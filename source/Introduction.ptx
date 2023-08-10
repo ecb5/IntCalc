@@ -1,0 +1,2198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<chapter xml:id="Introduction" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>First Chapter</title>
+  <section>
+    <title>A Quick Recap of Differential Calculus  </title>
+    <p>
+<m>\left.{\frac{y}{x} }\right|_a \RR</m>
+      The first section of this book dealt with dealt with
+      Differential Calculus, literally the rules for differences.  We
+      learned how to differentiate various functions and how to apply
+      this to various modeling problems.  For example, one of the
+      exercises we had was to show that a hanging chain (catenary)
+      satisfied the differential equation <me>\dfdxn{y}{x}{2}
+      =\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.</me>
+    </p>
+    <p>
+      A later exercise had you show that 
+      <me>y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)
+      </me>
+      in fact, satisfied this differential equation.  All this is well
+      and good, but you might have been wondering at the time where we
+      pulled this function out of to differentiate.  This is what
+      integral calculus is about.  In general, given a function
+      <m>y=y(x)</m>, we can differentiate it to obtain the
+      differential .  Integration is the process of starting with a
+      differential and finding the function that was differentiated to
+      obtain it.
+    </p>
+    <p>
+      For example, if <m>y=x^2</m> then <m>\dx{y}=2x\dx{x}</m>.  It
+      stands to reason that if we integrate , we should end up with .
+      There is a little bit of a complication here, as differentiating
+      <m>y=x^2+c</m> also yields <m>\dx{y}=2x\dx{x}</m> for any
+      constant <m>c</m>.  Happily, this is the only such complication;
+      if <m>\dx{f}=\dx{g} </m>, then <m>f</m> and <m>g</m> must differ
+      by a constant.
+    </p>
+    <p>
+      To see why, notice that if <m>\dx{f}=\dx{g} </m> then
+      <m>\dx(f-g)=\dx{f}-\dx{g}=0</m>.  Dividing by <m>\dx{x}</m> so
+      we can think of this as a slope, we have
+      <m>\frac{\dx{(f-g)}}{\dx{x}}=0</m>.  What kind of curve would
+      have a slope which is constantly <m>0</m>?  A moment’s thought
+      will suggest that this curve must be a horizontal line for if
+      not, then somewhere it should have a nonzero slope.  Such an
+      argument can be made rigorous, but we will not fuss over that
+      right now.
+    </p>
+
+    <p>
+      With this place, we will introduce some notation.  The notation
+      is motivated by the fact that integration (putting together,
+      summing) is the inverse process of differentiation (taking a
+      difference).  With this in mind, the integral of a differential
+      <m>\dx{y}</m> is denoted by <me>\int\dx{y}</me>.
+    </p>
+
+    <p>
+      It is worth taking a few minutes to make a couple of
+      observations about this notation.
+    </p>
+
+    <p>
+      First, the elongated "S" is called an <term>integral
+      sign</term>.  The <m>\int</m> symbol was originally meant to
+      indicate a particular sum so Leibniz chose the letter "S"
+      because it is the first letter of "sum."
+    </p>
+    <aside>
+      <title>A Little History</title>
+      <p>
+        To a modern eye the integral sign looks like a stylized "S",
+        and that is often how it is described but it really isn't
+        stylized at all. When Calculus was invented in the seventeenth
+        century the letter "S" had several common forms and Leibniz
+        adopted one of these forms as the integral sign. So it is
+        actually an archaic, not a stylized "S".
+      </p>
+    </aside>
+
+    <p>The formula <me>\int\dx{y}</me> really means a sum of differentials (differences).   First, WE ONLY INTEGRATE DIFFERENTIALS.  In other words, whatever you are integrating must be a differential.  For example,   makes sense,  does not.
+    </p>
+
+    <p>
+      Second, notice we did not write <me>\int\dx{y} =y</me>.  This is 
+      because it is not (quite) true. There are  an infinite number of
+      possible values of <me>\int\dx{y}</me>. Fortunately, as we
+      mentioned before, these all differ by constants.  Thus we can write
+      something like <m>\int 2x\dx{x}=x^2+C</m> where <m>C</m> is an arbitrary
+      constant.  This represents all of the possible functions whose
+      derivative is <m>2x</m>, so with that in mind <m>\int
+      2x\dx{x}</m> is referred to as the indefinite
+      integral or anti-derivative of <m>2x</m>.  These names come from the
+      foundational switch from differentials to limits and derivatives, but
+      we still want to emphasize that we integrate differentials, not
+      functions (so the <m>\dx{x}</m> is not optional). 
+    </p>
+  </section>
+  <section>
+    <title>Rules for Integration</title>
+    <p>
+      Just as Differential Calculus is literally the rules for
+      (infinitely small) differences, Integral Calculus is the rules
+      for summing up these differences.  Not surprisingly, each
+      differentiation rule has its integration rule counterpart.  The
+      following table illustrates some of these rules.
+    </p>
+
+    <table xml:id="BasicIntegrationTable">
+      <title>Inherited Integration Rules</title>
+      <tabular halign="left">
+        <row bottom="major" header="yes">
+          <cell>Differentiation Rule</cell><cell><line>Integration Rule</line><line>
+          (Assume <m>a</m> and <m>c</m> are constants.)
+        </line></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\text{constant})=0</m></cell>
+          <cell><line><m>\int0\dx{x}=c,</m></line> 
+          <line> where <m> c </m> is a constant.</line></cell>
+        </row>
+        <row>
+          <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell>
+          <cell><m>\int\dx(f+g)
+          <!-- =\int\dx(f+g) -->
+          =\int\dx{f}+\int\dx{g}=f+g+c</m></cell>
+        </row>
+        <row>
+          <cell><line>If <m>a</m> is a constant, then</line>
+          <line><m>\dx(ay)=a\dx(y)</m></line>
+          </cell>
+          <cell>
+          <m>\int a\dx{y}=\int\dx(ay)=a\int\dx{y}=ay+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell>
+          <cell><m>\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+c, n\neq -1</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}</m></cell>
+          <cell><m>\int x^{-1}\dx{x} = \ln\abs{x}+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(e^x)= e^x\dx{x}</m></cell>
+          <cell><m>\int e^x\dx{x} = e^x+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\sin(x))=\cos(x)\dx{x}</m></cell>
+          <cell><m>\int \cos(x) = \sin(x) +c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\cos(x))=-\sin(x)\dx{x}</m></cell>
+          <cell><m>\int \sin(x)\dx{x} = -\cos(x) +c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\tan(x))=\sec^2(x)\dx{x}</m></cell>
+          <cell><m>\int\sec^2(x)\dx{x} = \tan(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\sec(x))= \sec(x)\tan(x)\dx{x}</m></cell>
+          <cell><m>\int\sec(x)\tan(x)=\sec(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\sin(x))= \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\tan(x))= \frac{1}{1+x^2}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\sec(x))= \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+c</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+
+    <p>
+      <xref ref="BasicIntegrationTable">Table</xref> is not
+      exhaustive, as every differentiation performed gives rise to a
+      corresponding integration formula.  Conspicuously absent are the
+      product rule, quotient rule, and chain rule.  The analog of the
+      quotient rule is rather limited in its applicability and
+      typically is not used.  The analogs of the others are quite
+      useful and will be covered later.  Notice that the analog of the
+      power rule (line 4) makes sense verbally.  To differentiate
+      <m>x</m> to a power, you multiply by the exponent and then
+      subtract one from the exponent.  To reverse the process, you
+      reverse each step and reverse the order of the steps (much as
+      you put your socks on and then your shoes and to reverse it you
+      take off your shoes first and then your socks).  Thus you add
+      one to the exponent and then divide by the exponent.  Notice
+      that the rule will not work if the exponent is <m>n=-1</m> as
+      you cannot divide by zero.  This is where the natural logarithm
+      fills in the gap (line 5).  While we are at line five, notice
+      that we have inserted an absolute value in the formula:
+      <me>
+        \int\inverse x\dx{x}=\ln\abs{x}+C.
+      </me>
+    </p>
+
+
+    <problem>
+      <statement>      <p>
+        One way to define the absolute value function is
+        <m>\abs{x}=\sqrt{x^2}</m> where his signifies the non-negative square
+        root.  For example, <m>\abs{3}=\sqrt(3^2)=\sqrt(9)=3</m> and
+        <m>\abs{-3}=\sqrt{(-3)^2}=\sqrt{9}=3</m>.
+      </p>
+      <p>
+        Show that with this definition of absolute value, we still obtain the
+        formula
+        <me>
+          \dx(\ln\abs{x})=\frac1x \dx{x}.
+        </me>
+      </p>
+      </statement>
+      <hint>
+        <p>
+          Be careful that you do not try to take the logarithm of a negative
+          number. A common practice is to write <m>\int\inverse
+          x\dx{x}=\ln(x)+C</m>, even though this is only valid for .  We will
+          adopt this practice, and resort to an absolute value only when there
+          is an issue about being negative.
+        </p>
+      </hint>
+    </problem>
+
+
+    <problem>
+      <p>
+        It looks like we broke our own rule in lines two and three in the
+        above table of integration rules.  After all, 
+        <me>
+          \int \dx{f} +\int \dx{g} = f+c_1+g+c_2
+        </me>
+        where  and  are arbitrary constants, and 
+        <me>
+          a\int\dx{y}=a(y+c)=ay+ac
+          </me>.
+      </p>
+      <p>
+        Explain why what we have in the table is still legitimate.
+      </p>
+    </problem>
+
+    <p>
+      In light of the above problem, practitioners often will perform the
+      integration of a differential applying whatever tools are appropriate
+      and then combining any arbitrary constants into one constant at the
+      end.  For example, consider
+
+      <md>
+        <mrow>
+          \int\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\dx{x}\amp=5\int
+          x^2\dx{x}-3\int x^\frac12 \dx{x}+2\int\frac{1}{1+x^2}\dx{x}
+        </mrow>
+        <mrow>
+          \amp=5\left(\frac{x^3}{3}\right) -
+          \frac{3\left(x^{\frac12}\right)}{\frac32} + 2\inverse\tan(x)+c
+        </mrow>
+        <mrow>
+          \amp=\frac53x^3-2x^{\frac32}+2\inverse\tan(x)+c.
+        </mrow>
+      </md>
+      As with differentiation rules, when you get more comfortable with the
+      integration rules, you will probably do these in your head.  Again,
+      developing this fluency this is why you need to practice. 
+    </p>
+    <question>
+      <p>
+        question goes here
+      </p>
+    </question>
+
+    <p>
+      We have made a good start, but we are still a bit away from solving
+      differential equations such as 
+      <me>
+        \dfdxn{y}{x}{2} = \frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
+      </me>
+      A start might be to let <m>z=\dfdx{y}{x}</m>, so we have
+
+      <md>
+        <mrow>
+          \dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}
+        </mrow>
+        <mrow>
+          \frac{1}{\sqrt{1+z^2}}\dx{z}\amp=\frac{w}{H}\dx{x}.
+        </mrow>
+      </md>
+      If we now integrate both sides we get 
+      <me>
+        \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}.
+      </me>
+    </p>
+
+    <p>
+      The right-hand side of this doesn’t pose any problems since
+      <m>\frac{w}{H}</m> is a constant.  However, the left-hand side is
+      another matter, since it doesn’t quite fit with anything in our table.
+      We will learn techniques to handle such situations, but first let’s
+      look at some applications of integration which utilize what we know.
+    </p>
+  </section>
+
+  <section>
+    <title>First application -- Projectile motion</title>
+
+    <p>
+      Suppose you throw a ball straight up into the air.  Of course, it will
+      go up and come back down.  For the moment, let’s ignore air
+      resistance.  How high will the ball go?  How long will it take the
+      ball to hit the ground?  What will be its impact velocity?  Suppose
+      you throw the ball up with twice the initial speed.  Will the ball go
+      twice as high?  These were the types of questions that interested
+      scientists like Galileo Galilei (1564-1642) who were some of the first
+      scientists to systematically apply mathematics to science,
+      specifically projectile motion.
+    </p>
+
+    <p>
+
+      Now that we have that acceleration due to gravity is constant, let’s
+      look more into projectile motion.  This fits into our discussion on
+      integral calculus since we are given information about the
+      acceleration and must integrate twice to recover the position of the
+      ball.  Specifically, let’s say that the ball is thrown upward with an
+      initial velocity of <m>19.6</m> meters per second (roughly <m>44</m>
+      miles per hour) and is released at a point <m>2</m> meters above the
+      ground.  How high will the ball go?  When will it hit the ground?
+      What will be the impact velocity?
+    </p>
+
+    <p>
+      To answer these questions, we must translate this problem into a
+      mathematics problem.  With this in mind, suppose the height of
+      the ball is given by <m>y=y(t)</m> where <m>y</m> is measured in
+      meters and <m>t</m> is measured in seconds.  Then we have the
+      following information
+      <m>\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2}</m>,
+      <m>\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}}</m>,
+      and <m> y(0)=2\text{m}</m>.
+    </p>
+
+    <p>
+      Notice that the acceleration is constant (we are only looking a
+      gravity and ignoring air resistance) and is negative (we’ve set up <m>y</m>  so
+      that up is the positive direction and down is the negative
+      direction). 
+    </p>
+    <p>
+      With this in mind, we want to find <m>y</m> when <m>\dfdx{y}{t}=0</m>
+      (how high), <m>t</m> when <m>y=0</m> (when it hits the ground), and
+      <m>\eval{\dfdx{y}{t}}{y}{0}</m> (the impact velocity).
+    </p>
+
+
+    <p>
+      For convenience, let <m>v=\dfdx{y}{t}</m> denote velocity, and
+      <m>a=\dfdx{v}{t}=\dfdxn{y}{t}{2}</m> denote acceleration.  Starting with our constant acceleration <m>a=-9.8</m>, we need to integrate to find <m>v</m> and <m>y</m>.  Once we find these, then we can answer the questions posed.
+    </p>
+
+    <p>
+      We know that
+      <m>
+        a=\dfdx{v}{t}=\dfdxn{y}{t}{2}=-9.8
+      </m>
+      so
+
+      <md>
+        <mrow>
+          \dx{v}\amp=-9.8\dx{t}
+        </mrow>
+        <mrow>
+          \int\dx{v}\amp=\int-9.8\dx{t}
+        </mrow>
+        <mrow>
+          v+c_1\amp=-9.8t+c_2
+        </mrow>
+        <mrow>
+          v\amp=-9.8t+(\underbrace{c_2+c_1}_{= c})
+        </mrow>
+      </md>
+    </p>
+
+    <p>
+      To find  <m>c</m> is in this case, we utilize the fact that <m>v(0)=19.6</m>.  Thus
+      <me>
+        19.6=v(0)=-9.8(0)+c =c.
+      </me>
+      So our velocity is given by 
+      <me>
+        v=-9.8t+19.6.
+      </me>
+    </p>
+
+    <p>
+      We now integrate this to find the ball's position.
+
+      <md>
+        <mrow>
+          \dfdx{y}{t}\amp=-9.8t+19.6
+        </mrow>
+        <mrow>
+          \dx{y}\amp=\left(-9.8t+19.6\right)\dx{t}
+        </mrow>
+        <mrow>
+          \int\dx{y}\amp=-\int\left(9.8t+19.6\right)\dx{t}
+        </mrow>
+        <mrow>
+          y\amp=-9.8\left(\frac{t^2}{2}\right)+19.6t+c
+        </mrow>
+      </md>
+    </p>
+
+    <p>
+      This time to find the constant <m>c</m>  we observe that since
+      <m>y(0)=2=</m> we have
+      <me>
+        2=y(0)=\brackeval{-4.9t^2+19.6t+c}{t}{0} =c.
+      </me>
+      Thus the ball's position is given by: <m>y=-4.9t^2+19.6t+2</m>.
+    </p>
+
+    <p>
+      Once we have these three equations of motion (acceleration, velocity,
+      position) we can answer any question about the ball’s motion.  In
+      general, we suggest you find these three equations before trying to
+      answer any questions about motion. 
+    </p>
+
+    <p>
+      To find the maximum height, we set <m>v=0</m>. So we see that 
+      <m>
+        0=-9.8t+19.6
+        </m>. Solving for <m>t</m> gives <m>t=2 \text{ seconds}</m>. Thus the
+        ball's maximum height  is
+        <me>
+          y(2)=-4.9(2^2)+19.6(2)+2.
+        </me>
+        So the ball will reach a height of <m>= 21.6 \text{ meters}</m>.
+    </p>
+
+
+    <p>
+      To find the impact velocity, we first need to find the time <m>t</m>
+      when the ball hits the ground so we solve for <m>t</m> when <m>y=0</m>.
+      <md>
+        <mrow>
+          t\amp=\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2}}{2(-4.9)}
+        </mrow>
+      </md> 
+      and we see that both <m>t=4.1</m> and <m>t=-0.1</m> solve our
+      equation. However snce the negative time would represent time in the
+      past, we can say that the ball will hit the ground when <m>t=4.1</m>
+      seconds.  Thus the impact velocity is
+
+      <me>
+        v(4.1) = -9.8(4.1)+19.6= -20.58 \frac{\text{m}}{\text{s}}.
+      </me>
+      The negative answer makes sense as the ball is traveling in the
+      negative direction (given how we set up the <m>y</m> axis).
+    </p>
+
+    <problem>
+      <p>
+        Suppose we throw two  balls straight up. If the first has  an initial velocity of <m>v_0</m> and the second has an initial velocity of <m>2v_0</m> will the maximum height of the  second ball be twice the maximum height of the first. (Again, we ignore air resistance.)
+      </p>
+    </problem>
+
+    <p>
+      Of course, the same principles will work in two dimensions as with a
+      single dimension.  All we do is treat the horizontal and vertical
+      directions separately.  With this in mind, the horizontal acceleration
+      would be zero.
+    </p>
+
+    <exercise>
+      <introduction>
+        <p>
+          Consider the following projectile launched from the origin, with an initial velocity of <m>v_0</m> and angle of elevation <m>\theta</m>. 
+          <image source="ThrownRock.png" width="75%">
+            <description>Path of a thrown object.</description>
+          </image>
+          Assuming that there is no air resistance and the acceleration due to gravity is <m>-g</m>.
+        </p>      
+      </introduction>
+      <task>
+        <statement>
+          <p> 
+            Show that the trajectory is given by the parabola <me>
+            y=\frac{-g}{2v_0\cos(\theta)}x^2 +\tan(\theta)x
+            </me>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the equation in question 1 to show that the range of the projectile is given by <me>
+            \frac{v_0^2}{g}\sin(2\theta)
+            </me>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that the maximum range occurs when <m>\theta=\frac{\pi}{4}</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            On Feb. 6, 1971, astronaut Alan Shepard pulled out a makeshift
+            six-iron he smuggled on board Apollo <m>14</m> and hit two golf balls
+            on the lunar surface, becoming the first, and only, person to play
+            golf anywhere other than earth.  Assuming that the gravity on the moon
+            is <m>1/6</m> that of earth and that Shepard can hit the ball
+            identically on the earth and the moon, and ignoring air resistance on
+            the earth, would the ball go <m>6</m> times farther before it touches
+            the ground on the moon than on the earth? Justify your answer.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+  </section>
+
+  <section>
+    <title>Adding Resistance – This Looks Like a Job for Substitution!</title>
+    <p>
+      Up to now, we have ignored any sort of air resistance.  We will start
+      to consider resistance (drag) in such problems.  It turns out that
+      modeling projectile motion with drag is a more complicated matter.  In
+      general, resistance in a medium is modeled to be a function of
+      velocity.  You’ve probably experienced this if you held your hand out
+      a car window while it was moving.  The faster the car went, the more
+      force you felt on your hand.  Likewise, the faster you moved your hand
+      under water, the more force you felt on it.  Many things affect the
+      drag (speed, viscosity of the medium, shape and size of the object,
+      turbulence).  To keep a model simple, for a medium with a relatively
+      high viscosity and a relatively small object we will assume that the
+      drag is proportional to the velocity of the object.  An example of
+      this is a grain of sand falling in water.  For a medium with a
+      relatively low viscosity, such as air, and a relatively large object,
+      the drag is assumed to be proportional to the square of the velocity.
+      This would be the model to use for a baseball falling in the air.
+    </p>
+    <p>
+      To get a really accurate picture, one could use both a linear term and
+      a quadratic term in the drag, but we will keep it simple at this point
+      and keep these separate.  We will look at the simpler model of linear
+      drag and look at quadratic drag a little later and re-examine a ball
+      falling in air.
+    </p>
+    <example>
+      <p>
+        To look at linear drag, let’s look at the case of a grain of
+        sand of mass <m>m</m> descending in water.  To model this, let
+        <m>y(t)</m> be distance the sand has fallen (so the positive
+        <m>y</m> axis is pointing downward), with <m>y(0)=0</m>
+        representing the surface of the water.  If we draw a diagram
+        of the sand, there are three forces we need to consider: the
+        weight of the object, the buoyancy of the object, and the
+        drag.
+      </p>
+      <image source="Boyancy1.png" width="25%">
+        <description>Diagram of the forces on an object in a fluid.</description>
+      </image>
+      <p>
+        If we denote the acceleration due to gravity by <m>g</m>, then
+        the weight of the sand is <m>mg</m>.  The drag, which we
+        assume is linear, is proportional to the velocity, so we will
+        denote this by <m>-Rv</m>, where <m>R</m>is a constant and
+        <m>v=\dfdx{y}{t}</m> is the velocity.  Notice that this force
+        is negative as it points up (the negative direction).  The
+        buoyancy is really just the upward force that water would
+        apply if the sand wasn’t there.  That is, it is the weight of
+        the water that the grain of sand displaces.  This is just
+        <m>m_wg</m>, where <m>m_w</m> is the mass of the water
+        displaced.
+      </p>
+    </example>
+
+    <exercise>
+      <task>
+        <statement>
+          <p>
+            Use Newton's Third Law, (<m>F</m>)orce=(<m>m</m>)ass<m>\cdot</m>
+            (<m>a</m>)cceleration to show that
+            <me>
+              m\dfdx{v}{t}=(m-m_w)g-Rv,
+            </me>
+            <me>
+              v(0)=v_0
+            </me>
+          </p>
+          <p>
+            Let <m>M=m-m_w</m> and note that <m>M\gt0</m> (why?). Show that the
+            above leads to the differential equation
+            <me>
+              \frac{\dx{v}}{Rv-Mg}=\frac{-1}{m}\dx{t}
+            </me>
+            <me>
+              v(0)=v_0.
+            </me>
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Use the substitution <m>z=Rv-Mg</m>, to rewrite the above equation as 
+            <me>
+              \frac{\frac{1}{R}\dx{z}}{z}=-\frac{1}{m}\dx{t}
+            </me>
+            and show that 
+            <me>
+              v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
+            </me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Compute <m>v</m>. This will be the terminal velocity of the sand
+            settling in the water. Notice that this should be independent of
+            <m>v_0</m>. How does your answer for terminal velocity depend on
+            <m>M=m-m_w</m> and <m>R</m>? Does this make sense physically?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <p>
+      The above problem used the technique of substitution and is the
+      integration analog of the chain rule, which itself was the technique
+      of substitution applied to differentiation.  As with differentiation,
+      this did not actually compute the integral, but made it simpler to
+      apply formulas and techniques with which we are already familiar.
+      This technique of substitution is very powerful and allows us to
+      integrate differentials which are not in our table.  We already saw
+      one example in our previous problem.  For another, consider that in
+      the table, we had <m>\int\sin(x)\dx{x}</m> and
+      <m>\int\cos(x)\dx{x}</m>, but we did not have
+      <m>\int\tan(x)\dx{x}</m>.  
+
+    </p>
+    <p>
+      Since <m>\tan(x)=\frac{\sin(x)}{\cos(x)}</m> we now have the tools to do this one. If we make the substitution <m>z=\cos(x)</m>, then <m>\dx{z}=-\sin(x)\dx{x}</m> and so <m>\dx{x}=\frac{-\dx{z}}{\sin(x)}</m>.
+    </p>
+    <p>
+      Thus 
+      <md>
+        <mrow>\int\tan(x)\dx{x} = \int\frac{\sin(x)}{\cos(x)}\dx{x}\amp=\int\frac{\sin(x)}{z}\cdot\frac{-\dx{z}}{\sin(x)}</mrow>
+        <mrow>\amp=-\int\frac{\dx{z}}{z}</mrow>
+        <mrow>\amp=-\ln(z)+c</mrow>
+        <mrow>\amp=(-1)\ln(\cos(x))+c</mrow>
+        <mrow>\amp=\ln\left((\cos(x))^{-1}\right)+c</mrow>
+        <mrow>\amp=\ln\left(\sec(x)\right)+c</mrow>
+      </md>
+    </p>
+    <problem>
+      <p>
+      Use a similar substitution to compute <m>\int\cot(x)\dx{x}</m></p>
+    </problem>
+    <p>
+      There are no wrong substitutions, just unhelpful ones.  For
+      example, when computing <m>\int\tan(x)\dx{x}</m>, we could have
+      let <m>z=x</m>. In that case we would have
+      <m>\int\tan(x)\dx{x}=\int\tan(z)\dx{z}</m> which though
+      correct, is not very helpful.
+    </p>
+    <p>
+      Another approach would be to let  <m>u=\tan(x)</m> so that
+      <m></m>, and <m>\dx{u}=\sec^2(x)\dx{x}</m>. In that case we have
+      <men xml:id="BadTanInt1">
+        \int\tan(x)\dx{x}=\int\frac{u}{\sec^2(x)}\dx{u}=\int\frac{u}{1+\tan^2(x)}\dx{u}=\int\frac{u}{1+u^2}\dx{u}.
+      </men>
+    </p>
+    <p>
+      Although this is a doable integral, this approach seems like it
+      will be much harder than our original strategy so we're inclined
+      to abandon it immediately.
+    </p>
+    <p>
+      A comparably bad choice appears to be <m>u=\sin(x)</m> so that
+      <m>\dx{u}=\cos(x)\dx{x}</m> or
+      <m>\dx{x}=\frac{\dx{u}}{\cos(x)}</m>. In this case we have
+      <mdn>
+        <mrow number="no">\int\tan(x)\dx{x} =
+        \int\frac{\sin(x)}{\cos(x)}\dx{x}\amp=\int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right)=\int\frac{u}{1+u^2}\dx{u}</mrow>
+        <mrow xml:id="BadTanInt2">\amp=\int\frac{u}{1-u^2}\dx{u}
+        </mrow>
+      </mdn>
+      which is nearly the same, formally,
+      as <xref ref="BadTanInt1"> equation</xref>. The only difference
+      seems  to be that the "<m>+</m>" in the denominator became a
+      "<m>-</m>."
+    </p>
+    <aside>
+      <title>Observation</title>
+      <p>
+        We say "formally" because they aren't really the same. The
+        substitution variable <m>u</m> represents two entirely
+        different functions in each formula.
+      </p> 
+    </aside>
+    <exercise xml:id="TrickySubstitution1">
+      <introduction>
+        <p>
+          On the other hand  we now know that
+          <m>\int\tan(x)\dx{x}=\ln(\sec(x)+c</m> and we can use this
+          knowledge. Suppose we need to compute
+          <m>\int\frac{u}{1+u^2}\dx{u}</m> or
+          <m>\int\frac{u}{1-u^2}\dx{u}</m>. The same substitution we
+          used to transform these into the integral
+          <m>\int\tan(x)\dx{x}</m> will work in reverse.
+        </p>
+      </introduction>
+      <task  xml:id="Trickya">
+        <statement>
+          <p>
+            Use the substitution <m>u=\tan(x)</m> to show that:
+            <me>
+              \int\frac{u}{1+u^2}\dx{u} =
+              \ln\left(\sec\left(\inverse\tan(u)\right)\right)+c.
+            </me>
+          </p>
+          <p>
+            Now use your Algebra and Trigonometry skills to show that
+            <m>\sec\left(\inverse\tan(u)\right) = \sqrt{1+u^2}</m> so that 
+            <me>              \int\frac{u}{1+u^2}\dx{u} =
+            \frac12\ln\left(1+u^2\right)+c</me>.
+          </p>
+        </statement>
+      </task>
+
+      <task xml:id="Trickyb">
+        <statement>
+          <p>
+            Use the substitution <m>u=\sin(x)</m> to show that 
+            <me>
+              \int\frac{u}{1-u^2}\dx{u}=
+              \ln\left(\sec\left(\inverse\sin(u)\right)\right)+c.
+            </me>
+          </p>
+          <p>
+            Now use your Algebra and Trigonometry skills to show that
+            <m>\sec\left(\inverse\sin(u)\right) = \sqrt{1-u^2}</m> so that 
+            <me>              \int\frac{u}{1-u^2}\dx{u} =
+            -\frac12\ln\left(1-u^2\right)+c</me>.
+          </p>
+        </statement>
+      </task>
+
+    </exercise>
+    <aside>
+      <title>Advice and Encouragement</title>
+      <p>
+        You have surely noticed that the calculations you had to do to evaluate the integrals in <xref ref="TrickySubstitution1">Problem</xref> were quite intricate. Not hard, <foreign> per se,
+        </foreign> but there were a lot of steps and at each point you had to
+        draw on just the right tool from Algebra, or Trigonometry, or
+        Differential Calculus.
+      </p>
+
+      <p> For example, to get the one-half factor out in front
+      you needed first to recognize that <m>\sqrt{x}=x^{1/2}</m> and then
+      you needed the following property of logarithms: <m>\ln(a^b)=b\ln(a)</m>.
+      </p>
+
+      <p>
+        This is what your math courses are going to be like from now
+        on. You will continue to learn new techniques and acquire new tools. 
+        But the new material will frequently be fairly simple to <em>
+        understand<em></em>
+        </em> but not so simple to implement. When struggling with a problem
+        it is  easy to make the mistake of
+        thinking that you must have misunderstood the new material, but it
+        will  frequently be  the case that you  you really just don't see
+        which is the right tool to use, or how to use it.
+
+      </p>
+      <p>
+        This will be frustrating at times. Don't give up. Ask for help if you
+        need it. But be patient with yourself. When you are deep into a
+        problem it is easy to overlook simple things, and then to be
+        embarrassed when your teacher or a classmate shows you that all you
+        had to do was factor out an <m>x</m>. When this happens just learn the
+        lesson, remember it, and move on. There is no need for embarassment
+        and it will only waste your time and sap your self-confidence. We've
+        all been there.
+      </p>
+    </aside>
+
+    <exercise>
+      <introduction>
+        <p>
+          The integrals in <xref ref="Trickya"> Problem </xref> and <xref
+          ref="Trickyb"> Problem </xref> can be evaluated by means of
+          several different substitutions as we've seen.  There are others
+          that will also work but our principle point for now is that no
+          substitution is "wrong", some result in a new integral that is
+          easier than the original and some will not. If our goal is
+          simply to evaluate the integral we'll want to look for the
+          simplest method we can find. 
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find a simpler substitution than the one we used in <xref
+            ref="Trickya">Problem</xref> to evaluate the integral
+            <me>
+              \int\frac{x}{1+x^2}\dx{x}
+            </me> 
+          </p>
+        </statement>
+        <hint>
+          <p>          Notice that we're back to using <m>x</m> as the variable. Does this
+          matter?
+        </p>        </hint>
+        <hint>
+          <p>       Notice that <m>x\dx{x}</m> is <em>almost</em> the differential of
+          <m>1+2x</m>. 
+        </p>     </hint>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a simpler substitution than the one we used in <xref
+            ref="Trickyb">Problem</xref> to evaluate the integral
+            <me>
+              \int\frac{x}{1-x^2}\dx{x}
+            </me> 
+          </p>
+        </statement>
+        <hint>
+          <p>The same substitution will work here.</p>
+        </hint>
+      </task>
+    </exercise>
+    <p>
+      The good news with all of this is that you can do any substitution you
+      wish and as long as it is performed correctly, it is not wrong. 
+    </p>
+    <p>
+      The bad news is that you can do any substitution you wish, and as long
+      as it is performed correctly, it is not wrong -- but it may not be
+      helpful. After substituting you may get a new integral you don't know
+      how to do. You may get one no one knows how to do. In that case you'll
+      have to try again.
+    </p>
+    <example>
+      <p>
+        For example, consider the integral
+        <me>
+          \int x^2\sqrt{x^3+1}\dx{x}
+        </me>
+        We could let <m>u = x</m> so that <m>\dx{u} = 2x \dx{x}</m> . This would lead to
+        <me>
+          \int x^2\sqrt{x^3+1}\dx{x}= \int u\sqrt{u^{3/2}+1}\left(\frac{\dx{u}}{2x}\right) = \frac12\int\frac{u\sqrt{u^{3/2}+1}}{x}\dx{u}.
+        </me>
+        Notice that we can bring the <m>1/2</m> outside the integral because
+        it is a constant, but since  <m>\frac{1}{x}</m> is not a constant (it depends on <m>u</m>) we cannot do the same with with it. We could rewrite <m>x = \sqrt{u}</m> , so that
+
+        <md>
+          <mrow>\int x^2\sqrt{x^3+1}\dx{x} = \frac12\int\frac{u\sqrt{u^{3/2}}}{\sqrt{u}}\dx{u} \amp= \frac12 \int\sqrt{u}\sqrt{x^{3/2}+1}\dx{u}</mrow>
+          <mrow>\amp=\frac12\int\sqrt{u^{5/2}+u}\dx{u}.</mrow>
+        </md>
+        This is all correct, but leads to an integral far worse than the
+        original, especially if you notice that <m>x</m> is <m>3</m> “almost” the derivative
+        of <m>x + 1</m>. It is off by a factor of <m>3</m>, but as we’ve seen, constants
+        can be brought outside of the integral, so this is not really a
+        problem. So let’s make <m>y = x + 1</m> , so that <m>\dx{y} = 3x \dx{x}</m>.  Thus
+
+        <md>
+          <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp=\int x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)</mrow>
+          <mrow>\amp=\frac13\int y^{1/2}\dx{y}</mrow>
+          <mrow>\amp=\frac13\left(\frac{y^{3/2}}{3/2}\right)+c</mrow>
+          <mrow>\amp=\frac29\left(x^3+1\right)^{3/2}+c</mrow>
+        </md>
+      </p>
+      <p>
+        So what’s the definitive answer on a substitution? Unfortunately,
+        there is none. Basically, you can try anything. If it works, great! If
+        it doesn’t, don’t do something incorrectly to try and force it. Try
+        something else. Something you can look for is parts of the integrand
+        (the thing you are integrating) which are differentials of other parts
+        of the integrand. But there are no guarantees. This is what makes
+        integration harder than differentiation, much as long division is
+        harder than multiplication. But try something! As you practice, you
+        will gain more experience, so make sure you start looking for things
+        that you have seen before. And Practice, Practice, Practice!
+      </p>
+    </example>
+
+    <p>
+      In Differential Calculus you saw that while it is <em>not</em>
+      generally true that
+      <men xml:id="eq-NewbyError2">
+        \dfdx{(y\cdot z)}{x}=  \dfdx{y}{x}\cdot\dfdx{z}{x}
+      </men>
+      there are certain pairs of functions which are exceptions; for which
+      <xref ref="eq-NewbyError2">equation</xref> is true. Let’s explore
+      this problem in more detail.  We will switch to prime notation for
+      aesthetic reasons.
+    </p>
+    <exercise>
+
+      <task>
+        <statement>
+          <p>
+            Suppose <m>f^\prime(x)\neq{}f(x)</m> Show that if
+            <me>
+              \left(f\cdot g\right)^\prime(x) = f^\prime(x)\cdot g^\prime(x)
+            </me>
+            then<aside>
+            <title>Advice and Encouragement</title>
+            <p>
+              Don't let this formula frighten you. Recall that <m>\exp(x)=e^x</m>.
+            </p>
+          </aside>
+          <men xml:id="eq-ProdDerivs">
+            g(x)=\exp\left({\int{\frac{1}{1-\frac{f(x)}{f^\prime(x)}}}\dx{x}{}}\right)
+          </men>
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Apply <xref ref="eq-ProdDerivs">equation</xref> the function
+          <m>f(x)=x^n</m> and compare this to the results in Problem # 60 above.
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Suppose <m>f(x)=e^x</m>. What would <m>g(x) </m> be in this case?
+</p>
+</statement>
+</task>
+
+
+</exercise>
+
+<exercise>
+  <introduction>
+    <p>
+      We've integrated the trigonometric functions <m>\sin(x){}</m>,
+      <m>\cos(x){}</m>, <m>\tan(x){}</m>, and <m>\cot(x){}</m>. Now we will
+      deal with secant and cosecant.
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Consider the following "trick",
+      <me>
+        \int\sec(x)\dx{x}=\int\sec(x)\frac{\sec(x)+\tan(x){}}{\tan(x)+\sec(x){}}\dx{x}=\int\frac{\sec^2(x)+\sec(x)\tan(x)}{\tan(x)+\sec(x)}\dx{x}
+</me>
+Do you recognize a substitution that can be used?  Use this to
+integrate <m>\sec(x)\dx{x}{}</m>.</p>
+</statement>
+</task>
+
+<task>
+  <statement>
+    <p>
+      Use a similar trick to compute <m>\int\csc(x)\dx{x}{}</m>.
+</p>
+</statement>
+</task>
+</exercise>
+</section>
+
+<section>
+<title>The Opposite of the Product Rule -- Integration By Parts</title>
+<p>
+  Substitution is a powerful tool, but it is not a panacea. For example,
+  consider  the integral
+  <me>
+    \int x\cos(x)\dx{x}{}.
+</me>
+</p>
+<aside><p>
+  Actually, we should be more careful here. 
+  There is <em>
+  always
+  </em> a substitution that will work. The question is, can we find it?
+</p>
+</aside>
+<p>
+  Try as you might you will find that no substitution you might try will
+  work here. A common error that beginners make  is to assume that that
+  they  can just integrate the two factors separately, giving 
+  <men xml:id="IntProdneProdInt">
+    \int x\cos(x){}\dx{x}{}=\int x\dx{x}{}\int\cos(x)\dx{x}{}.
+</men>
+</p>
+<p>
+  Obviously <xref ref="IntProdneProdInt">equation</xref> is not
+  true. This doesn't work for differentiation so there is no reason to
+  think that it would work for integrals.
+</p>
+<p>
+  ince the product rule is what we use to differentiate a product, then
+  perhaps its analog would be of use here.   The product rule for
+  differentiation can be expressed as
+  <me>
+    \dx(uv){}=u\dx{v}{}+v\dx{u}{.}
+</me>
+Rearranging this a bit we have
+<me>
+  u\dx{v}{}=\dx(uv){}-v\dx{u}.
+</me>
+or
+<me>
+  \int{}u\dx{v}{}=\int{} \left(\dx(uv){}-v\dx{u}{}\right) = \int\dx(uv){}-\int
+  v\dx{u}{=uv-\int v\dx{u}{}}.
+</me>
+</p>
+<p>
+The formula <m>\int{}u\dx{v}{}=uv-\int v\dx{u}.</m> 
+is called the integration by parts formula and as you can see it is
+simply a rearrangement of the Product Rule formula. In this form it is
+exactly what we need to compute the  previous integral.  Specifically,
+if we let <m>u=x</m> and <m>\dx{v}=\cos(x)\dx{x}</m> , then
+<m>\dx{u}=\dx{x}</m> and <m>v=\int{\cos(x){}\dx{x}}=\sin(x){}</m>
+(don’t worry about the arbitrary constant here for the moment. We'll
+look at it later.).   Substituting these into our integration by parts
+formula,
+<men xml:id="IntByParts">
+  \int{}u\dx{v}{}=uv-\int v\dx{u}
+</men>
+we have
+<me>
+  \int x\cos(x)\dx{x} = x\sin(x)-\int\sin(x)\dx{x}=x\sin(x){}+\cos(x)+c{}
+</me>
+</p>
+<p>
+  At this point, we should take note of a few things. First, notice that
+  this was not a substitution; we did not end up with an integral with
+  <m>u</m>’s or <m>v</m>’s in it.  These were introduced just to keep track of the
+  integration by parts formula.
+</p>
+<p>
+  Second, notice that we needed to use the entire integrand. That is,
+  the expression <m>u\dx{v}</m> is exactly equal to the the integrand,
+  <m>x\cos(x)\dx{x}</m>. Nothing was left out.
+</p>
+<p>
+  Second, notice that like a substitution, the integration by parts
+  technique does not compute the integral.  Rather, it replaces that
+  integral with, hopefully, an easier integral.  This means that as long
+  as the integration by parts technique is applied correctly, it is not
+  wrong; it just might not be helpful.  For example, we could have let
+  <m>u=\cos(x){}</m> and <m>\dx{u}=x\dx{x}</m>. This would give
+  <m>v=x^2/2</m>. Substituting  these into <xref
+  ref="IntByParts">equation</xref> we get
+  <me>
+    \int
+    x\cos(x)\dx{x}=\frac{x^2}{2}\cos(x)+\frac{1}{2}\int x^2\sin(x)\dx{x}.
+</me>
+Everything we've done is correct, but we have an integral that is worse than
+before.  Practice is required to  us this
+technique as well. Lots of practice.
+</p>
+<p>
+  Lastly, notice that we suppressed the arbitrary constant when we
+  computed <m>v</m>.  We will see that this will not alter the result.  
+</p>
+<exercise>
+
+  <task>
+    <statement>
+      <p>
+        Redo the integration by parts on the integral <m>\int
+x\cos(x)\dx{x}</m>  letting <m>u=x</m> and <m>\dx{v}=\cos(x)\dx{x}</m>
+as before. But suppose this time we take <m>y=\sin(x)+a</m> where
+<m>a</m> is an arbitrary constant. Show that we will obtain the same
+answer as before.
+</p>
+
+<task>
+  <statement>
+    <p>
+      Show that in general, if we let <m>\int\dx{v}=v+a</m>  in the integration by parts formula, then we will obtain the same result as before, namely <m>\int u\dx{v}=uv-\int v\dx{u}</m>.
+</p>
+</statement>
+</task>
+
+</statement>
+</task>
+
+</exercise>
+
+<exercise>
+  <p>
+    Notice that in <xref ref="BasicIntegrationTable">Table</xref> we had 
+    <m>
+      \int e^x\dx{x}=e^x+C
+</m>
+but we had no analog for the integral of <m>\ln(x)</m>. Perform
+integral by parts on
+<me>
+  \int e^x\dx{x}=e^x+C
+</me>
+<aside>
+  Rather than trying to memorize this integral, just remember to use integration by parts.
+  </aside>using <m>u=\ln(x){}</m> and <m>\dx{v}=\dx{x}</m> to compute the
+  integral. 
+</p>
+</exercise>
+<p>
+  As with differentiation techniques and formulas, techniques such as
+  integration by parts and substitution are performed in concert,
+  utilizing whatever technique that is appropriate at the time.  As an
+  example of this consider  the next problem.
+</p>
+<exercise>
+  <p>
+    Perform integration by parts and then substitution to compute <m>\int
+    \inverse\sin(x)\dx{x}</m> and <m>\int
+    \inverse\tan(x)\dx{x}</m>.
+</p>
+</exercise>
+
+<aside>
+
+<title>A Word of Advice</title> 
+<p> 
+  As a word of advice, if you do
+  perform integration by parts twice, be sure not to switch the roles of
+  “<m>u</m>” and “<m>v</m>”.  This is not incorrect, but the second
+  integration will simply undo the irst and you will be back
+  where you started as indicated below 
+  <me>
+    \int u\dx{v}=uv-\int v\dx{u} = uv-\left[vu-\int u\dx{v}\right]=\int
+    u\dx{v}.
+</me> 
+</p> 
+
+</aside> 
+<p> 
+  Just as
+  integration by parts can be used with other techniques, it can be used
+  with itself multiple times.  
+</p> 
+<exercise> 
+  <p> Compute <me> \int x^2e^x\dx{x} </me> using integration by parts.  
+</p> 
+</exercise>
+
+<p>
+  Before we send you off to practice, we will look at one more “trick”
+  one could do with integration by parts.  We will also illustrate a way
+  to keep track of <m>u</m>, <m>\dx{v}</m>, <m>\dx{u}</m>, and d
+  <m>v</m>.
+</p>
+
+<example>
+  <p>
+    Consider <me>
+    \int e^x\sin(x)\dx{x}.
+</me>
+If we let <m>u=e^x</m> and <m>\dx{v} =\sin(x)\dx{x}</m>, then
+
+<md>
+<mrow>u\amp=e^x \amp\dx{v}\amp=\sin(x)\dx{x}</mrow>
+<mrow>\dx{u}\amp=e^x\dx{x}\amp v\amp=-\cos(x)\dx{x}</mrow>
+</md>
+so 
+<me>
+  \int e^x\sin(x)\dx{x} = -e^x\cos(x){}+\int e^x\cos(x)\dx{x}.
+</me>
+We can apply integration by parts again, being careful not to switch
+the roles of <m>u</m>  and <m>v</m>.
+
+<md>
+<mrow>u\amp=e^x \amp \dx{v}\amp=\cos(x)\dx{x}</mrow>
+<mrow>\dx{u}\amp=e^x\dx{x}\amp \sin(x){}</mrow>
+</md>
+so
+<me>
+  \int e^x\sin(x)\dx{x}=-e^x\cos(x)+\left[e^x\sin(x)-\int e^x\sin(x)\dx{x}\right]{}=-e^x\cos(x)+e^x\sin(x)-\int e^x\sin(x)\dx{x}
+</me>
+</p>
+<p>
+  At first it looks like we went full circle and came back to where we
+  started. But look again.  If we let <m>I=\int e^x\sin(x)\dx{x}</m>, we see
+  that this is now a simple algebra problem since
+  <me>
+    I=-e^x\cos(x){+e^x\sin(x){-I}}
+</me>
+Solving for <m>I</m> we have 
+<me>
+  I=\int e^x\sin(x)\dx{x}= \frac{e^x}{2}(\sin(x)-\cos(x))+c
+</me>
+</p>
+<p>
+  Notice that we had to remember to add the arbitrary constant since
+  there is no point in the calculation where it appears naturally .
+</p>
+</example>
+</section>
+
+
+<section>
+<title>Trigonometric Substitutions</title>
+
+<p>
+  Recall that earlier in this section we encountered the integral
+  <me>
+    \int{\frac{1}{\sqrt{1+z^2}}\dx{z}{}}
+</me>
+when we were trying to determine the solution to the catenary.  We
+actually have the tools to solve this type of integral once we notice
+that (surprisingly!) we would like to use the substitution <m>z=\tan{z}{}</m>.  As
+strange as it sounds to take a perfectly good integral and purposely
+insert trigonometry into it, this is just the ticket here.  Since we
+have the trigonometric identity <m>\tan^2(\theta)+1=\sec^2(\theta)</m>, then this substitution is just the
+thing to rid us of the square root, which poses more of an issue than
+the trigonometry does.
+
+</p>
+<p>
+  Specifically, if we let <m>z=\tan{z}{}</m>, then
+  <m>\dx{z}=\sec^2(\theta)\dx{\theta}</m>, and so we 
+  have
+  <me>
+    \int\frac{1}{\sqrt{1+z^2}}\dx{z}= \int\frac{1}
+    {\sqrt{1+\tan^2(\theta)}}\dx{\theta} =
+    \int\frac{\sec^2(\theta)}{\sec(\theta)}\dx{\theta}=\int\sec(\theta)\dx{\theta}=\ln\abs{\tan(\theta)+\sec(\theta)}+c
+</me>  
+</p> 
+<p>
+  The trick now is to put things back in terms of <m>z</m>.  We have
+  <m>\tan(\theta)=z</m> , but what
+  about <m>\sec(\theta)</m>?  We could certainly use the trigonometric identity from
+  before, but a more general way to do this is to draw a triangle.  The
+  beauty of this is that we don’t know what the angle <m>\theta{}</m> is, nor do we
+  really care.  All we need is that <m>\tan(\theta)=\frac{z}{1}</m>.  This leads to the following
+  triangle
+
+</p>
+<p>
+<image source="zeqtan.png" width="50%">
+<description>Diagram of a right triangle.</description>
+</image>
+
+</p>
+<p> 
+  With this triangle, not only can we obtain the aforementioned
+  <m>\tan(\theta)=\frac{z}{1}</m> and
+  <m>\sec(\theta)=\frac{\sqrt{1+z^2}}{1}</m> which is what we need in
+  the problem, but we could also obtain the following if we needed it.
+  <md>
+<mrow>\sin(\theta)\amp=\frac{z}{\sqrt{1+z^2}},</mrow>
+<mrow>\cos(\theta)\amp=\frac{1}{\sqrt{1+z^2}},</mrow>
+<mrow>\cot(\theta)\amp=\frac1z,</mrow>
+<mrow>\csc(\theta)\amp=\frac{\sqrt{1+z^2}}{z}.</mrow>
+</md> 
+</p>
+<p>
+  We really urge you to do this (DRAW A TRIANGLE) instead of relying on
+  memorizing trigonometric identities which actually are derived from
+  the triangle. This gives us that the differential equation
+  <me>
+    \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}
+</me>
+is satisfied by
+<me>
+  \ln\left(z+\sqrt{1+z^2}\right)=\frac{w}{H}x+c.
+</me> 
+</p>
+<exercise>
+
+
+<task>
+<statement>
+<p>
+Use the formula <m>z=\dfdx{y}{x}</m> for the catenary and
+<m>z(0)=\bigeval{\dfdx{y}{x}}{x}{0}=0</m>
+<aside>
+<title>Note to self</title>
+<p>Where did <m>y</m>  come from?</p>
+</aside>
+ (this was the low point on the
+hanging chain) to show that <m>c=0</m> and so
+<me>
+\dfdx{y}{x}=z=\frac12\left(e^{\frac{w}{H}x}-e^{-\frac{w}{H}x}\right).
+</me> 
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+Integrate the result in part (a) to obtain
+<me>
+y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)+c
+</me>
+which is the equation of the catenary as stated earlier. 
+</statement>
+</task>
+</exercise>
+
+
+<p>
+    Consider the top view of an airplane <m>P</m> starting at the point
+     <m>(1,0)</m> and traveling up the line <m> x=1</m> at a constant speed <m>v</m>.
+    When the plane is at <m>(1,0)</m>, a homing missile  <m>M</m> is fired from
+    the origin directly at the plane. Assuming that the missile
+    travels at a speed which is  <m>k</m> times the speed of the plane
+    <m>(k>1)</m> and is always aimed directly at the plane, find the path
+    the missile takes.  [Such a path is called a pursuit curve.]  The
+    diagram below shows the situation at time <m>t</m>.
+    <image source="PursuitCurve.png" width="75%">
+      <description>
+        Image of a pursuit curve.
+      </description>
+    </image>
+</p>
+
+<exercise xml:id="PursuitCurve1">
+<task>
+<statement>
+<p>
+If we let <m>s</m> denote the distance the missile has traveled at
+time <m>t</m>, show that the missile's path must satisfy the IVP
+<men xml:id="PursuitEquation1">
+\dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x}, \hskip5mm y(0)=0.
+</men>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p> 
+Obviously we can solve <xref ref="PursuitEquation1">equation</xref>
+for <m>y</m> but then we would have <m>y</m> in terms of <m>x</m>,
+<m>s</m>, and <m>\dfdx{y}{x}</m> which isn't very helpful. The
+<m>s</m> term is particularly problematic since we know almost nothing
+about it.
+</p>
+<p>
+But only almost. We do know that <m>\dx{s}^2=\dx{x}^2+\dx{y}^2</m>.
+</p>
+<p>
+Differentiate  <xref ref="PursuitEquation1">equation</xref> to show
+that the missile’s path must satisfy the differential equation
+<md>
+<mrow>(1-x)\dfdxn{y}{x}{2}=\frac{1}{k}\dfdx{s}{x}=\frac1k\sqrt{1+\left(\dfdx{y}{x}\right)^2{}}</mrow>
+</md>
+with the initial conditions <m>y(0)=0</m>, and
+<m>\eval{\dfdx{y}{x}}{x}{0}=0</m>.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Let's make this a little easier on our eyes. Let
+<m>z=\dfdx{y}{x} </m>, and show that <xref
+ref="PursuitEquation1">equation</xref> becomes
+<men xml:id="PursuitEquation2">
+\frac{1}{\sqrt{1+z^2}}\dx{z}=\frac1k\cdot\frac{1}{1-x}
+</men>
+with initial conditions <m>z(0)=0</m>.
+and use the trigonometric substitution <m>z=\tan(\theta)</m>  as before
+to show that 
+<me>
+z=\frac12\left(\left(1-x\right)^{\frac{-1}{k}}-\left(1-x\right)^{\frac1k}\right){}
+</me>
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Use the initial condition <m>y(0)=0</m> and  the substitution
+<m>z=\dfdx{y}{x}</m> to show that
+<me>
+y=\frac{k}{2}\left[\frac{(1-x)^{\frac{k+1}{k}}}{k+1}+\frac{(1-x)^{\frac{k-1}{k}}}{k-1}\right]+\frac{k}{k^2-1}
+</me>
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+How far has the plane gone when the missile reaches it?  What happens
+as <m>x\rightarrow1</m>?
+</p>
+</statement>
+</task>
+</exercise>
+
+<p>
+  Of course, the tangent function is not the only trigonometric
+  function at our disposal.
+</p>
+
+<exercise xml:id="TractrixProblem1">
+<p>
+The following is the view from above of a tractor-trailer.  Initially,
+the center of the rear axle of the tractor is at the origin and the
+center of the rear axle of the trailer is at the point <m>(1,0)</m>.
+<image source="Tractrix.png" width="80%">
+<description>Sketch of a tractor-trailer in the act of turning.</description>
+</image>
+Suppose the tractor pulls the front wheels up the <m>u</m>-axis and that the
+rear wheels don’t slip.  
+</p>
+
+<task>
+<statement>
+<p>
+show the path  that the center of the rear axle of the trailer follows must satisfy the equations
+<me>
+\dfdx{y}{x}=\frac{-\sqrt{1-x^2}}{x}, \hskip5mm y(1)=0
+</me>
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Find the equation, <m>y=y(x)</m> of the tractrix. <hint>
+After you separate the variables  substitute <m>x=\sin(\theta)</m> in
+your integral.
+</hint>
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Plot your solution on the <m>x-y</m> plane.
+</p>
+</statement>
+</task>
+</exercise>
+
+
+<exercise xml:id="TrigSub1">
+<p>
+Again, having trigonometry involved was a better option than having
+the square root.  Here, we utilized the trigonometric identity
+<m>\sin^2(\theta)+\cos^2(\theta)=1</m>.  A
+surprising number of integrals involve terms such as
+<m>\sqrt{1-x^2}</m>, <m>\sqrt{1+x^2}</m> or <m>\sqrt{x^2-1}</m>.  In these
+cases, it is often advantageous to utilize a trigonometric
+substitution, using the identities or to remove the square root, which
+typically is more a concern than the trigonometry.  However, you
+should remember that there are other techniques at your disposal, so
+you need to be judicious about what you utilize.  For example,
+consider the integral
+<me>
+\int\frac{x}{\sqrt{1+x^2}}\dx{x}.
+</me>
+</p>
+
+<task>
+<statement>
+<p>
+Use the trigonometric substitution <m>x=\tan(\theta)</m> to compute
+the above integral.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Now use the non-trigonometric substitution <m>x=1+x^2</m> to compute
+the integral
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Which method do you find more appealing? 
+<aside>
+<title></title>
+<p>Or least unappealing?</p>
+</aside>
+</p>
+</statement>
+</task>
+</exercise>
+
+<exercise>
+<introduction>
+<p>
+The table below repeats the last three entries of  <xref
+ref="BasicIntegrationTable">Table</xref>. 
+    <table xml:id="InvereTrigIntegrationTable">
+      <title>Inverse Trigonometric Substitution</title>
+      <tabular halign="left">
+        <row bottom="major" header="yes">
+          <cell>Differentiation Rule</cell><cell><line>Integration Rule</line></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\sin(x))= \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\tan(x))= \frac{1}{1+x^2}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\sec(x))= \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+c</m></cell>
+        </row>
+      </tabular>
+    </table>
+You can memorize it if you like, but if you for get one of these
+formulas they are straightforward to derive.
+</p>
+</introduction>
+
+<task>
+<statement>
+<p>
+Use the substitution <m>x=\sin(\theta)</m> to compute
+<m>\int\frac{1}{\sqrt{1-x^2}}\dx{x}</m>.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Use the substitution <m>x=\tan(\theta)</m> to compute
+<m>\int{\frac{1}{1+x^2}}\dx{x}</m>.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Use the substitution <m>x=\sec(\theta)</m> to compute <m>\int\frac{1}{x\sqrt{x^2-1}}\dx{x}</m>
+</p>
+</statement>
+</task>
+</exercise>
+
+<p>
+This is all well and good, but the forms <m>\sqrt{1-x^2}</m>,
+<m>\sqrt{1+x^2}</m>, and <m>\sqrt{x^2-1}</m> are all very
+specific. Can we use them for an integral like
+<m>
+\int\frac{1}{\sqrt{4+x^2}}\dx{x}
+</m>?
+</p>
+<p>
+Of course we can. We just need to rearrange it using Algebra.  Observe
+that if we had a <m>4</m> where the <m>1</m> is we'd be fine. We can't
+just change it. That would change the entire integral. But if we
+factor it out we get
+<men xml:id="TrigSubst1">
+\int\frac{1}{\sqrt{4+x^2}}\dx{x}=\int\frac{1}{\sqrt{4\left(1+\frac{x^2}{4}\right)}}\dx{x}=\frac12\int\frac{1}{\sqrt{1+\left(\frac{x}{2}\right)^2}}\dx{x}
+</men>
+</p>
+<p>
+Of course, now we have another problem. We have
+<m>\left(\frac{x}{2}\right)^2</m> where we were happy to have
+<m>x^2</m> before. But since we were going to substitute <m>x</m> away
+anyhow we'll just substitute <m>\frac{x}{2}</m> away instead.
+</p>
+<p>
+Letting <m>\frac{x}{2}=\tan(\theta)</m>, we proceed as before.
+</p>
+
+<problem xml:id="TrigSubst2">
+<task>
+<statement>
+<p>
+Finish computing the integral in <xref ref="TrigSubst1">equation</xref>
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Compute <m>\int\frac{1}{\sqrt{5-x^2}}\dx{x}</m>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Compute <m>\int\frac{1}{\sqrt{x^2-9}}\dx{x}</m>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Compute <m>\int\frac{1}{\sqrt{x^2-6x}}\dx{x}</m> 
+<hint>
+This  appears to be a completely different integral but it really isn't. Complete the square on
+<m>x^2-6x</m> and then use your result in part (c).
+</hint>
+</p>
+</statement>
+</task>
+</problem>
+<p>
+It should be clear from <xref ref="TrigSubst2">Drill</xref> that as
+long as the expression inside the radical is a quadratic, we can
+manipulate it algebraically to produce something of the form
+<m>\sqrt{1+\left(\frac{x-b}{a}\right)^2}</m>,
+<m>\sqrt{1-\left(\frac{x-b}{a}\right)^2}</m>or <m>\sqrt{\left(\frac{x-b}{a}\right)^2-1}</m>.
+From there, we can use the appropriate trigonometric substitution.
+</p>
+
+<p>
+Earlier we computed terminal velocity when considering linear
+drag. Now we will compare this to terminal velocity when the drag is
+proportional to the square of the velocity. An example of this would
+be a ball of mass <m>M</m> falling in air. (We can include buoyancy
+again, but it is typically negligible so we will discount it). Again,
+to model this, let<m>y(t)</m> be distance the ball has fallen (so the
+positive <m>y</m> axis is pointing downward), with <m>y(0)=0</m>
+representing the initial position of the ball. In a similar analysis
+to before, we denote the acceleration due to gravity by <m>g</m>, so
+the weight of the ball is <m>Mg</m>. The drag, which we assume is now
+quadratic, is proportional to the square of the velocity, so we will
+denote this by <m>-Rv^2</m>, where <m>R</m> is a constant and
+<m>v=\dfdx{v}{t}</m> is the velocity. For simplicity, we will assume
+<m>v(0)=0</m>.
+</p>
+
+<exercise xml:id="FallingWithDrag">
+
+<task>
+<statement>
+<p>
+Use Newton's Third Law of Motion:
+(<m>F</m>)<m>=</m>(<m>M</m>)ass<m>\cdot{}</m>(<m>A</m>)cceleration, to
+show that the velocity of the ball must satisfy the equations:
+<me>
+M\dfdx{v}{t}=Mg-Rv^2, \hskip5mm{}v(0)=0
+</me>.
+</p>
+<p>
+Show that the IVP above is equivalent to 
+<me>
+\frac{\dx{v}}{1-\frac{R}{Mg}v^2}=g\dx{t}, \hskip5mm v(0)=0
+</me>.
+</p></statement>
+</task>
+
+<task>
+<statement>
+<p>
+Use the substitution <m>\sqrt{\frac{R}{Mg}}v = \sin(\theta)</m> to
+show that
+<me>
+v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]
+</me>.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Compute <m>\limit{t}{\infty}{v}</m>. Compare this terminal velocity
+with our previous results.
+</p>
+</statement>
+</task>
+
+</exercise>
+
+<p>
+The trigonometric substitutions we've dealt with so far have  all
+involved square roots. What about this integral:
+<m>\int\frac{\dx{x}}{(1-x^2)^\frac32}</m>? Do you see that this is
+only slightly more complicated?
+</p>
+<p>
+If we make the substitution <m>x=\sin(\theta)</m>, then
+<m>\dx{x}=\cos(\theta)</m> as before so,
+<me>
+\int\frac{\dx{x}}{(1-x^2)^\frac32} =
+\int\frac{\cos(\theta)}{\left(\sqrt{1-\sin^2(\theta)}\right)^3}\dx{\theta}=\int\frac{\cos(\theta)}{\cos^3(\theta)}\dx{\theta}=\int\sec^2(\theta)\dx{\theta}=\tan(\theta)+c
+</me>.
+</p>
+<p>
+Since <m>\sin(\theta)=\frac{x}{2}</m>, we get the triangle 
+<image source="TrigTri1.png" width="40%">
+<description>Image of the triangle with theta in standard position and legs x and square root of one - x squared.</description>
+</image> 
+so
+<me>
+\int\frac{\dx{x}}{\left(x^2-1\right)^\frac32}=\tan(\theta)+c=\frac{x}{\sqrt{1-x^2}}+c
+</me>.
+</p>
+<problem>
+Confirm that this is correct by differentiating:
+<m>\frac{x}{\sqrt{1-x^2}}+c</m>.
+</problem>
+
+<p>
+Fortunately, we were still able to handle this, but what if we started
+with the integral:
+<m>\int\frac{x}{\left(x^2-1\right)^\frac32}\dx{x}{}</m>?
+</p>
+<p>
+  The substitution <m>x=\sec(\theta)</m> leads to:
+  <m>\int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}</m>. 
+  <aside>
+    <title></title>
+    <p>
+      Confirm
+      this yourself.
+    </p>
+    </aside> How do we handle that?
+</p>
+<p>
+We rewrite it as 
+<me>
+\int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}=\int\frac{1/\cos(\theta)}{\sin^2(\theta)/\cos^2(\theta)}\dx{\theta}=\int\frac{\cos(\theta)}{\sin^2(\theta)}\dx{\theta}=\int\cot(\theta)\csc(\theta)\dx{\theta}=-\csc(\theta)+c
+</me>.
+</p>
+<p>
+This example underscores the need to be able to compute a variety of
+integrals involving trigonometric functions. Again, it is a trial and
+error kind of thing, but there are some standard tricks to learn. It
+is probably best to learn these tricks by looking at some specific
+examples, but as you do, focus on the technique being used and how it
+can be used on similar integrals, not the specific example.
+</p>
+
+<example xml:id="OddSinPower">
+
+<m>
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}
+</m>
+
+<p>
+Since sine is raised to an odd power, it makes sense to “save one of
+the sines” and convert everything else to cosine, utilizing the
+Pythagorean identity <m>\sin^2(\theta)=1-\cos^2(\theta)</m>, and then
+apply a substitution as follows. First we "save a sine."
+<me>
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} =
+\int\sin(\theta)\sin^2(\theta)\cos^2(\theta)\dx{\theta}=\int(1-\cos^2(\theta))\cos^2(\theta)\sin(\theta)\dx{\theta}
+</me>.
+Next we let <m>z=\cos(\theta)</m>, so that
+<m>\dx{z}=-\sin(\theta)\dx{\theta}</m>, which gives   
+<md>
+<mrow>\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp=
+\int(1-z^2)z^2(-\dx{z})</mrow>
+<mrow>\amp=\int(z^4-z^2)\dx{z}</mrow>
+<mrow>\amp=\frac{z^5}{5}=\frac{z^3}{3}+c</mrow>
+<mrow>\amp=\frac{\cos^5(\theta)}{5}=\frac{\cos^3(\theta)}{3}+c</mrow>
+</md>.
+</p>
+</example>
+<exercise>
+<introduction>
+<p>
+  Had the cosine been raised to an odd power in <xref
+  ref="OddSinPower">example</xref>, we could have "saved one of the
+  cosines" instead.
+</p>
+</introduction>
+<task>
+<statement>
+<p>
+Compute <m>\int\sin^2(\theta)\cos^3(\theta)\dx{\theta}</m>.
+</p>
+</statement>
+</task>
+
+</exercise>
+
+<example>
+<p>
+Notice that in <xref ref="OddSinPower">example</xref> there would
+have been nothing wrong with computing
+<m>\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}</m> as  follows:
+<me>
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} =
+\int\sin^3(\theta)\cos(\theta)\cos(\theta)\dx{\theta} =
+\int\sin^3(\theta)\sqrt{1-\sin^2(\theta)}\cos(\theta)\dx{\theta}
+</me>.  
+It's just that it is not immediately clear how to continue
+from here.  Most people will shy away from this because of the square
+root but in fact, this integral can be computed
+using techniques you already know.
+</p>
+<p>
+First, the elementary substitution <m>x=\sin(\theta)</m> will give: 
+<me>
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} = \int
+x^3\sqrt{1-x^2}\dx{x}
+</me>.
+</p>
+<p>
+You see why we wouldn't want to go this route, right? Recall that we
+introduced trigonometric substitutions precisely so we could handle
+integrals like this last one. It would seem to be counterproductive to
+take this path since we <em> started </em> with an integral involving
+trigonometric functions.
+</p>
+<p>
+While our goal to be able to work out integrals by the simplest
+possible method, not the most difficult, it can instructive to see
+that a computation can be done in more than one manner so we will
+pursue this just a bit farther.
+</p>
+<problem cols="2">
+<introduction>
+Compute the integral <m>\int x^3\sqrt{1-x^2}\dx{x}</m> using these
+substitutions:
+</introduction>
+<task>
+<statement>
+<p>
+<m>x=\sin(\theta)</m>
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+<m>u=1-x^2</m>
+</p>
+</statement>
+</task>
+<conclusion>
+  Finish <xref ref="OddSinPower">example</xref> using each of the
+  substitutions above. Do you get the same solution as before?
+</conclusion>
+</problem>
+</example>
+<exercise xml:id="SinCosOddPower">
+<p>
+Compute the integral
+<m>\int\sin^3(\theta)\cos^3(\theta)\dx{\theta}</m> by:
+</p>
+
+<task>
+<statement>
+<p>
+Saving one of the cosines and converting everthing else into sines.  
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Saving one of the sines and converting everthing else into cosines.  
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Do you get the same result in parts (a) and (b)? Explain.
+</p>
+</statement>
+</task>
+</exercise>
+
+<example xml:id="SinCosEven">
+<p>
+What happens if you don’t have an odd power of sine or cosine? For
+example, suppose you have
+<m>\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}</m>.
+</p>
+<p>
+Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we
+can help it. In this case, there are a couple of trigonometric
+identities that can help. They the Half-Angle formlas:
+<me>
+\sin^2(\theta) = \frac12\left(1-\cos(2\theta)\right) \text{ and }
+\cos^2(\theta)=\frac12\left(1+\cos(2\theta)\right) 
+</me>.
+Using  these identities in our integral we see that
+<md>
+<mrow>\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}\amp=\frac14\int(1-\cos(2\theta))(1+\cos(2\theta))\dx{\theta}</mrow>
+<mrow>
+\amp=\frac14\int (1-\cos^2(2\theta))\dx{\theta}
+</mrow>
+<mrow>
+\amp=\frac{1}{4}\int\sin^2(2\theta)\dx{\theta}
+</mrow>
+</md>
+</p>
+<p>
+Using the Half-Angle formula again we obtain 
+<me>
+\frac{1}{4}\int\sin^2(2\theta)\dx{\theta} =
+\frac18\int(1-\cos(4\theta))\dx{\theta} =
+\frac18\left(\theta-\frac14\sin(4\theta)\right)+c
+</me> 
+</p>
+<problem>
+<p>
+Show that we  get the same result if we use the Double
+Angle formula: <m>\sin(2\theta)=2\sin(\theta)\cos(\theta)</m>.
+</p>
+</problem>
+</example>
+<example>
+<m>
+\int\sec^4(\theta)\tan^2(\theta)\dx{\theta}
+</m>
+<p>
+In this example, we can save a <m>\sec^2(\theta)</m> as part of the
+differential and use the identity <m>\sec^2(\theta)=1+\tan^2(\theta)</m>
+to change everything else into an expression in tangent. Since the secant is to an even power this again
+avoids square roots, which is the general idea.
+<md>
+<mrow>\int \sec^4(\theta)\tan^2(\theta)\dx{\theta}\amp=\int
+\sec^2(\theta)\tan^2(\theta)\sec^2(\theta)\dx{\theta}</mrow>
+<mrow>
+\int(1+\tan^2(\theta))\tan^2(\theta)\sec^2(\theta)\dx{\theta}
+</mrow>
+</md>
+Letting <m>y=\tan(\theta)</m>  we have
+<m>\dx{y}=\sec^2(\theta)\dx{\theta}</m>, so we obtain
+
+<md>
+<mrow>\int(1+y^2)y^2\dx{y}=\int(y^2+y^4)\dx{y}=\frac{y^3}{3}+\frac{y^5}{5}+c=\frac{\tan^3(\theta)}{3}+\frac{\tan^5(\theta)}{5}+c</mrow>.
+</md>
+</p>
+</example>
+
+<example>
+<p>
+If tangent occurs to an odd power, we can save a tangent and a secant
+as part of the differential and use the same identity to convert
+everything else to secant.
+<me>
+\int\sec^2(\theta)\tan^3(\theta)\dx{\theta} =
+\int\sec^2(\theta)\tan^2(\theta)\sec(\theta)\tan(\theta)\dx{\theta{}}=\int\sec^2(\theta)(\sec^2(\theta)-1)\sec(\theta)\tan(\theta)\dx{\theta}
+</me>.
+Letting <m>u=\sec(\theta)</m> we have
+<me>
+\int u^2(u^2-1)\dx{u}=\int
+(u^4-u^2)\dx{u}=\frac{u^5}{5}-\frac{u^3}{3}+c=\frac{\sec^5(\theta)}{5}-\frac{\sec^3(\theta)}{3}+c
+</me>.
+</p>
+</example>
+
+<exercise>
+<p>
+Consider the integral
+<me>
+\int\sec^4(\theta)\tan^3(\theta)\dx{\theta}
+</me>
+</p>
+
+<task>
+<statement>
+<p>
+Compute this integral by saving a <m>\sec^2(\theta)</m> and converting
+the rest into an expression in tangent.
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Compute this integral by saving a <m>\sec(\theta)\tan(\theta)</m> and converting
+the rest into an expression in secant.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Verify the at you get the same result in (a) and (b).
+</p>
+</statement>
+</task>
+</exercise>
+<exercise>
+<p>
+Previously we computed <m>\int \tan(\theta)\dx{\theta}</m> using the
+identity <m>\tan(\theta)=\frac{\cos(\theta)}{\sin(\theta)}</m>. We
+could also use the identity
+<m>\tan(\theta)=\frac{\sec(\theta)\tan(\theta)}{\sec(\theta)}\dx{\theta}</m>.
+</p>
+<p>
+Do we get a different answer? Explain.
+</p>
+</exercise>
+<p>
+The same tricks we applied with secant and tangent would apply equally
+well to integrals involving cosecant and cotangent using the
+identity <m>\csc^2(\theta)=1+\cot^2(\theta)</m>. Of course, we have not covered every
+type of integral that can occur and you can always find integrals that
+will take other tricks. We’ve only provided some basics that you can
+build on as you gain experience. So practice, practice, practice!
+</p>
+</section>
+
+
+<section>
+<title>Back to Logistic Growth: Partial Fractions</title>
+<p>
+Recall that in Section 6.4<aside>
+<title>Note to Self</title>
+<p>
+Turn this into a PreTeXt reference.  </p></aside> we had this example for
+logistic growth
+<me>
+\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)=.0001y(100-y)
+</me>.
+In that chapter, we analyzed this growth rate to draw a qualitative
+graph of <m>y=y(t)</m>, but we could
+not produce specific values of <m>t</m> for where things happened,
+because we didn’t have a formula for <m>y(t)</m>. We  now have the
+techniques needed to find <m>y(t)</m>.
+
+</p>
+<p>
+First we separate the
+variables:<me>\frac{\dx{y}}{y(100-y}=.0001y\dx{t} </me>.  To integrate
+the left-hand side, we could expand the denominator to complete the
+square and apply the appropriate trigonometric substitution.
+</p>
+<p>
+As we’ve mentioned before, all mathematical models are simplifications
+of reality, and typically are modified to take into account more
+complexities. For example, consider the following modification of the logistic
+model above
+<me>\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}\right)=.0001y(100-y)(y-1)</me>.
+In this case, <m>10</m> is called the <em>minimum viability level of the population.</em> (Why?) Solving this would require that we compute the integral
+<me>\int \frac{\dx{y}}{y(100-y)(y-10)}</me>.
+This form of this integral does not suggest any obvious trigonometric substitution so we will need a new idea.
+</p>
+<p>
+The next technique is wholly algebraic in nature. The trick to try and
+separate the integrand into “partial fractions” each of which will be easier
+to integrate than the original. For example, consider
+<m>\frac{1}{y(100-y)}</m>. With begin by making a reasonable,   educated guess
+<aside>
+<title>Comment</title>
+<p>
+This really is just a guess so it will need to be justified. For now
+we'll just roll with it.  </p></aside> that such a fraction can be
+written as <m>\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}</m>,
+where <m>A</m> and <m>B</m> are constant to be determined. We can see
+if this guess pans out by combining the partial fractions to obtain
+the original.
+<me>\frac{A}{y}+\frac{B}{100-y}=\frac{A(100-y)+By}{y(100-y)}=\frac{10A+(B-A)y}{y(100-y)}</me>
+Comparing this with <m>\frac{1}{y(100-y)}=</m> we see that if they are
+to be equal we must have <m>100A=1</m> and <m>B-A=1</m>. Therefore
+<m>A=B=\frac{1}{100}</m>. Thus
+<me>\frac{1}{y(100-y)}=\frac{1/100}{y}+\frac{1/100}{100-y}</me>. Uisng
+this in our original integral we see that 
+<mdn>
+<mrow number="no">
+\int\frac{\dx{y}}{y(100-y)}\amp=\int\frac{1/100}{y}\dx{y}+\int\frac{1/100}{100-y}\dx{y}</mrow>
+<mrow number="no" xml:id="PartFrac1">\amp=\frac{1}{100}\left(\int\frac{\dx{y}}{y}+\int\frac{\dx{y}}{100-y}\right)</mrow>
+<mrow>\amp=\frac{1}{100}\left(\ln(y)-\ln(100-y)\right)+c</mrow>
+</mdn>
+</p>
+<exercise>
+<task>
+<statement>
+<p>
+Use the integral provided above to obtain an equation for <m>y</m> in the logistic growth model
+<me>\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)\hskip5mm y(0)=0</me>
+for the case when <m>0\lt100</m>.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+Solve the same problem for the case where <m>y\gt 100</m>.  
+<aside>
+<title>Comment</title>
+<p>
+This is a spot
+where you need to look at the absolute value in the logarithm. We told
+you it comes up occasionally.
+</p>
+</aside>
+</p>
+</statement>
+</task>
+
+</exercise>
+
+<p>
+Now that we've seen that decomposing a ratio of
+polynomials (these are called  <term>rational functions</term>) into a sum of partial
+fractions is possible, we'll look for  a systematic way of doing this for any <term>
+rational function
+</term>. Our method will  hinge on the following theoretical, algebraic fact.
+</p>
+<p>
+Suppose we have two polynomials <m>p(x)</m> and <m>q(x)</m> which have
+no common factors (other than constants). Then there are polynomials
+<m>r(x)</m> and <m>s(x)</m> such that
+<me>r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1</me>.
+</p>
+<example xml:id="ElementaryPartFracDecomp">
+<p>
+For example notice that if <m>a</m> and <m>b</m> are constants then
+<m>x+a</m> and <m>x-b</m> have no common factors. Since
+<m>(x+a)-(x+b)=a-b</m> it follows  that<aside>
+<title>Comment</title>
+<p>
+Notice that since  <m>\frac{1}{a-b}</m> and <m>\frac{-1}{a-b}</m> are constants they are polynomials of degree zero. 
+</p></aside>
+
+<me>\frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)=1</me>.
+
+</p>
+</example>
+<p>
+Our approach to the problem in <xref ref="ElementaryPartFracDecomp">example</xref>was  somewhat ad-hoc. We will evantualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an 
+(educated) guess and check method. Notice that in the <xref ref="ElementaryPartFracDecomp">example</xref> we had
+<me>\frac{1}{(x+a)(x+b)}=\frac{\frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)}{(x+a)(x+b)}=
+\frac{\frac{1}{a-b}}{x+b}+\frac{\frac{-1}{a-b}}{x+a}=\frac{\frac{-1}{x+a}}{x+a}\frac{\frac{1}{x-b}}{x+b}</me>
+</p>
+<p>
+It is generally true that if <m>r(x)\cdot p(x+s(x)\cdot q(x)=1</m>
+then
+<me>\frac{1}{p(x)\cdot{}q(x)}=\frac{r(x)\cdot{}p(x)+s(x)\cdot{}q(x)}{p(x)\cdot{}q(x)}=
+\frac{s(x)}{p(x)}+\frac{r(x)}{q(x)}</me>. Multiplying by <m>t(x)</m>
+we have <me>\frac{t(x)}{p(x)\cdot{}q(x)}= \frac{t(x)\cdot
+s(x)}{p(x)}+\frac{t(x)\cdot{}r(x)}{q(x)}</me>.  Setting
+<m>A(x)=t(x)\cdot{}s(x)</m> and <m>B(x)=t(x)\cdot r(x)</m> gives
+<md>
+<mrow>\frac{t(x)}{p(x)\cdot{}q(x)}=
+\frac{A(x)}{p(x)}+\frac{B(x)}{q(x)}</mrow>
+</md>.
+</p>
+<p>
+Everything we've just shown assumes that if <m>p(x)</m> and
+<m>q(x)</m> are known then <m>r(x)</m> and <m>s(x)</m> can be found so
+that <m>r(x)\cdot p(x)+ s(x)\cdot q(x)=1</m>. For arbitrary functions
+this is a very restrictive condition. However as we observed above, if
+<m>p(x)</m> and <m>q(x)</m> are polynomial then the existence of
+<m>r(x)</m> and <m>s(x)</m> is guaranteed. Thus for polynomials the
+<term> Partial Fraction Decomposition </term> is also guaranteed.
+</p>
+
+<p>
+We formalize this in the following theorem.
+</p>
+<theorem xml:id="PartialFractionDecomp">
+
+<title>The Partial Fraction Decomposition (PFD)</title>
+<p>
+If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are polynomials with
+<m>\deg(P)\lt\deg(Q)+ \deg(R)</m>  the there exist  polynomials
+<m>A(x)</m> and <m>B(x)</m>, 
+<m>\deg{A}\lt\deg{Q}</m> and <m>\deg(B)\lt\deg(R)</m>, such that 
+<me>\frac{P(x)}{Q(x)\cdot{}R(x)} = \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
+</p>
+</theorem>
+
+<p>
+As stated in <xref ref="PartialFractionDecomp">Theorem</xref> the PFD is very comprehensive. We will 
+</p>
+</section>
+
+</chapter>
+
