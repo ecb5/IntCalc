@@ -1,0 +1,252 @@
+\chapter{Power Series }
+\label{cha:power-series}
+
+\section{Representation of Numbers}
+\label{sec:repr-numb}
+
+The decimal place-value representation of a number like $43527$ is so
+familiar that it feels easy and natural, even simple. It is anything
+but. Our familiar  base ten number representation notation is actually
+extremely sophisticated. It only seems simple because we learn it in
+childhood and use it every day for  all of our lives. 
+
+For example the notation $"43527"$ is actually a condensed form of
+$$
+4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0,
+$$
+but numbers written in this form are very difficult to work with. We
+get our usual representation $"43527"$ by observing that the powers of
+ten needn't be explicitly written down since they are clearly
+indicated by the position of each digit. Hence the name ``place
+value.'' 
+
+However, once the place value system is adopted we do lose
+some flexibility, since the digits  must appear in the proper
+order. For example $"72534"$ is a completely different number than
+$"43527,"$ but 
+$$
+4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0
+$$
+and 
+$$
+7\cdot10^0+2\cdot10^1+5\cdot10^2+3\cdot10^3+4\cdot10^4
+$$
+are the same. It will be convenient for us to use this last ordering
+soon.
+
+As long as our base  is $10$ the place value notation prevents us
+from confusing the number $"43527"$ with, say, $"18263."$
+
+But suppose our base is $8.$ The then number 
+$$
+43527 = 4\cdot8^4+3\cdot8^3+5\cdot8^2+2\cdot8^1+7\cdot8^0 = 18263.
+$$
+
+Clearly we can't allow this kind of ambiguity. We can't allow the same
+set of digits, written in the same order, to mean both ``forty-three
+thousand five hundred twenty-nine,'' \underline{and} ``eighteen
+thousand two hundred sixty three,''  \underline{and} ``sixty-three
+thousand one hundred ninety-one,'' which is what we would get if we
+interpreted the digits $"43527"$ using ``11'' as the base. To prevent
+this sort of confusion we will use subscripts. That is, 
+$$
+43527_{10} = 4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0
+$$
+whereas
+$$
+43527_{8} = 4\cdot8^4+3\cdot8^3+5\cdot8^2+2\cdot8^1+7\cdot8^0 = 18263_{10}, 
+$$
+and 
+$$
+43527_{11} = 4\cdot11^4+3\cdot11^3+5\cdot11^2+2\cdot11^1+7\cdot11^0 = 63191_{10}.
+$$
+Naturally as long as we only use base 10 notation there is no
+ambiguity. Since this is the usual situation we usually suppress the
+subscripts.
+
+But sometimes it is necessary to use a base other than $10$ and it is
+necessary to convert from one base to another. This conversion can be
+difficult at first, mainly because it is unfamiliar. That is, in base
+$10$ the number one hundred twenty-one is written $121_{10}$ but in
+base $5$ it is $441_5.$
+
+\begin{embeddedproblem}{}
+  Verify that $121_{10} = 441_5.$
+\end{embeddedproblem}
+
+If we did not know the base $5$ representation how could we find it?
+
+This sounds harder than it is. If we write  
+$$
+121_{10} = a_0 +a_1\cdot5 + a_2\cdot5^2
+$$ 
+we can find the unknown coefficients in the
+order given as follows. Divide each side of the above equation by $5.$
+On the right we get 
+$$
+a_1+a_2\cdot5, \text{ with a remainder of $a_0$.}
+$$
+On the left we get $\frac{121}{5} = 24$ with a remainder of $1.$ So
+$a_0 = 1$ and 
+$$
+24 = a_1+a_2\cdot5.
+$$ 
+
+Dividing both sides of this last formula by $5$ again gives a
+remainder of $a_1$ on the right and of $4$ on the left, and $a_2=4$ as
+well. Therefore
+$$
+121_{10} = 441_5.
+$$
+\begin{embeddedproblem}{}
+  Convert $121_{10}$ to each of the following bases.
+  \begin{multicols}{3}
+    \begin{description}
+    \item[(a)] $3$
+    \item[(b)] $4$
+    \item[(c)] $8$
+    \item[(d)] $9$
+    \item[(e)] $11$
+    \item[(f)] $2$
+    \end{description}
+  \end{multicols}
+\end{embeddedproblem}
+
+\section{Representations of Polynomials}
+\label{sec:repr-polyn}
+
+Notice that when we write $121_{10}$ as 
+$$
+121_{10} = 1+2\cdot10+1\cdot10^2
+$$
+the expression on the right has the form of a polynomial. That is, if
+we replace each instance of the base $10$ with $x$ we get the polynomial
+$1+2\cdot x+1\cdot x^2.$ Polynomials can be thought of as numbers
+where the base is $x$ (or that it is unspecified).
+
+We will very soon find it very convenient to to be able to convert
+polynomials to different bases just like we converted numbers in the
+last section. Fortunately, the method we've just developed carries
+over unchanged.
+
+\begin{myexample}
+  The polynomial $p(x) = 1+2x+x^2$ is represented  with  $x$ as the
+  base. Convert it to the base $(x-1).$
+
+  As before, we want to find coefficients $a_0, a_1,$ and $a_2$ so
+  that 
+$$
+ 1+2x+x^2 = a_0 + a_1(x-1) + a_2(x-1)^2.
+$$
+Dividing both sides by $x-1$ we get
+\begin{description}
+\item[\sc{}On the right:] $a_1+a_2(x-1)$ with the remainder $a_0.$
+\item[\sc{}On the left:] $x+3$ with the remainder $4.$
+\end{description}
+So $a_0=4$ and $x+3=a_1+a_2(x-1).$ Dividing again by $x-1$ gives
+\begin{description}
+\item[\sc{}On the right:] $a_2$ with the remainder $a_1.$
+\item[\sc{}On the left:] $1$ with the remainder $4.$
+\end{description}
+Therefore
+$$
+1+2x+x^2 = 4+4(x-1)+(x-1)^2.
+$$
+\end{myexample}
+\begin{embeddedproblem}{}
+  Confirm the result in the previous example.
+\end{embeddedproblem}
+
+For reasons that we will make clear later, we don't normally refer to
+this re-representation of polynomials as a ``change of base\footnote{even
+though that is really what it is.}.'' 
+Instead, when we convert from base $x$ to base $x-a$ for some $a$ we
+say we are ``expanding the polynomial about the number $a.$'' When the
+base is $x$ we say that the polynomial is expanded about  the number
+$0.$
+
+A more substantial example is in order.
+\begin{myexample}
+  Expand the polynomial $p(x) = x^5+3x^4-15x^2+1$ about the number
+  $2.$
+
+  As before we have 
+$$
+x^5+3x^4-15x^2+1 =
+a_0+a_1(x-2)+a_2(x-2)^2+a_3(x-2)^3+a_4(x-2)^4+a_5(x-2)^5.
+$$
+Dividing both sides by $x-2$ gives
+\begin{description}
+\item[\sc{}On the right:]
+  $a_1+a_2(x-2)+a_3(x-2)^2+a_4(x-2)^3+a_5(x-2)^4$ with remainder $a_0.$
+\item[\sc{}On the left:] $x^4+5x^3+10x^2+5x+10$ with remainder $21.$
+\end{description}
+Thus $a_0 = 21$ and 
+$$
+x^4+5x^3+10x^2+5x+10 = a_1+a_2(x-2)+a_3(x-2)^2+a_4(x-2)^3+a_5(x-2)^4.
+$$
+Dividing again we have
+\begin{description}
+\item[\sc{}On the right:] $a_2+a_3(x-2)+a_4(x-2)^2+a_5(x-2)^3$ with
+  remainder $a_1.$
+\item[\sc{}On the left:] $x^3+7x^2+24x+53$ with remainder $116.$
+\end{description}
+Thus $a_1=116$ and 
+$$
+x^3+7x^2+24x+53 = a_2+a_3(x-2)+a_4(x-2)^2+a_5(x-2)^3.
+$$
+Continuing in this fashion gives $a_2= 137$ and
+$$
+x^2+9x+42 = a_3+a_4(x-2)+a_5(x-2)^2,
+$$
+and then $a_3=64$ and 
+$$
+x+11 = a_4+a_5(x-2),
+$$
+from which it is clear that $a_5= 1$ and $a_4=13.$
+
+Therefore
+$$
+x^5+3x^4-15x^2+1 =
+21+116(x-2)+137(x-2)^2+64(x-2)^3+13(x-2)^4+(x-2)^5.
+$$
+\end{myexample}
+\begin{embeddedproblem}{}
+  Verify the result in the previous example.
+\end{embeddedproblem}
+
+If we expand the polynomial $p(x) = x^3$ about the number $1$ we get
+$$ 
+x^3 = a_0+a_1(x-1) +a_2(x-1)^2+a_3(x-1)^3.
+$$
+Proceeding as before we find that $a_0=1$ and $a_2= 3.$ If, rather
+than completing the conversion we stop here it is reasonable to expect
+that the graphs of $l(x) = a_0+a_1(x-1) = 1+3(x-1)$ and $p(x) = x^3$
+should be related, and indeed, when we graph both polynomials on the
+same set of axes we see the following.\\
+\centerline{\includegraphics*[height=2in,width=2in]{../Figures/LinearTaylor}}
+
+Hey! Wait a second! We've seen things like this before!
+
+This appears to be the graph of $p(x)=x^3$ and its tangent line at
+$x=1.$ Is this just an artifact of this particular problem or is it
+generally true?
+
+Clearly this is general. If we have an unspecified polynomial expanded
+about the number $a,$ $p(x) = a_0 + a_1(x-a) + a_2(x-a)^2 + \cdots +
+a_m(x-a)^n$ then clearly $p(a) = a_1$ and $\dfdx{p}{x}(a) = a_1.$ So
+it seems that in computing the coefficients $a_0$ and $a_1$ we have
+found the line tangent to $p(x)$ at $x=a.$ What do you suppose we will
+find when we compute $a_2?$
+\begin{embeddedproblem}{}
+ Find $a_2$ graph $x^3$ and $a_0 + a_1(x-a) + a_2(x-a)^2$
+    on the same set of axes. What do you observe?
+\end{embeddedproblem}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "IntCalc"
+%%% End: 
+
