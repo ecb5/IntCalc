@@ -3,7 +3,7 @@ web: *.ptx  Makefile
 	/home/ecb5/.local/bin/pretext view web;
 
 deploy: *.ptx  Makefile
-	/home/ecb5/.local/bin/pretext deploy
+	/home/ecb5/.local/bin/pretext deploy -u
 
 jing: *.ptx 
 	java -classpath jing-trang/build -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration -jar ~/jing-trang/build/jing.jar /home/ecb5/PreText/mathbook/schema/pretext.rng IntCalc.ptx
