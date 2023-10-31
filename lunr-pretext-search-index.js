@@ -487,11 +487,56 @@ var ptx_lunr_docs = [
   "body": " The Partial Fraction Decomposition (PFD)  If , , and are polynomials with the there exist polynomials and , and , such that .  "
 },
 {
-  "id": "chapter-2",
+  "id": "section-8",
   "level": "1",
-  "url": "chapter-2.html",
+  "url": "section-8.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Representations of Numbers",
+  "body": " Representations of Numbers  The decimal place-value representation of a number like is so familiar that it feels easy and natural, even simple. It is anything but. Our familiar base ten number representation notation is actually extremely sophisticated. It only seems simple because we learn it in childhood and use it every day for all of our lives.  For example the notation \" \" is actually a condensed form of but numbers written in this form are very difficult to work with. We get our usual representation \" \" by observing that the powers of ten needn't be explicitly written down since they are clearly indicated by the position of each digit. Hence the name ``place value.\"  However, once the place value system is adopted we do lose some flexibility, since the digits must appear in the proper order. For example \" \" is a completely different number than \" ,\" but and are the same. It will be convenient for us to use this last ordering soon.  As long as our base is the place value notation prevents us from confusing the number \" \" with, say, \" .\"  But suppose our base is . The then number   Clearly we can't allow this kind of ambiguity. We can't allow the same set of digits, written in the same order, to mean both ``forty-three thousand five hundred twenty-nine,'' and ``eighteen thousand two hundred sixty three,'' and ``sixty-three thousand one hundred ninety-one,'' which is what we would get if we interpreted the digits \" \" using `` '' as the base. To prevent this sort of confusion we will use subscripts. That is, whereas and Naturally as long as we only use base 10 notation there is no ambiguity. Since this is the usual situation we usually suppress the subscripts.  But sometimes it is necessary to use a base other than 10 and it is necessary to convert from one base to another. This conversion can be difficult at first, mainly because it is unfamiliar. That is, in base $10$ the number one hundred twenty-one is written but in base it is .    Verify that .    If we did not know the base $5$ representation how could we find it?  This sounds harder than it is. If we write we can find the unknown coefficients in the order given as follows. Divide each side of the above equation by . On the right we get On the left we get with a remainder of . So and   Dividing both sides of this last formula by again gives a remainder of on the right and of on the left, and as well. Therefore  Convert to each of the following bases.                                 "
+},
+{
+  "id": "problem-9",
+  "level": "2",
+  "url": "section-8.html#problem-9",
+  "type": "Drill",
+  "number": "2.1",
+  "title": "",
+  "body": " Verify that .  "
+},
+{
+  "id": "problem-10",
+  "level": "2",
+  "url": "section-8.html#problem-10",
+  "type": "Drill",
+  "number": "2.2",
+  "title": "",
+  "body": "Convert to each of the following bases.                               "
+},
+{
+  "id": "section-9",
+  "level": "1",
+  "url": "section-9.html",
+  "type": "Section",
+  "number": "2.2",
+  "title": "Representations of Polynomials",
+  "body": " Representations of Polynomials  Notice that when we write as the expression on the right has the form of a polynomial. That is, if we replace each instance of the base with we get the polynomial . Polynomials can be thought of as numbers where the base is (or that it is unspecified).  We will very soon find it very convenient to to be able to convert polynomials to different bases just like we converted numbers in the last section. Fortunately, the method we've just developed carries over unchanged.  \\begin{myexample} The polynomial $p(x) = 1+2x+x^2$ is represented with $x$ as the base. Convert it to the base $(x-1).$ As before, we want to find coefficients $a_0, a_1,$ and $a_2$ so that $$ 1+2x+x^2 = a_0 + a_1(x-1) + a_2(x-1)^2. $$ Dividing both sides by $x-1$ we get \\begin{description} \\item[\\sc{}On the right:] $a_1+a_2(x-1)$ with the remainder $a_0.$ \\item[\\sc{}On the left:] $x+3$ with the remainder $4.$ \\end{description} So $a_0=4$ and $x+3=a_1+a_2(x-1).$ Dividing again by $x-1$ gives \\begin{description} \\item[\\sc{}On the right:] $a_2$ with the remainder $a_1.$ \\item[\\sc{}On the left:] $1$ with the remainder $4.$ \\end{description} Therefore $$ 1+2x+x^2 = 4+4(x-1)+(x-1)^2. $$ \\end{myexample}                                                                                  "
+},
+{
+  "id": "example-10",
+  "level": "2",
+  "url": "section-9.html#example-10",
+  "type": "Example",
+  "number": "2.3",
+  "title": "",
+  "body": "\\begin{myexample} The polynomial $p(x) = 1+2x+x^2$ is represented with $x$ as the base. Convert it to the base $(x-1).$ As before, we want to find coefficients $a_0, a_1,$ and $a_2$ so that $$ 1+2x+x^2 = a_0 + a_1(x-1) + a_2(x-1)^2. $$ Dividing both sides by $x-1$ we get \\begin{description} \\item[\\sc{}On the right:] $a_1+a_2(x-1)$ with the remainder $a_0.$ \\item[\\sc{}On the left:] $x+3$ with the remainder $4.$ \\end{description} So $a_0=4$ and $x+3=a_1+a_2(x-1).$ Dividing again by $x-1$ gives \\begin{description} \\item[\\sc{}On the right:] $a_2$ with the remainder $a_1.$ \\item[\\sc{}On the left:] $1$ with the remainder $4.$ \\end{description} Therefore $$ 1+2x+x^2 = 4+4(x-1)+(x-1)^2. $$ \\end{myexample} "
+},
+{
+  "id": "chapter-3",
+  "level": "1",
+  "url": "chapter-3.html",
   "type": "Chapter",
-  "number": "2",
+  "number": "3",
   "title": "Title Goes Here",
   "body": "Title Goes Here  Text goes here.        "
 },
