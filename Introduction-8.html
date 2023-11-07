@@ -169,7 +169,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Introduction-5.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Adding Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Introduction-6.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Opposite of the Product Rule -- Integration By Parts</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Introduction-7.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="Introduction-8.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="Introduction-8.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Introduction-8.html#PartialFractionSubsection" class="internal"><span class="codenumber">2.7.1</span> <span class="title">The Partial Fraction Decomposition</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -202,10 +205,10 @@ window.MathJax = {
 <div class="para logical" id="Introduction-8-2">
 <div class="para">Recall that in Section 6.4<aside class="aside aside-like" id="Introduction-8-2-1"><h3 class="heading"><span class="title">Note to Self.</span></h3>
 <div class="para" id="Introduction-8-2-1-2">Turn this into a PreTeXt reference.</div></aside> we had this example for logistic growth</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)=.0001y(100-y)\text{.}
-\end{equation*}
+<div class="displaymath process-math" id="LogisticGrowthFromDiffCalc">
+\begin{equation}
+\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)=0.0001y(100-y)\text{.}\tag{2.10}
+\end{equation}
 </div>
 <div class="para">In that chapter, we analyzed this growth rate to draw a qualitative graph of <span class="process-math">\(y=y(t)\text{,}\)</span> but we could not produce specific values of <span class="process-math">\(t\)</span> for where things happened, because we didn’t have a formula for <span class="process-math">\(y(t)\text{.}\)</span> We  now have the techniques needed to find <span class="process-math">\(y(t)\text{.}\)</span>
 </div>
@@ -214,7 +217,7 @@ window.MathJax = {
 <div class="para">First we separate the variables:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\dx{y}}{y(100-y}=.0001y\dx{t} \text{.}
+\frac{\dx{y}}{y(100-y)}=0.0001y\dx{t} \text{.}
 \end{equation*}
 </div>
 <div class="para">To integrate the left-hand side, we could expand the denominator to complete the square and apply the appropriate trigonometric substitution.</div>
@@ -223,7 +226,7 @@ window.MathJax = {
 <div class="para">As we’ve mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider the following modification of the logistic model above</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}\right)=.0001y(100-y)(y-1)\text{.}
+\dfdx{y}{t}=0.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}\right)=0.0001y(100-y)(y-1)\text{.}
 \end{equation*}
 </div>
 <div class="para">In this case, <span class="process-math">\(10\)</span> is called the <em class="emphasis">minimum viability level of the population.</em> (Why?) Solving this would require that we compute the integral</div>
@@ -235,26 +238,31 @@ window.MathJax = {
 <div class="para">This form of this integral does not suggest any obvious trigonometric substitution so we will need a new idea.</div>
 </div>
 <div class="para logical" id="Introduction-8-5">
-<div class="para">The next technique is wholly algebraic in nature. The trick to try and separate the integrand into “partial fractions” each of which will be easier to integrate than the original. For example, consider <span class="process-math">\(\frac{1}{y(100-y)}\text{.}\)</span> With begin by making a reasonable,   educated guess <aside class="aside aside-like" id="Introduction-8-5-2"><h3 class="heading"><span class="title">Comment.</span></h3>
-<div class="para" id="Introduction-8-5-2-2">This really is just a guess so it will need to be justified. For now we’ll just roll with it.</div></aside> that such a fraction can be written as <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\text{,}\)</span> where <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original.</div>
+<div class="para">The next technique is wholly algebraic in nature. The trick to try and separate the integrand into <dfn class="terminology">partial fractions</dfn> each of which will be easier to integrate than the original. For example, consider the expression <span class="process-math">\(\frac{1}{y(100-y)}\text{.}\)</span> With begin by making a reasonable, educated guess <aside class="aside aside-like" id="Introduction-8-5-3"><h3 class="heading"><span class="title">Comment.</span></h3>
+<div class="para" id="Introduction-8-5-3-2">This isn’t really a guess. There is a theorem from algebra that says that there will always be constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> such that <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\)</span> but since we haven’t discussed this yet we’ll just roll with it for now.</div></aside> that such a fraction can be written as <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\text{,}\)</span> where <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{A}{y}+\frac{B}{100-y}=\frac{A(100-y)+By}{y(100-y)}=\frac{10A+(B-A)y}{y(100-y)}
 \end{equation*}
 </div>
-<div class="para">Comparing this with <span class="process-math">\(\frac{1}{y(100-y)}=\)</span> we see that if they are to be equal we must have <span class="process-math">\(100A=1\)</span> and <span class="process-math">\(B-A=1\text{.}\)</span> Therefore <span class="process-math">\(A=B=\frac{1}{100}\text{.}\)</span> Thus</div>
+<div class="para">Comparing this with <span class="process-math">\(\frac{1}{y(100-y)}=\)</span> we see that if they are to be equal we must have <span class="process-math">\(100A=1\)</span> and <span class="process-math">\(B-A=0\text{.}\)</span> Therefore <span class="process-math">\(A=B=\frac{1}{100}\text{.}\)</span> Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{y(100-y)}=\frac{1/100}{y}+\frac{1/100}{100-y}\text{.}
 \end{equation*}
 </div>
-<div class="para">Uisng this in our original integral we see that</div>
-<div class="displaymath process-math" id="Introduction-8-5-12">
-\begin{align}
-\int\frac{\dx{y}}{y(100-y)}\amp=\int\frac{1/100}{y}\dx{y}+\int\frac{1/100}{100-y}\dx{y}\notag\\
-\amp=\frac{1}{100}\left(\int\frac{\dx{y}}{y}+\int\frac{\dx{y}}{100-y}\right)\notag\\
-\amp=\frac{1}{100}\left(\ln(y)-\ln(100-y)\right)+c\tag{2.10}
-\end{align}
+<div class="para">Substituting into the original integral we see that</div>
+<div class="displaymath process-math" id="Introduction-8-5-13">
+\begin{align*}
+\int\frac{\dx{y}}{y(100-y)}\amp=\int\frac{1/100}{y}\dx{y}+\int\frac{1/100}{100-y}\dx{y}\\
+\amp=\frac{1}{100}\left(\int\frac{\dx{y}}{y}+\int\frac{\dx{y}}{100-y}\right)
+\end{align*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" id="Introduction-8-5-14">
+\begin{gather}
+\int\frac{\dx{y}}{y(100-y)}=\frac{1}{100}\left(\ln(y)-\ln(100-y)\right)+C\tag{2.11}
+\end{gather}
 </div>
 </div>
 <article class="exercise exercise-like" id="Introduction-8-6"><h3 class="heading">
@@ -262,19 +270,23 @@ window.MathJax = {
 </h3>
 <article class="task exercise-like" id="Introduction-8-6-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para logical" id="Introduction-8-6-1-1-1">
-<div class="para">Use the integral provided above to obtain an equation for <span class="process-math">\(y\)</span> in the logistic growth model</div>
-<div class="displaymath process-math">
+<div class="para">Use <a href="" class="xref" data-knowl="./knowl/xref/PartFrac1.html" title="Equation 2.11">equation (2.11)</a> to find <span class="process-math">\(y\)</span> for the logistic growth model (<a href="" class="xref" data-knowl="./knowl/xref/LogisticGrowthFromDiffCalc.html" title="Equation 2.10">equation (2.10)</a>) with the initial condition <span class="process-math">\(y(0)=0\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PartFrac1.html ./knowl/xref/LogisticGrowthFromDiffCalc.html">
 \begin{equation*}
-\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)\hskip5mm y(0)=0
+\dfdx{y}{t}=0.01y\left(1-\frac{y}{100}\right)\hskip5mm y(0)=0
 \end{equation*}
 </div>
 <div class="para">for the case when <span class="process-math">\(0\lt100\text{.}\)</span>
 </div>
 </div></article><article class="task exercise-like" id="Introduction-8-6-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="Introduction-8-6-2-1-1">Solve the same problem for the case where <span class="process-math">\(y\gt 100\text{.}\)</span> <aside class="aside aside-like" id="Introduction-8-6-2-1-1-2"><h5 class="heading"><span class="title">Comment.</span></h5>
-<div class="para" id="Introduction-8-6-2-1-1-2-2">This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.</div></aside>
-</div></article></article><div class="para" id="Introduction-8-7">Now that we’ve seen that decomposing a ratio of polynomials (these are called  <dfn class="terminology">rational functions</dfn>) into a sum of partial fractions is possible, we’ll look for  a systematic way of doing this for any <dfn class="terminology">rational function</dfn>. Our method will  hinge on the following theoretical, algebraic fact.</div>
-<div class="para logical" id="Introduction-8-8">
+<div class="para" id="Introduction-8-6-2-1-1">Solve the same problem for the case where <span class="process-math">\(y\gt 100\text{.}\)</span>
+</div> <aside class="aside aside-like" id="Introduction-8-6-2-1-2"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="Introduction-8-6-2-1-2-2">This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.</div></aside></article></article><section class="subsection" id="PartialFractionSubsection"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition</span>
+</h3>
+<div class="para" id="PartialFractionSubsection-2">Now that we’ve seen that decomposing a ratio of polynomials (these are called  <dfn class="terminology">rational functions</dfn>) into a sum of partial fractions is possible, we’ll look for  a systematic way of doing this for any <dfn class="terminology">rational function</dfn>. Our method will  hinge on the following theoretical, algebraic fact.</div>
+<div class="para logical" id="PartialFractionSubsection-3">
 <div class="para">Suppose we have two polynomials <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> which have no common factors (other than constants). Then there are polynomials <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -282,11 +294,11 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 \end{equation*}
 </div>
 </div>
-<article class="example example-like" id="ElementaryPartFracDecomp"><h3 class="heading">
+<article class="example example-like" id="ElementaryPartFracDecomp"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.42</span><span class="period">.</span>
-</h3>
+</h4>
 <div class="para logical" id="ElementaryPartFracDecomp-1">
-<div class="para">For example notice that if <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants then <span class="process-math">\(x+a\)</span> and <span class="process-math">\(x-b\)</span> have no common factors. Since <span class="process-math">\((x+a)-(x+b)=a-b\)</span> it follows  that<aside class="aside aside-like" id="ElementaryPartFracDecomp-1-6"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para">For example notice that if <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants then <span class="process-math">\(x+a\)</span> and <span class="process-math">\(x-b\)</span> have no common factors. Since <span class="process-math">\((x+a)-(x+b)=a-b\)</span> it follows  that<aside class="aside aside-like" id="ElementaryPartFracDecomp-1-6"><h5 class="heading"><span class="title">Comment.</span></h5>
 <div class="para" id="ElementaryPartFracDecomp-1-6-2">Notice that since  <span class="process-math">\(\frac{1}{a-b}\)</span> and <span class="process-math">\(\frac{-1}{a-b}\)</span> are constants they are polynomials of degree zero.</div></aside>
 </div>
 <div class="displaymath process-math">
@@ -294,7 +306,7 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 \frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)=1\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para logical" id="Introduction-8-10">
+</div></article><div class="para logical" id="PartialFractionSubsection-5">
 <div class="para">Our approach to the problem in <a href="" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" title="Example 2.42">example 2.42</a>was  somewhat ad-hoc. We will evantualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an (educated) guess and check method. Notice that in the <a href="" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" title="Example 2.42">example 2.42</a> we had</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ElementaryPartFracDecomp.html ./knowl/xref/ElementaryPartFracDecomp.html">
 \begin{equation*}
@@ -303,7 +315,7 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="Introduction-8-11">
+<div class="para logical" id="PartialFractionSubsection-6">
 <div class="para">It is generally true that if <span class="process-math">\(r(x)\cdot p(x+s(x)\cdot q(x)=1\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -319,18 +331,18 @@ s(x)}{p(x)}+\frac{t(x)\cdot{}r(x)}{q(x)}\text{.}
 \end{equation*}
 </div>
 <div class="para">Setting <span class="process-math">\(A(x)=t(x)\cdot{}s(x)\)</span> and <span class="process-math">\(B(x)=t(x)\cdot r(x)\)</span> gives</div>
-<div class="displaymath process-math" id="Introduction-8-11-7">
+<div class="displaymath process-math" id="PartialFractionSubsection-6-7">
 \begin{gather*}
 \frac{t(x)}{p(x)\cdot{}q(x)}=
 \frac{A(x)}{p(x)}+\frac{B(x)}{q(x)}\text{.}
 \end{gather*}
 </div>
 </div>
-<div class="para" id="Introduction-8-12">Everything we’ve just shown assumes that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are known then <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> can be found so that <span class="process-math">\(r(x)\cdot p(x)+ s(x)\cdot q(x)=1\text{.}\)</span> For arbitrary functions this is a very restrictive condition. However as we observed above, if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomial then the existence of <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> is guaranteed. Thus for polynomials the <dfn class="terminology">Partial Fraction Decomposition</dfn> is also guaranteed.</div>
-<div class="para" id="Introduction-8-13">We formalize this in the following theorem.</div>
-<article class="theorem theorem-like" id="PartialFractionDecomp"><h3 class="heading">
+<div class="para" id="PartialFractionSubsection-7">Everything we’ve just shown assumes that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are known then <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> can be found so that <span class="process-math">\(r(x)\cdot p(x)+ s(x)\cdot q(x)=1\text{.}\)</span> For arbitrary functions this is a very restrictive condition. However as we observed above, if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomial then the existence of <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> is guaranteed. Thus for polynomials the <dfn class="terminology">Partial Fraction Decomposition</dfn> is also guaranteed.</div>
+<div class="para" id="PartialFractionSubsection-8">We formalize this in the following theorem.</div>
+<article class="theorem theorem-like" id="PartialFractionDecomp"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.43</span><span class="period">.</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition (PFD).</span>
-</h3>
+</h4>
 <div class="para logical" id="PartialFractionDecomp-2">
 <div class="para">If <span class="process-math">\(P(x)\text{,}\)</span> <span class="process-math">\(Q(x)\text{,}\)</span> and <span class="process-math">\(R(x)\)</span> are polynomials with <span class="process-math">\(\deg(P)\lt\deg(Q)+ \deg(R)\)</span>  the there exist  polynomials <span class="process-math">\(A(x)\)</span> and <span class="process-math">\(B(x)\text{,}\)</span> <span class="process-math">\(\deg{A}\lt\deg{Q}\)</span> and <span class="process-math">\(\deg(B)\lt\deg(R)\text{,}\)</span> such that</div>
 <div class="displaymath process-math">
@@ -338,7 +350,7 @@ s(x)}{p(x)}+\frac{t(x)\cdot{}r(x)}{q(x)}\text{.}
 \frac{P(x)}{Q(x)\cdot{}R(x)} = \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="Introduction-8-15">As stated in <a href="" class="xref" data-knowl="./knowl/xref/PartialFractionDecomp.html" title="Theorem 2.43: The Partial Fraction Decomposition (PFD)">Theorem 2.43</a> the PFD is very comprehensive. We will</div></section></div>
+</div></article><div class="para" id="PartialFractionSubsection-10">As stated in <a href="" class="xref" data-knowl="./knowl/xref/PartialFractionDecomp.html" title="Theorem 2.43: The Partial Fraction Decomposition (PFD)">Theorem 2.43</a> the PFD is very comprehensive. We will</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Introduction-7.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Taylor.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

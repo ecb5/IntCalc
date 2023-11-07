@@ -457,7 +457,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.7",
   "title": "Back to Logistic Growth: Partial Fractions",
-  "body": " Back to Logistic Growth: Partial Fractions  Recall that in Section 6.4  Note to Self  Turn this into a PreTeXt reference. we had this example for logistic growth . In that chapter, we analyzed this growth rate to draw a qualitative graph of , but we could not produce specific values of for where things happened, because we didn’t have a formula for . We now have the techniques needed to find .  First we separate the variables: . To integrate the left-hand side, we could expand the denominator to complete the square and apply the appropriate trigonometric substitution.  As we’ve mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider the following modification of the logistic model above . In this case, is called the minimum viability level of the population. (Why?) Solving this would require that we compute the integral . This form of this integral does not suggest any obvious trigonometric substitution so we will need a new idea.  The next technique is wholly algebraic in nature. The trick to try and separate the integrand into “partial fractions” each of which will be easier to integrate than the original. For example, consider . With begin by making a reasonable, educated guess  Comment  This really is just a guess so it will need to be justified. For now we'll just roll with it. that such a fraction can be written as , where and are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original. Comparing this with we see that if they are to be equal we must have and . Therefore . Thus . Uisng this in our original integral we see that    Use the integral provided above to obtain an equation for in the logistic growth model for the case when .   Solve the same problem for the case where .  Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.     Now that we've seen that decomposing a ratio of polynomials (these are called rational functions ) into a sum of partial fractions is possible, we'll look for a systematic way of doing this for any rational function . Our method will hinge on the following theoretical, algebraic fact.  Suppose we have two polynomials and which have no common factors (other than constants). Then there are polynomials and such that .   For example notice that if and are constants then and have no common factors. Since it follows that  Comment  Notice that since and are constants they are polynomials of degree zero.  .   Our approach to the problem in example was somewhat ad-hoc. We will evantualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an (educated) guess and check method. Notice that in the example we had   It is generally true that if then . Multiplying by we have . Setting and gives .  Everything we've just shown assumes that if and are known then and can be found so that . For arbitrary functions this is a very restrictive condition. However as we observed above, if and are polynomial then the existence of and is guaranteed. Thus for polynomials the Partial Fraction Decomposition is also guaranteed.  We formalize this in the following theorem.   The Partial Fraction Decomposition (PFD)  If , , and are polynomials with the there exist polynomials and , and , such that .   As stated in Theorem the PFD is very comprehensive. We will  "
+  "body": " Back to Logistic Growth: Partial Fractions  Recall that in Section 6.4  Note to Self  Turn this into a PreTeXt reference. we had this example for logistic growth . In that chapter, we analyzed this growth rate to draw a qualitative graph of , but we could not produce specific values of for where things happened, because we didn’t have a formula for . We now have the techniques needed to find .  First we separate the variables: . To integrate the left-hand side, we could expand the denominator to complete the square and apply the appropriate trigonometric substitution.  As we’ve mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider the following modification of the logistic model above . In this case, is called the minimum viability level of the population. (Why?) Solving this would require that we compute the integral . This form of this integral does not suggest any obvious trigonometric substitution so we will need a new idea.  The next technique is wholly algebraic in nature. The trick to try and separate the integrand into partial fractions each of which will be easier to integrate than the original. For example, consider the expression . With begin by making a reasonable, educated guess  Comment  This isn't really a guess. There is a theorem from algebra that says that there will always be constants and such that but since we haven't discussed this yet we'll just roll with it for now.  that such a fraction can be written as , where and are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original. Comparing this with we see that if they are to be equal we must have and . Therefore . Thus . Substituting into the original integral we see that and so    Use equation to find for the logistic growth model ( equation ) with the initial condition  for the case when .   Solve the same problem for the case where .   Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.     The Partial Fraction Decomposition  Now that we've seen that decomposing a ratio of polynomials (these are called rational functions ) into a sum of partial fractions is possible, we'll look for a systematic way of doing this for any rational function . Our method will hinge on the following theoretical, algebraic fact.  Suppose we have two polynomials and which have no common factors (other than constants). Then there are polynomials and such that .   For example notice that if and are constants then and have no common factors. Since it follows that  Comment  Notice that since and are constants they are polynomials of degree zero.  .   Our approach to the problem in example was somewhat ad-hoc. We will evantualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an (educated) guess and check method. Notice that in the example we had   It is generally true that if then . Multiplying by we have . Setting and gives .  Everything we've just shown assumes that if and are known then and can be found so that . For arbitrary functions this is a very restrictive condition. However as we observed above, if and are polynomial then the existence of and is guaranteed. Thus for polynomials the Partial Fraction Decomposition is also guaranteed.  We formalize this in the following theorem.   The Partial Fraction Decomposition (PFD)  If , , and are polynomials with the there exist polynomials and , and , such that .   As stated in Theorem the PFD is very comprehensive. We will   "
+},
+{
+  "id": "Introduction-8-5",
+  "level": "2",
+  "url": "Introduction-8.html#Introduction-8-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "partial fractions "
 },
 {
   "id": "Introduction-8-6",
@@ -466,12 +475,12 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "2.41",
   "title": "",
-  "body": " Use the integral provided above to obtain an equation for in the logistic growth model for the case when .   Solve the same problem for the case where .  Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.    "
+  "body": " Use equation to find for the logistic growth model ( equation ) with the initial condition  for the case when .   Solve the same problem for the case where .   Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.   "
 },
 {
-  "id": "Introduction-8-7",
+  "id": "PartialFractionSubsection-2",
   "level": "2",
-  "url": "Introduction-8.html#Introduction-8-7",
+  "url": "Introduction-8.html#PartialFractionSubsection-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -487,9 +496,9 @@ var ptx_lunr_docs = [
   "body": " For example notice that if and are constants then and have no common factors. Since it follows that  Comment  Notice that since and are constants they are polynomials of degree zero.  .  "
 },
 {
-  "id": "Introduction-8-12",
+  "id": "PartialFractionSubsection-7",
   "level": "2",
-  "url": "Introduction-8.html#Introduction-8-12",
+  "url": "Introduction-8.html#PartialFractionSubsection-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
