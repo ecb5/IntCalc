@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Trigonometric Substitutions</title>
@@ -15,172 +15,99 @@
 <meta property="book:title" content="Integral Calculus">
 <meta property="book:author" content="Robert Rogers">
 <meta property="book:author" content="Eugene Boman">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.31/pretext_search.js"></script><link href="https://pretextbook.org/css/0.81/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.31</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.31/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.31/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.31/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.81/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.81/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="IntCalc.html"><span class="title">Integral Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
 <p class="byline">Robert Rogers, Eugene Boman</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-5.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="Introduction.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="section-7.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\abs#1{\left|#1\right|}
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Introduction.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\abs#1{\left|#1\right|}
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 
 \newcommand{\RR}{\mathbb {R}}
@@ -218,58 +145,58 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth3"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li><div class="toc-item"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
-<li><div class="toc-item"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li><div class="toc-item"><a href="preface-1.html" class="internal"><span class="title">Relevant Quotes</span></a></div></li>
-<li><div class="toc-item"><a href="preface-2.html" class="internal"><span class="title">To the Instructor</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface-1.html" class="internal"><span class="title">Relevant Quotes</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface-2.html" class="internal"><span class="title">To the Instructor</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="part-1.html" class="internal"><span class="codenumber">I</span> <span class="title">From Practice . . .</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="Introduction.html" class="internal"><span class="codenumber">1</span> <span class="title">First Chapter</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
-<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Rules for Integration</span></a></div></li>
-<li><div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">First application -- Projectile motion</span></a></div></li>
-<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Adding Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
-<li><div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Opposite of the Product Rule -- Integration By Parts</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
-<li><div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-1.html" class="internal"><span class="codenumber">I</span> <span class="title">From Practice . . .</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="Introduction.html" class="internal"><span class="codenumber">1</span> <span class="title">First Chapter</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Rules for Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">First application -- Projectile motion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Adding Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-5.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Opposite of the Product Rule -- Integration By Parts</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="section-6.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-7.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="Taylor.html" class="internal"><span class="codenumber">2</span> <span class="title">Taylor Series</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Representations of Numbers</span></a></div></li>
-<li><div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">2</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-8.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Representations of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="Theory.html" class="internal"><span class="codenumber">II</span> <span class="title">. . . To Theory</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="chapter-3.html" class="internal"><span class="codenumber">3</span> <span class="title">Title Goes Here</span></a></div></li></ul>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="Theory.html" class="internal"><span class="codenumber">II</span> <span class="title">. . . To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chapter-3.html" class="internal"><span class="codenumber">3</span> <span class="title">Title Goes Here</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="solutions-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
-<li><div class="toc-item"><a href="solutions-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
-<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
-<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-1.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-6"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Trigonometric Substitutions</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">Trigonometric Substitutions</span>
 </h2>
 <div class="para logical" id="p-113">
 <div class="para">Recall that earlier in this section we encountered the integral</div>
@@ -340,14 +267,14 @@ y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)+c
 </h3>
 <article class="task exercise-like" id="task-21"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para logical" id="p-122">
-<div class="para">If we let <span class="process-math">\(s\)</span> denote the distance the missile has traveled at time <span class="process-math">\(t\text{,}\)</span> show that the missile's path must satisfy the IVP</div>
+<div class="para">If we let <span class="process-math">\(s\)</span> denote the distance the missile has traveled at time <span class="process-math">\(t\text{,}\)</span> show that the missile’s path must satisfy the IVP</div>
 <div class="displaymath process-math" id="PursuitEquation1">
 \begin{equation}
 \dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x}, \hskip5mm y(0)=0.\tag{1.7}
 \end{equation}
 </div>
 </div></article><article class="task exercise-like" id="task-22"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="p-123">Obviously we can solve <a href="" class="xref" data-knowl="./knowl/PursuitEquation1.html" title="Equation 1.7">equation (1.7)</a> for <span class="process-math">\(y\)</span> but then we would have <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(s\text{,}\)</span> and <span class="process-math">\(\dfdx{y}{x}\)</span> which isn't very helpful. The <span class="process-math">\(s\)</span> term is particularly problematic since we know almost nothing about it.</div> <div class="para" id="p-124">But only almost. We do know that <span class="process-math">\(\dx{s}^2=\dx{x}^2+\dx{y}^2\text{.}\)</span>
+<div class="para" id="p-123">Obviously we can solve <a href="" class="xref" data-knowl="./knowl/PursuitEquation1.html" title="Equation 1.7">equation (1.7)</a> for <span class="process-math">\(y\)</span> but then we would have <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(s\text{,}\)</span> and <span class="process-math">\(\dfdx{y}{x}\)</span> which isn’t very helpful. The <span class="process-math">\(s\)</span> term is particularly problematic since we know almost nothing about it.</div> <div class="para" id="p-124">But only almost. We do know that <span class="process-math">\(\dx{s}^2=\dx{x}^2+\dx{y}^2\text{.}\)</span>
 </div> <div class="para logical" id="p-125">
 <div class="para">Differentiate  <a href="" class="xref" data-knowl="./knowl/PursuitEquation1.html" title="Equation 1.7">equation (1.7)</a> to show that the missile’s path must satisfy the differential equation</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/PursuitEquation1.html" id="md-12">
@@ -359,7 +286,7 @@ y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)+c
 </div>
 </div></article><article class="task exercise-like" id="task-23"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="para logical" id="p-126">
-<div class="para">Let's make this a little easier on our eyes. Let <span class="process-math">\(z=\dfdx{y}{x} \text{,}\)</span> and show that <a href="" class="xref" data-knowl="./knowl/PursuitEquation1.html" title="Equation 1.7">equation (1.7)</a> becomes</div>
+<div class="para">Let’s make this a little easier on our eyes. Let <span class="process-math">\(z=\dfdx{y}{x} \text{,}\)</span> and show that <a href="" class="xref" data-knowl="./knowl/PursuitEquation1.html" title="Equation 1.7">equation (1.7)</a> becomes</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/PursuitEquation1.html" id="PursuitEquation2">
 \begin{equation}
 \frac{1}{\sqrt{1+z^2}}\dx{z}=\frac1k\cdot\frac{1}{1-x}\tag{1.8}
@@ -385,7 +312,6 @@ y=\frac{k}{2}\left[\frac{(1-x)^{\frac{k+1}{k}}}{k+1}+\frac{(1-x)^{\frac{k-1}{k}}
 <article class="exercise exercise-like" id="TractrixProblem1"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.23</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-130">The following is the view from above of a tractor-trailer.  Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point <span class="process-math">\((1,0)\text{.}\)</span> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/Tractrix.png" class="contained" alt="Sketch of a tractor-trailer in the act of turning."></div> Suppose the tractor pulls the front wheels up the <span class="process-math">\(u\)</span>-axis and that the rear wheels don’t slip.</div>
 <article class="task exercise-like" id="task-26"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para logical" id="p-131">
 <div class="para">show the path  that the center of the rear axle of the trailer follows must satisfy the equations</div>
@@ -400,14 +326,6 @@ y=\frac{k}{2}\left[\frac{(1-x)^{\frac{k+1}{k}}}{k+1}+\frac{(1-x)^{\frac{k-1}{k}}
 <div class="para" id="p-133">Plot your solution on the <span class="process-math">\(x-y\)</span> plane.</div></article></article><article class="exercise exercise-like" id="TrigSub1"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.24</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-134">
-<div class="para">Again, having trigonometry involved was a better option than having the square root.  Here, we utilized the trigonometric identity <span class="process-math">\(\sin^2(\theta)+\cos^2(\theta)=1\text{.}\)</span>  A surprising number of integrals involve terms such as <span class="process-math">\(\sqrt{1-x^2}\text{,}\)</span> <span class="process-math">\(\sqrt{1+x^2}\)</span> or <span class="process-math">\(\sqrt{x^2-1}\text{.}\)</span>  In these cases, it is often advantageous to utilize a trigonometric substitution, using the identities or to remove the square root, which typically is more a concern than the trigonometry.  However, you should remember that there are other techniques at your disposal, so you need to be judicious about what you utilize.  For example, consider the integral</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int\frac{x}{\sqrt{1+x^2}}\dx{x}.
-\end{equation*}
-</div>
-</div>
 <article class="task exercise-like" id="task-29"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para" id="p-135">Use the trigonometric substitution <span class="process-math">\(x=\tan(\theta)\)</span> to compute the above integral.</div></article><article class="task exercise-like" id="task-30"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para" id="p-136">Now use the non-trigonometric substitution <span class="process-math">\(x=1+x^2\)</span> to compute the integral</div></article><article class="task exercise-like" id="task-31"><h4 class="heading"><span class="codenumber">(c)</span></h4>
@@ -443,26 +361,26 @@ y=\frac{k}{2}\left[\frac{(1-x)^{\frac{k+1}{k}}}{k+1}+\frac{(1-x)^{\frac{k-1}{k}}
 \text{?}\)</span>
 </div>
 <div class="para logical" id="p-144">
-<div class="para">Of course we can. We just need to rearrange it using Algebra.  Observe that if we had a <span class="process-math">\(4\)</span> where the <span class="process-math">\(1\)</span> is we'd be fine. We can't just change it. That would change the entire integral. But if we factor it out we get</div>
+<div class="para">Of course we can. We just need to rearrange it using Algebra.  Observe that if we had a <span class="process-math">\(4\)</span> where the <span class="process-math">\(1\)</span> is we’d be fine. We can’t just change it. That would change the entire integral. But if we factor it out we get</div>
 <div class="displaymath process-math" id="TrigSubst1">
 \begin{equation}
 \int\frac{1}{\sqrt{4+x^2}}\dx{x}=\int\frac{1}{\sqrt{4\left(1+\frac{x^2}{4}\right)}}\dx{x}=\frac12\int\frac{1}{\sqrt{1+\left(\frac{x}{2}\right)^2}}\dx{x}\tag{1.9}
 \end{equation}
 </div>
 </div>
-<div class="para" id="p-145">Of course, now we have another problem. We have <span class="process-math">\(\left(\frac{x}{2}\right)^2\)</span> where we were happy to have <span class="process-math">\(x^2\)</span> before. But since we were going to substitute <span class="process-math">\(x\)</span> away anyhow we'll just substitute <span class="process-math">\(\frac{x}{2}\)</span> away instead.</div>
+<div class="para" id="p-145">Of course, now we have another problem. We have <span class="process-math">\(\left(\frac{x}{2}\right)^2\)</span> where we were happy to have <span class="process-math">\(x^2\)</span> before. But since we were going to substitute <span class="process-math">\(x\)</span> away anyhow we’ll just substitute <span class="process-math">\(\frac{x}{2}\)</span> away instead.</div>
 <div class="para" id="p-146">Letting <span class="process-math">\(\frac{x}{2}=\tan(\theta)\text{,}\)</span> we proceed as before.</div>
 <article class="problem example-like" id="TrigSubst2"><h3 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.27</span><span class="period">.</span>
 </h3>
 <article class="task exercise-like" id="task-35"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para" id="p-147">Finish computing the integral in <a href="" class="xref" data-knowl="./knowl/TrigSubst1.html" title="Equation 1.9">equation (1.9)</a>
-</div></article> <article class="task exercise-like" id="task-36"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+</div></article><article class="task exercise-like" id="task-36"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para" id="p-148">Compute <span class="process-math">\(\int\frac{1}{\sqrt{5-x^2}}\dx{x}\)</span>
-</div></article> <article class="task exercise-like" id="task-37"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+</div></article><article class="task exercise-like" id="task-37"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="para" id="p-149">Compute <span class="process-math">\(\int\frac{1}{\sqrt{x^2-9}}\dx{x}\)</span>
-</div></article> <article class="task exercise-like" id="task-38"><h4 class="heading"><span class="codenumber">(d)</span></h4>
-<div class="para" id="p-150">Compute <span class="process-math">\(\int\frac{1}{\sqrt{x^2-6x}}\dx{x}\)</span> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">This  appears to be a completely different integral but it really isn't. Complete the square on <span class="process-math">\(x^2-6x\)</span> and then use your result in part (c).</div></div>
+</div></article><article class="task exercise-like" id="task-38"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="p-150">Compute <span class="process-math">\(\int\frac{1}{\sqrt{x^2-6x}}\dx{x}\)</span> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">This  appears to be a completely different integral but it really isn’t. Complete the square on <span class="process-math">\(x^2-6x\)</span> and then use your result in part (c).</div></div>
 </div></article></article><div class="para" id="p-151">It should be clear from <a href="" class="xref" data-knowl="./knowl/TrigSubst2.html" title="Drill 1.27">Drill 1.27</a> that as long as the expression inside the radical is a quadratic, we can manipulate it algebraically to produce something of the form <span class="process-math">\(\sqrt{1+\left(\frac{x-b}{a}\right)^2}\text{,}\)</span> <span class="process-math">\(\sqrt{1-\left(\frac{x-b}{a}\right)^2}\)</span>or <span class="process-math">\(\sqrt{\left(\frac{x-b}{a}\right)^2-1}\text{.}\)</span> From there, we can use the appropriate trigonometric substitution.</div>
 <div class="para" id="p-152">Earlier we computed terminal velocity when considering linear drag. Now we will compare this to terminal velocity when the drag is proportional to the square of the velocity. An example of this would be a ball of mass <span class="process-math">\(M\)</span> falling in air. (We can include buoyancy again, but it is typically negligible so we will discount it). Again, to model this, let<span class="process-math">\(y(t)\)</span> be distance the ball has fallen (so the positive <span class="process-math">\(y\)</span> axis is pointing downward), with <span class="process-math">\(y(0)=0\)</span> representing the initial position of the ball. In a similar analysis to before, we denote the acceleration due to gravity by <span class="process-math">\(g\text{,}\)</span> so the weight of the ball is <span class="process-math">\(Mg\text{.}\)</span> The drag, which we assume is now quadratic, is proportional to the square of the velocity, so we will denote this by <span class="process-math">\(-Rv^2\text{,}\)</span> where <span class="process-math">\(R\)</span> is a constant and <span class="process-math">\(v=\dfdx{v}{t}\)</span> is the velocity. For simplicity, we will assume <span class="process-math">\(v(0)=0\text{.}\)</span>
 </div>
@@ -471,7 +389,7 @@ y=\frac{k}{2}\left[\frac{(1-x)^{\frac{k+1}{k}}}{k+1}+\frac{(1-x)^{\frac{k-1}{k}}
 </h3>
 <article class="task exercise-like" id="task-39"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para logical" id="p-153">
-<div class="para">Use Newton's Third Law of Motion: (<span class="process-math">\(F\)</span>)<span class="process-math">\(=\)</span>(<span class="process-math">\(M\)</span>)ass<span class="process-math">\(\cdot{}\)</span>(<span class="process-math">\(A\)</span>)cceleration, to show that the velocity of the ball must satisfy the equations:</div>
+<div class="para">Use Newton’s Third Law of Motion: (<span class="process-math">\(F\)</span>)<span class="process-math">\(=\)</span>(<span class="process-math">\(M\)</span>)ass<span class="process-math">\(\cdot{}\)</span>(<span class="process-math">\(A\)</span>)cceleration, to show that the velocity of the ball must satisfy the equations:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 M\dfdx{v}{t}=Mg-Rv^2, \hskip5mm{}v(0)=0\text{.}
@@ -493,7 +411,7 @@ v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]\text{.}
 \end{equation*}
 </div>
 </div></article><article class="task exercise-like" id="task-41"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="p-156">Compute <span class="process-math">\(\limit{t}{\infty}{v}\text{.}\)</span> Compare this terminal velocity with our previous results.</div></article></article><div class="para" id="p-157">The trigonometric substitutions we've dealt with so far have  all involved square roots. What about this integral: <span class="process-math">\(\int\frac{\dx{x}}{(1-x^2)^\frac32}\text{?}\)</span> Do you see that this is only slightly more complicated?</div>
+<div class="para" id="p-156">Compute <span class="process-math">\(\limit{t}{\infty}{v}\text{.}\)</span> Compare this terminal velocity with our previous results.</div></article></article><div class="para" id="p-157">The trigonometric substitutions we’ve dealt with so far have  all involved square roots. What about this integral: <span class="process-math">\(\int\frac{\dx{x}}{(1-x^2)^\frac32}\text{?}\)</span> Do you see that this is only slightly more complicated?</div>
 <div class="para logical" id="p-158">
 <div class="para">If we make the substitution <span class="process-math">\(x=\sin(\theta)\text{,}\)</span> then <span class="process-math">\(\dx{x}=\cos(\theta)\)</span> as before so,</div>
 <div class="displaymath process-math">
@@ -564,7 +482,7 @@ v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]\text{.}
 \int\sin^3(\theta)\sqrt{1-\sin^2(\theta)}\cos(\theta)\dx{\theta}\text{.}
 \end{equation*}
 </div>
-<div class="para">It's just that it is not immediately clear how to continue from here.  Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.</div>
+<div class="para">It’s just that it is not immediately clear how to continue from here.  Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.</div>
 </div> <div class="para logical" id="p-169">
 <div class="para">First, the elementary substitution <span class="process-math">\(x=\sin(\theta)\)</span> will give:</div>
 <div class="displaymath process-math">
@@ -573,15 +491,15 @@ v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]\text{.}
 x^3\sqrt{1-x^2}\dx{x}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="p-170">You see why we wouldn't want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we <em class="emphasis">started</em> with an integral involving trigonometric functions.</div> <div class="para" id="p-171">While our goal to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.</div> <article class="problem example-like" id="problem-7"><h4 class="heading">
+</div> <div class="para" id="p-170">You see why we wouldn’t want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we <em class="emphasis">started</em> with an integral involving trigonometric functions.</div> <div class="para" id="p-171">While our goal to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.</div> <article class="problem example-like" id="problem-7"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.33</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-7">Compute the integral <span class="process-math">\(\int x^3\sqrt{1-x^2}\dx{x}\)</span> using these substitutions:</div> <article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-172"><span class="process-math">\(x=\sin(\theta)\)</span></div></article> <article class="task exercise-like" id="task-44"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-173"><span class="process-math">\(u=1-x^2\)</span></div></article> <div class="conclusion" id="conclusion-1">Finish <a href="" class="xref" data-knowl="./knowl/OddSinPower.html" title="Example 1.30">example 1.30</a> using each of the substitutions above. Do you get the same solution as before?</div></article></article><article class="exercise exercise-like" id="SinCosOddPower"><h3 class="heading">
+<div class="introduction" id="introduction-7">Compute the integral <span class="process-math">\(\int x^3\sqrt{1-x^2}\dx{x}\)</span> using these substitutions:</div>
+<article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-172"><span class="process-math">\(x=\sin(\theta)\)</span></div></article><article class="task exercise-like" id="task-44"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-173"><span class="process-math">\(u=1-x^2\)</span></div></article><div class="conclusion" id="conclusion-1">Finish <a href="" class="xref" data-knowl="./knowl/OddSinPower.html" title="Example 1.30">example 1.30</a> using each of the substitutions above. Do you get the same solution as before?</div></article></article><article class="exercise exercise-like" id="SinCosOddPower"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.34</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-174">Compute the integral <span class="process-math">\(\int\sin^3(\theta)\cos^3(\theta)\dx{\theta}\)</span> by:</div>
 <article class="task exercise-like" id="task-45"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para" id="p-175">Saving one of the cosines and converting everthing else into sines.</div></article><article class="task exercise-like" id="task-46"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para" id="p-176">Saving one of the sines and converting everthing else into cosines.</div></article><article class="task exercise-like" id="task-47"><h4 class="heading"><span class="codenumber">(c)</span></h4>
@@ -657,14 +575,6 @@ x^3\sqrt{1-x^2}\dx{x}\text{.}
 </div></article><article class="exercise exercise-like" id="exercise-19"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.39</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-184">
-<div class="para">Consider the integral</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int\sec^4(\theta)\tan^3(\theta)\dx{\theta}
-\end{equation*}
-</div>
-</div>
 <article class="task exercise-like" id="task-48"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para" id="p-185">Compute this integral by saving a <span class="process-math">\(\sec^2(\theta)\)</span> and converting the rest into an expression in tangent.</div></article><article class="task exercise-like" id="task-49"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para" id="p-186">Compute this integral by saving a <span class="process-math">\(\sec(\theta)\tan(\theta)\)</span> and converting the rest into an expression in secant.</div></article><article class="task exercise-like" id="task-50"><h4 class="heading"><span class="codenumber">(c)</span></h4>
@@ -675,13 +585,11 @@ x^3\sqrt{1-x^2}\dx{x}\text{.}
 </div>
 <div class="para" id="p-189">Do we get a different answer? Explain.</div></article><div class="para" id="p-190">The same tricks we applied with secant and tangent would apply equally well to integrals involving cosecant and cotangent using the identity <span class="process-math">\(\csc^2(\theta)=1+\cot^2(\theta)\text{.}\)</span> Of course, we have not covered every type of integral that can occur and you can always find integrals that will take other tricks. We’ve only provided some basics that you can build on as you gain experience. So practice, practice, practice!</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-5.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-7.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="section-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>
