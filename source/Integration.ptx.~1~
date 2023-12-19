@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<chapter xml:id="FTC" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Fundamental Theorem of Calculus</title>
+  <section>
+    <title>A Quick Recap of Differential Calculus  </title>
+    <p>
+      In <pubtitle>Differential Calculus: From Practice to Theory</pubtitle>
+      we learned how to differentiate various functions and how to apply
+      this to various modeling problems.  For example, one of the exercises
+       had you show that the shape of a hanging chain (the catenary curve) satisfied the
+       differential equation
+       <men xml:id="CatenaryIVP">\dfdxn{y}{x}{2}
+      =\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.</men>
+    </p>
+    <p>
+      A later exercise had you show that 
+      <me>y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)
+      </me>
+      in fact, satisfied <xref ref="CatenaryIVP">equation</xref>. You may have been wondering at the time where we
+      pulled this function out of to differentiate.  This is what
+      integral calculus is about.  In general, given a function
+      <m>y=y(x)</m>, we can differentiate it to obtain the
+      differential.  Integration is the process of starting with a
+      differential and finding the function that was differentiated to
+      obtain it.
+    </p>
+    <p>
+      For example, if <m>y=x^2</m> then <m>\dx{y}=2x\dx{x}</m>.  It
+      stands to reason that if we integrate  <m>2x\dx{x}</m>, we should end up with 
+ <m>x^2</m>.
+      There is a little bit of a complication here, as differentiating
+      <m>y=x^2+c</m> also yields <m>\dx{y}=2x\dx{x}</m> for any
+      constant <m>c</m>.  Happily, this is the only such complication;
+      if <m>\dx{f}=\dx{g} </m>, then <m>f</m> and <m>g</m> must differ
+      by a constant.
+    </p>
+    <p>
+      To see why, notice that if <m>\dx{f}=\dx{g} </m> then
+      <m>\dx(f-g)=\dx{f}-\dx{g}=0</m>.  Dividing by <m>\dx{x}</m> so
+      we can think of this as a slope, we have
+      <m>\frac{\dx{(f-g)}}{\dx{x}}=0</m>.  What kind of curve would
+      have a slope which is constantly <m>0</m>?  A moment’s thought
+      will suggest that this curve must be a horizontal line for if
+      not, then somewhere it should have a nonzero slope.  Such an
+      argument can be made rigorous, but we will not fuss over that
+      right now.
+    </p>
+
+    <p>
+      With this place, we will introduce some notation.  The notation
+      is motivated by the fact that integration (putting together,
+      summing) is the inverse process of differentiation (taking a
+      difference).  With this in mind, the integral of a differential
+      <m>\dx{y}</m> is denoted by <me>\int\dx{y}</me>.
+    </p>
+
+    <p>
+      It is worth taking a few minutes to make a couple of
+      observations about this notation.
+    </p>
+
+    <p>
+      First, the elongated "S" is called an <term>integral
+      sign</term>.  The <m>\int</m> symbol was originally meant to
+      indicate a particular sum so Leibniz chose the letter "S"
+      because it is the first letter of "sum."
+    </p>
+    <aside>
+      <title>A Little History</title>
+      <p>
+        To a modern eye the integral sign looks like a stylized "S",
+        and that is often how it is described but it really isn't
+        stylized at all. When Calculus was invented in the seventeenth
+        century the letter "S" had several common forms and Leibniz
+        adopted one of these forms as the integral sign. So it is
+        actually an archaic, not a stylized "S".
+      </p>
+    </aside>
+
+    <p>The formula <me>\int\dx{y}</me> really means a sum of differentials (differences).   First, WE ONLY INTEGRATE DIFFERENTIALS.  In other words, whatever you are integrating must be a differential.  For example,   makes sense,  does not.
+    </p>
+
+    <p>
+      Second, notice we did not write <me>\int\dx{y} =y</me>.  This is 
+      because it is not (quite) true. There are  an infinite number of
+      possible values of <me>\int\dx{y}</me>. Fortunately, as we
+      mentioned before, these all differ by constants.  Thus we can write
+      something like <m>\int 2x\dx{x}=x^2+C</m> where <m>C</m> is an arbitrary
+      constant.  This represents all of the possible functions whose
+      derivative is <m>2x</m>, so with that in mind <m>\int
+      2x\dx{x}</m> is referred to as the indefinite
+      integral or anti-derivative of <m>2x</m>.  These names come from the
+      foundational switch from differentials to limits and derivatives, but
+      we still want to emphasize that we integrate differentials, not
+      functions (so the <m>\dx{x}</m> is not optional). 
+    </p>
+  </section>
+<section>
+<title>FTC</title>
+<p>
+Suppose a point <m>P</m> begins at <m>x_0</m> and traces out a line segment of some unknown length, <m>x</m>.  We partition the line segment between <m>x_0</m> and <m>x</m> into subintervals as seen in figure . . .
+If the symbol <m>\Delta x_1</m> represents the first subinterval of
+<m>x</m>, <m>\Delta x_2</m> represents the second subinterval, and in general if <m>\Delta{x_i}</m> represents the <m>i</m>th subinterval of <m>x</m> then clearly the length of the line segment is
+<md>
+<mrow>\Delta{x_1}+\Delta{x_2}+\Delta{x_3} +\cdots +\Delta{x_{n-1}}+\Delta{x_n}</mrow>
+<mrow> = (x_1-x_0)+(x_2-x_2)+(x_3-x_2) +\cdots +
+(x_{n-1}-x_{n-2})+(x_n-x_{n-1})</mrow>
+<mrow>=x_n-x_0</mrow>
+</md>
+If the subintervals are all the same length, say <m>\Delta{x}</m>,
+then we no longer need the subscripts to distinguish them. This makes
+our notation a little less cumbersome, as follows:  
+<men xml:id="FinDiffSum">
+\underbrace{\Delta{x}+\Delta{x}+\cdots{}+\Delta{x}}_{\text{n copies}}=x_n-x_0
+</men>
+But it is cumbersome to write "<m>+\Delta{x}</m>" repeatedly so we
+define <m>\Delta{x}+\Delta{x}+\cdots{}+\Delta{x}</m> to be
+<m>\int{}\Delta{x}</m> and write <me>\int{}\Delta{x}=x_n-x_0</me>
+instead.  The "<m>\int{}</m> symbol is called an <term> integral
+sign</term>. </p>
+<p>
+We assume, with Leibniz, that <xref
+ref="FinDiffSum">equation</xref> remains true when the finite
+differences (<m>\Delta{x}</m>) are replaced with infinitesimal
+differences (<m>\dx{x}{}</m>):
+<me>\int{\dx{x}{}}=x_n-x_0.</me>
+</p>
+<aside>
+<title>Historical Note</title>
+<p>
+The integral sign is often described as an <q>elongated</q> or <q>
+stylized </q> version of the capital letter S. But it is neither. In
+the literature of the seventeenth century (when Leibniz was inventing
+Calculus notation) a printed S was routinely elongated compared to the
+other letters in a line of text. That is, a printed S extended well
+above and below the line of ordinary text just as the integral sign
+does today. So the integral sign is really just the letter S. Leibniz chose
+this letter to indicate addition because it is the first letter of the
+Latin word <q>summa,</q> meaning total.  </p></aside>
+
+
+<p>
+In any case the statement <m>\int\dx{x}=x_n-x_0</m> says that if we
+add up the lengths of all of the differentials that make up the line
+segment from <m>x_0</m> to <m>x_n</m> we will get its length: <m>x_n-x_0</m>.
+</p>
+<p>
+This is surely not surprising and you are probably wondering why we
+taken the trouble to wrap such an obvious statement in this obscure
+notation. The reason is this: Leibniz' integral notation has proven
+over time to be extremely versatile and expressive. 
+</p>
+<aside>
+<title>Note to self</title>
+<p>
+Confirm that it was Fourier who put the indices on integrals.
+</p></aside>
+<p>
+In the early nineteenth century Joseph Fourier found that Leibniz'
+original integral symbol was not quite descriptive enough for his
+purposes. In particular since we've dropped the subscripts the
+expression <m>\int{\dx{x}}</m> gives no clue where we need to start,
+and stop, summing the differentials. To clarify Fourier modified Leibniz' notation by inserting both a subscript and a superscript as follows:
+<men xml:id="FourierDefInt">\int_{x_0}^{x_n}\dx{x}=x_n-x_0</men>.
+<xref ref="FourierDefInt">Equation</xref> says that we begin summing
+the differentials at <m>x_0</m>, and end at <m>x_n</m>, resulting in
+the difference <m>x_n-x_0</m>.
+</p>
+
+
+</section>
+</chapter>
+
