@@ -14,7 +14,6 @@ latex: *.ptx Makefile
 
 print: *.ptx Makefile 
 	/home/ecb5/.local/bin/pretext build print
-	/home/ecb5/.local/bin/pretext view print;
 
 epub: *.ptx
 	/home/ecb5/.local/bin/pretext build epub
