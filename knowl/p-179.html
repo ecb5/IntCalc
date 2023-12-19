@@ -13,22 +13,29 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In this case, there are a couple of trigonometric identities that can help. They the Half-Angle formlas:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sin^2(\theta) = \frac12\left(1-\cos(2\theta)\right) \text{ and }
-\cos^2(\theta)=\frac12\left(1+\cos(2\theta)\right) \text{.}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}
 \end{equation*}
 </div>
-<div class="para">Using  these identities in our integral we see that</div>
+<div class="para">Since sine is raised to an odd power, it makes sense to “save one of the sines” and convert everything else to cosine, utilizing the Pythagorean identity <span class="process-math">\(\sin^2(\theta)=1-\cos^2(\theta)\text{,}\)</span> and then apply a substitution as follows. First we “save a sine.”</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} =
+\int\sin(\theta)\sin^2(\theta)\cos^2(\theta)\dx{\theta}=\int(1-\cos^2(\theta))\cos^2(\theta)\sin(\theta)\dx{\theta}\text{.}
+\end{equation*}
+</div>
+<div class="para">Next we let <span class="process-math">\(z=\cos(\theta)\text{,}\)</span> so that <span class="process-math">\(\dx{z}=-\sin(\theta)\dx{\theta}\text{,}\)</span> which gives</div>
 <div class="displaymath process-math">
 \begin{align*}
-\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}\amp=\frac14\int(1-\cos(2\theta))(1+\cos(2\theta))\dx{\theta}\\
-\amp=\frac14\int (1-\cos^2(2\theta))\dx{\theta}\\
-\amp=\frac{1}{4}\int\sin^2(2\theta)\dx{\theta}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp=
+\int(1-z^2)z^2(-\dx{z})\\
+\amp=\int(z^4-z^2)\dx{z}\\
+\amp=\frac{z^5}{5}=\frac{z^3}{3}+c\\
+\amp=\frac{\cos^5(\theta)}{5}=\frac{\cos^3(\theta)}{3}+c\text{.}
 \end{align*}
 </div>
 </div>
-<span class="incontext"><a href="section-6.html#p-179" class="internal">in-context</a></span>
+<span class="incontext"><a href="section-7.html#p-179" class="internal">in-context</a></span>
 </body>
 </html>
