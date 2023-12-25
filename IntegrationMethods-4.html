@@ -277,7 +277,7 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 \end{equation*}
 </div>
 </div></article><article class="task exercise-like" id="IntegrationMethods-4-5-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="IntegrationMethods-4-5-3-1-1">Compute <span class="process-math">\(v\text{.}\)</span> This will be the terminal velocity of the sand settling in the water. Notice that this should be independent of <span class="process-math">\(v_0\text{.}\)</span> How does your answer for terminal velocity depend on <span class="process-math">\(M=m-m_w\)</span> and <span class="process-math">\(R\text{?}\)</span> Does this make sense physically?</div></article></article><div class="para" id="IntegrationMethods-4-6">The above problem used the technique of substitution and is the integration analog of the chain rule, which itself was the technique of substitution applied to differentiation.  As with differentiation, this did not actually compute the integral, but made it simpler to apply formulas and techniques with which we are already familiar. This technique of substitution is very powerful and allows us to integrate differentials which are not in our table.  We already saw one example in our previous problem.  For another, consider that in the table, we had <span class="process-math">\(\int\sin(x)\dx{x}\)</span> and <span class="process-math">\(\int\cos(x)\dx{x}\text{,}\)</span> but we did not have <span class="process-math">\(\int\tan(x)\dx{x}\text{.}\)</span>
+<div class="para" id="IntegrationMethods-4-5-3-1-1">Compute <span class="process-math">\(\limit{t}{\infty}{v}\text{.}\)</span> This will be the terminal velocity of the sand settling in the water. Notice that this should be independent of <span class="process-math">\(v_0\text{.}\)</span> How does your answer for terminal velocity depend on <span class="process-math">\(M=m-m_w\)</span> and <span class="process-math">\(R\text{?}\)</span> Does this make sense physically?</div></article></article><div class="para" id="IntegrationMethods-4-6">The above problem used the technique of substitution and is the integration analog of the chain rule, which itself was the technique of substitution applied to differentiation.  As with differentiation, this did not actually compute the integral, but made it simpler to apply formulas and techniques with which we are already familiar. This technique of substitution is very powerful and allows us to integrate differentials which are not in our table.  We already saw one example in our previous problem.  For another, consider that in the table, we had <span class="process-math">\(\int\sin(x)\dx{x}\)</span> and <span class="process-math">\(\int\cos(x)\dx{x}\text{,}\)</span> but we did not have <span class="process-math">\(\int\tan(x)\dx{x}\text{.}\)</span>
 </div>
 <div class="para" id="IntegrationMethods-4-7">Since <span class="process-math">\(\tan(x)=\frac{\sin(x)}{\cos(x)}\)</span> we now have the tools to do this one. If we make the substitution <span class="process-math">\(z=\cos(x)\text{,}\)</span> then <span class="process-math">\(\dx{z}=-\sin(x)\dx{x}\)</span> and so <span class="process-math">\(\dx{x}=\frac{-\dx{z}}{\sin(x)}\text{.}\)</span>
 </div>
@@ -313,7 +313,7 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/BadTanInt1.html" id="IntegrationMethods-4-13-4">
 \begin{align}
 \int\tan(x)\dx{x} =
-\int\frac{\sin(x)}{\cos(x)}\dx{x}&amp;=\int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right)=\int\frac{u}{1+u^2}\dx{u}\notag\\
+\int\frac{\sin(x)}{\cos(x)}\dx{x}&amp;=\int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right)\notag\\
 &amp;=\int\frac{u}{1-u^2}\dx{u}\tag{2.2}
 \end{align}
 </div>
@@ -400,7 +400,7 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 \int x^2\sqrt{x^3+1}\dx{x}
 \end{equation*}
 </div>
-<div class="para">We could let <span class="process-math">\(u = x\)</span> so that <span class="process-math">\(\dx{u} = 2x \dx{x}\)</span> . This would lead to</div>
+<div class="para">We could let <span class="process-math">\(u = x^2\)</span> so that <span class="process-math">\(\dx{u} = 2x \dx{x}\)</span> . This would lead to</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int x^2\sqrt{x^3+1}\dx{x}= \int u\sqrt{u^{3/2}+1}\left(\frac{\dx{u}}{2x}\right) = \frac12\int\frac{u\sqrt{u^{3/2}+1}}{x}\dx{u}.
@@ -413,8 +413,8 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 &amp;=\frac12\int\sqrt{u^{5/2}+u}\dx{u}.
 \end{align*}
 </div>
-<div class="para">This is all correct, but leads to an integral far worse than the original, especially if you notice that <span class="process-math">\(x\)</span> is <span class="process-math">\(3\)</span> “almost” the derivative of <span class="process-math">\(x + 1\text{.}\)</span> It is off by a factor of <span class="process-math">\(3\text{,}\)</span> but as we’ve seen, constants can be brought outside of the integral, so this is not really a problem. So let’s make <span class="process-math">\(y = x + 1\)</span> , so that <span class="process-math">\(\dx{y} = 3x \dx{x}\text{.}\)</span>  Thus</div>
-<div class="displaymath process-math" id="IntegrationMethods-4-20-1-17">
+<div class="para">This is all correct, but leads to an integral far worse than the original, especially if you notice that <span class="process-math">\(x^2\)</span> is “almost” the derivative of <span class="process-math">\(x^3 + 1\text{.}\)</span> It is off by a factor of <span class="process-math">\(3\text{,}\)</span> but as we’ve seen, constants can be brought outside of the integral, so this is not really a problem. So let’s make <span class="process-math">\(y = x^3 + 1\)</span> , so that <span class="process-math">\(\dx{y} = 3x^2 \dx{x}\text{.}\)</span>  Thus</div>
+<div class="displaymath process-math" id="IntegrationMethods-4-20-1-16">
 \begin{align*}
 \int x^2\sqrt{x^3+1}\dx{x}&amp;=\int x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)\\
 &amp;=\frac13\int y^{1/2}\dx{y}\\
