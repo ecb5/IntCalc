@@ -1,3 +1,5 @@
+all: jing web view
+
 web: *.ptx  Makefile 
 	/home/ecb5/.local/bin/pretext build web
 #
@@ -21,4 +23,9 @@ epub: *.ptx
 view:
 	/home/ecb5/.local/bin/pretext view web
 
-clean: 
+debug:
+	/home/ecb5/.local/bin/pretext -v debug build web
+
+support:
+	/home/ecb5/.local/bin/pretext support
+
