@@ -236,7 +236,7 @@ window.MathJax = {
 <div class="para">Recall that in Section 6.4 of “Differential Calculus” we had this example for logistic growth</div>
 <div class="displaymath process-math" id="LogisticGrowthFromDiffCalc">
 \begin{equation}
-\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)=0.0001y(100-y)\text{.}\tag{2.11}
+\dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)=0.0001(100-y)\text{.}\tag{2.11}
 \end{equation}
 </div>
 <div class="para">In that chapter, we analyzed this growth rate to draw a qualitative graph of <span class="process-math">\(y=y(t)\text{,}\)</span> but we could not produce specific values of <span class="process-math">\(t\)</span> for where things happened, because we didn’t have a formula for <span class="process-math">\(y(t)\text{.}\)</span> We  now have the techniques needed to find <span class="process-math">\(y(t)\text{.}\)</span>
@@ -256,7 +256,7 @@ window.MathJax = {
 <div class="para">As we’ve mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider the following modification of the logistic model above</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\dfdx{y}{t}=0.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}\right)=0.0001y(100-y)(y-1)\text{.}
+\frac{dy}{dt}=.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}-1\right)=0.00001y(100-y)(y-10) 
 \end{equation*}
 </div>
 <div class="para">In this case, <span class="process-math">\(10\)</span> is called the <em class="emphasis">minimum viability level of the population.</em> (Why?) Solving this would require that we compute the integral</div>
@@ -271,10 +271,10 @@ window.MathJax = {
 <div class="para">The next technique is wholly algebraic in nature. The trick to try and separate the integrand into <dfn class="terminology">partial fractions</dfn> each of which will be easier to integrate than the original. For example, consider the expression <span class="process-math">\(\frac{1}{y(100-y)}\text{.}\)</span> With begin by making a reasonable, educated guess that such a fraction can be written as <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\text{,}\)</span> where <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{A}{y}+\frac{B}{100-y}=\frac{A(100-y)+By}{y(100-y)}=\frac{10A+(B-A)y}{y(100-y)}
+\frac{A}{y}+\frac{B}{100-y}=\frac{A(100-y)+By}{y(100-y)}=\frac{100A+(B-A)y}{y(100-y)}
 \end{equation*}
 </div>
-<div class="para">Comparing this with <span class="process-math">\(\frac{1}{y(100-y)}=\)</span> we see that if they are to be equal we must have <span class="process-math">\(100A=1\)</span> and <span class="process-math">\(B-A=0\text{.}\)</span> Therefore <span class="process-math">\(A=B=\frac{1}{100}\text{.}\)</span> Thus</div>
+<div class="para">Comparing this with <span class="process-math">\(\frac{1}{y(100-y)}\)</span> we see that if they are to be equal we must have <span class="process-math">\(100A=1\)</span> and <span class="process-math">\(B-A=0\text{.}\)</span> Therefore <span class="process-math">\(A=B=\frac{1}{100}\text{.}\)</span> Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{y(100-y)}=\frac{1/100}{y}+\frac{1/100}{100-y}\text{.}
@@ -307,7 +307,7 @@ window.MathJax = {
 \dfdx{y}{t}=0.01y\left(1-\frac{y}{100}\right)\hskip5mm y(0)=0
 \end{equation*}
 </div>
-<div class="para">for the case when <span class="process-math">\(0\lt100\text{.}\)</span>
+<div class="para">for the case when <span class="process-math">\(y\lt 100\text{.}\)</span>
 </div>
 </div></article><article class="task exercise-like" id="IntegrationMethods-7-2-8-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="IntegrationMethods-7-2-8-2-1-1">Solve the same problem for the case where <span class="process-math">\(y\gt 100\text{.}\)</span>
@@ -328,7 +328,7 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.46</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ElementaryPartFracDecomp-1">
-<div class="para">For example notice that if <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants then <span class="process-math">\(x+a\)</span> and <span class="process-math">\(x-b\)</span> have no common factors. Since <span class="process-math">\((x+a)-(x+b)=a-b\)</span> it follows  that</div>
+<div class="para">For example notice that if <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants then <span class="process-math">\(x+a\)</span> and <span class="process-math">\(x+b\)</span> have no common factors. Since <span class="process-math">\((x+a)-(x+b)=a-b\)</span> it follows  that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)=1\text{.}
@@ -336,12 +336,14 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 </div>
 </div> <aside class="aside aside-like" id="ElementaryPartFracDecomp-2"><h5 class="heading"><span class="title">Comment.</span></h5>
 <div class="para" id="ElementaryPartFracDecomp-2-2">Notice that since  <span class="process-math">\(\frac{1}{a-b}\)</span> and <span class="process-math">\(\frac{-1}{a-b}\)</span> are constants they are polynomials of degree zero.</div></aside></article><div class="para logical" id="PartialFractionSubsection-5">
-<div class="para">Our approach to the problem in <a href="" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" title="Example 2.46">example 2.46</a>was  somewhat ad-hoc. We will evantualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an (educated) guess and check method. Notice that in the <a href="" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" title="Example 2.46">example 2.46</a> we had</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ElementaryPartFracDecomp.html ./knowl/xref/ElementaryPartFracDecomp.html">
-\begin{equation*}
-\frac{1}{(x+a)(x+b)}=\frac{\frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)}{(x+a)(x+b)}=
-\frac{\frac{1}{a-b}}{x+b}+\frac{\frac{-1}{a-b}}{x+a}=\frac{\frac{-1}{x+a}}{x+a}\frac{\frac{1}{x-b}}{x+b}
-\end{equation*}
+<div class="para">Our approach to the problem in <a href="" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" title="Example 2.46">example 2.46</a>was  somewhat ad-hoc. We will eventualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an (educated) guess and check method. Notice that in the <a href="" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" title="Example 2.46">example 2.46</a> we had</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ElementaryPartFracDecomp.html ./knowl/xref/ElementaryPartFracDecomp.html" id="PartialFractionSubsection-5-3">
+\begin{align*}
+\frac{1}{(x+a)(x+b)}&amp;=\frac{\frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)}{(x+a)(x+b)}\\
+&amp;=
+\frac{\frac{1}{a-b}}{x+b}+\frac{\frac{-1}{a-b}}{x+a}\\
+&amp;=\frac{\frac{1}{a-b}}{x+b}-\frac{\frac{1}{a-b}}{x+a}
+\end{align*}
 </div>
 </div>
 <div class="para logical" id="PartialFractionSubsection-6">
@@ -367,19 +369,22 @@ s(x)}{p(x)}+\frac{t(x)\cdot{}r(x)}{q(x)}\text{.}
 \end{gather*}
 </div>
 </div>
-<div class="para" id="PartialFractionSubsection-7">Everything we’ve just shown assumes that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are known then <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> can be found so that <span class="process-math">\(r(x)\cdot p(x)+ s(x)\cdot q(x)=1\text{.}\)</span> For arbitrary functions this is a very restrictive condition. However as we observed above, if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomial then the existence of <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> is guaranteed. Thus for polynomials the <dfn class="terminology">Partial Fraction Decomposition</dfn> is also guaranteed.</div>
-<div class="para" id="PartialFractionSubsection-8">We formalize this in the following theorem.</div>
+<div class="para" id="PartialFractionSubsection-7">Everything we’ve just shown assumes that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are known then <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> can be found so that <span class="process-math">\(r(x)\cdot p(x)+ s(x)\cdot q(x)=1\text{.}\)</span> For arbitrary functions this is a very restrictive condition. However as we observed above, if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomials having only trivial common factors  then the existence of <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> is guaranteed. Thus for polynomials the <dfn class="terminology">Partial Fraction Decomposition</dfn> is also guaranteed.</div>
+<aside class="aside aside-like" id="PartialFractionSubsection-8"><h4 class="heading"><span class="title">Mathematical Language.</span></h4>
+<div class="para" id="PartialFractionSubsection-8-2">The word “trivial” is very context dependent in mathematics. In this context a “trivial common factor would be a constant.” For example, <span class="process-math">\(2\)</span> is a trivial common factor of <span class="process-math">\((2x-4)\)</span> and <span class="process-math">\(2x+6\text{.}\)</span>
+</div></aside><div class="para" id="PartialFractionSubsection-9">We formalize this in the following theorem.</div>
 <article class="theorem theorem-like" id="PartialFractionDecomp"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.47</span><span class="period">.</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition (PFD).</span>
 </h4>
 <div class="para logical" id="PartialFractionDecomp-2">
-<div class="para">If <span class="process-math">\(P(x)\text{,}\)</span> <span class="process-math">\(Q(x)\text{,}\)</span> and <span class="process-math">\(R(x)\)</span> are polynomials with <span class="process-math">\(\deg(P)\lt\deg(Q)+ \deg(R)\)</span>  the there exist  polynomials <span class="process-math">\(A(x)\)</span> and <span class="process-math">\(B(x)\text{,}\)</span> <span class="process-math">\(\deg{A}\lt\deg{Q}\)</span> and <span class="process-math">\(\deg(B)\lt\deg(R)\text{,}\)</span> such that</div>
+<div class="para">If <span class="process-math">\(P(x)\text{,}\)</span> <span class="process-math">\(Q(x)\text{,}\)</span> and <span class="process-math">\(R(x)\)</span> are polynomials having no non-trivial common factors with <span class="process-math">\(\deg(P)\lt\deg(Q)+ \deg(R)\)</span> then there exist polynomials <span class="process-math">\(A(x)\)</span> and <span class="process-math">\(B(x)\text{,}\)</span> <span class="process-math">\(\deg{A}\lt\deg{Q}\)</span> and <span class="process-math">\(\deg(B)\lt\deg(R)\text{,}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{P(x)}{Q(x)\cdot{}R(x)} = \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}\text{.}
+\frac{P(x)}{Q(x)\cdot{}R(x)} =
+\frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="PartialFractionSubsection-10">As stated in <a href="" class="xref" data-knowl="./knowl/xref/PartialFractionDecomp.html" title="Theorem 2.47: The Partial Fraction Decomposition (PFD)">Theorem 2.47</a> the PFD is very comprehensive. We will</div></section></section></div>
+</div></article><div class="para" id="PartialFractionSubsection-11">As stated in <a href="" class="xref" data-knowl="./knowl/xref/PartialFractionDecomp.html" title="Theorem 2.47: The Partial Fraction Decomposition (PFD)">Theorem 2.47</a> the PFD is very comprehensive. We will</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="IntegrationMethods-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="IntegrationMethods-8.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
