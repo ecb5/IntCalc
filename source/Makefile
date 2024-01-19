@@ -1,8 +1,7 @@
-all: jing web view
+all: jing web pdf view 
 
 web: *.ptx  Makefile 
 	/home/ecb5/.local/bin/pretext build web
-#
 
 deploy: *.ptx  Makefile
 	/home/ecb5/.local/bin/pretext deploy -u
@@ -14,7 +13,7 @@ jing: *.ptx
 latex: *.ptx Makefile 
 	/home/ecb5/.local/bin/pretext build latex
 
-print: *.ptx Makefile 
+pdf: *.ptx Makefile 
 	/home/ecb5/.local/bin/pretext build print
 
 epub: *.ptx
@@ -22,6 +21,9 @@ epub: *.ptx
 
 view:
 	/home/ecb5/.local/bin/pretext view web
+
+viewpdf:
+	/home/ecb5/.local/bin/pretext view print
 
 debug:
 	/home/ecb5/.local/bin/pretext -v debug build web
