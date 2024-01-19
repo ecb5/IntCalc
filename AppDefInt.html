@@ -116,9 +116,18 @@ window.MathJax = {
 \newcommand{\ZZ}{\mathbb {Z}}
 \def\DD{{\bf{}D}}
 
-\def\eval#1#2#3{\left.#1\right|_{#2=#3}}
+
+
+
+
+\def\ftceval#1#2#3{#1\hskip.5ex{\llap{\smash{\rule[-3ex]{0.5pt}{7ex}}}_{\raise{-3ex}{\hskip.5ex#2}}^{\raise{-5ex}{\hskip.5ex #3}}}}
+
+
+
+
+\def\eval#1#2#3{\left.#1\right]_{#2}^{#3}}
 \def\brackeval#1#2#3{\left.#1\right]_{#2=#3}}
-\def\bigeval#1#2#3{\left.\tallstrut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 
 
@@ -163,7 +172,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="FTC.html" class="internal"><span class="codenumber">1</span> <span class="title">Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-2.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculsu</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
@@ -196,6 +205,8 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">2.9.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">2.9.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">2.9.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">2.9.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -241,12 +252,12 @@ window.MathJax = {
 <div class="para">This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point — to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that <span class="process-math">\(y_2=2x\)</span>  and <span class="process-math">\(y_1=x^2\text{.}\)</span> Thus, we have</div>
 <div class="displaymath process-math" id="ParabolicSection-5-4">
 \begin{align*}
-\text{ Total area } =\int_{x=0}^2 (y_2-y_1)\dx{x}&amp;=\int_{x=0}^2
+\text{ Total area } =\int_{x=0}^2 (y_2-y_1)\dx{x}\amp amp;=\int_{x=0}^2
 (2x-x^2)\dx{x}\\
-&amp;=\eval{\left( x^2-\frac{x^3}{3}\right)}{x}{0}^2\\
-&amp;=\left( 2^2-\frac{2^3}{3}\right) - \left(
+\amp amp;=\eval{\left( x^2-\frac{x^3}{3}\right)}{x}{0}^2\\
+\amp amp;=\left( 2^2-\frac{2^3}{3}\right) - \left(
 0^2-\frac{0^3}{3}\right) \\
-&amp;=\frac43.
+\amp amp;=\frac43.
 \end{align*}
 </div>
 </div> <div class="para" id="ParabolicSection-6">Of course, there is nothing special about getting everything in terms of <span class="process-math">\(x\text{.}\)</span> We could divide the region into horizontal rectangles and put everything in terms of <span class="process-math">\(y\text{.}\)</span> We should obtain the same area. Notice that in the previous set up out two points had the same <span class="process-math">\(x\)</span> coordinate. In this one, they will have the same <span class="process-math">\(y\)</span> coordinate.</div> <figure class="figure figure-like" id="ParabolicSection-7"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/ParabolicSection3.png" class="contained" alt="Parabolic Segment in terms of y"></div>
@@ -254,11 +265,11 @@ window.MathJax = {
 <div class="para">Using the fact that <span class="process-math">\((x_2,y)\)</span> lies on the curve <span class="process-math">\(y=x^2\)</span> and that <span class="process-math">\((x_1,y)\)</span> lies on the curve <span class="process-math">\(y=2x\text{,}\)</span> we get</div>
 <div class="displaymath process-math" id="ParabolicSection-8-5">
 \begin{align*}
-\text{ Total Area } &amp;= \int_{y=0}^4 (x_2-x_1)\dx{y}\\
-&amp;= \int_{y=0}^4 (y^\frac12 -\frac{y}{2}\dx{y}\\
-&amp;=\eval{\left( \frac{2y^\frac32}{3}-\frac{y^2}{4}\right)}{y}{0}^4 \\
-&amp;=\left( \frac{2(4)^\frac32}{3}-\frac{4^2}{4}\right) -(0-0)\\
-&amp;=\frac{16}{3}-4=\frac43{}
+\text{ Total Area } \amp amp;= \int_{y=0}^4 (x_2-x_1)\dx{y}\\
+\amp amp;= \int_{y=0}^4 (y^\frac12 -\frac{y}{2}\dx{y}\\
+\amp amp;=\eval{\left( \frac{2y^\frac32}{3}-\frac{y^2}{4}\right)}{y}{0}^4 \\
+\amp amp;=\left( \frac{2(4)^\frac32}{3}-\frac{4^2}{4}\right) -(0-0)\\
+\amp amp;=\frac{16}{3}-4=\frac43{}
 \end{align*}
 </div>
 <div class="para">which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of <span class="process-math">\(x\)</span> or in terms of <span class="process-math">\(y\text{.}\)</span> In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.</div>
@@ -272,9 +283,9 @@ window.MathJax = {
 <div class="displaymath process-math" id="ParabSectionHoriz-4-1">
 \begin{align*}
 \text{ Total area
-}&amp;=\int_{x=-2}^4(y_2-y_1)\dx{x}\\
-&amp;=\int_{x=-2}^0(y_2-y_1)\dx{x}+\int_{x=0}^4(y_2-y_1)\dx{x}\\
-&amp;=\int_{x=-2}^0(x+2-0)\dx{x}+\int_{x=-2}^4\sqrt{4-x}-0\dx{x}
+}\amp amp;=\int_{x=-2}^4(y_2-y_1)\dx{x}\\
+\amp amp;=\int_{x=-2}^0(y_2-y_1)\dx{x}+\int_{x=0}^4(y_2-y_1)\dx{x}\\
+\amp amp;=\int_{x=-2}^0(x+2-0)\dx{x}+\int_{x=-2}^4\sqrt{4-x}-0\dx{x}
 \end{align*}
 </div>
 <div class="para">Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of <span class="process-math">\(y\text{?}\)</span>
@@ -476,10 +487,10 @@ r^2\right)=4\pi r^2
 <div class="displaymath process-math" id="subsec-VolByShells-6-8">
 \begin{align*}
 \text{ Total Volume }=\int_{x=0}^1 2\pi xy\dx{x}
-&amp;=\int_{x=0}^1x\left( x-x^3\right) \dx{x}\\
-&amp;=6\pi \int_{x=0}^1 x^2-x^4\dx{x}\\
-&amp;=6\pi \left(\frac14-\frac15\right) \\
-&amp;=\frac{12\pi }{15}.
+\amp amp;=\int_{x=0}^1x\left( x-x^3\right) \dx{x}\\
+\amp amp;=6\pi \int_{x=0}^1 x^2-x^4\dx{x}\\
+\amp amp;=6\pi \left(\frac14-\frac15\right) \\
+\amp amp;=\frac{12\pi }{15}.
 \end{align*}
 </div>
 </div>
@@ -489,8 +500,8 @@ r^2\right)=4\pi r^2
 <div class="para">Using the flattened-out version, we have that the volume of the shell is given by</div>
 <div class="displaymath process-math" id="subsec-VolByShells-9-1">
 \begin{align*}
-\text{Volume of shell}&amp;= \text{length}\cdot height\cdot thickness \\
-&amp;= \text{circumference}\cdot height\cdot thickness \\
+\text{Volume of shell}\amp amp;= \text{length}\cdot height\cdot thickness \\
+\amp amp;= \text{circumference}\cdot height\cdot thickness \\
 2\pi xy\dx{x}
 \end{align*}
 </div>
@@ -500,10 +511,10 @@ r^2\right)=4\pi r^2
 <div class="para">Actually, a similar formula works for any washer:</div>
 <div class="displaymath process-math" id="subsec-VolByShells-10-1">
 \begin{align*}
-\text{Volume of a washer}&amp;=\pi \left( x_2^2-x_1^2\right) \dx{y}\\
-&amp;=\pi (x_2+x+1)(x_2-x_1)\dx{y}\\
-&amp;=\left( 2\pi \frac{x_2+x_1}{2}\right)(\dx{y})(x_2-x_1)\\
-&amp;=\text{average circumference}\cdot \text{height}\cdot \text{thickness}
+\text{Volume of a washer}\amp amp;=\pi \left( x_2^2-x_1^2\right) \dx{y}\\
+\amp amp;=\pi (x_2+x+1)(x_2-x_1)\dx{y}\\
+\amp amp;=\left( 2\pi \frac{x_2+x_1}{2}\right)(\dx{y})(x_2-x_1)\\
+\amp amp;=\text{average circumference}\cdot \text{height}\cdot \text{thickness}
 \end{align*}
 </div>
 <div class="para">While this is interesting geometrically, it does not help with computing  integrals using washers.</div>
@@ -706,14 +717,14 @@ y=a\sin( \theta
 <div class="para">In general, if we placed a point mass of <span class="process-math">\(1\)</span> at each of the positions <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> <span class="process-math">\(x_3\text{,}\)</span> <span class="process-math">\(\cdots \text{,}\)</span> <span class="process-math">\(x_n\text{,}\)</span> then the center of mass <span class="process-math">\(\bar{x} \text{,}\)</span> should satisfy the relationship</div>
 <div class="displaymath process-math" id="subsection-CenterMass-7-8">
 \begin{align*}
-\bar{x} &amp;= \frac{x_1\cdot 1+x_2\cdot 1+\cdots x_n\cdot 1}{n}
+\bar{x} \amp amp;= \frac{x_1\cdot 1+x_2\cdot 1+\cdots x_n\cdot 1}{n}
 \end{align*}
 </div>
 <div class="para">To help with our discussions on this, we will give a name to the numerator. People have christened this the (first) moment of the system (about the origin). To give it a simple way to remember it, we write</div>
 <div class="displaymath process-math" id="subsection-CenterMass-7-9">
 \begin{align*}
-\text{moment}&amp;=\text{position}\cdot \text{mass}\\
-\text{ center of mass }&amp;=\frac{\text{total moment}}{\text{mass}}
+\text{moment}\amp amp;=\text{position}\cdot \text{mass}\\
+\text{ center of mass }\amp amp;=\frac{\text{total moment}}{\text{mass}}
 \end{align*}
 </div>
 <div class="para">Later we will have use for the second moment about the origin, namely</div>
@@ -760,7 +771,7 @@ moment}}{\text{mass}}=\frac{b^2-a^2}{2(b-a)}=\frac{a+b}{2}\text{.}
 <article class="exercise exercise-like" id="exercise-CoM1"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.142</span><span class="period">.</span>
 </h4>
-<div class="para" id="exercise-CoM1-1-1"> Find the center of mass of the set <span class="process-math">\(A=[a_1,b_1]\cup [a_2, b_2]\text{,}\)</span> <span class="process-math">\(b_1\lt a_2\text{.}\)</span> Is the center of mass of the set <span class="process-math">\(A\)</span> equal to the averages of the midpoints of the two intervals? Does this make sense?</div></article><div class="para" id="subsection-CenterMass-13">We did not want to give it away while you were doing the previous problem, but you will actually get what is known as a \term{weighted average}; that is, the center of mass of the two midpoints where the mass of each interval is condensed at its midpoint.</div>
+<div class="para" id="exercise-CoM1-1-1"> Find the center of mass of the set <span class="process-math">\(A=[a_1,b_1]\cup [a_2, b_2]\text{,}\)</span> <span class="process-math">\(b_1\lt a_2\text{.}\)</span> Is the center of mass of the set <span class="process-math">\(A\)</span> equal to the averages of the midpoints of the two intervals? Does this make sense?</div></article><div class="para" id="subsection-CenterMass-13">We did not want to give it away while you were doing the previous problem, but you will actually get what is known as a <dfn class="terminology">weighted average</dfn>; that is, the center of mass of the two midpoints where the mass of each interval is condensed at its midpoint.</div>
 <div class="para" id="subsection-CenterMass-14">What if we ramp this up to two-dimensions. Suppose we have a number of points of mass <span class="process-math">\(1\)</span> located at <span class="process-math">\((x_1, y_1), (x_2, y_2), \cdots (x_n, y_n)\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="figure-CoM2D"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CoM2D.png" class="contained"></div>
@@ -786,7 +797,7 @@ moment}}{\text{mass} }\text{.}\)</span> Let’s use this same idea to a curve of
 <figure class="figure figure-like" id="figure-CoMOfCurve"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/CoMOfCurve.png" class="contained" alt="A generic graph of a function."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.144<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="subsection-CenterMass-18">Using analogous reasoning, the center of mass of this curve will be given by <span class="process-math">\(\bar{X} =(\bar{x} , \bar{y} )\)</span> where each coordinate fits into our scheme <span class="process-math">\(\frac{\text{total moment}}{\text{mass} }\text{.}\)</span> . To this end, we will look at the mass of the curve. Since the density is constantly <span class="process-math">\(1\text{,}\)</span> the mass is really the arc length and is given by <span class="process-math">\(\int_{X=A}^B\dx{s}\text{.}\)</span>
 </div>
-<div class="para" id="subsection-CenterMass-19">To address <span class="process-math">\(\bar{x} \text{,}\)</span> we will compute of the curve about the line <span class="process-math">\(x=0\text{.}\)</span> Dividing our curve into infinitely small pieces, we can use our simple formulation.</div>
+<div class="para" id="subsection-CenterMass-19">To address <span class="process-math">\(\bar{x} \text{,}\)</span> we will compute the moment of the curve about the line <span class="process-math">\(x=0\text{.}\)</span> Dividing our curve into infinitely small pieces, we can use our simple formulation.</div>
 <figure class="figure figure-like" id="figure-MomentOfSegment"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/MomentOfSegment.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.145<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\text{Total moment (about } x=0\text{)}=\int_{X=A}^Bx\dx{s}\)</span></figcaption></figure><article class="exercise exercise-like" id="exercise-"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.146</span><span class="period">.</span>
@@ -812,23 +823,24 @@ moment}}{\text{mass} }\text{.}\)</span> Let’s use this same idea to a curve of
 </h4>
 <div class="introduction" id="exercise-CoMLineSegment-1"><div class="para" id="exercise-CoMLineSegment-1-1"> As a test of our reasoning, let’s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.</div></div>
 <article class="task exercise-like" id="exercise-CoMLineSegment-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="exercise-CoMLineSegment-2-1-1">Find the equation of the line segment joining <span class="process-math">\((x_1, y_1)\)</span> and <span class="process-math">\((x_2, y_2)\text{,}\)</span> To avoid dealing with absolute values, let’s assume <span class="process-math">\(x_1\lt x_2\text{.}\)</span>
+<div class="para" id="exercise-CoMLineSegment-2-1-1">Find the equation of the line segment joining <span class="process-math">\((x_1, y_1)\)</span> and <span class="process-math">\((x_2, y_2)\text{,}\)</span> To avoid dealing with absolute values, let’s assume <span class="process-math">\(x_1\lt x_2\)</span> and <span class="process-math">\(y_1\lt y_2\text{.}\)</span>
 </div></article><article class="task exercise-like" id="exercise-CoMLineSegment-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="exercise-CoMLineSegment-3-1-1">Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?</div></article></article><article class="exercise exercise-like" id="exercise-CoMCircle"><h4 class="heading">
+<div class="para" id="exercise-CoMLineSegment-3-1-1">Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?</div></article></article><aside class="aside aside-like" id="subsection-CenterMass-24"><h4 class="heading"><span class="title">Note from Bob.</span></h4>
+<div class="para" id="subsection-CenterMass-24-2">In <a href="" class="xref" data-knowl="./knowl/xref/exercise-CoMCircle.html" title="Problem 2.148">Problem 2.148</a> do we want to include that they should be able to arrive at <span class="process-math">\(0\)</span> in part (a) without computing the integral using symmetry?</div></aside><article class="exercise exercise-like" id="exercise-CoMCircle"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.148</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="exercise-CoMCircle-1"><div class="para logical" id="exercise-CoMCircle-1-1">
 <div class="para"> By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius <span class="process-math">\(r\)</span> centered at the origin. This can be described by the equations</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x=r\cos( \theta ), y=r\sin (\theta ), 0\le \theta \pi \text{.}
+x=r\cos( \theta ), y=r\sin (\theta ), 0\le \theta \le \pi \text{.}
 \end{equation*}
 </div>
 </div></div>
 <article class="task exercise-like" id="exercise-CoMCircle-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercise-CoMCircle-2-1-1">Verify that <span class="process-math">\(\bar{x}=0\)</span> by following our process as above.</div></article><article class="task exercise-like" id="exercise-CoMCircle-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercise-CoMCircle-3-1-1">Compute <span class="process-math">\(\bar{y}\text{.}\)</span>
-</div></article></article><div class="para" id="subsection-CenterMass-25">Notice that the above examples show that the center of mass of a curve need not be a point on the curve.  We are now in a position to prove Pappus’ Theorem on surface area.</div>
+</div></article></article><div class="para" id="subsection-CenterMass-26">Notice that the above examples show that the center of mass of a curve need not be a point on the curve.  We are now in a position to prove Pappus’ Theorem on surface area.</div>
 <article class="exercise exercise-like" id="exercise-PappusTheoremSA"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.149</span><span class="period">.</span><span class="space"> </span><span class="title">Pappus’ Theorem for Surface Area.</span>
 </h4>
@@ -842,29 +854,29 @@ x=r\cos( \theta ), y=r\sin (\theta ), 0\le \theta \pi \text{.}
 circle with radius } \bar{x} -c)\cdot (\text{length of curve})
 \end{equation*}
 </div>
-</div></article><aside class="aside aside-like" id="subsection-CenterMass-27"><h4 class="heading"><span class="title">Note to self.</span></h4>
-<div class="para" id="subsection-CenterMass-27-2">Put some practice problems here.</div></aside><div class="para" id="subsection-CenterMass-28">To obtain Pappus’ theorem for volumes we need to expand this idea to the center of mass of a two-dimensional region. Again, the center of mass <span class="process-math">\(\bar{X} \)</span> can be split into two coordinates <span class="process-math">\((\bar{x}, \bar{y} )\)</span>) which represent the averages of the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> coordinates of all of the points in the region.</div>
-<div class="para" id="subsection-CenterMass-29">With this in mind, consider a region <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span> plane which can be thought of as two-dimensional plate with constant density <span class="process-math">\(1\text{.}\)</span> We will draw this region shortly.</div>
-<div class="para" id="subsection-CenterMass-30">Again, we will utilize our strategy of dividing our region into pieces where a simple formula can be applied, and we will apply our general idea that the centroid is given by the formula <span class="process-math">\(\frac{\text{sum of
+</div></article><aside class="aside aside-like" id="subsection-CenterMass-28"><h4 class="heading"><span class="title">Note to self.</span></h4>
+<div class="para" id="subsection-CenterMass-28-2">Put some practice problems here.</div></aside><div class="para" id="subsection-CenterMass-29">To obtain Pappus’ theorem for volumes we need to expand this idea to the center of mass of a two-dimensional region. Again, the center of mass <span class="process-math">\(\bar{X} \)</span> can be split into two coordinates <span class="process-math">\((\bar{x}, \bar{y} )\)</span>) which represent the averages of the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> coordinates of all of the points in the region.</div>
+<div class="para" id="subsection-CenterMass-30">With this in mind, consider a region <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span> plane which can be thought of as two-dimensional plate with constant density <span class="process-math">\(1\text{.}\)</span> We will draw this region shortly.</div>
+<div class="para" id="subsection-CenterMass-31">Again, we will utilize our strategy of dividing our region into pieces where a simple formula can be applied, and we will apply our general idea that the centroid is given by the formula <span class="process-math">\(\frac{\text{sum of
 location mass}}{\text{total mass}}\)</span> The mass is just the area, so we will focus on the numerator.</div>
-<div class="para" id="subsection-CenterMass-31">Specifically, if we want to find <span class="process-math">\(\bar{x} \)</span> , we will draw a generic vertical box and determine its moment about the line <span class="process-math">\(x=0\text{.}\)</span>
+<div class="para" id="subsection-CenterMass-32">Specifically, if we want to find <span class="process-math">\(\bar{x} \)</span> , we will draw a generic vertical box and determine its moment about the line <span class="process-math">\(x=0\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="figure-PappusVolumes"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/PappusVolumes.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.151<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="subsection-CenterMass-33">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.151<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="subsection-CenterMass-34">
 <div class="para">The moment of this box is straightforward as every point in it is the same distance <span class="process-math">\((x)\)</span> from the <span class="process-math">\(y\)</span> axis. Formally, we have</div>
-<div class="displaymath process-math" id="subsection-CenterMass-33-3">
+<div class="displaymath process-math" id="subsection-CenterMass-34-3">
 \begin{align*}
-\text{moment of box (about} x=0) &amp;= (\text{position of box})\cdot
+\text{moment of box (about} x=0) \amp amp;= (\text{position of box})\cdot
 (\text{mass of box})\\
-&amp;=x\cdot (y_2-y_1)\dx{x}
+\amp amp;=x\cdot (y_2-y_1)\dx{x}
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="subsection-CenterMass-34">
+<div class="para logical" id="subsection-CenterMass-35">
 <div class="para">Integrating these moments, we get that the total moment of the region is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{total moment}=\int_{x=a}^c x(y(2-y_1(\dx{x}\text{.}
+\text{total moment}=\int_{x=a}^c x(y_2-y_1)\dx{x}\text{.}
 \end{equation*}
 </div>
 <div class="para">Thus, with this set up, we would have</div>
@@ -876,7 +888,7 @@ location mass}}{\text{total mass}}\)</span> The mass is just the area, so we wil
 \end{equation*}
 </div>
 </div>
-<div class="para" id="subsection-CenterMass-35">As before, you could memorize the formulas, but it is much better to remember simple concepts such as <span class="process-math">\(\text{moment } = \text{mass}\cdot \text{position}\)</span> and apply these to a situation where things are constant. For example, we can apply the same reasoning to a horizontal box as below to derive the formula for <span class="process-math">\(\bar{y}\text{.}\)</span> This is what integration is all about.</div>
+<div class="para" id="subsection-CenterMass-36">As before, you could memorize the formulas, but it is much better to remember simple concepts such as <span class="process-math">\(\text{moment } = \text{mass}\cdot \text{position}\)</span> and apply these to a situation where things are constant. For example, we can apply the same reasoning to a horizontal box as below to derive the formula for <span class="process-math">\(\bar{y}\text{.}\)</span> This is what integration is all about.</div>
 <article class="exercise exercise-like" id="exercise-PappusVol"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.152</span><span class="period">.</span>
 </h4>
@@ -895,11 +907,11 @@ location mass}}{\text{total mass}}\)</span> The mass is just the area, so we wil
 <div class="introduction" id="exercise-CMPractice1-1"><div class="para" id="exercise-CMPractice1-1-1"></div></div>
 <article class="task exercise-like" id="exercise-CMPractice1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercise-CMPractice1-2-1-1">In everything we did so far, we assumed that the region had a constant density and we said the density was <span class="process-math">\(1\text{.}\)</span> Would it have made a difference if we said the density was given by some other constant <span class="process-math">\(\delta \text{?}\)</span> Explain.</div></article><article class="task exercise-like" id="exercise-CMPractice1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="exercise-CMPractice1-3-1-1">Suppose the density <span class="process-math">\(\delta \)</span> was not constant. How would that alter the formulas for the center of mass?</div></article></article><div class="para" id="subsection-CenterMass-38">Again, you can memorize formulas, but understanding them helps you to recreate them should you forget or more appropriately, adapt the ideas should the occasion necessitate that. For example, consider the region below bounded by <span class="process-math">\(y=\sin(x) \)</span> and <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(0\le x\le
+<div class="para" id="exercise-CMPractice1-3-1-1">Suppose the density <span class="process-math">\(\delta \)</span> was not constant. How would that alter the formulas for the center of mass?</div></article></article><div class="para" id="subsection-CenterMass-39">Again, you can memorize formulas, but understanding them helps you to recreate them should you forget or more appropriately, adapt the ideas should the occasion necessitate that. For example, consider the region below bounded by <span class="process-math">\(y=\sin(x) \)</span> and <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(0\le x\le
 \pi \text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="figure-Moments"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/MomentSin.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.154<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="subsection-CenterMass-40">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.154<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="subsection-CenterMass-41">
 <div class="para">Assuming the density is constant, it is straightforward to see that <span class="process-math">\(\bar{x}=\frac\pi2 \text{.}\)</span> But what about <span class="process-math">\(\bar{y}\)</span>̅? If we use the formula your derived above, we would have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -912,7 +924,7 @@ y(x_2-x_1)\dx{y}}{\int_{y=a}^c (y_2-y_1)\dx{y}}
 </div>
 </div>
 <figure class="figure figure-like" id="figure-Moments2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/MomentSin2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.155<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="subsection-CenterMass-42">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.155<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="subsection-CenterMass-43">
 <div class="para">The problem with computing the moment (about <span class="process-math">\(x=0\)</span>) of this vertical box is that our simple formula <span class="process-math">\(\text{mass}\cdot \text{position}\)</span> won’t work as the position varies throughout the box. But wait a minute! We know  what <span class="process-math">\(\bar{y}\)</span>̅ for this box is, namely <span class="process-math">\(\frac{y}{2}\text{.}\)</span> We also know what area of this box is, namely <span class="process-math">\(y\dx{y}\text{.}\)</span> Using   that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -933,8 +945,8 @@ box}}{\text{area of box}}
 <div class="para" id="exercise-MomentSin3-1-1"> Integrate this and determine the <span class="process-math">\(y\)</span> coordinate of the center of mass of this region.</div></article><article class="exercise exercise-like" id="exercise-GeneralMomentY"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.157</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="exercise-GeneralMomentY-1-1">
-<div class="para"> For the following region, utilize the same sort of reasoning to show that the moment about the line <span class="process-math">\(x=0\)</span> is given by</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Moment1.png" class="contained"></div> <div class="para logical" id="exercise-GeneralMomentY-1-2">
+<div class="para"> For the following region, use the same sort of reasoning to show that the moment about the line <span class="process-math">\(x=0\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int_{y=c}^d \frac{x_2^2-x_1^2}{2}\dx{y}
@@ -944,16 +956,16 @@ box}}{\text{area of box}}
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.158</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="exercise-CoMCycloid-1-1">
-<div class="para"> n PIC # XX, you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by</div>
-<div class="displaymath process-math">
+<div class="para"> In <a href="" class="xref" data-knowl="./knowl/xref/CyclRevX.html" title="Problem 2.107: Revolving a Cycloid">Problem 2.107</a> you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CyclRevX.html">
 \begin{equation*}
 x=a(\theta -\sin( \theta ), \text{  } y=a(1-\cos(\theta )
 \end{equation*}
 </div>
 <div class="para">around the <span class="process-math">\(x\)</span>-axis.</div>
 </div> <figure class="figure figure-like" id="figure-GeneralMomentY"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CycloidArea.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.159<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><div class="para" id="subsection-CenterMass-46">Now that we have a handle on the center of mass of a two-dimensional region, we can actually make pretty quick work of Pappus’ Theorem for determining the volume of a solid of revolution.</div>
-<div class="para" id="subsection-CenterMass-47">Consider the following region 𝑅 lying completely to the right of the line <span class="process-math">\(x=0\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.159<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="exercise-CoMCycloid-1-3">The answer to that problem was <span class="process-math">\(5\pi^2a^3\text{.}\)</span> We still haven’t proved Pappus’ Theorem yet, but compute <span class="process-math">\(\bar{y} \)</span> for this planar region and see if Pappus’ Theorem applied to this will yield the same answer.</div></article><div class="para" id="subsection-CenterMass-47">Now that we have a handle on the center of mass of a two-dimensional region, we can actually make pretty quick work of Pappus’ Theorem for determining the volume of a solid of revolution.</div>
+<div class="para" id="subsection-CenterMass-48">Consider the following region 𝑅 lying completely to the right of the line <span class="process-math">\(x=0\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="figure-PappusThmSA"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/PappusThmSA.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.160<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="exercise exercise-like" id="exercise-PappusThmForVolumes"><h4 class="heading">
@@ -967,18 +979,18 @@ x=a(\theta -\sin( \theta ), \text{  } y=a(1-\cos(\theta )
 \end{equation*}
 </div>
 <div class="para">This is Pappus’ Theorem for volumes.</div>
-</div></article><aside class="aside aside-like" id="subsection-CenterMass-50"><h4 class="heading"><span class="title">Note to self.</span></h4>
-<div class="para" id="subsection-CenterMass-50-2">Insert Practice Pappus Problems.</div></aside></section><section class="subsection" id="subsection-OtherIntApplications"><h3 class="heading hide-type">
+</div></article><aside class="aside aside-like" id="subsection-CenterMass-51"><h4 class="heading"><span class="title">Note to self.</span></h4>
+<div class="para" id="subsection-CenterMass-51-2">Insert Practice Pappus Problems.</div></aside></section><section class="subsection" id="subsection-OtherIntApplications"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.9.6</span><span class="space"> </span><span class="title">Other Applications of Integration</span>
 </h3>
 <section class="subsubsection" id="subsection-OtherIntApplications-2"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.9.6.1</span><span class="space"> </span><span class="title">The Tautochrone</span>
 </h4>
 <div class="para" id="subsection-OtherIntApplications-2-2">You may have noticed that we keep bringing up the cycloid in a number of problems involving areas, arc lengths, volumes, and centers of mass. As we said, this curve has fascinated mathematicians for a long time and many of these elegant results were cleverly obtained before the invention of calculus. We will now see how the cycloid was utilized to address a more practical problem.</div>
-<div class="para" id="subsection-OtherIntApplications-2-3">In the 1600’s there was race among naval “superpowers” (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to £20,000 (about £5.1 million or $6.1 million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.</div>
+<div class="para" id="subsection-OtherIntApplications-2-3">In the 1600’s there was race among naval “superpowers” (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to £20,000 (about £5.1 million or <span class="process-math">\(6.1\)</span> million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.</div>
 <div class="para" id="subsection-OtherIntApplications-2-4">Since longitude is measured by “time” zones, then it became necessary to develop an accurate way of measuring time at sea. A regular pendulum clock, invented by the Dutch mathematician, scientist, and inventor <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Huygens/" target="_blank">Christiaan Huygens</a><a class="xref" id="subsection-OtherIntApplications-2-4-2" href="" data-knowl="./knowl/fn/subsection-OtherIntApplications-2-4-2.html" title="Footnote 2.8"><sup> 8 </sup></a> (1629-1695), utilized the fact that the oscillation of a pendulum is regular as long as it maintains the same amount of “swing” per oscillation. This made for an accurate timepiece on land, but it was not accurate at sea where a moving deck would make the pendulum swing at different angles and thus not have a constant period. To remedy this, Huygens developed a pendulum that would follow a tautochrone (a “same time” curve where a pendulum, exclusively under the influence of gravity, following that path would take the same amount of time to reach the bottom, no matter where it started on the curve). Huygens showed that an inverted cycloid was such a tautochrone shown below. A pendulum following the path of an inverted cycloid will take the same amount of time to reach the bottom no matter where it starts.</div>
 <figure class="figure figure-like" id="figure-Tautochrone1"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/Tautochrone1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.162<span class="period">.</span></span><span class="space"> </span>Image from <a class="external" href="http://www.mathwords.com/t/t_assets/tautochrone.gif" target="_blank">MathWords</a><a class="xref" id="figure-Tautochrone1-1-2" href="" data-knowl="./knowl/fn/figure-Tautochrone1-1-2.html" title="Footnote 2.9"><sup> 9 </sup></a></figcaption></figure><div class="para" id="subsection-OtherIntApplications-2-6">Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book <span class="booktitle">Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to clocks)</span>. The design from that <a class="external" href="https://en.wikipedia.org/wiki/Horologium_Oscillatorium" target="_blank">work</a><a class="xref" id="subsection-OtherIntApplications-2-6-3" href="" data-knowl="./knowl/fn/subsection-OtherIntApplications-2-6-3.html" title="Footnote 2.10"><sup> 10 </sup></a>. is on the left. To get the pendulum to swing along a cycloidal path, Huygen’s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen on the left. This curve traced out is called the <a class="external" href="http://rsefalicante.umh.es/LaboratorioPendulo/Pendulo2.htm" target="_blank"><dfn class="terminology">Involute of the cycloid</dfn></a><a class="xref" id="subsection-OtherIntApplications-2-6-6" href="" data-knowl="./knowl/fn/subsection-OtherIntApplications-2-6-6.html" title="Footnote 2.11"><sup> 11 </sup></a>.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.162<span class="period">.</span></span><span class="space"> </span>Image from <a class="external" href="http://www.mathwords.com/t/t_assets/tautochrone.gif" target="_blank">MathWords</a><a class="xref" id="figure-Tautochrone1-1-2" href="" data-knowl="./knowl/fn/figure-Tautochrone1-1-2.html" title="Footnote 2.9"><sup> 9 </sup></a></figcaption></figure><div class="para" id="subsection-OtherIntApplications-2-6">Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book <span class="booktitle">Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to clocks)</span>. The design from that <a class="external" href="https://en.wikipedia.org/wiki/Horologium_Oscillatorium" target="_blank">work</a><a class="xref" id="subsection-OtherIntApplications-2-6-3" href="" data-knowl="./knowl/fn/subsection-OtherIntApplications-2-6-3.html" title="Footnote 2.10"><sup> 10 </sup></a>. is seen below. To get the pendulum to swing along a cycloidal path, Huygen’s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen on the left. This curve traced out is called the <a class="external" href="http://rsefalicante.umh.es/LaboratorioPendulo/Pendulo2.htm" target="_blank"><dfn class="terminology">Involute of the cycloid</dfn></a><a class="xref" id="subsection-OtherIntApplications-2-6-6" href="" data-knowl="./knowl/fn/subsection-OtherIntApplications-2-6-6.html" title="Footnote 2.11"><sup> 11 </sup></a>.</div>
 <figure class="figure figure-like" id="figure-HuygenClock"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/HuygensClock.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.163<span class="period">.</span></span><span class="space"> </span>Huygens’ Clock</figcaption></figure><div class="para" id="subsection-OtherIntApplications-2-8">In practice, the clock did not work any more accurately than a regular pendulum clock as it assumed the only force involved was gravity, whereas a clock at sea was subject to many more forces which could not be ignored. Subsequently, the Englishman John Harrison (1693-1776), a Yorkshire carpenter, invented a chronometer which ran on springs and proved to be very accurate.</div>
 <div class="para" id="subsection-OtherIntApplications-2-9">Even still, many mathematicians cited Huygens’ work on this as being very elegant mathematically.  Furthermore, Huygens developed his mathematics without calculus as it hadn’t been invented (discovered?) yet. We will not prove that the involute of a cycloid is a cycloid, but we will utilize calculus to prove Huygens’ claim that the cycloid is, in fact, a tautochrone.</div>
@@ -991,9 +1003,9 @@ x=a(\theta -\sin( \theta ), \text{  } y=a(1-\cos(\theta )
 <div class="para"> Show that the total time it takes for the pendulum to move along the (inverted) cycloid</div>
 <div class="displaymath process-math" id="exercise-Taut1-1-1-2">
 \begin{align*}
-x&amp;=\frac12 (\theta-\sin (\theta))\\
-y&amp;=\frac12 (1-\cos (\theta ))\\
-y&amp;\theta_0\le \theta \le \pi 
+x\amp amp;=\frac12 (\theta-\sin (\theta))\\
+y\amp amp;=\frac12 (1-\cos (\theta ))\\
+\amp amp;\theta_0\le \theta \le \pi 
 \end{align*}
 </div>
 <div class="para">from a starting position <span class="process-math">\(\theta =\theta_0\)</span> to the bottom of the cycloid is given by</div>
@@ -1006,7 +1018,7 @@ y&amp;\theta_0\le \theta \le \pi
 </div>
 </div></article><div class="para" id="subsection-OtherIntApplications-2-12">At this point we’ve hit an impasse, as the speed of the pendulum 𝑣 is not a constant. Gravity will cause the pendulum to speed up as it swings downward. We will assume that the pendulum does not swing too wide, not too fast, and ignore air resistance. Thus, the only force we will consider is due to gravity and we will denote that by <span class="process-math">\(mg\text{,}\)</span> where <span class="process-math">\(m\)</span> is the mass of the pendulum and <span class="process-math">\(g\)</span> is the acceleration due to gravity. Below is a diagram of a pendulum following the path of a cycloid with the forces at work.</div>
 <figure class="figure figure-like" id="figure-CyclPendPath"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CyclPendPath.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.165<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="subsection-OtherIntApplications-2-14">The force due to gravity is always directed downward, so only a portion of it moves the pendulum along 𝑑𝑣 the curve. This tangential force has a magnitude <span class="process-math">\(ma\)</span> where <span class="process-math">\(a=\dx{t}\)</span> is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.165<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="subsection-OtherIntApplications-2-14">The force due to gravity is always directed downward, so only a portion of it moves the pendulum along the curve. This tangential force has a magnitude <span class="process-math">\(ma\)</span> where <span class="process-math">\(a=\dfdx{\nu}{t}\)</span> is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.</div>
 <figure class="figure figure-like" id="figure-CyclPendPath2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CyclPendPath2.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.166<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="exercise exercise-like" id="exercise-Taut2"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.167</span><span class="period">.</span>
@@ -1014,7 +1026,7 @@ y&amp;\theta_0\le \theta \le \pi
 <div class="introduction" id="exercise-Taut2-1"><div class="para" id="exercise-Taut2-1-1"></div></div>
 <article class="task exercise-like" id="exercise-Taut2-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para logical" id="exercise-Taut2-2-1-1">
-<div class="para">Use the fact that the two triangles are similar to show that <span class="process-math">\(g\dx{y}=a\dx{s}\)</span> and use the fact that <span class="process-math">\(a=\dx{t}\)</span> to conclude that</div>
+<div class="para">Use the fact that the two triangles are similar to show that <span class="process-math">\(g\dx{y}=a\dx{s}\)</span> and use the fact that <span class="process-math">\(a=\dfdx{\nu }{t}\)</span> to conclude that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 g\dx{y}=v\dx{v}\text{.}
@@ -1035,9 +1047,9 @@ v=\sqrt{2g(y(\theta )-y(\theta_0))}\text{.}
 \begin{equation*}
 \int_{\theta =\theta_0}^{\pi
 }\frac{\sin\left(\frac{\theta}{2}\right) }{\sqrt{2g(y(\theta
-)-y(\theta_0)}}\dx{\theta } =\int_{\theta
+)-y(\theta_0)}}\dx{\theta } =\frac{1}{\sqrt{2g}}\int_{\theta
 =\theta_0}^{\pi }\frac{\sin\left(\frac{\theta}{2}\right)
-}{\sqrt{y(\theta) -y(\theta_0)}}\dx{\theta } =
+}{\sqrt{y(\theta) -y(\theta_0)}}\dx{\theta } 
 \end{equation*}
 </div>
 </div>
@@ -1045,9 +1057,9 @@ v=\sqrt{2g(y(\theta )-y(\theta_0))}\text{.}
 <div class="para">Before we proceed any further, notice that if we use the appropriate trigonometric identity, we get</div>
 <div class="displaymath process-math" id="subsection-OtherIntApplications-2-18-1">
 \begin{align*}
-y(\theta )&amp;=\frac12(1-\cos (\theta ))=\sin^2 \left(
+y(\theta )\amp amp;=\frac12(1-\cos (\theta ))=\sin^2 \left(
 \frac{\theta }{2}\right) \\
-y(\theta_0 )&amp;=\frac12(1-\cos (\theta_0 ))=\sin^2 \left(
+y(\theta_0 )\amp amp;=\frac12(1-\cos (\theta_0 ))=\sin^2 \left(
 \frac{\theta_0 }{2}\right) 
 \end{align*}
 </div>
@@ -1058,14 +1070,14 @@ y(\theta_0 )&amp;=\frac12(1-\cos (\theta_0 ))=\sin^2 \left(
 \frac{\sin\left(\frac\theta2\right)}
 {\sqrt{\sin^2\left(\frac{\theta}{2}\right) - \sin^2\left(\frac{\theta_0}{2}\right)
 }}\dx{\theta}
-&amp;=\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^\pi
+\amp amp;=\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^\pi
 \frac{\sin\left(\frac\theta2\right)}{\sqrt{\left(1-\cos^2\left(\frac\theta2\right)\right)-\left(1-\cos^2\left(\frac{\theta_0}{2}\right)\right)}} \dx{\theta }\\
-&amp;=\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^\pi
+\amp amp;=\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^\pi
 \frac{\sin\left(\frac\theta2\right)}{\sqrt{\cos^2\left(\frac{\theta_0}{2}\right)
 -\cos^2\left(\frac\theta2\right) }} \dx{\theta}
 \end{align*}
 </div>
-<div class="para">As formidable as this integral may look, bear in mind that <span class="process-math">\(\theta_0\)</span> is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let <span class="process-math">\(u=\cos\left(\frac\theta2\right) \)</span> and <span class="process-math">\(u=\cos\left(\frac{\theta_0}{2}\right) \)</span>
+<div class="para">As formidable as this integral may look, bear in mind that <span class="process-math">\(\theta_0\)</span> is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let <span class="process-math">\(u=\cos\left(\frac\theta2\right) \)</span> and <span class="process-math">\(u_0=\cos\left(\frac{\theta_0}{2}\right) \)</span>
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-Taut3"><h5 class="heading">
@@ -1080,9 +1092,9 @@ _0)\right) \)</span> to <span class="process-math">\(\left( \frac\pi2 , 1\right)
 =\theta _0\)</span> to <span class="process-math">\(\theta \text{,}\)</span> we get</div>
 <div class="displaymath process-math" id="subsub-WorkEnergy-2-5">
 \begin{align*}
-\int_{\theta=\theta_0}^\theta mg\dx{y}&amp;=\int_{\theta=\theta_0}^\theta mv\dx{v}\\
+\int_{\theta=\theta_0}^\theta mg\dx{y}\amp amp;=\int_{\theta=\theta_0}^\theta mv\dx{v}\\
 mg\left(y(\theta )-y(\theta _0)\right)
-&amp;=\frac12mv^2(\theta)-\frac12 mv^2(\theta _0) 
+\amp amp;=\frac12mv^2(\theta)-\frac12 mv^2(\theta _0) 
 \end{align*}
 </div>
 <div class="para">The left-hand side is called the work done by gravity moving an object from the height <span class="process-math">\(y(\theta _0)\)</span> to the height <span class="process-math">\(y(\theta )\)</span> and the right-hand side is called the change in kinetic energy from the beginning point <span class="process-math">\(\left(x(\theta _0), y(\theta _0)\right) \text{,}\)</span> to the terminal point <span class="process-math">\(\left(x(\theta ),y(\theta )\right) \text{.}\)</span> So, this equation really says that</div>
@@ -1107,13 +1119,14 @@ _0)\right) \)</span> was the amount of work done by gravity moving a mass from a
 <div class="para">Notice that we didn’t put in the pump nor the tube going to the bottom of the pool. This was deliberate.  You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn’t that slab of water ultimately being lifted <span class="process-math">\(6\)</span> meters and not <span class="process-math">\(y\text{?}\)</span>” Actually, if you think about it, the pump only has to lift it the last <span class="process-math">\(y\)</span> meters as gravity will do the work of lifting it the first <span class="process-math">\(6 − y\)</span> meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance <span class="process-math">\(y\text{.}\)</span>  With this in mind, our simple formula for work applies to lifting the slab.</div>
 <div class="displaymath process-math" id="subsub-WorkEnergy-4-5-8">
 \begin{align*}
-\text{work to lift slab}&amp;=\text{weight of slab}\cdot
+\text{work to lift slab}\amp amp;=\text{weight of slab}\cdot
 \text{distance to lift slab}\\
-&amp;=\text{weight density of water}\cdot \text{volume of
+\amp amp;=\text{weight density of water}\cdot \text{volume of
 slab}\cdot \text{distance to lift slab}\\
-&amp;\left(
+\amp amp;=\left(
 9810\frac{\text{newtons}}{\text{meter}^3}\right)(10\cdot 15\cdot
-\dx{y})(y\text{ meters}) 
+\dx{y}\text{meters}^3)(y\text{ meters}) \\
+\amp amp;=1471500y \dx{y}\text{ newton meters}
 \end{align*}
 </div>
 <div class="para">Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:</div>
@@ -1133,7 +1146,7 @@ slab}\cdot \text{distance to lift slab}\\
 <article class="example example-like" id="example-WorkKin3"><h5 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.174</span><span class="period">.</span>
 </h5>
-<div class="para" id="example-WorkKin3-1">Suppose an anchor on a cruise ship weighs <span class="process-math">\(200000\)</span> newtons (approximately <span class="process-math">\(22.4\)</span> US tons) with a chain weighing <span class="process-math">\(3000\)</span> newtons/meter (approximately <span class="process-math">\(205\)</span> lb/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of <span class="process-math">\(20\)</span>  meters to a point <span class="process-math">\(5\)</span> meters above the surface of the water? See the diagram below.</div> <figure class="figure figure-like" id="figure-WorkKin4"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/WorkKin4.png" class="contained"></div>
+<div class="para" id="example-WorkKin3-1">Suppose an anchor on a cruise ship weighs <span class="process-math">\(200000\)</span> newtons (approximately <span class="process-math">\(22.4\)</span> US tons) with a chain weighing <span class="process-math">\(3000\)</span> newtons/meter (approximately <span class="process-math">\(205\)</span> lb/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of <span class="process-math">\(20\)</span> meters below the water line to a point <span class="process-math">\(5\)</span> meters above the surface of the water? See the diagram below.</div> <figure class="figure figure-like" id="figure-WorkKin4"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/WorkKin4.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.175<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="example-WorkKin3-3">We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula <span class="process-math">\(\text{work}=\text{force}\cdot
 \text{distance}\text{.}\)</span> This actually works fine for the anchor as the force is the weight of the anchor and the distance is <span class="process-math">\(25\)</span> meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.</div> <figure class="figure figure-like" id="figure-WorkKin5"><div class="image-box" style="width: 10%; margin-left: 45%; margin-right: 45%;"><img src="external/WorkKin5.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.176<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="exercise exercise-like" id="exercise-WorkKin3"><h5 class="heading">
@@ -1150,8 +1163,8 @@ slab}\cdot \text{distance to lift slab}\\
 <div class="displaymath process-math" id="subsub-WorkEnergy-12-1">
 \begin{align*}
 \text{work to raise the anchor and chain from } x \text{ to }
-\dx{x}&amp;=\text{force}\cdot \text{distance}\\
-&amp;=\left(200000+3000(25-x)\right) \cdot \dx{x}
+\dx{x}\amp amp;=\text{force}\cdot \text{distance}\\
+\amp amp;=\left(200000+3000(25-x)\right) \cdot \dx{x}
 \end{align*}
 </div>
 </div>
@@ -1159,11 +1172,414 @@ slab}\cdot \text{distance to lift slab}\\
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.179</span><span class="period">.</span>
 </h5>
 <div class="para" id="exercise-WorkKin7-1-1"> Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)</div></article><div class="para" id="subsub-WorkEnergy-14">As we said the above could be done either way, but consider this following variation.</div>
-<aside class="aside aside-like" id="subsub-WorkEnergy-15"><h5 class="heading"><span class="title">Note to self.</span></h5>
-<div class="para" id="subsub-WorkEnergy-15-2">Ideas for more problems here</div>
-<div class="para" id="subsub-WorkEnergy-15-3">(1) Raise Bucket losing water.</div>
-<div class="para" id="subsub-WorkEnergy-15-4">KE of disk and spin casting.</div>
-<div class="para" id="subsub-WorkEnergy-15-5">Improper integral for length of upper semi circle. Improper integral for escape velocity</div></aside></section></section></section></div>
+<article class="exercise exercise-like" id="exercise-Bucket1"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.180</span><span class="period">.</span>
+</h5>
+<div class="para" id="exercise-Bucket1-1-1"> A bucket that weighs <span class="process-math">\(15\)</span> newtons is being hauled up <span class="process-math">\(20\)</span> meters with a rope that weighs <span class="process-math">\(2\)</span> newtons per meter at a constant speed of <span class="process-math">\(1\)</span> meter/second.  Initially, the bucket is filled with <span class="process-math">\(150\)</span> newtons of water which is leaking out at a rate of <span class="process-math">\(3\)</span> newtons per second.  How much work is done?</div></article><div class="para" id="subsub-WorkEnergy-16">Since the weight of the water in the bucket is changing over time (unlike the anchor), it probably makes more sense to try to our second approach which is to determine the work required to lift the bucket water and rope from a distance <span class="process-math">\(x\)</span> to a distance <span class="process-math">\(x+dx\text{.}\)</span>  We can then integrate these small amounts of work to obtain the total work.</div>
+<article class="exercise exercise-like" id="exercise-Bucket2"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.181</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="exercise-Bucket2-1"><div class="para" id="exercise-Bucket2-1-1"></div></div>
+<article class="task exercise-like" id="exercise-Bucket2-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para logical" id="exercise-Bucket2-2-1-1">
+<div class="para">Use this analysis to show that the work to raise everything from a distance <span class="process-math">\(x\)</span> to a distance <span class="process-math">\(x+dx\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(205-5x\right)\dx{x}.
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="exercise-Bucket2-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="exercise-Bucket2-3-1-1">Integrate this to determine how much work it takes to raise all of this the entire <span class="process-math">\(20\)</span> meters.</div></article><article class="task exercise-like" id="exercise-Bucket2-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="exercise-Bucket2-4-1-1">What would the work be if the water was leaking out at a rate of <span class="process-math">\(10\)</span> newtons per second (so the bucket is empty before it reaches the top)?</div></article></article><div class="para" id="subsub-WorkEnergy-18">Now that we have a handle on work, let’s come back to kinetic energy.  Let’s begin by generalizing what we had done in the tautochrone problem.</div>
+<article class="exercise exercise-like" id="EXERCISEMassOnACurve"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.182</span><span class="period">.</span>
+</h5>
+<div class="para" id="EXERCISEMassOnACurve-1-1"> Suppose we have a (tangential) force <span class="process-math">\(F\)</span> moving a mass <span class="process-math">\(m\)</span> moving along a curve <span class="process-math">\(C\)</span> from point <span class="process-math">\(A\)</span> to point <span class="process-math">\(B\text{.}\)</span>  Let <span class="process-math">\(P\)</span> denote a generic point on the curve.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/MassOnCurve1.png" class="contained"></div> <div class="para logical" id="EXERCISEMassOnACurve-1-3">
+<div class="para">Let <span class="process-math">\(s\)</span> denote arc length from point <span class="process-math">\(A\)</span> to <span class="process-math">\(P\)</span> and <span class="process-math">\(v=\frac{ds}{dt}\)</span> represent velocity (speed) and <span class="process-math">\(a=\frac{dv}{dt}=\frac{d^2s}{dt^2}\)</span> (tangential) acceleration.  We have that the work <span class="process-math">\(w\)</span> done by <span class="process-math">\(F\)</span> to move the mass from <span class="process-math">\(P=A\)</span> to <span class="process-math">\(P=B\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+w=\int^B_{P=A}{F\ ds}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="EXERCISEMassOnACurve-1-4">
+<div class="para">Using Newton’s Second Law which states that force <span class="process-math">\(F=ma=m\left(\frac{dv}{dt}\right)\text{,}\)</span> show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+w=\ftceval{\frac{1}{2}mv^2}{P=A}{B}
+\end{equation*}
+</div>
+</div> <aside class="aside aside-like" id="EXERCISEMassOnACurve-1-5"><div class="para logical" id="EXERCISEMassOnACurve-1-5-1">
+<div class="para">The quantity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2}mv^2
+\end{equation*}
+</div>
+<div class="para">is called the kinetic energy of the object (at time <span class="process-math">\(t\)</span>) and is measured in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+kg\cdot {\left(\frac{\text{meter}}{\text{second}}\right)}^2=\left(\text{kg}\cdot \frac{\text{meters}}{\text{second}^2}\right)\text{meters}=\text{newton meters}.
+\end{equation*}
+</div>
+</div></aside></article><div class="para" id="subsub-WorkEnergy-20">As we said before, the above can be stated as work<span class="process-math">\(=\)</span>change in kinetic\ energy.  It turns out that utilizing the notion of kinetic energy can be a useful tool in determining the work involved in completing a task.  For example, recall from <span class="booktitle">Differential Calculus: From Practice to Theory</span>&gt; that the Richard F. Caris Mirror Laboratory uses spin casting to cast large parabolic mirrors for refractive telescopes.  They load glass into a revolving furnace. When the glass liquifies, the spinning makes the middle go down and the sides go up.  In that book there was a problem which showed that the surface generated would be a parabola.  As you can see from these photos, this an exceptionally large furnace and the mirrors it produces are large as well (up to somewhere around 16 tons each).</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/SpinCast1.png" class="contained"></div>
+<div class="para" id="subsub-WorkEnergy-22">A question is how long it takes for the furnace to rotate from a standing start to the proper speed.  This is where the notion of kinetic energy comes in handy.  To begin the process, they load chucks of borosilicate glass which has a density of <span class="process-math">\(2230\frac{kg}{m^3}\)</span> into the furnace (over a honeycomb substrate) and start spinning the furnace.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/SpinCast2.png" class="contained"></div>
+<div class="para" id="subsub-WorkEnergy-24">For simplicity, we will ignore the substrate and actual furnace itself and let’s assume that the glass is a solid disk which measures <span class="process-math">\(4
+\text{meters}\)</span>in radius and is <span class="process-math">\(10 \text{cm}\)</span> thick.</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/SpinCast3.png" class="contained"></div>
+<div class="para logical" id="subsub-WorkEnergy-26">
+<div class="para">To compute the kinetic energy of this disk spinning at a rate of <span class="process-math">\(2\frac{\text{revolutions}}{\text{second}}\)</span> we would like to utilize our simple formula</div>
+<div class="displaymath process-math" id="KineticEnergy">
+\begin{equation}
+\text{kinetic energy}=\frac{1}{2}\left(\text{mass}\right){\left(\text{velocity}\right)}^2\tag{2.18}
+\end{equation}
+</div>
+</div>
+<div class="para" id="subsub-WorkEnergy-27">The mass is no problem as we know the density and the volume of the disk.  The problem is the velocity.  We know the angular velocity, which is constant, but in our formula for kinetic energy, we are talking about linear velocity which increases as you move away from the axis of rotation.  This is where our plan of dividing the solid into parts where we can apply our simple formula applies. Specifically, consider the following cylindrical ring in our disk.  As with volumes utilizing cylindrical shells, we will draw a cutaway view.</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/SpinCast4.png" class="contained"></div>
+<div class="para" id="subsub-WorkEnergy-29">Notice that all the points in the cylindrical shell are moving at the same linear speed, so we can apply <a href="" class="xref" data-knowl="./knowl/xref/KineticEnergy.html" title="Equation 2.18">Formula (2.18)</a>  to the shell.</div>
+<article class="exercise exercise-like" id="EXERCISEKinEnergySpinCast"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.183</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="EXERCISEKinEnergySpinCast-1"><div class="para" id="EXERCISEKinEnergySpinCast-1-1"></div></div>
+<article class="task exercise-like" id="EXERCISEKinEnergySpinCast-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para logical" id="EXERCISEKinEnergySpinCast-2-1-1">
+<div class="para">Show that the kinetic energy of the shell is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3568{\pi }^3r^3dr \text{newton meters}
+\end{equation*}
+</div>
+<div class="para">Integrate this to determine the kinetic energy of the entire disk as it rotates at <span class="process-math">\(2\frac{\text{revoutions}}{\text{second}}\text{.}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="EXERCISEKinEnergySpinCast-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="EXERCISEKinEnergySpinCast-3-1-1">Suppose you have a 100-horsepower motor that produces <span class="process-math">\(73505\ \frac{\text{newton}\text{
+meters}}{\text{second}}\)</span> of power.  How long will it take for this motor to accelerate the disk from rest to <span class="process-math">\(2\frac{\text{revolutions}}{\text{second}}\text{?}\)</span>
+</div></article></article></section><section class="subsubsection" id="SUBSUBSECTIONEscapeVel"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.9.6.3</span><span class="space"> </span><span class="title">Escape Velocity and Improper Integrals</span>
+</h4>
+<div class="para" id="SUBSUBSECTIONEscapeVel-2">Many people have heard the term ``escape velocity’.  A quick look on the internet says that the escape velocity from the surface of the earth is approximately 11.2 km/second or about 33 times the speed of sound.  What does this mean and where did such a number come from?  The key is our discovery that work can be obtained by looking at the change in kinetic energy.  This also affords us a chance to delve into a new topic: improper integrals.</div>
+<div class="para" id="SUBSUBSECTIONEscapeVel-3">First, we all know that if you throw a ball into the air, then it will go up and come back down.  We actually showed in \textit{Differential Calculus: Practice Before Theory }that, ignoring air resistance, if you throw a ball up with an initial velocity of <span class="process-math">\(v_0\frac{meters}{second}\text{,}\)</span> then the maximum height the ball attains is <span class="process-math">\(\frac{v^2_0}{2g}\)</span> where <span class="process-math">\(g\)</span> is the acceleration due to gravity (which we presumed was constantly equal to <span class="process-math">\(9.8\frac{meters}{second^2}\)</span>).  We noted that this formula said that if we double the initial velocity, then the ball will go 4 times as high, triple it it will go 9 times as high, etc.  Is it possible to throw the ball up so fast that it never comes back down.  The answer would be no if the acceleration due to gravity remained constant at all altitudes, which is what we assumed in the original problem.  This works fine near the surface of the earth, but is not reasonable at higher and higher altitudes.  In fact, Newton’s Law of Gravitation states that the magnitude of force of gravity between two objects of masses <span class="process-math">\(m\)</span> and <span class="process-math">\(M\)</span> is given by <span class="process-math">\(\frac{GmM}{r^2}\)</span> where <span class="process-math">\(g\)</span> is a constant referred to as the universal gravitational constant and <span class="process-math">\(r\)</span> is the distance between the centers of mass of the two objects.  For objects near the surface of the earth, <span class="process-math">\(r\)</span> was so close to constant that we assumed it to be.  This is not the case for our projectile being propelled into outer space.  Surprisingly, the a amount of work that it takes to perform this task is finite and this is where escape velocity comes in.</div>
+<div class="para" id="SUBSUBSECTIONEscapeVel-4">If we had an unlimited power supply, then we could rise at whatever rate we wanted and still keep rising indefinitely.  Unfortunately, as with throwing a ball into the air, we can only impart an initial velocity and hope it is fast enough to overcome gravity indefinitely.  We have the means to deal with this.</div>
+<div class="para logical" id="SUBSUBSECTIONEscapeVel-5">
+<div class="para">The key is remembering that the work done by a force <span class="process-math">\(F\)</span> moving a mass <span class="process-math">\(m\)</span> along a straight line from point <span class="process-math">\(x=a\)</span> to point <span class="process-math">\(x=b\)</span> is equal to the change in kinetic energy.  In symbols it is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{work} = \ftceval{\frac12mv^2}{x=a}{b}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SUBSUBSECTIONEscapeVel-6">However, this was not the definition of work as work was simply <span class="process-math">\(force\cdot distance\text{.}\)</span>  We utilized calculus in case the force was not constant</div>
+<article class="exercise exercise-like" id="EXERCISEEscapeVelocity1"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.184</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="EXERCISEEscapeVelocity1-1-1">
+<div class="para"> Consider an object of mass <span class="process-math">\(m\)</span> being launched from the surface of a planet with mass <span class="process-math">\(M\)</span> and radius <span class="process-math">\(R\text{.}\)</span>  As we said, Newton’s Law of Gravitation states that the force due to gravity is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\frac{GmM}{r^2}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="EXERCISEEscapeVelocity1-1-2">
+<div class="para">where <span class="process-math">\(G\)</span> is the universal gravitational constant and <span class="process-math">\(r\)</span> is the distance between the centers of mass of the two objects.   Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of <span class="process-math">\(B&gt;R\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+GmM\left(\frac{1}{B}-\frac{1}{R}\right)
+\end{equation*}
+</div>
+</div> <aside class="aside aside-like" id="EXERCISEEscapeVelocity1-1-3"><h6 class="heading"><span class="title">Comment.</span></h6>
+<div class="para" id="EXERCISEEscapeVelocity1-1-3-2">It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive <span class="process-math">\(r\)</span> axis points away from the planet so the force is negative.</div></aside> <div class="para logical" id="EXERCISEEscapeVelocity1-1-4">
+<div class="para">If we take</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{B} {\infty} {GmM\left(\frac{1}{B}-\frac{1}{R}\right)}=-\frac{GmM}{R}.
+\end{equation*}
+</div>
+<div class="para">then this will represent the amount of work done by gravity moving a mass from the surface of the planet ``to infinity.’’ In other words, the amount of work (and energy) it takes to propel the object so it doesn’t come back is finite.</div>
+</div></article><article class="exercise exercise-like" id="EXERCISEEscapeVelocity2"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.185</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="EXERCISEEscapeVelocity2-1"><div class="para" id="EXERCISEEscapeVelocity2-1-1"> Assume that the original velocity of the mass is <span class="process-math">\(v_0\)</span> and that the velocity “at infinity” will be 0.</div></div>
+<article class="task exercise-like" id="EXERCISEEscapeVelocity2-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para logical" id="EXERCISEEscapeVelocity2-2-1-1">
+<div class="para">Use the result of <a href="" class="xref" data-knowl="./knowl/xref/EXERCISEEscapeVelocity1.html" title="Problem 2.184">Problem 2.184</a> and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXERCISEEscapeVelocity1.html">
+\begin{equation*}
+v_0=\sqrt{\frac{2GM}{R}}
+\end{equation*}
+</div>
+<div class="para">Notice that the escape velocity is independent of the mass of the projectile <span class="process-math">\(m\text{.}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="EXERCISEEscapeVelocity2-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para logical" id="EXERCISEEscapeVelocity2-3-1-1">
+<div class="para">Suppose that the acceleration due to gravity on the surface of the planet is given by <span class="process-math">\(-g\text{.}\)</span>  Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v_0=\sqrt{2gR}
+\end{equation*}
+</div>
+</div> <div class="para" id="EXERCISEEscapeVelocity2-3-1-2">Use the fact that for the earth <span class="process-math">\(g=9.8\frac{meters}{second}\)</span> and <span class="process-math">\(R=6,378,100\)</span> meters to check the earlier claim that the escape velocity from the surface of the earth is approximately <span class="process-math">\(11.2\frac{km}{second}\text{.}\)</span>
+</div></article><article class="task exercise-like" id="EXERCISEEscapeVelocity2-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="EXERCISEEscapeVelocity2-4-1-1">Assuming the radius of the moon is approximately <span class="process-math">\(\frac{1}{4}\)</span> that of the earth and the acceleration due to gravity is about <span class="process-math">\(\frac{1}{6}\)</span> that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?</div></article></article><div class="para logical" id="SUBSUBSECTIONEscapeVel-9">
+<div class="para">
+<a href="" class="xref" data-knowl="./knowl/xref/EXERCISEEscapeVelocity2.html" title="Problem 2.185">Problem 2.185</a> shows that the work to launch a projectile from the surface of a planet ``to infinity’’ is given by <span class="process-math">\({\mathop{\mathrm{lim}}_{B\to \infty }
+\int^B_{r=R}{-\frac{GmM}{r^2}\ dr}\ }\text{.}\)</span>  This prompts a new name and notation.  The notation is <span class="process-math">\(\int^{\infty }_{r=R}{-\frac{GmM}{r^2}\
+dr}\)</span> and this is called an \textit{improper integral}.  The improper comes from the fact that a proper definite integral should be defined on a closed bounded interval.  In general, we that the improper integral <span class="process-math">\(\int^{\infty }_{x=a}{f\left(x\right)dx}\)</span> converges if <span class="process-math">\({\mathop{\mathrm{lim}}_{B\to \infty }
+\int^B_{x=a}{f\left(x\right)dx}\ }\)</span> exists and we say that it is equal to that value.  In the above problem, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXERCISEEscapeVelocity2.html">
+\begin{equation*}
+\int^{\infty
+}_{r=R}{-\frac{GmM}{r^2}\ dr}={\mathop{\mathrm{lim}}_{B\to \infty }
+\int^B_{r=R}{-\frac{GmM}{r^2}\ dr}\ }={\mathop{\mathrm{lim}}_{B\to
+\infty } GmM\left(\frac{1}{B}-\frac{1}{R}\right)\ }=-\frac{GmM}{R}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SUBSUBSECTIONEscapeVel-10">Notice that to compute this improper integral, we had to first compute a proper definite integral from <span class="process-math">\(R\)</span> to <span class="process-math">\(B\)</span> and then take the limit of this as <span class="process-math">\(B\to \infty \text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="EXERCISEDefineConvIndInt"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.186</span><span class="period">.</span><span class="space"> </span><span class="title">Convergence of an Improper Integral.</span>
+</h5>
+<div class="para" id="EXERCISEDefineConvIndInt-2-1"> Define what we mean for improper integral <span class="process-math">\(\int^a_{x=-\infty }{f\left(x\right)dx}\ \)</span>to converge and what its value would be.</div></article><div class="para" id="SUBSUBSECTIONEscapeVel-12">You may find it surprising that an improper integral from <span class="process-math">\(r=R\)</span> to <span class="process-math">\(\infty \)</span> could have a real-world application such as escape velocity. Actually, there is an example of an improper integral of the form <span class="process-math">\(\int^a_{x=-\infty }{f\left(x\right)dx}\)</span> which has an application a little closer to home.  No doubt you have heard of a bell-shaped curve or perhaps have been in a statistics course that talks about <span class="process-math">\(z\)</span> values.  What does any of this mean and what does it have to do with improper integrals?</div>
+<div class="para" id="SUBSUBSECTIONEscapeVel-13">First, the bell-shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss to look at the probability that a measurement should deviate from the actual mean of a population.  The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels.  Specifically, a normal distribution with a mean of <span class="process-math">\(\mu \)</span> and a standard deviation of <span class="process-math">\(\sigma \)</span> has the equation <span class="process-math">\(f\left(x\right)=\frac{1}{\sigma \sqrt{2\pi
+}}e^{-\frac{1}{2}{\left(\frac{x-\mu }{\sigma }\right)}^2}\)</span> as its probability density function.  The fact that it is called a bell-shaped curve can be seen in the following graph.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/BellCurve.png" class="contained"></div>
+<div class="para logical" id="SUBSUBSECTIONEscapeVel-15">
+<div class="para">This is called the probability density function because the probability that the random variable <span class="process-math">\(X\)</span> takes on a value less than or equal to <span class="process-math">\(a\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{\sigma \sqrt{2\pi }}\int^a_{x=-\infty }{e^{-\frac{1}{2}{\left(\frac{x-\mu }{\sigma }\right)}^2}dx{x}}
+\end{equation*}
+</div>
+<div class="para">which is the area of the shaded region above.  It is not easy to see, but Gauss cleverly showed that the area under this entire curve is exactly one, which is a requirement to be a probability density function. Of course, the values of <span class="process-math">\(\mu \)</span> and <span class="process-math">\(\sigma \)</span> will affect the shape of the graph as seen below.</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/SeveralBellCurves.png" class="contained"></div>
+<div class="para logical" id="SUBSUBSECTIONEscapeVel-17">
+<div class="para">Of particular importance is the red curve where the mean <span class="process-math">\(\mu =0\)</span> and the standard deviation<span class="process-math">\(\ \sigma =1\text{.}\)</span>  Any random variable <span class="process-math">\(Z\)</span> which has a normal distribution with probability density function <span class="process-math">\(f\left(z\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{z^2}{2}}\)</span> is said to have a standard normal distribution and a result from probability theory says that if the random variable <span class="process-math">\(X\)</span> is normally distributed with mean <span class="process-math">\(\mu \)</span> and standard deviation <span class="process-math">\(\sigma \text{,}\)</span> then <span class="process-math">\(Z=\frac{X-\mu }{\sigma }\)</span> will have a standard normal distribution.  We’ve said a lot here in the way of theory, so let’s provide a concrete example.  It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean <span class="process-math">\(\mu =100\)</span> and standard deviation <span class="process-math">\(\sigma =15\text{.}\)</span>  It is also widely accepted that someone with an IQ of 140 or above is in the genius range.  Suppose we chose someone at random.  If we want to compute the probability that this person’s IQ is less than or equal to 140, then mathematically, we want to compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Prob\left(X\le 140\right)=\frac{1}{15\sqrt{2\pi }}\int^{140}_{x=-\infty }{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}dx
+\end{equation*}
+</div>
+<div class="para">Unfortunately, none of our integration techniques will compute this integral exactly.  In fact, there are no integration techniques that will do this.  Let’s do what any person would do and see what the internet says.  If we type this into a computer algebra system, we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{15\sqrt{2\pi }}\int^{140}_{x=-\infty }{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}dx\approx .99617
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="SUBSUBSECTIONEscapeVel-18">
+<div class="para">We will get into approximating techniques later, but for now let’s talk about <span class="process-math">\(z\)</span> scores and <span class="process-math">\(z\)</span> tables.  To compute the <span class="process-math">\(z\)</span> score of the above IQ of 140, books and websites will say to compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z=\frac{140-100}{15}=\frac{8}{3}
+\end{equation*}
+</div>
+<div class="para">In the old days, one would then look on a <span class="process-math">\(Z\)</span> table and arrive at the approximation <span class="process-math">\(.9961\text{.}\)</span>  Now you would input this <span class="process-math">\(z\)</span> score in an appropriate piece of software and obtain the same result.  Why are you doing this?  The following problem might shed some light</div>
+</div>
+<article class="exercise exercise-like" id="EXERCISEErrorFunction1"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.187</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="EXERCISEErrorFunction1-1-1">
+<div class="para"> Perform the substitution <span class="process-math">\(z=\frac{x-100}{15}\)</span> to <span class="process-math">\(\frac{1}{15\sqrt{2\pi }}\int^{140}_{x=-\infty }{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}dx\)</span> to obtain \noindent</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz
+\end{equation*}
+</div>
+</div></article><div class="para" id="SUBSUBSECTIONEscapeVel-20">This is what the approximation <span class="process-math">\(.9961\)</span> represents in the old <span class="process-math">\(z\)</span> tables and in the statistical software.  Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for <span class="process-math">\(\frac{1}{\sqrt{2\pi }}\int^a_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz\text{.}\)</span>  It is expected that a person uses the above substitution to compute a <span class="process-math">\(z\)</span> score and the table provides the approximation for the integral of the standard normal distribution.</div>
+<article class="exercise exercise-like" id="EXERCISEWolframAlpha1"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.188</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="EXERCISEWolframAlpha1-1"><div class="para logical" id="EXERCISEWolframAlpha1-1-1">
+<div class="para"> Actually, Wolfram Alpha provides the following output</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\mathrm{erf} \left(\frac{4\sqrt{2}}{3}\right)\ }+1\right)\approx .99617
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathrm{erf} \left(a\right)\ }=\frac{2}{\sqrt{\pi }}\int^a_{t=0}{e^{-t^2}\ dt}
+\end{equation*}
+</div>
+<div class="para">The name <dfn class="terminology">erf</dfn> is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.</div>
+</div></div>
+<article class="task exercise-like" id="EXERCISEWolframAlpha1-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para logical" id="EXERCISEWolframAlpha1-2-1-1">
+<div class="para">Use the substitution <span class="process-math">\(z=\sqrt{2}\ t\)</span> to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{\sqrt{2\pi }}\int^a_{z=0}{e^{-\frac{1}{2}z^2}}dz=\frac{1}{\sqrt{\pi }}\int^{a/\sqrt{2}}_{t=0}{e^{-t^2}}dt
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="EXERCISEWolframAlpha1-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para logical" id="EXERCISEWolframAlpha1-3-1-1">
+<div class="para">Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha’s equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\mathrm{erf} \left(\frac{4\sqrt{2}}{3}\right)\ }+1\right)
+\end{equation*}
+</div>
+<div class="para">is actually correct.</div>
+</div></article></article><div class="para" id="SUBSUBSECTIONEscapeVel-22">Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer.  As we said, we will get to approximation techniques, but before that, let’s look at another type of improper integral.</div></section><section class="subsubsection" id="SUBSUBSECTIONMoreImproperIntegrals"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">2.9.6.4</span><span class="space"> </span><span class="title">More Improper Integrals</span>
+</h4>
+<div class="para" id="SUBSUBSECTIONMoreImproperIntegrals-2">The previous section looked at definite integrals that are improper because they are being integrated on an infinite interval.  There is another type of improper integral that can occur on a finite interval. Furthermore, they can occur in a natural setting.</div>
+<article class="example example-like" id="EXAMPLECircumCircleViaImprInt"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.189</span><span class="period">.</span><span class="space"> </span><span class="title">The Circumference of a Unit Circle, Via an Improper Integral.</span>
+</h5> <div class="para logical" id="EXAMPLECircumCircleViaImprInt-2">
+<div class="para">We know that the circumference of a unit circle is <span class="process-math">\(2\pi \text{.}\)</span>  Thus, the length of a quarter of that circle is <span class="process-math">\(\frac{\pi }{2}\text{.}\)</span>  Suppose we wanted to use calculus to verify this.  The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x={\mathrm{cos} (\theta )\ }\ \ \ y={\mathrm{sin} (\theta )\ }\ ,\ \ \ 0\le \theta \le \frac{\pi }{2}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="EXAMPLECircumCircleViaImprInt-3">
+<div class="para">Thus, the arc length would be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^{\frac{\pi }{2}}_{\theta =0}{ds}=\int^{\frac{\pi }{2}}_{\theta =0}{\sqrt{{\left(dx\right)}^2+{\left(dy\right)}^2}}=\int^{\frac{\pi }{2}}_{\theta =0}{\sqrt{{\left(-{\mathrm{sin} (\theta )\ }\right)}^2+{\left({\mathrm{cos} \left(\theta \right)\ }\right)}^2}}\ d\theta =\int^{\frac{\pi }{2}}_{\theta =0}{1}\ d\theta =\frac{\pi }{2}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="EXAMPLECircumCircleViaImprInt-4">
+<div class="para">Suppose instead, we compute the arc length by using  the equation <span class="process-math">\(y=\sqrt{1-x^2}\ ,\ \ 0\le x\le 1\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^1_{x=0}{\sqrt{\frac{1}{1-x^2}}\ dx}={\left.{{\mathrm{(}\mathrm{sin}}^{\mathrm{-}\mathrm{1}} x\ })\right|}^1_{x=0}=\frac{\pi }{2}
+\end{equation*}
+</div>
+<div class="para">If you don’t see the problem yet, suppose instead I wanted to find the area under the curve <span class="process-math">\(y=\sqrt{\frac{1}{1-x^2}}\)</span>  over the interval <span class="process-math">\([0,1].\)</span> Here is a graph of that region.</div>
+</div> <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/ImpropInt1.png" class="contained"></div> <div class="para logical" id="EXAMPLECircumCircleViaImprInt-6">
+<div class="para">The area of that region would be computed by the same</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^1_{x=0}{\sqrt{\frac{1}{1-x^2}}\ dx}={\left.{{\mathrm{(}\mathrm{sin}}^{\mathrm{-}\mathrm{1}} x\ })\right|}^1_{x=0}=\frac{\pi }{2}
+\end{equation*}
+</div>
+<div class="para">even though the region itself is unbounded.  Before you say ``big deal, it worked’’, consider the area of this region.</div>
+</div> <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/ImpropInt2.png" class="contained"></div> <div class="para logical" id="EXAMPLECircumCircleViaImprInt-8">
+<div class="para">The area of this region would be given by</div>
+<div class="displaymath process-math" id="ImpropInt1">
+\begin{equation}
+\int^1_{x=0}{\frac{1}{1-x}\ dx}\tag{2.19}
+\end{equation}
+</div>
+</div></article><article class="problem example-like" id="PROBLEMImpropInt2"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">2.190</span><span class="period">.</span>
+</h5>
+<div class="para" id="PROBLEMImpropInt2-1">Try to compute the integral in <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMImpropInt2.html" title="Drill 2.190">Formula 2.190</a>. What happens?</div></article><div class="para logical" id="SUBSUBSECTIONMoreImproperIntegrals-5">
+<div class="para">Both integrals are improper because the functions involved are unbounded on the interval <span class="process-math">\([0,1]\text{.}\)</span>  If fact they are not even defined at one of the endpoints of the interval.  The way to handle the first integral is to write it as</div>
+<div class="displaymath process-math" id="SUBSUBSECTIONMoreImproperIntegrals-5-2">
+\begin{align*}
+\int^1_{x=0}{\sqrt{\frac{1}{1-x^2}}
+\dx{x}}\amp amp;=\llimit{B}{1}{\int^B_{x=0}{\sqrt{\frac{1}{1-x^2}}\ \dx{x}}}\\
+\amp amp;=\ftceval{\llimit{B}{1}{\inverse\sin(x)}}{x=0}{B}\\
+\amp amp;=\llimit{B}{1}{\inverse\sin(B)}\\
+\amp amp;=\frac{\pi }{2}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="SUBSUBSECTIONMoreImproperIntegrals-6">
+<div class="para">The same technique can be used for the second integral</div>
+<div class="displaymath process-math" id="SUBSUBSECTIONMoreImproperIntegrals-6-1">
+\begin{align*}
+\int^1_{x=0}{\frac{1}{1-x}
+\dx{x}}\amp amp;=\llimit{B}{1}{\int^1_{x=0}{\frac{1}{1-x}
+\dx{x}}}\\
+\amp amp;=\ftceval{\llimit{B}{1}{\left(-\ln(1-x)\right)}}{x=0}{B}\\
+\amp amp;=\llimit{B}{1}{(\ln(1-x))}\\
+\amp amp;=-\infty
+\end{align*}
+</div>
+<div class="para">This leads to the general idea that if a function <span class="process-math">\(f(x)\)</span> is unbounded at the right endpoint <span class="process-math">\(b\)</span> of an interval <span class="process-math">\([a,b]\)</span> then we can compute the improper integral<span class="process-math">\(\int^b_{x=a}{f\left(x\right)dx}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^b_{x=a}{f(x)} \dx{x}= \llimit{B}{b}{\int_{x=0}^Bf(x)\dx{x}}
+\end{equation*}
+</div>
+<div class="para">provided that limit exists.</div>
+</div>
+<article class="exercise exercise-like" id="EXERCISEImpropInt3"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.191</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="EXERCISEImpropInt3-1"><div class="para" id="EXERCISEImpropInt3-1-1"></div></div>
+<article class="task exercise-like" id="EXERCISEImpropInt3-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="EXERCISEImpropInt3-2-1-1">Suppose <span class="process-math">\(f(x)\)</span> is unbounded at the left endpoint <span class="process-math">\(a\)</span> of the interval <span class="process-math">\([a,b]\text{.}\)</span>  Provide a similar way to compute the improper integral <span class="process-math">\(\int^b_{x=a}{f\left(x\right)dx}\text{.}\)</span>
+</div></article><article class="task exercise-like" id="EXERCISEImpropInt3-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para logical" id="EXERCISEImpropInt3-3-1-1">
+<div class="para">Apply your technique from part (a) to compute the following improper integrals.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^1_{x=0}{\frac{1}{x^2}\dx{x}} \text{ and } \int^1_{x=0}{\frac{1}{x}\dx{x}}
+\end{equation*}
+</div>
+</div></article></article><article class="example example-like" id="EXAMPLETorricellisTrumpet"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.192</span><span class="period">.</span><span class="space"> </span><span class="title">Torricelli’s Trumpet and the Painter’s Paradox.</span>
+</h5> <div class="para" id="EXAMPLETorricellisTrumpet-2">Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus.  The first known results were by Archimedes circa 250 BC.  This predates the first paper of differential calculus (1684 AD) by almost 200 years.  We won’t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes.  They just didn’t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.</div> <div class="para" id="EXAMPLETorricellisTrumpet-3">Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus.  The first known results were by Archimedes circa 250 BC.  This predates the first paper of differential calculus (1684 AD) by almost 200 years.  We won’t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes.  They just didn’t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.</div> <div class="para" id="EXAMPLETorricellisTrumpet-4">One of these predecessors was Evangelista Torricelli (1608-1647).  In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 <i class="foreign">De solido hyperbolico acuto</i>.  In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).</div></article><article class="theorem theorem-like" id="TorriThm"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.193</span><span class="period">.</span>
+</h5>
+<div class="para" id="TorriThm-1">“An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.”</div></article><div class="para logical" id="SUBSUBSECTIONMoreImproperIntegrals-10">
+<div class="para">In more modern terms, Torricelli showed that it we rotate the following function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y\left(x\right)=\left\{ \begin{array}{cc}
+\frac{1}{b} \amp  \text{ if }\ 0\le x\le b \\
+\frac{1}{x} \amp  \text{ if }\ b\le x \end{array}
+\right.
+\end{equation*}
+</div>
+<div class="para">is rotated about the <span class="process-math">\(x\)</span> axis, then the infinitely long solid has a finite volume of <span class="process-math">\(2\pi /b\text{.}\)</span>  Here is picture of what has been dubbed ``Torricelli’s Trumpet’’.</div>
+</div>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/TorriTrumpet.png" class="contained"></div>
+<article class="exercise exercise-like" id="EXERCISETorriTrumpet"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.194</span><span class="period">.</span><span class="space"> </span><span class="title">The Volume of Torricelli’s Trumpet.</span>
+</h5>
+<div class="introduction" id="EXERCISETorriTrumpet-2"><div class="para" id="EXERCISETorriTrumpet-2-1"></div></div>
+<article class="task exercise-like" id="EXERCISETorriTrumpet-3"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="EXERCISETorriTrumpet-3-1-1">Use an improper integral with volumes of disks to obtain Torricelli’s result.  Again it should be noted that Torricelli obtained this before the invention of calculus.</div></article><article class="task exercise-like" id="EXERCISETorriTrumpet-4"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="EXERCISETorriTrumpet-4-1-1">Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.</div></article></article><div class="para" id="SUBSUBSECTIONMoreImproperIntegrals-13">This caused a philosophical debate about the nature of mathematical thinking and understanding of the infinite that persisted into the twentieth century. Even more paradoxical was a later result which showed that the surface area of solid is infinite. This is now called the Painter’s Paradox because we have a solid which holds a finite amount of paint but would require an infinite amount of paint to paint the inside surface!</div>
+<article class="exercise exercise-like" id="EXERCISETorriSurfArea"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.195</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="EXERCISETorriSurfArea-1"><div class="para" id="EXERCISETorriSurfArea-1-1"> Let’s assume that <span class="process-math">\(b=1\)</span> and focus on the curved part of the trumpet generated by revolving <span class="process-math">\(y=\frac{1}{x}, 1\le x\infty \)</span> about the <span class="process-math">\(x\)</span> axis.  We know that the surface area of an infinitely small piece of this is given by <span class="process-math">\(2\pi y\dx{s}\)</span>
+</div></div>
+<article class="task exercise-like" id="EXERCISETorriSurfArea-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para logical" id="EXERCISETorriSurfArea-2-1-1">
+<div class="para">Putting things in terms of <span class="process-math">\(x\text{,}\)</span> show that the surface area is given by the improper integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\pi \int^{\infty }_{x=1}{\frac{1}{x}\sqrt{1+\frac{1}{x^4}}\ dx}
+\end{equation*}
+</div>
+<div class="para">Computing this will not be easy, but notice that this integral is greater than 2𝜋 ∫𝑥=1 𝑑𝑥 (Why?) Use this 𝑥 fact to show that the surface area is infinite.</div>
+</div></article><article class="task exercise-like" id="EXERCISETorriSurfArea-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para logical" id="EXERCISETorriSurfArea-3-1-1">
+<div class="para">Putting the original integral in terms of <span class="process-math">\(y\text{,}\)</span> show that the surface area is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\pi \int^1_{y=0}{\sqrt{\frac{1}{y^2}+y^2}\ dy}
+\end{equation*}
+</div>
+<div class="para">Notice that this is still an improper integral (Why?).  Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.</div>
+</div></article></article><div class="para" id="SUBSUBSECTIONMoreImproperIntegrals-15">Torricelli’s Trumpet also represents a finite volume solid which does not have a center of mass.  We only talked about centers of mass (centroids) of one-dimensional curves and two-dimensional regions.  We can extend the ideas to three-dimensional solids, but instead we will give you a two-dimension region which has a finite area but no center of mass.  The idea for Torricelli’s Trumpet is basically the same.</div>
+<article class="exercise exercise-like" id="EXERCISEFiniteAreaInfiniteMoment"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.196</span><span class="period">.</span>
+</h5>
+<div class="para" id="EXERCISEFiniteAreaInfiniteMoment-1-1"> Consider the region between the curves <span class="process-math">\(y=0\)</span> and <span class="process-math">\(y=\frac{1}{x^2}\text{,}\)</span> for <span class="process-math">\(x\ge 1\text{.}\)</span>  Show that the area of this region is finite but the moment of this region about the <span class="process-math">\(y\)</span> axis (line <span class="process-math">\(x=0)\)</span> is infinite.  How does this say that the region has no centroid?</div></article><div class="para logical" id="SUBSUBSECTIONMoreImproperIntegrals-17">
+<div class="para">Suppose we had the function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y\left(x\right)=\left\{ \begin{array}{cc}
+\frac{1}{x} \amp  \mathrm{if}\ x\neq 0 \\
+0 \amp  \mathrm{if}\ x=0 \end{array}
+\right.
+\end{equation*}
+</div>
+<div class="para">Should <span class="process-math">\(\int^1_{x=-1}{y}\ dx=0\)</span> ?  An argument could be made for either case.  Now you see why these are called improper integrals.  This actually brings into mind the existence of an integral which is a much harder question.  We will kick this can down the road until we get into the theory part.</div>
+</div></section></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="DefIntProp.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Taylor.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

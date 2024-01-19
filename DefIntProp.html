@@ -116,9 +116,18 @@ window.MathJax = {
 \newcommand{\ZZ}{\mathbb {Z}}
 \def\DD{{\bf{}D}}
 
-\def\eval#1#2#3{\left.#1\right|_{#2=#3}}
+
+
+
+
+\def\ftceval#1#2#3{#1\hskip.5ex{\llap{\smash{\rule[-3ex]{0.5pt}{7ex}}}_{\raise{-3ex}{\hskip.5ex#2}}^{\raise{-5ex}{\hskip.5ex #3}}}}
+
+
+
+
+\def\eval#1#2#3{\left.#1\right]_{#2}^{#3}}
 \def\brackeval#1#2#3{\left.#1\right]_{#2=#3}}
-\def\bigeval#1#2#3{\left.\tallstrut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 
 
@@ -163,7 +172,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="FTC.html" class="internal"><span class="codenumber">1</span> <span class="title">Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-2.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculsu</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
@@ -196,6 +205,8 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">2.9.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">2.9.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">2.9.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">2.9.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -247,7 +258,7 @@ window.MathJax = {
 <tr><td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\int_{x=a}^bcf(x)\dx{x}=c\int_{x=a}^bf(x)\dx{x}{}\)</span></td></tr>
 <tr><td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\int_{x=a}^bf(x)\dx{x}=-\int_{x=b}^af(x)\dx{x}{}\)</span></td></tr>
 <tr><td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\int_{x=a}^af(x)\dx{x}=0\)</span></td></tr>
-<tr><td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\int_{x=a}^bf(x)\dx{x}{}=\int_{x=b}^cf(x)\dx{x}{}=\int_{x=a}^cf(x)\dx{x}{}\)</span></td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\int_{x=a}^bf(x)\dx{x}{}=\int_{x=a}^cf(x)\dx{x}+\int_{x=c}^bf(x)\dx{x}\)</span></td></tr>
 </table></div></figure><div class="para" id="DefIntProp-6">These properties are consistent with the rules for indefinite integrals, which is not surprising in light of the Fundamental Theorem of Calculus. That being said, let’s make sense of these properties beyond the fundamental theorem. First and foremost, remember that these integrals are sums of differentials and behave like sums. With this in mind, lets compare the first three properties in the table with their finite sum analogs.</div>
 <figure class="table table-like" id="DefIntProp-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.60<span class="period">.</span></span><span class="space"> </span>A simple table</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
@@ -272,23 +283,23 @@ window.MathJax = {
 </h3> <div class="para logical" id="IntPropExamples-2">
 <div class="displaymath process-math">
 \begin{equation*}
-\int_{x=a}^bx^2\dx{x}=\brackeval{\frac{x^3}{3}}{x}{b}^a=-\left(\frac{b^3}{3}-\frac{a^3}{3}\right)=-\left(\brackeval{\frac{x^3}{3}}{x}{a}^b\right)=-\int_{x=a}^bx^2\dx{x}
+\int_{x=b}^ax^2\dx{x}=\ftceval{\frac{x^3}{3}}{x=b}{a}=-\left(\frac{b^3}{3}-\frac{a^3}{3}\right)=-\left(\ftceval{\frac{x^3}{3}}{x=a}{b}\right)=-\int_{x=a}^bx^2\dx{x}
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int_{x=a}^bx^2\dx{x}=\brackeval{\frac{x^3}{3}}{x}{a}^a=\frac{a^3}{3}-\frac{a^3}{3}=0
+\int_{x=a}^bx^2\dx{x}=\eval{\frac{x^3}{3}}{x=a}{b}=\frac{a^3}{3}-\frac{a^3}{3}=0 
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int_{x=a}^bx^2\dx{x}+\int_{x=b}^cx^2\dx{x}=\brackeval{\frac{x^3}{3}}{x}{a}^b+\brackeval{\frac{x^3}{x}}{x}{b}^c=\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)=\frac{c^3}{3}-\frac{a^3}{3}=\brackeval{\frac{x^3}{3}}{x}{a}^c=\int_{x=a}^cx^2\dx{x}
+\int_{x=a}^bx^2\dx{x}+\int_{x=b}^cx^2\dx{x}=\ftceval{\frac{x^3}{3}}{x=a}{b}+\ftceval{\frac{x^3}{x}}{x=b}{c}=\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)=\frac{c^3}{3}-\frac{a^3}{3}=\ftceval{\frac{x^3}{3}}{x=a}{c}=\int_{x=a}^cx^2\dx{x}
 \end{equation*}
 </div>
 </div></article><div class="para" id="DefIntProp-10">To see that these properties hold geometrically (without the Fundamental Theorem of Calculus), recall that this really is a sum of differentials. Specifically, we have the following diagram illustrating a generic rectangle that we are summing.</div>
 <figure class="figure figure-like" id="DefIntProp-11"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IntGeom.png" class="contained" alt="A geometic representation of integration"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.62<span class="period">.</span></span><span class="space"> </span>A geometic representation of integration</figcaption></figure><div class="para logical" id="DefIntProp-12">
-<div class="para">When we consider <span class="process-math">\(\int_{x=a}^by\dx{x}\)</span> with <span class="process-math">\(a\lt b\text{,}\)</span> then the difference <span class="process-math">\(\dx{x}\)</span> is a positive change. When we consider <span class="process-math">\(\int_{x=a}^b y\dx{x}\text{,}\)</span> then the difference <span class="process-math">\(\dx{x}\)</span> represents a negative change. Hence, we have</div>
+<div class="para">When we consider <span class="process-math">\(\int_{x=b}^ay\dx{x}\)</span> with <span class="process-math">\(a\lt b\text{,}\)</span> then the difference <span class="process-math">\(\dx{x}\)</span> is a positive change. When we consider <span class="process-math">\(\int_{x=b}^a y\dx{x}\text{,}\)</span> then the difference <span class="process-math">\(\dx{x}\)</span> represents a negative change. Hence, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int_{x=b}^ay\dx{x}=-\int_{x=a}^by\dx{x}.
@@ -401,8 +412,8 @@ window.MathJax = {
 <div class="displaymath process-math">
 \begin{equation*}
 \frac12
-\int_{x=2}^3e^z\dx{z} =\eval{\frac12e^z}{x}{2}^3=
-\eval{\frac12e^{x^2}}{x}{2}^3=\frac{1}{2}\left(e^9-e^4\right){}
+\int_{x=2}^3e^z\dx{z} =\ftceval{\frac12e^z}{x=2}{3}=
+\ftceval{\frac12e^{x^2}}{x=2}{3}=\frac{1}{2}\left(e^9-e^4\right){}
 \end{equation*}
 </div>
 </div> <div class="para logical" id="DefIntProp-22-2">
@@ -410,8 +421,8 @@ window.MathJax = {
 <div class="displaymath process-math">
 \begin{equation*}
 \frac12
-\int_{x=2}^3e^z\dx{z} =\eval{\frac12e^z}{z}{4}^9=
-\eval{\frac12e^z}{z}{4}^9=\frac{1}{2}\left(e^9-e^4\right){}
+\int_{x=2}^3e^z\dx{z} =\ftceval{\frac12e^z}{z=4}{9}=
+\ftceval{\frac12e^z}{z=4}{9}=\frac{1}{2}\left(e^9-e^4\right){}
 \end{equation*}
 </div>
 <div class="para">Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an <span class="process-math">\(x\)</span> limit for <span class="process-math">\(z\)</span> or vice versa.</div>
@@ -429,18 +440,18 @@ window.MathJax = {
 x\)</span> and <span class="process-math">\(\dx{v} = \sin( x) \dx{x} \text{,}\)</span> then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IntegrationByParts.html" id="DefIntProp-23-1-4">
 \begin{align*}
-y &amp; =x      &amp; \dx{v} &amp; =\sin(x)\dx{x} \\
-\dx{u}&amp; =\dx{x} &amp; v      &amp; =-\cos(x)      
+y \amp amp; =x      \amp amp; \dx{v} \amp amp; =\sin(x)\dx{x} \\
+\dx{u}\amp amp; =\dx{x} \amp amp; v      \amp amp; =-\cos(x)      
 \end{align*}
 </div>
 <div class="para">Using the <a href="" class="xref" data-knowl="./knowl/xref/IntegrationByParts.html" title="Theorem 2.15: Integration by Parts Formula">integration by parts formula 2.15</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IntegrationByParts.html" id="DefIntProp-23-1-6">
 \begin{align*}
-\int_{x=0}^\pi x\sin(x) \dx{x} &amp;{}=\eval{-x\cos(x)}{x}{0}^\pi
+\int_{x=0}^\pi x\sin(x) \dx{x} \amp amp;{}=\ftceval{-x\cos(x)}{x=0}{\pi}
 - \int_{x=0}^\pi \cos(x)\dx{x}\\
-&amp;{}=\left( -\pi \cos(\pi) +0\cos(0)\right)-\brackeval{\sin(x)}{x}{0}^{-\pi}\\
-&amp;=(\pi +0)-(0-0)\\
-&amp;=\pi. 
+\amp amp;{}=\left( -\pi \cos(\pi) +0\cos(0)\right)-\brackeval{\sin(x)}{x}{0}^{-\pi}\\
+\amp amp;=(\pi +0)-(0-0)\\
+\amp amp;=\pi. 
 \end{align*}
 </div>
 </div></article><article class="exercise exercise-like" id="DefIntProp-24"><h3 class="heading">
@@ -467,7 +478,7 @@ y &amp; =x      &amp; \dx{v} &amp; =\sin(x)\dx{x} \\
 </div>
 <div class="para">Use the substitution <span class="process-math">\(z=-x\)</span> in the integral on the left.</div>
 </div></div></details></div></article><article class="task exercise-like" id="DefIntProp-24-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="DefIntProp-24-3-1">Suppose that <span class="process-math">\(y=y(x)\)</span> has the property <span class="process-math">\(y(-x)=-y(x)\text{.}\)</span> Thus <span class="process-math">\((x,y)\)</span> is on the curve of this function exactly when <span class="process-math">\((-x,-y(\)</span> is on the curve. What would such a curve look like?</div>
+<div class="para" id="DefIntProp-24-3-1">Suppose that <span class="process-math">\(y=y(x)\)</span> has the property <span class="process-math">\(y(-x)=-y(x)\text{.}\)</span> Thus <span class="process-math">\((x,y)\)</span> is on the curve of this function exactly when <span class="process-math">\((-x,-y)\)</span> is on the curve. What would such a curve look like?</div>
 <div class="para logical" id="DefIntProp-24-3-2">
 <div class="para">Show that in this case</div>
 <div class="displaymath process-math">
@@ -494,11 +505,11 @@ a_3\cos(3t) +b_3\sin(3t) + \cdots
 <div class="para">then</div>
 <div class="displaymath process-math" id="FourierSeriesProb-2-4-5">
 \begin{align*}
-a_0&amp;=\frac{1}{2\pi} \int_{t=-\pi }^\pi f(t)\cos(0t)
+a_0\amp amp;=\frac{1}{2\pi} \int_{t=-\pi }^\pi f(t)\cos(0t)
 \dx{t}=\frac{1}{2\pi}\int_{t=-\pi}^\pi f(t)\dx{t}\\
-a_n&amp;=\frac1\pi\int_{-\pi }^\pi f(t)\cos(nt)\dx{t}, \text{ if }
+a_n\amp amp;=\frac1\pi\int_{-\pi }^\pi f(t)\cos(nt)\dx{t}, \text{ if }
 n\ge 1\\
-b_n&amp;=\frac1\pi\int_{-\pi }^\pi f(t)\sin(nt)\dx{t}, \text{ if }
+b_n\amp amp;=\frac1\pi\int_{-\pi }^\pi f(t)\sin(nt)\dx{t}, \text{ if }
 n\ge 1
 \end{align*}
 </div>

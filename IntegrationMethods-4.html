@@ -116,9 +116,18 @@ window.MathJax = {
 \newcommand{\ZZ}{\mathbb {Z}}
 \def\DD{{\bf{}D}}
 
-\def\eval#1#2#3{\left.#1\right|_{#2=#3}}
+
+
+
+
+\def\ftceval#1#2#3{#1\hskip.5ex{\llap{\smash{\rule[-3ex]{0.5pt}{7ex}}}_{\raise{-3ex}{\hskip.5ex#2}}^{\raise{-5ex}{\hskip.5ex #3}}}}
+
+
+
+
+\def\eval#1#2#3{\left.#1\right]_{#2}^{#3}}
 \def\brackeval#1#2#3{\left.#1\right]_{#2=#3}}
-\def\bigeval#1#2#3{\left.\tallstrut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 
 
@@ -163,7 +172,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="FTC.html" class="internal"><span class="codenumber">1</span> <span class="title">Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-2.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculsu</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
@@ -196,6 +205,8 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">2.9.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">2.9.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">2.9.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">2.9.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -285,12 +296,12 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 <div class="para">Thus</div>
 <div class="displaymath process-math" id="IntegrationMethods-4-8-1">
 \begin{align*}
-\int\tan(x)\dx{x} = \int\frac{\sin(x)}{\cos(x)}\dx{x}&amp;=\int\frac{\sin(x)}{z}\cdot\frac{-\dx{z}}{\sin(x)}\\
-&amp;=-\int\frac{\dx{z}}{z}\\
-&amp;=-\ln(z)+c\\
-&amp;=(-1)\ln(\cos(x))+c\\
-&amp;=\ln\left((\cos(x))^{-1}\right)+c\\
-&amp;=\ln\left(\sec(x)\right)+c
+\int\tan(x)\dx{x} = \int\frac{\sin(x)}{\cos(x)}\dx{x}\amp amp;=\int\frac{\sin(x)}{z}\cdot\frac{-\dx{z}}{\sin(x)}\\
+\amp amp;=-\int\frac{\dx{z}}{z}\\
+\amp amp;=-\ln(z)+c\\
+\amp amp;=(-1)\ln(\cos(x))+c\\
+\amp amp;=\ln\left((\cos(x))^{-1}\right)+c\\
+\amp amp;=\ln\left(\sec(x)\right)+c
 \end{align*}
 </div>
 </div>
@@ -313,8 +324,8 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/BadTanInt1.html" id="IntegrationMethods-4-13-4">
 \begin{align}
 \int\tan(x)\dx{x} =
-\int\frac{\sin(x)}{\cos(x)}\dx{x}&amp;=\int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right)\notag\\
-&amp;=\int\frac{u}{1-u^2}\dx{u}\tag{2.2}
+\int\frac{\sin(x)}{\cos(x)}\dx{x}\amp amp;=\int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right)\notag\\
+\amp amp;=\int\frac{u}{1-u^2}\dx{u}\tag{2.2}
 \end{align}
 </div>
 <div class="para">which is nearly the same, formally, as <a href="" class="xref" data-knowl="./knowl/xref/BadTanInt1.html" title="Equation 2.1">equation (2.1)</a>. The only difference seems  to be that the “<span class="process-math">\(+\)</span>” in the denominator became a “<span class="process-math">\(-\text{.}\)</span>”</div>
@@ -409,17 +420,17 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
 <div class="para">Notice that we can bring the <span class="process-math">\(1/2\)</span> outside the integral because it is a constant, but since  <span class="process-math">\(\frac{1}{x}\)</span> is not a constant (it depends on <span class="process-math">\(u\)</span>) we cannot do the same with with it. We could rewrite <span class="process-math">\(x = \sqrt{u}\)</span> , so that</div>
 <div class="displaymath process-math" id="IntegrationMethods-4-20-1-9">
 \begin{align*}
-\int x^2\sqrt{x^3+1}\dx{x} = \frac12\int\frac{u\sqrt{u^{3/2}}}{\sqrt{u}}\dx{u} &amp;= \frac12 \int\sqrt{u}\sqrt{x^{3/2}+1}\dx{u}\\
-&amp;=\frac12\int\sqrt{u^{5/2}+u}\dx{u}.
+\int x^2\sqrt{x^3+1}\dx{x} = \frac12\int\frac{u\sqrt{u^{3/2}}}{\sqrt{u}}\dx{u} \amp amp;= \frac12 \int\sqrt{u}\sqrt{x^{3/2}+1}\dx{u}\\
+\amp amp;=\frac12\int\sqrt{u^{5/2}+u}\dx{u}.
 \end{align*}
 </div>
 <div class="para">This is all correct, but leads to an integral far worse than the original, especially if you notice that <span class="process-math">\(x^2\)</span> is “almost” the derivative of <span class="process-math">\(x^3 + 1\text{.}\)</span> It is off by a factor of <span class="process-math">\(3\text{,}\)</span> but as we’ve seen, constants can be brought outside of the integral, so this is not really a problem. So let’s make <span class="process-math">\(y = x^3 + 1\)</span> , so that <span class="process-math">\(\dx{y} = 3x^2 \dx{x}\text{.}\)</span>  Thus</div>
 <div class="displaymath process-math" id="IntegrationMethods-4-20-1-16">
 \begin{align*}
-\int x^2\sqrt{x^3+1}\dx{x}&amp;=\int x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)\\
-&amp;=\frac13\int y^{1/2}\dx{y}\\
-&amp;=\frac13\left(\frac{y^{3/2}}{3/2}\right)+c\\
-&amp;=\frac29\left(x^3+1\right)^{3/2}+c
+\int x^2\sqrt{x^3+1}\dx{x}\amp amp;=\int x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)\\
+\amp amp;=\frac13\int y^{1/2}\dx{y}\\
+\amp amp;=\frac13\left(\frac{y^{3/2}}{3/2}\right)+c\\
+\amp amp;=\frac29\left(x^3+1\right)^{3/2}+c
 \end{align*}
 </div>
 </div> <div class="para" id="IntegrationMethods-4-20-2">So what’s the definitive answer on a substitution? Unfortunately, there is none. Basically, you can try anything. If it works, great! If it doesn’t, don’t do something incorrectly to try and force it. Try something else. Something you can look for is parts of the integrand (the thing you are integrating) which are differentials of other parts of the integrand. But there are no guarantees. This is what makes integration harder than differentiation, much as long division is harder than multiplication. But try something! As you practice, you will gain more experience, so make sure you start looking for things that you have seen before. And Practice, Practice, Practice!</div></article><div class="para logical" id="IntegrationMethods-4-21">

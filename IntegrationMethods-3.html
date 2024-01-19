@@ -116,9 +116,18 @@ window.MathJax = {
 \newcommand{\ZZ}{\mathbb {Z}}
 \def\DD{{\bf{}D}}
 
-\def\eval#1#2#3{\left.#1\right|_{#2=#3}}
+
+
+
+
+\def\ftceval#1#2#3{#1\hskip.5ex{\llap{\smash{\rule[-3ex]{0.5pt}{7ex}}}_{\raise{-3ex}{\hskip.5ex#2}}^{\raise{-5ex}{\hskip.5ex #3}}}}
+
+
+
+
+\def\eval#1#2#3{\left.#1\right]_{#2}^{#3}}
 \def\brackeval#1#2#3{\left.#1\right]_{#2=#3}}
-\def\bigeval#1#2#3{\left.\tallstrut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 
 
@@ -163,7 +172,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="FTC.html" class="internal"><span class="codenumber">1</span> <span class="title">Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-2.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculsu</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
@@ -196,6 +205,8 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">2.9.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">2.9.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">2.9.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">2.9.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -240,10 +251,10 @@ window.MathJax = {
 <div class="para">We know that <span class="process-math">\(a=\dfdx{v}{t}=\dfdxn{y}{t}{2}=-9.8\)</span> so</div>
 <div class="displaymath process-math" id="IntegrationMethods-3-8-2">
 \begin{align*}
-\dx{v}&amp;=-9.8\dx{t}\\
-\int\dx{v}&amp;=\int-9.8\dx{t}\\
-v+c_1&amp;=-9.8t+c_2\\
-v&amp;=-9.8t+(\underbrace{c_2-c_1}_{= c})
+\dx{v}\amp amp;=-9.8\dx{t}\\
+\int\dx{v}\amp amp;=\int-9.8\dx{t}\\
+v+c_1\amp amp;=-9.8t+c_2\\
+v\amp amp;=-9.8t+(\underbrace{c_2-c_1}_{= c})
 \end{align*}
 </div>
 </div>
@@ -265,10 +276,10 @@ v=-9.8t+19.6.
 <div class="para">We now integrate this to find the ball’s position.</div>
 <div class="displaymath process-math" id="IntegrationMethods-3-10-1">
 \begin{align*}
-\dfdx{y}{t}&amp;=-9.8t+19.6\\
-\dx{y}&amp;=\left(-9.8t+19.6\right)\dx{t}\\
-\int\dx{y}&amp;=-\int\left(9.8t+19.6\right)\dx{t}\\
-y&amp;=-9.8\left(\frac{t^2}{2}\right)+19.6t+c
+\dfdx{y}{t}\amp amp;=-9.8t+19.6\\
+\dx{y}\amp amp;=\left(-9.8t+19.6\right)\dx{t}\\
+\int\dx{y}\amp amp;=-\int\left(9.8t+19.6\right)\dx{t}\\
+y\amp amp;=-9.8\left(\frac{t^2}{2}\right)+19.6t+c
 \end{align*}
 </div>
 </div>
@@ -276,7 +287,7 @@ y&amp;=-9.8\left(\frac{t^2}{2}\right)+19.6t+c
 <div class="para">This time to find the constant <span class="process-math">\(c\)</span>  we observe that since <span class="process-math">\(y(0)=2=\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-2=y(0)=\brackeval{-4.9t^2+19.6t+c}{t}{0} =c.
+2=y(0)=\ftceval{-4.9t^2+19.6t+c}{t}{0} =c.
 \end{equation*}
 </div>
 <div class="para">Thus the ball’s position is given by: <span class="process-math">\(y=-4.9t^2+19.6t+2\text{.}\)</span>
@@ -299,7 +310,7 @@ y(2)=-4.9(2^2)+19.6(2)+2.
 </div>
 <div class="displaymath process-math" id="IntegrationMethods-3-14-4">
 \begin{align*}
-t&amp;=\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2}}{2(-4.9)}
+t\amp amp;=\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2}}{2(-4.9)}
 \end{align*}
 </div>
 <div class="para">and we see that both <span class="process-math">\(t=4.1\)</span> and <span class="process-math">\(t=-0.1\)</span> solve our equation. However snce the negative time would represent time in the past, we can say that the ball will hit the ground when <span class="process-math">\(t=4.1\)</span> seconds.  Thus the impact velocity is</div>

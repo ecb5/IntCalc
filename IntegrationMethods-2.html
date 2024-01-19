@@ -116,9 +116,18 @@ window.MathJax = {
 \newcommand{\ZZ}{\mathbb {Z}}
 \def\DD{{\bf{}D}}
 
-\def\eval#1#2#3{\left.#1\right|_{#2=#3}}
+
+
+
+
+\def\ftceval#1#2#3{#1\hskip.5ex{\llap{\smash{\rule[-3ex]{0.5pt}{7ex}}}_{\raise{-3ex}{\hskip.5ex#2}}^{\raise{-5ex}{\hskip.5ex #3}}}}
+
+
+
+
+\def\eval#1#2#3{\left.#1\right]_{#2}^{#3}}
 \def\brackeval#1#2#3{\left.#1\right]_{#2=#3}}
-\def\bigeval#1#2#3{\left.\tallstrut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 
 
@@ -163,7 +172,7 @@ window.MathJax = {
 <div class="toc-title-box"><a href="FTC.html" class="internal"><span class="codenumber">1</span> <span class="title">Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-2.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Quick Recap of Differential Calculus</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculsu</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="FTC-3.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
@@ -196,6 +205,8 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">2.9.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">2.9.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">2.9.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">2.9.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -332,11 +343,11 @@ a\int\dx{y}=a(y+c)=ay+ac\text{.}
 <div class="para">In light of the above problem, practitioners often will perform the integration of a differential applying whatever tools are appropriate and then combining any arbitrary constants into one constant at the end.  For example, consider</div>
 <div class="displaymath process-math" id="IntegrationMethods-2-7-1">
 \begin{align*}
-\int\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\dx{x}&amp;=5\int
+\int\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\dx{x}\amp amp;=5\int
 x^2\dx{x}-3\int x^\frac12 \dx{x}+2\int\frac{1}{1+x^2}\dx{x}\\
-&amp;=5\left(\frac{x^3}{3}\right) -
+\amp amp;=5\left(\frac{x^3}{3}\right) -
 \frac{3\left(x^{\frac12}\right)}{\frac32} + 2\inverse\tan(x)+c\\
-&amp;=\frac53x^3-2x^{\frac32}+2\inverse\tan(x)+c.
+\amp amp;=\frac53x^3-2x^{\frac32}+2\inverse\tan(x)+c.
 \end{align*}
 </div>
 <div class="para">As with differentiation rules, when you get more comfortable with the integration rules, you will probably do these in your head.  Again, developing this fluency this is why you need to practice.</div>
@@ -352,7 +363,7 @@ x^2\dx{x}-3\int x^\frac12 \dx{x}+2\int\frac{1}{1+x^2}\dx{x}\\
 <div class="displaymath process-math" id="IntegrationMethods-2-8-3">
 \begin{align*}
 \dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}\\
-\frac{1}{\sqrt{1+z^2}}\dx{z}&amp;=\frac{w}{H}\dx{x}.
+\frac{1}{\sqrt{1+z^2}}\dx{z}\amp amp;=\frac{w}{H}\dx{x}.
 \end{align*}
 </div>
 <div class="para">If we now integrate both sides we get</div>
