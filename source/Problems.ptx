@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='utf-8'?>
+<chapter xml:id="problems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bob's Homework Problems</title>
+<section  xml:id="SECTIONProbs1">
+<title>Homework #2</title>
+
+<p>
+
+Up to now, we have ignored any sort of air resistance.  We will start to consider resistance (drag) in such   problems.  It turns out that modeling projectile motion with drag is a more complicated matter.  In general, resistance in a medium is modeled to be a function of velocity.  You've probably experienced this if you held your hand out a car window while it was moving.  The faster the car went, the more force you felt on your hand.  Likewise, the faster you moved your hand under water, the more force you felt on it.  Many things affect the drag (speed, viscosity of the medium, shape and size of the object, turbulence).  To keep a model simple, for a medium with a relatively high viscosity and a relatively small object we will assume that the drag is proportional to the velocity of the object.  An example of this is a grain of sand falling in water.  For a medium with a relatively low viscosity, such as air, and a relatively large object, the drag is assumed to be proportional to the square of the velocity.  This would be the model to use for a baseball falling in the air.
+</p>
+<p>
+
+ To get a really accurate picture, one could use both a linear term and a quadratic term in the drag, but we will keep it simple at this point and keep these separate.  We will look at the simpler model of linear drag and look at quadratic drag a little later and re-examine a ball falling in air. 
+</p>
+
+<example xml:id="EXAMPLE">
+<p>
+To look at linear drag, let's look at the case of a grain of sand of
+mass <m>m</m> descending in water.  To model this, let <m>y(t)</m> be
+distance the sand has fallen (so the positive <m>y</m> axis is
+pointing downward), with <m>y\left(0\right)=0\ </m>representing the
+surface of the water.  If we draw a diagram of the sand, there are
+three forces we need to consider: the weight of the object, the
+buoyancy of the object, and the drag.
+</p>
+<image source="hw2-1.png" width="30%">
+<shortdescription></shortdescription>
+</image>
+<p>
+If we denote the acceleration due to gravity by <m>g</m>, then the
+weight of the sand is <m>mg</m>.  The drag, which we assume is linear,
+is proportional to the velocity, so we will denote this by <m>-Rv</m>,
+where <m>R</m> is a constant and <m>v=\frac{dy}{dt}</m> is the
+velocity.  Notice that this force is negative as it points up (the
+negative direction).  The buoyancy is really just the upward force
+that water would apply if the sand wasn't there.  That is, it is the
+weight of the water that the grain of sand displaces.  This is just
+<m>m_wg</m>, where <m>m_w</m> is the mass of the water displaced.
+</p>
+</example>
+
+
+<exercise xml:id="EXERCISE">
+<p>
+Use Newton<rsq/> Second Law: <me>force=mass\cdot acceleration</me>, to
+show that the velocity of the grain of sand must satisfy the IVP
+<md>
+<mrow>m\dfdx{v}{t}\amp =(m-m_w)g-R </mrow>
+<mrow> v(0)\amp  =v_0.</mrow>
+</md>
+</p>
+<p>
+Let <m>M=m-m_w</m> and note that <m>M>0</m> (why?). Show that the above leads to the IVP
+<md>
+<mrow>\frac{\dx{v}}{Rv-Mg}\amp =-\frac{1}{m}\dx{t}</mrow>
+<mrow> v\left(0\right)\amp =v_0.</mrow>
+</md>
+</p>
+</exercise>
+
+<exercise xml:id="EXERCISE">
+<statement>
+<p>
+<idx><h></h></idx>
+ Use the substitution <m>z=Rv-Mg</m>, to rewrite the above equation as
+<me>\frac{\frac{1}{R}\dx{z}}{z}=-\frac{1}{m}\dx{t}</me> and show that
+<me>v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}</me>
+</p>
+</statement>
+</exercise>
+
+<exercise xml:id="EXERCISE">
+<statement>
+<p>
+<idx><h></h></idx>
+Compute <m>\limit{t}{\infty}{v}.</m>   This will be the terminal velocity of the sand settling in the water.  Notice that this should be independent of <m>v_0</m>.  How does your answer for terminal velocity depend on <m>M=m-m_w</m> and <m>R</m>?  Does this make sense physically?
+</p>
+</statement>
+</exercise>
+
+<p>
+
+The above problem used the technique of substitution and is the
+integration analog of the <term>Chain Rule</term>, which itself was
+the technique of substitution applied to differentiation.  As with
+differentiation, this did not actually compute the integral, but made
+it simpler to apply formulas and techniques with which we are already
+familiar.  This technique of substitution is very powerful and allows
+us to integrate differentials which are not in our table.  We already
+saw one example in our previous problem.  For another, consider that
+in the table, we had <m>\int{\sin(x) }\dx{x}</m> and
+<m>\int{\cos(x) }\ \dx{x}</m>, but we did not have
+<m>\int{\tan(x) }\ \dx{x}</m>.  Now we have the tools to do this
+one.  <me>\int\tan(x)\dx{x}=\int\frac{\sin(x)}{\cos(x)}\dx{x}</me>
+</p>
+<p>
+
+ If we make the substitution <m>z=\cos(x)</m>, then <m>\dx{z}=-\sin(x)\dx{x}</m> and so <m>\dx{x}=-\frac{\dx{z}}{\sin(x) }\ .</m>
+</p>
+<p>
+
+ Thus
+<me>\int{\tan(x) } \dx{x}=\int\frac{\sin(x) }{\cos(x)}\dx{x}=\int\frac{\sin(x)}{z}\left(-\frac{dz}{\sin(x)}\right)=-\int{\frac{dz}{z}}=-\ln(z)+c=-\ln\left(\cos(x) \right)+c=\ln\left(\frac{1}{\cos(x)} \right)+c=\ln\left(
+\sec(x)\right)+c</me>
+</p>
+
+<p>
+The beauty of a substitution is that there is no such thing as a wrong
+substitution.  For example, in the above computation of
+<m>\int\tan(x)\dx{x}</m>, we could have let <m>z=x</m>, so that
+<m>\dx{z}=\dx{x}</m>, and we would have
+<m>\int\tan(x)\dx{x}=\int\tan(z)\dx{z}</m>, which though correct,
+would not have been very helpful.  Alternatively, we could have let
+<m>u=\tan(x)</m> so that <m>\dx{u}=\sec^{2}(x)\dx{x}</m>, and so
+<me>\int{\tan(x)\dx{x}}=\int{\frac{u du}{\sec^2}
+(x)}=\int{\frac{u}{1+{\tan^{2}
+(x)x}}\dx{u}}=\int{\frac{u}{1+u^2}\dx{u}}</me>
+</p>
+<p>
+
+
+ This is a doable integral, but this seems worse than the original strategy.  Hey!  If we originally had the integral <m>\int{\frac{u}{1+u^2}\dx{u}}</m>, we could utilize the same substitution, to transform this into the integral <m>\int{\tan(x) \dx{x}}</m>, which we now know how to do.  This would be entirely correct, but alas, it is doing this integral the hard way.  We could compute <m>\int{\frac{u}{1+u^2}\dx{u}}</m>, more easily by letting <m>y=1+u^2</m>, so that <m>dy=2u\dx{u}</m>, and so
+<me>\int{\frac{u}{1+u^2}\dx{u}}=\int{\frac{u}{y}}\left(\frac{\dx{y}}{2u}\right)=\frac{1}{2}\int{\frac{\dx{y}}{y}}=\frac{1}{2}\ln(y)+c=\ln\left(\sqrt{1+u^2}\right)+c</me>
+</p>
+
+<exercise xml:id="EXERCISE">
+<statement>
+<p>
+<idx><h></h></idx>
+It appears that we have two different answers for <m>\int{\tan(x) }\dx{x}}</m>.  Show that these are in fact the same result.
+</p>
+</statement>
+</exercise>
+
+<p>
+ The lesson in all of this is that the good news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  The bad news is that you can do any substitution you wish, and as long as it is performed correctly, it is not wrong, but it may not be useful.  Sometimes they can not only lead to harder integrals, but ones where there is nothing you can really do (at least readily).    For example, consider
+<me>\int{x^2\sqrt{x^3+1}}\dx{x}</me>
+</p>
+<p>
+We could let <m>u=x^2</m> so that <m>\dx{u}=2x\ dx</m>.  This would
+lead to
+<me>\int{x^2\sqrt{x^3+1}}\dx{x}=\int{u\sqrt{u^{\frac{3}{2}}+1}}\left(\frac{\dx{u}}{2x}\right)=\frac{1}{2}\int{\frac{u\sqrt{u^{\frac{3}{2}}+1}}{x}}\dx{u}</me>
+</p>
+
+<p>
+  Notice that we can <q>bring the <m>1/2</m> outside the integral</q>
+  because it is a constant, but we cannot do the same with
+  <m>\frac{1}{x}</m>, because it is not a constant (it depends on
+  <m>u</m>) and that is not a legal move.  We could rewrite
+  <m>x=\sqrt{u}</m>, so that
+  <me>\int{x^2\sqrt{x^3+1}}\dx{x}=\frac{1}{2}\int{\frac{u\sqrt{u^{\frac{3}{2}}+1}}{\sqrt{u}}}\dx{u}=\frac{1}{2}\int{\sqrt{u}\sqrt{u^{\frac{3}{2}}+1}}\dx{u}=\frac{1}{2}\int{\sqrt{u^{\frac{5}{2}}+u}}\dx{u}</me>
+</p>
+
+<p>
+  This is all correct, but leads to an integral far worse than the
+  original, especially if you notice that <m>x^2</m> is <q>almost</q>
+  the derivative of <m>x^3+1</m>.  It is off by a factor of 3, but as
+  we've seen, constants can be brought outside of the integral, so
+  this is not really a problem.  So let's make <m>y=x^3+1</m>, so that
+  <m>\dx{y}=3x^2\dx{x}</m>.  Thus
+  <me>\int{x^2\sqrt{x^3+1}}\dx{x}=\int{x^2\sqrt{y}}\left(\frac{\dx{y}}{3x^2}\right)=\frac{1}{3}\int{y^{\frac{1}{2}}\dx{y}}=\frac{1}{3}\left(\frac{y^{\frac{3}{2}}}{\frac{3}{2}}\right)+c=\frac{2}{9}{\left(x^3+1\right)}^{\frac{3}{2}}+c</me>
+</p>
+
+<p>
+  So what's the definitive answer on a substitution?  Unfortunately,
+  there is none.  Basically, you can try anything.  If it works,
+  great!  If it doesn't, don't do something incorrectly to try and
+  force it.  Try something else.  Something you can look for is parts
+  of the integrand (the thing you are integrating) which are
+  differentials of other parts of the integrand.  But there are no
+  guarantees.  This is what makes integration harder than
+  differentiation, much as long division is harder than
+  multiplication.  But try something!  As you practice, you will gain
+  more experience, so make sure you start looking for things that you
+  have seen before.  And Practice, Practice, Practice!
+</p>
+</section>
+
+<section  xml:id="SECTIONProbs3">
+<title>Homework #3:The Opposite of the Product Rule <mdash/> Integration by Parts</title>
+<p>
+
+ Substitution is a powerful tool, but it is not a <q>cure all.</q>  For example, consider 
+<me>\int{x}{\cos(x)}\dx{x}</me> 
+ You can try, but there is no substitution that will really get you anywhere.  Unfortunately,
+<me>\int{x{\cos(x)}\ \dx{x}}\neq \int{x\ dx}\int{{\cos(x)}\ \dx{x}}</me> 
+ so that is out of the question.  (It doesn't work for differentiation, what would make you think that the integral of a product would ever equal the product of the integrals? Also, where do you see two <m>\dx{x}</m>'s in the original?)
+</p>
+<p>
+
+Since the product rule is what we use to differentiate a product, then
+perhaps its analog would be of use here.  In general, we have the
+product rule as <me>\dx{\left}(uv\right)=u\dx{v}+v\dx{u}</me>
+</p>
+
+<p>
+
+ Rearranging this, we have
+<me>u\dx{v}=\dx{\left}(uv\right)-v\dx{u}</me> 
+<me>\int{u\dx{v}}=\int(\dx{(uv)}-v\dx{u})=\int{\dx{\left}(uv\right)}-\int{v\dx{u}}=uv-\int{v}\dx{u}</me> 
+</p>
+<p>
+
+
+ This formula <m>\int{u\ \dx{v}}=uv-\int{v\dx{u}}\ </m>is called the
+ integration by parts formula and is the opposite of the product rule
+ and is just what we need for the previous integral.  Specifically, if
+ we let <m>u=x</m> and <m>\dx{v}=\cos(x)\dx{x}</m>, then
+ <m>\dx{u}=\dx{x}</m> and <m>v=\int\cos(x)\dx{x}}=\sin(x)</m> (don't
+ worry about the arbitrary constant here for the moment).
+ Substituting these into our integration by parts formula, <m>\int{u\
+ \dx{v}}=uv-\int{v\ \dx{u}}</m>, we have <me>\int{x}{\cos(x)}\
+ \dx{x}=x\sin(x)-\int\sin(x)\dx{x}}=x\sin(x)-\cos(x)+c=x\sin(x)+\cos(x)+c</me>
+</p>
+<p>
+
+
+ At this point, we should take note of a few things. First, notice
+ that this was not a substitution; we did not end up with an integral
+ with <m>u</m>'s or <m>v</m>'s in it.  These were introduced just to
+ keep track of the integration by parts formula.  Along that vein,
+ notice that we needed to use the entire integrand as opposed to a
+ substitution where we looked for parts of the integrand which were
+ differentials of other parts of the integrand.
+</p>
+<p>
+
+Second, notice that like a substitution, the integration by parts
+technique does not compute the integral.  Rather, it replaces that
+integral with, hopefully, an easier integral.  This means that as long
+as the integration by parts technique is applied correctly, it is not
+wrong; it just might not be helpful.  For example, in
+<me>\int{x\cos(x)\dx{x}}</me>
+</p>
+<p>
+
+
+ we could have let <m>u=\cos(x)</m> and <m>\dx{v}=x\dx{x}</m>.  This would give <m>\dx{u}=-\sin(x)\dx{x}</m> and <m>v=x^2/2</m>.   Substituting these into the integration by parts formula, we get
+<me>\int{x}{\cos(x)}\ \dx{x}=\frac{x^2}{2}{\cos(x)}+\frac{1}{2}\int{x^2\sin(x)\dx{x}}</me> 
+ Everything is correct, but we have an integral that is worse than before.  So, you will need to develop some experience with using this technique as well.
+</p>
+<p>
+
+ Lastly, notice that we suppressed the arbitrary constant in <m>v</m>.  We will see that this does not alter the result.
+</p>
+
+<exercise xml:id="EXERCISEProdRule">
+<introduction>
+<p>
+<idx><h></h></idx>
+</p>
+</introduction>
+<task>
+<statement>
+<p>
+ Show that if we let <m>\dx{v}=v+a</m> in the integration by parts
+ formula, where <m>a</m> is any constant, then we will obtain the same
+ result as before, namely <m>\int{u\dx{v}}=uv-\int{v\dx{u}}</m>.
+
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+ Use integration by parts with <m>u=x^2</m> and <m>\dx{v}=e^x\dx{x}</m> to obtain
+<me>\int{x^2e^x}\dx{x}=x^2e^x-\int{2xe^x \dx{x}}</me>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Use integration by parts on <m>\int{2xe^x\ \dx{x}}</m> with
+<m>u=e^x</m> and <m>\dx{v}=2x\dx{x}</m> and substitute this into the
+result in part (a).  What happened?  This is not a fluke!  It will
+happen every time if you switch the roles of <m>u</m> and <m>v</m>.
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+ Perform integration by parts again on the result in part a to obtain
+ a final answer for <m>\int{x^2e^x}\dx{x}</m>.
+</p>
+</statement>
+</task>
+
+</exercise>
+
+<exercise xml:id="EXERCISE">
+<statement>
+<p>
+<idx><h></h></idx>
+Perform integration by parts and then substitution to compute
+<me>\int{\inverse\sin(x)}\dx{x}</me> and 
+<me> \int{\inverse\tan(x)}\dx{x}</me>
+</p>
+</statement>
+</exercise>
+</section>
+
+</chapter>
