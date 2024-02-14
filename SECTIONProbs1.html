@@ -125,9 +125,10 @@ window.MathJax = {
 
 
 
-\def\eval#1#2#3{\left.#1\right]_{#2}^{#3}}
-\def\brackeval#1#2#3{\left.#1\right]_{#2=#3}}
+
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 
 
@@ -339,7 +340,7 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}
 <article class="exercise exercise-like" id="EXERCISE"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="EXERCISE-1-1"> It appears that we have two different answers for <span class="process-math">\(\int{\tan(x) }\dx{x}}\text{.}\)</span>  Show that these are in fact the same result.</div></article><div class="para logical" id="SECTIONProbs1-14">
+<div class="para" id="EXERCISE-1-1"> It appears that we have two different answers for <span class="process-math">\(\int\tan(x) \dx{x}\text{.}\)</span>  Show that these are in fact the same result.</div></article><div class="para logical" id="SECTIONProbs1-14">
 <div class="para">The lesson in all of this is that the good news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  The bad news is that you can do any substitution you wish, and as long as it is performed correctly, it is not wrong, but it may not be useful.  Sometimes they can not only lead to harder integrals, but ones where there is nothing you can really do (at least readily).    For example, consider</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -356,19 +357,24 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs1-16">
-<div class="para">Notice that we can “bring the <span class="process-math">\(1/2\)</span> outside the integral” because it is a constant, but we cannot do the same with <span class="process-math">\(\frac{1}{x}\text{,}\)</span> because it is not a constant (it depends on <span class="process-math">\(u\)</span>) and that is not a legal move.  We could rewrite <span class="process-math">\(x=\sqrt{u}\text{,}\)</span> so that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int{x^2\sqrt{x^3+1}}\dx{x}=\frac{1}{2}\int{\frac{u\sqrt{u^{\frac{3}{2}}+1}}{\sqrt{u}}}\dx{u}=\frac{1}{2}\int{\sqrt{u}\sqrt{u^{\frac{3}{2}}+1}}\dx{u}=\frac{1}{2}\int{\sqrt{u^{\frac{5}{2}}+u}}\dx{u}
-\end{equation*}
+<div class="para">Notice that we can bring the <span class="process-math">\(1/2\)</span> outside the integral because it is a constant, but we cannot do the same with <span class="process-math">\(\frac{1}{x}\)</span> because <span class="process-math">\(\frac1x\)</span> is not a constant.  We could set <span class="process-math">\(x=\sqrt{u}\text{,}\)</span> so that</div>
+<div class="displaymath process-math" id="SECTIONProbs1-16-5">
+\begin{align*}
+\int{x^2\sqrt{x^3+1}}\dx{x}\amp{}=\frac{1}{2}\int{\frac{u\sqrt{u^{\frac{3}{2}}+1}}{\sqrt{u}}}\dx{u}\\
+\amp{}=\frac{1}{2}\int{\sqrt{u}\sqrt{u^{\frac{3}{2}}+1}}\dx{u}\\
+\amp{}=\frac{1}{2}\int{\sqrt{u^{\frac{5}{2}}+u}}\dx{u}
+\end{align*}
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs1-17">
 <div class="para">This is all correct, but leads to an integral far worse than the original, especially if you notice that <span class="process-math">\(x^2\)</span> is “almost” the derivative of <span class="process-math">\(x^3+1\text{.}\)</span>  It is off by a factor of 3, but as we’ve seen, constants can be brought outside of the integral, so this is not really a problem.  So let’s make <span class="process-math">\(y=x^3+1\text{,}\)</span> so that <span class="process-math">\(\dx{y}=3x^2\dx{x}\text{.}\)</span>  Thus</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int{x^2\sqrt{x^3+1}}\dx{x}=\int{x^2\sqrt{y}}\left(\frac{\dx{y}}{3x^2}\right)=\frac{1}{3}\int{y^{\frac{1}{2}}\dx{y}}=\frac{1}{3}\left(\frac{y^{\frac{3}{2}}}{\frac{3}{2}}\right)+c=\frac{2}{9}{\left(x^3+1\right)}^{\frac{3}{2}}+c
-\end{equation*}
+<div class="displaymath process-math" id="SECTIONProbs1-17-6">
+\begin{align*}
+\int{x^2\sqrt{x^3+1}}\dx{x}\amp{}=\int{x^2\sqrt{y}}\left(\frac{\dx{y}}{3x^2}\right)\\
+\amp{}=\frac{1}{3}\int{y^{\frac{1}{2}}\dx{y}}\\
+\amp{}=\frac{1}{3}\left(\frac{y^{\frac{3}{2}}}{\frac{3}{2}}\right)+c\\
+\amp{}=\frac{2}{9}{\left(x^3+1\right)}^{\frac{3}{2}}+c
+\end{align*}
 </div>
 </div>
 <div class="para" id="SECTIONProbs1-18">So what’s the definitive answer on a substitution?  Unfortunately, there is none.  Basically, you can try anything.  If it works, great!  If it doesn’t, don’t do something incorrectly to try and force it.  Try something else.  Something you can look for is parts of the integrand (the thing you are integrating) which are differentials of other parts of the integrand.  But there are no guarantees.  This is what makes integration harder than differentiation, much as long division is harder than multiplication.  But try something!  As you practice, you will gain more experience, so make sure you start looking for things that you have seen before.  And Practice, Practice, Practice!</div></section></div>
