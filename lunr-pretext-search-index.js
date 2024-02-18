@@ -52,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "A Quick Review of Differential Calculus",
-  "body": " A Quick Review of Differential Calculus  In Differential Calculus: From Practice to Theory we saw that the notation for an infinitesimal difference, , can be thought of as a refinement of the change of symbol which you learned when you were studying straight lines. The distinction is that we think of as a measurable distance between and whereas represents and infinitesimal distance. To be sure we also learned in Differential Calculus: From Practice to Theory that the notion of an infinitesimal is very problematic as a logical foundation of our investigations. But as a way of thinking; as an appeal to intuition, it can be very useful. Naturally, any conclusions we draw from our intuitive approach will have to be confirmed logically but we needn t fuss about that yet.  By thinking in this way we found that we could extend the idea of the slope of a straight line to curved lines. The slope of a straight line is given by (the change of over the change of ) so the slope of a curved line at the point is given by the notation n . It is necessary to specify the slope of the curve at the particular point because it is clear that the slope of a curved line might change from point to point.  This generalization of the notion of slope is very useful in analyzing scientific problems because the interpretation of will vary depending on what physical quantities and happen to represent. To take one simple interpretation if the variable measures a vertical displacement and the variable measures the passage of time then represents the velocity in the vertical direction. (We would probably actually use instead of in this case in order evoke the word time , but the names we choose for our variables are generally irrelevant. We choose a name for a variable simply to help us remember what it represents.) For example, the position of a ball tossed vertically with an initial velocity , from an initial height , will be if is measured in meters and is measured in seconds.  Thus the ball s velocity will be and its acceleration will be which is, of course, the rate of acceleration of an object falling near the surface of the earth, as determined experimentally by Galileo   One exercise in Differential Calculus asked you to show that if represents the shape of a catenary curve then satisfies the differential equation      A later exercise had you show that in fact the function satisfies equation . Repeat that computation by computing and and showing that satisfies equation .    A natural question is How did we find ? This is our current topic. In its simplest formulation Differential Calculus is about subtraction differences. The reverse process, called Integral Calculus is about addition sums. That is, given a function , when we differentiate it we find the infinitesimal difference between two infinitely close points. Integration is, loosely speaking, the process of adding up all of the differentials of to recover itself.   Zero Differentials  For example, if then . It stands to reason that if we add up all of the differentials of we will reconstruct .  Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.    Integral Notation  The notation is motivated by the fact that integration (putting together, summing) is, in its simplest formulation, the inverse process of differentiation (taking a difference, subtracting). The summation of differentials is called integration and is denoted by . An integral consists of two parts: The symbol which indicates summation, and the differential  in this case.   Mathematics Notation  To a modern eye the integral sign looks like a stylized S, and that is often how it is described. But in the seventeenth century it wasn t stylized at all. When Calculus was invented the letter S typically took one of several forms, depending on where it appeared in a word. One of these forms was elongated to extend above and below the line of text. Leibniz adopted this as the integral sign. So, it is not really stylized. It is archaic.  Leibniz chose the letter S because it is the first letter of Latin word summa , from which we get the English word sum.    Notice that if then . Thus makes sense because the product is a differential. But is nonsense because alone is not a differential.  Notice we did not write . This is because it is not (quite) true. There are an infinite number of possible values of . Fortunately, as we mentioned before, these all differ by constants. Thus we can write something like where is an arbitrary constant. This represents all of the possible functions whose derivative is , so with that in mind is referred to as the indefinite integral or anti-derivative of . These names come from the foundational switch from differentials to limits and derivatives, but we still want to emphasize that we integrate differentials, not functions (so the is not optional).  For the early practitioners of Calculus an integral was always conceived of as simply a sum of differentials. In modern times, and especially since the work of Henri Lebesgue integration theory has expanded considerably beyond this initial understanding. But the underlying notion of a sum is still very helpful and we will rely on it rather heavily, at least at first.   "
+  "body": " A Quick Review of Differential Calculus  In Differential Calculus: From Practice to Theory we saw that the notation for an infinitesimal difference, , can be thought of as a refinement of the change of symbol which you learned when you were studying straight lines. The distinction is that we think of as a measurable distance between and whereas represents and infinitesimal distance. To be sure we also learned in Differential Calculus: From Practice to Theory that the notion of an infinitesimal is very problematic as a logical foundation of our investigations. But as a way of thinking; as an appeal to intuition, it can be very useful. Naturally, any conclusions we draw from our intuitive approach will have to be confirmed logically but we needn t fuss about that yet.  By thinking in this way we found that we could extend the idea of the slope of a straight line to curved lines. The slope of a straight line is given by (the change of over the change of ) so the slope of a curved line at the point is given by the notation n . It is necessary to specify the slope of the curve at the particular point because it is clear that the slope of a curved line might change from point to point.  This generalization of the notion of slope is very useful because our interpretation of the differential ratio, , will vary depending on what physical quantities and happen to represent. In one simple interpretation if the variable measures a vertical displacement and the variable measures the passage of time then represents the velocity in the vertical direction We would probably actually use instead of in this case in order evoke the word time . The names we choose for our variables are generally irrelevant. We choose a name simply to help us remember what it represents. . For example, the position of a ball tossed vertically with an initial velocity , from an initial height , will be if is measured in meters and is measured in seconds.  Thus the ball s velocity will be and its acceleration will be which is, of course, the rate of acceleration of an object falling near the surface of the earth, as determined experimentally by Galileo   One exercise in Differential Calculus asked you to show that if represents the shape of a catenary curve then will satisfy the differential equation      Catenary A later exercise had you show that in fact the function satisfies equation . Repeat that computation by computing and and showing that satisfies equation .    A natural question is How did we find ? Answering that question is our current topic.  In its simplest formulation Differential Calculus is about subtraction differences. Thus is seems reasonable to suppose that the reverse process, called Integral Calculus is about addition sums. That is, given a function , when we differentiate it we find the infinitesimal difference between two infinitely close points. In its simplest formulation integration is the process of adding up all of the differentials of to recover itself.   Integral Notation  The summation of differentials is called integration and is denoted by . An integral consists of two parts: The symbol which indicates summation, and the differential, in this case.   A Little History  To a modern eye the integral sign looks like a stylized letter S, and that is often how it is described. But it isn t stylized at all. When Calculus was invented in the seventeenth century the letter S typically had one of several forms, depending on where it appeared in a word. One of these forms was elongated to extend above and below the line of text. Leibniz adopted this as the integral sign. So, it is not really stylized. It is just archaic.  Leibniz chose the letter S because it is the first letter of Latin word summa , from which we get the English word sum.    For the early practitioners of Calculus an integral was always conceived of as simply a sum of differentials. In modern times, and especially since the work of Henri Lebesgue integration theory has expanded considerably beyond this initial understanding. But the underlying notion of a sum is still very helpful and we will rely on it rather heavily, at least at first.   We Integrate Differentials, Not Functions  It is common to speak informally of the integral of the function but this is not the correct usage. When we write we are summing the differential Recall from Chapter 3 of Differential Calculus: From Practice to Theory that the product of a differential and a real number will be a differential  , not the function . It is important to keep this basic fact in mind as we go forward because it will save us much confusion later.  If is some function the expression is meaningless, despite the fact that nearly everyone occasionally abuses the notation in this way. The integral sign is intended to express the summation of differentials. Any other usage is meaningless, no matter how convenient it might be.  Suppose that then . Then makes sense because the product is a differential. But is nonsense because alone is not a differential.  In particular, is meaningless. However if then what is probably meant is which is equal to since means add up the differentials of .    In equation we confidently asserted that . But this is not quite true. Or rather, it is too vague because we have not define our notation clearly yet. The problem, however is not in our understanding. It is certainly true that the sum of all of the differentials of will be itself. It is in our sloppy use of notation.    Integral Notation Can Be Difficult to Use                 Suppose a point on the real line begins at and traces out a line segment of some unknown length, .     Notice that represents the length of the line segment which has traced out. In particular is Not the position of on the line.   Mathematical Notation  Sometimes we will call the line the -axis. But this is a bit confusing as we ve already used to indicate a position on the line. Using in two incompatible ways like this is not precise enough for mathematics and we shouldn't really do it. Nor should you. But, for better or worse mathematics is done, and learned, by flawed and imprecise human creatures so we have to find ways to cope with our foibles.  To avoid confusion you should always question the meaning of the symbols being used. If you can't state the meaning precisely then you're going to have trouble understanding what is being said. We must be very careful about the meanings of our symbols.   We partition the line segment between and (which we have also called in the sketch below) into subintervals as seen in sketch below.     Representing the first subinterval of with , the second with , and in general if represents the th subinterval of then clearly the length of the line segment is If the subintervals are all the same length, say , then we no longer need the subscripts to distinguish them, and we have a compact symbol for indicating summation. We may as well use it and write  instead.  We assume, with Leibniz, that equation remains true when the finite differences ( ) are replaced with infinitesimal differences ( ):     So the statement says that if we add up the lengths of all of the differentials that make up the line segment from to we will get its length, , which we called above. Therefore and there is no ambiguity.         In the early nineteenth century Joseph Fourier found that Leibniz original integral symbol was not quite descriptive enough for his purposes. In particular since we ve dropped the subscripts the expression gives no clue where we need to start, and stop, summing the differentials. To clarify Fourier modified Leibniz notation by inserting both a subscript and a superscript as follows: . Equation says that we begin summing the differentials at , and end at , resulting in the difference .    The Problem of Zero Differentials       Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.   "
 },
 {
   "id": "DRILLCatenaryRedux",
@@ -61,25 +61,16 @@ var ptx_lunr_docs = [
   "type": "Drill",
   "number": "1.1",
   "title": "",
-  "body": "   A later exercise had you show that in fact the function satisfies equation . Repeat that computation by computing and and showing that satisfies equation .   "
+  "body": "   Catenary A later exercise had you show that in fact the function satisfies equation . Repeat that computation by computing and and showing that satisfies equation .   "
 },
 {
-  "id": "FTC-2-8",
+  "id": "FTC-2-9",
   "level": "2",
-  "url": "FTC-2.html#FTC-2-8",
+  "url": "FTC-2.html#FTC-2-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Integral Calculus "
-},
-{
-  "id": "EXAMPLEZeroDiff",
-  "level": "2",
-  "url": "FTC-2.html#EXAMPLEZeroDiff",
-  "type": "Example",
-  "number": "1.2",
-  "title": "Zero Differentials.",
-  "body": " Zero Differentials  For example, if then . It stands to reason that if we add up all of the differentials of we will reconstruct .  Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.  "
 },
 {
   "id": "FTC-2-10-2",
@@ -91,22 +82,22 @@ var ptx_lunr_docs = [
   "body": "integration integral "
 },
 {
-  "id": "FTC-3",
-  "level": "1",
-  "url": "FTC-3.html",
-  "type": "Section",
+  "id": "EXAMPLEDiffNotFunc",
+  "level": "2",
+  "url": "FTC-2.html#EXAMPLEDiffNotFunc",
+  "type": "Example",
   "number": "1.2",
-  "title": "The Fundamental Theorem of Calculus",
-  "body": " The Fundamental Theorem of Calculus  Suppose a point begins at and traces out a line segment of some unknown length, . We partition the line segment between and into subintervals as seen in figure below.     If the symbol represents the first subinterval of , represents the second subinterval, and in general if represents the th subinterval of then clearly the length of the line segment is If the subintervals are all the same length, say , then we no longer need the subscripts to distinguish them. As it is cumbersome to write repeatedly we instead define to be and write  instead. The symbol is called an integral sign .  We assume, with Leibniz, that equation remains true when the finite differences ( ) are replaced with infinitesimal differences ( ):    Historical Note  The integral sign is often described as an elongated or stylized version of the capital letter S. But it is neither. In the literature of the seventeenth century (when Leibniz was inventing Calculus notation) a printed S was routinely elongated compared to the other letters in a line of text. That is, a printed S extended well above and below the line of ordinary text just as the integral sign does today. So the integral sign is really just the letter S. Leibniz chose this letter to indicate addition because it is the first letter of the Latin word summa, meaning total.   In any case the statement says that if we add up the lengths of all of the differentials that make up the line segment from to we will get its length: .  This is surely not surprising and you are probably wondering why we taken the trouble to wrap such an obvious statement in this obscure notation. The reason is this: Leibniz integral notation has proven over time to be extremely versatile and expressive.  In the early nineteenth century Joseph Fourier found that Leibniz original integral symbol was not quite descriptive enough for his purposes. In particular since we ve dropped the subscripts the expression gives no clue where we need to start, and stop, summing the differentials. To clarify Fourier modified Leibniz notation by inserting both a subscript and a superscript as follows: . Equation says that we begin summing the differentials at , and end at , resulting in the difference .  "
+  "title": "We Integrate Differentials, Not Functions.",
+  "body": " We Integrate Differentials, Not Functions  It is common to speak informally of the integral of the function but this is not the correct usage. When we write we are summing the differential Recall from Chapter 3 of Differential Calculus: From Practice to Theory that the product of a differential and a real number will be a differential  , not the function . It is important to keep this basic fact in mind as we go forward because it will save us much confusion later.  If is some function the expression is meaningless, despite the fact that nearly everyone occasionally abuses the notation in this way. The integral sign is intended to express the summation of differentials. Any other usage is meaningless, no matter how convenient it might be.  Suppose that then . Then makes sense because the product is a differential. But is nonsense because alone is not a differential.  In particular, is meaningless. However if then what is probably meant is which is equal to since means add up the differentials of .   "
 },
 {
-  "id": "FTC-3-4",
+  "id": "EXAMPLEZeroDiff",
   "level": "2",
-  "url": "FTC-3.html#FTC-3-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "integral sign "
+  "url": "FTC-2.html#EXAMPLEZeroDiff",
+  "type": "Example",
+  "number": "1.3",
+  "title": "The Problem of Zero Differentials.",
+  "body": " The Problem of Zero Differentials       Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.  "
 },
 {
   "id": "IntegrationMethods-2",
@@ -649,9 +640,9 @@ var ptx_lunr_docs = [
   "body": "  Partial Fraction Decomposition Show that if we tried the following decomposition then no values for and would satisfy this.  "
 },
 {
-  "id": "EXAMPLEPFD1",
+  "id": "EXAMPLEPFD2",
   "level": "2",
-  "url": "IntegrationMethods-7.html#EXAMPLEPFD1",
+  "url": "IntegrationMethods-7.html#EXAMPLEPFD2",
   "type": "Example",
   "number": "2.54",
   "title": "",
@@ -1873,27 +1864,27 @@ var ptx_lunr_docs = [
   "body": " To look at linear drag, let's look at the case of a grain of sand of mass descending in water. To model this, let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. If we draw a diagram of the sand, there are three forces we need to consider: the weight of the object, the buoyancy of the object, and the drag.     If we denote the acceleration due to gravity by , then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a constant and is the velocity. Notice that this force is negative as it points up (the negative direction). The buoyancy is really just the upward force that water would apply if the sand wasn't there. That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.  "
 },
 {
-  "id": "EXERCISE",
+  "id": "EXERCISENewtonsSecondLaw",
   "level": "2",
-  "url": "SECTIONProbs1.html#EXERCISE",
+  "url": "SECTIONProbs1.html#EXERCISENewtonsSecondLaw",
   "type": "Problem",
   "number": "5.2",
   "title": "",
   "body": "Use Newton Second Law: , to show that the velocity of the grain of sand must satisfy the IVP  Let and note that (why?). Show that the above leads to the IVP  "
 },
 {
-  "id": "EXERCISE",
+  "id": "EXERCISESubsRvmMg",
   "level": "2",
-  "url": "SECTIONProbs1.html#EXERCISE",
+  "url": "SECTIONProbs1.html#EXERCISESubsRvmMg",
   "type": "Problem",
   "number": "5.3",
   "title": "",
   "body": "  Use the substitution , to rewrite the above equation as and show that   "
 },
 {
-  "id": "EXERCISE",
+  "id": "EXERCISETerminalVelocity",
   "level": "2",
-  "url": "SECTIONProbs1.html#EXERCISE",
+  "url": "SECTIONProbs1.html#EXERCISETerminalVelocity",
   "type": "Problem",
   "number": "5.4",
   "title": "",
@@ -1909,9 +1900,9 @@ var ptx_lunr_docs = [
   "body": "Chain Rule "
 },
 {
-  "id": "EXERCISE",
+  "id": "EXERCISEInvTanReconcile",
   "level": "2",
-  "url": "SECTIONProbs1.html#EXERCISE",
+  "url": "SECTIONProbs1.html#EXERCISEInvTanReconcile",
   "type": "Problem",
   "number": "5.5",
   "title": "",
@@ -1936,9 +1927,9 @@ var ptx_lunr_docs = [
   "body": "     Show that if we let in the integration by parts formula, where is any constant, then we will obtain the same result as before, namely .   Use integration by parts with and to obtain    Use integration by parts on with and and substitute this into the result in part (a). What happened? This is not a fluke! It will happen every time if you switch the roles of and .   Perform integration by parts again on the result in part a to obtain a final answer for .  "
 },
 {
-  "id": "EXERCISE",
+  "id": "EXERCISEInvSinInvTan",
   "level": "2",
-  "url": "SECTIONProbs3.html#EXERCISE",
+  "url": "SECTIONProbs3.html#EXERCISEInvSinInvTan",
   "type": "Problem",
   "number": "5.7",
   "title": "",
