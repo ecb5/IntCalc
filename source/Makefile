@@ -16,14 +16,15 @@ latex: *.ptx Makefile
 pdf: *.ptx Makefile 
 	/home/ecb5/.local/bin/pretext build print
 
-epub: *.ptx
+epub: *.ptx Makefile
 	/home/ecb5/.local/bin/pretext build epub
 
-view:
+view: web
 	/home/ecb5/.local/bin/pretext view web
 
-viewpdf:
-	/home/ecb5/.local/bin/pretext view print
+viewpdf: 
+#	/home/ecb5/.local/bin/pretext view print
+	evince /home/ecb5/Dropbox/CalcText/Boman/IntCalc/output/print/main.pdf
 
 debug:
 	/home/ecb5/.local/bin/pretext -v debug build web
