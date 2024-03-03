@@ -88,7 +88,7 @@ it simpler to apply formulas and techniques with which we are already
 familiar.  This technique of substitution is very powerful and allows
 us to integrate differentials which are not in our table.  We already
 saw one example in our previous problem.  For another, consider that
-in the table, we had <m>\int{\sin(x) }\dx{x}</m> and
+in the table, we had <m>\int \sin(x)\dx{x}</m> and
 <m>\int{\cos(x) }\ \dx{x}</m>, but we did not have
 <m>\int{\tan(x) }\ \dx{x}</m>.  Now we have the tools to do this
 one.  <me>\int\tan(x)\dx{x}=\int\frac{\sin(x)}{\cos(x)}\dx{x}</me>
@@ -145,7 +145,7 @@ lead to
 <p>
   Notice that we can bring the <m>1/2</m> outside the integral
   because it is a constant, but we cannot do the same with
-  <m>\frac{1}{x}</m> because <m>\frac1x</m> 
+  <m>\frac{1}{x}</m> because <m>\frac1x</m>
   is not a constant.  We could set <m>x=\sqrt{u}</m>, so that
   <md>
 <mrow>\int{x^2\sqrt{x^3+1}}\dx{x}\amp{}=\frac{1}{2}\int{\frac{u\sqrt{u^{\frac{3}{2}}+1}}{\sqrt{u}}}\dx{u}</mrow>
@@ -188,10 +188,10 @@ lead to
 <title>Homework #3:The Opposite of the Product Rule <mdash/> Integration by Parts</title>
 <p>
 
- Substitution is a powerful tool, but it is not a <q>cure all.</q>  For example, consider 
-<me>\int{x}{\cos(x)}\dx{x}</me> 
+ Substitution is a powerful tool, but it is not a <q>cure all.</q>  For example, consider
+<me>\int{x}{\cos(x)}\dx{x}</me>
  You can try, but there is no substitution that will really get you anywhere.  Unfortunately,
-<me>\int{x{\cos(x)}\ \dx{x}}\neq \int{x\ dx}\int{{\cos(x)}\ \dx{x}}</me> 
+<me>\int{x{\cos(x)}\ \dx{x}}\neq \int{x\ dx}\int{{\cos(x)}\ \dx{x}}</me>
  so that is out of the question.  (It doesn't work for differentiation, what would make you think that the integral of a product would ever equal the product of the integrals? Also, where do you see two <m>\dx{x}</m>'s in the original?)
 </p>
 <p>
@@ -204,8 +204,8 @@ product rule as <me>\dx{\left}(uv\right)=u\dx{v}+v\dx{u}</me>
 <p>
 
  Rearranging this, we have
-<me>u\dx{v}=\dx{\left}(uv\right)-v\dx{u}</me> 
-<me>\int{u\dx{v}}=\int(\dx{(uv)}-v\dx{u})=\int{\dx{\left}(uv\right)}-\int{v\dx{u}}=uv-\int{v}\dx{u}</me> 
+<me>u\dx{v}=\dx{\left}(uv\right)-v\dx{u}</me>
+<me>\int{u\dx{v}}=\int(\dx{(uv)}-v\dx{u})=\int{\dx{\left}(uv\right)}-\int{v\dx{u}}=uv-\int{v}\dx{u}</me>
 </p>
 <p>
 
@@ -244,7 +244,7 @@ wrong; it just might not be helpful.  For example, in
 
 
  we could have let <m>u=\cos(x)</m> and <m>\dx{v}=x\dx{x}</m>.  This would give <m>\dx{u}=-\sin(x)\dx{x}</m> and <m>v=x^2/2</m>.   Substituting these into the integration by parts formula, we get
-<me>\int{x}{\cos(x)}\ \dx{x}=\frac{x^2}{2}{\cos(x)}+\frac{1}{2}\int{x^2\sin(x)\dx{x}}</me> 
+<me>\int{x}{\cos(x)}\ \dx{x}=\frac{x^2}{2}{\cos(x)}+\frac{1}{2}\int{x^2\sin(x)\dx{x}}</me>
  Everything is correct, but we have an integral that is worse than before.  So, you will need to develop some experience with using this technique as well.
 </p>
 <p>
@@ -302,11 +302,363 @@ happen every time if you switch the roles of <m>u</m> and <m>v</m>.
 <p>
 <idx><h></h></idx>
 Perform integration by parts and then substitution to compute
-<me>\int{\inverse\sin(x)}\dx{x}</me> and 
-<me> \int{\inverse\tan(x)}\dx{x}</me>
+<me>\int{\inverse\sin(x)}\dx{x}</me> and <me>
+\int{\inverse\tan(x)}\dx{x}</me>
 </p>
 </statement>
 </exercise>
 </section>
 
+<section  xml:id="SECTIONProbs6">
+<title>Homework #6: Back to Logistic Growth: Partial Fractions </title>
+<p>
+ Recall that in differential calculus we had an example for logistic growth
+<md>
+<mrow>\dfdx{y}{dt}\amp{}=.01y\left(1-\frac{y}{100}\right)=.0001y\left(100-y\right)\amp{} y\left(0\right),\amp{}=y_0</mrow>
+</md>
+ We analyzed this growth rate to draw a qualitative graph of
+ <m>y=y(t)</m>, but we really could not produce specific values of
+ <m>t</m> for where things happened, because we didn't have a formula
+ for <m>y(t)</m>.  For reasons that will become clearer later, let's
+ suppose that <m>0\lt{}y\lt{}100</m>.  Separating the variables is no
+ problem
+<me>\frac{\dx{y}}{y\left(100-y\right)}=.0001\ \dx{t}</me>
+</p>
+<p>
+  To integrate the left-hand side, we could expand the denominator to
+  complete the square and apply the appropriate trigonometric
+  substitution. Specifically, we can manipulate this integral as
+  follows
+
+  <md>
+    <mrow>\int{\frac{\dx{y}}{y\left(100-y\right)}}=\int{\frac{\dx{y}}{100y-y^2}}\amp{}=\int{\frac{\dx{y}}{-\left(y^2-100y\right)}}</mrow>
+    <mrow>\amp{}=\int{\frac{\dx{y}}{{50}^2-\left(y^2-100y+{50}^2\right)}}</mrow>
+    <mrow>\amp{}=\int{\frac{\dx{y}}{{50}^2-{\left(y-50\right)}^2}}</mrow>
+    <mrow>\amp{}=\frac{1}{{50}^2}\int{\frac{\dx{y}}{1-{\left(\frac{y-50}{50}\right)}^2}}</mrow>
+  </md>
+</p>
+
+<p>
+  Applying the trigonometric substitution
+  <m>\frac{y-50}{50}=\sin(\theta),\ </m>we have
+  <m>\dx{y}=50\cos(\theta) </m>, so we get
+  <md>
+    <mrow>
+    \frac{1}{50}\int\frac{\cos(\theta)}{1-{\sin^2(\theta)}}\dx{\theta}=\frac{1}{50}\int\frac{1}{\cos(\theta)}\dx{\theta}\amp{}=\frac{1}{50}\int\sec(\theta)\dx{\theta}
+    </mrow>
+    <mrow>
+      \amp{}=\frac{1}{50}\ln\left(\sec (\theta)+\tan(\theta)\right)+C
+    </mrow>
+</md>
+</p>
+<p>
+ Utilizing the triangle
+</p>
+<image source="RightTriPFD1.png" width="70%">
+<shortdescription></shortdescription>
+</image>
+<p>
+
+We get
+<md>
+<mrow>
+\int{\frac{\dx{y}}{y\left(100-y\right)}}\amp{}=\frac{1}{50}\ln\left(\sec( \theta)+\tan(\theta)\right)
+</mrow>
+<mrow>
+\amp{}=\frac{1}{50}{\mathrm{ln} \left(\frac{50}{\sqrt{y\left(100-y\right)}}+\frac{y-50}{\sqrt{y\left(100-y\right)}}\right)\ }+C
+</mrow>
+<mrow> 
+\amp{}=\frac{1}{50}{\mathrm{ln} \left(\frac{y}{\sqrt{y\left(100-y\right)}}\right)\ }+C
+</mrow>
+<mrow>\amp{}=\frac{1}{50}{\mathrm{ln} \left(\sqrt{\frac{y}{100-y}}\right)\ }+C
+</mrow>
+</md>
+</p>
+
+ 
+<exercise xml:id="EXERCISEPFD1">
+<statement>
+<p>
+<idx><h>Problem</h></idx>
+Solve the original initial value problem
+<md>
+<mrow>\frac{\dx{y}}{y\left(100-y\right)}=.0001\dx{t},\amp{}\amp{} y(0)=y_0</mrow>
+</md>
+ for the case <m>0\lt{}y\lt{}100</m>.
+</p>
+</statement>
+
+<answer>
+<p>
+<me>y=\frac{100y_0}{y_0+\left(100-y_0\right)e^{-0.01t}}</me>
+</p>
+</answer>
+
+
+</exercise>
+
+
+ 
+
+ 
+<p>
+ As we've mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities.  For example, consider a modification of the logistic model above
+
+ 
+<me>\frac{\dx{y}}{\dx{t}}=.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}-1\right)=.00001y\left(100-y\right)(y-10)</me>
+</p>
+<p>
+ In this case, 10 is called the <term>minimum viability level of the
+ population.</term> (Why?)  Solving this would require solving
+ <me>\int{\frac{\dx{y}}{y\left(100-y\right)(y-10)}}</me>
+ which is not really conducive to a trigonometric substitution.
+</p>
+ 
+
+ 
+<exercise xml:id="EXERCISEPFD2">
+<statement>
+<p>
+<idx><h>Problem</h></idx>
+ Apply the same calculations we did before and the substitution <m>\frac{y-50}{50}=\sin( \theta)</m> to obtain
+<me>\int\frac{\dx{y}}{y\left(100-y\right)(y-10)}=
+\frac{1}{50}\int\frac{1 }{\cos( \theta)}\left(50\sin( \theta)+40\right)\dx{\theta}</me>
+
+</p>
+</statement>
+</exercise>
+
+ 
+
+ 
+<p>
+ Here, we will examine a technique which does not involve trigonometry and is really algebraic in nature.  It will also be useful for examining integrals such as the two above.  The trick is to try and separate the fraction into ``partial fractions'' which will be easier to integrate.  For example, consider  <m>\frac{1}{y\left(100-y\right)}</m>.  Unfortunately, we cannot just expand the denominator and divide this into two fractions as we could if it was the numerator.  This is due to the fact that fractions are added by finding a common denominator, not just adding denominators.  However, it is reasonable to make an educated guess that such a fraction can be written as
+<me>\frac{1}{y\left(100-y\right)}=\frac{A}{y}+\frac{B}{100-y}</me>
+
+
+ for some as yet to be determined <m>A</m> and <m>B</m>.  We can see if this guess pans out by combining the partial fractions to obtain the original.
+
+ 
+<me>\frac{1}{y\left(100-y\right)}=\frac{A}{y}+\frac{B}{100-y}=\frac{A\left(100-y\right)+By}{y\left(100-y\right)}=\frac{100A+\left(B-A\right)y}{y}</me>
+</p>
+<p>
+ This says that
+<m>B-A=0</m>, and <m>100A=1.</m>
+
+
+ so that <m>A=\frac{1}{100}</m> and <m>B=A=\frac{1}{100}</m>.  Hence
+
+ 
+<me>\frac{1}{y\left(100-y\right)}=\frac{1/100}{y}+\frac{1/100}{100-y}</me>
+</p>
+
+<p>
+ Back to our integration problem, we would obtain
+<md>
+<mrow>\int{\frac{\dx{y}}{y\left(100-y\right)}}\amp{}=\int{\left(\frac{\frac{1}{100}}{y}+\frac{\frac{1}{100}}{100-y}\right)}\ \dx{y}
+=\frac{1}{100}\left[\int{\frac{\dx{y}}{y}+}\int{\frac{\dx{y}}{100-y}}\right]
+</mrow>
+<mrow>
+\amp{}=\frac{1}{100}\left[{\mathrm{ln} y\ }-{\mathrm{ln} \left(100-y\right)\ }\right]+C=\frac{1}{100}{\mathrm{ln} \left(\frac{y}{100-y}\right)\ }+C
+</mrow>
+</md>
+ which is the same integral we obtained before.
+</p>
+ 
+
+ 
+
+<exercise xml:id="EXERCISEPFD3">
+<introduction>
+<p>
+<idx><h></h></idx>
+</p>
+</introduction>
+<task>
+<statement>
+<p>
+Explain why we had to restrict ourselves to <m>0\lt{}y\lt{}100</m> in what we did above.
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+ Use the integral provided above to obtain an equation for <m>y</m> in the logistic growth model
+
+ 
+<md>
+<mrow>\dfdx{y}{t}\amp{}=.01y\left(1-\frac{y}{100}\right),\amp{} y\left(0\right)=y_0</mrow>
+</md>
+for the case where <m>y\gt{}100</m>.  Show that (surprisingly?) this
+yields the same equation as in <xref ref="EXERCISEPFD1"></xref>.
+[This is a spot where you need to look at the absolute value in the
+logarithm.  We told you it comes up occasionally.]
+
+</p>
+</statement>
+</task>
+
+</exercise>
+
+
+
+
+<p>
+
+ Now that we've shown you an example where decomposing a fraction of polynomials (called a rational function) into a sum of partial fractions is practical, let's look into a systematic way of doing this algebraically.  All of this hinges on the following theoretical fact about polynomials.
+</p>
+ 
+<p>
+ Suppose we have two polynomials <m>p(x)</m> and <m>q(x)</m> which have no common factors (other than constants, which are considered trivial.  For example, <m>p\left(x\right)=2\left(\frac{p\left(x\right)}{2}\right),\ q\left(x\right)=2\left(\frac{q\left(x\right)}{2}\right)</m>, which would make 2 a trivial common factor of <m>p(x)</m> and <m>q(x)</m>.)  Then there are polynomials <m>r(x)</m> and <m>s(x)</m> such that
+
+ 
+<me>r\left(x\right)\cdot p\left(x\right)+s\left(x\right)\cdot q\left(x\right)=1</me>
+</p>
+<p>
+ In other words, there is some (linear) combination of <m>p</m> and <m>q</m> which produces 1.  For example, notice that
+
+  
+<me>\left(x+a\right)-\left(x+b\right)=a-b</me>
+
+ 
+
+ so if <m>a\neq b</m>, then
+
+ 
+<me>\frac{1}{a-b}\left(x+a\right)+\frac{-1}{a-b}\left(x+b\right)=1</me>
+</p>
+
+ <p>
+
+ We determined this combination in a somewhat ad-hoc way, but there is a systematic way to do this involving no more than long division of polynomials.  We won't delve into this, but will adopt a more (educated) guess and check method.  Notice that in the above example
+
+ 
+<md>
+<mrow>
+\frac{1}{\left(x+a\right)\left(x+b\right)}\amp{}=\frac{\frac{1}{a-b}\left(x+a\right)+\frac{-1}{a-b}\left(x+b\right)}{(x+a)(x+b)}
+</mrow>
+<mrow>
+\amp{}=\frac{\frac{1}{a-b}}{x+b}+\frac{\frac{-1}{a-b}}{x+a}
+</mrow>
+<mrow>\amp{}=\frac{\frac{-1}{a-b}}{x+a}+\frac{\frac{1}{a-b}}{x+b}
+</mrow>
+</md>
+</p>
+
+ 
+<p>
+ In general, if we have
+<me>r\left(x\right)\cdot p\left(x\right)+s\left(x\right)\cdot q\left(x\right)=1</me>
+then
+
+ 
+<me>\frac{1}{p\left(x\right)\cdot q(x)}=\frac{r\left(x\right)\cdot p\left(x\right)+s\left(x\right)\cdot q\left(x\right)}{p\left(x\right)\cdot q\left(x\right)}=\frac{s\left(x\right)}{p\left(x\right)}+\frac{r\left(x\right)}{q\left(x\right)}</me>
+
+
+ Notice that if <m>t(x)</m> is any polynomial, then
+
+ 
+<me>\frac{t(x)}{p\left(x\right)\cdot q(x)}=\frac{t\left(x\right)\cdot s\left(x\right)}{p\left(x\right)}+\frac{t\left(x\right)\cdot r\left(x\right)}{q\left(x\right)}=\frac{A\left(x\right)}{p\left(x\right)}+\frac{B\left(x\right)}{q\left(x\right)}</me>
+
+
+ where <m>A\left(x\right)=t\left(x\right)\cdot s(x)</m> and <m>B\left(x\right)=t\left(x\right)\cdot r(x)</m> are two polynomials.
+</p>
+
+<p>
+ To summarize all of this, we have, in theory, that if <m>p(x)</m> and <m>q(x)</m> are two polynomials with no non-trivial common factors, then for any polynomial <m>t(x)</m>, there are polynomials <m>A(x)</m> and <m>B(x)</m> such that
+<me>\frac{t(x)}{p\left(x\right)\cdot q(x)}=\frac{A\left(x\right)}{p\left(x\right)}+\frac{B\left(x\right)}{q\left(x\right)}</me>
+
+
+ To extend this idea further, if <m>p\left(x\right),\ q\left(x\right),\ r(x)</m> have no nontrivial common factors, then there are polynomials <m>A\left(x\right),\ B\left(x\right),\ C(x)</m> with
+
+ 
+<me>\frac{t(x)}{p\left(x\right)\cdot q\left(x\right)\cdot r(x)}=\frac{A\left(x\right)}{p\left(x\right)}+\frac{B\left(x\right)}{q\left(x\right)}+\frac{C\left(x\right)}{r\left(x\right)}</me>
+
+
+ and this can be extended to any number of factors in the denominator.  Again, this can be proven theoretically, and this partial fraction decomposition can be obtained systematically, but we will adopt a guess and check method to find <m>A,\ B,\ C</m>.  To make our guess a little more educated, the following fact can be employed.  You can make peace with this in your own closet.
+</p>
+ 
+<p>
+ If the degree of <m>t(x)</m> is less than the degree of <m>p(x)\cdot q(x)\cdot r(x)</m>, then <m>A,B,C</m> can be chosen with
+
+ 
+<md>
+<mrow>\deg( A)\amp{} \lt{}\deg( p),\amp{}\deg( B)\amp{}\lt{}\deg( q),\amp{}\deg( C)\amp{}\lt{}\deg( r).</mrow>
+</md>
+</p>
+
+<example>
+<p>
+Recall we had
+<me>\int{\frac{\dx{y}}{y\left(100-y\right)(y-10)}}</me>
+
+
+ To compute this, we will find the partial fractions decomposition of <m>\frac{1}{y\left(100-y\right)\left(y-10\right)}</m>.  We make the educated guess
+<me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{A}{y}+\frac{B}{100-y}+\frac{C}{y-10}</me>
+
+
+ and determine what <m>A,B,C</m> are.  This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.
+
+ 
+<me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)}{y\left(100-y\right)\left(y-10\right)}</me>
+
+<me>=\frac{A\left(-y^2+110y-100\right)+B\left(y^2-10y\right)+C\left(100y-y^2\right)}{y\left(100-y\right)\left(y-10\right)}</me>
+
+<me>=\frac{\left(-A+B-C\right)y^2+\left(110A-10B+100C\right)y+\left(-1000A\right)}{y\left(100-y\right)\left(y-10\right)}</me>
+</p>
+<p>
+ Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.
+
+ 
+<me>1=0y^2+0y+1=\left(-A+B-C\right)y^2+\left(110A-10B+100C\right)y+\left(-1000A\right)</me>
+
+<me>-A+B-C=0,\ \ \ \ \ \ \ \ 110A-10B+100C=0,\ \ \ -1000A=1</me>
+
+
+ Solve this any way you wish, but you should get
+<me>A=-\frac{1}{1000}\ ,\ \ \ B=\frac{1}{9000}\ ,\ \ \ C=\frac{1}{900}</me>
+
+
+ Thus
+<me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{-1/1000}{y}+\frac{1/9000}{100-y}+\frac{1/900}{y-10}</me>
+so
+<me>\int{\frac{\dx{y}}{y\left(100-y\right)\left(y-10\right)}}=-\frac{1}{1000}\int{\frac{\dx{y}}{y}}+\frac{1}{9000}\int{\frac{\dx{y}}{100-y}}+\frac{1}{900}\int{\frac{\dx{y}}{y-10}}</me>
+
+<me>=-\frac{1}{1000}{\mathrm{ln} y\ }-\frac{1}{9000}{\mathrm{ln} \left(100-y\right)\ }+\frac{1}{900}{\mathrm{ln} \left(y-10\right)\ }+C</me>
+</p>
+</example>
+
+<p>
+ In the above example, it said to find <m>A,\ B,\ C\ </m>any way you can.  We illustrated the brute force method of expanding <m>A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)</m> and setting this equal to <m>1=0y^2+0y+1</m>.  This led us to our three equations in the three unknowns <m>A,B,C</m>.  While solving this may be routine, it is tedious.  There are a number of shortcuts to this process, and we will illustrate one here.  Remember that the brute force will always work and does not require one to be clever, but it can be tedious.  For a less tedious method, remember that we want to find <m>A,B,C</m> so that
+
+ 
+<me>A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)=1</me>
+
+
+ for all values of <m>y</m>.  What if we judiciously choose various values of <m>y</m>.  For example, if we let <m>y=0</m>, we get
+<me>A\left(100-0\right)\left(0-10\right)+B\cdot 0+C\cdot 0=1</me>
+<me>-1000A=1</me>
+<me>A=-\frac{1}{1000}</me>
+
+
+ Similarly, if we let <m>y=100</m>, we get
+<me>A\cdot 0+B\left(100\right)\left(90\right)+C\cdot 0=1</me>
+<me>B=\frac{1}{9000}</me>
+
+
+ Finally, we let <m>y=10</m> and get
+<me>A\cdot 0+B\cdot 0+C\left(10\right)\left(90\right)=1</me>
+<me>C=\frac{1}{900}</me>
+
+
+ Again, you can let <m>y</m> equal anything you wish to find what the unknowns are.  Or you can always resort to the brute force method of expanding and equating coefficients.  Whatever gets the job done.
+
+</p>
+
+  
+ 
+
+
+</section>
 </chapter>
