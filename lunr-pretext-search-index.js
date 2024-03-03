@@ -1936,6 +1936,60 @@ var ptx_lunr_docs = [
   "body": "  Perform integration by parts and then substitution to compute and   "
 },
 {
+  "id": "SECTIONProbs6",
+  "level": "1",
+  "url": "SECTIONProbs6.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "Homework #6: Back to Logistic Growth: Partial Fractions",
+  "body": " Homework #6: Back to Logistic Growth: Partial Fractions  Recall that in differential calculus we had an example for logistic growth We analyzed this growth rate to draw a qualitative graph of , but we really could not produce specific values of for where things happened, because we didn't have a formula for . For reasons that will become clearer later, let's suppose that . Separating the variables is no problem   To integrate the left-hand side, we could expand the denominator to complete the square and apply the appropriate trigonometric substitution. Specifically, we can manipulate this integral as follows   Applying the trigonometric substitution we have , so we get   Utilizing the triangle     We get     Problem Solve the original initial value problem for the case .       As we've mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider a modification of the logistic model above   In this case, 10 is called the minimum viability level of the population. (Why?) Solving this would require solving which is not really conducive to a trigonometric substitution.    Problem Apply the same calculations we did before and the substitution to obtain    Here, we will examine a technique which does not involve trigonometry and is really algebraic in nature. It will also be useful for examining integrals such as the two above. The trick is to try and separate the fraction into ``partial fractions'' which will be easier to integrate. For example, consider . Unfortunately, we cannot just expand the denominator and divide this into two fractions as we could if it was the numerator. This is due to the fact that fractions are added by finding a common denominator, not just adding denominators. However, it is reasonable to make an educated guess that such a fraction can be written as for some as yet to be determined and . We can see if this guess pans out by combining the partial fractions to obtain the original.   This says that , and so that and . Hence   Back to our integration problem, we would obtain which is the same integral we obtained before.       Explain why we had to restrict ourselves to in what we did above.   Use the integral provided above to obtain an equation for in the logistic growth model for the case where . Show that (surprisingly?) this yields the same equation as in . [This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.]   Now that we've shown you an example where decomposing a fraction of polynomials (called a rational function) into a sum of partial fractions is practical, let's look into a systematic way of doing this algebraically. All of this hinges on the following theoretical fact about polynomials.  Suppose we have two polynomials and which have no common factors (other than constants, which are considered trivial. For example, , which would make 2 a trivial common factor of and .) Then there are polynomials and such that   In other words, there is some (linear) combination of and which produces 1. For example, notice that so if , then   We determined this combination in a somewhat ad-hoc way, but there is a systematic way to do this involving no more than long division of polynomials. We won't delve into this, but will adopt a more (educated) guess and check method. Notice that in the above example   In general, if we have then Notice that if is any polynomial, then where and are two polynomials.  To summarize all of this, we have, in theory, that if and are two polynomials with no non-trivial common factors, then for any polynomial , there are polynomials and such that To extend this idea further, if have no nontrivial common factors, then there are polynomials with and this can be extended to any number of factors in the denominator. Again, this can be proven theoretically, and this partial fraction decomposition can be obtained systematically, but we will adopt a guess and check method to find . To make our guess a little more educated, the following fact can be employed. You can make peace with this in your own closet.  If the degree of is less than the degree of , then can be chosen with    Recall we had To compute this, we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.  Solve this any way you wish, but you should get Thus so     In the above example, it said to find any way you can. We illustrated the brute force method of expanding and setting this equal to . This led us to our three equations in the three unknowns . While solving this may be routine, it is tedious. There are a number of shortcuts to this process, and we will illustrate one here. Remember that the brute force will always work and does not require one to be clever, but it can be tedious. For a less tedious method, remember that we want to find so that for all values of . What if we judiciously choose various values of . For example, if we let , we get   Similarly, if we let , we get  Finally, we let and get  Again, you can let equal anything you wish to find what the unknowns are. Or you can always resort to the brute force method of expanding and equating coefficients. Whatever gets the job done.  "
+},
+{
+  "id": "EXERCISEPFD1",
+  "level": "2",
+  "url": "SECTIONProbs6.html#EXERCISEPFD1",
+  "type": "Problem",
+  "number": "5.8",
+  "title": "",
+  "body": "  Problem Solve the original initial value problem for the case .      "
+},
+{
+  "id": "SECTIONProbs6-10",
+  "level": "2",
+  "url": "SECTIONProbs6.html#SECTIONProbs6-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "minimum viability level of the population. "
+},
+{
+  "id": "EXERCISEPFD2",
+  "level": "2",
+  "url": "SECTIONProbs6.html#EXERCISEPFD2",
+  "type": "Problem",
+  "number": "5.9",
+  "title": "",
+  "body": "  Problem Apply the same calculations we did before and the substitution to obtain   "
+},
+{
+  "id": "EXERCISEPFD3",
+  "level": "2",
+  "url": "SECTIONProbs6.html#EXERCISEPFD3",
+  "type": "Problem",
+  "number": "5.10",
+  "title": "",
+  "body": "     Explain why we had to restrict ourselves to in what we did above.   Use the integral provided above to obtain an equation for in the logistic growth model for the case where . Show that (surprisingly?) this yields the same equation as in . [This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.]  "
+},
+{
+  "id": "SECTIONProbs6-23",
+  "level": "2",
+  "url": "SECTIONProbs6.html#SECTIONProbs6-23",
+  "type": "Example",
+  "number": "5.11",
+  "title": "",
+  "body": " Recall we had To compute this, we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.  Solve this any way you wish, but you should get Thus so    "
+},
+{
   "id": "meta_backmatter-2",
   "level": "1",
   "url": "meta_backmatter-2.html",
