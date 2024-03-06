@@ -589,76 +589,76 @@ then
 </p>
 
 <example>
-<p>
-Recall we had
-<me>\int{\frac{\dx{y}}{y\left(100-y\right)(y-10)}}</me>
+  <p>
+    Recall we had
+    <me>\int{\frac{\dx{y}}{y\left(100-y\right)(y-10)}}</me> To compute
+    this, we will find the partial fractions decomposition of
+    <m>\frac{1}{y\left(100-y\right)\left(y-10\right)}</m>.  We make
+    the educated guess
+    <me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{A}{y}+\frac{B}{100-y}+\frac{C}{y-10}</me>
+    and determine what <m>A,B,C</m> are.  This can be done in a number
+    of ways, but the most direct (and labor intensive) way to do this
+    is to combine the terms in the right-hand side and compare
+    coefficients.
+    <me>
+      \frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)}{y\left(100-y\right)\left(y-10\right)}
+    </me>
+    <me>
+      =\frac{A\left(-y^2+110y-100\right)+B\left(y^2-10y\right)+C\left(100y-y^2\right)}{y\left(100-y\right)\left(y-10\right)}
+    </me>
+    <me>
+      =\frac{\left(-A+B-C\right)y^2+\left(110A-10B+100C\right)y+\left(-1000A\right)}{y\left(100-y\right)\left(y-10\right)}
+    </me>
+  </p>
+  <p>
+    Since the fractions must be equal and the denominators are the
+    same, then we can set the numerators equal.
+    <me>
+1=0y^2+0y+1=\left(-A+B-C\right)y^2+\left(110A-10B+100C\right)y+\left(-1000A\right)
+</me>
+    <me>-A+B-C=0,\ \ \ \ \ \ \ \ 110A-10B+100C=0,\ \ \ -1000A=1</me>
+
+    Solve this any way you wish, but you should get
+    <me>A=-\frac{1}{1000}\ ,\ \ \ B=\frac{1}{9000}\ ,\ \ \ C=\frac{1}{900}</me>
 
 
- To compute this, we will find the partial fractions decomposition of <m>\frac{1}{y\left(100-y\right)\left(y-10\right)}</m>.  We make the educated guess
-<me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{A}{y}+\frac{B}{100-y}+\frac{C}{y-10}</me>
+    Thus
+    <me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{-1/1000}{y}+\frac{1/9000}{100-y}+\frac{1/900}{y-10}</me>
+    so
+    <me>\int{\frac{\dx{y}}{y\left(100-y\right)\left(y-10\right)}}=-\frac{1}{1000}\int{\frac{\dx{y}}{y}}+\frac{1}{9000}\int{\frac{\dx{y}}{100-y}}+\frac{1}{900}\int{\frac{\dx{y}}{y-10}}</me>
 
-
- and determine what <m>A,B,C</m> are.  This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.
-
- 
-<me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)}{y\left(100-y\right)\left(y-10\right)}</me>
-
-<me>=\frac{A\left(-y^2+110y-100\right)+B\left(y^2-10y\right)+C\left(100y-y^2\right)}{y\left(100-y\right)\left(y-10\right)}</me>
-
-<me>=\frac{\left(-A+B-C\right)y^2+\left(110A-10B+100C\right)y+\left(-1000A\right)}{y\left(100-y\right)\left(y-10\right)}</me>
-</p>
-<p>
- Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.
-
- 
-<me>1=0y^2+0y+1=\left(-A+B-C\right)y^2+\left(110A-10B+100C\right)y+\left(-1000A\right)</me>
-
-<me>-A+B-C=0,\ \ \ \ \ \ \ \ 110A-10B+100C=0,\ \ \ -1000A=1</me>
-
-
- Solve this any way you wish, but you should get
-<me>A=-\frac{1}{1000}\ ,\ \ \ B=\frac{1}{9000}\ ,\ \ \ C=\frac{1}{900}</me>
-
-
- Thus
-<me>\frac{1}{y\left(100-y\right)\left(y-10\right)}=\frac{-1/1000}{y}+\frac{1/9000}{100-y}+\frac{1/900}{y-10}</me>
-so
-<me>\int{\frac{\dx{y}}{y\left(100-y\right)\left(y-10\right)}}=-\frac{1}{1000}\int{\frac{\dx{y}}{y}}+\frac{1}{9000}\int{\frac{\dx{y}}{100-y}}+\frac{1}{900}\int{\frac{\dx{y}}{y-10}}</me>
-
-<me>=-\frac{1}{1000}{\mathrm{ln} y\ }-\frac{1}{9000}{\mathrm{ln} \left(100-y\right)\ }+\frac{1}{900}{\mathrm{ln} \left(y-10\right)\ }+C</me>
-</p>
+    <me>=-\frac{1}{1000}{\mathrm{ln} y\ }-\frac{1}{9000}{\mathrm{ln} \left(100-y\right)\ }+\frac{1}{900}{\mathrm{ln} \left(y-10\right)\ }+C</me>
+  </p>
 </example>
 
 <p>
- In the above example, it said to find <m>A,\ B,\ C\ </m>any way you can.  We illustrated the brute force method of expanding <m>A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)</m> and setting this equal to <m>1=0y^2+0y+1</m>.  This led us to our three equations in the three unknowns <m>A,B,C</m>.  While solving this may be routine, it is tedious.  There are a number of shortcuts to this process, and we will illustrate one here.  Remember that the brute force will always work and does not require one to be clever, but it can be tedious.  For a less tedious method, remember that we want to find <m>A,B,C</m> so that
-
- 
-<me>A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)=1</me>
-
-
- for all values of <m>y</m>.  What if we judiciously choose various values of <m>y</m>.  For example, if we let <m>y=0</m>, we get
-<me>A\left(100-0\right)\left(0-10\right)+B\cdot 0+C\cdot 0=1</me>
-<me>-1000A=1</me>
-<me>A=-\frac{1}{1000}</me>
-
-
- Similarly, if we let <m>y=100</m>, we get
-<me>A\cdot 0+B\left(100\right)\left(90\right)+C\cdot 0=1</me>
-<me>B=\frac{1}{9000}</me>
-
-
- Finally, we let <m>y=10</m> and get
-<me>A\cdot 0+B\cdot 0+C\left(10\right)\left(90\right)=1</me>
-<me>C=\frac{1}{900}</me>
-
-
- Again, you can let <m>y</m> equal anything you wish to find what the unknowns are.  Or you can always resort to the brute force method of expanding and equating coefficients.  Whatever gets the job done.
-
+  In the above example, it said to find <m>A,\ B,\ C\ </m>any way you
+  can.  We illustrated the brute force method of expanding
+  <m>A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)</m>
+  and setting this equal to <m>1=0y^2+0y+1</m>.  This led us to our
+  three equations in the three unknowns <m>A,B,C</m>.  While solving
+  this may be routine, it is tedious.  There are a number of shortcuts
+  to this process, and we will illustrate one here.  Remember that the
+  brute force will always work and does not require one to be clever,
+  but it can be tedious.  For a less tedious method, remember that we
+  want to find <m>A,B,C</m> so that
+  <me>A\left(100-y\right)\left(y-10\right)+By\left(y-10\right)+Cy\left(100-y\right)=1</me>
+  for all values of <m>y</m>.  What if we judiciously choose various values of <m>y</m>.  For example, if we let <m>y=0</m>, we get
+  <me>A\left(100-0\right)\left(0-10\right)+B\cdot 0+C\cdot 0=1</me>
+  <me>-1000A=1</me>
+  <me>A=-\frac{1}{1000}</me>
+  Similarly, if we let <m>y=100</m>, we get
+  <me>A\cdot 0+B\left(100\right)\left(90\right)+C\cdot 0=1</me>
+  <me>B=\frac{1}{9000}</me>
+  Finally, we let <m>y=10</m> and get
+  <me>A\cdot 0+B\cdot 0+C\left(10\right)\left(90\right)=1</me>
+  <me>C=\frac{1}{900}</me>
+  Again, you can let <m>y</m> equal anything you wish to find what the
+  unknowns are.  Or you can always resort to the brute force method of
+  expanding and equating coefficients.  Whatever gets the job done.
 </p>
-
-  
- 
 
 
 </section>
+
 </chapter>
