@@ -1,0 +1,628 @@
+<?xml version='1.0' encoding='utf-8'?>  
+<chapter xml:id="FTC" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Integration in Its Simplest Forms  </title>
+<introduction>
+<title>A Quick Review of Differential Calculus</title>
+    <p>
+      In <pubtitle>Differential Calculus: From Practice to
+      Theory</pubtitle> we saw that the notation for an infinitesimal
+      difference, <q><m>\dx{x} </m>,</q> can be thought of as a
+      refinement of the <q>change of <m>x</m></q> symbol <m>\Delta
+      x</m> which you learned when you were studying straight
+      lines. The distinction is that we think of <m>\Delta x =
+      x_2-x_1</m> as a measurable distance between <m>x_2</m> and
+      <m>x_1</m> whereas <m>\dx{x}</m> represents and infinitesimal
+      distance. To be sure we also learned in <pubtitle>Differential
+      Calculus: From Practice to Theory</pubtitle> that the notion of
+      an infinitesimal is very problematic as a logical foundation of
+      our investigations. But as a way of thinking; as an appeal to
+      intuition, it can be very useful. Naturally, any conclusions we
+      draw from our intuitive approach will have to be confirmed
+      logically but we needn<rsq/>t fuss about that yet.
+    </p>
+
+    <p>
+      By thinking in this way we found that we could extend the idea
+      of the slope of a straight line to curved lines. The slope of a
+      straight line is given by <m>\frac{\Delta y}{\Delta x}</m> (the
+      change of <m>y</m> over the change of <m>x</m>) so the slope of
+      a curved line at the point <m>x=a</m> is given by the notation
+      n<me>\eval{\dfdx{y}{x}}{x}{a} </me>.  It is necessary to specify
+      the slope of the curve at the particular point <m>x=a</m>
+      because, unlike a straight line, the slope of a curved line
+      changes from point to point. 
+      This generaled notion slope is very useful. 
+   </p>
+
+    <p>
+ Our
+      interpretation of the differential ratio, <m>\dfdx{y}{x}</m>,
+      will vary depending on what physical quantities <m>x</m> and
+      <m>y</m> happen to represent. In one simple interpretation if
+      the variable <m>y</m> measures a vertical displacement and the
+      variable <m>x</m> measures the passage of time then
+      <m>\dfdx{y}{t}</m> represents the velocity in the vertical
+      direction.
+</p>
+<aside>
+<title>Mathematical Customs</title>
+<p>
+We would probably actually use <m>t</m> instead of
+      <m>x</m> in this case in order evoke the word <q>time</q>. The
+      names we choose for our variables are generally irrelevant. We
+      choose a name simply to help us remember what it
+      represents
+.</p>
+</aside>
+
+<p>
+ For example, the position of a ball tossed
+      vertically with an initial velocity <m>v_0</m>, from an initial
+      height <m>y_0</m>, will be <me>y(t)=-4.9t^2+v_0t+y_0</me> if
+      <m>y</m> is measured in meters and <m>t</m> is measured in
+      seconds.
+    </p>
+
+    <p>
+      Thus the ball<rsq/>s velocity will be <me>v(t) = \dfdx{y}{t} =
+      -9.8t+v_0</me> and its acceleration will be
+      <me>a(t)=\dfdx{v}{t}=\dfdxn{y}{t}{2}=-9.8,</me> which is, of
+      course, the rate of acceleration of an object falling near the
+      surface of the earth, as determined experimentally by <url
+      href="https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/"
+      visual="https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/">Galileo</url>
+    </p>
+
+    <p>
+      One exercise in <pubtitle>Differential Calculus</pubtitle> asked
+      you to show that if <m>y(x)</m> represents the shape of a
+      catenary curve then <m>y(x)</m> will satisfy the differential
+      equation
+      <men xml:id="CatenaryIVP">
+        \dfdxn{y}{x}{2} =\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
+      </men>
+    </p>
+    <problem xml:id="DRILLCatenaryRedux">
+        <statement>
+          <p>
+            <idx><h>Catenary</h></idx> 
+            A later exercise had you show that in fact the function
+            <me>
+              y(x)=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)
+            </me>
+            satisfies <xref ref="CatenaryIVP">equation</xref>. Repeat
+            that computation by computing <m>\dfdx{y}{x} </m> and
+            <m>\dfdxn{y}{x}{2} </m> and showing that <m>y(x)</m>
+            satisfies <xref ref="CatenaryIVP">equation</xref>.
+          </p>
+        </statement>
+      </problem>
+
+
+      <p>
+        A natural question is <q>How did we find <m>y(x)</m>?</q>
+        Answering that question is the  topic of Integral Calculus. .
+      </p>
+</introduction>
+
+<section  xml:id="SECTIONIntegrationAsASum">
+<title>Integration as  Summation</title>
+      <p>
+        In its simplest formulation Differential Calculus is about
+        subtraction <mdash/> differences. That is, given a function
+        <m>y=y(x)</m>, when we differentiate it we find the
+        infinitesimal difference <mdash/> which we've denoted as
+        <m>\dx{y}</m> <mdash/> between two <q>infinitely close</q>
+        points. Thus it seems reasonable to suppose that the reverse
+        process is about addition <mdash/> summmation.  In its
+        simplest formulation the inverse of Differentiatial Calculus,
+        called <term>Integral Calculus</term>, is the process of
+        adding up all of the differentials of <m>y</m> to recover
+        <m>y</m> itself. 
+    </p>
+
+
+      <!-- <p>  -->
+      <!--   Notice we did not write <me>\int\dx{y} =y</me>.  This is -->
+      <!--   because it is not (quite) true. There are an infinite number -->
+      <!--   of possible values of <me>\int\dx{y}</me>. Fortunately, as we -->
+      <!--   mentioned before, these all differ by constants.  Thus we can -->
+      <!--   write something like <m>\int 2x\dx{x}=x^2+C</m> where <m>C</m> -->
+      <!--   is an arbitrary constant.  This represents all of the possible -->
+      <!--   functions whose derivative is <m>2x</m>, so with that in mind -->
+      <!--   <m>\int 2x\dx{x}</m> is referred to as the indefinite integral -->
+      <!--   or anti-derivative of <m>2x</m>.  These names come from the -->
+      <!--   foundational switch from differentials to limits and -->
+      <!--   derivatives, but we still want to emphasize that we integrate -->
+      <!--   differentials, not functions (so the <m>\dx{x}</m> is not -->
+      <!--   optional). -->
+      <!-- </p> -->
+
+    <p> 
+      Suppose a point <m>P</m> on the real line begins at <m>P_0</m>
+      and traces out a line segment of some unknown length,
+      <m>x</m>.
+
+</p>
+<image source="X0toX.png" width="50%">
+<shortdescription></shortdescription>
+</image>
+<p>
+    Notice that in this setting <m>x</m> represents the
+    <em>length</em> of the line segment which <m>P</m> has traced
+    out. In particular <m>x</m> is <em>not</em> the position
+    (coordinate) of <m>P</m> on the line. It can't be because we have
+    not specified an origin (zero) point.
+    </p>
+<!-- <aside> -->
+<!-- <title>Mathematical Notation</title> -->
+<!-- <p> -->
+<!--  You should always question the meanings of the symbols you encounter -->
+<!--  and use. If you can't state the meaning precisely then you're going -->
+<!--  to have trouble understanding what is being said. For example, we've -->
+<!--  used <m>x</m> to represent the <em>length</em> of a line segment -->
+<!-- </p> -->
+<!-- <p> -->
+<!--   Sometimes it will be convenient to call the line <q>the <m>x</m>-axis.</q> But this -->
+<!--   is a bit confusing as we<rsq/>ve already used <m>x</m> to indicate a -->
+<!--   position on the line.  Using <m>x</m> in two incompatible ways like -->
+<!--   this is not precise enough for mathematics and we shouldn't really -->
+<!--   do it. Nor should you. But, for better or worse mathematics is done, -->
+<!--   and learned, by flawed and imprecise human creatures so we have to -->
+<!--   find ways to cope with our foibles. -->
+
+<!-- </p> -->
+<!-- </aside> -->
+<p>
+ In sketch below we have partitioned the line segment between <m>P</m> and <m>P_0</m> (which
+ we have re-labeled <m>x_n</m> and <m>x_0</m> in the sketch below)
+ into subintervals as explained below.
+    </p>
+    <image source="FTC1.png" width="50%">
+      <shortdescription></shortdescription>
+    </image>
+    <p>
+      We represent the length of the  first subinterval of <m>x</m> with <m>\Delta
+      x_1</m>, of the second with <m>\Delta x_2</m>, and so on.  In
+      general if <m>\Delta{x_i}</m> represents the length of <m>i</m>th
+      subinterval of <m>x</m>. Clearly the length of the line
+      segment is
+      <md>
+        <mrow>\Delta{x_1}+\Delta{x_2}+\Delta{x_3} +\cdots  +\Delta{x_{n-1}}+\Delta{x_n}</mrow>
+        <mrow> =  (x_1-x_0)+(x_2-x_1)+(x_3-x_2) +\cdots + (x_{n-1}-x_{n-2})+(x_n-x_{n-1})</mrow>
+        <mrow>=x_n-x_0.</mrow>
+      </md>
+      If the subintervals are all the same length, say
+      <m>\Delta{x}</m>, then we no longer need the subscripts to
+      distinguish them so we could write
+      <me> \underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+      copies}}=x_n-x_0</me>
+      
+      instead.  But this is cumbersome and we are far to lazy to write
+      all of that each time we want to indicate such a sum.  Leibniz proposed using 
+      the letter <q>S</q> (first letter of the word <q>sum</q>) to
+      simplify the summation  notation:
+
+
+      <men xml:id="FinDiffSum">
+        \int{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+      copies}} = x_n-x_0 </men>
+and his idea has been universally adopted.
+    </p> 
+    <p> 
+      We assume, with Leibniz, that <xref
+      ref="FinDiffSum">equation</xref> remains true when the finite
+      differences (<m>\Delta{x}</m>) are replaced with infinitesimal
+      differences (<m>\dx{x}{}</m>): <men
+      xml:id="EQUATIONDefInt2">\int{\dx{x}{}}=x_n-x_0.</men>
+ The symbol 
+<q><m>\int </m></q> is called an 
+<term>integral sign</term>, and any expression starting with 
+<q><m>\int </m> </q> and ending with 
+<q><m>\dx{x} </m></q> is called an 
+<term>integral</term>. <xref ref="EQUATIONDefInt2">Equation</xref> is the simplest possible integral.
+    </p>
+      <aside>
+        <title>A Little History</title>
+        <p>
+          Leibniz chose the letter <q>S</q> because
+          it is the first letter of Latin word <foreign>summa</foreign>,
+          from which we get the English word <q>sum.</q>
+        </p>
+        <p>
+          To a modern eye the integral sign looks like a stylized
+          letter <q>S,</q> and that is often how it is described. But
+          it isn<rsq/>t stylized at all. When Calculus was invented in
+          the seventeenth century a printed letter <q>S</q> typically
+          had several forms, depending on where it appeared in a
+          word. In one of these forms it extended above and below the
+          line of text, much like the modern form of the letter
+          <q>f</q> extends above the line of text.  Leibniz adopted
+          this doubly extended form of <q>S</q> as his summation, or
+          integral, sign. So the integral symbol isn<rsq/>t stylized,
+          but it is archaic.
+        </p>
+      </aside>
+
+      <p>
+        <xref ref="EQUATIONDefInt2">Equation</xref> says that if we add
+        up the lengths of all of the differentials that make up the
+        line segment from <m>x_0</m> to <m>x_n</m> we will get its
+        length, <m>x_n-x_0</m>, which we have called <m>x</m>. Therefore
+<men   xml:id="EQUATIONFTCSimple">\int\dx{x}=x.</men>
+      </p>
+      <p>
+        This is surely not surprising to you and you are probably
+        wondering why we've taken the trouble to wrap such an obvious
+        statement in this arcane notation. The reason is this: <xref
+        ref="EQUATIONFTCSimple">Equation</xref> is a very simple form
+        of what is known as the Fundamental Theorem of Calculus and we
+        will need to become very comfortable with it. Later, when
+        things get complex, it will be helpful to refer back to <xref
+        ref="EQUATIONFTCSimple">equation</xref> and remind ourselves
+        that, at its heart, integration is about adding things up.
+      </p>
+
+<paragraphs>
+<title>Coordinates, Variable Names, and Limits of Integration</title>
+<p>
+You may be wondering why we are being so punctilious about
+distinguishing the label of a point (e.g. <m>P</m>) and its coordinate
+<m>x_n</m>. A natural response would be <q>Aren<rsq/>t they the same
+thing?</q>
+</p>
+<p> No, actually they aren<rsq/>t. The label of a point is the name we
+use to distinguish it from other points. It<rsq/>s coordinate is
+it<rsq/>s from the origin.  Consider the following diagram.<!--
+Suppose <m>P</m> is a point on -->
+<!-- the <m>x</m>-axis located at a distance of <m>x</m> to the right of -->
+<!-- the origin. Does <m>x</m> represent a length? If so, what is <m>x</m> -->
+<!-- the length of? -->
+</p>
+<image source="VarX2.png" width="60%">
+<shortdescription></shortdescription>
+</image>
+<p>
+The labels (names) of the two points are <m>P_0</m> and <m>P</m>. Since
+<m>x_0</m> measures the distance between zero and <m>P_0</m> it is, by
+definition the coordinate of <m>P_0</m>. (If a vertical axis were
+present it would be the first coordinate and zero would be the
+second.) Similarly <m>x_n</m> is the coordinate of <m>P</m>. On the
+other hand since <m>x</m> <mdash/> the distance between <m>P_0</m> and
+<m>P</m> <mdash/> is not measured from the origin it is not a coordinate.
+</p>
+<!-- <p> -->
+<!-- Do you see -->
+<!-- what<rsq/>s going on here? The cooordinate <m>x</m> is indeed the length of the line segment between the origin and <m>P</m>. By definition every coordinate is the length of a line segment. But not every length  is necessarily a cooordinate. To see why consider the following sketch.  -->
+<!-- </p> -->
+<!-- <image source="VarX2.png" width="60%"> -->
+<!-- <shortdescription></shortdescription> -->
+<!-- </image> -->
+<!-- <p> -->
+<!-- In this case <m>P</m> and <m>P_0</m> are the labels of the two points, -->
+<!-- whereas <m>x_n</m> and <m>x_0</m> are their coordinates, respectively. -->
+<!-- </p> -->
+<p>
+But it is the length of the line segment <m>\overline{P_0P}</m> so if
+we partition the line segment <m>\overline{P_0P}</m> and compute
+<m>\int \dx{x} </m> we get <me>\int \dx{x} =x=x_n-x_0</me> which is
+equivalent to <xref ref="EQUATIONFTCSimple">equation</xref>.
+</p>
+<p>
+Since coordinates distinguish one point from another as well as
+separate labels a (very) common practice is to dispense with the
+labels altogether and make the coordinates serve both purposes as in
+the diagram below.
+</p>
+<image source="VarX3.png" width="60%">
+<shortdescription></shortdescription>
+</image>
+<p>
+Strictly speaking this is an abuse of our notation and it can cause
+confusion because it isn<rsq/>t always clear whether <m>x_0</m> and
+<m>x_n</m> refer to points on the line, or their distance from the
+origin (their coordinates). Always be sure it is clear to you which
+usage is intended.
+</p>
+
+</paragraphs>
+
+      <p>
+        In the early nineteenth century <url
+        href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
+        visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
+        Fourier</url> found that Leibniz<rsq/> original integral
+        symbol was not quite descriptive enough for his purposes. In
+        particular the expression <m>\int{\dx{x}}</m> gives no clue
+        where we need to start, or stop, summing the differentials. To
+        clarify things Fourier modified Leibniz<rsq/> notation by
+        inserting upper and lower indices on the integral sign as
+        follows:
+        <men
+        xml:id="EQUATIONFourierDefInt">\int_{x_0}^{x_n}\dx{x}=x_n-x_0</men>.
+        <xref
+        ref="EQUATIONFourierDefInt">Equation</xref> is equivalent to
+        <xref ref="EQUATIONDefInt2">equation</xref> but it has the
+        advantage that it clearly indicates the limits of
+        integration. We start summing the differentials at <m>x_0</m>,
+        and end at <m>x_n</m>, resulting in the difference
+        <m>x_n-x_0</m>.
+    </p>
+
+
+      <p>
+         Summation of differentials is called
+         <term>integration</term>.  An <term>integral</term> consists
+         of two parts: The <term>integral sign</term>, <me>\int
+         \text{(with or without indices)},</me> which indicates
+         summation, and the differentials to be summed <mdash/>
+         <m>\dx{y}</m> in this case.
+      </p>
+
+
+
+      <p>
+        Modern integration theory has expanded considerably beyond
+        this what we have described so far. But the underlying notion
+        of the integral as a sum is still very helpful and we will
+        rely on it rather heavily, at least at first.
+      </p>
+
+  </section>
+
+<section  xml:id="SECTIONIntAsAntiDiff">
+<title>Integration as Antidifferentiation</title>
+
+<definition>
+  <statement>
+    <p>
+      Suppose we have a function <men
+      xml:id="EQUATIONDefAntideriv">y=F(t)</men> whose derivative is
+      <m>\dfdx{y}{t}=f(t)</m>. Then <m>F(t)</m> is called an 
+      <term>antiderivative</term> of <m>f(t)</m>.
+    </p>
+  </statement>
+</definition>
+<p>
+  It follows immediately from the Constant Rule that a function, say
+  <m>f(t)</m> has more than one antiderivative. For example if
+  <m>F_1(x) = F(x) + 5</m> then from the Constant Differentiation Rule
+  <m>F_1^\prime(x) = F^\prime (x) = f(x)</m>.
+</p>
+<p>
+And there is nothing special about
+<m>5</m>. If <m>C</m> is any constant and <me>F_1(x)=F(x)+C</me> then
+<me>F_1^\prime(x)=F^\prime(x)=f(x)</me>, and it follows that <m>F_1(x)</m> is an
+antiderivative of <m>f(x)</m>. Thus, if we know that <m>F(x)</m> is one antiderivative of
+<m>f(x)</m>, then we know all (infinitely many) of the antiderivatives
+of <m>f(x)</m>  because we get a (slightly) different antiderivative
+each time we add a  constant to <m>F(x)</m>.
+Remember this. We will return to it when we discuss <xref ref="EQUATIONFTC">equation</xref> below.
+</p>
+<p>
+We know from our study of Differential Calculus that 
+<me>\dx{y}=F^\prime(t)\dx{t}=f(t)\dx{t}</me>, and we know  
+from our work in <xref ref="SECTIONIntegrationAsASum"></xref> that 
+<men  xml:id="EQUATIONFTC2">y=\int\dx{y}</men>.
+Observe that since <m>\dx{y} </m> is a
+differential it follows that <m>f(t)\dx{t}</m> is also a differential. 
+</p>
+<aside>
+<title>Comment</title>
+<p>
+In practice, integration is always a summation between two points so
+there really should be indices on our integral sign in <xref
+ref="EQUATIONFTC2">equation</xref>. We have discarded them for
+now because they would only distract from the larger point
+we<rsq/>re about to make. We will circle back to this issue in the
+next DIGRESSION.
+</p>
+</aside>
+
+
+
+<p>Next starting at some fixed point <m>c</m> we lay all of the differentials,
+ <m>\dx{y} =f(x)\dx{x}</m>, end to end, forming the partitioned
+ interval <m>[c,x]</m> as shown in the diagram below. 
+</p>
+<image source="FTC3.png" width="60%">
+<shortdescription></shortdescription>
+</image>
+<p>
+Next we define the function, 
+<men  xml:id="EQUATIONFTC3">\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} </men>
+which sums the differentials <m>f(t)\dx{t}=\dx{y} </m> from a fixed
+point <m>c</m> to a variable point <m>x</m>. There is a lot going on in <xref ref="EQUATIONFTC3">equation</xref> but 
+it is important that you understand  very clearly the nature of the
+function <m>\alpha(x)</m>. We will proceed slowly. 
+</p>
+<p>
+Starting at the number <m>c</m>, <m>\alpha(x)</m> sums all of the
+differentials <m>\dx{y}=f(x)\dx{x} </m> up to the point <m>x</m>. Thus
+<m>\alpha (x_1)</m> will be the sum of the differentials up to
+<m>x_1</m>, <m>\alpha (x_2)</m> is the sum up to <m>x_2</m>.
+Generally, <m>\alpha(x)</m> is the sum of all of the differentials
+from <m>c</m>  to <m>x</m>.
+
+</p>
+<problem  xml:id="PROBLEMIntAtoA">
+<p>
+Explain why <m>\alpha (c)=0</m>.
+</p>
+</problem>
+
+<p>
+From <xref ref="EQUATIONFourierDefInt">equation</xref> we see that <m>\int_{t=c}^{t=x}\dx{y} = y(x)-y(c)</m>. Therefore
+<me>
+\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t}=          \int_{t=c}^{t=x}\dx{y} = y(x)-y(c).
+</me>
+Finally, since <m>y(t)=F(t)</m> (see <xref ref="EQUATIONDefAntideriv">equation</xref>) 
+we see that 
+<men  xml:id="EQUATIONFTC">
+\alpha (x)=F(x)-F(c).
+</men>
+Despite its apparent simplicity <xref
+ref="EQUATIONFTC">Equation</xref>  is quite  profound. First, observe
+that  <m>F(c)</m> is a constant. To emphasize this we set
+<m>F(c)=C</m>, so it looks like a constant. </p>
+<p>
+With this notational change  we have <m>\alpha(x)+C=F(x)
+</m>. 
+
+From our observations at the begining of this section this means that 
+<me>\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} </me> is also an
+antiderivative of <m>f(x)</m>. 
+</p>
+<aside>
+<title>A Little Algebra</title>
+<p>
+<m>F(c)</m> is a constant for the same reason that if <m>g(x)=x^2</m>
+then <m>g(2)</m> is a constant.  When  we evaluate a
+function at a single element of its domain  the result will   be a single element of its range, i.e., a constant..
+</p>
+</aside>
+
+<p>
+But <xref ref="EQUATIONFTC">equation</xref> tells us  more than that. It says that if if we know another
+antiderivative of <m>f(x)</m>, say <m>F(x)</m> we can find <m>\alpha
+(x)</m> by computing 
+<men  xml:id="EQUATIONFTC5">
+\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} = F(x)-C,
+</men>
+<xref ref="EQUATIONFTC5">Equation</xref> is an informal statement of
+the <term>Fundamental Theorem of Calculus</term>. We will now state it
+formally.
+</p>
+<theorem  xml:id="THEOREMFTC">
+<title>The Fundamental Theorem of Calculus</title>
+<p>
+Let <m>c</m> be any constant.
+If <m>\alpha (x)</m> is defined by <me>\alpha (x) = \int_{t=c}^{t=x}
+f(t)\dx{t} </me> then <m>\alpha(x)</m> is an antiderivative of
+<m>f(x)</m>.
+</p>
+</theorem>
+<corollary>
+<p>   
+From <xref ref="THEOREMFTC"></xref> and <xref
+ref="EQUATIONFTC">equation</xref> it follows that if <m>F(x)</m> is
+any other antiderivative of <m>f(x)</m> then
+<men  xml:id="EQUATIONFTC4">
+F(x)=\alpha (x)+C.
+</men>
+<!-- So we see that the difference between <m>\alpha (x)</m> and -->
+<!-- <m>F(x)</m> is the constant <m>C=F(c)</m>. -->
+<!-- </p> -->
+<!-- <p> -->
+<!-- Because <m>F(c)</m> is a constant when we differentiate both sides of -->
+<!-- <xref ref="EQUATIONFTC4">equation</xref> we have -->
+<!-- <me>F^\prime(x)-\alpha^\prime (x)=0</me> or -->
+<!-- <me>\alpha^\prime (x)=F^\prime(x)=f(x.</me> -->
+<!-- </p> -->
+</p>
+</corollary>
+<corollary>
+<title>Definite Integration</title>
+
+<p>
+Let <m>c</m> and <m>b</m> be constants.  Then from <xref
+ref="THEOREMFTC"></xref> and <xref ref="EQUATIONFTC5"></xref> it
+follows that 
+<men  xml:id="EQUATIONDefFTC">\int_{t=c}^{t=b} f(t)\dx{t} = F(c)-F(b).</men>
+</p>
+</corollary>
+<example xml:id="EXAMPLEDiffNotFunc"> <title>We Integrate
+      Differentials, Not Functions</title> 
+      <p>
+        The integral sign is intended to indicate the summation of
+        differentials, but it is very easy to use the notation
+        improperly. Sooner or later most people will fall into the
+        habit of dropping the final <q><m>\dx{x}{}</m></q> and writing
+        <md>
+          <mrow>\amp{}\int f(x) \amp{}\text{ instead of }\amp{}\amp{}\int f(x)\dx{x}\</mrow>
+        </md>
+         and calling them both
+         the
+        integral of the function <m>f(x)</m>. This is an unfortunate, but common, abuse of the notation.
+         We
+        <em>strongly</em> suggest that you take care to avoid this bad
+        habit for as long as you can. Especially when the concepts are
+        still new it can be very confusing.
+</p>
+
+<aside>
+<title>Mathematical Customs</title>
+
+<p>
+In practice, if they are not relevant to the discussion at hand the
+indices are frequently left out entirely.
+</p>
+
+</aside>
+
+<p>
+ Remember that  <me>\int f(x)</me> is meaningless no matter how
+        convenient it might be. But
+        the meaning of <me>\int f(x)\dx{x}</me> is clear: We're
+        summing up all of the differentials of the form <m>f(x)\dx{x}
+        </m>.
+      </p>
+
+  <p>
+        Suppose that <m>y=x^2</m> then <m>\dx{y} =2x\dx{x}</m>. Then
+        <m>\int 2x\dx{x}</m> makes sense because the product
+        <m>2x\dx{x}=\dx{y}</m> is a differential. But <m>\int 2x</m>
+        is nonsense because <m>2x</m> alone is not a differential.
+      </p>
+<p>
+In particular, <m>\int 2x</m> is meaningless. However  if <m>y=x^2</m>
+then what is probably meant is
+<men  xml:id="EQUATIONPlusCMissing">\int 2x\dx{x} = \int \dx{y}</men> which is equal to <m>y</m> since <m>\int \dx{y}</m> means 
+<q>add up the differentials of <m>y</m>.</q>
+</p>
+</example>
+
+<example xml:id="EXAMPLEZeroDiff">
+<title>The Problem of Zero Differentials</title>
+<!--     <p> -->
+<!--       For example, if <m>y=x^2</m> then <m>\dx{y}=2x\dx{x}</m>.  It -->
+<!--       stands to reason that if we add up all of the differentials of -->
+<!--       <m>y</m>  we will reconstruct <m>y=x^2</m>. -->
+
+<!-- </p> -->
+<p>
+      Naturally, things are not quite this simple. Consider
+      <md>
+        <mrow>f_1(x)\amp{}=x^2+7 \text{ and}</mrow>
+        <mrow>f_2(x)\amp{}=x^2+4.</mrow>
+      </md>
+      Clearly <m>\dx{f_1}=\dx{f_2}=2x\dx{x}</m> so the sum of 
+      <m>\dx{f_1}</m>  and the sum of 
+      <m>\dx{f_2}</m> would seem to be the same as. But clearly <me>\text{ the sum of
+      the}\dx{y_1}=x^2+7</me> whereas <me>\text{ the sum of
+      the}\dx{y_2}=x^2+5</me>.  This apparent contradiction
+       needs to be resolved.
+    </p>
+
+    <p>
+      One way to resolve it is to form the function
+      <me>f(x)=y_1(x)-y_2(x)</me> and notice that since
+      <m>\dx{y_1}=\dx{y_2} </m> it follows that
+      <me>\dx(y_1-y_2)=\dx{y_1}-\dx{y_2}=0.</me>  Dividing by
+      <m>\dx{x}</m> and thinking of <m>\dfdx{y_1}{x} </m> and
+      <m>\dfdx{y_2}{x} </m> as slopes, we have <me>\dfdx{f}{x}= \dfdx{y_1}{x}
+      -\dfdx{y_2}{x} =\dfdx{(y_1-y_2)}{x}=0</me>. This says that
+      the curve <m> f(x) = y_1(x) - y_2(x)</m> has a slope which is
+      constantly equal to zero.  A moment’s thought will suggest that
+      this curve must be a horizontal line for if not then somewhere
+      it should have a nonzero slope.  This argument can be made
+      rigorous, but we will not fuss over that right now.
+    </p>
+</example>
+
+      
+</section>
+
+
+</chapter>
+
