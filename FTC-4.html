@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Areas and Integration</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Integral Calculus">
+<meta property="book:author" content="Robert Rogers">
+<meta property="book:author" content="Eugene Boman">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="IntCalc.html"><span class="title">Integral Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Robert Rogers, Eugene Boman</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="SECTIONIntegrationAsASum.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="FTC.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="IntegrationMethods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigrams</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">To the Instructor</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="IntCalc-4.html" class="internal"><span class="codenumber">I</span> <span class="title">From Practice . . .</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="FTC.html" class="internal"><span class="codenumber">1</span> <span class="title">Integration in Its Simplest Form</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsASum.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Integration as a Sum</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="FTC-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Areas and Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="IntegrationMethods.html" class="internal"><span class="codenumber">2</span> <span class="title">Integration Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Rules for Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-3.html" class="internal"><span class="codenumber">2.2</span> <span class="title">First application -- Projectile motion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-4.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Adding Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-5.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Opposite of the Product Rule -- Integration By Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-6.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="IntegrationMethods-7.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="IntegrationMethods-7.html#IntegrationMethods-7-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Intro</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="IntegrationMethods-7.html#PartialFractionSubsection" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Partial Fraction Decomposition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-8.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Areas and Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AppDefInt.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">2.9.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">2.9.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">2.9.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">2.9.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">2.9.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">2.9.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">2.9.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">2.9.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">2.9.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">2.9.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">3</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">3.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="Theory.html" class="internal"><span class="codenumber">II</span> <span class="title">. . . To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Theory-2.html" class="internal"><span class="codenumber">4</span> <span class="title">Title Goes Here</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalc-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">5</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="FTC-4"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Areas and Integration</span>
+</h2>
+<div class="para" id="FTC-4-2">Recall, much earlier, that we examined the catenary (hanging chain).  We showed that the catenary was not a parabola as Galileo had mentioned.  The idea of a catenary was (and is) important in engineering in the construction of arches.  Masons before Galileo’s time were aware of the fact that the “best” arches were in the shape of an inverted catenary, and they constructed wooden frames for their stone utilizing a hanging chain for the correct shape.  This can be seen in the following example.</div>
+<article class="example example-like" id="FTC-4-3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Stone Arch Bridge.</span>
+</h3> <div class="para" id="FTC-4-3-2">Consider one half of a stone arch bridge as drawn below.</div> <figure class="figure figure-like" id="FTC-4-3-3"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/StoneArch.png" class="contained" alt="Schematic of a stone arch"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span>Schematic of a stone arch</figcaption></figure> <div class="para" id="FTC-4-3-4">We will draw the positive <span class="process-math">\(y\)</span>-axis downward and will focus on the forces at a generic point <span class="process-math">\(P\)</span> with coordinates <span class="process-math">\((x,
+y)\text{.}\)</span>  The problem is to find the curve <span class="process-math">\(y=y(x)\)</span> so that the vertical component of the tangential force <span class="process-math">\(T\)</span> at <span class="process-math">\(P\)</span> is equal to the weight of the bridge from <span class="process-math">\(0\)</span> to <span class="process-math">\(x\text{.}\)</span>  If we do this, then that means that the weight of the bridge will be directed toward the base of the bridge.  With this in mind, let <span class="process-math">\(A(x)\)</span> denote the area of the side section of the bridge from <span class="process-math">\(0\)</span> to <span class="process-math">\(x\text{.}\)</span>  We will also let <span class="process-math">\(y\)</span> denote the (constant) magnitude of the horizontal force along the length of the bridge and <span class="process-math">\(w\)</span> be the weight density of the stone (per cross sectional area).</div> <figure class="figure figure-like" id="FTC-4-3-5"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/StoneArch2.png" class="contained" alt="Stone Arch Schematic"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6<span class="period">.</span></span><span class="space"> </span>Stone Arch Schematic</figcaption></figure> <div class="para" id="FTC-4-3-6">With all of this set up, what we really want is the horizontal component of the force <span class="process-math">\(T\)</span> to be <span class="process-math">\(h\)</span> and the vertical component to be the weight of the bridge from <span class="process-math">\(0\)</span> to <span class="process-math">\(x\text{,}\)</span> namely, <span class="process-math">\(wA\text{.}\)</span>  This leads to the following picture.</div> <figure class="figure figure-like" id="FTC-4-3-7"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/StoneArch3.png" class="contained" alt="Stone Arch Triangle of Forces"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7<span class="period">.</span></span><span class="space"> </span>Stone Arch Triangle of Forces</figcaption></figure> <div class="para logical" id="FTC-4-3-8">
+<div class="para">This leads to the slope of the tangent line at <span class="process-math">\(P\)</span> equaling <span class="process-math">\(\frac{wA}{h}\text{,}\)</span> so we get the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfdx{y}{x}=\frac{w}{h}A.
+\end{equation*}
+</div>
+<div class="para">The problem here is that we don’t know what <span class="process-math">\(A\)</span> is.  However, a moment’s thought tells us that we know what <span class="process-math">\(\dx{A}{}\)</span> is.  If we increase <span class="process-math">\(x\)</span> to <span class="process-math">\(x+\dx{x}{}\text{,}\)</span> then we can see that <span class="process-math">\(\dx{A}=y\dx{x}{}\text{.}\)</span>
+</div>
+</div> <figure class="figure figure-like" id="FTC-4-3-9"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/StoneArch4.png" class="contained" alt="Stone Arch Schematic"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8<span class="period">.</span></span><span class="space"> </span>Stone Arch Schematic</figcaption></figure> <div class="para logical" id="FTC-4-3-10">
+<div class="para">Thus, if we differentiate the above equation, we get that the arch should satisfy the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfdxn{y}{x}{2}=\frac{y}{x}\dfdx{A}{x}=\frac{w}{h}y.
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="FTC-4-4"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="FTC-4-4-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="FTC-4-4-1-1-1">
+<div class="para">Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y=Ae^{\sqrt{\frac{w}{h}}x}+Be^{-\sqrt{\frac{w}{h}}x}
+\end{equation*}
+</div>
+<div class="para">satisfies the above differential equation.</div>
+</div></article><article class="task exercise-like" id="FTC-4-4-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="FTC-4-4-2-1-1">Show that if <span class="process-math">\(y(0)=\sqrt{\frac{h}{w}}\)</span> and <span class="process-math">\(\eval{\dfdx{y}{x}}{x}{0}=0\text{,}\)</span> then <span class="process-math">\(A=B=\frac12{}\sqrt{\frac{h}{w}}\text{.}\)</span> Compare this to the equation of the catenary in Problem in Context #53 in <span class="booktitle">Differential Calculus</span>.</div> <aside class="aside aside-like" id="FTC-4-4-2-1-2"><h5 class="heading"><span class="title">Note to Self.</span></h5>
+<div class="para" id="FTC-4-4-2-1-2-2">Convert this to a PreTexT link.</div></aside></article></article><div class="para logical" id="FTC-4-5">
+<div class="para">While it is interesting that the above example illustrates the importance of catenaries in engineering, the important thing for us is that <span class="process-math">\(\dx{A}=y\dx{x}\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int{y}\dx{x}{}=\int{}\dx{A}{}=A+C.
+\end{equation*}
+</div>
+<div class="para">which relates integrals to areas. This relationship was known to both Newton and Leibniz, as well as some of their predecessors. It is of such importance that it is known as the <dfn class="terminology">Fundamental Theorem of Calculus</dfn>.</div>
+</div>
+<div class="para" id="FTC-4-6">To make this a bit more concrete, let’s set this up a bit more carefully. Suppose we start with a curve <span class="process-math">\(y=y(x)\)</span> where <span class="process-math">\(y\ge{0}\)</span> for <span class="process-math">\(a\le{x}\le{b}\text{,}\)</span> and we wish to find the area of the region bounded by the curves <span class="process-math">\(y=y(x)\text{,}\)</span> <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(x=a\text{,}\)</span> and <span class="process-math">\(x=b\)</span>
+</div>
+<figure class="figure figure-like" id="FTC-4-7"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/AreaUnder1.png" class="contained" alt="The area under a curve"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.10<span class="period">.</span></span><span class="space"> </span>The area under a curve</figcaption></figure><div class="para logical" id="FTC-4-8">
+<div class="para">We used the notation <span class="process-math">\(\int{y}\dx{x}\)</span> to denote a sum of differentials and called this integration with the idea that it was the opposite of differentiation and provided a notation for the antiderivative to the function <span class="process-math">\(y\text{.}\)</span> In examining a situation like we have with areas above, we will modify our notation a bit to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{x=a}^b{y}\dx{x}{}
+\end{equation*}
+</div>
+<div class="para">to emphasize that we are adding differentials from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\text{,}\)</span> so that <span class="process-math">\(\int_{x=a}^by\dx{x}\)</span> represents a specific number (in this case area), whereas <span class="process-math">\(\int{y}\dx{x}{}\)</span> represents an antiderivative which is a family of functions differing by arbitrary constants. With this in mind, <span class="process-math">\(\int_{x=a}^by\dx{x}\)</span> is called the definite integral of <span class="process-math">\(y\dx{x}{}\)</span> from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span> and <span class="process-math">\(\int{y}\dx{x}{}\)</span> is called the indefinite integral of <span class="process-math">\(y\dx{x}{}\text{.}\)</span> So, the definite integral is a specific number while the indefinite integral is a family of functions. If using almost the same notation seems confusing at this point, it is brought together by the <dfn class="terminology">Fundamental Theorem of Calculus</dfn>.</div>
+</div>
+<article class="theorem theorem-like" id="FTC-thm"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span><span class="space"> </span><span class="title">The Fundamental Theorem of Calculus.</span>
+</h3>
+<div class="para logical" id="FTC-thm-2">
+<div class="para">Suppose that <span class="process-math">\(\dfdx{A}{x}=y\)</span> (so that <span class="process-math">\(A\)</span> is an antiderivative of <span class="process-math">\(y\)</span>). Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{x=a}^b y\dx{x}
+=A(b)-A(a).
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="FTC-4-10">
+<div class="para">As was mentioned before, this result was known to both Newton and Leibniz and was first publish in a short paper by Leibniz in 1693. The idea is so surprisingly simple and profound, that it warrants an (apocryphal) story. When Leibniz was a young diplomat in Paris, he sought Christian Huygens who, at the time, was one of the most brilliant mathematicians in the world. Leibniz credited much of his mathematical growth in Paris to Huygens. The idea for summing differences came to Leibniz from a problem given to him by Huygens in 1672, namely to compute the following sum</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{1\cdot2}+\frac{1}{2\cdot3{}}+\frac{1}{3\cdot4}\cdots
+\end{equation*}
+</div>
+<div class="para">Leibniz recognized that this could be rewritten as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\frac11-\frac12\right)+\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\cdots
+\end{equation*}
+</div>
+<div class="para">and noted that nearly all of the fractions cancelled out leaving <span class="process-math">\(1-\frac{1}{\infty{}}=1-0=1\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="FTC-4-11">
+<div class="para">The importance of this was not the result, but the technique, namely that the sum of differences is equal to the difference of the extremes. Applying this same principle to the Fundamental Theorem of Calculus, we have</div>
+<div class="displaymath process-math" id="FTC-4-11-1">
+\begin{align*}
+\dfdx{A}{x}\amp =y\\
+y\dx{x}\amp =\dx{A} \\
+\int_{x=a}^by\dx{x}\amp =\int_{x=a}^b\dx{A}=A(b)-A(a)
+\end{align*}
+</div>
+<div class="para">This was so quick, that it probably deserves a picture. Consider the picture below of the two functions <span class="process-math">\(y\)</span> and <span class="process-math">\(A\)</span> related by the fact that <span class="process-math">\(\dfdx{A}{x}=y\text{.}\)</span>
+</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/FTC2.png" class="contained"></div>
+<div class="para logical" id="FTC-4-13">
+<div class="para">Notice that since <span class="process-math">\(y\dx{x}=\dx{A}{}\text{,}\)</span> then this says that the area of the box with width <span class="process-math">\(\dx{x}{}\)</span> and height <span class="process-math">\(y\)</span> in the first diagram is numerically the same as the length <span class="process-math">\(\dx{A}{}\)</span> of the segment in the second diagram. Of course, these represent corresponding generic boxes and segments. If we add all of these together, the sum of the areas of the boxes in the first diagram will provide the area of the region; the sum of the lengths of the segments in the second diagram will provide the length of the segment from <span class="process-math">\(A(a)\)</span> to <span class="process-math">\(A(b)\text{.}\)</span> In other words, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{x=a}^by\dx{x}=\int_{x=a}^b\dx{A}=A(b)-A(a){}
+\end{equation*}
+</div>
+<div class="para">which is what the Fundamental Theorem of Calculus says.</div>
+</div>
+<div class="para logical" id="FTC-4-14">
+<div class="para">It is hard to overstate the importance of this result. (Not everything is called a Fundamental Theorem.) In many applications, we will have a need to add all of the differentials which may or may not represent areas. After we set up this sum, computation will bring us back to our old problem of computing antiderivatives. For now, let’s just focus on computation of definite integrals via the Fundamental Theorem of Calculus. With the Fundamental Theorem of Calculus in mind, we introduce the following notation. If <span class="process-math">\(\dfdx{A}{x}=y\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{x=a}^by\dx{x}=\int_{x=a}^by\dx{x}=\left.A(x)\right|_{x=a}^b{}=A(b)-A(a)
+\end{equation*}
+</div>
+<div class="para">The symbol <span class="process-math">\(\left.A(x)\right|_{x=a}^b\)</span> is read aloud as “<span class="process-math">\(A\)</span> of <span class="process-math">\(x\)</span> evaluated from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span>” and is the difference between <span class="process-math">\(A(b)\)</span> and <span class="process-math">\(A(a)\text{.}\)</span> Again, this is purely notational.</div>
+</div>
+<article class="exercise exercise-like" id="FTC-4-15"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="FTC-4-15-1">
+<div class="para">Given our notation for an indefinite integral, the Fundamental Theorem of Calculus says</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{x=a}^by\dx{x}{}=\left.\left(\int{y}\dx{x}\right)\right|_{x=a}^b.
+\end{equation*}
+</div>
+<div class="para">However, there are infinitely many possibilities for <span class="process-math">\(\int{y}\dx{x}\text{.}\)</span> Does this mean that there are infinitely many possibilities for <span class="process-math">\(\int_{x=a}^by\dx{x}{}\text{?}\)</span> Explain.</div>
+</div></article><aside class="aside aside-like" id="FTC-4-16"><h3 class="heading"><span class="title">Note to Self.</span></h3>
+<div class="para" id="FTC-4-16-2">We need more exercises here.</div></aside></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="SECTIONIntegrationAsASum.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="IntegrationMethods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
