@@ -268,13 +268,14 @@
       <title>Coordinates, Variable Names, and Limits of Integration</title>
       <p>
         You may also be wondering why we are being so punctilious about
-        distinguishing the label of a point (e.g. <m>P</m>) and its coordinate
+        distinguishing the label of a point <m>P</m>, and its coordinate
         <m>x_n</m>. A natural response would be <q>Aren<rsq/>t they the same
         thing?</q>
       </p>
-      <p> No, actually they aren<rsq/>t. The label of a point is the name we
-      use to distinguish it from other points. The coordinate of a point is
-      it<rsq/>s distance from  the origin.  Consider the following diagram.<!--
+      <p> No, actually they aren<rsq/>t. The label of a point is the
+      name we use to distinguish it from other points. The
+      (horizontal) coordinate of a point is it<rsq/>s (horizontal)
+      distance from the origin.  Consider the following diagram.<!--
       Suppose <m>P</m> is a point on -->
       <!-- the <m>x</m>-axis located at a distance of <m>x</m> to the right of -->
       <!-- the origin. Does <m>x</m> represent a length? If so, what is <m>x</m> -->
@@ -287,12 +288,14 @@
         The labels (names) of the two points are <m>P_0</m> and <m>P</m>. Since
         <m>x_0</m> measures the distance between zero and <m>P_0</m> it is by
         definition the coordinate of <m>P_0</m>. (If a vertical axis were
-        present it would be the first coordinate and zero would be the
-        second.) Similarly <m>x_n</m> is the coordinate of <m>P</m>. On the
+        present <m>x_0</m> would be the first coordinate and zero would be the
+        second.) Similarly <m>x_n</m> is the coordinate of <m>P</m>.
+      </p>
+      <p>
+        On the
         other hand since <m>x</m> <mdash/> the distance between <m>P_0</m> and
         <m>P</m> <mdash/> is not measured from the origin it is
         neither a coordinate nor the label of a point. 
-      </p>
       <!-- <p> -->
       <!-- Do you see -->
       <!-- what<rsq/>s going on here? The cooordinate <m>x</m> is indeed the length of the line segment between the origin and <m>P</m>. By definition every coordinate is the length of a line segment. But not every length  is necessarily a cooordinate. To see why consider the following sketch.  -->
@@ -304,11 +307,11 @@
       <!-- In this case <m>P</m> and <m>P_0</m> are the labels of the two points, -->
       <!-- whereas <m>x_n</m> and <m>x_0</m> are their coordinates, respectively. -->
       <!-- </p> -->
-      <p>
         It is the length of the line segment
         <m>\overline{P_0P}</m>. If we partition this line segment and
-        compute <m>\int \dx{x} </m> we get <me>\int \dx{x}
-        =x=x_n-x_0</me> which is equivalent to <xref
+        compute <m>\int\dx{x} </m> we get 
+        <me>\int\dx{x}=x=x_n-x_0</me> 
+        which is equivalent to <xref
         ref="EQUATIONFTCSimple">equation</xref>.
       </p>
       <p>
@@ -356,11 +359,11 @@
 
 
       <p>
-        Summation of differentials is called
-        <term>integration</term>.  An <term>integral</term> consists
-        of two parts: The <term>integral sign</term>, <me>\int
-        \text{(with or without indices)},</me> which indicates
-        summation, and the differentials to be summed <mdash/>
+        Summation of differentials is called <term>integration</term>.
+        An <term>integral</term> consists of two parts: The
+        <term>integral sign</term>, <m>\int \text{(with or without
+        indices)}</m>, which indicates summation, and the
+        differentials to be summed <mdash/> represented by
         <m>\dx{y}</m> in this case.
       </p>
 
@@ -410,7 +413,8 @@
       from our work in <xref ref="SECTIONIntegrationAsASum"></xref> that 
       <men  xml:id="EQUATIONFTC2">y=\int\dx{y}</men>.
       Observe that since <m>\dx{y} </m> is a
-      differential it follows that <m>f(t)\dx{t}</m> is also a differential. 
+      differential it follows that <m>f(t)\dx{t}</m> is also a differential. Thus
+<me>y=\int\dx{y}= \int f(t)\dx{t}</me>.
     </p>
     <aside>
       <title>Comment</title>
@@ -427,7 +431,7 @@
 
 
     <p>Next starting at some fixed point <m>c</m> we lay all of the differentials,
-    <m>\dx{y} =f(x)\dx{x}</m>, end to end, forming the partitioned
+    <m>\dx{y} =f(t)\dx{t}</m>, end to end, forming the partitioned
     interval <m>[c,x]</m> as shown in the diagram below. 
     </p>
     <image source="FTC3.png" width="60%">
@@ -442,15 +446,26 @@
       function <m>\alpha(x)</m>. We will proceed slowly. 
     </p>
     <p>
-      Starting at the number <m>c</m>, <m>\alpha(x)</m> sums all of
-      the differentials <m>\dx{y}=f(x)\dx{x} </m> up to the point
-      <m>x</m>. Thus <m>\alpha (x_1)</m> will be the sum of the
-      differentials up to <m>x_1</m>, <m>\alpha (x_2)</m> is the sum
-      up to <m>x_2</m>.  Generally, <m>\alpha(x)</m> is the sum of all
-      of the differentials from <m>c</m> to <m>x</m>, so <m>\alpha
-      </m> depend on the value of <m>x</m>. Which is to say that
-      <m>\alpha </m> is a function of <m>x</m>.
-
+      To repeat, <m>\alpha(x)</m> is the function which sums all of the
+      differentials <m>\dx{y}=f(t)\dx{t} </m> up to the point
+      <m>x</m>, starting at the number <m>c</m>. Thus <m>\alpha
+      (x_1) = \int_{t=c}^{t=x_1}f(t)\dx{t} </m> will be the sum of the differentials up to <m>x_1</m>,
+      <m>\alpha (x_2)  = \int_{t=c}^{t=x_2}f(t)\dx{t}</m> is the sum up to <m>x_2</m>.
+    </p>
+    <p>
+      Recall that a <term>function</term> consists of a
+      <term>domain</term> (all real numbers (<m>\\R </m> in this case)
+      and a procedure for assigning outputs to inputs. In this
+      instance the procedure is, <q>for each <m>x</m> sum of all of
+      the differentials from <m>c</m> to <m>x</m>.</q> So <m>\alpha
+      </m> is a function of <m>x</m>. Take particular notice of the
+      fact that the integration variable (<m>t</m> in this case) does
+      not represent a variable in the domain of <m>\alpha </m>. The
+      integration variable is sometimes called a <q>dummy variable</q>
+      because in a very real sense it isn<rsq/>t really there. This is
+      very confusing at first, but don<rsq/>t concern yourself over it
+      right now. We will demonstrate what we mean with an example later.
+      
     </p>
     <problem  xml:id="PROBLEMIntAtoA">
       <p>
@@ -469,9 +484,9 @@
         \alpha (x)=F(x)-F(c).
       </men>
       Despite its apparent simplicity <xref
-      ref="EQUATIONFTC">Equation</xref>  is quite  profound. First, observe
-      that  <m>F(c)</m> is a constant. To emphasize this we set
-    <m>F(c)=C</m>, so that it looks like a constant. 
+      ref="EQUATIONFTC">Equation</xref> is quite profound. First,
+      observe that <m>F(c)</m> is a constant. To emphasize this fact
+      we set <m>F(c)=C</m>, so that it looks like a constant.
 </p>
     <aside>
       <title>A Little Algebra</title>
@@ -486,15 +501,17 @@
       With this notational change  we have <m>\alpha(x)+C=F(x)
       </m>. 
 
-      From our observations at the begining of this section this means that 
-      <me>\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} </me> is also an
-      antiderivative of <m>f(x)</m>. 
+      From our observations at the begining of this section we see that 
+      <me>\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t}= F(x) -C</me> is also an
+      antiderivative of <m>f(x)</m> (we<rsq/>ve added <m>-C</m> to the
+      antiderivative <m>F(x)</m>). 
     </p>
 
     <p>
-      But <xref ref="EQUATIONFTC">equation</xref> tells us  more than that. It says that if if we know another
-      antiderivative of <m>f(x)</m>, say <m>F(x)</m> we can find <m>\alpha
-      (x)</m> by computing 
+      But <xref ref="EQUATIONFTC">equation</xref> tells us more than
+      that. It says that if we know another antiderivative of
+      <m>f(x)</m>, say <m>F(x)</m> we can find <m>\alpha (x)</m> by
+      computing
       <men  xml:id="EQUATIONFTC5">
         \alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} = F(x)-C,
       </men>
