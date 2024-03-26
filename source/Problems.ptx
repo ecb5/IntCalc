@@ -661,4 +661,236 @@ then
 
 </section>
 
+<section  xml:id="SECTIONProbs9">
+<title>Homework #9: Applications of Definite Integrals</title>
+
+<p>
+Previously, we put indefinite integrals to work by modeling phenomena
+with differential equations and antidifferentiating to solve these.
+We will now put definite integrals to work, but in a slightly
+different manner.  Here we will use a differential to measure some
+quantity on an infinitely small scale where a simple formula applies.
+We will <q>integrate</q> all of these quantities to give us a total
+measurement as an integral.  Once we have this, then we can calculate
+this definite integral by antidifferentiation and applying the
+Fundamental Theorem of Calculus.  Sounds easy, huh!  As they say, the
+devil is in the details, but if you follow this basic format and draw
+and label pictures, you will be surprised by the things you can
+accomplish.  We'll start with the basic problem of computing an area.
+This is basic enough that there is a tendency to skip all of the steps
+in setting up the integral, BUT DON'T!  Getting into a good work habit
+when things are relatively straightforward will help when more
+complicated applications arise, such as computing a volume, or a
+center of mass, or a moment of inertia, or the kinetic energy of a
+spinning object.  If these applications sound daunting at this point,
+don't worry.  We will see that the same sort of <q>divide and
+conquer</q> strategy applies to a wonderful array of situations.  All
+that changes is what we want to measure.  This is where the strategy
+of setting up things on an infinitely small scale (utilizing pictures)
+and <q>integrating</q> these together will become invaluable.
+
+</p>
+
+<paragraphs>
+<title>Areas</title>
+<p>
+The simple formula for the area of a rectangle (length times width)
+provides the basis for determining the area of a more general shape.
+You will probably notice that we had been using this area model in
+looking at definite integrals already so this should not be too big a
+jump.  However, do not take a short cut and utilize our general
+strategy.  That is divide the region into infinitely thin rectangles
+where our simple length times width formula applies, and then
+``integrate'' them into the area of the entire region.  Let's
+demonstrate this with the following example.
+</p>
+
+<example>
+
+<p>
+Find the area of the following region bounded by the curves <m>y=x^2</m> and <m>y=2x</m>.  A graph of this region is below.
+</p>
+<image source="image21.png" width="40%">
+<shortdescription></shortdescription>
+</image>
+<!-- \includegraphics*[width=1.65in, height=3.18in, trim=3.99in 1.31in 3.94in 0.73in]{image21} -->
+<p>
+
+ Utilizing our strategy, we will draw a single generic rectangle of width <m>\dx{x}</m> whose endpoints lie on the bounding curves.  We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled.  You will see that this will make the computation of areas easier (which is the point). \textbf{ We insist that you follow this routine on every application, no matter how easy it may seem.}  This will serve you well as the applications get more complicated.
+</p>
+<image source="image22.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \includegraphics*[width=1.65in, height=3.18in, trim=3.99in 1.31in 3.94in 0.73in]{image22} -->
+<p>
+<me>\text{Area of rectangle}=\left(y_2-y_1\right)\dx{x}</me> 
+<me>\text{Total area}=\int^2_{x=0}{\left(y_2-y_1\right)\dx{x}}</me>
+This is the set up.  Notice that by labeling properly, we could read
+the area of the rectangle right off the picture.  This was the point
+-- to divide the problem into easily computable parts.  The integral
+just added them together.  To compute this integral, we need to put
+everything in terms of one variable.  This can done by noticing that
+<m>y_2=2x</m> and <m>y_1=x^2</m>.  Thus, we have 
+<me>\text{Total area}=\int^2_{x=0}{\left(y_2-y_1\right)\dx{x}}=\int^2_{x=0}{\left(2x-x^2\right)\dx{x}}={\left.\left(\int{\left(2x-x^2\right)\dx{x}}\right)\right|}^2_{x=0}</me>
+<me>={\left.\left(x^2-\frac{x^3}{3}\right)\right|}^2_{x=0}=\left(2^2-\frac{2^3}{3}\right)-\left(0^2-\frac{0^3}{3}\right)=\frac{4}{3}</me>
+Of course, there is nothing special about getting everything in terms
+of <m>x</m>.  We could divide the region into horizontal rectangles and put
+everything in terms of <m>y</m>.  We should obtain the same area.  Notice
+that in the previous set up out two points had the same <m>x</m>
+coordinate.  In this one, they will have the same <m>y</m> coordinate.
+
+</p>
+<image source="image23.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \noindent <m>{}{}<me>{}{}</me>{}<me>{}</me>{}<me>{}</m>\includegraphics*[width=1.65in, height=3.18in, trim=3.99in 1.31in 3.94in 0.73in]{image23} -->
+<p>
+<me>\text{Area of rectangle}=\left(x_2-x_1\right)\dx{y}</me> 
+<me>\text{Total area}=\int^4_{y=0}{\left(x_2-x_1\right)\dx{y}}</me> 
+Utilizing the fact that <m>{(x}_2,\ y)</m> lies on the curve <m>y=x^2</m>and that <m>(x_1,y)</m> lies on the curve <m>y=2x</m>, we get
+
+<md>
+<mrow>\text{Total area}=\int^4_{y=0}{\left(x_2-x_1\right)\dx{y}}\amp{}=\int^4_{y=0}{\left(y^{\frac{1}{2}}-\frac{y}{2}\right)\dx{y}}</mrow>
+<mrow>\amp{}={\left.\left(\int{y^{\frac{1}{2}}-\frac{y}{2}\dx{y}}\right)\right|}^2_{y=0}</mrow>
+<mrow>\amp{}={\left.\left(\frac{2y^{\frac{3}{2}}}{3}-\frac{y^2}{4}\right)\right|}^4_{y=0}</mrow>
+<mrow>\amp{}=\left(\frac{2{\left(4\right)}^{\frac{3}{2}}}{3}-\frac{4^2}{4}\right)-\left(0-0\right)</mrow>
+<mrow>\amp{}=\frac{16}{3}-4=\frac{4}{3}</mrow>
+</md>
+
+ 
+which is the same answer as before.  You can choose whichever way you want; it depends on whether you ultimately want things in terms of <m>x</m> or in terms of <m>y</m>.  In this example, one was not much harder than the other.  Sometimes the difference in difficulty will help you make the decision.  In the next example, we will set up the problem in both ways and then determine which will be the easiest route to follow.  After you have developed some experience, you will often be able to determine this before actually writing anything down.
+</p>
+</example>
+
+<example>
+<p>
+
+Compute the area of the following region bounded by <m>y=0,\ y=x+2,</m> and<m>\ y=\sqrt{4-x}</m>.  If we want everything in terms of <m>x</m> then we need to draw a generic vertical rectangle of width <m>\dx{x}</m>, which we've included in the diagram along with all of the appropriate labeling.
+
+</p>
+<image source="image24.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \includegraphics*[width=4.93in, height=2.20in, trim=0.37in 0.17in 0.00in 0.29in]{image24} -->
+<p>
+<me>\text{Area of rectangle}=\left(y_2-y_1\right)\dx{x}</me> 
+<me>\text{Total area}=\int^4_{x=-2}{\left(y_2-y_1\right)\ \dx{x}}</me> 
+</p>
+
+<p>
+Everything is just as before.  The real challenge comes from trying to put everything in terms of <m>x</m>.  <m>y_1=0</m> on the entire interval, but the formula for <m>y_2</m> changes.  Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from <m>x=-2</m> and <m>x=4</m>.  On <m>\left[-2,0\right],\ y_2=x+2</m>, while on <m>\left[0,4\right],\ y_2=\sqrt{4-x}</m>.  
+</p>
+
+<p>
+We actually know a way to handle this, utilizing our properties of definite integrals.  Specifically, we can do the following
+<me>\text{Total area}=\int^4_{x=-2}{\left(y_2-y_1\right)\ \dx{x}}=\int^0_{x=-2}{\left(y_2-y_1\right)\ \dx{x}}+\int^4_{x=0}{\left(y_2-y_1\right)\ \dx{x}}</me> 
+<me>=\int^0_{x=-2}{\left(x+2-0\right)\ \dx{x}}+\int^4_{x=0}{\left(\sqrt{4-x}-0\right)\ \dx{x}}</me> 
+Each integral can be handled separately, and the total area is the sum of those two values.  This is a perfectly acceptable way to do the problem, and each integral is not too bad to do.  But how about if we try a horizontal rectangle and putting everything in terms of <m>y</m>?
+</p>
+
+
+
+<image source="image25.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \includegraphics*[width=4.93in, height=2.20in, trim=0.37in 0.17in 0.00in 0.29in]{image25} -->
+<p>
+<me>\text{Area of rectangle}=\left(x_2-x_1\right)\dx{y}</me> 
+<me>\text{Total area}=\int^2_{y=0}{\left(x_2-x_1\right)\ \dx{y}}=\int^2_{y=0}{\left(\left(4-y^2\right)-(y-2)\right)\ \dx{y}}</me> 
+</p>
+
+</example>
+
+<problem  xml:id="PROBLEMA">
+<p>
+Problem A: Compute the three integrals in the previous example and verify that you get the same total area done either way.
+</p>
+</problem>
+
+<p>
+ In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.
+</p>
+
+<example>
+<p>
+
+Compute the following area bounded by the curves <m>x=0,\ y={\mathrm{sin} x\ },\ y={\mathrm{cos} x\ },\ x=5\pi /4</m>.
+</p>
+
+<image source="image26.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \includegraphics*[width=5.76in, height=3.05in, trim=0.51in 0.00in 0.25in 0.24in]{image26} -->
+
+
+<p>
+You should be able to see that drawing a horizontal rectangle and getting things in terms of <m>y</m> is going to be a mess.  So, let's put in a vertical rectangle and see what happens.  Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval <m>\left[0,\ 5\pi /4\right]</m>.
+</p>
+
+<image source="image27.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \includegraphics*[width=4.68in, height=2.56in, trim=0.41in 0.00in 0.20in 0.20in]{image27} -->
+
+<p>
+<me>\text{Area of rectangle}=\left(y_2-y_1\right)\dx{x}</me> 
+<me>\text{Total area}=\int^{5\pi /4}_{x=0}{\left(y_2-y_1\right)\dx{x}}=\int^{\pi /4}_{x=0}{\left(y_2-y_1\right)\dx{x}}+\int^{5\pi /4}_{x=\pi /4}{\left(y_2-y_1\right)\dx{x}}</me> 
+</p>
+</example>
+
+<problem  xml:id="PROBLEMB">
+<p>
+Finish the previous example to compute the area.
+</p>
+</problem>
+<p>
+ A cycloid is a curve traced out by a point <m>P</m> on a circle as the circle rolls along a straight line without slipping.
+</p>
+<image source="image28.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<!-- \noindent \includegraphics*[width=5.00in, height=2.01in, trim=2.25in 1.33in 0.35in 1.05in]{image28} -->
+
+<p> 
+This curve has fascinated mathematicians for a long time.  In class,
+we showed that the coordinates of the point <m>P</m> are given by
+
+<md>
+<mrow>x=a\left(\theta -\sin(\theta) \right)\amp{}\amp{}
+y=a\left(1-\cos(\theta)\right)</mrow>
+</md>
+
+
+ Galileo actually gave
+the curve its name in 1599 (though he was not the first to study it)
+and attempted to compute the area under one arch.  He couldn't
+accomplish this mathematically, but by weighing pieces of metal, one
+in the shape of a cycloid and one in the shape of its generating
+circle, Galileo surmised that the area of the cycloid was
+approximately three times that of the circle.  In 1634, Gilles
+Personne de Roberval showed that the area under one arch of the
+cycloid is exactly three times that of its generating circle.  This
+predated the invention of calculus, but he utilized infinitely thin
+rectangles very much like we have been doing.
+</p>
+
+<problem  xml:id="PROBLEMD">
+<statement>
+<p>
+Show that the area under one arch of the above cycloid is <m>3\pi a^2</m>, so it is, in fact, three times the area of the generating circle. 
+</p>
+<p>
+
+</p>
+</statement>
+<hint>
+<p>
+ You can set up the area with vertical rectangles just as before, only now get <m>y</m> and <m>\dx{x}\ </m>in terms of <m>d\theta </m>.
+</p>
+</hint>
+
+</problem>
+
+</paragraphs>
+</section>
 </chapter>

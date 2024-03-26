@@ -264,8 +264,8 @@
       that, at its heart, integration is about adding things up.
     </p>
 
-    <paragraphs>
-      <title>Coordinates, Variable Names, and Limits of Integration</title>
+    <paragraphs  xml:id="PARAGRAPHCoordinatesAndVariables">
+      <title>DIGRESSION: Coordinates and  Variable Names</title>
       <p>
         You may also be wondering why we are being so punctilious about
         distinguishing the label of a point <m>P</m>, and its coordinate
@@ -331,57 +331,16 @@
         usage is intended.
       </p>
 
+<p><alert>END OF DIGRESSION</alert></p>
     </paragraphs>
 
-    <paragraphs  xml:id="PARAIntegrationLimits">
-      <title>Limits of Integration</title>
-      <p>
-        In the early nineteenth century <url
-        href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
-        visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
-        Fourier</url> found that Leibniz<rsq/> original integral
-        symbol was not quite descriptive enough for his purposes. In
-        particular the expression <m>\int{\dx{x}}</m> gives no clue
-        where we need to start, or stop, summing the differentials. To
-        clarify things Fourier modified Leibniz<rsq/> notation by
-        inserting upper and lower indices on the integral sign as
-        follows:
-        <men
-            xml:id="EQUATIONFourierDefInt">\int_{x_0}^{x_n}\dx{x}=x_n-x_0</men>.
-        <xref
-            ref="EQUATIONFourierDefInt">Equation</xref> is equivalent to
-        <xref ref="EQUATIONDefInt2">equation</xref> but it has the
-        advantage that it clearly indicates the limits of
-        integration. We start summing the differentials at <m>x_0</m>,
-        and end at <m>x_n</m>, resulting in the difference
-        <m>x_n-x_0</m>.
-      </p>
 
-
-      <p>
-        Summation of differentials is called <term>integration</term>.
-        An <term>integral</term> consists of two parts: The
-        <term>integral sign</term>, <m>\int \text{(with or without
-        indices)}</m>, which indicates summation, and the
-        differentials to be summed <mdash/> represented by
-        <m>\dx{y}</m> in this case.
-      </p>
-
-
-
-      <p>
-        Modern integration theory has expanded considerably beyond
-        what we have described so far. But the underlying notion of
-        the integral as a sum is still very helpful and we will rely
-        on it rather heavily, at least at first.
-      </p>
-    </paragraphs>
   </section>
 
   <section  xml:id="SECTIONIntAsAntiDiff">
     <title>Integration as Antidifferentiation</title>
 
-    <definition>
+    <definition  xml:id="DEFINITIONAntiderivative">
       <statement>
         <p>
           Suppose we have a function <men
@@ -392,278 +351,394 @@
       </statement>
     </definition>
     <p>
-      It follows immediately from the Constant Rule that a function, say
-      <m>f(t)</m> has more than one antiderivative. For example if
-      <m>F_1(x) = F(x) + 5</m> then from the Constant Differentiation Rule
-      <m>F_1^\prime(x) = F^\prime (x) = f(x)</m>.
+      It follows immediately that if a function has one antiderivative
+      then it has infinitely many since, by the Constant Rule, adding
+      a constant to a function will not change its derivative. Thus if
+      we know that <m>F(x)</m> is one antiderivative of <m>f(x)</m>,
+      then we know all (infinitely many) of the antiderivatives of
+      <m>f(x)</m> because we get a (slightly) different antiderivative
+      each time we add a constant to <m>F(x)</m>.  Remember this. We
+      will return to it when we discuss <xref
+      ref="EQUATIONFTC">equation</xref> below.
     </p>
     <p>
-      And there is nothing special about
-      <m>5</m>. If <m>C</m> is any constant and <me>F_1(x)=F(x)+C</me> then
-      <me>F_1^\prime(x)=F^\prime(x)=f(x)</me>, and it follows that <m>F_1(x)</m> is an
-      antiderivative of <m>f(x)</m>. Thus, if we know that <m>F(x)</m> is one antiderivative of
-      <m>f(x)</m>, then we know all (infinitely many) of the antiderivatives
-      of <m>f(x)</m>  because we get a (slightly) different antiderivative
-      each time we add a  constant to <m>F(x)</m>.
-      Remember this. We will return to it when we discuss <xref ref="EQUATIONFTC">equation</xref> below.
-    </p>
-    <p>
-      We know from our study of Differential Calculus that 
-      <me>\dx{y}=F^\prime(t)\dx{t}=f(t)\dx{t}</me>, and we know  
-      from our work in <xref ref="SECTIONIntegrationAsASum"></xref> that 
-      <men  xml:id="EQUATIONFTC2">y=\int\dx{y}</men>.
-      Observe that since <m>\dx{y} </m> is a
-      differential it follows that <m>f(t)\dx{t}</m> is also a differential. Thus
-<me>y=\int\dx{y}= \int f(t)\dx{t}</me>.
-    </p>
-    <aside>
-      <title>Comment</title>
-      <p>
-        In practice, integration is always a summation between two points so
-        there really should be indices on our integral sign in <xref
-        ref="EQUATIONFTC2">equation</xref>. We have discarded them for
-        now because they would only distract from the larger point
-        we<rsq/>re about to make. We will circle back to this issue in the
-        next DIGRESSION.
-      </p>
-    </aside>
-
-
-
-    <p>Next starting at some fixed point <m>c</m> we lay all of the differentials,
-    <m>\dx{y} =f(t)\dx{t}</m>, end to end, forming the partitioned
-    interval <m>[c,x]</m> as shown in the diagram below. 
-    </p>
-    <image source="FTC3.png" width="60%">
-      <shortdescription></shortdescription>
-    </image>
-    <p>
-      Next we define the function, 
-      <men  xml:id="EQUATIONFTC3">\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} </men>
-      which sums the differentials <m>f(t)\dx{t}=\dx{y} </m> from a fixed
-      point <m>c</m> to a variable point <m>x</m>. There is a lot going on in <xref ref="EQUATIONFTC3">equation</xref> but 
-      it is important that you understand  very clearly the nature of the
-      function <m>\alpha(x)</m>. We will proceed slowly. 
-    </p>
-    <p>
-      To repeat, <m>\alpha(x)</m> is the function which sums all of the
-      differentials <m>\dx{y}=f(t)\dx{t} </m> up to the point
-      <m>x</m>, starting at the number <m>c</m>. Thus <m>\alpha
-      (x_1) = \int_{t=c}^{t=x_1}f(t)\dx{t} </m> will be the sum of the differentials up to <m>x_1</m>,
-      <m>\alpha (x_2)  = \int_{t=c}^{t=x_2}f(t)\dx{t}</m> is the sum up to <m>x_2</m>.
-    </p>
-    <p>
-      Recall that a <term>function</term> consists of a
-      <term>domain</term> (all real numbers (<m>\\R </m> in this case)
-      and a procedure for assigning outputs to inputs. In this
-      instance the procedure is, <q>for each <m>x</m> sum of all of
-      the differentials from <m>c</m> to <m>x</m>.</q> So <m>\alpha
-      </m> is a function of <m>x</m>. Take particular notice of the
-      fact that the integration variable (<m>t</m> in this case) does
-      not represent a variable in the domain of <m>\alpha </m>. The
-      integration variable is sometimes called a <q>dummy variable</q>
-      because in a very real sense it isn<rsq/>t really there. This is
-      very confusing at first, but don<rsq/>t concern yourself over it
-      right now. We will demonstrate what we mean with an example later.
+      Returning to <xref ref="EQUATIONDefAntideriv">equation</xref>, we
+      know from our study of Differential Calculus that
       
+      <me>\dx{y}=F^\prime(t)\dx{t}=f(t)\dx{t},</me>
+
+      and we know from our work in 
+      <xref ref="SECTIONIntegrationAsASum"></xref> that
+      
+      <men xml:id="EQUATIONFTC2">y=\int\dx{y}</men>. 
+
+      Therefore 
+
+      <me>y=\int\dx{y}= \int f(t)\dx{t}.</me>
+
+      Observe that since <m>\dx{y} </m> is a differential it follows
+      that <m>f(t)\dx{t}</m> is also a differential so the expression
+      <m>\int f(t)\dx{t}</m> is valid.
     </p>
-    <problem  xml:id="PROBLEMIntAtoA">
+
+    <p>
+      Thus it appears that if <m>\dx{y}=f(t)\dx{t} </m> is known then
+      <m>y=F(t)</m>, will be the antiderivative of <m>f(t)</m>. That is to
+      say, integration appears to be <q>differentiation run backwards.</q>
+    </p>
+    <p>
+      This is true as far as it goes, but remember that the title of this
+      chapter is <q>Integratin in its <em>Simplest</em> Form.</q> Running
+      differentiation backwards is not as straightforward as it first
+      appears to be.
+    </p>
+
+
+    <example xml:id="EXAMPLESimpleInt1">
+      <title>A Simple Integration</title>
       <p>
-        Explain why <m>\alpha (c)=0</m>.
+        For example, can you find a formula for this derivative?
+        <me>\int2t\dx{t}</me>
+      </p>
+      <p>
+        In this example clearly, <m>f(t)=2t</m>. Thus from <xref
+        ref="DEFINITIONAntiderivative"></xref> we see that <m>F(x) =
+        \frac{x^2}{2}</m> is an antiderivative, and we can capture all of the
+        antiderivatives by adding an arbitrary constant, traditionally called
+        <q><m>C</m>,</q> and we write 
+        <me>\int 2t\dx{t} = \frac{t^2}{2} + C.</me>
+      </p>
+      <p>
+        As this example shows the expression <m>\int f(t)\dx{t} </m>
+        represents a multifunction like the <q> <m>\text{arc}</m></q> we
+        encountered when we learned to differentiate the trigonometric 
+        functions and their inverses. 
+      </p>
+      <p>
+        There will be times when we will want to choose only one of the
+        functions represented by <m>\int f(t)\dx{t}</m>, but this will consist
+        entirely of choosing the value of <m>C</m> that works for our
+        problem. None of the complex domain and range difficulties that caused
+        do many headaches with the inverse trigonometric functions will be in
+        play here. Since the multifunction here are so simple, we will
+        dispence with the formal language and call <m>F(t) = \frac{t^2}{2}+C</m> the 
+<term>most general antiderivative</term> of <m>f(t) = t^2</m>.
+      </p>
+    </example>
+
+
+    <p>
+        Modern integration theory has expanded considerably beyond
+        what we will be learning in this course. But the underlying
+        notions of the integral as a sum and the integral as an
+        antiderivative are still very helpful and we will rely on them
+        rather heavily, at least at first.
+      </p>
+
+<problem  xml:id="PROBLEMAntiDiffPractice">
+<p>
+Find the most general antiderivative.
+<ol cols="2" marker="i">
+<li>
+<m>\int t^2\dx{t}</m>
+</li>
+<li>
+<m>\int 3t-2\dx{t}</m>
+</li>
+<li>
+<m>\int 7\dx{t}</m>
+</li>
+<li>
+<m>\int \sin(t)\dx{t}</m>
+</li>
+<li>
+<m>\int \cos(t)\dx{t}</m>
+</li>
+<li>
+<m>\int \sec(t)\tan(t)\dx{t}</m>
+</li>
+<li>
+<m>\int e^t\dx{t}</m>
+</li>
+<li>
+<m>\int t^{-1}\dx{t}</m>
+</li>
+</ol>
+</p>
+</problem>
+
+<exercise xml:id="EXERCISEAntiDerivPractice">
+<introduction>
+<p>
+<idx><h>Antiderivative</h></idx>
+Show that  the following statements are true.
+</p>
+</introduction>
+<task>
+<statement>
+<p>
+    <m>\int 2te^{t^2}\dx{t} = e^{t^2} +C</m>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+<m>\int te^t\dx{t} = (t-1)e^t+C</m>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+<m>\int \sin(x)\cos(x)\dx{x} =\frac12\sin^2(x)+C</m>
+</p>
+</statement>
+</task>
+<task  xml:id="Sinsqcossqantider">
+<statement>
+<p>
+<m>\int \sin(x)\cos(x)\dx{x} = -\frac12\cos^2(x)+C</m>
+</p>
+<p>
+Notice that we<rsq/>ve used <m>x</m> instead of <m>t</m> for our
+variable. Does that matter? Explain.
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+<m>\int u\cos(u) \dx{u} = u\sin(u)+\cos(u)+C</m>
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+<m>\int x\ln(x) \dx{x} = x(\ln{x}-1)+C</m>
+</p>
+</statement>
+</task>
+
+
+</exercise>
+
+  </section>
+<section>
+    <title>Rules for Integration</title>
+    <p>
+      Since Integration seems to be the reverse of Differentiation (at
+      least in the first approximation) it is not too surprising to
+      learn that each differentiation rule has its integration rule
+      counterpart.  The following table illustrates some of these
+      rules.
+    </p>
+    
+    <table xml:id="BasicIntegrationTable">
+      <title>Integration Rules Inherited from Differentiation Rules</title>
+      <tabular halign="center">
+        <row bottom="major" header="yes">
+          <cell>Differentiation Rule</cell><cell><line>Integration
+          Rule</line><line> (Assume <m>a</m> and <m>c</m> are
+          constants.)  </line></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\text{constant})=0</m></cell>
+          <cell><line><m>\int0\dx{x}=c,</m></line> <line> where <m> c
+          </m> is a constant.</line></cell>
+        </row>
+        <row>
+          <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell>
+          <cell><m>\int\dx(f+g)
+          <!-- =\int\dx(f+g) -->
+          =\int\dx{f}+\int\dx{g}=f+g+c</m></cell>
+        </row>
+        <row>
+          <cell><line>If <m>a</m> is a constant, then</line>
+          <line><m>\dx(ay)=a\dx(y)</m></line>
+          </cell>
+          <cell>
+          <m>\int a\dx{y}=\int\dx(ay)=a\int\dx{y}=ay+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell>
+          <cell><m>\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+c, n\neq
+          -1</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}</m></cell>
+          <cell><m>\int x^{-1}\dx{x} = \ln\abs{x}+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(e^x)= e^x\dx{x}</m></cell>
+          <cell><m>\int e^x\dx{x} = e^x+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\sin(x))=\cos(x)\dx{x}</m></cell>
+          <cell><m>\int \cos(x) = \sin(x) +c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\cos(x))=-\sin(x)\dx{x}</m></cell>
+          <cell><m>\int \sin(x)\dx{x} = -\cos(x) +c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\tan(x))=\sec^2(x)\dx{x}</m></cell>
+          <cell><m>\int\sec^2(x)\dx{x} = \tan(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\sec(x))= \sec(x)\tan(x)\dx{x}</m></cell>
+          <cell><m>\int\sec(x)\tan(x)=\sec(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\sin(x))=
+          \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\tan(x))=
+          \frac{1}{1+x^2}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+c</m></cell>
+        </row>
+        <row>
+          <cell><m>\dx(\inverse\sec(x))=
+          \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell>
+          <cell><m>\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+c</m></cell>
+        </row>
+      </tabular>
+    </table>
+    
+    
+    <p>
+      <xref ref="BasicIntegrationTable">Table</xref> is not
+      exhaustive, as every differentiation performed gives rise to a
+      corresponding integration formula.  Conspicuously absent are the
+      product rule, quotient rule, and chain rule.  The analog of the
+      quotient rule is rather limited in its applicability and
+      typically is not used.  The analogs of the others are quite
+      useful and will be covered later.  Notice that the analog of the
+      power rule (line 4) makes sense verbally.  To differentiate
+      <m>x</m> to a power, you multiply by the exponent and then
+      subtract one from the exponent.  To reverse the process, you
+      reverse each step and reverse the order of the steps (much as
+      you put your socks on and then your shoes and to reverse it you
+      take off your shoes first and then your socks).  Thus you add
+      one to the exponent and then divide by the exponent.  Notice
+      that the rule will not work if the exponent is <m>n=-1</m> as
+      you cannot divide by zero.  This is where the natural logarithm
+      fills in the gap (line 5).  While we are at line five, notice
+      that we have inserted an absolute value in the formula:
+      <me>
+        \int\inverse x\dx{x}=\ln\abs{x}+C.
+      </me>
+    </p>
+    
+    
+    <problem>
+      <statement>
+        <p>
+          One way to define the absolute value function is
+          <m>\abs{x}=\sqrt{x^2}</m> where his signifies the
+          non-negative square root.  For example,
+          <m>\abs{3}=\sqrt(3^2)=\sqrt(9)=3</m> and
+          <m>\abs{-3}=\sqrt{(-3)^2}=\sqrt{9}=3</m>.
+        </p>
+        <p>
+          Show that with this definition of absolute value, we still
+          obtain the formula
+          <me>
+            \dx(\ln\abs{x})=\frac1x \dx{x}.
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Be careful that you do not try to take the logarithm of a
+          negative number. A common practice is to write
+          <m>\int\inverse x\dx{x}=\ln(x)+C</m>, even though this is
+          only valid for .  We will adopt this practice, and resort to
+          an absolute value only when there is an issue about being
+          negative.
+        </p>
+      </hint>
+    </problem>
+    
+    
+    <problem>
+      <p>
+        It looks like we broke our own rule in lines two and three in
+        the above table of integration rules.  After all,
+        <me>
+          \int \dx{f} +\int \dx{g} = f+c_1+g+c_2
+        </me>
+        where and are arbitrary constants, and
+        <me>
+          a\int\dx{y}=a(y+c)=ay+ac </me>.
+      </p>
+      <p>
+        Explain why what we have in the table is still legitimate.
       </p>
     </problem>
-
-    <p>
-      From <xref ref="EQUATIONFourierDefInt">equation</xref> we see that <m>\int_{t=c}^{t=x}\dx{y} = y(x)-y(c)</m>. Therefore
-      <me>
-        \alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t}=          \int_{t=c}^{t=x}\dx{y} = y(x)-y(c).
-      </me>
-      Finally, since <m>y(t)=F(t)</m> (see <xref ref="EQUATIONDefAntideriv">equation</xref>) 
-      we see that 
-      <men  xml:id="EQUATIONFTC">
-        \alpha (x)=F(x)-F(c).
-      </men>
-      Despite its apparent simplicity <xref
-      ref="EQUATIONFTC">Equation</xref> is quite profound. First,
-      observe that <m>F(c)</m> is a constant. To emphasize this fact
-      we set <m>F(c)=C</m>, so that it looks like a constant.
-</p>
-    <aside>
-      <title>A Little Algebra</title>
-      <p>
-        <m>F(c)</m> is a constant for the same reason that if <m>g(x)=x^2</m>
-        then <m>g(2)</m> is a constant.  When  we evaluate a
-        function at a single element of its domain  the result will   be a single element of its range, i.e., a constant..
-      </p>
-    </aside>
-
-    <p>
-      With this notational change  we have <m>\alpha(x)+C=F(x)
-      </m>. 
-
-      From our observations at the begining of this section we see that 
-      <me>\alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t}= F(x) -C</me> is also an
-      antiderivative of <m>f(x)</m> (we<rsq/>ve added <m>-C</m> to the
-      antiderivative <m>F(x)</m>). 
-    </p>
-
-    <p>
-      But <xref ref="EQUATIONFTC">equation</xref> tells us more than
-      that. It says that if we know another antiderivative of
-      <m>f(x)</m>, say <m>F(x)</m> we can find <m>\alpha (x)</m> by
-      computing
-      <men  xml:id="EQUATIONFTC5">
-        \alpha (x)=\int_{t=c}^{t=x}f(t)\dx{t} = F(x)-C,
-      </men>
-      <xref ref="EQUATIONFTC5">Equation</xref> is an informal statement of
-      the <term>Fundamental Theorem of Calculus</term>. We will now state it
-      formally.
-    </p>
-    <theorem  xml:id="THEOREMFTC">
-      <title>The Fundamental Theorem of Calculus (FTC)</title>
-      <p>
-        Let <m>c</m> be any constant.
-        If <m>\alpha (x)</m> is defined by <me>\alpha (x) = \int_{t=c}^{t=x}
-        f(t)\dx{t} </me> then <m>\alpha(x)</m> is an antiderivative of
-        <m>f(x)</m>.
-      </p>
-    </theorem><p> In the FTC, notice where, and how, we used the
-    variable name <q><m>x</m></q> and where we used <q><m>t</m>.</q>
-    It is important to keep the distinction clear in your mind.
-</p>
-
-
-<!-- <example xml:id="EXAMPLEFTCSimple"> -->
-<!-- <title>A Simple Example of the FTC</title> -->
-<!-- <p> -->
-<!-- If <m>\alpha (x)</m> is defined by  -->
-<!-- <me>\alpha (x) = \int_{t=1}^{t=x}t^2\dx{t}.</me> then <m>\alpha (x) -->
-<!-- </m> must be and antiderivative of <m>f(x)=x^2</m>. But the -->
-<!-- antiderivatives of <m>f(x)</m> are  -->
-
-<!-- </p> -->
-<!-- </example> -->
-
-    <corollary>
-      <p>   
-        From <xref ref="THEOREMFTC"></xref> and <xref
-        ref="EQUATIONFTC">equation</xref> it follows that if <m>F(x)</m> is
-        any other antiderivative of <m>f(x)</m> then
-        <men  xml:id="EQUATIONFTC4">
-          F(x)=\alpha (x)+C.
-        </men>
-        <!-- So we see that the difference between <m>\alpha (x)</m> and -->
-        <!-- <m>F(x)</m> is the constant <m>C=F(c)</m>. -->
-        <!-- </p> -->
-        <!-- <p> -->
-        <!-- Because <m>F(c)</m> is a constant when we differentiate both sides of -->
-        <!-- <xref ref="EQUATIONFTC4">equation</xref> we have -->
-        <!-- <me>F^\prime(x)-\alpha^\prime (x)=0</me> or -->
-        <!-- <me>\alpha^\prime (x)=F^\prime(x)=f(x.</me> -->
-        <!-- </p> -->
-      </p>
-    </corollary>
-    <corollary>
-      <title>Definite Integration</title>
-
-      <p>
-        Let <m>c</m> and <m>b</m> be constants.  Then from <xref
-        ref="THEOREMFTC"></xref> and <xref ref="EQUATIONFTC5"></xref> it
-        follows that 
-        <men  xml:id="EQUATIONDefFTC">\int_{t=c}^{t=b} f(t)\dx{t} = F(c)-F(b).</men>
-      </p>
-    </corollary>
-    <example xml:id="EXAMPLEDiffNotFunc"> <title>We Integrate
-    Differentials, Not Functions</title> 
-    <p>
-      The integral sign is intended to indicate the summation of
-      differentials, but it is very easy to use the notation
-      improperly. Sooner or later most people will fall into the
-      habit of dropping the final <q><m>\dx{x}{}</m></q> and writing
-      <md>
-        <mrow>\amp{}\int f(x) \amp{}\text{ instead of }\amp{}\amp{}\int f(x)\dx{x}\</mrow>
-      </md>
-      and calling them both
-      the
-      integral of the function <m>f(x)</m>. This is an unfortunate, but common, abuse of the notation.
-      We
-      <em>strongly</em> suggest that you take care to avoid this bad
-      habit for as long as you can. Especially when the concepts are
-      still new it can be very confusing.
-    </p>
-
-    <aside>
-      <title>Mathematical Customs</title>
-
-      <p>
-        In practice, if they are not relevant to the discussion at hand the
-        indices are frequently left out entirely.
-      </p>
-
-    </aside>
-
-    <p>
-      Remember that  <me>\int f(x)</me> is meaningless no matter how
-      convenient it might be. But
-      the meaning of <me>\int f(x)\dx{x}</me> is clear: We're
-      summing up all of the differentials of the form <m>f(x)\dx{x}
-      </m>.
-    </p>
-
-    <p>
-      Suppose that <m>y=x^2</m> then <m>\dx{y} =2x\dx{x}</m>. Then
-      <m>\int 2x\dx{x}</m> makes sense because the product
-      <m>2x\dx{x}=\dx{y}</m> is a differential. But <m>\int 2x</m>
-      is nonsense because <m>2x</m> alone is not a differential.
-    </p>
-    <p>
-      In particular, <m>\int 2x</m> is meaningless. However  if <m>y=x^2</m>
-      then what is probably meant is
-      <men  xml:id="EQUATIONPlusCMissing">\int 2x\dx{x} = \int \dx{y}</men> which is equal to <m>y</m> since <m>\int \dx{y}</m> means 
-      <q>add up the differentials of <m>y</m>.</q>
-    </p>
-    </example>
-
-    <example xml:id="EXAMPLEZeroDiff">
-      <title>The Problem of Zero Differentials</title>
-      <!--     <p> -->
-      <!--       For example, if <m>y=x^2</m> then <m>\dx{y}=2x\dx{x}</m>.  It -->
-      <!--       stands to reason that if we add up all of the differentials of -->
-      <!--       <m>y</m>  we will reconstruct <m>y=x^2</m>. -->
-
-      <!-- </p> -->
-      <p>
-        Naturally, things are not quite this simple. Consider
-        <md>
-          <mrow>f_1(x)\amp{}=x^2+7 \text{ and}</mrow>
-          <mrow>f_2(x)\amp{}=x^2+4.</mrow>
-        </md>
-        Clearly <m>\dx{f_1}=\dx{f_2}=2x\dx{x}</m> so the sum of 
-        <m>\dx{f_1}</m>  and the sum of 
-        <m>\dx{f_2}</m> would seem to be the same as. But clearly <me>\text{ the sum of
-        the}\dx{y_1}=x^2+7</me> whereas <me>\text{ the sum of
-        the}\dx{y_2}=x^2+5</me>.  This apparent contradiction
-        needs to be resolved.
-      </p>
-
-      <p>
-        One way to resolve it is to form the function
-        <me>f(x)=y_1(x)-y_2(x)</me> and notice that since
-        <m>\dx{y_1}=\dx{y_2} </m> it follows that
-        <me>\dx(y_1-y_2)=\dx{y_1}-\dx{y_2}=0.</me>  Dividing by
-        <m>\dx{x}</m> and thinking of <m>\dfdx{y_1}{x} </m> and
-        <m>\dfdx{y_2}{x} </m> as slopes, we have <me>\dfdx{f}{x}= \dfdx{y_1}{x}
-        -\dfdx{y_2}{x} =\dfdx{(y_1-y_2)}{x}=0</me>. This says that
-        the curve <m> f(x) = y_1(x) - y_2(x)</m> has a slope which is
-        constantly equal to zero.  A moment’s thought will suggest that
-        this curve must be a horizontal line for if not then somewhere
-        it should have a nonzero slope.  This argument can be made
-        rigorous, but we will not fuss over that right now.
-      </p>
-    </example>
-
     
-  </section>
+    <p>
+      In light of the above problem, practitioners often will perform
+      the integration of a differential applying whatever tools are
+      appropriate and then combining any arbitrary constants into one
+      constant at the end.  For example, consider
+      
+      <md>
+        <mrow>
+          \int\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\dx{x}\amp
+          =5\int x^2\dx{x}-3\int x^\frac12
+          \dx{x}+2\int\frac{1}{1+x^2}\dx{x}
+        </mrow>
+        <mrow>
+          \amp =5\left(\frac{x^3}{3}\right) -
+          \frac{3\left(x^{\frac12}\right)}{\frac32} +
+          2\inverse\tan(x)+c
+        </mrow>
+        <mrow>
+          \amp =\frac53x^3-2x^{\frac32}+2\inverse\tan(x)+c.
+        </mrow>
+      </md>
+      As with differentiation rules, when you get more comfortable
+      with the integration rules, you will probably do these in your
+      head.  Again, developing this fluency this is why you need to
+      practice.
+    </p>
+    
+    <p>
+      We have made a good start, but we are still a bit away from
+      solving differential equations such as
+      <me>
+        \dfdxn{y}{x}{2} =
+        \frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
+      </me>
+      A start might be to let <m>z=\dfdx{y}{x}</m>, so we have
+      
+      <md>
+        <mrow>
+          \dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}
+        </mrow>
+        <mrow>
+          \frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}.
+        </mrow>
+      </md>
+      If we now integrate both sides we get
+      <me>
+        \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}.
+      </me>
+    </p>
+    
+    <p>
+      The right-hand side of this doesn't pose any problems since
+      <m>\frac{w}{H}</m> is a constant.  However, the left-hand side
+      is another matter, since it doesn't quite fit with anything in
+      our table.  We will learn techniques to handle such situations,
+      but first let's look at some applications of integration which
+      utilize what we know.
+      </p>
+      </section>
 
 
 </chapter>
