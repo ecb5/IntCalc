@@ -386,9 +386,73 @@
       <m>y=F(t)</m>, will be the antiderivative of <m>f(t)</m>. That is to
       say, integration appears to be <q>differentiation run backwards.</q>
     </p>
+
+    <paragraphs xml:id="PARAGRAPHSDiffNotFunc"> <title>We Integrate
+    Differentials, Not Functions</title> 
+    <p>
+       Integration can be usefully thought of as either summation or
+       antidifferentiation. But the integral sign is designed to
+       indicate the summation of differentials, not
+       antidifferentiation.  It is thus very easy to use the notation
+       improperly. Sooner or later most people will fall into the
+       habit of dropping the final <q><m>\dx{t}{}</m></q>, writing
+      <md>
+        <mrow>\amp{}\int f(t) \amp{}\text{ instead of }\amp{}\amp{}\int f(t)\dx{t},</mrow>
+      </md>
+      and calling them both the integral of the function
+      <m>f(t)</m>. This is an unfortunate, but common, abuse of the
+      notation.  We <em>strongly</em> suggest that you take care to
+      avoid this bad habit for as long as you can. Especially when the
+      concepts are still new it can be very confusing.
+    </p>
+
+    <!-- <aside> -->
+    <!--   <title>Mathematical Customs</title> -->
+
+    <!--   <p> -->
+    <!--     In practice, if they are not relevant to the discussion at hand the -->
+    <!--     indices are frequently left out entirely. -->
+    <!--   </p> -->
+
+    <!-- </aside> -->
+
+<aside>
+<title>Mathematical Notation</title>
+<p>
+By calling <m>\int f(t)</m> meaningless we have overstated the
+situation a bit. If you study mathematics long enough you will
+encounter situations where this is a perfectly reasonable notation to
+use. But we will not encounter them here, and it is best if you
+don<rsq/>t fall into this habit while you are still learning the
+basics.
+</p>
+</aside>
+
+    <p>
+      Remember that  <me>\int f(t)</me> is meaningless no matter how
+      convenient it might be. But
+      the meaning of <me>\int f(t)\dx{t}</me> is clear: We're
+      summing up all of the differentials of the form <m>f(t)\dx{t}
+      </m>.
+    </p>
+
+    <p>
+      Suppose that <m>y=t^2</m> then <m>\dx{y} =2t\dx{t}</m>. Then
+      <m>\int 2t\dx{t}</m> makes sense because the product
+      <m>2t\dx{t}=\dx{y}</m> is a differential. But <m>\int 2t</m>
+      is nonsense because <m>2t</m> alone is not a differential.
+    </p>
+    <p>
+      In particular, <m>\int 2t</m> is meaningless. However  if <m>y=t^2</m>
+      then what is probably meant is
+      <men  xml:id="EQUATIONPlusCMissing">\int 2t\dx{t} = \int \dx{y}</men> which is equal to <m>y</m> since <m>\int \dx{y}</m> means 
+      <q>add up the differentials of <m>y</m>.</q>
+    </p>
+</paragraphs>
+
     <p>
       This is true as far as it goes, but remember that the title of this
-      chapter is <q>Integratin in its <em>Simplest</em> Form.</q> Running
+      chapter is <q>Integration in its <em>Simplest</em> Form.</q> Running
       differentiation backwards is not as straightforward as it first
       appears to be.
     </p>
@@ -550,16 +614,16 @@ variable. Does that matter? Explain.
         </row>
         <row>
           <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell>
-          <cell><m>\int\dx(f+g)
-          <!-- =\int\dx(f+g) -->
-          =\int\dx{f}+\int\dx{g}=f+g+c</m></cell>
+          <cell><line><m>\int\dx(f+g)=\int\dx{f}+\int\dx{g}</m></line>
+<line><m>=f+g+c</m></line></cell>
         </row>
         <row>
           <cell><line>If <m>a</m> is a constant, then</line>
           <line><m>\dx(ay)=a\dx(y)</m></line>
           </cell>
           <cell>
-          <m>\int a\dx{y}=\int\dx(ay)=a\int\dx{y}=ay+c</m></cell>
+          <line><m>\int a\dx{y}=\int\dx(ay)=a\int\dx{y}</m></line>
+<line><m>=ay+c</m></line></cell>
         </row>
         <row>
           <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell>
@@ -656,7 +720,7 @@ variable. Does that matter? Explain.
           Be careful that you do not try to take the logarithm of a
           negative number. A common practice is to write
           <m>\int\inverse x\dx{x}=\ln(x)+C</m>, even though this is
-          only valid for .  We will adopt this practice, and resort to
+          only valid for <m>x\gt{0}</m>.  We will adopt this practice, and resort to
           an absolute value only when there is an issue about being
           negative.
         </p>
