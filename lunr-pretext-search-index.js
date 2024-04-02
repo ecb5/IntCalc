@@ -160,7 +160,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Differential Equations and Initial Value Problems",
-  "body": " Differential Equations and Initial Value Problems  Differential equations have been used since the invention of Calculus to model real world phenomena. A very simple example comes from the work of Galileo. In his investigations Galileo learned that a body falling freely near the surface of the earth would accelerate downward at a constant rate we ve called .   Initial Value Problem (IVP)    An Initial Value Problem is a differential equation of the form along with an Initial Value      We have made a good start, but we are still a bit away from solving differential equations such as A start might be to let , so we have If we now integrate both sides we get   The right-hand side of this doesn't pose any problems since is a constant. However, the left-hand side is another matter, since it doesn't quite fit with anything in our table. We will learn techniques to handle such situations, but first let's look at some applications of integration which utilize what we know.  "
+  "body": " Differential Equations and Initial Value Problems  Calculus gives us an extraordinarily powerful set of tools for modeling real world phenomena. We have already some simple examples of this already when we studied differentiation. For example if is the height of a falling body we know that the acceleration of the body is given by the second derivative of position: . Moreover Galileo showed that a body falling freely near the surface of the earth would accelerate downward at a constant rate we ve called . This is fully described by the differential equation which is our model of a falling body. From this model and the procedures of Different Calculus we can recover functions which tell us the velocity and the position of a falling body at any time and under any starting conditions. We will have more to say about this particular model in .  During our study of differentiation we also encountered a model of a hanging chain. Recall that if is the shape that a hanging chain naturally settles into we discovered that will necessarily be a solution of the Differential Equation : A start might be to let , so we have T If we now integrate both sides we get   The right-hand side of this doesn't pose any problems since is a constant. However, the left-hand side is another matter, since it doesn't quite fit with anything in our table. We will learn techniques to handle such situations, but first let's look at some applications of integration which utilize what we know.   Initial Value Problem (IVP)    An Initial Value Problem is a differential equation of the form along with an Initial Value      "
+},
+{
+  "id": "SECTIONIVPS-3",
+  "level": "2",
+  "url": "SECTIONIVPS.html#SECTIONIVPS-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Differential Equation "
 },
 {
   "id": "DEFINITIONIVP",
@@ -172,18 +181,18 @@ var ptx_lunr_docs = [
   "body": " Initial Value Problem (IVP)    An Initial Value Problem is a differential equation of the form along with an Initial Value     "
 },
 {
-  "id": "IntegrationMethods-2",
+  "id": "SECTIONProjectileMotion",
   "level": "1",
-  "url": "IntegrationMethods-2.html",
+  "url": "SECTIONProjectileMotion.html",
   "type": "Section",
   "number": "2.1",
   "title": "First application -- Projectile motion",
   "body": " First application -- Projectile motion  Suppose you throw a ball straight up into the air. Of course, it will go up and come back down. For the moment, let's ignore air resistance. How high will the ball go? How long will it take the ball to hit the ground? What will be its impact velocity? Suppose you throw the ball up with twice the initial speed. Will the ball go twice as high? These were the types of questions that interested scientists like Galileo Galilei (1564-1642) who were some of the first scientists to systematically apply mathematics to science, specifically projectile motion.  Now that we have that acceleration due to gravity is constant, let's look more into projectile motion. This fits into our discussion on integral calculus since we are given information about the acceleration and must integrate twice to recover the position of the ball. Specifically, let's say that the ball is thrown upward with an initial velocity of meters per second (roughly miles per hour) and is released at a point meters above the ground. How high will the ball go? When will it hit the ground? What will be the impact velocity?  To answer these questions, we must translate this problem into a mathematics problem. With this in mind, suppose the height of the ball is given by where is measured in meters and is measured in seconds. Then we have the following information , , and .  Notice that the acceleration is constant (we are only looking a gravity and ignoring air resistance) and is negative (we've set up so that up is the positive direction and down is the negative direction).  With this in mind, we want to find when (how high), when (when it hits the ground), and (the impact velocity).  For convenience, let denote velocity, and denote acceleration. Starting with our constant acceleration , we need to integrate to find and . Once we find these, then we can answer the questions posed.  We know that so   To find is in this case, we utilize the fact that . Thus So our velocity is given by   We now integrate this to find the ball's position.   This time to find the constant we observe that since we have Thus the ball's position is given by: .  Once we have these three equations of motion (acceleration, velocity, position) we can answer any question about the ball's motion. In general, we suggest you find these three equations before trying to answer any questions about motion.  To find the maximum height, we set . So we see that . Solving for gives . Thus the ball's maximum height is So the ball will reach a height of .  To find the impact velocity, we first need to find the time when the ball hits the ground so we solve for when . and we see that both and solve our equation. However snce the negative time would represent time in the past, we can say that the ball will hit the ground when seconds. Thus the impact velocity is The negative answer makes sense as the ball is traveling in the negative direction (given how we set up the axis).   Suppose we throw two balls straight up. If the first has an initial velocity of and the second has an initial velocity of will the maximum height of the second ball be twice the maximum height of the first. (Again, we ignore air resistance.)    Automobile safety experts say that a skilled driver in a car with good tires and dry pavement can safely brake to a stop at a rate of (ft\/sec)\/sec. If it is determined that it takes such a car 160 ft to stop. How fast was the car going initially (in miles per hour)   Of course, the same principles will work in two dimensions as with a single dimension. All we do is treat the horizontal and vertical directions separately. With this in mind, the horizontal acceleration would be zero.   Consider the following projectile launched from the origin, with an initial velocity of and angle of elevation .   Path of a thrown object.   Path of a thrown object.    Assuming that there is no air resistance and the acceleration due to gravity is .   Show that the trajectory is given by the parabola .   Use the equation in question 1 to show that the range of the projectile is given by .   Show that the maximum range occurs when .   On Feb. 6, 1971, astronaut Alan Shepard pulled out a makeshift six-iron he smuggled on board Apollo and hit two golf balls on the lunar surface, becoming the first, and only, person to play golf anywhere other than earth. Assuming that the gravity on the moon is that of earth and that Shepard can hit the ball identically on the earth and the moon, and ignoring air resistance on the earth, would the ball go times farther before it touches the ground on the moon than on the earth? Justify your answer.   "
 },
 {
-  "id": "IntegrationMethods-2-15",
+  "id": "SECTIONProjectileMotion-15",
   "level": "2",
-  "url": "IntegrationMethods-2.html#IntegrationMethods-2-15",
+  "url": "SECTIONProjectileMotion.html#SECTIONProjectileMotion-15",
   "type": "Drill",
   "number": "2.1",
   "title": "",
@@ -192,16 +201,16 @@ var ptx_lunr_docs = [
 {
   "id": "PROBLEMDeceleratingCar",
   "level": "2",
-  "url": "IntegrationMethods-2.html#PROBLEMDeceleratingCar",
+  "url": "SECTIONProjectileMotion.html#PROBLEMDeceleratingCar",
   "type": "Drill",
   "number": "2.2",
   "title": "",
   "body": " Automobile safety experts say that a skilled driver in a car with good tires and dry pavement can safely brake to a stop at a rate of (ft\/sec)\/sec. If it is determined that it takes such a car 160 ft to stop. How fast was the car going initially (in miles per hour)  "
 },
 {
-  "id": "IntegrationMethods-2-18",
+  "id": "SECTIONProjectileMotion-18",
   "level": "2",
-  "url": "IntegrationMethods-2.html#IntegrationMethods-2-18",
+  "url": "SECTIONProjectileMotion.html#SECTIONProjectileMotion-18",
   "type": "Problem",
   "number": "2.3",
   "title": "",

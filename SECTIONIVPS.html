@@ -181,7 +181,7 @@ window.MathJax = {
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="IntegrationMethods.html" class="internal"><span class="codenumber">2</span> <span class="title">Integration Methods</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">First application -- Projectile motion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProjectileMotion.html" class="internal"><span class="codenumber">2.1</span> <span class="title">First application -- Projectile motion</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Adding Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">2.3</span> <span class="title">The Opposite of the Product Rule -- Integration By Parts</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-5.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
@@ -264,8 +264,39 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONIVPS"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Differential Equations and Initial Value Problems</span>
 </h2>
-<div class="para" id="SECTIONIVPS-2">Differential equations have been used since the invention of Calculus to model real world phenomena. A very simple example comes from the work of Galileo. In his investigations Galileo learned that a body falling freely near the surface of the earth would accelerate downward at a constant rate we’ve called <span class="process-math">\(g\text{.}\)</span>
+<div class="para logical" id="SECTIONIVPS-2">
+<div class="para">Calculus gives us an extraordinarily powerful set of tools for modeling real world phenomena. We have already some simple examples of this already when we studied differentiation. For example if <span class="process-math">\(y(t)\)</span> is the height of a falling body we know that the acceleration of the body is given by the second derivative of position: <span class="process-math">\(\dfdxn{y}{t}{2}\text{.}\)</span> Moreover   Galileo showed that a body falling freely near the surface of the earth would accelerate downward at a constant rate we’ve called <span class="process-math">\(g=9.8
+\frac{\text{meters}}{\text{seconds}}\text{.}\)</span> This is fully described by the differential equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SECTIONProjectileMotion.html">
+\begin{equation*}
+\dfdxn{y}{t}{2}=9.8\frac{\text{meters}}{\text{seconds}},
+\end{equation*}
 </div>
+<div class="para">which is our model of a falling body. From this model and the procedures of Different Calculus we can recover  functions which tell us the velocity and the position of a falling body at any time and under any starting conditions. We will have more to say about this particular model in <a href="SECTIONProjectileMotion.html" class="internal" title="Section 2.1: First application -- Projectile motion">Section 2.1</a>.</div>
+</div>
+<div class="para logical" id="SECTIONIVPS-3">
+<div class="para">During our study of differentiation we also encountered a model of a hanging chain. Recall that if <span class="process-math">\(y(x)\)</span> is the shape that a hanging chain naturally settles into we discovered that <span class="process-math">\(y(x)\)</span> will necessarily be a solution of the <dfn class="terminology">Differential Equation</dfn>:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfdxn{y}{x}{2} =
+\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
+\end{equation*}
+</div>
+<div class="para">A start might be to let <span class="process-math">\(z=\dfdx{y}{x}\text{,}\)</span> so we have</div>
+<div class="displaymath process-math" id="SECTIONIVPS-3-6">
+\begin{align*}
+\dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}\\
+\frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}.
+\end{align*}
+</div>
+<div class="para">T      If we now integrate both sides we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SECTIONIVPS-4">The right-hand side of this doesn’t pose any problems since <span class="process-math">\(\frac{w}{H}\)</span> is a constant.  However, the left-hand side is another matter, since it doesn’t quite fit with anything in our table.  We will learn techniques to handle such situations, but first let’s look at some applications of integration which utilize what we know.</div>
 <article class="definition definition-like" id="DEFINITIONIVP"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Initial Value Problem (IVP).</span>
 </h3> <div class="para logical" id="DEFINITIONIVP-2-1">
@@ -282,29 +313,7 @@ window.MathJax = {
 y(x_0)=y_0.
 \end{equation*}
 </div>
-</div></article><div class="para logical" id="SECTIONIVPS-4">
-<div class="para">We have made a good start, but we are still a bit away from solving differential equations such as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\dfdxn{y}{x}{2} =
-\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
-\end{equation*}
-</div>
-<div class="para">A start might be to let <span class="process-math">\(z=\dfdx{y}{x}\text{,}\)</span> so we have</div>
-<div class="displaymath process-math" id="SECTIONIVPS-4-3">
-\begin{align*}
-\dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}\\
-\frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}.
-\end{align*}
-</div>
-<div class="para">If we now integrate both sides we get</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}.
-\end{equation*}
-</div>
-</div>
-<div class="para" id="SECTIONIVPS-5">The right-hand side of this doesn’t pose any problems since <span class="process-math">\(\frac{w}{H}\)</span> is a constant.  However, the left-hand side is another matter, since it doesn’t quite fit with anything in our table.  We will learn techniques to handle such situations, but first let’s look at some applications of integration which utilize what we know.</div></section></div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="FTC-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="IntegrationMethods.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
