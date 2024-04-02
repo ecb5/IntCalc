@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>  
-<chapter xml:id="FTC" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="CHAPTERFTC" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Integration in Its Simplest Forms  </title>
+
   <introduction>
     <title>A Quick Review of Differential Calculus</title>
     <p>
@@ -78,7 +79,7 @@
       you to show that if <m>y(x)</m> represents the shape of a
       catenary curve then <m>y(x)</m> will satisfy the differential
       equation
-      <men xml:id="CatenaryIVP">
+      <men xml:id="EQUATIONCatenaryIVP">
         \dfdxn{y}{x}{2} =\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
       </men>
     </p>
@@ -205,7 +206,7 @@
       simplify the summation  notation:
 
 
-      <men xml:id="FinDiffSum">
+      <men xml:id="EQUATIONFinDiffSum">
         \int{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
       copies}} = x_n-x_0 </men>
       and his idea has been universally adopted.
@@ -562,7 +563,7 @@ Show that  the following statements are true.
 </p>
 </statement>
 </task>
-<task  xml:id="Sinsqcossqantider">
+<task  xml:id="PROBLEMSinsqcossqantider">
 <statement>
 <p>
 <m>\int \sin(x)\cos(x)\dx{x} = -\frac12\cos^2(x)+C</m>
@@ -602,7 +603,7 @@ variable. Does that matter? Explain.
       some of these rules.
     </p>
     
-    <table xml:id="BasicIntegrationTable">
+    <table xml:id="TABLEBasicIntegrationTable">
       <title>Integration Rules Inherited from Differentiation Rules</title>
       <tabular halign="center">
         <row bottom="major" header="yes">
@@ -802,10 +803,9 @@ this already when we studied differentiation. For example if <m>y(t)</m> is the 
 of a falling body we know that the acceleration of the body is given
 by the second derivative of position: <m>\dfdxn{y}{t}{2}</m>. Moreover   Galileo 
 showed that a body falling freely near the surface of the earth would
-accelerate downward at a constant rate we<rsq/>ve called <m>g=9.8
-\frac{\text{meters}}{\text{seconds}}</m>. This is fully described by
+accelerate downward at a constant rate we<rsq/>ve called <m>g</m>. This is fully described by
 the differential equation
-<me>\dfdxn{y}{t}{2}=9.8\frac{\text{meters}}{\text{seconds}},</me> 
+<me>\dfdxn{y}{t}{2}=g,</me> 
 which is our model of a falling body. From this model and the
 procedures of Different 
 Calculus we can recover  functions which tell us the velocity and the
@@ -815,17 +815,36 @@ ref="SECTIONProjectileMotion"></xref>.
 </p>
 
     <p>
-    During our study of differentiation we also encountered a model
-    of a hanging chain. Recall that if <m>y(x)</m> is the shape that a
-    hanging chain naturally settles into we discovered that
-    <m>y(x)</m> will necessarily be a solution of the
-    <term>Differential Equation</term>:
-      <me>
+    Recall also that if <m>y(x)</m> is the shape that a hanging chain
+    naturally settles into under the pull of gravity then <m>y(x)</m>
+    will necessarily be a solution of the <term>Differential
+    Equation</term>:
+      <men  xml:id="EQUATIONHangChainModel">
         \dfdxn{y}{x}{2} =
         \frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
-      </me>
+      </men>
+which is a model for the Hanging Chain problem. The graph of a
+function which solves <xref ref="EQUATIONHangChainModel">equation</xref> will
+be  the shape of a hanging chain.
+    </p>
 
-      A start might be to let <m>z=\dfdx{y}{x}</m>, so we have
+<problem  xml:id="DRILLHangingChainSolution">
+<p>
+Show that               <men  xml:id="EQUATIONCatenary1">
+                y=\frac{H}{w}
+                \left(\frac{e^{\frac{wx}{H}}+e^{-\frac{wx}{H}}}{2}\right)
+              </men>
+ solves <xref ref="EQUATIONHangChainModel">equation</xref>.
+</p>
+</problem>
+
+
+
+<p>
+It is one thing to confirm a given solution, as in <xref
+ref="DRILLHangingChainSolution"></xref>, but finding the solution in
+the first place is not at all a simple task.  A start might be to let
+<m>z=\dfdx{y}{x}</m>, so we have
       
       <md>
         <mrow>
@@ -835,7 +854,7 @@ ref="SECTIONProjectileMotion"></xref>.
           \frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}.
         </mrow>
       </md>
-T      If we now integrate both sides we get
+      If we now integrate both sides we get
       <me>
         \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}.
       </me>
@@ -867,4 +886,3 @@ T      If we now integrate both sides we get
 
 
 </chapter>
-
