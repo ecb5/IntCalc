@@ -118,36 +118,36 @@ var ptx_lunr_docs = [
   "body": "  Antiderivative Show that the following statements are true.                  Notice that we ve used instead of for our variable. Does that matter? Explain.          "
 },
 {
-  "id": "FTC-5",
+  "id": "CHAPTERFTC-5",
   "level": "1",
-  "url": "FTC-5.html",
+  "url": "CHAPTERFTC-5.html",
   "type": "Section",
   "number": "1.3",
   "title": "Rules for Integration",
   "body": " Rules for Integration  Since Integration can be thought of as the reverse of Differentiation (at least in the first approximation) it is not too surprising to learn that each differentiation rule has its integration rule counterpart. The following table illustrates some of these rules.   Integration Rules Inherited from Differentiation Rules    Differentiation Rule Integration Rule (Assume and are constants.)    1    where is a constant.    2       3  If is a constant, then         4      5      6      7      8      9      10      11      12      13        Table is not exhaustive. It couldn t possibly be since every differentiation formula gives rise to a corresponding integration formula.  Conspicuously absent from Table are the Product Rule, the Quotient Rule, and the Chain Rule. The reverse of the Quotient Rule is rather limited in its applicability and typically is not used. Reversing the others can be quite useful and will be covered later.  If you read each of these Differentiation and Integration Rules verbally you can hear that they reverse each other. For example in line 4 we see that to differentiate to a power, we multiply by the exponent and then subtract one from the exponent. To reverse the process, we add one to the exponent and then divide by the exponent. (In the same way that when dressing you put your socks on and then your shoes and to reverse it you take off your shoes first and then your socks).  Notice that the Integration Rule in line 4 will not work if the exponent is as you cannot divide by zero. But that apparent hole in the table is covered on line 5. Does it seem odd to you that the we need the natural logarithm to plug that hole? After all, line 4 is about powers of the variable, which is a fairly concrete idea, whereas the natural logarithm function is much more abstract  While we are at line five, notice that we have inserted an absolute value in the formula:     One way to define the absolute value function is where his signifies the non-negative square root. For example, and .  Show that with this definition of absolute value, we still obtain the formula     Be careful that you do not try to take the logarithm of a negative number. A common practice is to write , even though this is only valid for . We will adopt this practice, and resort to an absolute value only when there is an issue about being negative.     It looks like we broke our own rule in lines two and three in the above table of integration rules. After all, where and are arbitrary constants, and .  Explain why what we have in the table is still legitimate.   In light of the above problem, practitioners often will perform the integration of a differential applying whatever tools are appropriate and then combining any arbitrary constants into one constant at the end. For example, consider As with differentiation rules, when you get more comfortable with the integration rules, you will probably do these in your head. Again, developing this fluency this is why you need to practice.  "
 },
 {
-  "id": "BasicIntegrationTable",
+  "id": "TABLEBasicIntegrationTable",
   "level": "2",
-  "url": "FTC-5.html#BasicIntegrationTable",
+  "url": "CHAPTERFTC-5.html#TABLEBasicIntegrationTable",
   "type": "Table",
   "number": "1.6",
   "title": "Integration Rules Inherited from Differentiation Rules",
   "body": " Integration Rules Inherited from Differentiation Rules    Differentiation Rule Integration Rule (Assume and are constants.)    1    where is a constant.    2       3  If is a constant, then         4      5      6      7      8      9      10      11      12      13      "
 },
 {
-  "id": "FTC-5-9",
+  "id": "CHAPTERFTC-5-9",
   "level": "2",
-  "url": "FTC-5.html#FTC-5-9",
+  "url": "CHAPTERFTC-5.html#CHAPTERFTC-5-9",
   "type": "Drill",
   "number": "1.7",
   "title": "",
   "body": "  One way to define the absolute value function is where his signifies the non-negative square root. For example, and .  Show that with this definition of absolute value, we still obtain the formula     Be careful that you do not try to take the logarithm of a negative number. A common practice is to write , even though this is only valid for . We will adopt this practice, and resort to an absolute value only when there is an issue about being negative.   "
 },
 {
-  "id": "FTC-5-10",
+  "id": "CHAPTERFTC-5-10",
   "level": "2",
-  "url": "FTC-5.html#FTC-5-10",
+  "url": "CHAPTERFTC-5.html#CHAPTERFTC-5-10",
   "type": "Drill",
   "number": "1.8",
   "title": "",
@@ -160,7 +160,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Differential Equations and Initial Value Problems",
-  "body": " Differential Equations and Initial Value Problems  Calculus gives us an extraordinarily powerful set of tools for modeling real world phenomena. We have already some simple examples of this already when we studied differentiation. For example if is the height of a falling body we know that the acceleration of the body is given by the second derivative of position: . Moreover Galileo showed that a body falling freely near the surface of the earth would accelerate downward at a constant rate we ve called . This is fully described by the differential equation which is our model of a falling body. From this model and the procedures of Different Calculus we can recover functions which tell us the velocity and the position of a falling body at any time and under any starting conditions. We will have more to say about this particular model in .  During our study of differentiation we also encountered a model of a hanging chain. Recall that if is the shape that a hanging chain naturally settles into we discovered that will necessarily be a solution of the Differential Equation : A start might be to let , so we have T If we now integrate both sides we get   The right-hand side of this doesn't pose any problems since is a constant. However, the left-hand side is another matter, since it doesn't quite fit with anything in our table. We will learn techniques to handle such situations, but first let's look at some applications of integration which utilize what we know.   Initial Value Problem (IVP)    An Initial Value Problem is a differential equation of the form along with an Initial Value      "
+  "body": " Differential Equations and Initial Value Problems  Calculus gives us an extraordinarily powerful set of tools for modeling real world phenomena. We have already some simple examples of this already when we studied differentiation. For example if is the height of a falling body we know that the acceleration of the body is given by the second derivative of position: . Moreover Galileo showed that a body falling freely near the surface of the earth would accelerate downward at a constant rate we ve called . This is fully described by the differential equation which is our model of a falling body. From this model and the procedures of Different Calculus we can recover functions which tell us the velocity and the position of a falling body at any time and under any starting conditions. We will have more to say about this particular model in .  Recall also that if is the shape that a hanging chain naturally settles into under the pull of gravity then will necessarily be a solution of the Differential Equation : which is a model for the Hanging Chain problem. The graph of a function which solves equation will be the shape of a hanging chain.   Show that solves equation .   It is one thing to confirm a given solution, as in , but finding the solution in the first place is not at all a simple task. A start might be to let , so we have If we now integrate both sides we get   The right-hand side of this doesn't pose any problems since is a constant. However, the left-hand side is another matter, since it doesn't quite fit with anything in our table. We will learn techniques to handle such situations, but first let's look at some applications of integration which utilize what we know.   Initial Value Problem (IVP)    An Initial Value Problem is a differential equation of the form along with an Initial Value      "
 },
 {
   "id": "SECTIONIVPS-3",
@@ -172,11 +172,20 @@ var ptx_lunr_docs = [
   "body": "Differential Equation "
 },
 {
+  "id": "DRILLHangingChainSolution",
+  "level": "2",
+  "url": "SECTIONIVPS.html#DRILLHangingChainSolution",
+  "type": "Drill",
+  "number": "1.9",
+  "title": "",
+  "body": " Show that solves equation .  "
+},
+{
   "id": "DEFINITIONIVP",
   "level": "2",
   "url": "SECTIONIVPS.html#DEFINITIONIVP",
   "type": "Definition",
-  "number": "1.9",
+  "number": "1.10",
   "title": "Initial Value Problem (IVP).",
   "body": " Initial Value Problem (IVP)    An Initial Value Problem is a differential equation of the form along with an Initial Value     "
 },
@@ -1873,9 +1882,9 @@ var ptx_lunr_docs = [
   "body": " Find graph and on the same set of axes. What do you observe?  "
 },
 {
-  "id": "Theory-2",
+  "id": "PARTToTheory-2",
   "level": "1",
-  "url": "Theory-2.html",
+  "url": "PARTToTheory-2.html",
   "type": "Chapter",
   "number": "4",
   "title": "Title Goes Here",
