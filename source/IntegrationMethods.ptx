@@ -8,53 +8,112 @@
       <title>First application -- Projectile motion</title>
       
       <p>
-        Suppose you throw a ball straight up into the air.  Of course,
-        it will go up and come back down.  For the moment, let's
-        ignore air resistance.  How high will the ball go?  How long
-        will it take the ball to hit the ground?  What will be its
-        impact velocity?  Suppose you throw the ball up with twice the
-        initial speed.  Will the ball go twice as high?  These were
-        the types of questions that interested scientists like Galileo
-        Galilei (1564-1642) who were some of the first scientists to
-        systematically apply mathematics to science, specifically
-        projectile motion.
+        Suppose we throw a ball straight up into the air.  For the
+        moment, let's ignore air resistance.  How high will the ball
+        go?  How long will it take the ball to hit the ground?  What
+        will be its impact velocity?  Suppose you throw the ball up
+        with twice the initial speed.  Will the ball go twice as high?
+        These were questions that interested Galileo Galilei
+        (1564-1642). Galileo was one of the first scientists to
+        systematically apply mathematics to science.
       </p>
       
       <p>
-        Now that we have that acceleration due to gravity is constant,
-        let's look more into projectile motion.  This fits into our
-        discussion on integral calculus since we are given information
-        about the acceleration and must integrate twice to recover the
-        position of the ball.  Specifically, let's say that the ball
-        is thrown upward with an initial velocity of <m>19.6</m>
-        meters per second (roughly <m>44</m> miles per hour) and is
-        released at a point <m>2</m> meters above the ground.  How
-        high will the ball go?  When will it hit the ground?  What
-        will be the impact velocity?
+        Thanks to Galileo we know have that the acceleration of an
+        object falling near the surface of the earth due to gravity is
+        constantly <m>9.8
+        \frac{\text{meters}}{\text{second}^2}</m>. Thanks to Newton we
+        know that velocity is the antiderivative of acceleration, so
+        it would appear that 
+<men  xml:id="EQUATIONVelAcc1">\text{velocity} = \int \text{acceleration}=\int{9.8}.</men>
+</p>
+<p>
+But this is wrong. Do you see why?
+</p>
+<p>
+<xref ref="EQUATIONVelAcc1"></xref> is wrong because the integral on
+the right is summing inifnitely many copies of <m>9.8</m>. This will
+clearly get arbitrarily large and we know that the velocity of a
+falling object is not infinite.
+</p>
+<p>
+<xref ref="EQUATIONVelAcc1"></xref> violates our observation that we
+can only integrate differentials. Not only is <m>9.8
+\frac{\text{meters}}{\text{second}^2}</m> not a differential, it is
+also not a velocity. It has the wrong units. The units of velocity are
+<m>\frac{\text{meters}}{\text{second}}</m> whereas the units of
+acceleration are <m>\frac{\text{meters}}{\text{second}^2}</m>. On the
+other hand, if we multiply
+<m>9.8\frac{\text{meters}}{\text{second}\cdot{}\text{second}}</m> by
+<m>\dx{t} </m> seconds we get
+<me>9.8\frac{\text{meters}}{\text{second}\cdot{}\cancel{\text{second}}}\cdot
+\dx{t}\cancel{\text{seconds}}=
+9.8\dx{t}\frac{\text{meters}}{\text{second}}</me>
+In order to get a velocity by integration (summation) each of the
+terms being summed must be a velocity. If you are ever unsure whether
+ you are integrating the correct expression, check the units, but
+ don<rsq/>t forget that the differentials also have units. In this
+ case <m>\dx{t} </m> measures time (in seconds).
+</p>
+
+<example xml:id="EXAMPLEVelAcc">
+
+<p>
+  Let's say that the ball is thrown upward with an initial velocity of
+  <m>19.6</m> meters per second (roughly <m>44</m> miles per hour) and
+  is released at a point <m>2</m> meters above the ground. We<rsq/>d
+  like to answer these questions:
+<ol>
+<li>
+How high
+  will the ball go?
+</li>
+<li>
+  When will it hit the ground?
+</li>
+<li>
+What will be the
+  impact velocity?
+</li>
+</ol>   
      </p>
     
      <p>
-      To answer these questions, we must translate this problem into a
-      mathematics problem.  With this in mind, suppose the height of
+      To answer these questions, we will translate this problem into
+      the notation of Calculus.  Suppose the height of
       the ball is given by <m>y=y(t)</m> where <m>y</m> is measured in
       meters and <m>t</m> is measured in seconds.  Then we have the
       following information
-      <m>\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2}</m>,
-      <m>\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}}</m>,
-      and <m> y(0)=2\text{m}</m>.
+
+<md>
+<mrow>
+\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2},
+\amp{}\amp{}
+\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}},
+\amp{}\amp{}
+      \text{and }y(0)=2\text{m}.
+</mrow>
+</md>
      </p>
      
      <p>
-       Notice that the acceleration is constant (we are only looking a
-       gravity and ignoring air resistance) and is negative (we've set
-       up <m>y</m> so that up is the positive direction and down is
-       the negative direction).
-     </p>
-     <p>
-       With this in mind, we want to find <m>y</m> when
-       <m>\dfdx{y}{t}=0</m> (how high), <m>t</m> when <m>y=0</m> (when
-       it hits the ground), and <m>\eval{\dfdx{y}{t}}{y}{0}</m> (the
-       impact velocity).
+       Notice that the acceleration is constant and  negative since
+       we've assumed that down is  the negative direction.
+We want to find 
+<ol>
+<li>
+<m>y</m> when
+       <m>\dfdx{y}{t}=0</m> (height at the top of the flight  (when
+       the ball<rsq/>s velocity is zero) ),
+</li>
+<li>
+<m>t</m> when <m>y=0</m> (the time when the ball  hits the ground),
+</li>
+<li>
+and <m>\eval{\dfdx{y}{t}}{y}{0}</m> (the impact velocity when it comes
+back to the ground).
+</li>
+</ol>  
      </p>
      
      
@@ -90,7 +149,7 @@
      </p>
      
      <p>
-       To find <m>c</m> is in this case, we utilize the fact that
+       To find <m>c</m> is in this case, we observe that
        <m>v(0)=19.6</m>.  Thus
        <me>
          19.6=v(0)=-9.8(0)+c =c.
@@ -102,11 +161,12 @@
      </p>
      
      <p>
-       We now integrate this to find the ball's position.
-       
+       We next integrate <m>v</m> to find the ball<rsq/>s
+       position.Since velocity is the derivative of position we 
+have       
        <md>
          <mrow>
-           \dfdx{y}{t}\amp =-9.8t+19.6
+          v= \dfdx{y}{t}\amp =-9.8t+19.6
          </mrow>
          <mrow>
            \dx{y}\amp =\left(-9.8t+19.6\right)\dx{t}
@@ -122,16 +182,16 @@
      
      <p>
        This time to find the constant <m>c</m> we observe that since
-       <m>y(0)=2=</m> we have
+       <m>y(0)=2</m> we have
        <me>
-         2=y(0)=\eval{-4.9t^2+19.6t+c}{t}{0} =c.
+         y(0)=2=\eval{-4.9t^2+19.6t+c}{t}{0} =c.
        </me>
        Thus the ball's position is given by: <m>y=-4.9t^2+19.6t+2</m>.
      </p>
      
      <p>
        Once we have these three equations of motion (acceleration,
-       velocity, position) we can answer any question about the ball's
+       velocity, position) we can answer any question about the ball<rsq/>s
        motion.  In general, we suggest you find these three equations
        before trying to answer any questions about motion.
      </p>
@@ -166,8 +226,10 @@
          v(4.1) = -9.8(4.1)+19.6= -20.58 \frac{\text{m}}{\text{s}}.
        </me>
        The negative answer makes sense as the ball is traveling in the
-       negative direction (given how we set up the <m>y</m> axis).
+       negative direction (recall that we assumed that down is the
+       negative direction).
      </p>
+</example>
      
      <problem>
        <p>
