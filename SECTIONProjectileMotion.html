@@ -289,16 +289,65 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONProjectileMotion"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">First application -- Projectile motion</span>
 </h2>
-<div class="para" id="SECTIONProjectileMotion-2">Suppose you throw a ball straight up into the air.  Of course, it will go up and come back down.  For the moment, let’s ignore air resistance.  How high will the ball go?  How long will it take the ball to hit the ground?  What will be its impact velocity?  Suppose you throw the ball up with twice the initial speed.  Will the ball go twice as high?  These were the types of questions that interested scientists like Galileo Galilei (1564-1642) who were some of the first scientists to systematically apply mathematics to science, specifically projectile motion.</div>
-<div class="para" id="SECTIONProjectileMotion-3">Now that we have that acceleration due to gravity is constant, let’s look more into projectile motion.  This fits into our discussion on integral calculus since we are given information about the acceleration and must integrate twice to recover the position of the ball.  Specifically, let’s say that the ball is thrown upward with an initial velocity of <span class="process-math">\(19.6\)</span> meters per second (roughly <span class="process-math">\(44\)</span> miles per hour) and is released at a point <span class="process-math">\(2\)</span> meters above the ground.  How high will the ball go?  When will it hit the ground?  What will be the impact velocity?</div>
-<div class="para" id="SECTIONProjectileMotion-4">To answer these questions, we must translate this problem into a mathematics problem.  With this in mind, suppose the height of the ball is given by <span class="process-math">\(y=y(t)\)</span> where <span class="process-math">\(y\)</span> is measured in meters and <span class="process-math">\(t\)</span> is measured in seconds.  Then we have the following information <span class="process-math">\(\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2}\text{,}\)</span> <span class="process-math">\(\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}}\text{,}\)</span> and <span class="process-math">\(y(0)=2\text{m}\text{.}\)</span>
+<div class="para" id="SECTIONProjectileMotion-2">Suppose we throw a ball straight up into the air.  For the moment, let’s ignore air resistance.  How high will the ball go?  How long will it take the ball to hit the ground?  What will be its impact velocity?  Suppose you throw the ball up with twice the initial speed.  Will the ball go twice as high? These were questions that interested Galileo Galilei (1564-1642). Galileo was one of the first scientists to systematically apply mathematics to science.</div>
+<div class="para logical" id="SECTIONProjectileMotion-3">
+<div class="para">Thanks to Galileo we know have that the acceleration of an object falling near the surface of the earth due to gravity is constantly <span class="process-math">\(9.8
+\frac{\text{meters}}{\text{second}^2}\text{.}\)</span> Thanks to Newton we know that velocity is the antiderivative of acceleration, so it would appear that</div>
+<div class="displaymath process-math" id="EQUATIONVelAcc1">
+\begin{equation}
+\text{velocity} = \int \text{acceleration}=\int{9.8}.\tag{2.1}
+\end{equation}
 </div>
-<div class="para" id="SECTIONProjectileMotion-5">Notice that the acceleration is constant (we are only looking a gravity and ignoring air resistance) and is negative (we’ve set up <span class="process-math">\(y\)</span> so that up is the positive direction and down is the negative direction).</div>
-<div class="para" id="SECTIONProjectileMotion-6">With this in mind, we want to find <span class="process-math">\(y\)</span> when <span class="process-math">\(\dfdx{y}{t}=0\)</span> (how high), <span class="process-math">\(t\)</span> when <span class="process-math">\(y=0\)</span> (when it hits the ground), and <span class="process-math">\(\eval{\dfdx{y}{t}}{y}{0}\)</span> (the impact velocity).</div>
-<div class="para" id="SECTIONProjectileMotion-7">For convenience, let <span class="process-math">\(v=\dfdx{y}{t}\)</span> denote velocity, and <span class="process-math">\(a=\dfdx{v}{t}=\dfdxn{y}{t}{2}\)</span> denote acceleration. Starting with our constant acceleration <span class="process-math">\(a=-9.8\text{,}\)</span> we need to integrate to find <span class="process-math">\(v\)</span> and <span class="process-math">\(y\text{.}\)</span>  Once we find these, then we can answer the questions posed.</div>
-<div class="para logical" id="SECTIONProjectileMotion-8">
+</div>
+<div class="para" id="SECTIONProjectileMotion-4">But this is wrong. Do you see why?</div>
+<div class="para" id="SECTIONProjectileMotion-5">
+<a href="" class="xref" data-knowl="./knowl/xref/EQUATIONVelAcc1.html" title="Equation 2.1">(2.1)</a> is wrong because the integral on the right is summing inifnitely many copies of <span class="process-math">\(9.8\text{.}\)</span> This will clearly get arbitrarily large and we know that the velocity of a falling object is not infinite.</div>
+<div class="para logical" id="SECTIONProjectileMotion-6">
+<div class="para">
+<a href="" class="xref" data-knowl="./knowl/xref/EQUATIONVelAcc1.html" title="Equation 2.1">(2.1)</a> violates our observation that we can only integrate differentials. Not only is <span class="process-math">\(9.8
+\frac{\text{meters}}{\text{second}^2}\)</span> not a differential, it is also not a velocity. It has the wrong units. The units of velocity are <span class="process-math">\(\frac{\text{meters}}{\text{second}}\)</span> whereas the units of acceleration are <span class="process-math">\(\frac{\text{meters}}{\text{second}^2}\text{.}\)</span> On the other hand, if we multiply <span class="process-math">\(9.8\frac{\text{meters}}{\text{second}\cdot{}\text{second}}\)</span> by <span class="process-math">\(\dx{t} \)</span> seconds we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONVelAcc1.html">
+\begin{equation*}
+9.8\frac{\text{meters}}{\text{second}\cdot{}\cancel{\text{second}}}\cdot
+\dx{t}\cancel{\text{seconds}}=
+9.8\dx{t}\frac{\text{meters}}{\text{second}}
+\end{equation*}
+</div>
+<div class="para">In order to get a velocity by integration (summation) each of the terms being summed must be a velocity. If you are ever unsure whether you are integrating the correct expression, check the units, but don’t forget that the differentials also have units. In this case <span class="process-math">\(\dx{t} \)</span> measures time (in seconds).</div>
+</div>
+<article class="example example-like" id="EXAMPLEVelAcc"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="EXAMPLEVelAcc-1">
+<div class="para">Let’s say that the ball is thrown upward with an initial velocity of <span class="process-math">\(19.6\)</span> meters per second (roughly <span class="process-math">\(44\)</span> miles per hour) and is released at a point <span class="process-math">\(2\)</span> meters above the ground. We’d like to answer these questions:</div>
+<ol class="decimal">
+<li id="EXAMPLEVelAcc-1-5-1"><div class="para" id="p-derived-EXAMPLEVelAcc-1-5-1">How high will the ball go?</div></li>
+<li id="EXAMPLEVelAcc-1-5-2"><div class="para" id="p-derived-EXAMPLEVelAcc-1-5-2">When will it hit the ground?</div></li>
+<li id="EXAMPLEVelAcc-1-5-3"><div class="para" id="p-derived-EXAMPLEVelAcc-1-5-3">What will be the impact velocity?</div></li>
+</ol>
+</div> <div class="para logical" id="EXAMPLEVelAcc-2">
+<div class="para">To answer these questions, we will translate this problem into the notation of Calculus.  Suppose the height of the ball is given by <span class="process-math">\(y=y(t)\)</span> where <span class="process-math">\(y\)</span> is measured in meters and <span class="process-math">\(t\)</span> is measured in seconds.  Then we have the following information</div>
+<div class="displaymath process-math" id="EXAMPLEVelAcc-2-4">
+\begin{align*}
+\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2},
+\amp{}\amp{}
+\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}},
+\amp{}\amp{}
+\text{and }y(0)=2\text{m}.
+\end{align*}
+</div>
+</div> <div class="para logical" id="EXAMPLEVelAcc-3">
+<div class="para">Notice that the acceleration is constant and  negative since we’ve assumed that down is  the negative direction. We want to find</div>
+<ol class="decimal">
+<li id="EXAMPLEVelAcc-3-1-1"><div class="para" id="p-derived-EXAMPLEVelAcc-3-1-1">
+<span class="process-math">\(y\)</span> when <span class="process-math">\(\dfdx{y}{t}=0\)</span> (height at the top of the flight  (when the ball’s velocity is zero) ),</div></li>
+<li id="EXAMPLEVelAcc-3-1-2"><div class="para" id="p-derived-EXAMPLEVelAcc-3-1-2">
+<span class="process-math">\(t\)</span> when <span class="process-math">\(y=0\)</span> (the time when the ball  hits the ground),</div></li>
+<li id="EXAMPLEVelAcc-3-1-3"><div class="para" id="p-derived-EXAMPLEVelAcc-3-1-3">and <span class="process-math">\(\eval{\dfdx{y}{t}}{y}{0}\)</span> (the impact velocity when it comes back to the ground).</div></li>
+</ol>
+</div> <div class="para" id="EXAMPLEVelAcc-4">For convenience, let <span class="process-math">\(v=\dfdx{y}{t}\)</span> denote velocity, and <span class="process-math">\(a=\dfdx{v}{t}=\dfdxn{y}{t}{2}\)</span> denote acceleration. Starting with our constant acceleration <span class="process-math">\(a=-9.8\text{,}\)</span> we need to integrate to find <span class="process-math">\(v\)</span> and <span class="process-math">\(y\text{.}\)</span>  Once we find these, then we can answer the questions posed.</div> <div class="para logical" id="EXAMPLEVelAcc-5">
 <div class="para">We know that <span class="process-math">\(a=\dfdx{v}{t}=\dfdxn{y}{t}{2}=-9.8\)</span> so</div>
-<div class="displaymath process-math" id="SECTIONProjectileMotion-8-2">
+<div class="displaymath process-math" id="EXAMPLEVelAcc-5-2">
 \begin{align*}
 \dx{v}\amp =-9.8\dx{t}\\
 \int\dx{v}\amp =\int-9.8\dx{t}\\
@@ -306,9 +355,8 @@ v+c_1\amp =-9.8t+c_2\\
 v\amp =-9.8t+(\underbrace{c_2-c_1}_{= c})
 \end{align*}
 </div>
-</div>
-<div class="para logical" id="SECTIONProjectileMotion-9">
-<div class="para">To find <span class="process-math">\(c\)</span> is in this case, we utilize the fact that <span class="process-math">\(v(0)=19.6\text{.}\)</span>  Thus</div>
+</div> <div class="para logical" id="EXAMPLEVelAcc-6">
+<div class="para">To find <span class="process-math">\(c\)</span> is in this case, we observe that <span class="process-math">\(v(0)=19.6\text{.}\)</span>  Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
 19.6=v(0)=-9.8(0)+c =c.
@@ -320,30 +368,26 @@ v\amp =-9.8t+(\underbrace{c_2-c_1}_{= c})
 v=-9.8t+19.6.
 \end{equation*}
 </div>
-</div>
-<div class="para logical" id="SECTIONProjectileMotion-10">
-<div class="para">We now integrate this to find the ball’s position.</div>
-<div class="displaymath process-math" id="SECTIONProjectileMotion-10-1">
+</div> <div class="para logical" id="EXAMPLEVelAcc-7">
+<div class="para">We next integrate <span class="process-math">\(v\)</span> to find the ball’s position.Since velocity is the derivative of position we have</div>
+<div class="displaymath process-math" id="EXAMPLEVelAcc-7-3">
 \begin{align*}
-\dfdx{y}{t}\amp =-9.8t+19.6\\
+v= \dfdx{y}{t}\amp =-9.8t+19.6\\
 \dx{y}\amp =\left(-9.8t+19.6\right)\dx{t}\\
 \int\dx{y}\amp =-\int\left(9.8t+19.6\right)\dx{t}\\
 y\amp =-9.8\left(\frac{t^2}{2}\right)+19.6t+c
 \end{align*}
 </div>
-</div>
-<div class="para logical" id="SECTIONProjectileMotion-11">
-<div class="para">This time to find the constant <span class="process-math">\(c\)</span> we observe that since <span class="process-math">\(y(0)=2=\)</span> we have</div>
+</div> <div class="para logical" id="EXAMPLEVelAcc-8">
+<div class="para">This time to find the constant <span class="process-math">\(c\)</span> we observe that since <span class="process-math">\(y(0)=2\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-2=y(0)=\eval{-4.9t^2+19.6t+c}{t}{0} =c.
+y(0)=2=\eval{-4.9t^2+19.6t+c}{t}{0} =c.
 \end{equation*}
 </div>
 <div class="para">Thus the ball’s position is given by: <span class="process-math">\(y=-4.9t^2+19.6t+2\text{.}\)</span>
 </div>
-</div>
-<div class="para" id="SECTIONProjectileMotion-12">Once we have these three equations of motion (acceleration, velocity, position) we can answer any question about the ball’s motion.  In general, we suggest you find these three equations before trying to answer any questions about motion.</div>
-<div class="para logical" id="SECTIONProjectileMotion-13">
+</div> <div class="para" id="EXAMPLEVelAcc-9">Once we have these three equations of motion (acceleration, velocity, position) we can answer any question about the ball’s motion.  In general, we suggest you find these three equations before trying to answer any questions about motion.</div> <div class="para logical" id="EXAMPLEVelAcc-10">
 <div class="para">To find the maximum height, we set <span class="process-math">\(v=0\text{.}\)</span> So we see that <span class="process-math">\(0=-9.8t+19.6 \text{.}\)</span> Solving for <span class="process-math">\(t\)</span> gives <span class="process-math">\(t=2 \text{
 seconds}\text{.}\)</span> Thus the ball’s maximum height is</div>
 <div class="displaymath process-math">
@@ -354,11 +398,10 @@ y(2)=-4.9(2^2)+19.6(2)+2.
 <div class="para">So the ball will reach a height of <span class="process-math">\(= 21.6 \text{
 meters}\text{.}\)</span>
 </div>
-</div>
-<div class="para logical" id="SECTIONProjectileMotion-14">
+</div> <div class="para logical" id="EXAMPLEVelAcc-11">
 <div class="para">To find the impact velocity, we first need to find the time <span class="process-math">\(t\)</span> when the ball hits the ground so we solve for <span class="process-math">\(t\)</span> when <span class="process-math">\(y=0\text{.}\)</span>
 </div>
-<div class="displaymath process-math" id="SECTIONProjectileMotion-14-4">
+<div class="displaymath process-math" id="EXAMPLEVelAcc-11-4">
 \begin{align*}
 t\amp =\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2}}{2(-4.9)}
 \end{align*}
@@ -369,44 +412,43 @@ t\amp =\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2}}{2(-4.9)}
 v(4.1) = -9.8(4.1)+19.6= -20.58 \frac{\text{m}}{\text{s}}.
 \end{equation*}
 </div>
-<div class="para">The negative answer makes sense as the ball is traveling in the negative direction (given how we set up the <span class="process-math">\(y\)</span> axis).</div>
-</div>
-<article class="problem example-like" id="SECTIONProjectileMotion-15"><h3 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
-</h3>
-<div class="para" id="SECTIONProjectileMotion-15-1">Suppose we throw two balls straight up. If the first has an initial velocity of <span class="process-math">\(v_0\)</span> and the second has an initial velocity of <span class="process-math">\(2v_0\)</span> will the maximum height of the second ball be twice the maximum height of the first. (Again, we ignore air resistance.)</div></article><article class="problem example-like" id="PROBLEMDeceleratingCar"><h3 class="heading">
+<div class="para">The negative answer makes sense as the ball is traveling in the negative direction (recall that we assumed that down is the negative direction).</div>
+</div></article><article class="problem example-like" id="SECTIONProjectileMotion-8"><h3 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="PROBLEMDeceleratingCar-1">Automobile safety experts say that a skilled driver in a car with good tires and dry pavement can safely brake to a stop at a rate of <span class="process-math">\(20\)</span> (ft/sec)/sec.  If it is determined that it takes such a car 160 ft to stop.  How fast was the car going initially (in miles per hour)</div></article><div class="para" id="SECTIONProjectileMotion-17">Of course, the same principles will work in two dimensions as with a single dimension.  All we do is treat the horizontal and vertical directions separately.  With this in mind, the horizontal acceleration would be zero.</div>
-<article class="exercise exercise-like" id="SECTIONProjectileMotion-18"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
+<div class="para" id="SECTIONProjectileMotion-8-1">Suppose we throw two balls straight up. If the first has an initial velocity of <span class="process-math">\(v_0\)</span> and the second has an initial velocity of <span class="process-math">\(2v_0\)</span> will the maximum height of the second ball be twice the maximum height of the first. (Again, we ignore air resistance.)</div></article><article class="problem example-like" id="PROBLEMDeceleratingCar"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="SECTIONProjectileMotion-18-1">
-<div class="para" id="SECTIONProjectileMotion-18-1-1">Consider the following projectile launched from the origin, with an initial velocity of <span class="process-math">\(v_0\)</span> and angle of elevation <span class="process-math">\(\theta\text{.}\)</span>
-</div> <figure class="figure figure-like" id="SECTIONProjectileMotion-18-1-2"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/ThrownRock.png" class="contained" alt="Path of a thrown object."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span>Path of a thrown object.</figcaption></figure> <div class="para" id="SECTIONProjectileMotion-18-1-3">Assuming that there is no air resistance and the acceleration due to gravity is <span class="process-math">\(-g\text{.}\)</span>
+<div class="para" id="PROBLEMDeceleratingCar-1">Automobile safety experts say that a skilled driver in a car with good tires and dry pavement can safely brake to a stop at a rate of <span class="process-math">\(20\)</span> (ft/sec)/sec.  If it is determined that it takes such a car 160 ft to stop.  How fast was the car going initially (in miles per hour)</div></article><div class="para" id="SECTIONProjectileMotion-10">Of course, the same principles will work in two dimensions as with a single dimension.  All we do is treat the horizontal and vertical directions separately.  With this in mind, the horizontal acceleration would be zero.</div>
+<article class="exercise exercise-like" id="SECTIONProjectileMotion-11"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SECTIONProjectileMotion-11-1">
+<div class="para" id="SECTIONProjectileMotion-11-1-1">Consider the following projectile launched from the origin, with an initial velocity of <span class="process-math">\(v_0\)</span> and angle of elevation <span class="process-math">\(\theta\text{.}\)</span>
+</div> <figure class="figure figure-like" id="SECTIONProjectileMotion-11-1-2"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/ThrownRock.png" class="contained" alt="Path of a thrown object."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5<span class="period">.</span></span><span class="space"> </span>Path of a thrown object.</figcaption></figure> <div class="para" id="SECTIONProjectileMotion-11-1-3">Assuming that there is no air resistance and the acceleration due to gravity is <span class="process-math">\(-g\text{.}\)</span>
 </div>
 </div>
-<article class="task exercise-like" id="SECTIONProjectileMotion-18-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para logical" id="SECTIONProjectileMotion-18-2-1-1">
+<article class="task exercise-like" id="SECTIONProjectileMotion-11-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONProjectileMotion-11-2-1-1">
 <div class="para">Show that the trajectory is given by the parabola</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y=\frac{-g}{2v_0\cos(\theta)}x^2 +\tan(\theta)x \text{.}
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="SECTIONProjectileMotion-18-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para logical" id="SECTIONProjectileMotion-18-3-1-1">
+</div></article><article class="task exercise-like" id="SECTIONProjectileMotion-11-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONProjectileMotion-11-3-1-1">
 <div class="para">Use the equation in question 1 to show that the range of the projectile is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{v_0^2}{g}\sin(2\theta) \text{.}
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="SECTIONProjectileMotion-18-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="SECTIONProjectileMotion-18-4-1-1">Show that the maximum range occurs when <span class="process-math">\(\theta=\frac{\pi}{4}\text{.}\)</span>
-</div></article><article class="task exercise-like" id="SECTIONProjectileMotion-18-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
-<div class="para" id="SECTIONProjectileMotion-18-5-1-1">On Feb. 6, 1971, astronaut Alan Shepard pulled out a makeshift six-iron he smuggled on board Apollo <span class="process-math">\(14\)</span> and hit two golf balls on the lunar surface, becoming the first, and only, person to play golf anywhere other than earth.  Assuming that the gravity on the moon is <span class="process-math">\(1/6\)</span> that of earth and that Shepard can hit the ball identically on the earth and the moon, and ignoring air resistance on the earth, would the ball go <span class="process-math">\(6\)</span> times farther before it touches the ground on the moon than on the earth? Justify your answer.</div></article></article></section></div>
+</div></article><article class="task exercise-like" id="SECTIONProjectileMotion-11-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SECTIONProjectileMotion-11-4-1-1">Show that the maximum range occurs when <span class="process-math">\(\theta=\frac{\pi}{4}\text{.}\)</span>
+</div></article><article class="task exercise-like" id="SECTIONProjectileMotion-11-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="SECTIONProjectileMotion-11-5-1-1">On Feb. 6, 1971, astronaut Alan Shepard pulled out a makeshift six-iron he smuggled on board Apollo <span class="process-math">\(14\)</span> and hit two golf balls on the lunar surface, becoming the first, and only, person to play golf anywhere other than earth.  Assuming that the gravity on the moon is <span class="process-math">\(1/6\)</span> that of earth and that Shepard can hit the ball identically on the earth and the moon, and ignoring air resistance on the earth, would the ball go <span class="process-math">\(6\)</span> times farther before it touches the ground on the moon than on the earth? Justify your answer.</div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="IntegrationMethods.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONSubstMethed.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
