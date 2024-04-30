@@ -310,17 +310,18 @@ window.MathJax = {
 <div class="para">which is the area of the shaded region above.  It is not easy to see, but Gauss cleverly showed that the area under this entire curve is exactly one, which is a requirement to be a probability density function.</div>
 </div>
 <div class="para" id="SECTIONProbs14-7">Of course, the values of <span class="process-math">\(\mu \)</span> and <span class="process-math">\(\sigma \)</span> will affect the shape of the graph as seen below.</div>
-<div class="para" id="SECTIONProbs14-8">\includegraphics*[width=4.65in, height=2.97in]{image53}</div>
-<div class="para logical" id="SECTIONProbs14-9">
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/SeveralGaussCurves.png" class="contained"></div>
+<div class="para" id="SECTIONProbs14-9">\includegraphics*[width=4.65in, height=2.97in]{image53}</div>
+<div class="para logical" id="SECTIONProbs14-10">
 <div class="para">Of particular importance is the red curve where the mean <span class="process-math">\(\mu
-=0\)</span> and the standard deviation<span class="process-math">\(\ \sigma =1\text{.}\)</span>  Any random variable <span class="process-math">\(Z\)</span> which has a normal distribution with probability density function <span class="process-math">\(f\left(z\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{z^2}{2}}\)</span> is said to have a standard normal distribution and a result from probability theory says that if the random variable <span class="process-math">\(X\)</span> is normally distributed with mean <span class="process-math">\(\mu \)</span> and standard deviation <span class="process-math">\(\sigma \text{,}\)</span> then <span class="process-math">\(Z=\frac{X-\mu }{\sigma }\)</span> will have a standard normal distribution.  We’ve said a lot here in the way of theory, so let’s provide a concrete example.  It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean <span class="process-math">\(\mu =100\)</span> and standard deviation <span class="process-math">\(\sigma =15\text{.}\)</span>  It is also widely accepted that someone with an IQ of 140 or above is in the genius range.  Suppose we chose someone at random.  If we want to compute the probability that this person’s IQ is less than or equal to 140, then mathematically, we want to compute</div>
+=0\)</span> and the standard deviation<span class="process-math">\(\sigma =1\text{.}\)</span>  Any random variable <span class="process-math">\(Z\)</span> which has a normal distribution with probability density function <span class="process-math">\(f\left(z\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{z^2}{2}}\)</span> is said to have a standard normal distribution and a result from probability theory says that if the random variable <span class="process-math">\(X\)</span> is normally distributed with mean <span class="process-math">\(\mu \)</span> and standard deviation <span class="process-math">\(\sigma \text{,}\)</span> then <span class="process-math">\(Z=\frac{X-\mu }{\sigma }\)</span> will have a standard normal distribution.  We’ve said a lot here in the way of theory, so let’s provide a concrete example.  It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean <span class="process-math">\(\mu =100\)</span> and standard deviation <span class="process-math">\(\sigma =15\text{.}\)</span>  It is also widely accepted that someone with an IQ of 140 or above is in the genius range.  Suppose we chose someone at random.  If we want to compute the probability that this person’s IQ is less than or equal to 140, then mathematically, we want to compute</div>
 <div class="displaymath process-math" id="EQUATIONGaussDist">
 \begin{equation}
 Prob\left(X\le 140\right)=\frac{1}{15\sqrt{2\pi }}\int^{140}_{x=-\infty }{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}dx\tag{5.3}
 \end{equation}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-10">
+<div class="para logical" id="SECTIONProbs14-11">
 <div class="para">Unfortunately, none of our integration techniques will compute this integral exactly.  In fact, there are no integration techniques that will do this.  Let’s do what any person would do and see what the internet says.  If we type this into a computer algebra system, we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -328,8 +329,8 @@ Prob\left(X\le 140\right)=\frac{1}{15\sqrt{2\pi }}\int^{140}_{x=-\infty }{e^{-\f
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SECTIONProbs14-11">This says that the probability that this random person’s IQ is less than or equal to 140 is approximately .99617.  Or alternatively, the probability that this person’s IQ is greater than 140 is <span class="process-math">\(1-.99617=.00383\text{.}\)</span>  Said another way, a person with an IQ of 140 has a higher IQ than approximately <span class="process-math">\(99.617\%\)</span> of the entire human population.</div>
-<div class="para logical" id="SECTIONProbs14-12">
+<div class="para" id="SECTIONProbs14-12">This says that the probability that this random person’s IQ is less than or equal to 140 is approximately .99617.  Or alternatively, the probability that this person’s IQ is greater than 140 is <span class="process-math">\(1-.99617=.00383\text{.}\)</span>  Said another way, a person with an IQ of 140 has a higher IQ than approximately <span class="process-math">\(99.617\%\)</span> of the entire human population.</div>
+<div class="para logical" id="SECTIONProbs14-13">
 <div class="para">We will get into approximating techniques later, but for now let’s talk about <span class="process-math">\(z\)</span> scores and <span class="process-math">\(z\)</span> tables.  To compute the <span class="process-math">\(z\)</span> score of the above IQ of 140, books and websites will say to compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -337,11 +338,11 @@ z=\frac{140-100}{15}=\frac{8}{3}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SECTIONProbs14-13">In the old days, one would then look on a <span class="process-math">\(z\)</span> table and arrive at the approximation <span class="process-math">\(.9961\text{.}\)</span>  Now you would input this <span class="process-math">\(z\)</span> score in an appropriate piece of software and obtain the same result.  Why are you doing this?  The following problem might shed some light</div>
-<article class="exercise exercise-like" id="SECTIONProbs14-14"><h3 class="heading">
+<div class="para" id="SECTIONProbs14-14">In the old days, one would then look on a <span class="process-math">\(z\)</span> table and arrive at the approximation <span class="process-math">\(.9961\text{.}\)</span>  Now you would input this <span class="process-math">\(z\)</span> score in an appropriate piece of software and obtain the same result.  Why are you doing this?  The following problem might shed some light</div>
+<article class="exercise exercise-like" id="SECTIONProbs14-15"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.43</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="SECTIONProbs14-14-1-1">
+<div class="para logical" id="SECTIONProbs14-15-1-1">
 <div class="para"> Use the the substitution <span class="process-math">\(z=\frac{x-100}{15}\)</span> in <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONGaussDist.html" title="Equation 5.3">equation (5.3)</a> to obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONGaussDist.html">
 \begin{equation*}
@@ -385,8 +386,8 @@ z=\frac{140-100}{15}=\frac{8}{3}
 \frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\mathrm{erf} \left(\frac{4\sqrt{2}}{3}\right)\ }+1\right)
 \end{equation*}
 </div>
-</div></article></article><div class="para" id="SECTIONProbs14-16">Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer.  This begs the question, how does one approximate integrals such as the above?  There are several different ways.  We will introduce the notion of a power series as one way.  We will come back to <span class="process-math">\(e^{-t^2}\text{,}\)</span> but let’s start with something easier.</div>
-<div class="para logical" id="SECTIONProbs14-17">
+</div></article></article><div class="para" id="SECTIONProbs14-17">Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer.  This begs the question, how does one approximate integrals such as the above?  There are several different ways.  We will introduce the notion of a power series as one way.  We will come back to <span class="process-math">\(e^{-t^2}\text{,}\)</span> but let’s start with something easier.</div>
+<div class="para logical" id="SECTIONProbs14-18">
 <div class="para">Imagine what integrating would be like if every function was a polynomial.  If this were the case, then we wouldn’t have needed to learn so many integration techniques.  For example, if we wanted to compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -394,7 +395,7 @@ z=\frac{140-100}{15}=\frac{8}{3}
 \end{equation*}
 </div>
 <div class="para">we could certainly use a trigonometric substitution, but an easier approach would be to rewrite this as</div>
-<div class="displaymath process-math" id="SECTIONProbs14-17-2">
+<div class="displaymath process-math" id="SECTIONProbs14-18-2">
 \begin{align*}
 \int{\frac{{1-x}^2}{1-x}}\ dx=\int{\frac{(1-x)(1+x)}{1-x}}\ dx
 \amp{}=\int{(1+x)}\ dx\\
@@ -411,7 +412,7 @@ x\lt{}1 \end{array}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-18">
+<div class="para logical" id="SECTIONProbs14-19">
 <div class="para">As long as <span class="process-math">\(x\neq 1\text{,}\)</span> we can divide by <span class="process-math">\(1-x\)</span> to obtain</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -446,7 +447,7 @@ x\lt{}1 \end{array}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-19">
+<div class="para logical" id="SECTIONProbs14-20">
 <div class="para">Also notice that multiplying by <span class="process-math">\(9\)</span> gives us</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -460,7 +461,7 @@ x\lt{}1 \end{array}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-20">
+<div class="para logical" id="SECTIONProbs14-21">
 <div class="para">If you look at it, then this is silly as the left-hand side grows arbitrarily large and the right-hand side is <span class="process-math">\(-1\text{.}\)</span>  Let’s be a bit more careful utilizing limits.  First notice that while writing</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -484,12 +485,12 @@ x\lt{}1 \end{array}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-21"><div class="displaymath process-math">
+<div class="para logical" id="SECTIONProbs14-22"><div class="displaymath process-math">
 \begin{equation*}
 1+x+x^2+\dots ={\mathop{\mathrm{lim}}_{N\to \infty } (1+\ }{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty } \frac{1-x^N}{1-x}\ }
 \end{equation*}
 </div></div>
-<div class="para logical" id="SECTIONProbs14-22">
+<div class="para logical" id="SECTIONProbs14-23">
 <div class="para">As long as <span class="process-math">\(\left|x\right|\lt{}1\text{,}\)</span> then <span class="process-math">\({\mathop{\mathrm{lim}}_{N\to \infty } x^N\ }=0\text{,}\)</span> so that for <span class="process-math">\(-1\lt{}x\lt{}1\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -498,7 +499,7 @@ x\lt{}1 \end{array}
 </div>
 <div class="para">The sum <span class="process-math">\(1+x+x^2+\dots \)</span> is called the geometric series since the ratio two consecutive terms <span class="process-math">\(\frac{x^{k+1}}{x^k}\)</span> is constantly equal to <span class="process-math">\(x\)</span> and these were studied by mathematicians before the invention of calculus.  As such, these infinite polynomials were called \textbf{\textit{power series}.}</div>
 </div>
-<div class="para logical" id="SECTIONProbs14-23">
+<div class="para logical" id="SECTIONProbs14-24">
 <div class="para">Mathematicians in the 18<span class="process-math">\({}^{th}\)</span> century were certainly aware of the geometric series and such limitations, but it didn’t stop them from exploiting this powerful tool in applying the ``new’’ calculus.  For example, suppose we wanted to compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -506,7 +507,7 @@ x\lt{}1 \end{array}
 \end{equation*}
 </div>
 <div class="para">We already know that this is <span class="process-math">\({\mathrm{arctan} (x)\ }+C\text{,}\)</span> but suppose we do the following</div>
-<div class="displaymath process-math" id="SECTIONProbs14-23-4">
+<div class="displaymath process-math" id="SECTIONProbs14-24-4">
 \begin{align*}
 \frac{1}{1+x^2}=\frac{1}{1-\left(-x^2\right)}
 \amp{}=1+\left(-x^2\right)+{\left(-x^2\right)}^2+{\left(-x^2\right)}^3+\dots\\
@@ -514,9 +515,9 @@ x\lt{}1 \end{array}
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-24">
+<div class="para logical" id="SECTIONProbs14-25">
 <div class="para">Thus, we have</div>
-<div class="displaymath process-math" id="SECTIONProbs14-24-1">
+<div class="displaymath process-math" id="SECTIONProbs14-25-1">
 \begin{align*}
 &gt;{\mathrm{arctan} \left(x\right)\
 }+C=\int{\frac{1}{1+x^2}dx}\amp{}=\int{\left(1-x^2+x^4-x^6+\dots
@@ -525,7 +526,7 @@ x\lt{}1 \end{array}
 \end{align*}
 </div>
 <div class="para">Setting <span class="process-math">\(x=0\text{,}\)</span> we get</div>
-<div class="displaymath process-math" id="SECTIONProbs14-24-3">
+<div class="displaymath process-math" id="SECTIONProbs14-25-3">
 \begin{align*}
 {\mathrm{arctan} \left(0\right)\
 }+C\amp{}=0-\frac{0^3}{3}+\frac{0^5}{5}-\frac{0^6}{6}+\dots =0\\
@@ -534,7 +535,7 @@ C\amp{}=0
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-25">
+<div class="para logical" id="SECTIONProbs14-26">
 <div class="para">Thus, we have a power series representation for the function <span class="process-math">\({\mathrm{arctan} (x)\ }\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -551,22 +552,22 @@ C\amp{}=0
 </div>
 <div class="para">which provides a way to approximate <span class="process-math">\(\pi \)</span> to whatever degree of accuracy we wish.  Again, this approach to calculus is full of subtleties and dangers, but it did not stop mathematicians from trying to represent non-polynomial functions as power series.</div>
 </div>
-<article class="exercise exercise-like" id="SECTIONProbs14-26"><h3 class="heading">
+<article class="exercise exercise-like" id="SECTIONProbs14-27"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.45</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="SECTIONProbs14-26-1"><div class="para" id="SECTIONProbs14-26-1-1"> Mimic the above techniques to find a power series representation for the following functions.</div></div>
-<article class="task exercise-like" id="SECTIONProbs14-26-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="SECTIONProbs14-26-2-1-1"><span class="process-math">\(\frac{1}{{\left(1-x\right)}^2}\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-26-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="SECTIONProbs14-26-3-1-1"><span class="process-math">\({\mathrm{ln} (1-x)\ }\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-26-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="SECTIONProbs14-26-4-1-1"><span class="process-math">\(\frac{1}{5+x}\)</span></div></article></article><div class="para logical" id="SECTIONProbs14-27">
+<div class="introduction" id="SECTIONProbs14-27-1"><div class="para" id="SECTIONProbs14-27-1-1"> Mimic the above techniques to find a power series representation for the following functions.</div></div>
+<article class="task exercise-like" id="SECTIONProbs14-27-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SECTIONProbs14-27-2-1-1"><span class="process-math">\(\frac{1}{{\left(1-x\right)}^2}\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-27-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SECTIONProbs14-27-3-1-1"><span class="process-math">\({\mathrm{ln} (1-x)\ }\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-27-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SECTIONProbs14-27-4-1-1"><span class="process-math">\(\frac{1}{5+x}\)</span></div></article></article><div class="para logical" id="SECTIONProbs14-28">
 <div class="para">Interestingly, we can get power series representation for the natural logarithm from the geometric series, but getting one for the exponential function is a bit more problematic.  To do this, we will go back to basic principles.  Recall from Calculus I that the natural exponential function <span class="process-math">\(y=e^x\)</span> came from the need to solve the following initial value problem</div>
-<div class="displaymath process-math" id="SECTIONProbs14-27-2">
+<div class="displaymath process-math" id="SECTIONProbs14-28-2">
 \begin{align*}
 \frac{dy}{dx}=y\amp{}\amp{} y\left(0\right)=1
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-28">
+<div class="para logical" id="SECTIONProbs14-29">
 <div class="para">This is the unique solution to that IVP.  Suppose we tried to write that solution as a power series, namely</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -574,7 +575,7 @@ y=a_0+a_1x+a_2x^2+a_3x^3+\dots
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-29">
+<div class="para logical" id="SECTIONProbs14-30">
 <div class="para">where <span class="process-math">\(a_0,\ a_1,\ a_2,\ a_3,\dots \)</span> are as yet to be determined coefficients.  Differentiating, we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -624,7 +625,7 @@ na_n=a_{n-1}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-30">
+<div class="para logical" id="SECTIONProbs14-31">
 <div class="para">Rewriting this pattern, we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -657,7 +658,7 @@ a_n=\frac{1}{n}a_{n-1}=\dots =\frac{1}{n\left(n-1\right)\left(n-2\right)\cdots 2
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-31">
+<div class="para logical" id="SECTIONProbs14-32">
 <div class="para">If we adopt the notation <span class="process-math">\(n!\)</span> (read <span class="process-math">\(n\)</span> factorial) to be <span class="process-math">\(n!=n\left(n-1\right)\left(n-2\right)\cdots 2\cdot 1,\ \)</span>then all this says that the power series</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -676,7 +677,7 @@ y=a_0+\frac{1}{1!}a_0x+\frac{1}{2!}a_0x^2+\frac{1}{3!}a_0x^3+\frac{1}{4!}a_0x^4+
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-32">
+<div class="para logical" id="SECTIONProbs14-33">
 <div class="para">Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -690,7 +691,7 @@ e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-33">
+<div class="para logical" id="SECTIONProbs14-34">
 <div class="para">To test this, let’s substitute in <span class="process-math">\(x=1\text{.}\)</span>  We get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -704,10 +705,10 @@ e=1+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\dots
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="SECTIONProbs14-34">
+<div class="para logical" id="SECTIONProbs14-35">
 <div class="para">to see if we get a reasonable approximation for <span class="process-math">\(e\text{.}\)</span>
 </div>
-<div class="displaymath process-math" id="SECTIONProbs14-34-2">
+<div class="displaymath process-math" id="SECTIONProbs14-35-2">
 \begin{align*}
 e\amp{}\approx 2.7182818011463845\\
 \amp{}=        1+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}+\frac{1}{8!}+\frac{1}{9!}+\frac{1}{10!}
@@ -732,12 +733,12 @@ e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 \end{equation*}
 </div>
 </div>
-<article class="exercise exercise-like" id="SECTIONProbs14-35"><h3 class="heading">
+<article class="exercise exercise-like" id="SECTIONProbs14-36"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.46</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="SECTIONProbs14-35-1"><div class="para" id="SECTIONProbs14-35-1-1"></div></div>
-<article class="task exercise-like" id="SECTIONProbs14-35-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para logical" id="SECTIONProbs14-35-2-1-1">
+<div class="introduction" id="SECTIONProbs14-36-1"><div class="para" id="SECTIONProbs14-36-1-1"></div></div>
+<article class="task exercise-like" id="SECTIONProbs14-36-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONProbs14-36-2-1-1">
 <div class="para">Use the power series</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -745,7 +746,7 @@ e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 \end{equation*}
 </div>
 <div class="para">to obtain a power series for <span class="process-math">\(e^{-t^2}\)</span> and use this to show</div>
-<div class="displaymath process-math" id="SECTIONProbs14-35-2-1-1-3">
+<div class="displaymath process-math" id="SECTIONProbs14-36-2-1-1-3">
 \begin{align*}
 {\mathrm{erf} \left(a\right)\ }\amp{}=\frac{2}{\sqrt{\pi
 }}\int^a_{t=0}{e^{-t^2}\ dt}\\
@@ -754,9 +755,9 @@ e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 9}a^9-\dots \right)
 \end{align*}
 </div>
-</div></article><article class="task exercise-like" id="SECTIONProbs14-35-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="SECTIONProbs14-35-3-1-1">Add the first ten terms of the series you obtained in part a with <span class="process-math">\(a=1\)</span> to obtain an approximation for <span class="process-math">\({\mathrm{erf} \left(1\right)\ }\text{.}\)</span>  How does your calculation compare to the approximate answer given by Wolfram Alpha which is <span class="process-math">\(.8427007929\)</span>
-</div></article></article><div class="para" id="SECTIONProbs14-36">As you can see, power series coupled with the new calculus became (and still is) a powerful tool.  As people utilized it more, issues about legitimacy came into play, but for now and in the next homework, we won’t worry about the nuances and just see what it can get us.</div></section></div>
+</div></article><article class="task exercise-like" id="SECTIONProbs14-36-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SECTIONProbs14-36-3-1-1">Add the first ten terms of the series you obtained in part a with <span class="process-math">\(a=1\)</span> to obtain an approximation for <span class="process-math">\({\mathrm{erf} \left(1\right)\ }\text{.}\)</span>  How does your calculation compare to the approximate answer given by Wolfram Alpha which is <span class="process-math">\(.8427007929\)</span>
+</div></article></article><div class="para" id="SECTIONProbs14-37">As you can see, power series coupled with the new calculus became (and still is) a powerful tool.  As people utilized it more, issues about legitimacy came into play, but for now and in the next homework, we won’t worry about the nuances and just see what it can get us.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="SECTIONProbs13.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="PARTNoHome.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
