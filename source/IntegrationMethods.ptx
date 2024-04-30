@@ -233,65 +233,110 @@ have
      
      <problem>
        <p>
-         Suppose we throw two balls straight up. If the first has an
+         Suppose we throw two balls straight up. Suppose the first has an
          initial velocity of <m>v_0</m> and the second has an initial
-         velocity of <m>2v_0</m> will the maximum height of the second
-         ball be twice the maximum height of the first. (Again, we
-         ignore air resistance.)
+         velocity of <m>2v_0</m>.  The maximum height of the second
+         ball either  be 
+<ol>
+<li>
+twice the maximum height of the first or,
+</li>
+<li>
+four times the maximum height of the first or,
+</li>
+<li>
+eight times the maximum height of the first.
+</li>
+</ol>
+Which of these opitons does your intuition say is correct? Either show
+that your intuition is correct or show that it is incorrect. (Again,
+we ignore air resistance.)
        </p>
+
      </problem>
      
      <problem  xml:id="PROBLEMDeceleratingCar">
        <p>
          Automobile safety experts say that a skilled driver in a car
          with good tires and dry pavement can safely brake to a stop
-         at a rate of <m>20</m> (ft/sec)/sec.  If it is determined
-         that it takes such a car 160 ft to stop.  How fast was the
-         car going initially (in miles per hour)
+         at a rate of <m>20 \frac{\text{feet}}{\text{second}^2}</m>.  If it is determined
+         that it takes such a car 160 ft to stop.  Show that the car
+         was initially travelling at approximately <m>54.5
+         \frac{\text{miles}}{\text{hour}}</m>.
        </p>
      </problem>
      
      <p>
        Of course, the same principles will work in two dimensions as
-       with a single dimension.  All we do is treat the horizontal and
-       vertical directions separately.  With this in mind, the
-       horizontal acceleration would be zero.
+       with a single dimension.  We just treat the horizontal and
+       vertical directions separately.  
      </p>
      
      <exercise>
        <introduction>
          <p>
-           Consider the following projectile launched from the origin,
-           with an initial velocity of <m>v_0</m> and angle of
+           Consider a projectile launched from the origin
+           with an initial velocity of <m>v_0</m> at an angle of
            elevation <m>\theta</m>.
          </p>
-         <figure>
-           <caption>Path of a thrown object.</caption>
-           <image source="ThrownRock.png" width="75%">
-             <shortdescription>Path of a thrown
-             object.</shortdescription>
-           </image>
-         </figure>
+         <!-- <figure> -->
+         <!--   <caption>Path of a thrown object.</caption> -->
+         <image source="ThrownRock.png" width="75%">
+           <shortdescription>Path of a thrown
+           object.</shortdescription>
+         </image>
+         <!-- </figure> -->
          <p>
-           Assuming that there is no air resistance and the
+           Assume that there is no air resistance and the
            acceleration due to gravity is <m>-g</m>.
          </p>      
        </introduction>
        <task>
          <statement>
-           <p> 
-             Show that the trajectory is given by the parabola
-             <me>
-               y=\frac{-g}{2v_0\cos(\theta)}x^2 +\tan(\theta)x </me>.
+           <p>
+             Use differentials to show that  the initial horizontal velocity is
+             <m>v_0\cos (\theta )</m>.
            </p>
          </statement>
        </task>
        <task>
          <statement>
            <p>
-             Use the equation in question 1 to show that the range of
-             the projectile is given by <me>
-             \frac{v_0^2}{g}\sin(2\theta) </me>.
+             Show that  the initial vertical velocity is
+             <m>v_0\sin (\theta )</m>.
+           </p>
+         </statement>
+       </task>
+       <task>
+         <statement>
+           <p>
+             Find the parametric function <m>P(t)=\ParamEqTwo{x(t)}{y(t)}</m> which
+             gives the projectile<rsq/>s position as a function of time (it<rsq/>s
+             trajectory).
+           </p>
+         </statement>
+       </task>
+
+       <task>
+         <statement>
+           <p> 
+             Show that the trajectory can also be  given as the graph
+             of 
+             <men  xml:id="EQUATIONProjectileLaunch">
+               y=\frac{-g}{2v_0\cos(\theta)}x^2 +\tan(\theta)x. 
+             </men>
+           </p>
+         </statement>
+       </task>
+       <task>
+         <statement>
+           <p>
+             Use <xref ref="EQUATIONProjectileLaunch">equation</xref>
+             to show that the distance from its starting point where
+             the projectile returns to the ground is given by <me>
+             \frac{v_0^2}{g}\sin(2\theta) </me>.  (This is called the
+             <q>range</q> of the projectile, not to be confused with
+             the range of a function.)
            </p>
          </statement>
        </task>
@@ -314,7 +359,7 @@ have
              <m>1/6</m> that of earth and that Shepard can hit the
              ball identically on the earth and the moon, and ignoring
              air resistance on the earth, would the ball go <m>6</m>
-             times farther before it touches the ground on the moon
+             times farther before it returns to the surface on the moon
              than on the earth? Justify your answer.
            </p>
          </statement>
@@ -398,14 +443,14 @@ have
            </p>
            <p>
              Let <m>M=m-m_w</m> and note that <m>M\gt0</m>
-             (why?). Show that the above leads to the differential
-             equation
-             <me>
-               \frac{\dx{v}}{Rv-Mg}=\frac{-1}{m}\dx{t}
-             </me>
-             <me>
+             (why?). Show that the above leads to the IVP
+
+<md>
+<mrow>
+\frac{\dx{v}}{Rv-Mg}=\frac{-1}{m}\dx{t}\amp{}\amp{}
                v(0)=v_0.
-             </me>
+</mrow>
+</md>
            </p>
          </statement>
        </task>
@@ -1159,16 +1204,20 @@ have
      </figure>
      
      <exercise xml:id="PursuitCurve1">
+       <idx><h>Problem</h><h>Pursuit Curve</h></idx>
        <task>
          <statement>
            <p>
              If we let <m>s</m> denote the distance the missile has
              traveled at time <m>t</m>, show that the missile's path
              must satisfy the IVP
-             <men xml:id="PursuitEquation1">
-               \dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x}, \hskip5mm
+
+<mdn>
+<mrow xml:id="PursuitEquation1">
+               \dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x},\amp{}\amp{}
                y(0)=0.
-             </men>
+</mrow>
+</mdn>
            </p>
          </statement>
        </task>
@@ -5381,7 +5430,7 @@ have
           <exercise xml:id="exercise-Taut1">
             <statement>
               <p>
-                <idx><h>The Tautochrone</h></idx> Show that the total
+                <idx><h>Tautochrone</h></idx> Show that the total
                 time it takes for the pendulum to move along the
                 (inverted) cycloid
                 <md>
@@ -5511,7 +5560,7 @@ have
           <exercise xml:id="exercise-Taut3">
             <statement>
               <p>
-                <idx><h>Tautachrone</h></idx> Perform this
+                <idx><h>Tautochrone</h></idx> Perform this
                 substitution and show that the time traveled by the
                 pendulum from <m>\left(x(\theta_0), y(\theta
                 _0)\right) </m> to <m>\left( \frac\pi2 , 1\right) </m>
@@ -6598,7 +6647,7 @@ have
           <title>The Volume of Torricelli's Trumpet</title>
           <introduction>
             <p>
-              <idx><h>Problem</h><h>Torricell<rsq/>s Trumpet</h></idx>
+              <idx><h>Problem</h><h>Torricelli<rsq/>s Trumpet</h><h>Volume</h></idx>
             </p>
           </introduction>
           <task>
@@ -6636,8 +6685,8 @@ have
         <exercise xml:id="EXERCISETorriSurfArea">
           <introduction>
             <p>
-              <idx><h>Problem</h><h>Torricell<rsq/>s Trumpet surface
-              area</h></idx> Let's assume that <m>b=1</m> and focus on
+              <idx><h>Problem</h><h>Torricelli<rsq/>s Trumpet</h><h> Surface
+              Area</h></idx> Let's assume that <m>b=1</m> and focus on
               the curved part of the trumpet generated by revolving
               <m>y=\frac{1}{x}, 1\le x\infty </m> about the <m>x</m>
               axis.  We know that the surface area of an infinitely
@@ -6695,7 +6744,7 @@ have
         <exercise xml:id="EXERCISEFiniteAreaInfiniteMoment">
           <statement>
             <p>
-              <idx><h>Problem</h><h>volume</h><h>infinite</h></idx>
+              <idx><h>Volume</h><h>infinite</h></idx>
               Consider the region between the curves <m>y=0</m> and
               <m>y=\frac{1}{x^2}</m>, for <m>x\ge 1</m>.  Show that
               the area of this region is finite but the moment of this
