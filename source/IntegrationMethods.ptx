@@ -407,7 +407,7 @@ For a medium with a relatively low viscosity, such as
        the simpler model of linear drag and look at quadratic drag a
        little later and re-examine a ball falling in air.
      </p>
-     <example>
+     <example xml:id="EXAMPLESandInWater">
        <p>
          To model a grain of sand of mass <m>m</m> descending in water
          we let <m>y(t)</m> be distance the sand has fallen (so the
@@ -435,36 +435,45 @@ For a medium with a relatively low viscosity, such as
          apply if the sand wasn't there. 
 </p>
 <aside>
-<title>Comment</title>
+<title>Comment (Note to self)</title>
 <p>
  That is, it is the weight of
          the water that the grain of sand displaces.  This is just
          <m>m_wg</m>, where <m>m_w</m> is the mass of the water
          displaced.
 </p>
+<p>
+Is more explanation necessary here?
+</p>
 </aside>
 
 
      </example>
      
-     <exercise>
-       <task>
-         <statement>
-           <p>
-             Use Newton's Third Law,
-             (<m>F</m>)orce=(<m>m</m>)ass<m>\cdot</m>
-             (<m>a</m>)cceleration to show that
-             <me>
-               m\dfdx{v}{t}=(m-m_w)g-Rv,
-             </me>
-             <me>
-               v(0)=v_0
-             </me>
-           </p>
-           <p>
-             Let <m>M=m-m_w</m> and note that <m>M\gt0</m>
-             (why?). Show that the above leads to the IVP
+     <exercise  xml:id="PROBLEMTerminalVeloctiy">
+<title>Terminal Velocity</title>
 
+       <task>
+<p>
+         <ol marker="i">
+           <li>
+             <p>
+               Use Newton's Third Law,
+               (<m>F</m>)orce=(<m>m</m>)ass<m>\cdot</m>
+               (<m>a</m>)cceleration to show that the situation in <xref
+               ref="EXAMPLESandInWater"></xref> can be modeled by the IVP
+               <md>
+                 <mrow>
+                   m\dfdx{v}{t}=(m-m_w)g-Rv,\amp{}\amp{}
+                   v(0)=v_0.
+                 </mrow>
+               </md>
+           </p>
+           </li>
+           <li>
+             <p>
+               Let <m>M=m-m_w</m> and note that <m>M\gt0</m>
+               (why?). Show that the above leads to the IVP
 <md>
 <mrow>
 \frac{\dx{v}}{Rv-Mg}=\frac{-1}{m}\dx{t}\amp{}\amp{}
@@ -472,48 +481,68 @@ For a medium with a relatively low viscosity, such as
 </mrow>
 </md>
            </p>
-         </statement>
+           </li>
+         </ol>
+</p>
        </task>
        
        <task>
-         <statement>
            <p>
+<ol marker="i">
+<li>
+<p>
              Use the substitution <m>z=Rv-Mg</m>, to rewrite the above
              equation as
              <me>
-               \frac{\frac{1}{R}\dx{z}}{z}=-\frac{1}{m}\dx{t}
+               \frac{\frac{1}{R}\dx{z}}{z}=-\frac{1}{m}\dx{t}.
              </me>
-             and show that
-             <me>
-               v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{r}{m}t}.
-             </me>
+</p>
+</li>
+<li> 
+<p>
+Show that
+             <m>
+               v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}.
+             </m>
            </p>
-         </statement>
+</li>
+</ol>
+           </p>
        </task>
        <task>
          <statement>
            <p>
-             Compute <m>\limit{t}{\infty}{v}</m>. This will be the
-             terminal velocity of the sand settling in the
-             water. Notice that this should be independent of
-             <m>v_0</m>. How does your answer for terminal velocity
-             depend on <m>M=m-m_w</m> and <m>R</m>? Does this make
-             sense physically?
+             Compute <m>\limit{t}{\infty}{v}</m>, and explain why this
+             is called  the
+             <term>terminal velocity</term> of the sand settling in the
+             water. Notice that the terminal velocity is  independent of
+             <m>v_0</m>.  Does this make
+             sense physically? Explain.
            </p>
          </statement>
        </task>
      </exercise>
      
      <p>
-       The above problem used the technique of substitution and is the
-       integration analog of the chain rule, which itself was the
-       technique of substitution applied to differentiation.  As with
-       differentiation, this did not actually compute the integral,
-       but made it simpler to apply formulas and techniques with which
-       we are already familiar.  This technique of substitution is
-       very powerful and allows us to integrate differentials which
-       are not in our table.  We already saw one example in our
-       previous problem.  For another, consider that in the table, we
+<xref ref="PROBLEMTerminalVeloctiy"></xref> used the technique of
+substitution.  As with substitution for 
+       differentiation the substitution was just the first step. It
+       makes the formualas a little <q>easier on the eyes</q>, but we
+       still have to compute the integral. Our substitution  made it simpler to apply formulas and techniques with which
+       we are already familiar.  As simple as it is,   substitution is
+       no mere trick. It is a
+       very powerful technique.
+</p>
+<aside>
+<title>Comment</title>
+<p>
+An old joke says that a <q>technique</q> is a <q>trick</q> that you
+use more than once.
+</p>
+</aside>
+
+<p>
+As  another example, consider that in the table, we
        had <m>\int\sin(x)\dx{x}</m> and <m>\int\cos(x)\dx{x}</m>, but
        we did not have <m>\int\tan(x)\dx{x}</m>.
        
