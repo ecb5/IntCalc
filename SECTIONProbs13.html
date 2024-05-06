@@ -148,7 +148,7 @@ window.MathJax = {
 \def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
 \def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
-
+\def\erf{\text{erf}}
 
 \newcommand{\ParamEqTwo}[2]
 {
@@ -263,6 +263,7 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -319,7 +320,7 @@ GmM\left(\frac{1}{B}-\frac{1}{R}\right)
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="SECTIONProbs13-7-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SECTIONProbs13-7-2-1">You should get a negative number because gravity is doing a negative amount of work in moving the object.</div></div></details></div></article><div class="para" id="SECTIONProbs13-8">If we take <span class="process-math">\({\mathop{\mathrm{lim}}_{B\to \infty }
+<div class="solutions"><details id="SECTIONProbs13-7-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SECTIONProbs13-7-2-1">You should get a negative number because gravity is doing a negative amount of work in moving the object.</div></div></details></div></article><div class="para" id="SECTIONProbs13-8">If we take <span class="process-math">\({\mathop{\lim}_{B\to \infty }
 GmM\left(\frac{1}{B}-\frac{1}{R}\right) }=-\frac{GmM}{R}\text{,}\)</span> then this will represent the amount of work done by gravity moving a mass from the surface of the planet “to infinity.” In other words, the amount of work (and energy) it takes to propel the object so it doesn’t come back is finite.</div>
 <article class="exercise exercise-like" id="SECTIONProbs13-9"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.35</span><span class="period">.</span>
@@ -405,16 +406,16 @@ P(\theta) \ParamEqThree{x=\cos(\theta)} {y=\sin(\theta)} {0\le \theta \le \frac{
 \begin{equation*}
 \int^1_{x=0}{\sqrt{\frac{1}{1-x^2}}
 \dx{x}}
-={\left.{{\mathrm{(sin}}^{\mathrm{-}\mathrm{1}} x
+={\left.{{\(sin}^{\mathrm{-}\mathrm{1}} x
 })\right|}^1_{x=0}=\frac{\pi }{2}
 \end{equation*}
 </div>
-<div class="para">If you don’t see the problem yet, suppose instead I wanted to find the area under the curve <span class="process-math">\(y=\sqrt{\frac{1}{1-x^2}}\)</span>  over the interval <span class="process-math">\([0,1].  \)</span>Here is a graph of that region.</div>
+<div class="para">If you don’t see the problem yet, suppose instead I wanted to find the area under the curve <span class="process-math">\(y=\sqrt{\frac{1}{1-x^2}}\)</span> over the interval <span class="process-math">\([0,1].\)</span>Here is a graph of that region.</div>
 </div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/ImproperInt1.png" class="contained"></div>  <div class="para logical" id="SECTIONProbs13-13-3">
 <div class="para">The area of that region would be computed by the same</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int^1_{x=0}{\sqrt{\frac{1}{1-x^2}} \dx{x}}={\left.{{\mathrm{(sin}}^{\mathrm{-}\mathrm{1}} x })\right|}^1_{x=0}=\frac{\pi }{2}
+\int^1_{x=0}{\sqrt{\frac{1}{1-x^2}} \dx{x}}={\left.{{\(sin}^{\mathrm{-}\mathrm{1}} x })\right|}^1_{x=0}=\frac{\pi }{2}
 \end{equation*}
 </div>
 <div class="para">even though the region itself is unbounded.  Before you say “big deal, it worked”, consider the area of this region.</div>
@@ -457,21 +458,21 @@ P(\theta) \ParamEqThree{x=\cos(\theta)} {y=\sin(\theta)} {0\le \theta \le \frac{
 </div>
 <div class="para">    provided that limit exists.</div>
 </div>
-<article class="exercise exercise-like" id="DRILLImproperIntegral"><h3 class="heading">
+<article class="exercise exercise-like" id="PROBLEMImproperIntegral"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.38</span><span class="period">.</span>
 </h3>
-<article class="task exercise-like" id="DRILLImproperIntegralA"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="DRILLImproperIntegralA-1-1">Suppose <span class="process-math">\(f(x)\)</span> is unbounded at the left endpoint <span class="process-math">\(a\)</span> of the interval <span class="process-math">\([a,b]\text{.}\)</span>  Provide a similar way to compute the improper integral <span class="process-math">\(\int^b_{x=a}{f\left(x\right)\dx{x}}\text{.}\)</span>
-</div></article><article class="task exercise-like" id="PROBLEMDRILLImproperIntegralB"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para logical" id="PROBLEMDRILLImproperIntegralB-1-1">
-<div class="para">Apply your technique from <a href="" class="xref" data-knowl="./knowl/xref/DRILLImproperIntegralA.html" title="Task 5.38.a">Task 5.38.a</a> to compute the following improper integrals.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DRILLImproperIntegralA.html">
+<article class="task exercise-like" id="PROBLEMImproperIntegralA"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="PROBLEMImproperIntegralA-1-1">Suppose <span class="process-math">\(f(x)\)</span> is unbounded at the left endpoint <span class="process-math">\(a\)</span> of the interval <span class="process-math">\([a,b]\text{.}\)</span>  Provide a similar way to compute the improper integral <span class="process-math">\(\int^b_{x=a}{f\left(x\right)\dx{x}}\text{.}\)</span>
+</div></article><article class="task exercise-like" id="PROBLEMImproperIntegralB"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="PROBLEMImproperIntegralB-1-1">
+<div class="para">Apply your technique from <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMImproperIntegralA.html" title="Task 5.38.a">Task 5.38.a</a> to compute the following improper integrals.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMImproperIntegralA.html">
 \begin{equation*}
 \int^1_{x=0}{\frac{1}{x^{0.99}}\dx{x}} \int^1_{x=0}{\frac{1}{x^{1.01}}\dx{x}}
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="PROBLEMDRILLImproperIntegralC"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="PROBLEMDRILLImproperIntegralC-1-1">Plot these two curves on the same set of axes for <span class="process-math">\(0\lt
+</div></article><article class="task exercise-like" id="PROBLEMImproperIntegralC"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="PROBLEMImproperIntegralC-1-1">Plot these two curves on the same set of axes for <span class="process-math">\(0\lt
 x\le 1\text{.}\)</span>  Staring at these graphs, are you surprised by the results in part b?</div></article></article><article class="example example-like" id="EXAMPLEPainterParadox"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.39</span><span class="period">.</span><span class="space"> </span><span class="title">Torricelli’s Trumpet and the Painter’s Paradox.</span>
 </h3>  <div class="para" id="EXAMPLEPainterParadox-3">Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus.  The first known results were by Archimedes circa 250 BC.  This predates the first paper of differential calculus (1684 AD) by almost 200 years.  We won’t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes.  They just didn’t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.</div> <div class="para" id="EXAMPLEPainterParadox-4">One of these predecessors was Evangelista Torricelli (1608-1647).  In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 \textit{De solido hyperbolico acuto.  }In this paper, he had the following theorem.</div> <aside class="aside aside-like" id="EXAMPLEPainterParadox-5"><h4 class="heading"><span class="title">Historical Context.</span></h4>

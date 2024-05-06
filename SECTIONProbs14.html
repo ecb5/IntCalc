@@ -107,7 +107,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="SECTIONProbs13.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="problems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="PARTNoHome.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\abs#1{\left|#1\right|}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="SECTIONProbs13.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="problems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SECTIONProbs15.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\abs#1{\left|#1\right|}
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 
 \newcommand{\RR}{\mathbb {R}}
@@ -148,7 +148,7 @@ window.MathJax = {
 \def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
 \def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
-
+\def\erf{\text{erf}}
 
 \newcommand{\ParamEqTwo}[2]
 {
@@ -263,6 +263,7 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -290,11 +291,19 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONProbs14"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.9</span><span class="space"> </span><span class="title">Homework #14: Power Series</span>
 </h2>
-<div class="para" id="SECTIONProbs14-2">You may have found it surprising in the last homework that an improper integral from <span class="process-math">\(r=R\)</span> to <span class="process-math">\(\infty \)</span> could have a real-world application such as escape velocity.  Actually, there is an example of an improper integral of the form <span class="process-math">\(\int^a_{x=-\infty }{f\left(x\right)dx}\)</span> which has an application a little closer to home.  \textbf{}</div>
+<div class="para" id="SECTIONProbs14-2">You may have found it surprising in the last homework that an improper integral from <span class="process-math">\(r=R\)</span> to <span class="process-math">\(\infty \)</span> could have a real-world application such as escape velocity.  Actually, there is an example of an improper integral of the form <span class="process-math">\(\int^a_{x=-\infty }{f\left(x\right)dx}\)</span> which has an application a little closer to home.</div>
 <article class="exercise exercise-like" id="SECTIONProbs14-3"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.42</span><span class="period">.</span>
 </h3>
-<div class="para" id="SECTIONProbs14-3-1-1"> Define what we mean for improper integral <span class="process-math">\(\int^a_{x=-\infty }{f\left(x\right)dx}\ \)</span>to converge and what its value would be.</div></article><div class="para" id="SECTIONProbs14-4">No doubt you have heard of a bell-shaped curve or perhaps have been in a statistics course that talks about <span class="process-math">\(z\)</span> values. What does any of this mean and what does it have to do with improper integrals?  First, the bell-shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss (1777 -- 1855) to look at the probability that a measurement should deviate from the actual mean of a population.  The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels.  Specifically, a normal distribution with a mean of <span class="process-math">\(\mu \)</span> and a standard deviation of <span class="process-math">\(\sigma \)</span> has the equation <span class="process-math">\(f\left(x\right)=\frac{1}{\sigma \sqrt{2\pi
+<div class="para logical" id="SECTIONProbs14-3-1-1">
+<div class="para"> Define what it means for the improper integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^a_{x=-\infty }{f\left(x\right)dx}
+\end{equation*}
+</div>
+<div class="para">to converge. What its value would be?</div>
+</div></article><div class="para" id="SECTIONProbs14-4">No doubt you have heard of a bell-shaped curve or perhaps have been in a statistics course that talks about <span class="process-math">\(z\)</span> values. What does any of this mean and what does it have to do with improper integrals?  First, the bell-shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss (1777 -- 1855) to look at the probability that a measurement should deviate from the actual mean of a population.  The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels.  Specifically, a normal distribution with a mean of <span class="process-math">\(\mu \)</span> and a standard deviation of <span class="process-math">\(\sigma \)</span> has the equation <span class="process-math">\(f\left(x\right)=\frac{1}{\sigma \sqrt{2\pi
 }}e^{-\frac{1}{2}{\left(\frac{x-\mu }{\sigma }\right)}^2}\)</span> as its probability density function.  The fact that it is called a bell-shaped curve can be seen in the following graph.</div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/GaussDistrib1.png" class="contained"></div>
 <div class="para logical" id="SECTIONProbs14-6">
@@ -311,7 +320,7 @@ window.MathJax = {
 </div>
 <div class="para" id="SECTIONProbs14-7">Of course, the values of <span class="process-math">\(\mu \)</span> and <span class="process-math">\(\sigma \)</span> will affect the shape of the graph as seen below.</div>
 <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/SeveralGaussCurves.png" class="contained"></div>
-<div class="para" id="SECTIONProbs14-9">\includegraphics*[width=4.65in, height=2.97in]{image53}</div>
+<div class="para" id="SECTIONProbs14-9"></div>
 <div class="para logical" id="SECTIONProbs14-10">
 <div class="para">Of particular importance is the red curve where the mean <span class="process-math">\(\mu
 =0\)</span> and the standard deviation<span class="process-math">\(\sigma =1\text{.}\)</span>  Any random variable <span class="process-math">\(Z\)</span> which has a normal distribution with probability density function <span class="process-math">\(f\left(z\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{z^2}{2}}\)</span> is said to have a standard normal distribution and a result from probability theory says that if the random variable <span class="process-math">\(X\)</span> is normally distributed with mean <span class="process-math">\(\mu \)</span> and standard deviation <span class="process-math">\(\sigma \text{,}\)</span> then <span class="process-math">\(Z=\frac{X-\mu }{\sigma }\)</span> will have a standard normal distribution.  We’ve said a lot here in the way of theory, so let’s provide a concrete example.  It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean <span class="process-math">\(\mu =100\)</span> and standard deviation <span class="process-math">\(\sigma =15\text{.}\)</span>  It is also widely accepted that someone with an IQ of 140 or above is in the genius range.  Suppose we chose someone at random.  If we want to compute the probability that this person’s IQ is less than or equal to 140, then mathematically, we want to compute</div>
@@ -359,20 +368,20 @@ z=\frac{140-100}{15}=\frac{8}{3}
 <div class="para"> Actually, Wolfram Alpha provides the following output</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\mathrm{erf} \left(\frac{4\sqrt{2}}{3}\right)\ }+1\right)\approx .99617
+\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\erf \left(\frac{4\sqrt{2}}{3}\right)}+1\right)\approx .99617
 \end{equation*}
 </div>
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-{\mathrm{erf} \left(a\right)\ }=\frac{2}{\sqrt{\pi }}\int^a_{t=0}{e^{-t^2}\ dt}
+{\erf \left(a\right)}=\frac{2}{\sqrt{\pi }}\int^a_{t=0}{e^{-t^2}\dx{t}}
 \end{equation*}
 </div>
 </div> <div class="para" id="DRILLErf-1-2">The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.</div>
 </div>
 <article class="task exercise-like" id="DRILLErfA"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para logical" id="DRILLErfA-1-1">
-<div class="para">Use the substitution <span class="process-math">\(z=\sqrt{2}\ t\)</span> to show that</div>
+<div class="para">Use the substitution <span class="process-math">\(z=\sqrt{2}t\)</span> to show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{\sqrt{2\pi }}\int^a_{z=0}{e^{-\frac{1}{2}z^2}}dz=\frac{1}{\sqrt{\pi }}\int^{a/\sqrt{2}}_{t=0}{e^{-t^2}}dt
@@ -380,10 +389,10 @@ z=\frac{140-100}{15}=\frac{8}{3}
 </div>
 </div></article><article class="task exercise-like" id="DRILLErfB"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para logical" id="DRILLErfB-1-1">
-<div class="para">Use the result of <a href="" class="xref" data-knowl="./knowl/xref/DRILLErfA.html" title="Task 5.44.a">Task 5.44.a</a>  and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha’s equation</div>
+<div class="para">Use the result of <a href="" class="xref" data-knowl="./knowl/xref/DRILLErfA.html" title="Task 5.44.a">Task 5.44.a</a> and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha’s equation</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DRILLErfA.html">
 \begin{equation*}
-\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\mathrm{erf} \left(\frac{4\sqrt{2}}{3}\right)\ }+1\right)
+\frac{1}{\sqrt{2\pi }}\int^{8/3}_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left({\erf \left(\frac{4\sqrt{2}}{3}\right)}+1\right)
 \end{equation*}
 </div>
 </div></article></article><div class="para" id="SECTIONProbs14-17">Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer.  This begs the question, how does one approximate integrals such as the above?  There are several different ways.  We will introduce the notion of a power series as one way.  We will come back to <span class="process-math">\(e^{-t^2}\text{,}\)</span> but let’s start with something easier.</div>
@@ -391,21 +400,21 @@ z=\frac{140-100}{15}=\frac{8}{3}
 <div class="para">Imagine what integrating would be like if every function was a polynomial.  If this were the case, then we wouldn’t have needed to learn so many integration techniques.  For example, if we wanted to compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int{\frac{x^2-1}{x-1}}\ dx
+\int{\frac{x^2-1}{x-1}}\dx{x}
 \end{equation*}
 </div>
 <div class="para">we could certainly use a trigonometric substitution, but an easier approach would be to rewrite this as</div>
 <div class="displaymath process-math" id="SECTIONProbs14-18-2">
 \begin{align*}
-\int{\frac{{1-x}^2}{1-x}}\ dx=\int{\frac{(1-x)(1+x)}{1-x}}\ dx
-\amp{}=\int{(1+x)}\ dx\\
+\int{\frac{{1-x}^2}{1-x}}\dx{x}=\int{\frac{(1-x)(1+x)}{1-x}}\dx{x}
+\amp{}=\int{(1+x)}\dx{x}\\
 \amp{}=x+\frac{x^2}{2}+C
 \end{align*}
 </div>
-<div class="para">which would be perfectly valid provided <span class="process-math">\(x\neq 1\text{.}\)</span>  Alas, not every function is a polynomial.  For example, consider <span class="process-math">\(\frac{1}{1-x}\text{.}\)</span>  Since <span class="process-math">\({\mathop{\mathrm{lim}}_{ \begin{array}{c}
+<div class="para">which would be perfectly valid provided <span class="process-math">\(x\neq 1\text{.}\)</span>  Alas, not every function is a polynomial.  For example, consider <span class="process-math">\(\frac{1}{1-x}\text{.}\)</span>  Since <span class="process-math">\({\mathop{\lim}_{ \begin{array}{c}
 x\to 1 \\
 x\lt{}1 \end{array}
-} \frac{1}{1-x}\ }=\infty \)</span> and no polynomial has this property, then <span class="process-math">\(f\left(x\right)=\frac{1}{1-x}\)</span> cannot be written as a polynomial (even if we exclude certain points as we did above).  However mathematicians realized that there are some things we can do.  First notice that</div>
+} \frac{1}{1-x}}=\infty \)</span> and no polynomial has this property, then <span class="process-math">\(f\left(x\right)=\frac{1}{1-x}\)</span> cannot be written as a polynomial (even if we exclude certain points as we did above).  However mathematicians realized that there are some things we can do.  First notice that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left(1-x\right)\left(1+x+x^2+\dots \right)=\left(1+x+x^2+\dots \right)-\left(x+x^2+x^3+\dots \right)=1
@@ -451,21 +460,24 @@ x\lt{}1 \end{array}
 <div class="para">Also notice that multiplying by <span class="process-math">\(9\)</span> gives us</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0.999\dots =1
+0.999\dots
+=1
 \end{equation*}
 </div>
-<div class="para">which is a little more subtle, but is nonetheless as true as the decimal representation of  <span class="process-math">\(\frac{1}{3}\)</span> that you are familiar with.  If nothing else, this says we must be a bit more careful about dealing with these infinite polynomials.  For example, we can only stretch this representation so far.  We already know that we can’t substitute <span class="process-math">\(x=1\)</span> into <span class="process-math">\(1+x+x^2+\dots =1/(1-x)\text{.}\)</span>  What about <span class="process-math">\(x=2\text{?}\)</span> Could we have</div>
+<div class="para">which is a little more subtle, but is nonetheless as true as the decimal representation of <span class="process-math">\(\frac{1}{3}\)</span> that you are familiar with.  If nothing else, this says we must be a bit more careful about dealing with these infinite polynomials. For example, we can only stretch this representation so far.  We already know that we can’t substitute <span class="process-math">\(x=1\)</span> into <span class="process-math">\(1+x+x^2+\dots =1/(1-x)\text{.}\)</span>  What about <span class="process-math">\(x=2\text{?}\)</span> Could we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-1+2+2^2+\dots =\frac{1}{1-2}\ \ ?
+1+2+2^2+\dots =\frac{1}{1-2}?
 \end{equation*}
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs14-21">
-<div class="para">If you look at it, then this is silly as the left-hand side grows arbitrarily large and the right-hand side is <span class="process-math">\(-1\text{.}\)</span>  Let’s be a bit more careful utilizing limits.  First notice that while writing</div>
+<div class="para">If you look at it, then this is silly as the left-hand side grows arbitrarily large and the right-hand side is <span class="process-math">\(-1\text{.}\)</span> Let’s be a bit more careful utilizing limits.  First notice that while writing</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\left(1-x\right)\left(1+x+x^2+\dots \right)=\left(1+x+x^2+\dots \right)-\left(x+x^2+x^3+\dots \right)=1
+\left(1-x\right)\left(1+x+x^2+\dots
+\right)=\left(1+x+x^2+\dots \right)-\left(x+x^2+x^3+\dots
+\right)=1
 \end{equation*}
 </div>
 <div class="para">may be a bit questionable, we can certainly write</div>
@@ -487,14 +499,16 @@ x\lt{}1 \end{array}
 </div>
 <div class="para logical" id="SECTIONProbs14-22"><div class="displaymath process-math">
 \begin{equation*}
-1+x+x^2+\dots ={\mathop{\mathrm{lim}}_{N\to \infty } (1+\ }{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty } \frac{1-x^N}{1-x}\ }
+1+x+x^2+\dots ={\mathop{\lim}_{N\to \infty } (1+}{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty } \frac{1-x^N}{1-x}}
 \end{equation*}
 </div></div>
 <div class="para logical" id="SECTIONProbs14-23">
-<div class="para">As long as <span class="process-math">\(\left|x\right|\lt{}1\text{,}\)</span> then <span class="process-math">\({\mathop{\mathrm{lim}}_{N\to \infty } x^N\ }=0\text{,}\)</span> so that for <span class="process-math">\(-1\lt{}x\lt{}1\text{,}\)</span> we have</div>
+<div class="para">As long as <span class="process-math">\(\left|x\right|\lt{}1\text{,}\)</span> then <span class="process-math">\({\mathop{\lim}_{N\to \infty } x^N}=0\text{,}\)</span> so that for <span class="process-math">\(-1\lt{}x\lt{}1\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-1+x+x^2+\dots ={\mathop{\mathrm{lim}}_{N\to \infty } (1+\ }{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty } \frac{1-x^N}{1-x}=\frac{1}{1-x}\ }
+1+x+x^2+\dots ={\mathop{\lim}_{N\to \infty }
+(1+}{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty }
+\frac{1-x^N}{1-x}=\frac{1}{1-x}} 
 \end{equation*}
 </div>
 <div class="para">The sum <span class="process-math">\(1+x+x^2+\dots \)</span> is called the geometric series since the ratio two consecutive terms <span class="process-math">\(\frac{x^{k+1}}{x^k}\)</span> is constantly equal to <span class="process-math">\(x\)</span> and these were studied by mathematicians before the invention of calculus.  As such, these infinite polynomials were called \textbf{\textit{power series}.}</div>
@@ -506,7 +520,7 @@ x\lt{}1 \end{array}
 \int{\frac{1}{1+x^2}dx}
 \end{equation*}
 </div>
-<div class="para">We already know that this is <span class="process-math">\({\mathrm{arctan} (x)\ }+C\text{,}\)</span> but suppose we do the following</div>
+<div class="para">We already know that this is <span class="process-math">\({\arctan (x)}+C\text{,}\)</span> but suppose we do the following</div>
 <div class="displaymath process-math" id="SECTIONProbs14-24-4">
 \begin{align*}
 \frac{1}{1+x^2}=\frac{1}{1-\left(-x^2\right)}
@@ -519,7 +533,7 @@ x\lt{}1 \end{array}
 <div class="para">Thus, we have</div>
 <div class="displaymath process-math" id="SECTIONProbs14-25-1">
 \begin{align*}
-&gt;{\mathrm{arctan} \left(x\right)\
+&gt;{\arctan \left(x\right)\
 }+C=\int{\frac{1}{1+x^2}dx}\amp{}=\int{\left(1-x^2+x^4-x^6+\dots
 \right)dx}\\
 \amp{}=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\dots 
@@ -528,7 +542,7 @@ x\lt{}1 \end{array}
 <div class="para">Setting <span class="process-math">\(x=0\text{,}\)</span> we get</div>
 <div class="displaymath process-math" id="SECTIONProbs14-25-3">
 \begin{align*}
-{\mathrm{arctan} \left(0\right)\
+{\arctan \left(0\right)\
 }+C\amp{}=0-\frac{0^3}{3}+\frac{0^5}{5}-\frac{0^6}{6}+\dots =0\\
 0+C\amp{}=0\\
 C\amp{}=0 
@@ -536,18 +550,18 @@ C\amp{}=0
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs14-26">
-<div class="para">Thus, we have a power series representation for the function <span class="process-math">\({\mathrm{arctan} (x)\ }\text{.}\)</span>
+<div class="para">Thus, we have a power series representation for the function <span class="process-math">\({\arctan (x)}\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-{\mathrm{arctan} (x)\
+{\arctan (x)\
 }=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\dots 
 \end{equation*}
 </div>
 <div class="para">If we substitute <span class="process-math">\(x=1\)</span> into here (which is dubious, since we couldn’t substitute it into the original <span class="process-math">\(\frac{1}{1-x}\text{,}\)</span> we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\pi }{4}={\mathrm{arctan} \left(1\right)\ }=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\dots 
+\frac{\pi }{4}={\arctan \left(1\right)}=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\dots 
 \end{equation*}
 </div>
 <div class="para">which provides a way to approximate <span class="process-math">\(\pi \)</span> to whatever degree of accuracy we wish.  Again, this approach to calculus is full of subtleties and dangers, but it did not stop mathematicians from trying to represent non-polynomial functions as power series.</div>
@@ -558,7 +572,7 @@ C\amp{}=0
 <div class="introduction" id="SECTIONProbs14-27-1"><div class="para" id="SECTIONProbs14-27-1-1"> Mimic the above techniques to find a power series representation for the following functions.</div></div>
 <article class="task exercise-like" id="SECTIONProbs14-27-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para" id="SECTIONProbs14-27-2-1-1"><span class="process-math">\(\frac{1}{{\left(1-x\right)}^2}\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-27-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="SECTIONProbs14-27-3-1-1"><span class="process-math">\({\mathrm{ln} (1-x)\ }\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-27-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SECTIONProbs14-27-3-1-1"><span class="process-math">\({\ln (1-x)}\)</span></div></article><article class="task exercise-like" id="SECTIONProbs14-27-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="para" id="SECTIONProbs14-27-4-1-1"><span class="process-math">\(\frac{1}{5+x}\)</span></div></article></article><div class="para logical" id="SECTIONProbs14-28">
 <div class="para">Interestingly, we can get power series representation for the natural logarithm from the geometric series, but getting one for the exponential function is a bit more problematic.  To do this, we will go back to basic principles.  Recall from Calculus I that the natural exponential function <span class="process-math">\(y=e^x\)</span> came from the need to solve the following initial value problem</div>
 <div class="displaymath process-math" id="SECTIONProbs14-28-2">
@@ -576,7 +590,7 @@ y=a_0+a_1x+a_2x^2+a_3x^3+\dots
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs14-30">
-<div class="para">where <span class="process-math">\(a_0,\ a_1,\ a_2,\ a_3,\dots \)</span> are as yet to be determined coefficients.  Differentiating, we get</div>
+<div class="para">where <span class="process-math">\(a_0,a_1,a_2,a_3,\dots \)</span> are as yet to be determined coefficients.  Differentiating, we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
 dy=1a_1dx+2a_2xdx+3a_3x^2dx+\dots 
@@ -659,7 +673,8 @@ a_n=\frac{1}{n}a_{n-1}=\dots =\frac{1}{n\left(n-1\right)\left(n-2\right)\cdots 2
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs14-32">
-<div class="para">If we adopt the notation <span class="process-math">\(n!\)</span> (read <span class="process-math">\(n\)</span> factorial) to be <span class="process-math">\(n!=n\left(n-1\right)\left(n-2\right)\cdots 2\cdot 1,\ \)</span>then all this says that the power series</div>
+<div class="para">If we adopt the notation <span class="process-math">\(n!\)</span> (read <span class="process-math">\(n\)</span> factorial) to be <span class="process-math">\(n!=n\left(n-1\right)\left(n-2\right)\cdots 2\cdot
+1,\)</span>then all this says that the power series</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y=a_0+\frac{1}{1!}a_0x+\frac{1}{2!}a_0x^2+\frac{1}{3!}a_0x^3+\frac{1}{4!}a_0x^4+\dots 
@@ -684,10 +699,11 @@ y=a_0+\frac{1}{1!}a_0x+\frac{1}{2!}a_0x^2+\frac{1}{3!}a_0x^3+\frac{1}{4!}a_0x^4+
 y=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots 
 \end{equation*}
 </div>
-<div class="para">satisfies the IVP <span class="process-math">\(\frac{dy}{dx}=y\ \ \ \ y\left(0\right)=1\text{.}\)</span>  But we already knew that the unique solution is <span class="process-math">\(y=e^x\)</span> so we have the power series for <span class="process-math">\(e^x\text{,}\)</span> namely</div>
+<div class="para">satisfies the IVP <span class="process-math">\(\frac{dy}{dx}=y\
+y\left(0\right)=1\text{.}\)</span>  But we already knew that the unique solution is <span class="process-math">\(y=e^x\)</span> so we have the power series for <span class="process-math">\(e^x\text{,}\)</span> namely</div>
 <div class="displaymath process-math">
 \begin{equation*}
-e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots 
+e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 \end{equation*}
 </div>
 </div>
@@ -717,19 +733,20 @@ e\amp{}\approx 2.7182818011463845\\
 <div class="para">Comparing this to the approximation for <span class="process-math">\(e\)</span> given on a calculator <span class="process-math">\(2.71828182846\text{,}\)</span> we see this is accurate to 7 decimal places.  Adding more terms would get us even more accuracy.  In fact, for any real number <span class="process-math">\(x\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-{\mathop{\mathrm{lim}}_{N\to \infty } \left(1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots +\frac{1}{N!}x^N\right)\ }=e^x
+{\mathop{\lim}_{N\to \infty } \left(1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots +\frac{1}{N!}x^N\right)}=e^x
 \end{equation*}
 </div>
 <div class="para">which is different than the limitation <span class="process-math">\(-1\lt{}x\lt{}1\)</span> we had for the geometric series.  The entire study of power series is more subtle than we’ve done so far, but for now, let’s go with the fact that we can represent</div>
 <div class="displaymath process-math">
 \begin{equation*}
-e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots 
+e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 \end{equation*}
 </div>
 <div class="para">for any real number <span class="process-math">\(x\text{.}\)</span>  Let’s apply this to our error function</div>
 <div class="displaymath process-math">
 \begin{equation*}
-{\mathrm{erf} \left(a\right)\ }=\frac{2}{\sqrt{\pi }}\int^a_{t=0}{e^{-t^2}\ dt}
+{\erf \left(a\right)}=\frac{2}{\sqrt{\pi
+}}\int^a_{t=0}{e^{-t^2}\dx{t}}
 \end{equation*}
 </div>
 </div>
@@ -748,18 +765,18 @@ e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots
 <div class="para">to obtain a power series for <span class="process-math">\(e^{-t^2}\)</span> and use this to show</div>
 <div class="displaymath process-math" id="SECTIONProbs14-36-2-1-1-3">
 \begin{align*}
-{\mathrm{erf} \left(a\right)\ }\amp{}=\frac{2}{\sqrt{\pi
-}}\int^a_{t=0}{e^{-t^2}\ dt}\\
-\amp{}=\frac{2}{\sqrt{\pi }}\left(a-\frac{1}{1!\cdot
-3}a^3+\frac{1}{2!\cdot 5}a^5-\frac{1}{3!\cdot 7}a^7+\frac{1}{4!\cdot
-9}a^9-\dots \right)
+{\erf \left(a\right)}\amp{}=\frac{2}{\sqrt{\pi}}\int^a_{t=0}{e^{-t^2}\dx{t}}\\
+\amp{}=\frac{2}{\sqrt{\pi}}\left(a-\frac{1}{1!\cdot3}a^3
++ \frac{1}{2!\cdot 5}a^5 - \frac{1}{3!\cdot7}a^7 +
+\frac{1}{4!\cdot 9}a^9-\dots \right)
 \end{align*}
 </div>
 </div></article><article class="task exercise-like" id="SECTIONProbs14-36-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="SECTIONProbs14-36-3-1-1">Add the first ten terms of the series you obtained in part a with <span class="process-math">\(a=1\)</span> to obtain an approximation for <span class="process-math">\({\mathrm{erf} \left(1\right)\ }\text{.}\)</span>  How does your calculation compare to the approximate answer given by Wolfram Alpha which is <span class="process-math">\(.8427007929\)</span>
+<div class="para" id="SECTIONProbs14-36-3-1-1">Add the first ten terms of the series you obtained in part a with <span class="process-math">\(a=1\)</span> to obtain an approximation for <span class="process-math">\({\erf
+\left(1\right)}\text{.}\)</span>  How does your calculation compare to the approximate answer given by Wolfram Alpha which is <span class="process-math">\(.8427007929\)</span>
 </div></article></article><div class="para" id="SECTIONProbs14-37">As you can see, power series coupled with the new calculus became (and still is) a powerful tool.  As people utilized it more, issues about legitimacy came into play, but for now and in the next homework, we won’t worry about the nuances and just see what it can get us.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="SECTIONProbs13.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="PARTNoHome.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="SECTIONProbs13.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONProbs15.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

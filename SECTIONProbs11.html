@@ -148,7 +148,7 @@ window.MathJax = {
 \def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
 \def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
-
+\def\erf{\text{erf}}
 
 \newcommand{\ParamEqTwo}[2]
 {
@@ -263,6 +263,7 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -301,7 +302,7 @@ window.MathJax = {
 \frac{dy}{dx}=\frac{ws}{H}.
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(w,\ H\)</span> were the weight density of the chain and horizontal tension, respectively, and <span class="process-math">\(s\)</span> is the length of the chain from the lowest point to <span class="process-math">\((x,y)\text{.}\)</span>  We then differentiated and applied the Pythagorean Theorem to the “differential” triangle</div>
+<div class="para">where <span class="process-math">\(w,H\)</span> were the weight density of the chain and horizontal tension, respectively, and <span class="process-math">\(s\)</span> is the length of the chain from the lowest point to <span class="process-math">\((x,y)\text{.}\)</span>  We then differentiated and applied the Pythagorean Theorem to the “differential” triangle</div>
 </div>
 <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DiffTri2.png" class="contained"></div>
 <div class="para logical" id="SECTIONProbs11-8"><div class="displaymath process-math">
@@ -345,7 +346,7 @@ s=\int^B_{X=A} \sqrt{\left(1+{\left(\dfdx{y}{x}\right)}^2\right)}
 <div class="para">Suppose we tried to compute the length of a quarter of the circle in the following way.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int^{(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})}_{X=(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})}{\sqrt{{\left(\frac{dx}{dy}\right)}^2+1}\ dy}=\int^{\frac{1}{\sqrt{2}}}_{y=\frac{1}{\sqrt{2}}}{\sqrt{{\left(\frac{dx}{dy}\right)}^2+1}\ dy}=0
+\int^{(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})}_{X=(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})}{\sqrt{{\left(\frac{dx}{dy}\right)}^2+1}dy}=\int^{\frac{1}{\sqrt{2}}}_{y=\frac{1}{\sqrt{2}}}{\sqrt{{\left(\frac{dx}{dy}\right)}^2+1}\dx{y}}=0
 \end{equation*}
 </div>
 <div class="para">What is the problem?</div>
@@ -365,11 +366,11 @@ s=\int^B_{X=A}{ds}=\int^B_{X=A}{\sqrt{{\left(dx\right)}^2+{\left(dy\right)}^2}}
 \end{equation*}
 </div>
 <div class="para">This seems much more natural.  At this point, it is just a matter of determining what variable you wish to put everything in terms of.  The variable doesn’t even need to be <span class="process-math">\(x\)</span> or <span class="process-math">\(y\text{.}\)</span>  For example, suppose we have <span class="process-math">\(x=x\left(u\right)\
-y=y\left(u\right),\ \ u_0\le u\le u_1\text{.}\)</span>  So we don’t need to deal with absolute values, let’s assume that the parameter <span class="process-math">\(u\)</span> is always increasing so that <span class="process-math">\(du&gt;0\text{.}\)</span> Then we could put everything in terms of <span class="process-math">\(u\text{.}\)</span>
+y=y\left(u\right),u_0\le u\le u_1\text{.}\)</span>  So we don’t need to deal with absolute values, let’s assume that the parameter <span class="process-math">\(u\)</span> is always increasing so that <span class="process-math">\(du&gt;0\text{.}\)</span> Then we could put everything in terms of <span class="process-math">\(u\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-s=\int^B_{X=A}{ds}=\int^B_{X=A}{\sqrt{{\left(dx\right)}^2+{\left(dy\right)}^2}}=\int^{u_1}_{u=u_0}{\sqrt{{\left(\frac{dx}{du}\right)}^2+{\left(\frac{dy}{du}\right)}^2}\ du}
+s=\int^B_{X=A}{ds}=\int^B_{X=A}{\sqrt{{\left(dx\right)}^2+{\left(dy\right)}^2}}=\int^{u_1}_{u=u_0}{\sqrt{{\left(\frac{dx}{du}\right)}^2+{\left(\frac{dy}{du}\right)}^2}du}
 \end{equation*}
 </div>
 </div>

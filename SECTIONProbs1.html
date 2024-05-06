@@ -148,7 +148,7 @@ window.MathJax = {
 \def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
 \def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
-
+\def\erf{\text{erf}}
 
 \newcommand{\ParamEqTwo}[2]
 {
@@ -263,6 +263,7 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -295,7 +296,7 @@ window.MathJax = {
 <article class="example example-like" id="EXAMPLE"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="EXAMPLE-1">To look at linear drag, let’s look at the case of a grain of sand of mass <span class="process-math">\(m\)</span> descending in water.  To model this, let <span class="process-math">\(y(t)\)</span> be distance the sand has fallen (so the positive <span class="process-math">\(y\)</span> axis is pointing downward), with <span class="process-math">\(y\left(0\right)=0\ \)</span>representing the surface of the water.  If we draw a diagram of the sand, there are three forces we need to consider: the weight of the object, the buoyancy of the object, and the drag.</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/hw2-1.png" class="contained"></div> <div class="para" id="EXAMPLE-3">If we denote the acceleration due to gravity by <span class="process-math">\(g\text{,}\)</span> then the weight of the sand is <span class="process-math">\(mg\text{.}\)</span>  The drag, which we assume is linear, is proportional to the velocity, so we will denote this by <span class="process-math">\(-Rv\text{,}\)</span> where <span class="process-math">\(R\)</span> is a constant and <span class="process-math">\(v=\frac{dy}{dt}\)</span> is the velocity.  Notice that this force is negative as it points up (the negative direction).  The buoyancy is really just the upward force that water would apply if the sand wasn’t there.  That is, it is the weight of the water that the grain of sand displaces.  This is just <span class="process-math">\(m_wg\text{,}\)</span> where <span class="process-math">\(m_w\)</span> is the mass of the water displaced.</div></article><article class="exercise exercise-like" id="EXERCISENewtonsSecondLaw"><h3 class="heading">
+<div class="para" id="EXAMPLE-1">To look at linear drag, let’s look at the case of a grain of sand of mass <span class="process-math">\(m\)</span> descending in water.  To model this, let <span class="process-math">\(y(t)\)</span> be distance the sand has fallen (so the positive <span class="process-math">\(y\)</span> axis is pointing downward), with <span class="process-math">\(y\left(0\right)=0\)</span>representing the surface of the water.  If we draw a diagram of the sand, there are three forces we need to consider: the weight of the object, the buoyancy of the object, and the drag.</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/hw2-1.png" class="contained"></div> <div class="para" id="EXAMPLE-3">If we denote the acceleration due to gravity by <span class="process-math">\(g\text{,}\)</span> then the weight of the sand is <span class="process-math">\(mg\text{.}\)</span>  The drag, which we assume is linear, is proportional to the velocity, so we will denote this by <span class="process-math">\(-Rv\text{,}\)</span> where <span class="process-math">\(R\)</span> is a constant and <span class="process-math">\(v=\frac{dy}{dt}\)</span> is the velocity.  Notice that this force is negative as it points up (the negative direction).  The buoyancy is really just the upward force that water would apply if the sand wasn’t there.  That is, it is the weight of the water that the grain of sand displaces.  This is just <span class="process-math">\(m_wg\text{,}\)</span> where <span class="process-math">\(m_w\)</span> is the mass of the water displaced.</div></article><article class="exercise exercise-like" id="EXERCISENewtonsSecondLaw"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.2</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="EXERCISENewtonsSecondLaw-2">
@@ -341,14 +342,14 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">5.4</span><span class="period">.</span>
 </h3>
 <div class="para" id="EXERCISETerminalVelocity-2-1"> Compute <span class="process-math">\(\limit{t}{\infty}{v}.\)</span> This will be the terminal velocity of the sand settling in the water.  Notice that this should be independent of <span class="process-math">\(v_0\text{.}\)</span>  How does your answer for terminal velocity depend on <span class="process-math">\(M=m-m_w\)</span> and <span class="process-math">\(R\text{?}\)</span>  Does this make sense physically?</div></article><div class="para logical" id="SECTIONProbs1-8">
-<div class="para">The above problem used the technique of substitution and is the integration analog of the <dfn class="terminology">Chain Rule</dfn>, which itself was the technique of substitution applied to differentiation.  As with differentiation, this did not actually compute the integral, but made it simpler to apply formulas and techniques with which we are already familiar.  This technique of substitution is very powerful and allows us to integrate differentials which are not in our table.  We already saw one example in our previous problem.  For another, consider that in the table, we had <span class="process-math">\(\int \sin(x)\dx{x}\)</span> and <span class="process-math">\(\int{\cos(x) }\ \dx{x}\text{,}\)</span> but we did not have <span class="process-math">\(\int{\tan(x) }\ \dx{x}\text{.}\)</span>  Now we have the tools to do this one.</div>
+<div class="para">The above problem used the technique of substitution and is the integration analog of the <dfn class="terminology">Chain Rule</dfn>, which itself was the technique of substitution applied to differentiation.  As with differentiation, this did not actually compute the integral, but made it simpler to apply formulas and techniques with which we are already familiar.  This technique of substitution is very powerful and allows us to integrate differentials which are not in our table.  We already saw one example in our previous problem.  For another, consider that in the table, we had <span class="process-math">\(\int \sin(x)\dx{x}\)</span> and <span class="process-math">\(\int{\cos(x) }\dx{x}\text{,}\)</span> but we did not have <span class="process-math">\(\int{\tan(x) }\dx{x}\text{.}\)</span>  Now we have the tools to do this one.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int\tan(x)\dx{x}=\int\frac{\sin(x)}{\cos(x)}\dx{x}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SECTIONProbs1-9">If we make the substitution <span class="process-math">\(z=\cos(x)\text{,}\)</span> then <span class="process-math">\(\dx{z}=-\sin(x)\dx{x}\)</span> and so <span class="process-math">\(\dx{x}=-\frac{\dx{z}}{\sin(x) }\ .\)</span>
+<div class="para" id="SECTIONProbs1-9">If we make the substitution <span class="process-math">\(z=\cos(x)\text{,}\)</span> then <span class="process-math">\(\dx{z}=-\sin(x)\dx{x}\)</span> and so <span class="process-math">\(\dx{x}=-\frac{\dx{z}}{\sin(x) }.\)</span>
 </div>
 <div class="para logical" id="SECTIONProbs1-10">
 <div class="para">Thus</div>
@@ -391,7 +392,7 @@ v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}
 </div>
 </div>
 <div class="para logical" id="SECTIONProbs1-15">
-<div class="para">We could let <span class="process-math">\(u=x^2\)</span> so that <span class="process-math">\(\dx{u}=2x\ dx\text{.}\)</span>  This would lead to</div>
+<div class="para">We could let <span class="process-math">\(u=x^2\)</span> so that <span class="process-math">\(\dx{u}=2xdx\text{.}\)</span>  This would lead to</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int{x^2\sqrt{x^3+1}}\dx{x}=\int{u\sqrt{u^{\frac{3}{2}}+1}}\left(\frac{\dx{u}}{2x}\right)=\frac{1}{2}\int{\frac{u\sqrt{u^{\frac{3}{2}}+1}}{x}}\dx{u}
