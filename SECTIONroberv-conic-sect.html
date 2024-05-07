@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Roberval, Conic Sections, and the Dynamic Approach</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="SECTIONdescartes-normals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERScienceBeforeCalc.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SECTIONsnells-law-refr.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\erf{\text{erf}}
+
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\def\sech{{\rm{}sech}{}}
+\def\csch{{\rm{}csch}{}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="DiffCalcFromPractice.html" class="internal"><span class="codenumber">I</span> <span class="title">Differential Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CalculusIsARock.html" class="internal"><span class="codenumber">1</span> <span class="title">Calculus is a Rock</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERproblem-solving.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction: Some  Advice on Problem Solving</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECusing-lett-inst.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using Letters Instead of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAn-easy-problem-alg.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Substitution, or Making Things “Easy on the Eyes”</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECan-easy-problem-geo.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An “Easy” Problem From Geometry</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECour-advice-synopsis.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Our advice, a synopsis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="CHAPTERScienceBeforeCalc.html" class="internal"><span class="codenumber">3</span> <span class="title">Science Before Calculus</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Apologia.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Apologia</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSomePreliminaries.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Some Preliminaries</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laziness-nature.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The Laziness of Nature</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFermMethAedeq.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Fermat’s Method of Adequality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdescartes-normals.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Descartes’s Method of Normals</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Roberval, Conic Sections, and the Dynamic Approach</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Speed, Velocity, and Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanConicSect" class="internal"><span class="codenumber">3.6.2</span> <span class="title">The Tangent Lines of the Conic Sections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanParab" class="internal"><span class="codenumber">3.6.2.1</span> <span class="title">The Tangent to a Parabola</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanEllipse" class="internal"><span class="codenumber">3.6.2.2</span> <span class="title">The Tangent to an Ellipse</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#TangentHyperbola" class="internal"><span class="codenumber">3.6.2.3</span> <span class="title">The Tangent to an Hyperbola</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsnells-law-refr.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Snell’s Law and the Limitations of Adequality:</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERdifferentials.html" class="internal"><span class="codenumber">4</span> <span class="title">Differentials, Differentiation, and the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONHist-intr.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONWarning.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Warning: Be Sure You Understand  the Purpose of This Chapter</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The General Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERdifferentials-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Generalized Power  Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERPTERVelocitySlopeTangent.html" class="internal"><span class="codenumber">5</span> <span class="title">Slopes, Tangents, and Rates of Change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONVelocitySlopeTangent.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Slopes and Tangents</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdefin-tang-line.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Defining the Tangent Line</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvomit-comet.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Vomit Comet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONrates-change.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Galileo Drops the Ball</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECONDBringCalc.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Bringing in Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDerivative.html" class="internal"><span class="codenumber">5.6</span> <span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONnewt-flux-dynam.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Thinking Dynamically</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONFluxions.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Newton’s Method of Fluxions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONFluxions.html#SUBSECTIONParametricFunctions" class="internal"><span class="codenumber">5.8.1</span> <span class="title">Parametric Functions</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Bridges, Chains, Domes, and Telescopes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONBridges" class="internal"><span class="codenumber">5.9.1</span> <span class="title">Bridges</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONChains" class="internal"><span class="codenumber">5.9.2</span> <span class="title">Chains</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONDomes" class="internal"><span class="codenumber">5.9.3</span> <span class="title">Domes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONTelescopes" class="internal"><span class="codenumber">5.9.4</span> <span class="title">Telescopes</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERcalc-trig.html" class="internal"><span class="codenumber">6</span> <span class="title">Calculus and Trigonometry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONtrig-interl.html" class="internal"><span class="codenumber">6.1</span> <span class="title">A Trigonometric Interlude</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONradian-measure" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Radian Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONtrig-interl-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONmodel-with-trig" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Modeling with Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONtrig-interl-5" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Phase Shifts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONpolar-coordinates" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Polar Coordinates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Differentials of the Sine and Cosine Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Circular Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONpolar-coord-calc" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Polar Coordinates and Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SECTIONdiff-sine-cosine-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">The Brachistochrone Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SECTIONdiff-sine-cosine-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Spin Casting, Redux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONsimple-harm-oscill" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Simple Harmonic Oscillation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-other-trig.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Differentials of the Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONinverse-tan-and-cot.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Inverse Tangent and Cotangent Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONwitch-agnesi-inverse.html" class="internal"><span class="codenumber">6.5</span> <span class="title">The Witch of Agnesi and the Inverse Tangent Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-inverse-tancot.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Differentials of the Inverse Tangent and Inverse Cotangent Functions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONother-inverse-trig.html" class="internal"><span class="codenumber">6.7</span> <span class="title">The Other Inverse Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSine" class="internal"><span class="codenumber">6.7.1</span> <span class="title">The Inverse Sine Function:  <span class="process-math">\(\inverse\sin(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSecCsc" class="internal"><span class="codenumber">6.7.2</span> <span class="title">The Inverse Secant and Inverse Cosecant</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONcurvature.html" class="internal"><span class="codenumber">6.8</span> <span class="title">Curvature</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTApproximation.html" class="internal"><span class="codenumber">7</span> <span class="title">Approximation Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONnewtons-method.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Root Finding: Two  Pre-Calculus Approaches</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBisectionMethod" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Bisection Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBabylonianMethod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Babylonian Method for Square Roots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONnewtons-method-1.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Newton’s Method</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONNewtonsMethodBasic" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Idea Behind Newton’s Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSpectacularFailure" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Spectacular Failure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSubtleFailure" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Subtle Failure</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONEulersMethod.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Euler’s Method</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONmore-high-deriv.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Higher Derivatives, Lagrange, and Taylor</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERlast-elem-funct.html" class="internal"><span class="codenumber">8</span> <span class="title">Exponentials and Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIvps.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Initial Value Problems (IVPs)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONexponential.html" class="internal"><span class="codenumber">8.2</span> <span class="title">The Natural Exponential</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONexponential-growth.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Exponential Growth and Exponential Notation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONhyperb-trig-hang.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Hyperbolic Trigonometry: The Hanging Chain</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGatewayArch.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Gateway Arch</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERlast-elem-funct-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exponential Growth</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONExpAndCmpndInt.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exponential Functions and Compound Interest</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONnatural-logarithm-1.html" class="internal"><span class="codenumber">8.8</span> <span class="title">A Short Introduction to Logarithms: John Napier Logs In</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNatLog.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Logarithms, Natural and Unnatural</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONLogApps.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Applications of Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SUBSECTIONradioactive-decay" class="internal"><span class="codenumber">8.10.1</span> <span class="title">Radioactive Dating</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SECTIONnewtons-law-cooling" class="internal"><span class="codenumber">8.10.2</span> <span class="title">Chillin’ with Newton: The Law of Cooling</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDerivNatLog.html" class="internal"><span class="codenumber">8.11</span> <span class="title">The Derivative of the Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html" class="internal"><span class="codenumber">8.12</span> <span class="title">General Logarithms and Exponentials</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONleonh-euler-harm.html" class="internal"><span class="codenumber">8.13</span> <span class="title">Leonhard Euler, Harmonic Oscillators, and Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONleonh-euler-harm.html#SUBSECTIONHowEulerDidIt" class="internal"><span class="codenumber">8.13.1</span> <span class="title">How Euler Did It</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERwhat-deriv-tells.html" class="internal"><span class="codenumber">9</span> <span class="title">Optimization: Going to Extremes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONintroduction.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction: Fermat’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfive-simil-probl.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Preliminaries: Some Simple Optimizations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Reflections, Refractions, and Rainbows</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONreflection" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Reflection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrefraction" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Refraction: Snell’s Law</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrainbows" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Rainbows</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONRainbow" class="internal"><span class="codenumber">9.3.4</span> <span class="title">The Colors of the Rainbow</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONDoubleRainbows" class="internal"><span class="codenumber">9.3.5</span> <span class="title">Double Rainbows</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGlobalVsLocalExtrema.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Global vs. Local Extrema</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Optimization, the Abstract Problem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-abstr-probl-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Identifying and Distinguishing Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Transition Points, and Possible Transition Points on Open Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONunderl-deriv" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Undefined Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-clos-interv" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Transition Points on a Closed Interval; the Problem of Endpoints</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Concavity and the Second Derivative Test</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv" class="internal"><span class="codenumber">9.6.1</span> <span class="title">The Second Derivative Test</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONoptim-probl.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONPageOfText" class="internal"><span class="codenumber">9.7.1</span> <span class="title">Two Ways to Optimize</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONFirstSolution" class="internal"><span class="codenumber">9.7.1.1</span> <span class="title">First Solution:</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONSecondSolution" class="internal"><span class="codenumber">9.7.1.2</span> <span class="title">Second Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONVarOptProbs" class="internal"><span class="codenumber">9.7.2</span> <span class="title">Selected Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERPTshape-things.html" class="internal"><span class="codenumber">10</span> <span class="title">Graphing with Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgraph-with-form.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(y(x)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgraph-without-form.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphing Without Formulas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(\dfdx{y}{t}\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERmodel-with-calc.html" class="internal"><span class="codenumber">11</span> <span class="title">Modeling with Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Population Dynamics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Modeling a Trout Farm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp" class="internal"><span class="codenumber">11.1.2</span> <span class="title">The Competing Species Model</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONselect-model-probl.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Selected Modeling Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SECTIONepidemic-blues" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Epidemics, The SIR Model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#subSECTIONtractrix" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The Tractrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SUBSECTIONPursuit" class="internal"><span class="codenumber">11.2.3</span> <span class="title">The  Pursuit Problem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERlimits-lhop-rule.html" class="internal"><span class="codenumber">12</span> <span class="title">Limits and L’Hôpital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Horizontal Asymptotes as Limits “at Infinity”</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsqueeze-theorem-informal.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvertical-asymptotes.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONmore-indet-forms.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Indeterminate Forms and L’Hôpital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule" class="internal"><span class="codenumber">12.4.1</span> <span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz" class="internal"><span class="codenumber">12.4.2</span> <span class="title">L’Hôpital’s Rule and Horizontal Asymptotes</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="DiffCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Differential Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERWhatsWrong.html" class="internal"><span class="codenumber">13</span> <span class="title">What’s Wrong with Differentials?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CalcAndBerkeley.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Calculus and Bishop Berkeley</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsecants-tangents.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Secants and Tangents</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERdiff-rules-with-limits.html" class="internal"><span class="codenumber">14</span> <span class="title">The Differentiation Rules via Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html" class="internal"><span class="codenumber">14.1</span> <span class="title">The Limit Rules (Theorems)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont" class="internal"><span class="codenumber">14.1.1</span> <span class="title">The Limit of a Composition and Continuity at a Point</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-rules-via.html" class="internal"><span class="codenumber">14.2</span> <span class="title">The General Differentiation Theorems, via Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONChainRule.html" class="internal"><span class="codenumber">14.3</span> <span class="title">The Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONproduct-rule-limits.html" class="internal"><span class="codenumber">14.4</span> <span class="title">The Product Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONother-gener-diff.html" class="internal"><span class="codenumber">14.5</span> <span class="title">The Other General Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-trig-funct.html" class="internal"><span class="codenumber">14.6</span> <span class="title">Derivatives of the Trigonometric Functions, via Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONinverse-functions.html" class="internal"><span class="codenumber">14.7</span> <span class="title">Inverse Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERFDT-Redux.html" class="internal"><span class="codenumber">15</span> <span class="title">The First Derivative Test, Redux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfermats-theorem.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Fermat’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONrolles-lemma-mean.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Rolle’s Lemma and the Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfirst-deriv-test.html" class="internal"><span class="codenumber">15.3</span> <span class="title">The Proof of the First Derivative Test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt.html" class="internal"><span class="codenumber">16</span> <span class="title">When the Derivative Doesn’t Exist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">One Sided Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONone-sided-deriv.html" class="internal"><span class="codenumber">16.2</span> <span class="title">One Sided Derivatives</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERformal-limits.html" class="internal"><span class="codenumber">17</span> <span class="title">Formal Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonIntuitExample.html" class="internal"><span class="codenumber">17.1</span> <span class="title">A Non-Intuitive Limit</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Getting Around Infinity</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONlimits-at-real.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Limits at a Real Number</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONLimitLaws.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Limit Laws (Theorems)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at" class="internal"><span class="codenumber">17.4.1</span> <span class="title">The Limit of a Sum</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONsqueeze-theorem" class="internal"><span class="codenumber">17.4.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SECTIONlimit-composition" class="internal"><span class="codenumber">17.4.3</span> <span class="title">The Limit of a Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONlimit-product-at" class="internal"><span class="codenumber">17.4.4</span> <span class="title">The Limit of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONOneOverXIsCont" class="internal"><span class="codenumber">17.4.5</span> <span class="title">The Function    <span class="process-math">\(f(x)=\frac1x\)</span> is Continuous Wherever  It Is Defined</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">III</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="IntCalc-2.html" class="internal"><span class="codenumber">18</span> <span class="title">dum</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERFTC.html" class="internal"><span class="codenumber">19</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsASum.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntAsAntiDiff.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERFTC-5.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Rules for Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIVPS.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Differential Equations and Initial Value Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="IntegrationMethods.html" class="internal"><span class="codenumber">20</span> <span class="title">Integration Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProjectileMotion.html" class="internal"><span class="codenumber">20.1</span> <span class="title">First application -- Projectile motion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Accounting for  Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">20.3</span> <span class="title">The Opposite of the Product Rule -- Integration By Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-5.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="IntegrationMethods-6.html" class="internal"><span class="codenumber">20.5</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="IntegrationMethods-6.html#IntegrationMethods-6-2" class="internal"><span class="codenumber">20.5.1</span> <span class="title">Intro</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="IntegrationMethods-6.html#PartialFractionSubsection" class="internal"><span class="codenumber">20.5.2</span> <span class="title">The Partial Fraction Decomposition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-7.html" class="internal"><span class="codenumber">20.6</span> <span class="title">Areas and Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">20.7</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AppDefInt.html" class="internal"><span class="codenumber">20.8</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">20.8.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">20.8.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">20.8.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">20.8.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">20.8.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">20.8.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="codenumber">20.8.6.1</span> <span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="codenumber">20.8.6.2</span> <span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="codenumber">20.8.6.3</span> <span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="codenumber">20.8.6.4</span> <span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">21</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">21.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">IV</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="IntCalcToTheory-2.html" class="internal"><span class="codenumber">22</span> <span class="title">Title Goes Here</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTBobsClasroomProblems.html" class="internal"><span class="codenumber">V</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">23</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">23.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">23.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">23.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs9.html" class="internal"><span class="codenumber">23.4</span> <span class="title">Homework #9: Applications of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs10.html" class="internal"><span class="codenumber">23.5</span> <span class="title">Homework #10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs11.html" class="internal"><span class="codenumber">23.6</span> <span class="title">Homework #11: Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">23.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">23.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">23.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">23.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">VI</span> <span class="title">Stuff Written But Without a Home</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">24</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">24.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">24.2</span> <span class="title">Integration as a Function</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONroberv-conic-sect"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.6</span><span class="space"> </span><span class="title">Roberval, Conic Sections, and the Dynamic Approach</span>
+</h2>
+<section class="subsection" id="SUBSECTIONSpdVelRofC"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.6.1</span><span class="space"> </span><span class="title">Speed, Velocity, and Rates of Change</span>
+</h3>
+<div class="para" id="SUBSECTIONSpdVelRofC-2">Descartes and Fermat were co-creators of Analytic Geometry — the use of Algebra to solve geometric problems — so their methods are simultaneously algebraic and geometric in nature. That is, their methods are static. There is no motion involved.  But at it’s heart, Calculus gives us a way of dealing with the properties of objects as they change. It is the mathematics of motion. So we will need to think more dynamically.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-3">If quantity <span class="process-math">\(A\)</span> changes by <span class="process-math">\(\Delta A\)</span> each time quantity <span class="process-math">\(B\)</span> changes by <span class="process-math">\(\Delta B\)</span> we say that the rate of change of <span class="process-math">\(A\)</span> <dfn class="terminology">with respect to</dfn> <span class="process-math">\(B\)</span> is <span class="process-math">\(\frac{\Delta A}{\Delta B}\text{.}\)</span>
+</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-4">For example, in a video game if your character gains one hundred hit points whenever you cast a certain spell we would say that the rate of change of your hit points is one hundred points per spell, denoted <span class="process-math">\(100 \frac{\text{points}}{\text{spell}}\text{.}\)</span> If you gain fifty hit points every second time you quaff a potion we write <span class="process-math">\(\frac{50\ \text{points}}{2\ \text{quaffs}}\)</span> or, equivalently, <span class="process-math">\(25 \frac{\text{points}}{\text{quaff}}\)</span> and we say that the rate of change of hit points with respect to quaffs is twenty-five. Notice how naturally the properties of fractions come into play: <span class="process-math">\(\frac{50\ \text{points}}{2\ \text{quaffs}} = 25
+\frac{\text{points}}{\text{quaff}}\text{.}\)</span>
+</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-5">On the other hand if you lose <span class="process-math">\(15\)</span> hit points each time an enemy strikes you three times with a sword then your hit points are decreasing at a rate of <span class="process-math">\(\frac{15\ \text{points}}{3\ \text{strikes}} = 5
+\frac{\text{points}}{\text{strike}}\text{.}\)</span> It is inconvenient to specify whether <span class="process-math">\(A\)</span> is increasing or decreasing verbally so we adopt the convention that a negative rate of change is decreasing and a positive rate of change is increasing.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-6">Speed is the rate of change we are most familiar with in daily life. If you are driving on a flat, straight, road your speed is the <dfn class="terminology">rate of change</dfn> of your position, <span class="process-math">\(\Delta x\text{,}\)</span> <dfn class="terminology">with respect to</dfn> the passage (change) of time, <span class="process-math">\(\Delta t\text{.}\)</span>  If your speedometer reads <span class="process-math">\(60\)</span> we say your speed is sixty miles per hour: <span class="process-math">\(60 \frac{\text{miles}}{\text{hour}}\text{,}\)</span> meaning of course that in one hour you will travel sixty miles. This is often abbreviated to <span class="process-math">\(60\)</span> mph. We will model a flat, straight, road as the <span class="process-math">\(x\)</span>-axis with the positive direction to the right, as is customary. Of course, on this flat, straight, road we could be going <span class="process-math">\(60 \frac{\text{miles}}{\text{hour}}\)</span> to the right or to the left. Since there are only two directions possible, we can again use negative numbers to indicate the direction of travel as depicted in the sketch below.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/DC/Vector2.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-8">However if we are on a broad flat plain, as depicted in the sketch below we can travel in any direction whatsoever.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/DC/Vector1.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-10">Notice that our sketch indicates that there are eight cars, all traveling at <span class="process-math">\(60 \frac{\text{miles}}{\text{hour}}\text{,}\)</span> but in different directions. That is, the <dfn class="terminology">speed</dfn> of each car is <span class="process-math">\(60 \frac{\text{miles}}{\text{hour}}\text{.}\)</span> But it should be clear that a single number is not adequate to fully describe the motion of these cars. We also need to specify the direction of travel and simply using plus or minus is no longer sufficient.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-11">When we specify the speed and direction of motion of some object we are stating its <dfn class="terminology">velocity</dfn>. This can be difficult at first because in casual conversation we use the words speed and velocity interchangeably, so we tend to think of them as synonyms.  But in a technical setting speed and velocity, while related, have different meanings. <dfn class="terminology">Speed</dfn> is how fast we’re going. In the sketch at the left the speed of all of the cars is <span class="process-math">\(60
+\frac{\text{miles}}{\text{hour}}\text{.}\)</span> But their <dfn class="terminology">velocities</dfn> are all different. The velocity of one car is <span class="process-math">\(60 \frac{\text{miles}}{\text{hour}}\)</span> to the north, the velocity of another is <span class="process-math">\(60
+\frac{\text{miles}}{\text{hour}}\)</span> to the west, the velocity of a third is <span class="process-math">\(60 \frac{\text{miles}}{\text{hour}}\)</span> to the southeast, and so on.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-12">
+<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Roberval/" target="_blank">Gilles Personne de Roberval</a><a class="xref" id="SUBSECTIONSpdVelRofC-12-2" href="" data-knowl="./knowl/fn/SUBSECTIONSpdVelRofC-12-2.html" title="Footnote 3.17"><sup> 17 </sup></a> <span class="process-math">\((1602-1675)\text{,}\)</span> a contemporary of Fermat and Descartes, used arrows to indicate the velocity of moving objects just as we have. The length of the arrow represents the speed of the object and the direction of travel is the direction that the arrow points. This works well in the kind of geometric arguments he used as it enabled him to develop a method for constructing tangents which is dynamic in nature.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-13">Suppose you are on a moving sidewalk like those in an airport and the sidewalk is moving at <span class="process-math">\(3
+\frac{\text{feet}}{\text{second}}\text{.}\)</span>  If you stand still on the sidewalk then you are still moving at <span class="process-math">\(3
+\frac{\text{feet}}{\text{second}}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DC/Arrows1.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-15">If you are walking along the sidewalk at <span class="process-math">\(4
+\frac{\text{feet}}{\text{second}}\)</span> and in the same direction the sidewalk is moving then it is pretty clear that you are moving at a rate of <span class="process-math">\(7
+\frac{\text{feet}}{\text{second}}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/DC/Arrows2.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-17">Of course, if you turn around and walk against the sidewalk, then your speed  would be <span class="process-math">\(1 \frac{\text{foot}}{\text{second}}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/DC/Arrows3.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-19">If you are walking against the sidewalk but slower than the sidewalk is moving, say at <span class="process-math">\(2 \frac{\text{feet}}{\text{second}}\text{,}\)</span> then you are again moving at <span class="process-math">\(1 \frac{\text{foot}}{\text{second}}\)</span> but in the other direction.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/DC/Arrows4.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-21">Since there are only two possible directions all this could have been done without arrows by just adding signed numbers where the sign indicates the direction: <span class="process-math">\(3+ 4=7\text{,}\)</span> <span class="process-math">\(3+(-4)=-1\text{,}\)</span> <span class="process-math">\(3+(-2) =1\text{,}\)</span> but what if there are more directions available?</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-22">Using arrows allows us to bring this discussion into a more general setting. In the examples above notice that the resulting velocity (the black arrow) was always obtained by attaching the tail of the green or red arrow to the head of the blue arrow.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-23">This works equally well if more directions are available, like when we are moving in a plane instead of a straight line.</div>
+<div class="para" id="SUBSECTIONSpdVelRofC-24">For example, suppose we are swimming across a river at a speed of <span class="process-math">\(2 \frac{\text{feet}}{\text{second}} \)</span> and the river is flowing at <span class="process-math">\(3 \frac{\text{feet}}{\text{second}}\text{.}\)</span>  Assuming that we are swimming perpendicular to the current, we have the situation depicted below. \centerline{\includegraphics*[height=1.2in,width=2.4in]{../Figures/Vector4}}</div>
+<article class="exercise exercise-like" id="DRILLVectorAddition"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">3.29</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="DRILLVectorAddition-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="DRILLVectorAddition-1-1-1">In the diagram above what does the length of the black arrow represent physically?</div></article><article class="task exercise-like" id="DRILLVectorAddition-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="DRILLVectorAddition-2-1-1">What is the length of the black arrow?</div></article></article><div class="para" id="SUBSECTIONSpdVelRofC-26">In general you can think of the velocity of an object moving in a plane as being compounded of a horizontal velocity (the blue arrow in <a href="" class="xref" data-knowl="./knowl/xref/DRILLVectorAddition.html" title="Problem 3.29">Drill 3.29</a>) and a vertical velocity (the red arrow in <a href="" class="xref" data-knowl="./knowl/xref/DRILLVectorAddition.html" title="Problem 3.29">Drill 3.29</a>).  This is easiest to think about when the component velocities are perpendicular but this isn’t strictly necessary. For example, you don’t need to be swimming perpendicular to the current. As seen in the diagram at the right to find the result of two non-perpendicular velocities (the solid red and blue arrows) we need only form the parallelogram as shown. The resulting velocity is then represented by the black diagonal arrow.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/Vector5.png" class="contained"></div>
+<div class="para" id="SUBSECTIONSpdVelRofC-28">Roberval assumed that a curve in the plane is generated by a point whose motion is an aggregate of two known motions, which can be represented as arrows. The arrows are then “added” by finding the diagonal of the parallelogram generated by the two arrows. This diagonal will point in the direction of motion at that point on the curve and will point tangent to the curve.</div>
+<article class="example example-like" id="EXAMPLERectilinearMotion"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.30</span><span class="period">.</span>
+</h4>
+<div class="para" id="EXAMPLERectilinearMotion-1">Suppose a point is moving in the plane so that its horizontal speed is <span class="process-math">\(1\)</span> unit per second and its vertical velocity is <span class="process-math">\(2\)</span> units per second as in the diagram at the right. Clearly our point is moving along the line <span class="process-math">\(y=2x\text{.}\)</span>
+</div> <aside class="aside aside-like" id="EXAMPLERectilinearMotion-2"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="EXAMPLERectilinearMotion-2-2">Observe that <span class="process-math">\(x(t) = t\)</span> is the algebraic representation of a horizontal arrow with length <span class="process-math">\(t\text{,}\)</span> and <span class="process-math">\(y(t) =
+2t\)</span> is the algebraic representation of a vertical arrow with length <span class="process-math">\(2t\text{.}\)</span> Translating statements and concepts between Algebra and Geometry is the essence of Analytic Geometry.</div></aside> <div class="para logical" id="EXAMPLERectilinearMotion-3">
+<div class="para">If <span class="process-math">\(t\)</span> represents time in seconds and if the point starts at the origin, then its coordinates are given by <span class="process-math">\(x(t)=t\)</span> and <span class="process-math">\(y(t)=2t\text{.}\)</span>  Since both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are needed to locate the point we will join them together notationally like this:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(t)=
+\ParamEqTwo{x(t)}{y(t)}
+=\ParamEqTwo{t}{2t}
+\end{equation*}
+</div>
+</div>     <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/Roberval8.png" class="contained"></div>       <div class="para" id="EXAMPLERectilinearMotion-5">You might quite reasonably ask why we’ve gone to all this bother just to have two different ways to represent a particular line: <span class="process-math">\(y=2x\text{,}\)</span> and <span class="process-math">\(P(t)=
+=\ParamEqTwo{t}{2t}\)</span> The difference is in how we “think about” the graph. When we write <span class="process-math">\(y=2x\)</span> we are thinking of the entire graph. When we write <span class="process-math">\(P(t)=
+\ParamEqTwo{x(t)}{y(t)} \)</span> there is an implicit understanding that (<span class="process-math">\(t\)</span>)ime is passing and we are thinking about the motion of the point.  Thus when <span class="process-math">\(t=1\)</span> the point is at <span class="process-math">\((1,2)\)</span> when <span class="process-math">\(t=2\)</span> it’s at <span class="process-math">\((2,4)\text{.}\)</span>
+</div> <div class="para" id="EXAMPLERectilinearMotion-6">Think of the line as a road. The formula <span class="process-math">\(y=2x\)</span> describes the entire road, whereas the expression <span class="process-math">\(P(t)=
+\ParamEqTwo{x(t)}{y(t)} = \ParamEqTwo{t}{2t} \)</span> tells us the point’s location on the road at any given time, <span class="process-math">\(t\text{.}\)</span>
+</div> <div class="para" id="EXAMPLERectilinearMotion-7">The idea of representing velocities with arrows is quite a powerful and common technique for representing non-linear motion. Roberval used this technique to find the tangent lines of the conic sections (as we will soon see) as well as more general curves. Since Roberval’s time this idea has been developed considerably beyond what Roberval did. In fact we are skirting the edge of some very deep ideas here. In modern terms these arrows would be called <dfn class="terminology">vectors</dfn>. <dfn class="terminology">Vector Addition</dfn> is then done by the <dfn class="terminology">Parallelogram Rule</dfn>, which is essentially what we did with our arrows above: Form the parallelogram and find its diagonal.  The full force of vector analysis was not available to Roberval, and we won’t need it, so we will not take you any further down this path but we encourage you visualize velocities, and any other directed quantity, as composed of horizontal and vertical components whenever you can. You will see this representation in more detail later in your education and it will help if you have already begun thinking in these terms.</div></article><article class="problem example-like" id="SUBSECTIONSpdVelRofC-30"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.31</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="SUBSECTIONSpdVelRofC-30-1"><div class="para" id="SUBSECTIONSpdVelRofC-30-1-1">Suppose the position of a point in the plane is given by <span class="process-math">\(P(t)= \ParamEqTwo{3t}{6t}\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="SUBSECTIONSpdVelRofC-30-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-30-2-1-1">What is the horizontal speed of the point?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-30-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-30-3-1-1">What is the vertical speed of the point?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-30-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-30-4-1-1">What is the speed of the point in the direction of motion?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-30-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-30-5-1-1">Compare the motion of the point in this problem to the motion of the point in <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLERectilinearMotion.html" title="Example 3.30">Example 3.30</a>.</div></article></article><article class="problem example-like" id="SUBSECTIONSpdVelRofC-31"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.32</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="SUBSECTIONSpdVelRofC-31-1"><div class="para" id="SUBSECTIONSpdVelRofC-31-1-1">Suppose a point is moving along the line <span class="process-math">\(y=mx+b\)</span> with a horizontal speed of <span class="process-math">\(1\)</span> unit per second.</div></div>
+<article class="task exercise-like" id="SUBSECTIONSpdVelRofC-31-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-31-2-1-1">Find a representation of the point’s position in the form <span class="process-math">\(P(t)=\ParamEqTwo{x(t)}{y(t)}\text{.}\)</span> \comment{There are a variety of correct solutions here. You must find a representation and then show that it is correct.  }</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-31-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-31-3-1-1">What is the speed of the point in the vertical direction?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-31-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-31-4-1-1">What is the speed of the point in the direction of motion?</div></article></article><article class="problem example-like" id="SUBSECTIONSpdVelRofC-32"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.33</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="SUBSECTIONSpdVelRofC-32-1"><div class="para" id="SUBSECTIONSpdVelRofC-32-1-1">Suppose a point is moving along the line <span class="process-math">\(y=mx+b\)</span> with a horizontal speed of <span class="process-math">\(5\)</span> units per second.</div></div>
+<article class="task exercise-like" id="SUBSECTIONSpdVelRofC-32-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-32-2-1-1">What is the speed of the point in the vertical direction?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-32-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-32-3-1-1">What is the speed of the point in the direction of motion?</div></article></article><article class="problem example-like" id="SUBSECTIONSpdVelRofC-33"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.34</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="SUBSECTIONSpdVelRofC-33-1"><div class="para" id="SUBSECTIONSpdVelRofC-33-1-1">Suppose the position of a point in the plane is given by <span class="process-math">\(P(t)= \ParamEqTwo{2t}{5t}\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="SUBSECTIONSpdVelRofC-33-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-33-2-1-1">What is the horizontal velocity of the point?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-33-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-33-3-1-1">What is the vertical velocity of the point?</div></article><article class="task exercise-like" id="SUBSECTIONSpdVelRofC-33-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="SUBSECTIONSpdVelRofC-33-4-1-1">What is the velocity of <span class="process-math">\(P\)</span> in the direction of motion?</div></article></article><article class="problem example-like" id="PROBLEMHelicopterFall"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.35</span><span class="period">.</span>
+</h4>
+<div class="para" id="PROBLEMHelicopterFall-1-1">We drop an object from a helicopter which is traveling horizontally with a constant velocity of <span class="process-math">\(1\)</span> meter per second. After it leave the helicopter the  vertical velocity of the object at time <span class="process-math">\(t\)</span> will be <span class="process-math">\(-9.8t\)</span> meters per second as in the following diagram:</div> <aside class="aside aside-like" id="PROBLEMHelicopterFall-1-2"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="PROBLEMHelicopterFall-1-2-2">This is because the acceleration due to gravity at the surface of the earth has been determined (by Galileo) to be  <span class="process-math">\(9.8 \frac{\text{m}}{\text{sec}^2}\text{.}\)</span> We’ll discuss this in more depth in <a href="SECTIONrates-change.html" class="internal" title="Section 5.4: Galileo Drops the Ball">Section 5.4</a>.}</div></aside>     <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/RobervalTan8.png" class="contained"></div>       <div class="para" id="PROBLEMHelicopterFall-1-4">If Roberval’s method works then the speed of the point at any time, <span class="process-math">\(t\text{,}\)</span> will be the length of the diagonal of parallelogram of velocity arrows at time <span class="process-math">\(t\text{.}\)</span> Find a formula for the speed of the point and any time <span class="process-math">\(t.\)</span>
+</div></article></section><section class="subsection" id="SUBSECTIONTanConicSect"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.6.2</span><span class="space"> </span><span class="title">The Tangent Lines of the Conic Sections</span>
+</h3>
+<section class="introduction" id="SUBSECTIONTanConicSect-2">    <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/ConicSections.png" class="contained"></div>       <div class="para" id="SUBSECTIONTanConicSect-2-2">Parabolas, ellipses, and hyperbolas are called conic sections, or just conics, because they were originally defined as the intersection of a cone with planes situated at various angles, as shown in the sketches at the right.</div> <div class="para" id="SUBSECTIONTanConicSect-2-3">While interesting, the original geometric definitions won’t do for our purposes because they are entirely static. There is no motion involved.</div> <aside class="aside aside-like" id="SUBSECTIONTanConicSect-2-4"><h4 class="heading"><span class="title">History.</span></h4>
+<div class="para" id="SUBSECTIONTanConicSect-2-4-2">This is primarily because we depend very heavily on our modern algebraic notation, not because of any inherent flaw in the definition. Without any notation at all ancient Greek scholars understood the nature of parabolas at least as well as we do today. Possibly better.</div></aside> <div class="para logical" id="SUBSECTIONTanConicSect-2-5">
+<div class="para">The more modern algebraic forms are a bit better:</div>
+<dl class="description-list">
+<dt id="SUBSECTIONTanConicSect-2-5-1-1">Parabolas</dt>
+<dd><div class="para" id="SUBSECTIONTanConicSect-2-5-1-1-2"><span class="process-math">\(\displaystyle y=ax^2+bx+c\)</span></div></dd>
+<dt id="SUBSECTIONTanConicSect-2-5-1-2">Ellipses</dt>
+<dd><div class="para" id="SUBSECTIONTanConicSect-2-5-1-2-2"><span class="process-math">\(\displaystyle \frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span></div></dd>
+<dt id="SUBSECTIONTanConicSect-2-5-1-3">Hyperbolas</dt>
+<dd><div class="para" id="SUBSECTIONTanConicSect-2-5-1-3-2"><span class="process-math">\(\displaystyle \frac{x^2}{a^2}-\frac{y^2}{b^2}=\pm1\)</span></div></dd>
+</dl>
+<div class="para">but they are also static.</div>
+</div> <div class="para" id="SUBSECTIONTanConicSect-2-6">To use Roberval’s dynamic approach to constructing tangent lines to the conic sections we will resort to yet a third equivalent definition. We start with the parabola.</div></section><section class="subsubsection" id="SUBSECTIONTanParab"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">3.6.2.1</span><span class="space"> </span><span class="title">The Tangent to a Parabola</span>
+</h4>
+<figure class="figure figure-like" id="figure-ParabTanRoberval"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/DC/GeometricParabola3.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.36<span class="period">.</span></span><span class="space"> </span>Roberval’s view of the tangent to a parabola</figcaption></figure><div class="para" id="SUBSECTIONTanParab-3">As seen in <a href="" class="xref" data-knowl="./knowl/xref/figure-ParabTanRoberval.html" title="Figure 3.36">Figure 3.36</a>, a parabola can also be thought of as the set of points, <span class="process-math">\(P\text{,}\)</span> in a plane which are equidistant from a fixed point, <span class="process-math">\(F\text{,}\)</span> called the <dfn class="terminology">focus</dfn> of the parabola, and a specific line, <span class="process-math">\(d\text{,}\)</span> called the <dfn class="terminology">directrix</dfn> of the parabola. Adopting Roberval’s dynamic viewpoint, we can think of <span class="process-math">\(P\)</span> as tracing out the parabola by moving so that these distances stay equal to each other.</div>
+<article class="problem example-like" id="PROBLEMparall-rhombus"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.37</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="PROBLEMparall-rhombus-1"><div class="para" id="PROBLEMparall-rhombus-1-1"></div></div>
+<article class="task exercise-like" id="PROBLEMparall-rhombus-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="PROBLEMparall-rhombus-2-1-1">Use <a href="" class="xref" data-knowl="./knowl/xref/figure-ParabTanRoberval.html" title="Figure 3.36">Figure 3.36</a> to explain why it must be that the speed at which <span class="process-math">\(P\)</span> moves away from <span class="process-math">\(F\)</span> must equal the speed at which <span class="process-math">\(P\)</span> moves away from <span class="process-math">\(d\text{.}\)</span>
+</div>
+<div class="solutions"><details id="PROBLEMparall-rhombus-2-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="PROBLEMparall-rhombus-2-2-1">Suppose these speeds were not equal. What would this say about the distances from <span class="process-math">\(P\)</span> to <span class="process-math">\(F\)</span> and from <span class="process-math">\(P\)</span> to <span class="process-math">\(d\text{?}\)</span>
+</div></div></details></div></article><article class="task exercise-like" id="PROBLEMparall-rhombus-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="PROBLEMparall-rhombus-3-1-1">If <span class="process-math">\(PV\)</span> represents the velocity of the motion of <span class="process-math">\(P\)</span> away from <span class="process-math">\(F\text{,}\)</span> and <span class="process-math">\(PU\)</span> represents the velocity of the motion of <span class="process-math">\(P\)</span> away from <span class="process-math">\(d\text{,}\)</span> then according to Roberval, the diagonal, <span class="process-math">\(PR\)</span> of the parallelogram <span class="process-math">\(PVRU\)</span> is tangent to the parabola. Use the result of part (a) to explain why this parallelogram is a rhombus. (A <dfn class="terminology">rhombus</dfn> is a parallelogram where the four sides have equal length.)</div></article><article class="task exercise-like" id="PROBLEMparall-rhombus-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="PROBLEMparall-rhombus-4-1-1">In <a href="" class="xref" data-knowl="./knowl/xref/figure-ParabTanRoberval.html" title="Figure 3.36">Figure 3.36</a> the angle <span class="process-math">\(\beta\)</span> is between the arrows <span class="process-math">\(PU\)</span> and <span class="process-math">\(PR.\)</span> We have also extended the arrow <span class="process-math">\(PR\)</span> downward to form the angle <span class="process-math">\(\alpha\)</span> with <span class="process-math">\(FP.\)</span> Given that the parallelogram <span class="process-math">\(PVRU\)</span> in the previous figure is a rhombus, show that the two angles, <span class="process-math">\(\alpha,\)</span> <span class="process-math">\(\beta\)</span> are congruent.</div></article></article><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="external/DC/Roberval7.png" class="contained"></div>
+<div class="para" id="SUBSECTIONTanParab-6">That <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> in the previous problem are congruent has an interesting consequence in optics. Imagine that the inside of our parabola is a mirror, and that a light source has been placed at the point <span class="process-math">\(F.\)</span> As we have seen when light reflects off of a flat mirror the angle of incidence is equal to the angle of reflection. Since this mirror isn’t flat the angles of incidence and reflection are measured from the line tangent to the parabola at the point where the light strikes the mirror. Thus the angle of incidence of a beam emerging from <span class="process-math">\(F\)</span> and striking the parabola at <span class="process-math">\(P\)</span> will be <span class="process-math">\(\alpha\)</span> in our diagram and the angle of reflection will be <span class="process-math">\(\beta (=\alpha).\)</span> It follows that a light beam emerging from <span class="process-math">\(F\)</span> and reflecting from the parabola at any point will follow a path parallel to the axis of symmetry of the parabola after reflecting from the interior of the parabola.</div>
+<div class="para" id="SUBSECTIONTanParab-7">You can see this in action with your car headlights or a flashlight. The reflector is cast in the shape of a parabola and the light emitting filament is place at the focus, so all of the light which strikes the reflector gets reflected in that direction.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/Satellite1.png" class="contained"></div>
+<div class="para" id="SUBSECTIONTanParab-9">Now turn this around. Any light beam coming parallel to axis of symmetry and striking the parabolic mirror will pass through the focal point <span class="process-math">\(F\text{.}\)</span> The light is thus focused and the image appears larger. This fact was used by Isaac Newton in the seventeenth century to design a new, and better, telescope than the one used by Galileo a generation earlier. Galileo’s telescope was based on the refraction of light as it passes through shaped lenses.  Through his study of optics Newton learned that the magnification effect could also be achieved via reflection.  It was his invention of the reflecting telescope that first brought Newton into scientific prominence.</div>
+<div class="para" id="SUBSECTIONTanParab-10">The fundamental optical principle he used, a light beam traveling parallel to the axis of symmetry, after reflecting from the interior of a parabolic mirror, will pass through the focus of the parabola, is the underlying design principle of all reflective telescopes, large and small, today.</div>
+<div class="para" id="SUBSECTIONTanParab-11">In fact, you use this every day. Since radio waves are a form of electromagnetic radiation, just like visible light, this is also a fundamental design point for both radar antennas, satellite cable TV dishes, and the antennas at the tops of cell phone towers.</div></section><section class="subsubsection" id="SUBSECTIONTanEllipse"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">3.6.2.2</span><span class="space"> </span><span class="title">The Tangent to an Ellipse</span>
+</h4>
+<div class="para" id="SUBSECTIONTanEllipse-2">Geometrically, an ellipse is the set of points in a plane, the sum of where the sum of the distances from two fixed points (foci) is a constant. Following Roberval we can generate an ellipse by combining two motions: one away from one focus (<span class="process-math">\(F_1P\)</span>) and one toward the other focus (<span class="process-math">\(PF_2\)</span>) as in the sketch below.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/Ellipse.png" class="contained"></div>
+<div class="para" id="SUBSECTIONTanEllipse-4">If we set <span class="process-math">\(d_1\)</span> equal to the length of <span class="process-math">\(F_1P\)</span> and <span class="process-math">\(d_2\)</span> equal to the length of <span class="process-math">\(PF_2\text{,}\)</span> then <span class="process-math">\(d_1+d_2\)</span> is constant.</div>
+<div class="para" id="SUBSECTIONTanEllipse-5">Because <span class="process-math">\(d_1+d_2\)</span> is constant it should be clear that the rate at which <span class="process-math">\(d_1\)</span> lengthens is related to the rate at which <span class="process-math">\(d_2\)</span> shortens. These rates of change are represented by the red arrows in our sketch.</div>
+<article class="problem example-like" id="PROBLEMEllipseRhombus"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.38</span><span class="period">.</span>
+</h5>
+<div class="para" id="PROBLEMEllipseRhombus-1-1">Explain why the parallelogram in the sketch above must be a rhombus and use this to show that angle <span class="process-math">\(\alpha\)</span> is congruent to angle <span class="process-math">\(\beta.\)</span>
+</div>
+<div class="solutions"><details id="PROBLEMEllipseRhombus-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="PROBLEMEllipseRhombus-2-1">An argument very similar to the one used in <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMparall-rhombus.html" title="Drill 3.37">Problem 3.37</a> will work.</div></div></details></div></article><div class="para" id="SUBSECTIONTanEllipse-7">From <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMEllipseRhombus.html" title="Drill 3.38">Problem 3.38</a> we see that any light ray, sound wave, etc., emanating from one focus of an ellipse will reflect off of the interior of the ellipse to the other focus.</div>
+<div class="para" id="SUBSECTIONTanEllipse-8">A playful example of the reflective properties of an ellipse are the so-called “whisper galleries.” If you and a friend stand at the foci of a room in the shape of an ellipse you will be able to converse in whispers even if you are very far apart. This is because the sound waves from your friend’s voice will spread out to the walls and then reflect back to the other focus, where you are standing. Naturally, the volume of sound from any single location in the interior of the ellipse will have dropped considerably in transit. However, since all of them travel the same distance to get to you they arrive at the same time and the volume you hear is the sum of all of the individual reflected volumes.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/DC/GCTWhisper2.png" class="contained"></div>
+<div class="para" id="SUBSECTIONTanEllipse-10">The whisper gallery shown above is next to the Oyster Bar in Grand Central Station, New York City. The young woman standing at the support column in the background on the left and the young man at the column at the right in the foreground are standing at the foci of the elliptical ceiling. Each can hear the other clearly even if  they speak quietly.</div>
+<div class="para" id="SUBSECTIONTanEllipse-11">There is another whisper gallery in Statuary Hall in the Capitol building in Washington DC. This room was originally the meeting hall for the House of Representatives. It is said that when John Quincy Adams was a representative he would eavesdrop on his political enemies by placing himself at one focus of the room whenever he saw them talking quietly at the other.</div>
+<aside class="aside aside-like" id="SUBSECTIONTanEllipse-12"><h5 class="heading"><span class="title">Vocabulary.</span></h5>
+<div class="para" id="SUBSECTIONTanEllipse-12-2">Lithotripsy literally means “rock grinding.”</div></aside><div class="para" id="SUBSECTIONTanEllipse-13">A more serious application of the reflective properties of the ellipse is used in modern medicine to treat kidney stones.  The treatment is called Extra-corporeal Shock Wave Lithotripsy, and it works by generating shock waves at one focus of a reflecting ellipse. The reflective property of the ellipse then concentrate the waves at the other focus. Placing the stone, which is inside the patient’s body, at the second focus allows the shock waves to pummel the stone into dust.</div>
+<div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/DC/Lithotripsy.png" class="contained"></div></section><section class="subsubsection" id="TangentHyperbola"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">3.6.2.3</span><span class="space"> </span><span class="title">The Tangent to an Hyperbola</span>
+</h4>
+<div class="para" id="TangentHyperbola-2">If an ellipse is the locus of points the sum of whose distances from two given points is constant it is natural to ask, “What do we get when the difference of their distances is constant?” That is the shape called the hyperbola seen in the diagram below.</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DC/Hyperbola1.png" class="contained"></div>
+<div class="para" id="TangentHyperbola-4">As before, we set <span class="process-math">\(d_1\)</span> and <span class="process-math">\(d_2\)</span> equal to the lengths of <span class="process-math">\(F_1P\)</span> and <span class="process-math">\(F_2P\text{,}\)</span> respectively. An hyperbola has the property that <span class="process-math">\(d_1-d_2\)</span> is constant.</div>
+<article class="problem example-like" id="TangentHyperbola-5"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">3.39</span><span class="period">.</span>
+</h5>
+<div class="para" id="TangentHyperbola-5-1-1">Explain why the parallelogram in the sketch above must be a rhombus and use this to show that angle <span class="process-math">\(\alpha\)</span> is congruent to angle <span class="process-math">\(\beta.\)</span> As before in our diagram the red arrows represent the velocity of <span class="process-math">\(P\)</span> in the direction from <span class="process-math">\(F_1\)</span> to <span class="process-math">\(P\)</span> and from <span class="process-math">\(F_2\)</span> to <span class="process-math">\(P\text{.}\)</span>
+</div></article><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/CassegrainAntenna.png" class="contained"></div>
+<div class="para" id="TangentHyperbola-7">The hyperbola also has interesting reflective properties. If a beam of light is aimed at one focus it will reflect off of the hyperbola toward the other focus. This property can be used to further refine the design of reflecting telescopes and antennae. The figure at the right shows the design of Cassegrain antenna. The large, primary mirror on the left is parabolic and shares a focus with the smaller, secondary, hyperbolic mirror on the right. Light reflecting off of the primary mirror is directed at the shared focus on the right where it is reflected to the other focus at the primary mirror. A detection device is then placed at the secondary focus to collect the amplified signal.</div>
+<div class="para" id="TangentHyperbola-8">Roberval’s use of arrows to represent velocities provides an intuitive way to understand the reflective properties of the conic sections. Moreover, thinking of curves as being traced out in time it gives us a dynamical way of looking at curves. This was a viewpoint that Newton adopted in his version of the Calculus.</div></section></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="SECTIONdescartes-normals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONsnells-law-refr.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
