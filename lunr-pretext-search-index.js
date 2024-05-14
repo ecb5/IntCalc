@@ -9834,76 +9834,85 @@ var ptx_lunr_docs = [
   "url": "SECTIONIntParts.html",
   "type": "Section",
   "number": "19.3",
-  "title": "The Opposite of the Product Rule -- Integration By Parts",
-  "body": " The Opposite of the Product Rule -- Integration By Parts  Substitution is a powerful tool, but it is not a panacea. For example, consider the integral    Comment  Actually, we should be more careful here. There is always a substitution that will work. The question is, can we find it?   Try as you might you will find that no substitution you might try will work here. A common error that beginners make is to assume that that they can just integrate the two factors separately, giving   Obviously equation is not true. This doesn't work for differentiation so there is no reason to think that it would work for integrals.  Since the product rule is what we use to differentiate a product, then perhaps its analog would be of use here. If the product rule for differentiation is rearranged a bit it can be expressed as the Integration by Parts Formula :   Note to self  I don't think belongs here, or even that it is stated correctly.    Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .    Integration by Parts Formula      Rearranging this a bit we have or   The formula is called the integration by parts formula and as you can see it is simply a rearrangement of the Product Rule formula. In this form it is exactly what we need to compute the previous integral. Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Second, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful. For example, we could have let and . This would give . Substituting these into equation we get Everything we've done is correct, but we have an integral that is worse than before. Practice is required to us this technique as well. Lots of practice.  Lastly, notice that we suppressed the arbitrary constant when we computed . We will see that this will not alter the result.   Redo the integration by parts on the integral letting and as before. But suppose this time we take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we will obtain the same result as before, namely .   Notice that in Table we had but we had no analog for the integral of . Perform integral by parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.   As with differentiation techniques and formulas, techniques such as integration by parts and substitution are performed in concert, utilizing whatever technique that is appropriate at the time. As an example of this consider the next problem.  Perform integration by parts and then substitution to compute and .  Just as integration by parts can be used with other techniques, it can be used with itself multiple times.   A Word of Advice  If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.       Compute using integration by parts.  Before we send you off to practice, we will look at one more trick one could do with integration by parts. We will also illustrate a way to keep track of , , , and d .   Consider If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .   "
+  "title": "Integration By Parts — The Opposite of the Product Rule",
+  "body": " Integration By Parts The Opposite of the Product Rule  Substitution is a powerful tool, but it is not a panacea. For example, consider the integral    Comment  Actually, we should be more careful here. There is always a substitution that will work. The question is, can we find it?   Try as you might you will find that no substitution you might try will work here. A common error that beginners make is to assume that that they can just integrate the two factors separately. But we know that because   Since integration can be seen as the reversal of differentiation, if we want to integrate the product of two functions it seems reasonable to try to find a way to reverse the Product Rule . then perhaps its analog would be of use here. If the product rule for differentiation is rearranged a bit it can be expressed as the Integration by Parts Formula :   Integration by Parts      Differential Form:       Functional Form:        As we ve indicated when it is written in this form the Product Rule is called Integration by Parts and it is exactly what we need to compute the previous integral.   Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process.  In any case, practice is necessary. Lots of practice.    Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula    Notice that in Table we had but we had no analog for the integral of . Perform integral by parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.   As with differentiation techniques and formulas, techniques such as integration by parts and substitution are performed in concert, utilizing whatever technique that is appropriate at the time. As an example of this consider the next problem.  Perform integration by parts and then substitution to compute and .  Just as integration by parts can be used with other techniques, it can be used with itself multiple times.   A Word of Advice  If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.       Compute using integration by parts.  Before we send you off to practice, we will look at one more trick one could do with integration by parts. We will also illustrate a way to keep track of , , , and d .   Consider If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .   "
 },
 {
-  "id": "SECTIONIntParts-6",
+  "id": "SECTIONIntParts-5",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-6",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Integration by Parts Formula "
 },
 {
-  "id": "ProblemMisplaced",
-  "level": "2",
-  "url": "SECTIONIntParts.html#ProblemMisplaced",
-  "type": "Problem",
-  "number": "19.18",
-  "title": "",
-  "body": " Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
-},
-{
   "id": "IntegrationByParts",
   "level": "2",
   "url": "SECTIONIntParts.html#IntegrationByParts",
   "type": "Theorem",
-  "number": "19.19",
-  "title": "Integration by Parts Formula.",
-  "body": " Integration by Parts Formula     "
+  "number": "19.18",
+  "title": "Integration by Parts.",
+  "body": " Integration by Parts      Differential Form:       Functional Form:       "
 },
 {
-  "id": "SECTIONIntParts-16",
+  "id": "SECTIONIntParts-7",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-16",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Integration by Parts "
+},
+{
+  "id": "EXAMPLEIntParts1",
+  "level": "2",
+  "url": "SECTIONIntParts.html#EXAMPLEIntParts1",
+  "type": "Example",
+  "number": "19.19",
+  "title": "",
+  "body": " Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process.  In any case, practice is necessary. Lots of practice.  "
+},
+{
+  "id": "SECTIONIntParts-9",
+  "level": "2",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-9",
   "type": "Problem",
   "number": "19.20",
   "title": "",
-  "body": " Redo the integration by parts on the integral letting and as before. But suppose this time we take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we will obtain the same result as before, namely .  "
+  "body": " Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula   "
 },
 {
-  "id": "SECTIONIntParts-17",
+  "id": "SECTIONIntParts-10",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-17",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-10",
   "type": "Problem",
   "number": "19.21",
   "title": "",
   "body": "Notice that in Table we had but we had no analog for the integral of . Perform integral by parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.  "
 },
 {
-  "id": "SECTIONIntParts-19",
+  "id": "SECTIONIntParts-12",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-19",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-12",
   "type": "Problem",
   "number": "19.22",
   "title": "",
   "body": "Perform integration by parts and then substitution to compute and . "
 },
 {
-  "id": "SECTIONIntParts-22",
+  "id": "SECTIONIntParts-15",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-22",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-15",
   "type": "Problem",
   "number": "19.23",
   "title": "",
   "body": "Compute using integration by parts. "
 },
 {
-  "id": "SECTIONIntParts-24",
+  "id": "SECTIONIntParts-17",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-24",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-17",
   "type": "Example",
   "number": "19.24",
   "title": "",
@@ -12104,6 +12113,24 @@ var ptx_lunr_docs = [
   "number": "23.5",
   "title": "The Problem of Zero Differentials.",
   "body": " The Problem of Zero Differentials       Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.  "
+},
+{
+  "id": "SECTIONRandomStuff",
+  "level": "1",
+  "url": "SECTIONRandomStuff.html",
+  "type": "Section",
+  "number": "23.3",
+  "title": "Random Stuff",
+  "body": " Random Stuff   Note to self  When the integral of a product is the product of the integrals.    Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .   "
+},
+{
+  "id": "ProblemMisplaced",
+  "level": "2",
+  "url": "SECTIONRandomStuff.html#ProblemMisplaced",
+  "type": "Problem",
+  "number": "23.6",
+  "title": "",
+  "body": " Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
 },
 {
   "id": "meta_backmatter-2",
