@@ -9691,7 +9691,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.2",
   "title": "Accounting for  Resistance – This Looks Like a Job for Substitution!",
-  "body": " Accounting for Resistance – This Looks Like a Job for Substitution!  To keep things simple we have ignored air resistance so far. But, depending on the conditions, resistance can hava a substantial effect on a body s motion. So we need to account for it in our model. In general, the medium a body is moving through (air, water, ether, whatever) tends to resist the motion of the body more the faster the body is moving. Hence the resistive force is most simply modeled as a function of velocity. You can experience directly by holding your hand out a car window. The faster the car moves, the more force you will feel on your hand. Similarly, the faster you move your hand under water, the more force you will feel resisting the motion.  Many phenomena will affect drag (speed, viscosity of the medium, shape and size of the object, turbulence). For a medium with a relatively high viscosity and a relatively small object the assumption that the drag is proportional to the velocity of the object makes for a reasonably accurate model. An example of this is a grain of sand falling in water.  For a medium with a relatively low viscosity, such as air, and a relatively large object, the drag is assumed to be proportional to the square of the velocity. This would be the model to use for a baseball falling in the air.  Of course to get a really accurate picture, we could use both a linear term and a quadratic term to represent the drag, but we will keep things as simple as possible for now. So in our first example we ll assume that the resistive force is proportional to velocity. This is called linear drag . We will look at the simpler model of linear drag and look at quadratic drag a little later and re-examine a ball falling in air.   To model a grain of sand of mass descending in water we let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. From the diagram below we see that there are three forces acting on the sand: (1) the weight of the sand grain, (2) the buoyancy of the sand grain, and (3) the drag that the water imposes on the sand grain.   Diagram of the forces on an object in a fluid.   As always we denote the acceleration due to gravity by . Then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a positive constant and is the velocity. Notice that this force is negative as the drag is necessarily in the direction opposit of the motion. The buoyancy is really just the upward force that water would apply if the sand wasn't there.   Comment (Note to self)  That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.  Is more explanation necessary here?    Terminal Velocity    Use Newton's Third Law, ( )orce=( )ass ( )cceleration to show that the situation in can be modeled by the IVP     Let and note that (why?). Show that the above leads to the IVP        Use the substitution , to rewrite the above equation as     Show that      Compute , and explain why this is called the terminal velocity of the sand settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.    Substitution, the Good, the Bad, and the Ugly   uses the technique of substitution. When we were learning differentiation we called this making things easier on the eyes because in that context the substitutions we made almost always resulted in simpler formulas that were easier to deal with than the originals..  Our goal when making a substitution is to simplify things eventually . But sometimes things will get more complicated first. We will proceed slowly.   The Integral of the Tangent Function  One of the entries in , was . We can use this to compute by making the substitution   Thus     Use a similar substitution to show that    Making a substitution in an integral is just the first step. We still have to compute the integral. Our substitution just makes it a little simpler to apply formulas and techniques with which we are already familiar. As simple as it is, substitution is no mere trick. It is a very powerful technique, not just in differentiation an integration but in all of mathematics.  The good news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  But the bad news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  That is to say, you can make any substitution you wish. As long as all calculations are done correctly, it will not be wrong. But it may not be helpful either and it won t always be easy to tell until you ve done a lot of computations whether the substitution you chose is viable. This issue is mitigated somewhat by experience, but be careful. Especially in the beginning it is very easy to make what looks like a reasonable substitution which is either unworkable or, if it is workable, is much harder to do than another substitution.  For example, when computing , we could have let . In that case we would have which is true, but it is not helpful.  Another approach would be to let so that or . In that case we have   This is a true statement we haven t made any computational errors but it appears that after the substitution we will need to evaluate , which looks hard. It is actually possible to compute this integral using the knowledge you now have. It is simply a matter of finding the right substitution. However, since we have already computed in it is pointless to continue with this example.               A comparably bad choice is . With this substitution we have or . In this case we have which is nearly the same, formally, as equation . The only difference seems to be that the in the denominator in equation became a in equation .   Observation  We say formally because they aren't really the same. We ve used the substitution variable to represent two entirely different functions in each of these formula.    On the other hand we know from that and we can use this knowledge.  Suppose we need to compute or . The same substitution we used to transform these into the integrals (seen in equation and equation ) will work in reverse.   Use the substitution to show that:   Now use your Algebra and Trigonometry skills to show that so that .   Use the substitution to show that   Now use your Algebra and Trigonometry skills to show that so that .    Advice and Encouragement  You have surely noticed that the calculations you had to do to evaluate the integrals in Problem were quite intricate. Not hard, per se, but there were a lot of steps and at each point you had to draw on just the right tool from Algebra, or Trigonometry, or Differential Calculus.  For example, to get the one-half factor out in front you needed first to recognize that and then you needed the following property of logarithms: .  This is what your math courses are going to be like from now on. You will continue to learn new techniques and acquire new tools. But the new material will frequently be fairly simple to understand  but not so simple to implement. When struggling with a problem it is easy to make the mistake of thinking that you must have misunderstood the new material, but it will frequently be the case that you you really just don't see which is the right tool to use, or how to use it.  This will be frustrating at times. Don't give up. Ask for help if you need it. But be patient with yourself. When you are deep into a problem it is easy to overlook simple things, and then to be embarrassed when your teacher or a classmate shows you that all you had to do was factor out an . When this happens just learn the lesson, remember it, and move on. There is no need for embarassment and it will only waste your time and sap your self-confidence. We've all been there.    The integrals in Problem and Problem can be evaluated by means of several different substitutions as we've seen. There are others that will also work but our principle point for now is that no substitution is wrong , some result in a new integral that is easier than the original and some will not. If our goal is simply to evaluate the integral we'll want to look for the simplest method we can find.   Find a simpler substitution than the one we used in Problem to evaluate the integral    Notice that we're back to using as the variable. Does this matter?   Notice that is almost the differential of .   Find a simpler substitution than the one we used in Problem to evaluate the integral    The substitution you used in will probably work here.   A good Rule of Thumb for choosing a substitution is to look a the integrand (the part between and the differential) and see if you can find an expression and its derivative. That is how we chose the substitution in , and what the hints in tried to lead you to. If you can t find an expression and its derivative try to find an expression and almost its derivative.   An Unhelpful Substitution For example, consider the integral We let so that . This gives  This is all correct, but leads to an integral far worse than the original, But and this is the point of this example we have no way of seeing that this particular substitution will not be helpful until after we ve done the computations above. The lessons here are (1) Be patient with yourself, because this is hard, and (2) Don t give up, because this is hard.  A Helpful Substitution But notice that is almost the derivative of . So let's make instead. Thus . Will that extra factor of be a problem for us? Let s see. Making the substitution we have    So what's the method for making a substitution? Unfortunately, there is none. Basically, you can try anything. If it works, great! If it doesn't, don't do something incorrectly to try and force it. Try something else. Our Rule of Thumb will help, but there are no guarantees. This is what makes integration harder than differentiation, much as long division is harder than multiplication.  The problem will not solve itself. Try something! As you practice, you will gain more experience. Look for formulas, methods, and ideas that you have seen before. Maybe they can be tweaked to address your problem. Maybe they can be applied directly. You won t know until you try.  And Practice, Practice, Practice!   As a general rule the more integrals you know the better. This is because the integration techniques you will be learning do not allow you to compute an integral. They merely show you how to transform one integral into another. You saw this in equation when we transformed into and in when we transformed into We did not compute these integrals, we merely transformed them. In we transformed into an integral that we knew from our work in differentiation, but this was information that we simply drew from our memory.  For that reason it is best to simply know that is, to have memorized as many integrals as you can. Each integral you know provides a target, something you can aim for as you try to transform a new integral into one you know.                                       The Integrals of the Secant and Cosecant Functions  At this point we have know the integrals of the , , , and . The first two were immediate consequences of the differentiation rules, but the , and were harder.   Confirm the identity:    Confirm the identity:    Use the observations in Problem and Problem and a well chosen substitution to show that    Comment:  We have absolute value bars around the expression to ensure that we are not trying to take the logarithm of a negative number. These will not appear obviously in any of the computations you need to do. Just tack them on at the end, like we did.    Compute similarly.    DIGRESSION: The Integral of an Arbitrary Polynomial in and  In many Calculus textbooks the integral of the secant function is developed using the following This digression is based on the paper  Integrating Polynomials in Secant and Tangent  , by Jonathan P. McCammond, The American Mathematical Monthly, Nov., 1999, Vol. 106, No. 9 trick:   Clearly whoever first computed the value of this integral found it by some other means (possibly by guessing) and then realized that multiplying by and using the substitution would suffice, even if it is not very illuminative.  As an means of computing the integral this is fine. But as a teaching example it leaves a lot to be desired. In particular, there is no discernible reason for multiplying the integrand by one in this particular form. It is clearly a trick that was devised after the value of the integral had already been determined.   Comment  An old joke says that a technique is a trick that you use more than once.   We have called this a trick, but we can turn it into a technique by finding the underlying structure of the problem. We begin by defining: from which we see that     Show that     Show that       For our first example we will compute   So, finally,                                                                            In fact, in the paper cited above, McCammond shows that if is any polynomial in two variables then can be evaluated using the substitutions in equations and , their properties in equations and above, and the judicious use of the Pythagorean trigonometric identity     Problme Evaluate the integrals and differentiate your solution to confirm that it is correct.                   These substitutions are clever and they give us an elegant solution but we do not necessarily want an elegant solution. In most cases where the evaluation of an integral is required we ll just want obtain a solution in the most efficient manner possible.    Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available.                   END OF DIGRESSION   "
+  "body": " Accounting for Resistance – This Looks Like a Job for Substitution!  To keep things simple we have ignored air resistance so far. But, depending on the conditions, resistance can hava a substantial effect on a body s motion. So we need to account for it in our model. In general, the medium a body is moving through (air, water, ether, whatever) tends to resist the motion of the body more the faster the body is moving. Hence the resistive force is most simply modeled as a function of velocity. You can experience directly by holding your hand out a car window. The faster the car moves, the more force you will feel on your hand. Similarly, the faster you move your hand under water, the more force you will feel resisting the motion.  Many phenomena will affect drag (speed, viscosity of the medium, shape and size of the object, turbulence). For a medium with a relatively high viscosity and a relatively small object the assumption that the drag is proportional to the velocity of the object makes for a reasonably accurate model. An example of this is a grain of sand falling in water.  For a medium with a relatively low viscosity, such as air, and a relatively large object, the drag is assumed to be proportional to the square of the velocity. This would be the model to use for a baseball falling in the air.  Of course to get a really accurate picture, we could use both a linear term and a quadratic term to represent the drag, but we will keep things as simple as possible for now. So in our first example we ll assume that the resistive force is proportional to velocity. This is called linear drag . We will look at the simpler model of linear drag and look at quadratic drag a little later and re-examine a ball falling in air.   To model a grain of sand of mass descending in water we let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. From the diagram below we see that there are three forces acting on the sand: (1) the weight of the sand grain, (2) the buoyancy of the sand grain, and (3) the drag that the water imposes on the sand grain.   Diagram of the forces on an object in a fluid.   As always we denote the acceleration due to gravity by . Then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a positive constant and is the velocity. Notice that this force is negative as the drag is necessarily in the direction opposit of the motion. The buoyancy is really just the upward force that water would apply if the sand wasn't there.   Comment (Note to self)  That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.  Is more explanation necessary here?    Terminal Velocity    Use Newton's Third Law, ( )orce=( )ass ( )cceleration to show that the situation in can be modeled by the IVP     Let and note that (why?). Show that the above leads to the IVP        Use the substitution , to rewrite the above equation as     Show that      Compute , and explain why this is called the terminal velocity of the sand settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.    Substitution, the Good, the Bad, and the Ugly   uses the technique of substitution. When we were learning differentiation we called this making things easier on the eyes because in that context the substitutions we made almost always resulted in simpler formulas that were easier to deal with than the originals..  Our goal when making a substitution is to simplify things eventually . But sometimes things will get more complicated first. We will proceed slowly.   The Integral of the Tangent Function  One of the entries in , was . We can use this to compute by making the substitution   Thus     Use a similar substitution to show that    Making a substitution in an integral is just the first step. We still have to compute the integral. Our substitution just makes it a little simpler to apply formulas and techniques with which we are already familiar. As simple as it is, substitution is no mere trick. It is a very powerful technique, not just in differentiation an integration but in all of mathematics.  The good news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  But the bad news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  That is to say, you can make any substitution you wish. As long as all calculations are done correctly, it will not be wrong. But it may not be helpful either and it won t always be easy to tell until you ve done a lot of computations whether the substitution you chose is viable. This issue is mitigated somewhat by experience, but be careful. Especially in the beginning it is very easy to make what looks like a reasonable substitution which is either unworkable or, if it is workable, is much harder to do than another substitution.  For example, when computing , we could have let . In that case we would have which is true, but it is not helpful.  Another approach would be to let so that or . In that case we have   This is a true statement we haven t made any computational errors but it appears that after the substitution we will need to evaluate , which looks hard. It is actually possible to compute this integral using the knowledge you now have. It is simply a matter of finding the right substitution. However, since we have already computed in it is pointless to continue with this example.               A comparably bad choice is . With this substitution we have or . In this case we have which is nearly the same, formally, as equation . The only difference seems to be that the in the denominator in equation became a in equation .   Observation  We say formally because they aren't really the same. We ve used the substitution variable to represent two entirely different functions in each of these formula.    On the other hand we know from that and we can use this knowledge.  Suppose we need to compute or . The same substitution we used to transform these into the integrals (seen in equation and equation ) will work in reverse.   Use the substitution to show that:   Now use your Algebra and Trigonometry skills to show that so that .   Use the substitution to show that   Now use your Algebra and Trigonometry skills to show that so that .    Advice and Encouragement  You have surely noticed that the calculations you had to do to evaluate the integrals in Problem were quite intricate. Not hard, per se, but there were a lot of steps and at each point you had to draw on just the right tool from Algebra, or Trigonometry, or Differential Calculus.  For example, to get the one-half factor out in front you needed first to recognize that and then you needed the following property of logarithms: .  This is what your math courses are going to be like from now on. You will continue to learn new techniques and acquire new tools. But the new material will frequently be fairly simple to understand  but not so simple to implement. When struggling with a problem it is easy to make the mistake of thinking that you must have misunderstood the new material, but it will frequently be the case that you you really just don't see which is the right tool to use, or how to use it.  This will be frustrating at times. Don't give up. Ask for help if you need it. But be patient with yourself. When you are deep into a problem it is easy to overlook simple things, and then to be embarrassed when your teacher or a classmate shows you that all you had to do was factor out an . When this happens just learn the lesson, remember it, and move on. There is no need for embarassment and it will only waste your time and sap your self-confidence. We've all been there.    The integrals in Problem and Problem can be evaluated by means of several different substitutions as we've seen. There are others that will also work but our principle point for now is that no substitution is wrong , some result in a new integral that is easier than the original and some will not. If our goal is simply to evaluate the integral we'll want to look for the simplest method we can find.   Find a simpler substitution than the one we used in Problem to evaluate the integral    Notice that we're back to using as the variable. Does this matter?   Notice that is almost the differential of .   Find a simpler substitution than the one we used in Problem to evaluate the integral    The substitution you used in will probably work here.   A good Rule of Thumb for choosing a substitution is to look a the integrand (the part between and the differential) and see if you can find an expression and its derivative. That is how we chose the substitution in , and what the hints in tried to lead you to. If you can t find an expression and its derivative try to find an expression and almost its derivative.   An Unhelpful Substitution For example, consider the integral We let so that . This gives  This is all correct, but leads to an integral far worse than the original, But and this is the point of this example we have no way of seeing that this particular substitution will not be helpful until after we ve done the computations above. The lessons here are (1) Be patient with yourself, because this is hard, and (2) Don t give up, because this is hard.  A Helpful Substitution But notice that is almost the derivative of . So let's make instead. Thus . Will that extra factor of be a problem for us? Let s see. Making the substitution we have    So what's the method for making a substitution? Unfortunately, there is none. Basically, you can try anything. If it works, great! If it doesn't, don't do something incorrectly to try and force it. Try something else. Our Rule of Thumb will help, but there are no guarantees. This is what makes integration harder than differentiation, much as long division is harder than multiplication.  The problem will not solve itself. Try something! As you practice, you will gain more experience. Look for formulas, methods, and ideas that you have seen before. Maybe they can be tweaked to address your problem. Maybe they can be applied directly. You won t know until you try.  And Practice, Practice, Practice!   As a general rule the more integrals you know the better. This is because the integration techniques you will be learning do not allow you to compute an integral. They merely show you how to transform one integral into another. You saw this in equation when we transformed into and in when we transformed into We did not compute these integrals, we merely transformed them. In we transformed into an integral that we knew from our work in differentiation, but this was information that we simply drew from our memory.  For that reason it is best to simply know that is, to have memorized as many integrals as you can. Each integral you know provides a target, something you can aim for as you try to transform a new integral into one you know.                                       The Integrals of the Secant and Cosecant Functions  At this point we have know the integrals of the , , , and . The first two were immediate consequences of the differentiation rules, but the , and were harder.   Confirm the identity:    Confirm the identity:    Use the observations in Problem and Problem and a well chosen substitution to show that    Comment:  We have absolute value bars around the expression to ensure that we are not trying to take the logarithm of a negative number. These will not appear obviously in any of the computations you need to do. Just tack them on at the end, like we did.    Compute similarly.    DIGRESSION: The Integral of an Arbitrary Polynomial in and  In many Calculus textbooks the integral of the secant function is developed using the following This digression is based on the paper  Integrating Polynomials in Secant and Tangent  , by Jonathan P. McCammond, The American Mathematical Monthly, Nov., 1999, Vol. 106, No. 9 trick:   Clearly whoever first computed the value of this integral found it by some other means (possibly by guessing) and then realized that multiplying by and using the substitution would suffice, even if it is not very illuminative.  As an means of computing the integral this is fine. But as a teaching example it leaves a lot to be desired. In particular, there is no discernible reason for multiplying the integrand by one in this particular form. It is clearly a trick that was devised after the value of the integral had already been determined.   Comment  An old joke says that a technique is a trick that you use more than once.   We have called this a trick, but we can turn it into a technique by finding the underlying structure of the problem. We begin by defining: from which we see that     Show that     Show that       For our first example we will compute   So, finally,                                                                            In fact, in the paper cited above, McCammond shows that if is any polynomial in two variables then can be evaluated using the substitutions in equations and , their properties in equations and above, and the judicious use of the Pythagorean trigonometric identity     Problme Evaluate the integrals and differentiate your solution to confirm that it is correct.                   These substitutions are clever and they give us an elegant solution but we do not necessarily want an elegant solution. In most cases where the evaluation of an integral is required we ll just want obtain a solution in the most efficient manner possible.    Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available.                     Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available. (You will need to find substitutions analogous to those we developed above.)                   END OF DIGRESSION   "
 },
 {
   "id": "SECTIONSubstMethed-5",
@@ -9802,9 +9802,9 @@ var ptx_lunr_docs = [
   "body": "  For our first example we will compute   So, finally,                                                                           "
 },
 {
-  "id": "EXERCISEPolySecTan",
+  "id": "PROBLEMPolySecTan",
   "level": "2",
-  "url": "SECTIONSubstMethed.html#EXERCISEPolySecTan",
+  "url": "SECTIONSubstMethed.html#PROBLEMPolySecTan",
   "type": "Problem",
   "number": "19.15",
   "title": "",
@@ -9818,6 +9818,15 @@ var ptx_lunr_docs = [
   "number": "19.16",
   "title": "",
   "body": "  Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available.                  "
+},
+{
+  "id": "PROBLEMPolyCscCot",
+  "level": "2",
+  "url": "SECTIONSubstMethed.html#PROBLEMPolyCscCot",
+  "type": "Problem",
+  "number": "19.17",
+  "title": "",
+  "body": "  Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available. (You will need to find substitutions analogous to those we developed above.)                  "
 },
 {
   "id": "SECTIONIntParts",
@@ -9842,7 +9851,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#ProblemMisplaced",
   "type": "Problem",
-  "number": "19.17",
+  "number": "19.18",
   "title": "",
   "body": " Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
 },
@@ -9851,7 +9860,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#IntegrationByParts",
   "type": "Theorem",
-  "number": "19.18",
+  "number": "19.19",
   "title": "Integration by Parts Formula.",
   "body": " Integration by Parts Formula     "
 },
@@ -9860,7 +9869,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-16",
   "type": "Problem",
-  "number": "19.19",
+  "number": "19.20",
   "title": "",
   "body": " Redo the integration by parts on the integral letting and as before. But suppose this time we take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we will obtain the same result as before, namely .  "
 },
@@ -9869,7 +9878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-17",
   "type": "Problem",
-  "number": "19.20",
+  "number": "19.21",
   "title": "",
   "body": "Notice that in Table we had but we had no analog for the integral of . Perform integral by parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.  "
 },
@@ -9878,7 +9887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-19",
   "type": "Problem",
-  "number": "19.21",
+  "number": "19.22",
   "title": "",
   "body": "Perform integration by parts and then substitution to compute and . "
 },
@@ -9887,7 +9896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-22",
   "type": "Problem",
-  "number": "19.22",
+  "number": "19.23",
   "title": "",
   "body": "Compute using integration by parts. "
 },
@@ -9896,7 +9905,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-24",
   "type": "Example",
-  "number": "19.23",
+  "number": "19.24",
   "title": "",
   "body": " Consider If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .  "
 },
@@ -9914,7 +9923,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-5",
   "type": "Figure",
-  "number": "19.24",
+  "number": "19.25",
   "title": "",
   "body": " Diagram of a right triangle.   Diagram of a right triangle.   "
 },
@@ -9923,7 +9932,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-8",
   "type": "Problem",
-  "number": "19.25",
+  "number": "19.26",
   "title": "",
   "body": " Use the formula for the catenary and (this was the low point on the hanging chain) to show that and so    Note to self  The use of and interchangeably is confusing.    Integrate the result in part (a) to obtain which is the equation of the catenary as stated earlier.  "
 },
@@ -9932,7 +9941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-10",
   "type": "Figure",
-  "number": "19.26",
+  "number": "19.27",
   "title": "",
   "body": " Image of a pursuit curve.   Image of a pursuit curve.   "
 },
@@ -9941,7 +9950,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#PursuitCurve1",
   "type": "Problem",
-  "number": "19.27",
+  "number": "19.28",
   "title": "",
   "body": "Problem Pursuit Curve  If we let denote the distance the missile has traveled at time , show that the missile's path must satisfy the IVP    Obviously we can solve equation for but then we would have in terms of , , and which isn't very helpful. The term is particularly problematic since we know almost nothing about it.  But only almost. We do know that .  Differentiate equation to show that the missile's path must satisfy the differential equation with the initial conditions , and .   Let's make this a little easier on our eyes. Let , and show that equation becomes with initial conditions . and use the trigonometric substitution as before to show that    Use the initial condition and the substitution to show that    How far has the plane gone when the missile reaches it? What happens as ?  "
 },
@@ -9950,7 +9959,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#TractrixProblem1",
   "type": "Problem",
-  "number": "19.28",
+  "number": "19.29",
   "title": "",
   "body": " The following is the view from above of a tractor-trailer. Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point .   Sketch of a tractor-trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels up the -axis and that the rear wheels don't slip.   show the path that the center of the rear axle of the trailer follows must satisfy the equations    Find the equation, of the tractrix.   After you separate the variables substitute in your integral.   Plot your solution on the plane.  "
 },
@@ -9959,7 +9968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#TrigSub1",
   "type": "Problem",
-  "number": "19.30",
+  "number": "19.31",
   "title": "",
   "body": " Again, having trigonometry involved was a better option than having the square root. Here, we utilized the trigonometric identity . A surprising number of integrals involve terms such as , or . In these cases, it is often advantageous to utilize a trigonometric substitution, using the identities or to remove the square root, which typically is more a concern than the trigonometry. However, you should remember that there are other techniques at your disposal, so you need to be judicious about what you utilize. For example, consider the integral    Use the trigonometric substitution to compute the above integral.   Now use the non-trigonometric substitution to compute the integral   Which method do you find more appealing? (Or least unappealing?)  "
 },
@@ -9968,7 +9977,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-15",
   "type": "Problem",
-  "number": "19.31",
+  "number": "19.32",
   "title": "",
   "body": " The table below repeats the last three entries of Table .   Inverse Trigonometric Substitution    Differentiation Rule Integration Rule                 You can memorize it if you like, but if you for get one of these formulas they are straightforward to derive.   Use the substitution to compute .   Use the substitution to compute .   Use the substitution to compute   "
 },
@@ -9977,7 +9986,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#TrigSubst2",
   "type": "Drill",
-  "number": "19.33",
+  "number": "19.34",
   "title": "",
   "body": "  Finish computing the integral in equation     Compute     Compute     Compute    This appears to be a completely different integral but it really isn't. Complete the square on and then use your result in part (c).   "
 },
@@ -9986,7 +9995,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#FallingWithDrag",
   "type": "Problem",
-  "number": "19.34",
+  "number": "19.35",
   "title": "",
   "body": " Use Newton's Third Law of Motion: ( ) ( )ass ( )cceleration, to show that the velocity of the ball must satisfy the equations: .  Show that the IVP above is equivalent to .  Use the substitution to show that .   Compute . Compare this terminal velocity with our previous results.  "
 },
@@ -9995,7 +10004,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-27",
   "type": "Figure",
-  "number": "19.35",
+  "number": "19.36",
   "title": "",
   "body": " Image of the triangle   Image of the triangle with theta in standard position and legs x and square root of one - x squared.   "
 },
@@ -10004,7 +10013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-29",
   "type": "Drill",
-  "number": "19.36",
+  "number": "19.37",
   "title": "",
   "body": " Confirm that this is correct by differentiating: .  "
 },
@@ -10013,7 +10022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#OddSinPower",
   "type": "Example",
-  "number": "19.37",
+  "number": "19.38",
   "title": "",
   "body": "  Since sine is raised to an odd power, it makes sense to save one of the sines and convert everything else to cosine, utilizing the Pythagorean identity , and then apply a substitution as follows. First we save a sine.  . Next we let , so that , which gives .  "
 },
@@ -10022,7 +10031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-36",
   "type": "Problem",
-  "number": "19.38",
+  "number": "19.39",
   "title": "",
   "body": " Had the cosine been raised to an odd power in , we could have saved one of the cosines instead.   Compute .  "
 },
@@ -10031,7 +10040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-37",
   "type": "Example",
-  "number": "19.39",
+  "number": "19.40",
   "title": "",
   "body": " Notice that in there would have been nothing wrong with computing as follows: It's just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn't want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.  "
 },
@@ -10040,7 +10049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-38",
   "type": "Problem",
-  "number": "19.40",
+  "number": "19.41",
   "title": "",
   "body": " Compute the integral using these substitutions:           Finish example using each of the substitutions above. Do you get the same solution as before?  "
 },
@@ -10049,7 +10058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#SinCosOddPower",
   "type": "Problem",
-  "number": "19.41",
+  "number": "19.42",
   "title": "",
   "body": " Compute the integral by:   Saving one of the cosines and converting everthing else into sines.   Saving one of the sines and converting everthing else into cosines.   Do you get the same result in parts (a) and (b)? Explain.  "
 },
@@ -10058,7 +10067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#SinCosEven",
   "type": "Example",
-  "number": "19.42",
+  "number": "19.43",
   "title": "",
   "body": " What happens if you don't have an odd power of sine or cosine? For example, suppose you have .  Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In this case, there are a couple of trigonometric identities that can help. They the Half-Angle formlas: . Using these identities in our integral we see that   Using the Half-Angle formula again we obtain   "
 },
@@ -10067,7 +10076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-41",
   "type": "Drill",
-  "number": "19.43",
+  "number": "19.44",
   "title": "",
   "body": " Show that we get the same result if we use the Double Angle formula: .  "
 },
@@ -10076,7 +10085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-42",
   "type": "Example",
-  "number": "19.44",
+  "number": "19.45",
   "title": "",
   "body": "    In this example, we can save a as part of the differential and use the identity to change everything else into an expression in tangent. Since the secant is to an even power this again avoids square roots, which is the general idea. Letting we have , so we obtain   "
 },
@@ -10085,7 +10094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-43",
   "type": "Example",
-  "number": "19.45",
+  "number": "19.46",
   "title": "",
   "body": " If tangent occurs to an odd power, we can save a tangent and a secant as part of the differential and use the same identity to convert everything else to secant. . Letting we have .  "
 },
@@ -10094,7 +10103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-44",
   "type": "Problem",
-  "number": "19.46",
+  "number": "19.47",
   "title": "",
   "body": " Consider the integral    Compute this integral by saving a and converting the rest into an expression in tangent.   Compute this integral by saving a and converting the rest into an expression in secant.   Verify the at you get the same result in (a) and (b).  "
 },
@@ -10103,7 +10112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-45",
   "type": "Problem",
-  "number": "19.47",
+  "number": "19.48",
   "title": "",
   "body": "Previously we computed using the identity . We could also use the identity . Do we get a different answer? Explain. "
 },
@@ -10130,7 +10139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#IntegrationMethods-6-2-7",
   "type": "Problem",
-  "number": "19.48",
+  "number": "19.49",
   "title": "",
   "body": " Use equation to find for the logistic growth model with the initial condition  for the case when .   Solve the same problem for the case where .   Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.   "
 },
@@ -10148,7 +10157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#ElementaryPartFracDecomp",
   "type": "Example",
-  "number": "19.49",
+  "number": "19.50",
   "title": "",
   "body": " For example notice that if and are constants then and have no common factors. Since it follows that .   Comment  Notice that since and are constants they are polynomials of degree zero.   "
 },
@@ -10166,7 +10175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#PartialFractionDecomp",
   "type": "Theorem",
-  "number": "19.50",
+  "number": "19.51",
   "title": "The Partial Fraction Decomposition (PFD).",
   "body": " The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non-trivial common factors with then there exist polynomials and , and , such that .  "
 },
@@ -10175,7 +10184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEPFD1",
   "type": "Example",
-  "number": "19.51",
+  "number": "19.52",
   "title": "",
   "body": " Recall we had To compute this we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, the numerators must also be equal. Thus   Solve these equations anyway you wish, but you should get , , and . Thus so    "
 },
@@ -10184,7 +10193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEHeaviCover",
   "type": "Example",
-  "number": "19.52",
+  "number": "19.53",
   "title": "Heaviside’s Cover-up Method.",
   "body": " Heaviside's Cover-up Method  Suppose we wish to find the partial fractions decomposition of . As before, we have This leads to   Observe that will be true for every real (or complex) value of . The factor appears in two of the terms on the right suggests that we let In that case we have or    Comment  Actually we are replacing with 1.   We did not simplify this last formula in order to highlight the following Observe that we get the same result if we simply cover up the factor on the left side of above and set    In precisely the same fashion (setting and ) we get: and so that    Warning!  In order to use Heaviside's Cover-Up Method you must have distinct linear factors in the denominator.  In this example they were , , and . If our rational function had been Heaviside's Method would not work because is not linear.  Try it and see what goes wrong.   This trick is known as Heaviside's Cover-Up Method ( HCUM ). It is well known, and can be used to find the PFD of a rational function as long as the denominator can be factored into distinct linear factors.  "
 },
@@ -10193,7 +10202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#PROBLEM",
   "type": "Drill",
-  "number": "19.53",
+  "number": "19.54",
   "title": "",
   "body": " Use HCUM to complete the decomposition in .  "
 },
@@ -10202,7 +10211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEHeaviNonLinear",
   "type": "Example",
-  "number": "19.54",
+  "number": "19.55",
   "title": "The PFD With Nonlinear Factors in the Denominator.",
   "body": " The PFD With Nonlinear Factors in the Denominator  What about something like Since this function satisfies all of the conditions of we can still decompose it into partial fractions. However since is not linear we can't use Heaviside's Method.  Recall that in the decomposition, the numerators in the individual terms can be chosen so that the degrees are less than the degrees in the denominators. This being said, we make the following educated guess as to the form of the partial fractions decomposition.   We can now recombine this to determine and .  This leads to     Solving this (any way you can) we get so that   If we wanted to integrate this, we would obtain       Notice in this example that we really needed to look at the most general possible polynomial of degree one less than the denominators in the partial fractions decomposition; we would not have obtained the correct answer otherwise.  "
 },
@@ -10211,7 +10220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXERCISEHeaviNonLinear",
   "type": "Problem",
-  "number": "19.55",
+  "number": "19.56",
   "title": "",
   "body": "  Partial Fraction Decomposition Show that if we tried the following decomposition then no values for and would satisfy this.  "
 },
@@ -10220,7 +10229,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEPFD2",
   "type": "Example",
-  "number": "19.56",
+  "number": "19.57",
   "title": "",
   "body": " Suppose we need to compute Applying our partial fractions decomposition, we get     This leads to Solving this (any way you can), we get   Getting back to the integral, we have   Notice that the last two integrals were pretty straightforward. This first integral is more problematic. There is a little algebraic trick which will allow us to break up that integral even further.       Putting this all together, we finally have The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as   The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as    Note from Bob  Bud -- at this point, how much of the paper you wrote should we put in? Will putting it in be too much at this point? Should be some practice exercises first? Should it be appendicized? I'm afraid I've already written too much on partial fractions decompositions. I need your fresh view on this.   Integrating this would be a matter of utilizing the substitution . Of course, this could have been done earlier to produce The point is that you have more tools at your disposal to transform integrals you don't know how to do into ones that you recognize.  Before we send you off to practice such integrals, we want to present you one more option. You have probably noticed that there is more algebra involved than calculus. Some of it is unavoidable, but there are some shortcuts. For example, finding in the original partial fractions decomposition required solving 4 equations in 4 unknowns. Again, this was straightforward, but it turns out that there is a shortcut for this similar to the HCUM. We will present it here.  "
 },
@@ -10238,7 +10247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-3",
   "type": "Example",
-  "number": "19.57",
+  "number": "19.58",
   "title": "Stone Arch Bridge.",
   "body": " Stone Arch Bridge  Consider one half of a stone arch bridge as drawn below.   Schematic of a stone arch   Schematic of a stone arch    We will draw the positive -axis downward and will focus on the forces at a generic point with coordinates . The problem is to find the curve so that the vertical component of the tangential force at is equal to the weight of the bridge from to . If we do this, then that means that the weight of the bridge will be directed toward the base of the bridge. With this in mind, let denote the area of the side section of the bridge from to . We will also let denote the (constant) magnitude of the horizontal force along the length of the bridge and be the weight density of the stone (per cross sectional area).   Stone Arch Schematic   Stone Arch Schematic    With all of this set up, what we really want is the horizontal component of the force to be and the vertical component to be the weight of the bridge from to , namely, . This leads to the following picture.   Stone Arch Triangle of Forces   Stone Arch Triangle of Forces    This leads to the slope of the tangent line at equaling , so we get the differential equation The problem here is that we don't know what is. However, a moment's thought tells us that we know what is. If we increase to , then we can see that .   Stone Arch Schematic   Stone Arch Schematic    Thus, if we differentiate the above equation, we get that the arch should satisfy the differential equation   "
 },
@@ -10247,7 +10256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-4",
   "type": "Problem",
-  "number": "19.62",
+  "number": "19.63",
   "title": "",
   "body": " Show that satisfies the above differential equation.   Show that if and , then . Compare this to the equation of the catenary in Problem in Context #53 in Differential Calculus .   Note to Self  Convert this to a PreTexT link.  "
 },
@@ -10265,7 +10274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-7",
   "type": "Figure",
-  "number": "19.63",
+  "number": "19.64",
   "title": "",
   "body": " The area under a curve   The area under a curve   "
 },
@@ -10283,7 +10292,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#FTC-thm",
   "type": "Theorem",
-  "number": "19.64",
+  "number": "19.65",
   "title": "The Fundamental Theorem of Calculus.",
   "body": " The Fundamental Theorem of Calculus  Suppose that (so that is an antiderivative of ). Then   "
 },
@@ -10292,7 +10301,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-15",
   "type": "Problem",
-  "number": "19.65",
+  "number": "19.66",
   "title": "",
   "body": "Given our notation for an indefinite integral, the Fundamental Theorem of Calculus says However, there are infinitely many possibilities for . Does this mean that there are infinitely many possibilities for ? Explain. "
 },
@@ -10310,7 +10319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-3",
   "type": "Figure",
-  "number": "19.66",
+  "number": "19.67",
   "title": "",
   "body": " Integrals do not always represent areas   Graph of y=x   "
 },
@@ -10319,7 +10328,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntPropTable",
   "type": "Table",
-  "number": "19.67",
+  "number": "19.68",
   "title": "Integration Properties",
   "body": " Integration Properties                      "
 },
@@ -10328,7 +10337,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-7",
   "type": "Table",
-  "number": "19.68",
+  "number": "19.69",
   "title": "A simple table",
   "body": " A simple table    Integration Properties  Sum Properties                "
 },
@@ -10337,7 +10346,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#IntPropExamples",
   "type": "Example",
-  "number": "19.69",
+  "number": "19.70",
   "title": "Some Examples.",
   "body": " Some Examples                      "
 },
@@ -10346,7 +10355,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-11",
   "type": "Figure",
-  "number": "19.70",
+  "number": "19.71",
   "title": "",
   "body": " A geometic representation of integration   A geometic representation of integration   "
 },
@@ -10355,7 +10364,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-13",
   "type": "Problem",
-  "number": "19.71",
+  "number": "19.72",
   "title": "",
   "body": "Use the fact that to show that . "
 },
@@ -10364,7 +10373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-15",
   "type": "Figure",
-  "number": "19.72",
+  "number": "19.73",
   "title": "",
   "body": " The sum property of integration   The sum property of integration   "
 },
@@ -10373,7 +10382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-17",
   "type": "Problem",
-  "number": "19.73",
+  "number": "19.74",
   "title": "",
   "body": " Show that for the case where , we still have    We already know that Solve for and use a previous property.  "
 },
@@ -10382,7 +10391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-18",
   "type": "Drill",
-  "number": "19.74",
+  "number": "19.75",
   "title": "",
   "body": " Suppose Compute                             "
 },
@@ -10391,7 +10400,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-22",
   "type": "Example",
-  "number": "19.75",
+  "number": "19.76",
   "title": "",
   "body": " Consider the integral If we make the substitution , then , and so At this point, we have two options: we can integrate and change the variable back into to finish the fundamental theorem of calculus, or we can convert everything over to and not deal with anymore. We'll show both. In the first approach, we have   In the second approach we have that , so when , and when , , so that Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an limit for or vice versa.  "
 },
@@ -10400,7 +10409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-23",
   "type": "Example",
-  "number": "19.76",
+  "number": "19.77",
   "title": "",
   "body": " Computing we see that integration by parts seems to be the way to go. If we let and , then Using the integration by parts formula , we have   "
 },
@@ -10409,7 +10418,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-24",
   "type": "Problem",
-  "number": "19.77",
+  "number": "19.78",
   "title": "",
   "body": "Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that   Does this make sense geometrically? Explain.   We know that Use the substitution in the integral on the left.  Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like? Show that in this case  Does this make sense geometrically? Explain. "
 },
@@ -10418,7 +10427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#FourierSeriesProb",
   "type": "Problem",
-  "number": "19.78",
+  "number": "19.79",
   "title": "Fourier Series.",
   "body": "Fourier Series    Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves    It can be shown (though we won't do it here), that if a function defined on the interval can be written as the Fourier Series:  then    With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.   With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.   Given the symmetries of the graphs above, is this surprising? Explain.  "
 },
@@ -10436,7 +10445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ParabolicSection",
   "type": "Example",
-  "number": "19.80",
+  "number": "19.81",
   "title": "",
   "body": " Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.  "
 },
@@ -10445,7 +10454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ParabSectionHoriz",
   "type": "Example",
-  "number": "19.84",
+  "number": "19.85",
   "title": "",
   "body": " Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we've included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?        "
 },
@@ -10454,7 +10463,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreasByIntegration-4",
   "type": "Drill",
-  "number": "19.87",
+  "number": "19.88",
   "title": "",
   "body": " Compute the three integrals in the previous example and verify that you get the same total area done either way.  "
 },
@@ -10463,7 +10472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreaExam3",
   "type": "Example",
-  "number": "19.88",
+  "number": "19.89",
   "title": "",
   "body": " In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let's put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle    "
 },
@@ -10472,7 +10481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreasByIntegration-6",
   "type": "Drill",
-  "number": "19.91",
+  "number": "19.92",
   "title": "",
   "body": " Compute the area indicated in the previous example.  "
 },
@@ -10481,7 +10490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ArchimedesParab",
   "type": "Problem",
-  "number": "19.92",
+  "number": "19.93",
   "title": "Archimedes Quadrature of the Parabola.",
   "body": "Archimedes Quadrature of the Parabola  In his treatise, Quadrature of the Parabola, Archimedes (287-212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn't even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.     Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]   Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .   Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).  "
 },
@@ -10490,7 +10499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#fig-CycloidArea",
   "type": "Figure",
-  "number": "19.95",
+  "number": "19.96",
   "title": "",
   "body": "   A cycloid generated by a rolling circle.   "
 },
@@ -10499,7 +10508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-CycloidArea",
   "type": "Problem",
-  "number": "19.96",
+  "number": "19.97",
   "title": "The Area Under a Cycloid.",
   "body": "The Area Under a Cycloid   Area of a cycloid Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.   You can set up the area with vertical rectangles just as before, only now get in terms of .  "
 },
@@ -10508,7 +10517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GenericRectangle",
   "type": "Figure",
-  "number": "19.97",
+  "number": "19.98",
   "title": "",
   "body": "   A generic rectangle   "
 },
@@ -10517,7 +10526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolEqualsFaceXThick",
   "type": "Figure",
-  "number": "19.98",
+  "number": "19.99",
   "title": "",
   "body": "   Pictures and formulas for the volume of a cylinder and a triangular wedge   "
 },
@@ -10526,7 +10535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolEqualsFaceXThick2",
   "type": "Figure",
-  "number": "19.99",
+  "number": "19.100",
   "title": "",
   "body": "   Picture and formula for the volume of an irregular slab.   "
 },
@@ -10535,7 +10544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeAndCyl",
   "type": "Figure",
-  "number": "19.100",
+  "number": "19.101",
   "title": "",
   "body": "   A cone and cylinder of the same height.   "
 },
@@ -10544,7 +10553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolCone",
   "type": "Figure",
-  "number": "19.101",
+  "number": "19.102",
   "title": "",
   "body": "   Cone with generic horizontal rectangle.   "
 },
@@ -10553,7 +10562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeSlice",
   "type": "Figure",
-  "number": "19.102",
+  "number": "19.103",
   "title": "",
   "body": "   A generic slice from a cone and a formula for its volume.   "
 },
@@ -10562,7 +10571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeSimTri",
   "type": "Figure",
-  "number": "19.103",
+  "number": "19.104",
   "title": "",
   "body": "   A right triangle with a similar right triangle inside.   "
 },
@@ -10571,7 +10580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeVol",
   "type": "Problem",
-  "number": "19.104",
+  "number": "19.105",
   "title": "Volume of a Cone.",
   "body": "Volume of a Cone  Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.  "
 },
@@ -10580,7 +10589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#FrustomVol",
   "type": "Problem",
-  "number": "19.105",
+  "number": "19.106",
   "title": "Volume of a Frustum.",
   "body": "Volume of a Frustum  A frustum of a cone is basically a cone with the top chopped off.     A frustum     Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!   Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.  "
 },
@@ -10589,7 +10598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolSqPyr",
   "type": "Problem",
-  "number": "19.107",
+  "number": "19.108",
   "title": "Volume of a Square Based Pyramid.",
   "body": "Volume of a Square Based Pyramid    Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.    "
 },
@@ -10598,7 +10607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GeneralCone",
   "type": "Problem",
-  "number": "19.109",
+  "number": "19.110",
   "title": "The Generalized Cone.",
   "body": "The Generalized Cone  Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .   The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.  "
 },
@@ -10607,7 +10616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereCyl",
   "type": "Figure",
-  "number": "19.111",
+  "number": "19.112",
   "title": "",
   "body": "   Cylinder with enclosed sphere with the same radius.   "
 },
@@ -10616,7 +10625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereByRevAboutX",
   "type": "Figure",
-  "number": "19.112",
+  "number": "19.113",
   "title": "",
   "body": "   A sphere generated by revolving about the x axis.   "
 },
@@ -10625,7 +10634,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolSphereWithDiffDisc",
   "type": "Figure",
-  "number": "19.113",
+  "number": "19.114",
   "title": "",
   "body": "   The same sphere with a generic disk and area and volume formulas.   "
 },
@@ -10634,7 +10643,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereVolXRev",
   "type": "Problem",
-  "number": "19.114",
+  "number": "19.115",
   "title": "Volume of a Sphere (rotation about the horizontal axis)..",
   "body": "Volume of a Sphere (rotation about the horizontal axis).   Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .  "
 },
@@ -10643,7 +10652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#CyclRevX",
   "type": "Problem",
-  "number": "19.115",
+  "number": "19.116",
   "title": "Revolving a Cycloid.",
   "body": "Revolving a Cycloid    Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.    "
 },
@@ -10652,7 +10661,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-GenSolidRevX",
   "type": "Problem",
-  "number": "19.117",
+  "number": "19.118",
   "title": "",
   "body": "  Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.         Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.  "
 },
@@ -10661,7 +10670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GenVolRevY",
   "type": "Problem",
-  "number": "19.119",
+  "number": "19.120",
   "title": "",
   "body": "   Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.         Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.    To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by   "
 },
@@ -10670,7 +10679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#fig-VolByWasher",
   "type": "Figure",
-  "number": "19.121",
+  "number": "19.122",
   "title": "",
   "body": "     "
 },
@@ -10679,7 +10688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#IntShellExamp",
   "type": "Figure",
-  "number": "19.122",
+  "number": "19.123",
   "title": "",
   "body": "     "
 },
@@ -10688,7 +10697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ShellFlattened",
   "type": "Figure",
-  "number": "19.123",
+  "number": "19.124",
   "title": "",
   "body": "   A cylindrical shell opened and flattened.   "
 },
@@ -10697,7 +10706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-GenShells",
   "type": "Problem",
-  "number": "19.124",
+  "number": "19.125",
   "title": "Generic volume using shells.",
   "body": "Generic volume using shells   Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.     Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by   "
 },
@@ -10706,7 +10715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-VolTorus",
   "type": "Problem",
-  "number": "19.126",
+  "number": "19.127",
   "title": "Volume of a torus.",
   "body": "Volume of a torus    Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571- 1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).     A torus around the y axis.    "
 },
@@ -10715,7 +10724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#example-WashersOrShells",
   "type": "Example",
-  "number": "19.128",
+  "number": "19.129",
   "title": "Shell vs. Washers.",
   "body": " Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don't look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.  "
 },
@@ -10724,7 +10733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-ShellsVSWashers",
   "type": "Problem",
-  "number": "19.130",
+  "number": "19.131",
   "title": "",
   "body": "  Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:   The -axis.   The -axis.  "
 },
@@ -10733,7 +10742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SurfaceAreaIllus",
   "type": "Figure",
-  "number": "19.131",
+  "number": "19.132",
   "title": "",
   "body": "   A cube and a parallellepiped with the same height.   "
 },
@@ -10742,7 +10751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#DiffTri",
   "type": "Figure",
-  "number": "19.132",
+  "number": "19.133",
   "title": "",
   "body": "   Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.   "
 },
@@ -10751,7 +10760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-GenArcLen",
   "type": "Figure",
-  "number": "19.133",
+  "number": "19.134",
   "title": "",
   "body": "   Generic curve between A and B.   "
 },
@@ -10760,7 +10769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-ArcLenQtrCirc",
   "type": "Problem",
-  "number": "19.134",
+  "number": "19.135",
   "title": "",
   "body": " Consider the quarter circle given by , where . Since the circumference of the unit circle is , the length of this quarter circle should be .    Arclength Use an integral to verify There is a reason we didn't have you compute the length of the entire semicircle , . If you can't see what it is, don't worry, we will come back to it later. this result.   Suppose we tried to compute the length of a quarter of the circle in the following way We'd have gotten an arclength of zero. What goes wrong?  "
 },
@@ -10769,7 +10778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CircumViaParam",
   "type": "Problem",
-  "number": "19.135",
+  "number": "19.136",
   "title": "",
   "body": "  Arc Length Use the parameterization , , to verify that the circumference of the unit circle is .  "
 },
@@ -10778,7 +10787,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CycArcLen",
   "type": "Problem",
-  "number": "19.136",
+  "number": "19.137",
   "title": "",
   "body": "  Arc Length  cycloid Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral ), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid        Show that the length of one arch of the cycloid is .  "
 },
@@ -10787,7 +10796,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-SphereSurfAr",
   "type": "Figure",
-  "number": "19.138",
+  "number": "19.139",
   "title": "",
   "body": "   A sphere with a vertical slice through it.   "
 },
@@ -10796,7 +10805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-ConicalFrustum",
   "type": "Figure",
-  "number": "19.139",
+  "number": "19.140",
   "title": "",
   "body": "   Circle with a wedge removed to create a cone.   "
 },
@@ -10805,7 +10814,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SurfAreaConeFrust",
   "type": "Problem",
-  "number": "19.140",
+  "number": "19.141",
   "title": "The Surface Area of a Conical Frustum.",
   "body": "The Surface Area of a Conical Frustum   Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by   "
 },
@@ -10814,7 +10823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-GenSurfArea",
   "type": "Figure",
-  "number": "19.142",
+  "number": "19.143",
   "title": "",
   "body": " Total Surface Area     "
 },
@@ -10823,7 +10832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SphereSurfArea",
   "type": "Problem",
-  "number": "19.143",
+  "number": "19.144",
   "title": "The Surface Area of a Sphere.",
   "body": "The Surface Area of a Sphere   Surface Area  of a sphere    Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.   Use the parameterization , , to obtain the same answer as part (a).  "
 },
@@ -10832,7 +10841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-GenSurfArea",
   "type": "Problem",
-  "number": "19.144",
+  "number": "19.145",
   "title": "General Surface Area.",
   "body": "General Surface Area   Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?  "
 },
@@ -10841,7 +10850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SurfAreaTorus",
   "type": "Problem",
-  "number": "19.146",
+  "number": "19.147",
   "title": "The Surface Area of a Torus.",
   "body": "The Surface Area of a Torus   Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.   You might find it easier using the parametric equations and instead of the equation for the generating circle.  "
 },
@@ -10850,7 +10859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusThems",
   "type": "Figure",
-  "number": "19.148",
+  "number": "19.149",
   "title": "",
   "body": " Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.     "
 },
@@ -10859,7 +10868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-IntervalMoment",
   "type": "Figure",
-  "number": "19.149",
+  "number": "19.150",
   "title": "",
   "body": "     "
 },
@@ -10868,7 +10877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoM1",
   "type": "Problem",
-  "number": "19.150",
+  "number": "19.151",
   "title": "",
   "body": "  Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?  "
 },
@@ -10886,7 +10895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CoM2D",
   "type": "Figure",
-  "number": "19.151",
+  "number": "19.152",
   "title": "",
   "body": "     "
 },
@@ -10895,7 +10904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CoMOfCurve",
   "type": "Figure",
-  "number": "19.152",
+  "number": "19.153",
   "title": "",
   "body": "   A generic graph of a function.   "
 },
@@ -10904,7 +10913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-MomentOfSegment",
   "type": "Figure",
-  "number": "19.153",
+  "number": "19.154",
   "title": "",
   "body": "     "
 },
@@ -10913,7 +10922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-",
   "type": "Problem",
-  "number": "19.154",
+  "number": "19.155",
   "title": "",
   "body": "  Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .  "
 },
@@ -10922,7 +10931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMLineSegment",
   "type": "Problem",
-  "number": "19.155",
+  "number": "19.156",
   "title": "",
   "body": "  Moments As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.   Find the equation of the line segment joining and , To avoid dealing with absolute values, let's assume and .   Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?  "
 },
@@ -10931,7 +10940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMCircle",
   "type": "Problem",
-  "number": "19.156",
+  "number": "19.157",
   "title": "",
   "body": "  Moments center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .   Verify that by following our process as above.   Compute .  "
 },
@@ -10940,7 +10949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusTheoremSA",
   "type": "Problem",
-  "number": "19.157",
+  "number": "19.158",
   "title": "Pappus’ Theorem for Surface Area.",
   "body": "Pappus' Theorem for Surface Area   Surface Area  Pappus' Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by   "
 },
@@ -10949,7 +10958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusVolumes",
   "type": "Figure",
-  "number": "19.159",
+  "number": "19.160",
   "title": "",
   "body": "     "
 },
@@ -10958,7 +10967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusVol",
   "type": "Problem",
-  "number": "19.160",
+  "number": "19.161",
   "title": "",
   "body": "  Moments  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by   "
 },
@@ -10967,7 +10976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CMPractice1",
   "type": "Problem",
-  "number": "19.161",
+  "number": "19.162",
   "title": "",
   "body": "  Center of mass    In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.   Suppose the density was not constant. How would that alter the formulas for the center of mass?  "
 },
@@ -10976,7 +10985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Moments",
   "type": "Figure",
-  "number": "19.162",
+  "number": "19.163",
   "title": "",
   "body": "     "
 },
@@ -10985,7 +10994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Moments2",
   "type": "Figure",
-  "number": "19.163",
+  "number": "19.164",
   "title": "",
   "body": "     "
 },
@@ -10994,7 +11003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-MomentSin3",
   "type": "Problem",
-  "number": "19.164",
+  "number": "19.165",
   "title": "",
   "body": "  Moments Integrate this and determine the coordinate of the center of mass of this region.  "
 },
@@ -11003,7 +11012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-GeneralMomentY",
   "type": "Problem",
-  "number": "19.165",
+  "number": "19.166",
   "title": "",
   "body": "     Moments For the following region, use the same sort of reasoning to show that the moment about the line is given by   "
 },
@@ -11012,7 +11021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMCycloid",
   "type": "Problem",
-  "number": "19.166",
+  "number": "19.167",
   "title": "",
   "body": "  Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven't proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.  "
 },
@@ -11021,7 +11030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusThmSA",
   "type": "Figure",
-  "number": "19.168",
+  "number": "19.169",
   "title": "",
   "body": "     "
 },
@@ -11030,7 +11039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusThmForVolumes",
   "type": "Problem",
-  "number": "19.169",
+  "number": "19.170",
   "title": "Pappus Theorem of Volumes.",
   "body": "Pappus Theorem of Volumes   Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.  "
 },
@@ -11039,7 +11048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Tautochrone1",
   "type": "Figure",
-  "number": "19.170",
+  "number": "19.171",
   "title": "",
   "body": " Image from MathWords      "
 },
@@ -11057,7 +11066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-HuygenClock",
   "type": "Figure",
-  "number": "19.171",
+  "number": "19.172",
   "title": "",
   "body": " Huygens Clock     "
 },
@@ -11066,7 +11075,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut1",
   "type": "Problem",
-  "number": "19.172",
+  "number": "19.173",
   "title": "",
   "body": "  Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by   "
 },
@@ -11075,7 +11084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CyclPendPath",
   "type": "Figure",
-  "number": "19.173",
+  "number": "19.174",
   "title": "",
   "body": "     "
 },
@@ -11084,7 +11093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CyclPendPath2",
   "type": "Figure",
-  "number": "19.174",
+  "number": "19.175",
   "title": "",
   "body": "     "
 },
@@ -11093,7 +11102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut2",
   "type": "Problem",
-  "number": "19.175",
+  "number": "19.176",
   "title": "",
   "body": "  Tautochrone    Use the fact that the two triangles are similar to show that and use the fact that to conclude that .   Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .  "
 },
@@ -11102,7 +11111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut3",
   "type": "Problem",
-  "number": "19.176",
+  "number": "19.177",
   "title": "",
   "body": "  Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.  "
 },
@@ -11111,7 +11120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#subsub-WorkEnergy-3",
   "type": "Example",
-  "number": "19.177",
+  "number": "19.178",
   "title": "",
   "body": " Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton-meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?  "
 },
@@ -11120,7 +11129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#subsub-WorkEnergy-4",
   "type": "Example",
-  "number": "19.178",
+  "number": "19.179",
   "title": "",
   "body": " Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:   "
 },
@@ -11129,7 +11138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-KinWork1",
   "type": "Problem",
-  "number": "19.181",
+  "number": "19.182",
   "title": "",
   "body": "  Kinetic Energy    Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.   Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.  "
 },
@@ -11138,7 +11147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#example-WorkKin3",
   "type": "Example",
-  "number": "19.182",
+  "number": "19.183",
   "title": "",
   "body": " Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.        "
 },
@@ -11147,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-WorkKin3",
   "type": "Problem",
-  "number": "19.185",
+  "number": "19.186",
   "title": "",
   "body": "  Kinetic Energy    If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.   Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)  "
 },
@@ -11156,7 +11165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-WorkKin6",
   "type": "Figure",
-  "number": "19.186",
+  "number": "19.187",
   "title": "",
   "body": "     "
 },
@@ -11165,7 +11174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-WorkKin7",
   "type": "Problem",
-  "number": "19.187",
+  "number": "19.188",
   "title": "",
   "body": "  Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)  "
 },
@@ -11174,7 +11183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Bucket1",
   "type": "Problem",
-  "number": "19.188",
+  "number": "19.189",
   "title": "",
   "body": "  A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?  "
 },
@@ -11183,7 +11192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Bucket2",
   "type": "Problem",
-  "number": "19.189",
+  "number": "19.190",
   "title": "",
   "body": "     Use this analysis to show that the work to raise everything from a distance to a distance is given by    Integrate this to determine how much work it takes to raise all of this the entire meters.   What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?  "
 },
@@ -11192,7 +11201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEMassOnACurve",
   "type": "Problem",
-  "number": "19.190",
+  "number": "19.191",
   "title": "",
   "body": "  Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton's Second Law which states that force , show that    The quantity is called the kinetic energy of the object (at time ) and is measured in    "
 },
@@ -11201,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEKinEnergySpinCast",
   "type": "Problem",
-  "number": "19.191",
+  "number": "19.192",
   "title": "",
   "body": "  Problem  Spin Casting    Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .   Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?  "
 },
@@ -11210,7 +11219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEEscapeVelocity1",
   "type": "Problem",
-  "number": "19.192",
+  "number": "19.193",
   "title": "",
   "body": "  Problem  Escape Velocity Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet ``to infinity.'' In other words, the amount of work (and energy) it takes to propel the object so it doesn't come back is finite.  "
 },
@@ -11219,7 +11228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEEscapeVelocity2",
   "type": "Problem",
-  "number": "19.193",
+  "number": "19.194",
   "title": "",
   "body": "  Problem  Escape Velocity Assume that the original velocity of the mass is and that the velocity at infinity will be 0.   Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .   Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?  "
 },
@@ -11228,7 +11237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEDefineConvIndInt",
   "type": "Problem",
-  "number": "19.194",
+  "number": "19.195",
   "title": "Convergence of an Improper Integral.",
   "body": "Convergence of an Improper Integral   Problem  Convergence of an Improper Integral Define what we mean for improper integral to converge and what its value would be.  "
 },
@@ -11237,7 +11246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEErrorFunction1",
   "type": "Problem",
-  "number": "19.195",
+  "number": "19.196",
   "title": "",
   "body": "  Problem Error Function Perform the substitution to to obtain   "
 },
@@ -11246,7 +11255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEWolframAlpha1",
   "type": "Problem",
-  "number": "19.196",
+  "number": "19.197",
   "title": "",
   "body": "  Problem Error Function Actually, Wolfram Alpha provides the following output where The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation is actually correct.  "
 },
@@ -11255,7 +11264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXAMPLECircumCircleViaImprInt",
   "type": "Example",
-  "number": "19.197",
+  "number": "19.198",
   "title": "The Circumference of a Unit Circle, Via an Improper Integral.",
   "body": " The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be   Suppose instead, we compute the arc length by using the equation . Then If you don't see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say ``big deal, it worked'', consider the area of this region.     The area of this region would be given by   "
 },
@@ -11264,7 +11273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#PROBLEMImpropInt2",
   "type": "Drill",
-  "number": "19.198",
+  "number": "19.199",
   "title": "",
   "body": " Try to compute the integral in Formula . What happens?  "
 },
@@ -11273,7 +11282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEImpropInt3",
   "type": "Problem",
-  "number": "19.199",
+  "number": "19.200",
   "title": "",
   "body": "  Problem Improper Integral    Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from part (a) to compute the following improper integrals.   "
 },
@@ -11282,7 +11291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXAMPLETorricellisTrumpet",
   "type": "Example",
-  "number": "19.200",
+  "number": "19.201",
   "title": "Torricelli’s Trumpet and the Painter’s Paradox.",
   "body": " Torricelli's Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608-1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).  "
 },
@@ -11291,7 +11300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#TorriThm",
   "type": "Theorem",
-  "number": "19.201",
+  "number": "19.202",
   "title": "",
   "body": "  An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   "
 },
@@ -11300,7 +11309,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISETorriTrumpet",
   "type": "Problem",
-  "number": "19.202",
+  "number": "19.203",
   "title": "The Volume of Torricelli’s Trumpet.",
   "body": "The Volume of Torricelli's Trumpet   Problem Torricelli s Trumpet Volume    Use an improper integral with volumes of disks to obtain Torricelli's result. Again it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.  "
 },
@@ -11309,7 +11318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISETorriSurfArea",
   "type": "Problem",
-  "number": "19.203",
+  "number": "19.204",
   "title": "",
   "body": "  Problem Torricelli s Trumpet Surface Area Let's assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than 2𝜋 ∫𝑥=1 𝑑𝑥 (Why?) Use this 𝑥 fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.  "
 },
@@ -11318,7 +11327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEFiniteAreaInfiniteMoment",
   "type": "Problem",
-  "number": "19.204",
+  "number": "19.205",
   "title": "",
   "body": "  Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?  "
 },
