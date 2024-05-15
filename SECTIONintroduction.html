@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -632,7 +644,7 @@ window.MathJax = {
 <article class="theorem theorem-like" id="THEOREMFermatsTheorem"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Fermat’s Theorem.</span>
 </h3>
-<div class="para" id="THEOREMFermatsTheorem-3">If a function, <span class="process-math">\(f(x)\text{,}\)</span> is differentiable at <span class="process-math">\(x=a\)</span> and <span class="process-math">\(f(a)\)</span> is either a maximum or a minimum then <span class="process-math">\(\geneval{\dfdx{f}{x}}{x=a}=0\text{.}\)</span>
+<div class="para" id="THEOREMFermatsTheorem-3">If a function, <span class="process-math">\(f(x)\text{,}\)</span> is differentiable at <span class="process-math">\(x=a\)</span> and <span class="process-math">\(f(a)\)</span> is either a maximum or a minimum then <span class="process-math">\(\dfdxat{f}{x}{a}=0\text{.}\)</span>
 </div></article><div class="para" id="SECTIONintroduction-7">In view of Fermat’s Theorem it appears that a likely strategy for attacking optimization problems is to find an expression, say <span class="process-math">\(f(x)\text{,}\)</span> for the objective function and then solve the equation <span class="process-math">\(\dfdx{f}{x} = 0\text{.}\)</span> In fact, this is precisely the strategy we used in <a href="SECTIONrates-change.html" class="internal" title="Section 5.4: Galileo Drops the Ball">Section 5.4</a> to find the maximal height attained by a tossed ball. If we toss a ball upward we know that it will reach a maximal height.  At the top of its flight, when the ball transitions from upward movement to downward movement, there is a moment when its velocity is zero. Thus we saw that if <span class="process-math">\(p(t)\)</span> is a formula that gives the height of the ball at any time, setting <span class="process-math">\(\dfdx{p}{t}=0\)</span> and solving for <span class="process-math">\(t\)</span> will yield the time when the ball is at the top of its flight.</div>
 <article class="exercise exercise-like" id="SECTIONintroduction-8"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">9.2</span><span class="period">.</span>
@@ -640,9 +652,9 @@ window.MathJax = {
 <div class="para" id="SECTIONintroduction-8-1-1">Suppose a ball is tossed vertically from the surface of the earth with an initial velocity of <span class="process-math">\(20
 \frac{\text{meters}}{\text{sec}}\text{.}\)</span> Show that the ball reaches its maximum height when <span class="process-math">\(t=\frac{20}{9.8}\approx 2\)</span> seconds.</div>
 <div class="solutions"><details id="SECTIONintroduction-8-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SECTIONintroduction-8-2-1">You may want to review <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMGeneralFallingBalls.html" title="Drill 5.31">Drill 5.31</a>.</div></div></details></div></article><div class="para" id="SECTIONintroduction-9">At their simplest, optimization problems really are just that straightforward. But “straightforward” does not necessarily mean easy. There are several nuances that, if not clearly understood, can cause much confusion and difficulty. We will proceed carefully.</div>
-<div class="para" id="SECTIONintroduction-10">To begin, take careful note of what Fermat’s Theorem says and, just as important, what it does not say: It says that if <span class="process-math">\((a, f(a))\)</span> is a point on the graph of a differentiable function <span class="process-math">\(f(x)\text{,}\)</span> and if <span class="process-math">\(f(a)\)</span> is known to be an extremum (either a maximum or a minimum) then <span class="process-math">\(\geneval{\dfdx{f}{x}}{x=a}=0\text{.}\)</span>
+<div class="para" id="SECTIONintroduction-10">To begin, take careful note of what Fermat’s Theorem says and, just as important, what it does not say: It says that if <span class="process-math">\((a, f(a))\)</span> is a point on the graph of a differentiable function <span class="process-math">\(f(x)\text{,}\)</span> and if <span class="process-math">\(f(a)\)</span> is known to be an extremum (either a maximum or a minimum) then <span class="process-math">\(\\dfdxat{f}{x}{a}=0\text{.}\)</span>
 </div>
-<div class="para" id="SECTIONintroduction-11">Fermat’s Theorem does not say that if <span class="process-math">\(\geneval{\dfdx{f}{x}}{x=a}=0\)</span> then <span class="process-math">\(f(a)\)</span> must be an extremum. In fact, that is not necessarily true.  For example, if <span class="process-math">\(f(x)=x^3\)</span> then <span class="process-math">\(\geneval{\dfdx{f}{x}}{x=0}=0\)</span> but the graph has neither a maximum or a minimum at <span class="process-math">\((0, f(0))\text{.}\)</span> Confirm this by graphing it.</div>
+<div class="para" id="SECTIONintroduction-11">Fermat’s Theorem does not say that if <span class="process-math">\(\dfdxat{f}{x}{a}=0\)</span> then <span class="process-math">\(f(a)\)</span> must be an extremum. In fact, that is not necessarily true.  For example, if <span class="process-math">\(f(x)=x^3\)</span> then <span class="process-math">\(\\dfdxat{f}{x}{0}=0\)</span> but the graph has neither a maximum or a minimum at <span class="process-math">\((0, f(0))\text{.}\)</span> Confirm this by graphing it.</div>
 <div class="para logical" id="SECTIONintroduction-12">
 <div class="para">We have a lifetime of experience with tossed balls telling us that a tossed ball will reach a maximum height.  Fermat’s Theorem tells us that whenever that maximum height is attained, <span class="process-math">\(\dfdx{p}{t}\)</span> will be zero. So all we had to do for this problem is find the one and only time when <span class="process-math">\(\dfdx{p}{t}=0\text{.}\)</span> This is the time when the maximum height is reached. But suppose after the ball is released there are forces other than gravity  involved.  Suppose, for example, that our tossed ball is being buffeted by the wind on a blustery day is such a way that the height of the ball is given by</div>
 <div class="displaymath process-math">

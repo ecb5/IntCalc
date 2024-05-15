@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -668,7 +680,7 @@ window.MathJax = {
 <div class="para">or just</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\geneval{\dfdx{y}{x}}{(a,b)}
+\mineval{\dfdx{y}{x}}{(a,b)}
 \end{equation*}
 </div>
 <div class="para">when there is no ambiguity. This notation is very flexible. Frequently the <span class="process-math">\(y\)</span> coordinate will not be in play. In that case we write <span class="process-math">\(\eval{\dfdx{y}{x}}{x}{a}\)</span> to indicate that we are evaluating <span class="process-math">\(\dfdx{y}{x}\)</span> at the point <span class="process-math">\(x=a\text{.}\)</span>
@@ -691,7 +703,7 @@ x-5}{(x,y)}{(3,12)}=6\cdot3-5=13.
 </div>
 </div> <aside class="aside aside-like" id="EXAMPLEEvaluationNotation-4-1-2"><h5 class="heading"><span class="title">Mathematical Notation.</span></h5>
 <div class="para" id="EXAMPLEEvaluationNotation-4-1-2-2">Obviously this makes no sense if the point <span class="process-math">\((3,12)\)</span> is not a point on the curve. You should always make sure the problem makes sense before you try to solve it.</div></aside> <div class="para" id="EXAMPLEEvaluationNotation-4-1-3">In this case we could just write: <span class="process-math">\(\eval{\dfdx{y}{x}}{x}{3}=13\text{,}\)</span> since the <span class="process-math">\(y\)</span> coordinate never comes into play.</div> <div class="para" id="EXAMPLEEvaluationNotation-4-1-4"> Finally, we emphasize that Leibniz’ notation is <em class="emphasis">deliberately</em> evocative of the notion of slope because when we evaluate the differential ratio at a point it tells us the slope of the curve at that point.  In view of the <em class="alert">Principle of Local Linearity</em>, this is equivalent to finding the slope of the line tangent to the curve at that point.</div></article></article><div class="para" id="SECTIONVelocitySlopeTangent-15">This notation probably seems unnecessarily cumbersome and honestly, in some ways it is. But be assured we have not made this choice lightly, and this notation has certain advantages that will become apparent later.</div>
-<div class="para" id="SECTIONVelocitySlopeTangent-16">It can be easy to get careless or simply confused and write <span class="process-math">\(\dfdx{y}{x}\)</span> when you mean <span class="process-math">\(\geneval{\dfdx{y}{x}}{x=a}\text{,}\)</span> and <i class="foreign">vice versa</i>, so it is important that you have the distinction between them clear in your mind.</div>
+<div class="para" id="SECTIONVelocitySlopeTangent-16">It can be easy to get careless or simply confused and write <span class="process-math">\(\dfdx{y}{x}\)</span> when you mean <span class="process-math">\(\eval{\dfdx{y}{x}}{x}{a}\text{,}\)</span> and <i class="foreign">vice versa</i>, so it is important that you have the distinction between them clear in your mind.</div>
 <article class="problem example-like" id="SECTIONVelocitySlopeTangent-17"><h3 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">5.3</span><span class="period">.</span>
 </h3>

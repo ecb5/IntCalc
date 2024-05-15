@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -641,11 +653,17 @@ window.MathJax = {
 </h3> <div class="para" id="EXAMPLEAbsValFunc-2">The Absolute Value function is usually introduced with some vague statement like,</div> <blockquote class="blockquote" id="EXAMPLEAbsValFunc-3"><div class="para" id="EXAMPLEAbsValFunc-3-1">“The absolute value of a number is just the positive version of the number,”</div></blockquote> <div class="para" id="EXAMPLEAbsValFunc-4">or</div> <blockquote class="blockquote" id="EXAMPLEAbsValFunc-5"><div class="para" id="EXAMPLEAbsValFunc-5-1">“<span class="process-math">\(\abs{x-a}\)</span> gives the length of the line segment between <span class="process-math">\(x\)</span> and <span class="process-math">\(a\text{.}\)</span>”</div></blockquote> <div class="para" id="EXAMPLEAbsValFunc-6">These are both true statements and are OK as intuitive definitions, but we will need something more precise from now on.</div></article><div class="para" id="CHAPTERwhen-deriv-doesnt-2-10">The formal definition of the Absolute Value function is:</div>
 <article class="definition definition-like" id="DEFINITIONAbsoluteValue"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.2</span><span class="period">.</span><span class="space"> </span><span class="title">The Absolute Value Function.</span>
-</h3>  <div class="para" id="DEFINITIONAbsoluteValue-3-1">The Absolute Value of <span class="process-math">\(x\)</span> is: <span class="process-math">\(\abs{x}=
+</h3>  <div class="para logical" id="DEFINITIONAbsoluteValue-3-1">
+<div class="para">The Absolute Value of <span class="process-math">\(x\)</span> is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{x}=
 \begin{cases}
 x\amp\text{ if } x\ge0\\
 -x\amp\text{ if } x\lt 0
-\end{cases}\text{.}\)</span>
+\end{cases}.
+\end{equation*}
+</div>
 </div></article><div class="para" id="CHAPTERwhen-deriv-doesnt-2-12"> The graph of the Absolute Value function is given below. Notice that <span class="process-math">\(f(x)=\abs{x}\)</span> is defined at <span class="process-math">\(x=0\)</span> since <span class="process-math">\(\abs{0}=0\text{,}\)</span> but as we indicated in <a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONunderl-deriv" class="internal" title="Subsection 9.5.3: Undefined Derivatives">Subsection 9.5.3</a> the Principle of Local Linearity does not hold at <span class="process-math">\(x=0\)</span> so we suspect that the Absolute Value function is not differentiable at <span class="process-math">\(x=0\text{.}\)</span>
 </div>
 <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/DC/AbsVal.png" class="contained"></div>
@@ -676,7 +694,7 @@ x\amp\text{ if } x\ge0\\
 <div class="para">which says that the left-hand limit will be negative one.</div>
 </div>
 <div class="para" id="CHAPTERwhen-deriv-doesnt-2-17">But since <span class="process-math">\(\frac{\abs{h}}{h}\)</span> can’t be close to <span class="process-math">\(1\)</span> and close to  <span class="process-math">\(-1\)</span> simultaneously we can not find a value for <span class="process-math">\(\tlimit{h}{0}{\frac{\abs{0+h}-\abs{0}}{h}}\)</span> which is correct for both positive and negative values of <span class="process-math">\(h\text{.}\)</span> In other words this limit does not exist.</div>
-<div class="para" id="CHAPTERwhen-deriv-doesnt-2-18">Therefore <span class="process-math">\(\eval{\dfdx{\abs{x}}{x}}{x}{0}\)</span> does not exist either.</div>
+<div class="para" id="CHAPTERwhen-deriv-doesnt-2-18">Therefore <span class="process-math">\(\dfdxat{\abs{x}}{x}{0}\)</span> does not exist either.</div>
 <article class="exercise exercise-like" id="CHAPTERwhen-deriv-doesnt-2-19"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.3</span><span class="period">.</span>
 </h3>

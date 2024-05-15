@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -690,7 +702,7 @@ window.MathJax = {
 \end{align*}
 </div>
 <div class="para">which verifies the Sum Rule.</div>
-</div> <div class="para" id="SECTIONsome-rules-diff-17-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><div class="para" id="SECTIONsome-rules-diff-18">Notice that like the Constant Rule, the Sum Rule is true regardless of whether we are talking about finite differences or differentials.</div>
+</div></article><div class="para" id="SECTIONsome-rules-diff-18">Notice that like the Constant Rule, the Sum Rule is true regardless of whether we are talking about finite differences or differentials.</div>
 <div class="para" id="SECTIONsome-rules-diff-19">The Sum Rule is stated as if it only applies to the sum of <em class="emphasis">two</em> quantities. This is typical of mathematical writing. We tend to be minimalists so we don’t state more than we absolutely have to. However, if the Sum Rule applies to the sum of two quantities it is straightforward to show that it also applies in the obvious fashion to a sum of three, four, or more quantities.</div>
 <article class="problem example-like" id="SECTIONsome-rules-diff-20"><h3 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">4.10</span><span class="period">.</span>
@@ -749,7 +761,7 @@ window.MathJax = {
 \end{equation*}
 </div>
 <div class="para">which verifies the Constant Multiple Rule.</div>
-</div> <div class="para" id="SECTIONsome-rules-diff-24-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><article class="example example-like" id="EXAMPLEDifferentialRatioIsSlope"><h3 class="heading">
+</div></article><article class="example example-like" id="EXAMPLEDifferentialRatioIsSlope"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.13</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="EXAMPLEDifferentialRatioIsSlope-1">
@@ -796,7 +808,7 @@ window.MathJax = {
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.15</span><span class="period">.</span><span class="space"> </span><span class="title">The Product Rule.</span>
 </h3>
 <div class="para" id="THEOREMProdRule-2"><span class="process-math">\(\dx{(xy)}=x\dx{y}+y\dx{x}.\)</span></div></article><article class="proof" id="SECTIONsome-rules-diff-31"><h3 class="heading"><span class="title"><i class="foreign">Ad Hoc</i> Proof.</span></h3> <aside class="aside aside-like" id="SECTIONsome-rules-diff-31-2"><h3 class="heading"><span class="title">Comment.</span></h3>
-<div class="para" id="SECTIONsome-rules-diff-31-2-2">We call these proofs <a class="external" href="https://www.merriam-webster.com/dictionary/ad%20hoc" target="_blank"><i class="foreign">“Ad Hoc”</i></a><a class="xref" id="SECTIONsome-rules-diff-31-2-2-2" href="" data-knowl="./knowl/fn/SECTIONsome-rules-diff-31-2-2-2.html" title="Footnote 4.14"><sup> 14 </sup></a> because they do not satisfy modern standards of rigor. Think of it as a reasonable, and (hopefully) convincing argument. We will address the question of formal rigor starting in <a href="CHAPTERWhatsWrong.html" class="internal" title="Chapter 13: What’s Wrong with Differentials?">Chapter 13</a>
+<div class="para" id="SECTIONsome-rules-diff-31-2-2">We call this proof <a class="external" href="https://www.merriam-webster.com/dictionary/ad%20hoc" target="_blank"><i class="foreign">“Ad Hoc”</i></a><a class="xref" id="SECTIONsome-rules-diff-31-2-2-2" href="" data-knowl="./knowl/fn/SECTIONsome-rules-diff-31-2-2-2.html" title="Footnote 4.14"><sup> 14 </sup></a> because it does not satisfy modern standards of rigor. Think of it as a reasonable, and (hopefully) convincing argument. We will address the question of formal rigor starting in <a href="CHAPTERWhatsWrong.html" class="internal" title="Chapter 13: What’s Wrong with Differentials?">Chapter 13</a>
 </div></aside> <div class="para" id="SECTIONsome-rules-diff-31-3">Think of the product <span class="process-math">\(xy\)</span> as the (A)rea of the rectangle with sides of length <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> so that <span class="process-math">\(A=xy\text{,}\)</span> as shown in the following sketch.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/ProductRule7.png" class="contained"></div> <div class="para logical" id="SECTIONsome-rules-diff-31-5">
 <div class="para">If we increase the sides by <span class="process-math">\(\dx{x}\)</span> and <span class="process-math">\(\dx{y}\text{,}\)</span> respectively, then the area will change by an infinitesimal amount <span class="process-math">\(\dx{A}\)</span> which is the sum of areas of the blue, yellow, and red regions shown in the sketch.  The area of the blue region is <span class="process-math">\(x\dx{y}\text{,}\)</span> the area of the red region is <span class="process-math">\(y\dx{x}\)</span> and the area of the yellow region is <span class="process-math">\(\dx{x}\dx{y}\text{.}\)</span>  Since <span class="process-math">\(\dx{A}\)</span> is the sum of these three regions we have</div>
 <div class="displaymath process-math" id="EQUATIONDifferentialProductRule">
@@ -804,7 +816,7 @@ window.MathJax = {
 \dx{A} =x\dx{y}+y\dx{x}+\dx{x}\dx{y}.\tag{4.4}
 \end{equation}
 </div>
-</div> <div class="para" id="SECTIONsome-rules-diff-31-6">But remember that <span class="process-math">\(\dx{x}\)</span> and <span class="process-math">\(\dx{y}\)</span> represent infinitely small changes.  Thus, their product <span class="process-math">\(\dx{x}\dx{y}\)</span> is even more infinitely small than they are. (Quadratically infinitely small?)</div> <div class="para" id="SECTIONsome-rules-diff-31-7">In fact, the product <span class="process-math">\(\dx{x}\dx{y}\)</span> is so small compared to any of the other terms in <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDifferentialProductRule.html" title="Equation 4.4">Equation (4.4)</a> that it simply doesn’t matter. So we will ignore it.</div> <div class="para" id="SECTIONsome-rules-diff-31-8">This leaves us with <span class="process-math">\(\dx{A}=\dx(xy)=x\dx{y}+y\dx{x}\)</span> verifying the Product Rule.</div> <div class="para" id="SECTIONsome-rules-diff-31-9"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><div class="para" id="SECTIONsome-rules-diff-32">You should feel at least a little uncomfortable with the  logical sleight of hand in our <i class="foreign">ad hoc</i> proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" title="Fact 4.15: The Product Rule">The Product Rule 4.15</a>. Some questions present themselves immediately: How can we choose not to ignore infinitesimals like <span class="process-math">\(\dx{x}\)</span> and <span class="process-math">\(\dx{y}\text{,}\)</span> but then choose to ignore their product <span class="process-math">\(\dx{x}\dx{y}\text{?}\)</span> What happens if <span class="process-math">\(x\)</span> or <span class="process-math">\(y\)</span> is negative? What happens if <span class="process-math">\(\dx{x}\)</span> or <span class="process-math">\(\dx{y}\)</span> is negative?</div>
+</div> <div class="para" id="SECTIONsome-rules-diff-31-6">But remember that <span class="process-math">\(\dx{x}\)</span> and <span class="process-math">\(\dx{y}\)</span> represent infinitely small changes.  Thus, their product <span class="process-math">\(\dx{x}\dx{y}\)</span> is even more infinitely small than they are. (Quadratically infinitely small?)</div> <div class="para" id="SECTIONsome-rules-diff-31-7">In fact, the product <span class="process-math">\(\dx{x}\dx{y}\)</span> is so small compared to any of the other terms in <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDifferentialProductRule.html" title="Equation 4.4">Equation (4.4)</a> that it simply doesn’t matter. So we will ignore it.</div> <div class="para" id="SECTIONsome-rules-diff-31-8">This leaves us with <span class="process-math">\(\dx{A}=\dx(xy)=x\dx{y}+y\dx{x}\)</span> verifying the Product Rule.</div></article><div class="para" id="SECTIONsome-rules-diff-32">You should feel at least a little uncomfortable with the  logical sleight of hand in our <i class="foreign">ad hoc</i> proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" title="Fact 4.15: The Product Rule">The Product Rule 4.15</a>. Some questions present themselves immediately: How can we choose not to ignore infinitesimals like <span class="process-math">\(\dx{x}\)</span> and <span class="process-math">\(\dx{y}\text{,}\)</span> but then choose to ignore their product <span class="process-math">\(\dx{x}\dx{y}\text{?}\)</span> What happens if <span class="process-math">\(x\)</span> or <span class="process-math">\(y\)</span> is negative? What happens if <span class="process-math">\(\dx{x}\)</span> or <span class="process-math">\(\dx{y}\)</span> is negative?</div>
 <div class="para" id="SECTIONsome-rules-diff-33">Perhaps Leibniz left out the demonstrations (proofs) of his rules because he knew they would be controversial.  However, he was not lying when he said that those familiar with infinitesimals would understand.  Newton also ignored products of infinitesimals in his version of Calculus.  As we discussed in <a href="SECTIONHist-intr.html" class="internal" title="Section 4.1: Historical Introduction">Section 4.1</a>, it took mathematicians some <span class="process-math">\(200\)</span> years to sort this out.  We will begin to address this problem in the <a href="CHAPTERWhatsWrong.html" class="internal" title="Chapter 13: What’s Wrong with Differentials?">Chapter 13</a>. For now, we will simply accept that the Product Rule works as we’ve stated it knowing full well that we are on shaky ground that will eventually need to be firmed up.</div>
 <article class="problem example-like" id="PROBLEMdydxIsSlope"><h3 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">4.16</span><span class="period">.</span>
@@ -833,9 +845,9 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div></article><article class="task exercise-like" id="PROBLEMCircleDifferential-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="PROBLEMCircleDifferential-3-1-1">Explain why be the area of the yellow ring in the diagram is also equal to <span class="process-math">\(\dx{A}\text{.}\)</span>
+<div class="para" id="PROBLEMCircleDifferential-3-1-1">Explain why  the area of the yellow ring in the diagram is also equal to <span class="process-math">\(\dx{A}\text{.}\)</span>
 </div></article><article class="task exercise-like" id="PROBLEMCircleDifferential-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="PROBLEMCircleDifferential-4-1-1">Find <span class="process-math">\(\dx{A}\)</span> by cutting the yellow region at the dotted line, reshaping the ring into a rectangle. How does this compare with what we obtained using our Calculus rules. Do you see any logical issues with this solution?  Specifically, why is it important that <span class="process-math">\(\dx{r}\)</span> must be infinitely small?</div></article></article><section class="paragraphs" id="DIGRESSIONDifferentialNotation"><h3 class="heading"><span class="title">DIGRESSION: Differential Notation.</span></h3>  <div class="para" id="DIGRESSIONDifferentialNotation-3">We will pause here for a moment to take explicit notice of the notational convenience we used in part (a) of <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMCircleDifferential.html" title="Drill 4.17">Drill 4.17</a> because it will be useful later.  We have used the expression <span class="process-math">\(\dx{x}\)</span> to represent an infinitesimal displacement of <span class="process-math">\(x\text{,}\)</span> but it will be useful to think of the “<span class="process-math">\(\dx{ }\)</span>” as meaningful in itself. That is, in the expression <span class="process-math">\(\dx(\pi r^2)\)</span> we think of the “d” as “operating on” the expression <span class="process-math">\(\pi
+<div class="para" id="PROBLEMCircleDifferential-4-1-1">Find <span class="process-math">\(\dx{A}\)</span> by cutting the yellow region at the dotted line, and reshaping the ring into a rectangle. How does this compare with what we obtained using our Calculus rules. Do you see any logical issues with this solution?  Specifically, why is it important that <span class="process-math">\(\dx{r}\)</span> must be infinitely small?</div></article></article><section class="paragraphs" id="DIGRESSIONDifferentialNotation"><h3 class="heading"><span class="title">DIGRESSION: Differential Notation.</span></h3>  <div class="para" id="DIGRESSIONDifferentialNotation-3">We will pause here for a moment to take explicit notice of the notational convenience we used in part (a) of <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMCircleDifferential.html" title="Drill 4.17">Drill 4.17</a> because it will be useful later.  We have used the expression <span class="process-math">\(\dx{x}\)</span> to represent an infinitesimal displacement of <span class="process-math">\(x\text{,}\)</span> but it will be useful to think of the “<span class="process-math">\(\dx{ }\)</span>” as meaningful in itself. That is, in the expression <span class="process-math">\(\dx(\pi r^2)\)</span> we think of the “d” as “operating on” the expression <span class="process-math">\(\pi
 r^2.\)</span> Thus when <span class="process-math">\(\dx{}\)</span> “operates on” the expression <span class="process-math">\(\pi r^2\)</span> it returns the expression <span class="process-math">\(2\pi r\dx{r}\)</span> and we have <span class="process-math">\(\dx{A}=\dx(\pi r^2) = 2\pi r
 \dx{r}.\)</span> This is actually consistent with our previous usage if we think of <span class="process-math">\(\dx(A)\)</span> as “operating on” the area <span class="process-math">\(A\)</span> and returning the differential <span class="process-math">\(\dx{A}.\)</span>
 </div> <div class="para" id="DIGRESSIONDifferentialNotation-4">This is akin to the way we think about the square root symbol. The symbol <span class="process-math">\(\sqrt{\phantom{4}}\)</span> “operates on” the expression underneath it so we have <span class="process-math">\(\sqrt{4}=2.\)</span> Just as <span class="process-math">\(\sqrt{\phantom{4}}\)</span> is always reserved for the square root <em class="emphasis">of some quantity</em>, <span class="process-math">\(\dx{}\)</span> is always reserved for the differential <em class="emphasis">of some quantity</em>. In both cases the quantity needs to be named. It is as meaningless to write <span class="process-math">\(\pi r^2\dx{}\)</span> as it is to write <span class="process-math">\(\pi r^2\sqrt{\phantom{4}}.\)</span> It is important to use the notation as it was designed to be used.</div> <div class="para" id="DIGRESSIONDifferentialNotation-5">Also, notice that on the left side of <span class="process-math">\(\dx{A}=\dx(\pi

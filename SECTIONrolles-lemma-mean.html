@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -658,7 +670,7 @@ window.MathJax = {
 </dd>
 </dl>
 <div class="para">In either case the existence of <span class="process-math">\(c\)</span> in the interval <span class="process-math">\((a,b)\text{,}\)</span> with <span class="process-math">\(f^\prime(c)=0\)</span> is guaranteed.</div>
-</div> <div class="para" id="SECTIONrolles-lemma-mean-9-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><section class="paragraphs" id="DIGRESSIONTheoremsAndLemmas"><h3 class="heading"><span class="title">Digression: Theorems and Lemmas.</span></h3>  <aside class="aside aside-like" id="DIGRESSIONTheoremsAndLemmas-3"><h4 class="heading"><span class="title">Mathematical Nomneclature.</span></h4>
+</div></article><section class="paragraphs" id="DIGRESSIONTheoremsAndLemmas"><h3 class="heading"><span class="title">Digression: Theorems and Lemmas.</span></h3>  <aside class="aside aside-like" id="DIGRESSIONTheoremsAndLemmas-3"><h4 class="heading"><span class="title">Mathematical Nomneclature.</span></h4>
 <div class="para" id="DIGRESSIONTheoremsAndLemmas-3-2">Technically speaking, a statement is not a theorem until it has actually been proved. Until then it is a conjecture.</div></aside> <div class="para" id="DIGRESSIONTheoremsAndLemmas-4">The distinction between a theorem and a lemma is very slight and rather arbitrary. Typically we call a statement a theorem if it is important and requires proof. We call it a lemma if it requires proof itself, and is used to simply the proof of a theorem.  This is not a hard-and-fast rule by any means. Sometimes we first prove a lemma as an aid to proving a theorem, only to find that the lemma is actually more important. However, having been originally dubbed a lemma the result is known ever after as a lemma.  For example, in the present instance we will be using the Extreme Value, and Fermat’s <em class="emphasis">Theorems</em> to prove what often called Rolle’s <em class="emphasis">Lemma</em>, and then use use Rolle’s <em class="emphasis">Lemma</em> to prove the Mean Value <em class="emphasis">Theorem</em>.  Then we will use the Mean Value <em class="emphasis">Theorem</em> to prove the First Derivative <em class="emphasis">Test</em>. It is all very chaotic.</div> <aside class="aside aside-like" id="DIGRESSIONTheoremsAndLemmas-5"><h4 class="heading"><span class="title">Comment.</span></h4>
 <div class="para" id="DIGRESSIONTheoremsAndLemmas-5-2">We will not be proving the Extreme Value Theorem in this text. Although it appears to be obviously true (read it again and see), it is remarkably hard to prove in a fully rigorous fashion. If you feel that you must see the proof you should change your major to mathematics and take a course in Real Analysis.</div></aside> <div class="para" id="DIGRESSIONTheoremsAndLemmas-6"><em class="alert">END OF DIGRESSION</em></div></section><article class="theorem theorem-like" id="THEOREMMVT"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Mean Value Theorem.</span>
@@ -718,7 +730,7 @@ f^\prime(c) = \frac{f(b)-f(a)}{b-a},
 \end{equation*}
 </div>
 <div class="para">which completes the proof.</div>
-</div> <div class="para" id="SECTIONrolles-lemma-mean-15-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><div class="para" id="SECTIONrolles-lemma-mean-16">As we mentioned at the beginning of this chapter in French the Mean Value Theorem is known as the <i class="foreign">théorème des accroissements finis</i> or literally the “theorem of the finite increments.”</div>
+</div></article><div class="para" id="SECTIONrolles-lemma-mean-16">As we mentioned at the beginning of this chapter in French the Mean Value Theorem is known as the <i class="foreign">théorème des accroissements finis</i> or literally the “theorem of the finite increments.”</div>
 <div class="para" id="SECTIONrolles-lemma-mean-17">To see why this is an accurate description let <span class="process-math">\(y=f(x)\text{.}\)</span> Then <span class="process-math">\(f(b)-f(a) = \Delta y\)</span> and <span class="process-math">\(b-a=\Delta x\text{.}\)</span> So we can re-express <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONMVT.html" title="Equation 15.3">equation (15.3)</a>) as <span class="process-math">\(\Delta y=f^\prime(c)\Delta x\text{.}\)</span> In this form it is clear that the Mean Value Theorem relates the finite increments <span class="process-math">\(\Delta y\)</span> and <span class="process-math">\(\Delta x\)</span> to the instantaneous rate of change <span class="process-math">\(f^\prime(c)\text{.}\)</span>
 </div>
 <div class="para" id="SECTIONrolles-lemma-mean-18">The English name, “Mean Value Theorem” comes from interpreting the derivative as an instantaneous velocity. If <span class="process-math">\(t\)</span> represents time and <span class="process-math">\(p(t)\)</span> represents position at time <span class="process-math">\(t\text{,}\)</span> then <span class="process-math">\(\frac{p(b)-p(a)}{b-a}\)</span> is the average velocity in the time interval <span class="process-math">\([a,b]\text{.}\)</span> Since <span class="process-math">\(p^\prime(c)\)</span> is instantaneous velocity at time <span class="process-math">\(c\text{,}\)</span> the conclusion of the Mean Value Theorem is that at some point in that interval, instantaneous velocity must match average (mean) velocity. For example, if you travel <span class="process-math">\(50\)</span> miles in one hour then your average velocity is <span class="process-math">\(50\frac{\text{miles}}{\text{hour}}\text{.}\)</span> But it is unlikely that you traveled at exactly <span class="process-math">\(50\frac{\text{miles}}{\text{hour}}\)</span> for the entire hour. However, at one instant (possibly more) you had to have been traveling at exactly <span class="process-math">\(50\frac{\text{miles}}{\text{hour}}\text{.}\)</span> This is the Mean Value Theorem. It provides the bridge we need to get from infinitesimals to finite intervals.</div></section></div>

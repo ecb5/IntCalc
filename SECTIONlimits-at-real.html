@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -725,11 +737,11 @@ x^2 \amp \lt \eps\\
 </div>
 <div class="para">Therefore <span class="process-math">\(\limit{x}{0}{f(x)}=2\text{.}\)</span>
 </div>
-</div> <div class="para" id="SECTIONlimits-at-real-19-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><div class="para" id="SECTIONlimits-at-real-20">Notice that our proof does not give us any new information since it is intuitively clear that <span class="process-math">\(\limit{x}{0}{(-x^2+2)}=2\text{.}\)</span> The formalism of a limit merely confirms, in a manner even Bishop Berkeley would accept, what we already know to be true.</div>
+</div></article><div class="para" id="SECTIONlimits-at-real-20">Notice that our proof does not give us any new information since it is intuitively clear that <span class="process-math">\(\limit{x}{0}{(-x^2+2)}=2\text{.}\)</span> The formalism of a limit merely confirms, in a manner even Bishop Berkeley would accept, what we already know to be true.</div>
 <div class="para" id="SECTIONlimits-at-real-21">Incidentally, since <span class="process-math">\(f(0)=-0^2+2=2\)</span> we have also just proved that <span class="process-math">\(f(x)\)</span> is continuous at <span class="process-math">\(x=0\text{.}\)</span> See <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONcontinuity.html" title="Definition 14.15: Continuity at a Point">Definition 14.15</a>.</div>
 <div class="para" id="SECTIONlimits-at-real-22">For simple problems like this one the proof consisted of writing the algebraic steps from our <dfn class="terminology">Scrapwork</dfn>  backwards, as you see. This worked because every algebraic step in the <dfn class="terminology">Scrapwork</dfn>  was reversible. But don’t jump to conclusions. This will not always be the case.</div>
 <div class="para" id="SECTIONlimits-at-real-23">Clearly the <dfn class="terminology">Scrapwork</dfn>  is the most important part of the solution process for this problem. In a very real sense it actually is the solution. We call it <dfn class="terminology">Scrapwork</dfn>  because it is the part of the work that you don’t show anyone else because it is messy and not well organized\aside{We kept it clean and orderly here so you could see the reasoning.}.  The scrapwork is like the scaffolding used to construct a building. The proof is the building.</div>
-<div class="para" id="SECTIONlimits-at-real-24">It is absolutely necessary to have the scaffolding while construction is ongoing but you tear it down and clean everything up before you move in. In the same way your proof should be a cleaned up version of your scrapwork.  If this example were a homework problem, your solution would be the part that appears between <em class="alert">Proof</em> and the little black square, <span class="process-math">\(\halmos\text{,}\)</span> at the end.</div>
+<div class="para" id="SECTIONlimits-at-real-24">It is absolutely necessary to have the scaffolding while construction is ongoing but you tear it down and clean everything up before you move in. In the same way your proof should be a cleaned up version of your scrapwork.  If this example were a homework problem, your solution would be the part that appears after <em class="alert">Proof</em>.</div>
 <aside class="aside aside-like" id="SECTIONlimits-at-real-25"><h3 class="heading"><span class="title">Historical Background.</span></h3>
 <div class="para" id="SECTIONlimits-at-real-25-2">When Latin was the language of scholarship a mathematical proof ended with the letters <a class="external" href="https://en.wikipedia.org/wiki/Q.E.D." target="_blank"><i class="foreign">Q.E.D.</i></a><a class="xref" id="SECTIONlimits-at-real-25-2-2" href="" data-knowl="./knowl/fn/SECTIONlimits-at-real-25-2-2.html" title="Footnote 17.4"><sup> 4 </sup></a>, which are the initials of the phrase <i class="foreign">quod erat demonstrandum</i>, meaning “which was to be demonstrated.” Contrary to a popular joke it does not mean “Quite Easily Done.” In the late twentieth century this traditional ending began to be replaced by the black square we’re using (or some variation of it). It is called a “Halmos” in honor of <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Halmos/" target="_blank">Paul Halmos</a><a class="xref" id="SECTIONlimits-at-real-25-2-9" href="" data-knowl="./knowl/fn/SECTIONlimits-at-real-25-2-9.html" title="Footnote 17.5"><sup> 5 </sup></a>, a preeminent mathematician of the <span class="process-math">\(20\)</span>th century, who popularized it.</div></aside><article class="example example-like" id="EXAMPLEDiscontLimit2"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.25</span><span class="period">.</span>
@@ -770,7 +782,7 @@ f(x)=
 </div>
 <div class="para">Therefore <span class="process-math">\(\tlimit{x}{2}{f(x)}=6.\)</span>
 </div>
-</div> <div class="para" id="SECTIONlimits-at-real-27-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><div class="para" id="SECTIONlimits-at-real-28">Notice that it is again irrelevant that <span class="process-math">\(f(2)=10\text{.}\)</span>
+</div></article><div class="para" id="SECTIONlimits-at-real-28">Notice that it is again irrelevant that <span class="process-math">\(f(2)=10\text{.}\)</span>
 </div>
 <article class="problem example-like" id="SECTIONlimits-at-real-29"><h3 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">17.26</span><span class="period">.</span>
@@ -871,7 +883,7 @@ f(x)=
 \limit{x}{\frac12}{\frac{4x^2-1}{2x+1}}=2\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="PROOFProofExample-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><div class="para" id="SECTIONlimits-at-real-37">A long list of inequalities like those in <a href="" class="xref" data-knowl="./knowl/xref/PROOFProofExample.html" title="Proof 17.3.3">Proof 17.3.3</a> can be a little intimidating. Don’t let that stop you. Verify each transition from one inequality to the next. If you don’t see why a particular transition  is valid refer back to the scrapwork.</div>
+</div></article><div class="para" id="SECTIONlimits-at-real-37">A long list of inequalities like those in <a href="" class="xref" data-knowl="./knowl/xref/PROOFProofExample.html" title="Proof 17.3.3">Proof 17.3.3</a> can be a little intimidating. Don’t let that stop you. Verify each transition from one inequality to the next. If you don’t see why a particular transition  is valid refer back to the scrapwork.</div>
 <section class="paragraphs" id="DIGRESSIONWhyProveTheorems"><h3 class="heading"><span class="title">DIGRESSION: Why We Prove Theorems.</span></h3>    <div class="para" id="DIGRESSIONWhyProveTheorems-3">The proof of any theorem will follow logically from the relevant definitions, lemmas, corollaries, and previously proved theorems. However, as we’ve seen proving that <span class="process-math">\(\limit{x}{\frac12}{\frac{4x^2-1}{2x+1}}=2\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" title="Definition 17.22: The Limit at a Point">Definition 17.22</a> was very delicate and troublesome, and it only gave us one relatively insignificant limit. We’d really like to work more generally than this if we can.</div> <div class="para logical" id="DIGRESSIONWhyProveTheorems-4">
 <div class="para">We prove general theorems so that we can use them as tools. Do we have any tools (theorems) that would have made the proof of</div>
 <div class="displaymath process-math">

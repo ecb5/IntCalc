@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -641,7 +653,7 @@ window.MathJax = {
 </div>
 <div class="para">so by <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" title="Equation 17.4">(17.4)</a> we have <span class="process-math">\(\abs{x+y} \leq \abs{x}+\abs{y}\text{.}\)</span>
 </div>
-</div> <div class="para" id="PROOFTriIneq-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article> <div class="para logical" id="SECTIONLimitLaws-2-6">
+</div></article> <div class="para logical" id="SECTIONLimitLaws-2-6">
 <div class="para">The Limit Laws we need to prove are:</div>
 <dl class="description-list">
 <dt id="SECTIONLimitLaws-2-6-1-1">Theorem 14.7:</dt>
@@ -673,7 +685,7 @@ window.MathJax = {
 \limit{x}{\infty}{f(x)}=K.
 \end{equation*}
 </div>
-</div> <div class="para" id="SECTIONLimitLaws-2-9-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article> <div class="para" id="SECTIONLimitLaws-2-10">The formalism we’re using requires that we specify some value for <span class="process-math">\(B\text{.}\)</span> It was convenient to specify <span class="process-math">\(B=L\text{,}\)</span> but in this proof any value for <span class="process-math">\(B\ge L\)</span> would have worked as well.</div> <article class="theorem theorem-like" id="THEOREMLimConstNegInf"><h3 class="heading">
+</div></article> <div class="para" id="SECTIONLimitLaws-2-10">The formalism we’re using requires that we specify some value for <span class="process-math">\(B\text{.}\)</span> It was convenient to specify <span class="process-math">\(B=L\text{,}\)</span> but in this proof any value for <span class="process-math">\(B\ge L\)</span> would have worked as well.</div> <article class="theorem theorem-like" id="THEOREMLimConstNegInf"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">17.34</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit at Negative Infinity of a Constant Function is the Constant.</span>
 </h3>
 <div class="para" id="THEOREMLimConstNegInf-3">Suppose <span class="process-math">\(U\)</span> and <span class="process-math">\(K\)</span> are real numbers.  If <span class="process-math">\(f(x)=K\)</span> for all <span class="process-math">\(x\lt U\)</span> then <span class="process-math">\(\limit{x}{-\infty}{f(x)}=K.\)</span>
@@ -741,7 +753,7 @@ window.MathJax = {
 </div>
 <div class="para">Therefore <span class="process-math">\(\limit{x}{\infty}{\left(f(x)+g(x)\right)}=L_f+L_g.\)</span>
 </div>
-</div> <div class="para" id="SUBSECTIONlimit-sum-at-4-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><article class="problem example-like" id="SUBSECTIONlimit-sum-at-5"><h4 class="heading">
+</div></article><article class="problem example-like" id="SUBSECTIONlimit-sum-at-5"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">17.39</span><span class="period">.</span>
 </h4>
 <div class="para" id="SUBSECTIONlimit-sum-at-5-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimSumInf.html" title="Theorem 17.38: The Limit of a Sum at Infinity">Theorem 17.38</a> as a model to construct a proof of   <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimSumNegInf.html" title="Theorem 17.40: The Limit of a Sum at Negative Infinity">Theorem 17.40</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimSumNegInf"><h4 class="heading">
@@ -802,7 +814,7 @@ B_\alpha, B_\beta)\text{.}\)</span> Then if <span class="process-math">\(x\gt B\
 </div>
 <div class="para">In particular, <span class="process-math">\(-\eps \lt  f(x)-L \lt  \eps \)</span> so from <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" title="Equation 17.4">(17.4)</a> we see that <span class="process-math">\(\abs{f(x)-L}\lt \eps \text{.}\)</span> Therefore <span class="process-math">\(\limit{x}{\infty}{f(x)} = L\text{.}\)</span>
 </div>
-</div> <div class="para" id="SUBSECTIONsqueeze-theorem-3-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><article class="problem example-like" id="SUBSECTIONsqueeze-theorem-4"><h4 class="heading">
+</div></article><article class="problem example-like" id="SUBSECTIONsqueeze-theorem-4"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">17.44</span><span class="period">.</span>
 </h4>
 <div class="para" id="SUBSECTIONsqueeze-theorem-4-1-1">Use  the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMSqThmInfinity.html" title="Theorem 17.43: The Squeeze  Theorem at Infinity">Theorem 17.43</a> as a model to prove <a href="" class="xref" data-knowl="./knowl/xref/THEOREMSqThmNegInfinity.html" title="Theorem 17.45: The Squeeze  Theorem at Negative Infinity">Theorem 17.45</a> below.</div></article><article class="theorem theorem-like" id="THEOREMSqThmNegInfinity"><h4 class="heading">
@@ -913,7 +925,7 @@ f\left(\tlimit{x}{\infty}{g(x)}\right).
 <div class="para">and since  <span class="process-math">\(\abs{y-L_g}\lt\delta\)</span> we see, from the continuity of <span class="process-math">\(f\)</span> at <span class="process-math">\(L_g\)</span> that <span class="process-math">\(\abs{f(y)-f(L_g)}\lt\eps\text{.}\)</span> Therefore <span class="process-math">\(\limit{x}{\infty}{f(g(x))} = f(L_g) =
 f\left(\tlimit{x}{\infty}{g(x)}\right).\)</span>
 </div>
-</div> <div class="para" id="SECTIONlimit-composition-7-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><article class="problem example-like" id="SECTIONlimit-composition-8"><h4 class="heading">
+</div></article><article class="problem example-like" id="SECTIONlimit-composition-8"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">17.50</span><span class="period">.</span>
 </h4>
 <div class="para" id="SECTIONlimit-composition-8-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" title="Theorem 17.49: The Limit of a Composition at Infinity">Theorem 17.49</a> as a model to construct a proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompNegInf.html" title="Theorem 17.51: The Limit of a Composition at Negative Infinity">Theorem 17.51</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimCompNegInf"><h4 class="heading">
@@ -1007,7 +1019,7 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 <div class="para">Therefore <span class="process-math">\(\limit{x}{\infty}{f(x)\cdot
 g(x)}=\limit{x}{\infty}{f(x)}\cdot\limit{x}{\infty}{g(x)}\text{.}\)</span>
 </div>
-</div> <div class="para" id="PROOFLemmaLimProd1-4"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article><section class="paragraphs" id="SUBSECTIONlimit-product-at-7"><h4 class="heading"><span class="title">Proving Lemma 17.55.</span></h4>  <div class="para logical" id="SUBSECTIONlimit-product-at-7-2">
+</div></article><section class="paragraphs" id="SUBSECTIONlimit-product-at-7"><h4 class="heading"><span class="title">Proving Lemma 17.55.</span></h4>  <div class="para logical" id="SUBSECTIONlimit-product-at-7-2">
 <div class="para">To prove <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> we need to guarantee that if <span class="process-math">\(x\)</span> is large enough then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd1.html">
 \begin{equation*}
@@ -1038,7 +1050,7 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </div>
 <div class="para">and it follows that if <span class="process-math">\(x\gt\beta\)</span> then <span class="process-math">\(\abs{f(x)}\lt N\text{.}\)</span>
 </div>
-</div> <div class="para" id="SUBSECTIONlimit-product-at-7-6-2"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article> <article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-7-7"><h5 class="heading">
+</div></article> <article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-7-7"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">17.58</span><span class="period">.</span>
 </h5>
 <div class="para" id="SUBSECTIONlimit-product-at-7-7-1-1">Draw a convincing diagram of <a href="" class="xref" data-knowl="./knowl/xref/LEMMABounded1.html" title="Lemma 17.57">Lemma 17.57</a> and its proof.</div></article> <article class="proof" id="SUBSECTIONlimit-product-at-7-8"><h5 class="heading"><span class="title">Proof of Lemma 17.55.</span></h5> <div class="para logical" id="SUBSECTIONlimit-product-at-7-8-2">
@@ -1067,7 +1079,7 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </div>
 <div class="para">Therefore    <span class="process-math">\(\tlimit{x}{\infty}{\left(f(x)\cdot g(x)-f(x)\cdot L_g\right)}=0.\)</span>
 </div>
-</div> <div class="para" id="SUBSECTIONlimit-product-at-7-8-3"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article></section><section class="paragraphs" id="SUBSECTIONlimit-product-at-8"><h4 class="heading"><span class="title">Proving Lemma 17.56.</span></h4> <div class="para logical" id="SUBSECTIONlimit-product-at-8-2">
+</div></article></section><section class="paragraphs" id="SUBSECTIONlimit-product-at-8"><h4 class="heading"><span class="title">Proving Lemma 17.56.</span></h4> <div class="para logical" id="SUBSECTIONlimit-product-at-8-2">
 <div class="para">To prove <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 17.56">Lemma 17.56</a> we need to guarantee that if <span class="process-math">\(x\)</span> is large enough then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd2.html ./knowl/xref/LEMMALimProd1.html">
 \begin{equation*}
@@ -1089,7 +1101,6 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </div>
 <div class="para" id="PROOFLemmaLimProd2-3-1-1-5">Therefore <span class="process-math">\(\tlimit{x}{\infty}{\left(L_gf(x)-L_gL_f\right)}=0\)</span> when <span class="process-math">\(L_g\neq0\text{.}\)</span>
 </div>
-<div class="para" id="PROOFLemmaLimProd2-3-1-1-6"><em class="alert"><span class="process-math">\(\halmos\)</span> (Case 1)</em></div>
 </dd>
 <dt id="PROOFLemmaLimProd2-3-1-2">Case 2:</dt>
 <dd>
@@ -1098,12 +1109,11 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </div>
 <div class="para" id="PROOFLemmaLimProd2-3-1-2-4">Therefore <span class="process-math">\(\tlimit{x}{\infty}{\left(L_gf(x)-L_gL_f\right)}=0\)</span> when <span class="process-math">\(L_g=0\text{.}\)</span>
 </div>
-<div class="para" id="PROOFLemmaLimProd2-3-1-2-5"><em class="alert"><span class="process-math">\(\halmos\)</span> Case 2</em></div>
 </dd>
 </dl>
 <div class="para">Since the limit is zero in both cases we see that <span class="process-math">\(\tlimit{x}{\infty}{\left(L_gf(x)-L_gL_f\right)}=0\text{.}\)</span>
 </div>
-</div> <div class="para" id="PROOFLemmaLimProd2-4"><em class="alert"><span class="process-math">\(\halmos\)</span></em></div></article> <div class="para" id="SUBSECTIONlimit-product-at-8-6">Having completed the proofs of <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> and <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> our proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 17.54: The Limit of a Product at Infinity">Theorem 17.54</a> is now also complete.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-7">The proofs of these two lemmas was not for the faint of heart.  None of the individual pieces was difficult to follow, but putting them all together in the right order was delicate.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-8">On the other hand, once <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> and   <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 17.56">Lemma 17.56</a> are known the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 17.54: The Limit of a Product at Infinity">Theorem 17.54</a> becomes even simpler as the next drill shows.</div> <article class="problem example-like" id="SUBSECTIONlimit-product-at-8-9"><h5 class="heading">
+</div></article> <div class="para" id="SUBSECTIONlimit-product-at-8-6">Having completed the proofs of <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> and <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> our proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 17.54: The Limit of a Product at Infinity">Theorem 17.54</a> is now also complete.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-7">The proofs of these two lemmas was not for the faint of heart.  None of the individual pieces was difficult to follow, but putting them all together in the right order was delicate.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-8">On the other hand, once <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 17.55">Lemma 17.55</a> and   <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 17.56">Lemma 17.56</a> are known the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 17.54: The Limit of a Product at Infinity">Theorem 17.54</a> becomes even simpler as the next drill shows.</div> <article class="problem example-like" id="SUBSECTIONlimit-product-at-8-9"><h5 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">17.59</span><span class="period">.</span>
 </h5>
 <div class="introduction" id="SUBSECTIONlimit-product-at-8-9-1"><div class="para" id="SUBSECTIONlimit-product-at-8-9-1-1">As you’ve seen using the limit definition (using <span class="process-math">\(\eps\)</span> and <span class="process-math">\(\delta\)</span>) to prove theorems is hard. But, as we said in <a href="" class="xref" data-knowl="./knowl/xref/DIGRESSIONWhyProveTheorems.html" title="Paragraphs: DIGRESSION: Why We Prove Theorems">DIGRESSION: Why We Prove Theorems</a>, the whole point of proving theorems is to give ourselves more refined tools that we can use instead of resorting to definitions.</div></div>

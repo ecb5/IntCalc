@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -722,8 +734,8 @@ window.MathJax = {
 </ul></div></article><article class="task exercise-like" id="SECTIONgraph-without-form-8-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para logical" id="SECTIONgraph-without-form-8-3-1-1"><ul class="disc cols2">
 <li id="SECTIONgraph-without-form-8-3-1-1-1-1"><div class="para" id="p-derived-SECTIONgraph-without-form-8-3-1-1-1-1"><span class="process-math">\(y(0)=0\text{,}\)</span></div></li>
-<li id="SECTIONgraph-without-form-8-3-1-1-1-2"><div class="para" id="p-derived-SECTIONgraph-without-form-8-3-1-1-1-2"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x=0}=0\text{,}\)</span></div></li>
-<li id="SECTIONgraph-without-form-8-3-1-1-1-3"><div class="para" id="p-derived-SECTIONgraph-without-form-8-3-1-1-1-3"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x\neq0}\gt0\text{,}\)</span></div></li>
+<li id="SECTIONgraph-without-form-8-3-1-1-1-2"><div class="para" id="p-derived-SECTIONgraph-without-form-8-3-1-1-1-2"><span class="process-math">\(\eval{\dfdx{y}{x}}{x}{0}=0\text{,}\)</span></div></li>
+<li id="SECTIONgraph-without-form-8-3-1-1-1-3"><div class="para" id="p-derived-SECTIONgraph-without-form-8-3-1-1-1-3"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x}{\neq0}\gt0\text{,}\)</span></div></li>
 <li id="SECTIONgraph-without-form-8-3-1-1-1-4"><div class="para" id="p-derived-SECTIONgraph-without-form-8-3-1-1-1-4">
 <span class="process-math">\(\dfdxn{y}{x}{2}\lt0\)</span> for <span class="process-math">\(x\lt0\text{,}\)</span>
 </div></li>
@@ -751,7 +763,7 @@ window.MathJax = {
 <li id="SECTIONgraph-without-form-8-5-1-1-1-1"><div class="para" id="p-derived-SECTIONgraph-without-form-8-5-1-1-1-1"><span class="process-math">\(y(0)=0\text{,}\)</span></div></li>
 <li id="SECTIONgraph-without-form-8-5-1-1-1-2"><div class="para" id="p-derived-SECTIONgraph-without-form-8-5-1-1-1-2">
 <span class="process-math">\(\dfdxat{y}{x}{0}\)</span>  does not exist,</div></li>
-<li id="SECTIONgraph-without-form-8-5-1-1-1-3"><div class="para" id="p-derived-SECTIONgraph-without-form-8-5-1-1-1-3"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x\neq0}\gt0\text{,}\)</span></div></li>
+<li id="SECTIONgraph-without-form-8-5-1-1-1-3"><div class="para" id="p-derived-SECTIONgraph-without-form-8-5-1-1-1-3"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x}{\neq0}\gt0\text{,}\)</span></div></li>
 <li id="SECTIONgraph-without-form-8-5-1-1-1-4"><div class="para" id="p-derived-SECTIONgraph-without-form-8-5-1-1-1-4">
 <span class="process-math">\(\dfdxn{y}{x}{2}\gt0\text{,}\)</span> for <span class="process-math">\(x\lt0\)</span>
 </div></li>
@@ -835,8 +847,8 @@ window.MathJax = {
 <li id="SECTIONgraph-without-form-8-10-1-1-1-4"><div class="para" id="p-derived-SECTIONgraph-without-form-8-10-1-1-1-4">
 <span class="process-math">\(\dfdx{y}{x}\gt0\text{,}\)</span> for <span class="process-math">\(0\lt x \lt2\text{,}\)</span>
 </div></li>
-<li id="SECTIONgraph-without-form-8-10-1-1-1-5"><div class="para" id="p-derived-SECTIONgraph-without-form-8-10-1-1-1-5"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x\gt2}\lt0\text{,}\)</span></div></li>
-<li id="SECTIONgraph-without-form-8-10-1-1-1-6"><div class="para" id="p-derived-SECTIONgraph-without-form-8-10-1-1-1-6"><span class="process-math">\(\geneval{\dfdxn{y}{x}{2}}{x=1}=0\text{,}\)</span></div></li>
+<li id="SECTIONgraph-without-form-8-10-1-1-1-5"><div class="para" id="p-derived-SECTIONgraph-without-form-8-10-1-1-1-5"><span class="process-math">\(\geneval{\dfdx{y}{x}}{x}{\gt2}\lt0\text{,}\)</span></div></li>
+<li id="SECTIONgraph-without-form-8-10-1-1-1-6"><div class="para" id="p-derived-SECTIONgraph-without-form-8-10-1-1-1-6"><span class="process-math">\(\eval{\dfdxn{y}{x}{2}}{x}{1}=0\text{,}\)</span></div></li>
 <li id="SECTIONgraph-without-form-8-10-1-1-1-7"><div class="para" id="p-derived-SECTIONgraph-without-form-8-10-1-1-1-7">
 <span class="process-math">\(\dfdxn{y}{x}{2}\gt0\text{,}\)</span> for <span class="process-math">\(0\lt x\lt1\text{,}\)</span>
 </div></li>

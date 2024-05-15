@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -697,10 +709,7 @@ y=\frac12\left(P-2x\right)    \tag{9.29}
 </li>
 <li id="EXAMPLERectangleFixedPerimeter-6-1-5"><div class="para" id="EXAMPLERectangleFixedPerimeter-6-1-5-1">The area, <span class="process-math">\(A=xy\text{,}\)</span> will be zero when <span class="process-math">\(x=0\)</span> and when    <span class="process-math">\(x=\frac{P}{2}\)</span> (why?) so by the Extreme Value Theorem the maximum    occurs when <span class="process-math">\(x=\frac{P}{4}\text{.}\)</span>
 </div></li>
-<li id="EXAMPLERectangleFixedPerimeter-6-1-6">
-<div class="para" id="EXAMPLERectangleFixedPerimeter-6-1-6-1">This problem asks us to show that the maximal rectangle must be a square, so we need to show that <span class="process-math">\(x=y\text{.}\)</span> We know that the maximum occurs when <span class="process-math">\(x=\frac{P}{4}\text{.}\)</span> Plugging this value into <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONFixedPerimeterConstraintDiffeq1.html" title="Equation 9.29">equation (9.29)</a> we see that <span class="process-math">\(y\)</span> is also equal to <span class="process-math">\(\frac{P}{4}\text{.}\)</span> Thus the maximal rectangle is a square as stated.</div>
-<div class="para" id="EXAMPLERectangleFixedPerimeter-6-1-6-2"><span class="process-math">\(\halmos \)</span></div>
-</li>
+<li id="EXAMPLERectangleFixedPerimeter-6-1-6"><div class="para" id="EXAMPLERectangleFixedPerimeter-6-1-6-1">This problem asks us to show that the maximal rectangle must be a square, so we need to show that <span class="process-math">\(x=y\text{.}\)</span> We know that the maximum occurs when <span class="process-math">\(x=\frac{P}{4}\text{.}\)</span> Plugging this value into <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONFixedPerimeterConstraintDiffeq1.html" title="Equation 9.29">equation (9.29)</a> we see that <span class="process-math">\(y\)</span> is also equal to <span class="process-math">\(\frac{P}{4}\text{.}\)</span> Thus the maximal rectangle is a square as stated.</div></li>
 </ol></div>                                                                                        </article> <div class="para" id="SECTIONoptim-probl-2-6">In <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLERectangleFixedPerimeter.html" title="Example 9.82: Example 3.6 revisited again">Example 9.82</a> we were careful to follow the steps we listed at the beginning of this section in the sequence given. That list is helpful. That’s why we wrote it out. However, it would be a mistake to think of it as a recipe to be followed blindly. Think of it as an outline. An outline is a guide, not a recipe and it is not necessary to follow it rigidly, step-by-step. If you find it simpler to do these steps in a different order for some problem there is no reason that you shouldn’t. But before you declare the problem solved look back at this outline and make sure that you have done everything that needs to be done. This is what an outline is for.</div> <div class="para logical" id="SECTIONoptim-probl-2-7">
 <div class="para">In <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLESquareMinimalPerimeter.html" title="Example 3.11">Example 3.11</a> in <a href="CHAPTERScienceBeforeCalc.html" class="internal" title="Chapter 3: Science Before Calculus">Chapter 3</a> we considered the related problem of minimizing the perimeter when the area is fixed. The following problem asks you to solve this problem using Calculus. Notice that just as above we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLESquareMinimalPerimeter.html ./knowl/xref/CHAPTERScienceBeforeCalc.html">

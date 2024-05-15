@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -1066,8 +1078,7 @@ P(t)=
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSHO.html" id="EQUATIONSHO">
 \begin{equation}
-\dfdxn{y}{t}{2}=-\omega^2y,
-\label{eq:SHO}\tag{6.9}
+\dfdxn{y}{t}{2}=-\omega^2y,\tag{6.9}
 \end{equation}
 </div>
 <div class="para">for some constant <span class="process-math">\(\omega\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONSHO.html" title="Equation 6.9">Equation (6.9)</a> is a little scary at first but it really isn’t that bad. To simplify things suppose for a moment that <span class="process-math">\(\omega=1\text{.}\)</span> Then we have <span class="process-math">\(\dfdxn{y}{t}{2}=-y\)</span> which says simply that <span class="process-math">\(y(t)\)</span> is a function whose second derivative is equal the negative of <span class="process-math">\(y\)</span> itself.</div>
@@ -1142,9 +1153,9 @@ m\dfdxn{y}{t}{2}=mg-k(y-y_0).
 </div></article></article>                    <div class="para" id="DIGRESSIONNeglGrav-7"><em class="alert">END OF DIGRESSION</em></div></section><article class="problem example-like" id="SUBSECTIONsimple-harm-oscill-17"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">6.46</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="SUBSECTIONsimple-harm-oscill-17-1"><div class="para" id="SUBSECTIONsimple-harm-oscill-17-1-1">Show that <span class="process-math">\(y(t)=2\cos\left(\sqrt{k/m}\cdot t\right) \)</span> will satisfy <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONSHO2.html" title="Equation 6.10">(6.10)</a>.</div></div>
+<div class="introduction" id="SUBSECTIONsimple-harm-oscill-17-1"><div class="para" id="SUBSECTIONsimple-harm-oscill-17-1-1">Show that <span class="process-math">\(y(t)=2\cos\left(\sqrt{k/m}\cdot t\right) \)</span> will satisfy <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONSHO2.html" title="Equation 6.10">equation (6.10)</a>.</div></div>
 <article class="task exercise-like" id="SUBSECTIONsimple-harm-oscill-17-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="SUBSECTIONsimple-harm-oscill-17-2-1-1">Compute <span class="process-math">\(y(0)\)</span> and <span class="process-math">\(\eval{\dfdx{y}{t}}{t}{0}\text{.}\)</span>  If we are modeling a mass-spring system, what do these values represent physically?</div></article><article class="task exercise-like" id="SUBSECTIONsimple-harm-oscill-17-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SUBSECTIONsimple-harm-oscill-17-2-1-1">Compute <span class="process-math">\(y(0)\)</span> and <span class="process-math">\(\dfdxat{y}{t}{0}\text{.}\)</span>  If we are modeling a mass-spring system, what do these values represent physically?</div></article><article class="task exercise-like" id="SUBSECTIONsimple-harm-oscill-17-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para logical" id="SUBSECTIONsimple-harm-oscill-17-3-1-1">
 <div class="para">Compare the graphs of <span class="process-math">\(y(t)\)</span> for each of the following choices of <span class="process-math">\(k\)</span> and <span class="process-math">\(m\text{.}\)</span>
 </div>

@@ -111,6 +111,10 @@ window.MathJax = {
 \def\tallstrut{\rule{0mm}{1.1\baselineskip}}
 \def\approach#1{{\left(\rightarrow{}#1\right)}}
 
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
 \newcommand{\RR}{\mathbb {R}}
 \newcommand{\QQ}{\mathbb {Q}}
 \newcommand{\NN}{\mathbb {N}}
@@ -129,6 +133,9 @@ window.MathJax = {
 
 
 \def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
 \def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
 
 \def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
@@ -148,6 +155,9 @@ window.MathJax = {
 
 \def\dx#1{\thinspace{\mathrm d}#1}
 \def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
 \def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
 \def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
 \def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
@@ -162,6 +172,8 @@ window.MathJax = {
 \def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
 \def\erf{\text{erf}}
 
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
 
 \def\arccot{{\rm{}arccot}{}}
 \def\Arctan{{\rm{}Arctan}{}}
@@ -706,15 +718,15 @@ x\amp =-\frac12.\tag{9.3}
 <div class="para">To find <span class="process-math">\(y\)</span> we use our constraint and the value of <span class="process-math">\(x\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONLineDist2.html" title="Equation 9.3">equation (9.3)</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONLineDist2.html">
 \begin{equation*}
-\geneval{y}{x=-1/2}=\geneval{\frac13(2-5x)}{x=-1/2}=\frac32.
+\eval{y}{x}{-1/2}=\eval{\frac13(2-5x)}{x}{-1/2}=\frac32.
 \end{equation*}
 </div>
 </div> <div class="para logical" id="EXAMPLESqOnLine-11">
 <div class="para">So we have found that the minimal square occurs when <span class="process-math">\(x=-\frac12\text{,}\)</span> and <span class="process-math">\(y=\frac32\)</span> and it feels like we’re done, doesn’t it? We’re not. The question asked was “What is the area of the smallest possible square?” To find the area we need to put <span class="process-math">\((x,y)=(-1/2, 3/2)\)</span> into our area formula which yields</div>
 <div class="displaymath process-math" id="EXAMPLESqOnLine-11-8">
 \begin{align*}
-\geneval{A(x,y)}{(x,y)} {\left(-\frac12, \frac32\right)} \amp
-=\geneval{(x-2)^2+(y-3)^2} {(x,y)}
+\eval{A(x,y)}{(x,y)} {\left(-\frac12, \frac32\right)} \amp
+=\eval{(x-2)^2+(y-3)^2} {(x,y)}
 {\left(-\frac{1}{2},\frac32\right)}\\
 \amp =\left(-\frac12-2\right)^2+\left(\frac12-3\right)^2=\frac{17}{2}\text{ square units.}
 \end{align*}
@@ -864,7 +876,7 @@ y=\pm2\sqrt{2-x^2}.
 <div class="para"> Suppose that the area of a square with one corner at <span class="process-math">\((a,b)\)</span> and an adjacent corner on the curve at <span class="process-math">\((x,y)\)</span> is optimal (minimal or maximal) at <span class="process-math">\((x_0, y_0)\text{.}\)</span> Show that the line joining <span class="process-math">\((a,b)\)</span> and <span class="process-math">\((x_0,y_0)\)</span> is orthogonal to the tangent line of <span class="process-math">\(C\)</span> at <span class="process-math">\((x_0,y_0)\)</span> . Try to solve this problem completely on your own, but if you get stuck here is an outline you can follow:</div>
 <ol class="decimal">
 <li id="PROBLEMMaxOrth1-3-1-3-8-1"><div class="para" id="PROBLEMMaxOrth1-3-1-3-8-1-1">Find the objective function, <span class="process-math">\(A(x)\text{.}\)</span> (This will be the area      of the square on the line from <span class="process-math">\((a,b)\)</span> to <span class="process-math">\((x,y)\text{.}\)</span>)</div></li>
-<li id="PROBLEMMaxOrth1-3-1-3-8-2"><div class="para" id="PROBLEMMaxOrth1-3-1-3-8-2-1">Use the fact that <span class="process-math">\(\geneval{\dfdx{A}{x}}{(x_0,y_0)}=0\)</span> to      find the slope of <span class="process-math">\(C\)</span> at <span class="process-math">\((x_0,y_0)\text{.}\)</span>
+<li id="PROBLEMMaxOrth1-3-1-3-8-2"><div class="para" id="PROBLEMMaxOrth1-3-1-3-8-2-1">Use the fact that <span class="process-math">\(\mineval{\dfdx{A}{x}}{(x_0,y_0)}=0\)</span> to      find the slope of <span class="process-math">\(C\)</span> at <span class="process-math">\((x_0,y_0)\text{.}\)</span>
 </div></li>
 <li id="PROBLEMMaxOrth1-3-1-3-8-3"><div class="para" id="PROBLEMMaxOrth1-3-1-3-8-3-1">Find the slope of the line from <span class="process-math">\((a,b)\)</span> to <span class="process-math">\((x_0,y_0)\text{.}\)</span>
 </div></li>
