@@ -1,4 +1,4 @@
-all: jing web  view 
+all: jing latex pdf web view 
 
 web: *.ptx  Makefile 
 	/home/ecb5/.local/bin/pretext build web
