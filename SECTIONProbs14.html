@@ -764,10 +764,7 @@ z=\frac{140-100}{15}=\frac{8}{3}
 \amp{}=x+\frac{x^2}{2}+C
 \end{align*}
 </div>
-<div class="para">which would be perfectly valid provided <span class="process-math">\(x\neq 1\text{.}\)</span>  Alas, not every function is a polynomial.  For example, consider <span class="process-math">\(\frac{1}{1-x}\text{.}\)</span>  Since <span class="process-math">\({\mathop{\lim}_{ \begin{array}{c}
-x\to 1 \\
-x\lt{}1 \end{array}
-} \frac{1}{1-x}}=\infty \)</span> and no polynomial has this property, then <span class="process-math">\(f\left(x\right)=\frac{1}{1-x}\)</span> cannot be written as a polynomial (even if we exclude certain points as we did above).  However mathematicians realized that there are some things we can do.  First notice that</div>
+<div class="para">which would be perfectly valid provided <span class="process-math">\(x\neq 1\text{.}\)</span>  Alas, not every function is a polynomial.  For example, consider <span class="process-math">\(\frac{1}{1-x}\text{.}\)</span>  Since <span class="process-math">\(\llimit{x}{1}{\frac{1}{1-x}}\)</span> and no polynomial has this property, then <span class="process-math">\(f\left(x\right)=\frac{1}{1-x}\)</span> cannot be written as a polynomial (even if we exclude certain points as we did above). However mathematicians realized that there are some things we can do.  First notice that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left(1-x\right)\left(1+x+x^2+\dots \right)=\left(1+x+x^2+\dots \right)-\left(x+x^2+x^3+\dots \right)=1
@@ -850,16 +847,17 @@ x\lt{}1 \end{array}
 </div>
 <div class="para logical" id="SECTIONProbs14-22"><div class="displaymath process-math">
 \begin{equation*}
-1+x+x^2+\dots ={\mathop{\lim}_{N\to \infty } (1+}{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty } \frac{1-x^N}{1-x}}
+1+x+x^2+\dots =\limit{N}{\infty}{\left(1+x+x^2+\dots +x^N\right)}
+=\limit{N}{\infty}{\left( \frac{1-x^N}{1-x}\right)
+}
 \end{equation*}
 </div></div>
 <div class="para logical" id="SECTIONProbs14-23">
-<div class="para">As long as <span class="process-math">\(\left|x\right|\lt{}1\text{,}\)</span> then <span class="process-math">\({\mathop{\lim}_{N\to \infty } x^N}=0\text{,}\)</span> so that for <span class="process-math">\(-1\lt{}x\lt{}1\text{,}\)</span> we have</div>
+<div class="para">As long as <span class="process-math">\(\left|x\right|\lt{}1\text{,}\)</span> then <span class="process-math">\(\limit{N}{\infty}{ x^N}=0\text{,}\)</span> so that for <span class="process-math">\(-1\lt{}x\lt{}1\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-1+x+x^2+\dots ={\mathop{\lim}_{N\to \infty }
-(1+}{x+x^2+\dots +x}^N)={\mathop{\mathrm{lim}}_{N\to \infty }
-\frac{1-x^N}{1-x}=\frac{1}{1-x}} 
+1+x+x^2+\dots =\limit{N}{\infty}{(1+x+x^2+\dots +x^N)}
+=\limit{N}{\infty}{\frac{1-x^N}{1-x}}=\frac{1}{1-x}\text{.}
 \end{equation*}
 </div>
 <div class="para">The sum <span class="process-math">\(1+x+x^2+\dots \)</span> is called the geometric series since the ratio two consecutive terms <span class="process-math">\(\frac{x^{k+1}}{x^k}\)</span> is constantly equal to <span class="process-math">\(x\)</span> and these were studied by mathematicians before the invention of calculus.  As such, these infinite polynomials were called \textbf{\textit{power series}.}</div>
@@ -876,7 +874,7 @@ x\lt{}1 \end{array}
 \begin{align*}
 \frac{1}{1+x^2}=\frac{1}{1-\left(-x^2\right)}
 \amp{}=1+\left(-x^2\right)+{\left(-x^2\right)}^2+{\left(-x^2\right)}^3+\dots\\
-\amp{}=1-x^2+x^4-x^6+\dots 
+\amp{}=1-x^2+x^4-x^6+\dots
 \end{align*}
 </div>
 </div>
@@ -887,7 +885,7 @@ x\lt{}1 \end{array}
 &gt;{\arctan \left(x\right)\
 }+C=\int{\frac{1}{1+x^2}dx}\amp{}=\int{\left(1-x^2+x^4-x^6+\dots
 \right)dx}\\
-\amp{}=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\dots 
+\amp{}=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\dots
 \end{align*}
 </div>
 <div class="para">Setting <span class="process-math">\(x=0\text{,}\)</span> we get</div>
@@ -1084,7 +1082,7 @@ e\amp{}\approx 2.7182818011463845\\
 <div class="para">Comparing this to the approximation for <span class="process-math">\(e\)</span> given on a calculator <span class="process-math">\(2.71828182846\text{,}\)</span> we see this is accurate to 7 decimal places.  Adding more terms would get us even more accuracy.  In fact, for any real number <span class="process-math">\(x\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-{\mathop{\lim}_{N\to \infty } \left(1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots +\frac{1}{N!}x^N\right)}=e^x
+\limit{N}{\infty}{ \left(1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots +\frac{1}{N!}x^N\right)}=e^x
 \end{equation*}
 </div>
 <div class="para">which is different than the limitation <span class="process-math">\(-1\lt{}x\lt{}1\)</span> we had for the geometric series.  The entire study of power series is more subtle than we’ve done so far, but for now, let’s go with the fact that we can represent</div>
