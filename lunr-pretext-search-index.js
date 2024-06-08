@@ -50,7 +50,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CalculusIsARock.html#figure-CountingBoard",
   "type": "Figure",
-  "number": "1.1",
+  "number": "1.0.0.1",
   "title": "",
   "body": "  A medieval European counting board.     "
 },
@@ -59,7 +59,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CalculusIsARock.html#figure-Suanpan",
   "type": "Figure",
-  "number": "1.2",
+  "number": "1.0.0.2",
   "title": "",
   "body": "  A traditional Chinese suanpan (abacus).    An abacus   "
 },
@@ -77,7 +77,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECusing-lett-inst.html#exercise-problem-calculator",
   "type": "Problem",
-  "number": "2.1",
+  "number": "2.1.0.1",
   "title": "",
   "body": "  Drill    Use the fact that to show that . Do not use a calculator.   Check the validity of the following statements. Are they true?      Using a calculator on would be rather pointless. Try it and see.   Show that it is not always true that if and are numbers then    Find a restriction on the possible values of and that will guarantee that inequality ) is true.  "
 },
@@ -86,7 +86,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECusing-lett-inst.html#SECusing-lett-inst-9",
   "type": "Drill",
-  "number": "2.2",
+  "number": "2.1.0.2",
   "title": "",
   "body": "  Suppose and are both integers. Find restrictions on the possible values of and that will guarantee that is an even, positive integer.    Now suppose and are both numbers. Find restrictions on the possible values of and that will guarantee that is an even, positive integer. (This is not the same problem as part (a). Read it carefully.)   "
 },
@@ -95,7 +95,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECusing-lett-inst.html#exercise-liberating",
   "type": "Problem",
-  "number": "2.3",
+  "number": "2.1.0.3",
   "title": "",
   "body": "  Drill Actually, there is something rather liberating about using letters to represent a broad class of numbers. Consider the following questions:   Is the number a perfect square? If so, what is its square root?   What about ? Was your calculator of any use on this? Notice that these numbers were completely factored into their prime factorizations. Did that help? How?   Now suppose that is a positive integer. Is always a perfect square? If not, for which values of will it be a perfect square?   What can you say, in general, about whether or not an integer greater than one is a perfect square in terms of its prime factorization?  "
 },
@@ -113,7 +113,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAn-easy-problem-alg.html#example-Sub1",
   "type": "Example",
-  "number": "2.4",
+  "number": "2.2.0.1",
   "title": "A Horrible Formula.",
   "body": " A Horrible Formula  For example, suppose you were asked to solve the following equation for : At first glance this looks horribly complicated. But look at it again. On the right the coefficient of is . That s just a number. It is approximately but who cares? For purposes of algebraically isolating all we need to know is that it is a number. Rather than calling it , let s just call it something simple, like . Think of it as giving the expression a nickname; something shorter, and easier to remember.  If we make that substitution our equation is now which is a bit easier on the eyes.   But wait. The expression is also just a number. Let s make it easier on the eyes, too. If we let we have which is even easier to look at. By now you see where this is going. If we let then our equation is which is much easier on the eyes than the original equation was. In fact, we can now see that this is really a very simple equation and the solution is . Of course we inserted , , and into the problem so now we need to unwind our substitutions. When we do that we get If a decimal number is required we could enter this formula into whatever computational tool we re using. Good luck with that.  "
 },
@@ -122,7 +122,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAn-easy-problem-alg.html#example-Sub2",
   "type": "Example",
-  "number": "2.5",
+  "number": "2.2.0.2",
   "title": "",
   "body": " When you were learning Algebra you almost certainly encountered problems like this: Given solve for .  At first glance, this looks like a formidable problem. However, if we look closer we see that it actually has a very familiar form. Because we can rewrite equation as and if you look closely you ll see that equation~ ) is quadratic in form. That is, it is really a quadratic equation which we know how to solve in disguise. However it is still rather difficult to see the quadratic nature of equation . To make this very clear we let That is, just as in Example we give the expression the nickname, , which is shorter, easier to remember, and easier on the eyes. Then equation becomes the quadratic equation: Our problem is not solved. Indeed, we haven t even tried to solve it yet. But it is much more simply expressed. And because it is more simply expressed we can now see how to solve it. Factoring, we have so we have and . But, of course, these are not solutions of our problem. We have found (which we inserted into the problem) not (which is what we need to find). To complete the solution we need to unwind the substitution we made and solve the two equations yielding the solutions and , respectively.  "
 },
@@ -131,7 +131,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAn-easy-problem-alg.html#PROBLEMQSub",
   "type": "Problem",
-  "number": "2.6",
+  "number": "2.2.0.3",
   "title": "",
   "body": "  Drill Before reading any further see if you can come up with the right substitution for equation ).   The goal is to eliminate the linear term, . You can see how this would help. If were not present in equation we could easily solve .  "
 },
@@ -140,7 +140,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAn-easy-problem-alg.html#SECTIONAn-easy-problem-alg-14",
   "type": "Problem",
-  "number": "2.7",
+  "number": "2.2.0.4",
   "title": "",
   "body": "  Drill Notice that after making our substitution we get: which is more complicated, not less. Of course it is. Sometimes you have to complicate before you can simplify. Don t give up. Multiply everything out to see what you ve got.  Once you ve found make the substitution and eliminate the linear term that was the objective, remember? At that point you should see the Quadratic Formula starting to emerge. Don t forget to unwind the substitution and solve for .  "
 },
@@ -158,7 +158,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECan-easy-problem-geo.html#EXAMPLEMaxTriangle",
   "type": "Example",
-  "number": "2.8",
+  "number": "2.3.0.1",
   "title": "",
   "body": "  The lengths of two sides of a triangle are and . If the third side is chosen in such a way that the area of the triangle is as large as possible what is the length of the third side?  You may be able to intuit the correct answer to this problem. That s OK, but you should try to solve it, too. By solve we mean that you should be able to explain to someone with the same mathematical skills you have at the moment why your answer is correct.   No, really. Give this problem a serious shot before you go on. It is not important that you succeed. Only that you try.   Before reading further do your best to solve this problem in Example . We ll wait.  At first it is difficult to see where to begin. (That s why it s called a problem.) Don t let this stop you! In our experience the most common mistake is giving up too soon.  Don t. Do. That. Keep thinking.    Partial Solution  Since we know the lengths of the sides and of our triangle let s draw it. The sketch at the right would be typical. The question is, what length for side makes the total area enclosed by the triangle as large as it can possibly be?  Now what?  Well, this looks like a right triangle doesn t it? If it is a right triangle, then we can find the length of via the Pythagorean Theorem: right?  Before you go on take a moment and really think about this problem. Can it really be that simple? Can you find any flaws in our reasoning.  Once you think about it you see that we have no reason to believe that the triangle we seek must be a right triangle. It was completely accidental that we drew our diagram that way. If this seems like a simple-minded mistake, the sort of mistake that you would never make, be careful. It is a mistake to rely too heavily on the diagrams we draw. But it is an easy mistake to make, especially when the problems are more complicated, because as problems get complex we will need to rely on visualization more and more. This was not a dumb mistake. It was just a bit careless, and it is easy to be careless, especially when we first start thinking about a problem.   "
 },
@@ -167,7 +167,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECan-easy-problem-geo.html#SECan-easy-problem-geo-15",
   "type": "Problem",
-  "number": "2.9",
+  "number": "2.3.0.2",
   "title": "",
   "body": "  Drill Replace with in the diagram above. Use the Pythagorean Theorem to reason that if then . How does this apply to the problem of maximizing the area of the triangle?  "
 },
@@ -185,7 +185,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECour-advice-synopsis.html#DRILLMaxPara",
   "type": "Problem",
-  "number": "2.10",
+  "number": "2.4.0.1",
   "title": "",
   "body": "  Drill maximal parallelogram Out of all parallelograms with sides and , which would have the largest area?  "
 },
@@ -194,7 +194,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECour-advice-synopsis.html#exercise-IntuitionDeceivers",
   "type": "Problem",
-  "number": "2.11",
+  "number": "2.4.0.2",
   "title": "Some possibly deceptive problems.",
   "body": "Some possibly deceptive problems   Drill All of the problems below refer to the following diagram:  You will probably have a strong insight, or intuition, about each of the following claims. Do your best to explain why each is true, or why it is false. Read each problem carefully and take care not to add assumptions that are not in the problem. Back up your claim with reasoning, not intuition.   Given a regular polygon inscribed in a fixed circle, if you double the number of sides, then the area inside the polygon becomes larger.   Given a polygon inscribed in a fixed circle, the more sides there are, the bigger the area inside the polygon is.   Given a polygon inscribed in a fixed circle, the more sides there are, the bigger the perimeter is.   Given the following parabola with axis , is the midpoint of .   In part (d), what if we insist that is perpendicular to ?  "
 },
@@ -212,7 +212,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Apologia.html#Apologia-15",
   "type": "Figure",
-  "number": "3.1",
+  "number": "3.1.0.1",
   "title": "",
   "body": "  Bernhard Bolzano 1781-1848   "
 },
@@ -221,7 +221,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Apologia.html#Apologia-20",
   "type": "Figure",
-  "number": "3.2",
+  "number": "3.1.0.2",
   "title": "",
   "body": "  Niccolo Fontana (The Stutterer) 1500-1557   "
 },
@@ -266,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#DRILLReflectingMirror",
   "type": "Drill",
-  "number": "3.3",
+  "number": "3.3.0.1",
   "title": "",
   "body": "     Suppose we label the angles in the previous diagram as follows:    Explain why .    Explain why .    And finally, conclude that .   "
 },
@@ -275,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#sec-laziness-nature-15",
   "type": "Drill",
-  "number": "3.4",
+  "number": "3.3.0.2",
   "title": "",
   "body": "   If a spotlight is mounted at point , how far from point must point be so that the light will be reflected to point ? Justify your answer.   "
 },
@@ -284,7 +284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#sec-laziness-nature-16",
   "type": "Drill",
-  "number": "3.5",
+  "number": "3.3.0.3",
   "title": "",
   "body": "  As long as it is not spinning sideways a billiard ball will bounce just like a beam of light. In the sketch below what must be to sink the ball into the side pocket at ? Make sure that you explain how you obtained your answer.    "
 },
@@ -293,7 +293,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#EXAMPLEFixedPerimeter",
   "type": "Example",
-  "number": "3.6",
+  "number": "3.3.0.4",
   "title": "Maximizing Area.",
   "body": " Maximizing Area  Out of all rectangles with a given fixed perimeter, which one encompasses the greatest area?  A reasonable guess is that the correct shape is a square. But a guess, no matter how much it feels right, is just a guess. We need a convincing demonstration.  To see that this actually is the correct shape, consider a square whose side is . If is the length of one side then the perimeter of our square is (the fixed value) and the area is (also fixed). Suppose we now increase the length of one of the two pairs of opposite sides by . To maintain the same perimeter, we must also decrease the length of the other pair of sides by the same . The area of this new rectangle is but its perimeter is still .  Thus the square has a larger area than the rectangle with the same perimeter. Moreover, since we didn t specify a value for our conclusion holds for all possible values of . That is, every rectangle with perimeter has a smaller area than the square with perimeter .  "
 },
@@ -311,7 +311,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#PROBLEMScienceBeforeCalc1",
   "type": "Drill",
-  "number": "3.7",
+  "number": "3.3.0.5",
   "title": "",
   "body": " Out of all rectangles with a fixed perimeter, which one has the shortest diagonal? Justify your answer.  "
 },
@@ -320,7 +320,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#EXAMPLEScienceBeforeCalc2",
   "type": "Example",
-  "number": "3.8",
+  "number": "3.3.0.6",
   "title": "",
   "body": " Consider all square based boxes with a fixed surface area . Does the cube enclose the largest volume?  To do this problem in the same manner as Example , observe that a cube with side would have a volume of and a surface area of . Suppose we change the lengths on the base from to . Notice that if then we will be increasing the lengths on the base and if then we will be decreasing the lengths. The only restriction is that so as to be a length. This says that . (In theory, we can make the lengths of the base as long as we wish.) To maintain a surface area of , we will need to adjust our height appropriately. Let’s call this new height .  "
 },
@@ -329,7 +329,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-laziness-nature.html#PROBLEMMaximalCube1",
   "type": "Drill",
-  "number": "3.9",
+  "number": "3.3.0.7",
   "title": "",
   "body": "  Proceed as in Example to show that in order to maintain a surface area of , must be . Use this to show that the volume of this new box is How does this address the original question about the cube having the largest volume?    Why did we write in this rather peculiar way?   "
 },
@@ -347,7 +347,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#SECTIONFermMethAedeq-2",
   "type": "Figure",
-  "number": "3.10",
+  "number": "3.4.0.1",
   "title": "",
   "body": "  Pierre de Fermat 1601-1665   "
 },
@@ -365,7 +365,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#EXAMPLESquareMinimalPerimeter",
   "type": "Example",
-  "number": "3.11",
+  "number": "3.4.0.2",
   "title": "",
   "body": "  In Example , we showed that out of all rectangles with a fixed perimeter, the one with the largest area is a square. Next we will use Fermat s Method of Adequality to examine the related question: Out of all rectangles with a fixed area, does a square have the smallest perimeter?  Consider a rectangle whose length is given by and width is given by . The area of the rectangle is given by and the perimeter is given by .  The problem is to minimize while holding constant. More precisely, our objective is to minimize the function , subject to the constraint that the area, , is fixed. First, we will use our constraint to eliminate one of the variables and substitute into . Solving for we get . Then, We have used function notation for to emphasize that is a function of alone. (Remember that is constant or fixed. )  Fermat s method says to first set This gives: Rearranging a bit, we get so that Adding the fractions gives Finally, and crucially, dividing both sides by gives                 Earlier we had made the mistake of setting (knowing that this is not true). Now we make it correct by setting . This gives: Substituting this into we get .  Thus is minimum when which is to say, when the rectangle is actually a square. A moment s thought should make it clear that there is no maximum value for .  Fermat s method is very slick. However it contains an inherent logical flaw. We begin by setting equal to , even though we know we are making an error. This seems like it might be a flaw but it really isn t. When we set we are asking, What happens if they are equal? The computations leading up to equation are the answer to that question.  But notice that we got from equation to equation by dividing by . From arithmetic you know that you can only divide by if is not zero. Fortunately it is clear that since the whole point of introducing is for and to be two different values. However, in the final step, after equation , we took to make it correct but if is zero then we couldn t have divided by . We seem to be chasing our tails. We need for to be equal to zero and not be equal to zero at the same time!  This is the logical flaw.  Since we began with the assumption that we can t just change our minds later. We can t have both and .  "
 },
@@ -374,7 +374,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#DRILLMethAdeq",
   "type": "Problem",
-  "number": "3.12",
+  "number": "3.4.0.3",
   "title": "",
   "body": " Apply Fermat s Method of Adequality to find all maxima or minima of the following functions. In each case examine a graph of the function to see if Fermat s Method provides the correct answer.              "
 },
@@ -383,7 +383,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#PROBLEMRectSolid",
   "type": "Drill",
-  "number": "3.13",
+  "number": "3.4.0.4",
   "title": "",
   "body": "  Consider a rectangular box with a square base, as seen here.          Find a formula for the volume, , and the surface area, , of the box.    Suppose we want to determine which box has the least surface area, given a fixed volume. What is our objective and what is our constraint? Use Fermat s Method of Adequality to find the dimensions of the box that solves this problem. Is the minimal box a cube?   "
 },
@@ -392,7 +392,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#SECTIONFermMethAedeq-22",
   "type": "Problem",
-  "number": "3.14",
+  "number": "3.4.0.5",
   "title": "",
   "body": "    Use the appropriate formula for the equation of a line to find an equation of each of the following lines:   with slope and -intercept     with slope and -intercept     with slope and -intercept     with slope and passing through the point     with slope and passing through the point     passing through the points and     passing through the points and       Show that the Point-Slope formula follows from the fact that the slope of a line can be determined using any two points on the line.   Show that the Slope-Intercept formula is really a rearrangement of the Point-Slope formula.   Show that the Point-Slope formula follows from the Two-Point formula.      What does the two-point formula reduce to if ?    What does the two-point formula reduce to if ?  Notice that in the two-point formula, as given we need to assume that . Can you rearrange the formula so that this is not a problem?      Show that the equation of the line with -intercept and -intercept can be written in the form: Notice that this equation is only valid if and .   Determine the equation of the line if .    Determine the equation of the line if .     "
 },
@@ -401,7 +401,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#SECTIONFermMethAedeq-23",
   "type": "Drill",
-  "number": "3.15",
+  "number": "3.4.0.6",
   "title": "",
   "body": "     In the diagram below is obtained from by translating (but not rotating) , as indicated by the arrows. Use the diagram to show that parallel lines have the same slope.  In the diagram below we have taken from the previous figure, and rotated by . Use this diagram to show that perpendicular lines have slopes that are negative reciprocals of each other.  "
 },
@@ -410,7 +410,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#SECTIONFermMethAedeq-24",
   "type": "Problem",
-  "number": "3.16",
+  "number": "3.4.0.7",
   "title": "",
   "body": " Find the equation of the line:   parallel to and passing through    perpendicular to and passing through    parallel to with -intercept    perpendicular to and passing through the point   "
 },
@@ -419,7 +419,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#PROBLEMPerpendicularDistance",
   "type": "Drill",
-  "number": "3.17",
+  "number": "3.4.0.8",
   "title": "",
   "body": "  Find the equations of the two lines such that each one is a perpendicular distance of units away from the line and parallel to it.   "
 },
@@ -428,7 +428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#PROBLEMFermMethX2",
   "type": "Problem",
-  "number": "3.18",
+  "number": "3.4.0.9",
   "title": "",
   "body": "       Use Fermat s method for tangents to compute the slope of the line tangent to at the generic point .    First plot the graph . Then, on the same set of axes, plot the line through the point , and tangent to the graph of , for each of .    What is the relationship between the slopes at and ? Is this consistent with what you see when you plot the graph of ?         Use Fermat s method for tangents to compute the slope of the line tangent to at the point .    First plot the graph . Then, on the same set of axes, plot the line through the point , and tangent to the graph of , for each of .You should notice something interesting about the tangent lines at and .    What can you say about the tangent lines at and ?     "
 },
@@ -437,7 +437,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFermMethAedeq.html#PROBLEMferm-meth-aedeq-1",
   "type": "Problem",
-  "number": "3.19",
+  "number": "3.4.0.10",
   "title": "",
   "body": "   Use Fermat s method to find a formula for the slope of the tangent line to at the point . How does this answer compare with the results from ? What, if anything, would change if we used Fermat s method to find the slope of the tangent line to at the point where is any constant? Use the graph of to explain. "
 },
@@ -455,7 +455,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#SECTIONdescartes-normals-2",
   "type": "Figure",
-  "number": "3.20",
+  "number": "3.5.0.1",
   "title": "",
   "body": "  Renè Descartes (1596-1650)    "
 },
@@ -464,7 +464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#EXAMPLEDescartesNormal1",
   "type": "Example",
-  "number": "3.21",
+  "number": "3.5.0.2",
   "title": "",
   "body": "              To find the slope of the normal (and, eventually the tangent) line to the graph of the curve at the point Descartes approach was to look at the family of circles with centers on the -axis and passing through the point . The sketch at the right displays several members of of that family of circles. Notice that each circle crosses the parabola at the point . We are searching for the center of the solid black circle which touches (is tangent to) the parabola at . If we can find the center of the black circle then the radial line through the point will be normal to the parabola at and the slope of the tangent line will be the negative reciprocal of the slope of the normal.  We now want to turn the geometric problem of finding the intersection of our circle and parabola into an algebraic problem. Let denote the coordinates of the center of a circle in that family, then the equation of the circle with center is where is the length of the radius of the circle and is a parameter. Since we require our circle to pass through the point the length of this radius will be the distance from to , . Thus we have .  Since we are looking for the point where and the circle intersect, we substitute into equation ) to get .  At this point it is tempting to use the Quadratic Formula to solve for and get (typically) two distinct solutions for in terms of . But the fact is we really don t care about the variable . We want to find the value of which ensures that the circle and the curve intersect exactly once.  Think about this for a moment. We get a single solution when we use the Quadratic Formula to solve this equation precisely when the discriminant (the part under the square root) is zero.  "
 },
@@ -473,7 +473,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#DRILLHuddeDiscriminant",
   "type": "Drill",
-  "number": "3.22",
+  "number": "3.5.0.3",
   "title": "",
   "body": "  Use the Quadratic Formula to show that the discriminant of equation ) is . Setting the discriminant in equal to zero and solving, we get So the center of the circle touching the curve only once is at and the line segment from to is normal (perpendicular) to the graph of . Descartes and Fermat are generally credited with the invention of Analytic Geometry which is a technique that allows us to move problems from Algebra to Geometry or, as in this problem, from Geometry to Algebra.   "
 },
@@ -482,7 +482,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#SECTIONdescartes-normals-8",
   "type": "Drill",
-  "number": "3.23",
+  "number": "3.5.0.4",
   "title": "",
   "body": "  Descartes would not have approached this problem using the idea of a discriminant as we just did. He knew that the only way the circle and the parabola could be tangent at is if is a double root of equation ). Since a quadratic polynomial only has two roots, this means that equation must be . By comparing the coefficients of equation ) and the right side of equation show that .   "
 },
@@ -491,7 +491,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#PROBLEMExtraneousRoots",
   "type": "Drill",
-  "number": "3.24",
+  "number": "3.5.0.5",
   "title": "Extraneous Roots.",
   "body": " Extraneous Roots   Show that the roots of are and . Notice that when and the parabola and circle will have two intersection points (as seen in the graph in Example ). When we get one positive and one negative root, but the parabola and the circle cross only at . How do we make peace with this apparent contradiction?    Look closely at the equation for the parabola. Can be negative?   "
 },
@@ -500,7 +500,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#EXERCISEDescartesNormals2",
   "type": "Problem",
-  "number": "3.25",
+  "number": "3.5.0.6",
   "title": "",
   "body": " Now that we ve found the center of the circle tangent to the curve at , use this to find the equation of the lines normal and tangent to the curve at that point. Plot the curve and these two lines on the same set of axes to see if they really are normal and tangent to the curve.  "
 },
@@ -509,7 +509,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#PROBLEMDescartesNormals1",
   "type": "Drill",
-  "number": "3.26",
+  "number": "3.5.0.7",
   "title": "",
   "body": "  Use Descartes Method of Normals to find the slope of the line tangent to the curve at the point .   "
 },
@@ -518,7 +518,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#SECTIONdescartes-normals-14",
   "type": "Drill",
-  "number": "3.27",
+  "number": "3.5.0.8",
   "title": "",
   "body": "  Use Descartes Method of Normals to find the slope of the line tangent to the curve at the point and compare with Problem .    You may want to use circles that are centered on the -axis instead of the -axis.   "
 },
@@ -527,7 +527,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdescartes-normals.html#SECTIONdescartes-normals-15",
   "type": "Drill",
-  "number": "3.28",
+  "number": "3.5.0.9",
   "title": "",
   "body": "  Apply Descartes Method of Normals to the line at the point . What equation did you find for the tangent line? Does this make sense to you?   "
 },
@@ -581,7 +581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#EXERCISEVectorAddition",
   "type": "Problem",
-  "number": "3.29",
+  "number": "3.6.1.1",
   "title": "",
   "body": "    In the diagram above what does the length of the black arrow represent physically?   What is the length of the black arrow?  "
 },
@@ -590,7 +590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#FIGUREVectorAddition",
   "type": "Figure",
-  "number": "3.30",
+  "number": "3.6.1.2",
   "title": "",
   "body": "    "
 },
@@ -599,7 +599,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#EXAMPLERectilinearMotion",
   "type": "Example",
-  "number": "3.31",
+  "number": "3.6.1.3",
   "title": "",
   "body": " Suppose a point is moving in the plane so that its horizontal speed is unit per second and its vertical velocity is units per second as in the diagram at the right. Clearly our point is moving along the line .   Comment  Observe that is the algebraic representation of a horizontal arrow with length , and is the algebraic representation of a vertical arrow with length . Translating statements and concepts between Algebra and Geometry is the essence of Analytic Geometry.   If represents time in seconds and if the point starts at the origin, then its coordinates are given by and . Since both and are needed to locate the point we will join them together notationally like this:              You might quite reasonably ask why we ve gone to all this bother just to have two different ways to represent a particular line: , and The difference is in how we think about the graph. When we write we are thinking of the entire graph. When we write there is an implicit understanding that ( )ime is passing and we are thinking about the motion of the point. Thus when the point is at when it s at .  Think of the line as a road. The formula describes the entire road, whereas the expression tells us the point s location on the road at any given time, .  The idea of representing velocities with arrows is quite a powerful and common technique for representing non-linear motion. Roberval used this technique to find the tangent lines of the conic sections (as we will soon see) as well as more general curves. Since Roberval s time this idea has been developed considerably beyond what Roberval did. In fact we are skirting the edge of some very deep ideas here. In modern terms these arrows would be called vectors . Using this terminology Vector Addition is then done by the Parallelogram Rule , which is essentially what we did in : Form the parallelogram and find its diagonal. The full force of vector analysis was not available to Roberval, and we won t need it either so we will not take you any further down this path but we encourage you visualize velocities, and any other directed quantity, as composed of horizontal and vertical components whenever you can. You will see this representation in more detail later in your education and it will help if you have already begun thinking in these terms.  "
 },
@@ -608,7 +608,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC-31",
   "type": "Drill",
-  "number": "3.32",
+  "number": "3.6.1.4",
   "title": "",
   "body": " Suppose the position of a point in the plane is given by .     What is the horizontal speed of the point?    What is the vertical speed of the point?    What is the speed of the point in the direction of motion?    Compare the motion of the point in this problem to the motion of the point in Example .     "
 },
@@ -617,7 +617,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC-32",
   "type": "Drill",
-  "number": "3.33",
+  "number": "3.6.1.5",
   "title": "",
   "body": " Suppose a point is moving along the line with a horizontal speed of unit per second.     Find a representation of the point s position in the form .  There are a many correct representations. You re task is to find one of theme and to show that it is correct.    What is the speed of the point in the vertical direction?    What is the speed of the point in the direction of motion?     "
 },
@@ -626,7 +626,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC-33",
   "type": "Drill",
-  "number": "3.34",
+  "number": "3.6.1.6",
   "title": "",
   "body": " Suppose a point is moving along the line with a horizontal speed of units per second.     What is the speed of the point in the vertical direction?    What is the speed of the point in the direction of motion?     "
 },
@@ -635,7 +635,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC-34",
   "type": "Drill",
-  "number": "3.35",
+  "number": "3.6.1.7",
   "title": "",
   "body": " Suppose the position of a point in the plane is given by .     What is the horizontal velocity of the point?    What is the vertical velocity of the point?    What is the velocity of in the direction of motion?     "
 },
@@ -644,7 +644,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#PROBLEMHelicopterFall",
   "type": "Drill",
-  "number": "3.36",
+  "number": "3.6.1.8",
   "title": "",
   "body": "  We drop an object from a helicopter which is traveling horizontally with a constant velocity of meter per second. After it leaves the helicopter the vertical velocity of the object at time will be meters per second as in the following diagram:   Comment  This is because the acceleration due to gravity at the surface of the earth has been determined (by Galileo) to be  . We ll discuss this in more depth in Section .}              If Roberval s method works then the speed of the point at any time, , will be the length of the diagonal of parallelogram of velocity arrows at time . Find a formula for the speed of the point and any time .   "
 },
@@ -653,7 +653,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#figure-ParabTanRoberval",
   "type": "Figure",
-  "number": "3.37",
+  "number": "3.6.2.1",
   "title": "",
   "body": " Roberval s view of the tangent to a parabola     "
 },
@@ -671,7 +671,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#PROBLEMparall-rhombus",
   "type": "Problem",
-  "number": "3.38",
+  "number": "3.6.2.2",
   "title": "",
   "body": " Use to explain why it must be that the speed at which moves away from must equal the speed at which moves away from .   (Suppose these speeds were not equal. What would this say about the distances from to and from to ?)   If represents the velocity of the motion of away from , and represents the velocity of the motion of away from , then according to Roberval, the diagonal, of the parallelogram is tangent to the parabola. Use the result of part (a) to explain why this parallelogram is a rhombus. (A rhombus is a parallelogram where the four sides have equal length.)   In the angle is between the arrows and . We have also extended the arrow downward to form the angle with . Given that the parallelogram in the previous figure is a rhombus, show that the two angles,  are congruent.  "
 },
@@ -680,7 +680,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#PROBLEMEllipseRhombus",
   "type": "Drill",
-  "number": "3.39",
+  "number": "3.6.2.3",
   "title": "",
   "body": "  Explain why the parallelogram in the sketch above must be a rhombus and use this to show that angle is congruent to angle .    An argument very similar to the one used in Problem will work.   "
 },
@@ -689,7 +689,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONroberv-conic-sect.html#TangentHyperbola-5",
   "type": "Drill",
-  "number": "3.40",
+  "number": "3.6.2.4",
   "title": "",
   "body": "  Explain why the parallelogram in the sketch above must be a rhombus and use this to show that angle is congruent to angle . As before in our diagram the red arrows represent the velocity of in the direction from to and from to .   "
 },
@@ -707,7 +707,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsnells-law-refr.html#SnellsLaw",
   "type": "Theorem",
-  "number": "3.41",
+  "number": "3.7.0.1",
   "title": "Snell’s Law of Refraction.",
   "body": " Snell s Law of Refraction  Theorem Snell s Law of Refraction  Suppose that light travels with a velocity of in the first medium and velocity in second medium, and that and are as seen in the diagram below.   Then the path that light follows satisfies Notice that if this says that and the path of the line would be a straight line.  "
 },
@@ -716,7 +716,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsnells-law-refr.html#PROBLEMFermatSnell",
   "type": "Drill",
-  "number": "3.42",
+  "number": "3.7.0.2",
   "title": "",
   "body": "  Assuming that the velocity of light is in the first medium and in the second, use the following diagram to show the time, , for light to travel along the path from to to is      "
 },
@@ -734,7 +734,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONHist-intr.html#SECTIONHist-intr-3",
   "type": "Figure",
-  "number": "4.1",
+  "number": "4.1.0.1",
   "title": "",
   "body": "  Woolsthorpe Manor as it appears today    "
 },
@@ -743,7 +743,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONHist-intr.html#SECTIONHist-intr-9",
   "type": "Figure",
-  "number": "4.2",
+  "number": "4.1.0.2",
   "title": "",
   "body": "  Isaac Newton (1642-1727)   "
 },
@@ -752,7 +752,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONHist-intr.html#SECTIONHist-intr-16",
   "type": "Figure",
-  "number": "4.3",
+  "number": "4.1.0.3",
   "title": "",
   "body": "  Gottfried Wilhelm Leibniz (1646-1716)   "
 },
@@ -779,7 +779,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONHist-intr.html#SECTIONHist-intr-35",
   "type": "Figure",
-  "number": "4.4",
+  "number": "4.1.0.4",
   "title": "",
   "body": "  Abraham Robinson (1918-1974)   "
 },
@@ -797,7 +797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONWarning.html#TABLEGenDiffRules",
   "type": "Table",
-  "number": "4.5",
+  "number": "4.2.0.1",
   "title": "General Differentiation Rules",
   "body": " General Differentiation Rules  Table Differentiation Rules General     The Constant Rule   If is a constant then       The Sum Rule          The Constant    Multiple Rule     If is a constant then         The Product Rule         The Power Rule    If is a rational number then       The Quotient Rule       "
 },
@@ -824,7 +824,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#THEOREMConstRule",
   "type": "Fact",
-  "number": "4.6",
+  "number": "4.3.0.1",
   "title": "The Constant Rule.",
   "body": " The Constant Rule  If is a constant, then .  "
 },
@@ -833,7 +833,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#DRILLConstantRule",
   "type": "Problem",
-  "number": "4.7",
+  "number": "4.3.0.2",
   "title": "",
   "body": "Compute the differential of the following.                                                  "
 },
@@ -842,7 +842,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMConstRuleName",
   "type": "Drill",
-  "number": "4.8",
+  "number": "4.3.0.3",
   "title": "",
   "body": "  In we stated the Constant Rule using as the constant, in we used , and in we used . Does it matter what symbol we use? Explain.   "
 },
@@ -851,7 +851,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-16",
   "type": "Fact",
-  "number": "4.9",
+  "number": "4.3.0.4",
   "title": "The Sum Rule.",
   "body": " The Sum Rule     "
 },
@@ -869,7 +869,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-20",
   "type": "Drill",
-  "number": "4.10",
+  "number": "4.3.0.5",
   "title": "",
   "body": "      Show that    Notice how we placed the parentheses.    Show that     Explain how you would show that where is an arbitrary positive, integer.   "
 },
@@ -878,7 +878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-21",
   "type": "Drill",
-  "number": "4.11",
+  "number": "4.3.0.6",
   "title": "",
   "body": "      Show that    Notice how we placed the parentheses.    Show that     Explain how you would show that where is an arbitrary positive, integer.   "
 },
@@ -887,7 +887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-23",
   "type": "Fact",
-  "number": "4.12",
+  "number": "4.3.0.7",
   "title": "The Constant Multiple Rule.",
   "body": " The Constant Multiple Rule  If is a constant then   "
 },
@@ -905,7 +905,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEDifferentialRatioIsSlope",
   "type": "Example",
-  "number": "4.13",
+  "number": "4.3.0.8",
   "title": "",
   "body": " To get a sense of how we will be using differentials consider the line which is the graph of the equation . Let's differentiate both sides of this formula using the tools we have so far. Obviously if two quantities are equal then their differentials are also equal. So, . From the Sum Rule and the Constant Rule we have, and from the Constant Multiple Rule we see that,   Notice that equation can be rearranged as follows: So it appears that the differential ratio  is the slope of our line. This makes sense since is the (infinitesimal) change in divided by the (infinitesimal) change in . From your study of lines in Algebra you know that the change in divided by the change in is the definition of slope. It continues to be the slope even if the changes in and are infinitesimal.  "
 },
@@ -914,7 +914,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-26",
   "type": "Problem",
-  "number": "4.14",
+  "number": "4.3.0.9",
   "title": "",
   "body": "Compute for each of the following:                                                                   "
 },
@@ -923,7 +923,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#THEOREMProdRule",
   "type": "Fact",
-  "number": "4.15",
+  "number": "4.3.0.10",
   "title": "The Product Rule.",
   "body": " The Product Rule     "
 },
@@ -941,7 +941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMdydxIsSlope",
   "type": "Drill",
-  "number": "4.16",
+  "number": "4.3.0.11",
   "title": "",
   "body": "  Use the Product Rule to show that if , then .   "
 },
@@ -959,7 +959,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMCircleDifferential",
   "type": "Drill",
-  "number": "4.17",
+  "number": "4.3.0.12",
   "title": "",
   "body": "  When a rock is tossed into a quiet lake it generates an expanding, circular wave, as in the diagram below.   The area enclosed by the wave at any time is given by the formula: , where is the expanding radius of the circle. As time advances the radius of the circular wave expands and, as a consequence, the area enclosed by the wave also grows.    Use the Constant Multiple Rule and the Product Rule to show that     Explain why be the area of the yellow ring in the diagram is also equal to .    Find by cutting the yellow region at the dotted line, reshaping the ring into a rectangle. How does this compare with what we obtained using our Calculus rules. Do you see any logical issues with this solution? Specifically, why is it important that must be infinitely small?   "
 },
@@ -968,7 +968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-45",
   "type": "Drill",
-  "number": "4.18",
+  "number": "4.3.0.13",
   "title": "",
   "body": "  We mentioned earlier that the Constant Rule, the Sum Rule, and the Product Rule are fundamental, and that the other three can be proved using these three. Show that the Constant Multiple Rule follows from the Constant Rule and the Product Rule.   "
 },
@@ -977,7 +977,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMGeneralPowerRule",
   "type": "Problem",
-  "number": "4.19",
+  "number": "4.3.0.14",
   "title": "Find the Pattern.",
   "body": "Find the Pattern     Compute each of the following differentials.                                     Do you see a pattern in the computations you did in Problem ? Assume is an unknown positive integer and use the pattern to compute:   "
 },
@@ -986,7 +986,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMPR-integer",
   "type": "Problem",
-  "number": "4.20",
+  "number": "4.3.0.15",
   "title": "Find the Pattern.",
   "body": "Find the Pattern  By custom, differentials are written at the end of each term where they appear in a given computation so the Product Rule is usually written as But this is just a custom so it is not strictly necessary. We could also use the Product Rule in the form    Use the Product Rule twice to show that    The Product Rule requires two factors. But we have three: , , and . We can fix this with the substitution . Then Now use the Product Rule.   Emulate the computations in Part to show that.    What does the Product Rule look like for    Use the result of part (c) with to show that   "
 },
@@ -1004,7 +1004,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEDiffRulesInConcert1",
   "type": "Example",
-  "number": "4.21",
+  "number": "4.3.0.16",
   "title": "",
   "body": "  From the Sum Rule we have, Next, the Constant Rule, and the Constant Multiple Rule give, and by the Power Rule for Positive Integers we have,  Finally, factoring out the differential of gives,   Did you notice that the differential appeared in every term allowing us to factor it out at the end? When there is only one independent variable involved ( in this case) that will always happen. So it provides an easy way to check your computations.  If you end with an expression where the differential of the independent variable cannot be factored out then you have made a mistake in your computations. You should find your mistake before going on. Or just begin again.  "
 },
@@ -1013,7 +1013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEDiffRulesInConcert2",
   "type": "Example",
-  "number": "4.22",
+  "number": "4.3.0.17",
   "title": "",
   "body": "  Here is another example without all the details spelled out. Make sure you see which rule is being invoked at each step.   "
 },
@@ -1022,7 +1022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-53",
   "type": "Drill",
-  "number": "4.23",
+  "number": "4.3.0.18",
   "title": "",
   "body": "  Identify each of the rules used in each step of .   "
 },
@@ -1031,7 +1031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-55",
   "type": "Drill",
-  "number": "4.24",
+  "number": "4.3.0.19",
   "title": "",
   "body": "  Compute each of the following:                              Assume that is a constant.        "
 },
@@ -1040,7 +1040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-56",
   "type": "Drill",
-  "number": "4.25",
+  "number": "4.3.0.20",
   "title": "",
   "body": "  Compute each of the following:               Assume that and are all constant.        "
 },
@@ -1049,7 +1049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-57",
   "type": "Drill",
-  "number": "4.26",
+  "number": "4.3.0.21",
   "title": "",
   "body": "  Compute each of the following:               Assume that and are all constant.     % Do this problem by   "
 },
@@ -1058,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-58",
   "type": "Problem",
-  "number": "4.27",
+  "number": "4.3.0.22",
   "title": "",
   "body": "Compute for each of the following:                                                              "
 },
@@ -1067,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLELocalLinearityCircle",
   "type": "Example",
-  "number": "4.28",
+  "number": "4.3.0.23",
   "title": "",
   "body": "         Local Linearity Differentiating both sides of an ordinary algebraic equation yields a Differential Equation  an equation which relates the differentials of the quantities involved. For example, suppose we have a point lying on the unit circle so that the quantities and are related by the equation .  Differentiating, we have the differential equation   Let's look at this geometrically and focus on the first quadrant. The sketch above shows what happens to the quantities and as the point changes its position on the circle.  The smaller triangle is called a differential triangle \\aside{Because all three sides are differentials, obviously.} and it is infinitely small. Differential triangles were a favorite tool of Leibniz. He assumed without justification (as we will, for now) that they are just like ordinary (finite) triangles.  Notice that is negative since the coordinate is moving to the left, and that is positive since the coordinate is moving upward. We need positive quantities to represent the length of the triangle's legs. Therefore we use to represent a positive length for the horizontal leg of our differential triangle.  A little more mysterious is the (correct) observation that the smaller triangle isn't really a triangle at all. Because it is part of the circle the line connecting and  the hypotenuse of the triangle is curved. But there is nothing lost by thinking of the hypotenuse as a straight line because according to the Principle of Local Linearity at an infinitely small scale lines and curves are indistinguishable. At least in part, this why Newton, Leibniz, and their contemporaries worked with differentials. At that scale they could replace curves with straight lines. % A little further on we will state the  "
 },
@@ -1076,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-60",
   "type": "Drill",
-  "number": "4.29",
+  "number": "4.3.0.24",
   "title": "",
   "body": "      Show that the two triangles in the diagram above are similar. Use this to show that Notice that this problem specifically asks you to use the triangles, not differentiation to show that     After we observed that the ratio must represent the slope of both the curve and its tangent line at a given point. Notice that the differential equation for the circle can be written as Explain how this is related to the geometric fact that the tangent to a circle at a point is perpendicular to the radius through that point.   "
 },
@@ -1085,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEBruteForce",
   "type": "Example",
-  "number": "4.30",
+  "number": "4.3.0.25",
   "title": "Brute Force Computation.",
   "body": " Brute Force Computation  Suppose that we wish to find when . One way to do this is simple brute force. That is, we compute Applying the Sum Rule we see that Next we use the Constant Multiple Rule to get In the end we have,   Brute force works but expanding an expression like is dull (and error prone) and mathematicians are like Nature: We are lazy. We'd really rather avoid doing all of that dull computation if we possibly can. Wouldn t you?  Suppose, we make this problem a little easier on the eyes with a substitution like we did in . Let . Then our original problem becomes which is much easier to look at. And now . Substituting back in for we get After computing we see that   "
 },
@@ -1094,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMBruteForce",
   "type": "Problem",
-  "number": "4.31",
+  "number": "4.3.0.26",
   "title": "",
   "body": "     Complete by showing that we get the same both ways.   Compute if and then solve the equation for . (This problem is completely contrived. There is no obvious reason that we would want or need to solve this equation. However, in the near future this will be the next step in many of the problems we will encounter.)  "
 },
@@ -1103,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEEOE1",
   "type": "Example",
-  "number": "4.32",
+  "number": "4.3.0.27",
   "title": "Making Things “Easier on the Eyes”.",
   "body": " Making Things Easier on the Eyes  Suppose we wish to find when Once again we could just apply brute force by multiplying out the expression But this is a lot of work and it is very error prone.  Instead notice that is the product of and so the Product Rule seems a likely place to begin. But first we make it easier on the eyes with the substitutions, , and . Thus: Using the Product Rule we now have and so   Not only does this involve considerably less Algebra (and is thus less prone to error) it also gives us in a form that is easy to factor. This is important because, as we mentioned in our comment to , many of the problems to come will involve finding a differential, setting it equal to zero, and then solving the resulting equation. If we had computed this by brute force we would have to find the roots of a fully expanded fourth degree polynomial. That would be hard. The form given above is much easier to work with. Let's go ahead and set and solve the resulting equation: just for practice.  The prospects for solving the equation, even in this form seem pretty glum at first, but it really isn't so bad once we notice that and appear as factors in both terms on the left hand side. Factoring these out gives so that  so that   "
 },
@@ -1112,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#DRILLSolveEx",
   "type": "Drill",
-  "number": "4.33",
+  "number": "4.3.0.28",
   "title": "",
   "body": "  Complete this example by finding all solutions of the last equation.   "
 },
@@ -1121,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-65",
   "type": "Drill",
-  "number": "4.34",
+  "number": "4.3.0.29",
   "title": "",
   "body": "  Compute the differential of and solve for .   "
 },
@@ -1130,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEPowRuleExtension1",
   "type": "Example",
-  "number": "4.35",
+  "number": "4.3.0.30",
   "title": "",
   "body": " However, you are surely aware that the radical symbol, , can be expressed as a fractional exponent. For example, It is tempting to simply assert that, by the Power Rule, In fact this is true, but it doesn't follow from the way we developed the Power Rule because we depended quite explicitly on the assumption that the exponent of is a positive integer.  Here's one way to prove that the Power Rule works when . If then Computing the differential of both sides gives: or which is the Power Rule with .  "
 },
@@ -1139,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEPowRuleExtension2",
   "type": "Example",
-  "number": "4.36",
+  "number": "4.3.0.31",
   "title": "",
   "body": " You should be a little bit surprised at this. After all, is a complicated thing, compared to , or even . Nevertheless, essentially the same procedure works here too. If , then . Differentiating both sides gives and solving for leaves us with This is not yet recognizable as the Power Rule primarily because we need to express the right side entirely in terms of . But recall that so that . Making that substitution gives which is the Power Rule with   "
 },
@@ -1148,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMPRPosRat",
   "type": "Problem",
-  "number": "4.37",
+  "number": "4.3.0.32",
   "title": "",
   "body": " Mimic the process in Examples and to show that    Now suppose where and are positive integers and show that   "
 },
@@ -1157,7 +1157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEPowRuleExtension3",
   "type": "Example",
-  "number": "4.38",
+  "number": "4.3.0.33",
   "title": "",
   "body": " Having seen that the Power Rule can be extended to include positive, fractional exponents it is natural to ask if it can be extended to negative exponents Can we find the differential of ? Of course we can. If then By the Product Rule we have and thus So the Power Rule works for as well.  "
 },
@@ -1166,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMRecip",
   "type": "Problem",
-  "number": "4.39",
+  "number": "4.3.0.34",
   "title": "",
   "body": " Let be a positive rational number and . As in  clear the fraction and use the Product Rule to obtain the Power Rule for negative rational numbers:   "
 },
@@ -1175,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-74",
   "type": "Problem",
-  "number": "4.40",
+  "number": "4.3.0.35",
   "title": "",
   "body": " Use the formula you found in \\ to show that   "
 },
@@ -1193,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#EXAMPLEComplexDifferentiation1",
   "type": "Example",
-  "number": "4.41",
+  "number": "4.3.0.36",
   "title": "",
   "body": "  To differentiate we begin by re-expressing the radicals as exponents because we have no differentiation rules for radicals. Be sure you can follow all the computations at each step in Example . You may want to make some substitutions as you go. With practice, you will be able to do most of this in your head.  "
 },
@@ -1202,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-78",
   "type": "Drill",
-  "number": "4.42",
+  "number": "4.3.0.37",
   "title": "",
   "body": "  Show that the formula above simplifies to Does this seem simpler to you?   "
 },
@@ -1211,7 +1211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-79",
   "type": "Drill",
-  "number": "4.43",
+  "number": "4.3.0.38",
   "title": "",
   "body": " Compute in terms of and     , where      , where      , where , and      "
 },
@@ -1220,7 +1220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-80",
   "type": "Drill",
-  "number": "4.44",
+  "number": "4.3.0.39",
   "title": "",
   "body": " Compute in terms of and     where      , where      , where , and      "
 },
@@ -1229,7 +1229,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-81",
   "type": "Drill",
-  "number": "4.45",
+  "number": "4.3.0.40",
   "title": "",
   "body": " Compute each of the following:                                       "
 },
@@ -1238,7 +1238,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-82",
   "type": "Drill",
-  "number": "4.46",
+  "number": "4.3.0.41",
   "title": "",
   "body": " Compute each of the following.                       "
 },
@@ -1247,7 +1247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#PROBLEMspacetime",
   "type": "Problem",
-  "number": "4.47",
+  "number": "4.3.0.42",
   "title": "",
   "body": " Compute for each of the following:                                        , where is a constant If , , and are spatial coordinates, is time, and the constant is the speed of light then the expression on the left-hand side represents the square of the distance between the origin and the point in dimensional, relativistic, spacetime. Setting this equal to zero allows us to identify all of the events that an observer at the origin is observing at a given instant. For example, if there is a solar flare happening on the sun million miles away from the earth, then we observe it minutes later. The spacetime distance is zero to allow for the simultaneity of the event happening and us observing it. The closest galaxy to the Milky Way Galaxy is the Andromeda Galaxy which is approximately million light-years away. This means that the light we are observing now originated 2.5 million years ago but the spacetime distance between the two events (called the Minkowski distance) is still zero. .  "
 },
@@ -1256,7 +1256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-85",
   "type": "Example",
-  "number": "4.48",
+  "number": "4.3.0.43",
   "title": "",
   "body": " For example, how can we compute given that It is possible to solve this explicitly for but it is difficult and the complexity of the computations tends to hide the underlying simplicity of the larger problem. Since  is quadratic in (the highest power of is ) we need only use the Quadratic Formula to get explicitly in terms of and and then differentiate. Try that some time when you have time to kill. Lots of time.  Instead, we'll just apply our differentiation rules to  as it is. Differentiating we have At first this may look very difficult to solve for but look again. This dirfferential equation is actually linear in each of the differentials, , , and . That is, each differential only appears raised to the first power. This will always happen. When we differentiate any expression the result will always be linear in the differentials involved.  We can rearrange our equation algebraically so that it has the following form. Solving for gives   For this example the specific computations are:   At this point we have solved our problem so we needn’t do any more. But notice that we could also write this as .  Some problems are legitimately hard, and some only look hard. So remember that as bleak as things may look sometimes, you should always keep your goal in view. In this case we were trying to isolate , so we gathered all of the terms that had in them, put all the other terms on the other side of the equation, factored out the and divided by the stuff that formed the coefficient of . This process is often easier than trying to solve for before differentiating.  "
 },
@@ -1265,7 +1265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#SECTIONsome-rules-diff-86",
   "type": "Problem",
-  "number": "4.49",
+  "number": "4.3.0.44",
   "title": "",
   "body": " Solve equation for and .  "
 },
@@ -1274,7 +1274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsome-rules-diff.html#DRILLClassicalCurves",
   "type": "Problem",
-  "number": "4.50",
+  "number": "4.3.0.45",
   "title": "",
   "body": " Compute for each of the following. (You will see these formulas again in  .)                                  "
 },
@@ -1292,7 +1292,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERdifferentials-5.html#EXAMPLEDiffRulesInConcert3",
   "type": "Example",
-  "number": "4.51",
+  "number": "4.4.0.1",
   "title": "",
   "body": "  From the Sum Rule we have, Next, the Constant Rule, and the Constant Multiple Rule give, and by the Power Rule for Positive Integers we have, Finally, factoring out the differential of gives,  Next, Constant Rule, and the Constant Multiple Rule give, and by the Power Rule for Positive Integers we have,  Finally, factoring out the differential of gives,   Did you notice that the differential appeared in every term of Equation , allowing us to factor it out at the end? When there is only one independent variable involved ( in this case) that will always happen. So it provides an easy way to check your computations. If you end with an expression where the differential of the independent variable cannot be factored out then you have made a mistake in your computations. You should find your mistake before going on. Or just begin again.  "
 },
@@ -1301,7 +1301,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERdifferentials-5.html#THEOREMGenPowRule",
   "type": "Fact",
-  "number": "4.52",
+  "number": "4.4.0.2",
   "title": "The General Power  Rule.",
   "body": " The General Power Rule  Let be any real number. Then .  "
 },
@@ -1310,7 +1310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERdifferentials-5.html#EXAMPLEQR1",
   "type": "Example",
-  "number": "4.53",
+  "number": "4.4.0.3",
   "title": "",
   "body": " Suppose we wish to find when . Rewriting this slightly we have . From the General Differentiation Rules we have:   Now suppose we have . Can we compute ? (Be sure you see why the previous approach won't work.)  There are actually two different approaches to this problem that use the Product Rule. The first is to rewrite as then apply the Product Rule followed by the Power Rule.  The second approach is to clear the fraction so that . From here we can compute the differential of both sides (using the Product Rule on the left side) and solve the result for .  "
 },
@@ -1319,7 +1319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERdifferentials-5.html#PROBLEMQR1",
   "type": "Drill",
-  "number": "4.54",
+  "number": "4.4.0.4",
   "title": "",
   "body": "  Compute by each of the two methods indicated in Example . Verify that your results are equivalent either way.   "
 },
@@ -1355,7 +1355,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONVelocitySlopeTangent.html#SECTIONVelocitySlopeTangent-12",
   "type": "Problem",
-  "number": "5.1",
+  "number": "5.1.0.1",
   "title": "",
   "body": "Find an equation of the line tangent to the graph of at each of the following points. Compare these results to those obtained using Fermat s Method in                            "
 },
@@ -1364,7 +1364,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONVelocitySlopeTangent.html#EXAMPLEEvaluationNotation",
   "type": "Example",
-  "number": "5.2",
+  "number": "5.1.0.2",
   "title": "",
   "body": "  For example to compute the slope of the graph of at we use the following three-step process.     First differentiate to obtain the differential equation . This relates and .    Second, from this differential equation we find the ratio This differential ratio tells us the slope of the curve at every point on the curve.    Third, if we need the value of at a single point like , for example we compute    Mathematical Notation  Obviously this makes no sense if the point is not a point on the curve. You should always make sure the problem makes sense before you try to solve it.   In this case we could just write: , since the coordinate never comes into play.   Local Linearity Finally, we emphasize that Leibniz notation is deliberately evocative of the notion of slope because when we evaluate the differential ratio at a point it tells us the slope of the curve at that point. In view of the Principle of Local Linearity , this is equivalent to finding the slope of the line tangent to the curve at that point.   "
 },
@@ -1373,7 +1373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONVelocitySlopeTangent.html#SECTIONVelocitySlopeTangent-17",
   "type": "Problem",
-  "number": "5.3",
+  "number": "5.1.0.3",
   "title": "",
   "body": " Explain the difference between and carefully and clearly.   We (the authors) have sometimes had students assert that since , the equation of the line tangent to the graph of at the point is Is this the equation of a line? If you can t tell try setting .   Find the correct formula for line tangent to the graph of at the point .  "
 },
@@ -1382,7 +1382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONVelocitySlopeTangent.html#SECTIONVelocitySlopeTangent-18",
   "type": "Drill",
-  "number": "5.4",
+  "number": "5.1.0.4",
   "title": "",
   "body": "  Find if and compare this with the slope we obtained in using Descartes Method of Normals.   "
 },
@@ -1391,7 +1391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONVelocitySlopeTangent.html#PROBLEMDeri",
   "type": "Problem",
-  "number": "5.5",
+  "number": "5.1.0.5",
   "title": "",
   "body": " Evaluate for each of the following functions at each of the given values of .    ,   Compare with Problem .    ,   Compare with Problem .    ,   Compare with Problem .  "
 },
@@ -1409,7 +1409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-11",
   "type": "Problem",
-  "number": "5.6",
+  "number": "5.2.0.1",
   "title": "",
   "body": "  Show that is the equation of the line tangent to the graph of at and as seen in the sketch above.  "
 },
@@ -1427,7 +1427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#DEFINITIONTangentLine",
   "type": "Definition",
-  "number": "5.7",
+  "number": "5.2.0.2",
   "title": "The Line Tangent to a Curve  at a Point.",
   "body": " The Line Tangent to a Curve at a Point  Definition The Line Tangent to a Curve at a Point   The line tangent to a curve , at the point is the line which passes through the point with slope .   "
 },
@@ -1445,7 +1445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#DEFINITIONLocalLinearity",
   "type": "Definition",
-  "number": "5.8",
+  "number": "5.2.0.3",
   "title": "The Principle of Local Linearity.",
   "body": " The Principle of Local Linearity  Definition The Principle of Local Linearity   Sufficiently close to a given point every smooth curve is indistinguishable from the line tangent at that point.   "
 },
@@ -1454,7 +1454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-22",
   "type": "Drill",
-  "number": "5.9",
+  "number": "5.2.0.4",
   "title": "",
   "body": " Find an equation of the line tangent to the given curve at the indicated values of .      when       when       when        when        when        when        when       when        when        when        when        when        when        when        when        when        when        when        when       when      "
 },
@@ -1463,7 +1463,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#PROBLEMtanlinedef",
   "type": "Problem",
-  "number": "5.10",
+  "number": "5.2.0.5",
   "title": "",
   "body": " Show that the only point on the graph of where the tangent line touches the curve only at the point of tangency is the point and that the tangent is horizontal. Now graph the curve and the line tangent at on the same set of axes. Does this look like a tangent line to you?  "
 },
@@ -1472,7 +1472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-27",
   "type": "Drill",
-  "number": "5.11",
+  "number": "5.2.0.6",
   "title": "",
   "body": "  Use Definition to find the equation of the line tangent to the graph of the straight line at the point , and show that the tangent line is in fact, the original line.   "
 },
@@ -1481,7 +1481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-28",
   "type": "Problem",
-  "number": "5.12",
+  "number": "5.2.0.7",
   "title": "",
   "body": "    Find the equations of all lines tangent to the graph of that are also parallel to the line .   Find the equations of all lines tangent to the graph of that are also parallel to the line    Find the equations of all lines tangent to the graph of that are also parallel to the line   "
 },
@@ -1490,7 +1490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-29",
   "type": "Drill",
-  "number": "5.13",
+  "number": "5.2.0.8",
   "title": "",
   "body": "  Find those points on the graph of the curve where the tangent line is    Parallel to the line: .    Perpendicular to the line: .   "
 },
@@ -1499,7 +1499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#PROBLEMClassicalCurves1",
   "type": "Drill",
-  "number": "5.14",
+  "number": "5.2.0.9",
   "title": "",
   "body": "  Find an equation of the line(s) tangent to and normal to each of the given curves at the specified points. (You have seen all of these curves previously in )     Astroid : at and        An Elliptic Curve: at and .        Cardioid : at and .        Conchoid of Nicomedes : at and         Cassini  oval : at        The Bicorn : at         The Kampyle of Eudoxus : at        The Folium : at and       "
 },
@@ -1508,7 +1508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-31",
   "type": "Drill",
-  "number": "5.15",
+  "number": "5.2.0.10",
   "title": "",
   "body": "  Find all points where the line tangent to the curve passes through the indicated points. If no such points exist, explain how you know.     through the points                           through the points                           through the points                         "
 },
@@ -1517,7 +1517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#DRILLZeroDenominator1",
   "type": "Problem",
-  "number": "5.16",
+  "number": "5.2.0.11",
   "title": "",
   "body": " n Show that if , whose graph is shown below, then .  "
 },
@@ -1544,7 +1544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#SECTIONdefin-tang-line-33",
   "type": "Drill",
-  "number": "5.17",
+  "number": "5.2.0.12",
   "title": "",
   "body": "  Suppose that the two blue line segments in the figure below are parallel. Show that is exactly halfway between and . (That is, show that .)     "
 },
@@ -1553,7 +1553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#PROBLEMHyperbolaTriangles",
   "type": "Drill",
-  "number": "5.18",
+  "number": "5.2.0.13",
   "title": "Find the Pattern.",
   "body": " Find the Pattern   Suppose that and are positive numbers. In the following sketch the line is tangent to the curve at the point .      For first show that the coordinates of points and are and , respectively, and then confirm that:   area     area     area     area        For first show that the coordinates of points and are and , respectively, and then confirm that:   area .    area .    area .    area .       For first show that the coordinates of points and are and , respectively and then confirm that:   area .    area .    area .    area .       Find a formula for the coordinates of points and for any value of and then:   Find the the area of for any value of .    Find the the area of for any value of .    Find the the area of for any value of .    Find the the area of for any value of .      "
 },
@@ -1562,7 +1562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdefin-tang-line.html#PROBLEMunderl-tang-line",
   "type": "Drill",
-  "number": "5.19",
+  "number": "5.2.0.14",
   "title": "",
   "body": "  Consider the equation .    Find the equation of the line tangent to the graph of when .    Does a line tangent to the graph of this function exist at ? If so, find the equation of the line. If not, explain why not.   Have you looked at the graph yet?}   "
 },
@@ -1580,7 +1580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvomit-comet.html#PROBLEMFlightPath2",
   "type": "Drill",
-  "number": "5.20",
+  "number": "5.3.0.1",
   "title": "",
   "body": "  Suppose the following graph depicts the parabolic flight path followed by the Vomit Comet as it starts its maneuver at an altitude of meters and an initial angle of elevation of .    If the equation of this parabola is then determine the values of and .   "
 },
@@ -1589,7 +1589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvomit-comet.html#EXAMPLEFlightPath",
   "type": "Example",
-  "number": "5.21",
+  "number": "5.3.0.2",
   "title": "Modeling the flight path of an airliner.",
   "body": " Modeling the flight path of an airliner  We want to model the flight path of a plane as it lands and determine the distance from the runway the plane should be when it starts its descent.  A fundamental tenet of mathematically modeling real world phenomena is to keep things as simple as possible. So, the first thing we d be likely to try for is a parabolic descent path: But it is pretty clear that this won t work because the plane should be traveling horizontally at the beginning and at the end of its descent. At the end, because at that point it should be on the ground, and at the beginning because we don t want to terrify the passengers.  "
 },
@@ -1598,7 +1598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvomit-comet.html#SECTIONvomit-comet-14",
   "type": "Problem",
-  "number": "5.22",
+  "number": "5.3.0.3",
   "title": "",
   "body": " Show that there is only one point on any parabola where the line tangent to the curve is horizontal. Explain why this proves that the flight path of the airliner in cannot be parabolic.   Wherever the flight path is horizontal its slope will be zero.  "
 },
@@ -1607,7 +1607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvomit-comet.html#PROBLEMFlightPath1",
   "type": "Drill",
-  "number": "5.23",
+  "number": "5.3.0.4",
   "title": "",
   "body": "  Below is a section of a cubic polynomial depicting a flight path with the plane starting initially at the point and ending at the airport which we will arbitrarily designate as the origin.      Assuming that the flight path is the graph of , compute . Then divide by to obtain .    Show that in equation ).   The point is on the graph of equation .}    Show that in ).   The flight path is horizontal at .}    Determine the values of and in ) in terms of and .   The point is on the flight path and the flight path is horizontal at .}   "
 },
@@ -1625,7 +1625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGalileoDrops.html#SECTIONGalileoDrops-2",
   "type": "Figure",
-  "number": "5.24",
+  "number": "5.4.0.1",
   "title": "",
   "body": "  Galileo Galilei {1564-1642}    "
 },
@@ -1643,7 +1643,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGalileoDrops.html#PROBLEMTossedBall1",
   "type": "Drill",
-  "number": "5.25",
+  "number": "5.4.0.2",
   "title": "",
   "body": "  We all know from experience that if you throw a ball straight up in the air, it will reach some maximum height. But suppose you throw the ball up twice as hard, would it go twice as high?  We re asking you to guess. Don t worry about being wrong. Just take your best guess.   "
 },
@@ -1652,7 +1652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGalileoDrops.html#FIGUREHammerFeather",
   "type": "Figure",
-  "number": "5.26",
+  "number": "5.4.0.3",
   "title": "",
   "body": "  David Scott dropping a hammer and a feather on the surface of the Moon     "
 },
@@ -1670,7 +1670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGalileoDrops.html#TABLEGalileoIncline",
   "type": "Table",
-  "number": "5.27",
+  "number": "5.4.0.4",
   "title": "Acceleration on an Incline",
   "body": " Acceleration on an Incline      Acceleration     4.9    6.93    8.49    9.47    9.72    9.78    9.795    9.799    9.799   "
 },
@@ -1688,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGalileoDrops.html#SECTIONGalileoDrops-28",
   "type": "Problem",
-  "number": "5.28",
+  "number": "5.4.0.5",
   "title": "",
   "body": " With a little Trigonometry you can deduce that with only one measurement. Use the diagram and the first line of the table above to deduce that     .  "
 },
@@ -1697,7 +1697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGalileoDrops.html#SECTIONGalileoDrops-31",
   "type": "Problem",
-  "number": "5.29",
+  "number": "5.4.0.6",
   "title": "",
   "body": " Show that if we measure distance in feet, the acceleration constant on the moon is approximately   "
 },
@@ -1715,7 +1715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECONDBringCalc.html#PROBLEMPositionVelocityAcceleration",
   "type": "Drill",
-  "number": "5.30",
+  "number": "5.5.0.1",
   "title": "",
   "body": "  Thus finding the position of the ball at any time reduces to finding an expression for that satisfies the differential equation    We begin with an educated guess. From the Power Rule the differential of a quadratic expression like will be the linear term , so seems like a reasonable guess.    Show that satisfies equation when     Earlier we reasoned that a ball dropped from a height of meters would strike the ground between one and two seconds after being dropped. Use to find out exactly how long it takes.    How long would it take the ball to hit the ground if dropped from the top of the Tower of Pisa (a height of meters?    Evaluate . What does this represent physically?   Remember that is a change in position and is a change in time.   "
 },
@@ -1733,7 +1733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECONDBringCalc.html#PROBLEMGeneralFallingBalls",
   "type": "Drill",
-  "number": "5.31",
+  "number": "5.5.0.2",
   "title": "",
   "body": "  Consider a ball moving vertically so that its height at time seconds is given by     Determine the ball s initial   Position       Velocity   ,    Acceleration      Remember to go through the two step process of differentiating and then dividing by We insist.    Is up the positive or the negative direction?    How high will the ball go?    When will the ball hit the ground?    What is the impact velocity?    Describe in words the physical situation being modeled by the formula ?    In general, the height of an object falling near the surface of the earth is given by meters.   Show that the initial height is , the initial velocity is , and the acceleration is .    For simplicity, assume . How high will the ball go?    Suppose we double our initial velocity. Would the ball go twice as high? Compare this to your guess in .      "
 },
@@ -1751,7 +1751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-2",
   "type": "Figure",
-  "number": "5.32",
+  "number": "5.6.0.1",
   "title": "",
   "body": "  Joseph Louis Lagrange {1736-1813}    "
 },
@@ -1805,7 +1805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#PROBLEMHuddesRule",
   "type": "Drill",
-  "number": "5.33",
+  "number": "5.6.0.2",
   "title": "",
   "body": "   Recall that in Descartes Method of Normals, we had to find a double root of a polynomial. To deal with this problem, Johann van Waveren Hudde (1628 1704) developed an algebraic tool for determining such double roots. Calculus allows a development of Hudde s Rule that does not require the complex algebraic reasoning that Hudde used and is much easier to follow.   Historical Background  Actually Hudde did considerably more than this. His method for finding double roots was a part of what has been called the Lost Calculus of algebraic functions. If you are interested you can read more about this in Jeff Suzuki s award winning article \\ The Lost Calculus (1637 1670): Tangency and Optimization without Limits    Consider any polynomial . Let and be any real numbers and form the following Hudde Polynomial.  Hudde showed that if is a double root of , then is a root of the Hudde polynomial     Show that if is a double root of the polynomial then it is a root of .   If is a double root of , then for some polynomial .    Show that and use this to prove Hudde s Rule.   "
 },
@@ -1823,7 +1823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#EXAMPLEDerivVSDiff",
   "type": "Example",
-  "number": "5.34",
+  "number": "5.6.0.3",
   "title": "",
   "body": " Given we wish to compute . Setting we see that By the Power Rule we have This would seem to be correct but it is not. Do you see the problem?  The left side of equation ) indicates that the variable is but there is no on the right side, only . So this can t be right. But what went wrong? We can avoid problems like this by using differentials: At this point if we divide by we recover equation in the form: Thus we see the left side of equation ) should have been not .  "
 },
@@ -1832,7 +1832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-12",
   "type": "Problem",
-  "number": "5.35",
+  "number": "5.6.0.4",
   "title": "",
   "body": " Starting with equation ) complete the computation of .  "
 },
@@ -1841,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-13",
   "type": "Example",
-  "number": "5.36",
+  "number": "5.6.0.5",
   "title": "",
   "body": " Of course, using differentials does not address all of the difficulties. For example, let . Then So far, so good. Next we apply the Product Rule, so    Historical Background  To see why we need to know that Leibniz always considered the differential to be a constant. And the differential of any constant is zero, by the Constant Rule.   The glaring question here is why is equal to zero in equation but is not equal to zero in equation ? Or, at a more fundamental level, what do we mean by the infinitely small change of an infinitely small change? As we will see in Chapter the early critics of Calculus cited this question specifically to argue that Calculus was invalid.  We will address these issues beginning in Chapter . For now we will make the following compromise: We will only differentiate finite quantities, be they functions, or derivatives. Since our ultimate goal is to compute some derivative this will suit our needs without getting caught up in the very problematic question of the nature of higher order differentials. So for this example we have   "
 },
@@ -1850,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#EXAMPLEHighOrderDerivs",
   "type": "Example",
-  "number": "5.37",
+  "number": "5.6.0.6",
   "title": "",
   "body": " Consider the expression . Differentiating we have You ve probably been taught all of your life to simplify complex looking expressions like and you probably do it without thinking. So you may be wondering why we left the coefficients above in the form we did.  The reason is simple. We were looking for patterns not numbers. Writing the above formulas as  , and obscures the pattern. Keep this in mind as you proceed. Algebraic or arithmetical simplifications often get in the way of recognizing patterns. Don t do them until there is a compelling reason to.  "
 },
@@ -1859,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-15",
   "type": "Problem",
-  "number": "5.38",
+  "number": "5.6.0.7",
   "title": "Find the Pattern.",
   "body": "Find the Pattern  Find the pattern in . Use this pattern to find directly, without computing all fifty derivatives.  "
 },
@@ -1868,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-16",
   "type": "Example",
-  "number": "5.39",
+  "number": "5.6.0.8",
   "title": "",
   "body": " Consider the circle . Differentiating, we have , or . Differentiating again we have   "
 },
@@ -1877,7 +1877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-17",
   "type": "Drill",
-  "number": "5.40",
+  "number": "5.6.0.9",
   "title": "",
   "body": "      Continue this example to show that .    Show that and use this to compute .    Do you get the same answer? Which method do you prefer?   "
 },
@@ -1886,7 +1886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-18",
   "type": "Problem",
-  "number": "5.41",
+  "number": "5.6.0.10",
   "title": "",
   "body": "For each of the following find in terms of and :              Compare this with part (b).     Compare this with . Which method do you prefer?        "
 },
@@ -1895,7 +1895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#PROBLEMDerivProdNEProdDeriv",
   "type": "Drill",
-  "number": "5.42",
+  "number": "5.6.0.11",
   "title": "",
   "body": "   Problem We know that it is not generally true that even though there are certain exceptions, like , and , or . In the same way, even though the Product Rule makes it very clear that there are certain pairs of functions which are exceptions; for which  is true. For example, show that for each of the following it is true that .                            Find the general pattern in part (a).    Those pairs of functions which fit the pattern you found in part (b) are not the only exceptional pairs. Can you find others?   "
 },
@@ -1904,7 +1904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-21",
   "type": "Problem",
-  "number": "5.43",
+  "number": "5.6.0.12",
   "title": "",
   "body": "Each of the following represents the position of a point on the -axis at time . Find the velocity and acceleration.                                "
 },
@@ -1913,7 +1913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivative.html#SECTIONDerivative-22",
   "type": "Drill",
-  "number": "5.44",
+  "number": "5.6.0.13",
   "title": "",
   "body": "  For each of the following represents the position of a point moving along the -axis. Use the information given to determine if the point is slowing down or speeding up at the instant .                       "
 },
@@ -1931,7 +1931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewt-flux-dynam.html#SECTIONnewt-flux-dynam-6",
   "type": "Problem",
-  "number": "5.45",
+  "number": "5.7.0.1",
   "title": "",
   "body": " Since we have . Since and we know that Use this to find a formula for and confirm that the arc is a parabola.  "
 },
@@ -1940,7 +1940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewt-flux-dynam.html#PROBLEMAirlinerSpeed",
   "type": "Drill",
-  "number": "5.46",
+  "number": "5.7.0.2",
   "title": "",
   "body": "         Recall that in we asked you find the equation of this flight path from the data in the figure at the right. You should have found that As we said when we suspended our earlier efforts, the problem with this picture is that it is static. It is a picture of the path the airliner has flown after the flight is finished. We now have the tools we need to address the characteristics of the flight as it occurs.    Use the differential triangle in our figure to show that airspeed of the airplane in its direction of motion, , its horizontal velocity, , and slope of its flight path, , are related by the formula:    Recall that , and are the horizontal and vertical velocities respectively    Assume that the plane s horizontal velocity is constant.   Use equation to explain how we know that the plane is traveling fastest when it is at the point where the curve is steepest (about where the red dot is in our sketch\\aside{It is possible to find the numerical coordinates of this point but it is rather difficult to see how to proceed at this point. It is worth taking a few minutes to ponder how this might be done.}).    What is the slowest speed attained by the plane, and where on the flight path does this occcur?      "
 },
@@ -1949,7 +1949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewt-flux-dynam.html#SECTIONnewt-flux-dynam-13",
   "type": "Problem",
-  "number": "5.47",
+  "number": "5.7.0.3",
   "title": "",
   "body": "Suppose are the coordinates of a ball moving along the given curves. If the ball is moving with a constant horizontal velocity of for each curve find the following.    The vertical velocity of the ball at the points indicated.    The horizontal and vertical acceleration of the ball at the points indicated.    The speed in the direction of travel of the ball at the points indicated.   Curve 1:   at and     Curve 2:   at and     Curve 3:   at and        "
 },
@@ -1958,7 +1958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewt-flux-dynam.html#SECTIONnewt-flux-dynam-15",
   "type": "Drill",
-  "number": "5.48",
+  "number": "5.7.0.4",
   "title": "",
   "body": "  The flight path obtained was . We need to put some limitations on the vertical acceleration, , experienced by the passengers in a commercial airliner. For simplicity assume that the pilot must maintain a constant horizontal speed of . (That is, set .)    Use the above equation to show that the vertical acceleration is given by     On the interval , what is the largest vertical acceleration and what is the smallest vertical acceleration and where do they occur? Does this make sense physically?    Suppose we put a restriction on the vertical acceleration so that for some constant . Show that with this restriction, .    Suppose that initially meters, , (which is approximately of the acceleration due to gravity). Find what must be (in kilometers).%   "
 },
@@ -1994,7 +1994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#PROBLEMadfj",
   "type": "Drill",
-  "number": "5.49",
+  "number": "5.8.0.1",
   "title": "",
   "body": "    For the Folium of Descartes:    Show that .    Locate all of the points where the line tangent to the Folium of Descartes is horizontal.    Locate all of the points where the line tangent to the Folium of Descartes is vertical.         The Tschirnhausen cubic:    Show that     Locate all of the points where the line tangent to the Tschirnhausen cubic is horizontal.    Locate all of the points where the line tangent to the Tschirnhausen cubic is vertical.      "
 },
@@ -2003,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#PROBLEMTschirnhausenCubic",
   "type": "Drill",
-  "number": "5.50",
+  "number": "5.8.0.2",
   "title": "",
   "body": "      Show that if and satisfy then and satisfy the equation of the Tschirnhausen Cubic: .    Compute the fluxions of and .    If we think of as time, with , representing time in the past, will the point traverse the clockwise or counterclockwise as increases?   Consider the values of for which and are moving in the positive and negative directions.    Find the values of for which . Use the result of part (b) to compute at these times. Are your answers consistent with what you obtained in part (c)? Explain.    Show that the equations of the two lines which are tangent to the Tschirnhausen cubic at are    "
 },
@@ -2012,7 +2012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#PROBLEMFoliumOfDescartes1",
   "type": "Drill",
-  "number": "5.51",
+  "number": "5.8.0.3",
   "title": "",
   "body": "  Recall that the Folium of Descartes, , crosses itself at the origin.    Show that if and then and satisfy the equation of the Folium.    Compute the fluxions of and .    For which values of is ?    Find the value of for which . use the result of part (b) to compute at this time. Is this consistent with the graph?    Can you explain why we only found one tangent line at when it is quite clear from the graph that there must be two?   "
 },
@@ -2039,7 +2039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#SUBSECTIONParametricFunctions-6",
   "type": "Drill",
-  "number": "5.52",
+  "number": "5.8.1.1",
   "title": "",
   "body": "  Let represent any point on the Folium which is not the origin. Let represent the slope of the line joining the origin to ; that is, or . Use this to show that   The difference between this problem and is this: In Problem we gave you and and asked you to show that it satisfies the equation of the Folium. Here we start with the equation of the Folium and you need to find and .   "
 },
@@ -2048,7 +2048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#SUBSECTIONParametricFunctions-13",
   "type": "Drill",
-  "number": "5.53",
+  "number": "5.8.1.2",
   "title": "",
   "body": "      Use your favorite graphing technology to show that the parameterization traces out part of the parabola . Which part?    The parameterization traces out different part of the same parabola. How else is this parameterization different from the one in part (a)?    Explain why neither of these parameterizations traces the part of the curve where .   "
 },
@@ -2057,7 +2057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#SUBSECTIONParametricFunctions-14",
   "type": "Example",
-  "number": "5.54",
+  "number": "5.8.1.3",
   "title": "",
   "body": " Moving between the equation and parametric forms can be very hard to do depending on the complexity of the equation. The simplest situation is when you have as a function of ; for example . To find a parametric representation we observe that we need to specify both and as functions of a third parameter, . This can be puzzling until we realize that is completely free. All we need to do is ensure that . So if we take and we almost have our parameterization.  When faced with a formula like you have learned to always assume that could be any real number that makes sense in the formula. But with parametric equations this assumption can lead to problems. We ll need to specify the allowable values of the parameter explicitly. This is why we said we almost have our parameterization. A complete parameterization must specify the values of that are available to us, so in this case   We can always parameterize the graph of a function the same way we just parameterized . A parameterization of , with domain is   This parameterization is equivalent to working with the function so it may or may not be particularly useful, but it can always be done.  "
 },
@@ -2066,7 +2066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#SUBSECTIONParametricFunctions-15",
   "type": "Drill",
-  "number": "5.55",
+  "number": "5.8.1.4",
   "title": "",
   "body": "      Use your favorite graphing technology to show that each of the following is a parameterization of part of the graph of .                                              Sketch only the part of the curve included in each parameterization in part (a). Be sure to indicate the direction of travel in each case, assuming is increasing.    Compute and show that this yields for each of the parameterizations in part (a).   "
 },
@@ -2075,7 +2075,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#PROBLEMUnitCircleParameterization1",
   "type": "Drill",
-  "number": "5.56",
+  "number": "5.8.1.5",
   "title": "",
   "body": "  Show that each of the following is a parameterization of part of the unit circle.                                    Sketch only the part of the curve included in each parameterization in part (a). Be sure to indicate the direction of travel in each case.    Compute and show that this yields for each of the parameterizations in part (a).   "
 },
@@ -2084,7 +2084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#PROBLEMParametricIVP",
   "type": "Drill",
-  "number": "5.57",
+  "number": "5.8.1.6",
   "title": "",
   "body": "         The red curve in the sketch at the right is parameterized by Differentiating and gives and so that .    Fill in the details of the computation of , , and show that .    Let and show that .    Sketch the graph of to see that this is not the same as the parameterized curve above. Can you tell what went wrong?    Show that the point is on our parameterized curve. Use this to find the function, , that has the same graph as .   "
 },
@@ -2093,7 +2093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#SUBSECTIONParametricFunctions-21",
   "type": "Drill",
-  "number": "5.58",
+  "number": "5.8.1.7",
   "title": "",
   "body": "  For each of the given parameterizations find two different ways:   Compute and and find their ratio, .    Solve for in terms of (or ), substitute the result into (or ), and then compute directly.   And then find .                  "
 },
@@ -2120,7 +2120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#SUBSECTIONBridges-21",
   "type": "Drill",
-  "number": "5.59",
+  "number": "5.9.1.1",
   "title": "",
   "body": "      Use the above analysis and schematic drawing of the forces involved to show that the curve representing the cable must satisfy the differential equation    Notice that is pulling in the direction tangent to the cable.    Show that the parabola where is an arbitrary constant, satisfies this differential equation    Let , and plot the parabola for . Does this agree with the idea that indicates how tightly we are winching the cable?   "
 },
@@ -2129,7 +2129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#SUBSECTIONChains-6",
   "type": "Drill",
-  "number": "5.60",
+  "number": "5.9.2.1",
   "title": "The Hanging Chain.",
   "body": " The Hanging Chain          This problem is very similar to finding the shape of the suspension bridge cable. The difference here is that since there is no deck to support, the only vertical force will be the weight of the chain itself, so we can t ignore the weight of the chain the way we ignored the weight of the cable in the suspension bridge.  Let represent the weight density of the chain in newtons per meter and represent the length of the chain from the lowest point to a point on the chain. Show that the curve represented by the chain must satisfy the differential equation    "
 },
@@ -2138,7 +2138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#PROBLEMcatenary",
   "type": "Drill",
-  "number": "5.61",
+  "number": "5.9.2.2",
   "title": "",
   "body": "  The difficulty is that we have the wrong variable on the right side of . Since depends on we d like to have only the variables and , appearing in our equation. Instead we have , , and . And we really don t know anything about . However, recall that we do know something about .    Use a differential triangle to show that the hanging chain curve must satisfy the differential equation    Recall the represents a differential along the direction of the curve. How is it related to and ?    Show that the general parabola does \\emph{not} satisfy this differential equation (and so Galileo was mistaken!) .    Show that, in fact no nonzero polynomial satisfies equation .   Suppose it did satisfy the equation. If we were to square both sides of the equation, what would be the degree of each side?   "
 },
@@ -2147,7 +2147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#FIGUREPantheon",
   "type": "Figure",
-  "number": "5.62",
+  "number": "5.9.3.1",
   "title": "",
   "body": "   Drawings of the Pantheon and a cross section of the dome with an inverted catenary superimposed on the arch.      "
 },
@@ -2156,7 +2156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#SUBSECTIONTelescopes-5",
   "type": "Figure",
-  "number": "5.63",
+  "number": "5.9.4.1",
   "title": "",
   "body": "  The Large Binocular Telescope, Mt. Graham, Arizona    "
 },
@@ -2165,7 +2165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#PROBLEMSpinCast1",
   "type": "Drill",
-  "number": "5.64",
+  "number": "5.9.4.2",
   "title": "",
   "body": "  The only horizontal force is the centripetal force due to the spinning of the furnace, which is . We will derive this formula analytically in when we have extended the scope of our differentiation rules. For now assume this is correct and proceed.    Use the diagram above to show that the curve must satisfy the differential equation    The slope of the line tangent to the parabola at will be . This will be perpendicular to the force acting at that point, represented by the red arrow.    Show that must be a parabola to satisfy this differential equation.    Using the value , graph the parabola from part (b). for . Do these graphs coincide with your intuition about what should happen as the liquid rotates faster?   "
 },
@@ -2174,7 +2174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#PROBLEMParabolaDefinition",
   "type": "Drill",
-  "number": "5.65",
+  "number": "5.9.4.3",
   "title": "",
   "body": "         A parabola may be defined geometrically as the set of points equidistant from a given point, the focus, and a given line, the directrix as shown below. Suppose that the point lies on the parabola with focus and directrix as in the diagram at the right.    Show that must satisfy the equation:     In , show that in order to spin a mirror with a focus Having the correct focus (and thus the correct focal length) is of paramount importance in the performance of the telescope. To give you a notion of the precision required, it took months to polish the surface of one of the primary mirrors in the Large Binocular Telescope to a precision of nanometers ( times thinner than a human hair). at the angular velocity must be .   "
 },
@@ -2183,7 +2183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONbridg-chains-telesc.html#PROBLEMParabolaReflectivity",
   "type": "Drill",
-  "number": "5.66",
+  "number": "5.9.4.4",
   "title": "",
   "body": "         Consider the parabola with equation focus , and directrix as in .    Show that the tangent line (in red) is perpendicular to line segment .    Show that .   What do you know about ?   "
 },
@@ -2210,7 +2210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#DRILLDegreeDemo",
   "type": "Problem",
-  "number": "6.1",
+  "number": "6.1.1.1",
   "title": "",
   "body": " Now suppose . Use the sketch above to show that the first child travels slightly less than meters along the red circle while the second travels slightly less than meters along the blue circle.  (Why do you suppose we chose rather than something more familiar like or ? It seems an odd choice, doesn t it?)   If we travel around a circle, what fraction of the circumference of the circle have we traversed?  "
 },
@@ -2228,7 +2228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SUBSECTIONradian-measure-19",
   "type": "Problem",
-  "number": "6.2",
+  "number": "6.1.1.2",
   "title": "",
   "body": "For each angle, determine the number of revolutions and direction around the circle. Do not convert to degrees first.    radians     radians     radians   "
 },
@@ -2237,7 +2237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SUBSECTIONradian-measure-20",
   "type": "Problem",
-  "number": "6.3",
+  "number": "6.1.1.3",
   "title": "",
   "body": "Find the radian measure of each angle described. Do not convert to degrees first.    of a circle in the positive direction.     of a circle in the negative direction.    Twice around the circle in the positive direction.     times around the circle in the negative direction.     times around the circle where can be any real number.   "
 },
@@ -2282,7 +2282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SUBSECTIONradian-measure-31",
   "type": "Problem",
-  "number": "6.4",
+  "number": "6.1.1.4",
   "title": "",
   "body": "Suppose a point is revolving in a circle with angular velocity . For each situation find the linear speed of the point in the units indicated.   Find the linear speed of in if meters and .    Find the linear speed of in if centimeters and .    Find the linear speed of in if feet and .  Notice that the units are mixed in this problem.    Find the linear speed of in mph (miles per hour) if miles and .  (This problem describes a physical phenomenon you see daily. Can you identify it?)    Find the linear speed of in mph if miles and .  (This problem describes a physical phenomenon you see monthly. Can you identify it?)    Find the linear speed of in mph if miles and one revolution is completed every days, hours, minutes, and seconds.  (Can you identify the physical phenomenon this problem represents?)    Our sun appears to revolve around the earth once per day. If that were actually happening, what would the sun s linear speed need to be in miles per second? Assume that the distance from the sun to the earth is million miles.   "
 },
@@ -2318,7 +2318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONtrig-interl-3-12",
   "type": "Problem",
-  "number": "6.5",
+  "number": "6.1.2.1",
   "title": "",
   "body": "        In the diagram above arc is the unit quarter-circle in the first quadrant.   For the angle on the diagram above match the trigonometric function value with the appropriate line segment.                                   You may have wondered why secant is the reciprocal of cosine and not sine. Use the diagram, similar triangles, and the observation that to show that              "
 },
@@ -2327,7 +2327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONtrig-interl-3-14",
   "type": "Problem",
-  "number": "6.6",
+  "number": "6.1.2.2",
   "title": "",
   "body": "Use a unit circle to illustrate and explain the following identities:                                "
 },
@@ -2336,7 +2336,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONtrig-interl-3-18",
   "type": "Problem",
-  "number": "6.7",
+  "number": "6.1.2.3",
   "title": "",
   "body": " A similar development gives us the graph of .    Use the diagram above to explain why the cosine cycles from , to , to , to to . for . What are the precise values of where the cosine takes on those values?  "
 },
@@ -2354,7 +2354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#DRILLPeriodicFunctions",
   "type": "Problem",
-  "number": "6.8",
+  "number": "6.1.3.1",
   "title": "",
   "body": " Because and complete one cycle on an interval of they are called - periodic functions. Suppose that , , and are constants. Choose several non-zero values for , , and (at least three of each) and graph the function to show graphically that is also a -periodic function.  "
 },
@@ -2372,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#DRILLSinusoidalAxis",
   "type": "Problem",
-  "number": "6.9",
+  "number": "6.1.3.2",
   "title": "",
   "body": " Suppose we had a sinusoidal wave oscillating between and . What would be the amplitude and what would be the sinusoidal axis of this wave?  "
 },
@@ -2381,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#EXAMPLEHertz",
   "type": "Example",
-  "number": "6.10",
+  "number": "6.1.3.3",
   "title": "",
   "body": " The pitch of a sound wave is regulated by how fast the wave is oscillating. Faster oscillations mean higher pitches. Suppose we want a wave that oscillates once per second. Our base function, , oscillates once over the interval . Divide by , so that we have one oscillation occurring when . If we let so that then oscillates at a rate of one cycle per second as in the following graph.    Now suppose we want to double the frequency to oscillations per second. Again our base function oscillates once for . We want two oscillations per second or one oscillation per half second. So, we want . Letting we see that oscillates once every half second (or twice every second) as in the following graph.    The number of cycles per second is referred to as the number of Hertz (Hz). So oscillates at Hz and oscillates at Hz.   Historical Background  Named for Heinrich Rudolf Hertz, (1857 - 1894) .   "
 },
@@ -2390,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#PROBLEMSineOscill",
   "type": "Drill",
-  "number": "6.11",
+  "number": "6.1.3.4",
   "title": "",
   "body": "      Mimic the derivation above to determine so that oscillates at Hz.    The standard musical pitch is or , the musical note A above middle C. has a frequency of Hz. Determine so that an note can be modeled by . Do the same with each of the following notes.    , ( Hz)     , ( Hz)     , ( Hz)     , ( Hz)     , ( Hz)     , ( Hz)       Musical notes an octave higher have frequencies that are doubled. So, (one octave higher than ) has a frequency of Hz. Repeat part for , , , , , , and , each one octave higher than the corresponding note in part .   "
 },
@@ -2417,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#PROBLEMSantaBarbaraDaylight",
   "type": "Drill",
-  "number": "6.12",
+  "number": "6.1.4.1",
   "title": "",
   "body": "  Let . Solve this for and use this to find a formula for the number of hours of daylight per day in Santa Barbara, CA on any given day with representing January 1. Graph this and compare your graph with the original graph.   "
 },
@@ -2426,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#PROBLEMSantaBarbaraDaylight2",
   "type": "Drill",
-  "number": "6.13",
+  "number": "6.1.4.2",
   "title": "",
   "body": "  Suppose we have a sine wave whose amplitude is given by , period is given by , sinusoidal axis is given by , and whose phase shift is given by . Show that the equation of this wave is    "
 },
@@ -2435,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONtrig-interl-5-10",
   "type": "Problem",
-  "number": "6.14",
+  "number": "6.1.4.3",
   "title": "",
   "body": "For each of the following waves find the amplitude, period, sinusoidal axis, and phase shift.                                "
 },
@@ -2444,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONtrig-interl-5-11",
   "type": "Problem",
-  "number": "6.15",
+  "number": "6.1.4.4",
   "title": "",
   "body": " Do you see that the cosine curve is basically the sine curve with a phase shift? What is the value of the phase shift? We usually restrict the phase shift to values between and . Explain why this restriction is useful.  "
 },
@@ -2471,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONpolar-coordinates-9",
   "type": "Problem",
-  "number": "6.16",
+  "number": "6.1.5.1",
   "title": "",
   "body": " Explain why the polar coordinates , , all locate the same point in the plane. Find at least three other sets of polar coordinates that identify the same point. How many are there?  "
 },
@@ -2480,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#DRILLPolarQuirks2",
   "type": "Problem",
-  "number": "6.17",
+  "number": "6.1.5.2",
   "title": "",
   "body": "The following pairs of points are given in polar coordinates. Plot them all on the same set of axes and then check your answers using your favorite graphing software.    and      and      and      and      and      and    "
 },
@@ -2489,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#DRILLPolRectConvert",
   "type": "Drill",
-  "number": "6.18",
+  "number": "6.1.5.3",
   "title": "",
   "body": "   Of course, we ll need to be able to translate from one coordinate system to the other.    Use the diagram above to show that if in polar coordinates, and in rectangular coordinates then,    ,     ,            In Cartesian coordinates the equation of a circle centered at the origin with radius is . What is the equation of the same circle in polar coordinates?   Use the result from part .   "
 },
@@ -2498,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#DRILLPolarQuirks1",
   "type": "Problem",
-  "number": "6.19",
+  "number": "6.1.5.4",
   "title": "",
   "body": " Plot the points and twice. First assume that they are polar coordinates and then assume that they Cartesian coordinates.  "
 },
@@ -2507,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#PROBLEMPolarGraphs",
   "type": "Problem",
-  "number": "6.20",
+  "number": "6.1.5.5",
   "title": "",
   "body": "The graph of an equation given in polar coordinates is quite different from one given in Cartesian coordinates. To get a sense of this sketch the graph of each of the following functions in polar coordinates Most graphing software has a built-in polar mode which will do this for you. This can be helpful once you are thoroughly familiar with the polar coordinate system but in the beginning you should do the graphing without the use of graphing software. Use technology to verify your graph after you ve drawn it by hand. .                                                              "
 },
@@ -2516,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONtrig-interl.html#SECTIONpolar-coordinates-17",
   "type": "Problem",
-  "number": "6.21",
+  "number": "6.1.5.6",
   "title": "",
   "body": " In polar coordinates the Spiral of Archimedes is the graph of the equation . Convert this to an equation in Cartesian coordinates.   Use the results of   "
 },
@@ -2534,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#FIGURESinDeriv",
   "type": "Figure",
-  "number": "6.22",
+  "number": "6.2.1.1",
   "title": "",
   "body": "    "
 },
@@ -2543,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-5",
   "type": "Problem",
-  "number": "6.23",
+  "number": "6.2.1.2",
   "title": "",
   "body": "Referring to ,   Show that     Show that     Show that and are similar.    "
 },
@@ -2552,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#EXAMPLETrigDerivExamples",
   "type": "Example",
-  "number": "6.24",
+  "number": "6.2.1.3",
   "title": "",
   "body": "   We can now use the new rules in conjuction with the General Differentiation Rules from Chapter     Suppose Then     Suppose Letting we have     Suppose Then     Suppose Then     Suppose where is constant. Then    "
 },
@@ -2561,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-10",
   "type": "Drill",
-  "number": "6.25",
+  "number": "6.2.1.4",
   "title": "",
   "body": "   Problem is more useful than is immediately apparent because the complementary angle identities: allow us to obtain the differential of either or provided only that we have the differential of the other. Use these identities to show the following:    If , then .    If , then .   "
 },
@@ -2570,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#EXERCISEDiffPractice1",
   "type": "Problem",
-  "number": "6.26",
+  "number": "6.2.1.5",
   "title": "",
   "body": "  Drill Compute the differential, , of each of the following functions:                               "
 },
@@ -2579,7 +2579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-12",
   "type": "Problem",
-  "number": "6.27",
+  "number": "6.2.1.6",
   "title": "",
   "body": "Assume that and . Find an equation relating and . Use this to compute , , , and                                 "
 },
@@ -2588,7 +2588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-13",
   "type": "Drill",
-  "number": "6.28",
+  "number": "6.2.1.7",
   "title": "",
   "body": "      For a fixed value of , what are the largest and smallest possible values for the slope of the tangent line to the curve ?    For which values of will the graph of have horizontal tangent lines?    For which values of will the graph of not have horizontal tangent lines?    Find the values of where the lines tangent to are horizontal. Graph the function to verify your answers.   "
 },
@@ -2597,7 +2597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-14",
   "type": "Drill",
-  "number": "6.29",
+  "number": "6.2.1.8",
   "title": "",
   "body": "      Show that for , the coordinates of the points where the tangent line of is horizontal are and .    What are the corresponding coordinates?   "
 },
@@ -2606,7 +2606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#PROBLEMSinCosDiffeq",
   "type": "Drill",
-  "number": "6.30",
+  "number": "6.2.1.9",
   "title": "",
   "body": "      Show that, if is constant then satisfies the equation     Show that, if is constant then also satisfies equation    "
 },
@@ -2615,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-16",
   "type": "Drill",
-  "number": "6.31",
+  "number": "6.2.1.10",
   "title": "",
   "body": "  One of the authors once heard a television weatherperson remark that, We gain and lose daylight faster at the equinoxes than at the solstices. Recall that in you were asked to find a formula for the number of hours of daylight in Santa Barbara, CA. You should have obtained the solution Use this to explain why the weatherperson s claim does, or does not, make sense.   "
 },
@@ -2624,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion-17",
   "type": "Drill",
-  "number": "6.32",
+  "number": "6.2.1.11",
   "title": "",
   "body": "  The following sketch represents a Ferris wheel rotating counterclockwise at a rate of one revolution every two minutes.    How fast is a rider rising when his seat is meters above the ground? What is the height of the rider when he is rising the fastest?   "
 },
@@ -2633,7 +2633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#PROBLEMDiffPolar",
   "type": "Drill",
-  "number": "6.33",
+  "number": "6.2.2.1",
   "title": "",
   "body": "      Use equations and to find and in terms of and     Show that the slope of the line tangent to the graph of (in polar coordinates) is given by     Find an equation of the line tangent to the Spiral of Archimedes, , , at , , , , and . Graph the Spiral and your tangent lines together to confirm your computations.    Show that the line tangent to the Spiral of Archimedes is horizontal when Explain why this will only ever happen when the terminal side of the angle is in the second or fourth quadrants.    Show that the line tangent to the Spiral of Archimedes is vertical when Explain why this will only ever happen when the terminal side of the angle is in the first or third quadrants.   "
 },
@@ -2642,7 +2642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONpolar-coord-calc-6",
   "type": "Drill",
-  "number": "6.34",
+  "number": "6.2.2.2",
   "title": "",
   "body": "  Find the equation of the line tangent to the following curves at the given value of                                                                                        .                        "
 },
@@ -2660,7 +2660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#PROBLEMcycloid2",
   "type": "Drill",
-  "number": "6.35",
+  "number": "6.2.3.1",
   "title": "",
   "body": "  Let be a point on a circle of radius that is rolling on the -axis and let be the position of when the ball has rolled through an angle of .         Use the diagram above to show that the parameterization of is given by     Compute and in terms of     Find the slope of the tangent line to the cycloid at an arbitrary point in terms of and use this to confirm that the tangent line is horizontal at the apex of the cycloid, point in our diagram.    Show that and use this to examine the slope of the cycloid near the points where it touches the -axis.          Suppose the circle is rolling at an angular speed of and compute the tangential speed, of . What do you notice about the speed of in relation to the circle s radius? Do you find this surprising? (Consider using .)    When is moving the fastest and when is it moving the slowest? Does this make sense physically?      "
 },
@@ -2669,7 +2669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#PROBLEMSpinCastCentripetalForce",
   "type": "Drill",
-  "number": "6.36",
+  "number": "6.2.4.1",
   "title": "",
   "body": "  To compute centripetal acceleration, we will consider the point traveling around the circle, with radius , so that its position at time is given by The velocity in the direction of motion, , is tangent to the circle and is composed of the velocity in the direction and the velocity in the direction : as seen below.      The magnitude of the velocity (speed) in the direction of motion is the length of . Show that the speed of is given by:    Use the Pythagorean Theorem.  Note: This result also follows directly from the definition of radian measure. We want you to do it this way in this problem because you will do a similar computation for acceleration in part below.    Assume that the angular velocity is constant: . Acceleration, like velocity, consists of a magnitude and a direction. In this case, the centripetal acceleration, represented by in our diagram below, is composed of the vertical acceleration and horizontal acceleration     The length of the arrow, is the magnitude of the centripetal acceleration. Compute and , and show that the length of the centripetal acceleration is given by which is what we said it was in .   "
 },
@@ -2678,7 +2678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#PROBLEMCentripetaAcclDecomposition",
   "type": "Drill",
-  "number": "6.37",
+  "number": "6.2.4.2",
   "title": "",
   "body": "  Show that if a point, , is constrained to move in a circle (so that and ) but that is no longer constant, then the horizontal acceleration and the vertical acceleration are given by,          "
 },
@@ -2687,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#DRILLCentripetaAcclDecomposition",
   "type": "Problem",
-  "number": "6.38",
+  "number": "6.2.4.3",
   "title": "",
   "body": " Show that the red terms in equations  and are the horizontal and vertical components of the centripetal acceleration by confirming that they are the same as the and that you computed for part of .  "
 },
@@ -2696,7 +2696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#DRILLThrust",
   "type": "Problem",
-  "number": "6.39",
+  "number": "6.2.4.4",
   "title": "",
   "body": " Use the diagram above to show that the magnitude of the thrust, , is given by   "
 },
@@ -2714,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONsimple-harm-oscill-6",
   "type": "Problem",
-  "number": "6.40",
+  "number": "6.2.5.1",
   "title": "",
   "body": " Find two more SHOs.   Don t overthink this. Build from the two that you already know.  "
 },
@@ -2723,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#PROBLEMHarmonicOscillator",
   "type": "Drill",
-  "number": "6.41",
+  "number": "6.2.5.2",
   "title": "",
   "body": "      Show that satisfies equation . for any constants and .    Determine the values of the constants and if and plot the graph of for these values of and .   "
 },
@@ -2732,7 +2732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#FIGUREHangingMass",
   "type": "Figure",
-  "number": "6.42",
+  "number": "6.2.5.3",
   "title": "",
   "body": " A Simple Harmonic Oscillator: A Hanging Mass   "
 },
@@ -2750,7 +2750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONsimple-harm-oscill-12",
   "type": "Figure",
-  "number": "6.43",
+  "number": "6.2.5.4",
   "title": "",
   "body": "  Robert Hooke, (1635 1703)   "
 },
@@ -2768,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONsimple-harm-oscill-15",
   "type": "Problem",
-  "number": "6.44",
+  "number": "6.2.5.5",
   "title": "",
   "body": " Show that equations and are equivalent as we ve claimed.   What is in equation ?  "
 },
@@ -2777,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#DIGRESSIONNeglGrav-6",
   "type": "Drill",
-  "number": "6.45",
+  "number": "6.2.5.6",
   "title": "",
   "body": "  Remember that the positive direction is downward. Assume that the weight of the object extends the spring a distance of as shown, and that is the vertical displacement of the object from equilibrium.    Notice that the downward force is the weight of the object and the upward force is the pull of the spring.    Show that the vertical displacement of the object satisfies the equation     Use the fact that when the object is at rest, to conclude that and use this to conclude that the spring-object system still satisfies equation    "
 },
@@ -2786,7 +2786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-sine-cosine.html#SUBSECTIONsimple-harm-oscill-17",
   "type": "Drill",
-  "number": "6.46",
+  "number": "6.2.5.7",
   "title": "",
   "body": "  Show that will satisfy equation .    Compute and . If we are modeling a mass-spring system, what do these values represent physically?    Compare the graphs of for each of the following choices of and .    , ,     , ,     , .   In particular, how do the values of and affect the frequency of the oscillation? Is this consistent with what and represent physically?    For which values of do the greatest and smallest velocities occur? What is the acceleration at each of these points? Is this consistent with the idea that the mass is transitioning from speeding up to slowing down and vice versa ? Explain.    For which values of is the acceleration the largest and the smallest? Is this consistent with both Newton s Second Law and Hooke s Law? Explain.   "
 },
@@ -2804,7 +2804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-4",
   "type": "Problem",
-  "number": "6.47",
+  "number": "6.3.0.1",
   "title": "",
   "body": " Use the Quotient Rule to show that   "
 },
@@ -2813,7 +2813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-6",
   "type": "Problem",
-  "number": "6.48",
+  "number": "6.3.0.2",
   "title": "",
   "body": " By similar means show that .  "
 },
@@ -2822,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-8",
   "type": "Example",
-  "number": "6.49",
+  "number": "6.3.0.3",
   "title": "",
   "body": " Example Double Angle Formulas  Consider the double angle formula for the sine function: . Differentiating gives or which is the double angle formula for the cosine function.  "
 },
@@ -2831,7 +2831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#Sin2Cos2",
   "type": "Example",
-  "number": "6.50",
+  "number": "6.3.0.4",
   "title": "",
   "body": "  We know that no matter what value has, so we d expect that differential of to be zero. Let s check.  By the Sum Rule and by the Power Rule we have   "
 },
@@ -2840,7 +2840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-10",
   "type": "Problem",
-  "number": "6.51",
+  "number": "6.3.0.5",
   "title": "",
   "body": " Since the sine and cosine functions are both differentiable and we can conclude that is (probably) equal to some constant. If we didn t already know, how could we conclude that the constant is   "
 },
@@ -2849,7 +2849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#DiffTrigFunc",
   "type": "Table",
-  "number": "6.52",
+  "number": "6.3.0.6",
   "title": "The Differentials of the Trigonometric Functions",
   "body": " The Differentials of the Trigonometric Functions  Table Differentiation Rules Trigonometrc    Function  Differential                                                    "
 },
@@ -2858,7 +2858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-13",
   "type": "Problem",
-  "number": "6.53",
+  "number": "6.3.0.7",
   "title": "",
   "body": "Differentiate both sides of each trigonometric identity to get another identity. Verify each identity (including the one you compute) by graphing the expression on both sides of the equals sign.                                "
 },
@@ -2867,7 +2867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-14",
   "type": "Problem",
-  "number": "6.54",
+  "number": "6.3.0.8",
   "title": "",
   "body": "If possible find an equation of the line tangent to the graphs of and at each of the points below. If no such line exists explain why not.                                "
 },
@@ -2876,7 +2876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-15",
   "type": "Drill",
-  "number": "6.55",
+  "number": "6.3.0.9",
   "title": "",
   "body": "  Show that differentiating each of the identities below leads to the other. Assume is a constant.             "
 },
@@ -2885,7 +2885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-16",
   "type": "Drill",
-  "number": "6.56",
+  "number": "6.3.0.10",
   "title": "",
   "body": "  Compute the differential, for each of the following functions:                                                     "
 },
@@ -2894,7 +2894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-17",
   "type": "Drill",
-  "number": "6.57",
+  "number": "6.3.0.11",
   "title": "",
   "body": "  Assume that and . Find an equation relating and . Use this to compute , , , and .                       "
 },
@@ -2903,7 +2903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-18",
   "type": "Drill",
-  "number": "6.58",
+  "number": "6.3.0.12",
   "title": "",
   "body": "  Find an equation of the tangent line to each curve at the indicated point.     at      at      at    "
 },
@@ -2912,7 +2912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-19",
   "type": "Drill",
-  "number": "6.59",
+  "number": "6.3.0.13",
   "title": "",
   "body": "      Show that the line tangent to the curve at is parallel to the line tangent to the curve at     Show that the line tangent to the curve at is parallel to the line tangent to the curve at    "
 },
@@ -2921,7 +2921,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-20",
   "type": "Drill",
-  "number": "6.60",
+  "number": "6.3.0.14",
   "title": "",
   "body": "      Show that there is no line tangent to the graph of which is parallel to any tangent line of the graph of     Show that this is not true of the graphs of and .   "
 },
@@ -2930,7 +2930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#SECTIONdiff-other-trig-21",
   "type": "Drill",
-  "number": "6.61",
+  "number": "6.3.0.15",
   "title": "",
   "body": "        A camera located at at ground level is tracking a rocket which is traveling vertically and took off from a spot meters from the camera.     How fast is the angle of elevation of the camera changing (in radians per second) when the rocket is meters high and traveling at ?    Now suppose the rocket is climbing at an angle radians off of vertical as shown in the diagram below.    How fast is the angle of elevation of the camera changing (in radians per second) when the rocket is meters high and traveling at ?   "
 },
@@ -2939,7 +2939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-other-trig.html#PROBLEMDiffFormTan",
   "type": "Drill",
-  "number": "6.62",
+  "number": "6.3.0.16",
   "title": "",
   "body": "      Use the Difference formulas for the sine and cosine from Trigonometry: to show that     Consider two points, and , moving upward on the line , with above as seen in the sketch below:       Suppose is moving up at a rate of units per second and is moving up at a rate of units per second. How fast is increasing when and     Suppose is moving up at a rate of units per second and we wanted the value of to remain constant. How fast must move?      "
 },
@@ -2984,7 +2984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-tan-and-cot.html#DIGRESSIONInverse-function-notation-7",
   "type": "Problem",
-  "number": "6.63",
+  "number": "6.4.0.1",
   "title": "",
   "body": "Evaluate each of the following:                      "
 },
@@ -2993,7 +2993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-tan-and-cot.html#SECTIONinverse-tan-and-cot-17",
   "type": "Problem",
-  "number": "6.64",
+  "number": "6.4.0.2",
   "title": "",
   "body": " Suppose we had chosen . What function (with domain) is that the inverse of?  "
 },
@@ -3002,7 +3002,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-tan-and-cot.html#SECTIONinverse-tan-and-cot-19",
   "type": "Drill",
-  "number": "6.65",
+  "number": "6.4.0.3",
   "title": "",
   "body": "  Find all solutions of and . Do they have the same set of solutions?    Obviously, they do not. Otherwise we wouldn t have asked the question. What is the difference between the two sets of solutions?   "
 },
@@ -3020,7 +3020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-tan-and-cot.html#SECTIONinverse-tan-and-cot-23",
   "type": "Problem",
-  "number": "6.66",
+  "number": "6.4.0.4",
   "title": "",
   "body": " Use the identity to choose an appropriate range for the function .  "
 },
@@ -3038,7 +3038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONwitch-agnesi-inverse.html#SECTIONwitch-agnesi-inverse-2",
   "type": "Figure",
-  "number": "6.67",
+  "number": "6.5.0.1",
   "title": "",
   "body": "  Maria Gaëtana Agnesi (1718 1799)    "
 },
@@ -3047,7 +3047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONwitch-agnesi-inverse.html#SECTIONwitch-agnesi-inverse-8",
   "type": "Drill",
-  "number": "6.68",
+  "number": "6.5.0.2",
   "title": "",
   "body": "  In the diagram above show that the coordinates and satisfy the equation, . Thus the Witch is the graph of    "
 },
@@ -3056,7 +3056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONwitch-agnesi-inverse.html#SECTIONwitch-agnesi-inverse-10",
   "type": "Problem",
-  "number": "6.69",
+  "number": "6.5.0.3",
   "title": "",
   "body": " Show that if then   "
 },
@@ -3065,7 +3065,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONwitch-agnesi-inverse.html#DRILLNonUniqueAntiderivative",
   "type": "Problem",
-  "number": "6.70",
+  "number": "6.5.0.4",
   "title": "",
   "body": " In the sketch below the red curve is the graph of the Witch and the blue curve is the graph of its derivative. Convince yourself that the blue curve could also be the graph of the derivative of any of the other curves shown as well. As clearly as you can, explain what this suggests about the relationship between a function and its derivative.    "
 },
@@ -3083,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONwitch-agnesi-inverse.html#SECTIONwitch-agnesi-inverse-35",
   "type": "Drill",
-  "number": "6.71",
+  "number": "6.5.0.5",
   "title": "",
   "body": "  Sketch the graph of the derivative and the antiderivative of each of the following curves on the same set if axes,                   "
 },
@@ -3101,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-inverse-tancot.html#SECTIONdiff-inverse-tancot-9",
   "type": "Drill",
-  "number": "6.72",
+  "number": "6.6.0.1",
   "title": "",
   "body": "      The inverse cotangent function is defined as if and only if . Proceed as we did above to show that     Derive the same result from the identity .   "
 },
@@ -3110,7 +3110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-inverse-tancot.html#PROBLEMInvTanDiffeq",
   "type": "Drill",
-  "number": "6.73",
+  "number": "6.6.0.2",
   "title": "",
   "body": "      Show that if then satisfies the differential equation     The function satisfies the same differential equation. Show this in two different ways.   By direct computation, just as you did part .    By direct computation, after first observing that .      "
 },
@@ -3119,7 +3119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-inverse-tancot.html#SECTIONdiff-inverse-tancot-11",
   "type": "Drill",
-  "number": "6.74",
+  "number": "6.6.0.3",
   "title": "",
   "body": "  Show that each of the following statements is true.                        This is weird isn t it? None of the functions on the left is but they all have the same derivative as . Can you explain this?   Let and . What is ?    Now show that where is an arbitrary constant.   "
 },
@@ -3137,7 +3137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#DRILLInvSin1",
   "type": "Problem",
-  "number": "6.75",
+  "number": "6.7.1.1",
   "title": "",
   "body": " Use the diagram below, to show that     "
 },
@@ -3146,7 +3146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#DRILLInvCos1",
   "type": "Drill",
-  "number": "6.76",
+  "number": "6.7.1.2",
   "title": "",
   "body": "      Use the fact that if and only if and proceed as we did in to show that Notice how this formula differs from the one you found in .    Derive the same result from the identity: .   "
 },
@@ -3155,7 +3155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#FIGUREFIGUREBadDrawing-InvSine",
   "type": "Figure",
-  "number": "6.77",
+  "number": "6.7.1.3",
   "title": "",
   "body": " The World s Most Evil Mathematician, by Ben Orlin     "
 },
@@ -3164,7 +3164,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#DEFINITIONInvSin",
   "type": "Definition",
-  "number": "6.78",
+  "number": "6.7.1.4",
   "title": "The Derivative of the Inverse Sine.",
   "body": " The Derivative of the Inverse Sine  Definition The Derivative of the Inverse Sine    The derivative of the inverse sine function is defined to be, , where .   "
 },
@@ -3173,7 +3173,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSine-16",
   "type": "Drill",
-  "number": "6.79",
+  "number": "6.7.1.5",
   "title": "",
   "body": "  What function is , as defined in Definition the inverse off?    Naturally, is the inverse of , but with which domain?   "
 },
@@ -3182,7 +3182,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#DEFINITIONInvCos",
   "type": "Definition",
-  "number": "6.80",
+  "number": "6.7.1.6",
   "title": "The Derivative of the Inverse Cosine.",
   "body": " The Derivative of the Inverse Cosine  Definition The Derivative of the Inverse Cosine    The derivative of the inverse sine function is defined to be, , where .   "
 },
@@ -3191,7 +3191,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#PROBLEMArcSinDiffeq",
   "type": "Drill",
-  "number": "6.81",
+  "number": "6.7.1.7",
   "title": "",
   "body": "      Show that if then satisfies the differential equation     The function satisfies the same differential equation. Show this in two different ways.   By direct computation, just as you did in part .    By direct computation, after first observing that .      "
 },
@@ -3200,7 +3200,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-4",
   "type": "Problem",
-  "number": "6.82",
+  "number": "6.7.2.1",
   "title": "",
   "body": " Show that:   "
 },
@@ -3209,7 +3209,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#PROBLEMDiffArcSec",
   "type": "Drill",
-  "number": "6.83",
+  "number": "6.7.2.2",
   "title": "",
   "body": "      Use the fact that if and only if and proceeding as we did above, show that     Derive the same result from the identity: .   "
 },
@@ -3218,7 +3218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#PROBLEMArcSecDiffeq",
   "type": "Drill",
-  "number": "6.84",
+  "number": "6.7.2.3",
   "title": "",
   "body": "      Show that if then satisfies the differential equation     The function satisfies the same differential equation. Show this in two different ways.   By direct computation, just as you did part .    By direct computation, after first observing that .      "
 },
@@ -3227,7 +3227,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-10",
   "type": "Drill",
-  "number": "6.85",
+  "number": "6.7.2.4",
   "title": "",
   "body": "  The sketch below shows that if we constrain the range of the to be the interval then      Use the identity to show that    "
 },
@@ -3236,7 +3236,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#TABLEInvTrigDerivs",
   "type": "Table",
-  "number": "6.86",
+  "number": "6.7.2.5",
   "title": "Derivatives of Inverse Trigonometric Functions",
   "body": " Derivatives of Inverse Trigonometric Functions    Function  Domain  Range Derivative       All real numbers          All real numbers                                       and    and          and    and                   "
 },
@@ -3245,7 +3245,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-17",
   "type": "Problem",
-  "number": "6.87",
+  "number": "6.7.2.6",
   "title": "",
   "body": "Compute each of the following:                                "
 },
@@ -3254,7 +3254,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-18",
   "type": "Drill",
-  "number": "6.88",
+  "number": "6.7.2.7",
   "title": "Find the Pattern.",
   "body": " Find the Pattern   Show that for any constant ,                                 "
 },
@@ -3263,7 +3263,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-19",
   "type": "Drill",
-  "number": "6.89",
+  "number": "6.7.2.8",
   "title": "",
   "body": "  Show that    "
 },
@@ -3272,7 +3272,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-20",
   "type": "Drill",
-  "number": "6.90",
+  "number": "6.7.2.9",
   "title": "",
   "body": "      Show that each of the following statements is true.                          Now compute where Does this problem change if is negative? How?   "
 },
@@ -3281,7 +3281,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#InverseSecCsc-21",
   "type": "Drill",
-  "number": "6.91",
+  "number": "6.7.2.10",
   "title": "",
   "body": "  Show that each of the following statements is true.             "
 },
@@ -3290,7 +3290,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-inverse-trig.html#PROBLEMCotTanSlope",
   "type": "Drill",
-  "number": "6.92",
+  "number": "6.7.2.11",
   "title": "",
   "body": "  Show that , if .     Part says that the graphs of and have the same slope when so their graphs should differ by a constant. Substitute into both to see what this constant should be.    Now plot the graphs of both. Do they differ by a constant? Explain why or why not.   "
 },
@@ -3326,7 +3326,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#DEFINITIONCurvature-1",
   "type": "Definition",
-  "number": "6.93",
+  "number": "6.8.0.1",
   "title": "Curvature.",
   "body": " Curvature  Definition Curvature    Suppose the point lies on a curve as in the sketch below.            Let represent the angle formed in the figure above by the line tangent to curve at point , with some fixed line.  Then the curvature is defined to be    "
 },
@@ -3335,7 +3335,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#PROBLEMCircleCurvature",
   "type": "Drill",
-  "number": "6.95",
+  "number": "6.8.0.3",
   "title": "",
   "body": "            Use the following sketch of a quarter-circle with radius to show that Definition yields a curvature of .    "
 },
@@ -3344,7 +3344,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#PROBLEMCurvatureDef2",
   "type": "Drill",
-  "number": "6.96",
+  "number": "6.8.0.4",
   "title": "",
   "body": "  Use equation to show that      .}   "
 },
@@ -3353,7 +3353,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-23-4",
   "type": "Figure",
-  "number": "6.97",
+  "number": "6.8.0.5",
   "title": "",
   "body": "  The Lennox Globe    "
 },
@@ -3362,7 +3362,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-25",
   "type": "Example",
-  "number": "6.98",
+  "number": "6.8.0.6",
   "title": "",
   "body": " Example Curvature  Let s apply formula to a circle to see if this agrees with Oresme s definition of the curvature of a circle. Consider the circle of radius given by the graph of . Differentiate to obtain so that Differentiate both sides again to see that or, after dividing both sides by    "
 },
@@ -3371,7 +3371,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-26",
   "type": "Problem",
-  "number": "6.99",
+  "number": "6.8.0.7",
   "title": "",
   "body": " Use the values for and we just computed to show that for a circle of radius , the curvature .  "
 },
@@ -3380,7 +3380,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-28",
   "type": "Drill",
-  "number": "6.100",
+  "number": "6.8.0.8",
   "title": "",
   "body": "      Show that the curvature of the parabola is given by .    Where does the greatest curvature occur? Does this agree with what you can see on the graph of ?   "
 },
@@ -3389,7 +3389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#PROBLEMEllipseCurv",
   "type": "Drill",
-  "number": "6.101",
+  "number": "6.8.0.9",
   "title": "",
   "body": "  Consider the ellipse given by , .      Show that the curvature is given by .   Rewrite as .    Looking at this graph it appears that the curvature at should be greater than at . Use the formula you just derived to verify this.    A circle is the special case of an ellipse when . Use the formula from part to compute the curvature of a circle.   "
 },
@@ -3398,7 +3398,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-30",
   "type": "Drill",
-  "number": "6.102",
+  "number": "6.8.0.10",
   "title": "",
   "body": "  Recall that in of we used Descartes Method of Normals to find the line tangent to the graph of at the point by finding a circle with its center on the -axis which touches the graph exactly once, as seen in the sketch below.      Compute the curvatures of the parabola and the circle seen in the diagram at the right at their point of intersection to show that they are not the same.    Find the equation of the circle which passes through the point , and also has the same slope and curvature as at the point . This is known as the osculating circle , or kissing circle .    Show that the center of the osculating circle is on the line which passes through and .   "
 },
@@ -3407,7 +3407,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-32",
   "type": "Problem",
-  "number": "6.103",
+  "number": "6.8.0.11",
   "title": "",
   "body": " Assume that and that is constant. Complete the line of reasoning we began in the previous paragraph to show that for some number . Explain how you know that this is this the equation of a line.  "
 },
@@ -3416,7 +3416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONcurvature.html#SECTIONcurvature-36",
   "type": "Drill",
-  "number": "6.104",
+  "number": "6.8.0.12",
   "title": "",
   "body": "      Complete the line of reasoning we began in the previous paragraph to show that and .    Next show that for some constants and .    And finally, show that the point lies on a circle of radius . What is the equation of the circle?   "
 },
@@ -3434,7 +3434,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#EXAMPLESqrt2-1",
   "type": "Example",
-  "number": "7.1",
+  "number": "7.1.1.1",
   "title": "",
   "body": " For the sake of having a definite problem to work with suppose we want to compute a decimal approximation to . The Bisection Method works like this: First pick two numbers, one less than , and one greater than , In this example we ll choose and .  Next, we take the midpoint of the interval as our first approximation to . We ll call this . The midpoint is the average of the endpoints so in this example . Since and are both in the bracketing interval we see that the distance between and is less than , the length of the interval.  Now must either be in the interval or . We need to decide which one. Since we see that so that must be in the interval .  We take our next approximation to be the midpoint of the (smaller) interval . Thus, . Since (confirm this) we have bracketed by   This is really the whole idea. If we are approximating a number, , we begin by bracketing between two known numbers, say and . We take the average of these, , as our first approximation of . We know that is within (the length of the interval ) of . If this is sufficiently accurate we use as our approximation.  If not we determine if is in the first half-interval, or the second, , and repeat the process, finding a new approximation in an interval half the length of the first..  The Bisection Method generates a sequence of approximations, of the root we seek. In our example we have and so on. At each step the new approximation is the midpoint of an interval whose length is one-half of the length of the previous interval. So our approximations can be made as close to the target as we would like.  "
 },
@@ -3443,7 +3443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#EXAMPLESqrt2-2",
   "type": "Drill",
-  "number": "7.2",
+  "number": "7.1.1.2",
   "title": "",
   "body": "      Show that the next two iterations for this example are and .    The starting interval matters.   For this example take the initial interval to be and compute and .    Now take the initial interval to be and compute and .   If you had to do these computations with paper and pencil would you use , , or as your starting interval? Explain   "
 },
@@ -3452,7 +3452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#PROBLEMbisect-meth",
   "type": "Drill",
-  "number": "7.3",
+  "number": "7.1.1.3",
   "title": "",
   "body": "  Notice that for each of the functions below . Find the largest positive integer such that . This says that a positive root for the function lies in the interval . Use the Bisection Method to compute the next four approximations, and .                                 "
 },
@@ -3461,7 +3461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#DRILLBabylonFirstGuess",
   "type": "Problem",
-  "number": "7.4",
+  "number": "7.1.2.1",
   "title": "",
   "body": " Show that if then , and that if then .  "
 },
@@ -3470,7 +3470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#EXAMPLESqrt2-3",
   "type": "Problem",
-  "number": "7.5",
+  "number": "7.1.2.2",
   "title": "",
   "body": " Compute . You should get an approximation within of the correct value. Do you?  "
 },
@@ -3479,7 +3479,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#PROBLEMBabylonianMethod",
   "type": "Drill",
-  "number": "7.6",
+  "number": "7.1.2.3",
   "title": "",
   "body": "  Write down the Babylonian method, as described by Heron, as a step-by-step algorithm.    Choose an initial guess and then use your algorithm to compute an approximation of .    Approximate using the Babylonian method.   "
 },
@@ -3488,7 +3488,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method.html#PROBLEMBabylMeth4",
   "type": "Drill",
-  "number": "7.7",
+  "number": "7.1.2.4",
   "title": "",
   "body": "     Suppose you wanted to use the Babylonian algorithm to approximate and started with an initial guess of . What would happen?  Yes, we know this is is already the square root of . We re making a point. Work with us here.    What would happen in the general case for if you ever got ?   "
 },
@@ -3515,7 +3515,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#EXAMPLEnewtons-method1",
   "type": "Example",
-  "number": "7.8",
+  "number": "7.2.1.1",
   "title": "",
   "body": "            Most mathematical software will accept the equation , whose graph is shown below, as input and give back the approximate solution at the click of a button. As a result it is easy to get the impression that this is a a simple problem. But, imagine yourself back in the late th century for a moment. The only computation technology available is paper and pencil. How would you solve this problem? How would you even generate an approximate solution?  One possibility is to graph and on the same set of axes and look for the value of where the two graphs intersect as in the figure below.   This seems like a good idea until we actually try it. Immediately we realize that accurately graphing even simple equations would have been an almost insurmountable task in those days. We clearly used modern technology to draw the graph pictured. Drawing it by hand accurately enough to glean useful information from it would have been virtually impossible.  Here s another idea. If we rearrange the equation just a little we get Now define to be the expression on the left of equation ): . The graph of this function, seen below, will cross the -axis (that is ) at the same coordinate where the equation is satisfied. This simple observation allows us to think of the problem in a slightly different way: We are looking for the value which is a root of the function .              You wouldn t think such a simple change would help. But it does because now, instead of looking for both the and coordinates of an intersection point we need only search for the value of where the graph of the function crosses the axis. This gives us just a little more information because we know that the coordinate is zero if a point is on the -axis.   Local Linearity and Newton s Method As before we will need an initial guess to get started. Since the root seems to be close to the point where we ll use as our first approximation. Now find and sketch the line tangent to at as seen in the sketch above (in red). If our first guess is close enough to the actual root the Principle of Local Linearity guarantees that the tangent line will cross the -axis very near to the actual root. So the value of , whatever it is, where the tangent line crosses seems like it would be a pretty good second approximation , of the root of . If we zoom in on this part of our graph, as in the figure, this is easy to see.  Apparently all we have to do now is determine the slope of the line tangent to the graph at , then find the equation of the line and its -intercept.  "
 },
@@ -3524,7 +3524,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#DRILLNewtonMethod2",
   "type": "Problem",
-  "number": "7.9",
+  "number": "7.2.1.2",
   "title": "",
   "body": "  Show that in this example an equation of the line tangent to at is     Our second approximation ( ) to the root we seek will be the coordinate of the point where the line in part crosses the axis. That is, where Set and show that the line in equation crosses the axis at .   "
 },
@@ -3533,7 +3533,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMTanToCubic",
   "type": "Drill",
-  "number": "7.10",
+  "number": "7.2.1.3",
   "title": "",
   "body": "     Find the equation of the line tangent to the function at and use this to show that our third approximation to the root of is .    Repeat part using the line tangent at to obtain the next approximation , but this time round it off to decimal places. (You will need digits for part .    If you ve done it correctly, you will notice that . Does this surprise to you? Explain.    Use your favorite computational software to find an approximation to the root of to decimal places. Compare your to this approximation. How close did you come?   "
 },
@@ -3542,7 +3542,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewtonsMethod3",
   "type": "Drill",
-  "number": "7.11",
+  "number": "7.2.1.4",
   "title": "",
   "body": "      Find the equation of the line tangent to the curve at the point . Show that it can be written in the form     Use your answer to part to show that is the general formula for Newton s Method.    If we get lucky and is the actual root of the function (not just an approximation). Explain what happens at the next iteration if is not the root.   "
 },
@@ -3551,7 +3551,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#ALGORITHMNewtonsMethod",
   "type": "Algorithm",
-  "number": "7.12",
+  "number": "7.2.1.5",
   "title": "Newton’s Method.",
   "body": " Newton s Method  Algorithms Newton s Method  Given a differentiable function, with a root at we can approximate as follows.   Choose     For compute until the desired level of accuracy is obtained.     "
 },
@@ -3569,7 +3569,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#EXERCISESqrt2InitGuess",
   "type": "Problem",
-  "number": "7.13",
+  "number": "7.2.1.6",
   "title": "",
   "body": " Obviously, has a root at But if we want to compute this is not a good choice of function to apply Newton s Method to. Explain why not. What would be a good choice for if we wish to approximate ?  "
 },
@@ -3578,7 +3578,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewtMethCreateFunction",
   "type": "Drill",
-  "number": "7.14",
+  "number": "7.2.1.7",
   "title": "",
   "body": "  Create a function which has a root at each of the following numbers and use your function to compute each to decimals using Newton s Method.                                 "
 },
@@ -3587,7 +3587,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewton-meth",
   "type": "Drill",
-  "number": "7.15",
+  "number": "7.2.1.8",
   "title": "",
   "body": "  Start with and use Newton s Method to compute the next four approximations ( , , , and ) of the roots of each of the following functions. Compare these with your results in . Which algorithm seems to be more accurate after four iterations?                                 "
 },
@@ -3596,7 +3596,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewton-meth2",
   "type": "Drill",
-  "number": "7.16",
+  "number": "7.2.1.9",
   "title": "",
   "body": "  Use Newton s Method to approximate the root of each of the following functions to at least four decimal places on the interval given.     on      on      on    "
 },
@@ -3605,7 +3605,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMXCosx",
   "type": "Drill",
-  "number": "7.17",
+  "number": "7.2.1.10",
   "title": "",
   "body": "              As you can see from the sketch above, the graphs of and intersect exactly once. We want to use Newton s Method to find an approximation of the coordinates of the point of intersection.  First obtain the iteration formula: Then use this formula to approximate the coordinates of the point of intersection to decimal places.   "
 },
@@ -3614,7 +3614,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMSqrta",
   "type": "Drill",
-  "number": "7.18",
+  "number": "7.2.1.11",
   "title": "Find the Pattern.",
   "body": " Find the Pattern      Apply Newton s Method to the function , shown above, to determine the iteration formula for approximating . Show that this is precisely the st iteration you get when using the Babylonian method:     Use Newton s Method on the function to obtain the iteration formula: for approximating . Notice that is the average of , and .    Obtain the iteration scheme for approximating the fourth root of Is this also an average? Of what?    Now find an iteration scheme to find the th root of if is a positive number, and is a positive integer.   "
 },
@@ -3632,7 +3632,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewtMethSignOfIterates",
   "type": "Drill",
-  "number": "7.19",
+  "number": "7.2.1.12",
   "title": "",
   "body": "  Even if you don t have any intuition into the problem a more than cursory understanding of the algorithm itself can be helpful. For example, show that when Newton s Method is used:    If and have the same sign then .    If and have opposite signs then .    Suppose you are trying to compute a numerical approximation of using an implementation of Newton s Method, but you accidentally enter as your function (instead of ). Explain how you can use the results of part and part to see that the algorithm is failing at the third iteration.   "
 },
@@ -3641,7 +3641,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewtMethAlgGeom",
   "type": "Drill",
-  "number": "7.20",
+  "number": "7.2.2.1",
   "title": "",
   "body": "  Suppose we want to find the root of and our initial guess is . Investigate, both algebraically and graphically, what happens when we apply Newton s Method to this problem. Describe the results of your investigations.   "
 },
@@ -3650,7 +3650,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewtonsMethodOneThird",
   "type": "Drill",
-  "number": "7.21",
+  "number": "7.2.2.2",
   "title": "",
   "body": "  The only root of the function is zero.    Use Newton s Method with the initial guess, to see if it converges to zero.   It won t.    Write down a formula for the computation in step from Newton s Method for this function. Use this to explain why the method will not converge no matter what non-zero initial guess is used.   "
 },
@@ -3659,7 +3659,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#EXAMPLE-SubtleFailCos",
   "type": "Example",
-  "number": "7.22",
+  "number": "7.2.3.1",
   "title": "",
   "body": " Suppose we wish to compute by finding the smallest positive root of If we start with an initial guess of (not a great first guess, but it s not obviously horrible either) we get which certainly seems like it might be a problem since If we ignore this and continue we get and              What s going on here? The numbers seem to be converging, but they are not converging to the answer we intended to find. The figure below shows what the difficulty is.   In a nutshell, our initial guess was too far away from the root. The slope of the tangent line at is which means that the tangent line (in red) decreases from left to right, but also that its slope is very shallow. Thus the tangent line crosses the axis at about very far from the root we seek. Now it happens that is actually pretty close to another root of our function: So continued iterations of Newton s Method will settle in on the root at . But the damage has already been done. We ve found a legitimate root but not he one we intended to find.  We call this a subtle failure because Newton s Method will converge without complaint. None of the computations will seem suspicious. A software implementation of Newton s Method for this problem using this initial guess will return a reasonable looking, but wrong, number. Although it is glaringly obvious what goes wrong when we draw a picture of each successive approximation the fact is if we use a software to compute the root most of the time there would be no pictures. Notice that, unlike the spectacular failure above there is nothing in the calculations being performed that could be detected in software to let the human in charge know that things have gone wrong. So, if you rely on software it is essential that you take the time to consider the reasonableness of the answer you obtain. If this is not understood there is a real risk that you could accept a ridiculous answer as correct.   Comment  This is embarrassing at best, deadly at worst. Seriously. If what you are calculating is the embedded software for, say the autopilot system, of an airliner accepting the wrong answer midflight could easily be deadly. Don t take this lightly.   "
 },
@@ -3668,7 +3668,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNewtMethHardCubic",
   "type": "Drill",
-  "number": "7.23",
+  "number": "7.2.3.2",
   "title": "",
   "body": "  Find approximations to all real roots of    "
 },
@@ -3677,7 +3677,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#SUBSECTIONSubtleFailure-8",
   "type": "Drill",
-  "number": "7.24",
+  "number": "7.2.3.3",
   "title": "",
   "body": "      Use Newton s Method to find approximations to the positive roots closest to zero of each of the following functions. (Clearly you can use Algebra and Trigonometry to compute them exactly. The point here is to see how good our guesses must sometimes be in order for Newton s Method to work.}                          If we were to next ask you to find approximations of the negative roots closest to zero of each of these functions would you need to use Newton s Method again? Explain.   "
 },
@@ -3686,7 +3686,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#PROBLEMNMByGraphing",
   "type": "Drill",
-  "number": "7.25",
+  "number": "7.2.3.4",
   "title": "",
   "body": "  Do not try to answer the questions in this problem analytically. Use a graphing calculator, or graphing software to explore these questions visually. The function has exactly one real root and it is between one and two.    Show that with an initial guess, , Newton s Method almost never converges to the root.    We said almost never in part because there is a small interval of numbers greater than with the property that Newton s Method will converge if is any number in the interval. Find an interval that works. (It doesn t have to be the largest possible interval.)    Show that if you start with an initial guess of or Newton s Method will not even generate the first iterate: Explain.   "
 },
@@ -3695,7 +3695,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnewtons-method-1.html#SUBSECTIONSubtleFailure-10",
   "type": "Drill",
-  "number": "7.26",
+  "number": "7.2.3.5",
   "title": "",
   "body": "  Suppose that a cubic polynomial has three real roots, , , and and that two of them, and are known. We wish to approximate the third. Show that if we take the average of and as our initial guess, Newton s Method will find the exact value of the third root, , in one iteration.   "
 },
@@ -3731,7 +3731,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#DEFINITIONIVP",
   "type": "Definition",
-  "number": "7.27",
+  "number": "7.3.0.1",
   "title": "Initial Value Problem (IVP).",
   "body": " Initial Value Problem (IVP)  Definition Initial Value Problem (IVP)  Terminology IVP    An Initial Value Problem is a differential equation of the form along with an Initial Value     "
 },
@@ -3740,7 +3740,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#ALGORITHMEulersMethod",
   "type": "Algorithm",
-  "number": "7.28",
+  "number": "7.3.0.2",
   "title": "Euler’s Method.",
   "body": " Euler s Method  Algorithms Euler s Method  Given an IVP: approximate points on the graph of by computing:   "
 },
@@ -3749,7 +3749,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#PROBLEMEulerSine",
   "type": "Drill",
-  "number": "7.29",
+  "number": "7.3.0.3",
   "title": "",
   "body": "  Observe that satisfies the IVP Use Euler s Method on this IVP to complete the table. Then plot the points you generated and the graph of on the same set of axes so you can compare them.                           "
 },
@@ -3758,7 +3758,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#PROBLEMEulerCosine",
   "type": "Drill",
-  "number": "7.30",
+  "number": "7.3.0.4",
   "title": "",
   "body": "  Observe that satisfies the IVP Use Euler s Method on this IVP to complete the following table. Then plot the points you generated and the graph of on the same set of axes so you can compare them.                           "
 },
@@ -3767,7 +3767,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#SECTIONEulersMethod-31",
   "type": "Drill",
-  "number": "7.31",
+  "number": "7.3.0.5",
   "title": "",
   "body": "  Use Euler s Method to approximate the solutions of the given IVPs by constructing a table like the ones in Problems  and . Then plot the points you found, connecting them with straight line segments.                       "
 },
@@ -3776,7 +3776,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#SECTIONEulersMethod-32",
   "type": "Drill",
-  "number": "7.32",
+  "number": "7.3.0.6",
   "title": "",
   "body": "  Use Euler s Method to approximate the solutions of the given IVPs by constructing a table like the ones in Problems  and . Then plot the points you found, connecting them with straight line segments.                       "
 },
@@ -3785,7 +3785,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#SECTIONEulersMethod-33",
   "type": "Drill",
-  "number": "7.33",
+  "number": "7.3.0.7",
   "title": "",
   "body": "  Use Euler s Method to approximate the solutions of the given IVPs by constructing a table like the ones in Problems  and . Then plot the points you found, connecting them with straight line segments.                                                "
 },
@@ -3794,7 +3794,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#PROBLEMTractrix",
   "type": "Drill",
-  "number": "7.34",
+  "number": "7.3.0.8",
   "title": "",
   "body": "         Consider the top view of a tractor-trailer as it turns, as shown at the right. Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point . The tractor pulls the front wheels vertically up the -axis and we assume that the rear wheels don t slip. The path that the center of the rear axle follows is called a tractrix from the Latin verb trahere , meaning to drag or pull.     Show that the tractrix must satisfy the Initial Value Problem    Find a differential triangle and an ordinary triangle which are proportional.    Apply Euler s Method to complete the following table to approximate the tractrix.                            Plot the points obtained in part b to see if this looks like the path the rear axle of the trailer would take.   "
 },
@@ -3803,7 +3803,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulersMethod.html#PROBLEMPursuit1",
   "type": "Drill",
-  "number": "7.35",
+  "number": "7.3.0.9",
   "title": "",
   "body": "   This figure needs a caption.          Suppose a rocket travels up the line at a constant speed . As the rocket passes through the point , a missile is fired from the origin directly at the rocket. Assume that the missile travels at a speed which is times the speed of the rocket and is always aimed directly at the rocket. At time the missile is at the point and the rocket is at the point We want to find the path the missile will follow. The diagram at the right shows the situation at time .    Find if denotes the length of the the missile s path at time .    Show that the missile s path must satisfy the IVP    Find a triangle which is proportional to the differential triangle shown.}    Apply Euler s Method to fill in the following table.                            Plot the points obtained in part b to see if this resembles the path you think the missile would follow.  We will re-visit this problem and find the exact solution in .   "
 },
@@ -3830,7 +3830,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-high-deriv.html#SECTIONmore-high-deriv-10",
   "type": "Problem",
-  "number": "7.37",
+  "number": "7.4.0.1",
   "title": "",
   "body": " Show that the equation of the line tangent to at is .  "
 },
@@ -3839,7 +3839,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-high-deriv.html#EXERCISEGenTan",
   "type": "Problem",
-  "number": "7.38",
+  "number": "7.4.0.2",
   "title": "",
   "body": " Show that the equation of the line tangent to the graph of an arbitrary (differentiable) function at is given by   "
 },
@@ -3848,7 +3848,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-high-deriv.html#SECTIONmore-high-deriv-18",
   "type": "Problem",
-  "number": "7.39",
+  "number": "7.4.0.3",
   "title": "",
   "body": " This drill demonstrates how we can obtain a first degree polynomial that approximates near . Suppose that is some (differentiable) function and that .   Show that if then    Show that if then   "
 },
@@ -3857,7 +3857,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-high-deriv.html#SECTIONmore-high-deriv-22",
   "type": "Drill",
-  "number": "7.40",
+  "number": "7.4.0.4",
   "title": "",
   "body": "      Differentiate again and set the second derivatives at equal to one another to show that     Show that if the cubic has the same third derivative as at then     Show that if the quartic has the same fourth derivative as at then    "
 },
@@ -3875,7 +3875,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-high-deriv.html#SECTIONmore-high-deriv-24",
   "type": "Drill",
-  "number": "7.41",
+  "number": "7.4.0.5",
   "title": "",
   "body": "  This is the process we used to generate our cubic approximation to the sine function just before equation .    Show that using this process on will generate the polynomial that we showed you earlier: .    Find the fourth degree Taylor Polynomial approximation for . \\comment{You may find this puzzling for a moment or two. Make sure you do all the calculations correctly and then believe your calculations.}    Find the fifth degree Taylor Polynomial approximation for and graph both functions on the same set of axes.    Find the sixth degree Taylor Polynomial approximation for .   "
 },
@@ -3884,7 +3884,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-high-deriv.html#SECTIONmore-high-deriv-25",
   "type": "Drill",
-  "number": "7.42",
+  "number": "7.4.0.6",
   "title": "",
   "body": "  Find the second and fourth degree Taylor Polynomial approximations for and graph them all on the same set of axes. Would it make any sense to use the fifth-degree Taylor Polynomial in this case? Explain.   "
 },
@@ -3902,7 +3902,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDEsandIVPS.html#SECTIONDEsandIVPS-4",
   "type": "Example",
-  "number": "8.1",
+  "number": "8.1.0.1",
   "title": "",
   "body": " Differential Equations defining functions via  We ve seen that when we differentiate the formula we get the differential equation  or If we did not already know that the function satisfies equation we could give a name to the solution (sqr , perhaps?) and by fiat, define sqr to be whatever function solves this equation. But there is a problem. The solution of equation is a multifunction, remember? To choose a single branch we need to impose an initial condition.  "
 },
@@ -3911,7 +3911,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDEsandIVPS.html#DRILLIVP-sqr",
   "type": "Problem",
-  "number": "8.2",
+  "number": "8.1.0.2",
   "title": "",
   "body": "Solve each of the following IVPs. Graph your solutions:                                  where and are fixed, but unspecified constants.    "
 },
@@ -3929,7 +3929,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential.html#DEFINITIONnatural-exponential-ivp",
   "type": "Definition",
-  "number": "8.3",
+  "number": "8.2.0.1",
   "title": "The Natural Exponential Function.",
   "body": " The Natural Exponential Function  Definition The Natural Exponential Function    The function which satisfies the IVP is called the natural exponential function , denoted .   "
 },
@@ -3938,7 +3938,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential.html#SECTIONexponential-10",
   "type": "Drill",
-  "number": "8.4",
+  "number": "8.2.0.2",
   "title": "",
   "body": "  Let be the th degree Taylor polynomial approximation of use equation and the initial value , to show that    "
 },
@@ -3956,7 +3956,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#DIGRESSIONGuessingEffectively-11",
   "type": "Drill",
-  "number": "8.5",
+  "number": "8.3.0.1",
   "title": "",
   "body": "  Show that none of the following is a solution of IVP . (Observe that if is a solution then .)      The notation is read three factorial and means Similarly and in general                    "
 },
@@ -3965,7 +3965,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#DIGRESSIONGuessingEffectively-12",
   "type": "Drill",
-  "number": "8.6",
+  "number": "8.3.0.2",
   "title": "",
   "body": "  Show that none of the following is a solution of . (Observe that if is a solution then .)   Mathematical Notation  The notation is read three factorial and means Similarly and in general                         "
 },
@@ -3974,7 +3974,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#DIGRESSIONGuessingEffectively-16",
   "type": "Drill",
-  "number": "8.7",
+  "number": "8.3.0.3",
   "title": "",
   "body": "  Show that the previous paragraph is true. That is, show that there is no (non-zero) polynomial that solves the differential equation:     Consider the degree of the polynomial and the degree of its derivative.   "
 },
@@ -3992,7 +3992,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#PROBLEMTaylorSeries1",
   "type": "Drill",
-  "number": "8.8",
+  "number": "8.3.0.4",
   "title": "",
   "body": "  Having set aside those deeper questions (for now) we can show that we have found the solution of our IVP.    Differentiate the series term-by-term to show that .    Show that    Yes, this really is as easy as it looks.   "
 },
@@ -4010,7 +4010,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#DIGRESSIONGuessingEffectively-48",
   "type": "Problem",
-  "number": "8.9",
+  "number": "8.3.0.5",
   "title": "",
   "body": " Confirm equation .  "
 },
@@ -4019,7 +4019,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-15",
   "type": "Drill",
-  "number": "8.10",
+  "number": "8.3.0.6",
   "title": "",
   "body": "  For this problem use the approximation     Use equation to show that . Compare this with the numerical value of you get from a calculator.   In equation take     Use equation to show that . Compare this with the numerical value of you get from a calculator.   "
 },
@@ -4028,7 +4028,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-16",
   "type": "Drill",
-  "number": "8.11",
+  "number": "8.3.0.7",
   "title": "",
   "body": "  For this problem use the approximation     Use to show that --> . Compare this with the numerical value of you get from a calculator. \\\\   In take     Use to show that . Compare this with the numerical value of you get from a calculator.   "
 },
@@ -4046,7 +4046,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#DRILLComputingE",
   "type": "Problem",
-  "number": "8.12",
+  "number": "8.3.0.8",
   "title": "",
   "body": " Since we know that solves IVP , it should be clear that we can approximate by computing the sum of, say fifty, terms of the series. Compute this approximation using your favorite computing technology to confirm that . (If you don t have any computing technology available just compute the sum of the first six terms.)  "
 },
@@ -4055,7 +4055,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-27",
   "type": "Example",
-  "number": "8.13",
+  "number": "8.3.0.9",
   "title": "",
   "body": " Product Rule  Find the derivative of   Using the Product Rule, we have   "
 },
@@ -4064,7 +4064,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-28",
   "type": "Problem",
-  "number": "8.14",
+  "number": "8.3.0.10",
   "title": "",
   "body": "Compute for each of the following, and use this to find the IVP that each one solves. (Use a substitution to make each one easier on your eyes.)            where is an unknown constant.  "
 },
@@ -4073,7 +4073,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-29",
   "type": "Problem",
-  "number": "8.15",
+  "number": "8.3.0.11",
   "title": "",
   "body": "For each of the following find :                                      "
 },
@@ -4082,7 +4082,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-30",
   "type": "Problem",
-  "number": "8.16",
+  "number": "8.3.0.12",
   "title": "",
   "body": "Show that the equation of the line tangent to each function below at the given point is the given line.   Function: ,  Point:   Tangent line:     Function: ,  Point:   Tangent line:     Function: ,  Point:   Tangent line:     Function: ,  Point:   Tangent line:    "
 },
@@ -4091,7 +4091,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-31",
   "type": "Drill",
-  "number": "8.17",
+  "number": "8.3.0.13",
   "title": "",
   "body": "      Show that when we use Newton s Method to approximate the coordinates of the intersection point of the curves and , we get the iteration formula     Starting with compute , and . Compare your approximation with a solution obtained from whatever computing technology you prefer.   "
 },
@@ -4100,7 +4100,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-32",
   "type": "Drill",
-  "number": "8.18",
+  "number": "8.3.0.14",
   "title": "",
   "body": "      Show that when we use Newton s Method to approximate the coordinates of the intersection point of the curves and , we get the iteration formula     Starting with compute , and . Compare your approximation with a solution obtained from whatever computing technology you prefer.   "
 },
@@ -4109,7 +4109,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-33",
   "type": "Drill",
-  "number": "8.19",
+  "number": "8.3.0.15",
   "title": "Find the Pattern.",
   "body": " Find the Pattern       Compute for each of the following:                          From your work in part (a) what do you expect to be if Show that your guess is correct or find the correct solution if you guessed wrong.   "
 },
@@ -4118,7 +4118,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-34",
   "type": "Drill",
-  "number": "8.20",
+  "number": "8.3.0.16",
   "title": "",
   "body": "  For each of the following, assume that , , and . Find an equation relating , , and .                                 "
 },
@@ -4127,7 +4127,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-35",
   "type": "Drill",
-  "number": "8.21",
+  "number": "8.3.0.17",
   "title": "",
   "body": "      Show that satisfies for any constant . How does this problem differ from IVP .    Show that also satisfies for any constant .    Parts (a) and (b) imply that . Use this knowledge to to show that    "
 },
@@ -4136,7 +4136,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-36",
   "type": "Drill",
-  "number": "8.22",
+  "number": "8.3.0.18",
   "title": "",
   "body": "      Show that satisfies for any constant . (This problem is not the same as . How does it differ?)    Show that also satisfies for any constant .    Parts (a) and (b) imply that . Use this knowledge to to show that   You might recognize this property of exponents from your Algebra class.   "
 },
@@ -4145,7 +4145,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONexponential-growth.html#SECTIONexponential-growth-37",
   "type": "Drill",
-  "number": "8.23",
+  "number": "8.3.0.19",
   "title": "",
   "body": "  For , , and compute                          Does it seem significant that for all three functions? What does your intuition say?   "
 },
@@ -4163,7 +4163,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhyperb-trig-hang.html#PROBLEMHangingChain",
   "type": "Drill",
-  "number": "8.24",
+  "number": "8.4.0.1",
   "title": "The Shape of a Hanging Chain.",
   "body": " The Shape of a Hanging Chain   The Calculus in this problem is pretty straightforward but the Algebra gets a bit messy. To avoid some of this mess in part , part , and part we will solve the special case where . In part we ll use our solution of this special case to solve the original problem.  So assume that . For this special case we will call our variables and , rather than and . The reasons for this will become clear in part .    Show that    It might help to make the substitution just to make things easier on the eyes. That makes     Show that and that     Show that the curve satisfies the differential equation     Now let s tackle the original problem. Show that satisfies the equation where is the weight density of the chain, and is the constant (magnitude of the) horizontal tension.   This is essentially the same computation you did for the special case, but the Algebra is messier. Consider making it easier on the eyes with the substitutions and We already know from part that . Notice that and use this to show that     Assume that , and and graph the curve given in equation . Does it look like a hanging chain? What happens to the graph if we use and , or and ? Does this make sense physically? Why or why not?   "
 },
@@ -4181,7 +4181,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhyperb-trig-hang.html#SECTIONhyperb-trig-hang-8",
   "type": "Drill",
-  "number": "8.25",
+  "number": "8.4.0.2",
   "title": "",
   "body": "  Analogously, show that the unit hyperbola , is parameterized by That is, show that .   "
 },
@@ -4199,7 +4199,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhyperb-trig-hang.html#DEFINITIONHypTrigFunc",
   "type": "Definition",
-  "number": "8.26",
+  "number": "8.4.0.3",
   "title": "The Hyperbolic Trigonometric Functions.",
   "body": " The Hyperbolic Trigonometric Functions  Definition The Hyperbolic Trigonometric Functions   In addition to and we make the following definitions which are clearly modeled on the definitions of the trigonometric functions:    "
 },
@@ -4208,7 +4208,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhyperb-trig-hang.html#PROBLEMHyperbolicTrig",
   "type": "Drill",
-  "number": "8.27",
+  "number": "8.4.0.4",
   "title": "",
   "body": "      Show that                                    Show that:     Show that:     Show that:     Show that:     Compare each of the identities above with the corresponding trigonometric identity.   "
 },
@@ -4217,7 +4217,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhyperb-trig-hang.html#PROBLEMSinhCoshDiffeq",
   "type": "Drill",
-  "number": "8.28",
+  "number": "8.4.0.5",
   "title": "",
   "body": "  Show that and both satisfy the differential equation: and compare this with .   "
 },
@@ -4235,7 +4235,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGatewayArch.html#SECTIONGatewayArch-2",
   "type": "Figure",
-  "number": "8.29",
+  "number": "8.5.0.1",
   "title": "",
   "body": "  The Gateway Arch in St. Louis    "
 },
@@ -4244,7 +4244,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGatewayArch.html#SECTIONGatewayArch-5",
   "type": "Drill",
-  "number": "8.30",
+  "number": "8.5.0.2",
   "title": "",
   "body": "  A true catenary is the graph of any function of the form     Show that is not a true catenary.    Plot the graph of equation , and determine the and intercepts.    Notice that the answers in part (b) do not determine an arch whose height and width are exactly feet. This is because this curve represents the centers Actually the centroids. You will learn about centroids when you take Integral Calculus. of the triangular cross sections.   The sketch below represents the cross-sectional slice of the arch, which is an equilateral triangle. In the sketch each side is equal to , and the point is equidistant from , , and . Show that the perpendicular distance from to one side is .      Use the result in part (i) to determine the height and width of the arch.       The curve Saarinen used is called a weighted catenary . It is the shape of a hanging chain whose density is not uniform. Saarinen decided to go with this since the size of the triangles was decreasing as they approached the apex of the arch. A true catenary arch would be something of the form Plot the graphs of equation and equation on the same set of axes and use this to show that they both have the same requisite height and width.   "
 },
@@ -4262,7 +4262,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERlast-elem-funct-8.html#EXAMPLEpopulation-growth",
   "type": "Example",
-  "number": "8.31",
+  "number": "8.6.0.1",
   "title": "Population Growth.",
   "body": " Population Growth  Suppose we start with a colony of grams of bacteria in a Petri dish and we wish to model the growth of the population as a function of time. In order to keep our initial discussion simple we begin by assuming that of our bacteria divide once per day at the same time. Such a population is growing at a rate of per day. If we start with grams of bacteria on day zero, then on day one we ll have more, or grams. On day two we ll have more than on day one, or grams. It should be clear that the rate of growth from day to day is proportional to how many bacteria we have on day . Thus from any one day to the next we see that the change in (that is, ) is given by where day, and is the change in population on that day.  But we assumed that of the bacteria were dividing in sync once per day, which is unrealistic. To get closer to reality suppose next that enough of them divide during any one hour so that at the end of one day the population has still grown by . Then from any one hour to the next we again have equation but this time is equal to one hour, or day. However, we don t have to measure time in days. If we measure it in hours instead we again have . The constant factor is still because we assumed that the population was growing at per day, and this is still true. That factor is called the nominal growth rate.   Mathematical Terminology  The word nominal means in name or thought so this is the named growth rate. It is not always the actual growth rate as we will see soon.   If we measure time in seconds the same reasoning will give us equation , with . If we measure in nanoseconds we get equation , with . If we measure time in infinitesimal increments we get    Local Linearity Notice that we are using the Principle of Local Linearity here. In this infinitesimal time interval the nominal growth rate, , is virtually constant and so we are treating it as linear growth.  Since we started with grams of bacteria we have the initial condition . This says that the amount of bacteria at time must satisfy the IVP: Take specific notice that the differential equation in IVP expresses the idea that the rate of change of the population, , is proportional to the size of the population, . The constant of proportionality is , or .  Clearly there is nothing particularly special about the number If our colony had been increasing at a nominal rate of we d have arrived at the IVP:   "
 },
@@ -4271,7 +4271,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERlast-elem-funct-8.html#DRILLExpGrowth1",
   "type": "Problem",
-  "number": "8.32",
+  "number": "8.6.0.2",
   "title": "",
   "body": " To begin solving IVP show that one solution of the differential equation  , from IVP is: There are other solutions. Find one of them.  "
 },
@@ -4280,7 +4280,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERlast-elem-funct-8.html#PROBLEMExpGrowth2",
   "type": "Drill",
-  "number": "8.33",
+  "number": "8.6.0.3",
   "title": "Find the Pattern.",
   "body": " Find the Pattern       Show that solves the differential equation: . What is ?    Show that solves the differential equation: . What is ?    Show that if is any constant then solves the differential equation . What is ?    Did your answer in part (c) account for the possibility that ? If not, redo it assuming that . What is in this case?   "
 },
@@ -4289,7 +4289,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERlast-elem-funct-8.html#PROBLEMBacteriaIVP1",
   "type": "Drill",
-  "number": "8.34",
+  "number": "8.6.0.4",
   "title": "",
   "body": "      Use the results of parts (a) and (b) of to show that is the solution of equation .    According to the model in part (a), how much did the colony grow over the first day and how does this compare to the growth rate of ?    Use the model to predict the size of the colony in days. Is this reasonable? What does it say about our assumptions in this problem?    Suppose our growth rate was per day. Would the bacteria have grown half as much in the first day as it did when the growth rate was per day?  Make your best guess.  Use Calculus to test your guess.     "
 },
@@ -4307,7 +4307,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERlast-elem-funct-8.html#CHAPTERlast-elem-funct-8-11",
   "type": "Problem",
-  "number": "8.35",
+  "number": "8.6.0.5",
   "title": "",
   "body": " Show that is a solution of IVP .  "
 },
@@ -4316,7 +4316,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERlast-elem-funct-8.html#CHAPTERlast-elem-funct-8-19",
   "type": "Drill",
-  "number": "8.36",
+  "number": "8.6.0.6",
   "title": "",
   "body": "  Suppose our bacteria population is increasing at a nominal rate of 10% per day. If we started with 100 grams, how much would there be after one, two, and three days?   "
 },
@@ -4352,7 +4352,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompSemiAn",
   "type": "Table",
-  "number": "8.37",
+  "number": "8.7.0.1",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded semiannually",
   "body": " nominal interest compounded semiannually    Time in years  Amount investment is worth in dollars                       "
 },
@@ -4361,7 +4361,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompThreeAn",
   "type": "Table",
-  "number": "8.38",
+  "number": "8.7.0.2",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded three time per year",
   "body": " nominal interest compounded three time per year    Time in years  Amount investment is worth in dollars                    "
 },
@@ -4370,7 +4370,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompQuart",
   "type": "Table",
-  "number": "8.39",
+  "number": "8.7.0.3",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded quarterly",
   "body": " nominal interest compounded quarterly    Time in years  Amount investment is worth in dollars                        "
 },
@@ -4379,7 +4379,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompCont",
   "type": "Table",
-  "number": "8.40",
+  "number": "8.7.0.4",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded continuously",
   "body": " nominal interest compounded continuously         2.70481382942    1000  2.71692393224     2.71814592683    100000  2.71826823717    1000000  2.71828046932    10000000  2.71828169255    "
 },
@@ -4388,7 +4388,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-19",
   "type": "Problem",
-  "number": "8.41",
+  "number": "8.7.0.5",
   "title": "",
   "body": " The function has the same form as our solution of IVP so it must satisfy the differential equation: . Confirm that it does.  "
 },
@@ -4397,7 +4397,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#PROBLEMContCompound1",
   "type": "Drill",
-  "number": "8.42",
+  "number": "8.7.0.6",
   "title": "",
   "body": "      What would the effective yield be for a bond nominally rated at 5% annually, compounded continuously? How does this compare to the effective yield of an investment compounded daily?    Suppose we had two investments growing continuously with nominal rates of 5% and 10% annually? After one year would the effective yield of the second investment be twice that of the first? Justify your answer.   "
 },
@@ -4424,7 +4424,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnatural-logarithm-1.html#SECTIONnatural-logarithm-1-3",
   "type": "Figure",
-  "number": "8.43",
+  "number": "8.8.0.1",
   "title": "",
   "body": "  John Napier (1555 1617)   "
 },
@@ -4460,7 +4460,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONnatural-logarithm-1.html#TABLEPropLog",
   "type": "Table",
-  "number": "8.44",
+  "number": "8.8.0.2",
   "title": "Properties of Logarithms",
   "body": " Properties of Logarithms  Table Properties of the Natural Logarithm     Property #1:        Property #2:        Property #3:    Notice that this is a special case of Property #1.    Property #4:     Property #5:     Property #6:     "
 },
@@ -4487,7 +4487,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-4",
   "type": "Problem",
-  "number": "8.45",
+  "number": "8.9.0.1",
   "title": "",
   "body": "Evaluate each of the following:                      "
 },
@@ -4496,7 +4496,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-6",
   "type": "Drill",
-  "number": "8.46",
+  "number": "8.9.0.2",
   "title": "",
   "body": "  Like Property #3, Property #5 is really just a convenience. Show that it is really an immediate consequence of Property #4 and Property #6.    Find a way to express as a product.   "
 },
@@ -4514,7 +4514,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-8",
   "type": "Problem",
-  "number": "8.47",
+  "number": "8.9.0.3",
   "title": "",
   "body": " Use your favorite computational tool to confirm that .  "
 },
@@ -4523,7 +4523,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-9",
   "type": "Problem",
-  "number": "8.48",
+  "number": "8.9.0.4",
   "title": "",
   "body": "Find approximate solutions for each of the following equations:                                                         "
 },
@@ -4532,7 +4532,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-11",
   "type": "Problem",
-  "number": "8.49",
+  "number": "8.9.0.5",
   "title": "",
   "body": "Solve each of the following equations exactly, without the use of technology.                                                    "
 },
@@ -4541,7 +4541,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-12",
   "type": "Drill",
-  "number": "8.50",
+  "number": "8.9.0.6",
   "title": "",
   "body": "  A particle is moving on the -axis so that its position at time is given by    When is the first time the particle stops moving forward and starts moving backward?    When does the particle start moving forward again?       A particle is moving on the -axis so that its position at time is given by .  Show that this particle never moves backward.  At which times does it stop moving forward?     "
 },
@@ -4550,7 +4550,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#PROBLEMDoubleYourMoney",
   "type": "Drill",
-  "number": "8.51",
+  "number": "8.9.0.7",
   "title": "Find the Pattern.",
   "body": " Find the Pattern       Suppose that dollars are invested in two separate accounts, and , where the interest in compounded continuously at the nominal rates of and , respectively. Let be the time it takes for the initial investment in account to double, and let be the time it takes for the initial investment in account to double. Is ?    At the end of the last section we asked you to guess the answers to part (a). Did you guess correctly? What was the intuition that lead you to your correct, or incorrect, guess?    Suppose that dollars are invested in two separate accounts, and , where the interest in compounded continuously at the rates and , respectively. Let be the time it takes for the initial investment in account to reach , and let be the time it takes for the initial investment in account to reach , were is some positive number. How are and related?   "
 },
@@ -4559,7 +4559,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-16",
   "type": "Example",
-  "number": "8.52",
+  "number": "8.9.0.8",
   "title": "",
   "body": " Suppose we have a bacteria culture which grows at a rate proportional to the amount of bacteria present. Suppose further that it has been observed that we have grams of the bacteria initially, then hours later we have grams. Can we predict how much would we have in hours?  Let represent the amount of bacteria present. This time our model is   "
 },
@@ -4568,7 +4568,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#DRILLBacteriaGuess1",
   "type": "Problem",
-  "number": "8.53",
+  "number": "8.9.0.9",
   "title": "",
   "body": " Before we proceed, try to guess how much bacteria we will have after hours. Will it be grams? grams? More? Less? Write down your best guess. We will revisit this in , as soon as we have a formula for .  "
 },
@@ -4577,7 +4577,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#DRILLBacteriaGuess2",
   "type": "Problem",
-  "number": "8.54",
+  "number": "8.9.0.10",
   "title": "",
   "body": " How good was your guess in ? Whether it was good or bad isn t really the point. Either way take a moment to hone your guessing skills by considering why you guessed the way you did. What was your intuition telling you about the problem?  "
 },
@@ -4586,7 +4586,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-24",
   "type": "Problem",
-  "number": "8.55",
+  "number": "8.9.0.11",
   "title": "",
   "body": " Show that   "
 },
@@ -4595,7 +4595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-25",
   "type": "Drill",
-  "number": "8.56",
+  "number": "8.9.0.12",
   "title": "",
   "body": "  At a certain time a Petri dish contains grams of bacteria. Three hours earlier it contained grams of bacteria.    Find a formula for the function, , which gives the amount of bacteria at any time, .    How long does it take for the dish to contain grams of bacteria?   "
 },
@@ -4604,7 +4604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNatLog.html#SECTIONNatLog-26",
   "type": "Drill",
-  "number": "8.57",
+  "number": "8.9.0.13",
   "title": "",
   "body": "  Starting with an unknown number of bacteria a culture is growing at a nominal (relative) rate of .    How long does it take for the culture to double in size?    How long does it take for the culture to triple in size?   "
 },
@@ -4631,7 +4631,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#EXAMPLEradioactive-dating",
   "type": "Example",
-  "number": "8.58",
+  "number": "8.10.1.1",
   "title": "",
   "body": " For the sake of being definite suppose that our isotope is decaying (shrinking) at a relative ( nominal ) rate of . Then if we start with Kg, the IVP to be solved is which we recognize as a special case of IVP , so the solution will be   Wait a minute. This can t be right. It says that the number of isotopes is increasing, not decreasing. Graph it and see.  So what did we do wrong?  The derivative of is its rate of change. If is increasing then its rate of change is going to be positive. If it is decreasing then its rate of change will be negative. We seem to have committed one of the classic blunders of mathematics. We got the sign wrong. We should have been solving the IVP instead of IVP . Since IVP also has the same form as IVP , the correct solution is   "
 },
@@ -4640,7 +4640,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-6",
   "type": "Problem",
-  "number": "8.59",
+  "number": "8.10.1.2",
   "title": "",
   "body": " Graph to confirm that it is decreasing.  "
 },
@@ -4649,7 +4649,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-8",
   "type": "Example",
-  "number": "8.60",
+  "number": "8.10.1.3",
   "title": "",
   "body": " Suppose we have pounds of a very unstable isotope which is known to lose half of its mass to radioactive decay in hours. If we let be the mass of our isotope sample at any time , then the IVP we need to solve is\\aside{In view of our discussion above about positive versus negative rates of change it is tempting to write the differential equation as . While this is not necessarily wrong, it is not helpful. The variable can be any number, positive or negative. If we do our analysis correctly the correct value will emerge. As always the solution of a differential equation of this form is where and is an unknown constant. To find we must use the additional information given. Half of our isotope s mass is lost in hours, so . Thus or Thus This is correct but again it is cumbersome. Also the lack of an obvious negative in the exponent is a little troubling.  "
 },
@@ -4658,7 +4658,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-9",
   "type": "Problem",
-  "number": "8.61",
+  "number": "8.10.1.4",
   "title": "",
   "body": "  Use the properties of logarithms and exponentials to show that .    Use the properties of logarithms and exponentials to show that    "
 },
@@ -4676,7 +4676,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-12",
   "type": "Drill",
-  "number": "8.62",
+  "number": "8.10.1.5",
   "title": "",
   "body": "  A certain isotope has a half-life of , and is decaying exponentially:     Find the value of in terms of .    Use the result of part (a) to show that the amount of our radioactive material at time is given by     The formula in part (a) is correct but it is a little awkward to use, as written. Use the properties of exponents and logarithms to show that this can be rewritten as What are   and Is this consistent with calling the half-life? Explain.   "
 },
@@ -4694,7 +4694,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-15",
   "type": "Drill",
-  "number": "8.63",
+  "number": "8.10.1.6",
   "title": "",
   "body": "        The Shroud of Turin, shown below, is a Christian religious relic which bears an image of a man. Some people believe it is the burial cloth of Jesus and that the image is that of Jesus himself. In the Vatican agreed to subject pieces of the shroud to radiocarbon dating. In this problem we will recreate the computations done to determine the age of the Shroud. Let be the amount of (in mg) at time years, where represents when the shroud was used. Let be the initial amount of present in the sample.     How much would be present if the shroud was 2000 years old?    If one of the samples of the Shroud contained 88.9% of the original . How old would this sample be?    This does not settle the question of the age of the Shroud. The technique of carbon dating is not in dispute, but there are other issues including questions about the quality of the samples. If you are interested you can read more here: https:\/\/www.usatoday.com\/story\/news\/world\/2013\/03\/30\/shroud-turin-display\/2038295\/ .   "
 },
@@ -4703,7 +4703,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-16",
   "type": "Drill",
-  "number": "8.64",
+  "number": "8.10.1.7",
   "title": "",
   "body": "  In medicine, Positron Emission Tomography (PET) scans use radioactive tracers to image body functions. One of the most commonly used radioactive tracers is Fluorine-  which has a half life of minutes. Typically is injected into the body and the imaging is done about one hour after the tracer is injected. Suppose that units of must remain in the body for the PET scan results to be useful. How much must be injected into the patient minutes prior?   "
 },
@@ -4712,7 +4712,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-17",
   "type": "Drill",
-  "number": "8.65",
+  "number": "8.10.1.8",
   "title": "",
   "body": "  The half-life of limits it to dating artifacts that are no older than years. What percentage of the original amount of would remain in a -year-old artifact? How does this explain the limitation on radiocarbon dating?   "
 },
@@ -4721,7 +4721,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SUBSECTIONradioactive-decay-18",
   "type": "Drill",
-  "number": "8.66",
+  "number": "8.10.1.9",
   "title": "",
   "body": "  The radioactive isotope Potassium-  has a half life of billion years. Radiometric dating using is especially effective for dating very old volcanic rock as the quickly cooling lava traps the Argon formed by the decaying of This has been used by scientists to study the frequency of geomagnetic reversals. A geomagnetic reversal is a change in the earth s magnetic polarity where the magnetic north and south poles (not to be confused with the geographic north and south poles) are switched. The latest such reversal is called the Brunhes-Matuyama reversal. Basically, the magnetic polarity of the planet is recorded in cooled lava flows. By dating the age of the lava flows, scientists can date these reversals. There are limitations to this dating method, as the smallest percentage of that can be detected is about .    According to the Wikipedia article we referenced above the the Brunhes-Matuyama reversal occured approximately years ago. A rock sample which appears to have a magnetic reversal contains between and of the that it originally contained. Is this consistent with the Brunhes-Matuyama reversal?    Approximately what is the age of the youngest rock that can be dated using this technique?   "
 },
@@ -4730,7 +4730,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SECTIONnewtons-law-cooling-2",
   "type": "Example",
-  "number": "8.67",
+  "number": "8.10.2.1",
   "title": "",
   "body": " Suppose a container of water at a temperature of is placed into a freezer maintained at a constant temperature of We d like to have a model that will allow us to compute how long it will take for the water to cool down to a temperature of, for example, where it will start to freeze.   Newton, Isaac and the Law of Cooling In the late th century Isaac Newton showed experimentally that the rate at which the water cools will be proportional to the difference between its current temperature and the ambient (surrounding) temperature. This is known as Newton s Law of Cooling and it holds generally, not just for water.  For this problem we see that the ambient temperature is and the initial temperature of the water is . We let represent the temperature of the water at any given time. Then the difference between the current temperature and the ambient temperature is , and (as always) the rate of change of the temperature of the water with respect to time is , (or if you are Newton). Letting be the (unknown) constant of proportionality we have the IVP   This differential equation looks like it will be tougher to solve than the IVPs we dealt with earlier. But in fact we can make this problem easier on the eyes with the substitution . Notice that so we have the IVP Do you recognize this equation? This has the same form as IVP so the solution is Reversing the substitution we see that   To complete our model we need to determine . We can find if we know the temperature of the water at a second time during the cooling. Assume that we measured the temperature of the water after minutes and it was Thus we have so that and our complete model is   Newton s Law of Cooling accurately models the cooling of any object placed in cooler surroundings. We used water in our example just to be definite.  "
 },
@@ -4739,7 +4739,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SECTIONnewtons-law-cooling-3",
   "type": "Problem",
-  "number": "8.68",
+  "number": "8.10.2.2",
   "title": "",
   "body": " Since the temperature of the water is decreasing we would expect to be less than zero. Show that it is.  "
 },
@@ -4748,7 +4748,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SECTIONnewtons-law-cooling-4",
   "type": "Drill",
-  "number": "8.69",
+  "number": "8.10.2.3",
   "title": "",
   "body": "      Answer the original question: How long does it take for the water to cool from to     Take a guess: Would it take the same amount of time to cool another from to Check to see if your guess was correct.    What would the initial temperature of the water need to be to take twice as long to cool to as it did for the water?   "
 },
@@ -4757,7 +4757,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SECTIONnewtons-law-cooling-5",
   "type": "Drill",
-  "number": "8.70",
+  "number": "8.10.2.4",
   "title": "",
   "body": "  The forensic rule of thumb for determining the time of death of a person is to start with a body temperature of and\\aside{Notice that we ve switched to measuring temperature in degrees Celsius.} subtract for each hour the person is dead. Of course, this simple linear model isn t as accurate as Newton s Law of Cooling since it does not take into account the surrounding temperature, size of the body, etc. and can only be applied until the temperature of the body reaches the surrounding temperature.    Suppose the ambient temperature is Using the forensic rule of thumb, how long would it take for the body to reach the ambient temperature? Using the forensic rule of thumb, what would the body temperature be halfway through the cooling process.    Use the temperature predicted by the rule of thumb at the halfway point to give a complete model of the body s cooling as predicted by Newton s Law of Cooling.    Of course, in Newton s Law of Cooling, the body temperature will never quite reach the ambient temperature, but just for comparison, substitute the time when the rule of thumb predicts that the body temperature is and see how close it is to the ambient temperature.    Using the answer you obtained in part (c), find the rate of change of the body temperature at the beginning of the time interval and the rate of change of the body temperature at the end of the time interval. How do these compare with the rule of thumb rate of change?   "
 },
@@ -4766,7 +4766,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLogApps.html#SECTIONnewtons-law-cooling-7",
   "type": "Drill",
-  "number": "8.71",
+  "number": "8.10.2.5",
   "title": "",
   "body": "  A whole turkey is considered to be safely cooked when the internal temperature is Suppose a turkey is taken out of a refrigerator set at and is put directly into an oven set at . You check it hours later and the internal temperature is How much longer does the turkey need to cook?   "
 },
@@ -4793,7 +4793,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivNatLog.html#SECTIONDerivNatLog-4",
   "type": "Problem",
-  "number": "8.72",
+  "number": "8.11.0.1",
   "title": "",
   "body": "For each of the following find , and .                                                                   "
 },
@@ -4802,7 +4802,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivNatLog.html#PROBLEMderiv-natur-logar",
   "type": "Drill",
-  "number": "8.73",
+  "number": "8.11.0.2",
   "title": "",
   "body": "  For each of the following find , and . (Use the properties of logarithms to make these drills easier on the eyes.)                            "
 },
@@ -4811,7 +4811,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDerivNatLog.html#SECTIONDerivNatLog-6",
   "type": "Drill",
-  "number": "8.74",
+  "number": "8.11.0.3",
   "title": "",
   "body": "  Recall that in we showed the curvature of the graph of a function is given by     Show that the curvature of the graph of is given by Graph both of these functions and use this to approximate the point , where the curvature of the graph of the natural exponential function is the greatest.    Show that the curvature of the graph of the is given by Graph both of these functions and use this to approximate the point , where the curvature of the graph of the natural logarithm is the greatest.    What do you notice about the points where the curvature is greatest in parts (a) and (b)? Does this surprise you? Explain.   "
 },
@@ -4838,7 +4838,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenExp-4",
   "type": "Problem",
-  "number": "8.75",
+  "number": "8.12.0.1",
   "title": "",
   "body": " Why do we impose the conditions, and ?  "
 },
@@ -4847,7 +4847,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenExp-6",
   "type": "Drill",
-  "number": "8.76",
+  "number": "8.12.0.2",
   "title": "",
   "body": "  Let , ,  and let be any real number.    Show that    Consider and use the properties of exponents to show that this equals     Show that    Consider and use the properties of exponents to show that this equals .   "
 },
@@ -4856,7 +4856,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenExp-13",
   "type": "Drill",
-  "number": "8.77",
+  "number": "8.12.0.3",
   "title": "",
   "body": "  Starting with , take the natural logarithm of both sides and solve for to obtain the same formula as above.   "
 },
@@ -4865,7 +4865,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenExp-15",
   "type": "Problem",
-  "number": "8.78",
+  "number": "8.12.0.4",
   "title": "",
   "body": "Find and for each of the following:                                               "
 },
@@ -4874,7 +4874,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenLog-7",
   "type": "Problem",
-  "number": "8.79",
+  "number": "8.12.0.5",
   "title": "",
   "body": "Compute and for each of the following.            "
 },
@@ -4883,7 +4883,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenLog-8",
   "type": "Drill",
-  "number": "8.80",
+  "number": "8.12.0.6",
   "title": "",
   "body": "  Assume and let . Show that    "
 },
@@ -4892,7 +4892,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSGenLog-9",
   "type": "Drill",
-  "number": "8.81",
+  "number": "8.12.0.7",
   "title": "",
   "body": "  For a given sound, the sound power level , in decibels, is given by where is the sound power of the source measured in watts and is the sound reference level taken to be picowatt or watts.    Suppose the sound power of a speaker is watts. How many decibels does this correspond to?    Suppose that the sound power of the speaker is being raised at a rate of watts per second. How fast is the sound power level rising?   "
 },
@@ -4919,7 +4919,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier-7",
   "type": "Problem",
-  "number": "8.82",
+  "number": "8.12.0.8",
   "title": "",
   "body": "  Use whatever technology you prefer to compute the natural logarithms of the numbers and and their product. Confirm that . (If you don t like these numbers use others. We just picked these at random.)    Do the same using common logarithms.    Do the same using . ( Or any other base. Again we just picked at random.)   "
 },
@@ -4928,7 +4928,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier-8",
   "type": "Example",
-  "number": "8.83",
+  "number": "8.12.0.9",
   "title": "",
   "body": " A calculator is a useful tool, but only if the human operating it understands what to calculate, and why. Blind computation is pointless and wasteful. As powerful and convenient as our modern technology is, there is still no substitution for a deep understanding of basic principles.  For example, how many base- digits long do you suppose the number is? You cannot solve this by punching into a calculator and counting the digits. Try it and see. If you can solve this by punching into a calculator, that just means that technology has outpaced this particular problem. In that case use a bigger exponent, say .  This feels like the sort of problem a math professor might make up just for fun (though it often feels like we do it just to torment our students), but it is not. Computer programmers routinely have to allocate space in memory to hold information. If the information being held happens to be the number the programmer will need to know how much space to allocate to hold the number.  "
 },
@@ -4937,7 +4937,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier-9",
   "type": "Problem",
-  "number": "8.84",
+  "number": "8.12.0.10",
   "title": "",
   "body": " Show that if is a positive integer and then will have digits to the left of the decimal point. \\\\   This is true because our number system is based on powers of ten. That is, it is based on the base exponential.  "
 },
@@ -4946,7 +4946,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier-11",
   "type": "Problem",
-  "number": "8.85",
+  "number": "8.12.0.11",
   "title": "",
   "body": "How many bits are needed to allocate to store these numbers?    ?     ?     ?     ?   "
 },
@@ -4955,7 +4955,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier-12",
   "type": "Drill",
-  "number": "8.86",
+  "number": "8.12.0.12",
   "title": "",
   "body": "  For each of the following numbers:                          Find the number of binary digits needed to store the number.    Find the number of base- digits needed to store the number.    Find the number of base- digits needed to store the number.    Find the number of base- digits needed to store the number.    Find the number of base- digits needed to store the number.   "
 },
@@ -4973,7 +4973,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PROBLEMNapierianLog",
   "type": "Drill",
-  "number": "8.87",
+  "number": "8.12.0.13",
   "title": "",
   "body": "   In this problem we have suppressed the variable .    Show that , and .    Solve the IVP: , ,    Use the information in parts (a) and (b) to show that Thus the base of Napier s original logarithm was .   "
 },
@@ -4982,7 +4982,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSLogDiff-6",
   "type": "Example",
-  "number": "8.88",
+  "number": "8.12.0.14",
   "title": "",
   "body": " For example, suppose we need to differentiate   While we can do this using our Differentiation Rules, it will be very tedious. But nice things happen if we take the natural logarithm of both sides before we differentiate. Since the natural logarithm changes division into subtraction (Property 5) we can rewrite the right side as: And since the natural logarithm changes multiplication into addition (Property 4) we can re-express the right side again. This time as: Re-expressing the square root as an exponent gives . and we can now bring the exponents down in front (Property 6). Notice that we have not yet started differentiating. All we ve done so far is re-express our function using the properties of logarithms.  But differentiating is now relatively easy. If we multiply by we get   "
 },
@@ -4991,7 +4991,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PROBLEMGeneralPowerRule2",
   "type": "Drill",
-  "number": "8.89",
+  "number": "8.12.0.15",
   "title": "",
   "body": "  Let .    Take the logarithm of both sides of this formula and use the properties of logarithms to show that for      Show that the result of part (a) is equivalent to the solution of .   "
 },
@@ -5009,7 +5009,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSLogDiff-11",
   "type": "Drill",
-  "number": "8.90",
+  "number": "8.12.0.16",
   "title": "",
   "body": "  Show that if , then by    Using Logarithmic Differentiation.    Not using Logarithmic Differentiation.    Does either method seem preferable to you? Explain.   "
 },
@@ -5018,7 +5018,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PROBLEMLogarithmicDifferentiation1",
   "type": "Drill",
-  "number": "8.91",
+  "number": "8.12.0.17",
   "title": "",
   "body": "  Compute the derivative of each of the following functions.                          "
 },
@@ -5027,7 +5027,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSLogDiff-14",
   "type": "Drill",
-  "number": "8.92",
+  "number": "8.12.0.18",
   "title": "",
   "body": "  For each of the following find , and .                       "
 },
@@ -5036,7 +5036,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSLogDiff-16",
   "type": "Drill",
-  "number": "8.93",
+  "number": "8.12.0.19",
   "title": "",
   "body": "  Suppose we want to differentiate where and are two differentiable functions.    Compute using Logarithmic Differentiation.    Now express as and compute again using the ordinary rules of differentiation and show that you get the same thing as in part (a).   "
 },
@@ -5045,7 +5045,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgener-logar-expon.html#PARAGRAPHSLogDiff-17",
   "type": "Drill",
-  "number": "8.94",
+  "number": "8.12.0.20",
   "title": "",
   "body": "  Suppose and show that .   "
 },
@@ -5063,7 +5063,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#PROBLEMDampedOscillator1",
   "type": "Drill",
-  "number": "8.95",
+  "number": "8.13.0.1",
   "title": "",
   "body": "      Show that: satisfies equation for any constants and .    Let and plot this solution for and Does this seem to model a damped oscillation?   "
 },
@@ -5072,7 +5072,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#SUBSECTIONHowEulerDidIt-3",
   "type": "Figure",
-  "number": "8.96",
+  "number": "8.13.1.1",
   "title": "",
   "body": "  Leonhard Euler    "
 },
@@ -5081,7 +5081,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#SUBSECTIONHowEulerDidIt-10",
   "type": "Drill",
-  "number": "8.97",
+  "number": "8.13.1.2",
   "title": "",
   "body": "  Show that if satisfies the differential equation then must satisfy the quadratic equation     Put the first two derivatives of into the differential equation.   "
 },
@@ -5090,7 +5090,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#PROBLEMDampOscExpSol",
   "type": "Drill",
-  "number": "8.98",
+  "number": "8.13.1.3",
   "title": "",
   "body": "  Assume that is a constant.    Show that is a solution of equation .    Show that is also a solution of equation .    Show that if and are constants then is also a solution of equation .   "
 },
@@ -5099,7 +5099,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#PROBLEMDampedOscillation1",
   "type": "Drill",
-  "number": "8.99",
+  "number": "8.13.1.4",
   "title": "",
   "body": "  Show that is a solution of the differential equation when or .   "
 },
@@ -5108,7 +5108,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#PROBLEMEulersFormula",
   "type": "Drill",
-  "number": "8.100",
+  "number": "8.13.1.5",
   "title": "",
   "body": "      Show that if then and    To get substitute To get differentiate first.    Show that if then and    "
 },
@@ -5126,7 +5126,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#SUBSECTIONHowEulerDidIt-26",
   "type": "Problem",
-  "number": "8.101",
+  "number": "8.13.1.6",
   "title": "",
   "body": " Show that .  "
 },
@@ -5135,7 +5135,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#SUBSECTIONHowEulerDidIt-28",
   "type": "Drill",
-  "number": "8.102",
+  "number": "8.13.1.7",
   "title": "",
   "body": "      Show that     Show that .   "
 },
@@ -5144,7 +5144,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONEulerHarmonicOsc.html#SUBSECTIONHowEulerDidIt-30",
   "type": "Drill",
-  "number": "8.103",
+  "number": "8.13.1.8",
   "title": "",
   "body": "      Assuming that that and that , use Euler s Identity to show that and that .    Show that if satisfies the initial conditions then and . what is equal to?   If     Use and from part (b) to show that and are real numbers.   "
 },
@@ -5171,7 +5171,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONintroduction.html#THEOREMFermatsTheorem",
   "type": "Theorem",
-  "number": "9.1",
+  "number": "9.1.0.1",
   "title": "Fermat’s Theorem.",
   "body": " Fermat s Theorem  Theorem Fermat s Theorem  If a function, , is differentiable at and is either a maximum or a minimum then .  "
 },
@@ -5180,7 +5180,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONintroduction.html#SECTIONintroduction-8",
   "type": "Problem",
-  "number": "9.2",
+  "number": "9.1.0.2",
   "title": "",
   "body": " Suppose a ball is tossed vertically from the surface of the earth with an initial velocity of . Show that the ball reaches its maximum height when seconds.   You may want to review .  "
 },
@@ -5189,7 +5189,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONintroduction.html#DRILLNonTrivialMaxExample",
   "type": "Problem",
-  "number": "9.3",
+  "number": "9.1.0.3",
   "title": "",
   "body": " Let    Show that when and when .   Graph . Does it have a maximum? Explain.  "
 },
@@ -5207,7 +5207,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#EXAMPLESqOnLine",
   "type": "Example",
-  "number": "9.4",
+  "number": "9.2.0.1",
   "title": "Constructing A Square on a Line.",
   "body": " Constructing A Square on a Line  What is the area of the smallest possible square having one corner at the point and an adjacent corner on the line The diagram below is a visualization of this problem.             We can imagine the blue square growing and shrinking as we move the point along the line. It seems clear that the square having the least area is the one pictured in black (when is at . It is worth taking a moment to notice this explicitly because not all optimization problems are solvable. If we had asked for the largest possible square there would be no solution because the blue square in our diagram can always be make larger by moving the point further to the left on the graph of equation .  But a convincing picture is not a solution. To complete the solution we ll need to compute the coordinates of the point in our sketch and compute the minimal area.  In any optimization problem the first question to ask is, What do we need to optimize? In other words, What is our objective function? For this problem the length of the line segment between the point and any point is given by the Distance Formula: . Therefore the area of the square constructed from this line segment is given by the function: So our objective function is . Since the point is constrained to lie on the line , equation , is our constraint.  Notice that we ve abused our notation a bit. Although the notation indicates that depends on alone, we ve given in terms of both and . But solving equation gives so it should be clear that really depends only on .   Comment  If we make this substitution immediately we can get the objective function solely in terms of : , But does that really help? Either way we re going to have to differentiate . Which form of would you rather use? We think using two variables makes this objective function a bit easier on the eyes.    We ve seen visually that this problem has a solution and Fermat s Theorem tells us that the derivative of our objective function will be zero at that solution. So we differentiate both sides of which gives But recall that and are constrained by the equation from which we see that . Therefore or Setting equal to zero we have From our constraint we have . Inserting this into equation we see that Solving for gives   To find we use our constraint and the value of from equation ,   So we have found that the minimal square occurs when , and and it feels like we re done, doesn t it? We re not. The question asked was What is the area of the smallest possible square? To find the area we need to put into our area formula which yields Always remember to check that you have actually answered the question which was asked before you stop.  "
 },
@@ -5216,7 +5216,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#SECTIONfive-simil-probl-5",
   "type": "Drill",
-  "number": "9.5",
+  "number": "9.2.0.2",
   "title": "",
   "body": "      Do you see that the point which minimizes the area of our square also minimizes the length of the line segment from to ? What objective function would we get if we tried to minimize the length of the segment instead of the area of the square. Does this change the problem? If so, how?    This example specified that and were adjacent corners of the square. What would the objective function look like if those points were diagonally opposite each other. Does this change the problem? If so, how?   "
 },
@@ -5225,7 +5225,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#PROBLEMMinSqLine",
   "type": "Drill",
-  "number": "9.6",
+  "number": "9.2.0.3",
   "title": "",
   "body": "  It seems fairly intuitively clear that the minimal square occurs when the line through is orthogonal to the graph of the line .   Mathematical Nomenclature   Orthogonal is the word mathematicians use when everyone else would say perpendicular. The reasons for this are abstruse.     Verify that our intuition is correct.    Does this remain true if the point on the line and are not adjacent corners of the square?   "
 },
@@ -5234,7 +5234,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#EXAMPLECircleDist",
   "type": "Example",
-  "number": "9.7",
+  "number": "9.2.0.4",
   "title": "Constructing A Square on a Circle.",
   "body": " Constructing A Square on a Circle  We want to find the area of the largest and the smallest squares that can be constructed with one corner at the point and an adjacent corner on the unit circle: .  The solution of this problem is very clear once it has been sketched. The purpose of is for you to see the solution intuitively. We will solve it again analytically below.  "
 },
@@ -5243,7 +5243,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#DRILLIntuitiveSquareOnCircle",
   "type": "Problem",
-  "number": "9.8",
+  "number": "9.2.0.5",
   "title": "",
   "body": "Sketch the unit circle, plot the point , and draw the smallest and largest squares you can which have one corner at the point and an adjacent corner on the unit circle: .   Explain how you can tell from your sketch that that there is both a maximal (largest area) and a minimal (smallest area) square.    Explain how you can tell from your sketch, that the second corner of the maximal and minimal squares are at the intersection points of the line and the unit circle.    Show that the areas of the maximal square is units and that the area of the minimal square is units.   "
 },
@@ -5252,7 +5252,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#DRILLExtremalSquareCircle",
   "type": "Problem",
-  "number": "9.9",
+  "number": "9.2.0.6",
   "title": "",
   "body": "  Show that the area of the maximal square is approximately units. Which value of does this correspond to?    Show that the area of the minimal square is approximately units. Which value of does this correspond to?   "
 },
@@ -5261,7 +5261,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#PROBLEMEllipseDist",
   "type": "Drill",
-  "number": "9.10",
+  "number": "9.2.0.7",
   "title": "",
   "body": "  There are two extremal squares with one corner at and an adjacent corner on the ellipse: Find the area of each one of them.  Steps (a) through (g) will guide you through the process. Not all of the problems in these steps are easily solved algebraically. Use Newton s Method or computational software as needed to find approximations.    Draw a sketch of this problem. Explain how you can tell from the sketch that there is one maximal, and one minimal square.    The objective function for this problem is, once again: What is the constraint?    Use the constraint to show that and that     Show that .    Show that if we choose then the only root of is .    Show that if we choose then the only root of is .    Find (approximately) the area of the square associated with both of these points. Which one is the maximal and which is the minimal square?   "
 },
@@ -5270,7 +5270,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#PROBLEMMaxOrth1",
   "type": "Drill",
-  "number": "9.11",
+  "number": "9.2.0.8",
   "title": "",
   "body": "  Here is a sketch of the optimal squares in . Notice that for both the maximal and the minimal square one of the sides appears to be orthogonal to (the line tangent to) the ellipse.      Show that they actually are orthogonal.    It is generally true that the shortest (or longest) line segment from a point to a curve, , will be orthogonal to the line tangent to the curve at their point of intersection. The figure below shows an arbitrary, differentiable curve, , and an arbitrary point .    Suppose that the area of a square with one corner at and an adjacent corner on the curve at is optimal (minimal or maximal) at . Show that the line joining and is orthogonal to the tangent line of at . Try to solve this problem completely on your own, but if you get stuck here is an outline you can follow:   Find the objective function, . (This will be the area of the square on the line from to .)    Use the fact that to find the slope of at .    Find the slope of the line from to .    Compare the two slopes.    What happens if the tangent line is horizontal? If it is vertical?      "
 },
@@ -5279,7 +5279,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#EXAMPLEDiffvsDer",
   "type": "Example",
-  "number": "9.12",
+  "number": "9.2.0.9",
   "title": "Differentials vs. Derivatives.",
   "body": " Differentials vs. Derivatives  Take a moment to consider . Is it clear to you that there must be such a maximal rectangle? If so then, as before, setting the derivative of the objective function equal to zero and solving for the variable will provide all of the values of the variable where the maximal rectangle might occur. If we re lucky there will only be a few such and we can check them one at a time.  Finding the objective function is easy. The area , of any rectangle is its length, , times its width, , so is the objective function.  The perimeter, is and is constrained to be a constant (fixed) value so equation is the constraint. Throughout this example keep in mind that is a fixed constant, not a function of and .  At this point we can complete the problem using Calculus in either of two equivalent ways.   Using Differentials:  In our opinion this is how Leibniz intended for his Calculus to be used so we tend to favor it.   Compute , from the objective function.    Differentiate the constraint, giving the differential form of the constraint:     Set and solve this equation using the constraint and its differential form as needed. In this problem we have so Since we have and thus the square encloses the most area.       Using Derivatives:  The modern approach emphasizes the use of functions and derivatives rather than curves and differentials.   Solve the constraint for either or in terms of the other. For example,     Substitute this into the objective function to rewrite it in terms of a single variable:     Now think of the objective function, , as an abstract function and find its maximum point by setting and solving for .  Proceeding, we have so . Putting this back into our constraint gives we see that is also equal to . Since the square encloses the most area.        As we said, the two approaches are completely equivalent. Use whichever feels most comfortable to you.  "
 },
@@ -5288,7 +5288,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#PROBLEMMaximalSquareRedux1",
   "type": "Drill",
-  "number": "9.13",
+  "number": "9.2.0.10",
   "title": "",
   "body": "  Find the dimensions of the rectangle having the smallest perimeter, given that the area is fixed. Since we are still relying on Fermat s Theorem, the first step is to convince yourself that this problem has a solution. Once you have done that, use both of the approaches outlined in to complete the solution. Which method do you prefer?   "
 },
@@ -5297,7 +5297,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#SECTIONfive-simil-probl-22",
   "type": "Drill",
-  "number": "9.14",
+  "number": "9.2.0.11",
   "title": "",
   "body": "        Consider all lines connecting the point to an arbitrary point , on the unit circle as pictured. There is clearly one point where the slope of the associated line is maximum and another point where the slope of the associated line is minimum. These are the outermost lines depicted in the figure. Find an equation for each of these lines. If you aren t sure how to begin use the following steps.    Find an appropriate objective function for this problem.    Find the constraint for this problem.    Differentiate both your objective function and your constraint to show that the points where the maximum and minimum slope occur must satisfy    Comment  There is usually more than one way to solve a given problem so it is possible that you came up with a different equation than we did. That s OK. Solve the problem using yours and use ours to check your solution.     Solve equation and the constraint simultaneously to find the equations of the lines with maximal and minimal slope. Verify your answer by graphing both lines and the unit circle.   "
 },
@@ -5306,7 +5306,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#SECTIONfive-simil-probl-23",
   "type": "Problem",
-  "number": "9.15",
+  "number": "9.2.0.12",
   "title": "",
   "body": "Sketch the graphs of and and convince yourself that there is a point on each graph which is closest to the origin.   Find the approximate coordinates of the point on the curve that is closest to the origin.    Find the approximate coordinates of the point on the curve that is closest to the origin.    Are the solutions of parts (a) and (b) related? Explain.   "
 },
@@ -5315,7 +5315,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#SECTIONfive-simil-probl-24",
   "type": "Problem",
-  "number": "9.16",
+  "number": "9.2.0.13",
   "title": "",
   "body": "Suppose a point is moving in a plane so that its coordinates are given by:    Find the value of where the point, , is closest to the origin. Is it clear that there is such a point?    Find the coordinates of the point s location when it is closest to the origin.   "
 },
@@ -5324,7 +5324,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#PROBLEMRectInscEll",
   "type": "Drill",
-  "number": "9.17",
+  "number": "9.2.0.14",
   "title": "",
   "body": "      Of all the rectangles that can be inscribed in the unit circle show that the one with the maximum area is a square.    Of all the rectangles that can be inscribed in the ellipse show that the one with the maximum area is three times taller than it is wide.    Of all the rectangles that can be inscribed in the ellipse show that the one with the maximum area is four times wider than it is tall.    Of all the rectangles that can be inscribed in the ellipse show that the one with the maximum area has a height to width ratio of .   "
 },
@@ -5333,7 +5333,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#FIGURETriFixedBase",
   "type": "Figure",
-  "number": "9.18",
+  "number": "9.2.0.15",
   "title": "",
   "body": "   "
 },
@@ -5342,7 +5342,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#PROBLEMMaximalIsoceles1",
   "type": "Drill",
-  "number": "9.19",
+  "number": "9.2.0.16",
   "title": "",
   "body": "       Use the sketch in to express as a function of and and show that when is maximal .    Express as a function of and and show that when is maximal .    Use the fact that is constant to find an equation relating and .    Use the fact that the perimeter is constant to find an equation relating and .    Use the results from parts (a), (b), (c), and (d) to show that is maximized when    Use an appropriate trigonometric function.    Use part (e) to conclude that the base angles, and , must be congruent and thus .   "
 },
@@ -5360,7 +5360,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfive-simil-probl.html#DRILLMaximalTriangle",
   "type": "Drill",
-  "number": "9.20",
+  "number": "9.2.0.17",
   "title": "The Largest Triangle with a Fixed Perimeter is Equilateral.",
   "body": " The Largest Triangle with a Fixed Perimeter is Equilateral   Observe that every triangle is either equilateral, or it is not equilateral.     Suppose we have a triangle with sides , , and which is not equilateral. Then at least two sides, say and , are not equal. Explain how implies that there must be another triangle with the same perimeter and a larger area.    Use Holmes maxim to explain why a triangle with a fixed perimeter enclosing maximal area must be equilateral.   "
 },
@@ -5378,7 +5378,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#SUBSECTIONreflection-15",
   "type": "Drill",
-  "number": "9.21",
+  "number": "9.3.1.1",
   "title": "",
   "body": "  In the figure above suppose that , , and .    Show that .    Show that the solution of is .    Use the result of part (b) to show that .   "
 },
@@ -5387,7 +5387,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#PROBLEMSnellsLawWithCalculus",
   "type": "Drill",
-  "number": "9.22",
+  "number": "9.3.2.1",
   "title": "",
   "body": "      We know that the total time traveled from point to to is given by Write down all of the constraints involving the variables , , , and , and the constants , , and . (We ll ignore and for now.)    Show that when is minimum (that is, when ) we have     Use equation to derive Snell s Law of refraction: .    Assuming that the speed of light in water is about of the speed of light in air, use Snell s Law to determine the range of possible angles for as ranges from to .     "
 },
@@ -5396,7 +5396,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#SUBSECTIONrefraction-11",
   "type": "Figure",
-  "number": "9.23",
+  "number": "9.3.2.2",
   "title": "",
   "body": "  Snell s window. Photo courtesy of Eric Cheng.    "
 },
@@ -5405,7 +5405,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#PROBLEMsnells-law-variation",
   "type": "Drill",
-  "number": "9.24",
+  "number": "9.3.2.3",
   "title": "",
   "body": "  Suppose that the cost to run a fiber optic cable underwater is ( ) times the cost to run it on land. We wish to run a fiber optic cable from point  km from the river, to point on the other side km downstream. The river is km wide.      Show that the value of necessary to minimize the cost of running the cable must satisfy the equation     When the formulas we re working with get this complicated it is a good idea to check them against our intuition in simple cases. Does this formula make sense to you when ?    Use any appropriate technology, or Newton s Method, to provide approximate values for in the following table                                             Do these values surprise you? Explain.   "
 },
@@ -5423,7 +5423,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#SUBSECTIONrainbows-13",
   "type": "Drill",
-  "number": "9.25",
+  "number": "9.3.3.1",
   "title": "",
   "body": "  Show that .   "
 },
@@ -5450,7 +5450,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#SUBSECTIONRainbow-5",
   "type": "Drill",
-  "number": "9.26",
+  "number": "9.3.4.1",
   "title": "",
   "body": "  Differentiate the objective function, , and the constraint, equation , and use Fermat s Theorem to show that when is a minimum    "
 },
@@ -5459,7 +5459,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#PROBLEMRainbowAngle",
   "type": "Drill",
-  "number": "9.27",
+  "number": "9.3.4.2",
   "title": "",
   "body": "      Use equation to show that for a given index of refraction , is minimized when and .    Use the result in part to complete the following table:    Color   (in degrees)  (in degrees)   (in degrees)   (in degrees)    Red 1.331       Orange 1.332       Yellow 1.333       Green 1.335       Blue 1.337       Indigo 1.340       Violet 1.344                      How does the table in part explain the order of the colors in the primary rainbow?   "
 },
@@ -5468,7 +5468,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrefl-refr-rainb.html#PROBLEMSecondaryRainbow",
   "type": "Drill",
-  "number": "9.28",
+  "number": "9.3.5.1",
   "title": "",
   "body": "      Show that in the case of the secondary rainbow, . This is our objective function for the secondary rainbow.    Show that is minimized when and .    Use part to complete the following table:    Color   (in degrees)  (in degrees)   (in degrees)   (in degrees)    Red 1.331       Orange 1.332       Yellow 1.333       Green 1.335       Blue 1.337       Indigo 1.340       Violet 1.344                      Use the table in part of this problem and the table in part of to explain why the secondary rainbow is above the primary rainbow and its colors are reversed.   "
 },
@@ -5486,7 +5486,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#EXAMPLEParabolaOptSqr",
   "type": "Example",
-  "number": "9.29",
+  "number": "9.4.0.1",
   "title": "Constructing a Square on a Parabola.",
   "body": " Constructing a Square on a Parabola  We would like to find the area of the smallest square which can be constructed with one corner at the point and an adjacent corner on the graph of . This example is very similar to Problem or Problem so we will proceed in much the same way. The objective function is the same but this time the constraint is   In our previous examples we began by differentiating both the objective function and the constraint. This time substitute the constraint into to obtain the objective function in terms of a single variable. We make this change of strategy simply to demonstrate that the two procedures are equivalent. In fact, for this particular problem they are almost identical. For more complex problems you may find that you prefer one strategy or the other.  "
 },
@@ -5495,7 +5495,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#DRILLSqParab",
   "type": "Problem",
-  "number": "9.30",
+  "number": "9.4.0.2",
   "title": "",
   "body": " Show that when , and . Getting three distinct solutions of is quite unexpected in light of our previous work. Can you explain what s going on here?  "
 },
@@ -5522,7 +5522,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#DEFINITIONGlobalMin",
   "type": "Definition",
-  "number": "9.31",
+  "number": "9.4.0.3",
   "title": "Global Minimum.",
   "body": " Global Minimum  Definition Global Minimum   Suppose that is a number in the domain of such that for every in the domain of . Then is the global minimum of .   "
 },
@@ -5531,7 +5531,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#PROBLEMMaximaDefinition",
   "type": "Drill",
-  "number": "9.32",
+  "number": "9.4.0.4",
   "title": "",
   "body": "  Provide a definition of Global Maximum modeled on .   "
 },
@@ -5558,7 +5558,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#DIGRESSIONIntervalNotation-6",
   "type": "Problem",
-  "number": "9.33",
+  "number": "9.4.0.5",
   "title": "",
   "body": "Re-express each of the following intervals using inequalities and state whether it is open, closed, or neither.                      "
 },
@@ -5567,7 +5567,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#DIGRESSIONIntervalNotation-7",
   "type": "Problem",
-  "number": "9.34",
+  "number": "9.4.0.6",
   "title": "",
   "body": "Re-express each of the following intervals using inequalities and state whether it is open, closed, or neither.                      "
 },
@@ -5576,7 +5576,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#DEFINITIONLocalMin",
   "type": "Definition",
-  "number": "9.35",
+  "number": "9.4.0.7",
   "title": "Local Minimum.",
   "body": " Local Minimum  Definition Local Minimum    Suppose that is a number in the domain of . Then is a local minimum of if there is an open interval, , such that for every in the interval and in the domain of .   "
 },
@@ -5585,7 +5585,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#PROBLEMLocalMaximaDefinition",
   "type": "Drill",
-  "number": "9.36",
+  "number": "9.4.0.8",
   "title": "",
   "body": "  Provide a definition of Local Maximum modeled on .   "
 },
@@ -5594,7 +5594,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGlobalVsLocalExtrema.html#SECTIONGlobalVsLocalExtrema-34",
   "type": "Problem",
-  "number": "9.37",
+  "number": "9.4.0.9",
   "title": "",
   "body": " Explain why we can find a global maximum (minimum) by finding all of the local maxima (minima) and selecting the largest (smallest) among these.  "
 },
@@ -5612,7 +5612,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#THEOREMFDT-lines",
   "type": "Theorem",
-  "number": "9.38",
+  "number": "9.5.1.1",
   "title": "",
   "body": " Theorem First Derivative Test for Straight Lines     If a line has positive slope then the coordinate increases as the coordinate increases.    If a line has negative slope then the coordinate decreases as the coordinate increases.     "
 },
@@ -5621,7 +5621,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#THEOREMFDT",
   "type": "Theorem",
-  "number": "9.39",
+  "number": "9.5.1.2",
   "title": "The First Derivative Test.",
   "body": " The First Derivative Test  Theorem First Derivative Test  Suppose is a function of . The following statements are true:   If , on some interval then is increasing on the interval.    If , on some interval then is decreasing on the interval.     "
 },
@@ -5648,7 +5648,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#DRILLTransitionQuestion",
   "type": "Problem",
-  "number": "9.40",
+  "number": "9.5.2.1",
   "title": "",
   "body": "  In the paragraph above we used the phrase in the simplest case. We chose our words carefully. Can you think of another way for to transition from positive to negative, or from negative to positive? Give this some thought. We will come back to it.  "
 },
@@ -5657,7 +5657,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#EXAMPLEPPT",
   "type": "Example",
-  "number": "9.41",
+  "number": "9.5.2.2",
   "title": "",
   "body": " Let . The solutions of are and so these are the POTPs. Sketch the graph of and follow along with our reasoning below, confirming our conclusions visually.  To determine if they actually are transition points we proceed as follows:   At :  Pick a number less than , say Since we see that is increasing to the left of Next pick a number between and the next POTP, . We ll take . Since we see that is decreasing to the right of . Thus is a local maximum value of .    At :  As we saw above is decreasing to the left of since . (Zero is between and .) Next choose any number to the right of . We ll choose . Since we see that is increasing to the right of . Thus is a local minimum of .     In this example we only tested one number between adjacent POTPs. Is that enough? Give this some thought before reading on.  Of course it is. Consider that the POTPs are precisely those places where might change sign. Therefore the sign of must either be always positive or always negative in between POTPs. Therefore, we only need to test at one value of to find the sign of on the entire interval between POTPs.  If is the greatest POTP we need only test the sign of one number greater than to determine the sign of for every value of greater than .  Similarly, if is the least POTP we need only test the sign of one number less than to determine the sign of for every value of less than .  We state all of this formally in below.  "
 },
@@ -5666,7 +5666,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints-11",
   "type": "Problem",
-  "number": "9.42",
+  "number": "9.5.2.3",
   "title": "",
   "body": " Does the graph of have a global maximum or minimum? Explain.  "
 },
@@ -5675,7 +5675,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#LEMMAAdjRoots",
   "type": "Lemma",
-  "number": "9.43",
+  "number": "9.5.2.4",
   "title": "",
   "body": " Let be a differentiable function.   Suppose and are two POTPs of such that there is not another POTP between them. If for some in the domain of between and , then for every in the domain of between and . Similarly, if for some between and , then for every in the domain of between and .    Suppose is the greatest POTP of . If for some then for all , in the domain of .    Suppose is the least POTP of . If for some then for all , in the domain of .     "
 },
@@ -5684,7 +5684,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints-14",
   "type": "Problem",
-  "number": "9.44",
+  "number": "9.5.2.5",
   "title": "",
   "body": " Read Lemma very carefully and convince yourself that it really does say the same thing as our conclusions at the end of .  "
 },
@@ -5693,7 +5693,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#EXAMPLEx5",
   "type": "Example",
-  "number": "9.45",
+  "number": "9.5.2.6",
   "title": "",
   "body": " Find all extrema of the graph of .  Solving we see that is the only POTP. But elsewhere (confirm this) so is positive for every value of except zero. In particular it is positive on the left and on the right of zero. Therefore never transitions between increasing and decreasing, so we conclude that it does not have an extremum at , despite the fact that . This may seem very curious until you graph the function.  "
 },
@@ -5702,7 +5702,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints-17",
   "type": "Problem",
-  "number": "9.46",
+  "number": "9.5.2.7",
   "title": "",
   "body": " Sketch the graph of and use it to explain how we can have yet not have either a maximum or a minimum at .  "
 },
@@ -5711,7 +5711,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#EXAMPLEParabolaSquare-Redux",
   "type": "Example",
-  "number": "9.47",
+  "number": "9.5.2.8",
   "title": "Constructing a Parabola on a Square, Revisited.",
   "body": " Constructing a Parabola on a Square, Revisited  Given our new understanding of the distinction between local and global extrema we will revisit . The objective function is still so when we substitute the constraint, , we get the abstract problem of finding the lowest points on the graph of   Solving gives us three POTPs: , , and as before, so the intervals we need are, , , , and . Because our POTPs are approximations these intervals are also approximate.  Now pretend that you don t already know the solution of this problem. Just as in we can use the First Derivative Test to determine which of the POTPs we ve identified corresponds to a local minimum or maximum.  "
 },
@@ -5720,7 +5720,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#PROBLEMFDT1",
   "type": "Drill",
-  "number": "9.48",
+  "number": "9.5.2.9",
   "title": "",
   "body": " For the objective function choose a point in each interval and confirm that the following statements are true.   On the (approximate) interval :     On the (approximate) interval :     On the (approximate) interval :     On the (approximate) interval :       Use the First Derivative Test and the data in part to show that there is a local minimum at a local maximum at and a local minimum at .    Is the data in part sufficient to support the conclusion that there is a global minimum at ? Explain why not.    What additional data do we need to conclude that there is a global minimum at ?   "
 },
@@ -5729,7 +5729,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#DRILLFDT2",
   "type": "Problem",
-  "number": "9.49",
+  "number": "9.5.2.10",
   "title": "",
   "body": "Identify all possible optimal transition points, and identify the intervals on which each function is increasing and decreasing. Label each possible optimal transition point as a local or global minimum, or a local or global maximum, or neither.                                          "
 },
@@ -5738,7 +5738,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#EXAMPLEPOTP-WhereDerivIsUndef",
   "type": "Example",
-  "number": "9.50",
+  "number": "9.5.3.1",
   "title": "",
   "body": " No, they won t. We can also have a transition point wherever is meaningless. That is, when is undefined . below demonstrates one way in which a derivative might be undefined.  "
 },
@@ -5747,7 +5747,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#DRILLCubeRoot2",
   "type": "Problem",
-  "number": "9.51",
+  "number": "9.5.3.2",
   "title": "",
   "body": " Suppose The graph of looks like this:     Show that is undefined.   Recall Digression: Dividing by Zero.    Graph to verify that when .  "
 },
@@ -5756,7 +5756,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#DEFINITIONOptimalTransitionPoints",
   "type": "Definition",
-  "number": "9.52",
+  "number": "9.5.3.3",
   "title": "Possible Optimal Transition Points (POTPs).",
   "body": " Possible Optimal Transition Points (POTPs)  Definition Possible Optimal Transition Points (POTPs)    The possible optimum transition points of a function, , come in two categories:   Any point, , where is a possible optimal transition point.    Any point, , where is not defined is a possible optimal transition point.      "
 },
@@ -5765,7 +5765,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#DRILLFDT3",
   "type": "Problem",
-  "number": "9.53",
+  "number": "9.5.3.4",
   "title": "",
   "body": "For each function identify all POTPs , and identify the intervals on which the function is increasing and decreasing. Label each POTP as a local or global minimum, maximum, or neither. (For some of these you will have to rely on their graphs to find the POTPs. In you will learn how to find them with computation.)                                                              "
 },
@@ -5774,7 +5774,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#EXAMPLESqrClosed",
   "type": "Example",
-  "number": "9.54",
+  "number": "9.5.4.1",
   "title": "",
   "body": "            For example, suppose we need to optimize the function, From the graph below we can see that this function has a global minimum at . We can find this minimum by the methods we are already familiar with. But it also has a local maximum at and global maximum at , and nothing we ve done so far would identify these two points as possible extrema.   It is clear from the graph what is happening, though. If we hadn t restricted the domain of our function then the graph would continue to rise on both sides and there would be no local or global maximum at all. The restriction on the domain forces the graph to stop rising at the endpoints of the interval which makes each of these endpoints a local maximum.  Thus we see that when the domain of our function is a closed interval there is also the possibility that a local or global extremum might occur at the endpoints of the interval as well. As a result, when searching for extrema we must always check the endpoints of the domain interval (if there are any).  To be clear, the end points of a closed interval are not transition points because there can be no transition between increasing and decreasing at an endpoint. It simply stops. However, since it is possible to have extrema at the endpoints they must also be checked whenever they are in play.  Be careful. When the domain of a function is artificially constrained like this it is easy to forget that the constraint is present. We tend to think of it as not really there. This is a mistake. Recall from Digression: The Tangent Function Has No Inverse that the definition of the domain is a part of the definition of a function. Think of the function s domain as the universe for that particular problem. Nothing exists outside of the domain. Thus in this example nothing exists outside of the interval (universe) .  "
 },
@@ -5783,7 +5783,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#THEOREMmax-min",
   "type": "Theorem",
-  "number": "9.55",
+  "number": "9.5.4.2",
   "title": "Extreme Value Theorem.",
   "body": " Extreme Value Theorem  Theorem Extreme Value Theorem  If is a continuous function whose domain consists entirely of closed, bounded intervals then:   There is at least one point in the domain, say such that is the global maximum value of . Moreover will either be an end point of one of the domain intervals, or an optimal transition point.    There is least one point in the domain, say , and is the global minimum of . Moreover will either be an end point of one of the domain intervals, or optimal transition point.     "
 },
@@ -5792,7 +5792,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#PROBLEMParabolaSquare-Redux",
   "type": "Drill",
-  "number": "9.56",
+  "number": "9.5.4.3",
   "title": "",
   "body": "  We ended after posing the problem of finding the global extrema of with the constraint Solve this problem now.   "
 },
@@ -5801,7 +5801,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-clos-interv-10",
   "type": "Drill",
-  "number": "9.57",
+  "number": "9.5.4.4",
   "title": "",
   "body": "      Notice that has no extrema on Explain why this does not violate the Extreme Value Theorem.    Notice that has no extrema on Explain why this does not violate the Extreme Value Theorem.   "
 },
@@ -5810,7 +5810,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#PROBLEMSquareOnCircle",
   "type": "Drill",
-  "number": "9.58",
+  "number": "9.5.4.5",
   "title": "",
   "body": "  If we had known Theorem when we first looked at it would have saved us some time. Redo , using the knowledge that the domain of the problem is because the constraint is    "
 },
@@ -5819,7 +5819,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-clos-interv-12",
   "type": "Drill",
-  "number": "9.59",
+  "number": "9.5.4.6",
   "title": "",
   "body": "  Find the global maximum and global minimum of each function with the domain restricted to the given intervals. Verify your solution by graphing the function.                                                                             "
 },
@@ -5828,7 +5828,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-clos-interv-13",
   "type": "Problem",
-  "number": "9.60",
+  "number": "9.5.4.7",
   "title": "",
   "body": "Find the global maximum and global minimum of each of the following functions with domains on the given intervals. Verify your solution with graphing software.     on the interval        on the interval          on the interval        on the interval        on the interval        on the interval        on the interval        on the interval        on the interval        on the interval        on the interval        on the interval        on the interval        on the interval          on the interval        on the interval          on the interval          on the interval        on the interval        on the interval     "
 },
@@ -5837,7 +5837,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-clos-interv-14",
   "type": "Drill",
-  "number": "9.61",
+  "number": "9.5.4.8",
   "title": "",
   "body": "  For each of the following functions defined on closed, bounded intervals, find the maximum and minimum of the function on that interval.                                 "
 },
@@ -5855,7 +5855,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#EXAMPLEOpenNoExtrema",
   "type": "Example",
-  "number": "9.62",
+  "number": "9.6.1.1",
   "title": "",
   "body": " For example, suppose our objective function is , and that the domain is the open interval . Do you see why the graph of this function has no extrema of any kind? If not here is one way to prove it.  "
 },
@@ -5873,7 +5873,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-5",
   "type": "Problem",
-  "number": "9.63",
+  "number": "9.6.1.2",
   "title": "",
   "body": " Show that the function also has no minimum on the open interval .  "
 },
@@ -5882,7 +5882,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#EXAMPLEFDT1",
   "type": "Example",
-  "number": "9.64",
+  "number": "9.6.1.3",
   "title": "",
   "body": " For this example we strongly suggest that you do not graph the objective functions first. Yes, we know this goes directly against our previous advice to always visualize your problem when you can, but one purpose of this section is for you to learn to analyze a problem using your Calculus tools. Much as an airline pilot must train to fly using only the cockpit instruments in case they have no other choice due to poor visibility, you should also practice flying blind so you can be successful even when you are not able to draw a useful graph. You will learn more, and you will learn better, that way.  Of course, once we ve moved beyond this section you should visualize your problem if you possibly can. We weren t kidding about that. You don t want to fly blind, you just need to be able to when it is necessary.  From the information gethered in : can we conclude that either or has a global maximum at and a global minimum at ?  No we can t. They both have a local maximum and minimum at those points since both functions increase on , decrease on , and then increase again on . But from the information we have gathered so far we can t tell if the graph of either function rises above its value at or drops below its value at .  When we analyze and using the First Derivative Test we get exactly the same information from both functions. But they are very different functions. In particular, does not have any global extrema, while has both a global maximum and a global minimum. Graph them now and see. To distinguish, analytically, between and we will need a new tool called the Second Derivative Test.  But before we leave this example we need to address a small issue with our language. The phrase gets farther from zero in the negative (or positive) direction so does is awkward\\aside{It is also a bit imprecise for our purposes.}. In future examples we will instead usually abbreviate these as: as goes to negative (or positive) infinity, also goes to negative (or positive) infinity. Do not invest too much in these phrases. They cannot possibly mean what they pretend to mean. Infinity is neither a number nor a place so it is meaningless to say that  goes to infinity. Think of this as a kind of verbal shorthand, or notation.  "
 },
@@ -5891,7 +5891,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#DRILLO1O2",
   "type": "Drill",
-  "number": "9.65",
+  "number": "9.6.1.4",
   "title": "",
   "body": "      Suppose that .   Show that the POTPs are and .    Show that is increasing on , decreasing on , and increasing again on .       Suppose that . Show that is increasing on , decreasing on , and increasing again on .   "
 },
@@ -5909,7 +5909,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-22",
   "type": "Problem",
-  "number": "9.66",
+  "number": "9.6.1.5",
   "title": "",
   "body": " Does that mean that the derivative of a concave downward function will decrease as increases? Yes, of course it does. Look back at the graphs of the other concave up and concave down examples and convince yourself that this is true of them as well.  "
 },
@@ -5918,7 +5918,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#THEOREMwhat-second-deriv",
   "type": "Theorem",
-  "number": "9.67",
+  "number": "9.6.1.6",
   "title": "Concavity.",
   "body": " Concavity  Theorem Concavity  Suppose is a differentiable function of The following statements are true:   If on some open interval then is increasing, and therefore the graph of is concave upward on the interval.    If , on some open interval then is decreasing, and therefore the graph of is concave downward on the same interval.     "
 },
@@ -5927,7 +5927,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-29",
   "type": "Example",
-  "number": "9.68",
+  "number": "9.6.1.7",
   "title": "",
   "body": " Let Then and Since the second derivative of is always positive the graph must always be concave upward.  "
 },
@@ -5936,7 +5936,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-30",
   "type": "Problem",
-  "number": "9.69",
+  "number": "9.6.1.8",
   "title": "",
   "body": " Graph and verify that it is always concave upward.  "
 },
@@ -5945,7 +5945,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-31",
   "type": "Example",
-  "number": "9.70",
+  "number": "9.6.1.9",
   "title": "",
   "body": " Let Then and Since the second derivative of is negative on the interval the graph must be concave downward on for . Since the second derivative of is positive on the interval the graph must be concave upward for .  "
 },
@@ -5954,7 +5954,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-32",
   "type": "Problem",
-  "number": "9.71",
+  "number": "9.6.1.10",
   "title": "",
   "body": " Graph and verify that it is always concave downward on the interval , and concave upward on the interval .  "
 },
@@ -5972,7 +5972,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#PROBLEMEvenFuncConcavity",
   "type": "Drill",
-  "number": "9.72",
+  "number": "9.6.1.11",
   "title": "",
   "body": "  Suppose that .    Show that the PITPs of are , and .    Show that the graph of is concave upward on the intervals and .    Show that the graph of is concave downward on the interval . In particular notice that is concave downward at .   "
 },
@@ -5981,7 +5981,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-39",
   "type": "Drill",
-  "number": "9.73",
+  "number": "9.6.1.12",
   "title": "",
   "body": "      Use the observation in the previous paragraph to show that the graph of has local minima at , and at .    What is the value of the minima (the value) of at each , and ?   "
 },
@@ -5990,7 +5990,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#THEOREMSecondDerivativeTest",
   "type": "Theorem",
-  "number": "9.74",
+  "number": "9.6.1.13",
   "title": "The Second Derivative Test.",
   "body": " The Second Derivative Test  Theorem Second Derivative Test   Suppose is some differentiable function and that at some point in its domain Then the following statements are true:   If then has a local minimum at     If then has a local maximum at     If then we get no information about possible extrema of at .     "
 },
@@ -5999,7 +5999,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#DRILLSecondDerivativeTest",
   "type": "Problem",
-  "number": "9.75",
+  "number": "9.6.1.14",
   "title": "",
   "body": "Use the Second Derivative Test to find the local maxima and minima of each function. Also identify any global maxima and minima.                          on        on        on    "
 },
@@ -6008,7 +6008,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-44",
   "type": "Problem",
-  "number": "9.76",
+  "number": "9.6.1.15",
   "title": "",
   "body": "Analyze the concavity of the graphs of each of the following functions.                                "
 },
@@ -6017,7 +6017,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-45",
   "type": "Problem",
-  "number": "9.77",
+  "number": "9.6.1.16",
   "title": "",
   "body": "Identify all intervals where the given curve is concave upward, concave downward, increasing, and decreasing. Identify all local optima, and all global optima, if any. Graph the curve to check your work after you have solved each problem.                                                                                                                 "
 },
@@ -6026,7 +6026,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-46",
   "type": "Drill",
-  "number": "9.78",
+  "number": "9.6.1.17",
   "title": "",
   "body": "  Show that has    both a global and a local minimum if its domain is the interval , and    only a local minimum if its domain is the interval .    Does the graph of this function have a global maximum for either of the domains given in parts (a) or (b)? Explain.   "
 },
@@ -6035,7 +6035,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-47",
   "type": "Drill",
-  "number": "9.79",
+  "number": "9.6.1.18",
   "title": "",
   "body": "  Does have a global extremum (minimum or maximum) on the interval ? How about on ? On ? Explain.    Use the First Derivative Test.   "
 },
@@ -6044,7 +6044,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-48",
   "type": "Drill",
-  "number": "9.80",
+  "number": "9.6.1.19",
   "title": "",
   "body": "  Suppose that and that the domain of the problem is all real numbers ( ).    Find all local extrema.    Find all global extrema.   "
 },
@@ -6053,7 +6053,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv-49",
   "type": "Drill",
-  "number": "9.81",
+  "number": "9.6.1.20",
   "title": "",
   "body": "  Consider the polynomial .    Show that    You can save yourself a lot of work on this problem by keeping your eye on the goal. The problem is to show that , not to compute and then simplify it.    Graph near to convince yourself that has neither a maximum nor a minimum at .   "
 },
@@ -6071,8 +6071,8 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#EXAMPLERectangleFixedPerimeter",
   "type": "Example",
-  "number": "9.82",
-  "title": "Example 3.6 revisited again.",
+  "number": "9.7.0.1",
+  "title": "Example 3.3.0.4 revisited again.",
   "body": " revisited again   We first solved this problem algebraically in . In we solved it again analytically (that is, using Calculus) using Fermat s Theorem. But Fermat s Theorem only allows us to find a maximum that we already know exists. Since we did not have the tools necessary to show that we actually had a maximum, we relied on our intuition and assumed that a maximum existed. We will solve this problem one last time, showing that there must be a maximum this time.  Show that of all rectangles with a fixed perimeter, , the one with the greatest area is a square.    We will follow the outline above.     The objective function is      The only constraint is where is constant.    Since we are talking about a length it must be that . From equation we see that must be less that or equal to . Otherwise the perimeter will be greater than . So the domain of our problem is .   Comment  Strictly speaking if or we don t actually have a rectangle. But it is simpler to use the Extreme Value Theorem ( ) than to find the increasing and decreasing intervals using the First Derivative Test. Since the Extreme Value Theorem requires a closed domain we make things simpler by allowing zero width (or height) rectangles.     Since the problem domain is a closed interval we will use the Extreme Value Theorem ( ). To find the POTPs we will need . From equation we see that   From equation we have and also   Combining equation , equation , and equation we see that The only solution of is , so the POTPs for this problem are the end points, and , and .    The area, , will be zero when and when (why?) so by the Extreme Value Theorem the maximum occurs when .    This problem asks us to show that the maximal rectangle must be a square, so we need to show that . We know that the maximum occurs when . Plugging this value into equation we see that is also equal to . Thus the maximal rectangle is a square as stated.                                                                                             "
 },
 {
@@ -6080,7 +6080,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#PROBLEMMaxPerimeter",
   "type": "Drill",
-  "number": "9.83",
+  "number": "9.7.0.2",
   "title": "",
   "body": "  Out of all rectangles with a fixed area, find the dimensions of the one with the smallest perimeter.    Identify the objective function and the constraint for this problem.    Find the natural domain of this problem and show that it is not a closed interval.    Show that we have a POTP when .    Show that when we have a minimum by:   Using the first derivative test.    Using the second derivative test.   Note that both tests will require you to use the constraint to reduce the number of variables in the objective to one. Which test was easier to use?   "
 },
@@ -6089,7 +6089,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SECTIONoptim-probl-2-9",
   "type": "Drill",
-  "number": "9.84",
+  "number": "9.7.0.3",
   "title": "",
   "body": "  Redo from Chapter using Calculus. Verify that you get the same answer as before.   "
 },
@@ -6098,7 +6098,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#DRILL",
   "type": "Problem",
-  "number": "9.85",
+  "number": "9.7.1.1",
   "title": "",
   "body": "  Show that the largest possible value of is and thus the natural domain for this problem is the closed interval .    Show that the maximal printed area occurs when .   "
 },
@@ -6107,7 +6107,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSUBSECTIONSecondSolution-9",
   "type": "Problem",
-  "number": "9.86",
+  "number": "9.7.1.2",
   "title": "",
   "body": " Determine the natural domain of and show that is a global maximum when . Do you get the same page dimensions as before?  "
 },
@@ -6116,7 +6116,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-2",
   "type": "Drill",
-  "number": "9.87",
+  "number": "9.7.2.1",
   "title": "Variations on a Theme.",
   "body": " Variations on a Theme          Find two positive numbers whose sum is 10, and whose product is a maximum. What is the maximum?     Find two positive numbers whose sum is , and whose product is a maximum. What is the maximum?     Find two positive numbers whose sum is , and whose product is a maximum. What is the maximum?           Find two positive numbers such that the sum of one of them and twice the other is 10, and whose product is a maximum. What is the maximum?      Find two positive numbers such that the sum of one of them and three times the other is 10, and whose product is a maximum. What is the maximum?       Find two positive numbers such that the sum of one of them and five times the other is 10, and whose product is a maximum. What is the maximum?      Find two positive numbers such that the sum of one of them and times the other is K, and whose product is a maximum. What is the maximum?          Find two positive numbers whose product is , and whose sum is a minimum. What is the minimum?     Find two positive numbers whose product is , and whose sum is a minimum. What is the minimum?     Find two positive numbers whose product is , and the sum one number and three times the other is a minimum. What is the minimum?     Find two positive numbers whose product is , and the sum one number and times the other is a minimum. What is the minimum?      "
 },
@@ -6125,7 +6125,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-3",
   "type": "Drill",
-  "number": "9.88",
+  "number": "9.7.2.2",
   "title": "Variations on a Theme.",
   "body": " Variations on a Theme   You have meters of fencing with which to build an animal pen.       What is the largest area you can enclose with a freestanding rectangular pen?     You want to build a pen divided into two equally sized internal pens. What is the largest area you can enclose?     You want to build a pen divided into three equally sized internal pens. What is the largest area you can enclose?     You want to build a pen divided into equally sized internal pens. What is the largest area you can enclose? If is the width and is the length of the external pen what is .           You want to use one side of a building as one full side of your pen as shown in the sketch below. What is the largest area you can enclose? What are the dimensions of the pen?       You want to use one side of a building as one partial side of your pen as shown in the sketch below. What is the largest area you can enclose? What are the dimensions of the pen?       You want to build your pen as shown in the sketch below. What is the largest area you can enclose? What are the dimensions of the pen?      You want to build your pen as shown in the sketch below. What is the largest area you can enclose? What are the dimensions of the pen?      You want to your pen to be subdivided into three parts as shown in the sketch below. What is the largest area you can enclose? What are the dimensions of the pen?      You want to build your pen as shown in the sketch below. What is the largest area you can enclose? What are the dimensions of the pen?        "
 },
@@ -6134,7 +6134,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-4",
   "type": "Drill",
-  "number": "9.89",
+  "number": "9.7.2.3",
   "title": "",
   "body": "  You have a piece of wire inches long.    Find the length of each piece of the wire that yields the least total area bounded by the pieces when:     You cut the wire into two pieces and bend each piece to form a square.    You cut the wire into two pieces and bend each piece to form a circle.    You cut the wire into two pieces and bend one piece to form a square and the second to form a circle.    You cut the wire into two pieces and bend one piece to form a rectangle with one side three times as long as the other. Then bend the second piece to form a square.    You cut the wire into three pieces and form two squares and one circle circle.       Repeat each problem in part (a), but this time find the length of each piece of the wire that yields the most total area bounded by the pieces.   "
 },
@@ -6143,7 +6143,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-5",
   "type": "Drill",
-  "number": "9.90",
+  "number": "9.7.2.4",
   "title": "",
   "body": "       Consider the side view of a person at point looking at a foot tall billboard sign that is feet off of the ground as shown in the diagram below.     Find a formula for the viewing angle in terms of Don t forget to put in the range for possible values for     Find the value of that will maximize the viewing angle .   "
 },
@@ -6152,7 +6152,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-6",
   "type": "Drill",
-  "number": "9.91",
+  "number": "9.7.2.5",
   "title": "",
   "body": "  Find the value of that maximizes the blue shaded area, , in the following diagram:     "
 },
@@ -6161,7 +6161,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-7",
   "type": "Drill",
-  "number": "9.92",
+  "number": "9.7.2.6",
   "title": "",
   "body": "      The strength of a rectangular wooden beam is proportional to its width times the square of its height. What is the ratio of the height to width of the strongest beam that can be cut from a cylindrical log?    The stiffness of a rectangular wooden beam is proportional to its width times the cube of its height. What is the ratio of the height to width of the stiffest beam that can be cut from a cylindrical log? Compare this to the answer in the previous problem.    Suppose we have an objective function which is proportional to the width times the th power of the height? What would the optimal ratio be now?   "
 },
@@ -6170,7 +6170,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-8",
   "type": "Drill",
-  "number": "9.93",
+  "number": "9.7.2.7",
   "title": "",
   "body": "  A box with a square base and an open top must have a volume of square centimeters.    Find the dimensions of the box that minimize the amount of material used to make the box.   "
 },
@@ -6179,7 +6179,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#PROBLEMRodAroundACorner",
   "type": "Drill",
-  "number": "9.94",
+  "number": "9.7.2.8",
   "title": "",
   "body": "        The diagram above depicts the view from above a pole of length being maneuvered horizontally around the corner of two hallways of widths , and . Find the longest pole which can be turned around the corner.    Show that the maximum value of is .    What would the maximum of be in the special case where ? Does this answer make sense geometrically?    In the problem statement we specified that the pole was being maneuvered horizontally, meaning that the pole is kept parallel to the ground at all times. Suppose we remove that constraint and that the height of the hallway is . What is the longest pole we can get around the corner now?   "
 },
@@ -6188,7 +6188,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#PROBLEMNormanWindow",
   "type": "Drill",
-  "number": "9.95",
+  "number": "9.7.2.9",
   "title": "",
   "body": "      A Norman window has the shape of a rectangle surmounted by a semicircle.    Find the dimensions of the window that allow the most light to enter if the perimeter of the window is feet.    Find the dimensions of the window that allow the most light to enter if the window is surmounted by an equilateral triangle.     "
 },
@@ -6197,7 +6197,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-11",
   "type": "Drill",
-  "number": "9.96",
+  "number": "9.7.2.10",
   "title": "",
   "body": "  At which points on the curve does the tangent line have the greatest slope?      Find the coordinates of the points on the graph of which are farthest from the point .      "
 },
@@ -6206,7 +6206,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-12",
   "type": "Drill",
-  "number": "9.97",
+  "number": "9.7.2.11",
   "title": "Find the Pattern.",
   "body": " Find the Pattern   Find the area of the smallest triangle formed by the and axes and a line passing through the point     Find the area of the smallest triangle formed by the and axes and a line passing through the point     Find the area of the smallest triangle formed by the and axes and a line passing through the point , where .   "
 },
@@ -6215,7 +6215,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#PROBLEMWitchTri1",
   "type": "Drill",
-  "number": "9.98",
+  "number": "9.7.2.12",
   "title": "",
   "body": "       We draw the right triangle whose hypotenuse starts at the origin, and ends on the Witch of Agnesi, . The other legs are as shown in the figure below:    Of all triangles for which is in the interval which one has the largest area?    Now suppose that for each function given below a triangle is constructed in the same manner used in part (a). Assume , , , and are constants. Of all possible such triangles for which is in the interval which one has the largest area?                         "
 },
@@ -6224,7 +6224,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONoptim-probl.html#SUBSECTIONVarOptProbs-14",
   "type": "Problem",
-  "number": "9.99",
+  "number": "9.7.2.13",
   "title": "Variations on a Theme.",
   "body": "Variations on a Theme               Comment  This problem is adapted from Hanging a Bird feeder: Food for Thought , by John W. Dawson, Jr. The College Mathematics Journal , Mar., 1990, Vol. 21, No. 2, pp. 129-130   To prevent squirrels from eating her birdseed a mathematician wants to hang a bird feeder so that its top is feet above the ground. To do this she attaches each end of a wire between two trees at a height of feet above the ground, with the feeder hanging from a second wire, , attached at the midpoint of the first as seen in the sketch at the right.  Find the value of that requires the least amount of wire if the trees are feet apart.   What will the total length of the wire be?    Show that .    Find the value of that requires the least amount of wire if the trees are feet apart.   What will the total length of the wire be?    Show also that .    "
 },
@@ -6242,7 +6242,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#FIGUREUnusableGraph",
   "type": "Figure",
-  "number": "10.1",
+  "number": "10.1.0.1",
   "title": "",
   "body": " A useless graph of    "
 },
@@ -6251,7 +6251,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#FIGUREUsaableGraph",
   "type": "Figure",
-  "number": "10.2",
+  "number": "10.1.0.2",
   "title": "",
   "body": " A more usefull graph of    "
 },
@@ -6260,7 +6260,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#DRILLHolyGrail1",
   "type": "Problem",
-  "number": "10.3",
+  "number": "10.1.0.3",
   "title": "",
   "body": " Compute and to see if they are really near zero.   Use a calculator for , not for .  "
 },
@@ -6269,7 +6269,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#SECTIONgraph-with-form-20",
   "type": "Example",
-  "number": "10.4",
+  "number": "10.1.0.4",
   "title": "",
   "body": " For example consider the following function. . Differentiating we see that This tells us that will have POTPs at and Testing a single point in each of the intervals between POTPs we see that and conclude that the graph is decreasing on the interval , increasing on the interval , and decreasing again on . Computing the second derivative gives: This tells us that will have PITPs at , , and . Testing a single point in each of these intervals between PITPs we see that and conclude that the graph is concave downward on the interval , concave upward on the interval , concave downward on the interval , and concave downward on the interval .  "
 },
@@ -6278,7 +6278,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#SECTIONgraph-with-form-21",
   "type": "Problem",
-  "number": "10.5",
+  "number": "10.1.0.5",
   "title": "",
   "body": " Use your favorite graphing tool to graph and confirm our conclusions.  "
 },
@@ -6287,7 +6287,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#EXAMPLEAsym1",
   "type": "Example",
-  "number": "10.6",
+  "number": "10.1.0.6",
   "title": ".",
   "body": "   The previous example was fairly simple so it was easy to keep all of the important information in mind at the same time. This will not always be the case so we will need ways to organize the data we collect. This will ensure that it is not overwhelming. Below we demonstrate one way to do this. It is not the only way. Let s sketch the graph of using Calculus. To use the First Derivative Test we ll need the derivative .  Setting the first derivative equal to zero and solving we see that we have a POTP at , , and at . To make all of this easier to see we arrange this data in the following table. Notice that we have organized our POTPs (and hence the intervals that we are testing) from left to right, just as they would appear on a number line.   The First Derivative Test Analysis          Interval                       From the table above we see that we have a local maximum at and and a local minimum at . Based on this information we could reasonably infer that the graph might might have the shape shown below.   The next step is to locate this graph on the - plane. From our table above we see that the local minimum is at , and the two local maxima are at .      Thus we can, again reasonably, infer that the graph of is located on the plane as shown below.   Unfortunately, we don t know that our graph is correct (in fact, it is not) because we ve made assumptions regarding its concavity that we haven t justified. This is the same error we made in the discussion following , back in when we drew a right triangle because it seemed to be correct. It is very easy to make this sort of mistake. Be careful. We can analyze the concavity of the graph using the second derivative in a manner very similar to what we did earlier with first derivative.  "
 },
@@ -6296,7 +6296,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#SECTIONgraph-with-form-23",
   "type": "Problem",
-  "number": "10.8",
+  "number": "10.1.0.8",
   "title": "",
   "body": "  Confirm that the derivative of the function in is     Confirm that the second derivative of the function in is: .    Use an appropriate computational tool, or Newton s Method, to show that the PITPs of are: , , , and .    The PITPs in part (c) can actually be computed exactly. Find the exact solutions and confirm the approximations.   "
 },
@@ -6305,7 +6305,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#TABLESDTChart1",
   "type": "Table",
-  "number": "10.9",
+  "number": "10.1.0.9",
   "title": "The Second Derivative Test Analysis",
   "body": " The Second Derivative Test Analysis    Interval                         "
 },
@@ -6314,7 +6314,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-with-form.html#SECTIONgraph-with-form-30",
   "type": "Problem",
-  "number": "10.10",
+  "number": "10.1.0.10",
   "title": "",
   "body": "Use the first and second derivatives to sketch the graph of each of the following functions, then sketch it again using graphing software. Resolve any discrepancies between the two graphs.                                                                         "
 },
@@ -6332,7 +6332,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-without-form.html#EXAMPLEGraphWOFormula",
   "type": "Example",
-  "number": "10.11",
+  "number": "10.2.0.1",
   "title": "",
   "body": " For example, suppose we have the following information about a certain function. Can we sketch a reasonable graph of the function?               for all      for  and     for      for  and   In a sense this is easier than the previous problems, since intervals of increase, decrease, concave up, and concave down have already been determined for us. For example, here are the tables for each.   POTPs    Interval                     PITPs    Interval                                                  "
 },
@@ -6341,7 +6341,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-without-form.html#SECTIONgraph-without-form-5",
   "type": "Drill",
-  "number": "10.14",
+  "number": "10.2.0.4",
   "title": "",
   "body": "  In we have and on the intervals and . Given that and when , did we really need to specify that on the interval ?   "
 },
@@ -6350,7 +6350,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-without-form.html#SECTIONgraph-without-form-8",
   "type": "Drill",
-  "number": "10.15",
+  "number": "10.2.0.5",
   "title": "",
   "body": "  Sketch the graph of which satisfies the given requirements.       ,  for all           ,   ,   ,   for ,  for ,                              for all ,   ,   ,   for all ,   , for ,   , for ,         ,   does not exist,   ,   , for   , for         for all ,   ,   for all ,   for all .         ,   ,     for in ,   for in ,   for ,   ,   ,   for in ,   for in ,   for in ,         ,   , for ,   , for         for all ,   ,   ,   ,   , for   , for      for in ,   for in         , for all ,   ,   ,   , for ,   ,   ,   , for ,   for .      For this problem we restrict the domain to the interval .     ,   ,   , for ,     , for ,   ,   for ,   for ,   for     "
 },
@@ -6359,7 +6359,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-without-form.html#TABLEGraphFromDerivGraph1",
   "type": "Table",
-  "number": "10.16",
+  "number": "10.2.0.6",
   "title": "POTPs",
   "body": " POTPs    Interval                 "
 },
@@ -6368,7 +6368,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-without-form.html#TABLEGraphFromDerivGraph2",
   "type": "Table",
-  "number": "10.17",
+  "number": "10.2.0.7",
   "title": "PITPs",
   "body": " PITPs    Interval              "
 },
@@ -6377,7 +6377,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONgraph-without-form.html#SECTIONgraph-without-form-9-8",
   "type": "Drill",
-  "number": "10.18",
+  "number": "10.2.0.8",
   "title": "",
   "body": "  Each of the following graphs is the derivative of some function. Find the shape of the graph of the function.                                                   "
 },
@@ -6395,7 +6395,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGraphingWithDeriv.html#PARAGRAPHSDerivDepOnxAlone-2",
   "type": "Example",
-  "number": "10.19",
+  "number": "10.3.0.1",
   "title": "",
   "body": " Consider the IVP, In Integral Calculus (probably your next math course) you will learn how to find explicitly. For now we will be satisfied with sketching an approximate graph of . Setting and solving we see that and are the POTPs for . Thus on each of the intervals , , and the graph of is either always increasing or always decreasing. We tabulate this information as follows:   POTPs    Interval                              Based on this table, we can see that is a local minimum and is a local maximum. Observe that we do not know the value of , only that it must be a local maximum. Nor do we have any way to determine the value of in this problem.  We proceed in a similar fashion to determine concavity. The second derivative is Setting and solving, we see that is a PITP for . Making a table as before we have   PITPs    Interval                           Based on the table we see that the point is an inflection point. We want to make a reasonable sketch of the graph of based on this information. But there is a lot of information in and and our graph needs to be consistent with all of it. So we first organize all of our conclusions by plotting the transition points (both optimal and inflective) on the axis and identifying the intervals where is increasing, decreasing, concave up, or concave down.    This information, along with the initial value, allows us to provide a reasonable graph of .    From the initial condition in the IVP we know that but we have no information about the vertical coordinate of any other point on the graph. Thus, from the information given the scale of this graph is unknowable. But we know that the graph above is reasonable because it is consistent with the data given in the IVP. This sort of graphical, qualitative analysis is the best we can do with the information we have but, as you see, we can glean a great deal of information about the shape of the graph of a function from its derivative alone.  "
 },
@@ -6404,7 +6404,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGraphingWithDeriv.html#PARAGRAPHSDerivDepOnxAlone-3",
   "type": "Drill",
-  "number": "10.22",
+  "number": "10.3.0.4",
   "title": "",
   "body": "  For each of the following IVPs:    Find the intervals on which the graph of the solution is increasing and decreasing. Identify the location all local extrema.    Find the intervals on which the graph of the solution is concave upward and concave downward. Identify the location of all inflection points.    Plot a reasonable sketch of the graph for Approximate transition points using the appropriate technology or Newton s Method as necessary.   "
 },
@@ -6422,7 +6422,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGraphingWithDeriv.html#PARAGRAPHSDfdxDependsOnYAlone-19",
   "type": "Problem",
-  "number": "10.23",
+  "number": "10.3.0.5",
   "title": "",
   "body": "  IVP has the initial condition, Plot the point and use this slope field to sketch the solution of IVP . Compare your solution with the approximation we obtained in . Do they look like the same solution?  "
 },
@@ -6431,7 +6431,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGraphingWithDeriv.html#PARAGRAPHSDfdxDependsOnYAlone-20",
   "type": "Drill",
-  "number": "10.24",
+  "number": "10.3.0.6",
   "title": "",
   "body": "      Confirm that is the solution of the IVP , . (This is the black graph above.)    Confirm that is the solution of the IVP , . (This is the red graph above.)    Based on parts (a) and (b) guess what the solution of the IVP , will be. Confirm that your guess is correct. {If you guess wrong, guess again.}    Based on parts (a) and (b), and (c) make a conjecture what the solution of the IVP , will be. Confirm that your guess is correct.   "
 },
@@ -6449,7 +6449,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGraphingWithDeriv.html#PARAGRAPHSDfdxDependsOnYAlone-22",
   "type": "Drill",
-  "number": "10.25",
+  "number": "10.3.0.7",
   "title": "",
   "body": "  For each of the following IVPs sketch the slope field in the ranges given and use your slope field to sketch the solution of the IVP.   Advice  It is simplest to begin by sketching slopes at integer coordinate points and then to fill in between them to get a clearer sense of the graphs.}      , , ,      , , ,      , , ,      , , ,      , , ,      , , ,    "
 },
@@ -6458,7 +6458,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONGraphingWithDeriv.html#PARAGRAPHSDfdxDependsOnYAndt-3",
   "type": "Drill",
-  "number": "10.26",
+  "number": "10.3.0.8",
   "title": "",
   "body": "  For each of the following IVPs draw The slope field in the ranges given and use your slope field to sketch the solution of the IVP.     , , ,      , , ,      , , ,      , , ,    "
 },
@@ -6476,7 +6476,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-11",
   "type": "Problem",
-  "number": "11.1",
+  "number": "11.1.1.1",
   "title": "",
   "body": " Confirm that solves IVP .  "
 },
@@ -6485,7 +6485,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-24",
   "type": "Problem",
-  "number": "11.2",
+  "number": "11.1.1.2",
   "title": "",
   "body": "Compute the growth rate of the trout population for equal to                                 "
 },
@@ -6494,7 +6494,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-29",
   "type": "Problem",
-  "number": "11.3",
+  "number": "11.1.1.3",
   "title": "",
   "body": " Suppose we were to use the data in the table above to plot a graph of versus . Would there be a maximum when . Explain why or why not..  "
 },
@@ -6503,7 +6503,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-30",
   "type": "Drill",
-  "number": "11.4",
+  "number": "11.1.1.4",
   "title": "",
   "body": "  In this problem we analyze the concavity of the graph of . In particular we'd like to find all values of where PITPs occur.    Show that and therefore     Find all values of where a PITP occurs.    Create a table similar to the one above to determine the (vertical) intervals on which is concave up or concave down.   "
 },
@@ -6512,7 +6512,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-39",
   "type": "Drill",
-  "number": "11.5",
+  "number": "11.1.1.5",
   "title": "",
   "body": "      On the same set of axes, plot reasonable graphs for with the following initial values:    ,     ,     ,     .   Is it clear to you that none of these curves can cross? Think about it a moment, if two of these curves crossed, it would force to take on two different values for some value of Do you see why this can t happen? This fact should help you graph each function.    Sketch the graph you get if you start by purchasing tons of trout, rather than tons. Is this a good business decision?   "
 },
@@ -6521,7 +6521,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#PROBLEMBassModel",
   "type": "Drill",
-  "number": "11.6",
+  "number": "11.1.1.6",
   "title": "",
   "body": "  Suppose our fishery has another lake full of bass, that the intrinsic growth rate is     Analyze this model in the same way we analyzed equation . Draw several typical graphs.    We can t make any money unless we sell some of our fish. Modify equation to account for harvesting at a uniform rate of .    Suppose tons. Sketch a graph of the population. What does the model predict about the amount of fish in the lake over a long period of time?    Assume that is still tons as in part (b), but this time the amount of harvesting is increased from to . Use a slope field to draw a graph of . What does the model predict now about the amount of fish over a long period of time?   "
 },
@@ -6539,7 +6539,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-42",
   "type": "Drill",
-  "number": "11.7",
+  "number": "11.1.1.7",
   "title": "",
   "body": "  Show that in this model is increasing and concave up when  is increasing and concave down when and is decreasing and concave up when     This is the same analysis we did above.We re just not assuming that this time.   "
 },
@@ -6548,7 +6548,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#PROBLEMMinViablePop",
   "type": "Drill",
-  "number": "11.8",
+  "number": "11.1.1.8",
   "title": "",
   "body": "  Our new model is then     Show that when is very large equation reduces (approximately) to equation .    Show that when then . What does this say about the growth of the population when is near zero?    Find all values of for which the graph of is increasing and the values for which it is decreasing?    Show that Use this to determine the values of for which the graph of is concave upward and the values for which the graph of is concave downward.    Use the information to plot a sketch of the graph of where the initial value satisfies each of the following:                          Explain why is called the minimum viable population for the species.   "
 },
@@ -6557,7 +6557,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#PROBLEMWalleyeAnalysis",
   "type": "Drill",
-  "number": "11.9",
+  "number": "11.1.2.1",
   "title": "",
   "body": "  Apply the same type of analysis to to determine where is increasing and where is decreasing. Plot these regions in the first quadrant of the - plane just as we did above for the bass population.   "
 },
@@ -6575,7 +6575,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp-21",
   "type": "Problem",
-  "number": "11.10",
+  "number": "11.1.2.2",
   "title": "",
   "body": "  Verify that the points , , and , are equilibrium points for our bass\/walleye populations.    Show that the coordinates of the equilibrium point are as given in the diagram below.    "
 },
@@ -6593,7 +6593,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp-27",
   "type": "Drill",
-  "number": "11.11",
+  "number": "11.1.2.3",
   "title": "",
   "body": "  Are there any initial conditions where the trajectory approaches the points , , or ? Explain.   "
 },
@@ -6602,7 +6602,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp-28",
   "type": "Drill",
-  "number": "11.12",
+  "number": "11.1.2.4",
   "title": "",
   "body": "      Suppose we adjust our differential equations slightly to Perform a similar graphical analysis to show that as long as , then any trajectory will approach the equilibrium point . That is, the walleye will become extinct, and the bass will approach their natural level of tons. How is this consistent with the adjustments we made from the original differential equations? Explain.    Now let s again adjust our differential equations to    Identify how this system of equations is different from the one in part (a), and interpret the difference in terms of the influence of each population on the other.    Perform a similar graphical analysis to show that the equilibrium points are , , , and . While it is theoretically possible for a trajectory to approach , show that most trajectories will either approach or . What does this mean for the fish populations, and is it consistent with the differential equations? Explain.       Compare the results in parts (a) and (b) with the example that started this section (equations and ). How does the coefficient of the term affect the model?   "
 },
@@ -6620,7 +6620,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONselect-model-probl.html#SECTIONepidemic-blues-6",
   "type": "Problem",
-  "number": "11.13",
+  "number": "11.2.1.1",
   "title": "",
   "body": " Assuming that no members are entering or leaving the population (by births, deaths from other diseases, or migration), explain why   "
 },
@@ -6638,7 +6638,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONselect-model-probl.html#SECTIONepidemic-blues-8",
   "type": "Problem",
-  "number": "11.14",
+  "number": "11.2.1.2",
   "title": "",
   "body": " Explain how we know that must be negative.  "
 },
@@ -6656,7 +6656,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONselect-model-probl.html#SECTIONepidemic-blues-10",
   "type": "Drill",
-  "number": "11.15",
+  "number": "11.2.1.3",
   "title": "",
   "body": "      Explain how we know that must be positive.    Show that     Use the information in part (b) to show that the number of infected is increasing when and decreasing when     Show that and use this to show that when and is positive otherwise.   "
 },
@@ -6665,7 +6665,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONselect-model-probl.html#subSECTIONtractrix-7",
   "type": "Drill",
-  "number": "11.16",
+  "number": "11.2.2.1",
   "title": "",
   "body": "      Show that satisfies the IVP in part (a). Graph this formula. Does it match your intuition about the shape of the curve? Does it match the graph you found using Euler s Method in ? You will learn how to derive this solution from IVP when you take Integral Calculus.    How far will the tractor have gone (in trailer lengths) before the trailer is within one degree of vertical?   "
 },
@@ -6674,7 +6674,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONselect-model-probl.html#PROBLEMPursuit2",
   "type": "Drill",
-  "number": "11.17",
+  "number": "11.2.3.1",
   "title": "",
   "body": "                As in we assume that rocket starting is traveling vertically up the line at a constant speed . When the rocket reaches the point , a missile is fired from the origin directly at the rocket. Assuming that the missile is always aimed directly at the rocket, and that it travels at a speed which is times the speed of the rocket ( ) we showed in that the curve described by the path the missile will satisfy the IVP: where denotes the length of the the missile s path at time .    Use to show that the missile s path must satisfy the (second order) differential equation with the initial conditions: and .    Show that satisfies the differential equation and initial conditions in part (a).    Find how long it takes for the missile to catch the rocket for , , and . Does this make sense to you physically? Explain   "
 },
@@ -6701,7 +6701,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DEFINITIONLimitAtInfinity-Intuitive",
   "type": "Definition",
-  "number": "12.1",
+  "number": "12.1.1.1",
   "title": "An Intuitive Definition of a Limit at <span class=\"process-math\">\\(\\pm\\infty\\)<\/span>.",
   "body": " An Intuitive Definition of a Limit at  Definition An Intuitive Definition of a Limit at       If, as , gets arbitrarily close to some number , we write     If, as , gets arbitrarily close to some number , we write       "
 },
@@ -6710,7 +6710,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#EXAMPLELimWitch",
   "type": "Example",
-  "number": "12.2",
+  "number": "12.1.1.2",
   "title": "",
   "body": " As we ve observed, for very large positive values of , the function will be close to zero (the larger the value, the closer is to zero). Likewise, for very large, negative values of , will also get close to zero so:   "
 },
@@ -6719,7 +6719,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DRILLLimit1OverX",
   "type": "Problem",
-  "number": "12.3",
+  "number": "12.1.1.3",
   "title": "",
   "body": " Use the graph of to argue that and .  "
 },
@@ -6728,7 +6728,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DEFINITIONHorizontalAsymptotes",
   "type": "Definition",
-  "number": "12.4",
+  "number": "12.1.1.4",
   "title": "Horizontal Asymptotes.",
   "body": " Horizontal Asymptotes  Definition Horizontal Asymptotes       If then the graph of the function has the horizontal asymptote,     If then the graph of the function has the horizontal asymptote,    as in the next three theorems.   "
 },
@@ -6737,7 +6737,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#PROBLEMLimConst",
   "type": "Drill",
-  "number": "12.5",
+  "number": "12.1.1.5",
   "title": "",
   "body": "      Justify the following assertion as clearly and as carefully as you can: .    Generalize the statement in part (a).   "
 },
@@ -6746,7 +6746,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#THEOREMLimSum1",
   "type": "Theorem",
-  "number": "12.6",
+  "number": "12.1.1.6",
   "title": "The Limit of a Sum.",
   "body": " The Limit of a Sum  Theorem Limit of a Sum   If and then   "
 },
@@ -6755,7 +6755,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#THEOREMLimProd1",
   "type": "Theorem",
-  "number": "12.7",
+  "number": "12.1.1.7",
   "title": "The Limit of a Product.",
   "body": " The Limit of a Product  Theorem Limit of a Product   If and then   "
 },
@@ -6764,7 +6764,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#THEOREMLimQuot1",
   "type": "Theorem",
-  "number": "12.8",
+  "number": "12.1.1.8",
   "title": "The Limit of a Quotient.",
   "body": " The Limit of a Quotient  Theorem Limit of a Quotient   If and then   "
 },
@@ -6773,7 +6773,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#EXAMPLENonexistantLimits",
   "type": "Example",
-  "number": "12.9",
+  "number": "12.1.1.9",
   "title": "",
   "body": " Notice that in we specifically required that . This is necessary because, as we stated quite emphatically in Digression: Dividing by Zero , division by zero is an undefined concept. Thus if is equal to, say , and then But this is meaningless, so we say that does not exist, or equivalently that it is undefined.  "
 },
@@ -6782,7 +6782,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-29",
   "type": "Example",
-  "number": "12.10",
+  "number": "12.1.1.10",
   "title": "",
   "body": " We d like to find the horizontal asymptotes of if any exist. In this example we will write down all of the details of our computation. As you get more comfortable, you will probably abbreviate the process by doing much of this in your head. That s good, but also be sure you can fill in all of the details when needed. You will need to be comfortable with all of the details when the problems get more complex. From we see that if horizontal asymptotes exist they will be the lines and so we need to evaluate these limits. For the first limit we see from that Applying (several times) we have So we see that the horizontal asymptote will be   "
 },
@@ -6791,7 +6791,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-30",
   "type": "Problem",
-  "number": "12.11",
+  "number": "12.1.1.11",
   "title": "",
   "body": " Evaluate . Justify each step by citing the appropriate theorem or fact.  "
 },
@@ -6800,7 +6800,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-31",
   "type": "Example",
-  "number": "12.12",
+  "number": "12.1.1.12",
   "title": "",
   "body": " To find one horizontal asymptote of we evaluate:   "
 },
@@ -6809,7 +6809,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-32",
   "type": "Problem",
-  "number": "12.13",
+  "number": "12.1.1.13",
   "title": "",
   "body": " Evaluate to find the other asymptote, if it exists.  "
 },
@@ -6818,7 +6818,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-33",
   "type": "Drill",
-  "number": "12.14",
+  "number": "12.1.1.14",
   "title": "",
   "body": "  Find the horizontal asymptotes of the graphs of the following functions.                           "
 },
@@ -6827,7 +6827,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-41",
   "type": "Problem",
-  "number": "12.15",
+  "number": "12.1.1.15",
   "title": "",
   "body": " Similarly means that as  . How would we say this in words?  "
 },
@@ -6836,7 +6836,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-42",
   "type": "Example",
-  "number": "12.16",
+  "number": "12.1.1.16",
   "title": "",
   "body": " It is especially important to keep in mind that is not a number when evaluating a limit like:   It is very tempting to attack this problem by noticing that each term is increasing without bound and write but in fact this limit is not zero. Can you see what the limit is? Give it some thought and take your best guess. We ll come back to it shortly.  "
 },
@@ -6845,7 +6845,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-47",
   "type": "Problem",
-  "number": "12.17",
+  "number": "12.1.1.17",
   "title": "",
   "body": "Find two functions, and such that as both and but is equal to each of the following.                            An arbitrary real number   "
 },
@@ -6854,7 +6854,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#EXAMPLEIndetForm1",
   "type": "Example",
-  "number": "12.18",
+  "number": "12.1.1.18",
   "title": "",
   "body": "  Consider . It is tempting to write , but as we have observed, is not a number so this makes no more sense than .  Once again, the key is to re-express the function algebraically. Factoring out the highest power of the variable from both the numerator and the denominator we see that   You may well ask, How did we know to factor out the highest power of the variable? The answer is very unsatisfying. We were taught this technique by our teachers, just as you are being taught now. We d have been hard pressed to come up with it on our own.  "
 },
@@ -6863,7 +6863,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#EXAMPLEAsym2",
   "type": "Example",
-  "number": "12.19",
+  "number": "12.1.1.19",
   "title": "(Continued from Section 10.1 ).",
   "body": " (Continued from )  Recall that we did not complete because we did not previously have any way to determine what happens to the graph of as or as . We do now. Finding what happens to the graph of as or as is equivalent to evaluating the following limits: We will evaluate the first one and leave the second as a drill. Proceeding as in we see that   "
 },
@@ -6872,7 +6872,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-60",
   "type": "Problem",
-  "number": "12.20",
+  "number": "12.1.1.20",
   "title": "",
   "body": " Show that is also equal to two.  "
 },
@@ -6890,7 +6890,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-62",
   "type": "Problem",
-  "number": "12.21",
+  "number": "12.1.1.21",
   "title": "",
   "body": "Show that each of the following statements is true.                                          "
 },
@@ -6899,7 +6899,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-63",
   "type": "Example",
-  "number": "12.22",
+  "number": "12.1.1.22",
   "title": "",
   "body": " Do you think the function has any horizontal asymptotes? Take your best guess before we begin this example. To find any horizontal asymptotes we have to evaluate the two limits First we ll find the limit as and leave the limit as as a drill for you.  As always the trick is to rearrange this expression inside the limit algebraically without changing its value until we can see clearly what happens as . The square roots seem to be the difficulty here. So we d like to find a way to make them go away. The standard trick for this is to multiply by the conjugate of , namely .   Comment  We are using the identity to square both terms and get rid of the square roots. The factors and are mutually conjugate.   Of course, if we do that then we need to divide by the conjugate as well. That way we ve multiplied by and have not changed the value of the expression. This won t actually eliminate the square roots as we will still have them in the denominator. But let s see what happens.   Factoring the highest power of out of the numerator and denominator gives and since we have But we re evaluating a limit as . So, we re really only interested in large, positive values of . In this case so   Did you guess right? If you did, either you have a very strong intuition for these kinds of problems or you just had a moment of blind luck. So don t just pat yourself on the back and walk away. Be sure to take a moment to figure out whether it was intuition or luck. You don t want to confuse them.  If you guessed wrong, or (most likely) were unable to come up with a guess don t fret about it. You re normal. But be sure you review and understand the steps to this solution so you can begin to build some intuition about such problems. This problem looked pretty intimidating, but once we got going in the right direction, it was all Algebra from there. Notice how the absolute value came into play. In this problem it wasn t an issue since we were considering only positive values of . But consider what would happen if was negative, if . In this case,    This is important. If you don t see why when ask your teacher about it.  "
 },
@@ -6908,7 +6908,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-65",
   "type": "Problem",
-  "number": "12.23",
+  "number": "12.1.1.23",
   "title": "",
   "body": " Try to guess the value of and then evaluate the limit to see if you guessed correctly.  "
 },
@@ -6917,7 +6917,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation-66",
   "type": "Problem",
-  "number": "12.24",
+  "number": "12.1.1.24",
   "title": "",
   "body": "Determine the following limits.                           "
 },
@@ -6935,7 +6935,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsqueeze-theorem-informal.html#SECTIONsqueeze-theorem-informal-14",
   "type": "Problem",
-  "number": "12.25",
+  "number": "12.2.0.1",
   "title": "",
   "body": " Show that for negative values of , also, so that as well.  "
 },
@@ -6944,7 +6944,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsqueeze-theorem-informal.html#THEOREMInfSqueeze",
   "type": "Theorem",
-  "number": "12.26",
+  "number": "12.2.0.2",
   "title": "The Squeeze  Theorem, (when <span class=\"process-math\">\\(x\\rightarrow\\pm\\infty\\)<\/span>).",
   "body": " The Squeeze Theorem, (when )  Theorem Squeeze Theorem  at  There are two cases:   If on some interval, and then also.    If on some interval, and then also.     "
 },
@@ -6953,7 +6953,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsqueeze-theorem-informal.html#SECTIONsqueeze-theorem-informal-18",
   "type": "Drill",
-  "number": "12.27",
+  "number": "12.2.0.3",
   "title": "",
   "body": "  Use the Squeeze Theorem to determine each of the following limits:               where represents the greatest integer\\aside{This is called the greatest integer function in mathematics, and the floor function in computer science. It rounds down to the greatest integer. For example , etc.} less than or equal to .   "
 },
@@ -6962,7 +6962,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsqueeze-theorem-informal.html#SECTIONsqueeze-theorem-informal-20",
   "type": "Drill",
-  "number": "12.28",
+  "number": "12.2.0.4",
   "title": "",
   "body": "  Use the squeeze theorem to compute Is this consistent with your guess? Explain.   "
 },
@@ -6998,7 +6998,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvertical-asymptotes.html#DEFINITIONVerticalAsymptotes",
   "type": "Definition",
-  "number": "12.29",
+  "number": "12.3.0.1",
   "title": "Vertical Asymptotes.",
   "body": " Vertical Asymptotes  Definition Vertical Asymptotes    If then the line is a vertical asymptote of the graph of .   "
 },
@@ -7007,7 +7007,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvertical-asymptotes.html#SECTIONvertical-asymptotes-14",
   "type": "Problem",
-  "number": "12.30",
+  "number": "12.3.0.2",
   "title": "",
   "body": "Compute each of the following limits. Read the notation carefully.                 "
 },
@@ -7016,7 +7016,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONvertical-asymptotes.html#SECTIONvertical-asymptotes-15",
   "type": "Drill",
-  "number": "12.31",
+  "number": "12.3.0.3",
   "title": "",
   "body": "  Find all vertical asymptotes of the graphs of each of the following functions.                                 "
 },
@@ -7034,7 +7034,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#EXAMPLEVertAsymp",
   "type": "Example",
-  "number": "12.32",
+  "number": "12.4.1.1",
   "title": "",
   "body": " Consider . Setting the denominator equal to zero yields and , but only one of these is a vertical asymptote. Do you see which one?  Let s take a careful look at this example. By Definition we will have a vertical asymptote when either one-sided limit of a function increases or decreases without bound, so we must evaluate each one-sided limit.  For , we have So the line is indeed a vertical asymptote.  "
 },
@@ -7043,7 +7043,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-4",
   "type": "Problem",
-  "number": "12.33",
+  "number": "12.4.1.2",
   "title": "",
   "body": " Explain how you know the limit above is not .  "
 },
@@ -7052,7 +7052,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-6",
   "type": "Problem",
-  "number": "12.34",
+  "number": "12.4.1.3",
   "title": "",
   "body": " Explain how you know the limit above is not .  "
 },
@@ -7061,7 +7061,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-9",
   "type": "Problem",
-  "number": "12.35",
+  "number": "12.4.1.4",
   "title": "",
   "body": " Confirm and .  "
 },
@@ -7079,7 +7079,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#PROBLEMvertical-asymptotes",
   "type": "Drill",
-  "number": "12.36",
+  "number": "12.4.1.5",
   "title": "",
   "body": "  Find all vertical asymptotes of the graphs of each of the following functions.                                 "
 },
@@ -7088,7 +7088,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#PROBLEMDiffSqLim",
   "type": "Drill",
-  "number": "12.37",
+  "number": "12.4.1.6",
   "title": "",
   "body": "  Suppose is a real number.    Find all vertical asymptotes of .    Does your solution of part (a) still work when ?   "
 },
@@ -7097,7 +7097,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#PROBLEMFoliumOfDescartes2",
   "type": "Drill",
-  "number": "12.38",
+  "number": "12.4.1.7",
   "title": "",
   "body": "  In we looked at the Folium of Descartes from Newton s dynamic point of view.    In that problem you showed that the fluents, and satisfy the equation of the Folium: and that is the only value of where . How then, can it be that the Folium crosses itself at the origin?    In you determined that when . Determine the values of for which and the which .    Show that     Compute in terms of and compute . Is this consistent with what you see on the graph?    Show that for , so that geometrically, represents the slope of the line joining the origin to the point on the graph of the Folium. Is this consistent with what you obtained in part a? Explain.    Compute each of the following:                                Is this consistent with the graph and the fact that represents the slope from the origin to the point ? Explain.   "
 },
@@ -7106,7 +7106,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#EXERCISESync1",
   "type": "Problem",
-  "number": "12.39",
+  "number": "12.4.1.8",
   "title": "",
   "body": " Show that the line tangent to at is .  "
 },
@@ -7115,7 +7115,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-33",
   "type": "Problem",
-  "number": "12.40",
+  "number": "12.4.1.9",
   "title": "",
   "body": "  Show that the equation of the line tangent to at is: .    Show that the equation of the line tangent to at is:    "
 },
@@ -7124,7 +7124,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-37",
   "type": "Problem",
-  "number": "12.41",
+  "number": "12.4.1.10",
   "title": "",
   "body": "  Show that is the equation of the line tangent to at .    Show that is the equation of the line tangent to at .   "
 },
@@ -7133,7 +7133,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-39",
   "type": "Problem",
-  "number": "12.42",
+  "number": "12.4.1.11",
   "title": "",
   "body": " Graph the equation and zoom in on the portion of the graph near . Does it look like we ve found the correct limit?  "
 },
@@ -7142,7 +7142,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-41",
   "type": "Problem",
-  "number": "12.43",
+  "number": "12.4.1.12",
   "title": "",
   "body": " Show that the equations of the lines tangent to and at are   "
 },
@@ -7151,7 +7151,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-44",
   "type": "Figure",
-  "number": "12.44",
+  "number": "12.4.1.13",
   "title": "",
   "body": "  Johann Bernoulli (1667-1748)   "
 },
@@ -7160,7 +7160,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-46",
   "type": "Figure",
-  "number": "12.45",
+  "number": "12.4.1.14",
   "title": "",
   "body": "  The Marquis de L Hôpital (1661-1704)   "
 },
@@ -7178,7 +7178,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#THEOREMLHRule1",
   "type": "Theorem",
-  "number": "12.46",
+  "number": "12.4.1.15",
   "title": "L’Hôpital’s Rule, (First Special Case).",
   "body": " L Hôpital s Rule, (First Special Case)  Theorem L Hôpital s Rule First Special Case  Suppose and are differentiable on an open interval containing and that . Suppose also that \\centerline{ and }. Then    Notation  We will use the notation to indicate that is equal to because of L Hôpital s Rule.   "
 },
@@ -7196,7 +7196,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-54",
   "type": "Example",
-  "number": "12.47",
+  "number": "12.4.1.16",
   "title": "",
   "body": " Consider This is a L Hôpital indeterminate so   "
 },
@@ -7205,7 +7205,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-55",
   "type": "Example",
-  "number": "12.48",
+  "number": "12.4.1.17",
   "title": "",
   "body": " Consider This is a L Hôpital indeterminate so   "
 },
@@ -7214,7 +7214,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-57",
   "type": "Example",
-  "number": "12.49",
+  "number": "12.4.1.18",
   "title": "",
   "body": " For example, if we mistakenly try to use L Hôpital s Rule, on we will obtain , but this is obviously incorrect.  "
 },
@@ -7223,7 +7223,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-58",
   "type": "Problem",
-  "number": "12.50",
+  "number": "12.4.1.19",
   "title": "",
   "body": " Show that .  "
 },
@@ -7232,7 +7232,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-59",
   "type": "Drill",
-  "number": "12.51",
+  "number": "12.4.1.20",
   "title": "",
   "body": " Compute each of the following limits:                                                                "
 },
@@ -7241,7 +7241,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-60",
   "type": "Example",
-  "number": "12.52",
+  "number": "12.4.1.21",
   "title": "",
   "body": "  is useful but it is much too limited, so to speak. For example, it does not help us with this limit: . Even though it is a L Hôpital indeterminate, when we apply we have This is useless because is still not defined.  We need to think about this again. It is true that is not defined, but if and then is a L Hôpital Indeterminate so we extend as follows:  "
 },
@@ -7250,7 +7250,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#THEOREMLHRule2",
   "type": "Theorem",
-  "number": "12.53",
+  "number": "12.4.1.22",
   "title": "L’Hôpital’s Rule, (Second Special Case).",
   "body": " L Hôpital s Rule, (Second Special Case)  Theorem L Hôpital s Rule Second Special Case  Suppose is the L Hôpital Indeterminate form . Then   "
 },
@@ -7259,7 +7259,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONLHopitalsRule-63",
   "type": "Drill",
-  "number": "12.54",
+  "number": "12.4.1.23",
   "title": "",
   "body": "  Use to compute each of the following limits. If this limit given is not a L Hôpital Indeterminate rearrange it algebraically, without changing its value, until it is a L Hôpital Indeterminate.          Assume that .     Assume that .                                 "
 },
@@ -7277,7 +7277,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#THEOREMLHRuleGen",
   "type": "Theorem",
-  "number": "12.55",
+  "number": "12.4.2.1",
   "title": "L’Hôpital’s Rule.",
   "body": " L Hôpital s Rule  Theorem L Hôpital s Rule  Suppose is any L Hôpital Indeterminate. Then We allow the possibility that which we understand to mean that increases or decreases without bound.  "
 },
@@ -7286,7 +7286,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-12",
   "type": "Drill",
-  "number": "12.56",
+  "number": "12.4.2.2",
   "title": "",
   "body": "  Compute each of the following limits. Use where appropriate.                         ,                                       "
 },
@@ -7295,7 +7295,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-13",
   "type": "Example",
-  "number": "12.57",
+  "number": "12.4.2.3",
   "title": "3.",
   "body": " 3  As both and increase without bound, but which one increases faster? Take a quick look at the graphs below.    As both graphs are flattening out, but it would appear that the natural logarithm function is outgrowing the cube root function. Is it? We can answer this question by looking at the limit, If the limit is then is growing faster. If it is zero then is increasing faster than (Do you see why?)  "
 },
@@ -7304,7 +7304,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-14",
   "type": "Problem",
-  "number": "12.58",
+  "number": "12.4.2.4",
   "title": "",
   "body": "  Which of and grows faster?    Can we draw any conclusions about the rate of increase if the limit is something other than or ? If so, what? If not, why not?   "
 },
@@ -7313,7 +7313,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-15",
   "type": "Drill",
-  "number": "12.59",
+  "number": "12.4.2.5",
   "title": "",
   "body": "  Use L Hôpital s Rule to determine which of the following pairs of functions are growing faster as .                                                    Based on the limits above write down a general conclusion about the rate of change of the natural logarithm as compared to roots.    Prove that your statement is correct.   "
 },
@@ -7322,7 +7322,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-18",
   "type": "Drill",
-  "number": "12.60",
+  "number": "12.4.2.6",
   "title": "",
   "body": "      Show that each of the following limits is zero.                 Explain how this implies that that grows faster than , , or even ?    Would for any positive integer Explain.    Suppose that any polynomial and show that . Do you see that this means that the natural exponential grows faster than any polynomial?    Suppose that any polynomial. Show that each of the following limits is also zero. What do you conclude from this?                         "
 },
@@ -7331,7 +7331,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#EXAMPLEMoreLHopRule",
   "type": "Example",
-  "number": "12.61",
+  "number": "12.4.2.7",
   "title": "More on L’Hôpital’s Rule.",
   "body": " More on L Hôpital s Rule  Consider the limit If we want to evaluate this limit (we do) we seem to have few options. This is not a L Hôpital Indeterminate, nor is it obvious what the limit might be. Simply letting we see that and so our limit has the Indeterminate form .  There is a real temptation to say that this must be zero since anything multiplied by zero is zero. But is it? Remember that the purpose of the arrow notation, , is to remind us that the expression is never actually equal to zero. It merely approaches zero. At the same time is increasing without bound ( ) so it seems that the value of the limit might depend on the relative speeds with which and .  But this reasoning feels very uncertain doesn t it? And, in any case, nothing we ve said will help us evaluate the limit. We ll have to find a way to re-express this limit as a L Hôpital Indeterminate so that L Hôpital s Rule does apply. In the meantime, take your best guess as to the value of this limit and write it down for later reference. Suppose we rewrite this limit as This is a little scary to look at so we ll make it easier on our eyes with the substitution . As we see that and . Since our limit is now which is the L Hôpital Indeterminate . Thus by Theorem we have since .  "
 },
@@ -7340,7 +7340,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#EXAMPLELimComp1",
   "type": "Example",
-  "number": "12.62",
+  "number": "12.4.2.8",
   "title": "",
   "body": " We need to evaluate the limit: It is tempting to reason as follows. We see that as . That is, we have the indeterminate form and since one raised to any power is equal to one this limit must equal , right? Surely you know better than to jump to that conclusion by now. Not only does all of the evidence of this chapter warn you that limits are more subtle than that, but in our investigations in we saw overwhelming evidence that this limit is not equal to one.  Also, notice that we wrote , not . Why do you think we did that?  The source of our difficulty here is that the variable is in the exponent where we can t get at it. We d like to find a way to bring it out of the exponent. The natural logarithm seems perfect for this task since it has the property that .  Begin by setting . Then Rather than evaluating directly we evaluate the limit of the logarithm of . Thus The limit on the right is an indeterminate form but unfortunately it is not a L Hôpital Indeterminate. So, as before, we ll have to do some algebraic manipulations first. Set so that Since it seems intuitively clear that , doesn t it? In fact, it is not true generally that But it is true for this problem.      Thus this is a detail that needn t trouble us for now. So we will ignore it for now and return to it in .  "
 },
@@ -7349,7 +7349,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-25",
   "type": "Drill",
-  "number": "12.63",
+  "number": "12.4.2.9",
   "title": "",
   "body": "      Show that     Show that for .   Let and manipulate this limit until it looks like the limit in part (a) (with different letters, of course).    Suppose we have an investment of compounded continuously with a relative annual rate of . How much would the investment be worth in years? How would this compare to an investment which is compounded quarterly?   You may want to review similar problems in before starting this problem.   "
 },
@@ -7358,7 +7358,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-26",
   "type": "Example",
-  "number": "12.64",
+  "number": "12.4.2.10",
   "title": "",
   "body": " Consider . Notice we are only considering positive values of (Why?) Proceeding in the same manner as before, let so that Thus This is a L Hôpital Indeterminate so we apply L Hôpital s Rule: Thus   "
 },
@@ -7367,7 +7367,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONmore-indet-forms.html#SUBSECTIONlhop-rule-horiz-30",
   "type": "Drill",
-  "number": "12.65",
+  "number": "12.4.2.11",
   "title": "",
   "body": "  Evaluate each of the following limits.                                 Not every indeterminant form requires L Hôpital s Rule.                  Set and consider .   "
 },
@@ -7385,7 +7385,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CalcAndBerkeley.html#CalcAndBerkeley-3",
   "type": "Figure",
-  "number": "13.1",
+  "number": "13.1.0.1",
   "title": "",
   "body": "  Bishop George Berkeley    "
 },
@@ -7412,7 +7412,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsecants-tangents.html#EXAMPLEyEQxR2-limits",
   "type": "Example",
-  "number": "13.2",
+  "number": "13.2.0.1",
   "title": "",
   "body": "  Suppose . We would like to compute the derivative (slope of the line tangent to the graph) of at the point by the the procedure indicated above.  Before we start, observe that from our work with differentials we know what we are expecting to get. It is   Taking and gives   So our proposed procedure seems to be heading us in the right direction. If we take and we get We say that is bounded , and that the numbers and are the bounds .  "
 },
@@ -7421,7 +7421,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsecants-tangents.html#PROBLEMBounds",
   "type": "Drill",
-  "number": "13.3",
+  "number": "13.2.0.2",
   "title": "",
   "body": "   Compute bounds on the derivatives of each function given at by using the values of and given below.                               ,     ,     , and        "
 },
@@ -7430,7 +7430,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsecants-tangents.html#DEFINITIONDerivative",
   "type": "Definition",
-  "number": "13.4",
+  "number": "13.2.0.3",
   "title": "The Derivative.",
   "body": " The Derivative  Definition The Derivative    Suppose is a function, and that is a real number. If exists then we say that is differentiable at and that the derivative of at is given by: if this limit exists. If the limit does not exist then the derivative also does not exist at .   "
 },
@@ -7439,7 +7439,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsecants-tangents.html#PROBLEMxIsSingular",
   "type": "Drill",
-  "number": "13.5",
+  "number": "13.2.0.4",
   "title": "",
   "body": "   Use the techniques we saw in to compute by evaluating a limit. Check your work by differentiating using differentials.  Do not use L Hôpital s Rule. L Hôpital s Rule as that would be circular reasoning.                                           "
 },
@@ -7466,7 +7466,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONsecants-tangents.html#SECTIONsecants-tangents-45",
   "type": "Problem",
-  "number": "13.6",
+  "number": "13.2.0.5",
   "title": "",
   "body": " Which of the functions in are differentiable and which are not? Identify all points of non-differentiability.  "
 },
@@ -7484,7 +7484,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#THEOREMLimSum2",
   "type": "Theorem",
-  "number": "14.1",
+  "number": "14.1.1.1",
   "title": "The Limit of a Sum is the Sum of the Limits.",
   "body": " The Limit of a Sum is the Sum of the Limits  Theorem Limit of a Sum is the Sum of the Limits   Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. Then if and then   "
 },
@@ -7493,7 +7493,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#THEOREMLimProd2",
   "type": "Theorem",
-  "number": "14.2",
+  "number": "14.1.1.2",
   "title": "The Limit of a Product is the Product of the Limits.",
   "body": " The Limit of a Product is the Product of the Limits  Theorem Limit of a Product is the Product of the Limits   Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. If and then   "
 },
@@ -7502,7 +7502,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#THEOREMLimQuot2",
   "type": "Theorem",
-  "number": "14.3",
+  "number": "14.1.1.3",
   "title": "The Limit of a Quotient is the Quotient of the Limits.",
   "body": " The Limit of a Quotient is the Quotient of the Limits  Theorem Limit of a Quotient is the Quotient of the Limits   Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. Then if and then   "
 },
@@ -7520,7 +7520,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#EXAMPLEDiscontLimit1",
   "type": "Example",
-  "number": "14.4",
+  "number": "14.1.1.4",
   "title": "",
   "body": " Suppose Then In particular the limit is not . Here is how we would evaluate this limit using the tools we currently have at our disposal. We're interested in the limit as so in particular we do not need to consider the case when . But as long as we have so As gets close to it is clear that gets close to . Therefore Notice that our reasoning is a little vague in the last step because we had to resort to the phase gets close to, and we know from our work in that this is not a precise phrase. This is the best we can do now because we have not yet rigorously defined a limit. We will do that in .  "
 },
@@ -7529,7 +7529,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-15",
   "type": "Drill",
-  "number": "14.5",
+  "number": "14.1.1.5",
   "title": "",
   "body": "  By reasoning in a manner similar to show that for each function.             "
 },
@@ -7547,7 +7547,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#DEFINITIONnear",
   "type": "Definition",
-  "number": "14.6",
+  "number": "14.1.1.6",
   "title": "Near.",
   "body": " Near  Definition Near    We say that has some property near  if has that property on an open interval about , except possibly at itself.   "
 },
@@ -7556,7 +7556,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#THEOREMConstLimit",
   "type": "Theorem",
-  "number": "14.7",
+  "number": "14.1.1.7",
   "title": "The Limit of a Constant is the Constant.",
   "body": " The Limit of a Constant is the Constant  Theorem Limit of a Constant is the Constant  Suppose and are real numbers, and near . Then   "
 },
@@ -7565,7 +7565,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-23",
   "type": "Problem",
-  "number": "14.8",
+  "number": "14.1.1.8",
   "title": "",
   "body": "  Find an open interval about where .    Find an open interval about where .   "
 },
@@ -7574,7 +7574,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-24",
   "type": "Problem",
-  "number": "14.9",
+  "number": "14.1.1.9",
   "title": "",
   "body": "Suppose Determine whether the following statements are true or false.    near .     near .     near .     near .     near .     near .   "
 },
@@ -7583,7 +7583,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-25",
   "type": "Drill",
-  "number": "14.10",
+  "number": "14.1.1.10",
   "title": "",
   "body": "  Explain, that the following statements are true by citing through as needed.                       "
 },
@@ -7592,7 +7592,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-26",
   "type": "Drill",
-  "number": "14.11",
+  "number": "14.1.1.11",
   "title": "",
   "body": "  Notice that neither nor exists. However their sum, does exist. Explain why this does not contradict Theorem .   "
 },
@@ -7601,7 +7601,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#PROBLEMDiffImpCont",
   "type": "Drill",
-  "number": "14.12",
+  "number": "14.1.1.12",
   "title": "",
   "body": "  Suppose near and exists. Use to show that if then .    Consider for near .   "
 },
@@ -7610,7 +7610,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#COROLLARYConstMultLimit",
   "type": "Corollary",
-  "number": "14.13",
+  "number": "14.1.1.13",
   "title": "",
   "body": " If and is a real number then   "
 },
@@ -7619,7 +7619,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-31",
   "type": "Problem",
-  "number": "14.14",
+  "number": "14.1.1.14",
   "title": "",
   "body": " Prove Corollary .  "
 },
@@ -7646,7 +7646,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#DEFINITIONcontinuity",
   "type": "Definition",
-  "number": "14.15",
+  "number": "14.1.1.15",
   "title": "Continuity at a Point.",
   "body": " Continuity at a Point  Definition Continuity at a Point    A function , whose domain is an interval in , is continuous at in the interval, if and only if , (alternatively, if ).   "
 },
@@ -7655,7 +7655,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#LEMMADiffImpliesCont",
   "type": "Lemma",
-  "number": "14.16",
+  "number": "14.1.1.16",
   "title": "Differentiability Implies Continuity.",
   "body": " Differentiability Implies Continuity  Lemma Differentiability Implies Continuity  If is differentiable at then is also continuous at   "
 },
@@ -7664,7 +7664,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-43",
   "type": "Drill",
-  "number": "14.17",
+  "number": "14.1.1.17",
   "title": "",
   "body": "  Use the result of to prove .   "
 },
@@ -7673,7 +7673,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#THEOREMFiniteSqueeze",
   "type": "Theorem",
-  "number": "14.18",
+  "number": "14.1.1.18",
   "title": "The Squeeze Theorem (The Finite Case).",
   "body": " The Squeeze Theorem (The Finite Case)  Theorem Squeeze Theorem at a point  If for near and then also.  "
 },
@@ -7682,7 +7682,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-48",
   "type": "Drill",
-  "number": "14.19",
+  "number": "14.1.1.19",
   "title": "",
   "body": "  Consider the two functions defined in the sketch below:        Use to show that is continuous at .   What functions is caught between?    Use to show that is not continuous at .   Try the substitution for . What would look like in terms of ?   "
 },
@@ -7691,7 +7691,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimit-theorems-laws.html#THEOREMCompositionLimit",
   "type": "Theorem",
-  "number": "14.20",
+  "number": "14.1.1.20",
   "title": "The Limit of a Composition is the Composition of the Limits.",
   "body": " The Limit of a Composition is the Composition of the Limits  Theorem Limit of a Composition is the Composition of the Limits   Suppose and that is continuous at . Then   "
 },
@@ -7718,7 +7718,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-rules-via.html#THEOREMLimConstantRule",
   "type": "Theorem",
-  "number": "14.21",
+  "number": "14.2.0.1",
   "title": "The Constant Rule for Differentiation.",
   "body": " The Constant Rule for Differentiation  Theorem Constant Rule for Differentiation  If is some number and for all real values of near (on an open interval around) , then at every real number near (on the same open interval) .  "
 },
@@ -7736,7 +7736,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-rules-via.html#SECTIONdiff-rules-via-10",
   "type": "Theorem",
-  "number": "14.22",
+  "number": "14.2.0.2",
   "title": "The Sum Rule for Differentiation.",
   "body": " The Sum Rule for Differentiation  If and are differentiable at and , then is also differentiable at and   "
 },
@@ -7745,7 +7745,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-rules-via.html#SECTIONdiff-rules-via-11",
   "type": "Drill",
-  "number": "14.23",
+  "number": "14.2.0.3",
   "title": "",
   "body": "  Use Definition to prove the Sum Rule for Differentiation.   "
 },
@@ -7754,7 +7754,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-rules-via.html#THEOREMLimitConstMult",
   "type": "Theorem",
-  "number": "14.24",
+  "number": "14.2.0.4",
   "title": "The Constant Multiple Rule for Differentiation.",
   "body": " The Constant Multiple Rule for Differentiation  If is differentiable at and is a constant then is also differentiable and   "
 },
@@ -7763,7 +7763,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-rules-via.html#PROBLEMConstMultRule",
   "type": "Drill",
-  "number": "14.25",
+  "number": "14.2.0.5",
   "title": "",
   "body": "  Use the to prove the Constant Multiple Rule.   "
 },
@@ -7781,7 +7781,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONChainRule.html#EXAMPLEchain-rule1",
   "type": "Example",
-  "number": "14.26",
+  "number": "14.3.0.1",
   "title": "",
   "body": " Here's what we mean: The formula , is given entirely in terms of the variables , and . To differentiate using differentials we would make the (variable) substitution so that . In that case, , and dividing through by gives us the derivative of with respect to ,   But requires that we think about functions, not variables so let's translate this problem into the language of functions. If , clearly is a function of (depends on) . Naming that function , we have . Replacing with , we get .  Similarly, if then is also a function of (depends on) , and naming that function we have . Replacing with we have . If we suppress the part of , we see that can also be thought of as a function of (depends on) so that is also a valid representation of our function. If we now define we see that   Looking again at equation , and mixing the differential and functional notations a bit we see that   Thus if is the composition of and then This is the Chain Rule. We have expressed the Chain Rule in this form so that we can prove it rigorously, not so that we can use it. The substitution process using differentials still works so there is no reason to stop using substitution when you are actually computing derivatives.  "
 },
@@ -7790,7 +7790,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONChainRule.html#THEOREMChainRule",
   "type": "Theorem",
-  "number": "14.27",
+  "number": "14.3.0.2",
   "title": "The Chain Rule.",
   "body": " The Chain Rule  Theorem Chain Rule  Suppose that is differentiable at , that is differentiable at and that near . Then the composition,\\\\ \\centerline{ } is also differentiable, and   "
 },
@@ -7808,7 +7808,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONChainRule.html#DIGRESSIONDeltaBetaNotZero-7",
   "type": "Drill",
-  "number": "14.28",
+  "number": "14.3.0.3",
   "title": "",
   "body": "      Show that the function does not satisfy the constraint when is near zero.   Recall .    As a result of part (a) does not apply to any of the following functions at . Nevertheless one of them is differentiable at . Use to find out which one.                    "
 },
@@ -7817,7 +7817,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONChainRule.html#EXAMPLEDiffByCR",
   "type": "Example",
-  "number": "14.29",
+  "number": "14.3.0.4",
   "title": "",
   "body": " Suppose that . To use the Chain Rule to compute the derivative of we need to recognize that is the composition of , and and then apply as follows.   "
 },
@@ -7826,7 +7826,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONChainRule.html#SECTIONChainRule-12",
   "type": "Problem",
-  "number": "14.30",
+  "number": "14.3.0.5",
   "title": "",
   "body": " Suppose . Compute the differential and then divide through by to find the derivative . Confirm that it is the same as the derivative we found in .  "
 },
@@ -7835,7 +7835,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONChainRule.html#SECTIONChainRule-13",
   "type": "Drill",
-  "number": "14.31",
+  "number": "14.3.0.6",
   "title": "",
   "body": "  Compute for each of the following functions by identifying and such that and applying the Chain Rule. You may have to do this more than once for a given problem. In each case confirm that your computation is correct with an appropriate differential substitution.                                 "
 },
@@ -7853,7 +7853,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONproduct-rule-limits.html#THEOREMLimitProdRule",
   "type": "Theorem",
-  "number": "14.32",
+  "number": "14.4.0.1",
   "title": "The Product Rule for Differentiation.",
   "body": " The Product Rule for Differentiation  Theorem Product Rule for Differentiation  If and are differentiable at then is differentiable and   "
 },
@@ -7880,7 +7880,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#THEOREMQuotientRuleLimit",
   "type": "Theorem",
-  "number": "14.33",
+  "number": "14.5.0.1",
   "title": "The Quotient Rule for Differentiation.",
   "body": " The Quotient Rule for Differentiation  Theorem Quotient Rule for Differentiation   We assume that , , and are all differentiable functions\\aside{Notice that we have explicitly assumed that the quotient }. Assume further that . Then   "
 },
@@ -7889,7 +7889,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#SECTIONother-gener-diff-4",
   "type": "Drill",
-  "number": "14.34",
+  "number": "14.5.0.2",
   "title": "",
   "body": "  Use the Product Rule to derive the Quotient Rule.    First solve for .   "
 },
@@ -7907,7 +7907,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#PROBLEMPowRulInduction",
   "type": "Drill",
-  "number": "14.35",
+  "number": "14.5.0.3",
   "title": "The Power Rule for Positive Integer Exponents.",
   "body": " The Power Rule for Positive Integer Exponents   Assume that is differentiable at for any positive integer .    Assume that . Use the limit definition to show that (This says, The Power Rule holds for . )    Now assume that the Power Rule for Positive Integer Exponents holds for , where is an arbitrary, fixed positive integer. Let and show that (This says, If the Power Rule holds for then it must also hold for . )               Do you see how this proves that the Power Rule holds for any positive integer, ? Write a short paragraph explaining the logic behind this.   "
 },
@@ -7925,7 +7925,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#SECTIONother-gener-diff-9",
   "type": "Drill",
-  "number": "14.36",
+  "number": "14.5.0.4",
   "title": "The Power Rule for Rational and Negative Exponents.",
   "body": " The Power Rule for Rational and Negative Exponents       Assume is a positive integer and that is differentiable. Show that    Rewrite as and use the Quotient Rule for Differentiation and the Power Rule for positive integers.    Assume that is a non-zero integer and that is differentiable at . Show that    Rewrite as and use the Chain Rule and the Power Rule for positive integers.    Assume that and are integers, , and that is differentiable at . Show that    Rewrite as and use the Chain Rule and part (b).   "
 },
@@ -7934,7 +7934,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#THEOREMPowerRuleLimit",
   "type": "Theorem",
-  "number": "14.37",
+  "number": "14.5.0.5",
   "title": "The Power Rule for Rational Exponents.",
   "body": " The Power Rule for Rational Exponents  Theorem Power Rule for Rational Exponents  Assume that and are integers, , and that is differentiable at . Then   "
 },
@@ -7943,7 +7943,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#PROBLEMQR-rigor",
   "type": "Drill",
-  "number": "14.38",
+  "number": "14.5.0.6",
   "title": "",
   "body": "  Assume that and are differentiable and that , but we make no assumption about the differentiability of .    First prove the special case of the Quotient Rule where .   Use the limit definition to show that .    Now evaluate the limit in part (i) to show that .       Use the Product Rule for Differentiation and the Chain Rule (along with the result of part a) to show that is differentiable at and that    "
 },
@@ -7952,7 +7952,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#PROBLEMPR-rigor1",
   "type": "Drill",
-  "number": "14.39",
+  "number": "14.5.0.7",
   "title": "",
   "body": "  To prove we will first focus on the special case of where is a non-negative integer.  The key to proving this special case is a generalization of the difference of squares formula:     Show that .    Show that .    Use Mathematical Induction to show that .   "
 },
@@ -7961,7 +7961,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONother-gener-diff.html#PROBLEMPR-rigor2",
   "type": "Drill",
-  "number": "14.40",
+  "number": "14.5.0.8",
   "title": "",
   "body": "  Assume that and are integers and that . If we apply to , we get     Use the substitutions , , and part (c) of the previous problem to show that     Substitute into the result of part a to obtain     Use the Chain Rule to show that for     "
 },
@@ -7979,7 +7979,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-trig-funct.html#THEOREMSineDeriv",
   "type": "Theorem",
-  "number": "14.41",
+  "number": "14.6.0.1",
   "title": "Derivative of <span class=\"process-math\">\\(\\sin(x)\\)<\/span>.",
   "body": " Derivative of  Theorem Derivative of  Suppose . Then   "
 },
@@ -7997,7 +7997,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-trig-funct.html#DRILLCircularReasoning",
   "type": "Problem",
-  "number": "14.42",
+  "number": "14.6.0.2",
   "title": "",
   "body": " Use L Hôpital s Rule to show     .    "
 },
@@ -8006,7 +8006,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-trig-funct.html#LEMMASinOverh",
   "type": "Lemma",
-  "number": "14.43",
+  "number": "14.6.0.3",
   "title": "",
   "body": " Lemma     "
 },
@@ -8024,7 +8024,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-trig-funct.html#PROBLEMCosM1Overh",
   "type": "Drill",
-  "number": "14.44",
+  "number": "14.6.0.4",
   "title": "",
   "body": "  Show that .\\\\    It is tempting to model this proof on the proof of . While this can be done, it is delicate. It is simpler to multiply by in the form . Try that instead.   "
 },
@@ -8033,7 +8033,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONdiff-trig-funct.html#SECTIONdiff-trig-funct-12",
   "type": "Drill",
-  "number": "14.45",
+  "number": "14.6.0.5",
   "title": "",
   "body": "  Prove that , using the proof of as a guide.   "
 },
@@ -8069,7 +8069,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#DEFINITIONBijectiveFunctions",
   "type": "Definition",
-  "number": "14.46",
+  "number": "14.7.0.1",
   "title": "One-To-One Functions.",
   "body": " One-To-One Functions  Definition One-To-One Functions   A function, , defined on a domain, , is said to be one-to-one if, whenever and are in and then, .   "
 },
@@ -8078,7 +8078,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#DEFINITIONFunctionInverse",
   "type": "Definition",
-  "number": "14.47",
+  "number": "14.7.0.2",
   "title": "Inverse Functions.",
   "body": " Inverse Functions  Definition Inverse Functions    Suppose , with domain and range, is a one-to-one function. Then the inverse of is the function with domain and range which satisfies the following properties (Notice that the domain and range have been swapped.):            for every value of in the domain of (equivalently, in the range of ).   "
 },
@@ -8096,7 +8096,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#DRILLCubeRoot",
   "type": "Problem",
-  "number": "14.48",
+  "number": "14.7.0.3",
   "title": "",
   "body": "  Prove that and are mutually inverse by showing that they satisfy the conditions stated in   "
 },
@@ -8105,7 +8105,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#LEMMAInvDerivAtZero",
   "type": "Lemma",
-  "number": "14.49",
+  "number": "14.7.0.4",
   "title": "",
   "body": " Lemma the derivative of an inverse function  If is an invertible function, , is differentiable at , and , then is not differentiable at . That is does not exist.  "
 },
@@ -8123,7 +8123,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#SECTIONinverse-functions-26",
   "type": "Drill",
-  "number": "14.50",
+  "number": "14.7.0.5",
   "title": "",
   "body": "  Choose a function whose derivative is equal to zero at some point and sketch the graph of your function and its inverse on the same set of axes. Be sure to include the point where the derivative is zero. Use your graph to explain why the derivative of the inverse of your function does not exist.   "
 },
@@ -8132,7 +8132,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#SECTIONinverse-functions-29",
   "type": "Problem",
-  "number": "14.51",
+  "number": "14.7.0.6",
   "title": "",
   "body": " Let and explain how the formula above is equivalent to   "
 },
@@ -8141,7 +8141,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#THEOREMDerivInvFunc",
   "type": "Theorem",
-  "number": "14.52",
+  "number": "14.7.0.7",
   "title": "The Derivative of Inverse Functions.",
   "body": " The Derivative of Inverse Functions  Theorem Derivative of an Inverse Function  Suppose that    is differentiable at ,     ,     ,     is continuous at .      Comment  In fact, the continuity of follows from the continuity of at . We do not have all of the tools necessary to prove this so we must include it in the assumptions of our theorem.   Then the inverse of is differentiable at and   "
 },
@@ -8151,7 +8151,7 @@ var ptx_lunr_docs = [
   "url": "SECTIONinverse-functions.html#SECTIONinverse-functions-33",
   "type": "Proof",
   "number": "14.7.2",
-  "title": "Proof of Theorem 14.52.",
+  "title": "Proof of Theorem 14.7.0.7.",
   "body": " Proof of  We want to show that the limit Since we know that so that The expression would be if only we had instead of . What we need to show now is that if then . Then we could write and our proof would be complete. Written a little more carefully, what we need to show is that . Recall that , and that so we need to show that or But we assumed that is continuous at which means that and the proof is complete. One last point: On the left side of the variable is and on the right it is . While this is not strictly wrong it is a more useful theorem if we state it in terms of alone. Since we see that so and the proof is complete.  "
 },
 {
@@ -8159,7 +8159,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#SECTIONinverse-functions-35",
   "type": "Example",
-  "number": "14.53",
+  "number": "14.7.0.8",
   "title": "The Derivative of the Inverse Sine.",
   "body": " The Derivative of the Inverse Sine  Inverse Sine derivative of  Derivative of  Suppose Then so   "
 },
@@ -8168,7 +8168,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#SECTIONinverse-functions-36",
   "type": "Drill",
-  "number": "14.54",
+  "number": "14.7.0.9",
   "title": "",
   "body": "  Use to show that each of the following differentiation rules is correct:                                 "
 },
@@ -8177,7 +8177,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONinverse-functions.html#SECTIONinverse-functions-38",
   "type": "Problem",
-  "number": "14.55",
+  "number": "14.7.0.10",
   "title": "",
   "body": " Look back at and explain why it is not necessary to use limits to show that .  "
 },
@@ -8195,7 +8195,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfermats-theorem.html#THEOREMFermatsTheorem2",
   "type": "Theorem",
-  "number": "15.1",
+  "number": "15.1.0.1",
   "title": "Fermat’s Theorem.",
   "body": " Fermat s Theorem  Theorem Fermat s Theorem  If is a local extremum (either a maximum or a minimum) of at , and is differentiable at then .  "
 },
@@ -8213,7 +8213,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfermats-theorem.html#SECTIONfermats-theorem-9",
   "type": "Problem",
-  "number": "15.2",
+  "number": "15.1.0.2",
   "title": "",
   "body": " Draw a similar diagram to convince yourself that must also be greater than or equal to zero when .  "
 },
@@ -8231,7 +8231,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfermats-theorem.html#SECTIONfermats-theorem-12",
   "type": "Drill",
-  "number": "15.3",
+  "number": "15.1.0.3",
   "title": "",
   "body": "  Use our proof of the maximum case as a guide to constructing a proof of Fermat s Theorem when is a local minimum.   "
 },
@@ -8249,7 +8249,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#SECTIONrolles-lemma-mean-2",
   "type": "Figure",
-  "number": "15.4",
+  "number": "15.2.0.1",
   "title": "",
   "body": "  Michel Rolle (1659-1719)   "
 },
@@ -8258,7 +8258,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#LEMMArolles-lemma",
   "type": "Lemma",
-  "number": "15.5",
+  "number": "15.2.0.2",
   "title": "Rolle’s Lemma.",
   "body": " Rolle s Lemma  Lemma Rolle s Lemma  Suppose is continuous on the closed interval and differentiable on the open interval . Suppose further that . Then there is at least one number , in the interval such that .  "
 },
@@ -8267,7 +8267,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#DRILLRollesLemma1",
   "type": "Problem",
-  "number": "15.6",
+  "number": "15.2.0.3",
   "title": "",
   "body": "  Sketch the graph of a function (different from the one in our sketch) which satisfies all of the conditions of Rolle s Lemma and convince yourself that the conclusion of Rolle s Lemma must still be true.    Show that the condition that is continuous on is necessary by sketching the graph of a function which violates only that condition and the conclusion of Rolle s Lemma.    Show that the condition that is differentiable on is necessary by sketching the graph of a function which violates only that condition and the conclusion of Rolle s Lemma.   "
 },
@@ -8285,7 +8285,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#THEOREMMVT",
   "type": "Theorem",
-  "number": "15.7",
+  "number": "15.2.0.4",
   "title": "The Mean Value Theorem.",
   "body": " The Mean Value Theorem  Theorem Mean Value Theorem  Suppose is continuous on some closed interval, , and is differentiable on . Then there is at least one number in the open interval such that   "
 },
@@ -8303,7 +8303,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#SECTIONrolles-lemma-mean-13",
   "type": "Problem",
-  "number": "15.8",
+  "number": "15.2.0.5",
   "title": "",
   "body": " Show that .    is a straight line and we have the coordinates of two points, and on the line.  "
 },
@@ -8312,7 +8312,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#PROBLEMrolles-lemma-mean-2",
   "type": "Drill",
-  "number": "15.9",
+  "number": "15.2.0.6",
   "title": "",
   "body": "  Show that from the diagram above satisfies all of the conditions of Rolle s Lemma. That is, show that:     is continuous on .     is differentiable on .        "
 },
@@ -8339,7 +8339,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfirst-deriv-test.html#THEOREMFDTproved",
   "type": "Theorem",
-  "number": "15.10",
+  "number": "15.3.0.1",
   "title": "First Derivative Test.",
   "body": " First Derivative Test  Theorem First Derivative Test  Suppose is continuous on the interval , and differentiable on the interval . Suppose further that both and are in the interval and .   If on the interval then . (That is, the function is increasing on .)    If on the interval then . (That is, the function is decreasing on .)     "
 },
@@ -8349,7 +8349,7 @@ var ptx_lunr_docs = [
   "url": "SECTIONfirst-deriv-test.html#SECTIONfirst-deriv-test-5",
   "type": "Proof",
   "number": "15.3.1",
-  "title": "Proof of Part 1 of Theorem 15.10.",
+  "title": "Proof of Part 1 of Theorem 15.3.0.1.",
   "body": " Proof of Part of  We want to use the Mean Value Theorem on the interval so we begin by verifying that the conditions of the Mean Value Theorem are satisfied on that interval. Observe that is a subinterval of so is continuous on and differentiable on . By the Mean Value Theorem there is a number, , in the interval such that Since both and are positive, must be positive as well. Therefore   "
 },
 {
@@ -8357,7 +8357,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfirst-deriv-test.html#SECTIONfirst-deriv-test-6",
   "type": "Drill",
-  "number": "15.11",
+  "number": "15.3.0.2",
   "title": "",
   "body": "  Prove part of the First Derivative Test in two different ways:    By modifying our proof of part of the First Derivative Test as needed.    Let and apply part of this problem. (Don t forget to show first that satisfies the conditions of the Mean Value Theorem.)   "
 },
@@ -8366,7 +8366,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfirst-deriv-test.html#PROBLEMDervEqZeroImpliesConstant",
   "type": "Drill",
-  "number": "15.12",
+  "number": "15.3.0.3",
   "title": "",
   "body": "      Suppose on the interval and that and are two points in that interval. Use an argument similar to the proof of the first derivative test to show that .    Explain how the result of part (a) says that must be constant on .    Show that if on the interval , then for some constant .   Consider the function .    What can be said if for all in some set which is not an interval?   "
 },
@@ -8375,7 +8375,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfirst-deriv-test.html#SECTIONfirst-deriv-test-10",
   "type": "Drill",
-  "number": "15.13",
+  "number": "15.3.0.4",
   "title": "",
   "body": "      Under the conditions of explain why     Apply the Mean Value Theorem to the numerator and denominator in part (a) and then prove .   Use the fact that in the statement of  is between and .   "
 },
@@ -8393,7 +8393,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#EXAMPLEAbsValFunc",
   "type": "Example",
-  "number": "16.1",
+  "number": "16.1.0.1",
   "title": "The  Absolute Value Function.",
   "body": " The Absolute Value Function  The Absolute Value function is usually introduced with some vague statement like,    The absolute value of a number is just the positive version of the number,    or    gives the length of the line segment between and .    These are both true statements and are OK as intuitive definitions, but we will need something more precise from now on.  "
 },
@@ -8402,7 +8402,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#DEFINITIONAbsoluteValue",
   "type": "Definition",
-  "number": "16.2",
+  "number": "16.1.0.2",
   "title": "The Absolute Value Function.",
   "body": " The Absolute Value Function  Lemma The Absolute Value Function   The Absolute Value of is:    "
 },
@@ -8411,7 +8411,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#CHAPTERwhen-deriv-doesnt-2-19",
   "type": "Problem",
-  "number": "16.3",
+  "number": "16.1.0.3",
   "title": "",
   "body": " According to , since does not exist, the value is a possible transition point for the Absolute Value function. So there might be a local extremum of at . Is there?  "
 },
@@ -8420,7 +8420,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#PROBLEMAbsValDeriv",
   "type": "Drill",
-  "number": "16.4",
+  "number": "16.1.0.4",
   "title": "",
   "body": "  The Absolute Value function is not differentiable at but it is differentiable at every other value of . Let and use to show that:   If then ,    If then .       From the discussion in DIGRESSION: The Absolute Value Function we know that . Use the differentiation rules you learned in Part 1 of this text to show that if , then How does this compare with your calculations in part (a)?   "
 },
@@ -8429,7 +8429,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#CHAPTERwhen-deriv-doesnt-2-21",
   "type": "Example",
-  "number": "16.5",
+  "number": "16.1.0.5",
   "title": "",
   "body": " Derivative doesn t exist  A slightly less intuitive example is the function . It is tempting to claim that this is really just since anything divided by itself is one but that claim is not true. As we saw in DIGRESSION: Dividing By Zero division by zero is undefined, regardless of the numerator. So the expression is undefined, and therefore the function is not defined at . It is also tempting to try to invoke L Hôpital s Rule, since it is true that But this only says that the limit of is equal to one, not that itself is equal to one, at . As we ve seen the statement explicitly excludes the point from consideration. This is why when we discussed indeterminate forms in Section we were very careful to write instead of . We needed to emphasize that we specifically do not allow the denominator to be equal to zero.  "
 },
@@ -8438,7 +8438,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#CHAPTERwhen-deriv-doesnt-2-22",
   "type": "Drill",
-  "number": "16.6",
+  "number": "16.1.0.6",
   "title": "",
   "body": "  Use to show that if then is undefined.  It is pretty clear that is undefined, since is undefined. We can't have a derivative where we don't have a point. But this is the kind of vague reasoning we are trying to avoid. The purpose of this exercise is to show unequivocally that the limit which defines is undefined.    Use to show that if then is defined.  This time is defined but this is a silly way to do it. We do this for emphasis.   "
 },
@@ -8447,7 +8447,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#CHAPTERwhen-deriv-doesnt-2-23",
   "type": "Example",
-  "number": "16.7",
+  "number": "16.1.0.7",
   "title": "",
   "body": " Derivative doesn t exist        It is intuitively clear that derivative of the function (above) is not defined at . We will confirm our intuition using .  That is, we'll try to compute the derivative of at using and see what goes wrong. The existence of the derivative of at is equivalent to the existence of the limit , so we will try to compute this limit and see what happens.   "
 },
@@ -8456,7 +8456,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#PROBLEMLRLim1overAbsh",
   "type": "Drill",
-  "number": "16.8",
+  "number": "16.1.0.8",
   "title": "",
   "body": "       Show that .    Show that .   "
 },
@@ -8465,7 +8465,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#EXAMPLEHeavisideFunction",
   "type": "Example",
-  "number": "16.9",
+  "number": "16.1.0.9",
   "title": "The Heaviside Function.",
   "body": " The Heaviside Function         shows that the derivative of the Absolute Value function (shown at the right) is: Notice that it is not defined at . We call the Heaviside function in honor of Oliver Heaviside (1850-1925). Simple as it is, Heaviside's function is a fundamental tool in signal processing, control theory, and the solution of differential equations.  "
 },
@@ -8474,7 +8474,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#PROBLEMHeavisideDeriv",
   "type": "Drill",
-  "number": "16.10",
+  "number": "16.1.0.10",
   "title": "",
   "body": "       Use to show that when     Explain why the result in part (a) does not contradict    "
 },
@@ -8483,7 +8483,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#DEFINITIONOneSidedLimits",
   "type": "Definition",
-  "number": "16.11",
+  "number": "16.1.0.11",
   "title": "One-sided Limits.",
   "body": " One-sided Limits  Definition One-sided Limits    If is a real number (or or ) and we say that is the right-hand limit of at . If is a real number (or or ) and we say that is the left-hand limit of at .   "
 },
@@ -8492,7 +8492,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERwhen-deriv-doesnt-2.html#THEOREMOneSideLim",
   "type": "Theorem",
-  "number": "16.12",
+  "number": "16.1.0.12",
   "title": "One Sided Derivatives.",
   "body": " One Sided Derivatives  Theorem One Sided Derivatives    exists if and only if In that case all three limits are equal.  "
 },
@@ -8510,7 +8510,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONone-sided-deriv.html#DEFINITIONone-sided-deriv",
   "type": "Definition",
-  "number": "16.13",
+  "number": "16.2.0.1",
   "title": "One Sided Derivatives.",
   "body": " One Sided Derivatives  Definition One Sided Derivatives    Given a function, , defined at a point :    is said to have a right-hand derivative at if the limit exists.     is said to have a left-hand derivative at if the limit exists.      "
 },
@@ -8519,7 +8519,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONone-sided-deriv.html#COROLLARYDerivEqualLRDeriv",
   "type": "Corollary",
-  "number": "16.14",
+  "number": "16.2.0.2",
   "title": "",
   "body": "  If , then is differentiable at and .  "
 },
@@ -8528,7 +8528,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONone-sided-deriv.html#SECTIONone-sided-deriv-7",
   "type": "Drill",
-  "number": "16.15",
+  "number": "16.2.0.3",
   "title": "",
   "body": "  Notice that since the Heaviside function at  , is not defined, neither are , , or .    Which of these derivatives would be defined if we were to arbitrarily define ? Explain.    Which of these derivatives would be defined if we were to arbitrarily define ? Explain.    Is there a value we could assign to so that is defined. Explain.   Review .   "
 },
@@ -8537,7 +8537,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONone-sided-deriv.html#SECTIONone-sided-deriv-8",
   "type": "Drill",
-  "number": "16.16",
+  "number": "16.2.0.4",
   "title": "",
   "body": "  Compute the right- and left-hand derivative, and the derivative itself, if they exist, of each of the following functions at the and . If any of these derivatives don't exist explain why not.                       "
 },
@@ -8546,7 +8546,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONone-sided-deriv.html#SECTIONone-sided-deriv-9",
   "type": "Drill",
-  "number": "16.17",
+  "number": "16.2.0.5",
   "title": "",
   "body": "  Use the limit definitions to compute the right- and left-hand derivative, of the function, , at , , and . At which of these points is differentiable?    "
 },
@@ -8555,7 +8555,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONone-sided-deriv.html#PROBLEMHeaviTranslate",
   "type": "Drill",
-  "number": "16.18",
+  "number": "16.2.0.6",
   "title": "",
   "body": "      Let be the Heaviside function and let be a real number.   Sketch .    Use to show that is not differentiable at .       Let also be a real number, distinct from , and define    Sketch .    Use to show that is not differentiable at or .      "
 },
@@ -8573,7 +8573,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonIntuitExample.html#SECTIONNonIntuitExample-10",
   "type": "Problem",
-  "number": "17.1",
+  "number": "17.1.0.1",
   "title": "",
   "body": " Use your favorite computational tool to find a value of near such that .  "
 },
@@ -8600,7 +8600,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DRILLBoundedGrowth",
   "type": "Problem",
-  "number": "17.2",
+  "number": "17.2.0.1",
   "title": "",
   "body": " Suppose is a positive real number, and that . Find a formula for as a function of time (in seconds), such that at each integer , the distance from to is half of the distance from to .  "
 },
@@ -8618,7 +8618,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONFormalLimits-10",
   "type": "Drill",
-  "number": "17.3",
+  "number": "17.2.0.2",
   "title": "",
   "body": "  If how large must be in order to guarantee that                       "
 },
@@ -8627,7 +8627,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONsecond-inad-limit-at-infinity",
   "type": "Definition",
-  "number": "17.4",
+  "number": "17.2.0.3",
   "title": "Positive Function With Limit Zero at Infinity.",
   "body": " Positive Function With Limit Zero at Infinity  Definition Positive Function With Limit Zero at Infinity    Suppose for all Then we say that if and only if for every we can find a real number with the property that if , then .   "
 },
@@ -8636,7 +8636,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLELimPosFuncInf",
   "type": "Example",
-  "number": "17.5",
+  "number": "17.2.0.4",
   "title": "",
   "body": " Show that if then As before take . (Think of epsilon as being handed to you by Bishop Berkeley. You don t get to control it, he does. Moreover all he will tell you about it is that it is a positive number.)  Once epsilon is given your job is to find out how large has to be to guarantee that So we work the problem backwards. That is, we start with and solve for to find that . If we take when then   "
 },
@@ -8645,7 +8645,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONconvincing-skeptic-19",
   "type": "Drill",
-  "number": "17.6",
+  "number": "17.2.0.5",
   "title": "",
   "body": "  Use to prove that for each of the functions below . That is, assume is given and find a lower bound such that if then .                                 "
 },
@@ -8654,7 +8654,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLElimit1",
   "type": "Example",
-  "number": "17.7",
+  "number": "17.2.0.6",
   "title": "",
   "body": " Suppose Can you guess the value of ? Let be given. Then when has any positive value, if we have and by we conclude that since all of the requirements of our definition have been met (except, of course, ). Of course, this is nonsense. As we have noted as increases without bound gets arbitrarily close to zero. So clearly . That we are able to prove that goes to zero simply means that doesn t capture everything we need. We need a more encompassing definition of a limit.  "
 },
@@ -8663,7 +8663,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-infinity-nearly-adequate",
   "type": "Definition",
-  "number": "17.8",
+  "number": "17.2.0.7",
   "title": "Zero Limit at Infinity.",
   "body": " Zero Limit at Infinity  Definition Zero Limit at Infinity    Suppose is defined for all . Then we say that if and only if for every we can find a real number with the property that whenever     "
 },
@@ -8672,7 +8672,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLEFormalLimitProof1",
   "type": "Example",
-  "number": "17.9",
+  "number": "17.2.0.8",
   "title": "First:.",
   "body": " First:  Suppose . We want to prove rigorously that .  "
 },
@@ -8699,7 +8699,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-13",
   "type": "Problem",
-  "number": "17.10",
+  "number": "17.2.0.9",
   "title": "",
   "body": " Identify which statements in the proof in correspond to the first, second, third, and fourth parts of the format presented above.  "
 },
@@ -8708,7 +8708,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLEFormalLimitProof2",
   "type": "Example",
-  "number": "17.11",
+  "number": "17.2.0.10",
   "title": "",
   "body": " Our previous examples and problems in this section were fairly simple as formal limit problems go. This one is more complex.  Use to show that .  "
 },
@@ -8735,7 +8735,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMProofPractice1",
   "type": "Drill",
-  "number": "17.12",
+  "number": "17.2.0.11",
   "title": "",
   "body": "  Explain carefully, and in detail, the reasoning that supports the claims made in Equations and .   "
 },
@@ -8744,7 +8744,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-20",
   "type": "Drill",
-  "number": "17.13",
+  "number": "17.2.0.12",
   "title": "",
   "body": "  For each of the following show that .                                            .}   "
 },
@@ -8753,7 +8753,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-posinfinity",
   "type": "Definition",
-  "number": "17.14",
+  "number": "17.2.0.13",
   "title": "A Limit at <span class=\"process-math\">\\(+\\infty\\)<\/span>.",
   "body": " A Limit at  Definition A Limit at    Suppose that is a real number and that is defined for all . Then we say that if and only if for every there is a real number with the property that whenever     "
 },
@@ -8762,7 +8762,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-24",
   "type": "Example",
-  "number": "17.15",
+  "number": "17.2.0.14",
   "title": "",
   "body": " Suppose . Intuitively, it is clear that but we need to prove that this is so.  "
 },
@@ -8789,7 +8789,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-27",
   "type": "Example",
-  "number": "17.16",
+  "number": "17.2.0.15",
   "title": "",
   "body": "  In we approached the problem of finding a horizontal asymptote of in the following highly intuitive manner, using the notation. So we see that this limit must be equal to five. To prove this rigorously, without referring to infinity, we use   "
 },
@@ -8807,7 +8807,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-29",
   "type": "Drill",
-  "number": "17.17",
+  "number": "17.2.0.16",
   "title": "",
   "body": "      Show that we really only need the condition by showing that implies that .    Suppose that and . Prove that if then    "
 },
@@ -8816,7 +8816,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-30",
   "type": "Drill",
-  "number": "17.18",
+  "number": "17.2.0.17",
   "title": "",
   "body": "  We want to give a rigorous proof that . Let be given.    Do the scrapwork that shows that we must take .    Show that if then    "
 },
@@ -8825,7 +8825,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-31",
   "type": "Drill",
-  "number": "17.19",
+  "number": "17.2.0.18",
   "title": "",
   "body": "  Do the scrapwork, and provide a rigorous proof of each of the limits below.                  "
 },
@@ -8834,7 +8834,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-neginfinity",
   "type": "Definition",
-  "number": "17.20",
+  "number": "17.2.0.19",
   "title": "A Limit at <span class=\"process-math\">\\(-\\infty\\)<\/span>.",
   "body": " A Limit at  Definition A Limit at    Suppose is defined for all Then we say that if and only if for every we can find a real number with the property that whenever     "
 },
@@ -8843,7 +8843,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-34",
   "type": "Drill",
-  "number": "17.21",
+  "number": "17.2.0.20",
   "title": "",
   "body": "  Do the scrapwork, and provide a rigorous proof of each of the limits below.                  "
 },
@@ -8861,7 +8861,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#DEFINITIONlimits-at-real",
   "type": "Definition",
-  "number": "17.22",
+  "number": "17.3.0.1",
   "title": "The Limit at a Point.",
   "body": " The Limit at a Point  Definition The Limit at a Point    Suppose is a function, and that is a real number. We say that if and only if for every there is a with the property that whenever , .   "
 },
@@ -8870,7 +8870,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#DRILLLimAtZero-LimAtA",
   "type": "Problem",
-  "number": "17.23",
+  "number": "17.3.0.2",
   "title": "",
   "body": "  Use , , , and to explain that the following are obviously true.   We are not looking for a formal proof, just a reasonable explanation.  "
 },
@@ -8879,7 +8879,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-16",
   "type": "Example",
-  "number": "17.24",
+  "number": "17.3.0.3",
   "title": "",
   "body": " Observe that it is intuitively clear that if then . We wish to prove this rigorously.  "
 },
@@ -8924,7 +8924,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#EXAMPLEDiscontLimit2",
   "type": "Example",
-  "number": "17.25",
+  "number": "17.3.0.4",
   "title": "",
   "body": "  Returning from recall that we had We had shown by an intuitive argument that . Our previous proof lacked rigor, especially in the last step. We will provide a fully rigorous proof now.  "
 },
@@ -8942,7 +8942,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-29",
   "type": "Drill",
-  "number": "17.26",
+  "number": "17.3.0.5",
   "title": "",
   "body": "  Use the proof above to recreate the scrapwork that we did before we wrote the proof.   "
 },
@@ -8951,7 +8951,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#EXAMPLEConcrete1",
   "type": "Example",
-  "number": "17.27",
+  "number": "17.3.0.6",
   "title": "4.",
   "body": " 4   We would like to find the value of , and prove that the value we find is correct.  Remember that none of our limit definitions tell us how to find the value of a limit, only how to prove that it has a particular value after we ve found it. In our examples so far the value of the limits have been intuitively clear so we haven t concerned ourselves with this part of the problem. But before we can prove that a limit has a particular value we obviously need to decide what we believe the limit value is.  We have several options for doing this. The simplest is guessing, but guessing works best if we have some intuition about the problem. Guessing blindly is usually a waste of time. Nevertheless, guessing is always an option. Can you guess the value of this limit?  Another simple option is to use a calculator and plug the value of the limit point, in this case , and see what the calculator comes up with. This will work if the function is continuous at the limit point. But is not continuous at so that won t help with this problem. Try it and see.         A third, and much more useful option is to sketch the graph of to see what is close to near the limit point. The graph of is given at the right. It is not defined at because when we get zero in the denominator. Nevertheless the limit at seems to exist. As you can see as approaches , appears to approach . Based on this graph it seems likely that the value of the limit is .  As we saw in , Algebra can also be very helpful. In this case we see that where the cancellation in red is only valid when . Our limit point is so it is not under consideration.  In fact, once we have rigorously proved , and from (We will do this in ) the following will be a valid proof:   "
 },
@@ -8960,7 +8960,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-31",
   "type": "Drill",
-  "number": "17.28",
+  "number": "17.3.0.7",
   "title": "",
   "body": "  Identify where we used , , and in the development above.   "
 },
@@ -8987,7 +8987,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#DIGRESSIONWhyProveTheorems-5",
   "type": "Drill",
-  "number": "17.29",
+  "number": "17.3.0.8",
   "title": "",
   "body": "      Show that satisfies all of the conditions of .    Use  to prove that .    Is your proof in part (b) rigorous? Why or why not?   "
 },
@@ -8996,7 +8996,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-39",
   "type": "Example",
-  "number": "17.30",
+  "number": "17.3.0.9",
   "title": "",
   "body": " In this example we will show rigorously that the derivative of is . To do that we need to show that Recall that differentiation is a local property so we are thinking of as a fixed, but unspecified real number. The variable in this example is .  "
 },
@@ -9014,7 +9014,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-41",
   "type": "Drill",
-  "number": "17.31",
+  "number": "17.3.0.10",
   "title": "",
   "body": "  Use the scrapwork above to write down a rigorous proof that if then .   "
 },
@@ -9041,7 +9041,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMTriangIneq",
   "type": "Theorem",
-  "number": "17.32",
+  "number": "17.4.0.1",
   "title": "The Triangle Inequality.",
   "body": " The Triangle Inequality  Theorem Triangle Inequality   For any real numbers , and , .  "
 },
@@ -9059,7 +9059,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimConstInf",
   "type": "Theorem",
-  "number": "17.33",
+  "number": "17.4.0.2",
   "title": "The Limit at Infinity of a Constant Function is the Constant.",
   "body": " The Limit at Infinity of a Constant Function is the Constant  Theorem Limit at Infinity of a Constant Function is the Constant  Suppose and are real numbers. If for all then .  "
 },
@@ -9077,7 +9077,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimConstNegInf",
   "type": "Theorem",
-  "number": "17.34",
+  "number": "17.4.0.3",
   "title": "The Limit at Negative Infinity of a Constant Function is the Constant.",
   "body": " The Limit at Negative Infinity of a Constant Function is the Constant  Theorem Limit at Negative Infinity of a Constant Function is the Constant  Suppose and are real numbers. If for all then   "
 },
@@ -9086,7 +9086,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONLimitLaws-2-12",
   "type": "Drill",
-  "number": "17.35",
+  "number": "17.4.0.4",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of .   "
 },
@@ -9095,7 +9095,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimConstPoint",
   "type": "Theorem",
-  "number": "17.36",
+  "number": "17.4.0.5",
   "title": "The Limit at a Point of a Constant Function is the Constant.",
   "body": " The Limit at a Point of a Constant Function is the Constant  Theorem Limit at a Point of a Constant Function is the Constant  Suppose is a real number and is a point in the domain of . If near then   "
 },
@@ -9104,7 +9104,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONLimitLaws-2-14",
   "type": "Drill",
-  "number": "17.37",
+  "number": "17.4.0.6",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of .    Despite the apparent simplicity of this problem there is a lot going on here. Recall that near means that on some open interval, say , containing except possibly at (see Definition ). You need to find a such that if then . That is, you need an interval of length with as the midpoint where . But there is no guarantee that is the midpoint of the interval . This would be an excellent time to engage your visual intuition by drawing a sketch so you can see the problem.   "
 },
@@ -9113,7 +9113,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimSumInf",
   "type": "Theorem",
-  "number": "17.38",
+  "number": "17.4.1.1",
   "title": "The Limit of a Sum at Infinity.",
   "body": " The Limit of a Sum at Infinity  Theorem Limit of a Sum at Infinity   If and then   "
 },
@@ -9140,7 +9140,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at-5",
   "type": "Drill",
-  "number": "17.39",
+  "number": "17.4.1.2",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of below.   "
 },
@@ -9149,7 +9149,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimSumNegInf",
   "type": "Theorem",
-  "number": "17.40",
+  "number": "17.4.1.3",
   "title": "The Limit of a Sum at Negative Infinity.",
   "body": " The Limit of a Sum at Negative Infinity  Theorem Limit of a Sum at Negative Infinity   If and then   "
 },
@@ -9158,7 +9158,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at-7",
   "type": "Drill",
-  "number": "17.41",
+  "number": "17.4.1.4",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of below.   "
 },
@@ -9167,7 +9167,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimSumPoint",
   "type": "Theorem",
-  "number": "17.42",
+  "number": "17.4.1.5",
   "title": "Limit of a Sum at a Point.",
   "body": " Limit of a Sum at a Point  Theorem Limit of a Sum at a Point  Suppose that is some real number, and . Then   "
 },
@@ -9176,7 +9176,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMSqThmInfinity",
   "type": "Theorem",
-  "number": "17.43",
+  "number": "17.4.2.1",
   "title": "The Squeeze  Theorem at Infinity.",
   "body": " The Squeeze Theorem at Infinity  Theorem Squeeze Theorem at Infinity  If on some interval, and then also.  "
 },
@@ -9194,7 +9194,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONsqueeze-theorem-4",
   "type": "Drill",
-  "number": "17.44",
+  "number": "17.4.2.2",
   "title": "",
   "body": "  Use the proof of Theorem as a model to prove Theorem below.   "
 },
@@ -9203,7 +9203,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMSqThmNegInfinity",
   "type": "Theorem",
-  "number": "17.45",
+  "number": "17.4.2.3",
   "title": "The Squeeze  Theorem at Negative Infinity.",
   "body": " The Squeeze Theorem at Negative Infinity  Theorem Squeeze Theorem at negative infinity  If on some interval, and then also.  "
 },
@@ -9212,7 +9212,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONsqueeze-theorem-6",
   "type": "Drill",
-  "number": "17.46",
+  "number": "17.4.2.4",
   "title": "",
   "body": "  Use the proof of Theorem as a model to prove Theorem below.   "
 },
@@ -9221,7 +9221,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMSqThmFinite",
   "type": "Theorem",
-  "number": "17.47",
+  "number": "17.4.2.5",
   "title": "The Squeeze  Theorem, at a Point.",
   "body": " The Squeeze Theorem, at a Point  Theorem Squeeze Theorem at a point  If near and then also.  "
 },
@@ -9230,7 +9230,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#EXAMPLELimitComposition",
   "type": "Example",
-  "number": "17.48",
+  "number": "17.4.3.1",
   "title": "",
   "body": " Let and . Observe that when , that , and that is not continuous at . We have and . Therefore   "
 },
@@ -9239,7 +9239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimCompInf",
   "type": "Theorem",
-  "number": "17.49",
+  "number": "17.4.3.2",
   "title": "The Limit of a Composition at Infinity.",
   "body": " The Limit of a Composition at Infinity  Theorem Limit of a Composition at Infinity   Suppose and is continuous at . Then   "
 },
@@ -9266,7 +9266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONlimit-composition-8",
   "type": "Drill",
-  "number": "17.50",
+  "number": "17.4.3.3",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of Theorem below.   "
 },
@@ -9275,7 +9275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimCompNegInf",
   "type": "Theorem",
-  "number": "17.51",
+  "number": "17.4.3.4",
   "title": "The Limit of a Composition at Negative Infinity.",
   "body": " The Limit of a Composition at Negative Infinity  Theorem Limit of a Composition at Negative Infinity   Suppose and is continuous at . Then   "
 },
@@ -9284,7 +9284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONlimit-composition-10",
   "type": "Drill",
-  "number": "17.52",
+  "number": "17.4.3.5",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of Theorem below.   "
 },
@@ -9293,7 +9293,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimCompPoint",
   "type": "Theorem",
-  "number": "17.53",
+  "number": "17.4.3.6",
   "title": "The Limit of a Composition at a Point.",
   "body": " The Limit of a Composition at a Point  Theorem Limit of a Composition at a Point  Suppose , and that is continuous at . Then   "
 },
@@ -9302,7 +9302,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMlimit-product-infinity",
   "type": "Theorem",
-  "number": "17.54",
+  "number": "17.4.4.1",
   "title": "The Limit of a Product at Infinity.",
   "body": " The Limit of a Product at Infinity  Theorem Limit of a Product at Infinity  If then   "
 },
@@ -9311,7 +9311,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#LEMMALimProd1",
   "type": "Lemma",
-  "number": "17.55",
+  "number": "17.4.4.2",
   "title": "",
   "body": " If and then   "
 },
@@ -9320,7 +9320,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#LEMMALimProd2",
   "type": "Lemma",
-  "number": "17.56",
+  "number": "17.4.4.3",
   "title": "",
   "body": " If and then   "
 },
@@ -9330,7 +9330,7 @@ var ptx_lunr_docs = [
   "url": "SECTIONLimitLaws.html#PROOFLemmaLimProd1",
   "type": "Proof",
   "number": "17.4.4.1",
-  "title": "Proof of Theorem 17.54.",
+  "title": "Proof of Theorem 17.4.4.1.",
   "body": " Proof of  Let be given. Observe that Adding and subtracting the same term like this is a highly non-intuitive, but common trick. Most mathematicians call it adding zero since middle terms add to zero. We (the authors) call this uncanceling because the middle terms cancel. It is hard to tell a priori when this trick will work. Sometimes you just have to try something and see what happens.  In this case our uncanceling allows us to use the Triangle Inequality effectively. From the Triangle Inequality we see that By there is a real number such that if then By there is a real number such that if then Take . If then Therefore .  "
 },
 {
@@ -9338,7 +9338,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#LEMMABounded1",
   "type": "Lemma",
-  "number": "17.57",
+  "number": "17.4.4.4",
   "title": "",
   "body": " If then there are positive real numbers and , such that if , then .  "
 },
@@ -9356,7 +9356,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-product-at-7-7",
   "type": "Problem",
-  "number": "17.58",
+  "number": "17.4.4.5",
   "title": "",
   "body": " Draw a convincing diagram of and its proof.  "
 },
@@ -9366,7 +9366,7 @@ var ptx_lunr_docs = [
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-product-at-7-8",
   "type": "Proof",
   "number": "2",
-  "title": "Proof of Lemma 17.55.",
+  "title": "Proof of Lemma 17.4.4.2.",
   "body": " Proof of  From we see that there are positive real numbers and , such that for all  Let be given. Since there is a real number such that for all  Take . Then for all we have Therefore   "
 },
 {
@@ -9375,7 +9375,7 @@ var ptx_lunr_docs = [
   "url": "SECTIONLimitLaws.html#PROOFLemmaLimProd2",
   "type": "Proof",
   "number": "1",
-  "title": "Proof of Lemma 17.56.",
+  "title": "Proof of Lemma 17.4.4.3.",
   "body": " Proof of  Let be given.  There are two cases.   Case 1:     Because there is a real number such that if then   So if then .  Therefore when .    Case 2:     In this case .  Therefore when .   Since the limit is zero in both cases we see that .  "
 },
 {
@@ -9383,7 +9383,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-product-at-8-9",
   "type": "Drill",
-  "number": "17.59",
+  "number": "17.4.4.6",
   "title": "",
   "body": "  As you ve seen using the limit definition (using and ) to prove theorems is hard. But, as we said in DIGRESSION: Why We Prove Theorems , the whole point of proving theorems is to give ourselves more refined tools that we can use instead of resorting to definitions.    Now that we have and there is actually a simpler way to prove . Observe that and complete the proof by citing and and the appropriate, previously proven, limit theorem.   The right side of equation is a sum.     can also be proved without resorting to the limit definition (using and ). Prove it by citing and the appropriate, previously proved, limit theorems.   "
 },
@@ -9392,7 +9392,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-product-at-8-11",
   "type": "Drill",
-  "number": "17.60",
+  "number": "17.4.4.7",
   "title": "",
   "body": "  Use our proof of Theorem as a model to prove Theorem below.   "
 },
@@ -9401,7 +9401,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMlimit-product-negative-infinity",
   "type": "Theorem",
-  "number": "17.61",
+  "number": "17.4.4.8",
   "title": "The Limit of a Product at Negative Infinity.",
   "body": " The Limit of a Product at Negative Infinity  Theorem Limit of a Product at Negative Infinity  If then   "
 },
@@ -9410,7 +9410,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-product-at-8-13",
   "type": "Drill",
-  "number": "17.62",
+  "number": "17.4.4.9",
   "title": "",
   "body": "  Use our proof of Theorem as a model to prove Theorem below.   "
 },
@@ -9419,7 +9419,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimProdPoint",
   "type": "Theorem",
-  "number": "17.63",
+  "number": "17.4.4.10",
   "title": "Limit of a Product at a Point.",
   "body": " Limit of a Product at a Point  Theorem Limit of a Product at a Point  Suppose that and for some real number . Then   "
 },
@@ -9428,7 +9428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#LEMMA1overxIsCont",
   "type": "Lemma",
-  "number": "17.64",
+  "number": "17.4.5.1",
   "title": "",
   "body": " The function is continuous at .  "
 },
@@ -9446,7 +9446,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#PROBLEM1overXIsCont",
   "type": "Drill",
-  "number": "17.65",
+  "number": "17.4.5.2",
   "title": "",
   "body": "      Use the scrapwork above to show that if then .    If we could replicate the proof in part (a), but keeping track of all of the sign changes will be burdensome. Otherwise it is really the same proof. Instead, notice that if then and so by part (a) Use this observation to prove that if then .   Let .   "
 },
@@ -9455,7 +9455,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimQuot",
   "type": "Theorem",
-  "number": "17.66",
+  "number": "17.4.5.3",
   "title": "The Limit of a Quotient is the Quotient of the Limits.",
   "body": " The Limit of a Quotient is the Quotient of the Limits  Theorem Limit of a Quotient is the Quotient of the Limits  Suppose is positive infinity, negative infinity, or some real number, that , and that . Then   "
 },
@@ -9464,7 +9464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#PROBLEMProofOfQuotLim",
   "type": "Drill",
-  "number": "17.67",
+  "number": "17.4.5.4",
   "title": "",
   "body": "      Prove that if and then    Rewrite as . Which of our theorems can you apply?    Prove that if and then     Prove that if is some real number, and , and . Then    "
 },
@@ -9473,7 +9473,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#DEFINITIONOneSidedLimits-Formal",
   "type": "Definition",
-  "number": "17.68",
+  "number": "17.4.5.5",
   "title": "Right-Hand Limit.",
   "body": " Right-Hand Limit  Definition Right-Hand Limit    Suppose is defined on some interval . Let be a real number. We say that provided that for each , there is a with such that if , then .   "
 },
@@ -9482,7 +9482,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#PROBLEMCodaOneSided",
   "type": "Drill",
-  "number": "17.69",
+  "number": "17.4.5.6",
   "title": "",
   "body": "      Use as a model to state a similar definition for     Prove from .   "
 },
@@ -9509,7 +9509,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsASum.html#FIGUREPartitionedInterval",
   "type": "Figure",
-  "number": "18.1",
+  "number": "18.1.0.1",
   "title": "",
   "body": " A partitioned interval     "
 },
@@ -9536,7 +9536,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntAsAntiDiff.html#DEFINITIONAntiderivative",
   "type": "Definition",
-  "number": "18.2",
+  "number": "18.2.0.1",
   "title": "Antiderivative.",
   "body": " Antiderivative   Suppose we have a function with an derivative . Then is called an antiderivative of .   "
 },
@@ -9545,7 +9545,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntAsAntiDiff.html#EXAMPLESimpleInt1",
   "type": "Example",
-  "number": "18.3",
+  "number": "18.2.0.2",
   "title": "A Simple Integration.",
   "body": " A Simple Integration  For example, can you find a formula for this integral?   In this example clearly, . Thus from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant, traditionally denoted , (presumably for constant ) so we write   As this example shows the expression represents a multifunction much like the  functions we encountered in .  There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for our problem. None of the complicated domain and range difficulties that caused so many headaches with the inverse trigonometric functions will be in play here. Since these multifunctions are so simple, we will dispense with the formal language and call the most general antiderivative of . But remember that it is really a multfunction since is unspecified.  "
 },
@@ -9554,7 +9554,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntAsAntiDiff.html#PROBLEMAntiDiffPractice",
   "type": "Drill",
-  "number": "18.4",
+  "number": "18.2.0.3",
   "title": "",
   "body": " Find the most general antiderivative.                            "
 },
@@ -9563,7 +9563,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntAsAntiDiff.html#EXERCISEAntiDerivPractice",
   "type": "Problem",
-  "number": "18.5",
+  "number": "18.2.0.4",
   "title": "",
   "body": "  Antiderivative Show that the following statements are true. Assume is an arbitrary constant.                  Notice that we ve used instead of for our variable. Does that matter? Explain.          "
 },
@@ -9581,7 +9581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERFTC-5.html#TABLEBasicIntegration",
   "type": "Table",
-  "number": "18.6",
+  "number": "18.3.0.1",
   "title": "Integration Rules Inherited from Differentiation Rules",
   "body": " Integration Rules Inherited from Differentiation Rules    Differentiation Rule Integration Rule (Assume and are constants.)    1    where is a constant.    2       3  If is a constant, then         4      5      6      7      8      9      10      11      12      13      "
 },
@@ -9590,7 +9590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERFTC-5.html#CHAPTERFTC-5-6",
   "type": "Drill",
-  "number": "18.7",
+  "number": "18.3.0.2",
   "title": "",
   "body": "  While we are at line five, notice that we have inserted an absolute value in the formula: One way to define the absolute value function is where the radical indicates the non-negative square root. For example, and .  Show that with this definition of absolute value, we still obtain the formula   (It is common to write , even though this is only valid for . We will adopt this practice.)    Be careful that you do not try to take the logarithm of a negative number.   "
 },
@@ -9599,7 +9599,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERFTC-5.html#CHAPTERFTC-5-7",
   "type": "Drill",
-  "number": "18.8",
+  "number": "18.3.0.3",
   "title": "",
   "body": " It looks like we broke our own rule in lines two and three in the above table of integration rules. Don t we need two integration constants? Isn t it true that where and are arbitrary constants, and that . Explain why what we have in the table is still legitimate.  "
 },
@@ -9626,7 +9626,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDiffeqsIVPS.html#SECTIONDiffeqsIVPS-3",
   "type": "Comment",
-  "number": "18.9",
+  "number": "18.4.0.1",
   "title": "Mathematical Vocabulary.",
   "body": " Mathematical Vocabulary  We called equation  second order because the second derivative is the highest order derivative appearing. (In this case it is the only derivative that appears.)  We didn t specify an order in because at that point first order equations were the only ones we were interested in and that will mostly remain true for the present. However higher order differential equations do come up (see for example, ).  Also, the term differential equation is an historical artifact. They should really be called derivative equations because they almost always involve the differential ratios we called derivatives .  "
 },
@@ -9635,7 +9635,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDiffeqsIVPS.html#DRILLHangingChainSolution",
   "type": "Drill",
-  "number": "18.10",
+  "number": "18.4.0.2",
   "title": "",
   "body": " Show that solves equation . (This is a repeat of Problem .)  "
 },
@@ -9662,7 +9662,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProjectileMotion.html#EXAMPLEVelAcc",
   "type": "Example",
-  "number": "19.1",
+  "number": "19.1.0.1",
   "title": "",
   "body": " Let's say that the ball is thrown upward with an initial velocity of meters per second (roughly miles per hour) and is released at a point meters above the ground. We d like to answer these questions:  How high will the ball go?  When will it hit the ground?  What will be the impact velocity?    To answer these questions, we will translate this problem into the notation of Calculus. Suppose the height of the ball is given by where is measured in meters and is measured in seconds. Then we have the following information   Notice that the acceleration is constant and negative since we've assumed that down is the negative direction. We want to find   when (height at the top of the flight, when the ball s velocity is zero),   when (the time when the ball hits the ground),  and (the impact velocity when the ball strikes the ground).    Second derivatives are a little scary but let s not frighten ourselves. We make the substitution , where denotes velocity. Similarly if we let denote acceleration we have denote acceleration. Starting with our constant acceleration , we need to integrate once to find and twice to find . Once we find these, then we can answer the questions posed.   Notation  More formally we have and But this last equation is way too scary to think about right now so we won t.   We know that so   To find in this case, we observe that . Thus So our velocity is given by   We next integrate to find the ball s position.Since velocity is the derivative of position we have   This time to find the constant we observe that since we have Thus the ball's position is given by: .  Once we have these three equations of motion (acceleration, velocity, position) we can answer any question about the ball s motion. In general, we suggest you find these three equations before trying to answer any questions about motion.  To find the maximum height, we set . So we see that . Solving for gives . Thus the ball's maximum height is So the ball will reach a height of .  To find the impact velocity, we first need to find the time when the ball hits the ground so we solve for when . and we see that both and solve our equation. However snce the negative time would represent time in the past, we can say that the ball will hit the ground when seconds. Thus the impact velocity is The negative answer makes sense as the ball is traveling in the negative direction (recall that we assumed that down is the negative direction).  "
 },
@@ -9671,7 +9671,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProjectileMotion.html#SECTIONProjectileMotion-14",
   "type": "Drill",
-  "number": "19.2",
+  "number": "19.1.0.2",
   "title": "",
   "body": " Suppose we throw two balls straight up. Suppose the first has an initial velocity of and the second has an initial velocity of . The maximum height of the second ball either be  twice the maximum height of the first or,  four times the maximum height of the first or,  eight times the maximum height of the first.  Which of these opitons does your intuition say is correct? Either show that your intuition is correct or show that it is incorrect. (Again, we ignore air resistance.)  "
 },
@@ -9680,7 +9680,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProjectileMotion.html#PROBLEMDeceleratingCar",
   "type": "Drill",
-  "number": "19.3",
+  "number": "19.1.0.3",
   "title": "",
   "body": " Automobile safety experts say that a skilled driver in a car with good tires and dry pavement can safely brake to a stop at a rate of .  Suppose it takes you feet to stop your car on a dry road where the speed limit is . Were you speeding?  "
 },
@@ -9689,7 +9689,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProjectileMotion.html#SECTIONProjectileMotion-17",
   "type": "Problem",
-  "number": "19.4",
+  "number": "19.1.0.4",
   "title": "",
   "body": " Consider a projectile launched from the origin with an initial velocity of at an angle of elevation .     Path of a thrown object.    Assume that there is no air resistance and the acceleration due to gravity is .   Show that the horizontal velocity is given by .   Show that the vertical velocity is given by .   Find the parametric function which gives the projectile s position as a function of time (it s trajectory).   Show that the trajectory can also be given as the graph of    Use equation to show that the distance from its starting point where the projectile returns to the ground is given by .   Mathematical Terminology  The distance a projectile flies is called its range . This is not to be confused with the range of a function.    Show that the maximum range occurs when .   On Feb. 6, 1971, astronaut Alan Shepard pulled out a makeshift six-iron he smuggled on board Apollo and hit two golf balls on the lunar surface, becoming the first, and so far the only, person to play golf anywhere other than earth. Assuming that the gravity on the moon is that of earth and that Shepard can hit the ball identically on the earth and the moon, and ignoring air resistance on the earth, would the ball go times farther before it returns to the surface on the moon than on the earth? Justify your answer.  "
 },
@@ -9716,7 +9716,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#EXAMPLESandInWater",
   "type": "Example",
-  "number": "19.5",
+  "number": "19.2.0.1",
   "title": "",
   "body": " To model a grain of sand of mass descending in water we let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. From the diagram below we see that there are three forces acting on the sand: (1) the weight of the sand grain, (2) the buoyancy of the sand grain, and (3) the drag that the water imposes on the sand grain.   Diagram of the forces on an object in a fluid.   As always we denote the acceleration due to gravity by . Then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a positive constant and is the velocity. Notice that this force is negative as the drag is necessarily in the direction opposit of the motion. The buoyancy is really just the upward force that water would apply if the sand wasn't there.   Comment (Note to self)  That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.  Is more explanation necessary here?   "
 },
@@ -9725,7 +9725,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMTerminalVeloctiy",
   "type": "Problem",
-  "number": "19.6",
+  "number": "19.2.0.2",
   "title": "Terminal Velocity.",
   "body": "Terminal Velocity    Use Newton's Third Law, ( )orce=( )ass ( )cceleration to show that the situation in can be modeled by the IVP     Let and note that (why?). Show that the above leads to the IVP        Use the substitution , to rewrite the above equation as     Show that      Compute , and explain why this is called the terminal velocity of the sand settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.  "
 },
@@ -9734,7 +9734,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#EXAMPLEIntTan",
   "type": "Example",
-  "number": "19.7",
+  "number": "19.2.0.3",
   "title": "The Integral of the Tangent Function.",
   "body": " The Integral of the Tangent Function  One of the entries in , was . We can use this to compute by making the substitution .  Thus .  "
 },
@@ -9743,7 +9743,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PARAGRAPHSubstGBU-5",
   "type": "Drill",
-  "number": "19.8",
+  "number": "19.2.0.4",
   "title": "",
   "body": " Use a similar substitution to show that   "
 },
@@ -9752,7 +9752,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMTrickySubstitution1",
   "type": "Problem",
-  "number": "19.9",
+  "number": "19.2.0.5",
   "title": "",
   "body": " On the other hand we know from that and we can use this knowledge.  Suppose we need to compute or . The same substitution we used to transform these into the integrals (seen in equation and equation ) will work in reverse.   Use the substitution to show that:   Now use your Algebra and Trigonometry skills to show that so that .   Use the substitution to show that   Now use your Algebra and Trigonometry skills to show that so that .  "
 },
@@ -9761,7 +9761,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMAlgebraicSubst1",
   "type": "Problem",
-  "number": "19.10",
+  "number": "19.2.0.6",
   "title": "",
   "body": " The integrals in Problem and Problem can be evaluated by means of several different substitutions as we've seen. There are others that will also work but our principle point for now is that no substitution is wrong , some result in a new integral that is easier than the original and some will not. If our goal is simply to evaluate the integral we'll want to look for the simplest method we can find.   Find a simpler substitution than the one we used in Problem to evaluate the integral    Notice that is almost the differential of .   Find a simpler substitution than the one we used in Problem to evaluate the integral    The substitution you used in will probably work here.  "
 },
@@ -9779,7 +9779,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PARAGRAPHSubstGBU-19",
   "type": "Example",
-  "number": "19.11",
+  "number": "19.2.0.7",
   "title": "",
   "body": " An Unhelpful Substitution For example, consider the integral We let so that . This gives  This is all correct, but leads to an integral far worse than the original, But and this is the point of this example we have no way of seeing that this particular substitution will not be helpful until after we ve done the computations above. The lessons here are (1) Be patient with yourself, because this is hard, and (2) Don t give up, because this is hard.  A Helpful Substitution But notice that is almost the derivative of . So let's make instead. Thus . Will that extra factor of be a problem for us? Let s see. Making the substitution we have   "
 },
@@ -9788,7 +9788,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMIntSECCSC",
   "type": "Problem",
-  "number": "19.12",
+  "number": "19.2.0.8",
   "title": "The Integrals of the Secant and Cosecant Functions.",
   "body": "The Integrals of the Secant and Cosecant Functions  At this point we have know the integrals of the , , , and . The first two were immediate consequences of the differentiation rules, but the , and were harder.   Confirm the identity:    Confirm the identity:    Use the observations in Problem and Problem and a well chosen substitution to show that    Comment:  We have absolute value bars around the expression to ensure that we are not trying to take the logarithm of a negative number. These will not appear obviously in any of the computations you need to do. Just tack them on at the end, like we did.    Compute similarly.  "
 },
@@ -9797,7 +9797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#DIGRESSIONIntPolySecTan-7",
   "type": "Drill",
-  "number": "19.13",
+  "number": "19.2.0.9",
   "title": "",
   "body": "  Show that     Show that    "
 },
@@ -9806,7 +9806,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#EXAMPLEIntPolySecTan",
   "type": "Example",
-  "number": "19.14",
+  "number": "19.2.0.10",
   "title": "",
   "body": "  For our first example we will compute From equation we have and from equation we have So, finally,                                                                           "
 },
@@ -9815,7 +9815,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMPolySecTan",
   "type": "Problem",
-  "number": "19.15",
+  "number": "19.2.0.11",
   "title": "",
   "body": "  Problme Evaluate the integrals and differentiate your solution to confirm that it is correct.                  "
 },
@@ -9824,7 +9824,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMPolySecTanByTrigSub",
   "type": "Problem",
-  "number": "19.16",
+  "number": "19.2.0.12",
   "title": "",
   "body": "  Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available.                  "
 },
@@ -9833,7 +9833,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMPolyCscCot",
   "type": "Problem",
-  "number": "19.17",
+  "number": "19.2.0.13",
   "title": "",
   "body": "  Problem Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available. (You will need to find substitutions analogous to those we developed above.)                  "
 },
@@ -9860,7 +9860,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#IntegrationByParts",
   "type": "Theorem",
-  "number": "19.18",
+  "number": "19.3.0.1",
   "title": "Integration by Parts.",
   "body": " Integration by Parts      Differential Form:       Functional Form:       "
 },
@@ -9878,7 +9878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#EXAMPLEIntParts1",
   "type": "Example",
-  "number": "19.19",
+  "number": "19.3.0.2",
   "title": "",
   "body": " Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.  "
 },
@@ -9887,7 +9887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-9",
   "type": "Problem",
-  "number": "19.20",
+  "number": "19.3.0.3",
   "title": "",
   "body": " Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula   "
 },
@@ -9896,7 +9896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-10",
   "type": "Problem",
-  "number": "19.21",
+  "number": "19.3.0.4",
   "title": "",
   "body": "Notice that in Table we had but we had no analog for the integral of . Perform integral by parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.  "
 },
@@ -9905,7 +9905,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-12",
   "type": "Problem",
-  "number": "19.22",
+  "number": "19.3.0.5",
   "title": "",
   "body": "Perform integration by parts and then substitution to compute and . "
 },
@@ -9914,7 +9914,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-15",
   "type": "Problem",
-  "number": "19.23",
+  "number": "19.3.0.6",
   "title": "",
   "body": "Compute using integration by parts. "
 },
@@ -9923,7 +9923,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-17",
   "type": "Example",
-  "number": "19.24",
+  "number": "19.3.0.7",
   "title": "",
   "body": " Consider If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .  "
 },
@@ -9941,7 +9941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-5",
   "type": "Figure",
-  "number": "19.25",
+  "number": "19.4.0.1",
   "title": "",
   "body": " Diagram of a right triangle.   Diagram of a right triangle.   "
 },
@@ -9950,7 +9950,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-8",
   "type": "Problem",
-  "number": "19.26",
+  "number": "19.4.0.2",
   "title": "",
   "body": " Use the formula for the catenary and (this was the low point on the hanging chain) to show that and so    Note to self  The use of and interchangeably is confusing.    Integrate the result in part (a) to obtain which is the equation of the catenary as stated earlier.  "
 },
@@ -9959,7 +9959,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-10",
   "type": "Figure",
-  "number": "19.27",
+  "number": "19.4.0.3",
   "title": "",
   "body": " Image of a pursuit curve.   Image of a pursuit curve.   "
 },
@@ -9968,7 +9968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#PursuitCurve1",
   "type": "Problem",
-  "number": "19.28",
+  "number": "19.4.0.4",
   "title": "",
   "body": "Problem Pursuit Curve  If we let denote the distance the missile has traveled at time , show that the missile's path must satisfy the IVP    Obviously we can solve equation for but then we would have in terms of , , and which isn't very helpful. The term is particularly problematic since we know almost nothing about it.  But only almost. We do know that .  Differentiate equation to show that the missile s path must satisfy the differential equation with the initial conditions , and .   Let's make this a little easier on our eyes. Let , and show that equation becomes with initial conditions . and use the trigonometric substitution as before to show that    Use the initial condition and the substitution to show that    How far has the plane gone when the missile reaches it? What happens as ?  "
 },
@@ -9977,7 +9977,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#TractrixProblem1",
   "type": "Problem",
-  "number": "19.29",
+  "number": "19.4.0.5",
   "title": "",
   "body": " The following is the view from above of a tractor-trailer. Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point .   Sketch of a tractor-trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels up the -axis and that the rear wheels don't slip.   show the path that the center of the rear axle of the trailer follows must satisfy the equations    Find the equation, of the tractrix.   After you separate the variables substitute in your integral.   Plot your solution on the plane.  "
 },
@@ -9986,7 +9986,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#TrigSub1",
   "type": "Problem",
-  "number": "19.31",
+  "number": "19.4.0.7",
   "title": "",
   "body": " Again, having trigonometry involved was a better option than having the square root. Here, we utilized the trigonometric identity . A surprising number of integrals involve terms such as , or . In these cases, it is often advantageous to utilize a trigonometric substitution, using the identities or to remove the square root, which typically is more a concern than the trigonometry. However, you should remember that there are other techniques at your disposal, so you need to be judicious about what you utilize. For example, consider the integral    Use the trigonometric substitution to compute the above integral.   Now use the non-trigonometric substitution to compute the integral   Which method do you find more appealing? (Or least unappealing?)  "
 },
@@ -9995,7 +9995,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-15",
   "type": "Problem",
-  "number": "19.32",
+  "number": "19.4.0.8",
   "title": "",
   "body": " The table below repeats the last three entries of Table .   Inverse Trigonometric Substitution    Differentiation Rule Integration Rule                 You can memorize it if you like, but if you for get one of these formulas they are straightforward to derive.   Use the substitution to compute .   Use the substitution to compute .   Use the substitution to compute   "
 },
@@ -10004,7 +10004,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#TrigSubst2",
   "type": "Drill",
-  "number": "19.34",
+  "number": "19.4.0.10",
   "title": "",
   "body": "  Finish computing the integral in equation     Compute     Compute     Compute    This appears to be a completely different integral but it really isn't. Complete the square on and then use your result in part (c).   "
 },
@@ -10013,7 +10013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#FallingWithDrag",
   "type": "Problem",
-  "number": "19.35",
+  "number": "19.4.0.11",
   "title": "",
   "body": " Use Newton's Third Law of Motion: ( ) ( )ass ( )cceleration, to show that the velocity of the ball must satisfy the equations: .  Show that the IVP above is equivalent to .   Use the substitution to show that .   Compute . Compare this terminal velocity with our previous results.  "
 },
@@ -10022,7 +10022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-27",
   "type": "Figure",
-  "number": "19.36",
+  "number": "19.4.0.12",
   "title": "",
   "body": " Image of the triangle   Image of the triangle with theta in standard position and legs x and square root of one - x squared.   "
 },
@@ -10031,7 +10031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-29",
   "type": "Drill",
-  "number": "19.37",
+  "number": "19.4.0.13",
   "title": "",
   "body": " Confirm that this is correct by differentiating: .  "
 },
@@ -10040,7 +10040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#OddSinPower",
   "type": "Example",
-  "number": "19.38",
+  "number": "19.4.0.14",
   "title": "",
   "body": "  Since sine is raised to an odd power, it makes sense to save one of the sines and convert everything else to cosine, utilizing the Pythagorean identity , and then apply a substitution as follows. First we save a sine.  . Next we let , so that , which gives .  "
 },
@@ -10049,7 +10049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-36",
   "type": "Problem",
-  "number": "19.39",
+  "number": "19.4.0.15",
   "title": "",
   "body": " Had the cosine been raised to an odd power in , we could have saved one of the cosines instead.   Compute .  "
 },
@@ -10058,7 +10058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-37",
   "type": "Example",
-  "number": "19.40",
+  "number": "19.4.0.16",
   "title": "",
   "body": " Notice that in there would have been nothing wrong with computing as follows: It's just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn't want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.  "
 },
@@ -10067,7 +10067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-38",
   "type": "Problem",
-  "number": "19.41",
+  "number": "19.4.0.17",
   "title": "",
   "body": " Compute the integral using these substitutions:           Finish example using each of the substitutions above. Do you get the same solution as before?  "
 },
@@ -10076,7 +10076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#SinCosOddPower",
   "type": "Problem",
-  "number": "19.42",
+  "number": "19.4.0.18",
   "title": "",
   "body": " Compute the integral by:   Saving one of the cosines and converting everthing else into sines.   Saving one of the sines and converting everthing else into cosines.   Do you get the same result in parts (a) and (b)? Explain.  "
 },
@@ -10085,7 +10085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#SinCosEven",
   "type": "Example",
-  "number": "19.43",
+  "number": "19.4.0.19",
   "title": "",
   "body": " What happens if you don't have an odd power of sine or cosine? For example, suppose you have .  Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In this case, there are a couple of trigonometric identities that can help. They the Half-Angle formlas: . Using these identities in our integral we see that   Using the Half-Angle formula again we obtain   "
 },
@@ -10094,7 +10094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-41",
   "type": "Drill",
-  "number": "19.44",
+  "number": "19.4.0.20",
   "title": "",
   "body": " Show that we get the same result if we use the Double Angle formula: .  "
 },
@@ -10103,7 +10103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-42",
   "type": "Example",
-  "number": "19.45",
+  "number": "19.4.0.21",
   "title": "",
   "body": "    In this example, we can save a as part of the differential and use the identity to change everything else into an expression in tangent. Since the secant is to an even power this again avoids square roots, which is the general idea. Letting we have , so we obtain   "
 },
@@ -10112,7 +10112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-43",
   "type": "Example",
-  "number": "19.46",
+  "number": "19.4.0.22",
   "title": "",
   "body": " If tangent occurs to an odd power, we can save a tangent and a secant as part of the differential and use the same identity to convert everything else to secant. . Letting we have .  "
 },
@@ -10121,7 +10121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-44",
   "type": "Problem",
-  "number": "19.47",
+  "number": "19.4.0.23",
   "title": "",
   "body": " Consider the integral    Compute this integral by saving a and converting the rest into an expression in tangent.   Compute this integral by saving a and converting the rest into an expression in secant.   Verify the at you get the same result in (a) and (b).  "
 },
@@ -10130,7 +10130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-5.html#IntegrationMethods-5-45",
   "type": "Problem",
-  "number": "19.48",
+  "number": "19.4.0.24",
   "title": "",
   "body": "Previously we computed using the identity . We could also use the identity . Do we get a different answer? Explain. "
 },
@@ -10157,7 +10157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#IntegrationMethods-6-2-7",
   "type": "Problem",
-  "number": "19.49",
+  "number": "19.5.1.1",
   "title": "",
   "body": " Use equation to find for the logistic growth model with the initial condition  for the case when .   Solve the same problem for the case where .   Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.   "
 },
@@ -10175,7 +10175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#ElementaryPartFracDecomp",
   "type": "Example",
-  "number": "19.50",
+  "number": "19.5.2.1",
   "title": "",
   "body": " For example notice that if and are constants then and have no common factors. Since it follows that .   Comment  Notice that since and are constants they are polynomials of degree zero.   "
 },
@@ -10193,7 +10193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#PartialFractionDecomp",
   "type": "Theorem",
-  "number": "19.51",
+  "number": "19.5.2.2",
   "title": "The Partial Fraction Decomposition (PFD).",
   "body": " The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non-trivial common factors with then there exist polynomials and , and , such that .  "
 },
@@ -10202,7 +10202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEPFD1",
   "type": "Example",
-  "number": "19.52",
+  "number": "19.5.2.3",
   "title": "",
   "body": " Recall we had To compute this we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, the numerators must also be equal. Thus   Solve these equations anyway you wish, but you should get , , and . Thus so    "
 },
@@ -10211,7 +10211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEHeaviCover",
   "type": "Example",
-  "number": "19.53",
+  "number": "19.5.2.4",
   "title": "Heaviside’s Cover-up Method.",
   "body": " Heaviside's Cover-up Method  Suppose we wish to find the partial fractions decomposition of . As before, we have This leads to   Observe that will be true for every real (or complex) value of . The factor appears in two of the terms on the right suggests that we let In that case we have or    Comment  Actually we are replacing with 1.   We did not simplify this last formula in order to highlight the following Observe that we get the same result if we simply cover up the factor on the left side of above and set    In precisely the same fashion (setting and ) we get: and so that    Warning!  In order to use Heaviside's Cover-Up Method you must have distinct linear factors in the denominator.  In this example they were , , and . If our rational function had been Heaviside's Method would not work because is not linear.  Try it and see what goes wrong.   This trick is known as Heaviside's Cover-Up Method ( HCUM ). It is well known, and can be used to find the PFD of a rational function as long as the denominator can be factored into distinct linear factors.  "
 },
@@ -10220,7 +10220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#PROBLEM",
   "type": "Drill",
-  "number": "19.54",
+  "number": "19.5.2.5",
   "title": "",
   "body": " Use HCUM to complete the decomposition in .  "
 },
@@ -10229,7 +10229,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEHeaviNonLinear",
   "type": "Example",
-  "number": "19.55",
+  "number": "19.5.2.6",
   "title": "The PFD With Nonlinear Factors in the Denominator.",
   "body": " The PFD With Nonlinear Factors in the Denominator  What about something like Since this function satisfies all of the conditions of we can still decompose it into partial fractions. However since is not linear we can't use Heaviside's Method.  Recall that in the decomposition, the numerators in the individual terms can be chosen so that the degrees are less than the degrees in the denominators. This being said, we make the following educated guess as to the form of the partial fractions decomposition.   We can now recombine this to determine and .  This leads to     Solving this (any way you can) we get so that   If we wanted to integrate this, we would obtain       Notice in this example that we really needed to look at the most general possible polynomial of degree one less than the denominators in the partial fractions decomposition; we would not have obtained the correct answer otherwise.  "
 },
@@ -10238,7 +10238,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXERCISEHeaviNonLinear",
   "type": "Problem",
-  "number": "19.56",
+  "number": "19.5.2.7",
   "title": "",
   "body": "  Partial Fraction Decomposition Show that if we tried the following decomposition then no values for and would satisfy this.  "
 },
@@ -10247,7 +10247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-6.html#EXAMPLEPFD2",
   "type": "Example",
-  "number": "19.57",
+  "number": "19.5.2.8",
   "title": "",
   "body": " Suppose we need to compute Applying our partial fractions decomposition, we get     This leads to Solving this (any way you can), we get   Getting back to the integral, we have   Notice that the last two integrals were pretty straightforward. This first integral is more problematic. There is a little algebraic trick which will allow us to break up that integral even further.       Putting this all together, we finally have The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as   The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as    Note from Bob  Bud -- at this point, how much of the paper you wrote should we put in? Will putting it in be too much at this point? Should be some practice exercises first? Should it be appendicized? I'm afraid I've already written too much on partial fractions decompositions. I need your fresh view on this.   Integrating this would be a matter of utilizing the substitution . Of course, this could have been done earlier to produce The point is that you have more tools at your disposal to transform integrals you don't know how to do into ones that you recognize.  Before we send you off to practice such integrals, we want to present you one more option. You have probably noticed that there is more algebra involved than calculus. Some of it is unavoidable, but there are some shortcuts. For example, finding in the original partial fractions decomposition required solving 4 equations in 4 unknowns. Again, this was straightforward, but it turns out that there is a shortcut for this similar to the HCUM. We will present it here.  "
 },
@@ -10265,7 +10265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-3",
   "type": "Example",
-  "number": "19.58",
+  "number": "19.6.0.1",
   "title": "Stone Arch Bridge.",
   "body": " Stone Arch Bridge  Consider one half of a stone arch bridge as drawn below.   Schematic of a stone arch   Schematic of a stone arch    We will draw the positive -axis downward and will focus on the forces at a generic point with coordinates . The problem is to find the curve so that the vertical component of the tangential force at is equal to the weight of the bridge from to . If we do this, then that means that the weight of the bridge will be directed toward the base of the bridge. With this in mind, let denote the area of the side section of the bridge from to . We will also let denote the (constant) magnitude of the horizontal force along the length of the bridge and be the weight density of the stone (per cross sectional area).   Stone Arch Schematic   Stone Arch Schematic    With all of this set up, what we really want is the horizontal component of the force to be and the vertical component to be the weight of the bridge from to , namely, . This leads to the following picture.   Stone Arch Triangle of Forces   Stone Arch Triangle of Forces    This leads to the slope of the tangent line at equaling , so we get the differential equation The problem here is that we don't know what is. However, a moment's thought tells us that we know what is. If we increase to , then we can see that .   Stone Arch Schematic   Stone Arch Schematic    Thus, if we differentiate the above equation, we get that the arch should satisfy the differential equation   "
 },
@@ -10274,7 +10274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-4",
   "type": "Problem",
-  "number": "19.63",
+  "number": "19.6.0.6",
   "title": "",
   "body": " Show that satisfies the above differential equation.   Show that if and , then . Compare this to the equation of the catenary in Problem in Context #53 in Differential Calculus .   Note to Self  Convert this to a PreTexT link.  "
 },
@@ -10292,7 +10292,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-7",
   "type": "Figure",
-  "number": "19.64",
+  "number": "19.6.0.7",
   "title": "",
   "body": " The area under a curve   The area under a curve   "
 },
@@ -10310,7 +10310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#THEOREMFTCDiff",
   "type": "Theorem",
-  "number": "19.65",
+  "number": "19.6.0.8",
   "title": "The Fundamental Theorem of Calculus.",
   "body": " The Fundamental Theorem of Calculus  Suppose that (so that is an antiderivative of ). Then   "
 },
@@ -10319,7 +10319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "IntegrationMethods-7.html#IntegrationMethods-7-15",
   "type": "Problem",
-  "number": "19.66",
+  "number": "19.6.0.9",
   "title": "",
   "body": "Given our notation for an indefinite integral, the Fundamental Theorem of Calculus says However, there are infinitely many possibilities for . Does this mean that there are infinitely many possibilities for ? Explain. "
 },
@@ -10337,7 +10337,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-3",
   "type": "Figure",
-  "number": "19.67",
+  "number": "19.7.0.1",
   "title": "",
   "body": " Integrals do not always represent areas   Graph of y=x   "
 },
@@ -10346,8 +10346,8 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntPropTable",
   "type": "Table",
-  "number": "19.68",
-  "title": "Integration Properties",
+  "number": "19.7.0.2",
+  "title": "Integration      Properties",
   "body": " Integration Properties                      "
 },
 {
@@ -10355,7 +10355,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-7",
   "type": "Table",
-  "number": "19.69",
+  "number": "19.7.0.3",
   "title": "A simple table",
   "body": " A simple table    Integration Properties  Sum Properties                "
 },
@@ -10364,7 +10364,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#IntPropExamples",
   "type": "Example",
-  "number": "19.70",
+  "number": "19.7.0.4",
   "title": "Some Examples.",
   "body": " Some Examples                      "
 },
@@ -10373,7 +10373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-11",
   "type": "Figure",
-  "number": "19.71",
+  "number": "19.7.0.5",
   "title": "",
   "body": " A geometic representation of integration   A geometic representation of integration   "
 },
@@ -10382,7 +10382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-13",
   "type": "Problem",
-  "number": "19.72",
+  "number": "19.7.0.6",
   "title": "",
   "body": "Use the fact that to show that . "
 },
@@ -10391,7 +10391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-15",
   "type": "Figure",
-  "number": "19.73",
+  "number": "19.7.0.7",
   "title": "",
   "body": " The sum property of integration   The sum property of integration   "
 },
@@ -10400,7 +10400,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-17",
   "type": "Problem",
-  "number": "19.74",
+  "number": "19.7.0.8",
   "title": "",
   "body": " Show that for the case where , we still have    We already know that Solve for and use a previous property.  "
 },
@@ -10409,7 +10409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-18",
   "type": "Drill",
-  "number": "19.75",
+  "number": "19.7.0.9",
   "title": "",
   "body": " Suppose Compute                             "
 },
@@ -10418,7 +10418,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-22",
   "type": "Example",
-  "number": "19.76",
+  "number": "19.7.0.10",
   "title": "",
   "body": " Consider the integral If we make the substitution , then , and so At this point, we have two options: we can integrate and change the variable back into to finish the fundamental theorem of calculus, or we can convert everything over to and not deal with anymore. We'll show both. In the first approach, we have   In the second approach we have that , so when , and when , , so that Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an limit for or vice versa.  "
 },
@@ -10427,7 +10427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-23",
   "type": "Example",
-  "number": "19.77",
+  "number": "19.7.0.11",
   "title": "",
   "body": " Computing we see that integration by parts seems to be the way to go. If we let and , then Using the integration by parts formula , we have   "
 },
@@ -10436,7 +10436,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-24",
   "type": "Problem",
-  "number": "19.78",
+  "number": "19.7.0.12",
   "title": "",
   "body": "Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that   Does this make sense geometrically? Explain.   We know that Use the substitution in the integral on the left.  Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like? Show that in this case  Does this make sense geometrically? Explain. "
 },
@@ -10445,7 +10445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#FourierSeriesProb",
   "type": "Problem",
-  "number": "19.79",
+  "number": "19.7.0.13",
   "title": "Fourier Series.",
   "body": "Fourier Series    Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves    It can be shown (though we won't do it here), that if a function defined on the interval can be written as the Fourier Series:  then    With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.   With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.   Given the symmetries of the graphs above, is this surprising? Explain.  "
 },
@@ -10456,14 +10456,14 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.8",
   "title": "Applications of Definite Integrals",
-  "body": " Applications of Definite Integrals   Previously, we put indefinite integrals to work by modeling phenomena with differential equations and antidifferentiating to solve these. We will now put definite integrals to work, but in a slightly different manner. Here we will use a differential to measure some quantity on an infinitely small scale where a simple formula applies. We will integrate all of these quantities to give us a total measurement as an integral. Once we have this, then we can calculate this definite integral by antidifferentiation and applying the Fundamental Theorem of Calculus. Sounds easy, huh! As they say, the devil is in the details, but if you follow this basic format and draw and label pictures, you will be surprised by the things you can accomplish. We'll start with the basic problem of computing an area. This is basic enough that there is a tendency to skip all of the steps in setting up the integral, BUT DON'T! Getting into a good work habit when things are relatively straightforward will help when more complicated applications arise, such as computing a volume, or a center of mass, or a moment of inertia, or the kinetic energy of a spinning object. If these applications sound daunting at this point, don't worry. We will see that the same sort of divide and conquer strategy applies to a wonderful array of situations. All that changes is what we want to measure. This is where the strategy of setting up things on an infinitely small scale (utilizing pictures) and integrating these together will become invaluable.    Areas   Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.    Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we've included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          Compute the three integrals in the previous example and verify that you get the same total area done either way.    In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let's put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle      Compute the area indicated in the previous example.   Archimedes Quadrature of the Parabola  In his treatise, Quadrature of the Parabola, Archimedes (287-212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn't even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.     Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]   Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .   Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).   Recall that in Problem 4.5.5, we looked a cycloid. This was a curve traced out by a point on a circle as the circle rolls along a straight line.     A cycloid generated by a rolling circle.    In that problem, we mentioned that this curve has fascinated mathematicians for a long time. We also had you show that the coordinates of the point are given by Galileo actually gave the curve its name in 1599 (though he was not the first to study it) and attempted to compute the area under one arch. He couldn't accomplish this mathematically, but by weighing pieces of metal, one in the shape of a cycloid and one in the shape of its generating circle, Galileo surmised that the area of the cycloid was approximately three times that of the circle. In 1634, Gilles Personne de Roberval showed that the area under one arch of the cycloid is exactly three times that of its generating circle. This predated the invention of calculus, but he utilized infinitely thin rectangles very much like we have been doing.  The Area Under a Cycloid   Area of a cycloid Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.   You can set up the area with vertical rectangles just as before, only now get in terms of .     Volumes  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let's restate the volume in this way The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids. For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    Let's verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that. With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get   What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .  Volume of a Cone  Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.   Volume of a Frustum  A frustum of a cone is basically a cone with the top chopped off.     A frustum     Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!   Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.   Volume of a Square Based Pyramid    Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.     The Generalized Cone  Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .   The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.    Marcus Tullius Cicero (106-43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won't go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn't determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.  Volume of a Sphere (rotation about the horizontal axis).   Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .   Revolving a Cycloid    Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.     Of course, this technique can be applied to find the volume of a more general solid of revolution.     Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.         Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.         Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.    To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by     To do  We need to add a bunch of volume of revolution problems here.    Volumes by Shells  As you no doubt noticed, when we had to compute the volume of a solid generated by revolving a region about the -axis (or any horizontal line), we obtained an integral with in it, which meant that we would put everything in terms of . Likewise, when we revolved about the -axis, we had to put everything in terms of . Sometimes this is not practical or leads to an undesirable integral. Consider the following example of the region bounded by and revolved about the -axis. Going through our set up (Yes, we must do it too!), we have the following generic rectangle revolved around to create a washer.        This set up (with the picture) was really the easy part. The harder part is putting everything in terms of and integrating. For instance, we would need to solve for in terms of . Furthermore, we would need to figure out the maximum value of on the interval . All of this is doable, but inconvenient. What would be preferable would be to leave everything in terms of , but this would entail drawing a vertical box instead.        If we were to treat the right-hand object as a very tall washer with inside radius , outside radius , and height , we would get its volume to be Recalling our reasoning with the product rule, we can ignore as it is infinitely small compared to , so that the volume of this tall washer is which we could then integrate to obtain   If you feel as funny (or perhaps more) about ignoring the as you did with the product rule, there is another way to look at this that might help your queasiness and provide a better way of remembering what to do in this situation. Basically, instead of calling the revolution of the generic rectangle a tall washer, we will call it a (cylindrical) shell. This sounds somewhat silly, but it really points out the difference. For a washer, the height is infinitesimal, whereas for a shell, the thickness of the wall is infinitesimal. For a physical analogy, this is the difference between an actual metal washer and a piece of metal tubing. To figure out the volume of the tubing (shell), we can slice it open and flatten it out into a rectangular piece of metal. This is not so easily done with a washer. This provides a shortcut (and device) for computing the volume of a shell; just compute the volume of the flattened version.     A cylindrical shell opened and flattened.    Using the flattened-out version, we have that the volume of the shell is given by as we obtained before.  Actually, a similar formula works for any washer: While this is interesting geometrically, it does not help with computing integrals using washers.  Generic volume using shells   Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.     Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by    Volume of a torus    Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571- 1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).     A torus around the y axis.     So a natural question arises, Which should I use, washers or shells? The answer is that you can use either one; sometimes it is more convenient to use one over the other, other times it really doesn't matter. The real question you need to ask in a particular problem is, Is it better to put things all in terms of or in terms of . This will determine if you want to utilize a vertical rectangle (of width ) or a horizontal rectangle (of width ). This will determine whether washers or shells are more appropriate.   Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don't look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.     Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:   The -axis.   The -axis.    Note to self  Add several problems using shells and washers here whichever makes the problem easier. Make sure to include a torus.    Surface Area and Arc Length  Recall that we mentioned that in his treatise On the Sphere and the Cylinder , Archimedes not only showed that the sphere had the volume of its circumscribing cylinder, but it also had the surface area. Again, we will not duplicate how Archimedes did it, but we will verify it with Calculus.  Surface area poses a bit more of a challenge than volume. This can be illustrated by the following two boxes.     A cube and a parallellepiped with the same height.    The boxes have the same base and same height, so they have the same volume. However, the slanted box clearly has more surface and could be stretched as far as you like, so the there really is no limit to how large the surface area could be made. The slant makes a difference in surface area. To see this more carefully, we will need to first develop the notion of arc length.   Note to self  Make this a proper link.   You have already been exposed to arc length in the differential calculus part of this book. Recall that in looking at the catenary [Section 4.3.1], we had that the hanging chain satisfied the equation where , were the weight density of the chain and horizontal tension, respectively, and is the length of the chain from the lowest point to . We then differentiated and applied the Pythagorean Theorem to the differential triangle     Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.    We will exploit this to look at the arc length of a curve. Specifically, suppose we have a curve from point to point and want to compute the length of this curve .     Generic curve between A and B.    If we divide this curve into infinitely small segments, then we can compute its length by integrating the lengths of these segments. In other words, we have where denotes a generic point on the curve. Using our infinitesimal Pythagorean Theorem, we have To actually compute this integral (via the Fundamental Theorem), we need to put this integral into a form that we can anti-differentiate. For example, we could put everything in terms of or in terms of yielding these two possibilities  The absolute value is necessary since we are factoring out or .In practice, if is always increasing then and so the absolute value isn't necessary. The same applies to . In many applications, this will be the case, but you should be wary that it can happen.   Consider the quarter circle given by , where . Since the circumference of the unit circle is , the length of this quarter circle should be .    Arclength Use an integral to verify There is a reason we didn't have you compute the length of the entire semicircle , . If you can't see what it is, don't worry, we will come back to it later. this result.   Suppose we tried to compute the length of a quarter of the circle in the following way We'd have gotten an arclength of zero. What goes wrong?   Again, there is real temptation to try to memorize formulas and but we urge you not to. First, why try to remember two formulas, when one just needs to remember the Pythagorean Theorem . This seems much more natural.  At this point, it is just a matter of determining what variable you wish to put everything in terms of. The variable doesn't even need to be or . For example, suppose we have , and , with . So we don't need to deal with absolute values, let's assume that the parameter is always increasing so that . Then we could put everything in terms of :     Arc Length Use the parameterization , , to verify that the circumference of the unit circle is .     Arc Length  cycloid Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral ), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid        Show that the length of one arch of the cycloid is .    Note to self  Insert a collection of problems here.   Now that we have arc length in place, let s go back to the problem of computing the surface area of a sphere. Recalling that surface area needs to take into account the slant of the surface rather than just the height, let s actually divide the surface of the sphere into infinitely small bands.     A sphere with a vertical slice through it.    What we need to do is compute the surface area of this band (called a frustum of a cone). To do that, we need to find the surface area of a cone (without the bottom). With that in mind, let s start with a cone with base radius of and slant length . If we slice the cone and flatten it (much like a paper cup), then we can determine the surface area of the cone, by finding the area of the sector created by flattening it.     Circle with a wedge removed to create a cone.    By dividing this sector into infinitely many infinitely thin triangles, and integrating the areas of these triangles, we get that the area of the sector (and thus the cone) is given by .  The Surface Area of a Conical Frustum   Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by    Armed by this, we can obtain that the surface area of a surface of revolution obtained by revolving a curve about the -axis is given by integrating the surface areas of these infinitely thin bands.   Total Surface Area      As with arc length, you are free to put this integral in terms of whichever variable you wish.  The Surface Area of a Sphere   Surface Area  of a sphere    Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.   Use the parameterization , , to obtain the same answer as part (a).   General Surface Area   Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?   The Surface Area of a Torus   Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.   You might find it easier using the parametric equations and instead of the equation for the generating circle.    Note to self  Insert practice problems here     Center of Mass  In and , we made reference to a theorem of Pappus. That theorem says that if a region is revolved about a line not passing through the region, then the volume of the solid of revolution is equal to the area of the region times the circumference of the circle formed by revolving the center of mass (centroid) of this region about the line. Another theorem of Pappus states that the surface area of a surface formed by revolving a curve about a line is equal to the length of the curve times the circumference of the circle formed by revolving the centroid of the curve about the line.   Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.      This played out in the two PIC s as the centroids of a disk and its boundary circle are both the center of the circle.  Disks and circles are pretty straightforward, but what about finding the center of mass of a general region. From a physical point of view, this region can represent a thin plate whose density could vary. To keep the problem geometric (and simpler), we will assume that the density is constantly 1 so that mass really is area. In this case, the center of mass is what we have been calling the centroid of the region.  Everyone probably has heard the term center of mass. But what does this mean? Let s start this with something that everyone is familiar with: an average of grades. If we have five grades: , , , , , then all students know that the average, denoted (read bar) is given by What does this average mean? This means that this student s overall performance is equivalent to the performance of a student who earned 89.6 on each of the five tests. It does not take into account fluctuations among the grades, but gives an overall measure. To put this in a more physical light, if we considered a system of points each with mass at these locations , , , , on a number line, then collectively, this system behaves the same as a mass of located at the point . It doesn t take into account the relationships among the various grades; as much as in astronomy where there is a tendency to “shrink” the mass of a planet to its center of mass, with disregard to the dynamics in that planet.  In general, if we placed a point mass of at each of the positions , , , , , then the center of mass , should satisfy the relationship To help with our discussions on this, we will give a name to the numerator. People have christened this the (first) moment of the system (about the origin). To give it a simple way to remember it, we write Later we will have use for the second moment about the origin, namely In general, one could look at the moment as   Let's apply this reasoning and our integration strategy to an infinite number of points. For example, the interval .        In this case, our simple formula doesn t hold as the position varies throughout the interval. Thus we apply our integration strategy. That is, we divide the interval into infinitely small intervals where the simple formula applies. The simple formula for moment applies to this small subinterval, so we have .  Integrating these individual moments gives us that the total moment of the interval is . Thus, we would have . This agrees with your intuitive notion that the center of mass of the interval should be located at the midpoint of the interval.    Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?   We did not want to give it away while you were doing the previous problem, but you will actually get what is known as a weighted average ; that is, the center of mass of the two midpoints where the mass of each interval is condensed at its midpoint.  What if we ramp this up to two-dimensions. Suppose we have a number of points of mass located at .        By the same reasoning as before, the center of mass should have the property that this system as a whole should behave the same as if the entire mass was located at . In other words, we should have This leads to the formulation . The thing to take away from this is that even though the center of mass, has two coordinates, we treat each coordinate separately and they are the averages of the coordinates and coordinates, respectively. Also, each coordinate still fits into the formula . Let's use this same idea to a curve of uniform density .     A generic graph of a function.    Using analogous reasoning, the center of mass of this curve will be given by where each coordinate fits into our scheme . . To this end, we will look at the mass of the curve. Since the density is constantly , the mass is really the arc length and is given by .  To address , we will compute the moment of the curve about the line . Dividing our curve into infinitely small pieces, we can use our simple formulation.          Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .   Putting all of this together we have . Again, we urge you to go through this process rather than trying to memorize these formulas.    Moments As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.   Find the equation of the line segment joining and , To avoid dealing with absolute values, let's assume and .   Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?    Note from Bob  In do we want to include that they should be able to arrive at in part (a) without computing the integral using symmetry?     Moments center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .   Verify that by following our process as above.   Compute .   Notice that the above examples show that the center of mass of a curve need not be a point on the curve. We are now in a position to prove Pappus' Theorem on surface area.  Pappus' Theorem for Surface Area   Surface Area  Pappus' Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by     Note to self  Put some practice problems here.   To obtain Pappus' theorem for volumes we need to expand this idea to the center of mass of a two-dimensional region. Again, the center of mass can be split into two coordinates ) which represent the averages of the and coordinates of all of the points in the region.  With this in mind, consider a region in the plane which can be thought of as two-dimensional plate with constant density . We will draw this region shortly.  Again, we will utilize our strategy of dividing our region into pieces where a simple formula can be applied, and we will apply our general idea that the centroid is given by the formula The mass is just the area, so we will focus on the numerator.  Specifically, if we want to find , we will draw a generic vertical box and determine its moment about the line .        The moment of this box is straightforward as every point in it is the same distance from the axis. Formally, we have   Integrating these moments, we get that the total moment of the region is given by . Thus, with this set up, we would have .  As before, you could memorize the formulas, but it is much better to remember simple concepts such as and apply these to a situation where things are constant. For example, we can apply the same reasoning to a horizontal box as below to derive the formula for . This is what integration is all about.    Moments  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by      Center of mass    In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.   Suppose the density was not constant. How would that alter the formulas for the center of mass?   Again, you can memorize formulas, but understanding them helps you to recreate them should you forget or more appropriately, adapt the ideas should the occasion necessitate that. For example, consider the region below bounded by and , .        Assuming the density is constant, it is straightforward to see that . But what about ? If we use the formula you derived above, we would have Getting everything in terms of would be problematic (but doable). It would be nice to keep everything in terms of which would entail using a vertical box. For the area in the denominator, this is not a problem and in fact is probably how you would have computed the area to begin with. For the numerator, let s put in our vertical box and see if we can compute its moment about the line .        The problem with computing the moment (about ) of this vertical box is that our simple formula won t work as the position varies throughout the box. But wait a minute! We know what for this box is, namely . We also know what area of this box is, namely . Using that so that .    Moments Integrate this and determine the coordinate of the center of mass of this region.        Moments For the following region, use the same sort of reasoning to show that the moment about the line is given by      Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven't proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.   Now that we have a handle on the center of mass of a two-dimensional region, we can actually make pretty quick work of Pappus Theorem for determining the volume of a solid of revolution.  Consider the following region lying completely to the right of the line .        Pappus Theorem of Volumes   Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.    Note to self  Insert Practice Pappus Problems.     Other Applications of Integration   The Tautochrone  You may have noticed that we keep bringing up the cycloid in a number of problems involving areas, arc lengths, volumes, and centers of mass. As we said, this curve has fascinated mathematicians for a long time and many of these elegant results were cleverly obtained before the invention of calculus. We will now see how the cycloid was utilized to address a more practical problem.  In the 1600 s there was race among naval superpowers (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to £20,000 (about £5.1 million or million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.  Since longitude is measured by “time” zones, then it became necessary to develop an accurate way of measuring time at sea. A regular pendulum clock, invented by the Dutch mathematician, scientist, and inventor Christiaan Huygens (1629-1695), utilized the fact that the oscillation of a pendulum is regular as long as it maintains the same amount of swing per oscillation. This made for an accurate timepiece on land, but it was not accurate at sea where a moving deck would make the pendulum swing at different angles and thus not have a constant period. To remedy this, Huygens developed a pendulum that would follow a tautochrone (a same time curve where a pendulum, exclusively under the influence of gravity, following that path would take the same amount of time to reach the bottom, no matter where it started on the curve). Huygens showed that an inverted cycloid was such a tautochrone shown below. A pendulum following the path of an inverted cycloid will take the same amount of time to reach the bottom no matter where it starts.   Image from MathWords       Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to clocks) . The design from that work . is seen below. To get the pendulum to swing along a cycloidal path, Huygen s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen on the left. This curve traced out is called the Involute of the cycloid .   Huygens Clock      In practice, the clock did not work any more accurately than a regular pendulum clock as it assumed the only force involved was gravity, whereas a clock at sea was subject to many more forces which could not be ignored. Subsequently, the Englishman John Harrison (1693-1776), a Yorkshire carpenter, invented a chronometer which ran on springs and proved to be very accurate.  Even still, many mathematicians cited Huygens work on this as being very elegant mathematically. Furthermore, Huygens developed his mathematics without calculus as it hadn t been invented (discovered?) yet. We will not prove that the involute of a cycloid is a cycloid, but we will utilize calculus to prove Huygens claim that the cycloid is, in fact, a tautochrone.  To start, recall that the speed at which the pendulum is traveling is given by where is the arc length traveled and is time. For simplicity, we will let the radius of the circle generating the cycloid be .    Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by    At this point we ve hit an impasse, as the speed of the pendulum is not a constant. Gravity will cause the pendulum to speed up as it swings downward. We will assume that the pendulum does not swing too wide, not too fast, and ignore air resistance. Thus, the only force we will consider is due to gravity and we will denote that by , where is the mass of the pendulum and is the acceleration due to gravity. Below is a diagram of a pendulum following the path of a cycloid with the forces at work.        The force due to gravity is always directed downward, so only a portion of it moves the pendulum along the curve. This tangential force has a magnitude where is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.          Tautochrone    Use the fact that the two triangles are similar to show that and use the fact that to conclude that .   Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .   Substituting the formula for from part (b) of we see that   Before we proceed any further, notice that if we use the appropriate trigonometric identity, we get so our formula for the total time traveled by the pendulum from to becomes As formidable as this integral may look, bear in mind that is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let and     Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.     Work and Kinetic Energy  If you go back to our proof that the cycloid is a tautochrone, you will notice that we had the equation . If we multiply both sides by our mass and integrate from to , we get The left-hand side is called the work done by gravity moving an object from the height to the height and the right-hand side is called the change in kinetic energy from the beginning point , to the terminal point . So, this equation really says that . At some point, you may have heard the expression that energy is the ability to do work. Kinematically, this is what we just showed. We will explore these two concepts in more detail to apply them to some natural questions that arise from things we did before.   Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton-meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?    Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:      Kinetic Energy    Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.   Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.    Note to self  More problems pumping tanks of various shapes including one where the bottom is slanted.   In the previous example, an integral was required as the distance lifted was not constant. Some problems have the force varying.   Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.           Kinetic Energy    If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.   Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)   There is another way to approach this problem which does not require examining the anchor separately. Instead of dividing the chain into small pieces where we can apply our formula for work, suppose we look at the work required to raise the anchor and chain from a distance to a distance .        Since the force (combined weight of anchor and remaining chain) stays virtually constant over this interval, then we can still apply our simple formula.     Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)   As we said the above could be done either way, but consider this following variation.    A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?   Since the weight of the water in the bucket is changing over time (unlike the anchor), it probably makes more sense to try to our second approach which is to determine the work required to lift the bucket water and rope from a distance to a distance . We can then integrate these small amounts of work to obtain the total work.       Use this analysis to show that the work to raise everything from a distance to a distance is given by    Integrate this to determine how much work it takes to raise all of this the entire meters.   What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?   Now that we have a handle on work, let's come back to kinetic energy. Let's begin by generalizing what we had done in the tautochrone problem.    Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton's Second Law which states that force , show that    The quantity is called the kinetic energy of the object (at time ) and is measured in     As we said before, the above can be stated as work change in kinetic\\ energy. It turns out that utilizing the notion of kinetic energy can be a useful tool in determining the work involved in completing a task. For example, recall from Differential Calculus: From Practice to Theory > that the Richard F. Caris Mirror Laboratory uses spin casting to cast large parabolic mirrors for refractive telescopes. They load glass into a revolving furnace. When the glass liquifies, the spinning makes the middle go down and the sides go up. In that book there was a problem which showed that the surface generated would be a parabola. As you can see from these photos, this an exceptionally large furnace and the mirrors it produces are large as well (up to somewhere around 16 tons each).     A question is how long it takes for the furnace to rotate from a standing start to the proper speed. This is where the notion of kinetic energy comes in handy. To begin the process, they load chucks of borosilicate glass which has a density of into the furnace (over a honeycomb substrate) and start spinning the furnace.     For simplicity, we will ignore the substrate and actual furnace itself and let's assume that the glass is a solid disk which measures in radius and is thick.     To compute the kinetic energy of this disk spinning at a rate of we would like to utilize our simple formula   The mass is no problem as we know the density and the volume of the disk. The problem is the velocity. We know the angular velocity, which is constant, but in our formula for kinetic energy, we are talking about linear velocity which increases as you move away from the axis of rotation. This is where our plan of dividing the solid into parts where we can apply our simple formula applies. Specifically, consider the following cylindrical ring in our disk. As with volumes utilizing cylindrical shells, we will draw a cutaway view.     Notice that all the points in the cylindrical shell are moving at the same linear speed, so we can apply Formula to the shell.    Problem  Spin Casting    Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .   Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?     Escape Velocity and Improper Integrals  Many people have heard the term ``escape velocity'. A quick look on the internet says that the escape velocity from the surface of the earth is approximately 11.2 km\/second or about 33 times the speed of sound. What does this mean and where did such a number come from? The key is our discovery that work can be obtained by looking at the change in kinetic energy. This also affords us a chance to delve into a new topic: improper integrals.   Note TO SELF  This section remove for a clean LaTeX compilation.                                                                                                                                                                                                                                                                                                                                                            More Improper Integrals  The previous section looked at definite integrals that are improper because they are being integrated on an infinite interval. There is another type of improper integral that can occur on a finite interval. Furthermore, they can occur in a natural setting.   Note TO SELF  This section remove for a clean LaTeX compilation.                                                                                                                                                                                                                                                                                                                                        "
+  "body": " Applications of Definite Integrals   Previously, we put indefinite integrals to work by modeling phenomena with differential equations and antidifferentiating to solve these. We will now put definite integrals to work, but in a slightly different manner. Here we will use a differential to measure some quantity on an infinitely small scale where a simple formula applies. We will integrate all of these quantities to give us a total measurement as an integral. Once we have this, then we can calculate this definite integral by antidifferentiation and applying the Fundamental Theorem of Calculus. Sounds easy, huh! As they say, the devil is in the details, but if you follow this basic format and draw and label pictures, you will be surprised by the things you can accomplish. We'll start with the basic problem of computing an area. This is basic enough that there is a tendency to skip all of the steps in setting up the integral, BUT DON'T! Getting into a good work habit when things are relatively straightforward will help when more complicated applications arise, such as computing a volume, or a center of mass, or a moment of inertia, or the kinetic energy of a spinning object. If these applications sound daunting at this point, don't worry. We will see that the same sort of divide and conquer strategy applies to a wonderful array of situations. All that changes is what we want to measure. This is where the strategy of setting up things on an infinitely small scale (utilizing pictures) and integrating these together will become invaluable.    Areas   Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.    Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we've included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          Compute the three integrals in the previous example and verify that you get the same total area done either way.    In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let's put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle      Compute the area indicated in the previous example.   Archimedes Quadrature of the Parabola  In his treatise, Quadrature of the Parabola, Archimedes (287-212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn't even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.     Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]   Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .   Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).   Recall that in Problem 4.5.5, we looked a cycloid. This was a curve traced out by a point on a circle as the circle rolls along a straight line.     A cycloid generated by a rolling circle.    In that problem, we mentioned that this curve has fascinated mathematicians for a long time. We also had you show that the coordinates of the point are given by Galileo actually gave the curve its name in 1599 (though he was not the first to study it) and attempted to compute the area under one arch. He couldn't accomplish this mathematically, but by weighing pieces of metal, one in the shape of a cycloid and one in the shape of its generating circle, Galileo surmised that the area of the cycloid was approximately three times that of the circle. In 1634, Gilles Personne de Roberval showed that the area under one arch of the cycloid is exactly three times that of its generating circle. This predated the invention of calculus, but he utilized infinitely thin rectangles very much like we have been doing.  The Area Under a Cycloid   Area of a cycloid Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.   You can set up the area with vertical rectangles just as before, only now get in terms of .     Volumes  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let's restate the volume in this way The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids. For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    Let's verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that. With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get   What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .  Volume of a Cone  Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.   Volume of a Frustum  A frustum of a cone is basically a cone with the top chopped off.     A frustum     Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!   Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.   Volume of a Square Based Pyramid    Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.     The Generalized Cone  Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .   The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.    Marcus Tullius Cicero (106-43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won't go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn't determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.  Volume of a Sphere (rotation about the horizontal axis).   Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .   Revolving a Cycloid    Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.     Of course, this technique can be applied to find the volume of a more general solid of revolution.     Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.         Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.         Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.    To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by     To do  We need to add a bunch of volume of revolution problems here.    Volumes by Shells  As you no doubt noticed, when we had to compute the volume of a solid generated by revolving a region about the -axis (or any horizontal line), we obtained an integral with in it, which meant that we would put everything in terms of . Likewise, when we revolved about the -axis, we had to put everything in terms of . Sometimes this is not practical or leads to an undesirable integral. Consider the following example of the region bounded by and revolved about the -axis. Going through our set up (Yes, we must do it too!), we have the following generic rectangle revolved around to create a washer.        This set up (with the picture) was really the easy part. The harder part is putting everything in terms of and integrating. For instance, we would need to solve for in terms of . Furthermore, we would need to figure out the maximum value of on the interval . All of this is doable, but inconvenient. What would be preferable would be to leave everything in terms of , but this would entail drawing a vertical box instead.        If we were to treat the right-hand object as a very tall washer with inside radius , outside radius , and height , we would get its volume to be Recalling our reasoning with the product rule, we can ignore as it is infinitely small compared to , so that the volume of this tall washer is which we could then integrate to obtain   If you feel as funny (or perhaps more) about ignoring the as you did with the product rule, there is another way to look at this that might help your queasiness and provide a better way of remembering what to do in this situation. Basically, instead of calling the revolution of the generic rectangle a tall washer, we will call it a (cylindrical) shell. This sounds somewhat silly, but it really points out the difference. For a washer, the height is infinitesimal, whereas for a shell, the thickness of the wall is infinitesimal. For a physical analogy, this is the difference between an actual metal washer and a piece of metal tubing. To figure out the volume of the tubing (shell), we can slice it open and flatten it out into a rectangular piece of metal. This is not so easily done with a washer. This provides a shortcut (and device) for computing the volume of a shell; just compute the volume of the flattened version.     A cylindrical shell opened and flattened.    Using the flattened-out version, we have that the volume of the shell is given by as we obtained before.  Actually, a similar formula works for any washer: While this is interesting geometrically, it does not help with computing integrals using washers.  Generic volume using shells   Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.     Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by    Volume of a torus    Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571- 1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).     A torus around the y axis.     So a natural question arises, Which should I use, washers or shells? The answer is that you can use either one; sometimes it is more convenient to use one over the other, other times it really doesn't matter. The real question you need to ask in a particular problem is, Is it better to put things all in terms of or in terms of . This will determine if you want to utilize a vertical rectangle (of width ) or a horizontal rectangle (of width ). This will determine whether washers or shells are more appropriate.   Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don't look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.     Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:   The -axis.   The -axis.    Note to self  Add several problems using shells and washers here whichever makes the problem easier. Make sure to include a torus.    Surface Area and Arc Length  Recall that we mentioned that in his treatise On the Sphere and the Cylinder , Archimedes not only showed that the sphere had the volume of its circumscribing cylinder, but it also had the surface area. Again, we will not duplicate how Archimedes did it, but we will verify it with Calculus.  Surface area poses a bit more of a challenge than volume. This can be illustrated by the following two boxes.     A cube and a parallellepiped with the same height.    The boxes have the same base and same height, so they have the same volume. However, the slanted box clearly has more surface and could be stretched as far as you like, so the there really is no limit to how large the surface area could be made. The slant makes a difference in surface area. To see this more carefully, we will need to first develop the notion of arc length.   Note to self  Make this a proper link.   You have already been exposed to arc length in the differential calculus part of this book. Recall that in looking at the catenary [Section 4.3.1], we had that the hanging chain satisfied the equation where , were the weight density of the chain and horizontal tension, respectively, and is the length of the chain from the lowest point to . We then differentiated and applied the Pythagorean Theorem to the differential triangle     Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.    We will exploit this to look at the arc length of a curve. Specifically, suppose we have a curve from point to point and want to compute the length of this curve .     Generic curve between A and B.    If we divide this curve into infinitely small segments, then we can compute its length by integrating the lengths of these segments. In other words, we have where denotes a generic point on the curve. Using our infinitesimal Pythagorean Theorem, we have To actually compute this integral (via the Fundamental Theorem), we need to put this integral into a form that we can anti-differentiate. For example, we could put everything in terms of or in terms of yielding these two possibilities  The absolute value is necessary since we are factoring out or .In practice, if is always increasing then and so the absolute value isn't necessary. The same applies to . In many applications, this will be the case, but you should be wary that it can happen.   Consider the quarter circle given by , where . Since the circumference of the unit circle is , the length of this quarter circle should be .    Arclength Use an integral to verify There is a reason we didn't have you compute the length of the entire semicircle , . If you can't see what it is, don't worry, we will come back to it later. this result.   Suppose we tried to compute the length of a quarter of the circle in the following way We'd have gotten an arclength of zero. What goes wrong?   Again, there is real temptation to try to memorize formulas and but we urge you not to. First, why try to remember two formulas, when one just needs to remember the Pythagorean Theorem . This seems much more natural.  At this point, it is just a matter of determining what variable you wish to put everything in terms of. The variable doesn't even need to be or . For example, suppose we have , and , with . So we don't need to deal with absolute values, let's assume that the parameter is always increasing so that . Then we could put everything in terms of :     Arc Length Use the parameterization , , to verify that the circumference of the unit circle is .     Arc Length  cycloid Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral ), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid        Show that the length of one arch of the cycloid is .    Note to self  Insert a collection of problems here.   Now that we have arc length in place, let s go back to the problem of computing the surface area of a sphere. Recalling that surface area needs to take into account the slant of the surface rather than just the height, let s actually divide the surface of the sphere into infinitely small bands.     A sphere with a vertical slice through it.    What we need to do is compute the surface area of this band (called a frustum of a cone). To do that, we need to find the surface area of a cone (without the bottom). With that in mind, let s start with a cone with base radius of and slant length . If we slice the cone and flatten it (much like a paper cup), then we can determine the surface area of the cone, by finding the area of the sector created by flattening it.     Circle with a wedge removed to create a cone.    By dividing this sector into infinitely many infinitely thin triangles, and integrating the areas of these triangles, we get that the area of the sector (and thus the cone) is given by .  The Surface Area of a Conical Frustum   Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by    Armed by this, we can obtain that the surface area of a surface of revolution obtained by revolving a curve about the -axis is given by integrating the surface areas of these infinitely thin bands.   Total Surface Area      As with arc length, you are free to put this integral in terms of whichever variable you wish.  The Surface Area of a Sphere   Surface Area  of a sphere    Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.   Use the parameterization , , to obtain the same answer as part (a).   General Surface Area   Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?   The Surface Area of a Torus   Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.   You might find it easier using the parametric equations and instead of the equation for the generating circle.    Note to self  Insert practice problems here     Center of Mass  In and , we made reference to a theorem of Pappus. That theorem says that if a region is revolved about a line not passing through the region, then the volume of the solid of revolution is equal to the area of the region times the circumference of the circle formed by revolving the center of mass (centroid) of this region about the line. Another theorem of Pappus states that the surface area of a surface formed by revolving a curve about a line is equal to the length of the curve times the circumference of the circle formed by revolving the centroid of the curve about the line.   Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.      This played out in the two PIC s as the centroids of a disk and its boundary circle are both the center of the circle.  Disks and circles are pretty straightforward, but what about finding the center of mass of a general region. From a physical point of view, this region can represent a thin plate whose density could vary. To keep the problem geometric (and simpler), we will assume that the density is constantly 1 so that mass really is area. In this case, the center of mass is what we have been calling the centroid of the region.  Everyone probably has heard the term center of mass. But what does this mean? Let s start this with something that everyone is familiar with: an average of grades. If we have five grades: , , , , , then all students know that the average, denoted (read bar) is given by What does this average mean? This means that this student s overall performance is equivalent to the performance of a student who earned 89.6 on each of the five tests. It does not take into account fluctuations among the grades, but gives an overall measure. To put this in a more physical light, if we considered a system of points each with mass at these locations , , , , on a number line, then collectively, this system behaves the same as a mass of located at the point . It doesn t take into account the relationships among the various grades; as much as in astronomy where there is a tendency to “shrink” the mass of a planet to its center of mass, with disregard to the dynamics in that planet.  In general, if we placed a point mass of at each of the positions , , , , , then the center of mass , should satisfy the relationship To help with our discussions on this, we will give a name to the numerator. People have christened this the (first) moment of the system (about the origin). To give it a simple way to remember it, we write Later we will have use for the second moment about the origin, namely In general, one could look at the moment as   Let's apply this reasoning and our integration strategy to an infinite number of points. For example, the interval .        In this case, our simple formula doesn t hold as the position varies throughout the interval. Thus we apply our integration strategy. That is, we divide the interval into infinitely small intervals where the simple formula applies. The simple formula for moment applies to this small subinterval, so we have .  Integrating these individual moments gives us that the total moment of the interval is . Thus, we would have . This agrees with your intuitive notion that the center of mass of the interval should be located at the midpoint of the interval.    Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?   We did not want to give it away while you were doing the previous problem, but you will actually get what is known as a weighted average ; that is, the center of mass of the two midpoints where the mass of each interval is condensed at its midpoint.  What if we ramp this up to two-dimensions. Suppose we have a number of points of mass located at .        By the same reasoning as before, the center of mass should have the property that this system as a whole should behave the same as if the entire mass was located at . In other words, we should have This leads to the formulation . The thing to take away from this is that even though the center of mass, has two coordinates, we treat each coordinate separately and they are the averages of the coordinates and coordinates, respectively. Also, each coordinate still fits into the formula . Let's use this same idea to a curve of uniform density .     A generic graph of a function.    Using analogous reasoning, the center of mass of this curve will be given by where each coordinate fits into our scheme . . To this end, we will look at the mass of the curve. Since the density is constantly , the mass is really the arc length and is given by .  To address , we will compute the moment of the curve about the line . Dividing our curve into infinitely small pieces, we can use our simple formulation.          Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .   Putting all of this together we have . Again, we urge you to go through this process rather than trying to memorize these formulas.    Moments As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.   Find the equation of the line segment joining and , To avoid dealing with absolute values, let's assume and .   Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?    Note from Bob  In do we want to include that they should be able to arrive at in part (a) without computing the integral using symmetry?     Moments center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .   Verify that by following our process as above.   Compute .   Notice that the above examples show that the center of mass of a curve need not be a point on the curve. We are now in a position to prove Pappus' Theorem on surface area.  Pappus' Theorem for Surface Area   Surface Area  Pappus' Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by     Note to self  Put some practice problems here.   To obtain Pappus' theorem for volumes we need to expand this idea to the center of mass of a two-dimensional region. Again, the center of mass can be split into two coordinates ) which represent the averages of the and coordinates of all of the points in the region.  With this in mind, consider a region in the plane which can be thought of as two-dimensional plate with constant density . We will draw this region shortly.  Again, we will utilize our strategy of dividing our region into pieces where a simple formula can be applied, and we will apply our general idea that the centroid is given by the formula The mass is just the area, so we will focus on the numerator.  Specifically, if we want to find , we will draw a generic vertical box and determine its moment about the line .        The moment of this box is straightforward as every point in it is the same distance from the axis. Formally, we have   Integrating these moments, we get that the total moment of the region is given by . Thus, with this set up, we would have .  As before, you could memorize the formulas, but it is much better to remember simple concepts such as and apply these to a situation where things are constant. For example, we can apply the same reasoning to a horizontal box as below to derive the formula for . This is what integration is all about.    Moments  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by      Center of mass    In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.   Suppose the density was not constant. How would that alter the formulas for the center of mass?   Again, you can memorize formulas, but understanding them helps you to recreate them should you forget or more appropriately, adapt the ideas should the occasion necessitate that. For example, consider the region below bounded by and , .        Assuming the density is constant, it is straightforward to see that . But what about ? If we use the formula you derived above, we would have Getting everything in terms of would be problematic (but doable). It would be nice to keep everything in terms of which would entail using a vertical box. For the area in the denominator, this is not a problem and in fact is probably how you would have computed the area to begin with. For the numerator, let s put in our vertical box and see if we can compute its moment about the line .        The problem with computing the moment (about ) of this vertical box is that our simple formula won t work as the position varies throughout the box. But wait a minute! We know what for this box is, namely . We also know what area of this box is, namely . Using that so that .    Moments Integrate this and determine the coordinate of the center of mass of this region.        Moments For the following region, use the same sort of reasoning to show that the moment about the line is given by      Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven't proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.   Now that we have a handle on the center of mass of a two-dimensional region, we can actually make pretty quick work of Pappus Theorem for determining the volume of a solid of revolution.  Consider the following region lying completely to the right of the line .        Pappus Theorem of Volumes   Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.    Note to self  Insert Practice Pappus Problems.     Other Applications of Integration   The Tautochrone  You may have noticed that we keep bringing up the cycloid in a number of problems involving areas, arc lengths, volumes, and centers of mass. As we said, this curve has fascinated mathematicians for a long time and many of these elegant results were cleverly obtained before the invention of calculus. We will now see how the cycloid was utilized to address a more practical problem.  In the 1600 s there was race among naval superpowers (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to £20,000 (about £5.1 million or million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.  Since longitude is measured by “time” zones, then it became necessary to develop an accurate way of measuring time at sea. A regular pendulum clock, invented by the Dutch mathematician, scientist, and inventor Christiaan Huygens (1629-1695), utilized the fact that the oscillation of a pendulum is regular as long as it maintains the same amount of swing per oscillation. This made for an accurate timepiece on land, but it was not accurate at sea where a moving deck would make the pendulum swing at different angles and thus not have a constant period. To remedy this, Huygens developed a pendulum that would follow a tautochrone (a same time curve where a pendulum, exclusively under the influence of gravity, following that path would take the same amount of time to reach the bottom, no matter where it started on the curve). Huygens showed that an inverted cycloid was such a tautochrone shown below. A pendulum following the path of an inverted cycloid will take the same amount of time to reach the bottom no matter where it starts.   Image from MathWords       Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to clocks) . The design from that work . is seen below. To get the pendulum to swing along a cycloidal path, Huygen s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen on the left. This curve traced out is called the Involute of the cycloid .   Huygens Clock      In practice, the clock did not work any more accurately than a regular pendulum clock as it assumed the only force involved was gravity, whereas a clock at sea was subject to many more forces which could not be ignored. Subsequently, the Englishman John Harrison (1693-1776), a Yorkshire carpenter, invented a chronometer which ran on springs and proved to be very accurate.  Even still, many mathematicians cited Huygens work on this as being very elegant mathematically. Furthermore, Huygens developed his mathematics without calculus as it hadn t been invented (discovered?) yet. We will not prove that the involute of a cycloid is a cycloid, but we will utilize calculus to prove Huygens claim that the cycloid is, in fact, a tautochrone.  To start, recall that the speed at which the pendulum is traveling is given by where is the arc length traveled and is time. For simplicity, we will let the radius of the circle generating the cycloid be .    Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by    At this point we ve hit an impasse, as the speed of the pendulum is not a constant. Gravity will cause the pendulum to speed up as it swings downward. We will assume that the pendulum does not swing too wide, not too fast, and ignore air resistance. Thus, the only force we will consider is due to gravity and we will denote that by , where is the mass of the pendulum and is the acceleration due to gravity. Below is a diagram of a pendulum following the path of a cycloid with the forces at work.        The force due to gravity is always directed downward, so only a portion of it moves the pendulum along the curve. This tangential force has a magnitude where is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.          Tautochrone    Use the fact that the two triangles are similar to show that and use the fact that to conclude that .   Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .   Substituting the formula for from part (b) of we see that   Before we proceed any further, notice that if we use the appropriate trigonometric identity, we get so our formula for the total time traveled by the pendulum from to becomes As formidable as this integral may look, bear in mind that is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let and     Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.     Work and Kinetic Energy  If you go back to our proof that the cycloid is a tautochrone, you will notice that we had the equation . If we multiply both sides by our mass and integrate from to , we get The left-hand side is called the work done by gravity moving an object from the height to the height and the right-hand side is called the change in kinetic energy from the beginning point , to the terminal point . So, this equation really says that . At some point, you may have heard the expression that energy is the ability to do work. Kinematically, this is what we just showed. We will explore these two concepts in more detail to apply them to some natural questions that arise from things we did before.   Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton-meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?    Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:      Kinetic Energy    Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.   Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.    Note to self  More problems pumping tanks of various shapes including one where the bottom is slanted.   In the previous example, an integral was required as the distance lifted was not constant. Some problems have the force varying.   Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.           Kinetic Energy    If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.   Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)   There is another way to approach this problem which does not require examining the anchor separately. Instead of dividing the chain into small pieces where we can apply our formula for work, suppose we look at the work required to raise the anchor and chain from a distance to a distance .        Since the force (combined weight of anchor and remaining chain) stays virtually constant over this interval, then we can still apply our simple formula.     Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)   As we said the above could be done either way, but consider this following variation.    A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?   Since the weight of the water in the bucket is changing over time (unlike the anchor), it probably makes more sense to try to our second approach which is to determine the work required to lift the bucket water and rope from a distance to a distance . We can then integrate these small amounts of work to obtain the total work.       Use this analysis to show that the work to raise everything from a distance to a distance is given by    Integrate this to determine how much work it takes to raise all of this the entire meters.   What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?   Now that we have a handle on work, let's come back to kinetic energy. Let's begin by generalizing what we had done in the tautochrone problem.    Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton's Second Law which states that force , show that    The quantity is called the kinetic energy of the object (at time ) and is measured in     As we said before, the above can be stated as work change in kinetic\\ energy. It turns out that utilizing the notion of kinetic energy can be a useful tool in determining the work involved in completing a task. For example, recall from Differential Calculus: From Practice to Theory > that the Richard F. Caris Mirror Laboratory uses spin casting to cast large parabolic mirrors for refractive telescopes. They load glass into a revolving furnace. When the glass liquifies, the spinning makes the middle go down and the sides go up. In that book there was a problem which showed that the surface generated would be a parabola. As you can see from these photos, this an exceptionally large furnace and the mirrors it produces are large as well (up to somewhere around 16 tons each).     A question is how long it takes for the furnace to rotate from a standing start to the proper speed. This is where the notion of kinetic energy comes in handy. To begin the process, they load chucks of borosilicate glass which has a density of into the furnace (over a honeycomb substrate) and start spinning the furnace.     For simplicity, we will ignore the substrate and actual furnace itself and let's assume that the glass is a solid disk which measures in radius and is thick.     To compute the kinetic energy of this disk spinning at a rate of we would like to utilize our simple formula   The mass is no problem as we know the density and the volume of the disk. The problem is the velocity. We know the angular velocity, which is constant, but in our formula for kinetic energy, we are talking about linear velocity which increases as you move away from the axis of rotation. This is where our plan of dividing the solid into parts where we can apply our simple formula applies. Specifically, consider the following cylindrical ring in our disk. As with volumes utilizing cylindrical shells, we will draw a cutaway view.     Notice that all the points in the cylindrical shell are moving at the same linear speed, so we can apply Formula to the shell.    Problem  Spin Casting    Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .   Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?     Escape Velocity and Improper Integrals  Many people have heard the term escape velocity. A quick look on the internet says that the escape velocity from the surface of the earth is approximately or about times the speed of sound. What does this mean and where did such a number come from? The key is our discovery that work can be obtained by looking at the change in kinetic energy. This also affords us a chance to delve into a new topic: improper integrals.        First, we all know that if you throw a ball into the air, then it will go up and come back down. We learned in Differential Calculus that, ignoring air resistance, if you throw a ball up with an initial velocity of , then the maximum height the ball attains is where is the acceleration due to gravity (which we presumed was constantly equal to ). We noted that this formula said that if we double the initial velocity, then the ball will go 4 times as high, triple it it will go 9 times as high, etc. Is it possible to throw the ball up so fast that it never comes back down. The answer would be no if the acceleration due to gravity remained constant at all altitudes, which is what we assumed in the original problem. This works fine near the surface of the earth, but is not reasonable at higher and higher altitudes. In fact, Newton's Law of Gravitation states that the magnitude of force of gravity between two objects of masses and is given by where is a constant referred to as the universal gravitational constant and is the distance between the centers of mass of the two objects. For objects near the surface of the earth, was so close to constant that we assumed it to be. This is not the case for our projectile being propelled into outer space. Surprisingly, the a amount of work that it takes to perform this task is finite and this is where escape velocity comes in.  If we had an unlimited power supply, then we could rise at whatever rate we wanted and still keep rising indefinitely. Unfortunately, as with throwing a ball into the air, we can only impart an initial velocity and hope it is fast enough to overcome gravity indefinitely. We have the means to deal with this.  The key is remembering that the work done by a force moving a mass along a straight line from point to point is equal to the change in kinetic energy. In symbols it is   However, this was not the definition of work as work was simply . We utilized calculus in case the force was not constant    Problem  Escape Velocity Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet ``to infinity.'' In other words, the amount of work (and energy) it takes to propel the object so it doesn't come back is finite.     Problem  Escape Velocity Assume that the original velocity of the mass is and that the velocity at infinity will be 0.   Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .   Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?    shows that the work to launch a projectile from the surface of a planet to infinity is given by .  This prompts a new name and notation. The notation is and this is called an improper integral . The improper comes from the fact that a proper definite integral should be defined on a closed bounded interval. In general, the improper integral converges if   exists and we say that it is equal to that value. In the above problem, we have .  Notice that to compute this improper integral, we had to first compute a proper definite integral from to and then take the limit of this as .  Convergence of an Improper Integral   Problem  Convergence of an Improper Integral Define what we mean for improper integral to converge and what its value would be.   You may find it surprising that an improper integral from to could have a real-world application such as escape velocity. Actually, there is an example of an improper integral of the form which has an application a little closer to home. No doubt you have heard of a bell-shaped curve or perhaps have been in a statistics course that talks about values. What does any of this mean and what does it have to do with improper integrals?  First, the bell-shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss to look at the probability that a measurement should deviate from the actual mean of a population. The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels. Specifically, a normal distribution with a mean of and a standard deviation of has the equation as its probability density function. The fact that it is called a bell-shaped curve can be seen in the following graph.     This is called the probability density function because the probability that the random variable takes on a value less than or equal to is given by which is the area of the shaded region above. It is not easy to see, but Gauss cleverly showed that the area under this entire curve is exactly one, which is a requirement to be a probability density function. Of course, the values of and will affect the shape of the graph as seen below.     Of particular importance is the red curve where the mean and the standard deviation . Any random variable which has a normal distribution with probability density function is said to have a standard normal distribution and a result from probability theory says that if the random variable is normally distributed with mean and standard deviation , then will have a standard normal distribution. We've said a lot here in the way of theory, so let's provide a concrete example. It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean and standard deviation . It is also widely accepted that someone with an IQ of 140 or above is in the genius range. Suppose we chose someone at random. If we want to compute the probability that this person's IQ is less than or equal to 140, then mathematically, we want to compute Unfortunately, none of our integration techniques will compute this integral exactly. In fact, there are no integration techniques that will do this. Let's do what any person would do and see what the internet says. If we type this into a computer algebra system, we get   We will get into approximating techniques later, but for now let's talk about scores and tables. To compute the score of the above IQ of 140, books and websites will say to compute In the old days, one would then look on a table and arrive at the approximation . Now you would input this score in an appropriate piece of software and obtain the same result. Why are you doing this? The following problem might shed some light   Problem Error Functions Perform the substitution to to obtain    This is what the approximation represents in the old tables and in the statistical software. Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for . It is expected that a person uses the above substitution to compute a score and the table provides the approximation for the integral of the standard normal distribution.    Problem Error Function Actually, Wolfram Alpha provides the following output where The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation is actually correct.   Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer. As we said, we will get to approximation techniques, but before that, let's look at another type of improper integral.    More Improper Integrals  The previous section looked at definite integrals that are improper because they are being integrated on an infinite interval. There is another type of improper integral that can occur on a finite interval. Furthermore, they can occur in a natural setting.         The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be .  Suppose instead, we compute the arc length by using the equation , . Then If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say Big deal. It worked, consider the area of this region.     The area of this region would be given by     Try to compute the integral in Formula . What happens?   Both integrals are improper because the functions involved are unbounded on the interval . If fact they are not even defined at one of the endpoints of the interval. The way to handle the first integral is to write it as   The same technique can be used for the second integral This leads to the general idea that if a function is unbounded at the right endpoint of an interval then we can compute the improper integral by provided that limit exists.    Problem Improper Integral    Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from part (a) to compute the following improper integrals.     Torricelli's Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608-1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).     An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.    In more modern terms, Torricelli showed that it we rotate the following function is rotated about the axis, then the infinitely long solid has a finite volume of . Here is picture of what has been dubbed ``Torricelli's Trumpet''.     The Volume of Torricelli's Trumpet   Problem Torricelli s Trumpet Volume    Use an improper integral with volumes of disks to obtain Torricelli's result. Again it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.   This caused a philosophical debate about the nature of mathematical thinking and understanding of the infinite that persisted into the twentieth century. Even more paradoxical was a later result which showed that the surface area of solid is infinite. This is now called the Painter’s Paradox because we have a solid which holds a finite amount of paint but would require an infinite amount of paint to paint the inside surface!    Problem Torricelli s Trumpet Surface Area Let's assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this x fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.   Torricelli's Trumpet also represents a finite volume solid which does not have a center of mass. We only talked about centers of mass (centroids) of one-dimensional curves and two-dimensional regions. We can extend the ideas to three-dimensional solids, but instead we will give you a two-dimension region which has a finite area but no center of mass. The idea for Torricelli's Trumpet is basically the same.    Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?   Suppose we had the function . Should ? An argument could be made for either case. Now you see why these are called improper integrals. This actually brings into mind the existence of an integral which is a much harder question. We will kick this can down the road until we get into the theory part.    "
 },
 {
   "id": "ParabolicSection",
   "level": "2",
   "url": "AppDefInt.html#ParabolicSection",
   "type": "Example",
-  "number": "19.81",
+  "number": "19.8.1.1",
   "title": "",
   "body": " Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.  "
 },
@@ -10472,7 +10472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ParabSectionHoriz",
   "type": "Example",
-  "number": "19.85",
+  "number": "19.8.1.5",
   "title": "",
   "body": " Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we've included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?        "
 },
@@ -10481,7 +10481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreasByIntegration-4",
   "type": "Drill",
-  "number": "19.88",
+  "number": "19.8.1.8",
   "title": "",
   "body": " Compute the three integrals in the previous example and verify that you get the same total area done either way.  "
 },
@@ -10490,7 +10490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreaExam3",
   "type": "Example",
-  "number": "19.89",
+  "number": "19.8.1.9",
   "title": "",
   "body": " In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let's put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle    "
 },
@@ -10499,7 +10499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreasByIntegration-6",
   "type": "Drill",
-  "number": "19.92",
+  "number": "19.8.1.12",
   "title": "",
   "body": " Compute the area indicated in the previous example.  "
 },
@@ -10508,7 +10508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ArchimedesParab",
   "type": "Problem",
-  "number": "19.93",
+  "number": "19.8.1.13",
   "title": "Archimedes Quadrature of the Parabola.",
   "body": "Archimedes Quadrature of the Parabola  In his treatise, Quadrature of the Parabola, Archimedes (287-212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn't even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.     Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]   Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .   Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).  "
 },
@@ -10517,7 +10517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#fig-CycloidArea",
   "type": "Figure",
-  "number": "19.96",
+  "number": "19.8.1.16",
   "title": "",
   "body": "   A cycloid generated by a rolling circle.   "
 },
@@ -10526,7 +10526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-CycloidArea",
   "type": "Problem",
-  "number": "19.97",
+  "number": "19.8.1.17",
   "title": "The Area Under a Cycloid.",
   "body": "The Area Under a Cycloid   Area of a cycloid Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.   You can set up the area with vertical rectangles just as before, only now get in terms of .  "
 },
@@ -10535,7 +10535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GenericRectangle",
   "type": "Figure",
-  "number": "19.98",
+  "number": "19.8.2.1",
   "title": "",
   "body": "   A generic rectangle   "
 },
@@ -10544,7 +10544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolEqualsFaceXThick",
   "type": "Figure",
-  "number": "19.99",
+  "number": "19.8.2.2",
   "title": "",
   "body": "   Pictures and formulas for the volume of a cylinder and a triangular wedge   "
 },
@@ -10553,7 +10553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolEqualsFaceXThick2",
   "type": "Figure",
-  "number": "19.100",
+  "number": "19.8.2.3",
   "title": "",
   "body": "   Picture and formula for the volume of an irregular slab.   "
 },
@@ -10562,7 +10562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeAndCyl",
   "type": "Figure",
-  "number": "19.101",
+  "number": "19.8.2.4",
   "title": "",
   "body": "   A cone and cylinder of the same height.   "
 },
@@ -10571,7 +10571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolCone",
   "type": "Figure",
-  "number": "19.102",
+  "number": "19.8.2.5",
   "title": "",
   "body": "   Cone with generic horizontal rectangle.   "
 },
@@ -10580,7 +10580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeSlice",
   "type": "Figure",
-  "number": "19.103",
+  "number": "19.8.2.6",
   "title": "",
   "body": "   A generic slice from a cone and a formula for its volume.   "
 },
@@ -10589,7 +10589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeSimTri",
   "type": "Figure",
-  "number": "19.104",
+  "number": "19.8.2.7",
   "title": "",
   "body": "   A right triangle with a similar right triangle inside.   "
 },
@@ -10598,7 +10598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeVol",
   "type": "Problem",
-  "number": "19.105",
+  "number": "19.8.2.8",
   "title": "Volume of a Cone.",
   "body": "Volume of a Cone  Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.  "
 },
@@ -10607,7 +10607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#FrustomVol",
   "type": "Problem",
-  "number": "19.106",
+  "number": "19.8.2.9",
   "title": "Volume of a Frustum.",
   "body": "Volume of a Frustum  A frustum of a cone is basically a cone with the top chopped off.     A frustum     Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!   Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.  "
 },
@@ -10616,7 +10616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolSqPyr",
   "type": "Problem",
-  "number": "19.108",
+  "number": "19.8.2.11",
   "title": "Volume of a Square Based Pyramid.",
   "body": "Volume of a Square Based Pyramid    Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.    "
 },
@@ -10625,7 +10625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GeneralCone",
   "type": "Problem",
-  "number": "19.110",
+  "number": "19.8.2.13",
   "title": "The Generalized Cone.",
   "body": "The Generalized Cone  Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .   The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.  "
 },
@@ -10634,7 +10634,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereCyl",
   "type": "Figure",
-  "number": "19.112",
+  "number": "19.8.2.15",
   "title": "",
   "body": "   Cylinder with enclosed sphere with the same radius.   "
 },
@@ -10643,7 +10643,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereByRevAboutX",
   "type": "Figure",
-  "number": "19.113",
+  "number": "19.8.2.16",
   "title": "",
   "body": "   A sphere generated by revolving about the x axis.   "
 },
@@ -10652,7 +10652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolSphereWithDiffDisc",
   "type": "Figure",
-  "number": "19.114",
+  "number": "19.8.2.17",
   "title": "",
   "body": "   The same sphere with a generic disk and area and volume formulas.   "
 },
@@ -10661,7 +10661,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereVolXRev",
   "type": "Problem",
-  "number": "19.115",
+  "number": "19.8.2.18",
   "title": "Volume of a Sphere (rotation about the horizontal axis)..",
   "body": "Volume of a Sphere (rotation about the horizontal axis).   Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .  "
 },
@@ -10670,7 +10670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#CyclRevX",
   "type": "Problem",
-  "number": "19.116",
+  "number": "19.8.2.19",
   "title": "Revolving a Cycloid.",
   "body": "Revolving a Cycloid    Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.    "
 },
@@ -10679,7 +10679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-GenSolidRevX",
   "type": "Problem",
-  "number": "19.118",
+  "number": "19.8.2.21",
   "title": "",
   "body": "  Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.         Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.  "
 },
@@ -10688,7 +10688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GenVolRevY",
   "type": "Problem",
-  "number": "19.120",
+  "number": "19.8.2.23",
   "title": "",
   "body": "   Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.         Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.    To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by   "
 },
@@ -10697,7 +10697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#fig-VolByWasher",
   "type": "Figure",
-  "number": "19.122",
+  "number": "19.8.3.1",
   "title": "",
   "body": "     "
 },
@@ -10706,7 +10706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#IntShellExamp",
   "type": "Figure",
-  "number": "19.123",
+  "number": "19.8.3.2",
   "title": "",
   "body": "     "
 },
@@ -10715,7 +10715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ShellFlattened",
   "type": "Figure",
-  "number": "19.124",
+  "number": "19.8.3.3",
   "title": "",
   "body": "   A cylindrical shell opened and flattened.   "
 },
@@ -10724,7 +10724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-GenShells",
   "type": "Problem",
-  "number": "19.125",
+  "number": "19.8.3.4",
   "title": "Generic volume using shells.",
   "body": "Generic volume using shells   Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.     Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by   "
 },
@@ -10733,7 +10733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-VolTorus",
   "type": "Problem",
-  "number": "19.127",
+  "number": "19.8.3.6",
   "title": "Volume of a torus.",
   "body": "Volume of a torus    Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571- 1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).     A torus around the y axis.    "
 },
@@ -10742,7 +10742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#example-WashersOrShells",
   "type": "Example",
-  "number": "19.129",
+  "number": "19.8.3.8",
   "title": "Shell vs. Washers.",
   "body": " Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don't look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.  "
 },
@@ -10751,7 +10751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-ShellsVSWashers",
   "type": "Problem",
-  "number": "19.131",
+  "number": "19.8.3.10",
   "title": "",
   "body": "  Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:   The -axis.   The -axis.  "
 },
@@ -10760,7 +10760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SurfaceAreaIllus",
   "type": "Figure",
-  "number": "19.132",
+  "number": "19.8.4.1",
   "title": "",
   "body": "   A cube and a parallellepiped with the same height.   "
 },
@@ -10769,7 +10769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#DiffTri",
   "type": "Figure",
-  "number": "19.133",
+  "number": "19.8.4.2",
   "title": "",
   "body": "   Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.   "
 },
@@ -10778,7 +10778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-GenArcLen",
   "type": "Figure",
-  "number": "19.134",
+  "number": "19.8.4.3",
   "title": "",
   "body": "   Generic curve between A and B.   "
 },
@@ -10787,7 +10787,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-ArcLenQtrCirc",
   "type": "Problem",
-  "number": "19.135",
+  "number": "19.8.4.4",
   "title": "",
   "body": " Consider the quarter circle given by , where . Since the circumference of the unit circle is , the length of this quarter circle should be .    Arclength Use an integral to verify There is a reason we didn't have you compute the length of the entire semicircle , . If you can't see what it is, don't worry, we will come back to it later. this result.   Suppose we tried to compute the length of a quarter of the circle in the following way We'd have gotten an arclength of zero. What goes wrong?  "
 },
@@ -10796,7 +10796,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CircumViaParam",
   "type": "Problem",
-  "number": "19.136",
+  "number": "19.8.4.5",
   "title": "",
   "body": "  Arc Length Use the parameterization , , to verify that the circumference of the unit circle is .  "
 },
@@ -10805,7 +10805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CycArcLen",
   "type": "Problem",
-  "number": "19.137",
+  "number": "19.8.4.6",
   "title": "",
   "body": "  Arc Length  cycloid Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral ), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid        Show that the length of one arch of the cycloid is .  "
 },
@@ -10814,7 +10814,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-SphereSurfAr",
   "type": "Figure",
-  "number": "19.139",
+  "number": "19.8.4.8",
   "title": "",
   "body": "   A sphere with a vertical slice through it.   "
 },
@@ -10823,7 +10823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-ConicalFrustum",
   "type": "Figure",
-  "number": "19.140",
+  "number": "19.8.4.9",
   "title": "",
   "body": "   Circle with a wedge removed to create a cone.   "
 },
@@ -10832,7 +10832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SurfAreaConeFrust",
   "type": "Problem",
-  "number": "19.141",
+  "number": "19.8.4.10",
   "title": "The Surface Area of a Conical Frustum.",
   "body": "The Surface Area of a Conical Frustum   Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by   "
 },
@@ -10841,7 +10841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-GenSurfArea",
   "type": "Figure",
-  "number": "19.143",
+  "number": "19.8.4.12",
   "title": "",
   "body": " Total Surface Area     "
 },
@@ -10850,7 +10850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SphereSurfArea",
   "type": "Problem",
-  "number": "19.144",
+  "number": "19.8.4.13",
   "title": "The Surface Area of a Sphere.",
   "body": "The Surface Area of a Sphere   Surface Area  of a sphere    Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.   Use the parameterization , , to obtain the same answer as part (a).  "
 },
@@ -10859,7 +10859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-GenSurfArea",
   "type": "Problem",
-  "number": "19.145",
+  "number": "19.8.4.14",
   "title": "General Surface Area.",
   "body": "General Surface Area   Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?  "
 },
@@ -10868,7 +10868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SurfAreaTorus",
   "type": "Problem",
-  "number": "19.147",
+  "number": "19.8.4.16",
   "title": "The Surface Area of a Torus.",
   "body": "The Surface Area of a Torus   Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.   You might find it easier using the parametric equations and instead of the equation for the generating circle.  "
 },
@@ -10877,7 +10877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusThems",
   "type": "Figure",
-  "number": "19.149",
+  "number": "19.8.5.1",
   "title": "",
   "body": " Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.     "
 },
@@ -10886,7 +10886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-IntervalMoment",
   "type": "Figure",
-  "number": "19.150",
+  "number": "19.8.5.2",
   "title": "",
   "body": "     "
 },
@@ -10895,7 +10895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoM1",
   "type": "Problem",
-  "number": "19.151",
+  "number": "19.8.5.3",
   "title": "",
   "body": "  Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?  "
 },
@@ -10913,7 +10913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CoM2D",
   "type": "Figure",
-  "number": "19.152",
+  "number": "19.8.5.4",
   "title": "",
   "body": "     "
 },
@@ -10922,7 +10922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CoMOfCurve",
   "type": "Figure",
-  "number": "19.153",
+  "number": "19.8.5.5",
   "title": "",
   "body": "   A generic graph of a function.   "
 },
@@ -10931,7 +10931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-MomentOfSegment",
   "type": "Figure",
-  "number": "19.154",
+  "number": "19.8.5.6",
   "title": "",
   "body": "     "
 },
@@ -10940,7 +10940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-",
   "type": "Problem",
-  "number": "19.155",
+  "number": "19.8.5.7",
   "title": "",
   "body": "  Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .  "
 },
@@ -10949,7 +10949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMLineSegment",
   "type": "Problem",
-  "number": "19.156",
+  "number": "19.8.5.8",
   "title": "",
   "body": "  Moments As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.   Find the equation of the line segment joining and , To avoid dealing with absolute values, let's assume and .   Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?  "
 },
@@ -10958,7 +10958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMCircle",
   "type": "Problem",
-  "number": "19.157",
+  "number": "19.8.5.9",
   "title": "",
   "body": "  Moments center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .   Verify that by following our process as above.   Compute .  "
 },
@@ -10967,7 +10967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusTheoremSA",
   "type": "Problem",
-  "number": "19.158",
+  "number": "19.8.5.10",
   "title": "Pappus’ Theorem for Surface Area.",
   "body": "Pappus' Theorem for Surface Area   Surface Area  Pappus' Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by   "
 },
@@ -10976,7 +10976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusVolumes",
   "type": "Figure",
-  "number": "19.160",
+  "number": "19.8.5.12",
   "title": "",
   "body": "     "
 },
@@ -10985,7 +10985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusVol",
   "type": "Problem",
-  "number": "19.161",
+  "number": "19.8.5.13",
   "title": "",
   "body": "  Moments  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by   "
 },
@@ -10994,7 +10994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CMPractice1",
   "type": "Problem",
-  "number": "19.162",
+  "number": "19.8.5.14",
   "title": "",
   "body": "  Center of mass    In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.   Suppose the density was not constant. How would that alter the formulas for the center of mass?  "
 },
@@ -11003,7 +11003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Moments",
   "type": "Figure",
-  "number": "19.163",
+  "number": "19.8.5.15",
   "title": "",
   "body": "     "
 },
@@ -11012,7 +11012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Moments2",
   "type": "Figure",
-  "number": "19.164",
+  "number": "19.8.5.16",
   "title": "",
   "body": "     "
 },
@@ -11021,7 +11021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-MomentSin3",
   "type": "Problem",
-  "number": "19.165",
+  "number": "19.8.5.17",
   "title": "",
   "body": "  Moments Integrate this and determine the coordinate of the center of mass of this region.  "
 },
@@ -11030,7 +11030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-GeneralMomentY",
   "type": "Problem",
-  "number": "19.166",
+  "number": "19.8.5.18",
   "title": "",
   "body": "     Moments For the following region, use the same sort of reasoning to show that the moment about the line is given by   "
 },
@@ -11039,7 +11039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMCycloid",
   "type": "Problem",
-  "number": "19.167",
+  "number": "19.8.5.19",
   "title": "",
   "body": "  Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven't proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.  "
 },
@@ -11048,7 +11048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusThmSA",
   "type": "Figure",
-  "number": "19.169",
+  "number": "19.8.5.21",
   "title": "",
   "body": "     "
 },
@@ -11057,7 +11057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusThmForVolumes",
   "type": "Problem",
-  "number": "19.170",
+  "number": "19.8.5.22",
   "title": "Pappus Theorem of Volumes.",
   "body": "Pappus Theorem of Volumes   Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.  "
 },
@@ -11066,7 +11066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Tautochrone1",
   "type": "Figure",
-  "number": "19.171",
+  "number": "19.8.6.1",
   "title": "",
   "body": " Image from MathWords      "
 },
@@ -11084,7 +11084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-HuygenClock",
   "type": "Figure",
-  "number": "19.172",
+  "number": "19.8.6.2",
   "title": "",
   "body": " Huygens Clock     "
 },
@@ -11093,7 +11093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut1",
   "type": "Problem",
-  "number": "19.173",
+  "number": "19.8.6.3",
   "title": "",
   "body": "  Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by   "
 },
@@ -11102,7 +11102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CyclPendPath",
   "type": "Figure",
-  "number": "19.174",
+  "number": "19.8.6.4",
   "title": "",
   "body": "     "
 },
@@ -11111,7 +11111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CyclPendPath2",
   "type": "Figure",
-  "number": "19.175",
+  "number": "19.8.6.5",
   "title": "",
   "body": "     "
 },
@@ -11120,7 +11120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut2",
   "type": "Problem",
-  "number": "19.176",
+  "number": "19.8.6.6",
   "title": "",
   "body": "  Tautochrone    Use the fact that the two triangles are similar to show that and use the fact that to conclude that .   Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .  "
 },
@@ -11129,7 +11129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut3",
   "type": "Problem",
-  "number": "19.177",
+  "number": "19.8.6.7",
   "title": "",
   "body": "  Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.  "
 },
@@ -11138,7 +11138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#subsub-WorkEnergy-3",
   "type": "Example",
-  "number": "19.178",
+  "number": "19.8.6.8",
   "title": "",
   "body": " Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton-meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?  "
 },
@@ -11147,7 +11147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#subsub-WorkEnergy-4",
   "type": "Example",
-  "number": "19.179",
+  "number": "19.8.6.9",
   "title": "",
   "body": " Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:   "
 },
@@ -11156,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-KinWork1",
   "type": "Problem",
-  "number": "19.182",
+  "number": "19.8.6.12",
   "title": "",
   "body": "  Kinetic Energy    Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.   Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.  "
 },
@@ -11165,7 +11165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#example-WorkKin3",
   "type": "Example",
-  "number": "19.183",
+  "number": "19.8.6.13",
   "title": "",
   "body": " Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.        "
 },
@@ -11174,7 +11174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-WorkKin3",
   "type": "Problem",
-  "number": "19.186",
+  "number": "19.8.6.16",
   "title": "",
   "body": "  Kinetic Energy    If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.   Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)  "
 },
@@ -11183,7 +11183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-WorkKin6",
   "type": "Figure",
-  "number": "19.187",
+  "number": "19.8.6.17",
   "title": "",
   "body": "     "
 },
@@ -11192,7 +11192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-WorkKin7",
   "type": "Problem",
-  "number": "19.188",
+  "number": "19.8.6.18",
   "title": "",
   "body": "  Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)  "
 },
@@ -11201,7 +11201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Bucket1",
   "type": "Problem",
-  "number": "19.189",
+  "number": "19.8.6.19",
   "title": "",
   "body": "  A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?  "
 },
@@ -11210,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Bucket2",
   "type": "Problem",
-  "number": "19.190",
+  "number": "19.8.6.20",
   "title": "",
   "body": "     Use this analysis to show that the work to raise everything from a distance to a distance is given by    Integrate this to determine how much work it takes to raise all of this the entire meters.   What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?  "
 },
@@ -11219,7 +11219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEMassOnACurve",
   "type": "Problem",
-  "number": "19.191",
+  "number": "19.8.6.21",
   "title": "",
   "body": "  Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton's Second Law which states that force , show that    The quantity is called the kinetic energy of the object (at time ) and is measured in    "
 },
@@ -11228,9 +11228,135 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEKinEnergySpinCast",
   "type": "Problem",
-  "number": "19.192",
+  "number": "19.8.6.22",
   "title": "",
   "body": "  Problem  Spin Casting    Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .   Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?  "
+},
+{
+  "id": "EXERCISEEscapeVelocity1",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEEscapeVelocity1",
+  "type": "Problem",
+  "number": "19.8.6.23",
+  "title": "",
+  "body": "  Problem  Escape Velocity Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet ``to infinity.'' In other words, the amount of work (and energy) it takes to propel the object so it doesn't come back is finite.  "
+},
+{
+  "id": "EXERCISEEscapeVelocity2",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEEscapeVelocity2",
+  "type": "Problem",
+  "number": "19.8.6.24",
+  "title": "",
+  "body": "  Problem  Escape Velocity Assume that the original velocity of the mass is and that the velocity at infinity will be 0.   Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .   Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?  "
+},
+{
+  "id": "SUBSUBSECTIONEscapeVel-10",
+  "level": "2",
+  "url": "AppDefInt.html#SUBSUBSECTIONEscapeVel-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "improper integral "
+},
+{
+  "id": "EXERCISEDefineConvIndInt",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEDefineConvIndInt",
+  "type": "Problem",
+  "number": "19.8.6.25",
+  "title": "Convergence of an Improper Integral.",
+  "body": "Convergence of an Improper Integral   Problem  Convergence of an Improper Integral Define what we mean for improper integral to converge and what its value would be.  "
+},
+{
+  "id": "EXERCISEErrorFunction1",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEErrorFunction1",
+  "type": "Problem",
+  "number": "19.8.6.26",
+  "title": "",
+  "body": " Problem Error Functions Perform the substitution to to obtain   "
+},
+{
+  "id": "EXERCISEWolframAlpha1",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEWolframAlpha1",
+  "type": "Problem",
+  "number": "19.8.6.27",
+  "title": "",
+  "body": "  Problem Error Function Actually, Wolfram Alpha provides the following output where The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation is actually correct.  "
+},
+{
+  "id": "EXAMPLECircumCircleViaImprInt",
+  "level": "2",
+  "url": "AppDefInt.html#EXAMPLECircumCircleViaImprInt",
+  "type": "Example",
+  "number": "19.8.6.28",
+  "title": "The Circumference of a Unit Circle, Via an Improper Integral.",
+  "body": " The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be .  Suppose instead, we compute the arc length by using the equation , . Then If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say Big deal. It worked, consider the area of this region.     The area of this region would be given by   "
+},
+{
+  "id": "PROBLEMImpropInt2",
+  "level": "2",
+  "url": "AppDefInt.html#PROBLEMImpropInt2",
+  "type": "Drill",
+  "number": "19.8.6.29",
+  "title": "",
+  "body": " Try to compute the integral in Formula . What happens?  "
+},
+{
+  "id": "EXERCISEImpropInt3",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEImpropInt3",
+  "type": "Problem",
+  "number": "19.8.6.30",
+  "title": "",
+  "body": "  Problem Improper Integral    Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from part (a) to compute the following improper integrals.   "
+},
+{
+  "id": "EXAMPLETorricellisTrumpet",
+  "level": "2",
+  "url": "AppDefInt.html#EXAMPLETorricellisTrumpet",
+  "type": "Example",
+  "number": "19.8.6.31",
+  "title": "Torricelli’s Trumpet and the Painter’s Paradox.",
+  "body": " Torricelli's Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608-1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).  "
+},
+{
+  "id": "TorriThm",
+  "level": "2",
+  "url": "AppDefInt.html#TorriThm",
+  "type": "Theorem",
+  "number": "19.8.6.32",
+  "title": "",
+  "body": "  An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   "
+},
+{
+  "id": "EXERCISETorriTrumpet",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISETorriTrumpet",
+  "type": "Problem",
+  "number": "19.8.6.33",
+  "title": "The Volume of Torricelli’s Trumpet.",
+  "body": "The Volume of Torricelli's Trumpet   Problem Torricelli s Trumpet Volume    Use an improper integral with volumes of disks to obtain Torricelli's result. Again it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.  "
+},
+{
+  "id": "EXERCISETorriSurfArea",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISETorriSurfArea",
+  "type": "Problem",
+  "number": "19.8.6.34",
+  "title": "",
+  "body": "  Problem Torricelli s Trumpet Surface Area Let's assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this x fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.  "
+},
+{
+  "id": "EXERCISEFiniteAreaInfiniteMoment",
+  "level": "2",
+  "url": "AppDefInt.html#EXERCISEFiniteAreaInfiniteMoment",
+  "type": "Problem",
+  "number": "19.8.6.35",
+  "title": "",
+  "body": "  Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?  "
 },
 {
   "id": "Taylor-2",
@@ -11246,7 +11372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-2.html#Taylor-2-9",
   "type": "Drill",
-  "number": "20.1",
+  "number": "20.1.0.1",
   "title": "",
   "body": " Verify that .  "
 },
@@ -11255,7 +11381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-2.html#Taylor-2-13",
   "type": "Drill",
-  "number": "20.2",
+  "number": "20.1.0.2",
   "title": "",
   "body": "  Convert to each of the following bases.                                 "
 },
@@ -11273,7 +11399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-3.html#Taylor-3-4",
   "type": "Example",
-  "number": "20.3",
+  "number": "20.2.0.1",
   "title": "",
   "body": " The polynomial is represented with as the base. Convert it to the base .  As before, we want to find coefficients and so that Dividing both sides by we get   On the right:  with the remainder .    On the left:   with the remainder . So and .   Dividing again by gives   On the right:   with the remainder .    On the left:   with the remainder .     Therefore   "
 },
@@ -11282,7 +11408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-3.html#Taylor-3-5",
   "type": "Drill",
-  "number": "20.4",
+  "number": "20.2.0.2",
   "title": "",
   "body": " Confirm the result in the previous example.  "
 },
@@ -11291,7 +11417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-3.html#Taylor-3-9",
   "type": "Example",
-  "number": "20.5",
+  "number": "20.2.0.3",
   "title": "",
   "body": " Expand the polynomial about the number .  As before we have Dividing both sides by gives  On the right:   with remainder .    On the left:  with remainder .   Thus and Dividing again we have   On the right:   with remainder .    On the left:  with remainder .   Thus and   Continuing in this fashion gives and and then and from which it is clear that and .  Therefore   "
 },
@@ -11300,7 +11426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-3.html#Taylor-3-10",
   "type": "Drill",
-  "number": "20.6",
+  "number": "20.2.0.4",
   "title": "",
   "body": " Verify the result in the previous example.  "
 },
@@ -11309,7 +11435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Taylor-3.html#Taylor-3-15",
   "type": "Drill",
-  "number": "20.7",
+  "number": "20.2.0.5",
   "title": "",
   "body": " Find graph and on the same set of axes. What do you observe?  "
 },
@@ -11336,7 +11462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXAMPLE",
   "type": "Example",
-  "number": "22.1",
+  "number": "22.1.0.1",
   "title": "",
   "body": " To look at linear drag, let s look at the case of a grain of sand of mass descending in water. To model this, let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. If we draw a diagram of the sand, there are three forces we need to consider: the weight of the object, the buoyancy of the object, and the drag.     If we denote the acceleration due to gravity by , then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a constant and is the velocity. Notice that this force is negative as it points up (the negative direction). The buoyancy is really just the upward force that water would apply if the sand wasn t there. That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.  "
 },
@@ -11345,7 +11471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISENewtonsSecondLaw",
   "type": "Problem",
-  "number": "22.2",
+  "number": "22.1.0.2",
   "title": "",
   "body": "Problem Use Newton Second Law: , to show that the velocity of the grain of sand must satisfy the IVP  Let and note that (why?). Show that the above leads to the IVP  "
 },
@@ -11354,7 +11480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISESubsRvmMg",
   "type": "Problem",
-  "number": "22.3",
+  "number": "22.1.0.3",
   "title": "",
   "body": "Problem   Use the substitution , to rewrite the above equation as and show that   "
 },
@@ -11363,7 +11489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISETerminalVelocity",
   "type": "Problem",
-  "number": "22.4",
+  "number": "22.1.0.4",
   "title": "",
   "body": "Problem   Problem Compute This will be the terminal velocity of the sand settling in the water. Notice that this should be independent of . How does your answer for terminal velocity depend on and ? Does this make sense physically?  "
 },
@@ -11381,7 +11507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISEInvTanReconcile",
   "type": "Problem",
-  "number": "22.5",
+  "number": "22.1.0.5",
   "title": "",
   "body": "Problem   Problem It appears that we have two different answers for . Show that these are in fact the same result.  "
 },
@@ -11399,7 +11525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs3.html#EXERCISEProdRule",
   "type": "Problem",
-  "number": "22.6",
+  "number": "22.2.0.1",
   "title": "",
   "body": "Problem      Show that if we let in the integration by parts formula, where is any constant, then we will obtain the same result as before, namely .   Use integration by parts with and to obtain    Use integration by parts on with and and substitute this into the result in part (a). What happened? This is not a fluke! It will happen every time if you switch the roles of and .   Perform integration by parts again on the result in part a to obtain a final answer for .  "
 },
@@ -11408,7 +11534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs3.html#EXERCISEInvSinInvTan",
   "type": "Problem",
-  "number": "22.7",
+  "number": "22.2.0.2",
   "title": "",
   "body": "Problem   Problem Perform integration by parts and then substitution to compute and   "
 },
@@ -11426,7 +11552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#EXERCISEPFD1",
   "type": "Problem",
-  "number": "22.8",
+  "number": "22.3.0.1",
   "title": "",
   "body": "Problem   Problem Solve the original initial value problem for the case .      "
 },
@@ -11444,7 +11570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#EXERCISEPFD2",
   "type": "Problem",
-  "number": "22.9",
+  "number": "22.3.0.2",
   "title": "",
   "body": "Problem   Problem Apply the same calculations we did before and the substitution to obtain   "
 },
@@ -11453,7 +11579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#EXERCISEPFD3",
   "type": "Problem",
-  "number": "22.10",
+  "number": "22.3.0.3",
   "title": "",
   "body": "Problem      Explain why we had to restrict ourselves to in what we did above.   Use the integral provided above to obtain an equation for in the logistic growth model for the case where . Show that (surprisingly?) this yields the same equation as in . [This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.]  "
 },
@@ -11462,7 +11588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#SECTIONProbs6-23",
   "type": "Example",
-  "number": "22.11",
+  "number": "22.3.0.4",
   "title": "",
   "body": " Recall we had To compute this, we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.  Solve this any way you wish, but you should get Thus so    "
 },
@@ -11480,7 +11606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#SECTIONProbs9-3-3",
   "type": "Example",
-  "number": "22.12",
+  "number": "22.4.0.1",
   "title": "",
   "body": " Find the area of the following region bounded by the curves and . A graph of this region is below.      Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). \\textbf{ We insist that you follow this routine on every application, no matter how easy it may seem.} This will serve you well as the applications get more complicated.        This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point -- to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have  Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.        Utilizing the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we will set up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.  "
 },
@@ -11489,7 +11615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#SECTIONProbs9-3-4",
   "type": "Example",
-  "number": "22.13",
+  "number": "22.4.0.2",
   "title": "",
   "body": " Compute the area of the following region bounded by and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we ve included in the diagram along with all of the appropriate labeling.          Everything is just as before. The real challenge comes from trying to put everything in terms of . on the entire interval, but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , while on .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following  Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          "
 },
@@ -11498,7 +11624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#PROBLEMA",
   "type": "Drill",
-  "number": "22.14",
+  "number": "22.4.0.3",
   "title": "",
   "body": " Problem A: Compute the three integrals in the previous example and verify that you get the same total area done either way.  "
 },
@@ -11507,7 +11633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#SECTIONProbs9-3-7",
   "type": "Example",
-  "number": "22.15",
+  "number": "22.4.0.4",
   "title": "",
   "body": " Compute the following area bounded by the curves .      You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let s put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .          "
 },
@@ -11516,7 +11642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#PROBLEMB",
   "type": "Drill",
-  "number": "22.16",
+  "number": "22.4.0.5",
   "title": "",
   "body": " Finish the previous example to compute the area.  "
 },
@@ -11525,7 +11651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#PROBLEMD",
   "type": "Drill",
-  "number": "22.17",
+  "number": "22.4.0.6",
   "title": "",
   "body": "  Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.    You can set up the area with vertical rectangles just as before, only now get and in terms of .   "
 },
@@ -11543,7 +11669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMConeVolume",
   "type": "Problem",
-  "number": "22.18",
+  "number": "22.5.0.1",
   "title": "The Volume of a Cone.",
   "body": "The Volume of a Cone Problem   Volume cone is of cylinder Substitute this value for into the integral and show that the volume of the cone is, in fact, 1\/3 the volume of the cylinder.  "
 },
@@ -11552,7 +11678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMSqBasePyramid",
   "type": "Drill",
-  "number": "22.19",
+  "number": "22.5.0.2",
   "title": "The Volume of a Square Based Pyramid.",
   "body": " The Volume of a Square Based Pyramid  Volume of a square based pyramid   Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height       The Moscow Mathematical Papyrus (circa. 1850 BC) provided a formula for the volume of a truncated square based pyramid (called a frustum of a pyramid). Written in modern terms we have that volume of the following truncated pyramid     is given by The papyrus does not indicate how this was obtained. Use calculus to verify this formula.    Verify equation by computing the volume of the frustum and the difference between two pyramids.   Begin by adding in the part of the pyramid that was cut off to make the frustum.   "
 },
@@ -11561,7 +11687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMSphereVolume",
   "type": "Problem",
-  "number": "22.20",
+  "number": "22.5.0.3",
   "title": "",
   "body": "Problem   Volume of a sphere Compute integral to show that the volume of the sphere is, in fact, .  "
 },
@@ -11570,7 +11696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMCycloidVolume",
   "type": "Problem",
-  "number": "22.21",
+  "number": "22.5.0.4",
   "title": "",
   "body": "Problem   Volume of revolution the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.        "
 },
@@ -11579,7 +11705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMGenSolidOfRevX",
   "type": "Problem",
-  "number": "22.22",
+  "number": "22.5.0.5",
   "title": "",
   "body": "Problem   Volume of revolution general Consider the following region bounded by the curves and and a generic rectangle of width inside it.      Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.  "
 },
@@ -11588,7 +11714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMGenSolidOfRevY",
   "type": "Problem",
-  "number": "22.23",
+  "number": "22.5.0.6",
   "title": "",
   "body": "Problem   Volume of revolution general Consider the following region bounded by the curves and and the vertical line to the left of this region.      Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.   Integrate your answer from part a. to show that the volume of the solid formed by revolving the region about the line is given by   "
 },
@@ -11606,7 +11732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs11.html#SECTIONProbs11-12",
   "type": "Problem",
-  "number": "22.24",
+  "number": "22.6.0.1",
   "title": "",
   "body": "Problem   Problem Consider the quarter circle given by  . Since the circumference of the unit circle is , then the length of this quarter circle should be . Use an integral to verify this result. [There is a reason we didn t have you compute the length of the entire semicircle  . If you can t see what it is, don t worry, we will come back to it later.]   Suppose we tried to compute the length of a quarter of the circle in the following way. What is the problem?  "
 },
@@ -11615,7 +11741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs11.html#SECTIONProbs11-14",
   "type": "Problem",
-  "number": "22.25",
+  "number": "22.6.0.2",
   "title": "",
   "body": "Problem   Problem Use the parameterization , to verify that the circumference of the unit circle is .  "
 },
@@ -11624,7 +11750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs11.html#SECTIONProbs11-15",
   "type": "Problem",
-  "number": "22.26",
+  "number": "22.6.0.3",
   "title": "",
   "body": "Problem   Problem Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid      , Show that the length of one arch of the cycloid is .  "
 },
@@ -11642,7 +11768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-14",
   "type": "Problem",
-  "number": "22.27",
+  "number": "22.7.0.1",
   "title": "",
   "body": " Consider the following region bounded by the curves and        Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by    In HW \\# 11 we found the surface area of a torus formed a circle of radius , whose center revolves around a line distance away.  Specifically, consider the following torus generated by revolving the circle about the line       Use shells to show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line.   Historical Background  This resulet was derived by Johannes Kepler (1571-1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).    If you utilize what you already know about symmetry and areas, this problem can be done without having to actually compute an integral. Work smarter, not harder!  "
 },
@@ -11651,7 +11777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-16",
   "type": "Example",
-  "number": "22.28",
+  "number": "22.7.0.2",
   "title": "",
   "body": "     If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don t look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.  "
 },
@@ -11660,7 +11786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-17",
   "type": "Problem",
-  "number": "22.29",
+  "number": "22.7.0.3",
   "title": "",
   "body": "  Problem Find the volumes of the solids generated by revolving this region about the -axis and -axis utilizing horizontal rectangles.  "
 },
@@ -11669,7 +11795,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-32",
   "type": "Problem",
-  "number": "22.30",
+  "number": "22.7.0.4",
   "title": "",
   "body": "  Show that the total time it takes for the pendulum to move along the (inverted) cycloid    from a starting position to the bottom of the cycloid is given by   "
 },
@@ -11678,7 +11804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-37",
   "type": "Problem",
-  "number": "22.31",
+  "number": "22.7.0.5",
   "title": "",
   "body": "     Use the fact that the two triangles are similar to show that and use the fact that to conclude that    Integrate both sides from to to show that if the pendulum starts from rest at , then the velocity at any point is given by   "
 },
@@ -11687,7 +11813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-41",
   "type": "Problem",
-  "number": "22.32",
+  "number": "22.7.0.6",
   "title": "",
   "body": "  Problem Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point . Thus, the cycloid really is a tautochrone.  "
 },
@@ -11696,7 +11822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-48",
   "type": "Problem",
-  "number": "22.33",
+  "number": "22.7.0.7",
   "title": "",
   "body": "  Problem Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve. Let denote arc length from point to and represent velocity (speed) and acceleration. Using Newton s Second Law which states that force , we have that the work done by to move the mass from to is given by    Show that   Note that the kinetic energy is measured in .   The Richard F. Caris Mirror Laboratory at the University of Arizona uses a revolving oven to spin cast large parabolic mirrors for reflective telescopes. They load borosilicate glass which has a density of into the furnace and start spinning the furnace. Let s assume that the glass is a disk which measures in radius and is thick.  Compute the kinetic energy of the disk when it is rotating around its axis at a rate of .   Suppose you have a 100 horsepower motor that produces of power. How long will it take (in minutes) for this motor to accelerate the disk from rest to ?  "
 },
@@ -11714,7 +11840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-7",
   "type": "Problem",
-  "number": "22.34",
+  "number": "22.8.0.1",
   "title": "",
   "body": "  Problem Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by where is the universal gravitational constant and is the distance between the centers of mass of the two objects. [We are assuming the positive axis points away from the planet so the force is negative.] Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by -->    You should get a negative number because gravity is doing a negative amount of work in moving the object.  "
 },
@@ -11723,7 +11849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-9",
   "type": "Problem",
-  "number": "22.35",
+  "number": "22.8.0.2",
   "title": "",
   "body": "     Assuming that the original velocity of the mass is and that the velocity at infinity will be , use the result of the previous problem and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by   Interestingly, the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately    Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?  "
 },
@@ -11741,7 +11867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-13",
   "type": "Example",
-  "number": "22.36",
+  "number": "22.8.0.3",
   "title": "",
   "body": " We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by Thus, the arc length would be Suppose instead we use the equation  . In this case we would get the integral If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.      The area of that region would be computed by the same even though the region itself is unbounded. Before you say big deal, it worked , consider the area of this region.       The area of this region would be given by   "
 },
@@ -11750,7 +11876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-14",
   "type": "Problem",
-  "number": "22.37",
+  "number": "22.8.0.4",
   "title": "",
   "body": "  Problem Try to compute this integral. What happens?  "
 },
@@ -11759,7 +11885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#PROBLEMImproperIntegral",
   "type": "Problem",
-  "number": "22.38",
+  "number": "22.8.0.5",
   "title": "",
   "body": " Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from to compute the following improper integrals.    Plot these two curves on the same set of axes for . Staring at these graphs, are you surprised by the results in part b?  "
 },
@@ -11768,7 +11894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#EXAMPLEPainterParadox",
   "type": "Example",
-  "number": "22.39",
+  "number": "22.8.0.6",
   "title": "Torricelli’s Trumpet and the Painter’s Paradox.",
   "body": " Torricelli s Trumpet and the Painter s Paradox  Example Torricelli s Trumpet  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608-1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 \\textit{De solido hyperbolico acuto. }In this paper, he had the following theorem.   Historical Context  This is taken from De solido hyperbolico acuto. Evangelista Torricelli . 1643. Translated G. Loria and G. Vassura 1919.     Theorem: An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   In more modern terms, Torricelli showed that if the following function is rotated about the axis, then the infinitely long solid has a finite volume of . Here is picture of what has been dubbed Torricelli s Trumpet .     "
 },
@@ -11777,7 +11903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-18",
   "type": "Problem",
-  "number": "22.40",
+  "number": "22.8.0.7",
   "title": "",
   "body": "Torricelli s Trumpet Volume  Use an improper integral with volumes of disks to obtain Torricelli s result. Again, it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.  "
 },
@@ -11786,7 +11912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-20",
   "type": "Problem",
-  "number": "22.41",
+  "number": "22.8.0.8",
   "title": "",
   "body": "  Problem Let s assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by   "
 },
@@ -11804,7 +11930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-3",
   "type": "Problem",
-  "number": "22.42",
+  "number": "22.9.0.1",
   "title": "",
   "body": "  Integral Improper Define what it means for the improper integral to converge. What its value would be?  "
 },
@@ -11813,7 +11939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-15",
   "type": "Problem",
-  "number": "22.43",
+  "number": "22.9.0.2",
   "title": "",
   "body": "  PROBLEM Use the the substitution in equation to obtain This is what the approximation represents in the old tables and in the statistical software. Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for . It is expected that a person uses the above substitution to compute a score and the table or software provides the approximation for the integral of the standard normal distribution.  "
 },
@@ -11822,7 +11948,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#PROBLEMErf",
   "type": "Problem",
-  "number": "22.44",
+  "number": "22.9.0.3",
   "title": "",
   "body": "  Problem Actually, Wolfram Alpha provides the following output where   The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation   "
 },
@@ -11831,7 +11957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-27",
   "type": "Problem",
-  "number": "22.45",
+  "number": "22.9.0.4",
   "title": "",
   "body": "  Problem Mimic the above techniques to find a power series representation for the following functions.              "
 },
@@ -11840,7 +11966,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-36",
   "type": "Problem",
-  "number": "22.46",
+  "number": "22.9.0.5",
   "title": "",
   "body": "  Problem    Use the power series to obtain a power series for and use this to show    Add the first ten terms of the series you obtained in part a with to obtain an approximation for . How does your calculation compare to the approximate answer given by Wolfram Alpha which is   "
 },
@@ -11858,7 +11984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#PROBLEMPS1",
   "type": "Problem",
-  "number": "22.47",
+  "number": "22.10.0.1",
   "title": "",
   "body": "  Problem For each of the following functions, find the power series expansion for the indicated value of by manipulating a known series. [Make sure you write out enough terms so there is a discernible pattern.]             "
 },
@@ -11867,7 +11993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-7",
   "type": "Problem",
-  "number": "22.48",
+  "number": "22.10.0.2",
   "title": "",
   "body": "  Problem Continue this process to show   "
 },
@@ -11876,7 +12002,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-15",
   "type": "Drill",
-  "number": "22.49",
+  "number": "22.10.0.3",
   "title": "",
   "body": "  Problem Verify your answers in by applying Taylor s formula to each of the functions in that problem to verify that you obtain the same series.  "
 },
@@ -11885,7 +12011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-16",
   "type": "Problem",
-  "number": "22.50",
+  "number": "22.10.0.4",
   "title": "",
   "body": "  Problem    Use Taylor s formula to derive the following power series    We could use Taylor s formula to obtain a power series for , but instead, differentiate the series you obtained in part a to get the series    You might have noticed the similarity between the power series for sine and cosine and the series This was also noticed by Leonard Euler (1707-1783). He substituted into the series for , where . Do the same to derive the important formula [Note: This formula is important in many fields such as electrical engineering, quantum physics, and mechanics and is the basis for all of complex analysis.]  "
 },
@@ -11894,7 +12020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-20",
   "type": "Problem",
-  "number": "22.51",
+  "number": "22.10.0.5",
   "title": "",
   "body": "  Problem    Write the following summations in the form [Make sure you put in enough terms to establish a pattern.]              Write the following using summation notation.          "
 },
@@ -11903,7 +12029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#FIGUREMidPointRule",
   "type": "Figure",
-  "number": "22.52",
+  "number": "22.10.0.6",
   "title": "",
   "body": "     "
 },
@@ -11912,7 +12038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#DRILLMidPointRule1",
   "type": "Drill",
-  "number": "22.53",
+  "number": "22.10.0.7",
   "title": "",
   "body": " Approximate the value of by summing the areas of the rectangles shown in where the height of each rectangle is the function value at the midpoint of each interval:   "
 },
@@ -11957,7 +12083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#PROBLEMIntAtoA",
   "type": "Drill",
-  "number": "23.1",
+  "number": "23.2.0.1",
   "title": "",
   "body": " Explain why .  "
 },
@@ -11975,7 +12101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#THEOREMFTC",
   "type": "Theorem",
-  "number": "23.2",
+  "number": "23.2.0.2",
   "title": "The Fundamental Theorem of Calculus (FTC).",
   "body": " The Fundamental Theorem of Calculus (FTC)  Let be any constant. If is defined by then is an antiderivative of .  "
 },
@@ -11984,7 +12110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#SECTIONIntegrationAsFunction-12",
   "type": "Corollary",
-  "number": "23.3",
+  "number": "23.2.0.3",
   "title": "",
   "body": " From and equation it follows that if is any other antiderivative of then            "
 },
@@ -11993,7 +12119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#SECTIONIntegrationAsFunction-13",
   "type": "Corollary",
-  "number": "23.4",
+  "number": "23.2.0.4",
   "title": "Definite Integration.",
   "body": " Definite Integration  Let and be constants. Then from and it follows that   "
 },
@@ -12002,7 +12128,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#EXAMPLEZeroDiff",
   "type": "Example",
-  "number": "23.5",
+  "number": "23.2.0.5",
   "title": "The Problem of Zero Differentials.",
   "body": " The Problem of Zero Differentials       Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.  "
 },
@@ -12020,7 +12146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRandomStuff.html#ProblemMisplaced",
   "type": "Problem",
-  "number": "23.6",
+  "number": "23.3.0.1",
   "title": "",
   "body": " Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
 },
