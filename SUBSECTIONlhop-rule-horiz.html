@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>L’Hôpital’s Rule and Horizontal Asymptotes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="SUBSECTIONLHopitalsRule.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="SECTIONmore-indet-forms.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="CHAPTERwhen-deriv-doesnt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="CHAPTERlimits-lhop-rule.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and L’Hôpital’s Rule</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Horizontal Asymptotes as Limits “at Infinity”</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="DIGRESSIONLimitNotation.html" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsqueeze-theorem-informal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvertical-asymptotes.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="SECTIONmore-indet-forms.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Indeterminate Forms and L’Hôpital’s Rule</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONLHopitalsRule.html" class="internal"><span class="codenumber">1.4.1</span> <span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection active"><div class="toc-title-box"><a href="SUBSECTIONlhop-rule-horiz.html" class="internal"><span class="codenumber">1.4.2</span> <span class="title">L’Hôpital’s Rule and Horizontal Asymptotes</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt.html" class="internal"><span class="codenumber">2</span> <span class="title">When the Derivative Doesn’t Exist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">One Sided Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONone-sided-deriv.html" class="internal"><span class="codenumber">2.2</span> <span class="title">One Sided Derivatives</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">I</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERFTC.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="CHAPTERFTC-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="CHAPTERFTC-3.html#SECTIONIntegrationAsASum" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="CHAPTERFTC-3.html#SECTIONIntAsAntiDiff" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERFTC-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Rules for Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDiffeqsIVPS.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="IntegrationMethods.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProjectileMotion.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projectile motion: Another Look at  Galileo’s Work</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Accounting for  Resistance – This Looks Like a Job for Substitution!</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Integration By Parts — The Opposite of the Product Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="IntegrationMethods-6.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="IntegrationMethods-6.html#IntegrationMethods-6-2" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Intro</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="IntegrationMethods-6.html#PartialFractionSubsection" class="internal"><span class="codenumber">4.5.2</span> <span class="title">The Partial Fraction Decomposition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="IntegrationMethods-7.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Areas and Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AppDefInt.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">4.8.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">4.8.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">4.8.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">4.8.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">4.8.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">4.8.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">5</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="IntCalcToTheory-2.html" class="internal"><span class="codenumber">6</span> <span class="title">Title Goes Here</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTBobsClasroomProblems.html" class="internal"><span class="codenumber">III</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">7</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs9.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Homework #9: Applications of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs10.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Homework #10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs11.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Homework #11: Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">7.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">7.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">IV</span> <span class="title">Stuff Written But Without a Home</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">8</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Integration as a Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Random Stuff</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">V</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">9</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="subsection" id="SUBSECTIONlhop-rule-horiz"><h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="space"> </span><span class="title">L’Hôpital’s Rule and Horizontal Asymptotes</span>
+</h2>
+<div class="para logical" id="SUBSECTIONlhop-rule-horiz-2">
+<div class="para">Our discovery of L’Hôpital’s Rule grew from our investigation of vertical asymptotes.  Is there any way that we can extend L’Hôpital’s Rule to help us with horizontal asymptotes?  For example, consider</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tlimit{x}{\infty}{\frac{\sin\left(\frac{2}{x}\right)}{\sin\left(\frac{3}{x}\right)}}.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-3">This limit is indeterminate of the form <span class="process-math">\(\frac{(\rightarrow0)}{(\rightarrow0)}\text{,}\)</span> so it seems like L’Hôpital’s Rule would apply. But both versions of L’Hôpital’s Rule (so far) require that <span class="process-math">\(x\rightarrow
+a,\)</span> where <span class="process-math">\(a\)</span> is a real number. And of course, infinity still insists on not being a number, real or otherwise.  If we want to use L’Hôpital’s Rule we’ll have to find a way to modify this limit so that L’Hôpital’s Rule does apply.</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-4">If we make the substitution <span class="process-math">\(z=\frac{1}{x}\)</span> then as <span class="process-math">\(x\rightarrow\infty\text{,}\)</span> <span class="process-math">\(\underset{z&gt;0}{z\rightarrow0}\text{.}\)</span>
+</div>
+<aside class="aside aside-like" id="SUBSECTIONlhop-rule-horiz-5"><h3 class="heading"><span class="title">Notation.</span></h3>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-5-2">Since <span class="process-math">\(x\rightarrow\infty\)</span> through positive values we need to constrain <span class="process-math">\(z\)</span> to do the same.</div></aside><div class="para logical" id="SUBSECTIONlhop-rule-horiz-6">
+<div class="para">After substituting we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tlimit{x}{\infty}{\frac{\sin\left(\frac{2}{x}\right)}{\sin\left(\frac{3}{x}\right)}}=\limitX{z}{0}{\textstyle\frac{\sin(2z)}{\sin(3z)}}{z\gt 0}.
+\end{equation*}
+</div>
+<div class="para">Now we apply L’Hôpital’s Rule and we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tlimit{x}{\infty}{\frac{\sin\left(\frac{2}{x}\right)}{\sin\left(\frac{3}{x}\right)}}\lhopeq\limitX{z}{0}{\textstyle\frac{2\cos(2z)}{3\cos(3z)}}{z\gt 0}=\frac23.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-7">Far more important than the answer in this example is the realization that we can use the same trick to extend L’Hôpital’s Rule to the case where <span class="process-math">\(x\)</span> approaches both <span class="process-math">\(\infty,\)</span> and <span class="process-math">\(-\infty.\)</span>
+</div>
+<div class="para logical" id="SUBSECTIONlhop-rule-horiz-8">
+<div class="para">To see this in the general situation suppose that <span class="process-math">\(\limit{x}{\infty}{f(x)}=0\)</span> and <span class="process-math">\(\limit{x}{\infty}{g(x)}=0.\)</span>  Make the substitution <span class="process-math">\(z=1/x\text{,}\)</span> so that when <span class="process-math">\(x\rightarrow\infty\)</span> we would have the one-sided limit as <span class="process-math">\(z\)</span> approaches zero from the right side. Now we can use L’Hôpital’s Rule with <span class="process-math">\(z\)</span> as the variable.</div>
+<div class="displaymath process-math" id="SUBSECTIONlhop-rule-horiz-8-9">
+\begin{align*}
+\limit{x}{\infty}{\frac{f(x)}{g(x)}} \amp{}=
+\rlimit{z}{0}{\frac{f\left(\frac1z\right)}{g\left(\frac1z\right)}}\\
+\amp \lhopeq
+\rlimit{z}{0}
+{\left(\frac{f^\prime\left(\frac1z\right)}{g^\prime(\frac1z)}\cdot\cancelto{1}{\frac{-z^{-2}}{-z^{-2}}}\right)}\\
+\amp =\rlimit{z}{0}{  \frac{f^\prime\left(\frac1z\right)}  {g^\prime\left(\frac1z\right)} }\\
+\amp =\limit{z}{\infty}{\frac{f^\prime(x)}{g^\prime(x)}}.
+\end{align*}
+</div>
+<div class="para">A similar development would work for <span class="process-math">\(x\rightarrow-\infty.\)</span>
+</div>
+</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-9">Although we have not discussed it, it is also true that L’Hôpital’s  Rule applies directly to the indeterminate form <span class="process-math">\(\frac{\approach{\pm\infty}}{\approach{\pm\infty}}\text{,}\)</span> so in addition to <span class="process-math">\(\frac{\approach{0}}{\approach{0}}\text{,}\)</span> we will call these <dfn class="terminology">L’Hôpital  Indeterminates</dfn> as well.</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-10">Putting this all together gives us the general statement of L’Hôpital’s Rule:</div>
+<article class="theorem theorem-like" id="THEOREMLHRuleGen"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.2.0.24</span><span class="period">.</span><span class="space"> </span><span class="title">L’Hôpital’s Rule.</span>
+</h3>
+<div class="para logical" id="THEOREMLHRuleGen-3">
+<div class="para">Suppose <span class="process-math">\(\limit{x}{a}{\frac{f(x)}{g(x)}}\)</span> is any L’Hôpital   Indeterminate.  Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{x}{a}{\frac{f(x)}{g(x)}}=\limit{x}{a}{\frac{f^\prime(x)}{g^\prime(x)}}.
+\end{equation*}
+</div>
+<div class="para">We allow the possibility that <span class="process-math">\(a=\pm\infty\)</span> which we understand to mean that <span class="process-math">\(x\)</span> increases or decreases without bound.</div>
+</div></article><article class="problem example-like" id="SUBSECTIONlhop-rule-horiz-12"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.4.2.0.25</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SUBSECTIONlhop-rule-horiz-12-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-12-1-1">Compute each of the following limits. Use <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLHRuleGen.html" title="Theorem 1.4.2.0.24: L’Hôpital’s Rule">Theorem 1.4.2.0.24</a> where appropriate.</div></div>
+<article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-2-1-1"><span class="process-math">\(\tlimit{x}{0}{\frac{5x}{\tan(x)}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-3-1-1"><span class="process-math">\(\tlimit{x}{2}{\frac{2x^2-5x+2}{5x^2-7x-6}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-4-1-1"><span class="process-math">\(\tlimit{x}{-3}{\frac{x^2+2x-3}{2x^2+3x-9}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-5-1-1"><span class="process-math">\(\tlimit{x}{0}{\frac{x+1-e^x}{x^2}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-6-1-1">
+<span class="process-math">\(\tlimit{x}{\infty}{\frac{e^{nx}}{\ln(x)}}\text{,}\)</span> <span class="process-math">\(n\gt0\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-7"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-7-1-1"><span class="process-math">\(\tlimit{x}{\infty}{\frac{5-5^x}{7-7^x}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-8"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-8-1-1"><span class="process-math">\(\tlimit{x}{\infty}{\frac{\ln(\ln(x))}{\ln(x^2)}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-9"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-9-1-1"><span class="process-math">\(\tlimit{x}{0}{\frac{\inverse\sin(x)}{x-\sin(x)}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-10"><h4 class="heading"><span class="codenumber">(i)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-10-1-1"><span class="process-math">\(\tlimit{x}{\infty}{\frac{e^{x-2}}{1+e^{x+3}}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-11"><h4 class="heading"><span class="codenumber">(j)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-11-1-1"><span class="process-math">\(\tlimit{x}{\infty}{\frac{e^{x-2}}{1+e^{x+3}}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-12"><h4 class="heading"><span class="codenumber">(k)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-12-1-1"><span class="process-math">\(\tlimit{x}{0}{\frac{e^{x-2}}{1+e^{-x+3}}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-12-13"><h4 class="heading"><span class="codenumber">(l)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-12-13-1-1"><span class="process-math">\(\tlimit{x}{\infty}{\frac{x}{\ln(1+2e^x)}}\)</span></div></article></article><article class="example example-like" id="SUBSECTIONlhop-rule-horiz-13"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2.0.26</span><span class="period">.</span><span class="space"> </span><span class="title">3.</span>
+</h3> <div class="para" id="SUBSECTIONlhop-rule-horiz-13-2">As <span class="process-math">\(x\rightarrow\infty\)</span> both <span class="process-math">\(f(x)=\ln(x)\)</span> and <span class="process-math">\(g(x)=\sqrt[3]{x}\)</span> increase without bound, but which one increases faster?  Take a quick look at the graphs below.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/DC/lhopital5.png" class="contained"></div>  <div class="para logical" id="SUBSECTIONlhop-rule-horiz-13-4">
+<div class="para">As <span class="process-math">\(x\rightarrow\infty\)</span> both graphs are flattening out, but it would appear that the natural logarithm function is outgrowing the cube root function. Is it? We can answer this question by looking at the limit,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{x}{\infty}{\frac{\ln(x)}{\sqrt[3]{x}}}.
+\end{equation*}
+</div>
+<div class="para">If the limit is <span class="process-math">\(\infty\)</span> then <span class="process-math">\(f(x)=\ln(x)\)</span> is growing faster. If it is zero then <span class="process-math">\(g(x) = \sqrt[3]{x}\)</span> is increasing faster than <span class="process-math">\(f(x)=\ln(x).\)</span> (Do you see why?)</div>
+</div></article><article class="exercise exercise-like" id="SUBSECTIONlhop-rule-horiz-14"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.4.2.0.27</span><span class="period">.</span>
+</h3>
+<ol class="lower-roman">
+<li id="SUBSECTIONlhop-rule-horiz-14-1-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-14-1-1-1">Which of <span class="process-math">\(f(x)=\ln(x)\)</span> and <span class="process-math">\(g(x)=\sqrt[3]{x}\)</span> grows faster?</div></li>
+<li id="SUBSECTIONlhop-rule-horiz-14-1-2"><div class="para" id="SUBSECTIONlhop-rule-horiz-14-1-2-1">Can we draw any conclusions about the rate of increase if the limit is something other than <span class="process-math">\(0\)</span> or <span class="process-math">\(\infty\text{?}\)</span> If so, what? If not, why not?</div></li>
+</ol></article><article class="problem example-like" id="SUBSECTIONlhop-rule-horiz-15"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.4.2.0.28</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SUBSECTIONlhop-rule-horiz-15-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-15-1-1">Use L’Hôpital’s Rule to determine which of the following pairs of functions are growing faster as <span class="process-math">\(x\rightarrow\infty\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-2-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-3-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{1/2}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-4-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{1/3}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-5-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{2/3}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-6-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{1/4}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-7"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-7-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{3/4}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-8"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-8-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{1/5}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-9"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-9-1-1">
+<span class="process-math">\(f(x)=\ln(x)\)</span> <span class="process-math">\(g(x)=x^{4/5}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-10"><h4 class="heading"><span class="codenumber">(i)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-10-1-1">Based on the limits above write down a general conclusion about the rate of change of the natural logarithm as compared to roots.</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-15-11"><h4 class="heading"><span class="codenumber">(j)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-15-11-1-1">Prove that your statement is correct.</div></article></article><div class="para" id="SUBSECTIONlhop-rule-horiz-16">Colloquially the phrase “exponential growth” just means that something is growing very fast, but it has a more precise meaning in mathematics. It means the growth rate is described by an exponential function. For example neither <span class="process-math">\(f(x)=x^2\)</span> nor <span class="process-math">\(f(x)=x^{200}\)</span> grows exponentially. They are both said to  grow “polynomially”. But <span class="process-math">\(f(x) = e^x\text{,}\)</span> <span class="process-math">\(f(x)=2^x\text{,}\)</span> and even <span class="process-math">\(f(x)=1.0001^x\)</span> all do grow exponentially  The next problem explores how “exponential growth”  compares “polynomial growth.”</div>
+<aside class="aside aside-like" id="SUBSECTIONlhop-rule-horiz-17"><h3 class="heading"><span class="title">Mathematica Terminology.</span></h3>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-17-2">As we saw in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONexponential-growth" missing or not unique]</code> <span class="process-math">\(f(x)=\left(\frac12\right)^x\)</span> is said to “decay exponentially.”</div></aside><article class="problem example-like" id="SUBSECTIONlhop-rule-horiz-18"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.4.2.0.29</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SUBSECTIONlhop-rule-horiz-18-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-1-1"></div></div>
+<article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-18-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SUBSECTIONlhop-rule-horiz-18-2-1-1">
+<div class="para">Show that each of the following limits is zero.</div>
+<ol class="lower-roman cols2">
+<li id="SUBSECTIONlhop-rule-horiz-18-2-1-1-1-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-2-1-1-1-1-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{x^2}{e^x}}=0\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-18-2-1-1-1-2"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-2-1-1-1-2-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{x^{20}}{e^x}}=0\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-18-2-1-1-1-3"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-2-1-1-1-3-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{x^{200}}{e^x}}=0\)</span></div></li>
+</ol>
+<div class="para">Explain how this implies that that <span class="process-math">\(e^x\)</span> grows faster than <span class="process-math">\(x^2\text{,}\)</span> <span class="process-math">\(x^{20}\text{,}\)</span> or even <span class="process-math">\(x^{200}\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-18-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-18-3-1-1">Would <span class="process-math">\(\limit{x}{\infty}{\frac{x^p}{e^x}}=0\)</span> for any positive integer <span class="process-math">\(p?\)</span> Explain.</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-18-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-18-4-1-1">Suppose that <span class="process-math">\(P(x)\)</span> any polynomial and show that <span class="process-math">\(\limit{x}{\infty}{\frac{P(x)}{e^x}}=0\text{.}\)</span> Do you see that this means that the natural exponential grows faster than any polynomial?</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-18-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para logical" id="SUBSECTIONlhop-rule-horiz-18-5-1-1">
+<div class="para">Suppose that <span class="process-math">\(P(x)\)</span> any polynomial. Show that each of the following limits is also zero. What do you conclude from this?</div>
+<ol class="lower-roman cols2">
+<li id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-1-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{P(x)}{10^x}}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-2"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-2-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{P(x)}{2^x}}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-3"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-3-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{P(x)}{1.1^x}}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-4"><div class="para" id="SUBSECTIONlhop-rule-horiz-18-5-1-1-2-4-1"><span class="process-math">\(\displaystyle \limit{x}{\infty}{\frac{P(x)}{1.00001^x}}\)</span></div></li>
+</ol>
+</div></article></article><article class="example example-like" id="EXAMPLEMoreLHopRule"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2.0.30</span><span class="period">.</span><span class="space"> </span><span class="title">More on L’Hôpital’s Rule.</span>
+</h3> <div class="para logical" id="EXAMPLEMoreLHopRule-2">
+<div class="para">Consider the limit</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{x}{\infty}{ \left[ x \tan\left(\frac1x\right)
+\right]}.
+\end{equation*}
+</div>
+<div class="para">If we want to evaluate this limit (we do) we seem to have few options. This is not a L’Hôpital  Indeterminate, nor is it obvious what the limit might be. Simply letting <span class="process-math">\(x\rightarrow\infty\)</span> we see that <span class="process-math">\(x\rightarrow\infty\)</span> and <span class="process-math">\(\tan\left(\frac1x\right)\rightarrow0\)</span> so our limit has the Indeterminate form <span class="process-math">\(\approach{\infty}\cdot\approach{0}\text{.}\)</span>
+</div>
+</div> <div class="para" id="EXAMPLEMoreLHopRule-3">There is a real temptation to say that this must be zero since anything multiplied by zero is zero.  But is it? Remember that the purpose of the arrow notation, <span class="process-math">\((\rightarrow0)\text{,}\)</span> is to remind us that the expression <span class="process-math">\(\tan\left(\frac{1}{x}\right)\)</span> is never actually equal to zero. It merely approaches zero. At the same time <span class="process-math">\(x\)</span> is increasing without bound (<span class="process-math">\(x\rightarrow\infty\)</span>) so it seems that the value of the limit might depend on the relative speeds with which <span class="process-math">\(x\rightarrow\infty\)</span> and <span class="process-math">\(\tan\left(\frac{1}{x}\right)\rightarrow0\text{.}\)</span>
+</div> <div class="para logical" id="EXAMPLEMoreLHopRule-4">
+<div class="para">But this reasoning feels very uncertain doesn’t it? And, in any case, nothing we’ve said will help us evaluate the limit. We’ll have to find a way to re-express this limit as a L’Hôpital Indeterminate so that L’Hôpital’s Rule does apply.  In the meantime, take your best guess as to the value of this limit and write it down for later reference. Suppose we rewrite this limit as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMLHRuleGen.html">
+\begin{equation*}
+\limit{x}{\infty}{ \left[ x \tan\left(\frac1x\right) \right]} =
+\limit{x}{\infty}{\frac{\tan\left(\frac1x\right)}{\frac1x}}. 
+\end{equation*}
+</div>
+<div class="para">This is a little scary to look at so we’ll make it easier on our eyes with the substitution <span class="process-math">\(z=\frac1x\text{.}\)</span>  As <span class="process-math">\(x\rightarrow\infty\)</span> we see that <span class="process-math">\(z\gt0\)</span> and <span class="process-math">\(z\rightarrow0\text{.}\)</span> Since <span class="process-math">\(\tan(0)=0\)</span> our limit is now <span class="process-math">\(\rlimit{z}{0}{\frac{\tan\left(z\right)}{z}}\)</span> which is the L’Hôpital Indeterminate <span class="process-math">\(\frac{(\rightarrow0)}{(\rightarrow0)}\text{.}\)</span> Thus by <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLHRuleGen.html" title="Theorem 1.4.2.0.24: L’Hôpital’s Rule">Theorem 1.4.2.0.24</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMLHRuleGen.html">
+\begin{equation*}
+\limit{x}{\infty}{x\tan\left(\frac1x\right)}
+=
+\rlimit{z}{0}{\frac{\tan\left(z\right)}{z}}
+\lhopeq\rlimit{z}{0}{\frac{\sec^2\left(z\right)}{1}}= \frac{\sec^2(0)}{1}=1
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\sec(0)=1\text{.}\)</span>
+</div>
+</div></article><div class="para" id="SUBSECTIONlhop-rule-horiz-20">Did you guess correctly?</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-21">Notice that the trick we used was a simple substitution much like the ones we have used in the past to make things “easier on the eyes.” The difference here is that we’re not making anything “easier on the eyes.” If anything we’re making things harder to look at since re-writing <span class="process-math">\(x\)</span> as <span class="process-math">\(\frac{1}{\frac1x}\)</span> certainly doesn’t seem like it’s going to help much.  Until we try it. Always try your ideas out no matter how crazy they seem to be. Only after you try an idea can you tell if it will work or not.</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-22">Recall that in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONexponential" missing or not unique]</code> where we defined the effective yield of an investment which is compounded continuously. We were led to examine the expression <span class="process-math">\(\left(1+\frac{1}{m}\right)^m\)</span> for very large values of <span class="process-math">\(m\text{.}\)</span>
+</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-23">As a result of that investigation we accumulated considerable numerical evidence that in one year an investment of <span class="process-math">\(1\)</span> growing at a nominal rate of <span class="process-math">\(5\%\text{,}\)</span> compounded continuously would grow to <span class="process-math">\(e^{0.05}\approx 1.0513\text{,}\)</span> but we were unable to do more than gather evidence. It was pretty convincing evidence but it was not proof since we didn’t yet have the mathematical technique necessary to evaluate the expression <span class="process-math">\(\left(1+\frac{1}{m}\right)^m\)</span> as <span class="process-math">\(m\rightarrow\infty\text{.}\)</span> Now we do.</div>
+<article class="example example-like" id="EXAMPLELimComp1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2.0.31</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="EXAMPLELimComp1-1">
+<div class="para">We need to evaluate the limit:</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\limit{m}{\infty}{ \left( 1+\frac{1}{m} \right)^m}.
+\end{equation*}
+</div>
+<div class="para">It is tempting to reason as follows. We see that <span class="process-math">\(1+\frac{1}{m}\rightarrow1\)</span> as <span class="process-math">\(m\rightarrow\infty\text{.}\)</span> That is, we have the indeterminate form <span class="process-math">\(\approach{1}^{\approach{\infty}}\)</span> and since one raised to any power is equal to one this limit must equal <span class="process-math">\(1\text{,}\)</span> right? Surely you know better than to jump to that conclusion by now. Not only does all of the evidence of this chapter warn you that limits are more subtle than that, but in our investigations in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONexponential" missing or not unique]</code> we saw overwhelming evidence that this limit is not equal to one.</div>
+</div> <div class="para" id="EXAMPLELimComp1-2">Also, notice that we wrote <span class="process-math">\(\approach{1}^{\approach{\infty}}\text{,}\)</span> not <span class="process-math">\(1^{\approach{\infty}}\text{.}\)</span> Why do you think we did that?</div> <div class="para" id="EXAMPLELimComp1-3">The source of our difficulty here is that the variable <span class="process-math">\(m\)</span> is in the exponent where we can’t get at it. We’d like to find a way to bring it out of the exponent. The natural logarithm seems perfect for this task since it has the property that <span class="process-math">\(\ln\left(a^b\right)=b\ln(a)\text{.}\)</span>
+</div> <div class="para logical" id="EXAMPLELimComp1-4">
+<div class="para">Begin by setting <span class="process-math">\(y=\left(1+\frac{1}{m}\right)^m\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ln(y)=
+\ln\left(1+\frac{1}{m}\right)^m =
+m\ln\left(1+\frac{1}{m}\right).
+\end{equation*}
+</div>
+<div class="para">Rather than evaluating <span class="process-math">\(\limit{t}{\infty}{y}\)</span> directly we evaluate the limit of the logarithm of <span class="process-math">\(y\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{m}{\infty}{\ln(y)} =
+\limit{m}{\infty}{m\ln\left(1+\frac{1}{m}\right) }.
+\end{equation*}
+</div>
+<div class="para">The limit on the right is an indeterminate form but unfortunately it is not a L’Hôpital  Indeterminate.  So, as before, we’ll have to do some algebraic manipulations first.  Set <span class="process-math">\(\frac1m=z\)</span> so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{t}{\infty}{\ln(y)}
+=\rlimit{z}{0}{\frac{\ln\left(1+z\right)}{z} }
+\lhopeq\rlimit{z}{0}{\frac{\frac{1}{1+z}}{1}}=1.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\limit{m}{\infty}{\ln(y)}=1\)</span> it seems intuitively clear that <span class="process-math">\(\limit{m}{\infty}{y}=\limit{m}{\infty}{\left(1+\frac1m\right)^m}=e^{1}\text{,}\)</span> doesn’t it? In fact, it is not true generally that</div>
+<div class="displaymath process-math" id="EXAMPLELimComp1-4-13">
+\begin{gather*}
+\textcolor{blue}{\tlimit{x}{a}{\textcolor{red}{f(g(x))}}} \text{ is equal to }
+\textcolor{red}{f}\textcolor{blue}{\left(\tlimit{x}{a}{g(x)}\right)}.
+\end{gather*}
+</div>
+<div class="para">But it is true for this problem.    </div>
+</div> <div class="para" id="EXAMPLELimComp1-5">Thus this is a detail that needn’t trouble us for now. So we will ignore it for now and return to it in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONLimitLaws" missing or not unique]</code>.</div></article><article class="problem example-like" id="SUBSECTIONlhop-rule-horiz-25"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.4.2.0.32</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SUBSECTIONlhop-rule-horiz-25-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-25-1-1"></div></div>
+<article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-25-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-25-2-1-1">Show that <span class="process-math">\(\limit{m}{\infty}{\left(1+\frac{r}{m}\right)}^m=e^{r}\)</span>
+</div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-25-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-25-3-1-1">Show that <span class="process-math">\(\limit{m}{\infty}{\left(1+\frac{r}{m}\right)}^{mt}=e^{rt}\)</span> for <span class="process-math">\(t\ge0\text{.}\)</span>
+</div>
+<div class="solutions"><details id="SUBSECTIONlhop-rule-horiz-25-3-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SUBSECTIONlhop-rule-horiz-25-3-2-1">Let <span class="process-math">\(n=mt\)</span> and manipulate this limit until it looks like the limit in part (a) (with different letters, of course).</div></div></details></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-25-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-25-4-1-1">Suppose we have an investment of <span class="process-math">\(10,000\)</span> compounded continuously with a relative annual rate of <span class="process-math">\(5\%\text{.}\)</span> How much would the investment be worth in <span class="process-math">\(20\)</span> years?  How would this compare to an investment which is compounded quarterly?</div>
+<div class="solutions"><details id="SUBSECTIONlhop-rule-horiz-25-4-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SUBSECTIONlhop-rule-horiz-25-4-2-1">You may want to review similar problems in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONexponential" missing or not unique]</code> before starting this problem.</div></div></details></div></article></article><article class="example example-like" id="SUBSECTIONlhop-rule-horiz-26"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2.0.33</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONlhop-rule-horiz-26-1">
+<div class="para">Consider <span class="process-math">\(\rlimit{t}{0}{t^t}\text{.}\)</span> Notice we are only considering positive values of <span class="process-math">\(t.\)</span> (Why?)  Proceeding in the same manner as before, let <span class="process-math">\(y=t^t,\)</span> so that <span class="process-math">\(\ln{(y)}=\ln(t^t)=t\ln(t).\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limitX{t}{0}{\ln(y)}{t\gt0}= \limitX{t}{0}{t\ln(t)}{t\gt0}=
+\limitX{t}{0}{\frac{\ln(t)}{\frac{1}{t}}}{t\gt0}.
+\end{equation*}
+</div>
+<div class="para">This is a L’Hôpital  Indeterminate so we apply L’Hôpital’s Rule:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limitX{t}{0}{\ln(y)}{t\gt0} =
+\limitX{t}{0}{\frac{\ln(t)}{t^{-1}}}{t\gt0} \lhopeq
+\limitX{t}{0}{\frac{t^{-1}}{-t^{-2}}}{t\gt0} =
+\limitX{t}{0}{(-t)}{t\gt0} = 0.
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limitX{t}{0}{t^t}{t\gt0}  = e^0=1.
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="SUBSECTIONlhop-rule-horiz-27">
+<div class="para">We have seen the following indeterminate forms:</div>
+<ol class="decimal cols3">
+<li id="SUBSECTIONlhop-rule-horiz-27-1-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-27-1-1-1"><span class="process-math">\(\displaystyle \approach{\infty}-\approach{\infty}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-27-1-2"><div class="para" id="SUBSECTIONlhop-rule-horiz-27-1-2-1"><span class="process-math">\(\displaystyle \approach{0}\approach{\infty}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-27-1-3"><div class="para" id="SUBSECTIONlhop-rule-horiz-27-1-3-1"><span class="process-math">\(\displaystyle \approach{0}^{\approach{0}}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-27-1-4"><div class="para" id="SUBSECTIONlhop-rule-horiz-27-1-4-1"><span class="process-math">\(\displaystyle \approach{1}^{\approach{\infty}}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-27-1-5"><div class="para" id="SUBSECTIONlhop-rule-horiz-27-1-5-1"><span class="process-math">\(\displaystyle \frac{\approach{0}}{\approach{0}}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-27-1-6"><div class="para" id="SUBSECTIONlhop-rule-horiz-27-1-6-1"><span class="process-math">\(\frac{\approach{\infty}}{\approach{\infty}}\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-28">Of these, only the last two are L’Hôpital  Indeterminate forms. The others must be evaluated by some method other than directly applying L’Hôpital’s Rule. Often this simply means algebraically rearranging them into a L’Hôpital Indeterminate.</div>
+<div class="para logical" id="SUBSECTIONlhop-rule-horiz-29">
+<div class="para">The following are not indeterminate forms. Don’t try to use L’Hôpital’s Rule on them. (In fact, you can evaluate each of these just by knowing the form. Try it.)</div>
+<ol class="decimal cols3">
+<li id="SUBSECTIONlhop-rule-horiz-29-4-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-29-4-1-1"><span class="process-math">\(\displaystyle \approach{\infty}+\approach{\infty}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-29-4-2"><div class="para" id="SUBSECTIONlhop-rule-horiz-29-4-2-1"><span class="process-math">\(\displaystyle \approach{1}^\approach{0}\)</span></div></li>
+<li id="SUBSECTIONlhop-rule-horiz-29-4-3"><div class="para" id="SUBSECTIONlhop-rule-horiz-29-4-3-1"><span class="process-math">\(\approach{0}^\approach{\infty}\text{.}\)</span></div></li>
+</ol>
+</div>
+<article class="problem example-like" id="SUBSECTIONlhop-rule-horiz-30"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">1.4.2.0.34</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SUBSECTIONlhop-rule-horiz-30-1"><div class="para" id="SUBSECTIONlhop-rule-horiz-30-1-1">Evaluate each of the following limits.</div></div>
+<article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-2-1-1"><span class="process-math">\(\limit{t}{\infty}{\left(1+\frac{a}{t}\right)^{bt}}      \)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-3-1-1"><span class="process-math">\(\limit{t}{0}{\left(1+t\right)^{\frac{1 }{t}}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-4-1-1"><span class="process-math">\(\limit{t}{0}{(1-2t)^{1/t}}      \)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-5-1-1"><span class="process-math">\(\limit{t}{0}{\left(1+at\right)^{\frac{b }{t}}}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-6-1-1"><span class="process-math">\(\rlimit{t}{0}{(\sin(t)+t)}      \)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-7"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-7-1-1"><span class="process-math">\(\limit{t}{\infty}{t^\frac{1}{\ln(t)}}\)</span></div>
+<div class="solutions"><details id="SUBSECTIONlhop-rule-horiz-30-7-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SUBSECTIONlhop-rule-horiz-30-7-2-1">Not every indeterminant form requires  L’Hôpital’s  Rule.</div></div></details></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-8"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-8-1-1"><span class="process-math">\(\limit{t}{1}{\left(\frac{1}{\ln(t)}-\frac{1}{t-1}\right)} \)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-9"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-9-1-1"><span class="process-math">\(\limit{t}{0}{\left(\csc(t)-\cot(t)\right)} \)</span></div></article><article class="task exercise-like" id="SUBSECTIONlhop-rule-horiz-30-10"><h4 class="heading"><span class="codenumber">(i)</span></h4>
+<div class="para" id="SUBSECTIONlhop-rule-horiz-30-10-1-1"><span class="process-math">\(\limit{t}{\infty}{\left(t-\ln(t)\right)} \)</span></div>
+<div class="solutions"><details id="SUBSECTIONlhop-rule-horiz-30-10-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SUBSECTIONlhop-rule-horiz-30-10-2-1">Set <span class="process-math">\(y=t-\ln(t)\)</span> and consider <span class="process-math">\(\lim(e^y)\text{.}\)</span>
+</div></div></details></div></article></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="SUBSECTIONLHopitalsRule.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="CHAPTERwhen-deriv-doesnt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
