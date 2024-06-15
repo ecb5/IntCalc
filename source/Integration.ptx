@@ -669,7 +669,7 @@ Since the early twentieth century integration theory has grown considerably beyo
       following table illustrates in both their differential and
       integral form the rules we have already seen.
     </p>
-    
+
     <table xml:id="TABLEBasicIntegration">
       <title>Integration Rules Inherited from Differentiation Rules</title>
       <tabular halign="center">
@@ -1107,1077 +1107,757 @@ differential is a differential so
 
   </section>
 
-  <section  xml:id="SECTIONSubstMethed">
-    <title>Accounting for  Resistance – This Looks Like a Job for
-    Substitution!</title>
+
+  <section  xml:id="SECTIONKnownIntegrals">
+    <title>Known Integrals</title>
     <p>
-      To keep things simple we have ignored air resistance so
-      far. But, depending on the conditions, resistance can have a
-      substantial effect on a body<rsq/>s motion. So we need to
-      account for it in our model.
-    </p>
-    <p>
-      In general, the faster the body is moving through a fluid (like
-      air or water) the more the fluie tends to resist the
-      motion. Hence the resistive force, or <term>drag</term>, is
-      most simply modeled as a function of the
-      body<rsq/>svelocity. You can experience this directly by holding
-      your hand out a car window.  The faster the car moves, the more
-      force you will feel on your hand. Similarly, the faster you move
-      your hand under water, the more force you will feel resisting
-      the motion.
-    </p>
-    <p>
-      Many phenomena will affect drag (speed, viscosity of the medium,
-      shape and size of the object, turbulence).  For a medium with a
-      relatively high viscosity and a relatively small object the
-      assumption that the drag is proportional to the velocity of the
-      object makes for a reasonably accurate model.  An example of this is
-      a grain of sand falling in water.
-    </p>
-    <p>
-      For a medium with a relatively low viscosity, such as
-      air, and a relatively large object, the drag is assumed to be
-      proportional to the square of the velocity.  This would be the
-      model to use for a baseball falling in the air.
-    </p>
-    <p>
-      Of course  to get a really accurate picture, we could use both a linear
-      term and a quadratic term to represent the drag, but we will
-      keep things as
-      simple as possible for now.  In our first example we<rsq/>ll
-      assume that the resistive force is proportional to
-      velocity. This is called
-      <term>linear drag</term>. 
-    </p>
-    <example xml:id="EXAMPLESandInWater">
+      The simplest way to compute an integral is to simply know what it  is
+      in the first place. So for example we see that from entry #7 of
+      <xref ref="TABLEBasicIntegration"></xref> that,
+<m>\int\cos(x){\dx{x} = \sin(x)+c }</m>.
+</p>
+<p>
+        <xref ref="TABLEBasicIntegration">Table</xref> is more that it might first
+appear to be. For example at first it seems that  entry #7 only tells
+us that an antiderivative of <m>\cos(x) </m> is <m>\sin(x)</m>, but
+with a little cleverness, and understanding, we can also use it to
+compute other integrals as follows.
+</p>
+<example xml:id="EXAMPLEIntSimpSub">
+<title>Integration By Simple Substitution</title>
+<p>
+To compute <me>\int\cos(5x) \dx{x}</me>, first make the substitution
+<m>u=5x</m>. In that case <m>\dx{u}=5\dx{x}</m>. Substituting these
+into our integral we have
+ <men xml:id="EQUATIONIntCos5x">
+\int\cos(5x) \dx{x}= \frac15\int\cos(u) \dx{u}
+ </men>.
+ From entry #7 of  <xref ref="TABLEBasicIntegration"></xref> we see
+that
+<me>\int\cos(5x) \dx{x} =\frac15\sin(u) +c</me>.
+Substituting back to the original variable
+(unsubstituting?) we have
+<me>\int\cos(5x) \dx{x}= \frac15\sin(ax)+c</me>.
+</p>
+</example>
+<problem>
+<p>
+Do all of the algebra necessary to show that <xref
+ref="EQUATIONIntCos5x">equation</xref>  is correct. Explain each step.
+</p>
+</problem>
+
+
+
+<problem xml:id="DRILLIntSimpSub">
+
+<p>
+<idx><h>Integration by Simple Substitution</h></idx>
+Emulate the computations in <xref ref="EXAMPLEIntSimpSub"></xref>  to
+compute each of the integrals. Assume <m>a</m> is a constant.
+
+<ol cols="2" marker="i">
+<li>
+<p>
+<m>\int \sin(ax)\dx{x}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\int \sec(ax)\tan(ax)\dx{x}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\int \frac{1}{\sqrt{1+a^2x^2}}\dx{x}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\int \frac{1}{1+ax^2}\dx{x}</m>
+</p>
+<p> Be careful! Don<rsq/>t make assumptions.</p>
+</li>
+</ol>
+</p>
+</problem>
+
+<exercise xml:id="PROBLEMIntlnax">
+<introduction>
+<p>
+<idx><h>Problem</h><h><m>\int\ln(ax)\dx{x} </m></h></idx> 
+
+Integrating by making a substitution seems to be a fairly simple
+technique when you first encounter it. But just as with
+differentiation it will turn out to be a very sophisticated
+technique. We will explore this a bit   here.
+</p>
+<!-- <p> -->
+<!-- Based on your experience so far, what is your best guess for the value -->
+<!-- of  -->
+<!-- <me> -->
+<!-- \int \ln(ax) \dx{x} -->
+<!-- </me>? -->
+<!-- </p> -->
+</introduction>
+<task xml:id="PROBLEMIntlnax1">
+<statement>
+<p>
+Show that <m>\int\ln(x)\dx{x} = x\ln(x) -x + c</m>
+</p>
+</statement>
+<hint>
+<p>
+You don<rsq/>t know how to compute this integral yet. Find another
+way.
+</p>
+</hint>
+</task>
+<task xml:id="PROBLEMIntlnax2">
+<statement>
+<p>
+Use the result of <xref ref="PROBLEMIntlnax1">part</xref> to guess the
+value of 
+<me>
+\int \ln(ax)\dx{x}
+</me>.
+</p>
+</statement>
+</task>
+
+<task xml:id="PROBLEMIntlnax3">
+<statement>
+<p>
+Now use the formula from <xref ref="PROBLEMIntlnax1">part</xref> and
+an appropriate substitution to
+compute <me>
+\int \ln(ax)\dx{x}
+</me>.
+Was your guess in <xref ref="PROBLEMIntlnax2"></xref> correct 
+</p>
+</statement>
+</task>
+
+<task xml:id="PROBLEMIntlnax4">
+<statement>
+<p>
+Differentiate the function you found in <xref
+ref="PROBLEMIntlnax3">part</xref> to confirm that your solution is
+correct.
+</p>
+</statement>
+</task>
+
+</exercise>
+
+<p>
+As you saw in <xref ref="PROBLEMIntlnax"></xref> integrals can be
+unpredictable, even when you are computing them correctly. You<rsq/>ll
+need to discipline yourself. You will save yourself some time and
+frustration if you don<rsq/>t try to anticipate  the
+solution. And only skip the steps that you are 
+<em>very </em> confident of.
+</p>
+
+
+
+
+<p>
+  For the first four hundred years or so after Calculus was invented
+  it was necessary for scientist, engineers, and mathematicians to
+  memorize a table of integrals like <xref
+  ref="TABLEBasicIntegration"></xref> (but much larger) and to own a
+  reference book of known integrals. The image below is a scan of two
+  pages of such a reference.
+</p>
+<image source="IC/CRC.png" width="70%">
+  <shortdescription></shortdescription>
+</image>
+
       <p>
-        To model a grain of sand with mass <m>m</m> descending in water
-        we let <m>y(t)</m> be distance the sand has fallen (so the
-        positive <m>y</m> axis is pointing downward), with
-        <m>y(0)=0</m> representing the surface of the water. From the
-        diagram below we see that there are three forces acting on
-        the sand: (1) the weight of the sand grain, (2) the buoyancy of the
-        sand grain, and (3) the drag that the water imposes on the
-        sand grain.
+        In the modern world the value of a published table of integrals has
+        diminished considerably due to the creation of several very
+        sophisticated mathematical software packages that will perform
+        integrations, sometimes even very complex integrations very
+        quickly. Certainly most such packages are able to compute all of the
+        integrals you will see in this course very quickly.
       </p>
       <p>
-        The total force acting on the grain, <m>F=m\dfdxn{y}{t}{2} </m>, will
-        be equal to the sum of these three forces.
-      </p>
-      <image source="IC/Boyancy1.png" width="25%">
-        <shortdescription>Diagram of the forces on an object in a
-        fluid.</shortdescription>
-      </image>
-      <p>
-        As always we denote the acceleration due to gravity by
-        <m>g</m>.
-        Then the weight of the sand is <m>mg</m>.  The drag, which we
-        assume is linear, is proportional to the velocity, so we will
-        denote this by <m>-Rv</m>, where <m>R</m> is a positive constant and
-        <m>v=\dfdx{y}{t}</m> is the velocity.  Notice that this force
-        is negative as the drag is necessarily in the direction
-        opposite  of the motion.
+        That being so, students are often left wondering why we insist that
+        you memorize the simpler integrals and learn the techniques that allow you
+        to compute more complex integrals. 
       </p>
       <p>
-        Since we have not discussed buoyancy before, a short explanation is in
-        order.  The buoyancy of an object is force that a surrounding fluid
-        applies to it. This force is equal to the weight of the fluid being
-        displaced by the object. If the density of the object is less than the
-        density of water then the weight of the object and it<rsq/>s boyancy
-        will balance before the object is completely covered by the
-        fluid. That is, the object floats.
+        There are a couple of reasons. 
+        <dl>
+          <li>
+            <title>Convenience</title>
+            <p>
+              Integrals are not stand<ndash/>alone problems. Except in this
+              course they will always come to you as part of a larger, more
+              complicated problem.  If you are working on such a problem and
+              the expression <m>\int_{-a}^{a} (x^2+4)\sin(x)\dx{x}</m> comes
+              up you<rsq/>d like to know that this is equal to zero without
+              interupting your work to enter this integral into some software
+              package so you can move on to the next step.
+            </p>
+            <p>
+              You need to be able to use your tools smoothly and efficiently
+              when you are working, and integration is one of your
+              tools. Having  to stop working in the middle of
+              every large computation you encounter in order to enter the
+              smaller computions  into software is like having to stop to
+              watch a video explaining every step  needed to do a small
+              carpentry job on your home. It can be done, but it will be an
+              onerous task at best. 
+            </p>
+          </li>
+          <li>
+            <title>Intuition (or the lack thereof)</title>
+            <p>
+              Let<rsq/>s put this question in a simpler context:
+              arithmetic. Was it really necessary for you to learn the
+              arithmetic rules in grade school?  After all, any calculuation
+              you need to do now, as an adult, can be done more reliably in
+              software. Learning arithmetic seems like wasted effort expended
+              to learn a useless skill. Why bother?
+            </p>
+            <p>
+              Suppose you are planning a road trip of <m>2,380</m> miles and
+              your car gets <m>23.8</m> miles per gallon of fuel.  There is
+              no source of fuel on the trip. How much fuel do you need to
+              bring? The computation is <m>2380/23.8=100</m> so you need one hundred
+              gallons of fuel. Easy right? 
+            </p>
+            <p>
+              Sure. But that<rsq/>s only because you know arithmetic. Someone who
+              doesn<rsq/>t will have to enter these numbers into some software and
+              pray that they are using it correctly because <mdash/> and this is the
+              point <mdash/> never having done any arithmetic computations they such
+              a person would likely be unsure whether the computation should be
+              <m>2380/23.8=100</m> or <m>23.8/2380= 1/100</m>. They may even compute
+              <m>2380 \times 23.8=56,644</m>. 
+            </p>
+            <p>
+              Hopefully, these calculations look silly to you. If so it<rsq/>s
+              because you do understand arithmetic. But if you didn<rsq/>t, if you
+              hadn<rsq/> spent large chucks of your childhood doing these kinds of
+              computations you<rsq/>d have no intuition to bring to bear on
+              the problem and  you<rsq/>d
+              be unable to see that <m>1/100</m> gallon is far too small, or that
+              <m>56,644</m> gallons is far to large. 
+            </p>
+
+            <p>
+              Mistakes happen, even with software. When they do you need to
+              have enough intuition into the problem to know when the
+              numbers aren<rsq/>t coming out right. A very good way to
+              develop that intuition is to do  problems without any
+              assistance (software or otherwise). 
+            </p>
+          </li>
+          <li>
+            <title>Software Doesn't Always Give a Useful Answer</title>
+            <p>
+              The most sophisticated mathematical software has the cumulative
+              experience and knowledge of many years of development by the
+              mathematical community as a whole built into them. As a result such software
+              will often give answers which, although correct, are not
+              helpful. Especially for a beginner.
+            </p>
+            <p>
+              For example we entered the integral
+              <me>\int e^{-x^2}\dx{x}</me> into one such system. The answer we got
+              back was <me>\frac12 \sqrt{\pi }\erf(x) +C </me> which is correct, but
+              what does it mean You can<rsq/>t tell because you don<rsq/>t know what
+              <m>\erf{x} </m> means.
+            </p>
+            <p>
+              The same system returns <m>x_2\text{F}_1\left(-\frac12, \frac13;
+              \frac43; x^3\right) </m> when fed the integral
+              <me>\int\sqrt{1-x^3}\dx{x} </me>. Even we (the authors) would have to
+              do some investigating to figure out what this means as the symbolism
+              is not part of our core knowledge.
+            </p>
+          </li>
+        </dl>
       </p>
       <aside>
-        <title>Note to self</title>
+        <title>Notation</title>
         <p>
-          Is more explanation necessary here?
+          You will see the function <m>\erf(x) </m>  again in <xref
+          ref="EXERCISEWolframAlpha1"></xref> where we will explain what it
+          means.
         </p>
       </aside>
 
-
-    </example>
-    
-    <exercise  xml:id="PROBLEMTerminalVeloctiy">
-      <title>Terminal Velocity</title>
-
-      <task>
         <p>
-          Use Newton's Second Law to show that the situation in <xref
-          ref="EXAMPLESandInWater"></xref> can be modeled by the IVP
-          <md>
-            <mrow>
-              m\dfdx{v}{t}=(m-m_w)g-Rv,\amp{}\amp{}
-              v(0)=v_0.
-            </mrow>
-          </md>
+          Mathematical software can be a marvelous help. But it is no
+          substitute for  skill, knowledge, or understanding and these are what
+          you should be striving to take away from this course.
         </p>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Let <m>M=m-m_w</m> and note that <m>M\gt0</m>.
-            (why?) Show that the above leads to the IVP
+  </section>
+
+
+
+  
+  <section  xml:id="SECTIONProjectileMotion">
+    <title>Projectile motion: Another Look at  Galileo<rsq/>s Work </title>
+    
+    <p>
+      Suppose we throw a ball straight up into the air.  For the
+      moment, let's ignore air resistance.  How high will the ball
+      go?  How long will it take the ball to hit the ground?  What
+      will be its impact velocity?  Suppose you throw the ball up
+      with twice the initial speed.  Will the ball go twice as high?
+    </p>
+    <p>
+      When we addressed these questions using the techniques of
+      Differential Calculus in <xref
+      ref="SECTIONGalileoDrops"></xref> our approach was a bit
+      indirect.  We return to them here because (1) We can attack
+      them much more directly using Integral Calculus and (2) They
+      serve as a good jumping off point for the more interesting
+      problems to come. If you don<rsq/>t recall what we did in
+      <xref ref="SECTIONGalileoDrops"></xref> you should review that
+      section before proceeding.
+      <!-- .These were -->
+      <!-- questions that interested Galileo Galilei (1564-1642). Galileo was -->
+      <!-- one of the first scientists to systematically apply mathematics to -->
+      <!-- science. -->
+    </p>
+    
+    <p>
+      Thanks to Galileo we know that the acceleration of an
+      object falling near the surface of the earth due to gravity is
+      constantly <m>9.8
+      \frac{\text{meters}}{\text{second}^2}</m>. Thanks to Newton we
+      know that velocity is the antiderivative of acceleration, so
+      it would appear that
+      <men  xml:id="EQUATIONVelAcc1">\text{velocity} = \int \text{acceleration}=\int{9.8}.</men>
+    </p>
+    <p>
+      But this is wrong for two reasons. Do you see what they are?
+    </p>
+    <p>
+      First, an acceleration is measured in <m>
+      \frac{\text{meters}}{\text{second}^2}</m> but velocity is
+      measured in
+      <m>\left(\frac{\text{meters}}{\text{second}}\right)</m>. Since the
+      dimensions don<rsq/>t match <xref
+      ref="EQUATIONVelAcc1">equation</xref> is nonsense.
+    </p>
+    <aside>
+      <title>Comment </title>
+      <p>
+        Dimensions like <m>\frac{\text{meters}}{\text{second}}</m> or
+        <m>\frac{\text{newtons}}{\text{meter}^2}</m>, or whatever, always come up in
+        real world problems. It is only when we abstract away from the real
+        world and do <q>pure</q> mathematics that they are not
+        present. Ignoring dimensions is almost always dangerous. Don<rsq/>t do
+        it.
+      </p>
+    </aside>
+
+    <p>
+      Second, even if we ignore the dimensions of our quantities, the
+      integral on the right of <xref
+      ref="EQUATIONVelAcc1">equation</xref> asks us to sum inifnitely
+      many copies of <m>9.8</m>. This will clearly get arbitrarily
+      large and we know that the velocity of a falling object is not
+      infinite. The problem here is that <m>9.8</m> is not a
+      differential. Recall that  we observed in <xref
+      ref="SECTIONIntAsAntiDiff"></xref> that we can only integrate
+      differentials.
+    </p>
+
+    <p>
+      But notice how easy it was to pass lightly over <xref
+      ref="EQUATIONVelAcc1">equation</xref> and believe that it was
+      valid. Be careful. Always make sure the expressions you write
+      down are sensible; that the dimensions match and that what you are
+      integrating is a differential.
+    </p>
+
+    <p>
+      Careful use of Leibniz<rsq/> differential notation will address
+      both of these issues. Since we know that acceleration is the
+      derivative of velocity we have 
+
+      <men xml:id="EQUATIONVelAccDiff">\dfdx{v}{t} = 9.8.</men> 
+
+      Checking the dimensions we see that <m>v</m> is measured in
+      <m>\frac{\text{meters}}{\text{second}}</m> and that <m>t</m> is
+      measured in seconds. So <m>\dfdx{v}{t} </m> is measured in
+      <m>
+        \frac{\frac{\text{meters}}{\text{seconds}}}
+        {\text{seconds}}=\frac{\text{meters}}{\text{second}^2}
+      </m>
+    </p>
+    <p>
+      On the
+      other hand, if we multiply both sides of <xref
+      ref="EQUATIONVelAccDiff">equation</xref>  by
+      <m>\dx{t} </m> seconds we get
+      <me>\dx{v} \frac{\text{meters} }{\text{second}
+      }=9.8\frac{\text{meters}}{\text{second}\cdot{}\cancel{\text{second}}}\cdot
+      \dx{t}\cancel{\text{ seconds}}=
+      9.8\dx{t}\frac{\text{meters}}{\text{second}}</me>
+      In order to get a velocity by integration (summation) each of the
+      terms being summed (the 
+      <term>integrand</term>)  must be a velocity. Summing (integrating)
+      both sides gives
+      <me>\int\dx{v} \frac{\text{meters} }{\text{second} }=\int
+      9.8\dx{t}\frac{\text{meters}}{\text{second}}</me>
+    </p>
+    <p>
+      Including all of the dimensions in a computation can be very
+      distracting so we will frequently leave them out. But this
+      can be a  deceptive practice so be careful.  If you are ever unsure whether you are integrating
+      the correct expression, check the dimensions, but don<rsq/>t forget
+      that the differentials also have dimensions. In this case <m>\dx{t}
+      </m> measures time (in seconds).
+    </p>
+
+    <example xml:id="EXAMPLEVelAcc">
+
+      <p>
+        Let's say that the ball is thrown upward with an initial velocity of
+        <m>19.6</m> meters per second (roughly <m>44</m> miles per hour) and
+        is released at a point <m>2</m> meters above the ground. We<rsq/>d
+        like to answer these questions:
+        <ol>
+          <li>
+            How high
+            will the ball go?
+          </li>
+          <li>
+            When will it hit the ground?
+          </li>
+          <li>
+            What will be the
+            impact velocity?
+          </li>
+        </ol>
+      </p>
+      
+      <p>
+        To answer these questions, we will translate this problem into
+        the notation of Calculus.  Suppose the height of
+        the ball is given by <m>y=y(t)</m> where <m>y</m> is measured in
+        meters and <m>t</m> is measured in seconds.  Then we have the
+        following information
+
+        <md>
+          <mrow>
+            \underbrace{\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2}}_{\text{acceleration}},
+            \amp{}\amp{}
+            \underbrace{\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}}}_{\text{Inintial
+            Velocity}},
+            \text{ and }\underbrace{y(0)=2 \text{
+            meters}}_{\text{Initial Position}}.
+          </mrow>
+        </md>
+      </p>
+      
+      <p>
+        Notice that the acceleration is constant and  negative since
+        we've assumed that down is  the negative direction.
+        We want to find
+        <ol>
+          <li>
+            <m>y</m> when
+            <m>\dfdx{y}{t}=0</m> (height at the top of the flight, when
+            the ball<rsq/>s velocity is zero),
+          </li>
+          <li>
+            <m>t</m> when <m>y=0</m> (the time when the ball  hits the ground),
+          </li>
+          <li>
+            <m>\eval{\dfdx{y}{t}}{y}{0}</m> (the impact velocity
+            when the ball strikes the ground).
+          </li>
+        </ol>
+      </p>
+      
+      
+      <p> 
+        Second derivatives are a little scary so, to avoid  frightening
+        ourselves, we make the substitution <m>v=\dfdx{y}{t}</m>,
+        where <m>v</m> denotes velocity. Similarly if we let <m>a</m>
+        denote acceleration we have
+        <men  xml:id="EQUATIONAeDved2p">a=\dfdx{v}{t}=\dfdxn{y}{t}{2}</men> 
+        Starting with our constant acceleration <m>a=-9.8</m>, we need
+        to integrate <xref ref="EQUATIONAeDved2p">equation</xref> once to find <m>v(t)</m> and twice to find
+        <m>y(t)</m>.  Once we find
+        these, then we can answer the questions posed.  
+      </p>
+      <aside>
+        <title>Notation</title>
+        <p>
+          More formally we have
+          <me>v(t)=\int y(t)\dx{t}</me> 
+          and
+          <me>\alpha{}(t)=\int\left(\int y(t)\dx{t}\right)\dx{t}</me> 
+          But this last equation is way too scary to think about right now so we
+          won<rsq/>t.
+        </p>
+      </aside>
+      
+      <p>
+        We know that
+        <m>
+          a=\dfdxn{y}{t}{2}=\dfdx{v}{t}=-9.8
+          </m>.
+          so
+          <me>
+            \dx{v} =-9.8\dx{t} 
+            </me>.
+            This says that the differential <m>\dx{v} </m> is equal to the
+            differential <m>-9.8\dx{t}</m>. It follows that equality is maintained
+            if we sum up all such differentials. So 
+            Therefore
+
             <md>
               <mrow>
-                \frac{\dx{v}}{Rv-Mg}=\frac{-1}{m}\dx{t}\amp{}\amp{}
-                v(0)=v_0.
+                \int\dx{v}\amp =\int-9.8\dx{t}
+              </mrow>
+              <mrow>
+                v+c_1\amp =-9.8t+c_2
+              </mrow>
+              <mrow>
+                v\amp =-9.8t+(\underbrace{c_2-c_1}_{= c})
               </mrow>
             </md>
-          </p>
-        </statement>
-      </task>
+      </p>
       
-      <task>
-        <statement>
-          <p>
-            Use the substitution <m>z=Rv-Mg</m>, to rewrite the above
-            equation as
-            <me>
-              \frac{\frac{1}{R}\dx{z}}{z}=-\frac{1}{m}\dx{t}.
-            </me>
-          </p>
-
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-              Show that
-              <m>
-                v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}.
-              </m>
-            </p>
-
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Compute <m>\limit{t}{\infty}{v}</m>, and explain why this
-            is called  the
-            <term>terminal velocity</term> of the sand settling in the
-            water. Notice that the terminal velocity is  independent of
-            <m>v_0</m>.  Does this make
-            sense physically? Explain.
-          </p>
-        </statement>
-      </task>
-    </exercise>
+      <p>
+        To find <m>c</m>  in this case, we observe that
+        <m>v(0)=19.6</m>.  Thus
+        <me>
+          19.6=v(0)=-9.8(0)+c =c.
+        </me>
+        So our velocity is given by
+        <me>
+          v=-9.8t+19.6.
+        </me>
+      </p>
+      
+      <p>
+        We next integrate <m>v=\dfdx{y}{t} </m> to find the ball<rsq/>s
+        position. Since velocity is the derivative of position we
+        have
+        <md>
+          <mrow>
+            v= \dfdx{y}{t}\amp =-9.8t+19.6
+          </mrow>
+          <mrow>
+            \dx{y}\amp =\left(-9.8t+19.6\right)\dx{t}
+          </mrow>
+          <mrow>
+            \int\dx{y}\amp =\int\left(-9.8t+19.6\right)\dx{t}
+          </mrow>
+          <mrow>
+            y\amp =-9.8\left(\frac{t^2}{2}\right)+19.6t+c
+          </mrow>
+        </md>
+      </p>
+      
+      <p>
+        This time to find the constant <m>c</m> we observe that since
+        <m>y(0)=2</m> we have
+        <me>
+          y(0)=2=\eval{-4.9t^2+19.6t+c}{t}{0} =c.
+        </me>
+        Thus the ball's position is given by: <m>y=-4.9t^2+19.6t+2</m>.
+      </p>
+      
+      <p>
+        Once we have these three equations of motion (acceleration,
+        velocity, position) we can answer any question about the ball<rsq/>s
+        motion.  In general, we suggest you find these three equations
+        before trying to answer any questions about motion.
+      </p>
+      
+      <p>
+        To find the maximum height, we set <m>v=0</m>. So we see that
+        <m>
+          0=-9.8t+19.6 </m>. Solving for <m>t</m> gives <m>t=2 \text{
+          seconds}</m>. Thus the ball's maximum height is
+          <me>
+            y(2)=-4.9(2^2)+19.6(2)+2.
+          </me>
+          So the ball will reach a height of <m>= 21.6 \text{
+          meters}</m>.
+      </p>
+      
+      <p>
+        To find the impact velocity, we first need to find the time
+        <m>t</m> when the ball hits the ground so we solve for <m>t</m>
+        when <m>y=0</m>.
+        <md>
+          <mrow>
+            t\amp =\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2)}}{(2)(-4.9)}
+          </mrow>
+        </md>
+        and we see that both <m>t=4.1</m> and <m>t=-0.1</m> solve our
+        equation. However snce the negative time would represent time
+        in the past, we can say that the ball will hit the ground when
+        <m>t=4.1</m> seconds.  Thus the impact velocity is
+        
+        <me>
+          v(4.1) = -9.8(4.1)+19.6= -20.58 \frac{\text{m}}{\text{s}}.
+        </me>
+        The negative answer makes sense as the ball is traveling in the
+        negative direction (recall that we assumed that down is the
+        negative direction).
+      </p>
+    </example>
     
-    <paragraphs xml:id="PARAGRAPHSubstGBU">
-      <title> Substitution, the Good, the Bad, and the Ugly</title>
-
+    <problem>
       <p>
-        <xref ref="PROBLEMTerminalVeloctiy"></xref> uses the technique of
-        substitution. When we were learning differentiation  we  called this <q>making things easier on the
-        eyes</q>  because in that context
-        the substitutions we made almost always resulted in simpler formulas
-        that were easier to deal with than the originals..
-      </p>
-      <p>
-        Our goal when making a substitution is to
-        simplify things
-        <em>eventually</em>. But sometimes things will get more complicated
-        first. We will proceed slowly.
-      </p>
-      <example xml:id="EXAMPLEIntTan">
-        <title>The Integral of the Tangent Function</title>
-
-        <p>
-          One of the entries in <xref ref="TABLEBasicIntegration"></xref>,
-          was <m>\int\sin(x)\dx{x} = -\cos(x)+c</m>. We can use this to
-          compute  <m>\int\tan(x)\dx{x}</m> by making the substitution
-
-          <md>
-            <mrow>
-              z=\cos(x),
-            </mrow>
-            <intertext>which means that</intertext>
-            <mrow>\dx{z}=-\sin(x)\dx{x}</mrow>
-            <intertext> or</intertext>
-            <mrow>\textcolor{red}{-\dx{z}=\sin(x)\dx{z}}</mrow>
-            </md>.
-        </p>
-        <p>
-          Thus
-          <md>
-            <mrow>\int\tan(x)\dx{x} =
-            \int\frac{\textcolor{red}{\sin(x)}}{\cos(x)}\textcolor{red}{\dx{x}}
-            <!-- \amp -->
-            <!--            =\int\frac{\sin(x)}{z}\cdot\frac{-\dx{z}}{\sin(x)}</mrow> -->
-            \amp =-\int\frac{\dx{z}}{z}
-            </mrow>
-            <mrow>\amp =-\ln(z)+c</mrow>
-            <mrow>\amp =(-1)\ln(\cos(x))+c</mrow>
-            <mrow>\amp =\ln\left((\cos(x))^{-1}\right)+c</mrow>
-            <mrow>\amp =\ln\left(\sec(x)\right)+c</mrow>
-            </md>.
-        </p>
-      </example>
-      <problem>
-        <p>
-          Use a similar substitution to show that
-          <me>\int\cot(x)\dx{x}=-\ln(\csc(x)+c</me>
-        </p>
-      </problem>
-
-
-      <p>
-        Making a substitution in an integral is just the first
-        step. We still have to compute the integral. Our substitution
-        just
-        makes it a little  simpler to apply formulas and techniques with which we
-        are already familiar.  As simple as it is, substitution is no
-        mere trick. It is a very powerful technique, not just in
-        differentiation an integration but in all of mathematics.
-      </p>
-      <p>
-        The good news is that you can do any substitution you wish and
-        as long as it is performed correctly, it is not wrong.
-      </p>
-      <p>
-        But the bad news is that you can do any substitution you wish
-        and as long as it is performed correctly, it is not wrong.
-      </p>
-      <p>
-        That is to say, you can make any substitution you wish.  As
-        long as all calculations are done correctly, it will not be
-        <em>wrong</em> in any absolute sense. But it may not be
-        helpful either and it won<rsq/>t always be easy to tell until
-        you<rsq/>ve done a lot of computations whether the
-        substitution you chose is viable. This issue will be mitigated
-        as you gain experience but, especially in the beginning, be
-        careful.  It is very easy to make what looks like a reasonable
-        substitution which is either unworkable or, if it is workable,
-        is much harder to do than different substitution would be.
+        Suppose we throw two balls straight up. Suppose the first has an
+        initial velocity of <m>v_0</m> and the second has an initial
+        velocity of <m>2v_0</m>.  The maximum height of the second
+        ball either  be
+        <ol>
+          <li>
+            twice the maximum height of the first or,
+          </li>
+          <li>
+            four times the maximum height of the first or,
+          </li>
+          <li>
+            eight times the maximum height of the first.
+          </li>
+        </ol>
+        Which of these options  does your intuition say is correct? Either show
+        that your intuition is correct or show that it is incorrect. (Again,
+        we ignore air resistance.)
       </p>
 
+    </problem>
+    
+    <problem  xml:id="PROBLEMDeceleratingCar">
       <p>
-        For example, when computing
-        <m>\int\tan(x)\dx{x}</m>, we could have let <m>z=x</m>. In that
-        case we would have <m>\int\tan(x)\dx{x}=\int\tan(z)\dx{z}</m>
-        which is true, but it  is not helpful.
+        Automobile safety experts say that a skilled driver in a car
+        with good tires and dry pavement can safely brake to a stop
+        at a rate of <m>20 \frac{\text{feet}}{\text{second}^2}</m>.
       </p>
       <p>
-        Another approach would be to let <m>u=\tan(x)</m> so that
-        <m>\dx{u}=\sec^2(x)\dx{x}</m> or <m>\dx{x} =\frac{\dx{u}
-        }{\sec^2(x) }</m>. In that case we have
-        <mdn>
-          <mrow number="no">
-            \int\tan(x)\dx{x}\amp{}=\int\frac{u}{\sec^2(x)}\dx{u}
-          </mrow>
-          <mrow number="no">
-            \amp{}=\int\frac{u}{1+\tan^2(x)}\dx{u}
-          </mrow>
-          <intertext>so that</intertext>
-          <mrow xml:id="EQUATIONBadTanInt1">
-            \int\tan(x)\dx{x}=\amp{}=\int\frac{u}{1+u^2}\dx{u}
-          </mrow>
-          </mdn>.
+        Suppose it takes you  <m>160</m> feet to stop your car on a dry road
+        where the speed limit is <m>55
+        \frac{\text{miles}}{\text{hour}}</m>. Were you speeding?
       </p>
-      <p>
-        This is a true statement <mdash/> we haven<rsq/>t made any
-        computational errors <mdash/> but it appears that after the
-        substitution we will need to evaluate <m>\int
-        \frac{u}{1+u^2}\dx{y}</m>, which looks hard. It is actually
-        possible to compute this integral using the knowledge you now
-        have. It is simply a matter of finding the right
-        substitution. However, since we have already computed <m>\int
-        \tan(x) \dx{x}</m> in <xref ref="EXAMPLEIntTan"></xref> it is
-        pointless to continue with this example.
-      </p>
-      <!-- <p> -->
-      <!-- However knowing that  -->
-      <!-- <men xml:id="EQUATIONIntTan3"> -->
-      <!-- \int\tan(x)\dx{x}=\int\frac{u}{\sec^2(x)}\dx{u}=\int\frac{u}{1+u^2}\dx{u}.</men> -->
-      <!-- will be helpful to us in <xref -->
-      <!-- ref="PROBLEMTrickySubstitution1"></xref> below so we take specific -->
-      <!-- notice of this fact here. -->
-      <!-- </p> -->
-      <!-- <p> -->
-
-
-      <!-- This is an  integral you can do today if you are clever enough, but it will require that you make another substitution. Since we<rsq/>ve already done at least as much work to get to <xref ref="EQUATIONBadTanInt1">equation</xref> as we did  this approach seems like it -->
-      <!--         will be much harder than our original strategy so we're -->
-      <!--         inclined to abandon it immediately. -->
-      <!--       </p> -->
-      <p>
-        A comparably bad choice is   <m>u=\sin(x)</m>. With this
-        substitution we have
-        <m>\dx{u}=\cos(x)\dx{x}</m> or
-        <m>\dx{x}=\frac{\dx{u}}{\cos(x)}</m>. In this case we have
-        <mdn>
-          <mrow number="no"> 
-            \int\tan(x)\dx{x} =\amp{} \int\frac{\sin(x)}{\cos(x)}\dx{x}
-          </mrow>
-          <mrow xml:id="EQUATIONBadTanInt2">
-            \amp{}= \int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right)
-            =\int\frac{u}{1-u^2}\dx{u}
-          </mrow>
-        </mdn>
-        which is nearly the same, formally, as <xref ref="EQUATIONBadTanInt1">
-        equation</xref>. The only difference seems to be that the
-        <q><m>+</m></q> in the denominator in <xref
-        ref="EQUATIONBadTanInt1">equation</xref> became a
-        <q><m>-</m></q> in <xref
-        ref="EQUATIONBadTanInt2">equation</xref>.
-      </p>
-      <aside>
-        <title>Observation</title>
-        <p>
-          We say <q>formally</q> because they aren't really the
-          same. We<rsq/>ve used the substitution variable <m>u</m> to
-          represent two entirely different functions in each of these
-          formula.
-        </p>
-      </aside>
-      <exercise xml:id="PROBLEMTrickySubstitution1">
-        <introduction>
-          <p>
-            On the other hand we  know from <xref ref="EXAMPLEIntTan"></xref> that
-            <m>\int\tan(x)\dx{x}=\ln(\sec(x)+c</m> and we can use this
-            knowledge.
-          </p>
-          <p>
-            Suppose we need to compute
-            <m>\int\frac{u}{1+u^2}\dx{u}</m> or
-            <m>\int\frac{u}{1-u^2}\dx{u}</m>. The same substitution we
-            used to transform <m>\int\tan(x)\dx{x}</m> these into the
-            integrals (seen in <xref
-            ref="EQUATIONBadTanInt1">equation</xref> and <xref
-            ref="EQUATIONBadTanInt2">equation</xref>)
-            will work in reverse.
-          </p>
-        </introduction>
-        <task  xml:id="PROBLEMTrickySubstitution1A">
-          <statement>
-            <p>
-              Use the substitution <m>u=\tan(x)</m> to show that:
-              <me>
-                \int\frac{u}{1+u^2}\dx{u} =
-                \ln\left(\sec\left(\inverse\tan(u)\right)\right)+c.
-              </me>
-            </p>
-            <p>
-              Now use your Algebra and Trigonometry skills to show that
-              <m>\sec\left(\inverse\tan(u)\right) = \sqrt{1+u^2}</m> so
-              that <me> \int\frac{u}{1+u^2}\dx{u} =
-              \frac12\ln\left(1+u^2\right)+c</me>.
-            </p>
-          </statement>
-        </task>
-        
-        <task xml:id="PROBLEMTrickySubstitution1B">
-          <statement>
-            <p>
-              Use the substitution <m>u=\sin(x)</m> to show that
-              <me>
-                \int\frac{u}{1-u^2}\dx{u}=
-                \ln\left(\sec\left(\inverse\sin(u)\right)\right)+c.
-              </me>
-            </p>
-            <p>
-              Now use your Algebra and Trigonometry skills to show that
-              <m>\sec\left(\inverse\sin(u)\right) = \sqrt{1-u^2}</m> so
-              that <me> \int\frac{u}{1-u^2}\dx{u} =
-              -\frac{1}{2}\ln\left(1-u^2\right)+c</me>.
-            </p>
-          </statement>
-        </task>
-        
-      </exercise>
-      <aside>
-        <title>Advice and Encouragement</title>
-        <p>
-          You have surely noticed that the calculations you had to do
-          to evaluate the integrals in <xref
-          ref="PROBLEMTrickySubstitution1">Problem</xref> were quite
-          intricate. Not hard, <foreign> per se, </foreign> but there
-          were a lot of steps and at each point you had to draw on just
-          the right tool from Algebra, or Trigonometry, or Differential
-          Calculus.
-        </p>
-        
-        <p> For example, to get the one-half factor out in front you
-        needed first to recognize that <m>\sqrt{x}=x^{1/2}</m> and then
-        you needed the following property of logarithms:
-        <m>\ln(a^b)=b\ln(a)</m>.
-        </p>
-        
-        <p>
-          This is what your math courses are going to be like from now
-          on. You will continue to learn new techniques and acquire new
-          tools.  But the new material will frequently be fairly simple
-          to <em> understand<em></em> </em> but not so simple to
-          implement. When struggling with a problem it is easy to make
-          the mistake of thinking that you must have misunderstood the
-          new material, but it will frequently be the case that you you
-          really just don't see which is the right tool to use, or how
-          to use it.
-          
-        </p>
-        <p>
-          This will be frustrating at times. Don't give up. Ask for
-          help if you need it. But be patient with yourself. When you
-          are deep into a problem it is easy to overlook simple things,
-          and then to be embarrassed when your teacher or a classmate
-          shows you that all you had to do was factor out an
-          <m>x</m>. When this happens just learn the lesson, remember
-          it, and move on. There is no need for embarassment and it
-          will only waste your time and sap your self-confidence. We've
-          all been there.
-        </p>
-      </aside>
-      
-      <exercise xml:id="PROBLEMAlgebraicSubst1">
-        <introduction>
-          <p>
-            The integrals in <xref ref="PROBLEMTrickySubstitution1A"> Problem </xref> and
-            <xref ref="PROBLEMTrickySubstitution1B"> Problem </xref> can be evaluated by
-            means of several different substitutions as we've seen.
-            There are others that will also work but our principle
-            point for now is that no substitution is <q>wrong</q>, some
-            result in a new integral that is easier than the original
-            and some will not. If our goal is simply to evaluate the
-            integral we'll want to look for the simplest method we can
-            find.
-          </p>
-        </introduction>
-        
-        <task xml:id="PROBLEMAlgebraicSubst1A">
-          <statement>
-            <p>
-              Find a simpler substitution than the one we used in <xref
-              ref="PROBLEMTrickySubstitution1A">Problem</xref> to evaluate the integral
-              <me>
-                \int\frac{x}{1+x^2}\dx{x}
-              </me>
-            </p>
-          </statement>
-          <!-- <hint> -->
-          <!--   <p> -->
-          <!--     Notice that we're back to using <m>x</m> as the -->
-          <!--     variable. Does this matter? -->
-          <!--   </p> -->
-          <!-- </hint> -->
-          <hint>
-            <p>
-              Notice that <m>x\dx{x}</m> is <em>almost</em> the
-              differential of <m>1+x^2</m>.
-            </p>
-          </hint>
-        </task>
-        <task  xml:id="PROBLEMAlgebraicSubst1B">
-          <statement>
-            <p>
-              Find a simpler substitution than the one we used in <xref
-              ref="PROBLEMTrickySubstitution1B">Problem</xref> to evaluate the integral
-              <me>
-                \int\frac{x}{1-x^2}\dx{x}
-              </me>
-            </p>
-          </statement>
-          <hint>
-            <p>The substitution you used in <xref
-            ref="PROBLEMAlgebraicSubst1A"></xref> will probably work here.</p>
-          </hint>
-        </task>
-      </exercise>
-
-      <p>
-        A good
-        <url href="https://en.wikipedia.org/wiki/Rule_of_thumb" visual="https://en.wikipedia.org/wiki/Rule_of_thumb">Rule of Thumb</url>
-        for choosing a substitution is to look a the
-        <term>integrand</term> (the part between <m>\int </m> and the
-        differential) and see if you can find an expression and its
-        derivative. That is how we chose the substitution <m>z=\cos(x) </m> in
-        <xref ref="EXAMPLEIntTan"></xref>, and what the hints in <xref
-        ref="PROBLEMAlgebraicSubst1"></xref> tried to lead you to. If you
-        can<rsq/>t find an expression and its derivative try to find an
-        expression and
-        <em>almost</em> its derivative.
-      </p>
-
-      <example>
-        <task>
-          <title>An Unhelpful Substitution</title>
-          <p>
-            For example, consider the integral
-
-            <me> \int       x^2\sqrt{x^3+1}\dx{x} </me>
-
-            We  let <m>u = x^2</m> so that
-            <m>\dx{u} = 2x \dx{x}</m>. This gives
-
-            <md>
-              <mrow> \int   x^2\sqrt{x^3+1}\dx{x}= \int
-              u\sqrt{u^{3/2}+1}\left(\frac{\dx{u}}{2x}\right)</mrow>
-              <intertext> Notice
-              that we can bring the <m>1/2</m> outside the integral because
-              it is a constant, but since <m>\frac{1}{x}</m> is not a
-              constant (it depends on <m>u</m>) we cannot do the same with
-              with it so</intertext>
-              <mrow> \amp{}=
-              \frac12\int\frac{u\sqrt{u^{3/2}+1}}{x}\dx{u}.</mrow>
-              <intertext>
-                We could rewrite <m>x = \sqrt{u}</m> , so that
-              </intertext>
-              <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp{}=
-              \frac12\int\frac{u\sqrt{u^{3/2}}}{\sqrt{u}}\dx{u}</mrow>
-              <mrow>\amp =
-              \frac12 \int\sqrt{u}\sqrt{u^{3/2}+1}\dx{u}</mrow>
-              <mrow>\amp
-              =\frac12\int\sqrt{u^{5/2}+u}\dx{u}.</mrow>
-            </md>
-          </p>
-          <p>
-            This is all correct, but leads to an integral far worse than the
-            original, But <mdash/> and this is the point of this example
-            <mdash/> we have no way of seeing that this particular
-            substitution will not be helpful until after we<rsq/>ve done the
-            computations above.
-          </p>
-          <p>
-            The lessons here are (1) Be patient with yourself, because this is hard, and (2)
-            Don<rsq/>t give up, because this is hard.
-          </p>
-        </task>
-        <task>
-          <title>A Helpful Substitution</title>
-          <p>
-            But notice that <m>x^2</m> is almost the derivative of <m>x^3 +
-            1</m>. So let's make <m>y = x^3 + 1</m> instead. Thus
-            <m>\dx{y} = 3x^2 \dx{x}</m>. Will that extra  factor of <m>3</m>
-            be a problem for us? Let<rsq/>s see.
-          </p>
-          <p>
-            Making the substitution we have
-            <md>
-              <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp =\int
-              x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)</mrow>
-              <mrow>\amp =\frac13\int y^{1/2}\dx{y}</mrow>
-              <mrow>\amp =\frac13\left(\frac{y^{3/2}}{3/2}\right)+c</mrow>
-              <mrow>\amp =\frac29\left(x^3+1\right)^{3/2}+c</mrow>
-            </md>
-          </p>
-        </task>
-      </example>
-      <p>
-        So what's the method for making a  substitution?
-        Unfortunately, there is none. Basically, you can try
-        anything. If it works, great!  If it doesn't, don't do
-        something incorrectly to try and force it. Try something
-        else. Our Rule of Thumb will help, but there are no guarantees. This is
-        what makes integration harder than differentiation, much as
-        long division is harder than multiplication.
-      </p>
-      <p>
-        The problem will not solve itself.  Try something!  As you practice,
-        you will gain more experience.  Look for formulas, methods, and
-        ideas  that you have seen before. Maybe they can be tweaked to
-        address your problem. Maybe they can be applied directly. You
-        won<rsq/>t know until you try.
-      </p>
-      <p>
-        And Practice, Practice, Practice!
-      </p>
-    </paragraphs>
-
+    </problem>
+    
     <p>
-      As a general rule the more integrals you know the better. This is
-      because the integration techniques you will be learning do not allow
-      you to compute an integral. They merely show you how to transform one
-      integral into another. You saw this in <xref
-      ref="EQUATIONBadTanInt1">equation</xref> when we transformed
-      <me>\int\tan(x)\dx{x}</me> into
-      <me>\int\frac{u}{1+u^2}\dx{u}</me> and in <xref
-      ref="EXAMPLEIntTan"></xref> when we transformed
-      <me>\int\tan(x)\dx{x}</me> into
-      <me>-\int\frac{\dx{z}}{z}.</me> We did not compute these integrals, we
-      merely transformed them. In <xref
-      ref="EXAMPLEIntTan"></xref> we transformed <m>\int\tan(x)\dx{x} </m>
-      into an integral that we knew from our work in differentiation, but
-      this was information that we simply drew from our memory.
+      Of course, the same principles will work in two dimensions as
+      with a single dimension.  We just treat the horizontal and
+      vertical directions separately.
     </p>
-    <p>
-      For that reason it is best to simply know <mdash/> that is, to  have memorized
-      <mdash/> as many integrals as you can. Each integral you know provides
-      a target, something you can aim for as you try to transform  a new
-      integral into one you know.
-    </p>
-    <!-- <problem  xml:id="IntSECCSC"> -->
-    <!--   <title>The Integrals of the Secant and Cosecant Functions</title> -->
-    <!--   <introduction> -->
-    <!--     <p> -->
-    <!--       At this point we have know the integrals of the <m>\sin(x) </m>, -->
-    <!--       <m>\cos(x) </m>, <m>\tan(x) </m>, and <m>\cot(x) </m>. The first two -->
-    <!--       were immediate consequences of the differentiation rules, but the -->
-    <!--       <m>\tan(x) </m>, and <m>\cot(x) </m> were harder.  -->
-    <!--     </p> -->
-    <!--   </introduction> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Compute <m>\int\sec(x)\dx{x} </m> using the following trick: -->
-    <!--         <me>\int\sec(x)\dx{x} = \int\sec(x)\underbrace{\frac{\tan (x)+\sec (x)}{\tan -->
-    <!--         (x)+\sec (x)}}_{=1}\dx{x}.</me> -->
-    <!--       </p> -->
-    <!--       <p> -->
-    <!--         Differentiate your solution to verify that its derivative is -->
-    <!--         <m>\sec(x) </m>. -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--     <hint> -->
-    <!--       <p> -->
-    <!--         Do you recognize a substitution that can be used? If so, use it. If -->
-    <!--         not, try something. -->
-    <!--       </p> -->
-    <!--     </hint> -->
-    <!--   </task> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Use a similar trick to compute <m>\int \csc(x) \dx{x} </m>. -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--   </task> -->
-
-    <!-- </problem> -->
-
-    <exercise xml:id="PROBLEMIntSECCSC">
-      <title>The Integrals of the Secant and Cosecant Functions</title>
+    
+    <exercise>
       <introduction>
         <p>
-          At this point we have know the integrals of the <m>\sin(x) </m>,
-          <m>\cos(x) </m>, <m>\tan(x) </m>, and <m>\cot(x) </m>. The first two
-          were immediate consequences of the differentiation rules, but the
-          <m>\tan(x) </m>, and <m>\cot(x) </m> were harder.
+          Consider a projectile launched from the origin
+          with an initial velocity of <m>v_0</m> at an angle of
+          elevation <m>\theta</m>.
+        </p>
+        <!-- <figure> -->
+        <!--   <caption>Path of a thrown object.</caption> -->
+        <image source="IC/ThrownRock.png" width="75%">
+          <shortdescription>Path of a thrown
+          object.</shortdescription>
+        </image>
+        <!-- </figure> -->
+        <p>
+          Assume that there is no air resistance and the
+          acceleration due to gravity is <m>-g</m>.
         </p>
       </introduction>
-      <task xml:id="PROBLEMIntSECCSCA">
+      <task>
         <statement>
           <p>
-            Confirm the identity:
-            <m>\sec(x) =\frac{\cos(x) }{1-\sin^2(x) }. </m>
-          </p>
-        </statement>
-      </task>
-      <task xml:id="PROBLEMIntSECCSCB">
-        <statement>
-          <p>
-            Confirm the identity: <m>\frac{1}{1-\sin^2(x) }=
-            \frac12{\left[\frac{1}{1+\sin(x) } + \frac{1}{1-\sin(x) }\right] }</m>
+            Show that  the  horizontal velocity is given by
+            <m>\dfdx{x}{t}=v_0\cos (\theta )</m>.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Use the observations in <xref ref="PROBLEMIntSECCSCA">Problem</xref> and
-            <xref ref="PROBLEMIntSECCSCB">Problem</xref> and a well chosen substitution
-            to show that
+            Show that  the  vertical velocity is given by
+            <m>\dfdx{y}{t}=v_0\sin (\theta )-gt</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find the parametric function <m>P(t)=\ParamEqTwo{x(t)}{y(t)}</m> which
+            gives the projectile<rsq/>s position as a function of time (it<rsq/>s
+            trajectory).
+          </p>
+        </statement>
+      </task>
 
-            <me>\int\sec(x)\dx{x} = \ln \abs{\sec(x) + \tan(x)} </me>
+      <task>
+        <statement>
+          <p>
+            Show that the trajectory can also be  given as the graph
+            of
+            <men  xml:id="EQUATIONProjectileLaunch">
+              y=\frac{-g}{2v_0\cos(\theta)}x^2 +\tan(\theta)x.
+            </men>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use <xref ref="EQUATIONProjectileLaunch">equation</xref>
+            to show that the distance from its starting point where
+            the projectile returns to the ground is given by <me>
+            \frac{v_0^2}{g}\sin(2\theta) </me>.  
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that the maximum range occurs when
+            <m>\theta=\frac{\pi}{4}</m>.
           </p>
           <aside>
-            <title>Comment:</title>
+            <title>Mathematical Terminology</title>
             <p>
-              We have absolute value bars around the expression <m>\sec(x)+\tan(x)
-              </m> to ensure that we are not trying to take the logarithm of a
-              negative number. These will not appear obviously in any of the  computations
-              you need to do. Just tack them on at the end, like we did.
+              The distance a projectile flies is called its
+              <q>range</q>. This is  not to be confused with
+              the range of a function.
             </p>
           </aside>
+
         </statement>
       </task>
-
       <task>
         <statement>
           <p>
-            Compute <m>\int \csc(x) \dx{x} </m> similarly.
+            On Feb. 6, 1971, astronaut 
+            <url href="https://en.wikipedia.org/wiki/Alan_Shepard" visual="https://en.wikipedia.org/wiki/Alan_Shepard">Alan Shepard</url>
+            pulled out a
+            makeshift six-iron he smuggled on board Apollo <m>14</m>
+            and hit two golf balls on the lunar surface, becoming the
+            first, and so far the only, person to play golf anywhere other than
+            earth.  Assuming that the gravity on the moon is
+            <m>1/6</m> that of earth and that Shepard can hit the
+            ball identically on the earth and the moon, and ignoring
+            air resistance on the earth, would the ball go <m>6</m>
+            times farther before it returns to the surface on the moon
+            than on the earth? Justify your answer.
           </p>
         </statement>
       </task>
-
     </exercise>
-
-    <paragraphs xml:id="DIGRESSIONIntPolySecTan">
-      <title>DIGRESSION: The Integral of an Arbitrary Polynomial
-      in
-      <m>\sec(x) </m> and <m>\tan{x} </m></title>
-      <p>
-        In
-        many Calculus textbooks  the integral of the secant function is
-        developed using the following<fn>This digression is based on the paper
-        <pubtitle>
-          <url href="https://www.jstor.org/stable/2589620" visual="https://www.jstor.org/stable/2589620">Integrating Polynomials in Secant and Tangent</url>
-          </pubtitle>, by
-          Jonathan P. McCammond,
-          The American Mathematical Monthly, Nov.,
-          1999, Vol. 106, No. 9</fn> trick:
-
-          <md>
-            <mrow>\int\sec(x)\dx{x} \amp{}= \int\sec(x)\underbrace{\frac{\tan (x)+\sec (x)}{\tan
-            (x)+\sec (x)}}_{=1}\dx{x}.
-            </mrow>
-            <intertext>Now let <m>u=\tan(x)+\sec(x) </m> so that <m>\dx{u}
-            =\sec(x)\tan(x)+\sec^2(x) </m> so that</intertext>
-            <mrow>\amp{}=\int\frac1u\dx{u}</mrow>
-            <mrow>\amp{}=\ln\abs{u}+c</mrow>
-            <mrow>\amp{}=\ln\abs{\sec(x)+\tan(x)} +c</mrow>
-          </md>
-      </p>
-      <p>
-        Clearly whoever first computed the value of this integral found it by
-        some other means (possibly by guessing) and then realized that
-        multiplying by <m>\frac{\tan (x)+\sec (x)}{\tan(x)+\sec (x)}</m> and
-        using the substitution <m>u=\tan(x)+\sec(x) </m> would suffice, even
-        if it is not very illuminative.
-      </p>
-      <p>
-        As an means of computing the integral this is fine. But as a teaching
-        example it leaves a lot to be desired. In particular, there is no
-        discernible reason for multiplying the integrand by one in this
-        particular form. It is clearly a trick that was devised after the
-        value of the integral had already been determined.
-      </p>
-      <aside>
-        <title>Comment</title>
-        <p>
-          An old joke says that a <q>technique</q> is a <q>trick</q> that you
-          use more than once.
-        </p>
-      </aside>
-      <p>
-        We have called this a trick, but we can turn it into a technique by
-        finding the underlying structure of the problem. We begin by defining:
-
-        <mdn>
-          <mrow xml:id="EQUATIONPolySecTanUSubA">u\amp{}=\sec(x)+\tan(x)</mrow>
-          <mrow xml:id="EQUATIONPolySecTanUSubB">v\amp{}=\sec(x)-\tan(x)</mrow>
-        </mdn>
-
-        from which we see that
-
-        <mdn>
-          <mrow xml:id="EQUATIONSecTanInvSubA">\sec(x) \amp{}=\frac12 (u+v)</mrow>
-          <mrow xml:id="EQUATIONSecTanInvSubB">\tan(x) \amp{}=\frac12 (u-v).</mrow>
-        </mdn>
-      </p>
-      <problem>
-        <task>
-          <statement>
-            <p>
-              Show that <men xml:id="EQUATIONSecTanEq1">uv=1.</men>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Show that <men xml:id="EQUATIONSetTanDifferentials">\sec(x)\dx{x} = \frac1u \dx{u} = - \frac1v \dx{v}. </men>
-            </p>
-          </statement>
-        </task>
-
-      </problem>
-
-      <example xml:id="EXAMPLEIntPolySecTan">
-        <task xml:id="PROBLEMIntPolySecTanA">
-          <statement>
-            <p>
-              For our first example we will compute 
-              <md>
-                <mrow>
-                  \int\sec^3(x)\dx{x} \amp{}= \int \sec^2(x)\sec{x}\dx{x} 
-                </mrow>
-              </md>
-              From <xref ref="EQUATIONSecTanInvSubA">equation</xref> we have
-              <md>
-                <mrow>
-                  \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u+v)^2\sec(x)\dx{x}
-                </mrow>
-                <mrow>
-                  \amp{}=\frac14\int(u^2+2uv+v^2)\sec(x)\dx{x}
-                </mrow>
-              </md>
-              and from <xref ref="EQUATIONSecTanEq1">equation</xref> we have
-              <md>
-                <mrow>
-                  \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u^2+2+v^2))\sec(x)\dx{x}
-                </mrow>
-                <mrow>
-                  =\amp{}\frac14\int u^2\left(\frac{1}{u}\dx{u}\right) -\frac14
-                  \int v^2\left(\frac{1}{v}\dx{v}\right)+\frac12\int\sec(x)\dx{x}
-                </mrow>
-                <mrow>
-                  =\amp{}\frac18\left(u^2-v^2\right)+\frac12\int\sec(x)\dx{x}
-                </mrow>
-                <mrow>
-                  =\amp{}\frac18\left[\sec(x)+\tan(x)\right]^2
-                  <!-- </mrow> -->
-                  <!-- <mrow> -->
-                  <!--   \amp{} -->-\frac18\left[\sec(x)-\tan(x)\right]^2
-                  <!-- </mrow> -->
-                  <!-- <mrow> -->
-                  <!--   \amp{} -->+\frac12\abs{\sec(x)+\tan(x)}+c
-                </mrow>
-                <mrow>
-                  =\amp{}\frac18\left[\sec^2(x)+2\sec(x)\tan(x)
-                  +\tan^2(x)\right]
-                </mrow>              
-                <mrow>
-                  \amp{}-\frac18\left[\sec^2(x)-2\sec(x)\tan(x) +\tan^2(x)\right]
-                </mrow>
-                <mrow>
-                  \amp{}+\frac12\abs{\sec(x)+\tan(x)}+c.
-                </mrow>                  
-              </md>
-              So, finally,
-              <me>
-                \int\sec^3(x)\dx{x}=\frac12\left(\sec(x)\tan(x)+\abs{\sec(x)+\tan(x)}\right)+c.
-              </me>
-            </p>
-          </statement>
-        </task>
-
-        <!-- <task  xml:id="PROBLEMEXAMPLEIntPolySecTanA"> -->
-        <!-- <statement> -->
-        <!-- <p> -->
-        <!-- For our first example we will compute <m>\int\sec(x)\dx{x} </m> again. -->
-        <!-- <me> -->
-        <!-- \int\sec(x)\dx{x}=\int\frac1u\dx{u} = \ln\abs{u}+c=\ln\abs{\sec{x}+\tan{x}}+c -->
-        <!-- </me> -->
-        <!-- </p> -->
-        <!-- </statement> -->
-        <!-- </task> -->
-        <!-- <task xml:id="PROBLEMEXAMPLEIntPolySecTanB"> -->
-        <!-- <p> -->
-        <!-- Since <m>\dx{\left(\sec(x)\right)}=\tan(x)\sec(x) -->
-        <!--   </m> and <m>\dx{\left( -->
-        <!-- \tan(x)\right)} =\sec^2(x) </m>   we know that -->
-        <!-- <m>\int\sec^2(x)\dx{x} = \tan(x)+c</m> and -->
-        <!-- <m>\int\tan(x)\sec(x)\dx{x} -->
-        <!-- </m>. For our second example we will -->
-        <!-- re-derive these results. -->
-
-        <!-- <ol marker="i"> -->
-        <!-- <li> -->
-
-        <!-- <md> -->
-        <!-- <mrow>\int\tan(x)\sec(x)\dx{x} \amp{}=\frac12 \int -->
-        <!-- (u-v)\sec(x)\dx{x} </mrow> -->
-        <!-- <mrow>\amp{}=\frac12\int u\left(\frac{1}{u}\dx{u}\right) + \frac12 -->
-        <!-- \int v\left(\frac{1}{v}\dx{v}\right)</mrow> -->
-        <!-- <mrow>\amp{}=\frac12(u+v)+c</mrow> -->
-        <!-- <mrow>\amp{}=\sec(x)+c</mrow> -->
-        <!-- </md> -->
-
-        <!-- </li> -->
-        <!-- <li> -->
-        <!-- <p> -->
-        <!-- <md> -->
-        <!-- <mrow>\int\sec^2(x) \dx{x} \amp{}= \int \sec(x)\sec(x)\dx{x}{}</mrow> -->
-        <!-- <mrow>\amp{}=\frac12\int(u+v)\sec(x)\dx{x}</mrow> -->
-        <!-- <mrow>\amp{}=\frac12\left[\int u\sec(x)\dx{x} + \int v\sec(x)\dx{x}\right]</mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac12\left[\int u\left(\frac{1}{u}\dx{u}\right) - \int v\left(-\frac{1}{v}\dx{v}\right)\right] -->
-        <!-- </mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac12\left(\int\dx{u} - \int\dx{v}\right) -->
-        <!-- </mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac12\left(u-v\right)+c -->
-        <!-- </mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}= \frac12\left[\sec(x)+\tan(x)- -->
-        <!-- \left(\sec(x)-\tan(x)\right)\right] +c -->
-        <!-- </mrow> -->
-        <!-- <mrow> \amp{}= \tan(x)+c</mrow> -->
-        <!-- </md> -->
-
-        <!-- </p> -->
-        <!-- </li> -->
-        <!-- <li> -->
-
-        <!-- <md> -->
-        <!-- <mrow>\int\sec^2(x)\tan(x)\dx{x} \amp{}= \int -->
-        <!-- \sec(x)\tan(x)\left(\sec{x}\dx{x}\right) </mrow> -->
-        <!-- <mrow>\amp{}=\frac14\int(u+v)(u-v)\sec(x)\dx{x}</mrow> -->
-        <!-- <mrow>\amp{}=\frac14\int u^2\left(\frac1u\dx{u}\right) + \frac14\int -->
-        <!-- v^2\left(\frac1v\dx{v}\right)</mrow> -->
-        <!-- <mrow>\amp{}=\frac18\left(u^2 + v^2\right) +c</mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac18\left[\sec^2(x) +2\sec(x)\tan(x) +\tan^2(x) -->
-        <!-- -\left(\sec^2(x) + 2\sec(x)\tan(x) +\tan^2(x)\right)\right]+c -->
-        <!-- </mrow> -->
-        <!-- <mrow>\amp{}=\frac14\left(\sec^2(x)+\tan^2(x)\right)+c</mrow> -->
-        <!-- </md> -->
-
-
-
-        <!-- </li> -->
-        <!-- </ol> -->
-        <!-- </p> -->
-        <!-- </task> -->
-
-      </example>
-      <p>
-        In fact, in the paper cited above, McCammond shows that if
-        <m>P(s,t)</m> is any polynomial in two variables then
-
-        <me>\int P\left(\sec(x), \tan(x)\right)\dx{x}</me>
-
-        can be evaluated using the substitutions in equations <xref
-        ref="EQUATIONPolySecTanUSubA"></xref> and <xref
-        ref="EQUATIONPolySecTanUSubB"></xref>, their properties in equations
-        <xref ref="EQUATIONSecTanInvSubA"></xref> and <xref ref=",
-        EQUATIONSecTanInvSubB"></xref> above, and the judicious use of the
-        Pythagorean trigonometric identity 
-        <men xml:id="EQUATIONPythSecTan">\tan^2(x)+1=\sec^2(x).</men>
-      </p>
-
-      <exercise  xml:id="PROBLEMPolySecTan">
-        <introduction>
-          <p>
-            <idx><h>Problme</h></idx>
-
-            Evaluate the integrals and differentiate your  solution to confirm
-            that it is  correct.
-          </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>\int \sec^5(x) \dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \tan^3(x) \dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \sec^4(x)\tan(x) \dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \sec^3(x)\tan^5(x) \dx{x} </m>
-            </p>
-          </statement>
-        </task>
-      </exercise>
-      <p>
-        These substitutions are clever and they give us an elegant solution
-        but we do not necessarily want an elegant solution. In most cases
-        where the evaluation of an integral is required we<rsq/>ll just want
-        obtain a
-        solution in the most efficient manner possible.
-      </p>
-
-      <exercise xml:id="PROBLEMPolySecTanByTrigSub">
-        <introduction>
-          <p>
-            <idx><h>Problem</h></idx>
-
-            Evaluate the following integrals and differentiate your  solution to confirm
-            that it is  correct. The method we<rsq/>ve described in this
-            digression will work, but is not the necessarily always the most efficient
-            method available.
-          </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>\int \sec^2(x)+\sec(x)\tan(x)\dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \sec^3(x)\tan(x)+\tan^3(x)\sec(x)\dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \left(1+\sec(x)+\sec^2(x)+\sec^3(x)+\sec^4(x) \right)\tan(x)
-              \dx{{x}  }</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \left(1+\tan(x)+\tan^2(x)+\tan^3(x)+\tan^4(x) \right)\sec(x)
-              \dx{{x}  }</m>
-            </p>
-          </statement>
-        </task>
-
-      </exercise>
-
-
-      <exercise xml:id="PROBLEMPolyCscCot">
-        <introduction>
-          <p>
-            <idx><h>Problem</h></idx>
-
-
-            Evaluate the following integrals and differentiate your  solution to confirm
-            that it is  correct. The method we<rsq/>ve described in this
-            digression will work, but is not the necessarily always the most efficient
-            method available.
-            (You will need to find substitutions analogous to those we developed
-            above.)
-          </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>\int \csc^2(x)+\csc(x)\cot(x)\dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \csc^3(x)\cot(x)+\cot^3(x)\csc(x)\dx{x} </m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \left(1+\csc(x)+\csc^2(x)+\csc^3(x)+\csc^4(x) \right)\cot(x)
-              \dx{{x}  }</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int \left(1+\cot(x)+\cot^2(x)+\cot^3(x)+\cot^4(x) \right)\csc(x)
-              \dx{{x}  }</m>
-            </p>
-          </statement>
-        </task>
-
-      </exercise>
-
-
-      <p><alert>END OF DIGRESSION</alert></p>
-    </paragraphs>
   </section>
 </chapter>
