@@ -1,4 +1,4 @@
-<chapter xml:id="IntegrationMethods" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="CHAPTERIntegrationMethods" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Integration Methods</title>
 
 <!-- <introduction> -->
@@ -130,13 +130,12 @@
 <!-- </introduction> -->
   
   <section  xml:id="SECTIONSubstMethed">
-    <title>Accounting for  Resistance – This Looks Like a Job for
-    Substitution!</title>
+    <title>Projectile Motion: Extending Galileo!</title>
     <p>
-      To keep things simple we have ignored air resistance so
-      far. But, depending on the conditions, resistance can have a
-      substantial effect on a body<rsq/>s motion. So we need to
-      account for it in our model.
+      In <xref ref="SECTIONProjectileMotion"></xref> we ignored air
+      resistance in order to keep things simple. But, depending on the
+      conditions, resistance can have a substantial effect on a
+      body<rsq/>s motion. So we<rsq/>ll need to account for it in our model.
     </p>
     <p>
       In general, the faster the body is moving through a fluid (like
@@ -183,32 +182,36 @@
         sand grain, and (3) the drag that the water imposes on the
         sand grain.
       </p>
-      <p>
-        The total force acting on the grain, <m>F=m\dfdxn{y}{t}{2} </m>, will
-        be equal to the sum of these three forces.
-      </p>
       <image source="IC/Boyancy1.png" width="25%">
         <shortdescription>Diagram of the forces on an object in a
         fluid.</shortdescription>
       </image>
       <p>
-        As always we denote the acceleration due to gravity by
-        <m>g</m>.
-        Then the weight of the sand is <m>mg</m>.  The drag, which we
-        assume is linear, is proportional to the velocity, so we will
-        denote this by <m>-Rv</m>, where <m>R</m> is a positive constant and
+        The total force acting on the grain, <m>F=m\dfdxn{y}{t}{2} </m>, will
+        be equal to the sum of these three forces.
+      </p>
+      <p>
+ If        as usual we denote the acceleration due to gravity by
+        <m>g</m>
+        then the weight of the sand is <m>mg</m>.  We
+      have  assumed that the drage is linear so it will be
+      proportional to the velocity: by <m>-Rv</m>, where the parameter
+      <m>R</m> is some positive constant and
         <m>v=\dfdx{y}{t}</m> is the velocity.  Notice that this force
         is negative as the drag is necessarily in the direction
         opposite  of the motion.
       </p>
       <p>
-        Since we have not discussed buoyancy before, a short explanation is in
-        order.  The buoyancy of an object is force that a surrounding fluid
-        applies to it. This force is equal to the weight of the fluid being
-        displaced by the object. If the density of the object is less than the
-        density of water then the weight of the object and it<rsq/>s boyancy
-        will balance before the object is completely covered by the
-        fluid. That is, the object floats.
+        Since we have not discussed buoyancy before, a short
+        explanation is in order.  The buoyancy of an object is the
+        force that the surrounding fluid applies to it. This force is
+        equal to the weight of the fluid being displaced by the
+        object. If we denote the mass of the displaced fluid as
+        <m>m_w</m> then the buoyant force is <m>m_wg</m>. If the
+        density of the object is less than the density of water then
+        the weight of the object and it<rsq/>s boyancy will balance
+        before the object is completely covered by the fluid. That is,
+        the object floats.
       </p>
       <aside>
         <title>Note to self</title>
@@ -216,30 +219,31 @@
           Is more explanation necessary here?
         </p>
       </aside>
-
-
+<p>
+To model this situation we again invoke Newton<rsq/>s Second Law. If
+<m>p(t)</m> is the position of the grain of sand then the 
+total of all of the forces on it is:
+<m>F=m\dfdx{p}{t}=m\dfdx{v}{t}</m>. The individual forces are the
+weight: <m>mg</m>, the drag: <m>-Rv</m>, and the bouyancy:
+<m>m_wg</m>. At the beginning of its fall the velocity of the grain is
+zero, or <m>v(0)=0</m>. Thus our model is the IVP
+<mdn>
+<mrow xml:id="EQUATIONFallingGrain">
+              m\dfdx{v}{t}\amp{}=(m-m_w)g-Rv,\amp{}
+              v(0)=v_0.
+</mrow>
+</mdn>
+</p>
     </example>
     
     <exercise  xml:id="PROBLEMTerminalVeloctiy">
       <title>Terminal Velocity</title>
-
-      <task>
-        <p>
-          Use Newton's Second Law to show that the situation in <xref
-          ref="EXAMPLESandInWater"></xref> can be modeled by the IVP
-          <md>
-            <mrow>
-              m\dfdx{v}{t}=(m-m_w)g-Rv,\amp{}\amp{}
-              v(0)=v_0.
-            </mrow>
-          </md>
-        </p>
-      </task>
-      <task>
+      <task xml:id="PROBLEMTerminalVeloctiy1">
         <statement>
           <p>
             Let <m>M=m-m_w</m> and note that <m>M\gt0</m>.
-            (why?) Show that the above leads to the IVP
+            (why?) Show that <xref
+            ref="EQUATIONFallingGrain">IVP</xref> can be re-expressed as
             <md>
               <mrow>
                 \frac{\dx{v}}{Rv-Mg}=\frac{-1}{m}\dx{t}\amp{}\amp{}
@@ -250,30 +254,32 @@
         </statement>
       </task>
       
-      <task>
+      <task xml:id="PROBLEMTerminalVeloctiy2">
         <statement>
           <p>
             Use the substitution <m>z=Rv-Mg</m>, to rewrite the above
             equation as
-            <me>
+            <men xml:id="EQUATIONTerminalVeloctiyBeq">
               \frac{\frac{1}{R}\dx{z}}{z}=-\frac{1}{m}\dx{t}.
-            </me>
+            </men>
           </p>
 
         </statement>
       </task>
-      <task>
+      <task xml:id="PROBLEMTerminalVeloctiy3">
         <statement>
           <p>
-              Show that
-              <m>
-                v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}.
-              </m>
+            Integrate both sides of <xref
+            ref="EQUATIONTerminalVeloctiyBeq">equation</xref> and use
+            the result to show that
+              <me>
+                v=\frac{Mg}{R}+\left(v_0-\frac{Mg}{R}\right)e^{-\frac{R}{m}t}
+              </me>.
             </p>
 
         </statement>
       </task>
-      <task>
+      <task xml:id="PROBLEMTerminalVeloctiy4">
         <statement>
           <p>
             Compute <m>\limit{t}{\infty}{v}</m>, and explain why this
@@ -286,23 +292,73 @@
         </statement>
       </task>
     </exercise>
-    
-    <paragraphs xml:id="PARAGRAPHSubstGBU">
-      <title> Substitution, the Good, the Bad, and the Ugly</title>
 
-      <p>
-        <xref ref="PROBLEMTerminalVeloctiy"></xref> uses the technique of
-        substitution. When we were learning differentiation  we  called this <q>making things easier on the
-        eyes</q>  because in that context
-        the substitutions we made almost always resulted in simpler formulas
-        that were easier to deal with than the originals..
-      </p>
-      <p>
-        Our goal when making a substitution is to
-        simplify things
-        <em>eventually</em>. But sometimes things will get more complicated
-        first. We will proceed slowly.
-      </p>
+<p>
+The technique on display in <xref
+ref="PROBLEMTerminalVeloctiy"></xref> is called 
+<term>separation of variables</term> and it is quite
+general. Essentially, we can  solve a  differential equation whenever
+we can  first <q>separate</q> the variables (say <m>y</m> and
+<m>x</m>) into the form
+<me>
+g(y)\dx{y}=f(x)\dx{x}
+</me>.
+Nest we sum the differentials, giving 
+<me>
+\int{}g(y)\dx{y}=\int{}f(x)\dx{x}
+</me>.
+If we are able to evaluate each of the integrals 
+<m>\int{}g(y)\dx{y}</m> and <m>\int{}f(x)\dx{x}</m> then we can solve
+the differential equation. 
+</p>
+<example xml:id="EXAMPLESeparableDE1">
+
+<p>
+Suppose we need to solve the differential equation 
+<men xml:id="EQUATIONSeparableDE1">
+\dfdx{y}{x} = \tan(x)  
+</men>.
+We proceed as above.
+
+<md>
+<mrow>
+\dfdx{y}{x} \amp{}= \tan(x) 
+</mrow>
+<mrow>
+\dx{y} \amp{}= \tan(x)\dx{x}
+</mrow>
+<mrow>
+\int\dx{y} \amp{}= \int\tan(x)\dx{x}
+</mrow>
+<mrow>
+y \amp{}= \int\tan(x)\dx{x}
+</mrow>
+</md>.
+But of course we haven<rsq/>t really made much progress until we can
+evaluate  <m>\int\tan(x)\dx{x}</m>.
+
+</p>
+</example>
+
+
+    
+    <!-- <paragraphs xml:id="PARAGRAPHSubstGBU"> -->
+    <!--   <title> Substitution, the Good, the Bad, and the Ugly</title> -->
+
+    <!--   <p> -->
+    <!--     <xref ref="PROBLEMTerminalVeloctiy"></xref> uses the technique of -->
+    <!--     substitution. When we were learning differentiation  we  called this <q>making things easier on the -->
+    <!--     eyes</q>  because in that context -->
+    <!--     the substitutions we made almost always resulted in simpler formulas -->
+    <!--     that were easier to deal with than the originals.. -->
+    <!--   </p> -->
+    <!--   <p> -->
+    <!--     Our goal when making a substitution is to -->
+    <!--     simplify things -->
+    <!--     <em>eventually</em>. But sometimes things will get more complicated -->
+    <!--     first. We will proceed slowly. -->
+    <!--   </p> -->
+    <!-- </paragraphs> -->
       <example xml:id="EXAMPLEIntTan">
         <title>The Integral of the Tangent Function</title>
 
@@ -337,6 +393,24 @@
             </md>.
         </p>
       </example>
+<exercise>
+<task>
+<statement>
+<p>
+Show that <m>y(x)= \ln(\sec (x))+C</m> is a solution of <xref
+ref="EQUATIONSeparableDE1">equation</xref>.
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Find <m>C</m> if <m>y(0)-2</m>.
+</p>
+</statement>
+</task>
+</exercise>
+
       <problem>
         <p>
           Use a similar substitution to show that
@@ -704,7 +778,7 @@
       <p>
         And Practice, Practice, Practice!
       </p>
-    </paragraphs>
+
 
     <p>
       As a general rule the more integrals you know the better. This is
@@ -1063,7 +1137,7 @@
       <exercise  xml:id="PROBLEMPolySecTan">
         <introduction>
           <p>
-            <idx><h>Problme</h></idx>
+            <idx><h>Problems</h><h>Integration Drills</h></idx>
 
             Evaluate the integrals and differentiate your  solution to confirm
             that it is  correct.
@@ -1107,10 +1181,9 @@
       </p>
 
       <exercise xml:id="PROBLEMPolySecTanByTrigSub">
+            <idx><h>Problems</h><h>Integration Drills</h></idx>
         <introduction>
           <p>
-            <idx><h>Problem</h></idx>
-
             Evaluate the following integrals and differentiate your  solution to confirm
             that it is  correct. The method we<rsq/>ve described in this
             digression will work, but is not the necessarily always the most efficient
@@ -1152,11 +1225,9 @@
 
 
       <exercise xml:id="PROBLEMPolyCscCot">
+            <idx><h>Problems</h><h>Integration Drills</h></idx>
         <introduction>
           <p>
-            <idx><h>Problem</h></idx>
-
-
             Evaluate the following integrals and differentiate your  solution to confirm
             that it is  correct. The method we<rsq/>ve described in this
             digression will work, but is not the necessarily always the most efficient
@@ -1612,7 +1683,7 @@
     </figure>
 
     <exercise xml:id="PursuitCurve1">
-      <idx><h>Problem</h><h>Pursuit Curve</h></idx>
+      <idx><h>Problems</h><h>Pursuit Curve</h></idx>
       <task>
         <statement>
           <p>
@@ -4880,10 +4951,11 @@
           applies to <m>y</m>. In many applications, this will be the
           case, but you should be wary that it can happen.
         </p>
-        <exercise xml:id="exercise-ArcLenQtrCirc">
+        <exercise xml:id="EXERCISEArcLenQtrCirc">
+<idx><h>Arclength</h><h>of a quarter circle</h></idx> 
           <introduction>
             <p>
-              Consider the quarter circle given by
+              Consider the quarter circle given by the graph of
               <m>y=\sqrt{1-x^2}</m>, where <m>-\frac{1}{\sqrt{2}} \le
               x\le \frac{1}{\sqrt{2}}</m>. Since the circumference of
               the unit circle is <m>2\pi </m>, the length of this
@@ -4893,12 +4965,7 @@
           <task>
             <statement>
               <p>
-                <idx><h>Arclength</h></idx> Use an integral to
-                verify<fn> There is a reason we didn't have you
-                compute the length of the entire semicircle
-                <m>y=\sqrt{1-x^2}</m>, <m>-1\le x\le 1</m>. If you
-                can't see what it is, don't worry, we will come back
-                to it later.  </fn> this result.
+                Use an integral to verify this result.
               </p>
 
             </statement>
@@ -4943,20 +5010,26 @@
             \right)^2+\left(\dfdx{y}{x} \right)^2}\dx{u}
           </me>
         </p>
-        <exercise xml:id="exercise-CircumViaParam">
-          <statement>
+
+        <exercise xml:id="EXERCISECircumViaParam">
+<idx><h>Arclength</h><h>of a circle</h></idx> 
+<p>
+It would have been tedious to compute the length of circumference of the entire
+                circle in <xref ref="EXERCISEArcLenQtrCirc"></xref>. Do you see why?
+</p>
             <p>
-              <idx><h>Arc Length</h></idx> Use the parameterization
+              Use the parameterization
               <m>x=\cos( \theta )</m>, <m>y=\sin (\theta )</m>,
               <m>0\le \theta \le 2\pi </m> to verify that the
               circumference of the unit circle is <m>2\pi </m>.
             </p>
-          </statement>
         </exercise>
+
         <exercise xml:id="exercise-CycArcLen">
+<idx><h>Arclength </h> <h>of a cycloid</h></idx>
           <statement>
             <p>
-              <idx><h>Arc Length </h> <h>cycloid</h></idx> Here is
+               Here is
               another interesting fact about the cycloid.  <url
               href="https://mathshistory.st-andrews.ac.uk/Biographies/Wren/"
               visual="https://mathshistory.st-andrews.ac.uk/Biographies/Wren/">Sir
@@ -6272,15 +6345,16 @@
             consider this following variation.
           </p>
           <exercise xml:id="exercise-Bucket1">
+                <idx><h>Problems</h></idx> 
             <statement>
               <p>
-                <idx><h></h></idx> A bucket that weighs <m>15</m>
-                newtons is being hauled up <m>20</m> meters with a
-                rope that weighs <m>2</m> newtons per meter at a
-                constant speed of <m>1</m> meter/second.  Initially,
-                the bucket is filled with <m>150</m> newtons of water
-                which is leaking out at a rate of <m>3</m> newtons per
-                second.  How much work is done?
+                A bucket that weighs <m>15</m> newtons is being hauled
+                up <m>20</m> meters with a rope that weighs <m>2</m>
+                newtons per meter at a constant speed of <m>1</m>
+                meter/second.  Initially, the bucket is filled with
+                <m>150</m> newtons of water which is leaking out at a
+                rate of <m>3</m> newtons per second.  How much work is
+                done?
               </p>
             </statement>
           </exercise>
@@ -6296,11 +6370,7 @@
           </p>
 
           <exercise xml:id="exercise-Bucket2">
-            <introduction>
-              <p>
-                <idx><h></h></idx>
-              </p>
-            </introduction>
+                <idx><h>Problems</h></idx>
             <task>
               <statement>
                 <p>
@@ -6332,26 +6402,32 @@
           <p>
             Now that we have a handle on work, let's come back to
             kinetic energy.  Let's begin by generalizing what we had
-            done in the tautochrone problem.  </p> <exercise
-            xml:id="EXERCISEMassOnACurve"> <statement> <p>
-            <idx><h></h></idx> Suppose we have a (tangential) force
-            <m>F</m> moving a mass <m>m</m> moving along a curve
-            <m>C</m> from point <m>A</m> to point <m> B</m>.  Let
-            <m>P</m> denote a generic point on the curve.  </p> <image
-            source="IC/MassOnCurve1.png" width="70%">
-            <shortdescription></shortdescription> </image> <p> Let
-            <m>s</m> denote arc length from point <m>A</m> to <m>P</m>
-            and <m>v=\frac{ds}{dt}</m> represent velocity (speed) and
-            <m>a=\frac{dv}{dt}=\frac{d^2s}{dt^2}</m> (tangential)
-            acceleration.  We have that the work <m>w</m> done by
-            <m>F</m> to move the mass from <m>P=A</m> to <m>P=B</m> is
-            given by <me>w=\int^B_{P=A}{F\ ds}</me> </p> <p> Using
-            Newton's Second Law which states that force
-            <m>F=ma=m\left(\frac{dv}{dt}\right)</m>, show that
-            <me>w=\ftceval{\frac{1}{2}mv^2}{P}{A}{B}</me>
-          </p>
+            done in the tautochrone problem.  
+          </p> 
+          <exercise xml:id="EXERCISEMassOnACurve"> 
+            <idx><h>Problems</h></idx> 
+            <statement> 
+              <p>
+                Suppose we have a (tangential) force
+                <m>F</m> moving a mass <m>m</m> moving along a curve
+                <m>C</m> from point <m>A</m> to point <m> B</m>.  Let
+                <m>P</m> denote a generic point on the curve.  
+              </p> 
+              <image   source="IC/MassOnCurve1.png" width="70%">
+                <shortdescription></shortdescription> 
+              </image> 
+              <p> 
+                Let <m>s</m> denote arc length from point <m>A</m> to <m>P</m> and
+                <m>v=\frac{ds}{dt}</m> represent velocity (speed) and
+                <m>a=\frac{dv}{dt}=\frac{d^2s}{dt^2}</m> (tangential) acceleration.
+                We have that the work <m>w</m> done by <m>F</m> to move the mass from
+                <m>P=A</m> to <m>P=B</m> is given by <me>w=\int^B_{P=A}{F\ ds}</me>
+                </p> <p> Using Newton's Second Law which states that force
+                <m>F=ma=m\left(\frac{dv}{dt}\right)</m>, show that
+                <me>w=\ftceval{\frac{1}{2}mv^2}{P}{A}{B}</me>
+              </p>
 
-          <aside>
+              <aside>
             <p>
               The quantity <me>\frac{1}{2}mv^2</me> is called the
               kinetic energy of the object (at time <m>t</m>) and is
@@ -6438,11 +6514,7 @@
 </p>
 
 <exercise xml:id="EXERCISEKinEnergySpinCast">
-  <introduction>
-    <p>
-<idx><h>Problem </h> <h>Spin Casting</h></idx>
-</p>
-</introduction>
+<idx><h>Problems</h> <h>Spin Casting</h></idx>
 <task>
   <statement>
     <p>
@@ -6541,7 +6613,7 @@ kinetic energy.  In symbols it is <me>\text{work} =
 <exercise xml:id="EXERCISEEscapeVelocity1">
   <statement>
     <p>
-<idx><h>Problem</h> <h>Escape Velocity</h></idx>
+<idx><h>Problems</h> <h>Escape Velocity</h></idx>
 
 Consider an object of mass <m>m</m> being launched from
 the surface of a planet with mass <m>M</m> and radius
@@ -6587,7 +6659,7 @@ back is finite.
 <exercise xml:id="EXERCISEEscapeVelocity2">
   <introduction>
     <p>
-      <idx><h>Problem</h> <h>Escape Velocity</h></idx> Assume
+      <idx><h>Problems</h> <h>Escape Velocity</h></idx> Assume
       that the original velocity of the mass is <m>v_0</m> and
       that the velocity <q>at infinity</q> will be 0.
 </p>
@@ -6688,8 +6760,7 @@ and then take the limit of this as <m>B\to \infty </m>.
 <title>Convergence of an Improper Integral</title>
 <statement>
   <p>
-    <idx><h>Problem</h> <h>Convergence of an Improper
-    Integral</h></idx> Define what we mean for improper
+    <idx><h>Improper Integral</h> <h>Convergence of</h></idx> Define what we mean for improper
     integral <m>\int^a_{x=-\infty }{f\left(x\right)\dx{x}}\ </m>to
     converge and what its value would be.
 </p>
@@ -6794,16 +6865,17 @@ computer algebra system, we get
 </p>
 
 <exercise       xml:id="EXERCISEErrorFunction1">
+<idx><h>Problems</h><h>Error Function</h></idx>
+    <idx><h><m>\erf()</m></h></idx>
   <statement>
-<p><idx><h>Problem</h><h>Error Functions</h></idx>
-
-Perform the substitution <m>z=\frac{x-100}{15}</m> to
-<m>\frac{1}{15\sqrt{2\pi
-}}\int^{140}_{x=-\infty}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\dx{x}</m>
-to obtain <me> \frac{1}{\sqrt{2\pi}}\int^{8/3}_{z=-\infty
-}{e^{-\frac{1}{2}z^2}}dz.</me>
-</p>
-</statement>
+    <p>
+    Perform the substitution <m>z=\frac{x-100}{15}</m> to
+    <m>\frac{1}{15\sqrt{2\pi
+    }}\int^{140}_{x=-\infty}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\dx{x}</m>
+    to obtain <me> \frac{1}{\sqrt{2\pi}}\int^{8/3}_{z=-\infty
+    }{e^{-\frac{1}{2}z^2}}dz.</me>
+    </p>
+  </statement>
 </exercise>
 <p>
   This is what the approximation <m>0.9961</m> represents in
@@ -6820,7 +6892,7 @@ to obtain <me> \frac{1}{\sqrt{2\pi}}\int^{8/3}_{z=-\infty
 <exercise xml:id="EXERCISEWolframAlpha1">
   <introduction>
     <p>
-<idx><h>Problem </h><h>Error Function</h></idx>
+<idx><h>Problems</h><h>Error Function</h></idx>
 Actually, Wolfram Alpha provides the following output
 
 <me> 
@@ -7008,7 +7080,7 @@ provided that limit exists.
 <exercise xml:id="EXERCISEImpropInt3">
   <introduction>
     <p>
-<idx><h>Problem</h><h>Improper Integral</h></idx>
+<idx><h>Problems</h><h>Improper Integral</h></idx>
 </p>
 </introduction>
 <task>
@@ -7111,7 +7183,7 @@ Paradox</title>
     <title>The Volume of Torricelli's Trumpet</title>
     <introduction>
       <p>
-        <idx><h>Problem</h><h>Torricelli<rsq/>s Trumpet</h><h>Volume</h></idx>
+        <idx><h>Problems</h><h>Torricelli<rsq/>s Trumpet</h><h>Volume</h></idx>
       </p>
     </introduction>
     <task>
@@ -7149,7 +7221,7 @@ Paradox</title>
   <exercise xml:id="EXERCISETorriSurfArea">
     <introduction>
       <p>
-        <idx><h>Problem</h><h>Torricelli<rsq/>s Trumpet</h><h> Surface
+        <idx><h>Problems</h><h>Torricelli<rsq/>s Trumpet</h><h> Surface
         Area</h></idx> Let's assume that <m>b=1</m> and focus on
         the curved part of the trumpet generated by revolving
         <m>y=\frac{1}{x}, 1\le x\infty </m> about the <m>x</m>
