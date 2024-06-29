@@ -556,48 +556,15 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
       </exercise>
 
 <p>
-This problem was a bit contrived. The real question is <q>How did we find
-these antiderivatives?</q> 
+The exercises in <xref ref="PROBLEMAntiDiffPractice"></xref> were all
+a bit contrived. Since we gave you the antiderivatives you don<rsq/>t
+really need to know how tho integrate.
 </p>
-<aside>
-<title>Note to self</title>
 <p>
-move the problems below
+ The real question here is <q>How could you find these antiderivatives
+ if we hadn<rsq/>t given them to you?</q>
 </p>
-</aside>
 
-      <problem  xml:id="PROBLEMAntiDiffPractice">
-        <p>
-          Use your knowledge of Differential Calculus to find the most
-          general antiderivative.
-          <ol cols="2" marker="i">
-            <li>
-              <m>\int t^2\dx{t}</m>
-            </li>
-            <li>
-              <m>\int 3t-2\dx{t}</m>
-            </li>
-            <li>
-              <m>\int 7\dx{t}</m>
-            </li>
-            <li>
-              <m>\int \sin(t)\dx{t}</m>
-            </li>
-            <li>
-              <m>\int \cos(t)\dx{t}</m>
-            </li>
-            <li>
-              <m>\int \sec(t)\tan(t)\dx{t}</m>
-            </li>
-            <li>
-              <m>\int e^t\dx{t}</m>
-            </li>
-            <li>
-              <m>\int t^{-1}\dx{t}</m>
-            </li>
-          </ol>
-        </p>
-      </problem>
     </subsection>
 
 <conclusion>
@@ -610,10 +577,24 @@ move the problems below
           dynamic (Newtonian) and geometric (Leibnizian) viewpoints in
           <xref ref="DiffCalcFromPractice"></xref>.
         </p>
+<p>
+Since it is valid to think of <m>\int
+f(x)\dx{x}</m> as representing an antiderivative of the function
+<m>f</m> it is customary to speak these symbols aloud as <q>the integral of <m>f</m>
+of <m>x</m>.</q> While this is not wrong, it is not quite right
+either. Properly speaking, we should say <q>the integral of the
+differential <m>f(x)\dx{x}</m>.</q> But no one does that, and neither
+will we.
+</p>
+<p>
+But  speaking incorrectly as we tend to do in this instance can lead
+you into unfortunate habits  which we would like to dissuade you from.
+We will take a moment to try to do this.
+</p>
         <p>
-          But the integral sign is designed to indicate summation, not
+         The integral sign was designed (by Leibniz) to indicate summation, not
           antidifferentiation. As a result it is very easy to use
-          integration notation improperly. Sooner or later most people
+          integral notation improperly. Sooner or later most people
           will fall into the habit of dropping the final
           <q><m>\dx{t}</m>,</q> writing <m>\int f(t)</m> instead of
           <m>\int f(t)\dx{t}</m>, and calling them both the integral
@@ -624,14 +605,13 @@ move the problems below
           you can because it can be very confusing. Especially when
           the concepts are new.
         </p>
-
         <p>
           Remember that <me>\int f(t)</me> is meaningless no matter how
           convenient it might be because it indicates that we are summing
           a function, not a differential.
         </p>
-        <aside>
-          <title>Mathematical Notation</title>
+<remark>
+          <title>Notation</title>
           <p>
             By calling <m>\int f(t)</m> meaningless we have overstated
             the situation a bit. If you study mathematics long enough
@@ -640,7 +620,7 @@ move the problems below
             encounter them here, and it is best if you don<rsq/>t fall
             into this habit while you are still learning the basics.
           </p>
-        </aside>
+</remark>
 
 
         <p>
@@ -673,95 +653,217 @@ move the problems below
 
   </section>
 
-  <section>
+  <section  xml:id="SECTIONIntegrationRules1">
     <title>Rules for Integration</title>
     <p>
       Since integration can be thought of as the reverse of
       differentiation it is not too surprising to learn that each
       differentiation rule has its counterpart as an integration rule.
-      The following table illustrates in both their differential and
-      integral form some of  the rules we have already seen.
+      The following list illustrates some of the rules we already know
+      from Differential Calculus in both their differential and
+      integral form.
+
+  <mdn>
+    <mrow number="no">
+      \text{Differentiation}\text{ Rule}\amp{}\amp{}\text{Integration} \text{ Rule}
+    </mrow>
+  </mdn>
+
+<mdn>
+
+
+    <mrow xml:id="IntRuleConstant">
+      \dx(\text{constant})=0;\amp{}\amp{}\int0\dx{x}=C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleSum">
+      \dx(f+g)=\dx{f}+\dx{g};\amp{}\amp{}\int\dx(f+g)=f+g+C
+<!-- \int\dx{f}+\int\dx{g} -->
+    </mrow>
+<!-- <mrow> -->
+<!-- \amp{}\amp{}=f+g+C -->
+<!--     </mrow> -->
+</mdn>
+
+<mdn>
+
+<mrow number="no">
+      \text{If }a\text{ is constant, then }          
+    </mrow>
+    <mrow xml:id="IntRuleConstMult">
+\dx(ay)=a\dx(y);\amp{}\amp{}\int a\dx{y}<!-- =\int\dx(ay) -->=a\int\dx{y}=ay+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleMonomial">
+      \dx(x^{n+1})=(n+1)x^n\dx{x}
+      ;\amp{}\amp{}\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq
+      -1
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleOneOver">
+      \dx(\ln(x))<!-- =\frac1x\dx{x} -->=x^{-1}\dx{x}
+      ;\amp{}\amp{}\int x^{-1}\dx{x} = \ln\abs{x}+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleExp">
+      \dx(e^x)= e^x\dx{x}
+      ;\amp{}\amp{}\int e^x\dx{x} = e^x+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleCos">
+      \dx(\sin(x))=\cos(x)\dx{x}
+      ;\amp{}\amp{}\int \cos(x)\dx{x} = \sin(x) +C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleSin">
+      \dx(\cos(x))=-\sin(x)\dx{x}
+      ;\amp{}\amp{}\int \sin(x)\dx{x} = -\cos(x) +C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleTan">
+      \dx(\tan(x))=\sec^2(x)\dx{x}
+      ;\amp{}\amp{}\int\sec^2(x)\dx{x} = \tan(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleSec">
+      \dx(\sec(x))= \sec(x)\tan(x)\dx{x}
+      ;\amp{}\amp{}\int\sec(x)\tan(x)\dx{x}=\sec(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleInvSin">
+      \dx(\inverse\sin(x))=
+      \frac{1}{\sqrt{1-x^2}}\dx{x}
+      ;\amp{}\amp{}\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleInvTan">
+      \dx(\inverse\tan(x))=   \frac{1}{1+x^2}\dx{x}
+      ;\amp{}\amp{}\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleInvSec">
+      \dx(\inverse\sec(x))=    \frac{1}{x\sqrt{x^2-1}}\dx{x}
+      ;\amp{}\amp{}\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C
+    </mrow>
+</mdn>
     </p>
 
-    <table xml:id="TABLEBasicIntegration">
-      <title>Integration Rules Inherited from Differentiation Rules</title>
-      <tabular halign="center">
-        <row bottom="major" header="yes">
+
+
+
+
+    <!-- <table xml:id="TABLEBasicIntegration"> -->
+    <!--   <title>Integration Rules Inherited from Differentiation Rules</title> -->
+    <!--   <tabular halign="center"> -->
+    <!--     <row bottom="major" header="yes"> -->
           
-          <cell></cell>
-          <cell>Differentiation Rule</cell>
-          <cell>
-            <line>Integration  Rule</line>
-            <line> (Assume that <m>C</m> is an arbitrary  constant.)  </line>
-          </cell>
-        </row>
-        <row>
-          <cell>1</cell>          
-          <cell><m>\dx(\text{constant})=0</m></cell>
-          <cell><line><m>\displaystyle\int0\dx{x}=C</m>, where <m> C
-          </m> is a constant.</line></cell>
-        </row>
-        <row>
-          <cell>2</cell>          
-          <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell>
-          <cell>
-            <line><m>\displaystyle\int\dx(f+g)=\int\dx{f}+\int\dx{g}</m><m>=f+g+C</m></line></cell>
-        </row>
-        <row>
-          <cell>3</cell>          
-          <cell>
-            <line>If <m>a</m> is a constant, then<m>\dx(ay)=a\dx(y)</m></line>
-        </cell>
-        <cell>
-          <line><m>\displaystyle\int a\dx{y}=\int\dx(ay)=a\int\dx{y}</m><m>=ay+C</m></line></cell>
-        </row>
-        <row>
-          <cell>4</cell>          
-          <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell>
-          <cell><m>\displaystyle\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq
-          -1</m></cell>
-        </row>
-        <row>
-          <cell>5</cell>          <cell><m>\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}</m></cell>
-          <cell><m>\displaystyle\int x^{-1}\dx{x} = \ln\abs{x}+C</m></cell>
-        </row>
-        <row>
-          <cell>6</cell>          <cell><m>\dx(e^x)= e^x\dx{x}</m></cell>
-          <cell><m>\displaystyle\int e^x\dx{x} = e^x+C</m></cell>
-        </row>
-        <row>
-          <cell>7</cell>          <cell><m>\dx(\sin(x))=\cos(x)\dx{x}</m></cell>
-          <cell><m>\displaystyle\int \cos(x)\dx{x} = \sin(x) +C</m></cell>
-        </row>
-        <row>
-          <cell>8</cell>          <cell><m>\dx(\cos(x))=-\sin(x)\dx{x}</m></cell>
-          <cell><m>\displaystyle\int \sin(x)\dx{x} = -\cos(x) +C</m></cell>
-        </row>
-        <row>
-          <cell>9</cell>          <cell><m>\dx(\tan(x))=\sec^2(x)\dx{x}</m></cell>
-          <cell><m>\displaystyle\int\sec^2(x)\dx{x} = \tan(x)+C</m></cell>
-        </row>
-        <row>
-          <cell>10</cell>          <cell><m>\dx(\sec(x))= \sec(x)\tan(x)\dx{x}</m></cell>
-          <cell><m>\displaystyle\int\sec(x)\tan(x)\dx{x}=\sec(x)+C</m></cell>
-        </row>
-        <row>
-          <cell>11</cell>          <cell><m>\dx(\inverse\sin(x))=
-          \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell>
-          <cell><m>\displaystyle\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C</m></cell>
-        </row>
-        <row>
-          <cell>12</cell>          <cell><m>\dx(\inverse\tan(x))=
-          \frac{1}{1+x^2}\dx{x}</m></cell>
-          <cell><m>\displaystyle\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C</m></cell>
-        </row>
-        <row>
-          <cell>13</cell>          <cell><m>\dx(\inverse\sec(x))=
-          \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell>
-          <cell><m>\displaystyle\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C</m></cell>
-        </row>
-      </tabular>
-    </table>
+    <!--       <cell></cell> -->
+    <!--       <cell>Differentiation Rule</cell> -->
+    <!--       <cell> -->
+    <!--         <line>Integration  Rule</line> -->
+    <!--         <line> (Assume that <m>C</m> is an arbitrary  constant.)  </line> -->
+    <!--       </cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>1</cell>           -->
+    <!--       <cell><m>\dx(\text{constant})=0</m></cell> -->
+    <!--       <cell><line><m>\displaystyle\int0\dx{x}=C</m>, where <m> C -->
+    <!--       </m> is a constant.</line></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>2</cell>           -->
+    <!--       <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell> -->
+    <!--       <cell> -->
+    <!--         <line><m>\displaystyle\int\dx(f+g)=\int\dx{f}+\int\dx{g}</m><m>=f+g+C</m></line></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>3</cell>           -->
+    <!--       <cell> -->
+    <!--         <line>If <m>a</m> is a constant, then<m>\dx(ay)=a\dx(y)</m></line> -->
+    <!--     </cell> -->
+    <!--     <cell> -->
+    <!--       <line><m>\displaystyle\int a\dx{y}=\int\dx(ay)=a\int\dx{y}</m><m>=ay+C</m></line></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>4</cell>           -->
+    <!--       <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq -->
+    <!--       -1</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>5</cell>          <cell><m>\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int x^{-1}\dx{x} = \ln\abs{x}+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>6</cell>          <cell><m>\dx(e^x)= e^x\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int e^x\dx{x} = e^x+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>7</cell>          <cell><m>\dx(\sin(x))=\cos(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int \cos(x)\dx{x} = \sin(x) +C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>8</cell>          <cell><m>\dx(\cos(x))=-\sin(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int \sin(x)\dx{x} = -\cos(x) +C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>9</cell>          <cell><m>\dx(\tan(x))=\sec^2(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\sec^2(x)\dx{x} = \tan(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>10</cell>          <cell><m>\dx(\sec(x))= \sec(x)\tan(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\sec(x)\tan(x)\dx{x}=\sec(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>11</cell>          <cell><m>\dx(\inverse\sin(x))= -->
+    <!--       \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>12</cell>          <cell><m>\dx(\inverse\tan(x))= -->
+    <!--       \frac{1}{1+x^2}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>13</cell>          <cell><m>\dx(\inverse\sec(x))= -->
+    <!--       \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--   </tabular> -->
+    <!-- </table> -->
     
     
 
@@ -769,23 +871,27 @@ move the problems below
     
     <problem xml:id="DRILLIntSum">
       <p>
-        It looks like we broke our own rule in lines 2 and 3 of <xref
-        ref="TABLEBasicIntegration"></xref>.  Don<rsq/>t we need two
-        integration constants? Isn<rsq/>t it true that
+        <xref
+        ref="IntRuleSum" >Integration Rules</xref> and <xref
+        ref="IntRuleConstMult"></xref> appear to violate <xref
+        ref="IntRuleConstant">Integration Rule</xref>, don<rsq/>t
+they?   Isn<rsq/>t it true that
         <me>
-          \int \dx{f} +\int \dx{g} = f+C_1+g+C_2
+        \int\dx(f+g)=  \int \dx{f} +\int \dx{g} = f+C_1+g+C_2
         </me>
-        where <m>c_1</m>and <m>c_2</m> are arbitrary constants, and that
+        where <m>C_1</m> and <m>C_2</m> are arbitrary constants, and that
         <me>
           a\int\dx{y}=a(y+c)=ay+aC </me>.
-          Explain why what we have in the table is still legitimate.
+          Explain how <xref
+        ref="IntRuleSum" >Integration Rules</xref> and <xref
+        ref="IntRuleConstMult"></xref> are legitimate as stated.
       </p>
     </problem>
     
     <p>
-      In light of <xref ref="DRILLIntSum"></xref>, most people will often
-      integrate each term of a differential and then combine all of the
-      arbitrary constants into a single constant.  
+      In light of <xref ref="DRILLIntSum"></xref>, it is common
+      practice integrate each term of a differential and then combine
+      all of the arbitrary constants into a single constant.
     </p>
 <example>
   <p>
@@ -794,8 +900,10 @@ For example,
       
       <md>
         <mrow>
-          \int\amp\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\dx{x}
-          =5\int x^2\dx{x}-3\int x^\frac12
+          \int\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\amp{}\dx{x}
+        </mrow>
+      <mrow>
+          \amp{}=5\int x^2\dx{x}-3\int x^\frac12
           \dx{x}+2\int\frac{1}{1+x^2}\dx{x}
         </mrow>
         <mrow>
@@ -816,31 +924,83 @@ where <m>C=C_1+C_2+C_3</m>.
       head.  But that ability will only come with practice.
     </p>
 
+      <problem  xml:id="PROBLEMAntiDiffPractice">
+        <p>
+          Use <xref first="IntRuleConstant"
+          last="IntRuleInvSec">Integration Rules</xref>  to find the most
+          general antiderivative.
+          <ol cols="2" marker="i">
+            <li>
+              <m>\int t^2\dx{t}</m>
+            </li>
+            <li>
+              <m>\int 3t-2\dx{t}</m>
+            </li>
+            <li>
+              <m>\int 7\dx{t}</m>
+            </li>
+            <li>
+              <m>\int \sin(t)\dx{t}</m>
+            </li>
+            <li>
+              <m>\int 5\cos(t)\dx{t}</m>
+            </li>
+            <li>
+              <m>\int \sec(t)\tan(t)\dx{t}</m>
+            </li>
+            <li>
+              <m>\int t + e^t\dx{t}</m>
+            </li>
+            <li>
+              <m>\int \frac{1}{1+\theta^2}\dx{\theta{}}</m>
+            </li>
+          </ol>
+        </p>
+      </problem>
+
+
     <p>
-      A few comments on lines <m>4</m> and <m>5</m> from <xref ref="TABLEBasicIntegration"></xref> are in
+      Conspicuously absent from our list of rules are the integral
+      form of the Product Rule, the Quotient Rule, and the Chain Rule.
+      The reverse of the Quotient Rule is rather limited in its
+      applicability and typically is not used.  Reversing the others
+      can be quite useful but we are not quite ready to discuss them
+      in depth. 
+    </p>
+
+<!-- <paragraphs> -->
+<!-- <!-\- <title>The Integral <m>\displaystyle\int \frac1x \dx{x}</m> and -\-> -->
+<!-- <!-\- Absolute Value</title> -\-> -->
+<!-- <title> -->
+<!-- <xref ref="IntRuleOneOver">Integration Rule</xref> -->
+<!-- </title> -->
+    <p>
+      A few comments on  <xref ref="IntRuleOneOver">Integration Rule</xref>  are in
       order.
     </p>
     <!-- <p> -->
-    <!--   <xref ref="TABLEBasicIntegration">Table</xref> is not -->
+    <!--   <xref ref="TABLEBasicIntegration">>Table</xref> is not -->
     <!--   exhaustive. It couldn<rsq/>t possibly be since every -->
     <!--   differentiation formula gives rise to a corresponding -->
     <!--   integration formula. -->
     <!-- </p> -->
     <p>
-      Notice that the Integration Rule in line 4 will not work if the
-      exponent is <m>n=-1</m> as we cannot divide by zero. But that
-      apparent hole is covered on line 5. Does it seem odd to
-      you that we need the natural logarithm to plug that hole? After
-      all, line 4 is about powers of the variable, which is a fairly simple,
-      concrete idea. On the other hand, the natural logarithm function is much more
-      abstract notion.
+First,      notice that <xref ref="IntRuleMonomial">Integration Rule</xref>  will work if the
+      exponent has any value 
+<em>except</em> <m>n=-1</m>. If we try to apply it we<rsq/>ll get 
+<me>
+\int \inverse{x}\dx{x} = \frac{x^{1-1}}{1-1} = \frac{1}{0}
+</me> 
+which we know is meaningless.
+</p>
+<p>
+For this
+single exception we have to turn to <xref ref="IntRuleOneOver">Integration Rule</xref>:
+<m>\int\frac1x\dx{x}=\ln\abs{x}+C{}</m>. 
     </p>
     
-    <exercise>
-      <statement>
         <p>
-          While we are discussing line five of <xref
-          ref="TABLEBasicIntegration"></xref>, notice the absolute
+          While we are discussing <xref ref="IntRuleOneOver">Integration Rule</xref>, notice the absolute
           value in the formula:
           <me>
             \int\inverse x\dx{x}=\ln\abs{x}+C.
@@ -851,6 +1011,8 @@ where <m>C=C_1+C_2+C_3</m>.
           alternative definition of the absolute value function is
           <me>\abs{x}=\sqrt{x^2}</me>.
         </p>
+    <exercise>
+<statement>
         <p>
           Show that if we differentiate the definition <m>\ln(x)
           =\sqrt{x^2}</m> we still obtain the formula
@@ -858,7 +1020,7 @@ where <m>C=C_1+C_2+C_3</m>.
             \dx(\ln\abs{x})=\frac1x \dx{x}
             </me>.
         </p>
-      </statement>
+</statement>
       <hint>
         <p>
           Be careful that you do not try to take the logarithm of a
@@ -874,15 +1036,7 @@ where <m>C=C_1+C_2+C_3</m>.
           the absolute value must be used.
         </p>
 
-    <p>
-      Conspicuously absent from <xref
-      ref="TABLEBasicIntegration">Table</xref> are the Product Rule, the
-      Quotient Rule, and the Chain Rule.  The reverse of the Quotient Rule
-      is rather limited in its applicability and typically is not used.
-      Reversing the others can be quite useful but we are not quite
-      ready to discuss them in depth. They will be covered
-      later.
-    </p>
+
     <!-- <p> -->
     <!--   If you read each of these Differentiation and Integration Rules -->
     <!--   verbally you can hear that they reverse each other. For example in -->

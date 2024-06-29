@@ -1,0 +1,1150 @@
+<chapter xml:id="CHAPTERDiffeqsIVPS">  
+    <title>Differential Equations</title>
+
+<section  xml:id="SECTIONTwoSimpleDiffeqs">
+  
+<title>Two Examples of Differential Equations</title>
+
+    <p>
+      <idx><h>Vocabulary</h><h>Differential Equation</h></idx>
+
+      <!-- Differential Calculus gave us an extraordinarily powerful set -->
+      <!-- of tools for modeling real world phenomena.  -->
+      We saw some examples of <term>Differential Equations</term> when
+      we studied differentiation. For example, we saw in <xref
+      ref="SECTIONGalileoDrops"></xref> that Galileo found empirically
+      that a body falling freely near the surface of the earth would
+      accelerate downward at a constant rate we<rsq/>ve called
+      <m>g</m>.  <idx><h>Newton</h><h>Second Law of Motion</h></idx>
+      And Newton<rsq/>s Second Law of Motion states that if we have a
+      body with mass equal to one kilogram (<m>m=1</m>) falling freely
+      under the force of the earth<rsq/>s gravitational attraction
+      then its acceleration, <m>a</m> is the derivative of its
+      velocity, <m>v</m>. So: <m>a=\dfdx{v}{t}</m>.  This is fully
+      described by the <term> differential equation</term>
+
+      <men xml:id="EQUATIONFallingBodyModel">\dfdx{v}{t}=g,</men>
+
+      which is a simple model of the motion of a falling body. 
+    </p>
+<example xml:id="EXAMPLESimpleDiffeq">
+<title>Falling Down: A Very Simple Differential Equation</title>
+    <p>
+      The simplest differential equations to solve are those like
+      <xref ref="EQUATIONFallingBodyModel">equation</xref>, where the
+      derivative of a function, say velocity as a function of time, or
+      <m>v(t)</m>, is given entirely in terms of of its variable,
+      <m>t</m> in this case. In general such equations can be written
+      in the form
+      <men xml:id="EQUATIONSimpleDiffeq">
+        \dfdx{v}{t} = f(t)
+      </men> 
+      where <m>f(t)</m> is some known function. <xref
+      ref="EQUATIONFallingBodyModel">Equation</xref> is particularly
+      simple since  <m>f(t)=g</m>,
+      is a  constant function.
+    </p>
+    <p>
+      We solve this differential equation as follows. First multiply
+      both sides by <m>\dx{t}</m>, giving 
+
+      <mdn>
+        <mrow number="no">
+          \dfdx{v}{t}\amp{}= g
+        </mrow>
+        <mrow  xml:id="EQUATIONSimplestDiffeq">
+          \dx{v}\amp{}=g\dx{t}
+        </mrow>
+        </mdn>.
+        <xref ref="EQUATIONSimplestDiffeq">Equation</xref>  says that the
+        differential <m>\dx{v} </m> is equal to the differential
+        <m>g\dx{t}
+        </m>.
+        Adding all of the differentials on both sides of <xref
+        ref="EQUATIONSimplestDiffeq">equation</xref> we have
+        <me>
+          \int \dx{v}=\int g\dx{t}
+        </me>
+        and from this we see that
+        <me>
+          v(t)=\int g\dx{t}{}
+          </me>.
+          Thus to solve <xref ref="EQUATIONFallingBodyModel">equation</xref> we
+          need only find an antiderivative of <m>g</m>.
+
+    </p>
+
+
+    <!-- <p> -->
+    <!--   Notice that <xref ref="EQUATIONFallingBodyModel">equation</xref> is a -->
+    <!--   very simple manifestation of Newton<rsq/>s Second Law: <m>F\text{orce} -->
+    <!--   = M\text{ass}\cdot A\text{cceleration}=m\dfdxn{y}{t}{2} =m -->
+    <!--   \dfdx{v}{t}</m>.  -->
+    <!-- </p> -->
+    <!-- <p> -->
+    <!--   Since the only force acting on the body is gravity, we see that -->
+    <!--   the total force, <m>F=m\dfdxn{y}{t}{2} </m> is equal to -->
+    <!--   <m>g</m>, or <me>F=m\dfdxn{y}{t}{2} = g</me>, but since we have -->
+    <!--   assumed that <m>m=1</m> this reduces to <xref -->
+    <!--   ref="EQUATIONFallingBodyModel">equation</xref>. -->
+    <!-- </p> -->
+
+    <p>
+      From <xref ref="EQUATIONFallingBodyModel"></xref> we can recover
+      functions which tell us the velocity and the position of a body
+      with a mass of one kilogram (falling freely near the surface of
+      the earth and disregarding air resistance) at any time and under
+      any starting conditions (see <xref
+      ref="SECTIONGalileoDrops"></xref>).  We will have more to say
+      about this particular model in <xref
+      ref="SECTIONProjectileMotion"></xref>.
+    </p>
+</example>
+
+<exercise xml:id="PROBLEMSimpleDiffeq">
+<statement>
+<p>
+<idx><h>Differential Equations</h></idx>
+ Emulate the computations in <xref
+ref="EXAMPLESimpleDiffeq"></xref> to show that the solution of <xref
+ref="EQUATIONSimpleDiffeq">equation</xref>   can be written in the
+form
+<me>
+v=\int f(t)\dx{t}
+</me>.
+</p>
+</statement>
+</exercise>
+
+
+    <!-- <paragraphs> -->
+    <!-- <title>DIGRESSION: The Order of a Differential Equation</title> -->
+    <!-- <p> -->
+    <!-- We called  -->
+    <!-- <xref ref="EQUATIONFallingBodyModel">equation</xref> -->
+    <!-- <q>second order </q> because <m>\dx^2{y} </m> is the highest -->
+    <!-- order differential  appearing.  -->
+    <!-- </p> -->
+    <!-- <p> -->
+    <!-- This -->
+    <!-- text is not about differential equations  -->
+    <!-- <foreign>per se,</foreign> but many of the <q>calculus problems</q> -->
+    <!-- that come to us from nature arrive in the form of a differential -->
+    <!-- equation, so it will be useful for us to become acquainted with the -->
+    <!-- language of differential equations, and some of of the simpler -->
+    <!-- solution techniques. Most of the the differential equations -->
+    <!-- we<rsq/>ll see will be first order. -->
+    <!-- </p> -->
+    <!-- <p> -->
+    <!-- However higher order differential -->
+    <!-- equations will come up occasionally (see -->
+    <!-- for example, <xref ref="SECTIONEulerHarmonicOsc"></xref>). -->
+    <!-- </p> -->
+    <!-- <p> -->
+    <!-- Finally,  the term <term>differential equation</term> is an historical artifact. They -->
+    <!--  should really be called <q>derivative</q> equations because they -->
+    <!--  almost always involve the differential ratios we<rsq/>ve called -->
+    <!--  <q>derivatives</q>. -->
+    <!-- </p> -->
+
+
+    <!-- <p><alert>END OF DIGRESSION</alert></p> -->
+    <!-- </paragraphs> -->
+
+
+
+<example xml:id="EXAMPLEHardDiffeq">
+<title>A Hard Differential Equation</title>
+    <p>
+      In <xref ref="PROBLEMHangingChain"></xref> of <xref ref="SECTIONhyperb-trig-hang"></xref> we saw
+      that if <m>y(x)</m> is the shape that a hanging chain naturally
+      settles into under the pull of gravity then <m>y(x)</m> will
+      necessarily be a solution of the second order differential equation:
+      <men  xml:id="EQUATIONHangChainModel">
+        \dfdxn{y}{x}{2} =
+        \frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.
+      </men>
+      which is a model for the Hanging Chain problem. That is, the graph of a
+      function which solves <xref ref="EQUATIONHangChainModel">equation</xref> will
+      be  the shape of a hanging chain.
+    </p>
+
+
+
+
+    <p>
+      It is one thing to confirm a given solution, as in <xref
+      ref="PROBLEMHangingChainSolution"></xref>, but finding the solution in
+      the first place is not at all a simple task.  A start might be to let
+      <m>z=\dfdx{y}{x}</m>, so we have
+      
+      <mdn>
+        <mrow number="no">
+          \dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}
+        </mrow>
+        <mrow xml:id="EQUATIONHangingChainInt1">
+          \frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}
+        </mrow>
+        </mdn>.
+        <!-- As we saw in <xref ref="DIGRESSIONDifferentialNotation">DIGRESSION: -->
+        <!-- Differential Notation</xref> the product of a number and a -->
+        <!-- differential is a differential so  -->
+        <!-- <xref ref="EQUATIONHangingChainInt1">equation</xref> says that every -->
+        <!-- differential of the form <m>\frac{1}{\sqrt{1+z^2}}\dx{z}</m> is -->
+        <!-- equal to a differential of the form <m>\frac{w}{H}\dx{z} -->
+        <!-- </m>.  -->
+         Adding  all of the differentials  on both sides of <xref
+        ref="EQUATIONHangingChainInt1">equation</xref>, we see that 
+        <men  xml:id="EQUATIONHangingChainInt2">
+          \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}
+          </men>.
+    </p>
+    
+    <p>
+      The right-hand side of <xref ref="EQUATIONHangingChainInt2">equation</xref>  doesn<rsq/>t pose any problems. Since
+      <m>w</m> and <m>H</m> are both constants, it follows that
+      <m>\frac{w}{H}</m> is also a constant. From entry #3 of
+      <xref ref="TABLEBasicIntegration"></xref> we have  <m>\int
+      \frac{w}{H}\dx{x} = \frac{w}{H}x+C </m>. We still need to find
+      the value of the constant <m>C</m>, but that is usually pretty
+      straighforward as you will see soon.
+    </p>
+    <p>
+      But the left-hand side isn<rsq/>t as easy.  It doesn<rsq/>t 
+      match anything in <xref ref="TABLEBasicIntegration"></xref> so
+      we currently have no way to address it. We need a new idea.
+</p>
+<p>
+
+      We will come back to this once we<rsq/>ve developed some more
+      sophisticated techniques.
+        In the meantime see if you can find a way to compute
+        <m>\int\frac{1}{\sqrt{1+z^2}}\dx{z}</m>. Come up with an
+        idea, give it a try, and see what happens. The learning is
+        in the trying, not the succeeding.
+      </p>
+
+    
+    <p>
+      Our goal in <xref
+      ref="CHAPTERIntegrationMethods"></xref> will be to
+      develop techniques that will enable us to compute various
+      integrals like the ones we<rsq/>ve just seen. These techniques
+      will turn out to be very useful for other kinds of problems as
+      well.
+<!-- These integration -->
+<!--       techniques will -->
+<!-- are the tools that will enable us to solve (some) -->
+<!--       differential equations. -->
+      <!-- ust see s this integral soon, but first -->
+      <!--  let<rsq/>s look at some applications of integration which use what we -->
+      <!--  already know how to do. -->
+    </p>
+</example>
+
+    <exercise  xml:id="PROBLEMHangingChainSolution">
+<idx><h>Problems</h><h>Hanging Chain Model</h></idx>
+<statement>
+      <p>
+        Show that <m> y=\frac{H}{w}
+        \left(\frac{e^{\frac{wx}{H}}+e^{-\frac{wx}{H}}}{2}\right)
+      </m>
+      solves <xref ref="EQUATIONHangChainModel">equation</xref>.
+            </p>
+</statement>
+<hint>
+<p>
+Notice that you are not asked to solve <xref
+ref="EQUATIONHangChainModel"></xref>. You are only asked to show that <m>        y=\frac{H}{w}
+        \left(\frac{e^{\frac{wx}{H}}+e^{-\frac{wx}{H}}}{2}\right)
+</m>
+is a solution.
+</p>
+</hint>
+    </exercise>
+
+    <!-- <p> -->
+    <!-- Recall <xref ref="DEFINITIONIVP"></xref> -->
+    <!-- </p> -->
+    <!--     <definition xml:id="DEFINITIONIVP2"> -->
+    <!--       <title>Initial Value Problem (IVP)</title> -->
+    <!--       <statement> -->
+    <!--         <p> -->
+    <!--           <!-\- \label{def:IVP} -\-> -->
+    <!--           An <term>Initial Value Problem</term> is a differential -->
+    <!--           equation of the form <me>\dfdx{y}{x}=f(x,y),</me> along with -->
+    <!--           an <term>Initial Value</term> <me>y(x_0)=y_0.</me> -->
+    <!--         </p> -->
+    <!--       </statement> -->
+    <!--     </definition> -->
+
+
+  </section>
+
+
+
+
+
+  
+  <section  xml:id="SECTIONProjectileMotion">
+    <title>Projectile motion: Another Look at  Galileo<rsq/>s Work </title>
+    
+    <p>
+      In <xref ref="SECTIONTwoSimpleDiffeqs"></xref> we analyzed the
+      fall of a dropped ball. But suppose the ball isn<rsq/>t simply
+      dropped.  Suppose instead that we throw the ball straight up
+      into the air.  For the moment, we continue to ignore air
+      resistance.  How high will the ball go?  How long will it take
+      the ball to hit the ground?  What will be its impact velocity?
+      Suppose you throw the ball up with twice the initial speed.
+      Will the ball go twice as high?
+    </p>
+    <p>
+      These are not a new problems for us but when we addressed them
+      using the techniques of Differential Calculus in <xref
+      ref="SECTIONGalileoDrops"></xref> our approach was a bit
+      indirect.  We return to them here because (1) We can attack them
+      much more directly using Integral Calculus and (2) They serve as
+      a good jumping off point for the more interesting problems to
+      come. If you don<rsq/>t recall what we did in <xref
+      ref="SECTIONGalileoDrops"></xref> you should review that section
+      before proceeding.
+      <!-- .These were -->
+      <!-- questions that interested Galileo Galilei (1564-1642). Galileo was -->
+      <!-- one of the first scientists to systematically apply mathematics to -->
+      <!-- science. -->
+    </p>
+    
+    <p>
+      Thanks to Galileo we know that the acceleration of an
+      object falling near the surface of the earth due to gravity is
+      constantly <m>9.8
+      \frac{\text{meters}}{\text{second}^2}</m>. Thanks to Newton we
+      know that velocity is the antiderivative of acceleration, so
+      it would appear that
+      <men  xml:id="EQUATIONVelAcc1">\text{velocity} = \int \text{acceleration}=\int{9.8}.</men>
+    </p>
+    <p>
+       This is essentially correct but we are not using our notation
+       correctly.  Do you see the problem?
+    </p>
+    <p>
+      First, an acceleration is measured in <m>
+      \frac{\text{meters}}{\text{second}^2}</m> but velocity is
+      measured in
+      <m>\left(\frac{\text{meters}}{\text{second}}\right)</m>. Since the
+      dimensions don<rsq/>t match <xref
+      ref="EQUATIONVelAcc1">equation</xref> is not properly formed.
+    </p>
+    <aside>
+      <title>Advise</title>
+      <p>
+        Dimensions like <m>\frac{\text{meters}}{\text{second}}</m> or
+        <m>\frac{\text{newtons}}{\text{meter}^2}</m>, or whatever,
+        always come up in real world problems. It is only when we
+        abstract away from the real world and do <q>pure</q>
+        mathematics that they are not present. When they <em>are</em>
+        present ignoring dimensions is almost always
+        dangerous. Don<rsq/>t do it.
+      </p>
+    </aside>
+
+    <p>
+      Second, even if we ignore the dimensions of our quantities, the
+      expression <m>\int 0.9</m> asks us to sum infnitely many copies
+      of <m>9.8</m>. This sum will clearly get arbitrarily large. But we
+      know from our own experience living in the world that the
+      velocity of a falling object is not infinite. The problem this
+      time is that <m>9.8</m> is not a differential. Recall that we
+      observed at the end of <xref ref="SECTIONIntAsAntiDiff"></xref>
+      that we can only integrate differentials.
+    </p>
+
+    <p>
+      But notice how easy it was to pass lightly over <xref
+      ref="EQUATIONVelAcc1">equation</xref> and believe that it was
+      valid. Be careful. Always make sure the expressions you write
+      down are sensible; that the dimensions match and that what you are
+      integrating is a differential.
+    </p>
+
+    <p>
+      Careful use of Leibniz<rsq/> differential notation will address
+      both of these issues. Since we know that acceleration is the
+      derivative of velocity we have 
+
+      <men xml:id="EQUATIONVelAccDiff">\dfdx{v}{t} = 9.8.</men> 
+
+      Checking the dimensions we see that <m>v</m> is measured in
+      <m>\frac{\text{meters}}{\text{second}}</m> and that <m>t</m> is
+      measured in seconds. So <m>\dfdx{v}{t} </m> is measured in
+      <m>
+        \frac{\frac{\text{meters}}{\text{seconds}}}
+        {\text{seconds}}
+      </m> 
+which, for convenience, we notate as 
+<m>
+\frac{\text{meters}}{\text{second}^2}
+      </m>.
+    </p>
+    <p>
+<idx><h>Vocabulary</h><h>integrand</h></idx>
+      On the
+      other hand, if we multiply both sides of <xref
+      ref="EQUATIONVelAccDiff">equation</xref>  by
+      <m>\dx{t} </m> seconds we get
+      <me>\dx{v} \frac{\text{meters} }{\text{second}
+      }=9.8\frac{\text{meters}}{\text{second}\cdot{}\cancel{\text{second}}}\cdot
+      \dx{t}\cancel{\text{ seconds}}=
+      9.8\dx{t}\frac{\text{meters}}{\text{second}}</me>
+      In order to get a velocity by integration (summation) each of the
+      terms being summed (the 
+      <term>integrand</term>)  must be a velocity. Summing (integrating)
+      both sides gives
+      <me>
+        \int\dx{v} \frac{\text{meters} }{\text{second} }=\int
+      9.8\dx{t}\frac{\text{meters}}{\text{second}}</me>
+    </p>
+    <p>
+      Including all of the dimensions in a computation can be very
+      distracting so we will frequently leave them out. But this
+      can be a  deceptive practice so be careful.  If you are ever unsure whether you are integrating
+      the correct expression, check the dimensions, but don<rsq/>t forget
+      that the differentials also have dimensions. In this case <m>\dx{t}
+      </m> measures time (in seconds).
+    </p>
+
+    <example xml:id="EXAMPLEVelAcc">
+
+      <p>
+        Let<rsq/>s say that the ball is thrown upward with an initial velocity of
+        <m>19.6</m> meters per second (roughly <m>44</m> miles per hour) and
+        is released at a point <m>2</m> meters above the ground. We<rsq/>d
+        like to answer these questions:
+        <ol>
+          <li>
+            How high
+            will the ball go?
+          </li>
+          <li>
+            When will it hit the ground?
+          </li>
+          <li>
+            What will be the
+            impact velocity?
+          </li>
+        </ol>
+      </p>
+      
+      <p>
+        Suppose <m>y=y(t)</m> gives the height of the ball in meters
+        and <m>t</m> is measured in seconds.  Then we have the
+        following information
+
+        <md>
+          <mrow>
+            \underbrace{\dfdxn{y}{x}{2}=-9.8\frac{\text{m}}{\text{s}^2}}_{\text{acceleration}},
+            \amp{}\amp{}
+            \underbrace{\eval{\dfdx{y}{x}}{t}{0}=19.6\frac{\text{m}}{\text{s}}}_{\text{Inintial
+            Velocity}},
+            \text{ and }\underbrace{y(0)=2 \text{
+            meters}}_{\text{Initial Position}}.
+          </mrow>
+        </md>
+      </p>
+      
+      <p>
+        Notice that the acceleration is constant and  negative since
+        we<rsq/>ve assumed that down is  the negative direction.
+        We want to find
+        <ol>
+          <li>
+            <m>y</m> when
+            <m>\dfdx{y}{t}=0</m> (height at the top of the flight, when
+            the ball<rsq/>s velocity is zero),
+          </li>
+          <li>
+            <m>t</m> when <m>y=0</m> (the time when the ball  hits the ground),
+          </li>
+          <li>
+            <m>\eval{\dfdx{y}{t}}{y}{0}</m> (the impact velocity
+            when the ball strikes the ground).
+          </li>
+        </ol>
+      </p>
+      
+      
+      <p> 
+        Second derivatives are a little scary so, to avoid frightening
+        ourselves, we make the substitution <m>v=\dfdx{y}{t}</m>,
+        where <m>v</m> denotes velocity.  If we let <m>a</m> denote
+        acceleration we have <men
+        xml:id="EQUATIONAeDved2p">a=\dfdx{v}{t}=\dfdxn{y}{t}{2}</men>
+        Starting with our constant acceleration <m>a=-9.8</m>,
+        integrating <xref ref="EQUATIONAeDved2p">equation</xref> once
+        will give us the velocity, <m>v(t)</m>. Integrating a second
+        time will give the position, <m>y(t)</m>.  Once we find these,
+        then we can answer the questions posed.
+      </p>
+      <aside>
+        <title>Notation</title>
+        <p>
+          More formally we have <me>v(t)=\int y(t)\dx{t}</me> and
+          <me>\alpha{}(t)=\int\left(\int y(t)\dx{t}\right)\dx{t}</me>
+          This last equation actually correct but it is way too scary
+          to think about right now so we<rsq/>ll keep things simple
+          for now.
+        </p>
+      </aside>
+      
+      <p>
+        We know that
+        <m>
+          a=\dfdxn{y}{t}{2}=\dfdx{v}{t}=-9.8
+          </m>.
+          so
+          <me>
+            \dx{v} =-9.8\dx{t} 
+            </me>.
+            This says that the differential <m>\dx{v} </m> is equal to the
+            differential <m>-9.8\dx{t}</m>. It follows that equality is maintained
+            if we sum up all such differentials. So 
+            Therefore
+
+            <md>
+              <mrow>
+                \int\dx{v}\amp =\int-9.8\dx{t}
+              </mrow>
+              <mrow>
+                v+C_1\amp =-9.8t+C_2
+              </mrow>
+              <mrow>
+                v\amp =-9.8t+(\underbrace{C_2-C_1}_{= C})
+              </mrow>
+            </md>
+      </p>
+      
+      <p>
+        To find <m>c</m>  in this case, we observe that
+        <m>v(0)=19.6</m>.  Thus
+        <me>
+          19.6=v(0)=-9.8(0)+C =C.
+        </me>
+        So our velocity is given by
+        <me>
+          v=-9.8t+19.6.
+        </me>
+      </p>
+      
+      <p>
+        We next integrate <m>v=\dfdx{y}{t} </m> to find the ball<rsq/>s
+        position. Since velocity is the derivative of position we
+        have
+        <mdn>
+          <mrow number="no">
+            v= \dfdx{y}{t}\amp =-9.8t+19.6
+          </mrow>
+          <mrow number="no">
+            \dx{y}\amp =\left(-9.8t+19.6\right)\dx{t}
+          </mrow>
+          <mrow  xml:id="EQUATIONIntegralNotation">
+            \int\dx{y}\amp =\int\left(-9.8t+19.6\right)\dx{t}
+          </mrow>
+          <mrow number="no">
+            y\amp =-9.8\left(\frac{t^2}{2}\right)+19.6t+c
+          </mrow>
+        </mdn>
+      </p>
+      <aside>
+<title>Notation</title>
+<p>
+Notice that in <xref ref="EQUATIONIntegralNotation">equation</xref> we placed
+parentheses around the integrand: <m>-9.8t+19.6</m>. In this context
+this makes sense because we are thinking of <m>\dx{t}</m> as an
+infinitely small number so we need to indicate that the distributive
+law is in play. 
+</p>
+<p>
+However, in a more modern formulation we don<rsq/>t think of
+<m>\dx{t}</m> as a number. Instead the construct <m>\int \cdots
+\dx{t}</m> is all one abstract symbol, and  the integrand is
+everything that appears where we have dots. In that formulation the
+parentheses are unnecessary. Thus we will frequently omit them here as
+well so that you can become accustomed to seeing integrals written
+this way. 
+</p>
+      </aside>
+
+      <p>
+        This time to find the constant <m>C</m> we observe that since
+        <m>y(0)=2</m> we have
+        <me>
+          y(0)=2=\eval{-4.9t^2+19.6t+C}{t}{0} =C.
+        </me>
+        Thus the ball<rsq/>s position is given by: <m>y(t)=-4.9t^2+19.6t+2</m>.
+      </p>
+      
+      <p>
+        Once we know the acceleration, velocity, and position of the
+        ball we can answer any question about it<rsq/>s motion.
+      </p>
+      
+      <p>
+        At the top of its flight the velocity of the ball is zero so
+        we set <m>v=0</m>. Solving
+        <m>
+          v=0=-9.8t+19.6 </m> for <m>t</m> gives <m>t=2 \text{
+          seconds}</m>. Thus the ball<rsq/>s maximum height occurs two
+          seconds after it is released and it  will reach a height of
+
+          <me>
+            y(2)=-4.9(2^2)+19.6(2)+2 = 21.6 \text{ meters}
+          </me>.
+         </p>
+      
+      <p>
+        To find the impact velocity, we first need to find the time
+        <m>t</m> when the ball hits the ground (when <m>y(t)=0</m>). Solving
+        <m>y(t)=0=-4.9t^2+19.6t+2</m> for <m>t</m>
+        gives
+        <md>
+          <mrow>
+            t\amp =\frac{-9.6\pm\sqrt{9.6^2-4(-4.9)(2)}}{(2)(-4.9)}
+          </mrow>
+        </md>.
+
+        Thus we see that both <m>t=4.1</m> and <m>t=-0.1</m> solve our
+        equation. However snce the negative value represents time in
+        the past, so we can say that the ball will hit the ground
+        <m>t=4.1</m> seconds after it is released.  At that time the
+        impact velocity is
+        
+        <me>
+          v(4.1) = -9.8(4.1)+19.6= -20.58 \frac{\text{m}}{\text{s}}.
+        </me>
+        The negative answer makes sense as the ball is traveling in the
+        negative direction (down).
+      </p>
+    </example>
+    
+    <exercise xml:id="PROBLEMTwoTossedBalls">
+<introduction>
+      <p>
+        Suppose we throw two balls straight up. Suppose the first has an
+        initial velocity of <m>v_0</m> and the second has an initial
+        velocity of <m>2v_0</m>.  The maximum height of the second
+        ball either  be
+        <ol>
+          <li>
+            twice the maximum height of the first or,
+          </li>
+          <li>
+            four times the maximum height of the first or,
+          </li>
+          <li>
+            eight times the maximum height of the first.
+          </li>
+        </ol>
+      </p>
+</introduction>
+<task>
+<statement>
+<p>
+        Which of the options listed  does your intuition say is correct? 
+</p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Either show
+        that your intuition is correct or show that it is incorrect. (Again,
+        we ignore air resistance.)
+</p>
+</statement>
+</task>
+
+    </exercise>
+    
+    <exercise  xml:id="PROBLEMDeceleratingCar">
+      <p>
+        Automobile safety experts say that a skilled driver in a car
+        with good tires and dry pavement can safely brake to a stop
+        at a rate of <m>20 \frac{\text{feet}}{\text{second}^2}</m>.
+      </p>
+      <p>
+        Suppose it takes you  <m>160</m> feet to stop your car on a dry road
+        where the speed limit is <m>55
+        \frac{\text{miles}}{\text{hour}}</m>. Were you speeding?
+        Explain.
+      </p>
+    </exercise>
+    
+    <p>
+      Of course, the same principles will work in two dimensions as
+      with a single dimension.  We just treat the horizontal and
+      vertical directions separately.
+    </p>
+    
+    <exercise>
+      <introduction>
+        <p>
+          Consider a projectile launched from the origin
+          with an initial velocity of <m>v_0</m> at an angle of
+          elevation <m>\theta</m>.
+        </p>
+        <!-- <figure> -->
+        <!--   <caption>Path of a thrown object.</caption> -->
+        <image source="IC/ThrownRock.png" width="75%">
+          <shortdescription>Path of a thrown
+          object.</shortdescription>
+        </image>
+        <!-- </figure> -->
+        <p>
+          Assume that there is no air resistance and the
+          acceleration due to gravity is <m>-g</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Show that  the  horizontal velocity is given by
+            <m>\dfdx{x}{t}=v_0\cos (\theta )</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that  the  vertical velocity is given by
+            <m>\dfdx{y}{t}=v_0\sin (\theta )-gt</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find the parametric function <m>P(t)=\ParamEqTwo{x(t)}{y(t)}</m> which
+            gives the projectile<rsq/>s position as a function of time (it<rsq/>s
+            trajectory).
+          </p>
+        </statement>
+<hint>
+<p>
+You will need to use entries #7 and #8  in <xref ref="TABLEBasicIntegration"></xref>.
+</p>
+</hint>
+
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Show that the trajectory can also be  given as the graph
+            of
+            <men  xml:id="EQUATIONProjectileLaunch">
+              y=\frac{-g}{2v_0\cos(\theta)}x^2 +\tan(\theta)x.
+            </men>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use <xref ref="EQUATIONProjectileLaunch">equation</xref>
+            to show that the distance from its starting point where
+            the projectile returns to the ground is given by <me>
+            \frac{v_0^2}{g}\sin(2\theta) </me>.  
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that the maximum range occurs when
+            <m>\theta=\frac{\pi}{4}</m>.
+          </p>
+          <aside>
+            <title>Mathematical Terminology</title>
+            <p>
+              The distance a projectile flies is called its
+              <q>range</q>. This is  not to be confused with
+              the range of a function.
+            </p>
+          </aside>
+
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            On Feb. 6, 1971, astronaut 
+            <url href="https://en.wikipedia.org/wiki/Alan_Shepard" visual="https://en.wikipedia.org/wiki/Alan_Shepard">Alan Shepard</url>
+            pulled out a
+            makeshift six-iron he smuggled on board Apollo <m>14</m>
+            and 
+<url href="https://www.youtube.com/watch?v=t_jYOubJmfM&amp;t=70s" visual="https://www.youtube.com/watch?v=t_jYOubJmfM&amp;t=70s">hit two golf balls on the lunar surface</url>, becoming the
+            first, and so far the only, person to play golf anywhere other than
+            earth.  Assuming that the gravity on the moon is
+            <m>1/6</m> that of earth and that Shepard can hit the
+            ball identically on the earth and the moon, and ignoring
+            air resistance on the earth, would the ball go <m>6</m>
+            times farther before it returns to the surface on the moon
+            than on the earth? Justify your answer.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+  </section>
+
+
+  <section  xml:id="SECTIONKnownIntegrals">
+    <title>Known Integrals</title>
+<p>
+It should be clear that we
+will need to be able to find antiderivatives of wide variety of
+functions but so far we only know the thirteen listed in <xref
+ref="TABLEBasicIntegration"></xref>. A significant portion of any course
+in Integral Calculus is devoted to extending the list of known
+antiderivatives. We begin that process in this section.
+</p>
+    <p>
+      The easiest way to compute an integral is to simply know what it  is
+      in the first place.  For example, entry #7 of
+      <xref ref="TABLEBasicIntegration"></xref> tells us that,
+      <m>\int\cos(x){\dx{x} = \sin(x)+c }</m>.
+But with a little cleverness we can use entry #7 to evaluate other
+integrals as well 
+</p>
+<!-- <p> -->
+<!-- For example at first it seems that  entry #7 only tells -->
+<!--       us that an antiderivative of <m>\cos(x) </m> is <m>\sin(x)</m>, but -->
+<!--       with a little cleverness, and understanding, we can also use it to -->
+<!--       compute other integrals as follows. -->
+<!--     </p> -->
+    <example xml:id="EXAMPLEIntSimpSub">
+      <title>Integration By Simple Substitution</title>
+      <p>
+        For example, to compute <me>\int\cos(5x) \dx{x}</me>, first make the substitution
+        <m>u=5x</m>. In that case <m>\dx{u}=5\dx{x}</m>. Substituting these
+        into our integral we have
+        <men xml:id="EQUATIONIntCos5x">
+          \int\cos(5x) \dx{x}= \frac15\int\cos(u) \dx{u}
+          </men>, 
+and  entry #7 of  <xref ref="TABLEBasicIntegration"></xref> tells us
+          that
+          <me>\int\cos(5x) \dx{x} =\frac15\sin(u) +c</me>.
+          Substituting back to the original variable
+          (unsubstituting?) we have
+          <me>\int\cos(5x) \dx{x}= \frac15\sin(ax)+c</me>.
+      </p>
+    </example>
+    <problem>
+      <p>
+        Do all of the algebra necessary to show that <xref
+        ref="EQUATIONIntCos5x">equation</xref>  is correct. Explain each step.
+      </p>
+    </problem>
+
+
+
+    <problem xml:id="DRILLIntSimpSub">
+
+      <p>
+        <idx><h>Integration by Simple Substitution</h></idx>
+        Emulate the computations in <xref ref="EXAMPLEIntSimpSub"></xref>  to
+        compute each of the integrals. Assume <m>a</m> is a constant.
+
+        <ol cols="2" marker="i">
+          <li>
+            <p>
+              <m>\int \sin(ax)\dx{x}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\int \sec(ax)\tan(ax)\dx{x}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\int \frac{1}{\sqrt{1+a^2x^2}}\dx{x}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\displaystyle\int \frac{1}{1+ax^2}\dx{x}</m>
+            </p>
+            <p> Be careful! Don<rsq/>t make assumptions.</p>
+          </li>
+        </ol>
+      </p>
+    </problem>
+
+    <exercise xml:id="PROBLEMIntlnax">
+          <idx><h>Problems</h><h><m>\int\ln(ax)\dx{x} </m></h></idx> 
+      <introduction>
+        <p>
+
+          Integrating by making a substitution seems to be a fairly simple
+          technique when you first encounter it. But just as with
+          differentiation it will turn out to be a very sophisticated
+          technique. We will explore this a bit   here.
+        </p>
+        <!-- <p> -->
+        <!-- Based on your experience so far, what is your best guess for the value -->
+        <!-- of  -->
+        <!-- <me> -->
+        <!-- \int \ln(ax) \dx{x} -->
+        <!-- </me>? -->
+        <!-- </p> -->
+      </introduction>
+      <task xml:id="PROBLEMIntlnax1">
+        <statement>
+          <p>
+            Show that <m>\int\ln(x)\dx{x} = x\ln(x) -x + c</m>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You don<rsq/>t know how to compute this integral yet. Find another
+            way.
+          </p>
+        </hint>
+      </task>
+      <task xml:id="PROBLEMIntlnax2">
+        <statement>
+          <p>
+            Use the result of <xref ref="PROBLEMIntlnax1">part</xref> to guess the
+            value of 
+            <me>
+              \int \ln(ax)\dx{x}
+              </me>.
+          </p>
+        </statement>
+      </task>
+
+      <task xml:id="PROBLEMIntlnax3">
+        <statement>
+          <p>
+            Now use the formula from <xref ref="PROBLEMIntlnax1">part</xref> and
+            an appropriate substitution to
+            compute <me>
+            \int \ln(ax)\dx{x}
+            </me>.
+            Was your guess in <xref ref="PROBLEMIntlnax2"></xref> correct 
+          </p>
+        </statement>
+      </task>
+
+      <task xml:id="PROBLEMIntlnax4">
+        <statement>
+          <p>
+            Differentiate the function you found in <xref
+            ref="PROBLEMIntlnax3">part</xref> to confirm that your solution is
+            correct.
+          </p>
+        </statement>
+      </task>
+
+    </exercise>
+
+    <p>
+      As you saw in <xref ref="PROBLEMIntlnax"></xref> integrals can be
+      unpredictable, even when you are computing them correctly. You<rsq/>ll
+      need to discipline yourself. You will save yourself some time and
+      frustration if you don<rsq/>t try to anticipate  the
+      solution. And only skip the steps that you are 
+      <em>very </em> confident of.
+    </p>
+
+
+
+
+    <p>
+      For the first four hundred years or so after Calculus was invented
+      it was necessary for scientists, engineers, and mathematicians to
+      memorize a table of integrals like <xref
+      ref="TABLEBasicIntegration"></xref> (but much larger) and to own a
+      reference book of known integrals. The image below is a scan of two
+      pages of such a reference.
+    </p>
+
+    <figure  xml:id="FIGURECRC">
+      <caption></caption>
+      <image source="IC/CRC.png" width="70%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+
+
+<problem>
+<p>
+Use the entries in the partial table in <xref ref="FIGURECRC"></xref>
+to  evaluate each of the integrals.
+<ol cols="2" marker="i">
+<li>
+<m>\int x\inverse\tan\left(\pi x \right) \dx{x}</m>
+</li>
+<li>
+<m>\int \frac{x}{6}\inverse\sec\left( \frac{\pi x}{2}\right) \dx{x}</m>
+</li>
+<li>
+<m>\int \frac{2\inverse\cos (6x)}{3x^2}\dx{x}</m>
+</li>
+<li>
+<m>\int{\frac{7\inverse\sin(3x)}{\sqrt{1-9x^2}}\dx{x}   }</m>
+</li>
+</ol>
+</p>
+</problem>
+
+
+    <p>
+      In the modern world the value of a published table of integrals has
+      diminished considerably due to the creation of several very
+      sophisticated mathematical software packages that will perform
+      integrations, sometimes even very complex integrations very
+      quickly.  Most such packages are able to compute all of the
+      integrals you will see in this course.
+    </p>
+    <p>
+      That being so, students are often left wondering why we insist
+      that you memorize the simpler integrals and learn the basice
+      techniques that allow you to compute more complex integrals.
+    </p>
+    <p>
+      There are a couple of reasons. 
+      <dl>
+        <li>
+          <title>Convenience</title>
+          <p>
+            Integrals are not stand<ndash/>alone problems. Except in
+            this course, they will always come to you as part of a
+            larger, more complicated problem.  If you are working on
+            such a problem and the expression <m>\int_{-a}^{a}
+            (x^2+4)\sin(x)\dx{x}</m> comes up you<rsq/>d like to know
+            that this is equal to zero without interupting your work
+            to enter this integral into some software package so you
+            can move on to the next step.  (Eventually it will be
+            obvious that <me>\int_{-a}^{a} (x^2+4)\sin(x)\dx{x}=0</me>
+            but it almost certainly is not obvious right now).
+          </p>
+          <p>
+            You need to be able to use your tools smoothly and efficiently
+            when you are working, and integration is one of your
+            tools. Having  to stop working in the middle of
+            every large computation you encounter in order to enter the
+            smaller computions  into software is like having to stop to
+            watch a video explaining every step  needed to do a small
+            carpentry job on your home. It can be done, but it will be an
+            onerous task at best. 
+          </p>
+        </li>
+        <li>
+          <title>Intuition (or the lack thereof)</title>
+          <p>
+            A similar question can be asked about arithmetic. Was it
+            really necessary for you to learn the arithmetic rules in
+            grade school?  After all, any calculuation you need to do
+            now, as an adult, can be done more reliably by posing the
+            question to your phone. Was learning arithmetic a wasted
+            effort?
+          </p>
+          <p>
+            Suppose that,
+<ul>
+<li> you had never learned any arithmetic,</li>
+<li> are
+            planning a road trip of <m>2,380</m> miles, and</li>
+<li> there is
+            no source of fuel on the trip. </li>
+</ul>
+If your car gets <m>23.8</m> miles per gallon of fuel.  How much fuel
+do you need to bring? You ask your phone to compute <m>2380/23.8</m>
+and it tells you that you need one hundred gallons of fuel. Easy
+right?
+          </p>
+          <p>
+            But remember you don<rsq/>t know how to do this
+            calculation yourself. You must rely completely on your
+            phone for the answer so you can only pray that you posed
+            the the problem correctly because <mdash/> and this is the
+            point <mdash/> never having done any arithmetic
+            computations yourself you have know way of knowing
+            whether the computation should yield <m>100</m> gallons or
+            <m>1/100</m> of a gallon.
+          </p>
+          <p>
+            If you hadn<rsq/> spent large chucks of your childhood
+            doing these kinds of computations yourself you<rsq/>d have no
+            intuition to bring to bear on the problem and you<rsq/>d
+            be unable to see that <m>1/100</m> gallon is far too
+            small.
+          </p>
+
+          <p>
+            Mistakes happen, even with software. When they do you need
+            to have enough insight into the problem to know when the
+            numbers aren<rsq/>t coming out wrong. A very good way to
+            develop that kind of insight is to do problems without any
+            assistance (software or otherwise).
+          </p>
+        </li>
+        <li>
+          <title>Software Doesn<rsq/>t Always Give a Useful Answer</title>
+          <p>
+            The most sophisticated, easily available, mathematical
+            software available now has the cumulative experience and
+            knowledge of many years of development by the mathematical
+            community as a whole built into it. As a result such
+            software will often give answers which, although correct,
+            are not helpful. Especially for a beginner.
+          </p>
+          <p>
+            For example we entered the integral <me>\int
+            e^{-x^2}\dx{x}</me> into one such system. The answer we
+            got back was <me>\frac12 \sqrt{\pi }\erf(x) +C </me> which
+            is correct, but what does it mean? If you can<rsq/>t tell
+            it is probably because you don<rsq/>t know what <m>\erf(x)
+            </m> means.
+          </p>
+      <p>
+        You will see the function <m>\erf(x) </m>  again in <xref
+        ref="EXERCISEWolframAlpha1"></xref> where we will explain what it
+        means.
+      </p>
+          <p>
+            The same system returns <m>x_2\text{F}_1\left(-\frac12, \frac13;
+            \frac43; x^3\right) </m> when fed it the integral
+            <me>\int\sqrt{1-x^3}\dx{x} </me>. Even we (the authors)
+            needed to 
+            do some investigating to figure out what this means as the symbolism
+            is not part of our core knowledge. It turns out that
+            <m>F_1()</m> is a particular Appell hypergeometric
+            function. 
+          </p>
+<p>
+Does that help you to understand?
+</p>
+        </li>
+      </dl>
+    </p>
+     <p>
+      This is not to say that you should not use these tools at all.
+      Mathematical software is available and it can be a marvelous
+      help. But it is no substitute for skill, knowledge, or
+      understanding and that is what you need to gain from this
+      course. So use the software to help you learn. Use it to check
+      your computations <em>after</em> you<rsq/>ve completed them
+      yourself. When you and the software disagree take the time to
+      figure out what is wrong and who is right.
+    </p>
+<aside>
+<title>Note to self</title>
+<p>
+<alert>Insert a set of substitution drills here.</alert>
+</p>
+</aside>
+</section>
+</chapter>
