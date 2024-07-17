@@ -1,0 +1,4273 @@
+<chapter xml:id="CHAPTERDefiniteIntegration" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Definite Integration</title>
+<section  xml:id="SECTIONCavalierisMethod">
+<title>Cavalieri and his Method of Indivisibles</title>
+
+
+<image source="IC/Cavalieri.png" width="50%">
+<shortdescription>Bonaventura Cavalieri</shortdescription>
+</image>
+<p>
+
+<url
+href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/"
+visual="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/">Bonaventura
+Cavalieri</url> was a Jesuat monk and had studied mathematics at the
+University of Pisa under the tutelage of <url
+href="https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/"
+visual="https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/">Benedetto
+Antonio Castelli</url>.  Castelli introduced the younger man to the
+works Galileo which he studied deeply. He was inspired by
+Galileo<rsq/>s methods, especially the novel technique of
+<q>indivisibles.</q> He and Galileo exchanged many letters over the
+years but only met once.
+</p>
+<p>
+Cavalieri studied and extended the method of <q>indivisibles</q>, (which would eventually become the Leibniz<rsq/> 
+<foreign>Calculus Differentialis</foreign> used by many prominent mathematicians of the time (and vehemently opposed by the Catholic Church for reasons that are fascinating but not relevant to our purpose). He would eventually publish his work called 
+<pubtitle>Geometria Indivisibilibus</pubtitle>. In his book 
+<pubtitle>Great Moments in Mathematics Before 1650</pubtitle> Howard Eves said of Cavalieri<rsq/>s work, <q>Cavalieri<rsq/>s treatise on the method of indivisibles is voluble and not clearly written, and it is not easy to learn from it precisely what Cavalieri meant by and <lsq/>indivisible.<rsq/></q> It is likely that this is because Cavalieri himself was unsure what an <q>indivisible</q> should be.
+</p>
+<p>
+Still, his ideas were deep and fundamental so it is worthwhile to learn a bit about them before we go on.
+</p>
+
+</section>
+
+<section> 
+  <title>Areas and Integration</title>
+  <p>
+    Recall, much earlier, that we examined the catenary (hanging
+    chain).  We showed that the catenary was not a parabola as
+    Galileo had mentioned.  The idea of a catenary was (and is)
+    important in engineering in the construction of arches.  Masons
+    before Galileo's time were aware of the fact that the <q>best</q>
+    arches were in the shape of an inverted catenary, and they
+    constructed wooden frames for their stone utilizing a hanging
+    chain for the correct shape.  This can be seen in the following
+    example.
+  </p>
+  <example> <title>Stone Arch Bridge</title>
+  <p>
+    Consider one half of a stone arch bridge as drawn below.
+  </p>
+  <figure>
+    <caption>
+      Schematic of a stone arch
+    </caption>
+    <image source="IC/StoneArch.png" width="40%">
+      <shortdescription>Schematic of a stone arch</shortdescription>
+    </image>
+  </figure>
+  <p>
+    We will draw the positive <m>y</m>-axis downward and will focus
+    on the forces at a generic point <m>P</m> with coordinates <m>(x,
+    y)</m>.  The problem is to find the curve <m>y=y(x)</m> so that
+    the vertical component of the tangential force <m>T</m> at
+    <m>P</m> is equal to the weight of the bridge from <m>0</m> to
+    <m>x</m>.  If we do this, then that means that the weight of the
+    bridge will be directed toward the base of the bridge.  With this
+    in mind, let <m>A(x)</m> denote the area of the side section of
+    the bridge from <m>0</m> to <m>x</m>.  We will also let <m>y</m>
+    denote the (constant) magnitude of the horizontal force along the
+    length of the bridge and <m>w</m> be the weight density of the
+    stone (per cross sectional area).
+  </p>
+  <figure>
+    <caption>
+      Stone Arch Schematic
+    </caption>
+    <image source="IC/StoneArch2.png" width="80%">
+      <shortdescription>Stone Arch Schematic</shortdescription>
+    </image>
+  </figure>
+  <p>
+    With all of this set up, what we really want is the horizontal
+    component of the force <m>T</m> to be <m>h</m> and the vertical
+    component to be the weight of the bridge from <m>0</m> to
+    <m>x</m>, namely, <m>wA</m>.  This leads to the following
+    picture.
+  </p>
+  <figure>
+    <caption>
+      Stone Arch Triangle of Forces
+    </caption>
+    <image source="IC/StoneArch3.png" width="40%">
+      <shortdescription>Stone Arch Triangle of
+      Forces</shortdescription>
+    </image>
+  </figure>
+  <p>
+    This leads to the slope of the tangent line at <m>P</m> equaling
+    <m>\frac{wA}{h}</m>, so we get the differential equation
+    <me>\dfdx{y}{x}=\frac{w}{h}A.</me> The problem here is that we
+    don't know what <m>A</m> is.  However, a moment's thought tells
+    us that we know what <m>\dx{A}{}</m> is.  If we increase <m>x</m>
+    to <m>x+\dx{x}{}</m>, then we can see that
+    <m>\dx{A}=y\dx{x}{}</m>.
+  </p>
+  <figure>
+    <caption>
+      Stone Arch Schematic
+    </caption>
+    <image source="IC/StoneArch4.png" width="80%">
+      <shortdescription>Stone Arch Schematic</shortdescription>
+    </image>
+  </figure>
+  <p>
+    Thus, if we differentiate the above equation, we get that the
+    arch should satisfy the differential equation
+    <me>\dfdxn{y}{x}{2}=\frac{y}{x}\dfdx{A}{x}=\frac{w}{h}y.</me>
+  </p>
+  </example>
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Show that
+          <me>y=Ae^{\sqrt{\frac{w}{h}}x}+Be^{-\sqrt{\frac{w}{h}}x}</me>
+          satisfies the above differential equation.
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Show that if <m>y(0)=\sqrt{\frac{h}{w}}</m> and
+          <m>\dfdxat{y}{x}{0}=0</m>, then
+          <m>A=B=\frac12{}\sqrt{\frac{h}{w}}</m>. Compare this to the
+          equation of the catenary in Problem in Context #53 in
+          <pubtitle>Differential Calculus</pubtitle>.
+        </p>
+        <aside>
+          <title>Note to Self</title>
+          <p>
+        Convert this to a PreTexT link.  </p></aside>
+
+      </statement>
+    </task>
+
+  </exercise>
+  <p>
+    <idx><h>Vocabulary</h><h>Fundamental Theorem of Calculus</h></idx>
+    While it is interesting that the above example illustrates the
+    importance of catenaries in engineering, the important thing for
+    us is that <m>\dx{A}=y\dx{x}</m>. Thus
+    <me>\int{y}\dx{x}{}=\int{}\dx{A}{}=A+C.</me> which relates
+    integrals to areas. This relationship was known to both Newton
+    and Leibniz, as well as some of their predecessors. It is of such
+    importance that it is known as the <term>Fundamental Theorem of
+    Calculus</term>.
+  </p>
+  <p>
+    To make this a bit more concrete, let's set this up a bit more
+    carefully. Suppose we start with a curve <m>y=y(x)</m> where
+    <m>y\ge{0}</m> for <m>a\le{x}\le{b}</m>, and we wish to find the
+    area of the region bounded by the curves <m>y=y(x)</m>,
+    <m>y=0</m>, <m>x=a</m>, and <m>x=b</m>
+  </p>
+  <figure>
+    <caption>
+      The area under a curve
+    </caption>
+    <image source="IC/AreaUnder1.png" width="80%">
+      <shortdescription>The area under a curve</shortdescription>
+    </image>
+  </figure>
+  <p>
+    <idx><h>Vocabulary</h><h>Fundamental Theorem of Calculus</h></idx>
+    We used the notation <m>\int{y}\dx{x}</m> to denote a sum of
+    differentials and called this integration with the idea that it
+    was the opposite of differentiation and provided a notation for
+    the antiderivative to the function <m>y</m>. In examining a
+    situation like we have with areas above, we will modify our
+    notation a bit to <me>\int_{x=a}^b{y}\dx{x}{}</me> to emphasize
+    that we are adding differentials from <m>x=a</m> to <m>x=b</m>,
+    so that <m>\int_{x=a}^by\dx{x}</m> represents a specific number
+    (in this case area), whereas <m>\int{y}\dx{x}{}</m> represents an
+    antiderivative which is a family of functions differing by
+    arbitrary constants. With this in mind,
+    <m>\int_{x=a}^by\dx{x}</m> is called the definite integral of
+    <m>y\dx{x}{}</m> from <m>x=a</m> to <m>x=b</m> and
+    <m>\int{y}\dx{x}{}</m> is called the indefinite integral of
+    <m>y\dx{x}{}</m>. So, the definite integral is a specific number
+    while the indefinite integral is a family of functions. If using
+    almost the same notation seems confusing at this point, it is
+    brought together by the <term>Fundamental Theorem of
+    Calculus</term>.
+  </p>
+
+
+  <theorem xml:id="THEOREMFTCDiff">
+    <title>The Fundamental Theorem of Calculus</title>
+    <p>
+      Suppose that <m>\dfdx{A}{x}=y</m> (so that <m>A</m> is an
+      antiderivative of <m>y</m>). Then <me>\int_{x=a}^b y\dx{x}
+      =A(b)-A(a).</me>
+    </p>
+  </theorem>
+
+  <p>
+    As was mentioned before, this result was known to both Newton and
+    Leibniz and was first publish in a short paper by Leibniz in
+    1693. The idea is so surprisingly simple and profound, that it
+    warrants an (apocryphal) story. When Leibniz was a young diplomat
+    in Paris, he sought Christian Huygens who, at the time, was one
+    of the most brilliant mathematicians in the world. Leibniz
+    credited much of his mathematical growth in Paris to Huygens. The
+    idea for summing differences came to Leibniz from a problem given
+    to him by Huygens in 1672, namely to compute the following sum
+    <me>\frac{1}{1\cdot2}+\frac{1}{2\cdot3{}}+\frac{1}{3\cdot4}\cdots</me>
+    Leibniz recognized that this could be rewritten as
+    <me>\left(\frac11-\frac12\right)+\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\cdots</me>
+    and noted that nearly all of the fractions cancelled out leaving
+    <m>1-\frac{1}{\infty{}}=1-0=1</m>.
+  </p>
+  <p>
+    The importance of this was not the result, but the technique,
+    namely that the sum of differences is equal to the difference of
+    the extremes. Applying this same principle to the Fundamental
+    Theorem of Calculus, we have
+    <md>
+      <mrow>\dfdx{A}{x}\amp =y</mrow>
+      <mrow>y\dx{x}\amp =\dx{A} </mrow>
+      <mrow>
+        \int_{x=a}^by\dx{x}\amp =\int_{x=a}^b\dx{A}=A(b)-A(a)
+      </mrow>
+    </md>
+    This was so quick, that it probably deserves a picture. Consider
+    the picture below of the two functions <m>y</m> and <m>A</m>
+    related by the fact that <m>\dfdx{A}{x}=y</m>.
+  </p>
+  <!-- <figure> -->
+  <!--   <caption>Visual representation of the FTC</caption> -->
+  <!--   <image source="IC/FTC1.png" width="50%"> -->
+  <!--     <shortdescription>Visual representation of the -->
+  <!--     FTC</shortdescription> -->
+  <!--   </image> -->
+  <!-- </figure> -->
+
+  <image source="IC/FTC2.png" width="80%">
+    <shortdescription></shortdescription>
+  </image>
+  <p>
+    Notice that since <m>y\dx{x}=\dx{A}{}</m>, then this says that
+    the area of the box with width <m>\dx{x}{}</m> and height
+    <m>y</m> in the first diagram is numerically the same as the
+    length <m>\dx{A}{}</m> of the segment in the second diagram. Of
+    course, these represent corresponding generic boxes and
+    segments. If we add all of these together, the sum of the areas
+    of the boxes in the first diagram will provide the area of the
+    region; the sum of the lengths of the segments in the second
+    diagram will provide the length of the segment from <m>A(a)</m>
+    to <m>A(b)</m>. In other words, we have
+    <me>\int_{x=a}^by\dx{x}=\int_{x=a}^b\dx{A}=A(b)-A(a){}</me> which
+    is what the Fundamental Theorem of Calculus says.
+  </p>
+  <p>
+    It is hard to overstate the importance of this result. (Not
+    everything is called a Fundamental Theorem.) In many
+    applications, we will have a need to add all of the differentials
+    which may or may not represent areas. After we set up this sum,
+    computation will bring us back to our old problem of computing
+    antiderivatives. For now, let's just focus on computation of
+    definite integrals via the Fundamental Theorem of Calculus. With
+    the Fundamental Theorem of Calculus in mind, we introduce the
+    following notation. If <m>\dfdx{A}{x}=y</m> then
+    <me>\int_{x=a}^by\dx{x}=\int_{x=a}^by\dx{x}=\left.A(x)\right|_{x=a}^b{}=A(b)-A(a)</me>
+    The symbol <m>\left.A(x)\right|_{x=a}^b</m> is read aloud as
+    <q><m>A</m> of <m>x</m> evaluated from <m>x=a</m> to
+    <m>x=b</m></q> and is the difference between <m>A(b)</m> and
+    <m>A(a)</m>. Again, this is purely notational.
+  </p>
+  <exercise>
+    <p>
+      Given our notation for an indefinite integral, the Fundamental
+      Theorem of Calculus says
+      <me>\int_{x=a}^by\dx{x}{}=\left.\left(\int{y}\dx{x}\right)\right|_{x=a}^b.</me>
+      However, there are infinitely many possibilities for
+      <m>\int{y}\dx{x}</m>. Does this mean that there are infinitely
+      many possibilities for <m>\int_{x=a}^by\dx{x}{}</m>? Explain.
+    </p>
+  </exercise>
+  <aside>
+    <title>Note to Self</title>
+    <p>
+  We need more exercises here.  </p></aside>
+</section>
+
+
+<section  xml:id="DefIntProp">
+  <title>Properties of Definite Integrals</title>
+  <p>
+    While it is true that areas motivated the definite integral and
+    the Fundamental Theorem of Calculus, it is important to remember
+    that we are really talking about a sum of differentials. This
+    helps to explain some anomalies which occur when applying the
+    fundamental theorem. For example, consider
+    <me>\int_{x=-2}^{2}x\dx{x}{}=\left.\frac{x^2}{2}\right|_{x=-2}^2=\frac{2^2}{2}-\frac{(-2)^2}{2}=0</me>
+    If you only think of this as an area, then this doesn't seem to
+    make sense. However, let's look at a graph.  
+    </p> 
+    <figure>
+    <caption>Integrals do not always represent areas</caption> 
+    <image  source="IC/IntArea1.png" width="40%"> 
+    <shortdescription>Graph of y=x</shortdescription> 
+    </image> 
+    </figure> 
+    <p> 
+      The rectangles
+      under the <m>x</m>-axis will provide a <q>negative</q> area so
+      the total is zero. In particular the following properties hold:
+    </p> 
+    <table xml:id="DefIntPropTable"> 
+    <title>Integration      Properties</title>
+    <tabular> 
+      <row bottom="minor" header="yes">
+    <cell><m>\int_{x=a}^b0\dx{x}=0</m></cell> 
+    </row> 
+    <row
+        bottom="minor">
+      <cell><m>\int_{x=a}^b\left(f(x)+g(x)\right)\dx{x}=\int_{x=a}^b\left(f(x)\dx{x}+g(x)\dx{x}{}\right)=\int_{x=a}^bf(x)\dx{x}
+    + \int_{x=a}^bg(x)\dx{x}</m></cell>
+    </row>
+    <row bottom="minor">
+    <cell><m>\int_{x=a}^bcf(x)\dx{x}=c\int_{x=a}^bf(x)\dx{x}{}</m></cell>
+    </row> 
+    <row bottom="minor">
+    <cell><m>\int_{x=a}^bf(x)\dx{x}=-\int_{x=b}^af(x)\dx{x}{}</m></cell>
+    </row> 
+    <row bottom="minor">
+    <cell><m>\int_{x=a}^af(x)\dx{x}=0</m></cell> 
+    </row> 
+    <row
+        bottom="minor">
+    <cell><m>\int_{x=a}^bf(x)\dx{x}{}=\int_{x=a}^cf(x)\dx{x}+\int_{x=c}^bf(x)\dx{x}</m></cell>
+    </row> 
+    </tabular> 
+    </table> 
+    <p> 
+      These properties are consistent
+      with the rules for indefinite integrals, which is not surprising
+      in light of the Fundamental Theorem of Calculus. That being said,
+      let's make sense of these properties beyond the fundamental
+      theorem. First and foremost, remember that these integrals are
+      sums of differentials and behave like sums. With this in mind,
+      lets compare the first three properties in the table with their
+    finite sum analogs.  </p> <table> <title>A simple table</title>
+    <tabular halign="center"> <row header="yes" bottom="minor" >
+    <cell>Integration Properties </cell> <cell>Sum Properties</cell>
+    </row> <row> <cell><m>\int{0}\dx{x}{}</m></cell>
+    <cell><m>0+0=0</m></cell> </row> <row>
+    <cell><m>\int_{x=a}^bf\dx{x}+g\dx{x}=\int_{x=a}^bf\dx{x}+\int_{x=a}^bg\dx{x}{}</m></cell>
+    <cell><m>(f_1+g_1)+(f_2+g_2)=(f_1+f_2)+(g_1+g_1)</m></cell>
+    </row> <row>
+    <cell><m>\int_{x=a}^bcf\dx{x}=c\int_{x=a}^bg\dx{x}</m></cell>
+    <cell><m>(cf_1+cf_2)=c(f_1+f_1)</m></cell> </row> </tabular>
+    </table> <p> The last three properties in Table 2 might seem less
+    obvious. We will make sense of these geometrically, but let's
+    first note that these are consistent with the fundamental theorem
+    of calculus as illustrated in the following examples.  </p>
+    <example xml:id="IntPropExamples"> <title>Some Examples</title>
+    <task> <statement> <p> <m> <!-- <mrow> -->
+      \int_{x=b}^ax^2\dx{x}=\ftceval{\frac{x^3}{3}}{x}{b}{a} <!--
+      </mrow> --> <!-- <mrow> -->
+    =-\left(\frac{b^3}{3}-\frac{a^3}{3}\right) <!-- </mrow> --> </m>
+    </p> </statement> </task> <task> <statement> <p> <m> <!-- <mrow>
+    --> \int_{x=b}^ax^2\dx{x}
+    =-\left(\ftceval{\frac{x^3}{3}}{x}{a}{b}\right) <!-- </mrow> -->
+    <!-- <mrow> --> =-\int_{x=a}^bx^2\dx{x} <!-- </mrow> --> </m>
+    </p> </statement> </task> <task> <statement> <p>
+    <m>\int_{x=a}^ax^2\dx{x}=\ftceval{\frac{x^3}{3}}{a}{a}{b}=\frac{a^3}{3}-\frac{a^3}{3}=0
+    </m>
+    </p>
+    </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              \int_{x=a}^bx^2\dx{x}+\int_{x=b}^cx^2\dx{x}\amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{b}+\ftceval{\frac{x^3}{x}}{3}{b}{c}
+    </mrow>
+    <mrow>
+      \amp{}
+      =\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)
+    </mrow>
+    <mrow>
+      \amp{}=\frac{c^3}{3}-\frac{a^3}{3}
+    </mrow>
+    <mrow>
+      \amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{c}
+    </mrow>
+  </md>
+</p>
+</statement>
+</task>
+</example>
+<p>
+  To see that these properties hold geometrically (without the
+  Fundamental Theorem of Calculus), recall that this really is a sum
+  of differentials. Specifically, we have the following diagram
+  illustrating a generic rectangle that we are summing.
+</p>
+
+<figure>
+<caption>A geometic representation of integration</caption>
+<image source="IC/IntGeom.png" width="40%">
+  <shortdescription>A geometic representation of
+integration</shortdescription>
+</image>
+</figure>
+
+<p>
+  When we consider <m>\int_{x=b}^ay\dx{x}</m> with <m>a\lt b</m>,
+  then the difference <m>\dx{x}</m> is a positive change. When we
+  consider <m>\int_{x=b}^a y\dx{x}</m>, then the difference
+  <m>\dx{x}</m> represents a negative change. Hence, we have
+<me>\int_{x=b}^ay\dx{x}=-\int_{x=a}^by\dx{x}.</me>
+</p>
+
+<exercise>
+  <p>
+    Use the fact that <me>\int_{x=a}^a=-\int_{x=a}^ay\dx{x}</me> to
+    show that <me>\int_{x=a}^ay\dx{x}=0{}</me>.
+</p>
+</exercise>
+
+<p>
+  As for the last property, <me>\int_{x=a}^bf\dx{x}
+  +\int_{x=b}^cf\dx{x}=\int_{x=a}^cf\dx{x}{}</me> Consider the
+  following diagram where <m>a\lt b \lt c</m>.
+</p>
+
+
+<figure>
+<caption>The sum property of integration</caption>
+<image source="IC/SumProp.png" width="60%">
+  <shortdescription>The sum property of
+integration</shortdescription>
+</image>
+</figure>
+
+<p>
+  If we are summing differentials <m>y\dx{x}</m> from <m>x=a</m> to
+  <m>x=b</m> and summing them from <m>x=b</m> to <m>x=c</m>, then
+  this certainly would be the same as summing them from <m>x=a</m> to
+  <m>x=c</m>. Thus <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
+  \int_{x=a}^cf\dx{x}</me>.
+</p>
+<exercise>
+  <statement>
+    <p>
+      Show that for the case where <m>a\lt{c}\lt{b}</m>, we still
+      have <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
+\int_{x=a}^cf\dx{x}.</me>
+</p>
+</statement>
+<hint>
+  <p>
+    We already know that
+    <me>\int_{x=a}^bf\dx{x}+\int_{x=a}^cf\dx{x} =
+\int_{x=c}^bf\dx{x}.</me> Solve for <m>\int_{x=a}^cf\dx{x}</m>
+and use a previous property.
+</p>
+</hint>
+</exercise>
+
+<problem>
+  <p>
+    Suppose <me>\int_{x=0}^5f\dx{x} = 3, \int_{x=0}^7f\dx{x} =8,
+    \text{ and } \int_{x=0}^5g\dx{x} =2.</me> Compute
+    
+    <ol cols="3" marker="i">
+      
+      <li>
+        <p>
+<m>\int_{x=0}^5(9f-4g)\dx{x}</m>
+</p>
+</li>
+
+<li>
+  <p>
+<m>\int_{x=5}^7f\dx{x} </m>
+</p>
+</li>
+
+<li>
+  <p>
+<m>\int_{x=5}^0g\dx{x} </m>
+</p>
+</li>
+
+<li>
+  <p>
+<m>\int_{x=0}^0f\dx{x} </m>
+</p>
+</li>
+
+<li>
+  <p>
+<m>\int_{t=0}^5f(t)\dx{t} </m>
+</p>
+</li>
+</ol>
+</p>
+</problem>
+<aside>
+<title>Note to self</title>
+
+<p>Make this a PreTeXt reference.</p>
+</aside>
+<p>
+  Part e of the last problem brings up an interesting aspect about
+  definite integrals. Since the final answer is a number, then the
+  variable t is immaterial. For example, we have
+  <me>\int_{x=0}^1x^2\dx{x}=\int_{t=0}^1t^2\dx{t}=\int_{u=0}^1u^2\dx{u}
+  =\frac13.</me> With this in mind, many people call the <m>x</m>,
+  <m>t</m>, or <m>u</m> in the integral a <q>dummy</q> variable. This
+  means that you can substitute any letter in and it will not change
+  the results.
+</p>
+<p>
+  Speaking of substitution, all of the techniques we applied when
+  computing indefinite integrals work just as well for definite
+  integrals. We just need to make sure that the limits of integration
+  match.
+</p>
+<example>
+  <p>
+    Consider the integral <me>\int_{x=2}^3{xe^{x^2}\dx{x}}.</me> If
+    we make the substitution <m>z=x^2</m>, then <m>\dx{z} =2x\dx{x}
+    </m>, and so <me>\int_{x=2}^3xe^{x^2}\dx{x} =\frac12
+    \int_{x=2}^3e^z\dx{z}. </me> At this point, we have two options:
+    we can integrate and change the variable back into <m>x</m> to
+    finish the fundamental theorem of calculus, or we can convert
+    everything over to <m>z</m> and not deal with <m>x</m> anymore.
+    We'll show both. In the first approach, we have <me>\frac12
+    \int_{x=2}^3e^z\dx{z} =\ftceval{\frac12e^z}{x}{2}{3}=
+    \ftceval{\frac12e^{x^2}}{x}{2}{3}=\frac{1}{2}\left(e^9-e^4\right)
+</me>
+</p>
+<p>
+  In the second approach we have that <m>z=x^2</m>, so when
+  <m>x=2</m>, <m>z = 4</m> and when <m>y = 3</m>, <m>z = 9</m>, so
+  that <me>\frac12 \int_{x=2}^3e^z\dx{z}
+  =\ftceval{\frac12e^z}{z}{4}{9}=
+\ftceval{\frac12e^z}{z}{4}{9}=\frac{1}{2}\left(e^9-e^4\right){}</me>
+Whichever you do is entirely up to you, usually one is not easier
+than the other. What you cannot do is to substitute an <m>x</m>
+limit for <m>z</m> or vice versa.
+</p>
+</example>
+
+<example>
+  <p>
+    Computing <me>\int_{x=0}^\pi x\sin(x)\dx{x} </me> we see that
+    integration by parts seems to be the way to go. If we let <m>u =
+    x</m> and <m>\dx{v} = \sin( x) \dx{x} </m>, then
+    
+    <md>
+<mrow> y \amp =x \amp \dx{v} \amp =\sin(x)\dx{x} </mrow>
+<mrow>\dx{u}\amp =\dx{x} \amp v \amp =-\cos(x) </mrow>
+</md>
+Using the <xref ref="IntegrationByParts">integration by parts
+formula</xref>, we have
+<md>
+  <mrow>\int_{x=0}^\pi x\sin(x) \dx{x} \amp
+  {}=\ftceval{-x\cos(x)}{x}{0}{\pi} - \int_{x=0}^\pi
+\cos(x)\dx{x}</mrow>
+<mrow>
+  \amp {}=\left( -\pi \cos(\pi)
+  +0\cos(0)\right)-\ftceval{\sin(x)}{x}{0}{-\pi}
+</mrow>
+<mrow>
+  \amp =(\pi +0)-(0-0)
+</mrow>
+<mrow>
+  \amp =\pi.
+</mrow>
+</md>
+</p>
+</example>
+
+<exercise>
+  <task>
+    <p>
+      Suppose that <m>y=y(x)</m> has the property that <m>y(-x)
+      =y(x)</m>. Thus <m>(x,y)</m> is on the curve of this function
+      exactly when <m>(-x,y)</m> is on the curve.
+</p>
+<p>
+  What would such a curve look like?
+</p>
+</task>
+<task>
+  <statement>
+    <p>
+      Show that <me>\int_{x=-a}^ay(x)\dx{x}
+=2\int_{x=0}^ay(x)\dx{x} </me>
+</p>
+<p>
+  Does this make sense geometrically? Explain.
+</p>
+</statement>
+<hint>
+  <p>
+    We know that <me>\int_{x=-a}^a
+y(x)\dx{x}=\int_{x=-a}^0y(x)\dx{x}+\int_0^ay(x)\dx{x}</me>
+Use the substitution <m>z=-x</m> in the integral on the left.
+</p>
+</hint>
+</task>
+<task>
+  <p>
+    Suppose that <m>y=y(x)</m> has the property
+    <m>y(-x)=-y(x)</m>. Thus <m>(x,y)</m> is on the curve of this
+    function exactly when <m>(-x,-y)</m> is on the curve. What
+    would such a curve look like?
+</p>
+<p>
+Show that in this case <me>\int_{x=-a}^a y(x)\dx{x}=0</me>
+</p>
+<p>
+  Does this make sense geometrically? Explain.
+</p>
+</task>
+</exercise>
+
+<exercise xml:id="FourierSeriesProb">
+<title>Fourier Series</title>
+<introduction>
+  <p>
+    <idx>
+      <h>
+        Fourier Series
+</h>
+</idx>
+Mathematicians (and scientists) use these and other symmetry
+properties with integrals to simplify problems whenever they
+can.
+</p>
+<p>
+  For example, in the theory of acoustics, sine and cosine waves
+  form the <q>pure tones</q> from which all other sound waves are
+  formed. Mathematically, we can think of a general sound wave as
+  a function on a closed interval of time (which constitutes one
+  cycle of the sound wave).  We have some pure tones of varying
+  frequencies defined on the interval <m>[-\pi, \pi] </m>.
+</p>
+
+<figure>
+<caption>Graphical representation of some pure tones</caption>
+<image source="IC/PureTones.png" width="100%">
+  <shortdescription>Various sinusoidal
+curves</shortdescription>
+</image>
+</figure>
+<p>
+<idx><h>Vocabulary</h><h>Fourier Series</h></idx>
+It can be shown (though we won't do it here), that if a
+function <m>f(t)</m> defined on the interval <m>[-\pi, \pi]
+</m> can be written as the <term>Fourier Series:</term>
+<me>a_0+a_1\cos(t)+ b_1 \sin(t) +a_2\cos(2t) + b_2\sin(2t) +
+a_3\cos(3t) +b_3\sin(3t) + \cdots </me> then
+
+<md>
+  <mrow>a_0\amp =\frac{1}{2\pi} \int_{t=-\pi }^\pi f(t)\cos(0t)
+\dx{t}=\frac{1}{2\pi}\int_{t=-\pi}^\pi f(t)\dx{t}</mrow>
+<mrow>a_n\amp =\frac1\pi\int_{-\pi }^\pi f(t)\cos(nt)\dx{t},
+\text{ if } n\ge 1</mrow>
+<mrow>b_n\amp =\frac1\pi\int_{-\pi }^\pi f(t)\sin(nt)\dx{t},
+\text{ if } n\ge 1</mrow>
+</md>
+
+
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      With the above set up, suppose that <m>f</m> is symmetric
+      about the <m>y</m> axis. That is <m>f(-t)=f(t)</m>. Show that
+in this case, <m>b_n=0</m> for all <m>n</m> and so <m>f</m>
+can be written exclusively as a sum of cosine waves.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      With the above set up, suppose that <m>f</m> is symmetric
+      about the origin. That is <m>f(-t)=-f(t)</m>. Show that in
+      this case, <m>a_n=0</m> for all <m>n</m> and so <m>f</m> can
+      be written exclusively as a sum of sine waves.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Given the symmetries of the graphs above, is this surprising?
+      Explain.
+</p>
+</statement>
+</task>
+</exercise>
+
+</section>
+
+
+<section  xml:id="AppDefInt">
+<title>Applications of Definite Integrals</title>
+<introduction>
+  <p>
+    Previously, we put indefinite integrals to work by modeling
+    phenomena with differential equations and antidifferentiating to
+    solve these. We will now put definite integrals to work, but in
+    a slightly different manner. Here we will use a differential to
+    measure some quantity on an infinitely small scale where a
+    simple formula applies. We will <q>integrate</q> all of these
+    quantities to give us a total measurement as an integral. Once
+    we have this, then we can calculate this definite integral by
+    antidifferentiation and applying the Fundamental Theorem of
+    Calculus. Sounds easy, huh! As they say, the devil is in the
+    details, but if you follow this basic format and draw and label
+    pictures, you will be surprised by the things you can
+    accomplish. We'll start with the basic problem of computing an
+    area. This is basic enough that there is a tendency to skip all
+    of the steps in setting up the integral, BUT DON'T! Getting into
+    a good work habit when things are relatively straightforward
+    will help when more complicated applications arise, such as
+    computing a volume, or a center of mass, or a moment of inertia,
+    or the kinetic energy of a spinning object.  If these
+    applications sound daunting at this point, don't worry. We will
+    see that the same sort of <q>divide and conquer</q> strategy
+    applies to a wonderful array of situations. All that changes is
+    what we want to measure. This is where the strategy of setting
+    up things on an infinitely small scale (utilizing pictures) and
+    <q>integrating</q> these together will become invaluable.
+</p>
+</introduction>
+<subsection xml:id="AreasByIntegration">
+<title>Areas</title>
+<example xml:id="ParabolicSection">
+  <p>
+    Find the area of the following region bounded by the curves
+    <m>y=x^2</m> and <m>y=2x</m>. A graph of this region is below.
+</p>
+
+<figure>
+<caption>Parabolic Section</caption>
+<image source="IC/ParabolicSection.png" width="50%">
+  <shortdescription>The area between y equals x and y equals x
+squared</shortdescription>
+</image>
+</figure>
+
+<p>
+  Utilizing our strategy, we will draw a single generic
+  rectangle of width <m>\dx{x}</m> whose endpoints lie on the
+  bounding curves. We will label the endpoints of this
+  infinitely thin rectangle on the diagram and draw this
+  rectangle on the side with its length and width labeled. You
+  will see that this will make the computation of areas easier
+  (which is the point). We insist that you follow this routine
+  on every application, no matter how easy it may seem. This
+  will serve you well as the applications get more complicated.
+</p>
+
+<figure>
+  <caption>Parabolic Section with differential
+rectangle</caption>
+<image source="IC/ParabolicSection2.png" width="50%">
+  <shortdescription>The area between y equals x and y equals x
+squared with differential rectangle</shortdescription>
+</image>
+</figure>
+
+<p>
+  This is the set up. Notice that by labeling properly, we could
+  read the area of the rectangle right off the picture. This was
+  the point <mdash/> to divide the problem into easily
+  computable parts. The integral just added them together. To
+  compute this integral, we need to put everything in terms of
+  one variable. This can done by noticing that <m>y_2=2x</m> and
+  <m>y_1=x^2</m>. Thus, we have
+  <md>
+    <mrow>\text{ Total area } =\int_{x=0}^2 (y_2-y_1)\dx{x}\amp
+=\int_{x=0}^2 (2x-x^2)\dx{x}</mrow>
+<mrow>
+  \amp =\eval{\left( x^2-\frac{x^3}{3}\right)}{x}{0}^2
+</mrow>
+<mrow>\amp =\left( 2^2-\frac{2^3}{3}\right) - \left(
+0^2-\frac{0^3}{3}\right) </mrow>
+<mrow>\amp =\frac43.</mrow>
+</md>
+</p>
+
+<p>
+  Of course, there is nothing special about getting everything
+  in terms of <m>x</m>. We could divide the region into
+  horizontal rectangles and put everything in terms of
+  <m>y</m>. We should obtain the same area. Notice that in the
+previous set up out two points had the same <m>x</m>
+coordinate. In this one, they will have the same <m>y</m>
+coordinate.
+</p>
+
+<figure>
+  <caption>Parabolic Section in the vertical
+coordinate</caption>
+<image source="IC/ParabolicSection3.png" width="50%">
+  <shortdescription>Parabolic Segment in terms of
+y</shortdescription>
+</image>
+</figure>
+
+<p>
+  Using the fact that <m>(x_2,y)</m> lies on the curve
+  <m>y=x^2</m> and that <m>(x_1,y)</m> lies on the curve
+  <m>y=2x</m>, we get
+  <md>
+    <mrow>\text{ Total Area } \amp = \int_{y=0}^4
+    (x_2-x_1)\dx{y}</mrow>
+    <mrow> \amp = \int_{y=0}^4 (y^\frac12
+    -\frac{y}{2}\dx{y}</mrow>
+    <mrow>\amp =\eval{\left(
+    \frac{2y^\frac32}{3}-\frac{y^2}{4}\right)}{y}{0}^4 </mrow>
+    <mrow>\amp =\left(
+    \frac{2(4)^\frac32}{3}-\frac{4^2}{4}\right) -(0-0)</mrow>
+    <mrow>\amp =\frac{16}{3}-4=\frac43{}</mrow>
+  </md>
+  which is the same answer as before. You can choose whichever
+  way you want; it depends on whether you ultimately want things
+  in terms of <m>x</m> or in terms of <m>y</m>. In this example,
+  one was not much harder than the other. Sometimes the
+  difference in difficulty will help you make the decision. In
+  the next example, we willset up the problem in both ways and
+  then determine which will be the easiest route to
+  follow. After you have developed some experience, you will
+  often be able to determine this before actually writing
+  anything down.
+</p>
+</example>
+
+<example xml:id="ParabSectionHoriz">
+  <p>
+    Compute the area of the following region bounded by
+    <m>y=0</m>, <m>y=x+2</m>, and <m>y=\sqrt{4-x}</m>. If we want
+    everything in terms of <m>x</m> then we need to draw a generic
+    vertical rectangle of width <m>\dx{x}</m>, which we've
+    included in the diagram along with all of the appropriate
+    labeling.
+</p>
+
+<figure>
+<caption></caption>
+<image source="IC/AreaExample1.png" width="100%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+
+
+<p>
+  Everything is just as before. The real challenge comes from
+  trying to put everything in terms of <m>x</m> on the entire
+interval. We have <m>y_1=0</m> but the formula for <m>y_2</m>
+changes. Remember that the rectangle is a generic rectangle
+and represents only one of the infinitely many rectangles that
+are being integrated on the interval from <m>x=-2</m> and
+<m>x=4</m>. On <m>[-2,0]</m>, <m>y_2=x+2</m>, while on
+<m>[0,4]</m>, <m>y_2=\sqrt{4-x}</m>.
+</p>
+
+<p>
+  We actually know a way to handle this, utilizing our
+  properties of definite integrals. Specifically, we can do the
+  following
+  
+  <md> <mrow>\text{ Total area
+}\amp =\int_{x=-2}^4(y_2-y_1)\dx{x}</mrow>
+<mrow>\amp
+=\int_{x=-2}^0(y_2-y_1)\dx{x}+\int_{x=0}^4(y_2-y_1)\dx{x}</mrow>
+<mrow>\amp
+=\int_{x=-2}^0(x+2-0)\dx{x}+\int_{x=-2}^4\sqrt{4-x}-0\dx{x}</mrow>
+</md> Each integral can be handled separately, and the total
+area is the sum of those two values. This is a perfectly
+acceptable way to do the problem, and each integral is not too
+bad to do. But how about if we try a horizontal rectangle and
+putting everything in terms of <m>y</m>?
+</p>
+
+<figure>
+<caption></caption>
+<image source="IC/AreaExample2.png" width="100%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+</example>
+<problem>
+  <p>
+    Compute the three integrals in the previous example and verify
+    that you get the same total area done either way.
+</p>
+</problem>
+<example xml:id="AreaExam3">
+  <p>
+    In the previous example, we had an alternative to dividing the
+    interval into subintervals, but this is not always the case.
+</p>
+<p>
+  Compute the following area bounded by the curves <m>x=0</m>,
+  <m>y=\sin(x) </m>, <m>y=\cos(x) </m>, <m>x=\frac{5\pi
+  }{4}</m>.
+</p>
+
+
+<figure  xml:id="SinCosArea">
+  <caption>Computing the area between <m>\sin(x) </m> and
+<m>\cos(x)</m></caption>
+<image source="IC/SinCosArea.png" width="90%">
+  <shortdescription>Graphs of the sine of x and cosine of
+x</shortdescription>
+</image>
+</figure>
+<p>
+  You should be able to see that drawing a horizontal rectangle
+  and getting things in terms of <m>y</m> is going to be a
+  mess. So, let's put in a vertical rectangle and see what
+  happens. Remember that we are only drawing a single generic
+  rectangle, but it could be positioned anywhere on the interval
+  <m>\left[0, \frac{5\pi }{4}\right] </m>.
+</p>
+
+<figure  xml:id="SinCosAreaWithRect">
+  <caption>Computing the area between <m>\sin(x) </m> and
+<m>\cos(x)</m></caption>
+<image source="IC/SinCosArea2.png" width="90%">
+  <shortdescription>Graphs of the sine of x and cosine of x
+with vertical differential rectangle</shortdescription>
+</image>
+</figure>
+</example>
+<problem>
+  <p>
+    Compute the area indicated in the previous example.
+</p>
+</problem>
+<exercise xml:id="ArchimedesParab">
+<title>Archimedes Quadrature of the Parabola</title>
+<introduction>
+  <p>
+    In his treatise, Quadrature of the Parabola, Archimedes
+    (287-212 BC) shows that the area of a parabolic 4 segment is
+    <m>3</m> the area of its inscribed triangle.
+</p>
+
+<figure  xml:id="ArchParWithTri">
+<caption></caption>
+<image source="IC/ArchParSection.png" width="40%">
+  <shortdescription>A parabolic section with inscribed
+triangle</shortdescription>
+</image>
+</figure>
+
+<p>
+  The <q>inscribed triangle</q> is the one where the distance
+  from point <m>C</m> to segment <m>\overline{AB} </m> is a
+  maximum. That The
+  <q>
+    inscribed triangle
+</q>
+is the one where the distance from point <m>C</m> to segment
+<m>AB</m>. Archimedes did this without calculus, equations,
+or coordinate geometry is a tribute to his genius and talent
+as a mathematician. He didn't even have formulas at his
+disposal; this is why he stated the area as he did.  We will
+use calculus to confirm Archimedes<rsq/> result. With this
+in mind, consider the parabola <m>y=x^2</m>, and let
+<m>A=(a, a^2)</m>, <m>B=(b, b^2)</m>, and <m>C=(c,c^2)</m>.
+</p>
+
+<figure  xml:id="ArchParSecProb">
+<caption></caption>
+<image source="IC/ArchParSecProb.png" width="90%">
+  <shortdescription>The parabolic section with vertex at the
+origin.</shortdescription>
+</image>
+</figure>
+
+</introduction>
+<task>
+  <statement>
+    <p>
+      Find the area of <m>\triangle ABC</m> in terms of
+      <m>a</m>, <m>b</m>, <m>c</m>. [Hint: You can do this in
+      many ways, but the
+      <q>
+        easiest
+</q>
+way might be to draw a vertical line through <m>C</m> and
+use this to divide the triangle into two triangles (only a
+suggestion).]
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Find the coordinates of <m>C</m> which maximizes the
+distance from <m>C</m> to segment <m>\overline{AB} </m>
+and verify Archimedes<rsq/> <m>r</m> result that the area
+of the parabolic segment is <m>3</m> the area of
+<m>\triangle ABC</m>.
+</p>
+</statement>
+<hint>
+  <p>
+    Again, you can maximize this distance in many ways, but
+    the easiest way might be to notice that the maximum
+    distance (measured along the perpendicular to
+    <m>\overline{AB} </m>) occurs when the vertical distance
+    is maximized (again, only a suggestion).
+</p>
+</hint>
+
+</task>
+
+</exercise>
+<p>
+  Recall that in Problem 4.5.5, we looked a cycloid. This was a
+  curve traced out by a point <m>P</m> on a circle as the circle
+  rolls along a straight line.
+</p>
+
+
+<figure  xml:id="fig-CycloidArea">
+<caption></caption>
+<image source="IC/CycloidArea.png" width="70%">
+  <shortdescription>A cycloid generated by a rolling
+circle.</shortdescription>
+</image>
+</figure>
+
+<p>
+  In that problem, we mentioned that this curve has fascinated
+  mathematicians for a long time. We also had you show that the
+  coordinates of the point <m>P</m> are given by <me>x=a(\theta
+-\sin (\theta) \text{ and } y=a(1-\cos (\theta )</me>
+
+Galileo actually gave the curve its name in 1599 (though he was
+not the first to study it) and attempted to compute the area
+under one arch. He couldn't accomplish this mathematically, but
+by weighing pieces of metal, one in the shape of a cycloid and
+one in the shape of its generating circle, Galileo surmised that
+the area of the cycloid was approximately three times that of
+the circle. In 1634, Gilles Personne de Roberval showed that the
+area under one arch of the cycloid is exactly three times that
+of its generating circle. This predated the invention of
+calculus, but he utilized infinitely thin rectangles very much
+like we have been doing.
+</p>
+
+<exercise xml:id="exer-CycloidArea">
+<title>The Area Under a Cycloid</title>
+<statement>
+  <p>
+    <idx><h>Area</h><h> of a cycloid</h></idx> Show that the
+    area under one arch of the above cycloid is <m>\frac{3\pi
+    }{2}</m>, so it is, in fact, three times the area of the
+    generating circle.
+</p>
+</statement>
+<hint>
+  <p>
+    You can set up the area with vertical rectangles just as
+    before, only now get <m>\dx{x}</m> in terms of <m>\dx{\theta
+    }</m>.
+</p>
+</hint>
+</exercise>
+
+</subsection>
+
+<subsection  xml:id="VolumesByIntegration">
+<title>Volumes</title>
+<p>
+  As we stated before and as you have seen, we have been focusing
+  on areas to help us understand properties of definite
+  integrals. However, this idea of adding infinitesimal quantities
+  can be applied in a number of other applications. Keep in mind
+  our general strategy of applying a relatively simple formula on
+  an infinitely small piece and then integrating (adding) these
+  infinitely small quantities. Take, for example, the volume of
+  the following box.
+</p>
+
+<figure  xml:id="GenericRectangle">
+<caption></caption>
+<image source="IC/GenRect.png" width="50%">
+<shortdescription>A generic rectangle</shortdescription>
+</image>
+</figure>
+<p>
+  You probably remember the volume of this box as length times
+  width times height. Let's restate the volume in this way
+  <me>\text{Volume of a box} = \text{Area of a face} \times
+  \text{Thickness}.</me> The advantage of thinking this way is
+  that it applies to more general objects. For example, the volume
+  of the following circular cylinder and prism follow the same
+  formula.
+</p>
+
+<figure  xml:id="VolEqualsFaceXThick">
+<caption></caption>
+<image source="IC/VolFacThik.png" width="80%">
+  <shortdescription>Pictures and formulas for the volume of a
+cylinder and a triangular wedge</shortdescription>
+</image>
+</figure>
+<p>
+  This idea even applies to slabs that have an irregular face.
+</p>
+
+<figure  xml:id="VolEqualsFaceXThick2">
+<caption></caption>
+<image source="IC/FaceXThickIrreg.png" width="50%">
+  <shortdescription>Picture and formula for the volume of an
+irregular slab.</shortdescription>
+</image>
+</figure>
+<p>
+  Combining this formula with our idea of dividing and integrating
+  provides a way to compute the volumes of more general
+  solids. For example, if you use the following cone to fill the
+  corresponding cylinder, it seems that it takes three cones to
+  fill the cylinder.
+</p>
+
+<figure  xml:id="ConeAndCyl">
+<caption></caption>
+<image source="IC/ConeCyl.png" width="50%">
+  <shortdescription>A cone and cylinder of the same
+height.</shortdescription>
+</image>
+</figure>
+<p>
+  Let's verify this. We know that the volume of the cylinder is
+  given by <m>\pi R^2</m>. We need to show that the volume of the
+  cone is <m>1/3</m> of that. With this in mind, we will put in a
+  vertical axis, label it <m>y</m>, and divide the cone into
+  infinitely thin slices. As before, we will only draw one generic
+  slice, but you must imagine that this cone is comprised of
+  infinitely many such slices stacked.
+</p>
+
+<figure  xml:id="VolCone">
+<caption></caption>
+<image source="IC/VolCone.png" width="60%">
+  <shortdescription>Cone with generic horizontal
+rectangle.</shortdescription>
+</image>
+</figure>
+<p>
+  Drawing this generic slice separately we can compute its volume.
+</p>
+
+<figure  xml:id="ConeSlice">
+<caption></caption>
+<image source="IC/ConeSlice.png" width="50%">
+  <shortdescription>A generic slice from a cone and a formula
+for its volume.</shortdescription>
+</image>
+</figure>
+<p>
+  Integrating these volumes, we get <me>\text{ Volume of cone} =
+\int_{y=0}^R{\pi r^2\dx{y}}.</me>
+</p>
+<p>
+  What is left now is to put <m>r</m> in terms of <m>y</m> so the
+  integral can be computed. This can be done by noticing that we
+  have similar triangles.
+</p>
+
+<figure  xml:id="ConeSimTri">
+<caption></caption>
+<image source="IC/ConeSimTri.png" width="70%">
+  <shortdescription>A right triangle with a similar right
+triangle inside.</shortdescription>
+</image>
+</figure>
+<p>
+  This gives us the proportion <m>\frac{r}{y}=\frac{R}{H}</m>, so
+  <m>r=\frac{R}{H}y</m>.
+</p>
+<exercise xml:id="ConeVol">
+<title>Volume of a Cone</title>
+
+<statement>
+  <p>
+    Substitute this value for <m>r</m> into the integral and
+    show that the volume of the cone is, in fact,<m> 1/3</m> the
+    volume of the cylinder.
+</p>
+</statement>
+</exercise>
+<exercise xml:id="FrustomVol">
+<title>Volume of a Frustum</title>
+<introduction>
+  <p>
+    A frustum of a cone is basically a cone with the top chopped
+    off.
+</p>
+
+<figure  xml:id="FrustumVol">
+<caption></caption>
+<image source="IC/FrustumVol.png" width="80%">
+<shortdescription>A frustum</shortdescription>
+</image>
+</figure>
+
+</introduction>
+<task>
+  <statement>
+    <p>
+      Use a definite integral to compute the volume of this
+      frustum. Remember to do the entire set up as above – we
+      insist!
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Verify your answer in part a by computing the volume of
+      the frustum without calculus. This will involve finding
+      the volume of the cone from which the frustum was cut and
+      subtracting the volume of the top that was cut off. To do
+      this, you will need to find the height of that cone.
+</p>
+</statement>
+</task>
+</exercise>
+<exercise xml:id="VolSqPyr">
+<title>Volume of a Square Based Pyramid</title>
+<statement>
+  <p>
+    <idx>
+      <h>Volume</h><h>of a square based pyramid</h></idx> Use the
+      same idea as above to show that the volume of a square
+      based pyramid is <m>1/3</m> the volume of the box with the
+      same base and height
+</p>
+
+<figure  xml:id="PyramidVolume">
+<caption></caption>
+<image source="IC/PyrVol.png" width="50%">
+  <shortdescription>A square based
+pyramid.</shortdescription>
+</image>
+</figure>
+</statement>
+</exercise>
+<exercise xml:id="GeneralCone">
+<title>The Generalized Cone</title>
+<statement>
+  <p>
+Consider the following <q>generalized cone.</q>
+</p>
+
+<figure  xml:id="GenCone">
+<caption></caption>
+<image source="IC/GenCone.png" width="70%">
+  <shortdescription>A cone an irregular
+base.</shortdescription>
+</image>
+</figure>
+<p>
+  Show that the volume of this cone is <m>1/3</m> the volume
+  of the <q>generalized cylinder</q> with the same height and
+  same base. That is, show that the volume of this cone is
+  <m>3 \text{ (Area of base)}\times \text{ height }</m>.
+</p>
+</statement>
+<hint>
+  <p>
+    The generic slice is similar to the base. When you set up a
+    proportion between the areas, it is proportional to the
+    squares of the distances from the apex.
+</p>
+</hint>
+</exercise>
+<p>
+  
+  <url href="https://www.britannica.com/biography/Cicero"
+       visual="https://www.britannica.com/biography/Cicero">Marcus
+  Tullius Cicero</url> (106-43 BC) is considered to be one of the
+  greatest orators and philosophers of the late Roman
+  Republic. When he was quaestor (a Roman official) in Syracuse
+  (Sicily) in 75 BC, heset out to find the tomb of the great Greek
+  mathematician Archimedes who died during the Roman siege of the
+  city 137 years earlier. Local Syracusans denied any knowledge of
+  his grave, but Cicero nevertheless discovered a tombstone
+  overgrown with brambles and thorns. When he saw the following
+  symbol on the stone, he knew that he had found the grave of <url
+  href="http://mathshistory.st-andrews.ac.uk/Biographies/Archimedes.html"
+  visual="http://mathshistory.st-andrews.ac.uk/Biographies/Archimedes.html">Archimedes</url>.
+</p>
+
+<figure  xml:id="SphereCyl">
+<caption></caption>
+<image source="IC/SphereCyl.png" width="20%">
+  <shortdescription>Cylinder with enclosed sphere with the same
+radius.</shortdescription>
+</image>
+</figure>
+<p>
+  How did Cicero surmise that this was the grave of Archimedes? It
+  seems that out of all of Archimedes works, he was proudest of
+  his treatise <pubtitle>On the Sphere and the
+  Cylinder</pubtitle>. In it, Archimedes proves that the volume
+  and surface area of a sphere is <m>2/3</m> that of its
+  circumscribed cylinder. He was so proud if this, that he
+  instructed that this be carved in his tombstone. This leads to
+  the modern formulas for the volume and surface area of a sphere
+  of radius <m>r</m>: <me>\text{ Volume}=\frac23{\left(
+\pi{r^2\cdot 2r}\right) =\frac43{\pi{r^3}} }</me>
+<!-- <me>\text{ Surface Area}=\frac23{\left(2 \pi{r\cdot
+     2r+2\cdot \pi r^2}\right) =4{\pi{r^}} }</me> -->
+<me>\text{ Volume}=\frac23\left(2\pi r\cdot 2r +2\cdot\pi
+r^2\right)=4\pi r^2</me>
+</p>
+<p>
+  The way in which Archimedes discovered these formulas has led
+  some to call him the inventor of integral calculus. This claim
+  is arguable, but at the very least, his techniques certainly
+  were a precursor to integral calculus. While we won't go into
+  Archimedes<lsq/> exact method, we will use Integral Calculus to
+  derive these formulas for volume and surface area. We will focus
+  of the volume now and come back to the surface area later. To
+  compute this volume, we will consider that a sphere of radius
+  <m>r</m> can be generated by revolving the curve
+  <m>y=\sqrt{r^2-x^2}</m> about the <m>x</m>-axis.
+</p>
+
+<figure  xml:id="SphereByRevAboutX">
+<caption></caption>
+<image source="IC/SpherRevX.png" width="70%">
+  <shortdescription>A sphere generated by revolving about the x
+axis.</shortdescription>
+</image>
+</figure>
+<p>
+  We will draw and label a generic rectangle of width
+  <m>\dx{s}</m> and height <m>y</m> and compute the volume of the
+  disk generated by revolving this rectangle about the
+  <m>x</m>-axis. As before, we will draw and label the disk on the
+  .
+</p>
+
+<figure  xml:id="VolSphereWithDiffDisc">
+<caption></caption>
+<image source="IC/VolSphereWithDiffDisc.png" width="70%">
+  <shortdescription>The same sphere with a generic disk and area
+and volume formulas.</shortdescription>
+</image>
+</figure>
+<p>
+  Again, we insist that you go through this process (including
+  drawing all of the pictures) instead of trying to memorize some
+  formula. Admit it, with the disk drawn and labeled, wasn't
+  determining the volume of disk relatively easy. The integral
+  only came in when we wanted to “integrate” all of the volumes of
+  the disks together.
+</p>
+<exercise xml:id="SphereVolXRev">
+  <title>Volume of a Sphere (rotation about the horizontal
+axis).</title>
+<statement>
+  <p>
+    <idx><h>Volume</h><h>of revolution</h><h> sphere, by
+    revolving about <m>x</m> axis</h></idx> Compute the integral
+    above to determine that the volume of the sphere is, in
+    fact, <m>\frac43 \pi r^3</m>.
+</p>
+</statement>
+</exercise>
+<exercise xml:id="CyclRevX">
+<title>Revolving a Cycloid</title>
+<statement>
+  <p>
+    <idx>
+      <h>Volume</h><h>of revolution</h> <h>the
+      cycloid</h></idx> Find the volume of the solid generated
+      by revolving one arch of the following cycloid about the
+      <m>x</m> axis.
+</p>
+
+<figure  xml:id="fig-CycloidVolume">
+<caption></caption>
+<image source="IC/CycloidArea.png" width="80%">
+  <shortdescription>Cycloid generated by rolling a
+circle.</shortdescription>
+</image>
+</figure>
+</statement>
+</exercise>
+<p>
+  Of course, this technique can be applied to find the volume of a
+more general <q>solid of revolution.</q>
+</p>
+<exercise xml:id="exer-GenSolidRevX">
+  <introduction>
+    <p>
+      <idx><h>Volume</h><h>of revolution</h> <h>about the
+<m>x</m>-axis</h></idx>
+Consider the following region
+bounded by the curves <m>y=y_1(x)</m> and <m>y=y_2(x)</m>
+and a generic rectangle of width <m>\dx{x}</m> inside it.
+</p>
+
+<figure  xml:id="fig-GenVolRevX">
+<caption></caption>
+<image source="IC/GenVolRevX.png" width="70%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+
+</introduction>
+<task>
+  <statement>
+    <p>
+      Draw and label the thickness and inside and outside radii
+      of the <q>washer</q> created by revolving this generic
+      rectangle about the <m>x</m>-axis.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Use the result to show that the volume of the solid
+      generated by revolving this region about the <m>x</m>-axis
+      is given by <me>\pi \int_{x=a}^b \left( y_2^2-y_1^2\right)
+\dx{x}.</me>
+</p>
+</statement>
+</task><task>
+<statement>
+  <p>
+    To emphasize that you should use the process and not
+    memorize a formula, find the integral that will compute
+    the volume of the solid generated by revolving this region
+    about a horizontal line <m>y=c</m> not passing through the
+    region. You can assume for the sake of argument that the
+    line lies below the region.
+</p>
+</statement>
+</task>
+</exercise>
+<exercise xml:id="GenVolRevY">
+  <introduction>
+    <p>
+      <idx>
+        <h>Volume</h><h>of revolution</h> <h>about the
+<m>y</m>-axis</h></idx>
+
+Consider the following region
+bounded by the curves <m>x=x_1(y)</m> and <m>x=x_2(y)</m>
+and the vertical line <m>x=c</m> to the left of this
+region.
+</p>
+
+<figure  xml:id="fig-GenVolRevY">
+<caption></caption>
+<image source="IC/GenVolRevY.png" width="70%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+
+</introduction>
+<task>
+  <statement>
+    <p>
+      Draw and label the washer created by revolving the
+      horizontal rectangle around the line <m>x=c</m> and use
+      this to find a formula for the volume of this washer.
+</p>
+</statement>
+</task><task>
+<statement>
+  <aside>
+<title>To do</title>
+<p>
+h and k are messed up in this problem.  </p></aside>
+<p>
+  Integrate your answer from part (a) to show that the
+  volume of the solid formed by revolving the region about
+  the line <m>x=c</m> is given by <me>\pi\int_{y=h}^k
+  \left[\left(x_2-c\right)^2 -\left(x_1-c\right)^2\right]
+\dx{y}.</me>
+</p>
+</statement>
+</task>
+
+</exercise>
+<aside>
+<title>To do</title>
+<p>
+  We need to add a bunch of volume of revolution problems here.
+</p></aside>
+
+</subsection>
+
+
+<subsection  xml:id="subsec-VolByShells">
+<title>Volumes by Shells</title>
+<p>
+  As you no doubt noticed, when we had to compute the volume of a
+  solid generated by revolving a region about the <m>x</m>-axis
+  (or any horizontal line), we obtained an integral with
+  <m>\dx{x}</m> in it, which meant that we would put everything in
+  terms of <m>x</m>. Likewise, when we revolved about the
+  <m>y</m>-axis, we had to put everything in terms of
+  <m>y</m>. Sometimes this is not practical or leads to an
+  undesirable integral. Consider the following example of the
+  region bounded by <m>y=0</m> and <m>y=3(x-x^3)</m> revolved
+  about the <m>y</m>-axis. Going through our set up (Yes, we must
+  do it too!), we have the following generic rectangle revolved
+  around to create a washer.
+</p>
+
+<figure  xml:id="fig-VolByWasher">
+<caption></caption>
+<image source="IC/VolByWasher.png" width="70%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+<p>
+  This set up (with the picture) was really the easy part. The
+  harder part is putting everything in terms of <m>y</m> and
+  integrating. For instance, we would need to solve
+  <m>y=3(x-x^3)</m> for <m>x</m> in terms of <m>y</m>.
+  Furthermore, we would need to figure out the maximum value of
+  <m>y=3\left(x-x^3\right) </m> on the interval <m>[0,1]</m>.  All
+  of this is doable, but inconvenient. What would be preferable
+  would be to leave everything in terms of <m>x</m>, but this
+  would entail drawing a vertical box instead.
+</p>
+<figure  xml:id="IntShellExamp">
+<caption></caption>
+<image source="IC/IntShellExamp.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+<p>
+  If we were to treat the right-hand object as a very tall washer
+  with inside radius <m>x</m>, outside radius <m>x+\dx{x}</m>, and
+  height <m>y</m>, we would get its volume to be <me>\pi \left(
+  (x+\dx{x})^2\right) y =\pi \left( x^2+2x\dx{x}+(\dx{x})^2\right)
+  y=\pi \left(2x\dx{x}+(\dx{x})^2\right) </me> Recalling our
+reasoning with the product rule, we can ignore <m>(\dx{x})^2</m>
+as it is infinitely small compared to <m>\dx{x}</m>, so that the
+volume of this tall washer is <me>2\pi xy\dx{x}</me> which we
+could then integrate to obtain
+
+<md>
+  <mrow>\text{ Total Volume }=\int_{x=0}^1 2\pi xy\dx{x} \amp
+=\int_{x=0}^1x\left( x-x^3\right) \dx{x}</mrow>
+<mrow>\amp =6\pi \int_{x=0}^1 x^2-x^4\dx{x}</mrow>
+<mrow>\amp =6\pi \left(\frac14-\frac15\right) </mrow>
+<mrow> \amp =\frac{12\pi }{15}.</mrow>
+</md>
+</p>
+<p>
+  If you feel as funny (or perhaps more) about ignoring the
+  <m>(\dx{x})^2</m> as you did with the product rule, there is
+  another way to look at this that might help your queasiness and
+  provide a better way of remembering what to do in this
+  situation. Basically, instead of calling the revolution of the
+  generic rectangle a tall washer, we will call it a (cylindrical)
+  shell. This sounds somewhat silly, but it really points out the
+  difference. For a washer, the height is infinitesimal, whereas
+  for a shell, the thickness of the wall is infinitesimal. For a
+  physical analogy, this is the difference between an actual metal
+  washer and a piece of metal tubing. To figure out the volume of
+  the tubing (shell), we can slice it open and flatten it out into
+  a rectangular piece of metal. This is not so easily done with a
+  washer. This provides a shortcut (and device) for computing the
+  volume of a shell; just compute the volume of the flattened
+  version.
+</p>
+
+<figure  xml:id="ShellFlattened">
+<caption></caption>
+<image source="IC/ShellFlattened.png" width="90%">
+  <shortdescription>A cylindrical shell opened and
+flattened.</shortdescription>
+</image>
+</figure>
+<p>
+  Using the flattened-out version, we have that the volume of the
+  shell is given by
+  <md>
+    <mrow>\text{Volume of shell}\amp = \text{length}\cdot
+height\cdot thickness </mrow>
+<mrow>\amp = \text{circumference}\cdot height\cdot thickness
+</mrow>
+<mrow>2\pi xy\dx{x}</mrow>
+</md>
+as we obtained before.
+</p>
+<p>
+  Actually, a similar formula works for any washer:
+  <md>
+    <mrow>\text{Volume of a washer}\amp =\pi \left(
+x_2^2-x_1^2\right) \dx{y}</mrow>
+<mrow>\amp =\pi (x_2+x+1)(x_2-x_1)\dx{y}</mrow>
+<mrow>\amp =\left( 2\pi
+\frac{x_2+x_1}{2}\right)(\dx{y})(x_2-x_1)</mrow>
+<mrow>\amp =\text{average circumference}\cdot
+\text{height}\cdot \text{thickness}</mrow>
+</md>
+While this is interesting geometrically, it does not help with
+computing integrals using washers.
+</p>
+<exercise xml:id="exer-GenShells">
+<title>Generic volume using shells</title>
+<introduction>
+  <p>
+    <idx><h>Volume</h> <h>of revolution</h><h>using
+shells</h></idx>
+
+Consider the following region bounded by the curves
+<m>y=y_1(x)</m> and <m>y=y_2(x)</m>.
+</p>
+
+<figure  xml:id="GenShells">
+<caption></caption>
+<image source="IC/GenShells.png" width="70%">
+  <shortdescription>Generic area bounded by two
+curves.</shortdescription>
+</image>
+</figure>
+
+</introduction>
+<task>
+  <statement>
+    <p>
+      Draw and label a generic vertical rectangle in this region
+      and draw and label the shell generated by revolving this
+      rectangle about the vertical line <m>x=c</m> to the left
+      of the region.
+</p>
+</statement>
+</task><task>
+<statement>
+  <p>
+    Compute the volume of this shell and integrate it to show
+    that the volume of the solid generated by revolving the
+    region about the line <m>x=c</m> is given by <me>2\pi
+\int_{x=a}^b (x-c)(y_2-y_1)\dx{x}.</me>
+</p>
+</statement>
+</task>
+
+</exercise>
+<exercise xml:id="exer-VolTorus">
+<title>Volume of a torus</title>
+<statement>
+  <p>
+    <idx>
+      <h>Volume</h> <h>of revolution</h> <h>
+      torus</h></idx> Consider a circle of radius <m>b</m>,
+whose center revolves around a line distance <m>a\gt b</m>
+away. The <q>donut</q> formed is actually called a
+torus. Consider the following torus generated by revolving
+the circle <m>x^2+y^2=b^2</m> about the line <m>x=-a</m>.
+</p>
+<p>
+  Show that the volume of this torus equals the area of the
+  small circle times the circumference of the circle generated
+  by revolving the center of this circle around the line. This
+  was derived by <url
+  href="https://mathshistory.st-andrews.ac.uk/Biographies/Kepler/"
+  visual="https://mathshistory.st-andrews.ac.uk/Biographies/Kepler/">Johannes
+  Kepler</url> (1571- 1630) and is a special case of a theorem
+  by <url
+  href="https://mathshistory.st-andrews.ac.uk/Biographies/Pappus/"
+  visual="https://mathshistory.st-andrews.ac.uk/Biographies/Pappus/">Pappus
+  of Alexandria</url> (290-350 AD).
+</p>
+<figure  xml:id="VolTorus">
+<caption></caption>
+<image source="IC/VolTorus.png" width="87%">
+  <shortdescription>A torus around the y
+axis.</shortdescription>
+</image>
+</figure>
+
+</statement>
+</exercise>
+
+<p>
+  So a natural question arises, <q>Which should I use, washers or
+  shells?</q> The answer is that you can use either one; sometimes
+  it is more convenient to use one over the other, other times it
+  really doesn't matter. The real question you need to ask in a
+  particular problem is, <q>Is it better to put things all in
+  terms of <m>x</m> or in terms of <m>y</m>.</q> This will
+  determine if you want to utilize a vertical rectangle (of width
+  <m>\dx{x}</m>) or a horizontal rectangle (of width
+  <m>\dx{y}</m>). This will determine whether washers or shells
+  are more appropriate.
+</p>
+
+
+
+<example xml:id="example-WashersOrShells">
+<title>Shell vs. Washers</title>
+<p>
+  <idx><h>Volume</h> <h>of revolution</h> <h>shells
+  vs. washers </h></idx> Consider the following region bounded
+  by <m>y=\sqrt{1-x}</m>, <m>y=x</m>, <m>y=0</m>.
+</p>
+
+
+<figure  xml:id="figure-ShellsVSWashers">
+<caption></caption>
+<image source="IC/ShellsVSWashers.png" width="50%">
+  <shortdescription>Graph of y=square root of 1-x and
+y=x.</shortdescription>
+</image>
+</figure>
+<p>
+  If we were to draw a vertical rectangle involving
+  <m>\dx{x}</m>, then any integral would, of necessity, need to
+  be divided into two separate integrals to compute, since the
+  <m>y</m> coordinate of the upper point on the rectangle
+  changes from one curve to the other. Utilizing, a horizontal
+  rectangle would circumvent this problem.  However, we would
+need to be prepared to put everything in terms of <m>y</m>
+instead of <m>x</m>. Luckily, these two equations don't look
+that bad with regard to this. We would still need to find the
+point of intersection, but that would have been the case with
+a vertical rectangle as well.
+</p>
+</example>
+
+<exercise xml:id="exer-ShellsVSWashers">
+  <introduction>
+    <p>
+      <idx><h>Volume</h> <h>of revolution</h> <h>shells
+      vs. washers </h></idx> Find the volumes of the solids
+      generated by revolving horizontal rectangles about:
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      The <m>x</m>-axis.
+</p>
+
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      The <m>y</m>-axis.
+</p>
+</statement>
+</task>
+
+</exercise>
+<aside>
+<title>Note to self</title>
+<p>
+  Add several problems using shells and washers here <mdash/>
+  whichever makes the problem easier. Make sure to include a
+torus.  </p></aside>
+
+
+</subsection>
+
+<subsection  xml:id="subsec-SurfAreaAndArcLength">
+<title>Surface Area and Arc Length</title>
+<p>
+  Recall that we mentioned that in his treatise <pubtitle>On
+  the Sphere and the Cylinder</pubtitle>, Archimedes not only
+  showed that the sphere had <m>2/3</m> the volume of its
+  circumscribing cylinder, but it also had <m>2/3</m> the
+  surface area. Again, we will not duplicate how Archimedes
+  did it, but we will verify it with Calculus.
+</p>
+<p>
+  Surface area poses a bit more of a challenge than
+  volume. This can be illustrated by the following two boxes.
+</p>
+<figure  xml:id="SurfaceAreaIllus">
+<caption></caption>
+<image source="IC/SA-illustration.png" width="80%">
+  <shortdescription>A cube and a parallellepiped with the
+same height.</shortdescription>
+</image>
+</figure>
+<p>
+  The boxes have the same base and same height, so they have
+  the same volume. However, the slanted box clearly has more
+  surface and could be stretched as far as you like, so the
+  there really is no limit to how large the surface area could
+  be made. The slant makes a difference in surface area. To
+  see this more carefully, we will need to first develop the
+  notion of arc length.
+</p>
+<aside>
+<title>Note to self</title>
+<p>
+  Make this a proper link.  
+</p>
+</aside>
+
+<p>
+  You have already been exposed to arc length in the
+  differential calculus part of this book. Recall that in
+  looking at the catenary [Section 4.3.1], we had that the
+  hanging chain satisfied the equation <me>\dfdx{y}{x}
+  =\frac{ws}{H}</me> where <m>e</m>, <m>H</m> were the weight
+  density of the chain and horizontal tension, respectively,
+  and <m>s</m> is the length of the chain from the lowest
+  point to <m>(x,y)</m>. We then differentiated and applied
+  the Pythagorean Theorem to the <q>differential</q> triangle
+</p>
+<figure  xml:id="DiffTri">
+<caption></caption>
+<image source="IC/DiffTri.png" width="40%">
+  <shortdescription>Right triangle with legs dx
+  and dy,
+  hypotenuse ds, and formula for the length of the
+hypotenuse.</shortdescription>
+</image>
+</figure>
+<p>
+  We will exploit this to look at the arc length of a
+  curve. Specifically, suppose we have a curve from point
+  <m>A=(x_1, y_1)</m> to point <m>B=(x_2,y_2)</m> and want to
+  compute the length of this curve <m>s</m>.
+</p>
+
+<figure  xml:id="figure-GenArcLen">
+<caption></caption>
+<image source="IC/GenArcLen.png" width="50%">
+  <shortdescription>Generic curve between A and
+B.</shortdescription>
+</image>
+</figure>
+
+<p>
+  If we divide this curve into infinitely small segments, then
+  we can compute its length by integrating the lengths of
+  these segments. In other words, we have <me>s=\int_{X=A}^B
+  \dx{s}</me> where <m>X</m> denotes a generic point
+  <m>(x,y)</m> on the curve. Using our infinitesimal
+  Pythagorean Theorem, we have
+  
+  <men xml:id="ArcLenPyth">s=\int_{X=A}^B\dx{s}=s=\int_{X=A}^B
+\sqrt{(\dx{x})^2+(\dx{y})^2}</men>
+
+To actually compute this integral (via the Fundamental
+Theorem), we need to put this integral into a form that we
+can anti-differentiate. For example, we could put everything
+in terms of <m>x</m> or in terms of <m>y</m> yielding these
+two possibilities
+
+<men  xml:id="ArcLenWRTx">
+  s=\int_{X=A}^B \sqrt{1+\left(\dfdx{y}{x} \right)^2
+  }\abs{\dx{x}}
+</men>
+<men  xml:id="ArcLenWRTy">
+  s =\int_{X=A}^B \sqrt{1+\left(\dfdx{x}{y} \right)^2
+  }\abs{\dx{y}}
+</men>
+
+The absolute value is necessary since we are factoring out
+<m>\sqrt{(\dx{x})^2}</m> or <m>\sqrt{(\dx{y})^2}</m>.In
+practice, if <m>x</m> is always increasing then <m>\dx{x}\gt
+0</m> and so the absolute value isn't necessary. The same
+applies to <m>y</m>. In many applications, this will be the
+case, but you should be wary that it can happen.
+</p>
+<exercise xml:id="EXERCISEArcLenQtrCirc">
+<idx><h>Arclength</h><h>of a quarter circle</h></idx> 
+<introduction>
+  <p>
+    Consider the quarter circle given by the graph of
+    <m>y=\sqrt{1-x^2}</m>, where <m>-\frac{1}{\sqrt{2}} \le
+    x\le \frac{1}{\sqrt{2}}</m>. Since the circumference of
+    the unit circle is <m>2\pi </m>, the length of this
+    quarter circle should be <m>\frac{\pi }{2}</m>.
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Use an integral to verify this result.
+</p>
+
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Suppose we tried to compute the length of a quarter of
+      the circle in the following way <me>\int_{x=\left(
+      -\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)
+      }^{\left( \frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)
+      }\sqrt{\left(\dfdx{x}{y} \right)^2
+      +1}\dx{y}=\int_{x=\left(
+      -\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)
+      }^{\left( \frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)
+      }\sqrt{1+\left(\dfdx{y}{x} \right)^2 }\dx{x}</me> We'd
+have gotten an arclength of zero. What goes wrong?</p>
+</statement>
+</task>
+</exercise>
+<p>
+  Again, there is real temptation to try to memorize formulas
+  <xref ref="ArcLenWRTx"></xref> and <xref
+  ref="ArcLenWRTy"></xref> but we urge you not to. First, why
+  try to remember two formulas, when one just needs to
+  remember the <xref ref="ArcLenPyth">Pythagorean
+  Theorem</xref>.  This seems much more natural.
+</p>
+<p>
+  At this point, it is just a matter of determining what
+  variable you wish to put everything in terms of. The
+  variable doesn't even need to be <m>x</m> or <m>y</m>. For
+  example, suppose we have <m>x=x(u)</m>, and <m>y=y(u)</m>,
+  with <m>u_0\le u_1</m>. So we don't need to deal with
+  absolute values, let's assume that the parameter <m>u</m> is
+  always increasing so that <m>\dx{u}\gt 0</m>. Then we could
+  put everything in terms of <m>u</m>:
+  <me>
+    s=\int_{X=A}^{B}\dx{x} =
+    \int_{X=A}^{B}\sqrt{(\dx{x})^2+(\dx{y})^2} =
+    \int_{X=A}^{B}\sqrt{\left(\dfdx{x}{y}
+    \right)^2+\left(\dfdx{y}{x} \right)^2}\dx{u}
+  </me>
+</p>
+
+<exercise xml:id="EXERCISECircumViaParam">
+  <idx><h>Arclength</h><h>of a circle</h></idx> 
+  <p>
+    It would have been tedious to compute the length of circumference of the entire
+    circle in <xref ref="EXERCISEArcLenQtrCirc"></xref>. Do you see why?
+  </p>
+  <p>
+    Use the parameterization
+    <m>x=\cos( \theta )</m>, <m>y=\sin (\theta )</m>,
+    <m>0\le \theta \le 2\pi </m> to verify that the
+    circumference of the unit circle is <m>2\pi </m>.
+  </p>
+</exercise>
+
+<exercise xml:id="exercise-CycArcLen">
+  <idx><h>Arclength </h> <h>of a cycloid</h></idx>
+  <statement>
+    <p>
+      Here is
+      another interesting fact about the cycloid.  <url
+      href="https://mathshistory.st-andrews.ac.uk/Biographies/Wren/"
+      visual="https://mathshistory.st-andrews.ac.uk/Biographies/Wren/">Sir
+      Christopher Wren</url> (best known for the buildings he
+      designed after the great fire of London in 1666,
+      including <url
+      href="https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral"
+      visual="https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral">St. Paul<rsq/>s
+      Cathedral</url>), showed in 1658 that the length of one
+      arch of the cycloid is 8 times the radius of the
+      generating circle. He did this without calculus, but we
+      will use integration to verify his result. Consider the
+      following cycloid
+    </p>
+    <figure xml:id="figure-CycloidArcLen">
+      <caption></caption>
+      <image source="IC/CycloidArea.png"   width="90%"> <shortdescription></shortdescription> </image>
+    </figure>
+    <p>
+      Show that the length of one arch of the cycloid is
+      <m>8a</m>.
+    </p>
+  </statement>
+</exercise>
+<aside>
+  <title>Note to self</title>
+  <p> 
+    Insert a collection of problems here.
+  </p>
+</aside>
+<p>
+  Now that we have arc length in place, let<rsq/>s go back to
+  the problem of computing the surface area of a
+  sphere. Recalling that surface area needs to take into
+  account the <q>slant</q> of the surface rather than just the
+  height, let<rsq/>s actually divide the surface of the sphere
+  into infinitely small bands.
+</p>
+<figure          xml:id="figure-SphereSurfAr">
+  <caption></caption>
+  <image
+      source="IC/SphereSurfAr.png" width="50%">
+    <shortdescription>A sphere with a vertical slice through
+    it.</shortdescription>
+  </image>
+</figure>
+<p>
+  What we need to do is compute the surface area of this band
+  (called a frustum of a cone). To do that, we need to find
+  the surface area of a cone (without the bottom). With that
+  in mind, let<rsq/>s start with a cone with base radius of
+  <m>r</m> and slant length <m>s</m>. If we slice the cone and
+  flatten it (much like a paper cup), then we can determine
+  the surface area of the cone, by finding the area of the
+  sector created by flattening it.
+  
+</p>
+<figure xml:id="figure-ConicalFrustum">
+  <caption></caption>
+  <image source="IC/ConicalFrustum.png"          width="60%">
+    <shortdescription>Circle with a wedge removed to create a
+    cone.</shortdescription>
+  </image>
+</figure>
+<p>
+  By dividing this sector into infinitely many <q>infinitely
+  thin</q> triangles, and integrating the areas of these
+  triangles, we get that the area of the sector (and thus the
+  cone) is given by <m>\frac12 \cdot 2\pi r\cdot s=\pi rs</m>.
+</p>
+<exercise xml:id="exercise-SurfAreaConeFrust">
+  <title>The Surface Area of a Conical Frustum</title>
+  <statement>
+    <p>
+      <idx><h>Surface Area</h><h>of a</h> <h>conical frustum</h></idx>
+      Consider the frustum cut from the following cone.
+    </p>
+    <figure         xml:id="figure-SurfAreaConeFrust">
+      <caption></caption>
+      <image source="IC/SurfAreaConeFrust.png" width="50%">
+        <shortdescription>A cone with embedded conical
+        frustum.</shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      Show that the surface area of the frustum is given by
+      <me>2\pi \left(\frac{r_1+r_2}{2}\right)\cdot s=\text{
+      average circumference} \cdot \text{ slant length} </me>
+    </p>
+  </statement>
+</exercise>
+
+<p>
+  Armed by this, we can obtain that the surface area of a
+  surface of revolution obtained by revolving a curve about
+  the <m>x</m>-axis is given by integrating the surface areas
+  of these infinitely thin bands.
+</p>
+
+<figure  xml:id="figure-GenSurfArea">
+  <caption>Total Surface Area <m>=\int_{X=A}^B2\pi y
+  \dx{s}</m></caption>
+  <image source="IC/GenSurfArea.png" width="80%">
+    <shortdescription></shortdescription>
+  </image>
+</figure>
+<p>
+  As with arc length, you are free to put this integral in
+  terms of whichever variable you wish.
+</p>
+<exercise xml:id="exercise-SphereSurfArea">
+  <title>The Surface Area of a Sphere</title>
+  <introduction>
+    <p>
+      <idx><h>Surface Area</h> <h>of a </h><h>sphere</h></idx>
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        Use <xref ref="exercise-SphereSurfArea">figure</xref>
+        with the equation <m>y=\sqrt{a^2-x^2}</m>, <m>-a\le
+        x\le a</m> to show that the surface area of a sphere
+        of radius <m>a</m> is <m>4\pi a^2</m> as Archimedes
+        claimed.
+      </p>
+    </statement>
+    </task><task>
+    <statement>
+      <p>
+        Use the parameterization <men
+        xml:id="CircParamCos">x=\cos (\theta )</men>, <men
+        xml:id="CircParamSin">y=a\sin( \theta )</men>, to
+        obtain the same answer as part (a).
+      </p>
+    </statement>
+  </task>
+
+</exercise>
+<exercise xml:id="exercise-GenSurfArea">
+  <title>General Surface Area</title>
+  <statement>
+    <p>
+      <idx><h>Surface Area</h></idx> Show that the surface
+      area of the surface generated by revolving the following
+      curve <m>y=y(x)</m> about the line <m>x=c</m> to the
+      left of curve is given by <me>\int_{X=A}^B
+      2\pi(x-c)\dx{s} </me>.
+    </p>
+
+    <figure  xml:id="figure-SurfAreaAboutGenLine">
+      <caption></caption>
+      <image source="IC/GenSurfArea.png" width="80%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+    <p>
+      What if the line was to the right of the curve? What if
+      it passed through the curve?
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="exercise-SurfAreaTorus">
+  <title>The Surface Area of a Torus</title>
+  <statement>
+    <p>
+      <idx><h>Surface Area</h> <h>of a</h> <h>torus</h></idx> In <xref
+      ref="VolTorus">problem</xref> we showed that the volume
+      of a torus is equal to the area of the generating circle
+      times the circumference of the circle formed by
+      revolving the center of this circle about axis of the
+      torus. One might wonder if a similar result holds for
+      the surface area of a torus; that is, is the surface
+      area of the torus equal to the circumference of the
+      generating circle times the circumference of the circle
+      formed by revolving the center of this circle about the
+      axis of the torus?  To answer this, consider the
+      following torus generated by revolving the circle
+      <m>x^2+y^2=b^2</m> about the line <m>x=-a</m>.
+    </p>
+
+    <figure  xml:id="figure-SurfAreaTorus">
+      <caption></caption>
+      <image source="IC/VolTorus.png" width="80%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+    <p>
+      Find the surface area of this torus and use this to
+      answer the above question.
+    </p>
+  </statement>
+  <hint>
+    <p>
+      You might find it easier using the parametric equations
+      <xref ref="CircParamCos"></xref> and <xref
+      ref="CircParamSin"></xref> instead of the equation
+      <m>x^2+y^2=b^2</m> for the generating circle.
+    </p>
+  </hint>
+</exercise>
+<aside>
+  <title>Note to self</title>
+  <p>
+    Insert practice problems here
+  </p>
+</aside>
+</subsection>
+
+<subsection  xml:id="subsection-CenterMass">
+  <title>Center of Mass</title>
+  <p>
+    In <xref ref="exer-VolTorus"></xref> and <xref
+    ref="exercise-SurfAreaTorus"></xref>, we made reference to a
+    theorem of Pappus. That theorem says that if a region is
+    revolved about a line not passing through the region, then
+    the volume of the solid of revolution is equal to the area
+    of the region times the circumference of the circle formed
+    by revolving the center of mass (centroid) of this region
+    about the line. Another theorem of Pappus states that the
+    surface area of a surface formed by revolving a curve about
+    a line is equal to the length of the curve times the
+    circumference of the circle formed by revolving the centroid
+    of the curve about the line.
+  </p>
+
+  <figure  xml:id="figure-PappusThems">
+    <caption>Two Theorems of Pappus: <m>C</m> represents the
+    centroids of the region and the curve,
+    respectively.</caption>
+    <image source="IC/PappusThems.png" width="90%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+  <p>
+    This played out in the two PIC<rsq/>s as the centroids of a
+    disk and its boundary circle are both the center of the
+    circle.
+  </p>
+  <p>
+    Disks and circles are pretty straightforward, but what about
+    finding the center of mass of a general region. From a
+    physical point of view, this region can represent a thin
+    plate whose density could vary. To keep the problem
+    geometric (and simpler), we will assume that the density is
+    constantly 1 so that mass really is area. In this case, the
+    center of mass is what we have been calling the centroid of
+    the region.
+  </p>
+  <p>
+    Everyone probably has heard the term <q>center of mass.</q>
+    But what does this mean? Let<rsq/>s start this with
+    something that everyone is familiar with: an average of
+    grades. If we have five grades: <m>96</m>, <m>87</m>,
+    <m>92</m>, <m>83</m>, <m>90</m>, then all students know that
+    the average, denoted <m>\bar{X}{}</m> (read <m>X</m> bar) is
+    given by
+
+    <me>\bar{X} =\frac{96+87+92+83+90}{5}=89.6</me>
+
+    What does this average mean? This means that this
+    student<rsq/>s overall performance is equivalent to the
+    performance of a student who earned 89.6 on each of the five
+    tests. It does not take into account fluctuations among the
+    grades, but gives an overall measure. To put this in a more
+    physical light, if we considered a system of points each
+    with mass <m>1</m> at these locations <m>96</m>, <m>87</m>,
+    <m>92</m>, <m>83</m>, <m>90</m> on a number line, then
+    collectively, this system behaves the same as a mass of
+    <m>5</m> located at the point <m>89.6</m>. It doesn<rsq/>t
+    take into account the relationships among the various
+    grades; as much as in astronomy where there is a tendency to
+    “shrink” the mass of a planet to its center of mass, with
+    disregard to the dynamics in that planet.
+  </p>
+  <p>
+    In general, if we placed a point mass of <m>1</m> at each of
+    the positions <m>x_1</m>, <m>x_2</m>, <m>x_3</m>, <m>\cdots
+    </m>, <m>x_n</m>, then the center of mass <m>\bar{x} </m>,
+    should satisfy the relationship
+    
+    <md>
+      <mrow>\bar{x} \amp = \frac{x_1\cdot 1+x_2\cdot 1+\cdots
+      x_n\cdot 1}{n}</mrow>
+      <!-- <md> -->
+      <!-- <mrow></md> -->
+      <!-- <mrow>\text{ center of mass }</mrow> -->
+      <!-- <mrow>\text{ center of mass }\amp =\frac{\text{total
+           moment}}{\text{mass}}</mrow> -->
+    </md>
+    To help with our discussions on this, we will give a name to
+    the numerator. People have christened this the (first)
+    moment of the system (about the origin). To give it a simple
+    way to remember it, we write
+
+    <md>
+      <mrow>\text{moment}\amp =\text{position}\cdot
+      \text{mass}</mrow>
+      <mrow>\text{ center of mass }\amp =\frac{\text{total
+      moment}}{\text{mass}}</mrow>
+    </md>
+    Later we will have use for the second moment about the
+    origin, namely <me>2^\text{nd} \text{ moment} =
+    (\text{position})^2\cdot \text{mass}</me> In general, one
+    could look at the <m>n^\text{th}</m> moment as
+    <me>n^\text{th} \text{ moment } = (\text{position}{})^n\cdot
+    \text{mass} </me>
+  </p>
+  <p>
+    Let's apply this reasoning and our integration strategy to
+    an infinite number of points. For example, the interval
+    <m>[a,b]</m>.
+  </p>
+  <figure  xml:id="figure-IntervalMoment">
+    <caption></caption>
+    <image source="IC/IntervalMoment.png" width="70%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    In this case, our simple formula doesn<rsq/>t hold as the
+    position varies throughout the interval. Thus we apply our
+    integration strategy. That is, we divide the interval into
+    infinitely small intervals where the simple formula
+    applies. The simple formula for moment applies to this small
+    subinterval, so we have <me>\text{moment of subinterval }=
+    \text{position}\cdot\text{mass}=x\dx{x}</me>.
+  </p>
+  <p>
+    Integrating these individual moments gives us that the total
+    moment of the interval <m>[a,b]</m> is <me>\text{total
+    moment }=\int_{x=a}^{b}x\dx{x} =\eval{\left(
+    \frac{x^2}{2}\right)}{x}{a}^b=\frac{b^2-a^2}{2}</me>.  Thus,
+    we would have <me>\text{center of mass }=\frac{\text{total
+    moment}}{\text{mass}}=\frac{b^2-a^2}{2(b-a)}=\frac{a+b}{2}</me>.
+    This agrees with your intuitive notion that the center of
+    mass of the interval should be located at the midpoint of
+    the interval.
+  </p>
+  <exercise xml:id="exercise-CoM1">
+    <statement>
+      <p>
+        <idx><h>Centeroids</h> <h>center of mass</h></idx> Find
+        the center of mass of the set <m>A=[a_1,b_1]\cup [a_2,
+        b_2]</m>, <m>b_1\lt a_2</m>. Is the center of mass of
+        the set <m>A</m> equal to the averages of the midpoints
+        of the two intervals?  Does this make sense?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    <idx><h>Vocabulary</h><h>weighted average</h></idx>
+    We did not want to give it away while you were doing the
+    previous problem, but you will actually get what is known as
+    a <term>weighted average</term>; that is, the center of mass
+    of the two midpoints where the mass of each interval is
+    condensed at its midpoint.
+  </p>
+  <p>
+    What if we ramp this up to two-dimensions. Suppose we have a
+    number of points of mass <m>1</m> located at <m>(x_1, y_1),
+    (x_2, y_2), \cdots (x_n, y_n)</m>.
+  </p>
+
+  <figure  xml:id="figure-CoM2D">
+    <caption></caption>
+    <image source="IC/CoM2D.png" width="80%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+  <p>
+    By the same reasoning as before, the center of mass
+    <m>\bar{X} </m> should have the property that this system as
+    a whole should behave the same as if the entire mass
+    <m>m</m> was located at <m>\bar{X} </m>. In other words, we
+    should have <me>n\cdot \bar{X} = (x_1, y_1)\cdot{1}+(x_2,
+    y_2)\cdot{1}+\cdots (x_n, y_n)\cdot{1}</me> This leads to
+    the formulation <me>\bar{X} =\left(\frac{x_1+x_2+\cdots
+    +x_n}{n}, \frac{y_1+y_2+\cdots +y_n}{n}\right) = (\bar{x},
+    \bar{y})</me>.  The thing to take away from this is that
+    even though the center of mass, has two coordinates, we
+    treat each coordinate separately and they are the averages
+    of the <m>x</m> coordinates and <m>y</m> coordinates,
+    respectively. Also, each coordinate still fits into the
+    formula <m>\frac{\text{total moment}}{\text{mass}
+    }</m>. Let's use this same idea to a curve of uniform
+    density <m>1</m>.
+  </p>
+
+  <figure  xml:id="figure-CoMOfCurve">
+    <caption></caption>
+    <image source="IC/CoMOfCurve.png" width="60%">
+      <shortdescription>A generic graph of a
+      function.</shortdescription>
+    </image>
+  </figure>
+  <p>
+    Using analogous reasoning, the center of mass of this curve
+    will be given by <m>\bar{X} =(\bar{x} , \bar{y} )</m> where
+    each coordinate fits into our scheme <m>\frac{\text{total
+    moment}}{\text{mass} }</m>.  . To this end, we will look at
+    the mass of the curve. Since the density is constantly
+    <m>1</m>, the mass is really the arc length and is given by
+    <m>\int_{X=A}^B\dx{s}</m>.
+  </p>
+  <p>
+    To address <m>\bar{x} </m>, we will compute the moment of
+    the curve about the line <m>x=0</m>. Dividing our curve into
+    infinitely small pieces, we can use our simple formulation.
+  </p>
+  <figure  xml:id="figure-MomentOfSegment">
+    <caption><m>\text{Total moment (about }
+    x=0\text{)}=\int_{X=A}^Bx\dx{s}</m></caption>
+    <image source="IC/MomentOfSegment.png" width="90%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+  <exercise xml:id="exercise-">
+    <statement>
+      <p>
+        <idx><h>Moment</h></idx> Provide the analogous reasoning
+        (and diagrams) to show that the total moment about the
+        line <m>y=0</m> on the interval <m>[A,B]</m> is given by
+        <me>\int_{X=A}^B y\dx{s}</me>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Putting all of this together we have <me>\bar{x} =
+    \frac{\int_{X=A}^B x\dx{s}}{\int_{X=A}^B \dx{s}}, \text{ and
+    } \bar{y} = \frac{\int_{X=A}^B y\dx{s}}{\int_{X=A}^B
+    \dx{s}}</me>.  Again, we urge you to go through this process
+    rather than trying to memorize these formulas.
+  </p>
+  <exercise xml:id="exercise-CoMLineSegment">
+    <introduction>
+      <p>
+        <idx><h>Moments</h></idx> As a test of our reasoning,
+        let<rsq/>s apply the above ideas to find the center of
+        mass of a line segment. If this reasoning is correct,
+        then we should get the midpoint of the line segment.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Find the equation of the line segment joining <m>(x_1,
+          y_1)</m> and <m>(x_2, y_2)</m>, To avoid dealing with
+          absolute values, let's assume <m>x_1\lt x_2</m> and
+          <m>y_1\lt y_2</m>.
+        </p>
+      </statement>
+      </task><task>
+      <statement>
+        <p>
+          Use the above formulas to determine the coordinates of
+          the center of mass of this line segment. Is it the
+          midpoint of the line segment?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+  <aside>
+    <title>Note from Bob</title>
+    <p>
+      In <xref ref="exercise-CoMCircle"></xref> do we want to
+      include that they should be able to arrive at <m>0</m> in
+      part (a) without computing the integral using symmetry?
+    </p>
+  </aside>
+
+  <exercise xml:id="exercise-CoMCircle">
+    <introduction>
+      <p>
+        <idx><h>Moments</h><h>center of mass of a
+        circle</h></idx> By symmetry, the center of mass of a
+        circle should be the center of the circle, but what
+        about a semicircle? With this in mind, consider the
+        upper semicircle of radius <m>r</m> centered at the
+        origin.  This can be described by the equations
+        <me>x=r\cos( \theta ), y=r\sin (\theta ), 0\le \theta
+        \le \pi </me>.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Verify that <m>\bar{x}=0</m> by following our process
+          as above.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Compute <m>\bar{y}</m>.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <p>
+    Notice that the above examples show that the center of mass
+    of a curve need not be a point on the curve.  We are now in
+    a position to prove Pappus' Theorem on surface area.
+  </p>
+  <exercise xml:id="exercise-PappusTheoremSA">
+    <title>Pappus' Theorem for Surface Area</title>
+    <statement>
+      <p>
+        <idx><h>Surface Area</h> <h>Pappus' Theorem</h></idx>
+        Consider the following curve with center of mass
+        <m>\bar{X} =(\bar{x}, \bar{y} )</m> revolved about a
+        vertical line <m>x=c</m> to the left of the curve.
+      </p>
+
+      <figure  xml:id="figure-CoMCircle">
+        <caption></caption>
+        <image source="IC/CoMCircle.png" width="70%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+      <p>
+        Show that the surface area of the surface generated by
+        revolving this curve about the line is given by <me>2\pi
+        (\bar{x} -c)\int_{X=A}^B \dx{s} = (\text{circumference
+        of circle with radius } \bar{x} -c)\cdot (\text{length
+        of curve})</me>
+      </p>
+    </statement>
+  </exercise>
+  <aside>
+    <title>Note to self</title>
+    <p>
+      Put some practice problems here.
+    </p>
+  </aside>
+
+  <p>
+    To obtain Pappus' theorem for volumes we need to expand this
+    idea to the center of mass of a two-dimensional
+    region. Again, the center of mass <m>\bar{X} </m> can be
+    split into two coordinates <m>(\bar{x}, \bar{y} )</m>) which
+    represent the averages of the <m>x</m> and <m>y</m>
+    coordinates of all of the points in the region.  </p> <p>
+    With this in mind, consider a region <m>R</m> in the
+    <m>xy</m> plane which can be thought of as two-dimensional
+    plate with constant density <m>1</m>. We will draw this
+    region shortly.  </p> <p> Again, we will utilize our
+    strategy of dividing our region into pieces where a simple
+    formula can be applied, and we will apply our general idea
+    that the centroid is given by the formula <m>\frac{\text{sum
+    of location mass}}{\text{total mass}}</m> The mass is just
+    the area, so we will focus on the numerator.
+  </p>
+  <p>
+    Specifically, if we want to find <m>\bar{x} </m> , we will
+    draw a generic vertical box and determine its moment about
+    the line <m>x=0</m>.
+  </p>
+
+  <figure  xml:id="figure-PappusVolumes">
+    <caption></caption>
+    <image source="IC/PappusVolumes.png" width="70%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+  <p>
+    The moment of this box is straightforward as every point in
+    it is the same distance <m>(x)</m> from the <m>y</m> axis.
+    Formally, we have
+    <md>
+      <mrow>\text{moment of box (about} x=0) \amp =
+      (\text{position of box})\cdot (\text{mass of box})</mrow>
+      <mrow>\amp =x\cdot (y_2-y_1)\dx{x}</mrow>
+    </md>
+  </p>
+  <p>
+    Integrating these moments, we get that the total moment of
+    the region is given by <me>\text{total moment}=\int_{x=a}^c
+    x(y_2-y_1)\dx{x}</me>.  Thus, with this set up, we would
+    have <me>\bar{x} = \frac{\text{moment of }R}{\text{mass of
+    }R}=\frac{\int_{x=a}^c x(y_2-y_1)\dx{x}}{\int_{x=a}^c
+    (y_2-y_1)\dx{x}}</me>.
+  </p>
+  <p>
+    As before, you could memorize the formulas, but it is much
+    better to remember simple concepts such as <m>\text{moment }
+    = \text{mass}\cdot \text{position}</m> and apply these to a
+    situation where things are constant. For example, we can
+    apply the same reasoning to a horizontal box as below to
+    derive the formula for <m>\bar{y}</m>. This is what
+    integration is all about.
+  </p>
+  <exercise xml:id="exercise-PappusVol">
+    <statement>
+      <p>
+        <idx><h>Moments</h> <h>Pappus Theorem for
+        Volumes</h></idx> Use a horizontal box in the above
+        diagram (appropriately labeled) to show that
+        <m>\bar{y}</m> for the region <m>R</m> is given by
+        <me>\bar{y}= \frac{\text{moment of }R}{\text{mass of
+        }R}=\frac{\int_{y=a}^c y(x_2-x_1)\dx{y}}{\int_{y=a}^c
+        (y_2-y_1)\dx{y}}</me>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exercise-CMPractice1">
+    <introduction>
+      <p>
+        <idx><h>Center of mass</h></idx>
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          In everything we did so far, we assumed that the
+          region had a constant density and we said the density
+          was <m>1</m>. Would it have made a difference if we
+          said the density was given by some other constant
+          <m>\delta </m>? Explain.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Suppose the density <m>\delta </m> was not
+          constant. How would that alter the formulas for the
+          center of mass?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+  <p>
+    Again, you can memorize formulas, but understanding them
+    helps you to recreate them should you forget or more
+    appropriately, adapt the ideas should the occasion
+    necessitate that. For example, consider the region below
+    bounded by <m>y=\sin(x) </m> and <m>y=0</m>, <m>0\le x\le
+    \pi </m>.
+  </p>
+
+  <figure  xml:id="figure-Moments">
+    <caption></caption>
+    <image source="IC/MomentSin.png" width="80%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+  <p>
+    Assuming the density is constant, it is straightforward to
+    see that <m>\bar{x}=\frac\pi2 </m>. But what about <m>\bar{y}</m>?
+    <!-- <m>\bar{y}</m>̅? -->
+    If we use the formula you derived above, we
+    would have <me>\bar{y}=\bar{y}= \frac{\text{moment of
+    }R}{\text{mass of }R}=\frac{\int_{y=a}^c
+    y(x_2-x_1)\dx{y}}{\int_{y=a}^c (y_2-y_1)\dx{y}}</me> Getting
+    everything in terms of <m>y</m> would be problematic (but
+    doable). It would be nice to keep everything in terms of
+    <m>x</m> which would entail using a vertical box. For the
+    area in the denominator, this is not a problem and in fact
+    is probably how you would have computed the area to begin
+    with. For the numerator, let<rsq/>s put in our vertical box
+    and see if we can compute its moment about the line
+    <m>x=0</m>.
+  </p>
+  <figure  xml:id="figure-Moments2">
+    <caption></caption>
+    <image source="IC/MomentSin2.png" width="80%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    The problem with computing the moment (about <m>x=0</m>) of
+    this vertical box is that our simple formula
+    <m>\text{mass}\cdot \text{position}</m> won<rsq/>t work as
+    the position varies throughout the box. But wait a minute!
+    We know what <m>\bar{y}</m> for this box is, namely
+    <m>\frac{y}{2}</m>. We also know what area of this box is,
+    namely <m>y\dx{y}</m>. Using that
+    <me>\frac{y}{2}=\bar{y}_{\text{box}}=\frac{\text{moment of
+    box}}{\text{area of box}}</me> so that <me>\text{moment of
+    box}=\left(\frac{y}{2}\right)(y\dx{x})=\frac{y^2}{2}\dx{x}
+    </me>.
+  </p>
+  <exercise xml:id="exercise-MomentSin3">
+    <statement>
+      <p>
+        <idx><h>Moments</h></idx> Integrate this and determine
+        the <m>y</m> coordinate of the center of mass of this
+        region.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="exercise-GeneralMomentY">
+    <statement>
+      <image source="IC/Moment1.png" width="50%">
+        <shortdescription></shortdescription>
+      </image>
+      <p>
+        <idx><h>Moments</h></idx> For the following region, use
+        the same sort of reasoning to show that the moment about
+        the line <m>x=0</m> is given by <me>\int_{y=c}^d
+        \frac{x_2^2-x_1^2}{2}\dx{y}</me>
+      </p>
+
+    </statement>
+  </exercise>
+  <exercise xml:id="exercise-CoMCycloid">
+    <statement>
+      <p>
+        <idx><h>Center of mass</h> <h>cycloid</h></idx> In <xref
+        ref="CyclRevX"></xref> you were asked to find the volume
+        of the solid generated by revolving one arch of a
+        cycloid given by <me>x=a(\theta -\sin( \theta ), \text{
+        } y=a(1-\cos(\theta )</me> around the <m>x</m>-axis.
+      </p>
+
+      <figure  xml:id="figure-GeneralMomentY">
+        <caption></caption>
+        <image source="IC/CycloidArea.png" width="80%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+      <p>
+        The answer to that problem was <m>5\pi^2a^3</m>. We
+        still haven't proved Pappus<rsq/> Theorem yet, but
+        compute <m>\bar{y} </m> for this planar region and see
+        if Pappus<rsq/> Theorem applied to this will yield the
+        same answer.
+      </p>
+    </statement>
+
+  </exercise>
+  <p>
+    Now that we have a handle on the center of mass of a
+    two-dimensional region, we can actually make pretty quick
+    work of Pappus<rsq/> Theorem for determining the volume of a
+    solid of revolution.
+  </p>
+  <p>
+    Consider the following region <m>R</m> lying completely to the
+    right of the line <m>x=0</m>.
+  </p>
+
+  <figure  xml:id="figure-PappusThmSA">
+    <caption></caption>
+    <image source="IC/PappusThmSA.png" width="70%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+  <exercise xml:id="exercise-PappusThmForVolumes">
+    <title>Pappus Theorem of Volumes</title>
+    <statement>
+      <p>
+        <idx><h>Volume</h> <h>Pappus<rsq/> Theorem</h></idx>
+        Use cylindrical shells to show that the volume of the
+        solid generated by revolving this region about the line
+        <m>x=0</m> is given by <me>2\pi \bar{x}_R\cdot
+        (\text{area of }R)</me>.  This is Pappus<rsq/> Theorem
+        for volumes.
+      </p>
+    </statement>
+  </exercise>
+  <aside>
+    <title>Note to self</title>
+    <p>
+      Insert Practice Pappus Problems.
+    </p>
+  </aside>
+
+</subsection>
+
+<subsection  xml:id="subsection-OtherIntApplications">
+  <title>Other Applications of Integration</title>
+  <subsubsection>
+    <title>The Tautochrone</title>
+
+    <p>
+      You may have noticed that we keep bringing up the cycloid
+      in a number of problems involving areas, arc lengths,
+      volumes, and centers of mass. As we said, this curve has
+      fascinated mathematicians for a long time and many of
+      these elegant results were cleverly obtained before the
+      invention of calculus. We will now see how the cycloid was
+      utilized to address a more practical problem.
+    </p>
+    <p>
+      In the 1600<rsq/>s there was race among naval
+      <q>superpowers</q> (Britain, France, Spain, Holland, etc.)
+      to develop a way of measuring longitude at sea. Measuring
+      latitude was relatively easy and could be accomplished by
+      measuring the angle of elevation of the sun or
+      stars. Before longitude could be measured accurately,
+      ships would sail until they reached the correct latitude
+      of a destination and then sailed east or west until they
+      hit the destination. As such, there were monetary prizes
+      awarded for anyone who develop an accurate way of
+      measuring longitude at sea. For example, the Longitude
+      Act, issued in Britain in 1714 offered a prize of up to
+      £20,000 (about £5.1 million or <m>6.1</m> million in 2022
+      currency) for anyone who could measure longitude to an
+      accuracy of half a degree.
+    </p>
+    <p>
+      Since longitude is measured by “time” zones, then it
+      became necessary to develop an accurate way of measuring
+      time at sea. A regular pendulum clock, invented by the
+      Dutch mathematician, scientist, and inventor <url
+      href="https://mathshistory.st-andrews.ac.uk/Biographies/Huygens/"
+      visual="https://mathshistory.st-andrews.ac.uk/Biographies/Huygens/">Christiaan
+      Huygens</url> (1629-1695), utilized the fact that the
+      oscillation of a pendulum is regular as long as it
+      maintains the same amount of <q>swing</q> per
+      oscillation. This made for an accurate timepiece on land,
+      but it was not accurate at sea where a moving deck would
+      make the pendulum swing at different angles and thus not
+      have a constant period. To remedy this, Huygens developed
+      a pendulum that would follow a tautochrone (a <q>same
+      time</q> curve where a pendulum, exclusively under the
+      influence of gravity, following that path would take the
+      same amount of time to reach the bottom, no matter where
+      it started on the curve). Huygens showed that an inverted
+      cycloid was such a tautochrone shown below. A pendulum
+      following the path of an inverted cycloid will take the
+      same amount of time to reach the bottom no matter where it
+      starts.
+    </p>
+
+    <figure  xml:id="figure-Tautochrone1">
+      <caption>Image from <url
+      href="http://www.mathwords.com/t/t_assets/tautochrone.gif"
+      visual="http://www.mathwords.com/t/t_assets/tautochrone.gif">MathWords</url>
+      </caption>
+      <image source="IC/Tautochrone1.png" width="60%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+    <p>
+      <idx><h>Vocabulary</h><h>Involute of the cycloid</h></idx>
+      Huygens then developed a pendulum clock which would do
+      this. He published his work in 1673 in his book
+      <pubtitle>Horologium Oscillatorium: sive de motu
+      pendulorum ad horologia aptato demostrationes geometricae
+      (The Pendulum Clock: or geometrical demonstrations
+      concerning the motion of pendula as applied to
+      clocks)</pubtitle>. The design from that <url
+      href="https://en.wikipedia.org/wiki/Horologium_Oscillatorium"
+      visual="https://en.wikipedia.org/wiki/Horologium_Oscillatorium">work</url>.
+      is seen below. To get the pendulum to swing along a
+      cycloidal path, Huygen<rsq/>s proved that if a flexible
+      pendulum wraps around two flaps shaped like arches of a
+      cycloid, then the bottom of the pendulum will trace a
+      cycloid itself as seen on the left. This curve traced out
+      is called the <url
+      href="http://rsefalicante.umh.es/LaboratorioPendulo/Pendulo2.htm"
+      visual="http://rsefalicante.umh.es/LaboratorioPendulo/Pendulo2.htm"><term>Involute
+      of the cycloid</term></url>.
+    </p>
+    <figure  xml:id="figure-HuygenClock">
+      <caption>Huygens<rsq/> Clock</caption>
+      <image source="IC/HuygensClock.png" width="75%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      In practice, the clock did not work any more accurately
+      than a regular pendulum clock as it assumed the only force
+      involved was gravity, whereas a clock at sea was subject
+      to many more forces which could not be
+      ignored. Subsequently, the Englishman John Harrison
+      (1693-1776), a Yorkshire carpenter, invented a chronometer
+      which ran on springs and proved to be very accurate.
+    </p>
+    <p>
+      Even still, many mathematicians cited Huygens<rsq/> work
+      on this as being very elegant mathematically.
+      Furthermore, Huygens developed his mathematics without
+      calculus as it hadn<rsq/>t been invented (discovered?)
+      yet. We will not prove that the involute of a cycloid is a
+      cycloid, but we will utilize calculus to prove
+      Huygens<rsq/> claim that the cycloid is, in fact, a
+      tautochrone.
+    </p>
+    <p>
+      To start, recall that the speed at which the pendulum is
+      traveling is given by <m>v=\dfdx{s}{t}</m> where <m>s</m>
+      is the arc length traveled and <m>t</m> is time. For
+      simplicity, we will let the radius of the circle
+      generating the cycloid be <m>\frac12 </m>.
+    </p>
+    <exercise xml:id="exercise-Taut1">
+      <statement>
+        <p>
+          <idx><h>Tautochrone</h></idx> Show that the total
+          time it takes for the pendulum to move along the
+          (inverted) cycloid
+          <md>
+            <mrow>x\amp =\frac12 (\theta-\sin (\theta))</mrow>
+            <mrow>y\amp =\frac12 (1-\cos (\theta ))</mrow>
+            <mrow>\amp \theta_0\le \theta \le \pi </mrow>
+          </md>
+          from a starting position <m>\theta =\theta_0</m> to
+          the bottom of the cycloid is given by <me>\int_{\theta
+          =\theta_0}^{\pi }\frac{\dx{s}}{v}=\int_{\theta
+          =\theta_0}^{\pi }\frac{\sin\left(\frac{\theta
+          }{2}\right) }{v}\dx{\theta }
+        </me>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      At this point we<rsq/>ve hit an impasse, as the speed of
+      the pendulum <m>\nu{}</m> is not a constant. Gravity will cause the
+      pendulum to speed up as it swings downward. We will assume
+      that the pendulum does not swing too wide, not too fast,
+      and ignore air resistance. Thus, the only force we will
+      consider is due to gravity and we will denote that by
+      <m>mg</m>, where <m>m</m> is the mass of the pendulum and
+      <m>g</m> is the acceleration due to gravity. Below is a
+      diagram of a pendulum following the path of a cycloid with
+      the forces at work.
+    </p>
+
+    <figure  xml:id="figure-CyclPendPath">
+      <caption></caption>
+      <image source="IC/CyclPendPath.png" width="40%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      The force due to gravity is always directed downward, so
+      only a portion of it moves the pendulum along the
+      curve. This tangential force has a magnitude <m>ma</m>
+      where <m>a=\dfdx{\nu}{t}</m> is the (tangential)
+      acceleration and is obtained by projecting the
+      gravitational force onto the tangent line to the curve. If
+      we draw a differential triangle, we have the following
+      similar triangles.
+    </p>
+
+
+    <figure  xml:id="figure-CyclPendPath2">
+      <caption></caption>
+      <image source="IC/CyclPendPath2.png" width="40%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+    <exercise xml:id="exercise-Taut2">
+      <introduction>
+        <p>
+          <idx><h>Tautochrone</h></idx>
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Use the fact that the two triangles are similar to
+            show that <m>g\dx{y}=a\dx{s}</m> and use the fact
+            that <m>a=\dfdx{\nu }{t}</m> to conclude that
+            <me>g\dx{y}=v\dx{v}</me>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Integrate both sides of the result in part (a) from
+            <m>\theta =\theta_0</m> to <m>\theta </m> to show
+            that if the pendulum starts from rest at
+            <m>\left(x(\theta_0), y(\theta_0)\right) </m>, then
+            the velocity at any point <m>(x(\theta ), y(\theta
+            ))</m> is given by <me>v=\sqrt{2g(y(\theta
+            )-y(\theta_0))}</me>.
+          </p>
+        </statement>
+      </task>
+
+    </exercise>
+    <p>
+      Substituting the formula for <m>v</m> from part (b) of
+      <xref ref="exercise-Taut2"/> we see that <me>\int_{\theta
+      =\theta_0}^{\pi }\frac{\sin\left(\frac{\theta}{2}\right)
+      }{\sqrt{2g(y(\theta )-y(\theta_0)}}\dx{\theta }
+      =\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^{\pi
+      }\frac{\sin\left(\frac{\theta}{2}\right) }{\sqrt{y(\theta)
+      -y(\theta_0)}}\dx{\theta } </me>
+    </p>
+    <p>
+      Before we proceed any further, notice that if we use the
+      appropriate trigonometric identity, we get
+      <md>
+        <mrow>y(\theta )\amp =\frac12(1-\cos (\theta ))=\sin^2
+        \left( \frac{\theta }{2}\right) </mrow>
+        <mrow>y(\theta_0 )\amp =\frac12(1-\cos (\theta_0
+        ))=\sin^2 \left( \frac{\theta_0 }{2}\right) </mrow>
+      </md>
+      so our formula for the total time traveled by the pendulum
+      from <m>\left(x(\theta_0), y(\theta_0)\right) </m> to
+      <m>\left(\frac\pi2, 1\right) </m> becomes
+
+      <md>
+        <mrow>\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^\pi
+        \frac{\sin\left(\frac\theta2\right)}
+        {\sqrt{\sin^2\left(\frac{\theta}{2}\right) -
+        \sin^2\left(\frac{\theta_0}{2}\right) }}\dx{\theta} \amp
+        =\frac{1}{\sqrt{2g}}\int_{\theta =\theta_0}^\pi
+        \frac{\sin\left(\frac\theta2\right)}{\sqrt{\left(1-\cos^2\left(\frac\theta2\right)\right)-\left(1-\cos^2\left(\frac{\theta_0}{2}\right)\right)}}
+        \dx{\theta }</mrow>
+        <mrow>\amp =\frac{1}{\sqrt{2g}}\int_{\theta
+        =\theta_0}^\pi
+        \frac{\sin\left(\frac\theta2\right)}{\sqrt{\cos^2\left(\frac{\theta_0}{2}\right)
+        -\cos^2\left(\frac\theta2\right) }} \dx{\theta}</mrow>
+      </md>
+      As formidable as this integral may look, bear in mind that
+      <m>\theta_0</m> is a constant. Also, this looks ripe for a
+      substitution to make it easier on the eyes. Specifically,
+      what if we let <m>u=\cos\left(\frac\theta2\right) </m> and
+      <m>u_0=\cos\left(\frac{\theta_0}{2}\right) </m>
+    </p>
+    <exercise xml:id="exercise-Taut3">
+      <statement>
+        <p>
+          <idx><h>Tautochrone</h></idx> Perform this
+          substitution and show that the time traveled by the
+          pendulum from <m>\left(x(\theta_0), y(\theta
+          _0)\right) </m> to <m>\left( \frac\pi2 , 1\right) </m>
+          is given by <m>\frac{\pi }{\sqrt{2g}}</m> which is
+          independent of the starting point. Thus, the cycloid
+          really is a tautochrone.
+        </p>
+      </statement>
+    </exercise>
+
+  </subsubsection>
+  <subsubsection  xml:id="subsub-WorkEnergy">
+    <title>Work and Kinetic Energy</title>
+
+    <p>
+      If you go back to our proof that the cycloid is a
+      tautochrone, you will notice that we had the equation
+      <m>g\dx{y}=v\dx{v}</m>. If we multiply both sides by our
+      mass <m>m</m> and integrate from <m>\theta =\theta _0</m>
+      to <m>\theta </m>, we get
+      <md>
+        <mrow>\int_{\theta=\theta_0}^\theta mg\dx{y}\amp
+        =\int_{\theta=\theta_0}^\theta mv\dx{v}</mrow>
+        <mrow>mg\left(y(\theta )-y(\theta _0)\right) \amp
+        =\frac12mv^2(\theta)-\frac12 mv^2(\theta _0) </mrow>
+      </md>
+      The left-hand side is called the work done by gravity
+      moving an object from the height <m>y(\theta _0)</m> to
+      the height <m>y(\theta )</m> and the right-hand side is
+      called the change in kinetic energy from the beginning
+      point <m>\left(x(\theta _0), y(\theta _0)\right) </m>, to
+      the terminal point <m>\left(x(\theta ),y(\theta )\right)
+      </m>. So, this equation really says that <me>\text{work}
+      =\text{change in kinetic energy}</me>.  At some point, you
+      may have heard the expression that energy is the ability
+      to do work. Kinematically, this is what we just showed. We
+      will explore these two concepts in more detail to apply
+      them to some natural questions that arise from things we
+      did before.
+    </p>
+    <example>
+      <p>
+        Suppose we apply a force of <m>5</m> newtons to move an
+        object <m>2</m> meters (in that direction), then we will
+        have done <m>5 \cdot 2 = 10</m> newton-meters (joules)
+        of work. In general, if we apply a force with magnitude
+        <m>F</m> newtons to move an object <m>m</m> meters in
+        the direction of the force, then the amount of work done
+        by that force is <m>W=F\cdot m</m> newton-meters. As
+        stated in the example above, <m>mg\left( y(\theta
+        )-y(\theta _0)\right) </m> was the amount of work done
+        by gravity moving a mass from a height of <m>y(\theta
+        _0)</m> to a height of <m>y(\theta )</m>. Notice the
+        <m>x</m> coordinate didn<rsq/>t matter as the direction
+        of the force was along the <m>y</m> axis. But what if
+        the force or distance is not constant?
+      </p>
+    </example>
+
+
+    <example>
+      <p>
+        Suppose we had the following inground diving pool filled
+        with water weighing <m>9810</m> newtons/cubic meter. How
+        long would it take a one horsepower pump at the top of
+        the pool to empty the pool?
+      </p>
+
+      <figure  xml:id="figure-WorkKin1">
+        <caption></caption>
+        <image source="IC/WorkKin1.png" width="70%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+      <p>
+        First things first. A one horsepower pump can do
+        approximately 735.5 newton-meters of work per second, so
+        we really need to find out how much work it takes to
+        accomplish the task. If we try to use our formula
+        <m>\text{work}=\text{force}\cdot \text{distance}</m>,
+        then the force is pretty straightforward. It is the
+        weight of the water. The difficulty comes from
+        considering the distance. This varies anywhere from
+        <m>0</m> to <m>6</m> meters. It takes very little work
+        to pump out the water near the top where it takes much
+        more work to pump the water that is at the bottom. This
+        is where our integration strategy of dividing things up
+        into pieces where our simple formula will apply comes
+        in. Let<rsq/>s look at a thin slab of water below and
+        look at the work it would take for the pump to lift that
+        slab to the top of the pool.
+      </p>
+
+      <figure  xml:id="figure-WorkKin2">
+        <caption></caption>
+        <image source="IC/WorkKin2.png" width="70%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+      <p>
+        Notice that we didn<rsq/>t put in the pump nor the tube
+        going to the bottom of the pool. This was deliberate.
+        You might be thinking, “Wait! If the tube reaches to the
+        bottom of the pool, then isn<rsq/>t that slab of water
+        ultimately being lifted <m>6</m> meters and not
+        <m>y</m>?” Actually, if you think about it, the pump
+        only has to lift it the last <m>y</m> meters as gravity
+        will do the work of lifting it the first <m>6 - y</m>
+        meters. If there was no pump at all, then the water
+        level in the tube would naturally rise to that level
+        itself. Also, since we only have to overcome the weight
+        of the water, which is a vertical force, then we only
+        need to worry about the vertical distance <m>y</m>.
+        With this in mind, our simple formula for work applies
+        to lifting the slab.
+
+        <md>
+          <mrow>\text{work to lift slab}\amp =\text{weight of
+          slab}\cdot \text{distance to lift slab}</mrow>
+          <mrow>\amp =\text{weight density of water}\cdot
+          \text{volume of slab}\cdot \text{distance to lift
+          slab}</mrow>
+          <mrow>\amp =\left(
+          9810\frac{\text{newtons}}{\text{meter}^3}\right)(10\cdot
+          15\cdot \dx{y}\text{meters}^3)(y\text{ meters})
+          </mrow>
+          <mrow>\amp =1471500y \dx{y}\text{ newton
+          meters}</mrow>
+        </md>
+        Notice we put in the units to show that they do provide
+        us with the correct units for work. To get the total
+        amount of work done, we integrate these together:
+        <me>\text{Total work}=\int_{y=0}^6{1471500y\dx{y}}</me>
+      </p>
+    </example>
+    <exercise xml:id="exercise-KinWork1">
+      <introduction>
+        <p>
+          <idx><h>Kinetic Energy</h></idx>
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Compute this integral to see how much work this
+            would take and use the fact that a one horsepower
+            pump can do <m>735</m> newton-meters of work per
+            second to see how many hours it would take for the
+            pump to empty the pool.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Take a guess: If the pool was only half full, would
+            it take the pump half the time to empty it? Use
+            calculus to check you guess.
+          </p>
+        </statement>
+      </task>
+
+    </exercise>
+    <aside>
+      <title>Note to self</title>
+      <p>
+        More problems pumping tanks of various shapes including
+        one where the bottom is slanted.
+      </p>
+    </aside>
+    <p>
+      In the previous example, an integral was required as the
+      distance lifted was not constant. Some problems have the
+      force varying.
+    </p>
+    <example xml:id="example-WorkKin3">
+      <p>
+        Suppose an anchor on a cruise ship weighs <m>200000</m>
+        newtons (approximately <m>22.4</m> US tons) with a chain
+        weighing <m>3000</m> newtons/meter (approximately
+        <m>205</m> lb/ft) is being hauled up by a winch. How
+        much work does it require to raise the anchor from a
+        chain length of <m>20</m> meters below the water line to
+        a point <m>5</m> meters above the surface of the water?
+        See the diagram below.
+      </p>
+      <figure  xml:id="figure-WorkKin4">
+        <caption></caption>
+        <image source="IC/WorkKin4.png" width="40%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+      <p>
+        We can actually approach this problem in two ways. One
+        is reminiscent of what we did pumping the water out of
+        the pool. We still want to apply our formula
+        <m>\text{work}=\text{force}\cdot
+        \text{distance}</m>. This actually works fine for the
+        anchor as the force is the weight of the anchor and the
+        distance is <m>25</m> meters. This would be the work
+        required to raise the anchor alone. The chain is another
+        matter. The lower parts of the chain need to be raised
+        more than the upper parts. Here we will look at a small
+        section of the chain and compute the work required to
+        raise that. Specifically, consider the following
+        diagram.
+      </p>
+
+      <figure  xml:id="figure-WorkKin5">
+        <caption></caption>
+        <image source="IC/WorkKin5.png" width="10%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+    </example>
+    <exercise xml:id="exercise-WorkKin3">
+      <introduction>
+        <p>
+          <idx><h>Kinetic Energy</h></idx>
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            If <m>\dx{y}</m> represents an infinitely small
+            length of chain, then compute the work involved to
+            raise that length of chain <m>y</m> meters.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Integrate the above to find the work required to
+            raise both the anchor and the chain. (Don<rsq/>t
+            forget to add in the work to raise the anchor
+            alone.)
+          </p>
+        </statement>
+      </task>
+
+    </exercise>
+    <p>
+      There is another way to approach this problem which does
+      not require examining the anchor separately.  Instead of
+      dividing the chain into small pieces where we can apply
+      our formula for work, suppose we look at the work required
+      to raise the anchor and chain from a distance <m>x</m> to
+      a distance <m>x+\dx{x}</m>.
+    </p>
+
+    <figure  xml:id="figure-WorkKin6">
+      <caption></caption>
+      <image source="IC/WorkKin6.png" width="20%">
+        <shortdescription></shortdescription>
+      </image>
+    </figure>
+    <p>
+      Since the force (combined weight of anchor and remaining
+      chain) stays virtually constant over this interval, then
+      we can still apply our simple formula.
+      
+      <md>
+        <mrow>\text{work to raise the anchor and chain from } x
+        \text{ to } \dx{x}\amp =\text{force}\cdot
+        \text{distance}</mrow>
+        <mrow>\amp =\left(200000+3000(25-x)\right) \cdot
+        \dx{x}</mrow>
+      </md>
+
+    </p>
+    <exercise xml:id="exercise-WorkKin7">
+      <statement>
+        <p>
+          <idx><h>Kinetic Energy</h></idx> Integrate the above
+          to compute the work done to raise the anchor and chain
+          and compare your answer to the previous. (They should
+          be the same.)
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      As we said the above could be done either way, but
+      consider this following variation.
+    </p>
+    <exercise xml:id="exercise-Bucket1">
+      <idx><h>Problems</h></idx> 
+      <statement>
+        <p>
+          A bucket that weighs <m>15</m> newtons is being hauled
+          up <m>20</m> meters with a rope that weighs <m>2</m>
+          newtons per meter at a constant speed of <m>1</m>
+          meter/second.  Initially, the bucket is filled with
+          <m>150</m> newtons of water which is leaking out at a
+          rate of <m>3</m> newtons per second.  How much work is
+          done?
+        </p>
+      </statement>
+    </exercise>
+
+    <p>
+      Since the weight of the water in the bucket is changing
+      over time (unlike the anchor), it probably makes more
+      sense to try to our second approach which is to determine
+      the work required to lift the bucket water and rope from a
+      distance <m>x</m> to a distance <m>x+\dx{x}</m>.  We can then
+      integrate these small amounts of work to obtain the total
+      work.
+    </p>
+
+    <exercise xml:id="exercise-Bucket2">
+      <idx><h>Problems</h></idx>
+      <task>
+        <statement>
+          <p>
+            Use this analysis to show that the work to raise
+            everything from a distance <m>x</m> to a distance
+            <m>x+\dx{x}</m> is given by
+            <me>\left(205-5x\right)\dx{x}.</me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Integrate this to determine how much work it takes
+            to raise all of this the entire <m>20</m> meters.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What would the work be if the water was leaking out
+            at a rate of <m>10</m> newtons per second (so the
+            bucket is empty before it reaches the top)?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+    <p>
+      Now that we have a handle on work, let's come back to
+      kinetic energy.  Let's begin by generalizing what we had
+      done in the tautochrone problem.  
+    </p> 
+    <exercise xml:id="EXERCISEMassOnACurve"> 
+      <idx><h>Problems</h></idx> 
+      <statement> 
+        <p>
+          Suppose we have a (tangential) force
+          <m>F</m> moving a mass <m>m</m> moving along a curve
+          <m>C</m> from point <m>A</m> to point <m> B</m>.  Let
+          <m>P</m> denote a generic point on the curve.  
+        </p> 
+        <image   source="IC/MassOnCurve1.png" width="70%">
+          <shortdescription></shortdescription> 
+        </image> 
+        <p> 
+          Let <m>s</m> denote arc length from point <m>A</m> to <m>P</m> and
+          <m>v=\frac{ds}{dt}</m> represent velocity (speed) and
+          <m>a=\frac{dv}{dt}=\frac{d^2s}{dt^2}</m> (tangential) acceleration.
+          We have that the work <m>w</m> done by <m>F</m> to move the mass from
+          <m>P=A</m> to <m>P=B</m> is given by <me>w=\int^B_{P=A}{F\ ds}</me>
+          </p> <p> Using Newton's Second Law which states that force
+          <m>F=ma=m\left(\frac{dv}{dt}\right)</m>, show that
+          <me>w=\ftceval{\frac{1}{2}mv^2}{P}{A}{B}</me>
+        </p>
+
+        <aside>
+          <p>
+            The quantity <me>\frac{1}{2}mv^2</me> is called the
+            kinetic energy of the object (at time <m>t</m>) and is
+            measured in
+            <me>
+              kg\cdot
+              {\left(\frac{\text{meter}}{\text{second}}\right)}^2=\left(\text{kg}\cdot
+              \frac{\text{meters}}{\text{second}^2}\right)\text{meters}=\text{newton
+              meters}.
+            </me>
+          </p>
+        </aside>
+      </statement>
+    </exercise>
+    <p>
+      As we said before, the above can be stated as
+      work<m>=</m>change in kinetic\ energy.  It turns out that
+      utilizing the notion of kinetic energy can be a useful tool in
+      determining the work involved in completing a task.  For
+      example, recall from <pubtitle>Differential Calculus: From
+      Practice to Theory</pubtitle>> that the Richard F. Caris
+      Mirror Laboratory uses spin casting to cast large parabolic
+      mirrors for refractive telescopes.  They load glass into a
+      revolving furnace.  When the glass liquifies, the spinning
+      makes the middle go down and the sides go up.  In that book
+      there was a problem which showed that the surface generated
+      would be a parabola.  As you can see from these photos, this
+      an exceptionally large furnace and the mirrors it produces are
+      large as well (up to somewhere around 16 tons each).
+    </p>
+
+
+    <image source="IC/SpinCast1.png" width="100%">
+      <shortdescription></shortdescription>
+    </image>
+    <p>
+      A question is how long it takes for the furnace to rotate from
+      a standing start to the proper speed.  This is where the
+      notion of kinetic energy comes in handy.  To begin the
+      process, they load chucks of borosilicate glass which has a
+      density of <m>2230\frac{kg}{m^3}</m> into the furnace (over a
+      honeycomb substrate) and start spinning the furnace.
+    </p>
+    <image source="IC/SpinCast2.png" width="50%">
+      <shortdescription></shortdescription>
+    </image>
+    <p>
+      For simplicity, we will ignore the substrate and actual
+      furnace itself and let's assume that the glass is a solid disk
+      which measures <m>4 \text{meters}</m>in radius and is <m>10
+      \text{cm}</m> thick.
+    </p>
+    <image source="IC/SpinCast3.png" width="70%">
+      <shortdescription></shortdescription>
+    </image>
+    <p>
+      To compute the kinetic energy of this disk spinning at a rate
+      of <m>2\frac{\text{revolutions}}{\text{second}}</m> we would
+      like to utilize our simple formula
+      <men  xml:id="KineticEnergy">
+        \text{kinetic energy} =
+        \frac{1}{2}\left(\text{mass}\right){\left(\text{velocity}\right)}^2
+      </men>
+    </p>
+    <p>
+      The mass is no problem as we know the density and the volume
+      of the disk.  The problem is the velocity.  We know the
+      angular velocity, which is constant, but in our formula for
+      kinetic energy, we are talking about linear velocity which
+      increases as you move away from the axis of rotation.  This is
+      where our plan of dividing the solid into parts where we can
+      apply our simple formula applies.  Specifically, consider the
+      following cylindrical ring in our disk.  As with volumes
+      utilizing cylindrical shells, we will draw a cutaway view.
+</p>
+<image source="IC/SpinCast4.png" width="70%">
+<shortdescription></shortdescription>
+</image>
+<p>
+  Notice that all the points in the cylindrical shell are moving
+  at the same linear speed, so we can apply <xref
+  ref="KineticEnergy">Formula</xref> to the shell.
+  
+</p>
+
+<exercise xml:id="EXERCISEKinEnergySpinCast">
+<idx><h>Problems</h> <h>Spin Casting</h></idx>
+<task>
+  <statement>
+    <p>
+      Show that the kinetic energy of the shell is given by
+      
+      <me>
+        3568{\pi }^3r^3dr \text{newton meters}
+</me>
+
+Integrate this to determine the kinetic energy of the
+entire disk as it rotates at
+<m>2\frac{\text{revoutions}}{\text{second}}</m>.  </p>
+</statement> </task> <task> <statement> <p> Suppose you
+have a 100-horsepower motor that produces <m>73505\
+\frac{\text{newton}\text{ meters}}{\text{second}}</m> of
+power.  How long will it take for this motor to
+accelerate the disk from rest to
+<m>2\frac{\text{revolutions}}{\text{second}}</m>?
+</p>
+</statement>
+</task>
+
+
+</exercise>
+</subsubsection>
+
+
+<subsubsection  xml:id="SUBSUBSECTIONEscapeVel">
+<title>Escape Velocity and Improper Integrals</title>
+<p>
+  Many people have heard the term <q>escape velocity.</q>  A quick
+  look on the internet says that the escape velocity from the
+  surface of the earth is approximately <m>11.2 \frac{kilometers}{second}</m> or about
+  <m>33</m> times the speed of sound.  What does this mean and where
+  did such a number come from?  The key is our discovery that
+  work can be obtained by looking at the change in kinetic
+  energy.  This also affords us a chance to delve into a new
+  topic: improper integrals.
+</p>
+<!-- <aside> -->
+<!-- <title>Note TO SELF</title> -->
+<!-- <p> -->
+<!-- This section removed for a clean LaTeX compilation. -->
+<!-- </p> -->
+<!-- </aside> -->
+<p>
+  First, we all know that if you throw a ball into the air, then it
+  will go up and come back down.  We learned in Differential
+  Calculus that, ignoring air resistance, if you throw a ball up
+  with an initial velocity of <m>v_0\frac{\text{meters}}{\text{second}}</m>, then
+the maximum height the ball attains is <m>\frac{v^2_0}{2g}</m>
+where <m>g</m> is the acceleration due to gravity (which we
+presumed was constantly equal to
+<m>9.8\frac{meters}{second^2}</m>).  We noted that this formula
+said that if we double the initial velocity, then the ball will go
+4 times as high, triple it it will go 9 times as high, etc.  Is it
+possible to throw the ball up so fast that it never comes back
+down.  The answer would be no if the acceleration due to gravity
+remained constant at all altitudes, which is what we assumed in
+the original problem.  This works fine near the surface of the
+earth, but is not reasonable at higher and higher altitudes.  In
+fact, Newton's Law of Gravitation states that the magnitude of
+force of gravity between two objects of masses <m>m</m> and
+<m>M</m> is given by <m>\frac{GmM}{r^2}</m> where <m>g</m> is a
+constant referred to as the universal gravitational constant and
+<m>r</m> is the distance between the centers of mass of the two
+objects.  For objects near the surface of the earth, <m>r</m> was
+so close to constant that we assumed it to be.  This is not the
+case for our projectile being propelled into outer space.
+Surprisingly, the a amount of work that it takes to perform this
+task is finite and this is where escape velocity comes in.
+</p>
+
+<p>
+  If we had an unlimited power supply, then we could rise at
+  whatever rate we wanted and still keep rising indefinitely.
+  Unfortunately, as with throwing a ball into the air, we can
+  only impart an initial velocity and hope it is fast enough to
+  overcome gravity indefinitely.  We have the means to deal with
+  this.
+</p>
+<p>
+The key is remembering that the work done by a force <m>F</m>
+moving a mass <m>m</m> along a straight line from point
+<m>x=a</m> to point <m>x=b</m> is equal to the change in
+kinetic energy.  In symbols it is <me>\text{work} =
+\ftceval{\frac12mv^2}{x}{a}{b}</me>
+</p>
+
+<p>
+  However, this was not the definition of work as work was
+  simply <m>force\cdot distance</m>.  We utilized calculus in
+  case the force was not constant
+</p>
+
+<exercise xml:id="EXERCISEEscapeVelocity1">
+  <statement>
+    <p>
+<idx><h>Problems</h> <h>Escape Velocity</h></idx>
+
+Consider an object of mass <m>m</m> being launched from
+the surface of a planet with mass <m>M</m> and radius
+<m>R</m>.  As we said, Newton<rsq/>s Law of Gravitation
+states that the force due to gravity is given by
+<me>
+  -\frac{GmM}{r^2}
+</me>
+</p>
+<p>
+  where <m>G</m> is the universal gravitational constant and
+  <m>r</m> is the distance between the centers of mass of
+  the two objects.  Show that the work done by gravity in
+  moving an object from the surface of the planet to an
+  arbitrary altitude of <m>B>R</m> is given by
+  <me>
+    GmM\left(\frac{1}{B}-\frac{1}{R}\right)
+</me>
+
+</p>
+<aside>
+<title>Comment</title>
+<p>
+  It will be a negative number as gravity is doing a
+  negative amount of work moving the object. We are
+  assuming the positive <m>r</m> axis points away from the
+  planet so the force is negative.
+</p>
+</aside>
+
+<p>
+  If we take <me>\limit{B} {\infty}
+{GmM\left(\frac{1}{B}-\frac{1}{R}\right)}=-\frac{GmM}{R}.</me>
+then this will represent the amount of work done by
+gravity moving a mass from the surface of the planet ``to
+infinity.''  In other words, the amount of work (and
+energy) it takes to propel the object so it doesn't come
+back is finite.
+</p>
+</statement>
+</exercise>
+
+<exercise xml:id="EXERCISEEscapeVelocity2">
+  <introduction>
+    <p>
+      <idx><h>Problems</h> <h>Escape Velocity</h></idx> Assume
+      that the original velocity of the mass is <m>v_0</m> and
+      that the velocity <q>at infinity</q> will be 0.
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Use the result of <xref
+      ref="EXERCISEEscapeVelocity1"></xref> and the fact that
+      the work done by gravity is equal to the change in
+      kinetic energy to show that the escape velocity (the
+      initial velocity needed to send an object into space
+      without coming back down, given no other propulsion) is
+      given by <me> v_0=\sqrt{\frac{2GM}{R}}
+</me>
+Notice that the escape velocity is independent of the mass
+of the projectile <m>m</m>.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Suppose that the acceleration due to gravity on the
+      surface of the planet is given by <m>-g</m>.  Show that
+      
+      
+      <me>
+        v_0=\sqrt{2gR}
+</me>
+
+</p>
+<p>
+  Use the fact that for the earth
+<m>g=9.8\frac{meters}{second}</m> and <m>R=6,378,100</m>
+meters to check the earlier claim that the escape
+velocity from the surface of the earth is approximately
+<m>11.2\frac{km}{second}</m>.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Assuming the radius of the moon is approximately
+      <m>\frac{1}{4}</m> that of the earth and the
+acceleration due to gravity is about <m>\frac{1}{6}</m>
+that of earth, how would the escape velocity from the
+surface of the moon compare with that of the earth?
+</p>
+</statement>
+</task>
+
+</exercise>
+<p>
+  <xref ref="EXERCISEEscapeVelocity2"></xref> shows that the
+  work to launch a projectile from the surface of a planet <q>to
+  infinity</q> is given by
+  <m>\limit{B} {\infty} {\int^B_{r=R}-\frac{GmM}{r^2}\dx{r}}</m>.
+</p>
+<p>
+<idx><h>Vocabulary</h><h>improper integral</h></idx>
+This prompts a
+new name and notation.  The notation is 
+<m>\int^{\infty}_{r=R}{-\frac{GmM}{r^2}\dx{r}}</m> and this is called an
+<term>improper integral</term>.  The improper comes from the fact
+that a proper definite integral should be defined on a closed
+bounded interval.  In general,  the improper integral
+<m>\displaystyle\int^{\infty }_{x=a}{f(x)\dx{x}}</m> converges if
+<m>\limit{B}{\infty}{\left(\int^B_{x=a}{f(x)\dx{x}}\right)} </m>
+
+<!-- <m>{\mathop{\mathrm{lim}}_{B\to \infty } -->
+<!--   \int^B_{x=a}{f\left(x\right)\dx{x}}\ }</m> -->
+
+exists and we say that
+it is equal to that value.  In the above problem, we have 
+
+<md>
+  <mrow>
+    \int^{\infty
+    }_{r=R}{-\frac{GmM}{r^2}\dx{r}}\amp{}=\limit{B}{\infty}{\int^B_{r=R}{-\frac{GmM}{r^2}\dx{r}}}
+</mrow>
+<mrow>
+  \amp{}=\limit{B}{\infty}{\left[GmM\left(\frac{1}{B}-\frac{1}{R}\right)\right]}
+</mrow>
+<mrow>
+  \amp{}=\frac{GmM}{R}
+</mrow>
+</md>.
+</p>
+
+<p>
+  Notice that to compute this improper integral, we had to first
+compute a proper definite integral from <m>R</m> to <m>B</m>
+and then take the limit of this as <m>B\to \infty </m>.
+</p>
+
+<exercise xml:id="EXERCISEDefineConvIndInt">
+<title>Convergence of an Improper Integral</title>
+<statement>
+  <p>
+    <idx><h>Improper Integral</h> <h>Convergence of</h></idx> Define what we mean for improper
+    integral <m>\int^a_{x=-\infty }{f\left(x\right)\dx{x}}\ </m>to
+    converge and what its value would be.
+</p>
+</statement>
+</exercise>
+<p>
+  You may find it surprising that an improper integral from
+  <m>r=R</m> to <m>\infty </m> could have a real-world
+  application such as escape velocity.  Actually, there is an
+  example of an improper integral of the form
+  <m>\int^a_{x=-\infty }{f\left(x\right)\dx{x}}</m> which has an
+  application a little closer to home.  No doubt you have heard
+  of a bell-shaped curve or perhaps have been in a statistics
+  course that talks about <m>z</m> values.  What does any of
+  this mean and what does it have to do with improper integrals?
+</p>
+
+<p>
+  First, the bell-shaped curve is known as a normal (or
+  gaussian) distribution and was developed by the mathematician
+  Karl Gauss to look at the probability that a measurement
+  should deviate from the actual mean of a population.  The fact
+  that many measurements such as height, weight, IQ, etc. seem
+  to be normally distributed is what makes this curve
+  ubiquitous, and this is why you have probably heard of it in
+  your travels.  Specifically, a normal distribution with a mean
+  of <m>\mu </m> and a standard deviation of <m>\sigma </m> has
+  the equation <m>f\left(x\right)=\frac{1}{\sigma \sqrt{2\pi
+}}e^{-\frac{1}{2}{\left(\frac{x-\mu }{\sigma }\right)}^2}</m>
+as its probability density function.  The fact that it is
+called a bell-shaped curve can be seen in the following graph.
+</p>
+<image source="IC/BellCurve.png" width="60%">
+<shortdescription></shortdescription>
+</image>
+<p>
+  This is called the probability density function because the
+  probability that the random variable <m>X</m> takes on a value
+  less than or equal to <m>a</m> is given by
+  <me>
+    \frac{1}{\sigma \sqrt{2\pi }}\int^a_{x=-\infty
+    }{e^{-\frac{1}{2}{\left(\frac{x-\mu }{\sigma
+    }\right)}^2}\dx{x}}
+</me>
+
+which is the area of the shaded region above.  It is not easy
+to see, but Gauss cleverly showed that the area under this
+entire curve is exactly one, which is a requirement to be a
+probability density function. Of course, the values of <m>\mu
+</m> and <m>\sigma </m> will affect the shape of the graph as
+seen below.
+</p>
+<image source="IC/SeveralBellCurves.png" width="80%">
+<shortdescription></shortdescription>
+</image>
+<p>
+  Of particular importance is the red curve where the mean
+  <m>\mu =0</m> and the standard deviation<m>\ \sigma =1</m>.
+  Any random variable <m>Z</m> which has a normal distribution
+  with probability density function
+  <m>f\left(z\right)=\frac{1}{\sqrt{2\pi
+  }}e^{-\frac{z^2}{2}}</m> is said to have a standard normal
+  distribution and a result from probability theory says that if
+  the random variable <m>X</m> is normally distributed with mean
+  <m>\mu </m> and standard deviation <m>\sigma </m>, then
+  <m>Z=\frac{X-\mu }{\sigma }</m> will have a standard normal
+  distribution.  We've said a lot here in the way of theory, so
+  let's provide a concrete example.  It is widely accepted that
+  IQ (intelligence quotient) is normally distributed with a mean
+  <m>\mu =100</m> and standard deviation <m>\sigma =15</m>.  It
+  is also widely accepted that someone with an IQ of 140 or
+  above is in the genius range.  Suppose we chose someone at
+  random.  If we want to compute the probability that this
+  person's IQ is less than or equal to 140, then mathematically,
+  we want to compute
+
+  <me>
+    Prob\left(X\le  140\right)=\frac{1}{15\sqrt{2\pi}}\int^{140}_{x=-\infty}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\dx{x}
+</me>
+
+Unfortunately, none of our integration techniques will compute
+this integral exactly.  In fact, there are no integration
+techniques that will do this.  Let's do what any person would
+do and see what the internet says.  If we type this into a
+computer algebra system, we get
+
+<me>
+  \frac{1}{15\sqrt{2\pi}}\int^{140}_{x=-\infty}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\dx{x}\approx0.99617
+</me>
+</p>
+<p>
+  We will get into approximating techniques later, but for now
+  let's talk about <m>z</m> scores and <m>z</m> tables.  To
+  compute the <m>z</m> score of the above IQ of 140, books and
+  websites will say to compute <me>
+  z=\frac{140-100}{15}=\frac{8}{3} </me> In the old days, one
+  would then look on a <m>Z</m> table and arrive at the
+  approximation <m>.9961</m>.  Now you would input this
+  <m>z</m> score in an appropriate piece of software and
+  obtain the same result.  Why are you doing this?  The
+  following problem might shed some light
+</p>
+
+<exercise       xml:id="EXERCISEErrorFunction1">
+<idx><h>Problems</h><h>Error Function</h></idx>
+<idx><h><m>\erf()</m></h></idx>
+<statement>
+  <p>
+    Perform the substitution <m>z=\frac{x-100}{15}</m> to
+    <m>\frac{1}{15\sqrt{2\pi
+}}\int^{140}_{x=-\infty}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\dx{x}</m>
+to obtain <me> \frac{1}{\sqrt{2\pi}}\int^{8/3}_{z=-\infty
+}{e^{-\frac{1}{2}z^2}}dz.</me>
+</p>
+</statement>
+</exercise>
+<p>
+  This is what the approximation <m>0.9961</m> represents in
+  the old <m>z</m> tables and in the statistical software.
+  Since it is impossible to have a table for every possible
+  normal distribution, the older tables and newer software
+  packages have approximations for <m>\frac{1}{\sqrt{2\pi
+  }}\int^a_{z=-\infty }{e^{-\frac{1}{2}z^2}}dz</m>.  It is
+  expected that a person uses the above substitution to
+  compute a <m>z</m> score and the table provides the
+  approximation for the integral of the standard normal
+  distribution.
+</p>
+<exercise xml:id="EXERCISEWolframAlpha1">
+  <introduction>
+    <p>
+<idx><h>Problems</h><h>Error Function</h></idx>
+Actually, Wolfram Alpha provides the following output
+
+<me> 
+  \frac{1} {\sqrt{2\pi}}\int^{8/3}_{z=-\infty} {e^{-\frac{1}{2}z^2}}\dx{z}
+  =\frac{1}{2}\left[\erf\left(\frac{4\sqrt{2}}{3}\right)+1\right]
+  \approx .99617 
+</me> 
+where 
+<me> 
+  \erf \left(a\right)=\frac{2}{\sqrt{\pi}}\int^a_{t=0}{e^{-t^2}\dx{t}} 
+</me>
+<idx><h>Vocabulary</h><h>erf</h></idx>
+The name <term>erf</term> is short for error function
+and reminds us that Gauss determined this function to
+compute the probability of errors in measurements.
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Use the substitution <m>z=\sqrt{2}\ t</m> to show that
+      <me> \frac{1}{\sqrt{2\pi
+      }}\int^a_{z=0}{e^{-\frac{1}{2}z^2}}dz=\frac{1}{\sqrt{\pi
+}}\int^{a/\sqrt{2}}_{t=0}{e^{-t^2}}dt </me>
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Use the result of part a and the fact that the total
+      area under the standard normal curve is 1 to verify
+      that Wolfram Alpha's equation <me> \frac{1}{\sqrt{2\pi
+      }}\int^{8/3}_{z=-\infty
+      }{e^{-\frac{1}{2}z^2}}dz=\frac{1}{2}\left[\erf
+      \left(\frac{4\sqrt{2}}{3}\right)+1\right] </me> is
+      actually correct.
+</p>
+</statement>
+</task>
+</exercise>
+<p>
+  Of course, the values for erf need to be approximated as well, so
+  the above still does not provide an exact answer.  As we said, we
+  will get to approximation techniques, but before that, let's look at
+  another type of improper integral.
+</p>
+</subsubsection>
+<subsubsection        xml:id="SUBSUBSECTIONMoreImproperIntegrals">
+<title>More Improper Integrals</title>
+<p>
+  The previous section looked at definite integrals that are
+  improper because they are being integrated on an infinite
+  interval.  There is another type of improper integral that
+  can occur on a finite interval.  Furthermore, they can occur
+  in a natural setting.
+</p>
+<!-- <aside> -->
+<!-- <title>Note TO SELF</title> -->
+<!-- <p> -->
+<!-- This section removed for a clean LaTeX compilation. -->
+<!-- </p> -->
+<!-- </aside> -->
+<example xml:id="EXAMPLECircumCircleViaImprInt">
+  <title>The Circumference of a Unit Circle, Via an Improper
+Integral</title>
+<p>
+  We know that the circumference of a unit circle is <m>2\pi
+  </m>.  Thus, the length of a quarter of that circle is
+  <m>\frac{\pi }{2}</m>.  Suppose we wanted to use calculus
+  to verify this.  The easiest way would be to parameterize
+  the quarter of the unit circle lying in the first quadrant
+  by
+  
+  <me>
+    x={\mathrm{cos} (\theta )\ }\ \ \ y={\mathrm{sin}
+    (\theta )\ }\ ,\ \ \ 0\le \theta \le \frac{\pi }{2}
+</me>
+
+</p>
+<p>
+  Thus, the arc length would be
+
+  <md>
+    <mrow>
+      \int^{\frac{\pi }{2}}_{\theta =0}{ds}\amp{}=\int^{\frac{\pi}{2}}_{\theta
+      =0}{\sqrt{{\left(\dx{x}\right)}^2+{\left(dy\right)}^2}}
+</mrow>
+<mrow>
+  \amp{}=\int^{\frac{\pi
+  }{2}}_{\theta =0}{\sqrt{{\left(-{\mathrm{sin} (\theta )\
+  }\right)}^2+{\left({\mathrm{cos} \left(\theta \right)\
+  }\right)}^2}}\dx{\theta}
+</mrow>
+<mrow>
+  \amp{}=\int^{\frac{\pi }{2}}_{\theta =0}{1}\dx{\theta} 
+  =\frac{\pi }{2}
+</mrow>
+</md>.
+
+
+</p>
+<p>
+  Suppose instead, we compute the arc length by using the
+  equation <m>y=\sqrt{1-x^2}</m>, <m>0\le x\le 1</m>. Then
+  <me>
+    \int_{x=0}^1\sqrt{\frac{1}{1-x^2}}\dx{x} =
+    \ftceval{\inverse\sin(x)}{x}{0}{1}=\frac{\pi }{2}
+</me>
+If you don<rsq/>t see the problem yet, suppose instead I wanted
+to find the area under the curve
+<m>y=\sqrt{\frac{1}{1-x^2}}</m> over the interval
+<m>[0,1].</m> Here is a graph of that region.
+</p>
+<image source="IC/ImpropInt1.png" width="20%">
+<shortdescription></shortdescription>
+</image>
+<p>
+  The area of that region would be computed by the same
+  <me>
+    \int_{x=0}^1\sqrt{\frac{1}{1-x^2}}\dx{x} =
+    \ftceval{\inverse\sin(x)}{x}{0}{1}=\frac{\pi }{2}
+</me>
+
+even though the region itself is unbounded.  Before you
+say <q>Big deal. It worked,</q> consider the area of this
+region.
+</p>
+<image source="IC/ImpropInt2.png" width="20%">
+<shortdescription></shortdescription>
+</image>
+<p>
+  The area of this region would be given by
+  
+  <men  xml:id="ImpropInt1">
+    \int^1_{x=0}{\frac{1}{1-x} \dx{x}}
+</men>
+</p>
+
+
+</example>
+
+<problem  xml:id="PROBLEMImpropInt2">
+  <p>
+    Try to compute the integral in <xref
+    ref="PROBLEMImpropInt2">Formula</xref>. What happens?
+</p>
+</problem>
+<p>
+  Both integrals are improper because the functions involved
+  are unbounded on the interval <m>[0,1]</m>.  If fact they
+  are not even defined at one of the endpoints of the
+  interval.  The way to handle the first integral is to write
+  it as
+  <md>
+    <mrow>\int^1_{x=0}{\sqrt{\frac{1}{1-x^2}} \dx{x}}\amp
+    =\llimit{B}{1}{\int^B_{x=0}{\sqrt{\frac{1}{1-x^2}}\
+\dx{x}}}</mrow>
+<mrow>\amp
+=\ftceval{\llimit{B}{1}{\inverse\sin(x)}}{x}{0}{B}</mrow>
+<mrow>\amp =\llimit{B}{1}{\inverse\sin(B)}</mrow>
+<mrow>\amp =\frac{\pi }{2}</mrow>
+</md>
+
+</p>
+<p>
+  The same technique can be used for the second integral
+  <md>
+    <mrow>\int^1_{x=0}{\frac{1}{1-x} \dx{x}}\amp
+=\llimit{B}{1}{\int^1_{x=0}{\frac{1}{1-x} \dx{x}}}</mrow>
+<mrow>\amp
+=\ftceval{\llimit{B}{1}{\left(-\ln(1-x)\right)}}{x}{0}{B}</mrow>
+<mrow>\amp =\llimit{B}{1}{(\ln(1-x))}</mrow>
+<mrow>\amp =-\infty</mrow>
+</md>
+This leads to the general idea that if a function
+<m>f(x)</m> is unbounded at the right endpoint <m>b</m> of
+an interval <m>[a,b]</m> then we can compute the improper
+integral<m>\int^b_{x=a}{f\left(x\right)\dx{x}}</m> by
+<me>
+  \int^b_{x=a}{f(x)} \dx{x}=
+  \llimit{B}{b}{\int_{x=0}^Bf(x)\dx{x}}
+</me>
+provided that limit exists.
+</p>
+<exercise xml:id="EXERCISEImpropInt3">
+  <introduction>
+    <p>
+<idx><h>Problems</h><h>Improper Integral</h></idx>
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Suppose <m>f(x)</m> is unbounded at the left endpoint
+      <m>a</m> of the interval <m>[a,b]</m>.  Provide a
+      similar way to compute the improper integral
+      <m>\int^b_{x=a}{f\left(x\right)\dx{x}}</m>.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Apply your technique from part (a) to compute the
+      following improper integrals.
+      <me>
+        \int^1_{x=0}{\frac{1}{x^2}\dx{x}} \text{ and }
+        \int^1_{x=0}{\frac{1}{x}\dx{x}}
+</me>
+
+</p>
+</statement>
+</task>
+
+</exercise>
+
+<example xml:id="EXAMPLETorricellisTrumpet">
+  <title>Torricelli's Trumpet and the Painter's
+Paradox</title>
+<p>
+  Actually, the idea of computing areas and volumes using
+  infinitely thin slices predates the invention of
+  differential calculus (by a lot!) and was influential in
+  the invention and use of differential calculus.  The first
+  known results were by Archimedes circa 250 BC.  This
+  predates the first paper of differential calculus (1684
+  AD) by almost 200 years.  We won't get into Archimedes
+  method for doing this, but the immediate predecessors of
+  Newton and Leibniz used the same idea of dividing objects
+  into infinitely thin slices to determine areas and
+  volumes.  They just didn't have the fundamental theorem of
+  calculus to compute the value when these slices were added
+  up (integrated), so they used alternate methods.
+</p>
+<p>
+  Actually, the idea of computing areas and volumes using
+  infinitely thin slices predates the invention of
+  differential calculus (by a lot!) and was influential in
+  the invention and use of differential calculus.  The first
+  known results were by Archimedes circa 250 BC.  This
+  predates the first paper of differential calculus (1684
+  AD) by almost 200 years.  We won't get into Archimedes
+  method for doing this, but the immediate predecessors of
+  Newton and Leibniz used the same idea of dividing objects
+  into infinitely thin slices to determine areas and
+  volumes.  They just didn't have the fundamental theorem of
+  calculus to compute the value when these slices were added
+  up (integrated), so they used alternate methods.
+  
+</p>
+<p>
+  One of these predecessors was Evangelista Torricelli
+  (1608-1647).  In 1643, Torricelli created a mathematical
+  and philosophical stir with a paper he wrote in 1643
+  <foreign>De solido hyperbolico acuto</foreign>.  In this
+  paper, he had the following theorem (Translated by
+  G. Loria and G. Vassura 1919).
+</p>
+</example>
+<theorem  xml:id="TorriThm">
+  <p>
+    <q>
+      An acute hyperbolic solid, infinitely long, cut by a
+      plane [perpendicular] to the axis, together with the
+      cylinder of the same base, is equal to that right
+      cylinder of which the base is the latus versum (that is,
+      the axis) of the hyperbola, and of which the altitude is
+equal to the radius of the basis of this acute body.</q>
+</p>
+</theorem>
+<p>
+  In more modern terms, Torricelli showed that it we rotate
+  the following function
+  <me>
+    y\left(x\right)=\left\{ \begin{array}{cc} \frac{1}{b} \amp
+    \text{ if }\ 0\le x\le b \\ \frac{1}{x} \amp \text{ if }\
+    b\le x \end{array} \right.
+</me>
+is rotated about the <m>x</m> axis, then the infinitely long
+solid has a finite volume of <m>2\pi /b</m>.  Here is
+picture of what has been dubbed ``Torricelli's Trumpet''.
+</p>
+<image source="IC/TorriTrumpet.png" width="90%">
+<shortdescription></shortdescription>
+</image>
+
+<exercise xml:id="EXERCISETorriTrumpet">
+<title>The Volume of Torricelli's Trumpet</title>
+<introduction>
+  <p>
+<idx><h>Problems</h><h>Torricelli<rsq/>s Trumpet</h><h>Volume</h></idx>
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Use an improper integral with volumes of disks to
+      obtain Torricelli's result.  Again it should be noted
+      that Torricelli obtained this before the invention of
+      calculus.
+</p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Actually, if we use cylindrical shells, this will
+      actually be closer to what Torricelli did and will not
+      involve an improper integral. Do this.
+</p>
+</statement>
+</task>
+</exercise>
+
+<p>
+  This caused a philosophical debate about the nature of
+  mathematical thinking and understanding of the infinite that
+  persisted into the twentieth century. Even more paradoxical
+  was a later result which showed that the surface area of
+  solid is infinite. This is now called the Painter’s Paradox
+  because we have a solid which holds a finite amount of paint
+  but would require an infinite amount of paint to paint the
+  inside surface!
+</p>
+
+<exercise xml:id="EXERCISETorriSurfArea">
+  <introduction>
+    <p>
+      <idx><h>Problems</h><h>Torricelli<rsq/>s Trumpet</h><h> Surface
+      Area</h></idx> Let's assume that <m>b=1</m> and focus on
+      the curved part of the trumpet generated by revolving
+<m>y=\frac{1}{x}, 1\le x\infty </m> about the <m>x</m>
+axis.  We know that the surface area of an infinitely
+small piece of this is given by <m>2\pi y\dx{s}</m>
+</p>
+</introduction>
+<task>
+  <statement>
+    <p>
+      Putting things in terms of <m>x</m>, show that the
+      surface area is given by the improper integral
+      
+      <me>
+        2\pi \int^{\infty
+        }_{x=1}{\frac{1}{x}\sqrt{1+\frac{1}{x^4}} \dx{x}}
+</me>
+
+Computing this will not be easy, but notice that this
+integral is greater than <m>2\pi \int_{ x=1}\dx{x}</m> (Why?) Use this x
+fact to show that the surface area is infinite.
+
+</p>
+</statement>
+</task>
+
+<task>
+  <statement>
+    <p>
+      Putting the original integral in terms of <m>y</m>,
+      show that the surface area is given by
+      <me>
+        2\pi \int^1_{y=0}{\sqrt{\frac{1}{y^2}+y^2}\ dy}
+      </me>
+
+      Notice that this is still an improper integral (Why?).
+      Again, computing this will not be easy so try a trick
+      like you did in part a to show that this is infinite.
+    </p>
+  </statement>
+</task>
+
+</exercise>
+
+<p>
+  Torricelli's Trumpet also represents a finite volume solid
+  which does not have a center of mass.  We only talked about
+  centers of mass (centroids) of one-dimensional curves and
+  two-dimensional regions.  We can extend the ideas to
+  three-dimensional solids, but instead we will give you a
+  two-dimension region which has a finite area but no center
+  of mass.  The idea for Torricelli's Trumpet is basically the
+  same.
+</p>
+
+<exercise xml:id="EXERCISEFiniteAreaInfiniteMoment">
+  <statement>
+    <p>
+<idx><h>Volume</h><h>infinite</h></idx>
+Consider the region between the curves <m>y=0</m> and
+<m>y=\frac{1}{x^2}</m>, for <m>x\ge 1</m>.  Show that
+the area of this region is finite but the moment of this
+region about the <m>y</m> axis (line <m>x=0)</m> is
+infinite.  How does this say that the region has no
+centroid?
+
+</p>
+</statement>
+</exercise>
+
+<p>
+  Suppose we had the function
+  <me>
+    y(x)=
+    \begin{cases}
+    \frac1x \amp{}\text{ if } x\ne 0\\
+    0       \amp{}\text{ if } x=0
+    \end{cases}
+    <!-- y(x)=\begin{cases} -->
+    <!-- \frac1x\amp{}\text{ if } x\ne0\\ -->
+    <!-- \frac1x\amp{}\text{     \amp}{amp -->
+    <!--      \end{cases} -->
+    </me>.
+    Should <m>\int^1_{x=-1}{y} \dx{x}=0</m>?  An argument could be
+    made for either case.  Now you see why these are called
+    improper integrals.  This actually brings into mind the
+    existence of an integral which is a much harder question.
+    We will kick this can down the road until we get into the
+    theory part.
+</p>
+
+</subsubsection>
+
+</subsection>
+</section>
+</chapter>
+
+
