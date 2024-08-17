@@ -3,6 +3,15 @@
   <title>Integration in Its Simplest Forms  </title>
 
   <introduction>
+<blockquote>
+<p>
+Those interested in celestial navigation are advised to first obtain a rudimentary knowledge of integral calculus, phlebotomy, astral physics and related subjects. The use of liquor is strictly forbidden on interplanetary flights.
+</p>
+<attribution>
+<url href="https://en.wikipedia.org/wiki/Henry_Miller/" visual="https://en.wikipedia.org/wiki/Henry_Miller">Henry Miller</url>
+ (1891<mdash/>1980)
+</attribution>
+</blockquote>
     <p>
       If asked for a one sentence description of Integral Calculus, most
       mathematicians will say something like, <q>It is the opposite of
@@ -164,40 +173,51 @@
         <shortdescription></shortdescription>
       </image>
 
-      <remark>
-        <p>
-          Notice that in this setting <m>x</m> represents the
-          <em>length</em> of the line segment which <m>P</m> has
-          traced out, and <m>P_0</m> represents the starting position
-          of the point, and <m>P</m> represents its current position.
-          In particular <m>x</m> is <em>not</em> the position
-          (coordinate) of <m>P</m> on the line. It can't be because we
-          have not specified an origin (zero) point from which to
-          measure position.
-        </p>
-      </remark>
+<!-- <remark>       -->
+<!--         <p> -->
+<!--           Notice that in this setting <m>x</m> represents the -->
+<!--           <em>length</em> of the line segment which <m>P</m> has -->
+<!--           traced out, and <m>P_0</m> represents the starting position -->
+<!--           of the point, and <m>P</m> represents its current position. -->
+<!--           In particular <m>x</m> is <em>not</em> the position -->
+<!--           (coordinate) of <m>P</m> on the line. It can't be because we -->
+<!--           have not specified an origin (zero) point from which to -->
+<!--           measure position. -->
+<!--         </p> -->
+<!-- </remark> -->
 
       <p>
-        In the sketch below we have partitioned the line segment between
-        <m>P</m> and <m>P_0</m> (which we have re-labeled <m>x_n</m> and
-        <m>x_0</m>) into subintervals. Note that <m>x_0</m>, <m>x_1</m>,
-        <m>x_2 \ldots</m> represent positions on the line segment
-        <m>x</m>. In particular, they do not represent lengths.
-      </p>
+        In the sketch below  we suppose that the coordinate of <m>P</m> is
+        <m>x_n</m>, and that the coordinate of <m>P_0</m> is
+        <m>x_0</m>.
+
+We next partition the line segment between <m>x_0</m>
+        and <m>x_n</m> by selecting points <m>x_1</m>, <m>x_2</m>,
+        <m>\ldots </m>, <m>x_{n-1}</m> such that 
+<me>
+x_0\lt x_1 \lt x_2 \lt \cdots \lt x_{n-1} \lt x_n
+</me>.
+</p>
 
       <figure  xml:id="FIGUREPartitionedInterval">
-        <caption>A partitioned interval</caption>
-        <image source="IC/FTC1.png" width="50%">
+        <caption>
+          A partitioned interval.<!--  Notice that we use <m>x_i</m> to -->
+          <!-- represent both the position of a partition point and its -->
+          <!-- coordinate. -->
+</caption>
+        <image source="IC/FTC1.png" width="70%">
           <shortdescription></shortdescription>
         </image>
       </figure>
 
       <p>
-        We represent the length of the  first subinterval of <m>x</m> with <m>\Delta
-        x_1</m>, of the second with <m>\Delta x_2</m>, and so on.  In
-        general  <m>\Delta{x_i}</m> represents the length of <m>i</m>th
+        The partition points subdivide the interval <m>[x_0, x_n]</m>
+         into subintervals.  We represent the length of the first
+        subinterval of <m>x</m> with <m>\Delta x_1</m>, of the second
+        with <m>\Delta x_2</m>, and so on.  In general
+        <m>\Delta{x_i}</m> represents the length of the <m>i</m>th
         subinterval of <m>x</m>. Clearly the length of the line
-        segment is
+        segment <m>[x_0, x_n]</m> is
         <md>
           <mrow>\Delta{x_1}\amp{}+\Delta{x_2}+\Delta{x_3} +\cdots  +\Delta{x_{n-1}}+\Delta{x_n}</mrow>
           <mrow>\amp{} =  (x_1-x_0)+(x_2-x_1)+(x_3-x_2) +\cdots + (x_{n-1}-x_{n-2})+(x_n-x_{n-1})</mrow>
@@ -288,7 +308,7 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
         possible integral. It says that if we add up the lengths of
         all of the differentials that make up the line segment from
         <m>x_0</m> to <m>x_n</m> we will get its length,
-        <m>x_n-x_0</m>, which we have called <m>x</m>.
+        <m>x_n-x_0=x</m>.
       </p>
       <p>
         <idx><h>Fundamental Theorem of Calculus</h></idx>
@@ -332,10 +352,16 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
         <p>
           The labels (names) of the two points are <m>P_0</m> and <m>P</m>. Since
           <m>x_0</m> measures the distance between zero and <m>P_0</m> it is by
-          definition the coordinate of the point labeled <m>P_0</m>. (If a vertical axis were
-          present <m>x_0</m> would be the first coordinate and zero would be the
-          second.) Similarly <m>x_n</m> is the coordinate of <m>P</m>.
+          definition the coordinate of the point labeled <m>P_0</m>.  Similarly <m>x_n</m> is the coordinate of <m>P</m>.
         </p>
+        <aside>
+          <title>Comment</title>
+          <p>
+            If a vertical axis were present zero would be the second
+            coordinate of both points. Do you see why?
+          </p>
+        </aside>
+
         <p>
           On the
           other hand since <m>x</m> <mdash/> the distance between <m>P_0</m> and
@@ -355,14 +381,13 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
           It is the length of the line segment
           <m>\overline{P_0P}</m>. If we partition this line segment and
           compute <m>\int\dx{x} </m> we get 
-          <me>\int\dx{x}=x_n-x_0=x</me> 
-          which is equivalent to <xref ref="EQUATIONDefInt2">equation</xref>.
+          <xref ref="EQUATIONDefInt2">equation</xref>.
         </p>
         <p>
-          Since coordinates distinguish one point from another as well as
-          their labels do,   a (very) common practice is to dispense with the
-          labels altogether and make the coordinates serve both purposes as in
-          the diagram below.
+          Since their coordinates distinguish one point from another
+          as well as their labels do, a (very) common practice is to
+          dispense with the labels altogether and make the coordinates
+          serve both purposes as in the diagram below.
         </p>
         <image source="IC/VarX3.png" width="60%">
           <shortdescription></shortdescription>
@@ -405,7 +430,8 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
 
 
  We know from our work in
-        <xref ref="SUBSECTIONIntegrationAsASum"></xref> that
+        <xref ref="SUBSECTIONIntegrationAsASum"></xref> (specifically
+        <xref ref="EQUATIONDefInt2">equation</xref>) that
         
         <me>y=\int\dx{y}</me>.
 
@@ -428,18 +454,21 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
       </p>
 
       <p>
-        It follows immediately from <xref ref="DEFINITIONAntiderivative"></xref> that if a function has one antiderivative
-        then it has infinitely many since, by the Constant Rule, adding
-        a constant to a function will not change its derivative. Thus if
-        we know  one antiderivative of <m>f(x)</m>,
-        then we know all (infinitely many) of the antiderivatives of
-        <m>f(x)</m>. That is, if <m>F(x)</m> is an antiderivative of
+        It follows immediately from <xref
+        ref="DEFINITIONAntiderivative"></xref> and the <xref
+        ref="THEOREMConstRule">Constant Rule</xref> that if a function has one antiderivative
+        then it has infinitely many.  That is, if <m>F(x)</m> is an antiderivative of
         <m>f(x)</m> then so is <m>F(x)+5</m>. And <m>F(x)+80</m>. In
         fact if <m>C</m> ia a constant then so is <m>F(x)+C</m> for
         every possible value of <m>C</m>
         because we get a (slightly) different antiderivative
         each time we add a constant to <m>F(x)</m>.  
-
+</p>
+<p>
+Thus if
+        we know  one antiderivative of <m>f(x)</m>,
+        then we know all (infinitely many) of the antiderivatives of
+        <m>f(x)</m>.
         Remember this. We
         will return to it when we discuss <xref ref="THEOREMFTC"></xref> below.
       </p>
@@ -454,9 +483,8 @@ because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
           Clearly <m>f(t)=2t</m> so from <xref
           ref="DEFINITIONAntiderivative"></xref> we see that <m>F(t) =
           \frac{t^2}{2}</m> is one antiderivative, and we can capture all of the
-          antiderivatives by adding an arbitrary constant,  so 
-          <me>\int 2t\dx{t} = \frac{t^2}{2} + C</me>
-          is correct.
+          antiderivatives by adding an arbitrary constant. Thus
+          <me>\int 2t\dx{t} = \frac{t^2}{2} + C</me>.
         </p>
         <p>
 <idx><h>Vocabulary</h><h>Antiderivative</h><h>most general</h></idx>
@@ -583,22 +611,25 @@ f(x)\dx{x}</m> as representing an antiderivative of the function
 <m>f</m> it is customary to speak these symbols aloud as <q>the integral of <m>f</m>
 of <m>x</m>.</q> While this is not wrong, it is not quite right
 either. Properly speaking, we should say <q>the integral of the
-differential <m>f(x)\dx{x}</m>.</q> But no one does that, and neither
-will we.
+differential <m>f(x)</m> times <m>\dx{x}</m>.</q> But no one does that
+so we won<rsq/>t either.
 </p>
 <p>
-But  speaking incorrectly as we tend to do in this instance can lead
-you into unfortunate habits  which we would like to dissuade you from.
-We will take a moment to try to do this.
+But if we (the authors or your instructor) consistently speak
+incorrectly (as we tend to do in this instance) it is easy for 
+you (the student) to develop  unfortunate habits of mind. 
+We will take a moment to try to  prevent that from happening.
 </p>
         <p>
          The integral sign was designed (by Leibniz) to indicate summation, not
-          antidifferentiation. As a result it is very easy to use
-          integral notation improperly. Sooner or later most people
+          antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people
           will fall into the habit of dropping the final
-          <q><m>\dx{t}</m>,</q> writing <m>\int f(t)</m> instead of
-          <m>\int f(t)\dx{t}</m>, and calling them both the integral
-          of the function <m>f(t)</m>. This is an unfortunate, but
+          <q><m>\dx{x}</m>,</q>  of writing <m>\int f(x)</m> instead of
+          <m>\int f(x)\dx{x}</m>, and then calling them both the integral
+          of the function <m>f(x)</m>.
+</p>
+<p>
+ This is an unfortunate, but
           common, abuse of the notation.  You can not integrate a
           function, only a differential. We <em>strongly</em> suggest
           that you take care to avoid this bad habit for as long as
@@ -606,27 +637,27 @@ We will take a moment to try to do this.
           the concepts are new.
         </p>
         <p>
-          Remember that <me>\int f(t)</me> is meaningless no matter how
+          Remember that <me>\int f(x)</me> is meaningless no matter how
           convenient it might be because it indicates that we are summing
           a function, not a differential.
         </p>
-<remark>
+<aside>
           <title>Notation</title>
           <p>
-            By calling <m>\int f(t)</m> meaningless we have overstated
+            By calling <m>\int f(x)</m> meaningless we have overstated
             the situation a bit. If you study mathematics long enough
-            you will encounter situations where <m>\int{f(t)}</m> is a
+            you will encounter situations where <m>\int{f(x)}</m> is a
             perfectly reasonable notation to use. But we will not
             encounter them here, and it is best if you don<rsq/>t fall
             into this habit while you are still learning the basics.
           </p>
-</remark>
+</aside>
 
 
         <p>
           But the meaning of <me>\int
-          f(t)\dx{t}</me> is clear. We're summing up all of the
-          differentials of the form <m>f(t)\dx{t} </m>.
+          f(x)\dx{x}</me> is clear. We're summing up all of the
+          differentials of the form <m>f(x)\dx{x} </m>.
         </p>
 
         <!-- <p> -->
@@ -974,10 +1005,9 @@ where <m>C=C_1+C_2+C_3</m>.
 <!-- <title> -->
 <!-- <xref ref="IntRuleOneOver">Integration Rule</xref> -->
 <!-- </title> -->
-    <p>
-      A few comments on  <xref ref="IntRuleOneOver">Integration Rule</xref>  are in
-      order.
-    </p>
+<paragraphs>
+<title>A Few Comments on  <xref ref="IntRuleOneOver">Integration Rule</xref>  </title>
+
     <!-- <p> -->
     <!--   <xref ref="TABLEBasicIntegration">>Table</xref> is not -->
     <!--   exhaustive. It couldn<rsq/>t possibly be since every -->
@@ -998,10 +1028,13 @@ For this
 single exception we have to turn to <xref ref="IntRuleOneOver">Integration Rule</xref>:
 <m>\int\frac1x\dx{x}=\ln\abs{x}+C{}</m>. 
     </p>
+<p>
+Does it seem strange to you that there would be this single exception
+to <xref ref="IntRuleMonomial">Integration Rule</xref>? Us too.
+</p>
     
         <p>
-          While we are discussing <xref ref="IntRuleOneOver">Integration Rule</xref>, notice the absolute
-          value in the formula:
+ Also notice the absolute value in the formula:
           <me>
             \int\inverse x\dx{x}=\ln\abs{x}+C.
           </me> 
@@ -1029,13 +1062,14 @@ single exception we have to turn to <xref ref="IntRuleOneOver">Integration Rule<
       </hint>
     </exercise>
         <p>
-          It is common practice to write <m>\int\inverse
+          It is common (though incorrect) practice to disregard the
+          absolute value and  write <m>\int\inverse
           x\dx{x}=\ln(x)+C</m>, even though this is only valid for
           <m>x\gt{0}</m>.  We will also adopt this practice but you
           should always bear in mind that there are situations where
-          the absolute value must be used.
+          the absolute value must be used. 
         </p>
-
+</paragraphs>
 
     <!-- <p> -->
     <!--   If you read each of these Differentiation and Integration Rules -->
