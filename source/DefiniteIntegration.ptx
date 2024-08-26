@@ -223,14 +223,181 @@ circle.
 
 </example>
 
+<exercise xml:id="PROBLEMVolSphereCavalieri">
+<introduction>
+<p>
+To display the power and usefulness of Cavalieri<rsq/>s Principle we
+will use it to find the formula for the volume of a sphere with radius
+<m>r</m>.
+</p>
+<sidebyside widths="35% 35%" margins="auto" valign="middle">
+<figure  xml:id="FIGUREHalfSphere">
+<caption>Half of a sphere with radius <m>r</m>.</caption>
+<image source="IC/HalfSphere.png" width="100%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+
+<figure  xml:id="FIGURECylSansCone">
+<caption>A cylinder with radius <m>r</m> with a cone removed.</caption>
+<image source="IC/CylSansCone.png" width="100%">
+<shortdescription></shortdescription>
+</image>
+</figure>
+</sidebyside>
 
 
+</introduction>
+<task>
+<statement>
+<p>
+Show that the red circle in <xref ref="FIGUREHalfSphere"></xref> has
+the same area as the red annulus in <xref
+ref="FIGURECylSansCone"></xref>.
+</p>
+</statement>
+</task>
+
+<task>
+<statement>
+<p>
+ Show that the volume of the solid in <xref
+ref="FIGURECylSansCone"></xref> is <m>\frac23 \pi r^3</m>.
+</p>
+</statement>
+<hint>
+<p>
+You will need a formula for the volume of the cylinder and a formula
+for the volume of the cone deleted from it.
+
+</p>
+</hint>
+
+</task>
+<task>
+<statement>
+<p>
+Use <xref ref="PRINCIPLECavalieri">Cavalieri<rsq/>s Principle</xref>
+to conclude that the volume of a sphere with radius <m>r</m> is <m>\frac43 \pi r^3</m>.
+</p>
+</statement>
+</task>
+</exercise>
 
     </subsection>
 
+
+<subsection  xml:id="SUBSECTIONCavLeibNotation">
+<title>Differentials and Cavalieri</title>
+<p>
+Since  our purpose to use Cavalieri<rsq/>s method to inform the
+Calculus approach to problem solving 
+we will now  reinterpret Cavalieri<rsq/>s approach to finding
+volumes using Leibniz<rsq/>s differential notation.
+</p>
+<p>
+ In  view of our discussion in <xref
+ref="SECTIONThinkingAboutIntegration"></xref>.
+it should be clear that Cavalieri is <q>adding up</q>
+differentials. For example,  in <xref
+ref="FIGUREAllLines1"></xref>  it is clear that the lines  have no
+width. We could, arbitrarily, define the width  to be zero
+but that is not helpful. Instead we will think of the width as a
+differential, say <m>\dx{x}</m>.
+</p>
+<p>
+In that case a rectangle consists of <q>all the lines</q> with
+(differential) area: <me>(\text{height})\dx{x}</me>.
+We defined the notation to express this in <xref
+ref="SECTIONThinkingAboutIntegration"></xref>. The area of a rectangle
+is given by the expression <me>\int(\text{height})\dx{x}</me>.
+</p>
+<p>
+But the formula above
+doesn<rsq/>t quite give us everything we<rsq/>d like. An example will
+be helpful.
+</p>
+
+<example xml:id="EXAMPLEIntegralIndices">
+<p>
+To see what we mean suppose we want to express the area of a rectangle
+with height equal to <m>2</m> and width equal to <m>4</m>. 
+</p>
+<aside>
+<title>Comment</title>
+<p>
+Yes we know this area is <m>8</m>. We don<rsq/>t care about that. We
+want to find a way to 
+<em>express</em> this simple  area using the notation of Calculus so
+that we can write down expressions for more complicated areas and,
+hopefully, find ways to actually compute them.
+</p>
+<p>
+In fact, ultimately we don<rsq/>t really care (much) about computing
+areas. For us the problem of computing area is just a relatively
+simple context in which  we can
+develop the skills that will help us  compute other quantities that we do
+care about.
+</p>
+</aside>
+<p>
+We begin by embedding our rectangle in an <m>x</m><ndash/>
+<m>y</m> coordinate
+system as in the sketch below where the red rectangle is one of
+Cavalieri<rsq/>s <q>all the lines</q> that make up the rectangle.
+</p>
+<image source="IC/RectangleAreaDiff.png" width="60%">
+<shortdescription></shortdescription>
+</image>
+<p>
+Clearly the <q>area</q> of this line is <m>2\dx{x}</m>, so the area of the
+area of the entire rectangle is given by
+<me>
+\int 2\dx{x}
+</me>.
+This is all well and good conceptually, but if we want to actually
+compute a value for the area we need to know where to start summing
+the differential areas (lines) and were to stop.
+</p>
+<p>
+Similar considerations lead the mathematician 
+<url href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph Fourier</url>
+to add 
+<term>indices</term> to the integral sign as follows:
+<men
+ xml:id="EQUATIONAreaRect2">
+\int_{x=2}^6 2\dx{x}.
+</men>
+The indices in this expression tell us that we begin summing the
+differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>. 
+</p>
+<p>
+Notice that, despite the complexity of the notation, expressions like  <xref
+ref="EQUATIONAreaRect2">formula</xref> simply represent a specific,
+or definite
+number; eight in this case. For that reason they are called
+<term>definite integrals</term>. Expressions like 
+<me>
+\int f(x)\dx{x}
+</me>, 
+without the indices, represent functions as we saw in <xref
+ref="CHAPTERIndefiniteIntegration"></xref>.
+</p>
+<p>
+In <xref
+ref="CHAPTERIndefiniteIntegration"></xref> we just called them
+integrals because they were the only ones had encountered. We call
+integrals without indices 
+<term>indefinite integrals</term> to 
+distinquish them from definite integrals with indices.
+</p>
+</example>
+
+</subsection>
+
   </section>
 
-  <section> 
+  <section xml:id="SECTIONAreasAndIntegration"> 
     <title>Areas and Integration</title>
     <p>
       Recall, much earlier, that we examined the catenary (hanging
