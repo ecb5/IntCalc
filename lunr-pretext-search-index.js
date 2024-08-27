@@ -7729,7 +7729,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "14.1",
   "title": "The Limit Rules (Theorems)",
-  "body": " The Limit Rules (Theorems)   The Limit of a Composition and Continuity at a Point   In the old days when people invented a new function they had something useful in mind. Now, they invent them deliberately just to invalidate our ancestors' reasoning, and that is all they are ever going to get out of them.   Henri Poincarè (1854 1912)   In this section we will state several theorems about limits which we will need in the sections following. The limit concept is very subtle and our understanding of it is still quite intuitive. We are not yet quite prepared to prove these theorems so we will leave these theorems unproven for now. Our immediate goal is simply to understand what they say and learn how to use them. In the next section we will begin using these theorems to show how the limit in allows us to recapture all of the major results we used in Part I of this text.  In we will finally discard our intuitive definition of a limit ( ) and formally define both a limit at infinity ( and ) and a limit at a point ( ). Then we will return to the theorems in this section and (finally) prove rigorously that they are, in fact, true. Until then any result which relies on the theorems in this section should be considered contingent.  In we stated the following three theorems about limits at infinity.    the limit of a sum is the sum of the limits ( ),    the limit of a product is the product of the limits ( ) and,    the limit of a quotient is the quotient of the limits ( ).   All three of these theorems remain true if is approaching some finite number, , instead of infinity.   The Limit of a Sum is the Sum of the Limits  Theorem Limit of a Sum is the Sum of the Limits  Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. Then if and then     The Limit of a Product is the Product of the Limits  Theorem Limit of a Product is the Product of the Limits  Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. If and then     The Limit of a Quotient is the Quotient of the Limits  Theorem Limit of a Quotient is the Quotient of the Limits  Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. Then if and then     Vocabulary in the limit Notice that in addition to changing to some real number, , we have added two qualifications to the statement of each of these theorems from :    Suppose that the functions and are defined on some open interval about and,     except, possibly, at itself    To see why these are necessary recall that we're going to use limits to define the derivative as in so we'll need to evaluate the limit . Clearly the expression is not defined at . But we're only interested in its value in the limit as which means that must be able to get close to . That is, there must be an open interval around where the expression is defined.  But we don't care if is defined at or not. That is irrelevant to our purpose. So we state explicitly that we do not consider whether .  Ok, but why did we insert the word possibly ? Wouldn't it be enough to simply say except at ?  We need to say possibly because these theorems, like all theorems, are stated with as much generality as possible. For example, consider the function . Had we not included possibly in the conditions of our theorems the limit: , which is clearly equal to , would have to be considered undefined because is defined at . This distinction may seem like a very fussy, and unimportant detail right now, but it will be important when we discuss the meaning of continuity in .   Historical Background  In the eighteenth century there was a, public, protracted, and vitriolic argument between Benjamin Robins and James Jurin over exactly this point. Robins would have claimed that the statement is meaningless. Jurin would have said it has meaning because it is obviously true. The point here is not that either man was right or wrong, but rather that it depends on how we define limits. By one definition Robins was correct, by another Jurin was. Their controversy was the result of the incomplete understanding of limits that prevailed at the time.    Suppose Then In particular the limit is not . Here is how we would evaluate this limit using the tools we currently have at our disposal. We're interested in the limit as so in particular we do not need to consider the case when . But as long as we have so As gets close to it is clear that gets close to . Therefore Notice that our reasoning is a little vague in the last step because we had to resort to the phase gets close to, and we know from our work in that this is not a precise phrase. This is the best we can do now because we have not yet rigorously defined a limit. We will do that in .    By reasoning in a manner similar to show that for each function.            Vocabulary near It will be tedious to write (and to read) the phrase Suppose that is defined on some open interval about except, possibly, at itself every time we need it so it is customary to say something more like Suppose is defined near  instead. Because we are trying to be as precise, and rigorous as possible we will formalize this by redefining the word near .   Near  Vocabulary Definition Near   We say that has some property near  if has that property on an open interval about , except possibly at itself.    Notice that this is not what near means in ordinary speech. This is one of the things that makes it difficult to read mathematics. We routinely co-opt words from natural languages (like English) and redefine them to fit our needs. In this case our purpose requires that we change the definition of near slightly as you've seen. Because near is a common word and you have a lifetime of experience using it, it can be very difficult to cast off your preconceptions. The familiar definition you learned in childhood will intrude and cause confusion. It is hard to overcome this. Refer back to the definition frequently until you have internalized the mathematical definition.  We have the following theorem.   The Limit of a Constant is the Constant  Theorem Limit of a Constant is the Constant  Suppose and are real numbers, and near . Then    Notice that would be considerably less useful had we not required that for near , rather than on its entire domain. For example, as stated allows us to conclude that if then and because there are open intervals about and where , and , respectively.  Since there is no such interval about , is undefined.      Find an open interval about where .    Find an open interval about where .       Suppose Determine whether the following statements are true or false.    near .     near .     near .     near .     near .     near .       Explain, that the following statements are true by citing through as needed.                    Notice that neither nor exists. However their sum, does exist. Explain why this does not contradict .    Suppose near and exists. Use to show that if then .   Consider for near .    Comment  This problem shows that if then the only way that can exist is if we have a L Hôpital Indeterminate. It can also be used to prove as you will see when we get to it.   The following Corollary says that if is approaching and we multiply by a number, , then the product approaches . It follows from and .   Corollary constant multiple in a limit  If and is a real number then    Corollary constant multiple in a limit  Prove .    Vocabulary continuity  Vocabulary continuous The concept of continuity is essential to Calculus, but you may have noticed that we have carefully avoided it as much as possible until now. This is because defining continuity is similar to defining the line tangent to a curve ( ). We need to think carefully about what we want the term continuous to mean, and then craft our definition to capture that meaning. This would have been very difficult to do without a fairly sophisticated understanding of the limit concept.  So stop and think about this for a moment. What do we mean when we say a curve is continuous ? A first, intuitive definition usually goes something like this: A function is continuous if you can draw its graph without lifting your pencil from the paper, but this is unsatisfactory for a number of reasons. In particular, it is impossible to apply in most cases. Think about it. How often have you seen the entire graph of any function? Usually we just draw the part neat the origin and put arrowheads on both ends of the graph. We need something more precise.  At the end of we remarked that it is only when is continuous at that is equal to , but we did not discuss the matter any further. It is time for that discussion.  First, notice that when you think closely about the statement is continuous at it appears to be nonsense, because is the value of at the single value . Does it make sense to you that a curve can be continuous at a single value of its domain? In ordinary usage the concept of continuity requires an interval to be continuous on, doesn't it?  Since we need the concept of continuity at a point, we define it.   Continuity at a Point  Definition Continuity at a Point   A function , whose domain is an interval in , is continuous at in the interval, if and only if , (alternatively, if ).    If is continuous at every point in its domain we'll just call it a continuous function.  The sketch below shows that recovers the intuitive notion that a function is continuous if we can draw its graph without lifting pen from page. Both of the functions, and are identical everywhere except at . Clearly, we must lift our pen from the page to draw the graph of , which is discontinuous at . But this is not true of the graph of , which is continuous.                   The Limit of a Composition is the Composition of the Limits  Theorem Limit of a Composition is the Composition of the Limits  Suppose and that is continuous at . Then    Essentially this says that we can interchange the function and the symbols if is continuous at .  The following lemma is true and the proof will be valid once the limit theorems have been proven in .   Differentiability Implies Continuity  Lemma Differentiability Implies Continuity  If is differentiable at then is also continuous at     Use the result of to prove .   When we were studying horizontal asymptotes in we encountered (the Squeeze Theorem at Infinity). But the Squeeze Theorem is also valid if , where is a real number.   The Squeeze Theorem (The Finite Case)  Theorem Squeeze Theorem at a point  If for near and then also.    is illustrated below, but a formal proof will not be given until . Notice that on the interval  is caught between ( squeezed by ) and .    Consider the two functions defined in the sketch below:      Use to show that is continuous at .   What functions is caught between?   Use to show that is not continuous at .   Try the substitution for . What would look like in terms of ?    "
+  "body": " The Limit Rules (Theorems)   The Limit of a Composition and Continuity at a Point   In the old days when people invented a new function they had something useful in mind. Now, they invent them deliberately just to invalidate our ancestors' reasoning, and that is all they are ever going to get out of them.   Henri Poincarè (1854 1912)   In this section we will state several theorems about limits which we will need in the sections following. The limit concept is very subtle and our understanding of it is still quite intuitive. We are not yet quite prepared to prove these theorems so we will leave these theorems unproven for now. Our immediate goal is simply to understand what they say and learn how to use them. In the next section we will begin using these theorems to show how the limit in allows us to recapture all of the major results we used in Part I of this text.  In we will finally discard our intuitive definition of a limit ( ) and formally define both a limit at infinity ( and ) and a limit at a point ( ). Then we will return to the theorems in this section and (finally) prove rigorously that they are, in fact, true. Until then any result which relies on the theorems in this section should be considered contingent.  In we stated the following three theorems about limits at infinity.    the limit of a sum is the sum of the limits ( ),    the limit of a product is the product of the limits ( ) and,    the limit of a quotient is the quotient of the limits ( ).   All three of these theorems remain true if is approaching some finite number, , instead of infinity.   The Limit of a Sum is the Sum of the Limits  Theorem Limit of a Sum is the Sum of the Limits  Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. Then if and then     The Limit of a Product is the Product of the Limits  Theorem Limit of a Product is the Product of the Limits  Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. If and then     The Limit of a Quotient is the Quotient of the Limits  Theorem Limit of a Quotient is the Quotient of the Limits  Let be some real number. Suppose that the functions and are defined on some open interval about except, possibly, at itself. Then if and then     Vocabulary in the limit Notice that in addition to changing to some real number, , we have added two qualifications to the statement of each of these theorems from :    Suppose that the functions and are defined on some open interval about and,     except, possibly, at itself    To see why these are necessary recall that we're going to use limits to define the derivative as in so we'll need to evaluate the limit . Clearly the expression is not defined at . But we're only interested in its value in the limit as which means that must be able to get close to . That is, there must be an open interval around where the expression is defined.  But we don't care if is defined at or not. That is irrelevant to our purpose. So we state explicitly that we do not consider whether .  Ok, but why did we insert the word possibly ? Wouldn't it be enough to simply say except at ?  We need to say possibly because these theorems, like all theorems, are stated with as much generality as possible. For example, consider the function . Had we not included possibly in the conditions of our theorems the limit: , which is clearly equal to , would have to be considered undefined because is defined at . This distinction may seem like a very fussy, and unimportant detail right now, but it will be important when we discuss the meaning of continuity in .   Historical Background  In the eighteenth century there was a, public, protracted, and vitriolic argument between Benjamin Robins and James Jurin over exactly this point. Robins would have claimed that the statement is meaningless. Jurin would have said it has meaning because it is obviously true. The point here is not that either man was right or wrong, but rather that it depends on how we define limits. By one definition Robins was correct, by another Jurin was. Their controversy was the result of the incomplete understanding of limits that prevailed at the time.    Suppose Then In particular the limit is not . Here is how we would evaluate this limit using the tools we currently have at our disposal. We're interested in the limit as so in particular we do not need to consider the case when . But as long as we have so As gets close to it is clear that gets close to . Therefore Notice that our reasoning is a little vague in the last step because we had to resort to the phase gets close to, and we know from our work in that this is not a precise phrase. This is the best we can do now because we have not yet rigorously defined a limit. We will do that in .    By reasoning in a manner similar to show that for each function.            Vocabulary near It will be tedious to write (and to read) the phrase Suppose that is defined on some open interval about except, possibly, at itself every time we need it so it is customary to say something more like Suppose is defined near  instead. Because we are trying to be as precise, and rigorous as possible we will formalize this by redefining the word near .   Near  Vocabulary Definition Near   We say that has some property near  if has that property on an open interval about , except possibly at itself.    Notice that this is not what near means in ordinary speech. This is one of the things that makes it difficult to read mathematics. We routinely co-opt words from natural languages (like English) and redefine them to fit our needs. In this case our purpose requires that we change the definition of near slightly as you've seen. Because near is a common word and you have a lifetime of experience using it, it can be very difficult to cast off your preconceptions. The familiar definition you learned in childhood will intrude and cause confusion. It is hard to overcome this. Refer back to the definition frequently until you have internalized the mathematical definition.  We have the following theorem.   The Limit of a Constant is the Constant  Theorem Limit of a Constant is the Constant  Suppose and are real numbers, and near . Then    Notice that would be considerably less useful had we not required that for near , rather than on its entire domain. For example, as stated allows us to conclude that if then and because there are open intervals about and where , and , respectively.  Since there is no such interval about , is undefined.      Find an open interval about where .    Find an open interval about where .       Suppose Determine whether the following statements are true or false.    near .     near .     near .     near .     near .     near .       Explain, that the following statements are true by citing through as needed.                    Notice that neither nor exists. However their sum, does exist. Explain why this does not contradict .    Suppose near and exists. Use to show that if then .   Consider for near .    Comment  This problem shows that if then the only way that can exist is if we have a L Hôpital Indeterminate. It can also be used to prove as you will see when we get to it.   The following Corollary says that if is approaching and we multiply by a number, , then the product approaches . It follows from and .   Corollary constant multiple in a limit  If and is a real number then    Corollary constant multiple in a limit  Prove .    Vocabulary continuity  Vocabulary continuous The concept of continuity is essential to Calculus, but you may have noticed that we have carefully avoided it as much as possible until now. This is because defining continuity is similar to defining the line tangent to a curve ( ). We need to think carefully about what we want the term continuous to mean, and then craft our definition to capture that meaning. This would have been very difficult to do without a fairly sophisticated understanding of the limit concept.  So stop and think about this for a moment. What do we mean when we say a curve is continuous ? A first, intuitive definition usually goes something like this: A function is continuous if you can draw its graph without lifting your pencil from the paper, but this is unsatisfactory for a number of reasons. In particular, it is impossible to apply in most cases. Think about it. How often have you seen the entire graph of any function? Usually we just draw the part neat the origin and put arrowheads on both ends of the graph. We need something more precise.  At the end of we remarked that it is only when is continuous at that is equal to , but we did not discuss the matter any further. It is time for that discussion.  First, notice that when you think closely about the statement is continuous at it appears to be nonsense, because is the value of at the single value . Does it make sense to you that a curve can be continuous at a single value of its domain? In ordinary usage the concept of continuity requires an interval to be continuous on, doesn't it?  Since we need the concept of continuity at a point, we define it.   Continuity at a Point  Definition Continuity at a Point   A function , whose domain is an interval in , is continuous at in the interval, if and only if , (alternatively, if ).    If is continuous at every point in its domain we'll just call it a continuous function.  The sketch below shows that recovers the intuitive notion that a function is continuous if we can draw its graph without lifting pen from page. Both of the functions, and are identical everywhere except at . Clearly, we must lift our pen from the page to draw the graph of , which is discontinuous at . But this is not true of the graph of , which is continuous.                  So intuitively, the continuity of at means that as approaches , should approach . For in the sketch above this does not happen when . From it is clear that if is continuous at then . This may seem to be a little silly observation but it emphaizes the fact that the continuity of at amounts to saying that we can interchange the name of the function and the limit symbol. This is the essence of below.   The Limit of a Composition is the Composition of the Limits  Theorem Limit of a Composition is the Composition of the Limits  Suppose and that is continuous at . Then    Essentially this says that we can interchange the function and the symbols if is continuous at .  The following lemma is true and the proof will be valid once the limit theorems have been proven in .   Differentiability Implies Continuity  Lemma Differentiability Implies Continuity  If is differentiable at then is also continuous at     Use the result of to prove .   When we were studying horizontal asymptotes in we encountered (the Squeeze Theorem at Infinity). But the Squeeze Theorem is also valid if , where is a real number.   The Squeeze Theorem (The Finite Case)  Theorem Squeeze Theorem at a point  If for near and then also.    is illustrated below, but a formal proof will not be given until . Notice that on the interval  is caught between ( squeezed by ) and .    Consider the two functions defined in the sketch below:      Use to show that is continuous at .   What functions is caught between?   Use to show that is not continuous at .   Try the substitution for . What would look like in terms of ?    "
 },
 {
   "id": "THEOREMLimSum2",
@@ -7921,9 +7921,9 @@ var ptx_lunr_docs = [
   "body": " Differentiability Implies Continuity  Lemma Differentiability Implies Continuity  If is differentiable at then is also continuous at   "
 },
 {
-  "id": "SUBSECTIONlimit-comp-cont-45",
+  "id": "SUBSECTIONlimit-comp-cont-46",
   "level": "2",
-  "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-45",
+  "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-46",
   "type": "Problem",
   "number": "14.1.1.18",
   "title": "",
@@ -7939,9 +7939,9 @@ var ptx_lunr_docs = [
   "body": " The Squeeze Theorem (The Finite Case)  Theorem Squeeze Theorem at a point  If for near and then also.  "
 },
 {
-  "id": "SUBSECTIONlimit-comp-cont-50",
+  "id": "SUBSECTIONlimit-comp-cont-51",
   "level": "2",
-  "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-50",
+  "url": "SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont-51",
   "type": "Problem",
   "number": "14.1.1.20",
   "title": "",
@@ -9754,7 +9754,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "18.1",
   "title": "Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation",
-  "body": " Two Ways of Thinking About Integration: Summation vs. Antidifferentiation   Beginning in we observed that in our study of Differential Calculus we it can helpful to change our viewpoint from geometric (Leibniz), to the dynamic (Newton), and back again, depending on the particular context. Similarly the next section describes two different, but equilvalent, ways to think about integration. As before these two viewpoints are, more or less, equivalent, but they provide different insights.    Integration as Summation  Suppose a point, , traces out a line segment of some unknown length, .                 In the sketch below we suppose that the coordinate of is , and that the coordinate of is . We next partition the line segment between and by selecting points , , , such that .   A partitioned interval.         The partition points subdivide the interval into subintervals. We represent the length of the first subinterval of with , of the second with , and so on. In general represents the length of the th subinterval of . Clearly the length of the line segment is . If the subintervals are all the same length, say , then we no longer need the subscripts to distinguish them so we could write instead. But this is cumbersome and we are far too lazy to write all of that each time we want to indicate such a sum. Leibniz proposed using the letter S (first letter of the word sum ) to simplify the summation notation. He would have written: .   Historical Background  Leibniz chose the letter S because it is the first letter of Latin word summa , from which we get the English word sum.   To a modern eye the integral sign looks like a stylized letter S, and that is often how it is described. But it isn t stylized at all. In the seventeenth century a printed letter S typically had one of several forms, depending on where it appeared in a word. One of these extended above and below the line of text, much as the letter f extends above and the letter j extends below the line of text. Leibniz adopted this doubly extended form of S as his summation sign. So the integral symbol isn t stylized at all. It is just archaic.    Vocabulary Integral and the Integral Sign We assume, with Leibniz, that equation remains true when the finite differences ( ) are replaced with infinitesimal differences ( ): . The symbol is called an integral sign , and any expression starting with  and ending with is called an integral .   Finite vs. Infinitesimal Summation  For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used and more or less interchangebly.  But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since comes from Greek, and comes from Latin we extend this convention to summation by writing equation as because is the Greek version of the Latin capital letter S .    Equation is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from to we will get its length, .   Fundamental Theorem of Calculus This is surely not surprising to you and you are probably wondering why we've taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: equation is a very simple form of what is known as the Fundamental Theorem of Calculus which we will need to become very comfortable with. Later, when things get complex, it will be helpful to refer back to equation and remind ourselves that, at its heart, integration is about adding up differentials.   DIGRESSION: Coordinates and Variable Names     In we were rather careless about the distinction between the label of a point, e.g. or , and its coordinate, e.g. or . A natural question would be Aren t they the same thing?   No, actually they aren t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it s (horizontal) distance from the origin. Consider the following diagram.         The labels (names) of the two points are and . Since measures the distance between zero and it is by definition the coordinate of the point labeled . Similarly is the coordinate of .   Comment  If a vertical axis were present zero would be the second coordinate of both points. Do you see why?   On the other hand since  the distance between and  is not measured from the origin it is neither a coordinate nor the label of a point.           It is the length of the line segment . If we partition this line segment and compute we get equation .  Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.     Strictly speaking this is an abuse of our notation and it can cause confusion because it isn t always clear whether and refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.  END OF DIGRESSION     Integration as Antidifferentiation   Antiderivative  Vocabulary Antiderivative   Suppose we have a function with derivative . Then is called an antiderivative of .    From , we see that .  We know from our work in (specifically equation ) that . So if we sum all of the differentials on the left and right sides of equation we have . Observe that since is a differential it follows that is also a differential so the expression is a valid integral.  Thus it appears that if is known then will be the antiderivative of . That is to say, integration appears to be differentiation run backwards.   It follows immediately from and the Constant Rule that if a function has one antiderivative then it has infinitely many. That is, if is an antiderivative of then so is . And . In fact if ia a constant then so is for every possible value of because we get a (slightly) different antiderivative each time we add a constant to .  Thus if we know one antiderivative of , then we know all (infinitely many) of the antiderivatives of . Remember this. We will return to it when we discuss below.   A Simple Integration  For example, can you find a formula for this integral: ?  Clearly so from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus .   Vocabulary Antiderivative most general This shows that the expression represents a multifunction much like the  functions we encountered in . However, none of the complicated domain and range difficulties that caused so many headaches in will be in play here. Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call the most general antiderivative of .   There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for the problem in front of us.   Beginning in the early twentieth century integration theory has grown considerably beyond what we will be learning in this course. But the underlying notions of the integral as a sum and the integral as an antiderivative are still very helpful and we will rely on them rather heavily, at least at first.  Antiderivative  Show that the following statements are true. Assume is an arbitrary constant. (We have not shown you how to compute any of these integrals. But you know how to differentiate. Read again carefully.)               Notice that we ve used instead of for our variable. Does that matter? Explain.               The exercises in were all a bit contrived. Since we gave you the antiderivatives you don t really need to know how tho integrate.  The real question here is How could you find these antiderivatives if we hadn t given them to you?     We Integrate Differentials, Not Functions  Integration can be usefully thought of as either summation or antidifferentiation. We will flip between these two mindsets as convenient in much the same way that we flipped between the dynamic (Newtonian) and geometric (Leibnizian) viewpoints in .  Since it is valid to think of as representing an antiderivative of the function it is customary to speak these symbols aloud as the integral of of . While this is not wrong, it is not quite right either. Properly speaking, we should say the integral of the differential times . But no one does that so we won t either.  But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop unfortunate habits of mind. We will take a moment to try to prevent that from happening.  The integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final , of writing instead of , and then calling them both the integral of the function .  This is an unfortunate, but common, abuse of the notation. You can not integrate a function, only a differential. We strongly suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.  Remember that is meaningless no matter how convenient it might be because it indicates that we are summing a function, not a differential.   Notation  By calling meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don t fall into this habit while you are still learning the basics.   But the meaning of is clear. We're summing up all of the differentials of the form .                     "
+  "body": " Two Ways of Thinking About Integration: Summation vs. Antidifferentiation   Beginning in we observed that in our study of Differential Calculus we it can helpful to change our viewpoint from geometric (Leibniz), to the dynamic (Newton), and back again, depending on the particular context. Similarly the next section describes two different, but equilvalent, ways to think about integration. As before these two viewpoints are, more or less, equivalent, but they provide different insights.    Integration as Summation  Suppose a point, , traces out a line segment of some unknown length, .                 In the sketch below we suppose that the coordinate of is , and that the coordinate of is . We next partition the line segment between and by selecting points , , , such that .   A partitioned interval.         The partition points subdivide the interval into subintervals. We represent the length of the first subinterval of with , of the second with , and so on. In general represents the length of the th subinterval of . Clearly the length of the line segment is . If the subintervals are all the same length, say , then we no longer need the subscripts to distinguish them so we could write instead. But this is cumbersome and we are far too lazy to write all of that each time we want to indicate such a sum. Leibniz proposed using the letter S (first letter of the word sum ) to simplify the summation notation. He would have written: .   Historical Background  Leibniz chose the letter S because it is the first letter of Latin word summa , from which we get the English word sum.   To a modern eye the integral sign looks like a stylized letter S, and that is often how it is described. But it isn t stylized at all. In the seventeenth century a printed letter S typically had one of several forms, depending on where it appeared in a word. One of these extended above and below the line of text, much as the letter f extends above and the letter j extends below the line of text. Leibniz adopted this doubly extended form of S as his summation sign. So the integral symbol isn t stylized at all. It is just archaic.    Vocabulary Integral and the Integral Sign We assume, with Leibniz, that equation remains true when the finite differences ( ) are replaced with infinitesimal differences ( ): . The symbol is called an integral sign , and any expression starting with  and ending with is called an integral .   Finite vs. Infinitesimal Summation  For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used and more or less interchangebly.  But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since comes from Greek, and comes from Latin we extend this convention to summation by writing equation as because is the Greek version of the Latin capital letter S .    Equation is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from to we will get its length, .   Fundamental Theorem of Calculus This is surely not surprising to you and you are probably wondering why we've taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: equation is a very simple form of what is known as the Fundamental Theorem of Calculus which we will need to become very comfortable with. Later, when things get complex, it will be helpful to refer back to equation and remind ourselves that, at its heart, integration is about adding up differentials.   DIGRESSION: Coordinates and Variable Names     In we were rather careless about the distinction between the label of a point, e.g. or , and its coordinate, e.g. or . A natural question would be Aren t they the same thing?   No, actually they aren t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it s (horizontal) distance from the origin. Consider the following diagram.         The labels (names) of the two points are and . Since measures the distance between zero and it is by definition the coordinate of the point labeled . Similarly is the coordinate of .   Comment  If a vertical axis were present zero would be the second coordinate of both points. Do you see why?   On the other hand since  the distance between and  is not measured from the origin it is neither a coordinate nor the label of a point.           It is the length of the line segment . If we partition this line segment and compute we get equation .  Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.     Strictly speaking this is an abuse of our notation and it can cause confusion because it isn t always clear whether and refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.  END OF DIGRESSION     Integration as Antidifferentiation   Antiderivative  Vocabulary Antiderivative   Suppose we have a function with derivative . Then is called an antiderivative of .    From , we see that .  We know from our work in (specifically equation ) that . So if we sum all of the differentials on the left and right sides of equation we have . Observe that since is a differential it follows that is also a differential so the expression is a valid integral.  Thus it appears that if is known then will be the antiderivative of . That is to say, integration appears to be differentiation run backwards. This seems reasonable since differentiation consists of subtracting (finding differentials) and integration consists of adding (summing differentials). Addition and subtraction can both be thought of as doing the the other backwards.   It follows immediately from and the Constant Rule that if a function has one antiderivative then it has infinitely many. That is, if is an antiderivative of then so is . And . In fact if ia a constant then so is for every possible value of because we get a (slightly) different antiderivative each time we add a constant to .  Thus if we know one antiderivative of , then we know all (infinitely many) of the antiderivatives of . Remember this. We will return to it when we discuss below.   A Simple Integration  For example, can you find a formula for this integral: ?  Clearly so from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus .   Vocabulary Antiderivative most general This shows that the expression represents a multifunction much like the  functions we encountered in . However, none of the complicated domain and range difficulties that caused so many headaches in will be in play here. Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call the most general antiderivative of .   There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for the problem in front of us.   Beginning in the early twentieth century integration theory has grown considerably beyond what we will be learning in this course. But the underlying notions of the integral as a sum and the integral as an antiderivative are still very helpful and we will rely on them rather heavily, at least at first.  Antiderivative  Show that the following statements are true. Assume is an arbitrary constant. (We have not shown you how to compute any of these integrals. But you know how to differentiate. Read again carefully.)               Notice that we ve used instead of for our variable. Does that matter? Explain.               The exercises in were all a bit contrived. Since we gave you the antiderivatives you don t really need to know how tho integrate.  The real question here is How could you find these antiderivatives if we hadn t given them to you?     We Integrate Differentials, Not Functions  Integration can be usefully thought of as either summation or antidifferentiation. We will flip between these two mindsets as convenient in much the same way that we flipped between the dynamic (Newtonian) and geometric (Leibnizian) viewpoints in .  Since it is valid to think of as representing an antiderivative of the function it is customary to speak these symbols aloud as the integral of of . While this is not wrong, it is not quite right either. Properly speaking, we should say the integral of the differential times . But no one does that so we won t either.  But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop unfortunate habits of mind. We will take a moment to try to prevent that from happening.  The integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final , of writing instead of , and then calling them both the integral of the function .  This is an unfortunate, but common, abuse of the notation. You can not integrate a function, only a differential. We strongly suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.  Remember that is meaningless no matter how convenient it might be because it indicates that we are summing a function, not a differential.   Notation  By calling meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don t fall into this habit while you are still learning the basics.   But the meaning of is clear. We're summing up all of the differentials of the form .  Finally, there is a puzzle here. In we introduced integration as summation, and we invented the integral sign to reflect that idea. But in this section we have reinterpreted the integral to mean antidifferentiation and the idea of integral as summation seems to have died a quiet death. Nowhere in does a summation appear.  But this is the point. Computing the sum is a very daunting task. Where would you even begin? By reinterpreting it as an antidifferentiation problem we are able to find the sum, without the bother of adding up (infinitely many) differentials of the form . Antidifferentiation gives us a way to compute the sum indirectly.                     "
 },
 {
   "id": "FIGUREPartitionedInterval",
@@ -9862,7 +9862,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.1",
   "title": "Separation of Variables",
-  "body": " Separation of Variables       Many natural phenomena can be modeled by a differential equation. You ve already seen this a couple of times. For example, you saw in that the differential equation models the force on a spinning vat of liquid glass. By recognizing that the parabola is one solution of equation we concluded that forming a telescope lens by spin casting would guarantee a parabolic shape.  We obtained our solution in , essentially, by guessing. As we ve said before guessing is an important tool and we encourage you to use it. But, as we ve also said, it is not enough to guess and move on if we happen to make a correct guess. We need to stop and examine the intuition that gave us this guess.  In particular in this case, we want to recast this problem in integral form so we can use the more descriptive, and helpful, notation of integration. We can rewrite equation as As you can see this is the same problem we need to find an antiderivative of . But whereas the differential notation merely tells us what the differential of is, the integral notation clearly suggests an action for us to take: Sum up all of the differentials of the form . And we know how to compute this sum using equations and . With a standard methodology and a clear notation we can successfully attack a wider variety of problems.    Problem Use the rules of integration to finish solving equation . Notice that when you integrate, you will have the arbitrary constant in your answer. We will determine this constant later. Can you guess what it must be and what factors will determine it s value?    Vocabulary Separation of Variables Again, the point is that integration gives us a more systematic way of solving differential equations. The solution strategy we used when we rewrote equation is called separation of variables and it will enable us to solve a great many simple differential equations.  To see this consider the differential equation .   Before we continue see if you can come up with a solution of equation on your own. Notice how it is similar to, and different from, equation . Does that help?    Separation of Variables  To find a way to approach this problem we will take our cue from basic Algebra. Suppose we want to solve the algebraic equation for . One obvious solution is . This is a valid solution, but it is uninteresting, so we will not consider it. Assuming that , we can divide by obtaining Once the variables have been separated like this, we can take the square root of each side and obtain .  Notice that it was helpful to put all of the variables on one side, and all of the variables on the other. It was not immediately clear that separating the variables would be helpful but once it was done, the next step was clear.  Similarly it is not clear that separating the variables in equation will help, but let s try it and see what happens. Separating the variables, we see that which says that the differentials on either side of the equation are the same. Integrating (summing) both sides gives .     Problem    Integrate both sides of equation and then show that must satisfy where are arbitrary constants.   Show that    Since are arbitrary constants, it follows that is also an arbitrary constant. (Why?) For simplicity we will set , so provides the general solution for the original differential equation.  Separation of variable is not always possible in either an Algebra or a Calculus setting. For example, try separating the variables in or .  Even when it can be done it is not always helpful For example, suppose we had the algebraic equation   Separating the variables gives , but simply taking the cube root of both sides won t work. Try it and see. It would take an application of the Cubic Formula which is not so trivial.   Comment  The Cubic Formula is like the Quadratic Formula , only more fun.   Similarly, try as you might you can not separate the variables in the differential equation . Try it and see.  There are whole books and college courses (undergraduate and graduate) on the solution of various kinds of differential equations, and it is still an active area of mathematical research. By and large, in this textbook we will only see separable differentiable equations. But even solving those takes work. For example,   A Hard Differential Equation  In of we saw that if is the shape that a hanging chain naturally settles into under the pull of gravity then will necessarily be a solution of the second order differential equation: which is a model for the Hanging Chain problem. That is, the graph of a function which solves equation will be the shape of a hanging chain.  It is one thing to confirm a given solution, as you did in , but finding the solution in the first place is not at all a simple task. A start might be to let , so we have .       Adding all of the differentials on both sides of equation , we see that .   As you can see, this is separable, and we can certainly integrate the right-hand side of equation . When we do that we get .  We still need to determine the arbitrary constant , but that is the least of our worries because nothing in our table of integrals from quite matches the left hand side of equation We ll need to develop more integration techniques before we can show that is the solution of equation . For now, let s get grounded with a topic we examined in . This time we will look at it from our integration perspective.  "
+  "body": " Separation of Variables       Many natural phenomena can be modeled by a differential equation. You ve already seen this a couple of times. For example, you saw in that the differential equation models the force on a spinning vat of liquid glass. By recognizing that the parabola is one solution of equation we concluded that forming a telescope lens by spin casting would guarantee a parabolic shape.  We obtained our solution in , essentially, by guessing. As we ve said before guessing is an important tool and we encourage you to use it. But, as we ve also said, it is not enough to guess and move on if we happen to make a correct guess. We need to stop and examine the intuition that gave us this guess.  In particular in this case, we want to recast this problem in integral form so we can use the more descriptive, and helpful, notation of integration. We can rewrite equation as As you can see this is the same problem we need to find an antiderivative of . But whereas the differential notation merely tells us what the differential of is, the integral notation clearly suggests an action for us to take: Sum up all of the differentials of the form . And we know how to compute this sum using equations and . With a standard methodology and a clear notation we can successfully attack a wider variety of problems.    Problem Use the rules of integration to finish solving equation . Notice that when you integrate, you will have the arbitrary constant in your answer. We do not yet have enough information to determine this constant. We will address this at a later    Vocabulary Separation of Variables Again, the point is that integration gives us a more systematic way of solving differential equations. The solution strategy we used when we rewrote equation is called separation of variables and it will enable us to solve a great many simple differential equations.  To see this consider the differential equation .   Before we continue see if you can come up with a solution of equation on your own. Notice how it is similar to, and different from, equation . Does that help?    Separation of Variables  To find a way to approach this problem we will take our cue from basic Algebra. Suppose we want to solve the algebraic equation for . One obvious solution is . This is a valid solution, but it is uninteresting, so we will not consider it. Assuming that , we can divide by obtaining Once the variables have been separated like this, we can take the square root of each side and obtain .  Notice that it was helpful to put all of the variables on one side, and all of the variables on the other. It was not immediately clear that separating the variables would be helpful but once it was done, the next step was clear.  Similarly it is not clear that separating the variables in equation will help, but let s try it and see what happens. Separating the variables, we see that which says that the differentials on either side of the equation are the same. Integrating (summing) both sides gives .     Problem    Integrate both sides of equation and then show that must satisfy where are arbitrary constants.   Show that    Since are arbitrary constants, it follows that is also an arbitrary constant. (Why?) For simplicity we will set , so provides the general solution for the original differential equation.  Separation of variable is not always possible. For example, try separating the variables in or .  Even when it can be done it is not always helpful. For example, suppose we had the algebraic equation   Separating the variables gives , but it would take an application of the Cubic Formula which is not so trivial.   Comment  The Cubic Formula is like the Quadratic Formula , only more fun.   There are whole books and college courses, at both the undergraduate and graduate levels, on the solution of various kinds of differential equations, and it is still an active area of mathematical research. Separable differential equations are among the simplest to solve and even these can be quite challenging at times. Consider the following example.   A Hard Differential Equation  In of we saw that if is the shape that a hanging chain naturally settles into under the pull of gravity then will necessarily be a solution of the second order differential equation: which is a model for the Hanging Chain problem. That is, the graph of a function which solves equation will be the shape of a hanging chain.  It is one thing to confirm a given solution, as you did in , but finding the solution in the first place is not at all a simple task. A start might be to let , so we have .       Adding all of the differentials on both sides of equation , we see that .   As you can see, this is separable, and we can certainly integrate the right-hand side of equation . When we do that we get .  We still need to determine the arbitrary constant , but that is the least of our worries because nothing in our table of integrals from quite matches the left hand side of equation We ll need to develop more integration techniques before we can show that is the solution of equation . For now, let s get grounded with a topic we examined in . This time we will look at it from our integration perspective.  "
 },
 {
   "id": "SECTIONTwoSimpleDiffeqs-5",
@@ -9871,7 +9871,7 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "19.1.0.1",
   "title": "",
-  "body": "  Problem Use the rules of integration to finish solving equation . Notice that when you integrate, you will have the arbitrary constant in your answer. We will determine this constant later. Can you guess what it must be and what factors will determine it s value?  "
+  "body": "  Problem Use the rules of integration to finish solving equation . Notice that when you integrate, you will have the arbitrary constant in your answer. We do not yet have enough information to determine this constant. We will address this at a later  "
 },
 {
   "id": "SECTIONTwoSimpleDiffeqs-6",
@@ -10726,7 +10726,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "21.1",
   "title": "Historical Precursors to Definite Integration",
-  "body": " Historical Precursors to Definite Integration   Bonaventura Cavalieri and Indivisibles    Bonaventura Cavalieri (1598 1647)   Portrait of Bonaventura Cavalieri     Bonaventura Cavalieri was a Jesuat monk who studied mathematics at the University of Pisa under the tutelage of Benedetto Antonio Castelli . Castelli introduced Cavalieri to Galileo s methods. Cavalieri was deeply inspired by Galileo and his methods. Although they only met once Cavalieri and Galileo exchanged many letters over the years.  Cavalieri studied, and extended, the method of indivisibles which was in vogue among the Italian mathematicians and scientists of his time. He would eventually publish his results in a book titled Geometria Indivisibilibus . Howard Eves In Great Moments in Mathematics Before 1650 said of, Cavalieri s great work, Cavalieri s treatise on the method of indivisibles is voluble and not clearly written, and it is not easy to learn from it precisely what Cavalieri meant by an indivisible . It is likely that this is because Cavalieri himself was unsure what an indivisible should be. Nevertheless the fundamental notion of an indivisible was picked up by Leibniz who transformed it into his Calculus Differentialis .   Historical Context  The concept of an indivisible was vehemently opposed by the Catholic Church for reasons that are quite fascinating. Unfortunately, the reasons for the church s opposition were religious, not mathematical, so discussing them here would take us too far afield.  They are discussed in detail in the book, Infinitesimal , by Amir Alexander, (2014).   Cavalieri s ideas were deep and fundamental so it is worthwhile to learn a bit about them before we go on. In simple terms Cavalieri said that we can compute the area of a planar region by summing up all of the lines that make up the region. Similarly, we can compute the volume of a solid by summing up all of the planes that make it up. An example will be helpful.     Cavalieri asserted that the area of the rectangle is composed of (infinitely many) vertical lines. We have separated the lines so they can be seen.      Cavalieri began with the simple observation, seen in , that a rectangle is composed of lines. He asserted that the area of the rectangle is equal to the sum of all the lines that make it up. He was careful not to say that the area of the rectangle is equal to the sum of the areas of the lines. He knew, as we do, that this would be problematic since lines do not have an area, and this would have lead him into logical contradictions. But he proceeded as if that was true.  If we accept this premise then clearly any other shape we can create using the same lines will have the same area. For example the sketch below shows the parallelogram constructed from the same lines that make up the rectangle in . Clearly both have the same area.     It isn t necessary for the shape to be regular in any sense. The following shape will also have the same area as our original rectangle as long as all the lines are the same.     The same idea can be used to compare volumes. For example the image below shows two pictures of the same deck of cards. Obviously the volumes of the stacks are the same since they are made of the same of cards.         Extending the idea in idea to infinitely thin slices gives us Cavalieri s Principle .   Cavalieri s Principle     If the cross sectional areas of the corresponding slices of two solid figures are all in the same proportion, say , then the proportion of the volumes of the two figures will also be provided both figures have the same height.    For the deck of cards shown above the proportion, , is equal to one. If the cards had been cut in half before making the second stack then and the second stack would have half the volume of the first.    Cavalieri s Principle is normally stated in terms of volumes of solids, as we have here, but it is equally applicable to the areas of planar regions.  State Cavalieri s Principle for the area of planar regions.    Circles and Ellipses  To see how Cavalieri used his principle we will find the area enclosed by an ellipse by comparing it to the known area of a related circle.  We begin with the graph of which is an ellipse. We then form the circle as shown below.     Solving equation for gives , and solving equation for gives . Thus the proportion of a typical cross section of both figures (see the vertical line in the figure) is . Therefore by the ratio of the areas enclosed by the ellipse and the circle is also . That is . Thus .  Notice that when the ellipse becomes a circle with radius equal to and our area formula recovers the area of the circle.    To display the power and usefulness of Cavalieri s Principle we will use it to find the formula for the volume of a sphere with radius .    Half of a sphere with radius .       A cylinder with radius with a cone removed.        Show that the red circle in has the same area as the red annulus in .   Show that the volume of the solid in is .   You will need a formula for the volume of the cylinder and a formula for the volume of the cone deleted from it.   Use Cavalieri s Principle to conclude that the volume of a sphere with radius is .     Differentials and Cavalieri  Since our purpose to use Cavalieri s method to inform the Calculus approach to problem solving we will now reinterpret Cavalieri s approach to finding volumes using Leibniz s differential notation.  In view of our discussion in . it should be clear that Cavalieri is adding up differentials. For example, in it is clear that the lines have no width. We could, arbitrarily, define the width to be zero but that is not helpful. Instead we will think of the width as a differential, say .  In that case a rectangle consists of all the lines with (differential) area: . We defined the notation to express this in . The area of a rectangle is given by the expression .  But the formula above doesn t quite give us everything we d like. An example will be helpful.   To see what we mean suppose we want to express the area of a rectangle with height equal to and width equal to .   Comment  Yes we know this area is . We don t care about that. We want to find a way to express this simple area using the notation of Calculus so that we can write down expressions for more complicated areas and, hopefully, find ways to actually compute them.  In fact, ultimately we don t really care (much) about computing areas. For us the problem of computing area is just a relatively simple context in which we can develop the skills that will help us compute other quantities that we do care about.   We begin by embedding our rectangle in an  coordinate system as in the sketch below where the red rectangle is one of Cavalieri s all the lines that make up the rectangle.     Clearly the area of this line is , so the area of the area of the entire rectangle is given by . This is all well and good conceptually, but if we want to actually compute a value for the area we need to know where to start summing the differential areas (lines) and were to stop.  Similar considerations lead the mathematician Joseph Fourier to add indices to the integral sign as follows: The indices in this expression tell us that we begin summing the differential at and stop at .  Notice that, despite the complexity of the notation, expressions like formula simply represent a specific, or definite number; eight in this case. For that reason they are called definite integrals . Expressions like , without the indices, represent functions as we saw in .  In we just called them integrals because they were the only ones had encountered. We call integrals without indices indefinite integrals to distinquish them from definite integrals with indices.    "
+  "body": " Historical Precursors to Definite Integration   Bonaventura Cavalieri and Indivisibles    Bonaventura Cavalieri (1598 1647)   Portrait of Bonaventura Cavalieri     Bonaventura Cavalieri was a Jesuat monk who studied mathematics at the University of Pisa under the tutelage of Benedetto Antonio Castelli . Castelli introduced Cavalieri to Galileo s methods. Cavalieri was deeply inspired by Galileo and his methods. Although they only met once Cavalieri and Galileo exchanged many letters over the years.  Cavalieri studied, and extended, the method of indivisibles which was in vogue among the Italian mathematicians and scientists of his time. He would eventually publish his results in a book titled Geometria Indivisibilibus . Howard Eves In Great Moments in Mathematics Before 1650 said of, Cavalieri s great work, Cavalieri s treatise on the method of indivisibles is voluble and not clearly written, and it is not easy to learn from it precisely what Cavalieri meant by an indivisible . It is likely that this is because Cavalieri himself was unsure what an indivisible should be. Nevertheless the fundamental notion of an indivisible was picked up by Leibniz who transformed it into his Calculus Differentialis .   Historical Context  The concept of an indivisible was vehemently opposed by the Catholic Church for reasons that are quite fascinating. Unfortunately, the reasons for the church s opposition were religious, not mathematical, so discussing them here would take us too far afield.  They are discussed in detail in the book, Infinitesimal , by Amir Alexander, (2014).   Cavalieri s ideas were deep and fundamental so it is worthwhile to learn a bit about them before we go on. In simple terms Cavalieri said that we can compute the area of a planar region by summing up all of the lines that make up the region. Similarly, we can compute the volume of a solid by summing up all of the planes that make it up. An example will be helpful.     Cavalieri asserted that the area of the rectangle is composed of (infinitely many) vertical lines. We have separated the lines so they can be seen.      Cavalieri began with the simple observation, seen in , that a rectangle is composed of lines. He asserted that the area of the rectangle is equal to the sum of all the lines that make it up. He was careful not to say that the area of the rectangle is equal to the sum of the areas of the lines. He knew, as we do, that this would be problematic since lines do not have an area, and this would have lead him into logical contradictions. But he proceeded as if that was true.  If we accept this premise then clearly any other shape we can create using the same lines will have the same area. For example the sketch below shows the parallelogram constructed from the same lines that make up the rectangle in . Clearly both have the same area.     It isn t necessary for the shape to be regular in any sense. The following shape will also have the same area as our original rectangle as long as all the lines are the same.     The same idea can be used to compare volumes. For example the image below shows two pictures of the same deck of cards. Obviously the volumes of the stacks are the same since they are made of the same of cards.         Extending the idea in idea to infinitely thin slices gives us Cavalieri s Principle .   Cavalieri s Principle     If the cross sectional areas of the corresponding slices of two solid figures are all in the same proportion, say , then the proportion of the volumes of the two figures will also be provided both figures have the same height.    For the deck of cards shown above the proportion, , is equal to one. If the cards had been cut in half before making the second stack then and the second stack would have half the volume of the first.    Cavalieri s Principle is normally stated in terms of volumes of solids, as we have here, but it is equally applicable to the areas of planar regions.  State Cavalieri s Principle for the area of planar regions.    Circles and Ellipses  To see how Cavalieri used his principle we will find the area enclosed by an ellipse by comparing it to the known area of a related circle.  We begin with the graph of which is an ellipse. We then form the circle as shown below.     Solving equation for gives , and solving equation for gives . Thus the proportion of a typical cross section of both figures (see the vertical line in the figure) is . Therefore by the ratio of the areas enclosed by the ellipse and the circle is also . That is . Thus .  Notice that when the ellipse becomes a circle with radius equal to and our area formula recovers the area of the circle.    To display the power and usefulness of Cavalieri s Principle we will use it to find the formula for the volume of a sphere with radius .    Half of a sphere with radius .       A cylinder with radius with a cone removed.        Show that the red circle in has the same area as the red annulus in .   Show that the volume of the solid in is .   You will need a formula for the volume of the cylinder and a formula for the volume of the cone deleted from it.   Use Cavalieri s Principle to conclude that the volume of a sphere with radius is .     Differentials and Cavalieri  Since our purpose to use Cavalieri s method to inform the Calculus approach to problem solving we will now reinterpret Cavalieri s approach to finding volumes using Leibniz s differential notation.  In view of our discussion in . it should be clear that Cavalieri is adding up differentials. For example, in it is clear that the lines have no width. We could, arbitrarily, define the width to be zero but that is not helpful. Instead we will think of the width as a differential, say .  In that case a rectangle consists of all the lines with (differential) area: . We defined the notation to express this in . The area of a rectangle is given by the expression .  But the formula above doesn t quite give us everything we d like. An example will be helpful.   To see what we mean suppose we want to express the area of a rectangle with height equal to and width equal to .   Comment  Yes we know this area is . We don t care about that. We want to find a way to express this simple area using the notation of Calculus so that we can write down expressions for more complicated areas and, hopefully, find ways to actually compute them.  In fact, ultimately we don t really care (much) about computing areas per se . For us the problem of computing area is just a relatively simple context in which we can develop the skills that will help us compute other quantities that we do care about.   We begin by embedding our rectangle in an  coordinate system as in the sketch below where the red rectangle is one of Cavalieri s all the lines that make up the rectangle.     Clearly the area of this line is , so the area of the area of the entire rectangle is given by . This is all well and good conceptually, but if we want to actually compute a value for the area we need to know where to start summing the differential areas (lines) and were to stop.  Similar considerations lead the mathematician Joseph Fourier to add indices to the integral sign as follows: The indices in this expression tell us that we begin summing the differential at and stop at .  Notice that, despite the complexity of the notation, expressions like formula simply represent a specific, or definite number; eight in this case. For that reason they are called definite integrals .  Expressions like , without the indices, represent functions as we saw in . Integrals without indices are called indefinite integrals to distinquish them from definite integrals with indices. In we just called them integrals because they were the only kind we had encountered at the time.    "
 },
 {
   "id": "FIGURECavalieri",
@@ -10798,14 +10798,23 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "21.1.2.1",
   "title": "",
-  "body": " To see what we mean suppose we want to express the area of a rectangle with height equal to and width equal to .   Comment  Yes we know this area is . We don t care about that. We want to find a way to express this simple area using the notation of Calculus so that we can write down expressions for more complicated areas and, hopefully, find ways to actually compute them.  In fact, ultimately we don t really care (much) about computing areas. For us the problem of computing area is just a relatively simple context in which we can develop the skills that will help us compute other quantities that we do care about.   We begin by embedding our rectangle in an  coordinate system as in the sketch below where the red rectangle is one of Cavalieri s all the lines that make up the rectangle.     Clearly the area of this line is , so the area of the area of the entire rectangle is given by . This is all well and good conceptually, but if we want to actually compute a value for the area we need to know where to start summing the differential areas (lines) and were to stop.  Similar considerations lead the mathematician Joseph Fourier to add indices to the integral sign as follows: The indices in this expression tell us that we begin summing the differential at and stop at .  Notice that, despite the complexity of the notation, expressions like formula simply represent a specific, or definite number; eight in this case. For that reason they are called definite integrals . Expressions like , without the indices, represent functions as we saw in .  In we just called them integrals because they were the only ones had encountered. We call integrals without indices indefinite integrals to distinquish them from definite integrals with indices.  "
+  "body": " To see what we mean suppose we want to express the area of a rectangle with height equal to and width equal to .   Comment  Yes we know this area is . We don t care about that. We want to find a way to express this simple area using the notation of Calculus so that we can write down expressions for more complicated areas and, hopefully, find ways to actually compute them.  In fact, ultimately we don t really care (much) about computing areas per se . For us the problem of computing area is just a relatively simple context in which we can develop the skills that will help us compute other quantities that we do care about.   We begin by embedding our rectangle in an  coordinate system as in the sketch below where the red rectangle is one of Cavalieri s all the lines that make up the rectangle.     Clearly the area of this line is , so the area of the area of the entire rectangle is given by . This is all well and good conceptually, but if we want to actually compute a value for the area we need to know where to start summing the differential areas (lines) and were to stop.  Similar considerations lead the mathematician Joseph Fourier to add indices to the integral sign as follows: The indices in this expression tell us that we begin summing the differential at and stop at .  Notice that, despite the complexity of the notation, expressions like formula simply represent a specific, or definite number; eight in this case. For that reason they are called definite integrals .  Expressions like , without the indices, represent functions as we saw in . Integrals without indices are called indefinite integrals to distinquish them from definite integrals with indices. In we just called them integrals because they were the only kind we had encountered at the time.  "
+},
+{
+  "id": "SUBSECTIONDefIndefInt",
+  "level": "1",
+  "url": "SUBSECTIONDefIndefInt.html",
+  "type": "Section",
+  "number": "21.2",
+  "title": "The Connection Between Definite and Indefinite Integration",
+  "body": " The Connection Between Definite and Indefinite Integration    "
 },
 {
   "id": "SECTIONAreasAndIntegration",
   "level": "1",
   "url": "SECTIONAreasAndIntegration.html",
   "type": "Section",
-  "number": "21.2",
+  "number": "21.3",
   "title": "Areas and Integration",
   "body": " Areas and Integration  Recall, much earlier, that we examined the catenary (hanging chain). We showed that the catenary was not a parabola as Galileo had mentioned. The idea of a catenary was (and is) important in engineering in the construction of arches. Masons before Galileo's time were aware of the fact that the best arches were in the shape of an inverted catenary, and they constructed wooden frames for their stone utilizing a hanging chain for the correct shape. This can be seen in the following example.   Stone Arch Bridge  Consider one half of a stone arch bridge as drawn below.   Schematic of a stone arch   Schematic of a stone arch    We will draw the positive -axis downward and will focus on the forces at a generic point with coordinates . The problem is to find the curve so that the vertical component of the tangential force at is equal to the weight of the bridge from to . If we do this, then that means that the weight of the bridge will be directed toward the base of the bridge. With this in mind, let denote the area of the side section of the bridge from to . We will also let denote the (constant) magnitude of the horizontal force along the length of the bridge and be the weight density of the stone (per cross sectional area).   Stone Arch Schematic   Stone Arch Schematic    With all of this set up, what we really want is the horizontal component of the force to be and the vertical component to be the weight of the bridge from to , namely, . This leads to the following picture.   Stone Arch Triangle of Forces   Stone Arch Triangle of Forces    This leads to the slope of the tangent line at equaling , so we get the differential equation The problem here is that we don't know what is. However, a moment's thought tells us that we know what is. If we increase to , then we can see that .   Stone Arch Schematic   Stone Arch Schematic    Thus, if we differentiate the above equation, we get that the arch should satisfy the differential equation     Show that satisfies the above differential equation.   Show that if and , then . Compare this to the equation of the catenary in Problem in Context #53 in Differential Calculus .   Note to Self  Convert this to a PreTexT link.    Vocabulary Fundamental Theorem of Calculus While it is interesting that the above example illustrates the importance of catenaries in engineering, the important thing for us is that . Thus which relates integrals to areas. This relationship was known to both Newton and Leibniz, as well as some of their predecessors. It is of such importance that it is known as the Fundamental Theorem of Calculus .  To make this a bit more concrete, let's set this up a bit more carefully. Suppose we start with a curve where for , and we wish to find the area of the region bounded by the curves , , , and    The area under a curve   The area under a curve     Vocabulary Fundamental Theorem of Calculus We used the notation to denote a sum of differentials and called this integration with the idea that it was the opposite of differentiation and provided a notation for the antiderivative to the function . In examining a situation like we have with areas above, we will modify our notation a bit to to emphasize that we are adding differentials from to , so that represents a specific number (in this case area), whereas represents an antiderivative which is a family of functions differing by arbitrary constants. With this in mind, is called the definite integral of from to and is called the indefinite integral of . So, the definite integral is a specific number while the indefinite integral is a family of functions. If using almost the same notation seems confusing at this point, it is brought together by the Fundamental Theorem of Calculus .   The Fundamental Theorem of Calculus  Suppose that (so that is an antiderivative of ). Then    As was mentioned before, this result was known to both Newton and Leibniz and was first publish in a short paper by Leibniz in 1693. The idea is so surprisingly simple and profound, that it warrants an (apocryphal) story. When Leibniz was a young diplomat in Paris, he sought Christian Huygens who, at the time, was one of the most brilliant mathematicians in the world. Leibniz credited much of his mathematical growth in Paris to Huygens. The idea for summing differences came to Leibniz from a problem given to him by Huygens in 1672, namely to compute the following sum Leibniz recognized that this could be rewritten as and noted that nearly all of the fractions cancelled out leaving .  The importance of this was not the result, but the technique, namely that the sum of differences is equal to the difference of the extremes. Applying this same principle to the Fundamental Theorem of Calculus, we have This was so quick, that it probably deserves a picture. Consider the picture below of the two functions and related by the fact that .            Notice that since , then this says that the area of the box with width and height in the first diagram is numerically the same as the length of the segment in the second diagram. Of course, these represent corresponding generic boxes and segments. If we add all of these together, the sum of the areas of the boxes in the first diagram will provide the area of the region; the sum of the lengths of the segments in the second diagram will provide the length of the segment from to . In other words, we have which is what the Fundamental Theorem of Calculus says.  It is hard to overstate the importance of this result. (Not everything is called a Fundamental Theorem.) In many applications, we will have a need to add all of the differentials which may or may not represent areas. After we set up this sum, computation will bring us back to our old problem of computing antiderivatives. For now, let's just focus on computation of definite integrals via the Fundamental Theorem of Calculus. With the Fundamental Theorem of Calculus in mind, we introduce the following notation. If then The symbol is read aloud as of evaluated from to and is the difference between and . Again, this is purely notational.  Given our notation for an indefinite integral, the Fundamental Theorem of Calculus says However, there are infinitely many possibilities for . Does this mean that there are infinitely many possibilities for ? Explain.   Note to Self  We need more exercises here.  "
 },
@@ -10814,7 +10823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAreasAndIntegration.html#SECTIONAreasAndIntegration-3",
   "type": "Example",
-  "number": "21.2.0.1",
+  "number": "21.3.0.1",
   "title": "Stone Arch Bridge.",
   "body": " Stone Arch Bridge  Consider one half of a stone arch bridge as drawn below.   Schematic of a stone arch   Schematic of a stone arch    We will draw the positive -axis downward and will focus on the forces at a generic point with coordinates . The problem is to find the curve so that the vertical component of the tangential force at is equal to the weight of the bridge from to . If we do this, then that means that the weight of the bridge will be directed toward the base of the bridge. With this in mind, let denote the area of the side section of the bridge from to . We will also let denote the (constant) magnitude of the horizontal force along the length of the bridge and be the weight density of the stone (per cross sectional area).   Stone Arch Schematic   Stone Arch Schematic    With all of this set up, what we really want is the horizontal component of the force to be and the vertical component to be the weight of the bridge from to , namely, . This leads to the following picture.   Stone Arch Triangle of Forces   Stone Arch Triangle of Forces    This leads to the slope of the tangent line at equaling , so we get the differential equation The problem here is that we don't know what is. However, a moment's thought tells us that we know what is. If we increase to , then we can see that .   Stone Arch Schematic   Stone Arch Schematic    Thus, if we differentiate the above equation, we get that the arch should satisfy the differential equation   "
 },
@@ -10823,7 +10832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAreasAndIntegration.html#SECTIONAreasAndIntegration-4",
   "type": "Problem",
-  "number": "21.2.0.6",
+  "number": "21.3.0.6",
   "title": "",
   "body": " Show that satisfies the above differential equation.   Show that if and , then . Compare this to the equation of the catenary in Problem in Context #53 in Differential Calculus .   Note to Self  Convert this to a PreTexT link.  "
 },
@@ -10841,7 +10850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAreasAndIntegration.html#SECTIONAreasAndIntegration-7",
   "type": "Figure",
-  "number": "21.2.0.7",
+  "number": "21.3.0.7",
   "title": "",
   "body": " The area under a curve   The area under a curve   "
 },
@@ -10859,7 +10868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAreasAndIntegration.html#THEOREMFTCDiff",
   "type": "Theorem",
-  "number": "21.2.0.8",
+  "number": "21.3.0.8",
   "title": "The Fundamental Theorem of Calculus.",
   "body": " The Fundamental Theorem of Calculus  Suppose that (so that is an antiderivative of ). Then   "
 },
@@ -10868,7 +10877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAreasAndIntegration.html#SECTIONAreasAndIntegration-15",
   "type": "Problem",
-  "number": "21.2.0.9",
+  "number": "21.3.0.9",
   "title": "",
   "body": "Given our notation for an indefinite integral, the Fundamental Theorem of Calculus says However, there are infinitely many possibilities for . Does this mean that there are infinitely many possibilities for ? Explain. "
 },
@@ -10877,7 +10886,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "DefIntProp.html",
   "type": "Section",
-  "number": "21.3",
+  "number": "21.4",
   "title": "Properties of Definite Integrals",
   "body": " Properties of Definite Integrals  While it is true that areas motivated the definite integral and the Fundamental Theorem of Calculus, it is important to remember that we are really talking about a sum of differentials. This helps to explain some anomalies which occur when applying the fundamental theorem. For example, consider If you only think of this as an area, then this doesn't seem to make sense. However, let's look at a graph.   Integrals do not always represent areas   Graph of y=x    The rectangles under the -axis will provide a negative area so the total is zero. In particular the following properties hold:   Integration Properties                       These properties are consistent with the rules for indefinite integrals, which is not surprising in light of the Fundamental Theorem of Calculus. That being said, let's make sense of these properties beyond the fundamental theorem. First and foremost, remember that these integrals are sums of differentials and behave like sums. With this in mind, lets compare the first three properties in the table with their finite sum analogs.   A simple table    Integration Properties  Sum Properties                 The last three properties in Table 2 might seem less obvious. We will make sense of these geometrically, but let's first note that these are consistent with the fundamental theorem of calculus as illustrated in the following examples.   Some Examples                       To see that these properties hold geometrically (without the Fundamental Theorem of Calculus), recall that this really is a sum of differentials. Specifically, we have the following diagram illustrating a generic rectangle that we are summing.   A geometic representation of integration   A geometic representation of integration    When we consider with , then the difference is a positive change. When we consider , then the difference represents a negative change. Hence, we have   Use the fact that to show that .  As for the last property, Consider the following diagram where .   The sum property of integration   The sum property of integration    If we are summing differentials from to and summing them from to , then this certainly would be the same as summing them from to . Thus .   Show that for the case where , we still have    We already know that Solve for and use a previous property.    Suppose Compute                               Note to self  Make this a PreTeXt reference.   Part e of the last problem brings up an interesting aspect about definite integrals. Since the final answer is a number, then the variable t is immaterial. For example, we have With this in mind, many people call the , , or in the integral a dummy variable. This means that you can substitute any letter in and it will not change the results.  Speaking of substitution, all of the techniques we applied when computing indefinite integrals work just as well for definite integrals. We just need to make sure that the limits of integration match.   Consider the integral If we make the substitution , then , and so At this point, we have two options: we can integrate and change the variable back into to finish the fundamental theorem of calculus, or we can convert everything over to and not deal with anymore. We'll show both. In the first approach, we have   In the second approach we have that , so when , and when , , so that Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an limit for or vice versa.    Computing we see that integration by parts seems to be the way to go. If we let and , then Using the integration by parts formula , we have    Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that   Does this make sense geometrically? Explain.   We know that Use the substitution in the integral on the left.  Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like? Show that in this case  Does this make sense geometrically? Explain.  Fourier Series    Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves     Vocabulary Fourier Series It can be shown (though we won't do it here), that if a function defined on the interval can be written as the Fourier Series:  then    With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.   With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.   Given the symmetries of the graphs above, is this surprising? Explain.   "
 },
@@ -10886,7 +10895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-3",
   "type": "Figure",
-  "number": "21.3.0.1",
+  "number": "21.4.0.1",
   "title": "",
   "body": " Integrals do not always represent areas   Graph of y=x   "
 },
@@ -10895,7 +10904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntPropTable",
   "type": "Table",
-  "number": "21.3.0.2",
+  "number": "21.4.0.2",
   "title": "Integration      Properties",
   "body": " Integration Properties                      "
 },
@@ -10904,7 +10913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-7",
   "type": "Table",
-  "number": "21.3.0.3",
+  "number": "21.4.0.3",
   "title": "A simple table",
   "body": " A simple table    Integration Properties  Sum Properties                "
 },
@@ -10913,7 +10922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#IntPropExamples",
   "type": "Example",
-  "number": "21.3.0.4",
+  "number": "21.4.0.4",
   "title": "Some Examples.",
   "body": " Some Examples                      "
 },
@@ -10922,7 +10931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-11",
   "type": "Figure",
-  "number": "21.3.0.5",
+  "number": "21.4.0.5",
   "title": "",
   "body": " A geometic representation of integration   A geometic representation of integration   "
 },
@@ -10931,7 +10940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-13",
   "type": "Problem",
-  "number": "21.3.0.6",
+  "number": "21.4.0.6",
   "title": "",
   "body": "Use the fact that to show that . "
 },
@@ -10940,7 +10949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-15",
   "type": "Figure",
-  "number": "21.3.0.7",
+  "number": "21.4.0.7",
   "title": "",
   "body": " The sum property of integration   The sum property of integration   "
 },
@@ -10949,7 +10958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-17",
   "type": "Problem",
-  "number": "21.3.0.8",
+  "number": "21.4.0.8",
   "title": "",
   "body": " Show that for the case where , we still have    We already know that Solve for and use a previous property.  "
 },
@@ -10958,7 +10967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-18",
   "type": "Drill",
-  "number": "21.3.0.9",
+  "number": "21.4.0.9",
   "title": "",
   "body": " Suppose Compute                             "
 },
@@ -10967,7 +10976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-22",
   "type": "Example",
-  "number": "21.3.0.10",
+  "number": "21.4.0.10",
   "title": "",
   "body": " Consider the integral If we make the substitution , then , and so At this point, we have two options: we can integrate and change the variable back into to finish the fundamental theorem of calculus, or we can convert everything over to and not deal with anymore. We'll show both. In the first approach, we have   In the second approach we have that , so when , and when , , so that Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an limit for or vice versa.  "
 },
@@ -10976,7 +10985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-23",
   "type": "Example",
-  "number": "21.3.0.11",
+  "number": "21.4.0.11",
   "title": "",
   "body": " Computing we see that integration by parts seems to be the way to go. If we let and , then Using the integration by parts formula , we have   "
 },
@@ -10985,7 +10994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#DefIntProp-24",
   "type": "Problem",
-  "number": "21.3.0.12",
+  "number": "21.4.0.12",
   "title": "",
   "body": "Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that   Does this make sense geometrically? Explain.   We know that Use the substitution in the integral on the left.  Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like? Show that in this case  Does this make sense geometrically? Explain. "
 },
@@ -10994,7 +11003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "DefIntProp.html#FourierSeriesProb",
   "type": "Problem",
-  "number": "21.3.0.13",
+  "number": "21.4.0.13",
   "title": "Fourier Series.",
   "body": "Fourier Series    Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves     Vocabulary Fourier Series It can be shown (though we won't do it here), that if a function defined on the interval can be written as the Fourier Series:  then    With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.   With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.   Given the symmetries of the graphs above, is this surprising? Explain.  "
 },
@@ -11003,7 +11012,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "AppDefInt.html",
   "type": "Section",
-  "number": "21.4",
+  "number": "21.5",
   "title": "Applications of Definite Integrals",
   "body": " Applications of Definite Integrals   Previously, we put indefinite integrals to work by modeling phenomena with differential equations and antidifferentiating to solve these. We will now put definite integrals to work, but in a slightly different manner. Here we will use a differential to measure some quantity on an infinitely small scale where a simple formula applies. We will integrate all of these quantities to give us a total measurement as an integral. Once we have this, then we can calculate this definite integral by antidifferentiation and applying the Fundamental Theorem of Calculus. Sounds easy, huh! As they say, the devil is in the details, but if you follow this basic format and draw and label pictures, you will be surprised by the things you can accomplish. We'll start with the basic problem of computing an area. This is basic enough that there is a tendency to skip all of the steps in setting up the integral, BUT DON'T! Getting into a good work habit when things are relatively straightforward will help when more complicated applications arise, such as computing a volume, or a center of mass, or a moment of inertia, or the kinetic energy of a spinning object. If these applications sound daunting at this point, don't worry. We will see that the same sort of divide and conquer strategy applies to a wonderful array of situations. All that changes is what we want to measure. This is where the strategy of setting up things on an infinitely small scale (utilizing pictures) and integrating these together will become invaluable.    Areas   Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.    Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we've included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          Compute the three integrals in the previous example and verify that you get the same total area done either way.    In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let's put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle      Compute the area indicated in the previous example.   Archimedes Quadrature of the Parabola  In his treatise, Quadrature of the Parabola, Archimedes (287-212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn't even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.     Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]   Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .   Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).   Recall that in Problem 4.5.5, we looked a cycloid. This was a curve traced out by a point on a circle as the circle rolls along a straight line.     A cycloid generated by a rolling circle.    In that problem, we mentioned that this curve has fascinated mathematicians for a long time. We also had you show that the coordinates of the point are given by Galileo actually gave the curve its name in 1599 (though he was not the first to study it) and attempted to compute the area under one arch. He couldn't accomplish this mathematically, but by weighing pieces of metal, one in the shape of a cycloid and one in the shape of its generating circle, Galileo surmised that the area of the cycloid was approximately three times that of the circle. In 1634, Gilles Personne de Roberval showed that the area under one arch of the cycloid is exactly three times that of its generating circle. This predated the invention of calculus, but he utilized infinitely thin rectangles very much like we have been doing.  The Area Under a Cycloid   Area of a cycloid Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.   You can set up the area with vertical rectangles just as before, only now get in terms of .     Volumes  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let's restate the volume in this way The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids. For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    Let's verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that. With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get   What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .  Volume of a Cone  Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.   Volume of a Frustum  A frustum of a cone is basically a cone with the top chopped off.     A frustum     Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!   Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.   Volume of a Square Based Pyramid    Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.     The Generalized Cone  Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .   The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.    Marcus Tullius Cicero (106-43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won't go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn't determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.  Volume of a Sphere (rotation about the horizontal axis).   Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .   Revolving a Cycloid    Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.     Of course, this technique can be applied to find the volume of a more general solid of revolution.     Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.         Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.         Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.    To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by     To do  We need to add a bunch of volume of revolution problems here.    Volumes by Shells  As you no doubt noticed, when we had to compute the volume of a solid generated by revolving a region about the -axis (or any horizontal line), we obtained an integral with in it, which meant that we would put everything in terms of . Likewise, when we revolved about the -axis, we had to put everything in terms of . Sometimes this is not practical or leads to an undesirable integral. Consider the following example of the region bounded by and revolved about the -axis. Going through our set up (Yes, we must do it too!), we have the following generic rectangle revolved around to create a washer.        This set up (with the picture) was really the easy part. The harder part is putting everything in terms of and integrating. For instance, we would need to solve for in terms of . Furthermore, we would need to figure out the maximum value of on the interval . All of this is doable, but inconvenient. What would be preferable would be to leave everything in terms of , but this would entail drawing a vertical box instead.        If we were to treat the right-hand object as a very tall washer with inside radius , outside radius , and height , we would get its volume to be Recalling our reasoning with the product rule, we can ignore as it is infinitely small compared to , so that the volume of this tall washer is which we could then integrate to obtain   If you feel as funny (or perhaps more) about ignoring the as you did with the product rule, there is another way to look at this that might help your queasiness and provide a better way of remembering what to do in this situation. Basically, instead of calling the revolution of the generic rectangle a tall washer, we will call it a (cylindrical) shell. This sounds somewhat silly, but it really points out the difference. For a washer, the height is infinitesimal, whereas for a shell, the thickness of the wall is infinitesimal. For a physical analogy, this is the difference between an actual metal washer and a piece of metal tubing. To figure out the volume of the tubing (shell), we can slice it open and flatten it out into a rectangular piece of metal. This is not so easily done with a washer. This provides a shortcut (and device) for computing the volume of a shell; just compute the volume of the flattened version.     A cylindrical shell opened and flattened.    Using the flattened-out version, we have that the volume of the shell is given by as we obtained before.  Actually, a similar formula works for any washer: While this is interesting geometrically, it does not help with computing integrals using washers.  Generic volume using shells   Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.     Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by    Volume of a torus    Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571- 1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).     A torus around the y axis.     So a natural question arises, Which should I use, washers or shells? The answer is that you can use either one; sometimes it is more convenient to use one over the other, other times it really doesn't matter. The real question you need to ask in a particular problem is, Is it better to put things all in terms of or in terms of . This will determine if you want to utilize a vertical rectangle (of width ) or a horizontal rectangle (of width ). This will determine whether washers or shells are more appropriate.   Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don't look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.     Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:   The -axis.   The -axis.    Note to self  Add several problems using shells and washers here whichever makes the problem easier. Make sure to include a torus.    Surface Area and Arc Length  Recall that we mentioned that in his treatise On the Sphere and the Cylinder , Archimedes not only showed that the sphere had the volume of its circumscribing cylinder, but it also had the surface area. Again, we will not duplicate how Archimedes did it, but we will verify it with Calculus.  Surface area poses a bit more of a challenge than volume. This can be illustrated by the following two boxes.     A cube and a parallellepiped with the same height.    The boxes have the same base and same height, so they have the same volume. However, the slanted box clearly has more surface and could be stretched as far as you like, so the there really is no limit to how large the surface area could be made. The slant makes a difference in surface area. To see this more carefully, we will need to first develop the notion of arc length.   Note to self  Make this a proper link.   You have already been exposed to arc length in the differential calculus part of this book. Recall that in looking at the catenary [Section 4.3.1], we had that the hanging chain satisfied the equation where , were the weight density of the chain and horizontal tension, respectively, and is the length of the chain from the lowest point to . We then differentiated and applied the Pythagorean Theorem to the differential triangle     Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.    We will exploit this to look at the arc length of a curve. Specifically, suppose we have a curve from point to point and want to compute the length of this curve .     Generic curve between A and B.    If we divide this curve into infinitely small segments, then we can compute its length by integrating the lengths of these segments. In other words, we have where denotes a generic point on the curve. Using our infinitesimal Pythagorean Theorem, we have To actually compute this integral (via the Fundamental Theorem), we need to put this integral into a form that we can anti-differentiate. For example, we could put everything in terms of or in terms of yielding these two possibilities  The absolute value is necessary since we are factoring out or .In practice, if is always increasing then and so the absolute value isn't necessary. The same applies to . In many applications, this will be the case, but you should be wary that it can happen.  Arclength of a quarter circle  Consider the quarter circle given by the graph of , where . Since the circumference of the unit circle is , the length of this quarter circle should be .   Use an integral to verify this result.   Suppose we tried to compute the length of a quarter of the circle in the following way We'd have gotten an arclength of zero. What goes wrong?   Again, there is real temptation to try to memorize formulas and but we urge you not to. First, why try to remember two formulas, when one just needs to remember the Pythagorean Theorem . This seems much more natural.  At this point, it is just a matter of determining what variable you wish to put everything in terms of. The variable doesn't even need to be or . For example, suppose we have , and , with . So we don't need to deal with absolute values, let's assume that the parameter is always increasing so that . Then we could put everything in terms of :   Arclength of a circle It would have been tedious to compute the length of circumference of the entire circle in . Do you see why? Use the parameterization , , to verify that the circumference of the unit circle is .  Arclength  of a cycloid  Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral ), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid        Show that the length of one arch of the cycloid is .    Note to self  Insert a collection of problems here.   Now that we have arc length in place, let s go back to the problem of computing the surface area of a sphere. Recalling that surface area needs to take into account the slant of the surface rather than just the height, let s actually divide the surface of the sphere into infinitely small bands.     A sphere with a vertical slice through it.    What we need to do is compute the surface area of this band (called a frustum of a cone). To do that, we need to find the surface area of a cone (without the bottom). With that in mind, let s start with a cone with base radius of and slant length . If we slice the cone and flatten it (much like a paper cup), then we can determine the surface area of the cone, by finding the area of the sector created by flattening it.     Circle with a wedge removed to create a cone.    By dividing this sector into infinitely many infinitely thin triangles, and integrating the areas of these triangles, we get that the area of the sector (and thus the cone) is given by .  The Surface Area of a Conical Frustum   Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by    Armed by this, we can obtain that the surface area of a surface of revolution obtained by revolving a curve about the -axis is given by integrating the surface areas of these infinitely thin bands.   Total Surface Area      As with arc length, you are free to put this integral in terms of whichever variable you wish.  The Surface Area of a Sphere   Surface Area  of a sphere    Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.   Use the parameterization , , to obtain the same answer as part (a).   General Surface Area   Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?   The Surface Area of a Torus   Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.   You might find it easier using the parametric equations and instead of the equation for the generating circle.    Note to self  Insert practice problems here     Center of Mass  In and , we made reference to a theorem of Pappus. That theorem says that if a region is revolved about a line not passing through the region, then the volume of the solid of revolution is equal to the area of the region times the circumference of the circle formed by revolving the center of mass (centroid) of this region about the line. Another theorem of Pappus states that the surface area of a surface formed by revolving a curve about a line is equal to the length of the curve times the circumference of the circle formed by revolving the centroid of the curve about the line.   Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.      This played out in the two PIC s as the centroids of a disk and its boundary circle are both the center of the circle.  Disks and circles are pretty straightforward, but what about finding the center of mass of a general region. From a physical point of view, this region can represent a thin plate whose density could vary. To keep the problem geometric (and simpler), we will assume that the density is constantly 1 so that mass really is area. In this case, the center of mass is what we have been calling the centroid of the region.  Everyone probably has heard the term center of mass. But what does this mean? Let s start this with something that everyone is familiar with: an average of grades. If we have five grades: , , , , , then all students know that the average, denoted (read bar) is given by What does this average mean? This means that this student s overall performance is equivalent to the performance of a student who earned 89.6 on each of the five tests. It does not take into account fluctuations among the grades, but gives an overall measure. To put this in a more physical light, if we considered a system of points each with mass at these locations , , , , on a number line, then collectively, this system behaves the same as a mass of located at the point . It doesn t take into account the relationships among the various grades; as much as in astronomy where there is a tendency to “shrink” the mass of a planet to its center of mass, with disregard to the dynamics in that planet.  In general, if we placed a point mass of at each of the positions , , , , , then the center of mass , should satisfy the relationship To help with our discussions on this, we will give a name to the numerator. People have christened this the (first) moment of the system (about the origin). To give it a simple way to remember it, we write Later we will have use for the second moment about the origin, namely In general, one could look at the moment as   Let's apply this reasoning and our integration strategy to an infinite number of points. For example, the interval .        In this case, our simple formula doesn t hold as the position varies throughout the interval. Thus we apply our integration strategy. That is, we divide the interval into infinitely small intervals where the simple formula applies. The simple formula for moment applies to this small subinterval, so we have .  Integrating these individual moments gives us that the total moment of the interval is . Thus, we would have . This agrees with your intuitive notion that the center of mass of the interval should be located at the midpoint of the interval.    Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?    Vocabulary weighted average We did not want to give it away while you were doing the previous problem, but you will actually get what is known as a weighted average ; that is, the center of mass of the two midpoints where the mass of each interval is condensed at its midpoint.  What if we ramp this up to two-dimensions. Suppose we have a number of points of mass located at .        By the same reasoning as before, the center of mass should have the property that this system as a whole should behave the same as if the entire mass was located at . In other words, we should have This leads to the formulation . The thing to take away from this is that even though the center of mass, has two coordinates, we treat each coordinate separately and they are the averages of the coordinates and coordinates, respectively. Also, each coordinate still fits into the formula . Let's use this same idea to a curve of uniform density .     A generic graph of a function.    Using analogous reasoning, the center of mass of this curve will be given by where each coordinate fits into our scheme . . To this end, we will look at the mass of the curve. Since the density is constantly , the mass is really the arc length and is given by .  To address , we will compute the moment of the curve about the line . Dividing our curve into infinitely small pieces, we can use our simple formulation.          Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .   Putting all of this together we have . Again, we urge you to go through this process rather than trying to memorize these formulas.    Moments As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.   Find the equation of the line segment joining and , To avoid dealing with absolute values, let's assume and .   Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?    Note from Bob  In do we want to include that they should be able to arrive at in part (a) without computing the integral using symmetry?     Moments center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .   Verify that by following our process as above.   Compute .   Notice that the above examples show that the center of mass of a curve need not be a point on the curve. We are now in a position to prove Pappus' Theorem on surface area.  Pappus' Theorem for Surface Area   Surface Area  Pappus' Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by     Note to self  Put some practice problems here.   To obtain Pappus' theorem for volumes we need to expand this idea to the center of mass of a two-dimensional region. Again, the center of mass can be split into two coordinates ) which represent the averages of the and coordinates of all of the points in the region.  With this in mind, consider a region in the plane which can be thought of as two-dimensional plate with constant density . We will draw this region shortly.  Again, we will utilize our strategy of dividing our region into pieces where a simple formula can be applied, and we will apply our general idea that the centroid is given by the formula The mass is just the area, so we will focus on the numerator.  Specifically, if we want to find , we will draw a generic vertical box and determine its moment about the line .        The moment of this box is straightforward as every point in it is the same distance from the axis. Formally, we have   Integrating these moments, we get that the total moment of the region is given by . Thus, with this set up, we would have .  As before, you could memorize the formulas, but it is much better to remember simple concepts such as and apply these to a situation where things are constant. For example, we can apply the same reasoning to a horizontal box as below to derive the formula for . This is what integration is all about.    Moments  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by      Center of mass    In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.   Suppose the density was not constant. How would that alter the formulas for the center of mass?   Again, you can memorize formulas, but understanding them helps you to recreate them should you forget or more appropriately, adapt the ideas should the occasion necessitate that. For example, consider the region below bounded by and , .        Assuming the density is constant, it is straightforward to see that . But what about ? If we use the formula you derived above, we would have Getting everything in terms of would be problematic (but doable). It would be nice to keep everything in terms of which would entail using a vertical box. For the area in the denominator, this is not a problem and in fact is probably how you would have computed the area to begin with. For the numerator, let s put in our vertical box and see if we can compute its moment about the line .        The problem with computing the moment (about ) of this vertical box is that our simple formula won t work as the position varies throughout the box. But wait a minute! We know what for this box is, namely . We also know what area of this box is, namely . Using that so that .    Moments Integrate this and determine the coordinate of the center of mass of this region.        Moments For the following region, use the same sort of reasoning to show that the moment about the line is given by      Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven't proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.   Now that we have a handle on the center of mass of a two-dimensional region, we can actually make pretty quick work of Pappus Theorem for determining the volume of a solid of revolution.  Consider the following region lying completely to the right of the line .        Pappus Theorem of Volumes   Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.    Note to self  Insert Practice Pappus Problems.     Other Applications of Integration   The Tautochrone  You may have noticed that we keep bringing up the cycloid in a number of problems involving areas, arc lengths, volumes, and centers of mass. As we said, this curve has fascinated mathematicians for a long time and many of these elegant results were cleverly obtained before the invention of calculus. We will now see how the cycloid was utilized to address a more practical problem.  In the 1600 s there was race among naval superpowers (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to £20,000 (about £5.1 million or million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.  Since longitude is measured by “time” zones, then it became necessary to develop an accurate way of measuring time at sea. A regular pendulum clock, invented by the Dutch mathematician, scientist, and inventor Christiaan Huygens (1629-1695), utilized the fact that the oscillation of a pendulum is regular as long as it maintains the same amount of swing per oscillation. This made for an accurate timepiece on land, but it was not accurate at sea where a moving deck would make the pendulum swing at different angles and thus not have a constant period. To remedy this, Huygens developed a pendulum that would follow a tautochrone (a same time curve where a pendulum, exclusively under the influence of gravity, following that path would take the same amount of time to reach the bottom, no matter where it started on the curve). Huygens showed that an inverted cycloid was such a tautochrone shown below. A pendulum following the path of an inverted cycloid will take the same amount of time to reach the bottom no matter where it starts.   Image from MathWords        Vocabulary Involute of the cycloid Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to clocks) . The design from that work . is seen below. To get the pendulum to swing along a cycloidal path, Huygen s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen on the left. This curve traced out is called the Involute of the cycloid .   Huygens Clock      In practice, the clock did not work any more accurately than a regular pendulum clock as it assumed the only force involved was gravity, whereas a clock at sea was subject to many more forces which could not be ignored. Subsequently, the Englishman John Harrison (1693-1776), a Yorkshire carpenter, invented a chronometer which ran on springs and proved to be very accurate.  Even still, many mathematicians cited Huygens work on this as being very elegant mathematically. Furthermore, Huygens developed his mathematics without calculus as it hadn t been invented (discovered?) yet. We will not prove that the involute of a cycloid is a cycloid, but we will utilize calculus to prove Huygens claim that the cycloid is, in fact, a tautochrone.  To start, recall that the speed at which the pendulum is traveling is given by where is the arc length traveled and is time. For simplicity, we will let the radius of the circle generating the cycloid be .    Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by    At this point we ve hit an impasse, as the speed of the pendulum is not a constant. Gravity will cause the pendulum to speed up as it swings downward. We will assume that the pendulum does not swing too wide, not too fast, and ignore air resistance. Thus, the only force we will consider is due to gravity and we will denote that by , where is the mass of the pendulum and is the acceleration due to gravity. Below is a diagram of a pendulum following the path of a cycloid with the forces at work.        The force due to gravity is always directed downward, so only a portion of it moves the pendulum along the curve. This tangential force has a magnitude where is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.          Tautochrone    Use the fact that the two triangles are similar to show that and use the fact that to conclude that .   Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .   Substituting the formula for from part (b) of we see that   Before we proceed any further, notice that if we use the appropriate trigonometric identity, we get so our formula for the total time traveled by the pendulum from to becomes As formidable as this integral may look, bear in mind that is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let and     Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.     Work and Kinetic Energy  If you go back to our proof that the cycloid is a tautochrone, you will notice that we had the equation . If we multiply both sides by our mass and integrate from to , we get The left-hand side is called the work done by gravity moving an object from the height to the height and the right-hand side is called the change in kinetic energy from the beginning point , to the terminal point . So, this equation really says that . At some point, you may have heard the expression that energy is the ability to do work. Kinematically, this is what we just showed. We will explore these two concepts in more detail to apply them to some natural questions that arise from things we did before.   Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton-meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?    Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:      Kinetic Energy    Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.   Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.    Note to self  More problems pumping tanks of various shapes including one where the bottom is slanted.   In the previous example, an integral was required as the distance lifted was not constant. Some problems have the force varying.   Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.           Kinetic Energy    If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.   Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)   There is another way to approach this problem which does not require examining the anchor separately. Instead of dividing the chain into small pieces where we can apply our formula for work, suppose we look at the work required to raise the anchor and chain from a distance to a distance .        Since the force (combined weight of anchor and remaining chain) stays virtually constant over this interval, then we can still apply our simple formula.     Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)   As we said the above could be done either way, but consider this following variation.  Problems  A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?   Since the weight of the water in the bucket is changing over time (unlike the anchor), it probably makes more sense to try to our second approach which is to determine the work required to lift the bucket water and rope from a distance to a distance . We can then integrate these small amounts of work to obtain the total work.  Problems  Use this analysis to show that the work to raise everything from a distance to a distance is given by    Integrate this to determine how much work it takes to raise all of this the entire meters.   What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?   Now that we have a handle on work, let's come back to kinetic energy. Let's begin by generalizing what we had done in the tautochrone problem.  Problems  Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton's Second Law which states that force , show that    The quantity is called the kinetic energy of the object (at time ) and is measured in     As we said before, the above can be stated as work change in kinetic\\ energy. It turns out that utilizing the notion of kinetic energy can be a useful tool in determining the work involved in completing a task. For example, recall from Differential Calculus: From Practice to Theory > that the Richard F. Caris Mirror Laboratory uses spin casting to cast large parabolic mirrors for refractive telescopes. They load glass into a revolving furnace. When the glass liquifies, the spinning makes the middle go down and the sides go up. In that book there was a problem which showed that the surface generated would be a parabola. As you can see from these photos, this an exceptionally large furnace and the mirrors it produces are large as well (up to somewhere around 16 tons each).     A question is how long it takes for the furnace to rotate from a standing start to the proper speed. This is where the notion of kinetic energy comes in handy. To begin the process, they load chucks of borosilicate glass which has a density of into the furnace (over a honeycomb substrate) and start spinning the furnace.     For simplicity, we will ignore the substrate and actual furnace itself and let's assume that the glass is a solid disk which measures in radius and is thick.     To compute the kinetic energy of this disk spinning at a rate of we would like to utilize our simple formula   The mass is no problem as we know the density and the volume of the disk. The problem is the velocity. We know the angular velocity, which is constant, but in our formula for kinetic energy, we are talking about linear velocity which increases as you move away from the axis of rotation. This is where our plan of dividing the solid into parts where we can apply our simple formula applies. Specifically, consider the following cylindrical ring in our disk. As with volumes utilizing cylindrical shells, we will draw a cutaway view.     Notice that all the points in the cylindrical shell are moving at the same linear speed, so we can apply Formula to the shell.  Problems  Spin Casting  Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .   Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?     Escape Velocity and Improper Integrals  Many people have heard the term escape velocity. A quick look on the internet says that the escape velocity from the surface of the earth is approximately or about times the speed of sound. What does this mean and where did such a number come from? The key is our discovery that work can be obtained by looking at the change in kinetic energy. This also affords us a chance to delve into a new topic: improper integrals.        First, we all know that if you throw a ball into the air, then it will go up and come back down. We learned in Differential Calculus that, ignoring air resistance, if you throw a ball up with an initial velocity of , then the maximum height the ball attains is where is the acceleration due to gravity (which we presumed was constantly equal to ). We noted that this formula said that if we double the initial velocity, then the ball will go 4 times as high, triple it it will go 9 times as high, etc. Is it possible to throw the ball up so fast that it never comes back down. The answer would be no if the acceleration due to gravity remained constant at all altitudes, which is what we assumed in the original problem. This works fine near the surface of the earth, but is not reasonable at higher and higher altitudes. In fact, Newton's Law of Gravitation states that the magnitude of force of gravity between two objects of masses and is given by where is a constant referred to as the universal gravitational constant and is the distance between the centers of mass of the two objects. For objects near the surface of the earth, was so close to constant that we assumed it to be. This is not the case for our projectile being propelled into outer space. Surprisingly, the a amount of work that it takes to perform this task is finite and this is where escape velocity comes in.  If we had an unlimited power supply, then we could rise at whatever rate we wanted and still keep rising indefinitely. Unfortunately, as with throwing a ball into the air, we can only impart an initial velocity and hope it is fast enough to overcome gravity indefinitely. We have the means to deal with this.  The key is remembering that the work done by a force moving a mass along a straight line from point to point is equal to the change in kinetic energy. In symbols it is   However, this was not the definition of work as work was simply . We utilized calculus in case the force was not constant    Problems  Escape Velocity Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet ``to infinity.'' In other words, the amount of work (and energy) it takes to propel the object so it doesn't come back is finite.     Problems  Escape Velocity Assume that the original velocity of the mass is and that the velocity at infinity will be 0.   Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .   Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?    shows that the work to launch a projectile from the surface of a planet to infinity is given by .   Vocabulary improper integral This prompts a new name and notation. The notation is and this is called an improper integral . The improper comes from the fact that a proper definite integral should be defined on a closed bounded interval. In general, the improper integral converges if   exists and we say that it is equal to that value. In the above problem, we have .  Notice that to compute this improper integral, we had to first compute a proper definite integral from to and then take the limit of this as .  Convergence of an Improper Integral   Improper Integral  Convergence of Define what we mean for improper integral to converge and what its value would be.   You may find it surprising that an improper integral from to could have a real-world application such as escape velocity. Actually, there is an example of an improper integral of the form which has an application a little closer to home. No doubt you have heard of a bell-shaped curve or perhaps have been in a statistics course that talks about values. What does any of this mean and what does it have to do with improper integrals?  First, the bell-shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss to look at the probability that a measurement should deviate from the actual mean of a population. The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels. Specifically, a normal distribution with a mean of and a standard deviation of has the equation as its probability density function. The fact that it is called a bell-shaped curve can be seen in the following graph.     This is called the probability density function because the probability that the random variable takes on a value less than or equal to is given by which is the area of the shaded region above. It is not easy to see, but Gauss cleverly showed that the area under this entire curve is exactly one, which is a requirement to be a probability density function. Of course, the values of and will affect the shape of the graph as seen below.     Of particular importance is the red curve where the mean and the standard deviation . Any random variable which has a normal distribution with probability density function is said to have a standard normal distribution and a result from probability theory says that if the random variable is normally distributed with mean and standard deviation , then will have a standard normal distribution. We've said a lot here in the way of theory, so let's provide a concrete example. It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean and standard deviation . It is also widely accepted that someone with an IQ of 140 or above is in the genius range. Suppose we chose someone at random. If we want to compute the probability that this person's IQ is less than or equal to 140, then mathematically, we want to compute Unfortunately, none of our integration techniques will compute this integral exactly. In fact, there are no integration techniques that will do this. Let's do what any person would do and see what the internet says. If we type this into a computer algebra system, we get   We will get into approximating techniques later, but for now let's talk about scores and tables. To compute the score of the above IQ of 140, books and websites will say to compute In the old days, one would then look on a table and arrive at the approximation . Now you would input this score in an appropriate piece of software and obtain the same result. Why are you doing this? The following problem might shed some light  Problems Error Function  Perform the substitution to to obtain    This is what the approximation represents in the old tables and in the statistical software. Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for . It is expected that a person uses the above substitution to compute a score and the table provides the approximation for the integral of the standard normal distribution.    Problems Error Function Actually, Wolfram Alpha provides the following output where  Vocabulary erf The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation is actually correct.   Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer. As we said, we will get to approximation techniques, but before that, let's look at another type of improper integral.    More Improper Integrals  The previous section looked at definite integrals that are improper because they are being integrated on an infinite interval. There is another type of improper integral that can occur on a finite interval. Furthermore, they can occur in a natural setting.         The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be .  Suppose instead, we compute the arc length by using the equation , . Then If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say Big deal. It worked, consider the area of this region.     The area of this region would be given by     Try to compute the integral in Formula . What happens?   Both integrals are improper because the functions involved are unbounded on the interval . If fact they are not even defined at one of the endpoints of the interval. The way to handle the first integral is to write it as   The same technique can be used for the second integral This leads to the general idea that if a function is unbounded at the right endpoint of an interval then we can compute the improper integral by provided that limit exists.    Problems Improper Integral    Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from part (a) to compute the following improper integrals.     Torricelli's Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608-1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).     An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.    In more modern terms, Torricelli showed that it we rotate the following function is rotated about the axis, then the infinitely long solid has a finite volume of . Here is picture of what has been dubbed ``Torricelli's Trumpet''.     The Volume of Torricelli's Trumpet   Problems Torricelli s Trumpet Volume    Use an improper integral with volumes of disks to obtain Torricelli's result. Again it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.   This caused a philosophical debate about the nature of mathematical thinking and understanding of the infinite that persisted into the twentieth century. Even more paradoxical was a later result which showed that the surface area of solid is infinite. This is now called the Painter’s Paradox because we have a solid which holds a finite amount of paint but would require an infinite amount of paint to paint the inside surface!    Problems Torricelli s Trumpet Surface Area Let's assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this x fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.   Torricelli's Trumpet also represents a finite volume solid which does not have a center of mass. We only talked about centers of mass (centroids) of one-dimensional curves and two-dimensional regions. We can extend the ideas to three-dimensional solids, but instead we will give you a two-dimension region which has a finite area but no center of mass. The idea for Torricelli's Trumpet is basically the same.    Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?   Suppose we had the function . Should ? An argument could be made for either case. Now you see why these are called improper integrals. This actually brings into mind the existence of an integral which is a much harder question. We will kick this can down the road until we get into the theory part.    "
 },
@@ -11012,7 +11021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ParabolicSection",
   "type": "Example",
-  "number": "21.4.1.1",
+  "number": "21.5.1.1",
   "title": "",
   "body": " Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.  "
 },
@@ -11021,7 +11030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ParabSectionHoriz",
   "type": "Example",
-  "number": "21.4.1.5",
+  "number": "21.5.1.5",
   "title": "",
   "body": " Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we've included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?        "
 },
@@ -11030,7 +11039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreasByIntegration-4",
   "type": "Drill",
-  "number": "21.4.1.8",
+  "number": "21.5.1.8",
   "title": "",
   "body": " Compute the three integrals in the previous example and verify that you get the same total area done either way.  "
 },
@@ -11039,7 +11048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreaExam3",
   "type": "Example",
-  "number": "21.4.1.9",
+  "number": "21.5.1.9",
   "title": "",
   "body": " In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let's put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle    "
 },
@@ -11048,7 +11057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#AreasByIntegration-6",
   "type": "Drill",
-  "number": "21.4.1.12",
+  "number": "21.5.1.12",
   "title": "",
   "body": " Compute the area indicated in the previous example.  "
 },
@@ -11057,7 +11066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ArchimedesParab",
   "type": "Problem",
-  "number": "21.4.1.13",
+  "number": "21.5.1.13",
   "title": "Archimedes Quadrature of the Parabola.",
   "body": "Archimedes Quadrature of the Parabola  In his treatise, Quadrature of the Parabola, Archimedes (287-212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn't even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.     Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]   Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .   Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).  "
 },
@@ -11066,7 +11075,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#fig-CycloidArea",
   "type": "Figure",
-  "number": "21.4.1.16",
+  "number": "21.5.1.16",
   "title": "",
   "body": "   A cycloid generated by a rolling circle.   "
 },
@@ -11075,7 +11084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-CycloidArea",
   "type": "Problem",
-  "number": "21.4.1.17",
+  "number": "21.5.1.17",
   "title": "The Area Under a Cycloid.",
   "body": "The Area Under a Cycloid   Area of a cycloid Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.   You can set up the area with vertical rectangles just as before, only now get in terms of .  "
 },
@@ -11084,7 +11093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GenericRectangle",
   "type": "Figure",
-  "number": "21.4.2.1",
+  "number": "21.5.2.1",
   "title": "",
   "body": "   A generic rectangle   "
 },
@@ -11093,7 +11102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolEqualsFaceXThick",
   "type": "Figure",
-  "number": "21.4.2.2",
+  "number": "21.5.2.2",
   "title": "",
   "body": "   Pictures and formulas for the volume of a cylinder and a triangular wedge   "
 },
@@ -11102,7 +11111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolEqualsFaceXThick2",
   "type": "Figure",
-  "number": "21.4.2.3",
+  "number": "21.5.2.3",
   "title": "",
   "body": "   Picture and formula for the volume of an irregular slab.   "
 },
@@ -11111,7 +11120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeAndCyl",
   "type": "Figure",
-  "number": "21.4.2.4",
+  "number": "21.5.2.4",
   "title": "",
   "body": "   A cone and cylinder of the same height.   "
 },
@@ -11120,7 +11129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolCone",
   "type": "Figure",
-  "number": "21.4.2.5",
+  "number": "21.5.2.5",
   "title": "",
   "body": "   Cone with generic horizontal rectangle.   "
 },
@@ -11129,7 +11138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeSlice",
   "type": "Figure",
-  "number": "21.4.2.6",
+  "number": "21.5.2.6",
   "title": "",
   "body": "   A generic slice from a cone and a formula for its volume.   "
 },
@@ -11138,7 +11147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeSimTri",
   "type": "Figure",
-  "number": "21.4.2.7",
+  "number": "21.5.2.7",
   "title": "",
   "body": "   A right triangle with a similar right triangle inside.   "
 },
@@ -11147,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ConeVol",
   "type": "Problem",
-  "number": "21.4.2.8",
+  "number": "21.5.2.8",
   "title": "Volume of a Cone.",
   "body": "Volume of a Cone  Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.  "
 },
@@ -11156,7 +11165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#FrustomVol",
   "type": "Problem",
-  "number": "21.4.2.9",
+  "number": "21.5.2.9",
   "title": "Volume of a Frustum.",
   "body": "Volume of a Frustum  A frustum of a cone is basically a cone with the top chopped off.     A frustum     Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!   Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.  "
 },
@@ -11165,7 +11174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolSqPyr",
   "type": "Problem",
-  "number": "21.4.2.11",
+  "number": "21.5.2.11",
   "title": "Volume of a Square Based Pyramid.",
   "body": "Volume of a Square Based Pyramid    Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.    "
 },
@@ -11174,7 +11183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GeneralCone",
   "type": "Problem",
-  "number": "21.4.2.13",
+  "number": "21.5.2.13",
   "title": "The Generalized Cone.",
   "body": "The Generalized Cone  Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .   The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.  "
 },
@@ -11183,7 +11192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereCyl",
   "type": "Figure",
-  "number": "21.4.2.15",
+  "number": "21.5.2.15",
   "title": "",
   "body": "   Cylinder with enclosed sphere with the same radius.   "
 },
@@ -11192,7 +11201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereByRevAboutX",
   "type": "Figure",
-  "number": "21.4.2.16",
+  "number": "21.5.2.16",
   "title": "",
   "body": "   A sphere generated by revolving about the x axis.   "
 },
@@ -11201,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#VolSphereWithDiffDisc",
   "type": "Figure",
-  "number": "21.4.2.17",
+  "number": "21.5.2.17",
   "title": "",
   "body": "   The same sphere with a generic disk and area and volume formulas.   "
 },
@@ -11210,7 +11219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SphereVolXRev",
   "type": "Problem",
-  "number": "21.4.2.18",
+  "number": "21.5.2.18",
   "title": "Volume of a Sphere (rotation about the horizontal axis)..",
   "body": "Volume of a Sphere (rotation about the horizontal axis).   Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .  "
 },
@@ -11219,7 +11228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#CyclRevX",
   "type": "Problem",
-  "number": "21.4.2.19",
+  "number": "21.5.2.19",
   "title": "Revolving a Cycloid.",
   "body": "Revolving a Cycloid    Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.    "
 },
@@ -11228,7 +11237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-GenSolidRevX",
   "type": "Problem",
-  "number": "21.4.2.21",
+  "number": "21.5.2.21",
   "title": "",
   "body": "  Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.         Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.  "
 },
@@ -11237,7 +11246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#GenVolRevY",
   "type": "Problem",
-  "number": "21.4.2.23",
+  "number": "21.5.2.23",
   "title": "",
   "body": "   Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.         Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.    To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by   "
 },
@@ -11246,7 +11255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#fig-VolByWasher",
   "type": "Figure",
-  "number": "21.4.3.1",
+  "number": "21.5.3.1",
   "title": "",
   "body": "     "
 },
@@ -11255,7 +11264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#IntShellExamp",
   "type": "Figure",
-  "number": "21.4.3.2",
+  "number": "21.5.3.2",
   "title": "",
   "body": "     "
 },
@@ -11264,7 +11273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#ShellFlattened",
   "type": "Figure",
-  "number": "21.4.3.3",
+  "number": "21.5.3.3",
   "title": "",
   "body": "   A cylindrical shell opened and flattened.   "
 },
@@ -11273,7 +11282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-GenShells",
   "type": "Problem",
-  "number": "21.4.3.4",
+  "number": "21.5.3.4",
   "title": "Generic volume using shells.",
   "body": "Generic volume using shells   Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.     Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by   "
 },
@@ -11282,7 +11291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-VolTorus",
   "type": "Problem",
-  "number": "21.4.3.6",
+  "number": "21.5.3.6",
   "title": "Volume of a torus.",
   "body": "Volume of a torus    Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571- 1630) and is a special case of a theorem by Pappus of Alexandria (290-350 AD).     A torus around the y axis.    "
 },
@@ -11291,7 +11300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#example-WashersOrShells",
   "type": "Example",
-  "number": "21.4.3.8",
+  "number": "21.5.3.8",
   "title": "Shell vs. Washers.",
   "body": " Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don't look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.  "
 },
@@ -11300,7 +11309,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exer-ShellsVSWashers",
   "type": "Problem",
-  "number": "21.4.3.10",
+  "number": "21.5.3.10",
   "title": "",
   "body": "  Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:   The -axis.   The -axis.  "
 },
@@ -11309,7 +11318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#SurfaceAreaIllus",
   "type": "Figure",
-  "number": "21.4.4.1",
+  "number": "21.5.4.1",
   "title": "",
   "body": "   A cube and a parallellepiped with the same height.   "
 },
@@ -11318,7 +11327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#DiffTri",
   "type": "Figure",
-  "number": "21.4.4.2",
+  "number": "21.5.4.2",
   "title": "",
   "body": "   Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.   "
 },
@@ -11327,7 +11336,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-GenArcLen",
   "type": "Figure",
-  "number": "21.4.4.3",
+  "number": "21.5.4.3",
   "title": "",
   "body": "   Generic curve between A and B.   "
 },
@@ -11336,7 +11345,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEArcLenQtrCirc",
   "type": "Problem",
-  "number": "21.4.4.4",
+  "number": "21.5.4.4",
   "title": "",
   "body": "Arclength of a quarter circle  Consider the quarter circle given by the graph of , where . Since the circumference of the unit circle is , the length of this quarter circle should be .   Use an integral to verify this result.   Suppose we tried to compute the length of a quarter of the circle in the following way We'd have gotten an arclength of zero. What goes wrong?  "
 },
@@ -11345,7 +11354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISECircumViaParam",
   "type": "Problem",
-  "number": "21.4.4.5",
+  "number": "21.5.4.5",
   "title": "",
   "body": "Arclength of a circle It would have been tedious to compute the length of circumference of the entire circle in . Do you see why? Use the parameterization , , to verify that the circumference of the unit circle is . "
 },
@@ -11354,7 +11363,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CycArcLen",
   "type": "Problem",
-  "number": "21.4.4.6",
+  "number": "21.5.4.6",
   "title": "",
   "body": "Arclength  of a cycloid  Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral ), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid        Show that the length of one arch of the cycloid is .  "
 },
@@ -11363,7 +11372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-SphereSurfAr",
   "type": "Figure",
-  "number": "21.4.4.8",
+  "number": "21.5.4.8",
   "title": "",
   "body": "   A sphere with a vertical slice through it.   "
 },
@@ -11372,7 +11381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-ConicalFrustum",
   "type": "Figure",
-  "number": "21.4.4.9",
+  "number": "21.5.4.9",
   "title": "",
   "body": "   Circle with a wedge removed to create a cone.   "
 },
@@ -11381,7 +11390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SurfAreaConeFrust",
   "type": "Problem",
-  "number": "21.4.4.10",
+  "number": "21.5.4.10",
   "title": "The Surface Area of a Conical Frustum.",
   "body": "The Surface Area of a Conical Frustum   Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by   "
 },
@@ -11390,7 +11399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-GenSurfArea",
   "type": "Figure",
-  "number": "21.4.4.12",
+  "number": "21.5.4.12",
   "title": "",
   "body": " Total Surface Area     "
 },
@@ -11399,7 +11408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SphereSurfArea",
   "type": "Problem",
-  "number": "21.4.4.13",
+  "number": "21.5.4.13",
   "title": "The Surface Area of a Sphere.",
   "body": "The Surface Area of a Sphere   Surface Area  of a sphere    Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.   Use the parameterization , , to obtain the same answer as part (a).  "
 },
@@ -11408,7 +11417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-GenSurfArea",
   "type": "Problem",
-  "number": "21.4.4.14",
+  "number": "21.5.4.14",
   "title": "General Surface Area.",
   "body": "General Surface Area   Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?  "
 },
@@ -11417,7 +11426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-SurfAreaTorus",
   "type": "Problem",
-  "number": "21.4.4.16",
+  "number": "21.5.4.16",
   "title": "The Surface Area of a Torus.",
   "body": "The Surface Area of a Torus   Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.   You might find it easier using the parametric equations and instead of the equation for the generating circle.  "
 },
@@ -11426,7 +11435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusThems",
   "type": "Figure",
-  "number": "21.4.5.1",
+  "number": "21.5.5.1",
   "title": "",
   "body": " Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.     "
 },
@@ -11435,7 +11444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-IntervalMoment",
   "type": "Figure",
-  "number": "21.4.5.2",
+  "number": "21.5.5.2",
   "title": "",
   "body": "     "
 },
@@ -11444,7 +11453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoM1",
   "type": "Problem",
-  "number": "21.4.5.3",
+  "number": "21.5.5.3",
   "title": "",
   "body": "  Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?  "
 },
@@ -11462,7 +11471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CoM2D",
   "type": "Figure",
-  "number": "21.4.5.4",
+  "number": "21.5.5.4",
   "title": "",
   "body": "     "
 },
@@ -11471,7 +11480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CoMOfCurve",
   "type": "Figure",
-  "number": "21.4.5.5",
+  "number": "21.5.5.5",
   "title": "",
   "body": "   A generic graph of a function.   "
 },
@@ -11480,7 +11489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-MomentOfSegment",
   "type": "Figure",
-  "number": "21.4.5.6",
+  "number": "21.5.5.6",
   "title": "",
   "body": "     "
 },
@@ -11489,7 +11498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-",
   "type": "Problem",
-  "number": "21.4.5.7",
+  "number": "21.5.5.7",
   "title": "",
   "body": "  Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .  "
 },
@@ -11498,7 +11507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMLineSegment",
   "type": "Problem",
-  "number": "21.4.5.8",
+  "number": "21.5.5.8",
   "title": "",
   "body": "  Moments As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.   Find the equation of the line segment joining and , To avoid dealing with absolute values, let's assume and .   Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?  "
 },
@@ -11507,7 +11516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMCircle",
   "type": "Problem",
-  "number": "21.4.5.9",
+  "number": "21.5.5.9",
   "title": "",
   "body": "  Moments center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .   Verify that by following our process as above.   Compute .  "
 },
@@ -11516,7 +11525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusTheoremSA",
   "type": "Problem",
-  "number": "21.4.5.10",
+  "number": "21.5.5.10",
   "title": "Pappus’ Theorem for Surface Area.",
   "body": "Pappus' Theorem for Surface Area   Surface Area  Pappus' Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by   "
 },
@@ -11525,7 +11534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusVolumes",
   "type": "Figure",
-  "number": "21.4.5.12",
+  "number": "21.5.5.12",
   "title": "",
   "body": "     "
 },
@@ -11534,7 +11543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusVol",
   "type": "Problem",
-  "number": "21.4.5.13",
+  "number": "21.5.5.13",
   "title": "",
   "body": "  Moments  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by   "
 },
@@ -11543,7 +11552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CMPractice1",
   "type": "Problem",
-  "number": "21.4.5.14",
+  "number": "21.5.5.14",
   "title": "",
   "body": "  Center of mass    In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.   Suppose the density was not constant. How would that alter the formulas for the center of mass?  "
 },
@@ -11552,7 +11561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Moments",
   "type": "Figure",
-  "number": "21.4.5.15",
+  "number": "21.5.5.15",
   "title": "",
   "body": "     "
 },
@@ -11561,7 +11570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Moments2",
   "type": "Figure",
-  "number": "21.4.5.16",
+  "number": "21.5.5.16",
   "title": "",
   "body": "     "
 },
@@ -11570,7 +11579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-MomentSin3",
   "type": "Problem",
-  "number": "21.4.5.17",
+  "number": "21.5.5.17",
   "title": "",
   "body": "  Moments Integrate this and determine the coordinate of the center of mass of this region.  "
 },
@@ -11579,7 +11588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-GeneralMomentY",
   "type": "Problem",
-  "number": "21.4.5.18",
+  "number": "21.5.5.18",
   "title": "",
   "body": "     Moments For the following region, use the same sort of reasoning to show that the moment about the line is given by   "
 },
@@ -11588,7 +11597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-CoMCycloid",
   "type": "Problem",
-  "number": "21.4.5.19",
+  "number": "21.5.5.19",
   "title": "",
   "body": "  Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven't proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.  "
 },
@@ -11597,7 +11606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-PappusThmSA",
   "type": "Figure",
-  "number": "21.4.5.21",
+  "number": "21.5.5.21",
   "title": "",
   "body": "     "
 },
@@ -11606,7 +11615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-PappusThmForVolumes",
   "type": "Problem",
-  "number": "21.4.5.22",
+  "number": "21.5.5.22",
   "title": "Pappus Theorem of Volumes.",
   "body": "Pappus Theorem of Volumes   Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.  "
 },
@@ -11615,7 +11624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-Tautochrone1",
   "type": "Figure",
-  "number": "21.4.6.1",
+  "number": "21.5.6.1",
   "title": "",
   "body": " Image from MathWords      "
 },
@@ -11633,7 +11642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-HuygenClock",
   "type": "Figure",
-  "number": "21.4.6.2",
+  "number": "21.5.6.2",
   "title": "",
   "body": " Huygens Clock     "
 },
@@ -11642,7 +11651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut1",
   "type": "Problem",
-  "number": "21.4.6.3",
+  "number": "21.5.6.3",
   "title": "",
   "body": "  Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by   "
 },
@@ -11651,7 +11660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CyclPendPath",
   "type": "Figure",
-  "number": "21.4.6.4",
+  "number": "21.5.6.4",
   "title": "",
   "body": "     "
 },
@@ -11660,7 +11669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-CyclPendPath2",
   "type": "Figure",
-  "number": "21.4.6.5",
+  "number": "21.5.6.5",
   "title": "",
   "body": "     "
 },
@@ -11669,7 +11678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut2",
   "type": "Problem",
-  "number": "21.4.6.6",
+  "number": "21.5.6.6",
   "title": "",
   "body": "  Tautochrone    Use the fact that the two triangles are similar to show that and use the fact that to conclude that .   Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .  "
 },
@@ -11678,7 +11687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Taut3",
   "type": "Problem",
-  "number": "21.4.6.7",
+  "number": "21.5.6.7",
   "title": "",
   "body": "  Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.  "
 },
@@ -11687,7 +11696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#subsub-WorkEnergy-3",
   "type": "Example",
-  "number": "21.4.6.8",
+  "number": "21.5.6.8",
   "title": "",
   "body": " Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton-meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?  "
 },
@@ -11696,7 +11705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#subsub-WorkEnergy-4",
   "type": "Example",
-  "number": "21.4.6.9",
+  "number": "21.5.6.9",
   "title": "",
   "body": " Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:   "
 },
@@ -11705,7 +11714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-KinWork1",
   "type": "Problem",
-  "number": "21.4.6.12",
+  "number": "21.5.6.12",
   "title": "",
   "body": "  Kinetic Energy    Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.   Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.  "
 },
@@ -11714,7 +11723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#example-WorkKin3",
   "type": "Example",
-  "number": "21.4.6.13",
+  "number": "21.5.6.13",
   "title": "",
   "body": " Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.        "
 },
@@ -11723,7 +11732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-WorkKin3",
   "type": "Problem",
-  "number": "21.4.6.16",
+  "number": "21.5.6.16",
   "title": "",
   "body": "  Kinetic Energy    If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.   Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)  "
 },
@@ -11732,7 +11741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#figure-WorkKin6",
   "type": "Figure",
-  "number": "21.4.6.17",
+  "number": "21.5.6.17",
   "title": "",
   "body": "     "
 },
@@ -11741,7 +11750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-WorkKin7",
   "type": "Problem",
-  "number": "21.4.6.18",
+  "number": "21.5.6.18",
   "title": "",
   "body": "  Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)  "
 },
@@ -11750,7 +11759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Bucket1",
   "type": "Problem",
-  "number": "21.4.6.19",
+  "number": "21.5.6.19",
   "title": "",
   "body": "Problems  A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?  "
 },
@@ -11759,7 +11768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#exercise-Bucket2",
   "type": "Problem",
-  "number": "21.4.6.20",
+  "number": "21.5.6.20",
   "title": "",
   "body": "Problems  Use this analysis to show that the work to raise everything from a distance to a distance is given by    Integrate this to determine how much work it takes to raise all of this the entire meters.   What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?  "
 },
@@ -11768,7 +11777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEMassOnACurve",
   "type": "Problem",
-  "number": "21.4.6.21",
+  "number": "21.5.6.21",
   "title": "",
   "body": "Problems  Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton's Second Law which states that force , show that    The quantity is called the kinetic energy of the object (at time ) and is measured in    "
 },
@@ -11777,7 +11786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEKinEnergySpinCast",
   "type": "Problem",
-  "number": "21.4.6.22",
+  "number": "21.5.6.22",
   "title": "",
   "body": "Problems  Spin Casting  Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .   Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?  "
 },
@@ -11786,7 +11795,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEEscapeVelocity1",
   "type": "Problem",
-  "number": "21.4.6.23",
+  "number": "21.5.6.23",
   "title": "",
   "body": "  Problems  Escape Velocity Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet ``to infinity.'' In other words, the amount of work (and energy) it takes to propel the object so it doesn't come back is finite.  "
 },
@@ -11795,7 +11804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEEscapeVelocity2",
   "type": "Problem",
-  "number": "21.4.6.24",
+  "number": "21.5.6.24",
   "title": "",
   "body": "  Problems  Escape Velocity Assume that the original velocity of the mass is and that the velocity at infinity will be 0.   Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .   Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?  "
 },
@@ -11813,7 +11822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEDefineConvIndInt",
   "type": "Problem",
-  "number": "21.4.6.25",
+  "number": "21.5.6.25",
   "title": "Convergence of an Improper Integral.",
   "body": "Convergence of an Improper Integral   Improper Integral  Convergence of Define what we mean for improper integral to converge and what its value would be.  "
 },
@@ -11822,7 +11831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEErrorFunction1",
   "type": "Problem",
-  "number": "21.4.6.26",
+  "number": "21.5.6.26",
   "title": "",
   "body": "Problems Error Function  Perform the substitution to to obtain   "
 },
@@ -11831,7 +11840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEWolframAlpha1",
   "type": "Problem",
-  "number": "21.4.6.27",
+  "number": "21.5.6.27",
   "title": "",
   "body": "  Problems Error Function Actually, Wolfram Alpha provides the following output where  Vocabulary erf The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation is actually correct.  "
 },
@@ -11840,7 +11849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXAMPLECircumCircleViaImprInt",
   "type": "Example",
-  "number": "21.4.6.28",
+  "number": "21.5.6.28",
   "title": "The Circumference of a Unit Circle, Via an Improper Integral.",
   "body": " The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be .  Suppose instead, we compute the arc length by using the equation , . Then If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say Big deal. It worked, consider the area of this region.     The area of this region would be given by   "
 },
@@ -11849,7 +11858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#PROBLEMImpropInt2",
   "type": "Drill",
-  "number": "21.4.6.29",
+  "number": "21.5.6.29",
   "title": "",
   "body": " Try to compute the integral in Formula . What happens?  "
 },
@@ -11858,7 +11867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEImpropInt3",
   "type": "Problem",
-  "number": "21.4.6.30",
+  "number": "21.5.6.30",
   "title": "",
   "body": "  Problems Improper Integral    Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from part (a) to compute the following improper integrals.   "
 },
@@ -11867,7 +11876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXAMPLETorricellisTrumpet",
   "type": "Example",
-  "number": "21.4.6.31",
+  "number": "21.5.6.31",
   "title": "Torricelli’s Trumpet and the Painter’s Paradox.",
   "body": " Torricelli's Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won't get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn't have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608-1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).  "
 },
@@ -11876,7 +11885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#TorriThm",
   "type": "Theorem",
-  "number": "21.4.6.32",
+  "number": "21.5.6.32",
   "title": "",
   "body": "  An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   "
 },
@@ -11885,7 +11894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISETorriTrumpet",
   "type": "Problem",
-  "number": "21.4.6.33",
+  "number": "21.5.6.33",
   "title": "The Volume of Torricelli’s Trumpet.",
   "body": "The Volume of Torricelli's Trumpet   Problems Torricelli s Trumpet Volume    Use an improper integral with volumes of disks to obtain Torricelli's result. Again it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.  "
 },
@@ -11894,7 +11903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISETorriSurfArea",
   "type": "Problem",
-  "number": "21.4.6.34",
+  "number": "21.5.6.34",
   "title": "",
   "body": "  Problems Torricelli s Trumpet Surface Area Let's assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this x fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.  "
 },
@@ -11903,7 +11912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AppDefInt.html#EXERCISEFiniteAreaInfiniteMoment",
   "type": "Problem",
-  "number": "21.4.6.35",
+  "number": "21.5.6.35",
   "title": "",
   "body": "  Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?  "
 },
