@@ -106,109 +106,6 @@
       </aside>
     </introduction>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section  xml:id="SECTIONDEsandIVPS">
 <title>Initial Value Problems</title>
       <p>
@@ -414,6 +311,7 @@ T_n(x) =1+x+\frac{x^2}{2!}+\frac{x^3}{3!}
       </statement>
     </problem>
   </section>
+
   <section xml:id="SECTIONexponential-growth">
     <title>Exponential Growth and Exponential Notation</title>
       <p>
@@ -705,7 +603,7 @@ Newton wrote his
 
             <p>
               This is a startling idea but before we dismiss it, let<rsq/>s take our own
-              advice from <xref ref="DIGRESSIONGuessingEffectively" text="custom">Digression: The Art of Guessing Effectively</xref>. We<rsq/>ll trust
+              advice from <xref ref="SECour-advice-synopsis"></xref>. We<rsq/>ll trust
               our intuition, but also examine it closely. What we<rsq/>re saying is that
               the solution of <xref ref="IVPExpDiffeq">equation</xref> is:
               <men  xml:id="EQUATIONExpSeries1">
@@ -745,7 +643,7 @@ Newton wrote his
                   we have found the solution of our IVP.
                 </p>
               </introduction>
-              <task>
+              <task xml:id="PROBLEMTaylorSeries1A">
                 <statement>
                   <p>
                     Differentiate the series
@@ -755,7 +653,7 @@ Newton wrote his
                   </p>
                 </statement>
               </task>
-              <task>
+              <task xml:id="PROBLEMTaylorSeries1B">
                 <statement>
                   <p>
                     Show that <m>y(0)=1.</m> 
@@ -1020,9 +918,11 @@ Our notation fails us a bit
 </p>
 <p>
         And this is not just a matter of not knowing the value of <m>e</m>.  The
-        difficulty is built into the real numbers. Recall that we saw the
-        same issue come up in <xref ref="SECTIONsome-rules-diff">Section</xref> when we
-        tried to extend the Power Rule to irrational exponents.
+        difficulty is built into the real numbers. The
+        same difficulty appeared  in <xref
+        ref="SUBSECTIONPowerRule">Section</xref> when we
+        tried to extend the Power Rule to irrational exponents. Recall <xref
+        ref="REMARKPowerRule"></xref>
         This is weird.
 </p>
 <aside>
@@ -1056,22 +956,33 @@ Many people are repelled when they encounter this
         </men>
 </p>
 <p>
-        If there is only one solution to <xref ref="IVPExpDiffeq">IVP</xref> (there is) then
-        <m>y(x) = e^x</m> and <m>y(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots</m>
-        must be the same solution.  Defining <m>\exp(x)</m> as
+        If there is only one solution to <xref
+        ref="IVPExpDiffeq">IVP</xref> (there is) then <m>y(x) =
+        e^x</m> and
+        <m>y(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots</m> must be
+        the same solution.  Defining <m>\exp(x)</m> as
         <men  xml:id="EQUATIONExpSeries3">
           \exp(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\ldots,
         </men>
-        rather than <m>\exp(x)=e^x</m> addresses all of these issues. For example
+        rather than <m>\exp(x)=e^x</m> addresses all of these
+        issues. In particular, if <m>x</m> is irrational, say <m>x=\pi
+        </m> then 
         <m>e^\pi</m> means
-        <me>
+        <men xml:id="EQUATIONExpSeriesPi">
         e^\pi=
         1+\pi+\frac{\pi^2}{2!}+\frac{\pi^3}{3!}+\frac{\pi^4}{4!}+\ldots.
-        </me>
+        </men>
+        Recall that we mentioned in <xref
+        ref="REMARKPowerRule"></xref> that we wouldd find two
+        different ways to assign meaning to <m>x^\alpha </m> if
+        <m>\alpha{}</m> is irrational.  <xref
+        ref="EQUATIONExpSeriesPi">Equation</xref> is an example of the
+        first way to do this.
 </p>
+
 <p>
         Of course we are still free to think of the natural exponential as
-        <m>e^x</m>, regardless of the definition and we encourage you to do
+        <m>e^x</m>, regardless of which  definition we use, and we encourage you to do
         that. It can be very helpful.
 </p>
 
@@ -2202,7 +2113,7 @@ The word
         <p>
 <idx><h>Local Linearity</h></idx>
 <idx><h>Vocabulary</h><h>nominal growth rate</h></idx>
-          Notice that we are using the Principle of Local Linearity here. In this
+          Notice that we are using the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  here. In this
           infinitesimal time interval the <term>nominal</term> growth rate, <m>0.3P </m>,
           is virtually constant and so we are treating it as linear
           growth.
@@ -5237,22 +5148,32 @@ seven decimal places.
 <paragraphs xml:id="PARAGRAPHSLogDiff">
 <title>Logarithmic Differentiation</title>
 <p>
-  Recall that in <xref ref="SECTIONsome-rules-diff"></xref> we observed that the
+  Recall that in <xref ref="REMARKPowerRule"></xref> we observed that the
   Power Rule does not easily extend to <m>y=x^\alpha</m>, where <m>\alpha</m> is
-  an irrational number. The properties of the natural exponential and
-  the natural logarithm functions will (finally) allow us to make this
-  extension.
+  an irrational number because we didn<rsq/>t have any way to assign
+  meaning to the expression <m>x^\alpha </m> when <m>\alpha{}</m> is
+  an irrational number. In <xref
+  ref="SECTIONexponential-growth"></xref> we found one way to assign
+  meaning to <m>x^\alpha </m>. 
+ The properties of the natural exponential and
+  the natural logarithm functions provide another. Moreover, this
+  method will finally allow us to extend the Power Rule to <m>x^\alpha
+  </m> when <m>\alpha </m> is irrational.
   </p>
-  <aside>
-<title>Comment</title>
 <p>
-In particular we do not assume that <m>\alpha</m> is rational.
+There is no difficulty about the meaning of either of the symbols <m>\ln (x)</m>
+or <m>e^x</m> for any value of <m>x</m>, rational or otherwise. So our
+second way to  make the expression <m>x^\alpha </m>
+meaningful is:
+<me>
+x^\alpha = \left(e^{\ln(x)}\right)^\alpha = e^{\alpha \ln(x) }
+</me>.
 </p>
-</aside>
 
 <p>
-  Suppose <m>\alpha</m> is any real number.  Starting with <m>y=x^\alpha</m> we
-  take the logarithm of both sides, obtaining
+  Suppose <m>\alpha</m> is any real number (in particular suppose that
+  <m>\alpha</m> is irrational).  Starting with <m>y=x^\alpha</m> we take
+  the logarithm of both sides, obtaining
   <me>
     \ln(y)=\alpha\ln(x).
 </me>
@@ -5512,39 +5433,72 @@ If we multiply by <m>y</m> we get
   rule, but it isn<rsq/>t. It is really just a trick as the next problem
   shows. A handy trick, to be sure, but still a trick.
 </p>
-<exercise>
+
+<problem>
+<p>
+Use Logarithmic Differentiation to show that if <me>x^y=y^x</me> then  <me>\dfdx{y}{x}=\frac{y-x\ln(y)}{x-y\ln(x)}</me>.
+</p>
+</problem>
+
+<exercise xml:id="PROBLEMGenPR">
   <introduction>
     <p>
-      Suppose we want to differentiate <m>y=[\alpha(x)]^{\beta(x)}</m> where
-      <m>\alpha(x)</m> and <m>\beta(x)</m>  are two differentiable functions.
+      Suppose that <me>y=[\alpha(x)]^{\beta(x)}</me> where
+      <m>\alpha(x)</m> and <m>\beta(x)</m>  are differentiable functions.
     </p>
   </introduction>
-  <task>
+  <task xml:id="PROBLEMGenPRA">
     <statement>
       <p>
-        Compute <m>\dfdx{y}{x}</m> using Logarithmic
-        Differentiation.
+        Use Logarithmic Differentiation to show that
+        <me>
+          \dfdx{y}{x} = \alpha (x)^{\beta (x)}\left( \beta
+            (x)\frac{\alpha^\prime (x)}{\alpha (x)} +\beta^\prime(x)
+            \ln \left(\alpha (x)\right) \right)
+        </me>.
       </p>
     </statement>
   </task>
-  <task>
+  <task xml:id="PROBLEMGenPRB">
     <statement>
       <p>
         Now express <m>\alpha(x)</m> as
         <m>\alpha(x)=e^{\ln\left(\alpha(x)\right)}</m> and compute
-        <m>\dfdx{y}{x}</m> again using the ordinary rules of differentiation
-        and show that you get the same thing as in part (a).
+        <m>\dfdx{y}{x}</m> again without using Logarithmic
+        Differentiation to show that you get the same thing as in <xref
+ref="PROBLEMGenPRA">part</xref>.
       </p>
     </statement>
   </task>
 </exercise>
-<problem>
-  <statement>
-    <p>
-      Suppose <m>x^y=y^x</m> and show that  <m>\dfdx{y}{x}=\frac{y-x\ln(y)}{x-y\ln(x)}</m>.
-    </p>
-  </statement>
-</problem>
+
+<p>
+  Recall that in <xref ref="CHAPTERdifferentials"></xref>  we stated, but did not prove the <xref
+  ref="THEOREMGenPowRule">General Power Rule</xref> because we had no
+  way to address the case of an irrational exponent.
+</p>
+<p>
+In <xref ref="PROBLEMTaylorSeries1"></xref> you showed that 
+</p>
+
+
+<exercise xml:id="PROBLEMGenerPowRule">
+<title>The General Power Rule</title>
+<p>
+ We are now,
+  finally, in a position to extend the Power Rule to irrational exponents.
+In fact we<rsq/>ve already done it.
+</p>
+
+<p>
+ Explain how the results of <xref
+ref="PROBLEMGenPR"></xref> imply that if <me>y=x^\alpha{}</me> then
+<me>
+\dx{y}=\alpha x^{\alpha -1}
+</me> even when <m>\alpha{}</m> is irrational.
+</p>
+</exercise>
+
 
 </paragraphs>
 

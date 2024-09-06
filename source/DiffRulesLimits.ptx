@@ -1662,7 +1662,7 @@ in this text require an Induction argument for full rigor.
 <idx><h>Vocabulary</h><h>Mathematical Induction</h></idx>
 <introduction>
     <p>
-      Assume  that <m>\alpha(x)=x^n</m> is differentiable at <m>x</m> for
+      Assume  that <m>\alpha(x)=x^n</m>  for
       any positive integer <m>n</m>.
     </p>
 </introduction>
@@ -1919,7 +1919,7 @@ similar reasons.
 <task xml:id="PROBLEMPRRigor1C">
 <statement>
 <p>
- Use <term>Mathematical Induction</term> to show that
+Now show that in general
       <me>(a-b)(a^{q-1}+a^{q-2}b+a^{q-3}b^2+\cdots+ab^{q-2}+b^{q-1})=a^q-b^q</me>.
     </p>
 </statement>
@@ -2141,7 +2141,7 @@ L<rsq/>Hôpital<rsq/>s Rule.
   </me>
   and
   this is true on the interval <m>\left[0,\frac{\pi}{2}\right]</m>.
-  Since
+  Since <m>\cos (\theta )</m> is a continuous function we see that
   <me>
   \rlimit{\theta}{0}{1}=\rlimit{\theta}{0}{\cos(\theta)}=1
   </me>
@@ -2195,12 +2195,11 @@ proof that <m>\dfdx{(\sin(x))}{x}= \cos(x)</m> is complete.
 </statement>
 </problem>
 <p>
-Assuming that <m>\tan(\theta)</m>, <m>\cot(\theta)</m>, <m>\sec(\theta)</m>, and
-<m>\csc(\theta)</m> are differentiable we can now use
-<xref ref="PROBLEMQRRigor"></xref> to find their derivatives as
-well. Since this is exactly what we did in
-<xref ref="SECTIONdiff-other-trig"></xref> we have the derivatives of all of
-the trigonometric functions.
+We can now use <xref ref="PROBLEMQRRigor"></xref> to find the
+derivatives of <m>\tan(\theta)</m>, <m>\cot(\theta)</m>,
+<m>\sec(\theta)</m>, and <m>\csc(\theta)</m> as well. Since this is
+exactly what we did in <xref ref="SECTIONdiff-other-trig"></xref> we
+have the derivatives of all of the trigonometric functions.
 </p>
 
 </section>
@@ -2245,7 +2244,7 @@ Recall that
 when we tried to invert <m>\tan(x)</m> (which is not one-to-one) in
 <xref ref="SECTIONwitch-agnesi-inverse"></xref> we got the multifunction
 <m>\arctan(x)</m>. We had to restrict the domain of the tangent function to
-<m>\frac{-\pi}{2}\le x \le \frac{\pi}{2}</m>, in order to find an
+<m>\frac{-\pi}{2}\lt x \lt \frac{\pi}{2}</m>, in order to find an
 inverse. That restriction gave us a one-to-one function which we could
 invert because one-to-one functions are the only functions with inverses.
 </p>
@@ -2256,26 +2255,24 @@ invert because one-to-one functions are the only functions with inverses.
 <statement>
 <p>
   
-  Suppose <m>f(x)</m>, with domain <m>D</m> and range, <m>R</m> is a one-to-one
+  Suppose <m>f(x)</m>, with domain <m>D</m> and range <m>R</m> is a one-to-one
   function. Then the inverse of <m>f(x)</m> is the function <m>\inverse f(x)</m>
   with domain <m>R</m> and range <m>D</m> which satisfies the
-  following properties (Notice that the domain and range
-    have been swapped.):
+  following properties:
     <ol>
       <li>
         <p>
-          <m>f\left(\inverse f(x)\right)=x</m>
+          <m>f\left(\inverse f(x)\right)=x</m>     for every value of
+          <m>x</m> in <m>R</m>.
         </p>
       </li>
       <li>
         <p>
-          <m>\inverse f\left( f(x)\right)=x</m>
+          <m>\inverse f\left( f(x)\right)=x</m>     for every value of
+          <m>x</m> in <m>D</m>.
         </p>
       </li>
     </ol>
-    for every value of <m>x</m> in the domain of <m>f</m>
-    (equivalently, in the range of <m>\inverse f</m>).
-
 </p>
 </statement>
 </definition>
@@ -2515,10 +2512,8 @@ We include this proof in its full abstraction for two reasons:
 <p>
 <idx><h>Sherlock Holmes Maxim</h></idx>
 The strategy behind the following proof follows the same general
-
 scheme as the Sherlock Holmes Maxim that we referred to in
-<xref ref="PARAGRAPHTrianglesWithFixedPerimeters" text="title"></xref>
-
+<xref ref="DRILLMaximalTriangle"></xref>. We will eliminate the
 impossible so that <q>whatever remains, however improbable, must be the
 truth.</q>
 </p>
@@ -2715,9 +2710,10 @@ patient with yourself and do not rush.
     </mrow>
     <intertext>
       Observe that if <m>b+h</m> is in the domain of <m>\inverse{f}</m> then it is in the
-      range of <m>f</m>. Thus there is some number in the domain   of
-      <m>f</m> (for convenience we'll call it <m>a+k</m>) such that
-      <m>\textcolor{blue}{b+h}=\textcolor{blue}{f(a+k)}</m>. Thus
+      range of <m>f</m>. Thus there is some number, <m>a+k</m>, in the domain   of
+      <m>f</m>  such that
+      <m>\textcolor{blue}{b+h}=\textcolor{blue}{f(a+k)}</m>. (Note
+      that <m>k\ne 0</m> since <m>h\ne 0</m> and  <m>f</m> is one-to-one.) Thus
     </intertext>
     <mrow>
       \limit{h}{0}{\frac{\inverse{f}(\textcolor{blue}{b+h})-\inverse{f}(b)}{h}}
@@ -2726,7 +2722,7 @@ patient with yourself and do not rush.
     </mrow>
     <intertext>
       Again since <m>f</m> and <m>\inverse{f}</m> are mutually inverse
-      they <q>undo</q> each other, so  <m>\inverse{f}(f(a+k))=a+k</m> so that
+      they <q>undo</q> each other so  <m>\inverse{f}(f(a+k))=a+k</m>. Thus
     </intertext>
     <mrow>
       \limit{h}{0}{\frac{\inverse{f}(b+h)-\inverse{f}(b)}{h}} \amp =
