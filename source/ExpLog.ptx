@@ -973,11 +973,11 @@ Many people are repelled when they encounter this
         1+\pi+\frac{\pi^2}{2!}+\frac{\pi^3}{3!}+\frac{\pi^4}{4!}+\ldots.
         </men>
         Recall that we mentioned in <xref
-        ref="REMARKPowerRule"></xref> that we wouldd find two
+        ref="REMARKPowerRule"></xref> that we would find two
         different ways to assign meaning to <m>x^\alpha </m> if
         <m>\alpha{}</m> is irrational.  <xref
         ref="EQUATIONExpSeriesPi">Equation</xref> is an example of the
-        first way to do this.
+        first way to do this in the special case when <m>x=e</m>.
 </p>
 
 <p>
@@ -1037,7 +1037,7 @@ In <xref ref="EQUATIONExpApprox1">equation</xref> take <m>x=-1.</m>
        Use <xref ref="EQUATIONExpApprox2"></xref> to show that -->
             <m>\inverse{e} \approx 0.36788</m>. Compare this with the numerical
             value of
-            <m>\frac1e\approx\frac{1}{2.71828}</m> you get from a calculator. \\
+            <m>\frac1e\approx\frac{1}{2.71828}</m> you get from a calculator. 
           </p>
       </statement>
 <hint>
@@ -5148,26 +5148,34 @@ seven decimal places.
 <paragraphs xml:id="PARAGRAPHSLogDiff">
 <title>Logarithmic Differentiation</title>
 <p>
-  Recall that in <xref ref="REMARKPowerRule"></xref> we observed that the
-  Power Rule does not easily extend to <m>y=x^\alpha</m>, where <m>\alpha</m> is
-  an irrational number because we didn<rsq/>t have any way to assign
-  meaning to the expression <m>x^\alpha </m> when <m>\alpha{}</m> is
-  an irrational number. In <xref
-  ref="SECTIONexponential-growth"></xref> we found one way to assign
-  meaning to <m>x^\alpha </m>. 
- The properties of the natural exponential and
-  the natural logarithm functions provide another. Moreover, this
-  method will finally allow us to extend the Power Rule to <m>x^\alpha
-  </m> when <m>\alpha </m> is irrational.
-  </p>
+  Recall that in <xref ref="REMARKPowerRule"></xref> we observed that
+  we could not easily extend the Power Rule to <m>y=x^\alpha</m> when
+  <m>\alpha</m> is an irrational number because we didn<rsq/>t have
+  any way to assign meaning to the expression <m>x^\alpha </m> when
+  <m>\alpha{}</m> is irrational. In <xref
+  ref="SECTIONexponential-growth"></xref> we found that the special case
+  <m>e^\alpha </m> is meaningful if  we define it via it<rsq/>s
+  infinite series representation.  This approach
+  can be extended to  <m>x^\alpha</m> but we don<rsq/>t yet
+  have any tools for handling infinite series so this isn<rsq/>t very
+  useful to us at the moment.
+</p>
 <p>
-There is no difficulty about the meaning of either of the symbols <m>\ln (x)</m>
-or <m>e^x</m> for any value of <m>x</m>, rational or otherwise. So our
-second way to  make the expression <m>x^\alpha </m>
-meaningful is:
-<me>
-x^\alpha = \left(e^{\ln(x)}\right)^\alpha = e^{\alpha \ln(x) }
-</me>.
+ The properties of the natural exponential and the natural logarithm
+ functions will allow us to extend the Power Rule to <m>x^\alpha </m>
+ when for any real value of <m>x</m> or <m>\alpha </m>. In particular
+ they allow us to assign meaning to <m>x^\alpha </m> when <m>\alpha
+ </m> is irrational. 
+</p>
+<p>
+  Since there is no difficulty about the meaning of either <m>\ln (x)</m> or
+  <m>e^x</m> for any value of <m>x</m>, rational or otherwise,
+  <m>x^\alpha </m> is meaningful if we  define it as
+<men  xml:id="EQUATIONGenExpViaLn">
+x^\alpha = \left(e^{\ln(x)}\right)^\alpha = e^{\alpha \ln(x) } </men>.
+You will use <xref ref="EQUATIONGenExpViaLn">equation</xref> to show
+that the Power Rule extends to irrational values of <m>\alpha </m> in
+<xref ref="PROBLEMGenerPowRule"></xref> at the end of this section.
 </p>
 
 <p>
@@ -5484,19 +5492,39 @@ In <xref ref="PROBLEMTaylorSeries1"></xref> you showed that
 
 <exercise xml:id="PROBLEMGenerPowRule">
 <title>The General Power Rule</title>
+<introduction>
 <p>
  We are now,
   finally, in a position to extend the Power Rule to irrational exponents.
 In fact we<rsq/>ve already done it.
 </p>
-
+</introduction>
+<task>
+<statement>
 <p>
  Explain how the results of <xref
-ref="PROBLEMGenPR"></xref> imply that if <me>y=x^\alpha{}</me> then
+ref="PROBLEMGenPR"></xref> imply that if <me>y=x^\alpha{}</me> and
+<m>x\gt 0</m> then
 <me>
-\dx{y}=\alpha x^{\alpha -1}
+\dx{y}=\alpha x^{\alpha -1}\dx{x}
 </me> even when <m>\alpha{}</m> is irrational.
 </p>
+</statement>
+</task>
+<task>
+<statement>
+<p>
+Why did we impose the restriction <m>x\gt 0</m>?
+</p>
+</statement>
+<hint>
+<p>
+What happens if <m>x\lt 0</m> and <m>\alpha = 1/2</m>?
+</p>
+</hint>
+
+</task>
+
 </exercise>
 
 
