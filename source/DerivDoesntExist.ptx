@@ -271,51 +271,50 @@
 
 
           <exercise>
-            <task>
-              <statement>
-                <p>
-                  Use <xref ref="DEFINITIONDerivative"></xref> to show that if
-                  <m>f(x)=\frac{x}{x}</m> then <m>f^\prime(0)</m> is undefined.
-                </p>
-
-                <p>
-                  It is pretty clear that <m>f^\prime(0)</m> is undefined, since
-                  <m>f(0)</m> is undefined. We can't have a derivative where we
+            <introduction>
+              <p>
+                It is pretty clear that <m>f^\prime(0)</m> is undefined, since
+                <m>f(0)</m> is undefined. We can't have a derivative where we
                   don't have a point. But this is the kind of vague reasoning we
-                  are trying to avoid. The purpose of this exercise is to show
+                  are trying to avoid. Part (a) of this exercise shows
                   unequivocally that the limit which defines <m>f^\prime(0)</m>
                   is undefined.
                 </p>
-              </statement>
-            </task>
-            <task>
-              <statement>
                 <p>
-                  Use <xref ref="DEFINITIONDerivative"></xref> to show that
-                  if
-                  <me>
-                    f(x)=
-                    \begin{cases}
-                    \frac{x}{x}\amp  \text{ if }x\neq0\\
-                    1\amp  \text{ if }x=0
-                    \end{cases}
-                  </me>
-                  then <m>f^\prime(0)</m> is defined.
+                  Part (b) shows how, in simple cases like this one,
+                  we can <q>plug the hole</q> by slightly modifying
+                  our function.
                 </p>
-                <p>
-                  This time <m>f(0)</m> is defined but this is a silly way to do
-                  it. We do this for emphasis.
-                </p>
-              </statement>
-            </task>
+            </introduction>
+              <task>
+                <statement>
+                  <p>
+                    Use <xref ref="DEFINITIONDerivative"></xref> to show that if
+                    <m>f(x)=\frac{x}{x}</m> then <m>f^\prime(0)</m> is undefined.
+                  </p>
+                </statement>
+              </task>
+              <task>
+                <statement>
+
+                  <p>
+                    Use <xref ref="DEFINITIONDerivative"></xref> to show that
+                    if
+                    <me>
+                      f(x)=
+                      \begin{cases}
+                      \frac{x}{x}\amp  \text{ if }x\neq0\\
+                      1\amp  \text{ if }x=0
+                      \end{cases}
+                    </me>
+                    then <m>f^\prime(0)</m> is defined.
+                  </p>
+                </statement>
+              </task>
           </exercise>
           <example>
             <idx><h>Derivative</h><h>doesn<rsq/>t exist</h></idx>
             <image source="DC/AbsSqrtX.png" width="30%"/>
-            
-            
-            
-            
             
             <p>
               It is intuitively clear that derivative of the function
@@ -323,10 +322,12 @@
               defined at <m>x=0</m>.  We will confirm our intuition using
               <xref ref="DEFINITIONDerivative"></xref>. 
             </p>
+
             <p>
-              That is, we'll try to compute the
-              derivative of <m>f(x)</m> at <m>x=0</m> using <xref ref="DEFINITIONDerivative"></xref>
-              and see what goes wrong.
+              That is, we'll try to compute the derivative of
+              <m>f(x)</m> at <m>x=0</m> using <xref
+              ref="DEFINITIONDerivative"></xref> and see what goes
+              wrong.
 
               The existence of the derivative of <m>f(x)</m> at <m>x=0</m> is equivalent to
               the existence of  the limit <m> \tlimit{h}{0}{\frac{f(0+h)-f(0)}{h}}</m>,
@@ -367,107 +368,107 @@
             exist,
             and therefore <m>f^\prime(0)</m> is not defined.
           </p>
+          <aside>
+            <title>Comment</title>
+            <p>
+              As a verbal shorthand most people will just say that the right- and
+              left-hand limits are not equal and so <m>f^\prime(0)</m> does not
+              exist. Be sure you understand why this is, strictly speaking,
+              incorrect.
+            </p>
+          </aside>
 
-<aside>
-<title>Comment</title>
-<p>
-As a verbal shorthand most people will just say that the right- and
-left-hand limits are not equal and so <m>f^\prime(0)</m> does not
-exist. Be sure you understand why this is, strictly speaking,
-incorrect.
-</p>
-</aside>
+          <example xml:id="EXAMPLEHeavisideFunction">
+            <title>The Heaviside Function</title>
+            <p>
+              <xref ref="PROBLEMAbsValDeriv"></xref> shows that the derivative of the
+              Absolute Value function  is:
+              <me>H(x)=
+              \begin{cases}
+              1\amp x\gt0\\
+              -1\amp x\lt0
+              \end{cases}.
+              </me>
+              Notice that it is not defined at <m>x=0</m>.
 
-    <example xml:id="EXAMPLEHeavisideFunction">
-      <title>The Heaviside Function</title>
-      <p>
-        <xref ref="PROBLEMAbsValDeriv"></xref> shows that the derivative of the
-        Absolute Value function  is:
-        <me>H(x)=
-        \begin{cases}
-        1\amp x\gt0\\
-        -1\amp x\lt0
-        \end{cases}.
-        </me>
-        Notice that it is not defined at <m>x=0</m>.
-
-        We call <m>H(x)</m> the Heaviside function in honor
-        of
-        <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/">Oliver
-        Heaviside</url> (1850<ndash/>1925). Simple as it is, Heaviside's function is a fundamental
-        tool in signal processing, control theory, and the solution of
-        differential equations.
-      </p>
-    </example>
-    <exercise xml:id="PROBLEMHeavisideDeriv">
-      <task xml:id="PROBLEMHeavisideDerivA">
-        <statement>
-          <p>
-            Use <xref ref="DEFINITIONDerivative"></xref> to show that
-            <m>H^\prime(x)=0</m> when <m>x\ne0</m>
-          </p>
-        </statement>
-      </task>
-      <task xml:id="PROBLEMHeavisideDerivB">
-        <statement>
-          <p>
-            Explain why the result in <xref ref="PROBLEMHeavisideDerivA">part</xref>  does not
-            contradict
-            <xref ref="PROBLEMDervEqZeroImpliesConstant"></xref>
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    
-    <p>
-      We first introduced one-sided limits in <xref
-      ref="SECTIONvertical-asymptotes">Section</xref>. At the time our
-      concern was to locate vertical asymptotes so we only looked at
-      limits that were equal to either positive or negative
-      infinity. We see now that these limits can take any value and
-      that they are more fundamental than they first appeared to
-      be.  We are still not quite ready for a  formal definition but <xref ref="DEFINITIONOneSidedLimits"></xref>  earlier we will
-      do so now.
-    </p>
-    <definition xml:id="DEFINITIONOneSidedLimits">
-      <title>One-sided Limits</title>
-<idx><h>Definition</h><h>One-sided Limits</h></idx>
-      <statement>
-        <p>
+              We call <m>H(x)</m> the Heaviside function in honor
+              of
+              <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/">Oliver
+              Heaviside</url> (1850<ndash/>1925). Simple as it is, Heaviside's function is a fundamental
+              tool in signal processing, control theory, and the solution of
+              differential equations.
+            </p>
+          </example>
+          <exercise xml:id="PROBLEMHeavisideDeriv">
+            <task xml:id="PROBLEMHeavisideDerivA">
+              <statement>
+                <p>
+                  Use <xref ref="DEFINITIONDerivative"></xref> to show that
+                  <m>H^\prime(x)=0</m> when <m>x\ne0</m>
+                </p>
+              </statement>
+            </task>
+            <task xml:id="PROBLEMHeavisideDerivB">
+              <statement>
+                <p>
+                  Explain why the result in <xref
+                  ref="PROBLEMHeavisideDerivA">part</xref> does not
+                  contradict <xref
+                  ref="PROBLEMDervEqZeroImpliesConstant"></xref>
+                </p>
+              </statement>
+            </task>
+          </exercise>
           
-          If <m>R</m> is a  real number (or <m>-\infty</m> or <m>\infty</m>) and 
-          <me> \rlimit{x}{a}{f(x)} = R</me>
-          we say that <m>R</m> is the right-hand limit of <m>f(x)</m> at <m>x=a</m>.
-
-          If <m>L</m> is a  real number (or <m>-\infty</m> or <m>\infty</m>) and 
-          <me>\llimit{x}{a}{f(x)} = L</me>
-          we say that <m>L</m> is the left-hand limit of <m>f(x)</m> at <m>x=a</m>.
-
-        </p>
-      </statement>
-    </definition>
-    <p>
-      Because <m>f(x)</m> can't simultaneously approach two different numbers, if
-      the left and right handed limits both exist but do not agree then
-      <m>\limit{x}{a}{f(x)}</m> doesn't exist. This fact will be a
-      useful tool for us later so we state it as a
-      theorem. 
-    </p>
-    <theorem xml:id="THEOREMOneSideLim">
-      <idx><h>Theorem</h><h>One Sided Limits</h></idx>
-      <p>        
-        <m>\limit{x}{a}{f(x)}</m> exists if and only if
-        <m>\rlimit{x}{a}{f(x)} = \llimit{x}{a}{f(x)}.</m> In that case all three
-        limits are equal.
-      </p>
-    </theorem>
-    <p>
-      <xref ref="THEOREMOneSideLim"></xref> requires proof but we do not
-      have the tools to prove it here. The appropriate tools will be
-      developed in
-      <xref ref="CHAPTERformal-limits"></xref>. Proving this fact is the last problem
-      in this textbook.
-    </p>
+          <p>
+            We first introduced one-sided limits in <xref
+            ref="SECTIONvertical-asymptotes">Section</xref>. At the
+            time our concern was to locate vertical asymptotes so we
+            only looked at limits that were equal to either positive
+            or negative infinity. We see now that these limits can
+            take any value and that they are more fundamental than
+            they first appeared to be.  We are still not quite ready
+            for a formal definition but <xref
+            ref="DEFINITIONOneSidedLimits"></xref> earlier we will do
+            so now.
+          </p>
+          <definition xml:id="DEFINITIONOneSidedLimits">
+            <title>One-sided Limits</title>
+            <idx><h>Definition</h><h>One-sided Limits</h></idx>
+            <statement>
+              <p>
+                If <m>R</m> is a real number (or <m>-\infty</m> or
+                <m>\infty</m>) and <me> \rlimit{x}{a}{f(x)} = R</me>
+                we say that <m>R</m> is the right-hand limit of
+                <m>f(x)</m> at <m>x=a</m>.  If <m>L</m> is a real
+                number (or <m>-\infty</m> or <m>\infty</m>) and
+                <me>\llimit{x}{a}{f(x)} = L</me> we say that <m>L</m>
+                is the left-hand limit of <m>f(x)</m> at <m>x=a</m>.
+              </p>
+            </statement>
+          </definition>
+          <p>
+            Because <m>f(x)</m> can't simultaneously approach two different numbers, if
+            the left and right handed limits both exist but do not agree then
+            <m>\limit{x}{a}{f(x)}</m> doesn't exist. This fact will be a
+            useful tool for us later so we state it as a
+            theorem. 
+          </p>
+          <theorem xml:id="THEOREMOneSideLim">
+            <idx><h>Theorem</h><h>One Sided Limits</h></idx>
+            <p>        
+              <m>\limit{x}{a}{f(x)}</m> exists if and only if
+              <m>\rlimit{x}{a}{f(x)} = \llimit{x}{a}{f(x)}.</m> In that case all three
+              limits are equal.
+            </p>
+          </theorem>
+          <p>
+            <xref ref="THEOREMOneSideLim"></xref> requires proof but we do not
+            have the tools to prove it here. The appropriate tools will be
+            developed in
+            <xref ref="CHAPTERformal-limits"></xref>. Proving this fact is the last problem
+            in this textbook.
+          </p>
   </section>
   <section xml:id="SECTIONone-sided-deriv">
     <title>One Sided Derivatives</title>
