@@ -8692,7 +8692,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "16.1",
   "title": "One Sided Limits",
-  "body": " One Sided Limits   I turn away with fright and horror from the lamentable evil of functions which do not have derivatives.   Charles Hermite (1822 1901)    The brilliant Cerebron, . . . discovered three distinct kinds of dragon: the mythical, the chimerical, and the purely hypothetical. They were all, one might say, nonexistent, but each non-existed in an entirely different way.   Stanislaw Lem (1921 2006)   In we saw that those points where the derivative doesn't exist are possible optimal points but we didn't pursue this any further at the time. However we now need to re-examine the non-existence of derivatives.   Principle of Local Linearity failure of, non-differentiability We also observed in that derivatives fail to exist at points where the Principle of Local Linearity does not hold. This is true, but the only way we currently have to determine if the Principle of Local Linearity holds is to look at a graph. While graphs are useful, we have learned that we should not put all of our faith in conclusions drawn from graphs.  On the other hand, by the derivative of a function is given by a limit, and from our work in Chapter we know that not all limits exist. For example, if we try to compute the value of for some function and we find that is meaningless then is not differentiable at . In other words, does not exist.  So, the limit definition gives us a computational tool we can use to decide the question of differentiability which, as we saw in Chapter , is crucial to finding possible optimal transition points of a function.  In our comments following we listed several functions which are not differentiable at . Of these, the Absolute Value function, , is probably the simplest to work with, so we will start there.   The Absolute Value Function  The Absolute Value function is usually introduced with some vague statement like, The absolute value of a number is just the positive version of the number,   Or sometimes an appeal is made to the intutive notion of distance, as gives the length of the line segment between and .   These are both true statements and are OK as intuitive definitions, but we will need something more precise from now on.   The formal definition of the Absolute Value function is:   The Absolute Value Function  Lemma The Absolute Value Function   The Absolute Value of is:      Principle of Local Linearity failure of, non-differentiability of the Absolute Value function The graph of the Absolute Value function is given in below. Notice that is defined at since , but as we indicated in the Principle of Local Linearity does not hold at so we suspect that the Absolute Value function is not differentiable at .      But we now have the ability to confirm our suspicion analytically so let's take a look at this using the limit definition of the derivative. The derivative of at will be the value of the limit so the derivative of at will be: OK, but what is this limit? Don't jump to conclusions. Think about this carefully for a few minutes. What do you think is equal to?   Comment  To say that is approaching  suggests that is sliding along the horizontal axis toward the origin. We encourage you to think of limits this way. It is a good intuitive approach. However, as we will see in it isn't quite what is really happening.   First suppose that is approaching zero from the positive side. Recall that in we invented the notation for exactly this situation. In this case is positive so and which says that the right-hand limit will be one. Now suppose is very small and negative. In this case is negative so and which says that the left-hand limit will be negative one.  But since can't be close to and close to simultaneously we can not find a value for which is correct for both positive and negative values of . In other words this limit does not exist.  Therefore does not exist either.    According to , since does not exist, the value is a possible transition point for the Absolute Value function. So there might be a local extremum of at . Is there?     The Absolute Value function is not differentiable at but it is differentiable at every other value of . Let and use to show that:   If then ,    If then .      From the discussion in DIGRESSION: The Absolute Value Function we know that . Use the differentiation rules you learned in Part 1 of this text to show that if , then How does this compare with your calculations part ?    Derivative doesn t exist  A slightly less intuitive example is the function . It is tempting to claim that this is really just since anything divided by itself is one but that claim is not true. As we saw in DIGRESSION: Dividing By Zero division by zero is undefined, regardless of the numerator. So the expression is undefined, and therefore the function is not defined at . It is also tempting to try to invoke L Hôpital s Rule, since it is true that But this only says that the limit of is equal to one, not that itself is equal to one, at . As we ve seen the statement explicitly excludes the point from consideration. This is why when we discussed indeterminate forms in Section we were very careful to write instead of . We needed to emphasize that we specifically do not allow the denominator to be equal to zero.    Use to show that if then is undefined.  It is pretty clear that is undefined, since is undefined. We can't have a derivative where we don't have a point. But this is the kind of vague reasoning we are trying to avoid. The purpose of this exercise is to show unequivocally that the limit which defines is undefined.   Use to show that if then is defined.  This time is defined but this is a silly way to do it. We do this for emphasis.    Derivative doesn t exist   It is intuitively clear that derivative of the function (above) is not defined at . We will confirm our intuition using .  That is, we'll try to compute the derivative of at using and see what goes wrong. The existence of the derivative of at is equivalent to the existence of the limit , so we will try to compute this limit and see what happens.        Show that .   Show that .    shows, increases without bound as approaches zero from the right, and decreases without bound as approaches zero from the left. Since neither of these limits even exists it follows that also does not exist, and therefore is not defined.   Comment  As a verbal shorthand most people will just say that the right- and left-hand limits are not equal and so does not exist. Be sure you understand why this is, strictly speaking, incorrect.    The Heaviside Function   shows that the derivative of the Absolute Value function is: Notice that it is not defined at . We call the Heaviside function in honor of Oliver Heaviside (1850 1925). Simple as it is, Heaviside's function is a fundamental tool in signal processing, control theory, and the solution of differential equations.    Use to show that when    Explain why the result in part does not contradict    We first introduced one-sided limits in Section . At the time our concern was to locate vertical asymptotes so we only looked at limits that were equal to either positive or negative infinity. We see now that these limits can take any value and that they are more fundamental than they first appeared to be. We are still not quite ready for a formal definition but earlier we will do so now.   One-sided Limits  Definition One-sided Limits   If is a real number (or or ) and we say that is the right-hand limit of at . If is a real number (or or ) and we say that is the left-hand limit of at .    Because can't simultaneously approach two different numbers, if the left and right handed limits both exist but do not agree then doesn't exist. This fact will be a useful tool for us later so we state it as a theorem.   Theorem One Sided Limits   exists if and only if In that case all three limits are equal.    requires proof but we do not have the tools to prove it here. The appropriate tools will be developed in . Proving this fact is the last problem in this textbook.  "
+  "body": " One Sided Limits   I turn away with fright and horror from the lamentable evil of functions which do not have derivatives.   Charles Hermite (1822 1901)    The brilliant Cerebron, . . . discovered three distinct kinds of dragon: the mythical, the chimerical, and the purely hypothetical. They were all, one might say, nonexistent, but each non-existed in an entirely different way.   Stanislaw Lem (1921 2006)   In we saw that those points where the derivative doesn't exist are possible optimal points but we didn't pursue this any further at the time. However we now need to re-examine the non-existence of derivatives.   Principle of Local Linearity failure of, non-differentiability We also observed in that derivatives fail to exist at points where the Principle of Local Linearity does not hold. This is true, but the only way we currently have to determine if the Principle of Local Linearity holds is to look at a graph. While graphs are useful, we have learned that we should not put all of our faith in conclusions drawn from graphs.  On the other hand, by the derivative of a function is given by a limit, and from our work in Chapter we know that not all limits exist. For example, if we try to compute the value of for some function and we find that is meaningless then is not differentiable at . In other words, does not exist.  So, the limit definition gives us a computational tool we can use to decide the question of differentiability which, as we saw in Chapter , is crucial to finding possible optimal transition points of a function.  In our comments following we listed several functions which are not differentiable at . Of these, the Absolute Value function, , is probably the simplest to work with, so we will start there.   The Absolute Value Function  The Absolute Value function is usually introduced with some vague statement like, The absolute value of a number is just the positive version of the number,   Or sometimes an appeal is made to the intutive notion of distance, as gives the length of the line segment between and .   These are both true statements and are OK as intuitive definitions, but we will need something more precise from now on.   The formal definition of the Absolute Value function is:   The Absolute Value Function  Lemma The Absolute Value Function   The Absolute Value of is:      Principle of Local Linearity failure of, non-differentiability of the Absolute Value function The graph of the Absolute Value function is given in below. Notice that is defined at since , but as we indicated in the Principle of Local Linearity does not hold at so we suspect that the Absolute Value function is not differentiable at .      But we now have the ability to confirm our suspicion analytically so let's take a look at this using the limit definition of the derivative. The derivative of at will be the value of the limit so the derivative of at will be: OK, but what is this limit? Don't jump to conclusions. Think about this carefully for a few minutes. What do you think is equal to?   Comment  To say that is approaching  suggests that is sliding along the horizontal axis toward the origin. We encourage you to think of limits this way. It is a good intuitive approach. However, as we will see in it isn't quite what is really happening.   First suppose that is approaching zero from the positive side. Recall that in we invented the notation for exactly this situation. In this case is positive so and which says that the right-hand limit will be one. Now suppose is very small and negative. In this case is negative so and which says that the left-hand limit will be negative one.  But since can't be close to and close to simultaneously we can not find a value for which is correct for both positive and negative values of . In other words this limit does not exist.  Therefore does not exist either.    According to , since does not exist, the value is a possible transition point for the Absolute Value function. So there might be a local extremum of at . Is there?     The Absolute Value function is not differentiable at but it is differentiable at every other value of . Let and use to show that:   If then ,    If then .      From the discussion in DIGRESSION: The Absolute Value Function we know that . Use the differentiation rules you learned in Part 1 of this text to show that if , then How does this compare with your calculations part ?    Derivative doesn t exist  A slightly less intuitive example is the function . It is tempting to claim that this is really just since anything divided by itself is one but that claim is not true. As we saw in DIGRESSION: Dividing By Zero division by zero is undefined, regardless of the numerator. So the expression is undefined, and therefore the function is not defined at . It is also tempting to try to invoke L Hôpital s Rule, since it is true that But this only says that the limit of is equal to one, not that itself is equal to one, at . As we ve seen the statement explicitly excludes the point from consideration. This is why when we discussed indeterminate forms in Section we were very careful to write instead of . We needed to emphasize that we specifically do not allow the denominator to be equal to zero.    It is pretty clear that is undefined, since is undefined. We can't have a derivative where we don't have a point. But this is the kind of vague reasoning we are trying to avoid. Part (a) of this exercise shows unequivocally that the limit which defines is undefined.  Part (b) shows how, in simple cases like this one, we can plug the hole by slightly modifying our function.   Use to show that if then is undefined.   Use to show that if then is defined.    Derivative doesn t exist   It is intuitively clear that derivative of the function (above) is not defined at . We will confirm our intuition using .  That is, we'll try to compute the derivative of at using and see what goes wrong. The existence of the derivative of at is equivalent to the existence of the limit , so we will try to compute this limit and see what happens.        Show that .   Show that .    shows, increases without bound as approaches zero from the right, and decreases without bound as approaches zero from the left. Since neither of these limits even exists it follows that also does not exist, and therefore is not defined.   Comment  As a verbal shorthand most people will just say that the right- and left-hand limits are not equal and so does not exist. Be sure you understand why this is, strictly speaking, incorrect.    The Heaviside Function   shows that the derivative of the Absolute Value function is: Notice that it is not defined at . We call the Heaviside function in honor of Oliver Heaviside (1850 1925). Simple as it is, Heaviside's function is a fundamental tool in signal processing, control theory, and the solution of differential equations.    Use to show that when    Explain why the result in part does not contradict    We first introduced one-sided limits in Section . At the time our concern was to locate vertical asymptotes so we only looked at limits that were equal to either positive or negative infinity. We see now that these limits can take any value and that they are more fundamental than they first appeared to be. We are still not quite ready for a formal definition but earlier we will do so now.   One-sided Limits  Definition One-sided Limits   If is a real number (or or ) and we say that is the right-hand limit of at . If is a real number (or or ) and we say that is the left-hand limit of at .    Because can't simultaneously approach two different numbers, if the left and right handed limits both exist but do not agree then doesn't exist. This fact will be a useful tool for us later so we state it as a theorem.   Theorem One Sided Limits   exists if and only if In that case all three limits are equal.    requires proof but we do not have the tools to prove it here. The appropriate tools will be developed in . Proving this fact is the last problem in this textbook.  "
 },
 {
   "id": "EXAMPLEAbsValFunc",
@@ -8755,7 +8755,7 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "16.1.0.7",
   "title": "",
-  "body": " Use to show that if then is undefined.  It is pretty clear that is undefined, since is undefined. We can't have a derivative where we don't have a point. But this is the kind of vague reasoning we are trying to avoid. The purpose of this exercise is to show unequivocally that the limit which defines is undefined.   Use to show that if then is defined.  This time is defined but this is a silly way to do it. We do this for emphasis.  "
+  "body": " It is pretty clear that is undefined, since is undefined. We can't have a derivative where we don't have a point. But this is the kind of vague reasoning we are trying to avoid. Part (a) of this exercise shows unequivocally that the limit which defines is undefined.  Part (b) shows how, in simple cases like this one, we can plug the hole by slightly modifying our function.   Use to show that if then is undefined.   Use to show that if then is defined.  "
 },
 {
   "id": "CHAPTERwhen-deriv-doesnt-2-23",
@@ -8908,14 +8908,14 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "17.2",
   "title": "Getting Around Infinity",
-  "body": " Getting Around Infinity  It all comes down to understanding infinity, both the infinitely small and the infinitely large. Or rather, it comes down to realizing that we do not understand infinity at all. So, whenever an apparently infinite quantity appears we will have to work with and explain it in finite terms. This might sound impossible, but it turns out to be merely difficult.  This approach is within well established mathematical tradition. From the time of the ancient Greeks until the sixteenth century, infinity was carefully excluded from serious mathematical consideration. It was the successful exploitation of the infinitely small (infinitesimals) by Galileo and others that eventually forced mathematicians to study infinity seriously.  Today we tend to conceive of a straight line in infinite terms; as extending infinitely far in two opposite directions. But when Euclid (325 BC 265 BC) wrote his geometry text The Elements , he very carefully avoided allowing the existence of an infinite line. For Euclid a straight line was what today would be called a line segment: the shortest path between two points.  But this restriction immediately caused problems for Euclid. For some of his constructions he needed to be able to extend his line segment. In modern mathematics this is not a problem since we allow lines to extend infinitely far in either direction. So we d just move to a new point on the line wherever it needs to be.   But when Euclid specified a line segment he meant that the points and were the endpoints of the line segment. To avoid infinite lines he extended the line segment by some definite amount out to a point , thereby obtaining a new segment , which and this is the point is still finite in length. In this way Euclid explicitly allowed line segments to be extendable to any finite length without ever allowing an infinitely long line.   The Infinitely Large  We want to ask, and answer, the question    What number does get close to if and we allow to grow infinitely large?    as precisely as we can without invoking the notion of the infinitely large. Does this rephrasing work for you?   If , what does get close to as grows larger and larger?   This seems to be better. We have side-stepped the issue of the infinitely large by saying larger and larger. But unfortunately this rephrasing of the question changes its meaning. To see what we mean, think of as the radius of a balloon which we want to inflate as much as we possibly can. Suppose we know that when the radius of the balloon is it will pop. To avoid popping our balloon, we blow in enough air during the first second to expand the radius to . In the next second we expand the radius to fill half of the remaining distance to . In the third we repeat the process, expanding it to . And we continue in this fashion. At each second the radius of our balloon expands to half of the remaining distance to .  Clearly the balloon s radius grows larger each second, so grows larger and larger as required. But the intent of our original question was for to become infinitely large, not for to remain smaller than .  And there is nothing special about . If moves half of the distance to each second, or halfway to , or even if it moves halfway to at each step we have the same problem. In each case is growing larger and larger but it is not growing in a manner that reflects what we think we mean when we say that is growing infinitely large.    Suppose is a positive real number, and that . Find a formula for as a function of time (in seconds), such that at each integer , the distance from to is half of the distance from to .    Vocabulary bounded above In this situation is said to be bounded above because there is an upper bound on how large can be, despite the fact that is growing larger and larger.   Recall that in we mentioned that the notation should be read aloud as increases without bound, so we rephrase our question as   If , what does get close to as increases without bound?     The Infinitely Small  The answer is very clear: gets closer and closer to zero. But of course, the phrase closer and closer is also too vague, and for essentially the same reason that larger and larger is too vague to be useful.  Again, it is not our conception of the problem that is the difficulty. It is the language we re using. As before, we must choose our words more carefully.  To capture the idea that gets closer and closer to zero, without ever getting to zero let s think this through, being careful to say exactly what we mean, no more, no less. To begin we ask, Is there a value of which forces to be less than, say   Keeping in mind that if then , if we need and that means that . Solving for we have .   So apparently any value of strictly greater than will guarantee that is less than .  Stop and think about that last sentence. Do you see that we ve actually discovered more than the original question asked for? Our question was, Is there a value of which forces to be less than ? But we ve actually found all of them. We ve found that if is any number greater than then regardless of which number we use.  Can we make Sure. Exactly the same analysis will show that if , then , or if , then , and so on.   If how large must be in order to guarantee that                   It should be clear that we needn t have stopped at one millionth . The same argument will show that if we want we need And that if we want we need   So, by an appropriate choice of we can make as close to as we choose. To be a little more precise we say that we can make arbitrarily close to zero, even if it never actually is zero. And this is what we really intended when we said that gets closer and closer (or goes to ) zero.  This idea is exactly what the limit notation we introduced in was intended to capture. So here at last are our question and answer precisely stated:   Question:  If , what is ?    Answer:   ?       Convincing Berkeley  Is the use of these more precise terms enough to convince Bishop Berkeley?  Clearly not. If we were to show Berkeley that for we can guarantee that by taking , his response would simply be, So what? How do I know you can make less than . Nor will it be sufficient to show that we can make less than or any particular number. Berkeley will simply come back to us with a smaller challenge.  What we have to do is answer all possible challenges at once. This seems like a lot to ask until we think about it a bit. All we really have to do is suppose that we have some small, positive, unspecified number and show that we can find out how large has to be to make less than that number. For the sake of being definite we ll give our number a name. It is traditional to call it .   Mathematical Notation  Presumably for error since is the Greek version of the letter e.     Suppose that and we want to figure out how large to make to guarantee that If we want , first substitute for giving . Solve this for (remember that if then ) so that .  Do you see the significance of this? Because we left unspecified (other than requiring it to be positive), we ve met all possible challenges. If the challenge is to make less than our response is, We ve already done that. Just take . Repeating the computation above gives .  Now for some function , the statement has the following precise meaning:   If for each we can make by taking sufficiently large, then we say that the limit as approaches infinity is zero.    To be sure, when we allow to be arbitrary, but unspecified we skirt the edge of the infinitely small. But this is the point. If is arbitrary then it can be as small as we need for it to be without ever being infinitely small. This is akin to Euclid allowing lines to be extended to any, unspecified, length without allowing them to be infinite in length. This is the idea underlying limits and limit notation.   Mathematical Notation  Be careful. Unspecified does not mean variable. is a particular, fixed number. We just don t know which one it is.    Warning! Be aware that the way we tend to speak about limits and the meaning of the limit notation are inconsistent. This can present a lot of problems for the beginner. If we are speaking loosely, among friends, we would read this statement, , as: The limit of one over as goes to infinity is equal to zero.   This is a very poor way to express the idea we are trying to capture. To say that  goes to infinity completely undercuts everything we ve said about infinity because it treats infinity as if it is an actual number we can get close to. It is not  When reading we should say The limit of as increases without bound is zero , but almost no one does. Generally, when talking about limits what we actually say is not what the notation means. That incongruity can be very confusing at first. In this text we will be very careful not to speak so casually. At least not until we have more experience with limits.  We have only begun, but this is enough for us to offer a first definition of the limit concept. We generalize slightly.   Positive Function With Limit Zero at Infinity  Definition Positive Function With Limit Zero at Infinity   Suppose for all Then we say that if and only if for every we can find a real number with the property that if , then .    The parameter is the lower bound that has to exceed for to be less than . In our first example we had , in our last we had . Naming the lower bound like this gives us a concrete way to specify how large has to be. To great extent finding is the whole problem. This is easier to see in an example.   Show that if then As before take . (Think of epsilon as being handed to you by Bishop Berkeley. You don t get to control it, he does. Moreover all he will tell you about it is that it is a positive number.)  Once epsilon is given your job is to find out how large has to be to guarantee that So we work the problem backwards. That is, we start with and solve for to find that . If we take when then     Use to prove that for each of the functions below . That is, assume is given and find a lower bound such that if then .                             Refining the Definition   Definition works as long as , but without this restriction it fails utterly as our next example shows:   Suppose Can you guess the value of ? Let be given. Then when has any positive value, if we have and by we conclude that since all of the requirements of our definition have been met (except, of course, ). Of course, this is nonsense. As we have noted as increases without bound gets arbitrarily close to . So clearly . That we are able to prove that goes to zero simply means that doesn t capture everything we need. We need a more encompassing definition of a limit.   Based on our experience in Example with , what would you say needs to be changed in to allow as well?  The problem of course, is that if is given the statement doesn t really capture the idea that is near the number zero, only that it is less than the number . For example, is less than but it is nowhere near zero. What we need is a way to measure how far is from zero, regardless of whether in the positive or the negative direction.  That is exactly what the absolute value function measures. For example, both and are the same distance from zero, the first one in the positive and the second one in the negative direction. That is .  We need to modify our definition so that the distance from to zero is less than . We want not just .   Zero Limit at Infinity  Definition Zero Limit at Infinity   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever       Suppose . We want to prove rigorously that .    Let be given.  As we did in we find the bound by working the problem backwards. We want to end with , so that s where we start.  Since we are only interested in what happens to as , we can safely assume that . In that case if then it follows that and if then , so apparently to make we need . So we take .   END OF SCRAPWORK     Let be given. Take . If then Therefore and So Therefore, by  .   This example displays the format of a limit proof that you need to adhere to. Below is an outline of the format. Do not depart from this format. This is not a course in creative writing.   First:  State the challenge, .    Second:  Specify the bound (usually in terms of ).    Third:  Show that if then .    Fourth:  State your conclusion.      Identify which statements in the proof in correspond to the first, second, third, and fourth parts of the format presented above.    Our previous examples and problems in this section were fairly simple as formal limit problems go. This one is more complex.  Use to show that .    For a given , we want to end up with Part of what makes this limit more complex is that the part inside the absolute value , is not always positive. We need to deal with that somehow.  First, since we are only concerned about what happens as it is safe to assume that . In that case, . Next, observe that if also, then . Thus , so that . We could now work backwards like before, and solve for . This will work fine, but the Algebra gets very messy. Try it and see.  There is a sneaky way to do this that avoids some of the Algebra. Notice that . Notice further that if , then so that . Putting all of this together we we that for ,   Thus to guarantee that we need , or .   END OF SCRAPWORK     Let be given. Let be the larger of and . If then so . Therefore Since , we see that . Thus Therefore by ,     Explain carefully, and in detail, the reasoning that supports the claims made in Equations and .   Notice that in and that the scrapwork was an essential part of the solution, but in the formal proof the results of the scrapwork were so abbreviated as to almost not be present. This is part of the formalism of mathematical writing. We try to make sure that everything that needs to be said is said and absolutely nothing more. In this instance in particular, we are not obligated to explain where the bound came from, only that it works. It can take time to become comfortable with this presentation style.  Even with practice very few people can read a formal proof without doing the computations necessary to show that all of the claims made are actually true. Keep paper and pencil handy at all times to help you follow the argument.   For each of the following show that .                                    .}    Definition only tells us what it means when the limit of some function as is zero. But as we observed in Example as increases without bound approaches , not . We ll need something more general, but all of the important ideas have been introduced. We generalize as follows.   A Limit at  Definition A Limit at   Suppose that is a real number and that is defined on some interval . Then we say that if and only if for every there is a real number with the property that whenever      Notice that if this reduces to .   Suppose . Intuitively, it is clear that but we need to prove that this is so.    Suppose is given. We need to specify a number (probably in terms of ), with the property that if then So we will work backwards from this inequality.   Thus , and it appears that as long as is greater than    END OF SCRAPWORK     Let be given. Take . Then Therefore by ,     In we approached the problem of finding a horizontal asymptote of in the following highly intuitive manner, using the notation. So we see that this limit must be equal to five. To prove this rigorously, without referring to infinity, we use     Let be given. As before we work backwards from our goal, . As long as this is the same as so we will stipulate that (and therefore ) must be at least greater than . Solving equation for we see that also. So we take to be the greater of and . We capture this idea with the notation, .   END OF SCRAPWORK        Show that we really only need the condition by showing that implies that .   Suppose that and . Prove that if then     We want to give a rigorous proof that . Let be given.   Do the scrapwork that shows that we must take .   Show that if then     Do the scrapwork, and provide a rigorous proof of each of the limits below.               It should be clear how to define a limit at . All of the same issues of clarity and precision that we encountered before come up here as well. The only difference is that we have to change the sense of our inequalities to reflect that is decreasing without bound.   A Limit at  Definition A Limit at   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever       Do the scrapwork, and provide a rigorous proof of each of the limits below.                "
+  "body": " Getting Around Infinity   It all comes down to understanding infinity, both the infinitely small and the infinitely large. Or rather, it comes down to realizing that we do not understand infinity at all. So, whenever an apparently infinite quantity appears we will have to work with and explain it in finite terms. This might sound impossible, but it turns out to be merely difficult.  This approach is within well established mathematical tradition. From the time of the ancient Greeks until the sixteenth century, infinity was carefully excluded from serious mathematical consideration. It was the successful exploitation of the infinitely small (infinitesimals) by Galileo and others that eventually forced mathematicians to study infinity seriously.  Today we tend to conceive of a straight line in infinite terms; as extending infinitely far in two opposite directions. But when Euclid (325 BC 265 BC) wrote his geometry text The Elements , he very carefully avoided allowing the existence of an infinite line. For Euclid a straight line was what today would be called a line segment: the shortest path between two points.  But this restriction immediately caused problems for Euclid. For some of his constructions he needed to be able to extend his line segment. In modern mathematics this is not a problem since we allow lines to extend infinitely far in either direction. So we d just move to a new point on the line wherever it needs to be.   But when Euclid specified a line segment he meant that the points and were the endpoints of the line segment. To avoid infinite lines he extended the line segment by some definite amount out to a point , thereby obtaining a new segment , which and this is the point is still finite in length. In this way Euclid explicitly allowed line segments to be extendable to any finite length without ever allowing an infinitely long line.    Horizontal Asymptotes  We want to ask, and answer, the question    What number does get close to if and we allow to grow infinitely large?    as precisely as we can without invoking the notion of the infinitely large. Does this rephrasing work for you?   If , what does get close to as grows larger and larger?   This seems to be better. We have side-stepped the issue of the infinitely large by saying larger and larger. But unfortunately this rephrasing of the question changes its meaning. To see what we mean, think of as the radius of a balloon which we want to inflate as much as we possibly can. Suppose we know that when the radius of the balloon is it will pop. To avoid popping our balloon, we blow in enough air during the first second to expand the radius to . In the next second we expand the radius to fill half of the remaining distance to . In the third we repeat the process, expanding it to . And we continue in this fashion. At each second the radius of our balloon expands to half of the remaining distance to .  Clearly the balloon s radius grows larger each second, so grows larger and larger as required. But the intent of our original question was for to become infinitely large, not for to remain smaller than .  And there is nothing special about . If moves half of the distance to each second, or halfway to , or even if it moves halfway to at each step we have the same problem. In each case is growing larger and larger but it is not growing in a manner that reflects what we think we mean when we say that is growing infinitely large.    Suppose is a positive real number, and that . Find a formula for as a function of time (in seconds), such that at each integer , the distance from to is half of the distance from to .    Vocabulary bounded above In this situation is said to be bounded above because there is an upper bound on how large can be, despite the fact that is growing larger and larger.   Recall that in we mentioned that the notation should be read aloud as increases without bound, so we rephrase our question as   If , what does get close to as increases without bound?    The answer is very clear: gets closer and closer to zero. But of course, the phrase closer and closer is also too vague, and for essentially the same reason that larger and larger is too vague to be useful.  Again, it is not our conception of the problem that is the difficulty. It is the language we re using. As before, we must choose our words more carefully.  To capture the idea that gets closer and closer to zero, without ever getting to zero let s think this through, being careful to say exactly what we mean, no more, no less. To begin we ask, Is there a value of which forces to be less than, say   Keeping in mind that if then , if we need and that means that . Solving for we have .   So apparently any value of strictly greater than will guarantee that is less than .  Stop and think about that last sentence. Do you see that we ve actually discovered more than the original question asked for? Our question was, Is there a value of which forces to be less than ? But we ve actually found all of them. We ve found that if is any number greater than then regardless of which number we use.  Can we make Sure. Exactly the same analysis will show that if , then , or if , then , and so on.   If how large must be in order to guarantee that                   It should be clear that we needn t have stopped at one millionth . The same argument will show that if we want we need And that if we want we need   So, by an appropriate choice of we can make as close to as we choose. To be a little more precise we say that we can make arbitrarily close to zero, even if it never actually is zero. And this is what we really intended when we said that gets closer and closer (or goes to ) zero.  This idea is exactly what the limit notation we introduced in was intended to capture. So here at last are our question and answer precisely stated:   Question:  If , what is ?    Answer:   ?       Vertical Asymptotes  In the last section, we were able to transform our intuitive understanding of horizontal asymptotes into a rigorous definition of which did not make reference to infinity. Here we will do the same for vertical asymptotes and . Along the way, we will need to start addressing one sided limits more rigorously as well.  For example, back in Section 12.3, we encountered and This was an attempt to describe what we see graphically      Again, we want to rigorously define what we mean by this without referring to the nebulous word infinity . Recall that in the last section, we were able to craft a rigorous definition for  by formalizing the idea that we can make as close to 0 as we wish provided we make large enough (or small enough). We will do a similar thing here, but switch the roles around. In the case of , we want to make larger than a given number by determining how close a positive number needs to be to 0. For example, if we want , then this will happen for . If we want , then this will happen when . It seems reasonable that given a positive number , we should be able to get , provided .   Show that for , whenever    Notice that we needed to make , to make our inequalities work out. Suppose . Show that for any real number , we have whenever .   Using this example as a guide, we have the following definition.   Limit at    Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .     Use this definition to rigorously show that .    We will use our definition to show that . As before, we will need to do some scrapwork to produce a suitable .    Working backwards, for a given , we want , so that whenever   We need to be a bit careful here as taking reciprocals only switches the inequality if both sides are positive. However, this won't be a problem since we will be assuming that . Proceeding we have  This suggests that we should make     Confirm that is in fact positive   Use part (a) to show that     Do the scrapwork, and provide a rigorous proof of each of the limits below.           If you graph , you would probably suspect that . You might have even suspected this without graphing. Since exactly when , we have the following definition.    Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .    Though this may appear to be a new concept with a new definition, it really isn t as evidenced by the following problem.    Problem Let be a real number. Suppose we have defined on some interval . Then if and only if    Left-sided limits are dealt with in a manner similar to right-sided limits but now we will focus on .    Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .    We can go through a number of examples as we did before, but we can streamline our approach by noticing that if we let then we have exactly when . This comes from the fact that exactly when . This observation can be utilized in the following problem.    Problem Suppose is a real number and is defined on some interval . Show that if and only if .     Problem Define what it means for and use your definition to show that if an only if .   Finally, notice that we have and . This leads us to say that does not exist. This is unlike the situation where and so we say . With this in mind, we can provide the following rigorous definition.    Suppose is defined near . Then we say if and only if .      Problem Provide a similar definition for and use your definition to show that if and only if .     Problem Suppose is defined near . Show that if and only if for any real number , there is a such that whenever and , then    Notice in the last Problem, we had the condition and . This can be more succinctly written as . Keep this in mind when you read the next section where we get into limits not involving infinity.    Convincing Berkeley  Is the use of these more precise terms enough to convince Bishop Berkeley?  Clearly not. If we were to show Berkeley that for we can guarantee that by taking , his response would simply be, So what? How do I know you can make less than . Nor will it be sufficient to show that we can make less than or any particular number. Berkeley will simply come back to us with a smaller challenge.  What we have to do is answer all possible challenges at once. This seems like a lot to ask until we think about it a bit. All we really have to do is suppose that we have some small, positive, unspecified number and show that we can find out how large has to be to make less than that number. For the sake of being definite we ll give our number a name. It is traditional to call it .   Mathematical Notation  Presumably for error since is the Greek version of the letter e.     Suppose that and we want to figure out how large to make to guarantee that If we want , first substitute for giving . Solve this for (remember that if then ) so that .  Do you see the significance of this? Because we left unspecified (other than requiring it to be positive), we ve met all possible challenges. If the challenge is to make less than our response is, We ve already done that. Just take . Repeating the computation above gives .  Now for some function , the statement has the following precise meaning:   If for each we can make by taking sufficiently large, then we say that the limit as approaches infinity is zero.    To be sure, when we allow to be arbitrary, but unspecified we skirt the edge of the infinitely small. But this is the point. If is arbitrary then it can be as small as we need for it to be without ever being infinitely small. This is akin to Euclid allowing lines to be extended to any, unspecified, length without allowing them to be infinite in length. This is the idea underlying limits and limit notation.   Mathematical Notation  Be careful. Unspecified does not mean variable. is a particular, fixed number. We just don t know which one it is.    Warning! Be aware that the way we tend to speak about limits and the meaning of the limit notation are inconsistent. This can present a lot of problems for the beginner. If we are speaking loosely, among friends, we would read this statement, , as: The limit of one over as goes to infinity is equal to zero.   This is a very poor way to express the idea we are trying to capture. To say that  goes to infinity completely undercuts everything we ve said about infinity because it treats infinity as if it is an actual number we can get close to. It is not  When reading we should say The limit of as increases without bound is zero , but almost no one does. Generally, when talking about limits what we actually say is not what the notation means. That incongruity can be very confusing at first. In this text we will be very careful not to speak so casually. At least not until we have more experience with limits.  We have only begun, but this is enough for us to offer a first definition of the limit concept. We generalize slightly.   Positive Function With Limit Zero at Infinity  Definition Positive Function With Limit Zero at Infinity   Suppose for all Then we say that if and only if for every we can find a real number with the property that if , then .    The parameter is the lower bound that has to exceed for to be less than . In our first example we had , in our last we had . Naming the lower bound like this gives us a concrete way to specify how large has to be. To great extent finding is the whole problem. This is easier to see in an example.   Show that if then As before take . (Think of epsilon as being handed to you by Bishop Berkeley. You don t get to control it, he does. Moreover all he will tell you about it is that it is a positive number.)  Once epsilon is given your job is to find out how large has to be to guarantee that So we work the problem backwards. That is, we start with and solve for to find that . If we take when then     Use to prove that for each of the functions below . That is, assume is given and find a lower bound such that if then .                             Refining the Definition   Definition works as long as , but without this restriction it fails utterly as our next example shows:   Suppose Can you guess the value of ? Let be given. Then when has any positive value, if we have and by we conclude that since all of the requirements of our definition have been met (except, of course, ). Of course, this is nonsense. As we have noted as increases without bound gets arbitrarily close to . So clearly . That we are able to prove that goes to zero simply means that doesn t capture everything we need. We need a more encompassing definition of a limit.   Based on our experience in Example with , what would you say needs to be changed in to allow as well?  The problem of course, is that if is given the statement doesn t really capture the idea that is near the number zero, only that it is less than the number . For example, is less than but it is nowhere near zero. What we need is a way to measure how far is from zero, regardless of whether in the positive or the negative direction.  That is exactly what the absolute value function measures. For example, both and are the same distance from zero, the first one in the positive and the second one in the negative direction. That is .  We need to modify our definition so that the distance from to zero is less than . We want not just .   Zero Limit at Infinity  Definition Zero Limit at Infinity   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever       Suppose . We want to prove rigorously that .    Let be given.  As we did in we find the bound by working the problem backwards. We want to end with , so that s where we start.  Since we are only interested in what happens to as , we can safely assume that . In that case if then it follows that and if then , so apparently to make we need . So we take .   END OF SCRAPWORK     Let be given. Take . If then Therefore and So Therefore, by  .   This example displays the format of a limit proof that you need to adhere to. Below is an outline of the format. Do not depart from this format. This is not a course in creative writing.   First:  State the challenge, .    Second:  Specify the bound (usually in terms of ).    Third:  Show that if then .    Fourth:  State your conclusion.      Identify which statements in the proof in correspond to the first, second, third, and fourth parts of the format presented above.    Our previous examples and problems in this section were fairly simple as formal limit problems go. This one is more complex.  Use to show that .    For a given , we want to end up with Part of what makes this limit more complex is that the part inside the absolute value , is not always positive. We need to deal with that somehow.  First, since we are only concerned about what happens as it is safe to assume that . In that case, . Next, observe that if also, then . Thus , so that . We could now work backwards like before, and solve for . This will work fine, but the Algebra gets very messy. Try it and see.  There is a sneaky way to do this that avoids some of the Algebra. Notice that . Notice further that if , then so that . Putting all of this together we we that for ,   Thus to guarantee that we need , or .   END OF SCRAPWORK     Let be given. Let be the larger of and . If then so . Therefore Since , we see that . Thus Therefore by ,     Explain carefully, and in detail, the reasoning that supports the claims made in Equations and .   Notice that in and that the scrapwork was an essential part of the solution, but in the formal proof the results of the scrapwork were so abbreviated as to almost not be present. This is part of the formalism of mathematical writing. We try to make sure that everything that needs to be said is said and absolutely nothing more. In this instance in particular, we are not obligated to explain where the bound came from, only that it works. It can take time to become comfortable with this presentation style.  Even with practice very few people can read a formal proof without doing the computations necessary to show that all of the claims made are actually true. Keep paper and pencil handy at all times to help you follow the argument.   For each of the following show that .                                    .}    Definition only tells us what it means when the limit of some function as is zero. But as we observed in Example as increases without bound approaches , not . We ll need something more general, but all of the important ideas have been introduced. We generalize as follows.   A Limit at  Definition A Limit at   Suppose that is a real number and that is defined on some interval . Then we say that if and only if for every there is a real number with the property that whenever      Notice that if this reduces to .   Suppose . Intuitively, it is clear that but we need to prove that this is so.    Suppose is given. We need to specify a number (probably in terms of ), with the property that if then So we will work backwards from this inequality.   Thus , and it appears that as long as is greater than    END OF SCRAPWORK     Let be given. Take . Then Therefore by ,     In we approached the problem of finding a horizontal asymptote of in the following highly intuitive manner, using the notation. So we see that this limit must be equal to five. To prove this rigorously, without referring to infinity, we use     Let be given. As before we work backwards from our goal, . As long as this is the same as so we will stipulate that (and therefore ) must be at least greater than . Solving equation for we see that also. So we take to be the greater of and . We capture this idea with the notation, .   END OF SCRAPWORK        Show that we really only need the condition by showing that implies that .   Suppose that and . Prove that if then     We want to give a rigorous proof that . Let be given.   Do the scrapwork that shows that we must take .   Show that if then     Do the scrapwork, and provide a rigorous proof of each of the limits below.               It should be clear how to define a limit at . All of the same issues of clarity and precision that we encountered before come up here as well. The only difference is that we have to change the sense of our inequalities to reflect that is decreasing without bound.   A Limit at  Definition A Limit at   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever       Do the scrapwork, and provide a rigorous proof of each of the limits below.                "
 },
 {
   "id": "DRILLBoundedGrowth",
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DRILLBoundedGrowth",
   "type": "Problem",
-  "number": "17.2.0.1",
+  "number": "17.2.1.1",
   "title": "",
   "body": " Suppose is a positive real number, and that . Find a formula for as a function of time (in seconds), such that at each integer , the distance from to is half of the distance from to .  "
 },
@@ -8929,20 +8929,155 @@ var ptx_lunr_docs = [
   "body": "bounded above "
 },
 {
-  "id": "SUBSECTIONFormalLimits-10",
+  "id": "SUBSECTIONEpsDelt1-21",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONFormalLimits-10",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONEpsDelt1-21",
   "type": "Problem",
-  "number": "17.2.0.2",
+  "number": "17.2.1.2",
   "title": "",
   "body": " If how large must be in order to guarantee that                  "
+},
+{
+  "id": "PROBLEMVertAsym1",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#PROBLEMVertAsym1",
+  "type": "Problem",
+  "number": "17.2.2.1",
+  "title": "",
+  "body": " Show that for , whenever    Notice that we needed to make , to make our inequalities work out. Suppose . Show that for any real number , we have whenever .  "
+},
+{
+  "id": "DEFINITIONLimAtPosInf",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#DEFINITIONLimAtPosInf",
+  "type": "Definition",
+  "number": "17.2.2.2",
+  "title": "Limit at <span class=\"process-math\">\\(\\infty \\)<\/span>.",
+  "body": " Limit at    Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-9",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-9",
+  "type": "Drill",
+  "number": "17.2.2.3",
+  "title": "",
+  "body": " Use this definition to rigorously show that .  "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-10",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-10",
+  "type": "Example",
+  "number": "17.2.2.4",
+  "title": "",
+  "body": " We will use our definition to show that . As before, we will need to do some scrapwork to produce a suitable .  "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-11",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-11",
+  "type": "Scrapwork",
+  "number": "17.1",
+  "title": "",
+  "body": " Working backwards, for a given , we want , so that whenever   We need to be a bit careful here as taking reciprocals only switches the inequality if both sides are positive. However, this won't be a problem since we will be assuming that . Proceeding we have  This suggests that we should make   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-12",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-12",
+  "type": "Problem",
+  "number": "17.2.2.5",
+  "title": "",
+  "body": " Confirm that is in fact positive   Use part (a) to show that   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-13",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-13",
+  "type": "Problem",
+  "number": "17.2.2.6",
+  "title": "",
+  "body": " Do the scrapwork, and provide a rigorous proof of each of the limits below.          "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-15",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-15",
+  "type": "Definition",
+  "number": "17.2.2.7",
+  "title": "",
+  "body": "  Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-17",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-17",
+  "type": "Problem",
+  "number": "17.2.2.8",
+  "title": "",
+  "body": "  Problem Let be a real number. Suppose we have defined on some interval . Then if and only if   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-19",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-19",
+  "type": "Definition",
+  "number": "17.2.2.9",
+  "title": "",
+  "body": "  Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-21",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-21",
+  "type": "Problem",
+  "number": "17.2.2.10",
+  "title": "",
+  "body": "  Problem Suppose is a real number and is defined on some interval . Show that if and only if .  "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-22",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-22",
+  "type": "Problem",
+  "number": "17.2.2.11",
+  "title": "",
+  "body": "  Problem Define what it means for and use your definition to show that if an only if .  "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-24",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-24",
+  "type": "Definition",
+  "number": "17.2.2.12",
+  "title": "",
+  "body": "  Suppose is defined near . Then we say if and only if .   "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-25",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-25",
+  "type": "Problem",
+  "number": "17.2.2.13",
+  "title": "",
+  "body": "  Problem Provide a similar definition for and use your definition to show that if and only if .  "
+},
+{
+  "id": "SUBSECTIONVerticalAsymptotes-26",
+  "level": "2",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-26",
+  "type": "Problem",
+  "number": "17.2.2.14",
+  "title": "",
+  "body": "  Problem Suppose is defined near . Show that if and only if for any real number , there is a such that whenever and , then   "
 },
 {
   "id": "DEFINITIONsecond-inad-limit-at-infinity",
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONsecond-inad-limit-at-infinity",
   "type": "Definition",
-  "number": "17.2.0.3",
+  "number": "17.2.3.1",
   "title": "Positive Function With Limit Zero at Infinity.",
   "body": " Positive Function With Limit Zero at Infinity  Definition Positive Function With Limit Zero at Infinity   Suppose for all Then we say that if and only if for every we can find a real number with the property that if , then .   "
 },
@@ -8951,7 +9086,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLELimPosFuncInf",
   "type": "Example",
-  "number": "17.2.0.4",
+  "number": "17.2.3.2",
   "title": "",
   "body": " Show that if then As before take . (Think of epsilon as being handed to you by Bishop Berkeley. You don t get to control it, he does. Moreover all he will tell you about it is that it is a positive number.)  Once epsilon is given your job is to find out how large has to be to guarantee that So we work the problem backwards. That is, we start with and solve for to find that . If we take when then   "
 },
@@ -8960,7 +9095,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONconvincing-skeptic-20",
   "type": "Problem",
-  "number": "17.2.0.5",
+  "number": "17.2.3.3",
   "title": "",
   "body": " Use to prove that for each of the functions below . That is, assume is given and find a lower bound such that if then .                          "
 },
@@ -8969,7 +9104,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLElimit1",
   "type": "Example",
-  "number": "17.2.0.6",
+  "number": "17.2.4.1",
   "title": "",
   "body": " Suppose Can you guess the value of ? Let be given. Then when has any positive value, if we have and by we conclude that since all of the requirements of our definition have been met (except, of course, ). Of course, this is nonsense. As we have noted as increases without bound gets arbitrarily close to . So clearly . That we are able to prove that goes to zero simply means that doesn t capture everything we need. We need a more encompassing definition of a limit.  "
 },
@@ -8978,7 +9113,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-infinity-nearly-adequate",
   "type": "Definition",
-  "number": "17.2.0.7",
+  "number": "17.2.4.2",
   "title": "Zero Limit at Infinity.",
   "body": " Zero Limit at Infinity  Definition Zero Limit at Infinity   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever     "
 },
@@ -8987,34 +9122,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLEFormalLimitProof1",
   "type": "Example",
-  "number": "17.2.0.8",
+  "number": "17.2.4.3",
   "title": "",
   "body": " Suppose . We want to prove rigorously that .  "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-10",
+  "id": "SUBSECTIONRefiningDerivative-10",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-10",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-10",
   "type": "Scrapwork",
-  "number": "17.1",
+  "number": "17.2",
   "title": "",
   "body": " Let be given.  As we did in we find the bound by working the problem backwards. We want to end with , so that s where we start.  Since we are only interested in what happens to as , we can safely assume that . In that case if then it follows that and if then , so apparently to make we need . So we take .   END OF SCRAPWORK   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-11",
+  "id": "SUBSECTIONRefiningDerivative-11",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-11",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-11",
   "type": "Proof",
-  "number": "1",
+  "number": "17.2.4.1",
   "title": "",
   "body": " Let be given. Take . If then Therefore and So Therefore, by  .  "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-13",
+  "id": "SUBSECTIONRefiningDerivative-13",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-13",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-13",
   "type": "Problem",
-  "number": "17.2.0.9",
+  "number": "17.2.4.4",
   "title": "",
   "body": " Identify which statements in the proof in correspond to the first, second, third, and fourth parts of the format presented above.  "
 },
@@ -9023,25 +9158,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLEFormalLimitProof2",
   "type": "Example",
-  "number": "17.2.0.10",
+  "number": "17.2.4.5",
   "title": "",
   "body": " Our previous examples and problems in this section were fairly simple as formal limit problems go. This one is more complex.  Use to show that .  "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-15",
+  "id": "SUBSECTIONRefiningDerivative-15",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-15",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-15",
   "type": "Scrapwork",
-  "number": "17.2",
+  "number": "17.3",
   "title": "",
   "body": " For a given , we want to end up with Part of what makes this limit more complex is that the part inside the absolute value , is not always positive. We need to deal with that somehow.  First, since we are only concerned about what happens as it is safe to assume that . In that case, . Next, observe that if also, then . Thus , so that . We could now work backwards like before, and solve for . This will work fine, but the Algebra gets very messy. Try it and see.  There is a sneaky way to do this that avoids some of the Algebra. Notice that . Notice further that if , then so that . Putting all of this together we we that for ,   Thus to guarantee that we need , or .   END OF SCRAPWORK   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-16",
+  "id": "SUBSECTIONRefiningDerivative-16",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-16",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-16",
   "type": "Proof",
-  "number": "2",
+  "number": "17.2.4.2",
   "title": "",
   "body": " Let be given. Let be the larger of and . If then so . Therefore Since , we see that . Thus Therefore by ,   "
 },
@@ -9050,16 +9185,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMProofPractice1",
   "type": "Problem",
-  "number": "17.2.0.11",
+  "number": "17.2.4.6",
   "title": "",
   "body": " Explain carefully, and in detail, the reasoning that supports the claims made in Equations and .  "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-20",
+  "id": "SUBSECTIONRefiningDerivative-20",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-20",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-20",
   "type": "Problem",
-  "number": "17.2.0.12",
+  "number": "17.2.4.7",
   "title": "",
   "body": " For each of the following show that .                                    .}  "
 },
@@ -9068,79 +9203,79 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-posinfinity",
   "type": "Definition",
-  "number": "17.2.0.13",
+  "number": "17.2.4.8",
   "title": "A Limit at <span class=\"process-math\">\\(+\\infty\\)<\/span>.",
   "body": " A Limit at  Definition A Limit at   Suppose that is a real number and that is defined on some interval . Then we say that if and only if for every there is a real number with the property that whenever     "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-24",
+  "id": "SUBSECTIONRefiningDerivative-24",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-24",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-24",
   "type": "Example",
-  "number": "17.2.0.14",
+  "number": "17.2.4.9",
   "title": "",
   "body": " Suppose . Intuitively, it is clear that but we need to prove that this is so.  "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-25",
+  "id": "SUBSECTIONRefiningDerivative-25",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-25",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-25",
   "type": "Scrapwork",
-  "number": "17.3",
+  "number": "17.4",
   "title": "",
   "body": " Suppose is given. We need to specify a number (probably in terms of ), with the property that if then So we will work backwards from this inequality.   Thus , and it appears that as long as is greater than    END OF SCRAPWORK   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-26",
+  "id": "SUBSECTIONRefiningDerivative-26",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-26",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-26",
   "type": "Proof",
-  "number": "3",
+  "number": "17.2.4.3",
   "title": "",
   "body": " Let be given. Take . Then Therefore by ,   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-27",
+  "id": "SUBSECTIONRefiningDerivative-27",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-27",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-27",
   "type": "Example",
-  "number": "17.2.0.15",
+  "number": "17.2.4.10",
   "title": "",
   "body": " In we approached the problem of finding a horizontal asymptote of in the following highly intuitive manner, using the notation. So we see that this limit must be equal to five. To prove this rigorously, without referring to infinity, we use   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-28",
+  "id": "SUBSECTIONRefiningDerivative-28",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-28",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-28",
   "type": "Scrapwork",
-  "number": "17.4",
+  "number": "17.5",
   "title": "",
   "body": " Let be given. As before we work backwards from our goal, . As long as this is the same as so we will stipulate that (and therefore ) must be at least greater than . Solving equation for we see that also. So we take to be the greater of and . We capture this idea with the notation, .   END OF SCRAPWORK   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-29",
+  "id": "SUBSECTIONRefiningDerivative-29",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-29",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-29",
   "type": "Problem",
-  "number": "17.2.0.16",
+  "number": "17.2.4.11",
   "title": "",
   "body": "    Show that we really only need the condition by showing that implies that .   Suppose that and . Prove that if then   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-30",
+  "id": "SUBSECTIONRefiningDerivative-30",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-30",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-30",
   "type": "Problem",
-  "number": "17.2.0.17",
+  "number": "17.2.4.12",
   "title": "",
   "body": " We want to give a rigorous proof that . Let be given.   Do the scrapwork that shows that we must take .   Show that if then   "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-31",
+  "id": "SUBSECTIONRefiningDerivative-31",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-31",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-31",
   "type": "Problem",
-  "number": "17.2.0.18",
+  "number": "17.2.4.13",
   "title": "",
   "body": " Do the scrapwork, and provide a rigorous proof of each of the limits below.              "
 },
@@ -9149,16 +9284,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-neginfinity",
   "type": "Definition",
-  "number": "17.2.0.19",
+  "number": "17.2.4.14",
   "title": "A Limit at <span class=\"process-math\">\\(-\\infty\\)<\/span>.",
   "body": " A Limit at  Definition A Limit at   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever     "
 },
 {
-  "id": "SECTIONlimits-at-infinity-11-34",
+  "id": "SUBSECTIONRefiningDerivative-34",
   "level": "2",
-  "url": "SECTIONlimits-at-infinity.html#SECTIONlimits-at-infinity-11-34",
+  "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-34",
   "type": "Problem",
-  "number": "17.2.0.20",
+  "number": "17.2.4.15",
   "title": "",
   "body": " Do the scrapwork, and provide a rigorous proof of each of the limits below.              "
 },
@@ -9212,7 +9347,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-17",
   "type": "Scrapwork",
-  "number": "17.5",
+  "number": "17.6",
   "title": "",
   "body": " Suppose is given. Our goal is to find a such that if (or just ) then . Solving this for we have Recall from that , so we see that or, equivalently   It appears that as long as , so we take .   END OF SCRAPWORK   "
 },
@@ -9293,7 +9428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-34",
   "type": "Scrapwork",
-  "number": "17.6",
+  "number": "17.7",
   "title": "",
   "body": " As is typical we work backwards from our goal. We need to show that so Since we re not interested in the value of anything at (where the denominator is zero) we can factor and cancel, giving We see that if then or So taking will work for this problem.   END OF SCRAPWORK   "
 },
@@ -9329,7 +9464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-39",
   "type": "Scrapwork",
-  "number": "17.7",
+  "number": "17.8",
   "title": "",
   "body": " For we need to find such that if , then . Working backwards from this we have so we choose .   END OF SCRAPWORK   "
 },
@@ -9446,7 +9581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at-16",
   "type": "Scrapwork",
-  "number": "17.8",
+  "number": "17.9",
   "title": "",
   "body": " As always we begin by assuming that has been given.  We want to show that if is large enough (larger than some specified ) then The only information we have to work with is the knowledge that which means that we can make and as close to zero as we wish, provided we make large enough. Rewriting the left-hand side of equation and invoking the Triangle Inequality we see that But as we ve observed we can make and as close to zero as we wish, provided we take large enough. To be precise, there is a number such that if then . Similarly there is a number such that if then .  Since we need for both of these things to happen a sufficiently large value of is one where and .   END OF SCRAPWORK   "
 },
@@ -9572,7 +9707,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONlimit-composition-6",
   "type": "Scrapwork",
-  "number": "17.9",
+  "number": "17.10",
   "title": "",
   "body": "  It will be helpful to have a visual guide for this proof so we will rely on diagrams here in the scrapwork. Our finalized proof below will not.  Let be given. We need to show that we can find a such that if then .  Since is continuous at  tells us that   Thus tells us that there there is a real number such that if then , as visualized in the sketch above.  Next, consider what it means to say that . It means that if we take large enough we can make as close to as we would like. In particular, we would like for as in the sketch below.   Therefore, we can find a number such that for every , . If we take , then we have .  From the continuity of at we know that means that    END OF SCRAPWORK   "
 },
@@ -9761,7 +9896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONOneOverXIsCont-4",
   "type": "Scrapwork",
-  "number": "17.10",
+  "number": "17.11",
   "title": "",
   "body": " To keep things simple (this is scrapwork, after all) we will first assume that . If we have an then by we need to find a such that if then . As usual we work backwards.  Combining the fractions we see that so we need to find a such that ensures that .  At first it appears that all we need to do choose . If we could do that we d have in which case   But of course we ve seen this before. Just as in the proof of Lemma , must be a constant; it cannot depend on . So we need to replace with a constant somehow. The Algebra here gets a bit delicate. We strongly recommend that you visualize each step of the following argument with a sketch like the one we used in the scrapwork for Theorem   Suppose that Then we see that or Thus if we make , we see that and so, from the right side of equation . for all .   Comment  Notice that we are using the left side of equation    Therefore . Thus if we choose to be the lesser of and we have everything we need to conclude that for    END OF SCRAPWORK   "
 },
