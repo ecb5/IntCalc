@@ -14,8 +14,6 @@
   <title>Horizontal Asymptotes: Limits <q>at Infinity</q></title>
   <introduction>
     <p>
-
-
       In our fishery model in the previous chapter we referred to the
       carrying capacity of the lake, <m>P=100</m>, as an <q>asymptote.</q>
       Loosely speaking, an asymptote is a line that the graph of a function
@@ -697,17 +695,11 @@
         \limit{x}{\infty}{(x^3-21x^2)} = \approach{\infty} -
         \approach{\infty}.
       </me>
-      This says that the limit consists of something which is approaching
-      <m>\infty</m> (increasing without bound) minus something else which
-      is approaching <m>\infty</m> (again, increasing without bound). When
-      we say it like this <mdash/> more importantly when we think about it
-      like this <mdash/> we can see that the value of the limit will
-      depend upon precisely how the two parts increase without bound.
     </p>
     <aside>
       <title>Mathematical Notation</title>
       <p>
-        This: <m>\approach{\infty}</m> is not a standard notation so you
+        The expression <m>\approach{\infty}</m> is not a standard notation so you
         probably won<rsq/>t see it anywhere except in this textbook. No
         matter. Once you master the underlying idea, the particular
         notation being used isn<rsq/>t so important.
@@ -715,8 +707,18 @@
     </aside>
 
     <p>
-      Limits which appear to resolve to an undefined
-      expression (like <m>\infty - \infty </m>) are called
+      This says that the limit consists of something which is approaching
+      <m>\infty</m> (increasing without bound) minus something else which
+      is approaching <m>\infty</m> (again, increasing without bound). When
+      we say it like this <mdash/> more importantly when we think about it
+      like this <mdash/> we can see that the value of the limit will
+      depend upon precisely how the two parts increase without bound.
+    </p>
+
+    <p>
+      <idx><h>Vocabulary</h><h>Indeterminate Form</h></idx>
+      Limits which appear to resolve to an
+      expression like <m>\approach{\infty} - \approach{\infty} </m> are called
       <term>indeterminate forms</term>. Some indeterminate forms can
       be evaluated using what is known as <term>L<rsq/>Hôpital<rsq/>s
       Rule</term>. We will learn how to use  L<rsq/>Hôpital<rsq/>s
@@ -725,6 +727,17 @@
       L<rsq/>Hôpital<rsq/>s Rule only applies to some indeterminate
       forms so we still need all of our other tools. 
     </p>
+    <aside>
+      <title>Comment</title>
+      <p>
+        <q>Indeterminate</q> is not the same as <q>undefined.</q> An
+        undefined expression simply has no meaning. An indeterminate form
+        may have meaning but we have no hard and fast rules for
+        determining what the meaning is. They have to be handled on a
+        case<ndash/>by<ndash/>case basis.
+      </p>
+    </aside>
+
     <p>
       In particular to evaluate <m>\limit{x}{\infty}{(x^3-21x^2)}</m>
       we<rsq/>ll need Algebra.
@@ -787,371 +800,378 @@
       <m>x</m> (either positive or negative), <m>x^3</m> will continually outgrow
       (<q>approach infinity</q> faster than) <m>21x^2</m>.
     </p>
-    <p>
-
-      We have established that, because <m>\infty</m> is not a number, the expression
-      <m>\infty-\infty</m> does not make sense. What about
-      <m>\frac{\infty}{\infty}</m>? Is it true that <m>\frac{\infty}{\infty}=1</m>?
-    </p>
-    <p>
-
-      No, of course not. The expression <m>\frac{\infty}{\infty}</m> is
-      meaningless for the same reason that  <m>\infty</m> - <m>\infty</m> is
-      meaningless.
-    </p>
-
-
-    <example xml:id="EXAMPLEIndetForm1">
-
-      <p> 
-        Consider <m> \limit{x}{\infty}{\frac{x^4+x^2}{5x^4-100x}}</m>. It is
-        tempting to write <m>\frac{\infty}{\infty}=1</m>, but as we have
-        observed, <m>\infty</m> is not a number so this makes no more sense
-        than <m>\infty-\infty=0</m>.
-      </p>
+    <problem  xml:id="DRILL">
       <p>
-        Once again, the key is to re-express the function
-        algebraically. Factoring out the highest power of the variable from
-        both the numerator and the denominator we see that 
-
-        <md>
-          <mrow>
-            \limit{x}{\infty}{\frac{x^4+x^2}{5x^4-100x}}
-            \amp{}=\limit{x}{\infty}{\frac{x^4(1+1/x^2)}{x^4(5-100/x^3)}}
-          </mrow>
-          <mrow>  \amp=\limit{x}{\infty}{\left[\CancelToRed{=1}{\frac{x^4}{x^4}}\cdot\frac{1+\CancelToRed{0}{1/x^2}}{5-\CancelToRed{0}{100/x^3}}\right]}</mrow>
-          <mrow>  \amp= 1\cdot\approach{\frac15}</mrow>
-          <mrow> \amp=\frac15.  </mrow>
-        </md>
+        Explain why <m>\limit{x}{\infty}{(x^3+21x^2)}</m> and 
+        <m>\limit{x}{-\infty}{(x^3-21x^2)}</m> are not indeterminate
+        forms.
       </p>
-      <p>
-        You may well ask, <q>How did we know to factor out the highest power
-        of the variable?</q> The answer is very unsatisfying.  We were
-        taught this technique by our teachers, just as you are being taught
-        now. We<rsq/>d have been hard pressed to come up with it on our own.
-      </p>
-
-
-    </example>
-
-
-
-
-
-
-    <example xml:id="EXAMPLEAsym2">
-      <title>(Continued from <xref ref="SECTIONgraph-with-form"></xref> )</title>
-      <p>
-        Recall that we did not complete <xref ref="EXAMPLEAsym1"></xref> because
-        we did not previously have any way to determine what happens to the
-        graph of <m>y(x)=\frac{2+2x^2+2x^4}{1+x^4}</m> as <m>x\rightarrow\infty</m> or
-        as <m>x\rightarrow-\infty</m>. We do now. Finding what happens to the graph of
-        <m>y(x)=\frac{2+2x^2+2x^4}{1+x^4}</m> as <m>x\rightarrow\infty</m> or as
-        <m>x\rightarrow-\infty</m> is equivalent to evaluating the following
-        limits:
-        <me>
-          \limit{x}{\infty}{\frac{2+2x^2+2x^4}{1+x^4}}\ \ \text{ and }
-          \limit{x}{-\infty}{\frac{2+2x^2+2x^4}{1+x^4.}}
-        </me>
-        We will evaluate the first one and leave the second as a drill.
-
-        Proceeding as in <xref ref="EXAMPLEIndetForm1"></xref> we see that
-        <md>
-          <mrow>
-            \limit{x}{\infty}{\frac{2+2x^2+2x^4}{1+x^4}} \amp =
-            \limit{x}{\infty}{\frac{x^4(2/x^4+2/x^2+2)}{x^4(1/x^4+1)}}
-          </mrow>
-          <mrow>
-            \amp{}
-            =\limit{x}{\infty}{\CancelToRed{1}{\frac{x^4}{x^4}}\cdot\frac{\CancelToRed{0}{2/x^4}+\CancelToRed{0}{2/x^2}+2}{\CancelToRed{0}{1/x^4}+1}}
-          </mrow>
-          <mrow>
-            \amp{} =2.
-          </mrow>
-        </md>
-      </p>
-    </example>
-
-    <exercise>
-      <statement>
-        <p>
-          Show that <m>\tlimit{x}{-\infty}{\frac{2+2x^2+2x^4}{1+x^4}}</m> is also
-          equal to two. 
-        </p>
-      </statement>
-    </exercise>
-    <p>
-      <idx><h>Vocabulary</h><h>horizontal asymptote</h></idx>
-      We can now see that <m>y(x)=\frac{2+2x^2+2x^4}{1+x^4}</m> has a
-      <term>horizontal asymptote</term> at <m>y=2</m>. If you haven<rsq/>t
-      already done so consider graphing this function to confirm.
-    </p>
-
-
-
-
-    <exercise>
-      <introduction>
-        <p>
-          Show that  each of the following statements is true.
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{\infty}{\frac{x^5+x^3}{5x^5-100x}} =\frac15</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{-\infty}{\frac{2x^5+x^3}{5x^5-x}} =\frac25</m>
-
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{\infty}{\frac{x^5+x^3}{5x^4-10x}} =\infty</m>
-
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{-\infty}{\frac{x^5+x^3}{5x^4-10x}} =-\infty</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{\infty}{\frac{x-\frac{1}{x^3}}{5x-\frac{-8}{x^2}}} =\frac15</m>
-
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{-\infty}{\frac{x+\frac{1}{x^3}}{5x+\frac{-8}{x^2}}} =\frac15</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{\infty}{\frac{x^5+2x^3}{5x^6-x}} =0</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>  \limit{x}{-\infty}{\frac{x^5+2x^3}{5x^6-x}} =0</m>
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    <example>
-      <p>
-        Do you think the function <m>y(x) = \sqrt{x^2+2}-\sqrt{x^2+x}</m>
-        has any horizontal asymptotes? Take your best guess before we
-        begin this example.
-        
-        To find any horizontal asymptotes we have to evaluate the two
-        limits
-        <me>
-          \limit{x}{\pm\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)}.
-        </me>
-        First we<rsq/>ll find the limit as <m>x\rightarrow\infty</m> and leave the limit as
-        <m>x\rightarrow-\infty</m> as a drill  for you.
-      </p>
-      <p>    
-        As always the trick is to rearrange this expression inside the
-        limit algebraically <mdash/> without changing its value <mdash/>
-        until we can see clearly what happens as
-        <m>x\rightarrow\infty</m>.
-        The square roots seem to be the difficulty here. So we<rsq/>d like
-        to find a way to make them go away. The standard trick for this is
-        to multiply by the conjugate  of <m>\sqrt{x^2+2}-\sqrt{x^2+x}</m>, namely
-        <m>\sqrt{x^2+2}+\sqrt{x^2+x}</m>.
-      </p>
-      <aside>
-        <title>Comment</title>
-        <p>
-          We are using the identity <m>(A-B)(A+B)=A^2-B^2</m> to square both
-          terms and get rid of the square roots. The factors <m>A+B</m> and
-          <m>A-B</m> are mutually conjugate.
-        </p>
-      </aside>
-
-      <p>
-        Of course, if we do that then
-        we need to divide by the conjugate as well. That way we<rsq/>ve
-        multiplied by <m>1</m> and have not changed the value of the
-        expression. This won<rsq/>t actually eliminate the square roots as
-        we will still have them in the denominator. But let<rsq/>s see
-        what happens. 
-      </p>
-      <p>
-        <md>
-          <mrow>
-            \amp{}\limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)}
-          </mrow>
-          <mrow>
-            \amp{} =
-            \left[\limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)}\textcolor{red}{\underbrace{\left(\frac{\sqrt{x^2+2}+\sqrt{x^2+x}}{\sqrt{x^2+2}+\sqrt{x^2+x}}\right)}_{=1}}\right]
-          </mrow>
-          <mrow>
-            \amp = \limit{x}{\infty}{\left(\frac{(x^2+2)-
-            (x^2+x)}{\sqrt{x^2+2}+\sqrt{x^2+x}}\right)}
-          </mrow>
-          <mrow>
-            \amp{}=    \limit{x}{\infty}{\left(\frac{2-x}{\sqrt{x^2+2}+\sqrt{x^2+x}}\right)}.
-          </mrow>    
-        </md>
-        Factoring the highest power of <m>x</m> out of the
-        numerator and denominator gives 
-
-        <me>
-          \limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)} 
-          =\limit{x}{\infty}{\frac{\textcolor{red}{x}\left(2/x-1\right)}{\textcolor{red}{\sqrt{x^2}}\left(\sqrt{1+2/x^2}+\sqrt{1+1/x}\right)}}
-        </me>
-        and since <m>\sqrt{x^2}=\abs{x}</m> we have
-        <me>    \limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)} 
-        =\limit{x}{\infty}{\frac{\textcolor{red}{x}\left(2/x-1\right)}{\textcolor{red}{\abs{x}}\left(\sqrt{1+2/x^2}+\sqrt{1+1/x}\right)}}.
-        </me>
-        But we<rsq/>re evaluating a limit as
-        <m>x\rightarrow\infty</m>. So, we<rsq/>re really only interested
-        in large, positive values of <m>x</m>. In this case
-        <m>\abs{x}=x</m> so 
-
-        <md>
-          <mrow>
-            \limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)} 
-            \amp{}=\limit{x}{\infty}{\CancelToRed{=1}{\frac{x}{x}}\ \cdot\
-            \left[\frac{\CancelToRed{0}{2/x}-1}{\sqrt{1+\CancelToRed{0}{2/x^2}}+\sqrt{1+\CancelToRed{0}{1/x}}}\right]}
-          </mrow>
-          <mrow>
-            \amp = -\frac12.  
-          </mrow>
-        </md>
-      </p>
-      <p>
-        Did you guess right? If you did,
-        either you have a very strong intuition for these kinds of
-        problems or you just had a moment of blind luck. So don<rsq/>t
-        just pat yourself on the back and walk away. Be sure to take a
-        moment to figure out whether it was intuition or luck. You
-        don<rsq/>t want to confuse them.
-      </p>
-      <p>
-        If you guessed wrong, or (most likely) were unable to come up
-        with a guess don<rsq/>t fret about it. You<rsq/>re normal. But be sure you
-        review and understand the steps to this solution so you can
-        begin to build some intuition about such problems.
-        
-        This problem looked pretty intimidating, but once we got going in
-        the right direction, it was all Algebra from there.  Notice how the
-        absolute value came into play. In this problem it wasn<rsq/>t an issue
-        since we were considering only positive values of <m>x</m>. But consider
-        what would happen if <m>x</m> was negative, if <m>x\rightarrow-\infty</m>.
-        In this case,
-        <m>\abs{x}=-x.</m>
-      </p>
-      <p>
-        <alert>This is important.</alert> If you don<rsq/>t see why <m>\abs{x}=-x</m> when
-        <m>x\lt0</m> ask your teacher about it.
-      </p>
-    </example>
-    <paragraphs  xml:id="DIGRESSIONAbsValSqrt">
-      <title>DIGRESSION: The Absolute Value Function   </title>
-      <idx><h>Digression</h><h>Absolute Value Function   </h></idx>
-
-      <p>
-        It is not true that <m>\sqrt{x^2}=x</m>, although this is an easy
-        mistake to make. It is not true because the square root function,
-        <m>\sqrt{x}</m>, is the functional inverse of the function
-        <me>
-          f(x)=x^2, \text{ with domain } x\ge0.
-        </me>
-        Note that the domain restriction means that <m>\sqrt{x}</m>
-        always returns a positive number. Thus <m>\sqrt{2^2} = 2</m>, but
-        <m>\sqrt{(-2)^2} = 2</m>, also.
-        Similarly,
-        <me>
-          \sqrt{3^2}=\sqrt{(-3)^2}=3,\ 
-          \sqrt{10^2}=\sqrt{(-10)^2}=10, \text{ and in general }
-          \sqrt{x^2}=\abs{x}.
-        </me>
-        When <m>x</m> is negative <m>\sqrt{x^2}=-x</m> because when
-        <m>x</m> negative,
-        <m>-x</m> is positive. 
-      </p>
-      
-      <p><alert>END OF DIGRESSION</alert></p>
-    </paragraphs>
-
-    <problem>
-      <statement>
-        <p>
-          Try to  guess the value of 
-          <m> \limit{x}{-\infty}{ \left( \sqrt{x^2+2}-\sqrt{x^2+x} \right)} </m>
-          and then evaluate the limit to see if you guessed correctly.
-        </p>
-      </statement>
     </problem>
 
+      <p>
+        We have established that, because <m>\infty</m> is not a number, the expression
+        <m>\infty-\infty</m> does not make sense. What about
+        <m>\frac{\infty}{\infty}</m>? Is it true that <m>\frac{\infty}{\infty}=1</m>?
+      </p>
+      <p>
+
+        No, of course not. The expression <m>\frac{\infty}{\infty}</m> is
+        meaningless for the same reason that  <m>\infty</m> - <m>\infty</m> is
+        meaningless.
+      </p>
 
 
+      <example xml:id="EXAMPLEIndetForm1">
 
-    <exercise>
-      <introduction>
-        <p>
-          Determine  the following limits.
+        <p> 
+          Consider <m> \limit{x}{\infty}{\frac{x^4+x^2}{5x^4-100x}}</m>. It is
+          tempting to write <m>\frac{\infty}{\infty}=1</m>, but as we have
+          observed, <m>\infty</m> is not a number so this makes no more sense
+          than <m>\infty-\infty=0</m>.
         </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>\limit{x}{\infty} {\sqrt{x^2+x}-x}</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\limit{x}{\infty}{\frac{1}{\sqrt{x+1} -\sqrt{4x+1}}}</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\limit{x}{-\infty}{\sqrt{x^2+x}-x}</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\limit{x}{\infty}{\frac{\sqrt{x^2+2}-\sqrt{x^2+x}}{\sqrt{x^2+2}-\sqrt{x^2-x}}}</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\limit{x}{-\infty}{\frac{\sqrt{x^2+2}-\sqrt{x^2+x}}{\sqrt{x^2+2}-\sqrt{x^2-x}}}</m>
-          </p>
-        </statement>
-      </task>
+        <p>
+          Once again, the key is to re-express the function
+          algebraically. Factoring out the highest power of the variable from
+          both the numerator and the denominator we see that 
 
-    </exercise>
+          <md>
+            <mrow>
+              \limit{x}{\infty}{\frac{x^4+x^2}{5x^4-100x}}
+              \amp{}=\limit{x}{\infty}{\frac{x^4(1+1/x^2)}{x^4(5-100/x^3)}}
+            </mrow>
+            <mrow>  \amp=\limit{x}{\infty}{\left[\CancelToRed{=1}{\frac{x^4}{x^4}}\cdot\frac{1+\CancelToRed{0}{1/x^2}}{5-\CancelToRed{0}{100/x^3}}\right]}</mrow>
+            <mrow>  \amp= 1\cdot\approach{\frac15}</mrow>
+            <mrow> \amp=\frac15.  </mrow>
+          </md>
+        </p>
+        <p>
+          You may well ask, <q>How did we know to factor out the highest power
+          of the variable?</q> The answer is very unsatisfying.  We were
+          taught this technique by our teachers, just as you are being taught
+          now. We<rsq/>d have been hard pressed to come up with it on our own.
+        </p>
+
+
+      </example>
+
+
+
+
+
+
+      <example xml:id="EXAMPLEAsym2">
+        <title>(Continued from <xref ref="SECTIONgraph-with-form"></xref> )</title>
+        <p>
+          Recall that we did not complete <xref ref="EXAMPLEAsym1"></xref> because
+          we did not previously have any way to determine what happens to the
+          graph of <m>y(x)=\frac{2+2x^2+2x^4}{1+x^4}</m> as <m>x\rightarrow\infty</m> or
+          as <m>x\rightarrow-\infty</m>. We do now. Finding what happens to the graph of
+          <m>y(x)=\frac{2+2x^2+2x^4}{1+x^4}</m> as <m>x\rightarrow\infty</m> or as
+          <m>x\rightarrow-\infty</m> is equivalent to evaluating the following
+          limits:
+          <me>
+            \limit{x}{\infty}{\frac{2+2x^2+2x^4}{1+x^4}}\ \ \text{ and }
+            \limit{x}{-\infty}{\frac{2+2x^2+2x^4}{1+x^4.}}
+          </me>
+          We will evaluate the first one and leave the second as a drill.
+
+          Proceeding as in <xref ref="EXAMPLEIndetForm1"></xref> we see that
+          <md>
+            <mrow>
+              \limit{x}{\infty}{\frac{2+2x^2+2x^4}{1+x^4}} \amp =
+              \limit{x}{\infty}{\frac{x^4(2/x^4+2/x^2+2)}{x^4(1/x^4+1)}}
+            </mrow>
+            <mrow>
+              \amp{}
+              =\limit{x}{\infty}{\CancelToRed{1}{\frac{x^4}{x^4}}\cdot\frac{\CancelToRed{0}{2/x^4}+\CancelToRed{0}{2/x^2}+2}{\CancelToRed{0}{1/x^4}+1}}
+            </mrow>
+            <mrow>
+              \amp{} =2.
+            </mrow>
+          </md>
+        </p>
+      </example>
+
+      <exercise>
+        <statement>
+          <p>
+            Show that <m>\tlimit{x}{-\infty}{\frac{2+2x^2+2x^4}{1+x^4}}</m> is also
+            equal to two. 
+          </p>
+        </statement>
+      </exercise>
+      <p>
+        <idx><h>Vocabulary</h><h>horizontal asymptote</h></idx>
+        We can now see that <m>y(x)=\frac{2+2x^2+2x^4}{1+x^4}</m> has a
+        <term>horizontal asymptote</term> at <m>y=2</m>. If you haven<rsq/>t
+        already done so consider graphing this function to confirm.
+      </p>
+
+
+
+
+      <exercise>
+        <introduction>
+          <p>
+            Show that  each of the following statements is true.
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{\infty}{\frac{x^5+x^3}{5x^5-100x}} =\frac15</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{-\infty}{\frac{2x^5+x^3}{5x^5-x}} =\frac25</m>
+
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{\infty}{\frac{x^5+x^3}{5x^4-10x}} =\infty</m>
+
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{-\infty}{\frac{x^5+x^3}{5x^4-10x}} =-\infty</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{\infty}{\frac{x-\frac{1}{x^3}}{5x-\frac{-8}{x^2}}} =\frac15</m>
+
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{-\infty}{\frac{x+\frac{1}{x^3}}{5x+\frac{-8}{x^2}}} =\frac15</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{\infty}{\frac{x^5+2x^3}{5x^6-x}} =0</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>  \limit{x}{-\infty}{\frac{x^5+2x^3}{5x^6-x}} =0</m>
+            </p>
+          </statement>
+        </task>
+      </exercise>
+      <example>
+        <p>
+          Do you think the function <m>y(x) = \sqrt{x^2+2}-\sqrt{x^2+x}</m>
+          has any horizontal asymptotes? Take your best guess before we
+          begin this example.
+          
+          To find any horizontal asymptotes we have to evaluate the two
+          limits
+          <me>
+            \limit{x}{\pm\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)}.
+          </me>
+          First we<rsq/>ll find the limit as <m>x\rightarrow\infty</m> and leave the limit as
+          <m>x\rightarrow-\infty</m> as a drill  for you.
+        </p>
+        <p>    
+          As always the trick is to rearrange this expression inside the
+          limit algebraically <mdash/> without changing its value <mdash/>
+          until we can see clearly what happens as
+          <m>x\rightarrow\infty</m>.
+          The square roots seem to be the difficulty here. So we<rsq/>d like
+          to find a way to make them go away. The standard trick for this is
+          to multiply by the conjugate  of <m>\sqrt{x^2+2}-\sqrt{x^2+x}</m>, namely
+          <m>\sqrt{x^2+2}+\sqrt{x^2+x}</m>.
+        </p>
+        <aside>
+          <title>Comment</title>
+          <p>
+            We are using the identity <m>(A-B)(A+B)=A^2-B^2</m> to square both
+            terms and get rid of the square roots. The factors <m>A+B</m> and
+            <m>A-B</m> are mutually conjugate.
+          </p>
+        </aside>
+
+        <p>
+          Of course, if we do that then
+          we need to divide by the conjugate as well. That way we<rsq/>ve
+          multiplied by <m>1</m> and have not changed the value of the
+          expression. This won<rsq/>t actually eliminate the square roots as
+          we will still have them in the denominator. But let<rsq/>s see
+          what happens. 
+        </p>
+        <p>
+          <md>
+            <mrow>
+              \amp{}\limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)}
+            </mrow>
+            <mrow>
+              \amp{} =
+              \left[\limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)}\textcolor{red}{\underbrace{\left(\frac{\sqrt{x^2+2}+\sqrt{x^2+x}}{\sqrt{x^2+2}+\sqrt{x^2+x}}\right)}_{=1}}\right]
+            </mrow>
+            <mrow>
+              \amp = \limit{x}{\infty}{\left(\frac{(x^2+2)-
+              (x^2+x)}{\sqrt{x^2+2}+\sqrt{x^2+x}}\right)}
+            </mrow>
+            <mrow>
+              \amp{}=    \limit{x}{\infty}{\left(\frac{2-x}{\sqrt{x^2+2}+\sqrt{x^2+x}}\right)}.
+            </mrow>    
+          </md>
+          Factoring the highest power of <m>x</m> out of the
+          numerator and denominator gives 
+
+          <me>
+            \limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)} 
+            =\limit{x}{\infty}{\frac{\textcolor{red}{x}\left(2/x-1\right)}{\textcolor{red}{\sqrt{x^2}}\left(\sqrt{1+2/x^2}+\sqrt{1+1/x}\right)}}
+          </me>
+          and since <m>\sqrt{x^2}=\abs{x}</m> we have
+          <me>    \limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)} 
+          =\limit{x}{\infty}{\frac{\textcolor{red}{x}\left(2/x-1\right)}{\textcolor{red}{\abs{x}}\left(\sqrt{1+2/x^2}+\sqrt{1+1/x}\right)}}.
+          </me>
+          But we<rsq/>re evaluating a limit as
+          <m>x\rightarrow\infty</m>. So, we<rsq/>re really only interested
+          in large, positive values of <m>x</m>. In this case
+          <m>\abs{x}=x</m> so 
+
+          <md>
+            <mrow>
+              \limit{x}{\infty}{\left(\sqrt{x^2+2}-\sqrt{x^2+x}\right)} 
+              \amp{}=\limit{x}{\infty}{\CancelToRed{=1}{\frac{x}{x}}\ \cdot\
+              \left[\frac{\CancelToRed{0}{2/x}-1}{\sqrt{1+\CancelToRed{0}{2/x^2}}+\sqrt{1+\CancelToRed{0}{1/x}}}\right]}
+            </mrow>
+            <mrow>
+              \amp = -\frac12.  
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Did you guess right? If you did,
+          either you have a very strong intuition for these kinds of
+          problems or you just had a moment of blind luck. So don<rsq/>t
+          just pat yourself on the back and walk away. Be sure to take a
+          moment to figure out whether it was intuition or luck. You
+          don<rsq/>t want to confuse them.
+        </p>
+        <p>
+          If you guessed wrong, or (most likely) were unable to come up
+          with a guess don<rsq/>t fret about it. You<rsq/>re normal. But be sure you
+          review and understand the steps to this solution so you can
+          begin to build some intuition about such problems.
+          
+          This problem looked pretty intimidating, but once we got going in
+          the right direction, it was all Algebra from there.  Notice how the
+          absolute value came into play. In this problem it wasn<rsq/>t an issue
+          since we were considering only positive values of <m>x</m>. But consider
+          what would happen if <m>x</m> was negative, if <m>x\rightarrow-\infty</m>.
+          In this case,
+          <m>\abs{x}=-x.</m>
+        </p>
+        <p>
+          <alert>This is important.</alert> If you don<rsq/>t see why <m>\abs{x}=-x</m> when
+          <m>x\lt0</m> ask your teacher about it.
+        </p>
+      </example>
+      <paragraphs  xml:id="DIGRESSIONAbsValSqrt">
+        <title>DIGRESSION: The Absolute Value Function   </title>
+        <idx><h>Digression</h><h>Absolute Value Function   </h></idx>
+
+        <p>
+          It is not true that <m>\sqrt{x^2}=x</m>, although this is an easy
+          mistake to make. It is not true because the square root function,
+          <m>\sqrt{x}</m>, is the functional inverse of the function
+          <me>
+            f(x)=x^2, \text{ with domain } x\ge0.
+          </me>
+          Note that the domain restriction means that <m>\sqrt{x}</m>
+          always returns a positive number. Thus <m>\sqrt{2^2} = 2</m>, but
+          <m>\sqrt{(-2)^2} = 2</m>, also.
+          Similarly,
+          <me>
+            \sqrt{3^2}=\sqrt{(-3)^2}=3,\ 
+            \sqrt{10^2}=\sqrt{(-10)^2}=10, \text{ and in general }
+            \sqrt{x^2}=\abs{x}.
+          </me>
+          When <m>x</m> is negative <m>\sqrt{x^2}=-x</m> because when
+          <m>x</m> negative,
+          <m>-x</m> is positive. 
+        </p>
+        
+        <p><alert>END OF DIGRESSION</alert></p>
+      </paragraphs>
+
+      <problem>
+        <statement>
+          <p>
+            Try to  guess the value of 
+            <m> \limit{x}{-\infty}{ \left( \sqrt{x^2+2}-\sqrt{x^2+x} \right)} </m>
+            and then evaluate the limit to see if you guessed correctly.
+          </p>
+        </statement>
+      </problem>
+
+
+
+
+      <exercise>
+        <introduction>
+          <p>
+            Determine  the following limits.
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>\limit{x}{\infty} {\sqrt{x^2+x}-x}</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\limit{x}{\infty}{\frac{1}{\sqrt{x+1} -\sqrt{4x+1}}}</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\limit{x}{-\infty}{\sqrt{x^2+x}-x}</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\limit{x}{\infty}{\frac{\sqrt{x^2+2}-\sqrt{x^2+x}}{\sqrt{x^2+2}-\sqrt{x^2-x}}}</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\limit{x}{-\infty}{\frac{\sqrt{x^2+2}-\sqrt{x^2+x}}{\sqrt{x^2+2}-\sqrt{x^2-x}}}</m>
+            </p>
+          </statement>
+        </task>
+
+      </exercise>
 
   </subsection>
 </section>
@@ -1723,7 +1743,7 @@ satisfies the differential equation which models damped oscillation
         <mrow>\limit{x}{2}{\frac{x-2}{x^2-4}}=\limit{x}{2}{\frac{x-2}{(x-2)(x+2)}}
         \amp{}=\cancelto{=1}{\left(\limit{x}{2}{\frac{x-2}{x-2}}\right)}\,\,\cdot\,\,\left(\limit{x}{2}{\frac{1}{x+2}}\right)</mrow>
         <mrow>\amp{}=\approach{1}\cdot\approach{\frac14}</mrow>
-        <mrow>=\frac{1}{4}.</mrow>
+        <mrow>\amp{}=\frac{1}{4}.</mrow>
       </md>
     </p>
 
@@ -1737,17 +1757,20 @@ satisfies the differential equation which models damped oscillation
     </problem>
 
     <p>
-      <idx><h>Vocabulary</h><h>Indeterminate Form</h></idx>
       Observe that this limit has the form
       <m>\limit{x}{2}{\frac{x-2}{x^2-4}}=\frac{\approach{0}}{\approach{0}}</m>.
-      A limit of this form is called an <term>Indeterminate
-      Form</term>.
+      A limit of this form is  another <term>indeterminate
+      Form</term>  like <m>\approach{\infty -\infty }</m>.
     </p>
     <aside>
       <title>Comment</title>
       <p>
-        There are other kinds of Indeterminate Forms. We
-        will encounter them later in this chapter.
+We
+will encounter them later in this chapter. Remember that
+<q>indeterminate</q> does not mean undefined. It means that they must
+be addressed on a case<ndash/>by<ndash/>case basis, and their value is
+often surprising. For example, would you have guessed that
+<m>\limit{x}{2}{\frac{x-2}{x^2-4}}=2</m>?
       </p>
     </aside>
 
@@ -2173,12 +2196,13 @@ satisfies the differential equation which models damped oscillation
 
 
     <p>
-      The idea of replacing the numerator and denominator of indeterminate
-      forms with their tangent lines has worked in all of our examples so
-      let<rsq/>s look at this problem in a more general context. If
-      <m>f(x)</m> and <m>g(x)</m> are differentiable functions such that
-      <m>f(a)=g(a)=0</m> then <m>\limit{x}{a}{\frac{f(x)}{g(x)}}</m> is an
-      indeterminate form.
+      In all of our examples where the indeterminate form was a
+      fraction,  replacing the numerator and denominator
+      with their respective tangent lines seems to have worked. The
+      idea seems promising so let<rsq/>s look at it in a more general
+      context. If <m>f(x)</m> and <m>g(x)</m> are differentiable
+      functions such that <m>f(a)=g(a)=0</m> then
+      <m>\limit{x}{a}{\frac{f(x)}{g(x)}}</m> is an indeterminate form.
     </p>
 
     <exercise xml:id="PROBLEMTanLineArbFunc">
@@ -2201,22 +2225,21 @@ satisfies the differential equation which models damped oscillation
       If we replace <m>f(x)</m> and <m>g(x)</m> in <xref
       ref="PROBLEMTanLineArbFunc"></xref>  with their tangent lines
       at <m>x=a</m> we have
-      <mdn>
-        <mrow number="no">  
-          \limit{x}{a}{\frac{f(x)}{g(x)}} \amp =
-          \limit{x}{a}{\frac{f(a)+f^\prime(a)(x-a)}{g(a)+g^\prime(a)(x-a)}}
-        </mrow>
-        <mrow number="no">
-          \amp =
-          \limit{x}{a}{\frac{0+f^\prime(a)(x-a)}{0+g^\prime(a)(x-a)}}
-        </mrow>
-        <mrow xml:id="EQUATIONLHV1">
-          \limit{x}{a}{\frac{f(x)}{g(x)}}\amp =
-          \frac{f^\prime(a)}{g^\prime(a)}
-          
-        </mrow>
-      </mdn>
-      (We need to assume that
+      <me>
+        \limit{x}{a}{\frac{f(x)}{g(x)}}  =
+        \limit{x}{a}{\frac{f(a)+f^\prime(a)(x-a)}{g(a)+g^\prime(a)(x-a)}}.
+      </me>
+      Since <m>f(a)=g(a)=0</m> we see that
+      <me>
+        \limit{x}{a}{\frac{f(x)}{g(x)}}  =
+        \limit{x}{a}{\frac{0+f^\prime(a)(x-a)}{0+g^\prime(a)(x-a)}}.
+      </me>
+      So
+      <men xml:id="EQUATIONLHV1">
+        \limit{x}{a}{\frac{f(x)}{g(x)}} =
+        \frac{f^\prime(a)}{g^\prime(a)}.
+      </men>
+      (We<rsq/>ll need to assume that
       <m>g^\prime(a)\neq0</m>. Do you see why?)
 
       This is consistent with all of our examples above so it appears that
@@ -2231,10 +2254,10 @@ satisfies the differential equation which models damped oscillation
       This idea is due to the Swiss mathematician <url
       href="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Johann/"
       visual="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Johann/">Johann
-      Bernoulli</url>. Johann and his brother <url
+      Bernoulli</url> (1667<ndash/>1748). Johann and his brother <url
       href="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/"
       visual="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/">Jacob
-      Bernoulli</url> (1667<ndash/>1748)  were taught Calculus by Leibniz
+      Bernoulli</url> (1665<ndash/>1795)  were taught Calculus by Leibniz
       himself, but soon showed themselves to be his equal, or nearly so.
     </p>
     <figure>
@@ -2301,10 +2324,8 @@ satisfies the differential equation which models damped oscillation
       turned out to be the slope of the line tangent to the graph of the
       numerator divided by the slope of the line tangent to the graph of
       the denominator. But the slope of the line tangent to <m>f(x)</m> at
-      <m>x=a</m> is simply:
-      <md>
-        <mrow>\text{If } y=f(x) \amp{}\amp{} \text{then} \amp{}\amp{} \dfdx{y}{x}=f^\prime(x).</mrow>
-      </md> 
+      <m>x=a</m> is simply <m>\eval{\dfdx{y}{x} }{x}{a} = f^\prime(a)
+      </m>.
     </p>
     <aside>
       <title>Mathematical Notation</title>
@@ -2334,26 +2355,23 @@ satisfies the differential equation which models damped oscillation
         Suppose 
         <ol marker="1">
           <li>
-            <m>f(x)</m> and <m>g(x)</m> are differentiable on an open
-            interval containing <m>a</m>,
-            </li>
+            that <m>f(x)</m> and <m>g(x)</m> are differentiable on an
+            open interval containing <m>a</m>,
+          </li>
             <li> that
             <m>f(a)=g(a)=0</m>
             </li>
-            <li> and that             <m>f^\prime(a)</m> and 
-            <m>g(a)</m> are both defined.
-            <!-- <md> -->
-            <!--   <mrow> -->
-            <!--     \limit{x}{a}{f^\prime(x)}=L  \amp{}\amp{}\text{ and }\amp{}\amp{} -->
-            <!--     \limit{x}{a}{g^\prime(x)}=M\ne0. -->
-            <!--   </mrow> -->
-            <!-- </md> -->
-            Then
-            <me>
-              \limit{x}{a}{\frac{f(x)}{g(x)}}\lhopeq\frac{f^\prime(a)}{f^\prime(a)}
-              </me>.
+            <li>  that             <m>f^\prime(a)</m> and 
+            <m>g^\prime(a)</m> are both defined.
+            </li>
+            <li>
+              and that <m>g^\prime(a)\ne0 </m>,
             </li>
         </ol>
+        Then
+        <me>
+          \limit{x}{a}{\frac{f(x)}{g(x)}}\lhopeq\frac{f^\prime(a)}{g^\prime(a)}
+          </me>.
       </p>
     </theorem>
     <remark>
@@ -2756,10 +2774,12 @@ satisfies the differential equation which models damped oscillation
     </p>
     <p>
       <idx><h>Vocabulary</h><h>Hôpital  Indeterminate</h></idx>
-      Although we have not discussed it, it is also true that L<rsq/>Hôpital<rsq/>s  Rule
-      applies directly to the indeterminate forms
-      <m>\frac{\approach{\pm\infty}}{\approach{\pm\infty}}</m> and 
-      <m>\frac{\approach{0}}{\approach{0}}</m>, so we will also
+      Although we have not discussed it here,  L<rsq/>Hôpital<rsq/>s
+      Rule also
+      applies directly to the indeterminate form
+      <m>\frac{\approach{\pm\infty}}{\approach{\pm\infty}}</m>, as well
+      as 
+      <m>\frac{\approach{0}}{\approach{0}}</m>. So we will also
       call these <term>L<rsq/>Hôpital  Indeterminates</term>.
     </p>
     <p>
