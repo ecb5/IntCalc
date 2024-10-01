@@ -455,7 +455,7 @@
           <li>
             <title>Question:</title>
             <p>
-              Why is <m>y(x)=\frac1x=0</m>?
+              Why is <m>y(x)=\limit{x}{\infty}{\frac1x}=0</m>?
             </p>
           </li>
           <li>
@@ -841,7 +841,7 @@
 
     <proof>
       <p>
-        Let <m>\eps\gt0</m> be given. Take <m>B\gt\frac1\eps</m>.
+        Let <m>\eps\gt0</m> be given. Take <m>B=\frac1\eps</m>.
 
         If <m>x\gt B</m> then
 
@@ -862,9 +862,9 @@
     </proof>
 
     <p>
-      This example displays the format of a limit proof that you need to
-      adhere to. Below is an outline of the format. Do not depart from this format. This is not a course in
-      creative writing.
+      This example displays the format of a limit proof that you need
+      to adhere to. Below is an outline of the format. Do not depart
+      from this format. This is not a course in creative writing.
       <dl>
         <li>
           <title>First:</title>
@@ -1282,8 +1282,8 @@
     <exercise>
       <introduction>
         <p>
-          Do the scrapwork, and provide a rigorous proof of each of the
-          limits below.
+          Do the scrapwork, and provide a rigorous proof of each of these
+          limits.
         </p>
       </introduction>
       <task>
@@ -1337,7 +1337,7 @@
       <introduction>
         <p>
           Do the scrapwork, and provide a rigorous proof of each of the
-          limits below.
+          limits below.  Recall that when <m>x\lt0{}</m>, <m>\abs{x}=-x</m>.
         </p>
       </introduction>
       <task>
@@ -1366,24 +1366,24 @@
 
   <subsection  xml:id="SUBSECTIONVerticalAsymptotes">
     <title>Vertical Asymptotes, Redux</title>
-    <!-- <p>  -->
-    <!--   In the last section, we were able to transform our intuitive -->
-    <!--   understanding of horizontal asymptotes into a rigorous -->
-    <!--   definition of <m>\limit{x}{\pm\infty}{f(x)}</m> which did not -->
-    <!--   make reference to infinity.  Here we will do the same for -->
-    <!--   vertical asymptotes <m>\left(\limit{x}{a}{f(x)}=\pm -->
-    <!--   \infty\right)</m>. Along the way, we will develop a more -->
-    <!--   rigorous way of addressing one sided limits as well. -->
-    <!-- </p> -->
-    <!-- <aside> -->
-    <!--   <title>Mathematical Notation</title> -->
-    <!--   <p> -->
-    <!--     Obviously we did use the symbol <m>\infty</m> when we wrote -->
-    <!--     <m>\limit{x}{\infty}{y(x)}=0 </m>, but we now recognize this -->
-    <!--     as a notational convenience. We don<rsq/>t really mean that -->
-    <!--     <m>x</m> is getting close to a number called <q>infinity.</q> -->
-    <!--   </p> -->
-    <!-- </aside> -->
+    <p>
+      In the last section, we were able to transform our intuitive
+      understanding of horizontal asymptotes into a rigorous
+      definition of <m>\limit{x}{\pm\infty}{f(x)}</m> which did not
+      make reference to infinity.  Here we will do the same for
+      vertical asymptotes <m>\left(\limit{x}{a}{f(x)}=\pm
+      \infty\right)</m>. Along the way, we will develop a more
+      rigorous way of addressing one sided limits as well.
+    </p>
+    <aside>
+      <title>Mathematical Notation</title>
+      <p>
+        Obviously we did use the symbol <m>\infty</m> when we wrote
+        <m>\limit{x}{\infty}{y(x)}=0 </m>, but we now recognize this
+        as a notational convenience. We don<rsq/>t really mean that
+        <m>x</m> is getting close to a number called <q>infinity.</q>
+      </p>
+    </aside>
 
 
     <p>
@@ -1451,16 +1451,23 @@
             Suppose <m>B\gt 0</m>. Show that if <m>0\lt
             x\lt \frac{1}{B}</m> then  <m>\frac{1}{x}\gt B</m>.
           </p>
+          <aside>
+            <title>Comment</title>
+            <p>
+              Our assumption that <m>B\gt 0</m> is really
+              just a convenience as we shall see in part (b).         
+            </p>
+          </aside>
+
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            In part (a) it was necessary to assume that <m>B>0</m>.
-            Otherwise our inequalities don<rsq/>t work out. To see this
-            suppose <m>B\le 0</m>.  Show that for any real number
-            <m>\delta \gt 0</m>, we have <m>\frac{1}{x}>B</m>
-            whenever <m>0\lt x\lt\delta </m>.
+            Suppose <m>B\le
+            0</m>.  Show that for any real number <m>\delta \gt 0</m>,
+            we have <m>\frac{1}{x}>B</m> whenever <m>0\lt x\lt\delta
+            </m>.
           </p>
         </statement>
       </task>
@@ -1610,7 +1617,7 @@
           Let <m>a</m> be a real number.  Suppose we have
           <m>f(x)</m> defined on some interval <m>(a,b)</m>.
           Then we say 
-          <me>\llimit{x}{a}{f(x)} =-\infty </me> 
+          <me>\rlimit{x}{a}{f(x)} =-\infty </me> 
           if and only if for any real number <m>B\lt0</m>, there is a
           number <m>\delta >0</m> with 
           the property that whenever
@@ -1629,14 +1636,13 @@
       <statement>
         <p>
           <idx><h>Problem </h></idx>
-          Let <m>c</m> be a real number in the interval
-          <m>(a,b)</m> and   suppose
+          Suppose
           <m>f(x)</m> is defined on some interval
           <m>(a,b)</m>. Use <xref
           ref="DEFINITIONRHInfLim"></xref> and <xref
           ref="DEFINITIONLHInfLim"></xref> to prove that
-          <me>\rlimit{x}{c}{f(x) }=-\infty </me> if and only if
-          <me>\rlimit{x}{c}{\left(-f\left(x\right)\right) }=\infty
+          <me>\rlimit{x}{a}{f(x) }=-\infty </me> if and only if
+          <me>\rlimit{x}{a}{\left(-f\left(x\right)\right) }=\infty
           </me>.
         </p>
       </statement>
@@ -1651,7 +1657,7 @@
           ref="DEFINITIONLHInfLim"></xref>.
         </p>
       </introduction>
-      <task>
+      <task xml:id="PROBLEMLeftInfLimitsA">
         <statement>
           <p>
             Give a definition like <xref
@@ -1660,7 +1666,7 @@
           </p>
         </statement>
       </task>
-      <task>
+      <task xml:id="PROBLEMLeftInfLimitsB">
         <statement>
           <p>
             Give a definition like <xref
@@ -1822,35 +1828,36 @@
           <m>\limit{x}{0}{\frac{1}{x^2}} = \infty </m>
           since  
 
-          <me>
+          <me> 
             \rlimit{x}{0}{\frac{1}{x^2}} = \infty
-            =\llimit{x}{0}{\frac{1}{x^2}} = \infty 
-        </me>
+            =\llimit{x}{0}{\frac{1}{x^2}}
+            </me>.
         </p>
       </example>
 
-      <problem  xml:id="DRILLPosInfLimit">
-        <p>
-          <ol marker="i">
-            <li>
-              <p>
-                Use <xref ref="DEFINITIONRHInfLim"></xref> to show that 
-                <me>
-                  \rlimit{x}{0}{\frac{1}{x^2}} = \infty
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                Use <xref ref="DEFINITIONLHInfLim"></xref> to show that 
-                <me>
-                  \llimit{x}{0}{\frac{1}{x^2}} = \infty
-                </me>
-              </p>
-            </li>
-          </ol>
-        </p>      
-      </problem>
+      <exercise  xml:id="EXERCISEPosInfLimit">
+        <task>
+          <statement>
+            <p>
+              Use <xref ref="DEFINITIONRHInfLim"></xref> to show that 
+              <me>
+                \rlimit{x}{0}{\frac{1}{x^2}} = \infty
+              </me>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Use the appropriate definition from <xref
+              ref="PROBLEMLeftInfLimits"></xref> to show that
+              <me>
+                \llimit{x}{0}{\frac{1}{x^2}} = \infty
+              </me>
+            </p>
+          </statement>
+        </task>
+      </exercise>
 
 
 
@@ -1893,35 +1900,35 @@
               </m> 
             </p>
           </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>
-              \limit{x}{0}{\frac{-1}{x^4}}=-\infty 
-            </m> 
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>
-              \limit{x}{0}{\frac{1}{x^3}} 
-              </m> does not exist.
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>
+                \limit{x}{0}{\frac{-1}{x^4}}=-\infty 
+              </m> 
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>
+                \limit{x}{0}{\frac{1}{x^3}} 
+                </m> does not exist.
 
-          </p>
-        </statement>
-</task>
-<task>
-  <statement>
-    <p>
-    <m>
-      \limit{x}{3}{\frac{3}{(x-3)}}
-      </m> does not exist.
-    </p>
-</statement>
-</task>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>
+                \limit{x}{3}{\frac{3}{(x-3)}}
+                </m> does not exist.
+            </p>
+          </statement>
+        </task>
 
       </exercise>
 
@@ -2020,10 +2027,10 @@
       <exercise xml:id="PROBLEMLimitEquivDef">
         <p>
           Complete this equivalence by showing that if
-        <me>\rlimit{x}{a}{f(x)} = \infty = \llimit{x}{a}{f(x)} </me>
-        then for every real number <m>B>0</m>, there is a <m>\delta
-        \gt 0</m> such that <m>f\left(x\right)\gt B</m> whenever
-        <m>a-\delta \lt x\lt a+\delta </m> and <m>x\neq a</m>.
+          <me>\rlimit{x}{a}{f(x)} = \infty = \llimit{x}{a}{f(x)} </me>
+          then for every real number <m>B>0</m>, there is a <m>\delta
+          \gt 0</m> such that <m>f\left(x\right)\gt B</m> whenever
+          <m>a-\delta \lt x\lt a+\delta </m> and <m>x\neq a</m>.
         </p>
       </exercise>
 
