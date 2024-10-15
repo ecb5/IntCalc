@@ -345,7 +345,6 @@
 
     </subsection>
 
-
     <subsection  xml:id="SUBSECTIONCavLeibNotation"> 
       <title>Cavalieri, Differentials, and Definite Integration</title>
       <p>
@@ -413,75 +412,289 @@
         </image>
         <p>
           Clearly the <q>area</q> of this line is <m>2\dx{x}</m>, so
-          the area of the area of the entire rectangle is given by
-
-          <me> \int 2\dx{x} </me>.
-      </p>
+          the area of the area of the entire rectangle must be  given by
+          the sum of these, or
+          <men xml:id="EQUATIONIntCav"> \int 2\dx{x} </men>. Moreover,
+          since this is a <m>2\times 4</m> rectangle we must have
+          <m> \int 2\dx{x} =8</m>, right?
+        </p>
+        <p>
+          Do you see the  problem? If our rectangle had different
+          dimensions, say <m>2\times 5</m>, then 
+          <m> \int 2\dx{x}</m> would equal <m>10</m>, wouldn<rsq/>t it?  
+        </p>
+        <p>
+          But it gets worse!
+          Recall that in <xref
+          ref="SUBSECTIONIntAsAntiDiff"></xref> we used exactly the same
+          notation seen in <xref ref="EQUATIONIntCav">formula</xref> to
+          represent the most general antiderivative (multifunction) of
+          <m>f(x)= 2</m>. 
+        </p>
+        <p>
+          We can<rsq/>t have this. We need for the meaning of the
+          expression <m>\int 2\dx{t}</m> to be unambiguous. In
+          particular it can<rsq/>t be <m>8</m> sometimes, <m>10</m> at
+          other times, and a multifunction at yet other times. We need
+          to clarify what we mean when we use the integral notation.
+        </p>
       </example>
       
+    </subsection>
+    <subsection xml:id="SUBSECTIONDefIndefInt"> 
+      <title>Functions, Multifunctions and Integral Notation</title>
+      <p>
+        <xref ref="EXAMPLEIntegralIndices">Example</xref> seems to
+        suggest that areas and antiderivatives are related, and
+        in fact  they are. Because they are we will define several
+        variations on the basic summation symbol originally invented
+        by Leibniz,  <m>\int
+        </m>.
+      </p>
+      <p>
+        We make the following definition.
+      </p>
+      <definition xml:id="DEFINITIONIndefInt">
+        <title>Indefinite Integral</title>
+        <statement>
+          <p>
+            Given <m>f(x)</m> the formula <me>\int f(x)\dx{x}</me> 
+            <em>always</em> represents the multifunction whose
+            derivative is <m>f(x)</m>. 
+          </p>
+        </statement>
+      </definition>
+      <p>
+      For simplicity, and because it has become standard, we will
+      almost always refer <m>\int f(x)\dx{x}</m> as the 
+      <term>indefinite integral</term> of <m>f(x)</m> or less often,
+      as the 
+      <term>antiderivative</term> of <m>f(x)</m>.
+      </p>
+      <p>
+        In view of <xref ref="DEFINITIONIndefInt"></xref> we will 
+        need another notatation for  the area of the rectangle
+        in <xref ref="EXAMPLEIntegralIndices"></xref>. 
+      </p>
+<p>
+  Because <m>f(x)</m> and <m>\int f(x)\dx{x}</m> are so closely
+  related it is common to define <me>F(x)=\int f(x)\dx{x}</me>.
+</p>
 
-      <paragraphs>
-        <title>Definite Integral Notation </title>
+<p>
+  However notice that in both cases we are summing up infinitely
+  many things. We are summing Cavalieri<rsq/>s lines to compute
+  an area, and we are summing differentials to find an
+  antiderivative. So the <m>\int </m> symbol seems natural in
+  both instances.
+</p>
 
-        <p>
-          Conceptually, it is all well and good to say that the area
-          is the sum of <q>all the lines</q> that make it up.  But
-          faced with a real problem we<rsq/>ll need more information
-          than that. In particular,  we need to know which line
-          we<rsq/>re summing. That is, we need to
-          know where to start summing the differential areas (lines)
-          and where to stop.
-        </p>
-        <p>
-          Similar considerations lead the mathematician 
-          <url
-              href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
-              visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
-          Fourier</url> (1768<ndash/>1830)
-          to create the 
-          <term>definite integral</term> by adding
-          <term>indices</term> to the integral sign as follows:
-          <men
-              xml:id="EQUATIONAreaRect2">
-            \int_{x=2}^6 2\dx{x}.
-          </men>
-          The indices in this expression tell us that we begin summing the
-          differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>. 
-        </p>
+<p>
+  As Calculus developed from the ideas of Leibniz and Newton
+  into the powerful tool is has become, the integral notation
+  evolved from Leibniz<rsq/> simple <q>S</q> (for
+  <foreign>summa</foreign> or <q>sum</q>) into a sophisticated
+  and rather esoteric bit of notation.         Our purpose in
+  this section is to introduce and explain that evolution.  It
+  will take time,
+  effort, and a lot of practice to get comfortable with it. Be
+  patient with yourself.
+</p>
 
 
+<p>
+  <idx><h>Initial Value Problem (IVP)</h></idx>
+  Consider the Initial Value Problem 
+  <mdn>
+    <mrow xml:id="EQUATIONMultFuncIVP">   
+      \dfdx{y}{t}=2t\amp{}\amp{} \text{ and }\amp{}\amp{} y(0)=5.
+    </mrow>
+  </mdn>
+  We saw in <xref ref="EXAMPLESimpleInt1"></xref> that 
+  <men xml:id="EQUATIONIntegralNotationModification1">
+    y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C
+    </men>.
+    Moreover, from the initial condition we see that 
+    <me>y(0)=0^2+C=5</me> or <m>C=5</m>. Thus the solution of
+    <xref ref="EQUATIONMultFuncIVP">IVP</xref> is 
+    <me>y(t)=t^2+5</me>. 
+</p>
+
+<p>
+  But as we saw in <xref ref="EXAMPLEIntegralIndices"></xref>
+  the expression <m>\int 2t\dx{t}</m> can also indicat
+
+  the
+  solution of the differential equation is 
+  To accomplish this we need to solve the differential equation
+  <m>\dfdx{y}{t}=2t </m> to find  the multifunction
 
 
-        <p>
-          Notice that, despite the complexity of the notation, expressions
-          like <xref ref="EQUATIONAreaRect2">formula</xref> simply represent
-          a specific, or definite number; eight in this case. This is why
-          they are called <term>definite integrals</term>.
-        </p>
-        <p>
-          Expressions like 
-          <me>
-            \int f(x)\dx{x} </me>, without the indices, represent
-            functions as we saw in <xref
-            ref="CHAPTERIndefiniteIntegration"></xref>.  Integrals without
-            indices are called <term>indefinite integrals</term> to
-            distinquish them from definite integrals with indices. In
-            <xref ref="CHAPTERIndefiniteIntegration"></xref> we just
-            called them integrals because they were the only kind we had
-            encountered at the time.
-        </p>
+  and then find the <em>particular</em> function which satisfies
+  the initial condition <m>y(0)=4</m>.
+</p>
+<p>
+  As we saw in <xref ref="EXAMPLESimpleInt1"></xref> the
+  expression <m> \int 2t\dx{t} </m> represents the most general
+  antiderivative (a multifunction) of <m>f(t)=2t</m>.
+</p>
 
-      </paragraphs>
+<p>
+  Since <m>y(t)=\int 2t\dx{t} </m> and <m>y(0)=5 </m> we know that
+  the particular function we seek satisfies
+  <men xml:id="EQUATIONIntegralNotationModification2">
+    y(0)= \eval{\int 2t\dx{t}}{t}{0} =5 </men>.  
+    <!-- While our evaluation notation is clear, in this context the -->
+    <!-- expression <m>\eval{\int 2t\dx{t}}{t}{0}</m> is also rather -->
+    <!-- clumsy. So we will modify it slightly  as follows: -->
+
+    <!-- <men xml:id="EQUATIONIntegralNotationModification1"> -->
+    <!--   y(0)= \eval{\int 2t\dx{t}}{t}{0}=\int^{t=0}2t\dx{t}  -->
+    <!--   </men>. -->
+</p>
+<p>
+  While our evaluation notation is clear, an expression like
+  <m>\eval{\int f(t)\dx{t}}{t}{a}</m> is rather clumsy. So we introduce
+  the following slightly more convenient notation:
+  <men>
+    \eval{\int
+    f(t)\dx{t}}{t}{a}=\int^{t=a} f(t)\dx{t}.
+  </men>
+
+</p>
+
+
+<p>
+  Together equations
+  <xref
+      ref="EQUATIONIntegralNotationModification1"></xref>
+  and         <xref
+  ref="EQUATIONIntegralNotationModification2"></xref>
+  describe the solution of <xref
+  ref="EQUATIONMultFuncIVP">IVP</xref>, but this is  not a very
+  useful description since all we<rsq/>ve really done is
+  re-express <xref ref="EQUATIONMultFuncIVP">IVP</xref> in new
+  notation. 
+</p>
+<p>
+  <xref
+      ref="EQUATIONIntegralNotationModification1">Equation</xref>
+  merely        says that the solution of <xref
+  ref="EQUATIONMultFuncIVP">IVP</xref> is one of the
+  antiderivatives of <m>=2t</m>, and <xref
+  ref="EQUATIONIntegralNotation2">equation</xref> simply
+  restates the initial condition. 
+</p>
+<p>
+
+  would be the most we can say. But from <xref
+  ref="EXAMPLESimpleInt1"></xref> we also know that <m>y(t)</m>
+  has the form <me>y(t)=t^2+C</me> for some value of <m>C</m>.
+  Thus
+
+  <men xml:id="EQUATIONIntEval">
+    y(0)= \int^{t=0} 2t\dx{t}= \eval{t^2+C}{t}{0}=0^2+C =5
+    </men>.
+    
+    <!-- It  follows that the solution of <xref -->
+    <!-- ref="EQUATIONMultFuncIVP">IVP</xref>  is the  function <m>y(t)</m> -->
+    <!-- selected from our multifunction <m>\int 2t\dx{t} = t^2+C</m>. -->
+    <!-- Specifically, -->
+    <!-- <me> -->
+    <!--   y(t)=t^2+5 -->
+    <!--   </me>. -->
+</p>
+
+<aside>
+  <title>Note to Self</title>
+  <p>
+    When we introduce the lower index we will drop the <q>t=</q>
+    part of the upper.
+  </p>
+</aside>
+
+<!-- <p> -->
+<!--   More generally, the indefinite integral of <m>f(t)</m>,  at -->
+<!--   <m>t=a</m> is given by -->
+<!--   <men xml:id="EQUATIONIntBotIndx"> -->
+<!--     \eval{\int f(t)\dx{t}}{t}{a} = \int^{t=a} f(t)\dx{t}  -->
+<!--     </men>.  -->
+<!-- </p> -->
+<!-- <p> -->
+<!--   At the moment this change may seem to be hardly worth the effort -->
+<!--   but as we mentioned the integral notation has evolved quite a bit -->
+<!--   over time. <xref ref="EQUATIONIntBotIndx">Formula</xref> is just -->
+<!--   the first modification we<rsq/>ll see. -->
+<!-- </p> -->
+
+
+<p>
+  Using our new notation we see that <xref
+  ref="EQUATIONIntEval">equation</xref> can be expressed as 
+  <me>
+    y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5
+    </me>.
+    The advantage of this notation may not be clear to you yet but as
+    we proceed you will see that it is very helpful, particularly in
+    the  context of 
+    <term>Definite Integration</term> which we will return to in
+    <xref ref="CHAPTERDefiniteIntegration"></xref>.
+</p>
+
+<p>
+  Conceptually, it is all well and good to say that the area
+  is the sum of <q>all the lines</q> that make it up.  But
+  faced with a real problem we<rsq/>ll need more information
+  than that. In particular,  we need to know which lines
+  we<rsq/>re summing. That is, we need to
+  know where to start summing the differential areas (lines)
+  and where to stop.
+</p>
+
+<p>
+  Since <m>\int 2\dx{x}</m> is the most general antiderivative 
+</p>
+<p>
+  Similar considerations lead the mathematician 
+  <url
+      href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
+      visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
+  Fourier</url> (1768<ndash/>1830)
+  to create the 
+  <term>definite integral</term> by adding
+  <term>indices</term> to the integral sign as follows:
+  <men
+      xml:id="EQUATIONAreaRect2">
+    \int_{x=2}^6 2\dx{x}.
+  </men>
+  The indices in this expression tell us that we begin summing the
+  differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>. 
+</p>
+
+
+
+
+<p>
+  Notice that, despite the complexity of the notation, expressions
+  like <xref ref="EQUATIONAreaRect2">formula</xref> simply represent
+  a specific, or definite number; eight in this case. This is why
+  they are called <term>definite integrals</term>.
+</p>
+<p>
+  Expressions like 
+  <me>
+    \int f(x)\dx{x} </me>, without the indices, represent
+    functions as we saw in <xref
+    ref="CHAPTERIndefiniteIntegration"></xref>.  Integrals without
+    indices are called <term>indefinite integrals</term> to
+    distinquish them from definite integrals with indices. In
+    <xref ref="CHAPTERIndefiniteIntegration"></xref> we just
+    called them integrals because they were the only kind we had
+    encountered at the time.
+</p>
 
 
     </subsection>
-  </section>
-
-  <section xml:id="SUBSECTIONDefIndefInt"> 
-    <title>The Connection Between Definite and Indefinite Integration</title>
-    <p>
-
-    </p>
   </section>
 
   <section xml:id="SECTIONAreasAndIntegration">  
