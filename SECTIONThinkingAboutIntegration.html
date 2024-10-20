@@ -58,7 +58,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -70,8 +70,8 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -79,16 +79,627 @@ window.MathJax = {
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#PleaForHelp-9-3 { counter-set: PleaForHelp-9-3 0; }
+#PleaForHelp-9-3 > li::marker { content: ""counter(PleaForHelp-9-3,decimal)"."; }
+#PleaForHelp-9-3 > li { counter-increment: PleaForHelp-9-3; }
+#SECTIONFermMethAedeq-22-2-1-1-1 { counter-set: SECTIONFermMethAedeq-22-2-1-1-1 0; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-2-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-2-1-1-1; }
+#SECTIONFermMethAedeq-22-6-1-1-1 { counter-set: SECTIONFermMethAedeq-22-6-1-1-1 0; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-6-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-6-1-1-1; }
+#SECTIONFermMethAedeq-22-7-1-1-8 { counter-set: SECTIONFermMethAedeq-22-7-1-1-8 0; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-7-1-1-8,lower-roman)""; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li { counter-increment: SECTIONFermMethAedeq-22-7-1-1-8; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 { counter-set: PROBLEMPROBLEMFermMethX2A-1-1-1 0; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li::marker { content: ""counter(PROBLEMPROBLEMFermMethX2A-1-1-1,lower-roman)""; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li { counter-increment: PROBLEMPROBLEMFermMethX2A-1-1-1; }
+#PROBLEMFermMethX2B-1-1-1 { counter-set: PROBLEMFermMethX2B-1-1-1 0; }
+#PROBLEMFermMethX2B-1-1-1 > li::marker { content: ""counter(PROBLEMFermMethX2B-1-1-1,lower-roman)""; }
+#PROBLEMFermMethX2B-1-1-1 > li { counter-increment: PROBLEMFermMethX2B-1-1-1; }
+#SUBSECTIONSpdVelRofC-31-2-1 { counter-set: SUBSECTIONSpdVelRofC-31-2-1 0; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-31-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-31-2-1; }
+#SUBSECTIONSpdVelRofC-32-2-1 { counter-set: SUBSECTIONSpdVelRofC-32-2-1 0; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-32-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-32-2-1; }
+#SUBSECTIONSpdVelRofC-33-2-1 { counter-set: SUBSECTIONSpdVelRofC-33-2-1 0; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-33-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-33-2-1; }
+#SUBSECTIONSpdVelRofC-34-2-1 { counter-set: SUBSECTIONSpdVelRofC-34-2-1 0; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-34-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-34-2-1; }
+#DRILLConstantRule-2 { counter-set: DRILLConstantRule-2 0; }
+#DRILLConstantRule-2 > li::marker { content: ""counter(DRILLConstantRule-2,lower-roman)""; }
+#DRILLConstantRule-2 > li { counter-increment: DRILLConstantRule-2; }
+#SUBSECTIONConstMultRule-5-2 { counter-set: SUBSECTIONConstMultRule-5-2 0; }
+#SUBSECTIONConstMultRule-5-2 > li::marker { content: ""counter(SUBSECTIONConstMultRule-5-2,lower-roman)""; }
+#SUBSECTIONConstMultRule-5-2 > li { counter-increment: SUBSECTIONConstMultRule-5-2; }
+#PARTGenPwrRule-1-2-1 { counter-set: PARTGenPwrRule-1-2-1 0; }
+#PARTGenPwrRule-1-2-1 > li::marker { content: ""counter(PARTGenPwrRule-1-2-1,lower-roman)""; }
+#PARTGenPwrRule-1-2-1 > li { counter-increment: PARTGenPwrRule-1-2-1; }
+#SUBSECTIONPowerRule-12-1-1 { counter-set: SUBSECTIONPowerRule-12-1-1 0; }
+#SUBSECTIONPowerRule-12-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-12-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-12-1-1 > li { counter-increment: SUBSECTIONPowerRule-12-1-1; }
+#SUBSECTIONPowerRule-13-1-1 { counter-set: SUBSECTIONPowerRule-13-1-1 0; }
+#SUBSECTIONPowerRule-13-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-13-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-13-1-1 > li { counter-increment: SUBSECTIONPowerRule-13-1-1; }
+#SUBSECTIONPowerRule-14-1-2 { counter-set: SUBSECTIONPowerRule-14-1-2 0; }
+#SUBSECTIONPowerRule-14-1-2 > li::marker { content: ""counter(SUBSECTIONPowerRule-14-1-2,lower-roman)""; }
+#SUBSECTIONPowerRule-14-1-2 > li { counter-increment: SUBSECTIONPowerRule-14-1-2; }
+#SUBSECTIONPowerRule-40-1-4 { counter-set: SUBSECTIONPowerRule-40-1-4 0; }
+#SUBSECTIONPowerRule-40-1-4 > li::marker { content: ""counter(SUBSECTIONPowerRule-40-1-4,lower-roman)""; }
+#SUBSECTIONPowerRule-40-1-4 > li { counter-increment: SUBSECTIONPowerRule-40-1-4; }
+#SUBSECTIONPowerRule-41-1-1 { counter-set: SUBSECTIONPowerRule-41-1-1 0; }
+#SUBSECTIONPowerRule-41-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-41-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-41-1-1 > li { counter-increment: SUBSECTIONPowerRule-41-1-1; }
+#SUBSECTIONPowerRule-42-1-1 { counter-set: SUBSECTIONPowerRule-42-1-1 0; }
+#SUBSECTIONPowerRule-42-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-42-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-42-1-1 > li { counter-increment: SUBSECTIONPowerRule-42-1-1; }
+#DRILLClassicalCurves-1-3 { counter-set: DRILLClassicalCurves-1-3 0; }
+#DRILLClassicalCurves-1-3 > li::marker { content: ""counter(DRILLClassicalCurves-1-3,lower-roman)""; }
+#DRILLClassicalCurves-1-3 > li { counter-increment: DRILLClassicalCurves-1-3; }
+#SUBSECTIONQuotientRule-9-1-2 { counter-set: SUBSECTIONQuotientRule-9-1-2 0; }
+#SUBSECTIONQuotientRule-9-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-9-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-9-1-2 > li { counter-increment: SUBSECTIONQuotientRule-9-1-2; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 { counter-set: SUBSECTIONQuotientRule-10-2-1-1-2 0; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-10-2-1-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li { counter-increment: SUBSECTIONQuotientRule-10-2-1-1-2; }
+#SECTIONVelocitySlopeTangent-12-1-4 { counter-set: SECTIONVelocitySlopeTangent-12-1-4 0; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li::marker { content: ""counter(SECTIONVelocitySlopeTangent-12-1-4,lower-roman)""; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li { counter-increment: SECTIONVelocitySlopeTangent-12-1-4; }
+#SECTIONdefin-tang-line-23-1-2 { counter-set: SECTIONdefin-tang-line-23-1-2 0; }
+#SECTIONdefin-tang-line-23-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-23-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-23-1-2 > li { counter-increment: SECTIONdefin-tang-line-23-1-2; }
+#SECTIONdefin-tang-line-32-2-1-1-2 { counter-set: SECTIONdefin-tang-line-32-2-1-1-2 0; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-2-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-2-1-1-2; }
+#SECTIONdefin-tang-line-32-3-1-1-2 { counter-set: SECTIONdefin-tang-line-32-3-1-1-2 0; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-3-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-3-1-1-2; }
+#SECTIONdefin-tang-line-32-4-1-1-2 { counter-set: SECTIONdefin-tang-line-32-4-1-1-2 0; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-4-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-4-1-1-2; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-3-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-3-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-3-1-1-6; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-4-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-4-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-4-1-1-6; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-5-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-5-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-5-1-1-6; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 { counter-set: PROBLEMHyperbolaTriangles-6-1-1-4 0; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-6-1-1-4,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li { counter-increment: PROBLEMHyperbolaTriangles-6-1-1-4; }
+#SECTIONGalileoDrops-9-2 { counter-set: SECTIONGalileoDrops-9-2 0; }
+#SECTIONGalileoDrops-9-2 > li::marker { content: ""counter(SECTIONGalileoDrops-9-2,decimal)"."; }
+#SECTIONGalileoDrops-9-2 > li { counter-increment: SECTIONGalileoDrops-9-2; }
+#SECTIONGalileoDrops-48-4 { counter-set: SECTIONGalileoDrops-48-4 0; }
+#SECTIONGalileoDrops-48-4 > li::marker { content: ""counter(SECTIONGalileoDrops-48-4,decimal)""; }
+#SECTIONGalileoDrops-48-4 > li { counter-increment: SECTIONGalileoDrops-48-4; }
+#SECONDBringCalc-6-4 { counter-set: SECONDBringCalc-6-4 0; }
+#SECONDBringCalc-6-4 > li::marker { content: ""counter(SECONDBringCalc-6-4,decimal)"."; }
+#SECONDBringCalc-6-4 > li { counter-increment: SECONDBringCalc-6-4; }
+#SECONDBringCalc-12-6 { counter-set: SECONDBringCalc-12-6 0; }
+#SECONDBringCalc-12-6 > li::marker { content: ""counter(SECONDBringCalc-12-6,decimal)"."; }
+#SECONDBringCalc-12-6 > li { counter-increment: SECONDBringCalc-12-6; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-2-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-2-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-2-1-1-2; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-8-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-8-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-8-1-1-2; }
+#SECTIONDerivative-19-1-4 { counter-set: SECTIONDerivative-19-1-4 0; }
+#SECTIONDerivative-19-1-4 > li::marker { content: ""counter(SECTIONDerivative-19-1-4,lower-roman)""; }
+#SECTIONDerivative-19-1-4 > li { counter-increment: SECTIONDerivative-19-1-4; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 { counter-set: PROBLEMDerivProdNEProdDeriv-2-1-1-1 0; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li::marker { content: ""counter(PROBLEMDerivProdNEProdDeriv-2-1-1-1,lower-roman)""; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li { counter-increment: PROBLEMDerivProdNEProdDeriv-2-1-1-1; }
+#SECTIONDerivative-22-1-3 { counter-set: SECTIONDerivative-22-1-3 0; }
+#SECTIONDerivative-22-1-3 > li::marker { content: ""counter(SECTIONDerivative-22-1-3,lower-roman)""; }
+#SECTIONDerivative-22-1-3 > li { counter-increment: SECTIONDerivative-22-1-3; }
+#PROBLEMAirlinerSpeed-3-1-1-2 { counter-set: PROBLEMAirlinerSpeed-3-1-1-2 0; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li::marker { content: ""counter(PROBLEMAirlinerSpeed-3-1-1-2,lower-roman)""; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li { counter-increment: PROBLEMAirlinerSpeed-3-1-1-2; }
+#SECTIONThinkingDynamically-13-1-2-1 { counter-set: SECTIONThinkingDynamically-13-1-2-1 0; }
+#SECTIONThinkingDynamically-13-1-2-1 > li::marker { content: ""counter(SECTIONThinkingDynamically-13-1-2-1,lower-roman)""; }
+#SECTIONThinkingDynamically-13-1-2-1 > li { counter-increment: SECTIONThinkingDynamically-13-1-2-1; }
+#SECTIONFluxions-36-2-1-1-1 { counter-set: SECTIONFluxions-36-2-1-1-1 0; }
+#SECTIONFluxions-36-2-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-2-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-2-1-1-1 > li { counter-increment: SECTIONFluxions-36-2-1-1-1; }
+#SECTIONFluxions-36-3-1-1-1 { counter-set: SECTIONFluxions-36-3-1-1-1 0; }
+#SECTIONFluxions-36-3-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-3-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-3-1-1-1 > li { counter-increment: SECTIONFluxions-36-3-1-1-1; }
+#PROBLEMadfj-1-1-2-2 { counter-set: PROBLEMadfj-1-1-2-2 0; }
+#PROBLEMadfj-1-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-1-1-2-2,lower-roman)""; }
+#PROBLEMadfj-1-1-2-2 > li { counter-increment: PROBLEMadfj-1-1-2-2; }
+#PROBLEMadfj-2-1-2-2 { counter-set: PROBLEMadfj-2-1-2-2 0; }
+#PROBLEMadfj-2-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-2-1-2-2,lower-roman)""; }
+#PROBLEMadfj-2-1-2-2 > li { counter-increment: PROBLEMadfj-2-1-2-2; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-15-2-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-15-2-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-15-2-1-1-2; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 { counter-set: PROBLEMUnitCircleParameterization1-1-1-1-1 0; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li::marker { content: ""counter(PROBLEMUnitCircleParameterization1-1-1-1-1,lower-roman)""; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li { counter-increment: PROBLEMUnitCircleParameterization1-1-1-1-1; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-21-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-21-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-21-1-1-2; }
+#SUBSECTIONradian-measure-19-2 { counter-set: SUBSECTIONradian-measure-19-2 0; }
+#SUBSECTIONradian-measure-19-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-19-2,lower-roman)""; }
+#SUBSECTIONradian-measure-19-2 > li { counter-increment: SUBSECTIONradian-measure-19-2; }
+#SUBSECTIONradian-measure-20-2 { counter-set: SUBSECTIONradian-measure-20-2 0; }
+#SUBSECTIONradian-measure-20-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-20-2,lower-roman)""; }
+#SUBSECTIONradian-measure-20-2 > li { counter-increment: SUBSECTIONradian-measure-20-2; }
+#SUBSECTIONradian-measure-31-2 { counter-set: SUBSECTIONradian-measure-31-2 0; }
+#SUBSECTIONradian-measure-31-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-31-2,lower-roman)""; }
+#SUBSECTIONradian-measure-31-2 > li { counter-increment: SUBSECTIONradian-measure-31-2; }
+#SECTIONtrig-interl-3-12-2-1-1-2 { counter-set: SECTIONtrig-interl-3-12-2-1-1-2 0; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-2-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-2-1-1-2; }
+#SECTIONtrig-interl-3-12-3-1-1-2 { counter-set: SECTIONtrig-interl-3-12-3-1-1-2 0; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-3-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-3-1-1-2; }
+#SECTIONtrig-interl-3-14-2 { counter-set: SECTIONtrig-interl-3-14-2 0; }
+#SECTIONtrig-interl-3-14-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-14-2,lower-roman)""; }
+#SECTIONtrig-interl-3-14-2 > li { counter-increment: SECTIONtrig-interl-3-14-2; }
+#PROBLEMSineOscillB-1-1-8 { counter-set: PROBLEMSineOscillB-1-1-8 0; }
+#PROBLEMSineOscillB-1-1-8 > li::marker { content: ""counter(PROBLEMSineOscillB-1-1-8,lower-roman)""; }
+#PROBLEMSineOscillB-1-1-8 > li { counter-increment: PROBLEMSineOscillB-1-1-8; }
+#SECTIONtrig-interl-5-11-2 { counter-set: SECTIONtrig-interl-5-11-2 0; }
+#SECTIONtrig-interl-5-11-2 > li::marker { content: ""counter(SECTIONtrig-interl-5-11-2,lower-roman)""; }
+#SECTIONtrig-interl-5-11-2 > li { counter-increment: SECTIONtrig-interl-5-11-2; }
+#DRILLPolarQuirks2-2 { counter-set: DRILLPolarQuirks2-2 0; }
+#DRILLPolarQuirks2-2 > li::marker { content: ""counter(DRILLPolarQuirks2-2,lower-roman)""; }
+#DRILLPolarQuirks2-2 > li { counter-increment: DRILLPolarQuirks2-2; }
+#PROBLEMPolRectConvertA-1-1-3 { counter-set: PROBLEMPolRectConvertA-1-1-3 0; }
+#PROBLEMPolRectConvertA-1-1-3 > li::marker { content: ""counter(PROBLEMPolRectConvertA-1-1-3,lower-roman)""; }
+#PROBLEMPolRectConvertA-1-1-3 > li { counter-increment: PROBLEMPolRectConvertA-1-1-3; }
+#PROBLEMPolarGraphs-2 { counter-set: PROBLEMPolarGraphs-2 0; }
+#PROBLEMPolarGraphs-2 > li::marker { content: ""counter(PROBLEMPolarGraphs-2,lower-roman)""; }
+#PROBLEMPolarGraphs-2 > li { counter-increment: PROBLEMPolarGraphs-2; }
+#SUBSECTIONCircularMotion-5-1-2 { counter-set: SUBSECTIONCircularMotion-5-1-2 0; }
+#SUBSECTIONCircularMotion-5-1-2 > li::marker { content: ""counter(SUBSECTIONCircularMotion-5-1-2,lower-roman)""; }
+#SUBSECTIONCircularMotion-5-1-2 > li { counter-increment: SUBSECTIONCircularMotion-5-1-2; }
+#EXERCISEDiffPractice1-1-1-3 { counter-set: EXERCISEDiffPractice1-1-1-3 0; }
+#EXERCISEDiffPractice1-1-1-3 > li::marker { content: ""counter(EXERCISEDiffPractice1-1-1-3,lower-roman)""; }
+#EXERCISEDiffPractice1-1-1-3 > li { counter-increment: EXERCISEDiffPractice1-1-1-3; }
+#SUBSECTIONCircularMotion-12-1-9 { counter-set: SUBSECTIONCircularMotion-12-1-9 0; }
+#SUBSECTIONCircularMotion-12-1-9 > li::marker { content: ""counter(SUBSECTIONCircularMotion-12-1-9,lower-roman)""; }
+#SUBSECTIONCircularMotion-12-1-9 > li { counter-increment: SUBSECTIONCircularMotion-12-1-9; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-2-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-2-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-2-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-3-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-3-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-3-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-4-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-4-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-4-1-3-1; }
+#PROBLEMcycloid2-2-1-1-1 { counter-set: PROBLEMcycloid2-2-1-1-1 0; }
+#PROBLEMcycloid2-2-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-2-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-2-1-1-1 > li { counter-increment: PROBLEMcycloid2-2-1-1-1; }
+#PROBLEMcycloid2-3-1-1-1 { counter-set: PROBLEMcycloid2-3-1-1-1 0; }
+#PROBLEMcycloid2-3-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-3-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-3-1-1-1 > li { counter-increment: PROBLEMcycloid2-3-1-1-1; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 { counter-set: SUBSECTIONsimple-harm-oscill-17-3-1-1-4 0; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li::marker { content: ""counter(SUBSECTIONsimple-harm-oscill-17-3-1-1-4,lower-roman)""; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li { counter-increment: SUBSECTIONsimple-harm-oscill-17-3-1-1-4; }
+#SECTIONdiff-other-trig-13-1-1 { counter-set: SECTIONdiff-other-trig-13-1-1 0; }
+#SECTIONdiff-other-trig-13-1-1 > li::marker { content: ""counter(SECTIONdiff-other-trig-13-1-1,lower-roman)""; }
+#SECTIONdiff-other-trig-13-1-1 > li { counter-increment: SECTIONdiff-other-trig-13-1-1; }
+#SECTIONdiff-other-trig-14-1-3 { counter-set: SECTIONdiff-other-trig-14-1-3 0; }
+#SECTIONdiff-other-trig-14-1-3 > li::marker { content: ""counter(SECTIONdiff-other-trig-14-1-3,lower-roman)""; }
+#SECTIONdiff-other-trig-14-1-3 > li { counter-increment: SECTIONdiff-other-trig-14-1-3; }
+#PROBLEMDiffFormTan-3-1-3-1 { counter-set: PROBLEMDiffFormTan-3-1-3-1 0; }
+#PROBLEMDiffFormTan-3-1-3-1 > li::marker { content: ""counter(PROBLEMDiffFormTan-3-1-3-1,lower-roman)""; }
+#PROBLEMDiffFormTan-3-1-3-1 > li { counter-increment: PROBLEMDiffFormTan-3-1-3-1; }
+#DIGRESSIONInverse-function-notation-7-1-1 { counter-set: DIGRESSIONInverse-function-notation-7-1-1 0; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li::marker { content: ""counter(DIGRESSIONInverse-function-notation-7-1-1,lower-roman)""; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li { counter-increment: DIGRESSIONInverse-function-notation-7-1-1; }
+#PROBLEMInvTanDiffeqB-1-1-3 { counter-set: PROBLEMInvTanDiffeqB-1-1-3 0; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMInvTanDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li { counter-increment: PROBLEMInvTanDiffeqB-1-1-3; }
+#PROBLEMArcSinDiffeqB-1-1-3 { counter-set: PROBLEMArcSinDiffeqB-1-1-3 0; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSinDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSinDiffeqB-1-1-3; }
+#PROBLEMArcSecDiffeqB-1-1-3 { counter-set: PROBLEMArcSecDiffeqB-1-1-3 0; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSecDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSecDiffeqB-1-1-3; }
+#InverseSecCsc-11-1 { counter-set: InverseSecCsc-11-1 0; }
+#InverseSecCsc-11-1 > li::marker { content: ""counter(InverseSecCsc-11-1,decimal)"."; }
+#InverseSecCsc-11-1 > li { counter-increment: InverseSecCsc-11-1; }
+#InverseSecCsc-17-1-1 { counter-set: InverseSecCsc-17-1-1 0; }
+#InverseSecCsc-17-1-1 > li::marker { content: ""counter(InverseSecCsc-17-1-1,lower-roman)""; }
+#InverseSecCsc-17-1-1 > li { counter-increment: InverseSecCsc-17-1-1; }
+#InverseSecCsc-20-2-1-1-1 { counter-set: InverseSecCsc-20-2-1-1-1 0; }
+#InverseSecCsc-20-2-1-1-1 > li::marker { content: ""counter(InverseSecCsc-20-2-1-1-1,lower-roman)""; }
+#InverseSecCsc-20-2-1-1-1 > li { counter-increment: InverseSecCsc-20-2-1-1-1; }
+#EXAMPLESqrt2-2-3-1-1-1 { counter-set: EXAMPLESqrt2-2-3-1-1-1 0; }
+#EXAMPLESqrt2-2-3-1-1-1 > li::marker { content: ""counter(EXAMPLESqrt2-2-3-1-1-1,lower-roman)""; }
+#EXAMPLESqrt2-2-3-1-1-1 > li { counter-increment: EXAMPLESqrt2-2-3-1-1-1; }
+#DRILLNewtonMethod2-2 { counter-set: DRILLNewtonMethod2-2 0; }
+#DRILLNewtonMethod2-2 > li::marker { content: ""counter(DRILLNewtonMethod2-2,lower-roman)""; }
+#DRILLNewtonMethod2-2 > li { counter-increment: DRILLNewtonMethod2-2; }
+#ALGORITHMNewtonsMethod-3-4 { counter-set: ALGORITHMNewtonsMethod-3-4 0; }
+#ALGORITHMNewtonsMethod-3-4 > li::marker { content: ""counter(ALGORITHMNewtonsMethod-3-4,decimal)"."; }
+#ALGORITHMNewtonsMethod-3-4 > li { counter-increment: ALGORITHMNewtonsMethod-3-4; }
+#PROBLEMNewtMethCreateFunction-2-3 { counter-set: PROBLEMNewtMethCreateFunction-2-3 0; }
+#PROBLEMNewtMethCreateFunction-2-3 > li::marker { content: ""counter(PROBLEMNewtMethCreateFunction-2-3,lower-roman)""; }
+#PROBLEMNewtMethCreateFunction-2-3 > li { counter-increment: PROBLEMNewtMethCreateFunction-2-3; }
+#PROBLEMNewton-meth-2-8 { counter-set: PROBLEMNewton-meth-2-8 0; }
+#PROBLEMNewton-meth-2-8 > li::marker { content: ""counter(PROBLEMNewton-meth-2-8,lower-roman)""; }
+#PROBLEMNewton-meth-2-8 > li { counter-increment: PROBLEMNewton-meth-2-8; }
+#PROBLEMNewton-meth2-2-2 { counter-set: PROBLEMNewton-meth2-2-2 0; }
+#PROBLEMNewton-meth2-2-2 > li::marker { content: ""counter(PROBLEMNewton-meth2-2-2,lower-roman)""; }
+#PROBLEMNewton-meth2-2-2 > li { counter-increment: PROBLEMNewton-meth2-2-2; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 { counter-set: SUBSECTIONSubtleFailure-8-3-1-1-3 0; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li::marker { content: ""counter(SUBSECTIONSubtleFailure-8-3-1-1-3,lower-roman)""; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li { counter-increment: SUBSECTIONSubtleFailure-8-3-1-1-3; }
+#SECTIONDEsandIVPS-2-3 { counter-set: SECTIONDEsandIVPS-2-3 0; }
+#SECTIONDEsandIVPS-2-3 > li::marker { content: ""counter(SECTIONDEsandIVPS-2-3,decimal)"."; }
+#SECTIONDEsandIVPS-2-3 > li { counter-increment: SECTIONDEsandIVPS-2-3; }
+#DRILLIVP-sqr-1-1 { counter-set: DRILLIVP-sqr-1-1 0; }
+#DRILLIVP-sqr-1-1 > li::marker { content: ""counter(DRILLIVP-sqr-1-1,lower-roman)""; }
+#DRILLIVP-sqr-1-1 > li { counter-increment: DRILLIVP-sqr-1-1; }
+#SECTIONexponential-growth-23-2 { counter-set: SECTIONexponential-growth-23-2 0; }
+#SECTIONexponential-growth-23-2 > li::marker { content: ""counter(SECTIONexponential-growth-23-2,decimal)"."; }
+#SECTIONexponential-growth-23-2 > li { counter-increment: SECTIONexponential-growth-23-2; }
+#SECTIONexponential-growth-28-1-2 { counter-set: SECTIONexponential-growth-28-1-2 0; }
+#SECTIONexponential-growth-28-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-28-1-2,lower-roman)""; }
+#SECTIONexponential-growth-28-1-2 > li { counter-increment: SECTIONexponential-growth-28-1-2; }
+#SECTIONexponential-growth-29-1-2 { counter-set: SECTIONexponential-growth-29-1-2 0; }
+#SECTIONexponential-growth-29-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-29-1-2,lower-roman)""; }
+#SECTIONexponential-growth-29-1-2 > li { counter-increment: SECTIONexponential-growth-29-1-2; }
+#SECTIONexponential-growth-30-1-1 { counter-set: SECTIONexponential-growth-30-1-1 0; }
+#SECTIONexponential-growth-30-1-1 > li::marker { content: ""counter(SECTIONexponential-growth-30-1-1,lower-roman)""; }
+#SECTIONexponential-growth-30-1-1 > li { counter-increment: SECTIONexponential-growth-30-1-1; }
+#PROBLEMPolyExpA-1-1-2 { counter-set: PROBLEMPolyExpA-1-1-2 0; }
+#PROBLEMPolyExpA-1-1-2 > li::marker { content: ""counter(PROBLEMPolyExpA-1-1-2,lower-roman)""; }
+#PROBLEMPolyExpA-1-1-2 > li { counter-increment: PROBLEMPolyExpA-1-1-2; }
+#SECTIONexponential-growth-34-1-7 { counter-set: SECTIONexponential-growth-34-1-7 0; }
+#SECTIONexponential-growth-34-1-7 > li::marker { content: ""counter(SECTIONexponential-growth-34-1-7,lower-roman)""; }
+#SECTIONexponential-growth-34-1-7 > li { counter-increment: SECTIONexponential-growth-34-1-7; }
+#SECTIONexponential-growth-36-1-1-1-4 { counter-set: SECTIONexponential-growth-36-1-1-1-4 0; }
+#SECTIONexponential-growth-36-1-1-1-4 > li::marker { content: ""counter(SECTIONexponential-growth-36-1-1-1-4,lower-roman)""; }
+#SECTIONexponential-growth-36-1-1-1-4 > li { counter-increment: SECTIONexponential-growth-36-1-1-1-4; }
+#PROBLEMHyperbolicTrig-2-1-1-1 { counter-set: PROBLEMHyperbolicTrig-2-1-1-1 0; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li::marker { content: ""counter(PROBLEMHyperbolicTrig-2-1-1-1,lower-roman)""; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li { counter-increment: PROBLEMHyperbolicTrig-2-1-1-1; }
+#PROBLEMCatenaryTrueC-1-1-4 { counter-set: PROBLEMCatenaryTrueC-1-1-4 0; }
+#PROBLEMCatenaryTrueC-1-1-4 > li::marker { content: ""counter(PROBLEMCatenaryTrueC-1-1-4,lower-roman)""; }
+#PROBLEMCatenaryTrueC-1-1-4 > li { counter-increment: PROBLEMCatenaryTrueC-1-1-4; }
+#PROBLEMBacteriaIVP1D-1-1-3 { counter-set: PROBLEMBacteriaIVP1D-1-1-3 0; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li::marker { content: ""counter(PROBLEMBacteriaIVP1D-1-1-3,lower-roman)""; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li { counter-increment: PROBLEMBacteriaIVP1D-1-1-3; }
+#SECTIONNatLog-4-1-1 { counter-set: SECTIONNatLog-4-1-1 0; }
+#SECTIONNatLog-4-1-1 > li::marker { content: ""counter(SECTIONNatLog-4-1-1,lower-roman)""; }
+#SECTIONNatLog-4-1-1 > li { counter-increment: SECTIONNatLog-4-1-1; }
+#SECTIONNatLog-9-1-1 { counter-set: SECTIONNatLog-9-1-1 0; }
+#SECTIONNatLog-9-1-1 > li::marker { content: ""counter(SECTIONNatLog-9-1-1,lower-roman)""; }
+#SECTIONNatLog-9-1-1 > li { counter-increment: SECTIONNatLog-9-1-1; }
+#SECTIONNatLog-11-1-1 { counter-set: SECTIONNatLog-11-1-1 0; }
+#SECTIONNatLog-11-1-1 > li::marker { content: ""counter(SECTIONNatLog-11-1-1,lower-roman)""; }
+#SECTIONNatLog-11-1-1 > li { counter-increment: SECTIONNatLog-11-1-1; }
+#SECTIONNatLog-12-1-1-1-4 { counter-set: SECTIONNatLog-12-1-1-1-4 0; }
+#SECTIONNatLog-12-1-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-1-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-1-1-1-4 > li { counter-increment: SECTIONNatLog-12-1-1-1-4; }
+#SECTIONNatLog-12-2-1-1-4 { counter-set: SECTIONNatLog-12-2-1-1-4 0; }
+#SECTIONNatLog-12-2-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-2-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-2-1-1-4 > li { counter-increment: SECTIONNatLog-12-2-1-1-4; }
+#SUBSECTIONradioactive-decay-9-1 { counter-set: SUBSECTIONradioactive-decay-9-1 0; }
+#SUBSECTIONradioactive-decay-9-1 > li::marker { content: ""counter(SUBSECTIONradioactive-decay-9-1,lower-roman)""; }
+#SUBSECTIONradioactive-decay-9-1 > li { counter-increment: SUBSECTIONradioactive-decay-9-1; }
+#SECTIONDerivNatLog-4-1-3 { counter-set: SECTIONDerivNatLog-4-1-3 0; }
+#SECTIONDerivNatLog-4-1-3 > li::marker { content: ""counter(SECTIONDerivNatLog-4-1-3,lower-roman)""; }
+#SECTIONDerivNatLog-4-1-3 > li { counter-increment: SECTIONDerivNatLog-4-1-3; }
+#PARAGRAPHSGenExp-16-1-3 { counter-set: PARAGRAPHSGenExp-16-1-3 0; }
+#PARAGRAPHSGenExp-16-1-3 > li::marker { content: ""counter(PARAGRAPHSGenExp-16-1-3,lower-roman)""; }
+#PARAGRAPHSGenExp-16-1-3 > li { counter-increment: PARAGRAPHSGenExp-16-1-3; }
+#PARAGRAPHSGenLog-7-1-3 { counter-set: PARAGRAPHSGenLog-7-1-3 0; }
+#PARAGRAPHSGenLog-7-1-3 > li::marker { content: ""counter(PARAGRAPHSGenLog-7-1-3,lower-roman)""; }
+#PARAGRAPHSGenLog-7-1-3 > li { counter-increment: PARAGRAPHSGenLog-7-1-3; }
+#DIGRESSIONBriggsAndNapier-7-1-1 { counter-set: DIGRESSIONBriggsAndNapier-7-1-1 0; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-7-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-7-1-1; }
+#DIGRESSIONBriggsAndNapier-11-1-1 { counter-set: DIGRESSIONBriggsAndNapier-11-1-1 0; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-11-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-11-1-1; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 { counter-set: DIGRESSIONBriggsAndNapier-12-1-1-1 0; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-12-1-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-12-1-1-1; }
+#DRILLIntuitiveSquareOnCircle-1-4 { counter-set: DRILLIntuitiveSquareOnCircle-1-4 0; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li::marker { content: ""counter(DRILLIntuitiveSquareOnCircle-1-4,lower-roman)""; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li { counter-increment: DRILLIntuitiveSquareOnCircle-1-4; }
+#DRILLExtremalSquareCircle-1-1 { counter-set: DRILLExtremalSquareCircle-1-1 0; }
+#DRILLExtremalSquareCircle-1-1 > li::marker { content: ""counter(DRILLExtremalSquareCircle-1-1,lower-roman)""; }
+#DRILLExtremalSquareCircle-1-1 > li { counter-increment: DRILLExtremalSquareCircle-1-1; }
+#PROBLEMMaxOrth1-3-1-3-8 { counter-set: PROBLEMMaxOrth1-3-1-3-8 0; }
+#PROBLEMMaxOrth1-3-1-3-8 > li::marker { content: ""counter(PROBLEMMaxOrth1-3-1-3-8,decimal)"."; }
+#PROBLEMMaxOrth1-3-1-3-8 > li { counter-increment: PROBLEMMaxOrth1-3-1-3-8; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-1-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-1-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-1-2-1; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-2-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-2-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-2-2-1; }
+#SECTIONfive-simil-probl-23-1-3 { counter-set: SECTIONfive-simil-probl-23-1-3 0; }
+#SECTIONfive-simil-probl-23-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-23-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-23-1-3 > li { counter-increment: SECTIONfive-simil-probl-23-1-3; }
+#SECTIONfive-simil-probl-24-1-3 { counter-set: SECTIONfive-simil-probl-24-1-3 0; }
+#SECTIONfive-simil-probl-24-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-24-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-24-1-3 > li { counter-increment: SECTIONfive-simil-probl-24-1-3; }
+#SECTIONrefl-refr-rainb-2-1-2 { counter-set: SECTIONrefl-refr-rainb-2-1-2 0; }
+#SECTIONrefl-refr-rainb-2-1-2 > li::marker { content: ""counter(SECTIONrefl-refr-rainb-2-1-2,decimal)"."; }
+#SECTIONrefl-refr-rainb-2-1-2 > li { counter-increment: SECTIONrefl-refr-rainb-2-1-2; }
+#SECTIONGlobalVsLocalExtrema-18-2 { counter-set: SECTIONGlobalVsLocalExtrema-18-2 0; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li::marker { content: ""counter(SECTIONGlobalVsLocalExtrema-18-2,decimal)"."; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li { counter-increment: SECTIONGlobalVsLocalExtrema-18-2; }
+#DIGRESSIONIntervalNotation-6-1-1 { counter-set: DIGRESSIONIntervalNotation-6-1-1 0; }
+#DIGRESSIONIntervalNotation-6-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-6-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-6-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-6-1-1; }
+#DIGRESSIONIntervalNotation-7-1-1 { counter-set: DIGRESSIONIntervalNotation-7-1-1 0; }
+#DIGRESSIONIntervalNotation-7-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-7-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-7-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-7-1-1; }
+#THEOREMFDT-lines-2-1 { counter-set: THEOREMFDT-lines-2-1 0; }
+#THEOREMFDT-lines-2-1 > li::marker { content: ""counter(THEOREMFDT-lines-2-1,decimal)"."; }
+#THEOREMFDT-lines-2-1 > li { counter-increment: THEOREMFDT-lines-2-1; }
+#THEOREMFDT-3-3 { counter-set: THEOREMFDT-3-3 0; }
+#THEOREMFDT-3-3 > li::marker { content: ""counter(THEOREMFDT-3-3,decimal)"."; }
+#THEOREMFDT-3-3 > li { counter-increment: THEOREMFDT-3-3; }
+#LEMMAAdjRoots-1-2 { counter-set: LEMMAAdjRoots-1-2 0; }
+#LEMMAAdjRoots-1-2 > li::marker { content: ""counter(LEMMAAdjRoots-1-2,decimal)"."; }
+#LEMMAAdjRoots-1-2 > li { counter-increment: LEMMAAdjRoots-1-2; }
+#PROBLEMFDT1A-1-2 { counter-set: PROBLEMFDT1A-1-2 0; }
+#PROBLEMFDT1A-1-2 > li::marker { content: ""counter(PROBLEMFDT1A-1-2,lower-roman)""; }
+#PROBLEMFDT1A-1-2 > li { counter-increment: PROBLEMFDT1A-1-2; }
+#DRILLFDT2-1-1 { counter-set: DRILLFDT2-1-1 0; }
+#DRILLFDT2-1-1 > li::marker { content: ""counter(DRILLFDT2-1-1,lower-roman)""; }
+#DRILLFDT2-1-1 > li { counter-increment: DRILLFDT2-1-1; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 { counter-set: DEFINITIONOptimalTransitionPoints-4-1-3 0; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li::marker { content: ""counter(DEFINITIONOptimalTransitionPoints-4-1-3,decimal)"."; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li { counter-increment: DEFINITIONOptimalTransitionPoints-4-1-3; }
+#DRILLFDT3-2-2 { counter-set: DRILLFDT3-2-2 0; }
+#DRILLFDT3-2-2 > li::marker { content: ""counter(DRILLFDT3-2-2,lower-roman)""; }
+#DRILLFDT3-2-2 > li { counter-increment: DRILLFDT3-2-2; }
+#SUBSECTIONoptim-clos-interv-5-1 { counter-set: SUBSECTIONoptim-clos-interv-5-1 0; }
+#SUBSECTIONoptim-clos-interv-5-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-5-1,decimal)"."; }
+#SUBSECTIONoptim-clos-interv-5-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-5-1; }
+#THEOREMmax-min-3-2 { counter-set: THEOREMmax-min-3-2 0; }
+#THEOREMmax-min-3-2 > li::marker { content: ""counter(THEOREMmax-min-3-2,decimal)"."; }
+#THEOREMmax-min-3-2 > li { counter-increment: THEOREMmax-min-3-2; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-2-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-2-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-2-1-1-2; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-3-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-3-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-3-1-1-2; }
+#SUBSECTIONoptim-clos-interv-14-1-1 { counter-set: SUBSECTIONoptim-clos-interv-14-1-1 0; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-14-1-1,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-14-1-1; }
+#DRILLO1O2-2-1-1-2 { counter-set: DRILLO1O2-2-1-1-2 0; }
+#DRILLO1O2-2-1-1-2 > li::marker { content: ""counter(DRILLO1O2-2-1-1-2,lower-roman)""; }
+#DRILLO1O2-2-1-1-2 > li { counter-increment: DRILLO1O2-2-1-1-2; }
+#THEOREMwhat-second-deriv-3-3 { counter-set: THEOREMwhat-second-deriv-3-3 0; }
+#THEOREMwhat-second-deriv-3-3 > li::marker { content: ""counter(THEOREMwhat-second-deriv-3-3,lower-alpha)""; }
+#THEOREMwhat-second-deriv-3-3 > li { counter-increment: THEOREMwhat-second-deriv-3-3; }
+#THEOREMSecondDerivativeTest-3-4 { counter-set: THEOREMSecondDerivativeTest-3-4 0; }
+#THEOREMSecondDerivativeTest-3-4 > li::marker { content: ""counter(THEOREMSecondDerivativeTest-3-4,lower-alpha)""; }
+#THEOREMSecondDerivativeTest-3-4 > li { counter-increment: THEOREMSecondDerivativeTest-3-4; }
+#DRILLSecondDerivativeTest-1-1 { counter-set: DRILLSecondDerivativeTest-1-1 0; }
+#DRILLSecondDerivativeTest-1-1 > li::marker { content: ""counter(DRILLSecondDerivativeTest-1-1,lower-roman)""; }
+#DRILLSecondDerivativeTest-1-1 > li { counter-increment: DRILLSecondDerivativeTest-1-1; }
+#SUBSECTIONconc-second-deriv-44-1-1 { counter-set: SUBSECTIONconc-second-deriv-44-1-1 0; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-44-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-44-1-1; }
+#SUBSECTIONconc-second-deriv-45-1-1 { counter-set: SUBSECTIONconc-second-deriv-45-1-1 0; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-45-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-45-1-1; }
+#SUBSECTIONOptStrat-3-1 { counter-set: SUBSECTIONOptStrat-3-1 0; }
+#SUBSECTIONOptStrat-3-1 > li::marker { content: ""counter(SUBSECTIONOptStrat-3-1,decimal)"."; }
+#SUBSECTIONOptStrat-3-1 > li { counter-increment: SUBSECTIONOptStrat-3-1; }
+#EXAMPLERectangleFixedPerimeter-6-1 { counter-set: EXAMPLERectangleFixedPerimeter-6-1 0; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li::marker { content: ""counter(EXAMPLERectangleFixedPerimeter-6-1,decimal)"."; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li { counter-increment: EXAMPLERectangleFixedPerimeter-6-1; }
+#PROBLEMMaxPerimeter-5-1-1-2 { counter-set: PROBLEMMaxPerimeter-5-1-1-2 0; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li::marker { content: ""counter(PROBLEMMaxPerimeter-5-1-1-2,lower-roman)""; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li { counter-increment: PROBLEMMaxPerimeter-5-1-1-2; }
+#SUBSUBSECTIONFirstSolution-12-1-1 { counter-set: SUBSUBSECTIONFirstSolution-12-1-1 0; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li::marker { content: ""counter(SUBSUBSECTIONFirstSolution-12-1-1,lower-roman)""; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li { counter-increment: SUBSUBSECTIONFirstSolution-12-1-1; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-2-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-2-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-2-1-1-1; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-3-1-1-1; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-4-1-1-1; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-3-1-1-1; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-4-1-1-1; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 { counter-set: SUBSECTIONVarOptProbs-4-2-1-2-1 0; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-4-2-1-2-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li { counter-increment: SUBSECTIONVarOptProbs-4-2-1-2-1; }
+#PROBLEMWitchTri1-3-1-1-7 { counter-set: PROBLEMWitchTri1-3-1-1-7 0; }
+#PROBLEMWitchTri1-3-1-1-7 > li::marker { content: ""counter(PROBLEMWitchTri1-3-1-1-7,lower-roman)""; }
+#PROBLEMWitchTri1-3-1-1-7 > li { counter-increment: PROBLEMWitchTri1-3-1-1-7; }
+#SUBSECTIONVarOptProbs-14-3-1-3 { counter-set: SUBSECTIONVarOptProbs-14-3-1-3 0; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-3-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-3-1-3; }
+#SUBSECTIONVarOptProbs-14-4-1-3 { counter-set: SUBSECTIONVarOptProbs-14-4-1-3 0; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-4-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-4-1-3; }
+#SECTIONgraph-with-form-19-2 { counter-set: SECTIONgraph-with-form-19-2 0; }
+#SECTIONgraph-with-form-19-2 > li::marker { content: ""counter(SECTIONgraph-with-form-19-2,decimal)"."; }
+#SECTIONgraph-with-form-19-2 > li { counter-increment: SECTIONgraph-with-form-19-2; }
+#SECTIONgraph-with-form-23-1-1 { counter-set: SECTIONgraph-with-form-23-1-1 0; }
+#SECTIONgraph-with-form-23-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-23-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-23-1-1 > li { counter-increment: SECTIONgraph-with-form-23-1-1; }
+#SECTIONgraph-with-form-30-1-1 { counter-set: SECTIONgraph-with-form-30-1-1 0; }
+#SECTIONgraph-with-form-30-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-30-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-30-1-1 > li { counter-increment: SECTIONgraph-with-form-30-1-1; }
+#SUBSECTIONModelingTrout-17-2 { counter-set: SUBSECTIONModelingTrout-17-2 0; }
+#SUBSECTIONModelingTrout-17-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-17-2,decimal)"."; }
+#SUBSECTIONModelingTrout-17-2 > li { counter-increment: SUBSECTIONModelingTrout-17-2; }
+#SUBSECTIONModelingTrout-23-1-2 { counter-set: SUBSECTIONModelingTrout-23-1-2 0; }
+#SUBSECTIONModelingTrout-23-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-23-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-23-1-2 > li { counter-increment: SUBSECTIONModelingTrout-23-1-2; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 { counter-set: SUBSECTIONModelingTrout-38-2-1-1-2 0; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-38-2-1-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li { counter-increment: SUBSECTIONModelingTrout-38-2-1-1-2; }
+#PROBLEMMinViablePop-6-1-1-3 { counter-set: PROBLEMMinViablePop-6-1-1-3 0; }
+#PROBLEMMinViablePop-6-1-1-3 > li::marker { content: ""counter(PROBLEMMinViablePop-6-1-1-3,lower-roman)""; }
+#PROBLEMMinViablePop-6-1-1-3 > li { counter-increment: PROBLEMMinViablePop-6-1-1-3; }
+#SECTIONlittle-healthy-comp-21-1-1 { counter-set: SECTIONlittle-healthy-comp-21-1-1 0; }
+#SECTIONlittle-healthy-comp-21-1-1 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-21-1-1,lower-roman)""; }
+#SECTIONlittle-healthy-comp-21-1-1 > li { counter-increment: SECTIONlittle-healthy-comp-21-1-1; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 { counter-set: SECTIONlittle-healthy-comp-28-3-1-1-3 0; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-28-3-1-1-3,lower-roman)""; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li { counter-increment: SECTIONlittle-healthy-comp-28-3-1-1-3; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 { counter-set: DEFINITIONLimitAtInfinity-Intuitive-3-1-1 0; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li::marker { content: ""counter(DEFINITIONLimitAtInfinity-Intuitive-3-1-1,decimal)"."; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li { counter-increment: DEFINITIONLimitAtInfinity-Intuitive-3-1-1; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 { counter-set: DEFINITIONHorizontalAsymptotes-3-1-1 0; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li::marker { content: ""counter(DEFINITIONHorizontalAsymptotes-3-1-1,decimal)"."; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li { counter-increment: DEFINITIONHorizontalAsymptotes-3-1-1; }
+#DIGRESSIONLimitNotation-47-1-7 { counter-set: DIGRESSIONLimitNotation-47-1-7 0; }
+#DIGRESSIONLimitNotation-47-1-7 > li::marker { content: ""counter(DIGRESSIONLimitNotation-47-1-7,lower-roman)""; }
+#DIGRESSIONLimitNotation-47-1-7 > li { counter-increment: DIGRESSIONLimitNotation-47-1-7; }
+#THEOREMInfSqueeze-3-1 { counter-set: THEOREMInfSqueeze-3-1 0; }
+#THEOREMInfSqueeze-3-1 > li::marker { content: ""counter(THEOREMInfSqueeze-3-1,decimal)""; }
+#THEOREMInfSqueeze-3-1 > li { counter-increment: THEOREMInfSqueeze-3-1; }
+#SECTIONvertical-asymptotes-14-1-1 { counter-set: SECTIONvertical-asymptotes-14-1-1 0; }
+#SECTIONvertical-asymptotes-14-1-1 > li::marker { content: ""counter(SECTIONvertical-asymptotes-14-1-1,lower-roman)""; }
+#SECTIONvertical-asymptotes-14-1-1 > li { counter-increment: SECTIONvertical-asymptotes-14-1-1; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 { counter-set: PROBLEMFoliumOfDescartes2-6-1-1-1 0; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li::marker { content: ""counter(PROBLEMFoliumOfDescartes2-6-1-1-1,lower-roman)""; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li { counter-increment: PROBLEMFoliumOfDescartes2-6-1-1-1; }
+#SUBSECTIONLHopitalsRule-34-1-1 { counter-set: SUBSECTIONLHopitalsRule-34-1-1 0; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-34-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-34-1-1; }
+#SUBSECTIONLHopitalsRule-38-1-1 { counter-set: SUBSECTIONLHopitalsRule-38-1-1 0; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-38-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-38-1-1; }
+#THEOREMLHRule1-3-1 { counter-set: THEOREMLHRule1-3-1 0; }
+#THEOREMLHRule1-3-1 > li::marker { content: ""counter(THEOREMLHRule1-3-1,decimal)""; }
+#THEOREMLHRule1-3-1 > li { counter-increment: THEOREMLHRule1-3-1; }
+#SUBSECTIONLHopitalsRule-62-1-1 { counter-set: SUBSECTIONLHopitalsRule-62-1-1 0; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-62-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-62-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 { counter-set: SUBSECTIONlhop-rule-horiz-17-2-1-1-1 0; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-2-1-1-1,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-2-1-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 { counter-set: SUBSECTIONlhop-rule-horiz-17-5-1-1-2 0; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-5-1-1-2,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-5-1-1-2; }
+#SUBSECTIONlhop-rule-horiz-26-1 { counter-set: SUBSECTIONlhop-rule-horiz-26-1 0; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-26-1,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-26-1; }
+#SUBSECTIONlhop-rule-horiz-28-4 { counter-set: SUBSECTIONlhop-rule-horiz-28-4 0; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-28-4,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li { counter-increment: SUBSECTIONlhop-rule-horiz-28-4; }
+#SECTIONsecants-tangents-18-1 { counter-set: SECTIONsecants-tangents-18-1 0; }
+#SECTIONsecants-tangents-18-1 > li::marker { content: ""counter(SECTIONsecants-tangents-18-1,decimal)"."; }
+#SECTIONsecants-tangents-18-1 > li { counter-increment: SECTIONsecants-tangents-18-1; }
+#PROBLEMBounds-1-1-4 { counter-set: PROBLEMBounds-1-1-4 0; }
+#PROBLEMBounds-1-1-4 > li::marker { content: ""counter(PROBLEMBounds-1-1-4,lower-roman)""; }
+#PROBLEMBounds-1-1-4 > li { counter-increment: PROBLEMBounds-1-1-4; }
+#SUBSECTIONlimit-comp-cont-5-3 { counter-set: SUBSECTIONlimit-comp-cont-5-3 0; }
+#SUBSECTIONlimit-comp-cont-5-3 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-5-3,decimal)"."; }
+#SUBSECTIONlimit-comp-cont-5-3 > li { counter-increment: SUBSECTIONlimit-comp-cont-5-3; }
+#SUBSECTIONlimit-comp-cont-23-1-1 { counter-set: SUBSECTIONlimit-comp-cont-23-1-1 0; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-23-1-1,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li { counter-increment: SUBSECTIONlimit-comp-cont-23-1-1; }
+#SUBSECTIONlimit-comp-cont-24-1-2 { counter-set: SUBSECTIONlimit-comp-cont-24-1-2 0; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-24-1-2,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li { counter-increment: SUBSECTIONlimit-comp-cont-24-1-2; }
+#PROBLEMTopSineFuncB-1-1-6 { counter-set: PROBLEMTopSineFuncB-1-1-6 0; }
+#PROBLEMTopSineFuncB-1-1-6 > li::marker { content: ""counter(PROBLEMTopSineFuncB-1-1-6,lower-roman)""; }
+#PROBLEMTopSineFuncB-1-1-6 > li { counter-increment: PROBLEMTopSineFuncB-1-1-6; }
+#PROBLEMQRRigorA-1-1-2 { counter-set: PROBLEMQRRigorA-1-1-2 0; }
+#PROBLEMQRRigorA-1-1-2 > li::marker { content: ""counter(PROBLEMQRRigorA-1-1-2,lower-roman)""; }
+#PROBLEMQRRigorA-1-1-2 > li { counter-increment: PROBLEMQRRigorA-1-1-2; }
+#DRILLCircularReasoning-1-1-3 { counter-set: DRILLCircularReasoning-1-1-3 0; }
+#DRILLCircularReasoning-1-1-3 > li::marker { content: ""counter(DRILLCircularReasoning-1-1-3,lower-roman)""; }
+#DRILLCircularReasoning-1-1-3 > li { counter-increment: DRILLCircularReasoning-1-1-3; }
+#DEFINITIONFunctionInverse-3-1-8 { counter-set: DEFINITIONFunctionInverse-3-1-8 0; }
+#DEFINITIONFunctionInverse-3-1-8 > li::marker { content: ""counter(DEFINITIONFunctionInverse-3-1-8,decimal)"."; }
+#DEFINITIONFunctionInverse-3-1-8 > li { counter-increment: DEFINITIONFunctionInverse-3-1-8; }
+#SECTIONinverse-functions-21-1 { counter-set: SECTIONinverse-functions-21-1 0; }
+#SECTIONinverse-functions-21-1 > li::marker { content: ""counter(SECTIONinverse-functions-21-1,decimal)"."; }
+#SECTIONinverse-functions-21-1 > li { counter-increment: SECTIONinverse-functions-21-1; }
+#SECTIONinverse-functions-23-2 { counter-set: SECTIONinverse-functions-23-2 0; }
+#SECTIONinverse-functions-23-2 > li::marker { content: ""counter(SECTIONinverse-functions-23-2,decimal)"."; }
+#SECTIONinverse-functions-23-2 > li { counter-increment: SECTIONinverse-functions-23-2; }
+#THEOREMDerivInvFunc-3-1 { counter-set: THEOREMDerivInvFunc-3-1 0; }
+#THEOREMDerivInvFunc-3-1 > li::marker { content: ""counter(THEOREMDerivInvFunc-3-1,decimal)"."; }
+#THEOREMDerivInvFunc-3-1 > li { counter-increment: THEOREMDerivInvFunc-3-1; }
+#DRILLRollesLemma1-2 { counter-set: DRILLRollesLemma1-2 0; }
+#DRILLRollesLemma1-2 > li::marker { content: ""counter(DRILLRollesLemma1-2,lower-roman)""; }
+#DRILLRollesLemma1-2 > li { counter-increment: DRILLRollesLemma1-2; }
+#THEOREMFDTproved-3-8 { counter-set: THEOREMFDTproved-3-8 0; }
+#THEOREMFDTproved-3-8 > li::marker { content: ""counter(THEOREMFDTproved-3-8,decimal)"."; }
+#THEOREMFDTproved-3-8 > li { counter-increment: THEOREMFDTproved-3-8; }
+#PROBLEMMVTSpecialCase-1-1-2 { counter-set: PROBLEMMVTSpecialCase-1-1-2 0; }
+#PROBLEMMVTSpecialCase-1-1-2 > li::marker { content: ""counter(PROBLEMMVTSpecialCase-1-1-2,decimal)"."; }
+#PROBLEMMVTSpecialCase-1-1-2 > li { counter-increment: PROBLEMMVTSpecialCase-1-1-2; }
+#PROBLEMAbsValDerivA-1-1-5 { counter-set: PROBLEMAbsValDerivA-1-1-5 0; }
+#PROBLEMAbsValDerivA-1-1-5 > li::marker { content: ""counter(PROBLEMAbsValDerivA-1-1-5,decimal)"."; }
+#PROBLEMAbsValDerivA-1-1-5 > li { counter-increment: PROBLEMAbsValDerivA-1-1-5; }
+#DEFINITIONone-sided-deriv-3-1-3 { counter-set: DEFINITIONone-sided-deriv-3-1-3 0; }
+#DEFINITIONone-sided-deriv-3-1-3 > li::marker { content: ""counter(DEFINITIONone-sided-deriv-3-1-3,decimal)"."; }
+#DEFINITIONone-sided-deriv-3-1-3 > li { counter-increment: DEFINITIONone-sided-deriv-3-1-3; }
+#PROBLEMHeaviTranslate-2-1-1-3 { counter-set: PROBLEMHeaviTranslate-2-1-1-3 0; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li::marker { content: ""counter(PROBLEMHeaviTranslate-2-1-1-3,lower-roman)""; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li { counter-increment: PROBLEMHeaviTranslate-2-1-1-3; }
+#PROBLEMHeaviTranslate-3-1-1-4 { counter-set: PROBLEMHeaviTranslate-3-1-1-4 0; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li::marker { content: ""counter(PROBLEMHeaviTranslate-3-1-1-4,lower-roman)""; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li { counter-increment: PROBLEMHeaviTranslate-3-1-1-4; }
+#SECTIONone-sided-deriv-11-3 { counter-set: SECTIONone-sided-deriv-11-3 0; }
+#SECTIONone-sided-deriv-11-3 > li::marker { content: ""counter(SECTIONone-sided-deriv-11-3,decimal)"."; }
+#SECTIONone-sided-deriv-11-3 > li { counter-increment: SECTIONone-sided-deriv-11-3; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 { counter-set: SUBSECTIONVerticalAsymptotes-24-4-2 0; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li::marker { content: ""counter(SUBSECTIONVerticalAsymptotes-24-4-2,decimal)""; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li { counter-increment: SUBSECTIONVerticalAsymptotes-24-4-2; }
+#PROBLEMAntiDiffPractice-1-2 { counter-set: PROBLEMAntiDiffPractice-1-2 0; }
+#PROBLEMAntiDiffPractice-1-2 > li::marker { content: ""counter(PROBLEMAntiDiffPractice-1-2,lower-roman)""; }
+#PROBLEMAntiDiffPractice-1-2 > li { counter-increment: PROBLEMAntiDiffPractice-1-2; }
+#DRILLIntSimpSub-1-4 { counter-set: DRILLIntSimpSub-1-4 0; }
+#DRILLIntSimpSub-1-4 > li::marker { content: ""counter(DRILLIntSimpSub-1-4,lower-roman)""; }
+#DRILLIntSimpSub-1-4 > li { counter-increment: DRILLIntSimpSub-1-4; }
+#SECTIONKnownIntegrals-12-1-2 { counter-set: SECTIONKnownIntegrals-12-1-2 0; }
+#SECTIONKnownIntegrals-12-1-2 > li::marker { content: ""counter(SECTIONKnownIntegrals-12-1-2,lower-roman)""; }
+#SECTIONKnownIntegrals-12-1-2 > li { counter-increment: SECTIONKnownIntegrals-12-1-2; }
+#DefIntProp-18-1-2 { counter-set: DefIntProp-18-1-2 0; }
+#DefIntProp-18-1-2 > li::marker { content: ""counter(DefIntProp-18-1-2,lower-roman)""; }
+#DefIntProp-18-1-2 > li { counter-increment: DefIntProp-18-1-2; }
+#PROBLEMPS1-1-1-4 { counter-set: PROBLEMPS1-1-1-4 0; }
+#PROBLEMPS1-1-1-4 > li::marker { content: ""counter(PROBLEMPS1-1-1-4,lower-roman)""; }
+#PROBLEMPS1-1-1-4 > li { counter-increment: PROBLEMPS1-1-1-4; }
+#SECTIONProbs15-20-2-1-1-2 { counter-set: SECTIONProbs15-20-2-1-1-2 0; }
+#SECTIONProbs15-20-2-1-1-2 > li::marker { content: ""counter(SECTIONProbs15-20-2-1-1-2,lower-roman)""; }
+#SECTIONProbs15-20-2-1-1-2 > li { counter-increment: SECTIONProbs15-20-2-1-1-2; }
+#SECTIONProbs15-20-3-1-1-1 { counter-set: SECTIONProbs15-20-3-1-1-1 0; }
+#SECTIONProbs15-20-3-1-1-1 > li::marker { content: ""counter(SECTIONProbs15-20-3-1-1-1,lower-roman)""; }
+#SECTIONProbs15-20-3-1-1-1 > li { counter-increment: SECTIONProbs15-20-3-1-1-1; }
+</style>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -228,9 +839,9 @@ window.MathJax = {
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
 </ul>
 </li>
@@ -735,7 +1346,7 @@ copies}} = x_n-x_0 =x\text{.}\tag{17.1}
 <aside class="aside aside-like" id="SUBSECTIONIntegrationAsASum-7"><h4 class="heading"><span class="title">Historical Background.</span></h4>
 <div class="para" id="SUBSECTIONIntegrationAsASum-7-2">Leibniz chose the letter “S” because it is the first letter of Latin word <i class="foreign">summa</i>, from which we get the English word “sum.”</div>
 <div class="para" id="SUBSECTIONIntegrationAsASum-7-3">To a modern eye the integral sign looks like a stylized letter “S,” and that is often how it is described. But it isn’t stylized at all. In the seventeenth century a printed letter “S” typically had one of several forms, depending on where it appeared in a word.  One of these extended above and below the line of text, much as the letter “f” extends above and the letter “j” extends below the line of text.  Leibniz adopted this doubly extended form of “S” as his summation sign. So the integral symbol isn’t a stylized “S” at all.  It is an archaic letter “S”.</div></aside><div class="para logical" id="SUBSECTIONIntegrationAsASum-8">
-<div class="para"> We assume, with Leibniz, that <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONFinDiffSum.html" title="Equation 17.1">equation (17.1)</a> remains true when the finite differences (<span class="process-math">\(\Delta{x}\)</span>) are replaced with infinitesimal differences (<span class="process-math">\(\dx{x}{}\)</span>):</div>
+<div class="para"> We assume, with Leibniz, that <a href="SECTIONThinkingAboutIntegration.html#EQUATIONFinDiffSum" class="xref" data-knowl="./knowl/xref/EQUATIONFinDiffSum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.1">equation (17.1)</a> remains true when the finite differences (<span class="process-math">\(\Delta{x}\)</span>) are replaced with infinitesimal differences (<span class="process-math">\(\dx{x}{}\)</span>):</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONFinDiffSum.html" id="EQUATIONDefInt2">
 \begin{equation}
 \int{\dx{x} }=x_n-x_0=x\text{.}\tag{17.2}
@@ -745,8 +1356,10 @@ copies}} = x_n-x_0 =x\text{.}\tag{17.1}
 </div>
 <article class="remark remark-like" id="SUBSECTIONIntegrationAsASum-9"><h4 class="heading">
 <span class="type">Comment</span><span class="space"> </span><span class="codenumber">17.1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finite vs. Infinitesimal Summation.</span>
-</h4> <div class="para" id="SUBSECTIONIntegrationAsASum-9-2">For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used “<span class="process-math">\(\dx{x}\)</span>”  and “<span class="process-math">\(\Delta{x} \)</span>” more or less interchangebly.</div> <div class="para logical" id="SUBSECTIONIntegrationAsASum-9-3">
-<div class="para">But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since <span class="process-math">\(\Delta \)</span> comes from Greek and <span class="process-math">\(\int \)</span> comes from Latin,  we extend this convention to finite summation by writing <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONFinDiffSum.html" title="Equation 17.1">equation (17.1)</a> as</div>
+</h4>
+<div class="para" id="SUBSECTIONIntegrationAsASum-9-2">For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used “<span class="process-math">\(\dx{x}\)</span>”  and “<span class="process-math">\(\Delta{x} \)</span>” more or less interchangebly.</div>
+<div class="para logical" id="SUBSECTIONIntegrationAsASum-9-3">
+<div class="para">But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since <span class="process-math">\(\Delta \)</span> comes from Greek and <span class="process-math">\(\int \)</span> comes from Latin,  we extend this convention to finite summation by writing <a href="SECTIONThinkingAboutIntegration.html#EQUATIONFinDiffSum" class="xref" data-knowl="./knowl/xref/EQUATIONFinDiffSum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.1">equation (17.1)</a> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONFinDiffSum.html">
 \begin{equation*}
 \sum{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
@@ -755,17 +1368,27 @@ copies}} = x_n-x_0 =x
 </div>
 <div class="para">because “<span class="process-math">\(\Sigma \)</span>” is the Greek version of the Latin capital letter “S”.</div>
 </div></article><div class="para" id="SUBSECTIONIntegrationAsASum-10">
-<a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" title="Equation 17.2">Equation (17.2)</a> is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from <span class="process-math">\(x_0\)</span> to <span class="process-math">\(x_n\)</span> we will get its length, <span class="process-math">\(x_n-x_0=x\text{.}\)</span>
+<a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.2">Equation (17.2)</a> is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from <span class="process-math">\(x_0\)</span> to <span class="process-math">\(x_n\)</span> we will get its length, <span class="process-math">\(x_n-x_0=x\text{.}\)</span>
 </div>
-<div class="para" id="SUBSECTIONIntegrationAsASum-11"> This is surely not surprising to you and you are probably wondering why we’ve taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" title="Equation 17.2">equation (17.2)</a> is a very simple form of what is known as the Fundamental Theorem of Calculus which we will need to become very comfortable with. Later, when things get complex, it will be helpful to refer back to <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" title="Equation 17.2">equation (17.2)</a> and remind ourselves that, at its heart, integration is about adding up differentials.</div>
-<section class="paragraphs" id="PARAGRAPHCoordinatesAndVariables"><h4 class="heading"><span class="title">DIGRESSION: Coordinates and  Variable Names.</span></h4> <div class="para" id="PARAGRAPHCoordinatesAndVariables-2">   In <a href="" class="xref" data-knowl="./knowl/xref/FIGUREPartitionedInterval.html" title="Figure 17.1.1.1">Figure 17.1.1.1</a> we were rather careless about the distinction between the label of a point, e.g.  <span class="process-math">\(P\)</span> or <span class="process-math">\(P_0\text{,}\)</span> and its coordinate, e.g. <span class="process-math">\(x_1\)</span> or <span class="process-math">\(x_2\text{.}\)</span> A natural question would be “Aren’t they the same thing?”</div> <div class="para" id="PARAGRAPHCoordinatesAndVariables-3">No, actually they aren’t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it’s (horizontal) distance from the origin.  Consider the following diagram.   </div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VarX2.png" class="contained"></div> <div class="para" id="PARAGRAPHCoordinatesAndVariables-5">The labels (names) of the two points are <span class="process-math">\(P_0\)</span> and <span class="process-math">\(P\text{.}\)</span> Since <span class="process-math">\(x_0\)</span> measures the distance between zero and <span class="process-math">\(P_0\)</span> it is by definition the coordinate of the point labeled <span class="process-math">\(P_0\text{.}\)</span>  Similarly <span class="process-math">\(x_n\)</span> is the coordinate of <span class="process-math">\(P\text{.}\)</span>
-</div> <aside class="aside aside-like" id="PARAGRAPHCoordinatesAndVariables-6"><h5 class="heading"><span class="title">Comment.</span></h5>
-<div class="para" id="PARAGRAPHCoordinatesAndVariables-6-2">If a vertical axis were present zero would be the second coordinate of both points. Do you see why?</div></aside> <div class="para" id="PARAGRAPHCoordinatesAndVariables-7">On the other hand since <span class="process-math">\(x\)</span> — the distance between <span class="process-math">\(P_0\)</span> and <span class="process-math">\(P\)</span> — is not measured from the origin it is neither a coordinate nor the label of a point.            It is the length of the line segment <span class="process-math">\(\overline{P_0P}\text{.}\)</span> If we partition this line segment and compute <span class="process-math">\(\int\dx{x} \)</span> we get <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" title="Equation 17.2">equation (17.2)</a>.</div> <div class="para" id="PARAGRAPHCoordinatesAndVariables-8">Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VarX3.png" class="contained"></div> <div class="para" id="PARAGRAPHCoordinatesAndVariables-10">Strictly speaking this is an abuse of our notation and it can cause confusion because it isn’t always clear whether <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x_n\)</span> refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.</div> <div class="para" id="PARAGRAPHCoordinatesAndVariables-11"><em class="alert">END OF DIGRESSION</em></div></section></section><section class="subsection" id="SUBSECTIONIntAsAntiDiff"><h3 class="heading hide-type">
+<div class="para" id="SUBSECTIONIntegrationAsASum-11"> This is surely not surprising to you and you are probably wondering why we’ve taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.2">equation (17.2)</a> is a very simple form of what is known as the Fundamental Theorem of Calculus which we will need to become very comfortable with. Later, when things get complex, it will be helpful to refer back to <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.2">equation (17.2)</a> and remind ourselves that, at its heart, integration is about adding up differentials.</div>
+<section class="paragraphs" id="PARAGRAPHCoordinatesAndVariables"><h4 class="heading"><span class="title">DIGRESSION: Coordinates and  Variable Names.</span></h4>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-2">   In <a href="SECTIONThinkingAboutIntegration.html#FIGUREPartitionedInterval" class="xref" data-knowl="./knowl/xref/FIGUREPartitionedInterval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 17.1.1.1">Figure 17.1.1.1</a> we were rather careless about the distinction between the label of a point, e.g.  <span class="process-math">\(P\)</span> or <span class="process-math">\(P_0\text{,}\)</span> and its coordinate, e.g. <span class="process-math">\(x_1\)</span> or <span class="process-math">\(x_2\text{.}\)</span> A natural question would be “Aren’t they the same thing?”</div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-3">No, actually they aren’t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it’s (horizontal) distance from the origin.  Consider the following diagram.   </div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VarX2.png" class="contained"></div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-5">The labels (names) of the two points are <span class="process-math">\(P_0\)</span> and <span class="process-math">\(P\text{.}\)</span> Since <span class="process-math">\(x_0\)</span> measures the distance between zero and <span class="process-math">\(P_0\)</span> it is by definition the coordinate of the point labeled <span class="process-math">\(P_0\text{.}\)</span>  Similarly <span class="process-math">\(x_n\)</span> is the coordinate of <span class="process-math">\(P\text{.}\)</span>
+</div>
+<aside class="aside aside-like" id="PARAGRAPHCoordinatesAndVariables-6"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-6-2">If a vertical axis were present zero would be the second coordinate of both points. Do you see why?</div></aside><div class="para" id="PARAGRAPHCoordinatesAndVariables-7">On the other hand since <span class="process-math">\(x\)</span> — the distance between <span class="process-math">\(P_0\)</span> and <span class="process-math">\(P\)</span> — is not measured from the origin it is neither a coordinate nor the label of a point.            It is the length of the line segment <span class="process-math">\(\overline{P_0P}\text{.}\)</span> If we partition this line segment and compute <span class="process-math">\(\int\dx{x} \)</span> we get <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.2">equation (17.2)</a>.</div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-8">Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VarX3.png" class="contained"></div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-10">Strictly speaking this is an abuse of our notation and it can cause confusion because it isn’t always clear whether <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x_n\)</span> refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.</div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-11"><em class="alert">END OF DIGRESSION</em></div></section></section><section class="subsection" id="SUBSECTIONIntAsAntiDiff"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">17.1.2</span><span class="space"> </span><span class="title">Integration as Antidifferentiation</span>
 </h3>
 <article class="definition definition-like" id="DEFINITIONAntiderivative"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">17.1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Antiderivative.</span>
-</h4>  <div class="para logical" id="DEFINITIONAntiderivative-3-1">
+</h4>
+<div class="para logical" id="DEFINITIONAntiderivative-3-1">
 <div class="para">Suppose we have a function</div>
 <div class="displaymath process-math" id="EQUATIONDefAntideriv">
 \begin{equation}
@@ -775,7 +1398,7 @@ y=F(t)\tag{17.3}
 <div class="para">with derivative <span class="process-math">\(\dfdx{y}{t}=F^\prime(t)=f(t)\text{.}\)</span> Then <span class="process-math">\(F(t)\)</span> is called an <dfn class="terminology">antiderivative</dfn> of <span class="process-math">\(f(t)\text{.}\)</span>
 </div>
 </div></article><div class="para logical" id="SUBSECTIONIntAsAntiDiff-3">
-<div class="para">From <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a> , we see that</div>
+<div class="para">From <a href="SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a> , we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DEFINITIONAntiderivative.html" id="EQUATIONIntAsAntiDiff">
 \begin{equation}
 \dx{y}=F^\prime(t)\dx{t}=f(t)\dx{t}\text{.}\tag{17.4}
@@ -783,13 +1406,13 @@ y=F(t)\tag{17.3}
 </div>
 </div>
 <div class="para logical" id="SUBSECTIONIntAsAntiDiff-4">
-<div class="para">We know from our work in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 17.1.1: Integration as  Summation">Subsection 17.1.1</a> (specifically <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" title="Equation 17.2">equation (17.2)</a>) that</div>
+<div class="para">We know from our work in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 17.1.1: Integration as  Summation">Subsection 17.1.1</a> (specifically <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.2">equation (17.2)</a>) that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SUBSECTIONIntegrationAsASum.html ./knowl/xref/EQUATIONDefInt2.html ./knowl/xref/EQUATIONIntAsAntiDiff.html">
 \begin{equation*}
 y=\int\dx{y}\text{.}
 \end{equation*}
 </div>
-<div class="para">So if we sum all of the differentials on the left and right sides of <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONIntAsAntiDiff.html" title="Equation 17.4">equation (17.4)</a>  we have</div>
+<div class="para">So if we sum all of the differentials on the left and right sides of <a href="SECTIONThinkingAboutIntegration.html#EQUATIONIntAsAntiDiff" class="xref" data-knowl="./knowl/xref/EQUATIONIntAsAntiDiff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 17.4">equation (17.4)</a>  we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SUBSECTIONIntegrationAsASum.html ./knowl/xref/EQUATIONDefInt2.html ./knowl/xref/EQUATIONIntAsAntiDiff.html">
 \begin{equation*}
 y=\int\dx{y}= \int f(t)\dx{t}\text{.}
@@ -798,20 +1421,23 @@ y=\int\dx{y}= \int f(t)\dx{t}\text{.}
 <div class="para">Observe that since <span class="process-math">\(\dx{y} \)</span> is a differential it follows that <span class="process-math">\(f(t)\dx{t}\)</span> is also a differential so the expression <span class="process-math">\(\int f(t)\dx{t}\)</span> is a valid integral.</div>
 </div>
 <div class="para" id="SUBSECTIONIntAsAntiDiff-5">Thus it appears that if <span class="process-math">\(\dx{y}=f(t)\dx{t} \)</span> is known then <span class="process-math">\(y=F(t)\)</span> will be the antiderivative of <span class="process-math">\(f(t)\text{.}\)</span> That is to say, integration appears to be “differentiation run backwards.” This seems reasonable since differentiation consists of subtracting (finding differentials) and integration consists of adding (summing differentials). Addition and subtraction can  both be thought of as “doing the the other backwards.”</div>
-<div class="para" id="SUBSECTIONIntAsAntiDiff-6">It follows immediately from <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a> and the <a href="" class="xref" data-knowl="./knowl/xref/THEOREMConstRule.html" title="Fact 3.3.1.1: The Constant Rule">Constant Rule 3.3.1.1</a> that if a function has one antiderivative then it has infinitely many.  That is, if <span class="process-math">\(F(x)\)</span> is an antiderivative of <span class="process-math">\(f(x)\)</span> then so is <span class="process-math">\(F(x)+5\text{.}\)</span> And <span class="process-math">\(F(x)+80\text{.}\)</span> In fact if <span class="process-math">\(C\)</span> ia a constant then so is <span class="process-math">\(F(x)+C\)</span> for every possible value of <span class="process-math">\(C\)</span> because we get a (slightly) different antiderivative each time we add a constant to <span class="process-math">\(F(x)\text{.}\)</span>
+<div class="para" id="SUBSECTIONIntAsAntiDiff-6">It follows immediately from <a href="SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a> and the <a href="SECTIONsome-rules-diff.html#THEOREMConstRule" class="xref" data-knowl="./knowl/xref/THEOREMConstRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Fact 3.3.1.1: The Constant Rule">Constant Rule 3.3.1.1</a> that if a function has one antiderivative then it has infinitely many.  That is, if <span class="process-math">\(F(x)\)</span> is an antiderivative of <span class="process-math">\(f(x)\)</span> then so is <span class="process-math">\(F(x)+5\text{.}\)</span> And <span class="process-math">\(F(x)+80\text{.}\)</span> In fact if <span class="process-math">\(C\)</span> ia a constant then so is <span class="process-math">\(F(x)+C\)</span> for every possible value of <span class="process-math">\(C\)</span> because we get a (slightly) different antiderivative each time we add a constant to <span class="process-math">\(F(x)\text{.}\)</span>
 </div>
-<div class="para" id="SUBSECTIONIntAsAntiDiff-7">Thus if we know  one antiderivative of <span class="process-math">\(f(x)\text{,}\)</span> then we know all (infinitely many) of the antiderivatives of <span class="process-math">\(f(x)\text{.}\)</span> Remember this. We will return to it when we discuss <a href="" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" title="Theorem 24.2.0.2: The Fundamental Theorem of Calculus (FTC)">Theorem 24.2.0.2</a> below.</div>
+<div class="para" id="SUBSECTIONIntAsAntiDiff-7">Thus if we know  one antiderivative of <span class="process-math">\(f(x)\text{,}\)</span> then we know all (infinitely many) of the antiderivatives of <span class="process-math">\(f(x)\text{.}\)</span> Remember this. We will return to it when we discuss <a href="SECTIONIntegrationAsFunction.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 24.2.0.2: The Fundamental Theorem of Calculus (FTC)">Theorem 24.2.0.2</a> below.</div>
 <article class="example example-like" id="EXAMPLESimpleInt1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">17.1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">A Simple Integration.</span>
-</h4> <div class="para" id="EXAMPLESimpleInt1-2">For example, can you find a formula for this integral: <span class="process-math">\(\int2t\dx{t}\text{?}\)</span> Before reading on give it a try.</div> <div class="para logical" id="EXAMPLESimpleInt1-3">
-<div class="para">Clearly <span class="process-math">\(f(t)=2t\)</span> so from <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a> we see that <span class="process-math">\(F(t) =
+</h4>
+<div class="para" id="EXAMPLESimpleInt1-2">For example, can you find a formula for this integral: <span class="process-math">\(\int2t\dx{t}\text{?}\)</span> Before reading on give it a try.</div>
+<div class="para logical" id="EXAMPLESimpleInt1-3">
+<div class="para">Clearly <span class="process-math">\(f(t)=2t\)</span> so from <a href="SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a> we see that <span class="process-math">\(F(t) =
 t^2\)</span> is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DEFINITIONAntiderivative.html">
 \begin{equation*}
 \int 2t\dx{t} = t^2 + C\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="EXAMPLESimpleInt1-4">
+</div>
+<div class="para logical" id="EXAMPLESimpleInt1-4">
 <div class="para"> This shows that the expression <span class="process-math">\(\int f(t)\dx{t} \)</span> represents a multifunction much like the “<span class="process-math">\(\text{arc}\)</span>” functions we encountered in <a href="CHAPTERcalc-trig.html" class="internal" title="Chapter 5: Calculus and Trigonometry">Chapter 5</a>.  However, none of the complicated domain and range difficulties that caused so many headaches in <a href="SECTIONinverse-tan-and-cot.html" class="internal" title="Section 5.4: The Inverse Tangent and Cotangent Functions">Section 5.4</a> will be in play here. Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CHAPTERcalc-trig.html ./knowl/xref/SECTIONinverse-tan-and-cot.html">
 \begin{equation*}
@@ -823,20 +1449,26 @@ t^2\)</span> is one antiderivative, and we can capture all of the antiderivative
 <article class="exercise exercise-like" id="EXERCISEAntiDerivPractice"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">17.1.2.3</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="EXERCISEAntiDerivPractice-2"><div class="para" id="EXERCISEAntiDerivPractice-2-1">Show that  the following statements are true. Assume <span class="process-math">\(C\)</span> is an arbitrary constant. (We have not shown you how to compute any of these integrals. But  you know how to differentiate. Read <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a>  again carefully.)</div></div>
+<div class="introduction" id="EXERCISEAntiDerivPractice-2"><div class="para" id="EXERCISEAntiDerivPractice-2-1">Show that  the following statements are true. Assume <span class="process-math">\(C\)</span> is an arbitrary constant. (We have not shown you how to compute any of these integrals. But  you know how to differentiate. Read <a href="SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 17.1.2.1: Antiderivative">Definition 17.1.2.1</a>  again carefully.)</div></div>
 <article class="task exercise-like" id="EXERCISEAntiDerivPractice-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="EXERCISEAntiDerivPractice-3-1-1"><span class="process-math">\(\displaystyle\int 2te^{t^2}\dx{t} = e^{t^2} +C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="EXERCISEAntiDerivPractice-4-1-1"><span class="process-math">\(\displaystyle\int te^t\dx{t} = (t-1)e^t+C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="EXERCISEAntiDerivPractice-5-1-1"><span class="process-math">\(\displaystyle\int \sin(x)\cos(x)\dx{x} =\frac12\sin^2(x)+C\)</span></div>
-<div class="solutions"><details id="EXERCISEAntiDerivPractice-5-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="EXERCISEAntiDerivPractice-5-2-1">Notice that we’ve used <span class="process-math">\(x\)</span> instead of <span class="process-math">\(t\)</span> for our variable. Does that matter? Explain.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMSinsqcossqantider"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="solutions"><details id="EXERCISEAntiDerivPractice-5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="EXERCISEAntiDerivPractice-5-2-1">Notice that we’ve used <span class="process-math">\(x\)</span> instead of <span class="process-math">\(t\)</span> for our variable. Does that matter? Explain.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMSinsqcossqantider"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="PROBLEMSinsqcossqantider-1-1"><span class="process-math">\(\displaystyle\int \sin(\theta )\cos(\theta )\dx{\theta } =
 -\frac12\cos^2(\theta )+C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-7"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="EXERCISEAntiDerivPractice-7-1-1"><span class="process-math">\(\displaystyle\int u\cos(u) \dx{u} = u\sin(u)+\cos(u)+C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-8"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<div class="para" id="EXERCISEAntiDerivPractice-8-1-1"><span class="process-math">\(\displaystyle\int x\ln(x) \dx{x} = x(\ln{x}-1)+C\)</span></div></article></article><div class="para" id="SUBSECTIONIntAsAntiDiff-11">The exercises in <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMAntiDiffPractice.html" title="Drill 17.2.0.3">Drill 17.2.0.3</a> were all a bit contrived. Since we gave you the antiderivatives you don’t really need to know how tho integrate.</div>
+<div class="para" id="EXERCISEAntiDerivPractice-8-1-1"><span class="process-math">\(\displaystyle\int x\ln(x) \dx{x} = x(\ln{x}-1)+C\)</span></div></article></article><div class="para" id="SUBSECTIONIntAsAntiDiff-11">The exercises in <a href="SECTIONIntegrationRules1.html#PROBLEMAntiDiffPractice" class="xref" data-knowl="./knowl/xref/PROBLEMAntiDiffPractice.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 17.2.0.3">Drill 17.2.0.3</a> were all a bit contrived. Since we gave you the antiderivatives you don’t really need to know how tho integrate.</div>
 <div class="para" id="SUBSECTIONIntAsAntiDiff-12">The real question here is “How could you find these antiderivatives if we hadn’t given them to you?”</div></section><section class="conclusion" id="SECTIONThinkingAboutIntegration-5"><h3 class="heading">We Integrate Differentials, Not Functions.<span></span>
-</h3> <div class="para" id="SECTIONThinkingAboutIntegration-5-2">Integration can be usefully thought of as either summation or antidifferentiation. We will flip between these two mindsets as convenient in much the same way that we flipped between the dynamic (Newtonian) and geometric (Leibnizian) viewpoints in <a href="DiffCalcFromPractice.html" class="internal" title="Part I: Differential Calculus: From Practice">Part I</a>.</div> <div class="para" id="SECTIONThinkingAboutIntegration-5-3">Since it is valid to think of <span class="process-math">\(\int
-f(x)\dx{x}\)</span> as representing an antiderivative of the function <span class="process-math">\(f\)</span> it is customary to speak these symbols aloud as “the integral of <span class="process-math">\(f\)</span> of <span class="process-math">\(x\text{.}\)</span>” While this is not wrong, it is not quite right either. Properly speaking, we should say “the integral of the differential <span class="process-math">\(f(x)\)</span> times <span class="process-math">\(\dx{x}\text{.}\)</span>” But no one does that so we won’t either.</div> <div class="para" id="SECTIONThinkingAboutIntegration-5-4">But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop  unfortunate habits of mind. We will take a moment to try to  prevent that from happening.</div> <div class="para" id="SECTIONThinkingAboutIntegration-5-5">The integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final “<span class="process-math">\(\dx{x}\text{,}\)</span>”  of writing <span class="process-math">\(\int f(x)\)</span> instead of <span class="process-math">\(\int f(x)\dx{x}\text{,}\)</span> and then calling them both the integral of the function <span class="process-math">\(f(x)\text{.}\)</span>
-</div> <div class="para" id="SECTIONThinkingAboutIntegration-5-6">This is an unfortunate, but common, abuse of the notation.  You can not integrate a function, only a differential. We <em class="emphasis">strongly</em> suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.</div> <div class="para logical" id="SECTIONThinkingAboutIntegration-5-7">
+</h3>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-2">Integration can be usefully thought of as either summation or antidifferentiation. We will flip between these two mindsets as convenient in much the same way that we flipped between the dynamic (Newtonian) and geometric (Leibnizian) viewpoints in <a href="DiffCalcFromPractice.html" class="internal" title="Part I: Differential Calculus: From Practice">Part I</a>.</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-3">Since it is valid to think of <span class="process-math">\(\int
+f(x)\dx{x}\)</span> as representing an antiderivative of the function <span class="process-math">\(f\)</span> it is customary to speak these symbols aloud as “the integral of <span class="process-math">\(f\)</span> of <span class="process-math">\(x\text{.}\)</span>” While this is not wrong, it is not quite right either. Properly speaking, we should say “the integral of the differential <span class="process-math">\(f(x)\)</span> times <span class="process-math">\(\dx{x}\text{.}\)</span>” But no one does that so we won’t either.</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-4">But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop  unfortunate habits of mind. We will take a moment to try to  prevent that from happening.</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-5">The integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final “<span class="process-math">\(\dx{x}\text{,}\)</span>”  of writing <span class="process-math">\(\int f(x)\)</span> instead of <span class="process-math">\(\int f(x)\dx{x}\text{,}\)</span> and then calling them both the integral of the function <span class="process-math">\(f(x)\text{.}\)</span>
+</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-6">This is an unfortunate, but common, abuse of the notation.  You can not integrate a function, only a differential. We <em class="emphasis">strongly</em> suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.</div>
+<div class="para logical" id="SECTIONThinkingAboutIntegration-5-7">
 <div class="para">Remember that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -844,8 +1476,9 @@ f(x)\dx{x}\)</span> as representing an antiderivative of the function <span clas
 \end{equation*}
 </div>
 <div class="para">is meaningless no matter how convenient it might be because it indicates that we are summing a function, not a differential.</div>
-</div> <aside class="aside aside-like" id="SECTIONThinkingAboutIntegration-5-8"><h4 class="heading"><span class="title">Notation.</span></h4>
-<div class="para" id="SECTIONThinkingAboutIntegration-5-8-2">By calling <span class="process-math">\(\int f(x)\)</span> meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where <span class="process-math">\(\int{f(x)}\)</span> is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don’t fall into this habit while you are still learning the basics.</div></aside> <div class="para logical" id="SECTIONThinkingAboutIntegration-5-9">
+</div>
+<aside class="aside aside-like" id="SECTIONThinkingAboutIntegration-5-8"><h4 class="heading"><span class="title">Notation.</span></h4>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-8-2">By calling <span class="process-math">\(\int f(x)\)</span> meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where <span class="process-math">\(\int{f(x)}\)</span> is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don’t fall into this habit while you are still learning the basics.</div></aside><div class="para logical" id="SECTIONThinkingAboutIntegration-5-9">
 <div class="para">But the meaning of</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -855,7 +1488,9 @@ f(x)\dx{x}
 </div>
 <div class="para">is clear. We’re summing up all of the differentials of the form <span class="process-math">\(f(x)\dx{x} \text{.}\)</span>
 </div>
-</div> <div class="para" id="SECTIONThinkingAboutIntegration-5-10">Finally, there is a puzzle here. In <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 17.1.1: Integration as  Summation">Subsection 17.1.1</a> we introduced integration as summation, and we invented the integral sign <span class="process-math">\(\left(\int{}\right)\)</span> to reflect that idea. But in this section we have reinterpreted the integral to mean antidifferentiation and the idea of “integral as summation” seems to have died a quiet death. Nowhere in <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> does a summation appear.</div> <div class="para" id="SECTIONThinkingAboutIntegration-5-11">But this is the point. Finding the sum <span class="process-math">\(\int 2x\dx{x}\)</span> by addition is a very daunting task. Where would you even begin? By reinterpreting it as an antidifferentiation problem we are able to find the sum, <span class="process-math">\(\int 2x\dx{x}+C\)</span> without the bother of adding up (infinitely many) differentials of the form <span class="process-math">\(2x\dx{x}\text{.}\)</span> Antidifferentiation gives us a way to compute the sum indirectly.</div>                  </section></section></div>
+</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-10">Finally, there is a puzzle here. In <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 17.1.1: Integration as  Summation">Subsection 17.1.1</a> we introduced integration as summation, and we invented the integral sign <span class="process-math">\(\left(\int{}\right)\)</span> to reflect that idea. But in this section we have reinterpreted the integral to mean antidifferentiation and the idea of “integral as summation” seems to have died a quiet death. Nowhere in <a href="SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> does a summation appear.</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-11">But this is the point. Finding the sum <span class="process-math">\(\int 2x\dx{x}\)</span> by addition is a very daunting task. Where would you even begin? By reinterpreting it as an antidifferentiation problem we are able to find the sum, <span class="process-math">\(\int 2x\dx{x}+C\)</span> without the bother of adding up (infinitely many) differentials of the form <span class="process-math">\(2x\dx{x}\text{.}\)</span> Antidifferentiation gives us a way to compute the sum indirectly.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="CHAPTERFTC.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONIntegrationRules1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

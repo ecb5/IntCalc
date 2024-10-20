@@ -58,7 +58,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -70,8 +70,8 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -79,16 +79,627 @@ window.MathJax = {
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#PleaForHelp-9-3 { counter-set: PleaForHelp-9-3 0; }
+#PleaForHelp-9-3 > li::marker { content: ""counter(PleaForHelp-9-3,decimal)"."; }
+#PleaForHelp-9-3 > li { counter-increment: PleaForHelp-9-3; }
+#SECTIONFermMethAedeq-22-2-1-1-1 { counter-set: SECTIONFermMethAedeq-22-2-1-1-1 0; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-2-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-2-1-1-1; }
+#SECTIONFermMethAedeq-22-6-1-1-1 { counter-set: SECTIONFermMethAedeq-22-6-1-1-1 0; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-6-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-6-1-1-1; }
+#SECTIONFermMethAedeq-22-7-1-1-8 { counter-set: SECTIONFermMethAedeq-22-7-1-1-8 0; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-7-1-1-8,lower-roman)""; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li { counter-increment: SECTIONFermMethAedeq-22-7-1-1-8; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 { counter-set: PROBLEMPROBLEMFermMethX2A-1-1-1 0; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li::marker { content: ""counter(PROBLEMPROBLEMFermMethX2A-1-1-1,lower-roman)""; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li { counter-increment: PROBLEMPROBLEMFermMethX2A-1-1-1; }
+#PROBLEMFermMethX2B-1-1-1 { counter-set: PROBLEMFermMethX2B-1-1-1 0; }
+#PROBLEMFermMethX2B-1-1-1 > li::marker { content: ""counter(PROBLEMFermMethX2B-1-1-1,lower-roman)""; }
+#PROBLEMFermMethX2B-1-1-1 > li { counter-increment: PROBLEMFermMethX2B-1-1-1; }
+#SUBSECTIONSpdVelRofC-31-2-1 { counter-set: SUBSECTIONSpdVelRofC-31-2-1 0; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-31-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-31-2-1; }
+#SUBSECTIONSpdVelRofC-32-2-1 { counter-set: SUBSECTIONSpdVelRofC-32-2-1 0; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-32-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-32-2-1; }
+#SUBSECTIONSpdVelRofC-33-2-1 { counter-set: SUBSECTIONSpdVelRofC-33-2-1 0; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-33-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-33-2-1; }
+#SUBSECTIONSpdVelRofC-34-2-1 { counter-set: SUBSECTIONSpdVelRofC-34-2-1 0; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-34-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-34-2-1; }
+#DRILLConstantRule-2 { counter-set: DRILLConstantRule-2 0; }
+#DRILLConstantRule-2 > li::marker { content: ""counter(DRILLConstantRule-2,lower-roman)""; }
+#DRILLConstantRule-2 > li { counter-increment: DRILLConstantRule-2; }
+#SUBSECTIONConstMultRule-5-2 { counter-set: SUBSECTIONConstMultRule-5-2 0; }
+#SUBSECTIONConstMultRule-5-2 > li::marker { content: ""counter(SUBSECTIONConstMultRule-5-2,lower-roman)""; }
+#SUBSECTIONConstMultRule-5-2 > li { counter-increment: SUBSECTIONConstMultRule-5-2; }
+#PARTGenPwrRule-1-2-1 { counter-set: PARTGenPwrRule-1-2-1 0; }
+#PARTGenPwrRule-1-2-1 > li::marker { content: ""counter(PARTGenPwrRule-1-2-1,lower-roman)""; }
+#PARTGenPwrRule-1-2-1 > li { counter-increment: PARTGenPwrRule-1-2-1; }
+#SUBSECTIONPowerRule-12-1-1 { counter-set: SUBSECTIONPowerRule-12-1-1 0; }
+#SUBSECTIONPowerRule-12-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-12-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-12-1-1 > li { counter-increment: SUBSECTIONPowerRule-12-1-1; }
+#SUBSECTIONPowerRule-13-1-1 { counter-set: SUBSECTIONPowerRule-13-1-1 0; }
+#SUBSECTIONPowerRule-13-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-13-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-13-1-1 > li { counter-increment: SUBSECTIONPowerRule-13-1-1; }
+#SUBSECTIONPowerRule-14-1-2 { counter-set: SUBSECTIONPowerRule-14-1-2 0; }
+#SUBSECTIONPowerRule-14-1-2 > li::marker { content: ""counter(SUBSECTIONPowerRule-14-1-2,lower-roman)""; }
+#SUBSECTIONPowerRule-14-1-2 > li { counter-increment: SUBSECTIONPowerRule-14-1-2; }
+#SUBSECTIONPowerRule-40-1-4 { counter-set: SUBSECTIONPowerRule-40-1-4 0; }
+#SUBSECTIONPowerRule-40-1-4 > li::marker { content: ""counter(SUBSECTIONPowerRule-40-1-4,lower-roman)""; }
+#SUBSECTIONPowerRule-40-1-4 > li { counter-increment: SUBSECTIONPowerRule-40-1-4; }
+#SUBSECTIONPowerRule-41-1-1 { counter-set: SUBSECTIONPowerRule-41-1-1 0; }
+#SUBSECTIONPowerRule-41-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-41-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-41-1-1 > li { counter-increment: SUBSECTIONPowerRule-41-1-1; }
+#SUBSECTIONPowerRule-42-1-1 { counter-set: SUBSECTIONPowerRule-42-1-1 0; }
+#SUBSECTIONPowerRule-42-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-42-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-42-1-1 > li { counter-increment: SUBSECTIONPowerRule-42-1-1; }
+#DRILLClassicalCurves-1-3 { counter-set: DRILLClassicalCurves-1-3 0; }
+#DRILLClassicalCurves-1-3 > li::marker { content: ""counter(DRILLClassicalCurves-1-3,lower-roman)""; }
+#DRILLClassicalCurves-1-3 > li { counter-increment: DRILLClassicalCurves-1-3; }
+#SUBSECTIONQuotientRule-9-1-2 { counter-set: SUBSECTIONQuotientRule-9-1-2 0; }
+#SUBSECTIONQuotientRule-9-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-9-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-9-1-2 > li { counter-increment: SUBSECTIONQuotientRule-9-1-2; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 { counter-set: SUBSECTIONQuotientRule-10-2-1-1-2 0; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-10-2-1-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li { counter-increment: SUBSECTIONQuotientRule-10-2-1-1-2; }
+#SECTIONVelocitySlopeTangent-12-1-4 { counter-set: SECTIONVelocitySlopeTangent-12-1-4 0; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li::marker { content: ""counter(SECTIONVelocitySlopeTangent-12-1-4,lower-roman)""; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li { counter-increment: SECTIONVelocitySlopeTangent-12-1-4; }
+#SECTIONdefin-tang-line-23-1-2 { counter-set: SECTIONdefin-tang-line-23-1-2 0; }
+#SECTIONdefin-tang-line-23-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-23-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-23-1-2 > li { counter-increment: SECTIONdefin-tang-line-23-1-2; }
+#SECTIONdefin-tang-line-32-2-1-1-2 { counter-set: SECTIONdefin-tang-line-32-2-1-1-2 0; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-2-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-2-1-1-2; }
+#SECTIONdefin-tang-line-32-3-1-1-2 { counter-set: SECTIONdefin-tang-line-32-3-1-1-2 0; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-3-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-3-1-1-2; }
+#SECTIONdefin-tang-line-32-4-1-1-2 { counter-set: SECTIONdefin-tang-line-32-4-1-1-2 0; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-4-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-4-1-1-2; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-3-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-3-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-3-1-1-6; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-4-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-4-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-4-1-1-6; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-5-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-5-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-5-1-1-6; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 { counter-set: PROBLEMHyperbolaTriangles-6-1-1-4 0; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-6-1-1-4,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li { counter-increment: PROBLEMHyperbolaTriangles-6-1-1-4; }
+#SECTIONGalileoDrops-9-2 { counter-set: SECTIONGalileoDrops-9-2 0; }
+#SECTIONGalileoDrops-9-2 > li::marker { content: ""counter(SECTIONGalileoDrops-9-2,decimal)"."; }
+#SECTIONGalileoDrops-9-2 > li { counter-increment: SECTIONGalileoDrops-9-2; }
+#SECTIONGalileoDrops-48-4 { counter-set: SECTIONGalileoDrops-48-4 0; }
+#SECTIONGalileoDrops-48-4 > li::marker { content: ""counter(SECTIONGalileoDrops-48-4,decimal)""; }
+#SECTIONGalileoDrops-48-4 > li { counter-increment: SECTIONGalileoDrops-48-4; }
+#SECONDBringCalc-6-4 { counter-set: SECONDBringCalc-6-4 0; }
+#SECONDBringCalc-6-4 > li::marker { content: ""counter(SECONDBringCalc-6-4,decimal)"."; }
+#SECONDBringCalc-6-4 > li { counter-increment: SECONDBringCalc-6-4; }
+#SECONDBringCalc-12-6 { counter-set: SECONDBringCalc-12-6 0; }
+#SECONDBringCalc-12-6 > li::marker { content: ""counter(SECONDBringCalc-12-6,decimal)"."; }
+#SECONDBringCalc-12-6 > li { counter-increment: SECONDBringCalc-12-6; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-2-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-2-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-2-1-1-2; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-8-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-8-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-8-1-1-2; }
+#SECTIONDerivative-19-1-4 { counter-set: SECTIONDerivative-19-1-4 0; }
+#SECTIONDerivative-19-1-4 > li::marker { content: ""counter(SECTIONDerivative-19-1-4,lower-roman)""; }
+#SECTIONDerivative-19-1-4 > li { counter-increment: SECTIONDerivative-19-1-4; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 { counter-set: PROBLEMDerivProdNEProdDeriv-2-1-1-1 0; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li::marker { content: ""counter(PROBLEMDerivProdNEProdDeriv-2-1-1-1,lower-roman)""; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li { counter-increment: PROBLEMDerivProdNEProdDeriv-2-1-1-1; }
+#SECTIONDerivative-22-1-3 { counter-set: SECTIONDerivative-22-1-3 0; }
+#SECTIONDerivative-22-1-3 > li::marker { content: ""counter(SECTIONDerivative-22-1-3,lower-roman)""; }
+#SECTIONDerivative-22-1-3 > li { counter-increment: SECTIONDerivative-22-1-3; }
+#PROBLEMAirlinerSpeed-3-1-1-2 { counter-set: PROBLEMAirlinerSpeed-3-1-1-2 0; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li::marker { content: ""counter(PROBLEMAirlinerSpeed-3-1-1-2,lower-roman)""; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li { counter-increment: PROBLEMAirlinerSpeed-3-1-1-2; }
+#SECTIONThinkingDynamically-13-1-2-1 { counter-set: SECTIONThinkingDynamically-13-1-2-1 0; }
+#SECTIONThinkingDynamically-13-1-2-1 > li::marker { content: ""counter(SECTIONThinkingDynamically-13-1-2-1,lower-roman)""; }
+#SECTIONThinkingDynamically-13-1-2-1 > li { counter-increment: SECTIONThinkingDynamically-13-1-2-1; }
+#SECTIONFluxions-36-2-1-1-1 { counter-set: SECTIONFluxions-36-2-1-1-1 0; }
+#SECTIONFluxions-36-2-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-2-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-2-1-1-1 > li { counter-increment: SECTIONFluxions-36-2-1-1-1; }
+#SECTIONFluxions-36-3-1-1-1 { counter-set: SECTIONFluxions-36-3-1-1-1 0; }
+#SECTIONFluxions-36-3-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-3-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-3-1-1-1 > li { counter-increment: SECTIONFluxions-36-3-1-1-1; }
+#PROBLEMadfj-1-1-2-2 { counter-set: PROBLEMadfj-1-1-2-2 0; }
+#PROBLEMadfj-1-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-1-1-2-2,lower-roman)""; }
+#PROBLEMadfj-1-1-2-2 > li { counter-increment: PROBLEMadfj-1-1-2-2; }
+#PROBLEMadfj-2-1-2-2 { counter-set: PROBLEMadfj-2-1-2-2 0; }
+#PROBLEMadfj-2-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-2-1-2-2,lower-roman)""; }
+#PROBLEMadfj-2-1-2-2 > li { counter-increment: PROBLEMadfj-2-1-2-2; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-15-2-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-15-2-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-15-2-1-1-2; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 { counter-set: PROBLEMUnitCircleParameterization1-1-1-1-1 0; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li::marker { content: ""counter(PROBLEMUnitCircleParameterization1-1-1-1-1,lower-roman)""; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li { counter-increment: PROBLEMUnitCircleParameterization1-1-1-1-1; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-21-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-21-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-21-1-1-2; }
+#SUBSECTIONradian-measure-19-2 { counter-set: SUBSECTIONradian-measure-19-2 0; }
+#SUBSECTIONradian-measure-19-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-19-2,lower-roman)""; }
+#SUBSECTIONradian-measure-19-2 > li { counter-increment: SUBSECTIONradian-measure-19-2; }
+#SUBSECTIONradian-measure-20-2 { counter-set: SUBSECTIONradian-measure-20-2 0; }
+#SUBSECTIONradian-measure-20-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-20-2,lower-roman)""; }
+#SUBSECTIONradian-measure-20-2 > li { counter-increment: SUBSECTIONradian-measure-20-2; }
+#SUBSECTIONradian-measure-31-2 { counter-set: SUBSECTIONradian-measure-31-2 0; }
+#SUBSECTIONradian-measure-31-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-31-2,lower-roman)""; }
+#SUBSECTIONradian-measure-31-2 > li { counter-increment: SUBSECTIONradian-measure-31-2; }
+#SECTIONtrig-interl-3-12-2-1-1-2 { counter-set: SECTIONtrig-interl-3-12-2-1-1-2 0; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-2-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-2-1-1-2; }
+#SECTIONtrig-interl-3-12-3-1-1-2 { counter-set: SECTIONtrig-interl-3-12-3-1-1-2 0; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-3-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-3-1-1-2; }
+#SECTIONtrig-interl-3-14-2 { counter-set: SECTIONtrig-interl-3-14-2 0; }
+#SECTIONtrig-interl-3-14-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-14-2,lower-roman)""; }
+#SECTIONtrig-interl-3-14-2 > li { counter-increment: SECTIONtrig-interl-3-14-2; }
+#PROBLEMSineOscillB-1-1-8 { counter-set: PROBLEMSineOscillB-1-1-8 0; }
+#PROBLEMSineOscillB-1-1-8 > li::marker { content: ""counter(PROBLEMSineOscillB-1-1-8,lower-roman)""; }
+#PROBLEMSineOscillB-1-1-8 > li { counter-increment: PROBLEMSineOscillB-1-1-8; }
+#SECTIONtrig-interl-5-11-2 { counter-set: SECTIONtrig-interl-5-11-2 0; }
+#SECTIONtrig-interl-5-11-2 > li::marker { content: ""counter(SECTIONtrig-interl-5-11-2,lower-roman)""; }
+#SECTIONtrig-interl-5-11-2 > li { counter-increment: SECTIONtrig-interl-5-11-2; }
+#DRILLPolarQuirks2-2 { counter-set: DRILLPolarQuirks2-2 0; }
+#DRILLPolarQuirks2-2 > li::marker { content: ""counter(DRILLPolarQuirks2-2,lower-roman)""; }
+#DRILLPolarQuirks2-2 > li { counter-increment: DRILLPolarQuirks2-2; }
+#PROBLEMPolRectConvertA-1-1-3 { counter-set: PROBLEMPolRectConvertA-1-1-3 0; }
+#PROBLEMPolRectConvertA-1-1-3 > li::marker { content: ""counter(PROBLEMPolRectConvertA-1-1-3,lower-roman)""; }
+#PROBLEMPolRectConvertA-1-1-3 > li { counter-increment: PROBLEMPolRectConvertA-1-1-3; }
+#PROBLEMPolarGraphs-2 { counter-set: PROBLEMPolarGraphs-2 0; }
+#PROBLEMPolarGraphs-2 > li::marker { content: ""counter(PROBLEMPolarGraphs-2,lower-roman)""; }
+#PROBLEMPolarGraphs-2 > li { counter-increment: PROBLEMPolarGraphs-2; }
+#SUBSECTIONCircularMotion-5-1-2 { counter-set: SUBSECTIONCircularMotion-5-1-2 0; }
+#SUBSECTIONCircularMotion-5-1-2 > li::marker { content: ""counter(SUBSECTIONCircularMotion-5-1-2,lower-roman)""; }
+#SUBSECTIONCircularMotion-5-1-2 > li { counter-increment: SUBSECTIONCircularMotion-5-1-2; }
+#EXERCISEDiffPractice1-1-1-3 { counter-set: EXERCISEDiffPractice1-1-1-3 0; }
+#EXERCISEDiffPractice1-1-1-3 > li::marker { content: ""counter(EXERCISEDiffPractice1-1-1-3,lower-roman)""; }
+#EXERCISEDiffPractice1-1-1-3 > li { counter-increment: EXERCISEDiffPractice1-1-1-3; }
+#SUBSECTIONCircularMotion-12-1-9 { counter-set: SUBSECTIONCircularMotion-12-1-9 0; }
+#SUBSECTIONCircularMotion-12-1-9 > li::marker { content: ""counter(SUBSECTIONCircularMotion-12-1-9,lower-roman)""; }
+#SUBSECTIONCircularMotion-12-1-9 > li { counter-increment: SUBSECTIONCircularMotion-12-1-9; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-2-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-2-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-2-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-3-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-3-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-3-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-4-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-4-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-4-1-3-1; }
+#PROBLEMcycloid2-2-1-1-1 { counter-set: PROBLEMcycloid2-2-1-1-1 0; }
+#PROBLEMcycloid2-2-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-2-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-2-1-1-1 > li { counter-increment: PROBLEMcycloid2-2-1-1-1; }
+#PROBLEMcycloid2-3-1-1-1 { counter-set: PROBLEMcycloid2-3-1-1-1 0; }
+#PROBLEMcycloid2-3-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-3-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-3-1-1-1 > li { counter-increment: PROBLEMcycloid2-3-1-1-1; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 { counter-set: SUBSECTIONsimple-harm-oscill-17-3-1-1-4 0; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li::marker { content: ""counter(SUBSECTIONsimple-harm-oscill-17-3-1-1-4,lower-roman)""; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li { counter-increment: SUBSECTIONsimple-harm-oscill-17-3-1-1-4; }
+#SECTIONdiff-other-trig-13-1-1 { counter-set: SECTIONdiff-other-trig-13-1-1 0; }
+#SECTIONdiff-other-trig-13-1-1 > li::marker { content: ""counter(SECTIONdiff-other-trig-13-1-1,lower-roman)""; }
+#SECTIONdiff-other-trig-13-1-1 > li { counter-increment: SECTIONdiff-other-trig-13-1-1; }
+#SECTIONdiff-other-trig-14-1-3 { counter-set: SECTIONdiff-other-trig-14-1-3 0; }
+#SECTIONdiff-other-trig-14-1-3 > li::marker { content: ""counter(SECTIONdiff-other-trig-14-1-3,lower-roman)""; }
+#SECTIONdiff-other-trig-14-1-3 > li { counter-increment: SECTIONdiff-other-trig-14-1-3; }
+#PROBLEMDiffFormTan-3-1-3-1 { counter-set: PROBLEMDiffFormTan-3-1-3-1 0; }
+#PROBLEMDiffFormTan-3-1-3-1 > li::marker { content: ""counter(PROBLEMDiffFormTan-3-1-3-1,lower-roman)""; }
+#PROBLEMDiffFormTan-3-1-3-1 > li { counter-increment: PROBLEMDiffFormTan-3-1-3-1; }
+#DIGRESSIONInverse-function-notation-7-1-1 { counter-set: DIGRESSIONInverse-function-notation-7-1-1 0; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li::marker { content: ""counter(DIGRESSIONInverse-function-notation-7-1-1,lower-roman)""; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li { counter-increment: DIGRESSIONInverse-function-notation-7-1-1; }
+#PROBLEMInvTanDiffeqB-1-1-3 { counter-set: PROBLEMInvTanDiffeqB-1-1-3 0; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMInvTanDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li { counter-increment: PROBLEMInvTanDiffeqB-1-1-3; }
+#PROBLEMArcSinDiffeqB-1-1-3 { counter-set: PROBLEMArcSinDiffeqB-1-1-3 0; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSinDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSinDiffeqB-1-1-3; }
+#PROBLEMArcSecDiffeqB-1-1-3 { counter-set: PROBLEMArcSecDiffeqB-1-1-3 0; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSecDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSecDiffeqB-1-1-3; }
+#InverseSecCsc-11-1 { counter-set: InverseSecCsc-11-1 0; }
+#InverseSecCsc-11-1 > li::marker { content: ""counter(InverseSecCsc-11-1,decimal)"."; }
+#InverseSecCsc-11-1 > li { counter-increment: InverseSecCsc-11-1; }
+#InverseSecCsc-17-1-1 { counter-set: InverseSecCsc-17-1-1 0; }
+#InverseSecCsc-17-1-1 > li::marker { content: ""counter(InverseSecCsc-17-1-1,lower-roman)""; }
+#InverseSecCsc-17-1-1 > li { counter-increment: InverseSecCsc-17-1-1; }
+#InverseSecCsc-20-2-1-1-1 { counter-set: InverseSecCsc-20-2-1-1-1 0; }
+#InverseSecCsc-20-2-1-1-1 > li::marker { content: ""counter(InverseSecCsc-20-2-1-1-1,lower-roman)""; }
+#InverseSecCsc-20-2-1-1-1 > li { counter-increment: InverseSecCsc-20-2-1-1-1; }
+#EXAMPLESqrt2-2-3-1-1-1 { counter-set: EXAMPLESqrt2-2-3-1-1-1 0; }
+#EXAMPLESqrt2-2-3-1-1-1 > li::marker { content: ""counter(EXAMPLESqrt2-2-3-1-1-1,lower-roman)""; }
+#EXAMPLESqrt2-2-3-1-1-1 > li { counter-increment: EXAMPLESqrt2-2-3-1-1-1; }
+#DRILLNewtonMethod2-2 { counter-set: DRILLNewtonMethod2-2 0; }
+#DRILLNewtonMethod2-2 > li::marker { content: ""counter(DRILLNewtonMethod2-2,lower-roman)""; }
+#DRILLNewtonMethod2-2 > li { counter-increment: DRILLNewtonMethod2-2; }
+#ALGORITHMNewtonsMethod-3-4 { counter-set: ALGORITHMNewtonsMethod-3-4 0; }
+#ALGORITHMNewtonsMethod-3-4 > li::marker { content: ""counter(ALGORITHMNewtonsMethod-3-4,decimal)"."; }
+#ALGORITHMNewtonsMethod-3-4 > li { counter-increment: ALGORITHMNewtonsMethod-3-4; }
+#PROBLEMNewtMethCreateFunction-2-3 { counter-set: PROBLEMNewtMethCreateFunction-2-3 0; }
+#PROBLEMNewtMethCreateFunction-2-3 > li::marker { content: ""counter(PROBLEMNewtMethCreateFunction-2-3,lower-roman)""; }
+#PROBLEMNewtMethCreateFunction-2-3 > li { counter-increment: PROBLEMNewtMethCreateFunction-2-3; }
+#PROBLEMNewton-meth-2-8 { counter-set: PROBLEMNewton-meth-2-8 0; }
+#PROBLEMNewton-meth-2-8 > li::marker { content: ""counter(PROBLEMNewton-meth-2-8,lower-roman)""; }
+#PROBLEMNewton-meth-2-8 > li { counter-increment: PROBLEMNewton-meth-2-8; }
+#PROBLEMNewton-meth2-2-2 { counter-set: PROBLEMNewton-meth2-2-2 0; }
+#PROBLEMNewton-meth2-2-2 > li::marker { content: ""counter(PROBLEMNewton-meth2-2-2,lower-roman)""; }
+#PROBLEMNewton-meth2-2-2 > li { counter-increment: PROBLEMNewton-meth2-2-2; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 { counter-set: SUBSECTIONSubtleFailure-8-3-1-1-3 0; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li::marker { content: ""counter(SUBSECTIONSubtleFailure-8-3-1-1-3,lower-roman)""; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li { counter-increment: SUBSECTIONSubtleFailure-8-3-1-1-3; }
+#SECTIONDEsandIVPS-2-3 { counter-set: SECTIONDEsandIVPS-2-3 0; }
+#SECTIONDEsandIVPS-2-3 > li::marker { content: ""counter(SECTIONDEsandIVPS-2-3,decimal)"."; }
+#SECTIONDEsandIVPS-2-3 > li { counter-increment: SECTIONDEsandIVPS-2-3; }
+#DRILLIVP-sqr-1-1 { counter-set: DRILLIVP-sqr-1-1 0; }
+#DRILLIVP-sqr-1-1 > li::marker { content: ""counter(DRILLIVP-sqr-1-1,lower-roman)""; }
+#DRILLIVP-sqr-1-1 > li { counter-increment: DRILLIVP-sqr-1-1; }
+#SECTIONexponential-growth-23-2 { counter-set: SECTIONexponential-growth-23-2 0; }
+#SECTIONexponential-growth-23-2 > li::marker { content: ""counter(SECTIONexponential-growth-23-2,decimal)"."; }
+#SECTIONexponential-growth-23-2 > li { counter-increment: SECTIONexponential-growth-23-2; }
+#SECTIONexponential-growth-28-1-2 { counter-set: SECTIONexponential-growth-28-1-2 0; }
+#SECTIONexponential-growth-28-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-28-1-2,lower-roman)""; }
+#SECTIONexponential-growth-28-1-2 > li { counter-increment: SECTIONexponential-growth-28-1-2; }
+#SECTIONexponential-growth-29-1-2 { counter-set: SECTIONexponential-growth-29-1-2 0; }
+#SECTIONexponential-growth-29-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-29-1-2,lower-roman)""; }
+#SECTIONexponential-growth-29-1-2 > li { counter-increment: SECTIONexponential-growth-29-1-2; }
+#SECTIONexponential-growth-30-1-1 { counter-set: SECTIONexponential-growth-30-1-1 0; }
+#SECTIONexponential-growth-30-1-1 > li::marker { content: ""counter(SECTIONexponential-growth-30-1-1,lower-roman)""; }
+#SECTIONexponential-growth-30-1-1 > li { counter-increment: SECTIONexponential-growth-30-1-1; }
+#PROBLEMPolyExpA-1-1-2 { counter-set: PROBLEMPolyExpA-1-1-2 0; }
+#PROBLEMPolyExpA-1-1-2 > li::marker { content: ""counter(PROBLEMPolyExpA-1-1-2,lower-roman)""; }
+#PROBLEMPolyExpA-1-1-2 > li { counter-increment: PROBLEMPolyExpA-1-1-2; }
+#SECTIONexponential-growth-34-1-7 { counter-set: SECTIONexponential-growth-34-1-7 0; }
+#SECTIONexponential-growth-34-1-7 > li::marker { content: ""counter(SECTIONexponential-growth-34-1-7,lower-roman)""; }
+#SECTIONexponential-growth-34-1-7 > li { counter-increment: SECTIONexponential-growth-34-1-7; }
+#SECTIONexponential-growth-36-1-1-1-4 { counter-set: SECTIONexponential-growth-36-1-1-1-4 0; }
+#SECTIONexponential-growth-36-1-1-1-4 > li::marker { content: ""counter(SECTIONexponential-growth-36-1-1-1-4,lower-roman)""; }
+#SECTIONexponential-growth-36-1-1-1-4 > li { counter-increment: SECTIONexponential-growth-36-1-1-1-4; }
+#PROBLEMHyperbolicTrig-2-1-1-1 { counter-set: PROBLEMHyperbolicTrig-2-1-1-1 0; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li::marker { content: ""counter(PROBLEMHyperbolicTrig-2-1-1-1,lower-roman)""; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li { counter-increment: PROBLEMHyperbolicTrig-2-1-1-1; }
+#PROBLEMCatenaryTrueC-1-1-4 { counter-set: PROBLEMCatenaryTrueC-1-1-4 0; }
+#PROBLEMCatenaryTrueC-1-1-4 > li::marker { content: ""counter(PROBLEMCatenaryTrueC-1-1-4,lower-roman)""; }
+#PROBLEMCatenaryTrueC-1-1-4 > li { counter-increment: PROBLEMCatenaryTrueC-1-1-4; }
+#PROBLEMBacteriaIVP1D-1-1-3 { counter-set: PROBLEMBacteriaIVP1D-1-1-3 0; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li::marker { content: ""counter(PROBLEMBacteriaIVP1D-1-1-3,lower-roman)""; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li { counter-increment: PROBLEMBacteriaIVP1D-1-1-3; }
+#SECTIONNatLog-4-1-1 { counter-set: SECTIONNatLog-4-1-1 0; }
+#SECTIONNatLog-4-1-1 > li::marker { content: ""counter(SECTIONNatLog-4-1-1,lower-roman)""; }
+#SECTIONNatLog-4-1-1 > li { counter-increment: SECTIONNatLog-4-1-1; }
+#SECTIONNatLog-9-1-1 { counter-set: SECTIONNatLog-9-1-1 0; }
+#SECTIONNatLog-9-1-1 > li::marker { content: ""counter(SECTIONNatLog-9-1-1,lower-roman)""; }
+#SECTIONNatLog-9-1-1 > li { counter-increment: SECTIONNatLog-9-1-1; }
+#SECTIONNatLog-11-1-1 { counter-set: SECTIONNatLog-11-1-1 0; }
+#SECTIONNatLog-11-1-1 > li::marker { content: ""counter(SECTIONNatLog-11-1-1,lower-roman)""; }
+#SECTIONNatLog-11-1-1 > li { counter-increment: SECTIONNatLog-11-1-1; }
+#SECTIONNatLog-12-1-1-1-4 { counter-set: SECTIONNatLog-12-1-1-1-4 0; }
+#SECTIONNatLog-12-1-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-1-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-1-1-1-4 > li { counter-increment: SECTIONNatLog-12-1-1-1-4; }
+#SECTIONNatLog-12-2-1-1-4 { counter-set: SECTIONNatLog-12-2-1-1-4 0; }
+#SECTIONNatLog-12-2-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-2-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-2-1-1-4 > li { counter-increment: SECTIONNatLog-12-2-1-1-4; }
+#SUBSECTIONradioactive-decay-9-1 { counter-set: SUBSECTIONradioactive-decay-9-1 0; }
+#SUBSECTIONradioactive-decay-9-1 > li::marker { content: ""counter(SUBSECTIONradioactive-decay-9-1,lower-roman)""; }
+#SUBSECTIONradioactive-decay-9-1 > li { counter-increment: SUBSECTIONradioactive-decay-9-1; }
+#SECTIONDerivNatLog-4-1-3 { counter-set: SECTIONDerivNatLog-4-1-3 0; }
+#SECTIONDerivNatLog-4-1-3 > li::marker { content: ""counter(SECTIONDerivNatLog-4-1-3,lower-roman)""; }
+#SECTIONDerivNatLog-4-1-3 > li { counter-increment: SECTIONDerivNatLog-4-1-3; }
+#PARAGRAPHSGenExp-16-1-3 { counter-set: PARAGRAPHSGenExp-16-1-3 0; }
+#PARAGRAPHSGenExp-16-1-3 > li::marker { content: ""counter(PARAGRAPHSGenExp-16-1-3,lower-roman)""; }
+#PARAGRAPHSGenExp-16-1-3 > li { counter-increment: PARAGRAPHSGenExp-16-1-3; }
+#PARAGRAPHSGenLog-7-1-3 { counter-set: PARAGRAPHSGenLog-7-1-3 0; }
+#PARAGRAPHSGenLog-7-1-3 > li::marker { content: ""counter(PARAGRAPHSGenLog-7-1-3,lower-roman)""; }
+#PARAGRAPHSGenLog-7-1-3 > li { counter-increment: PARAGRAPHSGenLog-7-1-3; }
+#DIGRESSIONBriggsAndNapier-7-1-1 { counter-set: DIGRESSIONBriggsAndNapier-7-1-1 0; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-7-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-7-1-1; }
+#DIGRESSIONBriggsAndNapier-11-1-1 { counter-set: DIGRESSIONBriggsAndNapier-11-1-1 0; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-11-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-11-1-1; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 { counter-set: DIGRESSIONBriggsAndNapier-12-1-1-1 0; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-12-1-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-12-1-1-1; }
+#DRILLIntuitiveSquareOnCircle-1-4 { counter-set: DRILLIntuitiveSquareOnCircle-1-4 0; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li::marker { content: ""counter(DRILLIntuitiveSquareOnCircle-1-4,lower-roman)""; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li { counter-increment: DRILLIntuitiveSquareOnCircle-1-4; }
+#DRILLExtremalSquareCircle-1-1 { counter-set: DRILLExtremalSquareCircle-1-1 0; }
+#DRILLExtremalSquareCircle-1-1 > li::marker { content: ""counter(DRILLExtremalSquareCircle-1-1,lower-roman)""; }
+#DRILLExtremalSquareCircle-1-1 > li { counter-increment: DRILLExtremalSquareCircle-1-1; }
+#PROBLEMMaxOrth1-3-1-3-8 { counter-set: PROBLEMMaxOrth1-3-1-3-8 0; }
+#PROBLEMMaxOrth1-3-1-3-8 > li::marker { content: ""counter(PROBLEMMaxOrth1-3-1-3-8,decimal)"."; }
+#PROBLEMMaxOrth1-3-1-3-8 > li { counter-increment: PROBLEMMaxOrth1-3-1-3-8; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-1-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-1-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-1-2-1; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-2-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-2-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-2-2-1; }
+#SECTIONfive-simil-probl-23-1-3 { counter-set: SECTIONfive-simil-probl-23-1-3 0; }
+#SECTIONfive-simil-probl-23-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-23-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-23-1-3 > li { counter-increment: SECTIONfive-simil-probl-23-1-3; }
+#SECTIONfive-simil-probl-24-1-3 { counter-set: SECTIONfive-simil-probl-24-1-3 0; }
+#SECTIONfive-simil-probl-24-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-24-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-24-1-3 > li { counter-increment: SECTIONfive-simil-probl-24-1-3; }
+#SECTIONrefl-refr-rainb-2-1-2 { counter-set: SECTIONrefl-refr-rainb-2-1-2 0; }
+#SECTIONrefl-refr-rainb-2-1-2 > li::marker { content: ""counter(SECTIONrefl-refr-rainb-2-1-2,decimal)"."; }
+#SECTIONrefl-refr-rainb-2-1-2 > li { counter-increment: SECTIONrefl-refr-rainb-2-1-2; }
+#SECTIONGlobalVsLocalExtrema-18-2 { counter-set: SECTIONGlobalVsLocalExtrema-18-2 0; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li::marker { content: ""counter(SECTIONGlobalVsLocalExtrema-18-2,decimal)"."; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li { counter-increment: SECTIONGlobalVsLocalExtrema-18-2; }
+#DIGRESSIONIntervalNotation-6-1-1 { counter-set: DIGRESSIONIntervalNotation-6-1-1 0; }
+#DIGRESSIONIntervalNotation-6-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-6-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-6-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-6-1-1; }
+#DIGRESSIONIntervalNotation-7-1-1 { counter-set: DIGRESSIONIntervalNotation-7-1-1 0; }
+#DIGRESSIONIntervalNotation-7-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-7-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-7-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-7-1-1; }
+#THEOREMFDT-lines-2-1 { counter-set: THEOREMFDT-lines-2-1 0; }
+#THEOREMFDT-lines-2-1 > li::marker { content: ""counter(THEOREMFDT-lines-2-1,decimal)"."; }
+#THEOREMFDT-lines-2-1 > li { counter-increment: THEOREMFDT-lines-2-1; }
+#THEOREMFDT-3-3 { counter-set: THEOREMFDT-3-3 0; }
+#THEOREMFDT-3-3 > li::marker { content: ""counter(THEOREMFDT-3-3,decimal)"."; }
+#THEOREMFDT-3-3 > li { counter-increment: THEOREMFDT-3-3; }
+#LEMMAAdjRoots-1-2 { counter-set: LEMMAAdjRoots-1-2 0; }
+#LEMMAAdjRoots-1-2 > li::marker { content: ""counter(LEMMAAdjRoots-1-2,decimal)"."; }
+#LEMMAAdjRoots-1-2 > li { counter-increment: LEMMAAdjRoots-1-2; }
+#PROBLEMFDT1A-1-2 { counter-set: PROBLEMFDT1A-1-2 0; }
+#PROBLEMFDT1A-1-2 > li::marker { content: ""counter(PROBLEMFDT1A-1-2,lower-roman)""; }
+#PROBLEMFDT1A-1-2 > li { counter-increment: PROBLEMFDT1A-1-2; }
+#DRILLFDT2-1-1 { counter-set: DRILLFDT2-1-1 0; }
+#DRILLFDT2-1-1 > li::marker { content: ""counter(DRILLFDT2-1-1,lower-roman)""; }
+#DRILLFDT2-1-1 > li { counter-increment: DRILLFDT2-1-1; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 { counter-set: DEFINITIONOptimalTransitionPoints-4-1-3 0; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li::marker { content: ""counter(DEFINITIONOptimalTransitionPoints-4-1-3,decimal)"."; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li { counter-increment: DEFINITIONOptimalTransitionPoints-4-1-3; }
+#DRILLFDT3-2-2 { counter-set: DRILLFDT3-2-2 0; }
+#DRILLFDT3-2-2 > li::marker { content: ""counter(DRILLFDT3-2-2,lower-roman)""; }
+#DRILLFDT3-2-2 > li { counter-increment: DRILLFDT3-2-2; }
+#SUBSECTIONoptim-clos-interv-5-1 { counter-set: SUBSECTIONoptim-clos-interv-5-1 0; }
+#SUBSECTIONoptim-clos-interv-5-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-5-1,decimal)"."; }
+#SUBSECTIONoptim-clos-interv-5-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-5-1; }
+#THEOREMmax-min-3-2 { counter-set: THEOREMmax-min-3-2 0; }
+#THEOREMmax-min-3-2 > li::marker { content: ""counter(THEOREMmax-min-3-2,decimal)"."; }
+#THEOREMmax-min-3-2 > li { counter-increment: THEOREMmax-min-3-2; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-2-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-2-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-2-1-1-2; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-3-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-3-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-3-1-1-2; }
+#SUBSECTIONoptim-clos-interv-14-1-1 { counter-set: SUBSECTIONoptim-clos-interv-14-1-1 0; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-14-1-1,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-14-1-1; }
+#DRILLO1O2-2-1-1-2 { counter-set: DRILLO1O2-2-1-1-2 0; }
+#DRILLO1O2-2-1-1-2 > li::marker { content: ""counter(DRILLO1O2-2-1-1-2,lower-roman)""; }
+#DRILLO1O2-2-1-1-2 > li { counter-increment: DRILLO1O2-2-1-1-2; }
+#THEOREMwhat-second-deriv-3-3 { counter-set: THEOREMwhat-second-deriv-3-3 0; }
+#THEOREMwhat-second-deriv-3-3 > li::marker { content: ""counter(THEOREMwhat-second-deriv-3-3,lower-alpha)""; }
+#THEOREMwhat-second-deriv-3-3 > li { counter-increment: THEOREMwhat-second-deriv-3-3; }
+#THEOREMSecondDerivativeTest-3-4 { counter-set: THEOREMSecondDerivativeTest-3-4 0; }
+#THEOREMSecondDerivativeTest-3-4 > li::marker { content: ""counter(THEOREMSecondDerivativeTest-3-4,lower-alpha)""; }
+#THEOREMSecondDerivativeTest-3-4 > li { counter-increment: THEOREMSecondDerivativeTest-3-4; }
+#DRILLSecondDerivativeTest-1-1 { counter-set: DRILLSecondDerivativeTest-1-1 0; }
+#DRILLSecondDerivativeTest-1-1 > li::marker { content: ""counter(DRILLSecondDerivativeTest-1-1,lower-roman)""; }
+#DRILLSecondDerivativeTest-1-1 > li { counter-increment: DRILLSecondDerivativeTest-1-1; }
+#SUBSECTIONconc-second-deriv-44-1-1 { counter-set: SUBSECTIONconc-second-deriv-44-1-1 0; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-44-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-44-1-1; }
+#SUBSECTIONconc-second-deriv-45-1-1 { counter-set: SUBSECTIONconc-second-deriv-45-1-1 0; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-45-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-45-1-1; }
+#SUBSECTIONOptStrat-3-1 { counter-set: SUBSECTIONOptStrat-3-1 0; }
+#SUBSECTIONOptStrat-3-1 > li::marker { content: ""counter(SUBSECTIONOptStrat-3-1,decimal)"."; }
+#SUBSECTIONOptStrat-3-1 > li { counter-increment: SUBSECTIONOptStrat-3-1; }
+#EXAMPLERectangleFixedPerimeter-6-1 { counter-set: EXAMPLERectangleFixedPerimeter-6-1 0; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li::marker { content: ""counter(EXAMPLERectangleFixedPerimeter-6-1,decimal)"."; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li { counter-increment: EXAMPLERectangleFixedPerimeter-6-1; }
+#PROBLEMMaxPerimeter-5-1-1-2 { counter-set: PROBLEMMaxPerimeter-5-1-1-2 0; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li::marker { content: ""counter(PROBLEMMaxPerimeter-5-1-1-2,lower-roman)""; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li { counter-increment: PROBLEMMaxPerimeter-5-1-1-2; }
+#SUBSUBSECTIONFirstSolution-12-1-1 { counter-set: SUBSUBSECTIONFirstSolution-12-1-1 0; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li::marker { content: ""counter(SUBSUBSECTIONFirstSolution-12-1-1,lower-roman)""; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li { counter-increment: SUBSUBSECTIONFirstSolution-12-1-1; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-2-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-2-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-2-1-1-1; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-3-1-1-1; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-4-1-1-1; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-3-1-1-1; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-4-1-1-1; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 { counter-set: SUBSECTIONVarOptProbs-4-2-1-2-1 0; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-4-2-1-2-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li { counter-increment: SUBSECTIONVarOptProbs-4-2-1-2-1; }
+#PROBLEMWitchTri1-3-1-1-7 { counter-set: PROBLEMWitchTri1-3-1-1-7 0; }
+#PROBLEMWitchTri1-3-1-1-7 > li::marker { content: ""counter(PROBLEMWitchTri1-3-1-1-7,lower-roman)""; }
+#PROBLEMWitchTri1-3-1-1-7 > li { counter-increment: PROBLEMWitchTri1-3-1-1-7; }
+#SUBSECTIONVarOptProbs-14-3-1-3 { counter-set: SUBSECTIONVarOptProbs-14-3-1-3 0; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-3-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-3-1-3; }
+#SUBSECTIONVarOptProbs-14-4-1-3 { counter-set: SUBSECTIONVarOptProbs-14-4-1-3 0; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-4-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-4-1-3; }
+#SECTIONgraph-with-form-19-2 { counter-set: SECTIONgraph-with-form-19-2 0; }
+#SECTIONgraph-with-form-19-2 > li::marker { content: ""counter(SECTIONgraph-with-form-19-2,decimal)"."; }
+#SECTIONgraph-with-form-19-2 > li { counter-increment: SECTIONgraph-with-form-19-2; }
+#SECTIONgraph-with-form-23-1-1 { counter-set: SECTIONgraph-with-form-23-1-1 0; }
+#SECTIONgraph-with-form-23-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-23-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-23-1-1 > li { counter-increment: SECTIONgraph-with-form-23-1-1; }
+#SECTIONgraph-with-form-30-1-1 { counter-set: SECTIONgraph-with-form-30-1-1 0; }
+#SECTIONgraph-with-form-30-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-30-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-30-1-1 > li { counter-increment: SECTIONgraph-with-form-30-1-1; }
+#SUBSECTIONModelingTrout-17-2 { counter-set: SUBSECTIONModelingTrout-17-2 0; }
+#SUBSECTIONModelingTrout-17-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-17-2,decimal)"."; }
+#SUBSECTIONModelingTrout-17-2 > li { counter-increment: SUBSECTIONModelingTrout-17-2; }
+#SUBSECTIONModelingTrout-23-1-2 { counter-set: SUBSECTIONModelingTrout-23-1-2 0; }
+#SUBSECTIONModelingTrout-23-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-23-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-23-1-2 > li { counter-increment: SUBSECTIONModelingTrout-23-1-2; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 { counter-set: SUBSECTIONModelingTrout-38-2-1-1-2 0; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-38-2-1-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li { counter-increment: SUBSECTIONModelingTrout-38-2-1-1-2; }
+#PROBLEMMinViablePop-6-1-1-3 { counter-set: PROBLEMMinViablePop-6-1-1-3 0; }
+#PROBLEMMinViablePop-6-1-1-3 > li::marker { content: ""counter(PROBLEMMinViablePop-6-1-1-3,lower-roman)""; }
+#PROBLEMMinViablePop-6-1-1-3 > li { counter-increment: PROBLEMMinViablePop-6-1-1-3; }
+#SECTIONlittle-healthy-comp-21-1-1 { counter-set: SECTIONlittle-healthy-comp-21-1-1 0; }
+#SECTIONlittle-healthy-comp-21-1-1 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-21-1-1,lower-roman)""; }
+#SECTIONlittle-healthy-comp-21-1-1 > li { counter-increment: SECTIONlittle-healthy-comp-21-1-1; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 { counter-set: SECTIONlittle-healthy-comp-28-3-1-1-3 0; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-28-3-1-1-3,lower-roman)""; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li { counter-increment: SECTIONlittle-healthy-comp-28-3-1-1-3; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 { counter-set: DEFINITIONLimitAtInfinity-Intuitive-3-1-1 0; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li::marker { content: ""counter(DEFINITIONLimitAtInfinity-Intuitive-3-1-1,decimal)"."; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li { counter-increment: DEFINITIONLimitAtInfinity-Intuitive-3-1-1; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 { counter-set: DEFINITIONHorizontalAsymptotes-3-1-1 0; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li::marker { content: ""counter(DEFINITIONHorizontalAsymptotes-3-1-1,decimal)"."; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li { counter-increment: DEFINITIONHorizontalAsymptotes-3-1-1; }
+#DIGRESSIONLimitNotation-47-1-7 { counter-set: DIGRESSIONLimitNotation-47-1-7 0; }
+#DIGRESSIONLimitNotation-47-1-7 > li::marker { content: ""counter(DIGRESSIONLimitNotation-47-1-7,lower-roman)""; }
+#DIGRESSIONLimitNotation-47-1-7 > li { counter-increment: DIGRESSIONLimitNotation-47-1-7; }
+#THEOREMInfSqueeze-3-1 { counter-set: THEOREMInfSqueeze-3-1 0; }
+#THEOREMInfSqueeze-3-1 > li::marker { content: ""counter(THEOREMInfSqueeze-3-1,decimal)""; }
+#THEOREMInfSqueeze-3-1 > li { counter-increment: THEOREMInfSqueeze-3-1; }
+#SECTIONvertical-asymptotes-14-1-1 { counter-set: SECTIONvertical-asymptotes-14-1-1 0; }
+#SECTIONvertical-asymptotes-14-1-1 > li::marker { content: ""counter(SECTIONvertical-asymptotes-14-1-1,lower-roman)""; }
+#SECTIONvertical-asymptotes-14-1-1 > li { counter-increment: SECTIONvertical-asymptotes-14-1-1; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 { counter-set: PROBLEMFoliumOfDescartes2-6-1-1-1 0; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li::marker { content: ""counter(PROBLEMFoliumOfDescartes2-6-1-1-1,lower-roman)""; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li { counter-increment: PROBLEMFoliumOfDescartes2-6-1-1-1; }
+#SUBSECTIONLHopitalsRule-34-1-1 { counter-set: SUBSECTIONLHopitalsRule-34-1-1 0; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-34-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-34-1-1; }
+#SUBSECTIONLHopitalsRule-38-1-1 { counter-set: SUBSECTIONLHopitalsRule-38-1-1 0; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-38-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-38-1-1; }
+#THEOREMLHRule1-3-1 { counter-set: THEOREMLHRule1-3-1 0; }
+#THEOREMLHRule1-3-1 > li::marker { content: ""counter(THEOREMLHRule1-3-1,decimal)""; }
+#THEOREMLHRule1-3-1 > li { counter-increment: THEOREMLHRule1-3-1; }
+#SUBSECTIONLHopitalsRule-62-1-1 { counter-set: SUBSECTIONLHopitalsRule-62-1-1 0; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-62-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-62-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 { counter-set: SUBSECTIONlhop-rule-horiz-17-2-1-1-1 0; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-2-1-1-1,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-2-1-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 { counter-set: SUBSECTIONlhop-rule-horiz-17-5-1-1-2 0; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-5-1-1-2,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-5-1-1-2; }
+#SUBSECTIONlhop-rule-horiz-26-1 { counter-set: SUBSECTIONlhop-rule-horiz-26-1 0; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-26-1,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-26-1; }
+#SUBSECTIONlhop-rule-horiz-28-4 { counter-set: SUBSECTIONlhop-rule-horiz-28-4 0; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-28-4,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li { counter-increment: SUBSECTIONlhop-rule-horiz-28-4; }
+#SECTIONsecants-tangents-18-1 { counter-set: SECTIONsecants-tangents-18-1 0; }
+#SECTIONsecants-tangents-18-1 > li::marker { content: ""counter(SECTIONsecants-tangents-18-1,decimal)"."; }
+#SECTIONsecants-tangents-18-1 > li { counter-increment: SECTIONsecants-tangents-18-1; }
+#PROBLEMBounds-1-1-4 { counter-set: PROBLEMBounds-1-1-4 0; }
+#PROBLEMBounds-1-1-4 > li::marker { content: ""counter(PROBLEMBounds-1-1-4,lower-roman)""; }
+#PROBLEMBounds-1-1-4 > li { counter-increment: PROBLEMBounds-1-1-4; }
+#SUBSECTIONlimit-comp-cont-5-3 { counter-set: SUBSECTIONlimit-comp-cont-5-3 0; }
+#SUBSECTIONlimit-comp-cont-5-3 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-5-3,decimal)"."; }
+#SUBSECTIONlimit-comp-cont-5-3 > li { counter-increment: SUBSECTIONlimit-comp-cont-5-3; }
+#SUBSECTIONlimit-comp-cont-23-1-1 { counter-set: SUBSECTIONlimit-comp-cont-23-1-1 0; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-23-1-1,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li { counter-increment: SUBSECTIONlimit-comp-cont-23-1-1; }
+#SUBSECTIONlimit-comp-cont-24-1-2 { counter-set: SUBSECTIONlimit-comp-cont-24-1-2 0; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-24-1-2,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li { counter-increment: SUBSECTIONlimit-comp-cont-24-1-2; }
+#PROBLEMTopSineFuncB-1-1-6 { counter-set: PROBLEMTopSineFuncB-1-1-6 0; }
+#PROBLEMTopSineFuncB-1-1-6 > li::marker { content: ""counter(PROBLEMTopSineFuncB-1-1-6,lower-roman)""; }
+#PROBLEMTopSineFuncB-1-1-6 > li { counter-increment: PROBLEMTopSineFuncB-1-1-6; }
+#PROBLEMQRRigorA-1-1-2 { counter-set: PROBLEMQRRigorA-1-1-2 0; }
+#PROBLEMQRRigorA-1-1-2 > li::marker { content: ""counter(PROBLEMQRRigorA-1-1-2,lower-roman)""; }
+#PROBLEMQRRigorA-1-1-2 > li { counter-increment: PROBLEMQRRigorA-1-1-2; }
+#DRILLCircularReasoning-1-1-3 { counter-set: DRILLCircularReasoning-1-1-3 0; }
+#DRILLCircularReasoning-1-1-3 > li::marker { content: ""counter(DRILLCircularReasoning-1-1-3,lower-roman)""; }
+#DRILLCircularReasoning-1-1-3 > li { counter-increment: DRILLCircularReasoning-1-1-3; }
+#DEFINITIONFunctionInverse-3-1-8 { counter-set: DEFINITIONFunctionInverse-3-1-8 0; }
+#DEFINITIONFunctionInverse-3-1-8 > li::marker { content: ""counter(DEFINITIONFunctionInverse-3-1-8,decimal)"."; }
+#DEFINITIONFunctionInverse-3-1-8 > li { counter-increment: DEFINITIONFunctionInverse-3-1-8; }
+#SECTIONinverse-functions-21-1 { counter-set: SECTIONinverse-functions-21-1 0; }
+#SECTIONinverse-functions-21-1 > li::marker { content: ""counter(SECTIONinverse-functions-21-1,decimal)"."; }
+#SECTIONinverse-functions-21-1 > li { counter-increment: SECTIONinverse-functions-21-1; }
+#SECTIONinverse-functions-23-2 { counter-set: SECTIONinverse-functions-23-2 0; }
+#SECTIONinverse-functions-23-2 > li::marker { content: ""counter(SECTIONinverse-functions-23-2,decimal)"."; }
+#SECTIONinverse-functions-23-2 > li { counter-increment: SECTIONinverse-functions-23-2; }
+#THEOREMDerivInvFunc-3-1 { counter-set: THEOREMDerivInvFunc-3-1 0; }
+#THEOREMDerivInvFunc-3-1 > li::marker { content: ""counter(THEOREMDerivInvFunc-3-1,decimal)"."; }
+#THEOREMDerivInvFunc-3-1 > li { counter-increment: THEOREMDerivInvFunc-3-1; }
+#DRILLRollesLemma1-2 { counter-set: DRILLRollesLemma1-2 0; }
+#DRILLRollesLemma1-2 > li::marker { content: ""counter(DRILLRollesLemma1-2,lower-roman)""; }
+#DRILLRollesLemma1-2 > li { counter-increment: DRILLRollesLemma1-2; }
+#THEOREMFDTproved-3-8 { counter-set: THEOREMFDTproved-3-8 0; }
+#THEOREMFDTproved-3-8 > li::marker { content: ""counter(THEOREMFDTproved-3-8,decimal)"."; }
+#THEOREMFDTproved-3-8 > li { counter-increment: THEOREMFDTproved-3-8; }
+#PROBLEMMVTSpecialCase-1-1-2 { counter-set: PROBLEMMVTSpecialCase-1-1-2 0; }
+#PROBLEMMVTSpecialCase-1-1-2 > li::marker { content: ""counter(PROBLEMMVTSpecialCase-1-1-2,decimal)"."; }
+#PROBLEMMVTSpecialCase-1-1-2 > li { counter-increment: PROBLEMMVTSpecialCase-1-1-2; }
+#PROBLEMAbsValDerivA-1-1-5 { counter-set: PROBLEMAbsValDerivA-1-1-5 0; }
+#PROBLEMAbsValDerivA-1-1-5 > li::marker { content: ""counter(PROBLEMAbsValDerivA-1-1-5,decimal)"."; }
+#PROBLEMAbsValDerivA-1-1-5 > li { counter-increment: PROBLEMAbsValDerivA-1-1-5; }
+#DEFINITIONone-sided-deriv-3-1-3 { counter-set: DEFINITIONone-sided-deriv-3-1-3 0; }
+#DEFINITIONone-sided-deriv-3-1-3 > li::marker { content: ""counter(DEFINITIONone-sided-deriv-3-1-3,decimal)"."; }
+#DEFINITIONone-sided-deriv-3-1-3 > li { counter-increment: DEFINITIONone-sided-deriv-3-1-3; }
+#PROBLEMHeaviTranslate-2-1-1-3 { counter-set: PROBLEMHeaviTranslate-2-1-1-3 0; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li::marker { content: ""counter(PROBLEMHeaviTranslate-2-1-1-3,lower-roman)""; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li { counter-increment: PROBLEMHeaviTranslate-2-1-1-3; }
+#PROBLEMHeaviTranslate-3-1-1-4 { counter-set: PROBLEMHeaviTranslate-3-1-1-4 0; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li::marker { content: ""counter(PROBLEMHeaviTranslate-3-1-1-4,lower-roman)""; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li { counter-increment: PROBLEMHeaviTranslate-3-1-1-4; }
+#SECTIONone-sided-deriv-11-3 { counter-set: SECTIONone-sided-deriv-11-3 0; }
+#SECTIONone-sided-deriv-11-3 > li::marker { content: ""counter(SECTIONone-sided-deriv-11-3,decimal)"."; }
+#SECTIONone-sided-deriv-11-3 > li { counter-increment: SECTIONone-sided-deriv-11-3; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 { counter-set: SUBSECTIONVerticalAsymptotes-24-4-2 0; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li::marker { content: ""counter(SUBSECTIONVerticalAsymptotes-24-4-2,decimal)""; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li { counter-increment: SUBSECTIONVerticalAsymptotes-24-4-2; }
+#PROBLEMAntiDiffPractice-1-2 { counter-set: PROBLEMAntiDiffPractice-1-2 0; }
+#PROBLEMAntiDiffPractice-1-2 > li::marker { content: ""counter(PROBLEMAntiDiffPractice-1-2,lower-roman)""; }
+#PROBLEMAntiDiffPractice-1-2 > li { counter-increment: PROBLEMAntiDiffPractice-1-2; }
+#DRILLIntSimpSub-1-4 { counter-set: DRILLIntSimpSub-1-4 0; }
+#DRILLIntSimpSub-1-4 > li::marker { content: ""counter(DRILLIntSimpSub-1-4,lower-roman)""; }
+#DRILLIntSimpSub-1-4 > li { counter-increment: DRILLIntSimpSub-1-4; }
+#SECTIONKnownIntegrals-12-1-2 { counter-set: SECTIONKnownIntegrals-12-1-2 0; }
+#SECTIONKnownIntegrals-12-1-2 > li::marker { content: ""counter(SECTIONKnownIntegrals-12-1-2,lower-roman)""; }
+#SECTIONKnownIntegrals-12-1-2 > li { counter-increment: SECTIONKnownIntegrals-12-1-2; }
+#DefIntProp-18-1-2 { counter-set: DefIntProp-18-1-2 0; }
+#DefIntProp-18-1-2 > li::marker { content: ""counter(DefIntProp-18-1-2,lower-roman)""; }
+#DefIntProp-18-1-2 > li { counter-increment: DefIntProp-18-1-2; }
+#PROBLEMPS1-1-1-4 { counter-set: PROBLEMPS1-1-1-4 0; }
+#PROBLEMPS1-1-1-4 > li::marker { content: ""counter(PROBLEMPS1-1-1-4,lower-roman)""; }
+#PROBLEMPS1-1-1-4 > li { counter-increment: PROBLEMPS1-1-1-4; }
+#SECTIONProbs15-20-2-1-1-2 { counter-set: SECTIONProbs15-20-2-1-1-2 0; }
+#SECTIONProbs15-20-2-1-1-2 > li::marker { content: ""counter(SECTIONProbs15-20-2-1-1-2,lower-roman)""; }
+#SECTIONProbs15-20-2-1-1-2 > li { counter-increment: SECTIONProbs15-20-2-1-1-2; }
+#SECTIONProbs15-20-3-1-1-1 { counter-set: SECTIONProbs15-20-3-1-1-1 0; }
+#SECTIONProbs15-20-3-1-1-1 > li::marker { content: ""counter(SECTIONProbs15-20-3-1-1-1,lower-roman)""; }
+#SECTIONProbs15-20-3-1-1-1 > li { counter-increment: SECTIONProbs15-20-3-1-1-1; }
+</style>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -228,9 +839,9 @@ window.MathJax = {
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
 </ul>
 </li>
@@ -697,7 +1308,7 @@ window.MathJax = {
 </h3>
 <div class="para" id="SUBSECTIONradioactive-decay-2"> Radioactive isotopes have the curious property that in time they break down into other, more stable, substances. This process is known as <dfn class="terminology">radioactive decay</dfn>. While there is no way to predict when an individual radioactive atom will decay, the decay of a large collection of radioactive isotopes is very regular and can be predicted.</div>
 <div class="para" id="SUBSECTIONradioactive-decay-3">For example, if we have two pounds of the radioactive isotope Cesium-137 <span class="process-math">\((\text{Cs}{137})\)</span> it is known that after the passage of <span class="process-math">\(30\)</span> years and <span class="process-math">\(70\)</span> days we will have only one pound. The rest will have decayed into barium.  Even more curious though, is this: If we wait another <span class="process-math">\(30\)</span> years and <span class="process-math">\(70\)</span> days only one-half pound of the remaining one pound will have decayed.  The numbers change depending on the isotope but the general principle is that a fixed percentage of a radioactive isotope will decay during a fixed interval of time.</div>
-<div class="para" id="SUBSECTIONradioactive-decay-4">Do you see the implications of this? Since a fixed percentage decays in a fixed time interval the rate of change of <span class="process-math">\(A(t)\)</span> will be proportional to <span class="process-math">\(A\)</span> itself. Since this is exactly what we said about both population growth and return on investment, <a href="" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" title="Equation 7.20">IVP (7.20)</a> should model this phenomenon as well. There is, of course, the difference that the quantity is now shrinking rather than growing. How do you think that will manifest in our model? Take a guess.</div>
+<div class="para" id="SUBSECTIONradioactive-decay-4">Do you see the implications of this? Since a fixed percentage decays in a fixed time interval the rate of change of <span class="process-math">\(A(t)\)</span> will be proportional to <span class="process-math">\(A\)</span> itself. Since this is exactly what we said about both population growth and return on investment, <a href="CHAPTERlast-elem-funct-8.html#CHAPTERlast-elem-funct-8-8-6" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.20">IVP (7.20)</a> should model this phenomenon as well. There is, of course, the difference that the quantity is now shrinking rather than growing. How do you think that will manifest in our model? Take a guess.</div>
 <article class="example example-like" id="EXAMPLEradioactive-dating"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.10.1.1</span><span class="period">.</span>
 </h4>
@@ -708,20 +1319,23 @@ window.MathJax = {
 \dfdx{A}{t}= 0.25A,\ A(0)=20.\tag{7.24}
 \end{equation}
 </div>
-<div class="para">which we recognize as a special case of <a href="" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" title="Equation 7.20">IVP (7.20)</a>, so the solution will be</div>
+<div class="para">which we recognize as a special case of <a href="CHAPTERlast-elem-funct-8.html#CHAPTERlast-elem-funct-8-8-6" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.20">IVP (7.20)</a>, so the solution will be</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGeneral.html">
 \begin{equation*}
 A(t)=20e^{0.25t}
 \end{equation*}
 </div>
-</div> <div class="para" id="EXAMPLEradioactive-dating-2">Wait a minute. This can’t be right. It says that the number of isotopes is increasing, not decreasing. Graph it and see.</div> <div class="para" id="EXAMPLEradioactive-dating-3">So what did we do wrong?</div> <div class="para logical" id="EXAMPLEradioactive-dating-4">
+</div>
+<div class="para" id="EXAMPLEradioactive-dating-2">Wait a minute. This can’t be right. It says that the number of isotopes is increasing, not decreasing. Graph it and see.</div>
+<div class="para" id="EXAMPLEradioactive-dating-3">So what did we do wrong?</div>
+<div class="para logical" id="EXAMPLEradioactive-dating-4">
 <div class="para">The derivative of <span class="process-math">\(A(t)\)</span> is its rate of change. If <span class="process-math">\(A(t)\)</span> is increasing then its rate of change is going to be positive. If it is decreasing then its rate of change will be negative. We seem to have committed one of the classic blunders of mathematics. We got the sign wrong. We should have been solving  the IVP</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPRadioactiveDecay-Wrong.html ./knowl/xref/IVPRadioactiveDecay-Correct.html ./knowl/xref/IVPExpGeneral.html" id="IVPRadioactiveDecay-Correct">
 \begin{equation}
 \dfdx{A}{t}= -0.25A,\ A(0)=20.\tag{7.25}
 \end{equation}
 </div>
-<div class="para">instead of <a href="" class="xref" data-knowl="./knowl/xref/IVPRadioactiveDecay-Wrong.html" title="Equation 7.24">IVP (7.24)</a>. Since <a href="" class="xref" data-knowl="./knowl/xref/IVPRadioactiveDecay-Correct.html" title="Equation 7.25">IVP (7.25)</a> also has the same form as <a href="" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" title="Equation 7.20">IVP (7.20)</a>,  the correct solution is</div>
+<div class="para">instead of <a href="SECTIONLogApps.html#IVPRadioactiveDecay-Wrong" class="xref" data-knowl="./knowl/xref/IVPRadioactiveDecay-Wrong.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.24">IVP (7.24)</a>. Since <a href="SECTIONLogApps.html#IVPRadioactiveDecay-Correct" class="xref" data-knowl="./knowl/xref/IVPRadioactiveDecay-Correct.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.25">IVP (7.25)</a> also has the same form as <a href="CHAPTERlast-elem-funct-8.html#CHAPTERlast-elem-funct-8-8-6" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.20">IVP (7.20)</a>,  the correct solution is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPRadioactiveDecay-Wrong.html ./knowl/xref/IVPRadioactiveDecay-Correct.html ./knowl/xref/IVPExpGeneral.html" id="EQUATIONNuclearDecay-Wrong">
 \begin{equation}
 A(t)=20e^{-0.25t}\tag{7.26}
@@ -741,8 +1355,9 @@ A(t)=20e^{-0.25t}\tag{7.26}
 \dfdx{y}{t}=ry, \amp{}\amp{} y(0)=6.
 \end{align*}
 </div>
-</div> <aside class="aside aside-like" id="SUBSECTIONradioactive-decay-8-2"><h5 class="heading"><span class="title">Comment.</span></h5>
-<div class="para" id="SUBSECTIONradioactive-decay-8-2-2">In view of our discussion above about positive versus negative rates of change it is tempting to write the differential equation as <span class="process-math">\(\dfdx{y}{t}=-ry\text{.}\)</span> While this is not necessarily wrong, it is not helpful. The variable <span class="process-math">\(r\)</span> can be any number, positive or negative. If we do our analysis correctly the correct value will emerge.</div></aside> <div class="para logical" id="SUBSECTIONradioactive-decay-8-3">
+</div>
+<aside class="aside aside-like" id="SUBSECTIONradioactive-decay-8-2"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="SUBSECTIONradioactive-decay-8-2-2">In view of our discussion above about positive versus negative rates of change it is tempting to write the differential equation as <span class="process-math">\(\dfdx{y}{t}=-ry\text{.}\)</span> While this is not necessarily wrong, it is not helpful. The variable <span class="process-math">\(r\)</span> can be any number, positive or negative. If we do our analysis correctly the correct value will emerge.</div></aside><div class="para logical" id="SUBSECTIONradioactive-decay-8-3">
 <div class="para">As always the solution of a differential equation of this form is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -774,7 +1389,7 @@ y(t) = 6e^{\frac{t}{2}\ln\left(\frac12\right)}.
 </div></article><article class="exercise exercise-like" id="SUBSECTIONradioactive-decay-9"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">7.10.1.4</span><span class="period">.</span>
 </h4>
-<ol class="lower-roman">
+<ol class="lower-roman" id="SUBSECTIONradioactive-decay-9-1">
 <li id="SUBSECTIONradioactive-decay-9-1-1"><div class="para" id="SUBSECTIONradioactive-decay-9-1-1-1">Use the properties of logarithms and exponentials to show that <span class="process-math">\(6e^{\frac{t}{2}\ln\left(\frac12\right)} =
 6e^{-\frac{t}{2}\ln\left(2\right)}\text{.}\)</span>
 </div></li>
@@ -800,16 +1415,17 @@ A(h)=\frac{1}{2}A_0=A_0 e^{rh}.
 </div></article><article class="task exercise-like" id="SUBSECTIONradioactive-decay-12-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="SUBSECTIONradioactive-decay-12-4-1-1">The formula in part (a) is correct but it is a little awkward to use, as written. Use the properties of exponents and logarithms to show that this can be rewritten as <span class="process-math">\(A(t)=A_0 \left(\frac{1}{2}\right)^{\frac{t}{h}}.  \)</span> What are <span class="process-math">\(A(0),\)</span> <span class="process-math">\(A(h),\)</span> <span class="process-math">\(A(2h),\)</span> and <span class="process-math">\(A(3h)?\)</span> Is this consistent with calling <span class="process-math">\(h\)</span> the half-life?  Explain.</div></article></article><div class="para" id="SUBSECTIONradioactive-decay-13">Radiocarbon <span class="process-math">\((C_{14})\)</span> is a radioactive isotope of carbon which is constantly being created in the atmosphere by the interaction of cosmic rays with atmospheric nitrogen. The resulting radiocarbon combines with atmospheric oxygen to form radioactive carbon dioxide, which is incorporated into plants by photosynthesis. Animals then acquire <span class="process-math">\(C_{14}\)</span> by eating the plants. When the animal or plant dies, it stops absorbing carbon from the environment. From that point onward the amount of <span class="process-math">\(C_{14}\)</span> it contains begins to decrease as the <span class="process-math">\(C_{14}\)</span> undergoes radioactive decay. During life the ratio of <span class="process-math">\(C_{14}\)</span> to other, stable, isotopes remains stable. However after an organism dies this ratio begins to decrease due to the decay of <span class="process-math">\(C_{14}\)</span>
 </div>
-<div class="para" id="SUBSECTIONradioactive-decay-14"> By measuring the amount of <span class="process-math">\(C_{14}\)</span> in a sample from a dead plant or animal such as a piece of wood or a fragment of bone we can calculate, approximately when the plant or animal died. This is called <dfn class="terminology">radiocarbon dating</dfn>, and it was developed by <a class="external" href="https://www.nobelprize.org/prizes/chemistry/1960/libby/biographical/" target="_blank">Willard Libby</a><a class="xref" id="SUBSECTIONradioactive-decay-14-5" href="" data-knowl="./knowl/fn/SUBSECTIONradioactive-decay-14-5.html" title="Footnote 7.13"><sup> 13 </sup></a> (1908-1980), in <span class="process-math">\(1949\text{.}\)</span> Radiocarbon dating revolutionized the field of archaeology and   Libby was awarded the Nobel Prize in Chemistry in <span class="process-math">\(1960\)</span> for this development.</div>
+<div class="para" id="SUBSECTIONradioactive-decay-14"> By measuring the amount of <span class="process-math">\(C_{14}\)</span> in a sample from a dead plant or animal such as a piece of wood or a fragment of bone we can calculate, approximately when the plant or animal died. This is called <dfn class="terminology">radiocarbon dating</dfn>, and it was developed by <a class="external" href="https://www.nobelprize.org/prizes/chemistry/1960/libby/biographical/" target="_blank">Willard Libby</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONradioactive-decay-14-5"><summary class="ptx-footnote__number" title="Footnote 7.13"><sup> 13 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONradioactive-decay-14-5"><code class="code-inline tex2jax_ignore">https://www.nobelprize.org/prizes/chemistry/1960/libby/biographical/</code></div></details> (1908-1980), in <span class="process-math">\(1949\text{.}\)</span> Radiocarbon dating revolutionized the field of archaeology and   Libby was awarded the Nobel Prize in Chemistry in <span class="process-math">\(1960\)</span> for this development.</div>
 <article class="exercise exercise-like" id="SUBSECTIONradioactive-decay-15"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">7.10.1.6</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="SUBSECTIONradioactive-decay-15-1">
-<div class="para" id="SUBSECTIONradioactive-decay-15-1-1">The Shroud of Turin, shown below, is a Christian religious relic which bears an image of a man. Some people believe it is the burial cloth of Jesus and that the image is that of Jesus himself. In <span class="process-math">\(1987\)</span> the Vatican agreed to subject pieces of the shroud to radiocarbon dating. In this problem we will recreate the computations done to determine the age of the Shroud. Let <span class="process-math">\(A=A(t)\)</span> be the amount of <span class="process-math">\(C_{14}\)</span> (in mg) at time <span class="process-math">\(t\)</span> years, where <span class="process-math">\(t=0\)</span> represents when the shroud was used.  Let <span class="process-math">\(A(0)=A_0\)</span> be the initial amount of <span class="process-math">\(C_{14}\)</span> present in the sample.</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DC/ShroudOfTurin.png" class="contained"></div>
+<div class="para" id="SUBSECTIONradioactive-decay-15-1-1">The Shroud of Turin, shown below, is a Christian religious relic which bears an image of a man. Some people believe it is the burial cloth of Jesus and that the image is that of Jesus himself. In <span class="process-math">\(1987\)</span> the Vatican agreed to subject pieces of the shroud to radiocarbon dating. In this problem we will recreate the computations done to determine the age of the Shroud. Let <span class="process-math">\(A=A(t)\)</span> be the amount of <span class="process-math">\(C_{14}\)</span> (in mg) at time <span class="process-math">\(t\)</span> years, where <span class="process-math">\(t=0\)</span> represents when the shroud was used.  Let <span class="process-math">\(A(0)=A_0\)</span> be the initial amount of <span class="process-math">\(C_{14}\)</span> present in the sample.</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DC/ShroudOfTurin.png" class="contained"></div>
 </div>
 <article class="task exercise-like" id="SUBSECTIONradioactive-decay-15-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="SUBSECTIONradioactive-decay-15-2-1-1">How much <span class="process-math">\(C_{14}\)</span> would be present if the shroud was 2000 years old?</div></article><article class="task exercise-like" id="SUBSECTIONradioactive-decay-15-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="SUBSECTIONradioactive-decay-15-3-1-1">If one of the samples of the Shroud contained 88.9% of the original <span class="process-math">\(C_{14}\text{.}\)</span>  How old would this sample be?</div></article><div class="conclusion" id="SUBSECTIONradioactive-decay-15-4"><div class="para" id="SUBSECTIONradioactive-decay-15-4-1">This does not settle the question of the age of the Shroud. The technique of carbon dating is not in dispute, but there are other issues including questions about the quality of the samples.  If you are interested you can read more here: <a class="external" href="https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/" target="_blank">https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/</a><a class="xref" id="SUBSECTIONradioactive-decay-15-4-1-2" href="" data-knowl="./knowl/fn/SUBSECTIONradioactive-decay-15-4-1-2.html" title="Footnote 7.14"><sup> 14 </sup></a>.</div></div></article><article class="problem example-like" id="SUBSECTIONradioactive-decay-16"><h4 class="heading">
+<div class="para" id="SUBSECTIONradioactive-decay-15-3-1-1">If one of the samples of the Shroud contained 88.9% of the original <span class="process-math">\(C_{14}\text{.}\)</span>  How old would this sample be?</div></article><div class="conclusion" id="SUBSECTIONradioactive-decay-15-4"><div class="para" id="SUBSECTIONradioactive-decay-15-4-1">This does not settle the question of the age of the Shroud. The technique of carbon dating is not in dispute, but there are other issues including questions about the quality of the samples.  If you are interested you can read more here: <a class="external" href="https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/" target="_blank">https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONradioactive-decay-15-4-1-2"><summary class="ptx-footnote__number" title="Footnote 7.14"><sup> 14 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONradioactive-decay-15-4-1-2"><code class="code-inline tex2jax_ignore">https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/</code></div></details>.</div></div></article><article class="problem example-like" id="SUBSECTIONradioactive-decay-16"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">7.10.1.7</span><span class="period">.</span>
 </h4>
 <div class="para" id="SUBSECTIONradioactive-decay-16-1-1">In medicine, Positron Emission Tomography (PET) scans use radioactive tracers to image body functions.  One of the most commonly used radioactive tracers is Fluorine-<span class="process-math">\(18\)</span> <span class="process-math">\((F_{18})\)</span> which has a half life of <span class="process-math">\(110\)</span> minutes. Typically <span class="process-math">\(F_{18}\)</span> is injected into the body and the imaging is done about one hour after the tracer is injected.  Suppose that <span class="process-math">\(s\)</span> units of <span class="process-math">\(F_{18}\)</span> must remain in the body for the PET scan results to be useful.  How much <span class="process-math">\(F_{18}\)</span> must be injected into the patient <span class="process-math">\(60\)</span> minutes prior?</div></article><article class="problem example-like" id="SUBSECTIONradioactive-decay-17"><h4 class="heading">
@@ -818,7 +1434,7 @@ A(h)=\frac{1}{2}A_0=A_0 e^{rh}.
 <div class="para" id="SUBSECTIONradioactive-decay-17-1-1">The half-life of <span class="process-math">\(C_{14}\)</span> limits it to dating artifacts that are no older than <span class="process-math">\(50,000\)</span> years.  What percentage of the original amount of <span class="process-math">\(C_{14}\)</span> would remain in a <span class="process-math">\(50,000\)</span>-year-old artifact?  How does this explain the limitation on radiocarbon dating?</div></article><article class="exercise exercise-like" id="SUBSECTIONradioactive-decay-18"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">7.10.1.9</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="SUBSECTIONradioactive-decay-18-1"><div class="para" id="SUBSECTIONradioactive-decay-18-1-1">The radioactive isotope Potassium-<span class="process-math">\(40\)</span> <span class="process-math">\((K_{40})\)</span> has a half life of <span class="process-math">\(1.25\)</span> billion years. Radiometric dating using <span class="process-math">\(K_{40}\)</span> is especially effective for dating very old volcanic rock as the quickly cooling lava traps the Argon formed by the decaying of <span class="process-math">\(K_{40}.\)</span> This has been used by scientists to study the frequency of geomagnetic reversals.  A geomagnetic reversal is a change in the earth’s magnetic polarity where the magnetic north and south poles (not to be confused with the geographic north and south poles) are switched. The latest such reversal is called the <a class="external" href="https://en.wikipedia.org/wiki/Brunhes%E2%80%93Matuyama_reversal" target="_blank">Brunhes-Matuyama</a><a class="xref" id="SUBSECTIONradioactive-decay-18-1-1-8" href="" data-knowl="./knowl/fn/SUBSECTIONradioactive-decay-18-1-1-8.html" title="Footnote 7.15"><sup> 15 </sup></a> reversal. Basically, the magnetic polarity of the planet is “recorded” in cooled lava flows.  By dating the age of the lava flows, scientists can date these reversals. There are limitations to this dating method, as the smallest percentage of <span class="process-math">\(K_{40}\)</span> that can be detected is about <span class="process-math">\(0.0053\%\text{.}\)</span>
+<div class="introduction" id="SUBSECTIONradioactive-decay-18-1"><div class="para" id="SUBSECTIONradioactive-decay-18-1-1">The radioactive isotope Potassium-<span class="process-math">\(40\)</span> <span class="process-math">\((K_{40})\)</span> has a half life of <span class="process-math">\(1.25\)</span> billion years. Radiometric dating using <span class="process-math">\(K_{40}\)</span> is especially effective for dating very old volcanic rock as the quickly cooling lava traps the Argon formed by the decaying of <span class="process-math">\(K_{40}.\)</span> This has been used by scientists to study the frequency of geomagnetic reversals.  A geomagnetic reversal is a change in the earth’s magnetic polarity where the magnetic north and south poles (not to be confused with the geographic north and south poles) are switched. The latest such reversal is called the <a class="external" href="https://en.wikipedia.org/wiki/Brunhes%E2%80%93Matuyama_reversal" target="_blank">Brunhes-Matuyama</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONradioactive-decay-18-1-1-8"><summary class="ptx-footnote__number" title="Footnote 7.15"><sup> 15 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONradioactive-decay-18-1-1-8"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Brunhes%E2%80%93Matuyama_reversal</code></div></details> reversal. Basically, the magnetic polarity of the planet is “recorded” in cooled lava flows.  By dating the age of the lava flows, scientists can date these reversals. There are limitations to this dating method, as the smallest percentage of <span class="process-math">\(K_{40}\)</span> that can be detected is about <span class="process-math">\(0.0053\%\text{.}\)</span>
 </div></div>
 <article class="task exercise-like" id="SUBSECTIONradioactive-decay-18-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="SUBSECTIONradioactive-decay-18-2-1-1">According to the Wikipedia article we referenced above the the Brunhes-Matuyama reversal occured approximately <span class="process-math">\(781,000\)</span> years ago. A rock sample which appears to have a magnetic reversal  contains between <span class="process-math">\(99.9541\%\)</span> and <span class="process-math">\(99.9593\%\)</span> of the <span class="process-math">\(K_{40}\)</span> that it originally contained. Is this consistent with the Brunhes-Matuyama reversal?</div></article><article class="task exercise-like" id="SUBSECTIONradioactive-decay-18-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
@@ -828,21 +1444,24 @@ A(h)=\frac{1}{2}A_0=A_0 e^{rh}.
 <article class="example example-like" id="SECTIONnewtons-law-cooling-2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.10.2.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="SECTIONnewtons-law-cooling-2-1">Suppose a container of water at a temperature of <span class="process-math">\(40^\circ F\)</span> is placed into a freezer maintained at a constant temperature of <span class="process-math">\(5^\circ F.\)</span> We’d like to have a model that will allow us to compute how long it will take for the water to cool down to a temperature of, for example, <span class="process-math">\(32^\circ F\)</span> where it will start to freeze.</div> <div class="para" id="SECTIONnewtons-law-cooling-2-2"> In the late <span class="process-math">\(17\)</span>th century Isaac Newton showed experimentally that the rate at which the water cools will be proportional to the difference between its current temperature and the ambient (surrounding) temperature. This is known as Newton’s Law of Cooling and it holds generally, not just for water.</div> <div class="para logical" id="SECTIONnewtons-law-cooling-2-3">
+<div class="para" id="SECTIONnewtons-law-cooling-2-1">Suppose a container of water at a temperature of <span class="process-math">\(40^\circ F\)</span> is placed into a freezer maintained at a constant temperature of <span class="process-math">\(5^\circ F.\)</span> We’d like to have a model that will allow us to compute how long it will take for the water to cool down to a temperature of, for example, <span class="process-math">\(32^\circ F\)</span> where it will start to freeze.</div>
+<div class="para" id="SECTIONnewtons-law-cooling-2-2"> In the late <span class="process-math">\(17\)</span>th century Isaac Newton showed experimentally that the rate at which the water cools will be proportional to the difference between its current temperature and the ambient (surrounding) temperature. This is known as Newton’s Law of Cooling and it holds generally, not just for water.</div>
+<div class="para logical" id="SECTIONnewtons-law-cooling-2-3">
 <div class="para">For this problem we see that the ambient temperature is <span class="process-math">\(5^\circ F\)</span> and the initial temperature of the water is <span class="process-math">\(40^\circ F\text{.}\)</span>  We let <span class="process-math">\(T(t)\)</span> represent the temperature of the water at any given time. Then the difference between the current temperature and the ambient temperature is <span class="process-math">\(T-5\text{,}\)</span> and (as always) the rate of change of the temperature of the water with respect to time is <span class="process-math">\(\dfdx{T}{t}\text{,}\)</span> (or <span class="process-math">\(\dot{T}\)</span> if you are Newton). Letting <span class="process-math">\(r\)</span> be the (unknown) constant of proportionality we have the IVP</div>
 <div class="displaymath process-math" id="SECTIONnewtons-law-cooling-2-3-8">
 \begin{align*}
 \dfdx{T}{t}=r(T-5),\amp{}\amp{} T(0)=40.
 \end{align*}
 </div>
-</div> <div class="para logical" id="SECTIONnewtons-law-cooling-2-4">
+</div>
+<div class="para logical" id="SECTIONnewtons-law-cooling-2-4">
 <div class="para">This differential equation looks like it will be tougher to solve than the IVPs we dealt with earlier. But in fact we can make this problem “easier on the eyes” with the substitution <span class="process-math">\(D=T-5\text{.}\)</span> Notice that <span class="process-math">\(\dfdx{D}{t}=\dfdx{(T-5)}{t}=\dfdx{T}{t}\)</span> so we have the IVP</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONBacteriaIVP.html" id="SECTIONnewtons-law-cooling-2-4-4">
 \begin{align}
 \dfdx{D}{t}=rD \amp{}\amp{}          D(0)=40-5=35.  \tag{7.27}
 \end{align}
 </div>
-<div class="para">Do you recognize this equation? This has the same form as <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONBacteriaIVP.html" title="Equation 7.19">IVP (7.19)</a> so the solution is</div>
+<div class="para">Do you recognize this equation? This has the same form as <a href="CHAPTERlast-elem-funct-8.html#EXAMPLEpopulation-growth-7-4" class="xref" data-knowl="./knowl/xref/EQUATIONBacteriaIVP.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.19">IVP (7.19)</a> so the solution is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONBacteriaIVP.html">
 \begin{equation*}
 D(t)=D(0) e^{rt}=35e^{rt}.
@@ -855,7 +1474,8 @@ T(t)-5\amp =\left(T(0)-5\right)e^{rt}\\
 T(t)\amp =5+35e^{rt}.
 \end{align*}
 </div>
-</div> <div class="para logical" id="SECTIONnewtons-law-cooling-2-5">
+</div>
+<div class="para logical" id="SECTIONnewtons-law-cooling-2-5">
 <div class="para">To complete our model we need to determine <span class="process-math">\(r\text{.}\)</span> We can find <span class="process-math">\(r\)</span> if we know the temperature of the water at a second time during the cooling.  Assume that we measured the temperature of the water after <span class="process-math">\(10\)</span> minutes and it was <span class="process-math">\(35^\circ F.\)</span> Thus we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -876,7 +1496,8 @@ T(t)\amp =5+35e^{\frac{\ln(6/7)}{10} t}\\
 \amp =5+35\left(\frac{6}{7}\right)^{\frac{t}{10}}.
 \end{align*}
 </div>
-</div> <div class="para" id="SECTIONnewtons-law-cooling-2-6">Newton’s Law of Cooling accurately models the cooling of any object placed in  cooler surroundings. We used water in our example just to be definite.</div></article><article class="exercise exercise-like" id="SECTIONnewtons-law-cooling-3"><h4 class="heading">
+</div>
+<div class="para" id="SECTIONnewtons-law-cooling-2-6">Newton’s Law of Cooling accurately models the cooling of any object placed in  cooler surroundings. We used water in our example just to be definite.</div></article><article class="exercise exercise-like" id="SECTIONnewtons-law-cooling-3"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">7.10.2.2</span><span class="period">.</span>
 </h4>
 <div class="para" id="SECTIONnewtons-law-cooling-3-1-1">Since the temperature of the water is decreasing we would expect <span class="process-math">\(r\)</span> to be less than zero. Show that it is.</div></article><article class="exercise exercise-like" id="SECTIONnewtons-law-cooling-4"><h4 class="heading">
@@ -891,7 +1512,8 @@ T(t)\amp =5+35e^{\frac{\ln(6/7)}{10} t}\\
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">7.10.2.4</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="SECTIONnewtons-law-cooling-5-1">
-<div class="para" id="SECTIONnewtons-law-cooling-5-1-1">The  rule of thumb forensic scientist use to  determine at person’s the time of death is to start with a body temperature of <span class="process-math">\(37^\circ C\)</span> and subtract <span class="process-math">\(1.5^\circ C\)</span> for each hour the person is dead.  Of course, this simple linear model isn’t as accurate as Newton’s Law of Cooling since it does not take into account the surrounding temperature, size of the body, etc. and can only be applied until the temperature of the body reaches the surrounding temperature.</div> <aside class="aside aside-like" id="SECTIONnewtons-law-cooling-5-1-2"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="SECTIONnewtons-law-cooling-5-1-1">The  rule of thumb forensic scientist use to  determine at person’s the time of death is to start with a body temperature of <span class="process-math">\(37^\circ C\)</span> and subtract <span class="process-math">\(1.5^\circ C\)</span> for each hour the person is dead.  Of course, this simple linear model isn’t as accurate as Newton’s Law of Cooling since it does not take into account the surrounding temperature, size of the body, etc. and can only be applied until the temperature of the body reaches the surrounding temperature.</div>
+<aside class="aside aside-like" id="SECTIONnewtons-law-cooling-5-1-2"><h5 class="heading"><span class="title">Comment.</span></h5>
 <div class="para" id="SECTIONnewtons-law-cooling-5-1-2-2">Notice that we’ve switched to measuring temperature in degrees Celsius.</div></aside>
 </div>
 <article class="task exercise-like" id="SECTIONnewtons-law-cooling-5-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>

@@ -58,7 +58,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -70,8 +70,8 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -79,16 +79,627 @@ window.MathJax = {
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#PleaForHelp-9-3 { counter-set: PleaForHelp-9-3 0; }
+#PleaForHelp-9-3 > li::marker { content: ""counter(PleaForHelp-9-3,decimal)"."; }
+#PleaForHelp-9-3 > li { counter-increment: PleaForHelp-9-3; }
+#SECTIONFermMethAedeq-22-2-1-1-1 { counter-set: SECTIONFermMethAedeq-22-2-1-1-1 0; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-2-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-2-1-1-1; }
+#SECTIONFermMethAedeq-22-6-1-1-1 { counter-set: SECTIONFermMethAedeq-22-6-1-1-1 0; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-6-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-6-1-1-1; }
+#SECTIONFermMethAedeq-22-7-1-1-8 { counter-set: SECTIONFermMethAedeq-22-7-1-1-8 0; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-7-1-1-8,lower-roman)""; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li { counter-increment: SECTIONFermMethAedeq-22-7-1-1-8; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 { counter-set: PROBLEMPROBLEMFermMethX2A-1-1-1 0; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li::marker { content: ""counter(PROBLEMPROBLEMFermMethX2A-1-1-1,lower-roman)""; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li { counter-increment: PROBLEMPROBLEMFermMethX2A-1-1-1; }
+#PROBLEMFermMethX2B-1-1-1 { counter-set: PROBLEMFermMethX2B-1-1-1 0; }
+#PROBLEMFermMethX2B-1-1-1 > li::marker { content: ""counter(PROBLEMFermMethX2B-1-1-1,lower-roman)""; }
+#PROBLEMFermMethX2B-1-1-1 > li { counter-increment: PROBLEMFermMethX2B-1-1-1; }
+#SUBSECTIONSpdVelRofC-31-2-1 { counter-set: SUBSECTIONSpdVelRofC-31-2-1 0; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-31-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-31-2-1; }
+#SUBSECTIONSpdVelRofC-32-2-1 { counter-set: SUBSECTIONSpdVelRofC-32-2-1 0; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-32-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-32-2-1; }
+#SUBSECTIONSpdVelRofC-33-2-1 { counter-set: SUBSECTIONSpdVelRofC-33-2-1 0; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-33-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-33-2-1; }
+#SUBSECTIONSpdVelRofC-34-2-1 { counter-set: SUBSECTIONSpdVelRofC-34-2-1 0; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-34-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-34-2-1; }
+#DRILLConstantRule-2 { counter-set: DRILLConstantRule-2 0; }
+#DRILLConstantRule-2 > li::marker { content: ""counter(DRILLConstantRule-2,lower-roman)""; }
+#DRILLConstantRule-2 > li { counter-increment: DRILLConstantRule-2; }
+#SUBSECTIONConstMultRule-5-2 { counter-set: SUBSECTIONConstMultRule-5-2 0; }
+#SUBSECTIONConstMultRule-5-2 > li::marker { content: ""counter(SUBSECTIONConstMultRule-5-2,lower-roman)""; }
+#SUBSECTIONConstMultRule-5-2 > li { counter-increment: SUBSECTIONConstMultRule-5-2; }
+#PARTGenPwrRule-1-2-1 { counter-set: PARTGenPwrRule-1-2-1 0; }
+#PARTGenPwrRule-1-2-1 > li::marker { content: ""counter(PARTGenPwrRule-1-2-1,lower-roman)""; }
+#PARTGenPwrRule-1-2-1 > li { counter-increment: PARTGenPwrRule-1-2-1; }
+#SUBSECTIONPowerRule-12-1-1 { counter-set: SUBSECTIONPowerRule-12-1-1 0; }
+#SUBSECTIONPowerRule-12-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-12-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-12-1-1 > li { counter-increment: SUBSECTIONPowerRule-12-1-1; }
+#SUBSECTIONPowerRule-13-1-1 { counter-set: SUBSECTIONPowerRule-13-1-1 0; }
+#SUBSECTIONPowerRule-13-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-13-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-13-1-1 > li { counter-increment: SUBSECTIONPowerRule-13-1-1; }
+#SUBSECTIONPowerRule-14-1-2 { counter-set: SUBSECTIONPowerRule-14-1-2 0; }
+#SUBSECTIONPowerRule-14-1-2 > li::marker { content: ""counter(SUBSECTIONPowerRule-14-1-2,lower-roman)""; }
+#SUBSECTIONPowerRule-14-1-2 > li { counter-increment: SUBSECTIONPowerRule-14-1-2; }
+#SUBSECTIONPowerRule-40-1-4 { counter-set: SUBSECTIONPowerRule-40-1-4 0; }
+#SUBSECTIONPowerRule-40-1-4 > li::marker { content: ""counter(SUBSECTIONPowerRule-40-1-4,lower-roman)""; }
+#SUBSECTIONPowerRule-40-1-4 > li { counter-increment: SUBSECTIONPowerRule-40-1-4; }
+#SUBSECTIONPowerRule-41-1-1 { counter-set: SUBSECTIONPowerRule-41-1-1 0; }
+#SUBSECTIONPowerRule-41-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-41-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-41-1-1 > li { counter-increment: SUBSECTIONPowerRule-41-1-1; }
+#SUBSECTIONPowerRule-42-1-1 { counter-set: SUBSECTIONPowerRule-42-1-1 0; }
+#SUBSECTIONPowerRule-42-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-42-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-42-1-1 > li { counter-increment: SUBSECTIONPowerRule-42-1-1; }
+#DRILLClassicalCurves-1-3 { counter-set: DRILLClassicalCurves-1-3 0; }
+#DRILLClassicalCurves-1-3 > li::marker { content: ""counter(DRILLClassicalCurves-1-3,lower-roman)""; }
+#DRILLClassicalCurves-1-3 > li { counter-increment: DRILLClassicalCurves-1-3; }
+#SUBSECTIONQuotientRule-9-1-2 { counter-set: SUBSECTIONQuotientRule-9-1-2 0; }
+#SUBSECTIONQuotientRule-9-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-9-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-9-1-2 > li { counter-increment: SUBSECTIONQuotientRule-9-1-2; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 { counter-set: SUBSECTIONQuotientRule-10-2-1-1-2 0; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-10-2-1-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li { counter-increment: SUBSECTIONQuotientRule-10-2-1-1-2; }
+#SECTIONVelocitySlopeTangent-12-1-4 { counter-set: SECTIONVelocitySlopeTangent-12-1-4 0; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li::marker { content: ""counter(SECTIONVelocitySlopeTangent-12-1-4,lower-roman)""; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li { counter-increment: SECTIONVelocitySlopeTangent-12-1-4; }
+#SECTIONdefin-tang-line-23-1-2 { counter-set: SECTIONdefin-tang-line-23-1-2 0; }
+#SECTIONdefin-tang-line-23-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-23-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-23-1-2 > li { counter-increment: SECTIONdefin-tang-line-23-1-2; }
+#SECTIONdefin-tang-line-32-2-1-1-2 { counter-set: SECTIONdefin-tang-line-32-2-1-1-2 0; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-2-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-2-1-1-2; }
+#SECTIONdefin-tang-line-32-3-1-1-2 { counter-set: SECTIONdefin-tang-line-32-3-1-1-2 0; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-3-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-3-1-1-2; }
+#SECTIONdefin-tang-line-32-4-1-1-2 { counter-set: SECTIONdefin-tang-line-32-4-1-1-2 0; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-4-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-4-1-1-2; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-3-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-3-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-3-1-1-6; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-4-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-4-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-4-1-1-6; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-5-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-5-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-5-1-1-6; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 { counter-set: PROBLEMHyperbolaTriangles-6-1-1-4 0; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-6-1-1-4,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li { counter-increment: PROBLEMHyperbolaTriangles-6-1-1-4; }
+#SECTIONGalileoDrops-9-2 { counter-set: SECTIONGalileoDrops-9-2 0; }
+#SECTIONGalileoDrops-9-2 > li::marker { content: ""counter(SECTIONGalileoDrops-9-2,decimal)"."; }
+#SECTIONGalileoDrops-9-2 > li { counter-increment: SECTIONGalileoDrops-9-2; }
+#SECTIONGalileoDrops-48-4 { counter-set: SECTIONGalileoDrops-48-4 0; }
+#SECTIONGalileoDrops-48-4 > li::marker { content: ""counter(SECTIONGalileoDrops-48-4,decimal)""; }
+#SECTIONGalileoDrops-48-4 > li { counter-increment: SECTIONGalileoDrops-48-4; }
+#SECONDBringCalc-6-4 { counter-set: SECONDBringCalc-6-4 0; }
+#SECONDBringCalc-6-4 > li::marker { content: ""counter(SECONDBringCalc-6-4,decimal)"."; }
+#SECONDBringCalc-6-4 > li { counter-increment: SECONDBringCalc-6-4; }
+#SECONDBringCalc-12-6 { counter-set: SECONDBringCalc-12-6 0; }
+#SECONDBringCalc-12-6 > li::marker { content: ""counter(SECONDBringCalc-12-6,decimal)"."; }
+#SECONDBringCalc-12-6 > li { counter-increment: SECONDBringCalc-12-6; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-2-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-2-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-2-1-1-2; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-8-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-8-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-8-1-1-2; }
+#SECTIONDerivative-19-1-4 { counter-set: SECTIONDerivative-19-1-4 0; }
+#SECTIONDerivative-19-1-4 > li::marker { content: ""counter(SECTIONDerivative-19-1-4,lower-roman)""; }
+#SECTIONDerivative-19-1-4 > li { counter-increment: SECTIONDerivative-19-1-4; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 { counter-set: PROBLEMDerivProdNEProdDeriv-2-1-1-1 0; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li::marker { content: ""counter(PROBLEMDerivProdNEProdDeriv-2-1-1-1,lower-roman)""; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li { counter-increment: PROBLEMDerivProdNEProdDeriv-2-1-1-1; }
+#SECTIONDerivative-22-1-3 { counter-set: SECTIONDerivative-22-1-3 0; }
+#SECTIONDerivative-22-1-3 > li::marker { content: ""counter(SECTIONDerivative-22-1-3,lower-roman)""; }
+#SECTIONDerivative-22-1-3 > li { counter-increment: SECTIONDerivative-22-1-3; }
+#PROBLEMAirlinerSpeed-3-1-1-2 { counter-set: PROBLEMAirlinerSpeed-3-1-1-2 0; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li::marker { content: ""counter(PROBLEMAirlinerSpeed-3-1-1-2,lower-roman)""; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li { counter-increment: PROBLEMAirlinerSpeed-3-1-1-2; }
+#SECTIONThinkingDynamically-13-1-2-1 { counter-set: SECTIONThinkingDynamically-13-1-2-1 0; }
+#SECTIONThinkingDynamically-13-1-2-1 > li::marker { content: ""counter(SECTIONThinkingDynamically-13-1-2-1,lower-roman)""; }
+#SECTIONThinkingDynamically-13-1-2-1 > li { counter-increment: SECTIONThinkingDynamically-13-1-2-1; }
+#SECTIONFluxions-36-2-1-1-1 { counter-set: SECTIONFluxions-36-2-1-1-1 0; }
+#SECTIONFluxions-36-2-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-2-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-2-1-1-1 > li { counter-increment: SECTIONFluxions-36-2-1-1-1; }
+#SECTIONFluxions-36-3-1-1-1 { counter-set: SECTIONFluxions-36-3-1-1-1 0; }
+#SECTIONFluxions-36-3-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-3-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-3-1-1-1 > li { counter-increment: SECTIONFluxions-36-3-1-1-1; }
+#PROBLEMadfj-1-1-2-2 { counter-set: PROBLEMadfj-1-1-2-2 0; }
+#PROBLEMadfj-1-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-1-1-2-2,lower-roman)""; }
+#PROBLEMadfj-1-1-2-2 > li { counter-increment: PROBLEMadfj-1-1-2-2; }
+#PROBLEMadfj-2-1-2-2 { counter-set: PROBLEMadfj-2-1-2-2 0; }
+#PROBLEMadfj-2-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-2-1-2-2,lower-roman)""; }
+#PROBLEMadfj-2-1-2-2 > li { counter-increment: PROBLEMadfj-2-1-2-2; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-15-2-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-15-2-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-15-2-1-1-2; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 { counter-set: PROBLEMUnitCircleParameterization1-1-1-1-1 0; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li::marker { content: ""counter(PROBLEMUnitCircleParameterization1-1-1-1-1,lower-roman)""; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li { counter-increment: PROBLEMUnitCircleParameterization1-1-1-1-1; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-21-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-21-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-21-1-1-2; }
+#SUBSECTIONradian-measure-19-2 { counter-set: SUBSECTIONradian-measure-19-2 0; }
+#SUBSECTIONradian-measure-19-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-19-2,lower-roman)""; }
+#SUBSECTIONradian-measure-19-2 > li { counter-increment: SUBSECTIONradian-measure-19-2; }
+#SUBSECTIONradian-measure-20-2 { counter-set: SUBSECTIONradian-measure-20-2 0; }
+#SUBSECTIONradian-measure-20-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-20-2,lower-roman)""; }
+#SUBSECTIONradian-measure-20-2 > li { counter-increment: SUBSECTIONradian-measure-20-2; }
+#SUBSECTIONradian-measure-31-2 { counter-set: SUBSECTIONradian-measure-31-2 0; }
+#SUBSECTIONradian-measure-31-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-31-2,lower-roman)""; }
+#SUBSECTIONradian-measure-31-2 > li { counter-increment: SUBSECTIONradian-measure-31-2; }
+#SECTIONtrig-interl-3-12-2-1-1-2 { counter-set: SECTIONtrig-interl-3-12-2-1-1-2 0; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-2-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-2-1-1-2; }
+#SECTIONtrig-interl-3-12-3-1-1-2 { counter-set: SECTIONtrig-interl-3-12-3-1-1-2 0; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-3-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-3-1-1-2; }
+#SECTIONtrig-interl-3-14-2 { counter-set: SECTIONtrig-interl-3-14-2 0; }
+#SECTIONtrig-interl-3-14-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-14-2,lower-roman)""; }
+#SECTIONtrig-interl-3-14-2 > li { counter-increment: SECTIONtrig-interl-3-14-2; }
+#PROBLEMSineOscillB-1-1-8 { counter-set: PROBLEMSineOscillB-1-1-8 0; }
+#PROBLEMSineOscillB-1-1-8 > li::marker { content: ""counter(PROBLEMSineOscillB-1-1-8,lower-roman)""; }
+#PROBLEMSineOscillB-1-1-8 > li { counter-increment: PROBLEMSineOscillB-1-1-8; }
+#SECTIONtrig-interl-5-11-2 { counter-set: SECTIONtrig-interl-5-11-2 0; }
+#SECTIONtrig-interl-5-11-2 > li::marker { content: ""counter(SECTIONtrig-interl-5-11-2,lower-roman)""; }
+#SECTIONtrig-interl-5-11-2 > li { counter-increment: SECTIONtrig-interl-5-11-2; }
+#DRILLPolarQuirks2-2 { counter-set: DRILLPolarQuirks2-2 0; }
+#DRILLPolarQuirks2-2 > li::marker { content: ""counter(DRILLPolarQuirks2-2,lower-roman)""; }
+#DRILLPolarQuirks2-2 > li { counter-increment: DRILLPolarQuirks2-2; }
+#PROBLEMPolRectConvertA-1-1-3 { counter-set: PROBLEMPolRectConvertA-1-1-3 0; }
+#PROBLEMPolRectConvertA-1-1-3 > li::marker { content: ""counter(PROBLEMPolRectConvertA-1-1-3,lower-roman)""; }
+#PROBLEMPolRectConvertA-1-1-3 > li { counter-increment: PROBLEMPolRectConvertA-1-1-3; }
+#PROBLEMPolarGraphs-2 { counter-set: PROBLEMPolarGraphs-2 0; }
+#PROBLEMPolarGraphs-2 > li::marker { content: ""counter(PROBLEMPolarGraphs-2,lower-roman)""; }
+#PROBLEMPolarGraphs-2 > li { counter-increment: PROBLEMPolarGraphs-2; }
+#SUBSECTIONCircularMotion-5-1-2 { counter-set: SUBSECTIONCircularMotion-5-1-2 0; }
+#SUBSECTIONCircularMotion-5-1-2 > li::marker { content: ""counter(SUBSECTIONCircularMotion-5-1-2,lower-roman)""; }
+#SUBSECTIONCircularMotion-5-1-2 > li { counter-increment: SUBSECTIONCircularMotion-5-1-2; }
+#EXERCISEDiffPractice1-1-1-3 { counter-set: EXERCISEDiffPractice1-1-1-3 0; }
+#EXERCISEDiffPractice1-1-1-3 > li::marker { content: ""counter(EXERCISEDiffPractice1-1-1-3,lower-roman)""; }
+#EXERCISEDiffPractice1-1-1-3 > li { counter-increment: EXERCISEDiffPractice1-1-1-3; }
+#SUBSECTIONCircularMotion-12-1-9 { counter-set: SUBSECTIONCircularMotion-12-1-9 0; }
+#SUBSECTIONCircularMotion-12-1-9 > li::marker { content: ""counter(SUBSECTIONCircularMotion-12-1-9,lower-roman)""; }
+#SUBSECTIONCircularMotion-12-1-9 > li { counter-increment: SUBSECTIONCircularMotion-12-1-9; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-2-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-2-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-2-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-3-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-3-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-3-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-4-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-4-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-4-1-3-1; }
+#PROBLEMcycloid2-2-1-1-1 { counter-set: PROBLEMcycloid2-2-1-1-1 0; }
+#PROBLEMcycloid2-2-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-2-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-2-1-1-1 > li { counter-increment: PROBLEMcycloid2-2-1-1-1; }
+#PROBLEMcycloid2-3-1-1-1 { counter-set: PROBLEMcycloid2-3-1-1-1 0; }
+#PROBLEMcycloid2-3-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-3-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-3-1-1-1 > li { counter-increment: PROBLEMcycloid2-3-1-1-1; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 { counter-set: SUBSECTIONsimple-harm-oscill-17-3-1-1-4 0; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li::marker { content: ""counter(SUBSECTIONsimple-harm-oscill-17-3-1-1-4,lower-roman)""; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li { counter-increment: SUBSECTIONsimple-harm-oscill-17-3-1-1-4; }
+#SECTIONdiff-other-trig-13-1-1 { counter-set: SECTIONdiff-other-trig-13-1-1 0; }
+#SECTIONdiff-other-trig-13-1-1 > li::marker { content: ""counter(SECTIONdiff-other-trig-13-1-1,lower-roman)""; }
+#SECTIONdiff-other-trig-13-1-1 > li { counter-increment: SECTIONdiff-other-trig-13-1-1; }
+#SECTIONdiff-other-trig-14-1-3 { counter-set: SECTIONdiff-other-trig-14-1-3 0; }
+#SECTIONdiff-other-trig-14-1-3 > li::marker { content: ""counter(SECTIONdiff-other-trig-14-1-3,lower-roman)""; }
+#SECTIONdiff-other-trig-14-1-3 > li { counter-increment: SECTIONdiff-other-trig-14-1-3; }
+#PROBLEMDiffFormTan-3-1-3-1 { counter-set: PROBLEMDiffFormTan-3-1-3-1 0; }
+#PROBLEMDiffFormTan-3-1-3-1 > li::marker { content: ""counter(PROBLEMDiffFormTan-3-1-3-1,lower-roman)""; }
+#PROBLEMDiffFormTan-3-1-3-1 > li { counter-increment: PROBLEMDiffFormTan-3-1-3-1; }
+#DIGRESSIONInverse-function-notation-7-1-1 { counter-set: DIGRESSIONInverse-function-notation-7-1-1 0; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li::marker { content: ""counter(DIGRESSIONInverse-function-notation-7-1-1,lower-roman)""; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li { counter-increment: DIGRESSIONInverse-function-notation-7-1-1; }
+#PROBLEMInvTanDiffeqB-1-1-3 { counter-set: PROBLEMInvTanDiffeqB-1-1-3 0; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMInvTanDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li { counter-increment: PROBLEMInvTanDiffeqB-1-1-3; }
+#PROBLEMArcSinDiffeqB-1-1-3 { counter-set: PROBLEMArcSinDiffeqB-1-1-3 0; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSinDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSinDiffeqB-1-1-3; }
+#PROBLEMArcSecDiffeqB-1-1-3 { counter-set: PROBLEMArcSecDiffeqB-1-1-3 0; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSecDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSecDiffeqB-1-1-3; }
+#InverseSecCsc-11-1 { counter-set: InverseSecCsc-11-1 0; }
+#InverseSecCsc-11-1 > li::marker { content: ""counter(InverseSecCsc-11-1,decimal)"."; }
+#InverseSecCsc-11-1 > li { counter-increment: InverseSecCsc-11-1; }
+#InverseSecCsc-17-1-1 { counter-set: InverseSecCsc-17-1-1 0; }
+#InverseSecCsc-17-1-1 > li::marker { content: ""counter(InverseSecCsc-17-1-1,lower-roman)""; }
+#InverseSecCsc-17-1-1 > li { counter-increment: InverseSecCsc-17-1-1; }
+#InverseSecCsc-20-2-1-1-1 { counter-set: InverseSecCsc-20-2-1-1-1 0; }
+#InverseSecCsc-20-2-1-1-1 > li::marker { content: ""counter(InverseSecCsc-20-2-1-1-1,lower-roman)""; }
+#InverseSecCsc-20-2-1-1-1 > li { counter-increment: InverseSecCsc-20-2-1-1-1; }
+#EXAMPLESqrt2-2-3-1-1-1 { counter-set: EXAMPLESqrt2-2-3-1-1-1 0; }
+#EXAMPLESqrt2-2-3-1-1-1 > li::marker { content: ""counter(EXAMPLESqrt2-2-3-1-1-1,lower-roman)""; }
+#EXAMPLESqrt2-2-3-1-1-1 > li { counter-increment: EXAMPLESqrt2-2-3-1-1-1; }
+#DRILLNewtonMethod2-2 { counter-set: DRILLNewtonMethod2-2 0; }
+#DRILLNewtonMethod2-2 > li::marker { content: ""counter(DRILLNewtonMethod2-2,lower-roman)""; }
+#DRILLNewtonMethod2-2 > li { counter-increment: DRILLNewtonMethod2-2; }
+#ALGORITHMNewtonsMethod-3-4 { counter-set: ALGORITHMNewtonsMethod-3-4 0; }
+#ALGORITHMNewtonsMethod-3-4 > li::marker { content: ""counter(ALGORITHMNewtonsMethod-3-4,decimal)"."; }
+#ALGORITHMNewtonsMethod-3-4 > li { counter-increment: ALGORITHMNewtonsMethod-3-4; }
+#PROBLEMNewtMethCreateFunction-2-3 { counter-set: PROBLEMNewtMethCreateFunction-2-3 0; }
+#PROBLEMNewtMethCreateFunction-2-3 > li::marker { content: ""counter(PROBLEMNewtMethCreateFunction-2-3,lower-roman)""; }
+#PROBLEMNewtMethCreateFunction-2-3 > li { counter-increment: PROBLEMNewtMethCreateFunction-2-3; }
+#PROBLEMNewton-meth-2-8 { counter-set: PROBLEMNewton-meth-2-8 0; }
+#PROBLEMNewton-meth-2-8 > li::marker { content: ""counter(PROBLEMNewton-meth-2-8,lower-roman)""; }
+#PROBLEMNewton-meth-2-8 > li { counter-increment: PROBLEMNewton-meth-2-8; }
+#PROBLEMNewton-meth2-2-2 { counter-set: PROBLEMNewton-meth2-2-2 0; }
+#PROBLEMNewton-meth2-2-2 > li::marker { content: ""counter(PROBLEMNewton-meth2-2-2,lower-roman)""; }
+#PROBLEMNewton-meth2-2-2 > li { counter-increment: PROBLEMNewton-meth2-2-2; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 { counter-set: SUBSECTIONSubtleFailure-8-3-1-1-3 0; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li::marker { content: ""counter(SUBSECTIONSubtleFailure-8-3-1-1-3,lower-roman)""; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li { counter-increment: SUBSECTIONSubtleFailure-8-3-1-1-3; }
+#SECTIONDEsandIVPS-2-3 { counter-set: SECTIONDEsandIVPS-2-3 0; }
+#SECTIONDEsandIVPS-2-3 > li::marker { content: ""counter(SECTIONDEsandIVPS-2-3,decimal)"."; }
+#SECTIONDEsandIVPS-2-3 > li { counter-increment: SECTIONDEsandIVPS-2-3; }
+#DRILLIVP-sqr-1-1 { counter-set: DRILLIVP-sqr-1-1 0; }
+#DRILLIVP-sqr-1-1 > li::marker { content: ""counter(DRILLIVP-sqr-1-1,lower-roman)""; }
+#DRILLIVP-sqr-1-1 > li { counter-increment: DRILLIVP-sqr-1-1; }
+#SECTIONexponential-growth-23-2 { counter-set: SECTIONexponential-growth-23-2 0; }
+#SECTIONexponential-growth-23-2 > li::marker { content: ""counter(SECTIONexponential-growth-23-2,decimal)"."; }
+#SECTIONexponential-growth-23-2 > li { counter-increment: SECTIONexponential-growth-23-2; }
+#SECTIONexponential-growth-28-1-2 { counter-set: SECTIONexponential-growth-28-1-2 0; }
+#SECTIONexponential-growth-28-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-28-1-2,lower-roman)""; }
+#SECTIONexponential-growth-28-1-2 > li { counter-increment: SECTIONexponential-growth-28-1-2; }
+#SECTIONexponential-growth-29-1-2 { counter-set: SECTIONexponential-growth-29-1-2 0; }
+#SECTIONexponential-growth-29-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-29-1-2,lower-roman)""; }
+#SECTIONexponential-growth-29-1-2 > li { counter-increment: SECTIONexponential-growth-29-1-2; }
+#SECTIONexponential-growth-30-1-1 { counter-set: SECTIONexponential-growth-30-1-1 0; }
+#SECTIONexponential-growth-30-1-1 > li::marker { content: ""counter(SECTIONexponential-growth-30-1-1,lower-roman)""; }
+#SECTIONexponential-growth-30-1-1 > li { counter-increment: SECTIONexponential-growth-30-1-1; }
+#PROBLEMPolyExpA-1-1-2 { counter-set: PROBLEMPolyExpA-1-1-2 0; }
+#PROBLEMPolyExpA-1-1-2 > li::marker { content: ""counter(PROBLEMPolyExpA-1-1-2,lower-roman)""; }
+#PROBLEMPolyExpA-1-1-2 > li { counter-increment: PROBLEMPolyExpA-1-1-2; }
+#SECTIONexponential-growth-34-1-7 { counter-set: SECTIONexponential-growth-34-1-7 0; }
+#SECTIONexponential-growth-34-1-7 > li::marker { content: ""counter(SECTIONexponential-growth-34-1-7,lower-roman)""; }
+#SECTIONexponential-growth-34-1-7 > li { counter-increment: SECTIONexponential-growth-34-1-7; }
+#SECTIONexponential-growth-36-1-1-1-4 { counter-set: SECTIONexponential-growth-36-1-1-1-4 0; }
+#SECTIONexponential-growth-36-1-1-1-4 > li::marker { content: ""counter(SECTIONexponential-growth-36-1-1-1-4,lower-roman)""; }
+#SECTIONexponential-growth-36-1-1-1-4 > li { counter-increment: SECTIONexponential-growth-36-1-1-1-4; }
+#PROBLEMHyperbolicTrig-2-1-1-1 { counter-set: PROBLEMHyperbolicTrig-2-1-1-1 0; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li::marker { content: ""counter(PROBLEMHyperbolicTrig-2-1-1-1,lower-roman)""; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li { counter-increment: PROBLEMHyperbolicTrig-2-1-1-1; }
+#PROBLEMCatenaryTrueC-1-1-4 { counter-set: PROBLEMCatenaryTrueC-1-1-4 0; }
+#PROBLEMCatenaryTrueC-1-1-4 > li::marker { content: ""counter(PROBLEMCatenaryTrueC-1-1-4,lower-roman)""; }
+#PROBLEMCatenaryTrueC-1-1-4 > li { counter-increment: PROBLEMCatenaryTrueC-1-1-4; }
+#PROBLEMBacteriaIVP1D-1-1-3 { counter-set: PROBLEMBacteriaIVP1D-1-1-3 0; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li::marker { content: ""counter(PROBLEMBacteriaIVP1D-1-1-3,lower-roman)""; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li { counter-increment: PROBLEMBacteriaIVP1D-1-1-3; }
+#SECTIONNatLog-4-1-1 { counter-set: SECTIONNatLog-4-1-1 0; }
+#SECTIONNatLog-4-1-1 > li::marker { content: ""counter(SECTIONNatLog-4-1-1,lower-roman)""; }
+#SECTIONNatLog-4-1-1 > li { counter-increment: SECTIONNatLog-4-1-1; }
+#SECTIONNatLog-9-1-1 { counter-set: SECTIONNatLog-9-1-1 0; }
+#SECTIONNatLog-9-1-1 > li::marker { content: ""counter(SECTIONNatLog-9-1-1,lower-roman)""; }
+#SECTIONNatLog-9-1-1 > li { counter-increment: SECTIONNatLog-9-1-1; }
+#SECTIONNatLog-11-1-1 { counter-set: SECTIONNatLog-11-1-1 0; }
+#SECTIONNatLog-11-1-1 > li::marker { content: ""counter(SECTIONNatLog-11-1-1,lower-roman)""; }
+#SECTIONNatLog-11-1-1 > li { counter-increment: SECTIONNatLog-11-1-1; }
+#SECTIONNatLog-12-1-1-1-4 { counter-set: SECTIONNatLog-12-1-1-1-4 0; }
+#SECTIONNatLog-12-1-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-1-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-1-1-1-4 > li { counter-increment: SECTIONNatLog-12-1-1-1-4; }
+#SECTIONNatLog-12-2-1-1-4 { counter-set: SECTIONNatLog-12-2-1-1-4 0; }
+#SECTIONNatLog-12-2-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-2-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-2-1-1-4 > li { counter-increment: SECTIONNatLog-12-2-1-1-4; }
+#SUBSECTIONradioactive-decay-9-1 { counter-set: SUBSECTIONradioactive-decay-9-1 0; }
+#SUBSECTIONradioactive-decay-9-1 > li::marker { content: ""counter(SUBSECTIONradioactive-decay-9-1,lower-roman)""; }
+#SUBSECTIONradioactive-decay-9-1 > li { counter-increment: SUBSECTIONradioactive-decay-9-1; }
+#SECTIONDerivNatLog-4-1-3 { counter-set: SECTIONDerivNatLog-4-1-3 0; }
+#SECTIONDerivNatLog-4-1-3 > li::marker { content: ""counter(SECTIONDerivNatLog-4-1-3,lower-roman)""; }
+#SECTIONDerivNatLog-4-1-3 > li { counter-increment: SECTIONDerivNatLog-4-1-3; }
+#PARAGRAPHSGenExp-16-1-3 { counter-set: PARAGRAPHSGenExp-16-1-3 0; }
+#PARAGRAPHSGenExp-16-1-3 > li::marker { content: ""counter(PARAGRAPHSGenExp-16-1-3,lower-roman)""; }
+#PARAGRAPHSGenExp-16-1-3 > li { counter-increment: PARAGRAPHSGenExp-16-1-3; }
+#PARAGRAPHSGenLog-7-1-3 { counter-set: PARAGRAPHSGenLog-7-1-3 0; }
+#PARAGRAPHSGenLog-7-1-3 > li::marker { content: ""counter(PARAGRAPHSGenLog-7-1-3,lower-roman)""; }
+#PARAGRAPHSGenLog-7-1-3 > li { counter-increment: PARAGRAPHSGenLog-7-1-3; }
+#DIGRESSIONBriggsAndNapier-7-1-1 { counter-set: DIGRESSIONBriggsAndNapier-7-1-1 0; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-7-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-7-1-1; }
+#DIGRESSIONBriggsAndNapier-11-1-1 { counter-set: DIGRESSIONBriggsAndNapier-11-1-1 0; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-11-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-11-1-1; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 { counter-set: DIGRESSIONBriggsAndNapier-12-1-1-1 0; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-12-1-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-12-1-1-1; }
+#DRILLIntuitiveSquareOnCircle-1-4 { counter-set: DRILLIntuitiveSquareOnCircle-1-4 0; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li::marker { content: ""counter(DRILLIntuitiveSquareOnCircle-1-4,lower-roman)""; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li { counter-increment: DRILLIntuitiveSquareOnCircle-1-4; }
+#DRILLExtremalSquareCircle-1-1 { counter-set: DRILLExtremalSquareCircle-1-1 0; }
+#DRILLExtremalSquareCircle-1-1 > li::marker { content: ""counter(DRILLExtremalSquareCircle-1-1,lower-roman)""; }
+#DRILLExtremalSquareCircle-1-1 > li { counter-increment: DRILLExtremalSquareCircle-1-1; }
+#PROBLEMMaxOrth1-3-1-3-8 { counter-set: PROBLEMMaxOrth1-3-1-3-8 0; }
+#PROBLEMMaxOrth1-3-1-3-8 > li::marker { content: ""counter(PROBLEMMaxOrth1-3-1-3-8,decimal)"."; }
+#PROBLEMMaxOrth1-3-1-3-8 > li { counter-increment: PROBLEMMaxOrth1-3-1-3-8; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-1-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-1-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-1-2-1; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-2-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-2-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-2-2-1; }
+#SECTIONfive-simil-probl-23-1-3 { counter-set: SECTIONfive-simil-probl-23-1-3 0; }
+#SECTIONfive-simil-probl-23-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-23-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-23-1-3 > li { counter-increment: SECTIONfive-simil-probl-23-1-3; }
+#SECTIONfive-simil-probl-24-1-3 { counter-set: SECTIONfive-simil-probl-24-1-3 0; }
+#SECTIONfive-simil-probl-24-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-24-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-24-1-3 > li { counter-increment: SECTIONfive-simil-probl-24-1-3; }
+#SECTIONrefl-refr-rainb-2-1-2 { counter-set: SECTIONrefl-refr-rainb-2-1-2 0; }
+#SECTIONrefl-refr-rainb-2-1-2 > li::marker { content: ""counter(SECTIONrefl-refr-rainb-2-1-2,decimal)"."; }
+#SECTIONrefl-refr-rainb-2-1-2 > li { counter-increment: SECTIONrefl-refr-rainb-2-1-2; }
+#SECTIONGlobalVsLocalExtrema-18-2 { counter-set: SECTIONGlobalVsLocalExtrema-18-2 0; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li::marker { content: ""counter(SECTIONGlobalVsLocalExtrema-18-2,decimal)"."; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li { counter-increment: SECTIONGlobalVsLocalExtrema-18-2; }
+#DIGRESSIONIntervalNotation-6-1-1 { counter-set: DIGRESSIONIntervalNotation-6-1-1 0; }
+#DIGRESSIONIntervalNotation-6-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-6-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-6-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-6-1-1; }
+#DIGRESSIONIntervalNotation-7-1-1 { counter-set: DIGRESSIONIntervalNotation-7-1-1 0; }
+#DIGRESSIONIntervalNotation-7-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-7-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-7-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-7-1-1; }
+#THEOREMFDT-lines-2-1 { counter-set: THEOREMFDT-lines-2-1 0; }
+#THEOREMFDT-lines-2-1 > li::marker { content: ""counter(THEOREMFDT-lines-2-1,decimal)"."; }
+#THEOREMFDT-lines-2-1 > li { counter-increment: THEOREMFDT-lines-2-1; }
+#THEOREMFDT-3-3 { counter-set: THEOREMFDT-3-3 0; }
+#THEOREMFDT-3-3 > li::marker { content: ""counter(THEOREMFDT-3-3,decimal)"."; }
+#THEOREMFDT-3-3 > li { counter-increment: THEOREMFDT-3-3; }
+#LEMMAAdjRoots-1-2 { counter-set: LEMMAAdjRoots-1-2 0; }
+#LEMMAAdjRoots-1-2 > li::marker { content: ""counter(LEMMAAdjRoots-1-2,decimal)"."; }
+#LEMMAAdjRoots-1-2 > li { counter-increment: LEMMAAdjRoots-1-2; }
+#PROBLEMFDT1A-1-2 { counter-set: PROBLEMFDT1A-1-2 0; }
+#PROBLEMFDT1A-1-2 > li::marker { content: ""counter(PROBLEMFDT1A-1-2,lower-roman)""; }
+#PROBLEMFDT1A-1-2 > li { counter-increment: PROBLEMFDT1A-1-2; }
+#DRILLFDT2-1-1 { counter-set: DRILLFDT2-1-1 0; }
+#DRILLFDT2-1-1 > li::marker { content: ""counter(DRILLFDT2-1-1,lower-roman)""; }
+#DRILLFDT2-1-1 > li { counter-increment: DRILLFDT2-1-1; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 { counter-set: DEFINITIONOptimalTransitionPoints-4-1-3 0; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li::marker { content: ""counter(DEFINITIONOptimalTransitionPoints-4-1-3,decimal)"."; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li { counter-increment: DEFINITIONOptimalTransitionPoints-4-1-3; }
+#DRILLFDT3-2-2 { counter-set: DRILLFDT3-2-2 0; }
+#DRILLFDT3-2-2 > li::marker { content: ""counter(DRILLFDT3-2-2,lower-roman)""; }
+#DRILLFDT3-2-2 > li { counter-increment: DRILLFDT3-2-2; }
+#SUBSECTIONoptim-clos-interv-5-1 { counter-set: SUBSECTIONoptim-clos-interv-5-1 0; }
+#SUBSECTIONoptim-clos-interv-5-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-5-1,decimal)"."; }
+#SUBSECTIONoptim-clos-interv-5-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-5-1; }
+#THEOREMmax-min-3-2 { counter-set: THEOREMmax-min-3-2 0; }
+#THEOREMmax-min-3-2 > li::marker { content: ""counter(THEOREMmax-min-3-2,decimal)"."; }
+#THEOREMmax-min-3-2 > li { counter-increment: THEOREMmax-min-3-2; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-2-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-2-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-2-1-1-2; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-3-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-3-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-3-1-1-2; }
+#SUBSECTIONoptim-clos-interv-14-1-1 { counter-set: SUBSECTIONoptim-clos-interv-14-1-1 0; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-14-1-1,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-14-1-1; }
+#DRILLO1O2-2-1-1-2 { counter-set: DRILLO1O2-2-1-1-2 0; }
+#DRILLO1O2-2-1-1-2 > li::marker { content: ""counter(DRILLO1O2-2-1-1-2,lower-roman)""; }
+#DRILLO1O2-2-1-1-2 > li { counter-increment: DRILLO1O2-2-1-1-2; }
+#THEOREMwhat-second-deriv-3-3 { counter-set: THEOREMwhat-second-deriv-3-3 0; }
+#THEOREMwhat-second-deriv-3-3 > li::marker { content: ""counter(THEOREMwhat-second-deriv-3-3,lower-alpha)""; }
+#THEOREMwhat-second-deriv-3-3 > li { counter-increment: THEOREMwhat-second-deriv-3-3; }
+#THEOREMSecondDerivativeTest-3-4 { counter-set: THEOREMSecondDerivativeTest-3-4 0; }
+#THEOREMSecondDerivativeTest-3-4 > li::marker { content: ""counter(THEOREMSecondDerivativeTest-3-4,lower-alpha)""; }
+#THEOREMSecondDerivativeTest-3-4 > li { counter-increment: THEOREMSecondDerivativeTest-3-4; }
+#DRILLSecondDerivativeTest-1-1 { counter-set: DRILLSecondDerivativeTest-1-1 0; }
+#DRILLSecondDerivativeTest-1-1 > li::marker { content: ""counter(DRILLSecondDerivativeTest-1-1,lower-roman)""; }
+#DRILLSecondDerivativeTest-1-1 > li { counter-increment: DRILLSecondDerivativeTest-1-1; }
+#SUBSECTIONconc-second-deriv-44-1-1 { counter-set: SUBSECTIONconc-second-deriv-44-1-1 0; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-44-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-44-1-1; }
+#SUBSECTIONconc-second-deriv-45-1-1 { counter-set: SUBSECTIONconc-second-deriv-45-1-1 0; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-45-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-45-1-1; }
+#SUBSECTIONOptStrat-3-1 { counter-set: SUBSECTIONOptStrat-3-1 0; }
+#SUBSECTIONOptStrat-3-1 > li::marker { content: ""counter(SUBSECTIONOptStrat-3-1,decimal)"."; }
+#SUBSECTIONOptStrat-3-1 > li { counter-increment: SUBSECTIONOptStrat-3-1; }
+#EXAMPLERectangleFixedPerimeter-6-1 { counter-set: EXAMPLERectangleFixedPerimeter-6-1 0; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li::marker { content: ""counter(EXAMPLERectangleFixedPerimeter-6-1,decimal)"."; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li { counter-increment: EXAMPLERectangleFixedPerimeter-6-1; }
+#PROBLEMMaxPerimeter-5-1-1-2 { counter-set: PROBLEMMaxPerimeter-5-1-1-2 0; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li::marker { content: ""counter(PROBLEMMaxPerimeter-5-1-1-2,lower-roman)""; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li { counter-increment: PROBLEMMaxPerimeter-5-1-1-2; }
+#SUBSUBSECTIONFirstSolution-12-1-1 { counter-set: SUBSUBSECTIONFirstSolution-12-1-1 0; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li::marker { content: ""counter(SUBSUBSECTIONFirstSolution-12-1-1,lower-roman)""; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li { counter-increment: SUBSUBSECTIONFirstSolution-12-1-1; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-2-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-2-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-2-1-1-1; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-3-1-1-1; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-4-1-1-1; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-3-1-1-1; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-4-1-1-1; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 { counter-set: SUBSECTIONVarOptProbs-4-2-1-2-1 0; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-4-2-1-2-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li { counter-increment: SUBSECTIONVarOptProbs-4-2-1-2-1; }
+#PROBLEMWitchTri1-3-1-1-7 { counter-set: PROBLEMWitchTri1-3-1-1-7 0; }
+#PROBLEMWitchTri1-3-1-1-7 > li::marker { content: ""counter(PROBLEMWitchTri1-3-1-1-7,lower-roman)""; }
+#PROBLEMWitchTri1-3-1-1-7 > li { counter-increment: PROBLEMWitchTri1-3-1-1-7; }
+#SUBSECTIONVarOptProbs-14-3-1-3 { counter-set: SUBSECTIONVarOptProbs-14-3-1-3 0; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-3-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-3-1-3; }
+#SUBSECTIONVarOptProbs-14-4-1-3 { counter-set: SUBSECTIONVarOptProbs-14-4-1-3 0; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-4-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-4-1-3; }
+#SECTIONgraph-with-form-19-2 { counter-set: SECTIONgraph-with-form-19-2 0; }
+#SECTIONgraph-with-form-19-2 > li::marker { content: ""counter(SECTIONgraph-with-form-19-2,decimal)"."; }
+#SECTIONgraph-with-form-19-2 > li { counter-increment: SECTIONgraph-with-form-19-2; }
+#SECTIONgraph-with-form-23-1-1 { counter-set: SECTIONgraph-with-form-23-1-1 0; }
+#SECTIONgraph-with-form-23-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-23-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-23-1-1 > li { counter-increment: SECTIONgraph-with-form-23-1-1; }
+#SECTIONgraph-with-form-30-1-1 { counter-set: SECTIONgraph-with-form-30-1-1 0; }
+#SECTIONgraph-with-form-30-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-30-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-30-1-1 > li { counter-increment: SECTIONgraph-with-form-30-1-1; }
+#SUBSECTIONModelingTrout-17-2 { counter-set: SUBSECTIONModelingTrout-17-2 0; }
+#SUBSECTIONModelingTrout-17-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-17-2,decimal)"."; }
+#SUBSECTIONModelingTrout-17-2 > li { counter-increment: SUBSECTIONModelingTrout-17-2; }
+#SUBSECTIONModelingTrout-23-1-2 { counter-set: SUBSECTIONModelingTrout-23-1-2 0; }
+#SUBSECTIONModelingTrout-23-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-23-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-23-1-2 > li { counter-increment: SUBSECTIONModelingTrout-23-1-2; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 { counter-set: SUBSECTIONModelingTrout-38-2-1-1-2 0; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-38-2-1-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li { counter-increment: SUBSECTIONModelingTrout-38-2-1-1-2; }
+#PROBLEMMinViablePop-6-1-1-3 { counter-set: PROBLEMMinViablePop-6-1-1-3 0; }
+#PROBLEMMinViablePop-6-1-1-3 > li::marker { content: ""counter(PROBLEMMinViablePop-6-1-1-3,lower-roman)""; }
+#PROBLEMMinViablePop-6-1-1-3 > li { counter-increment: PROBLEMMinViablePop-6-1-1-3; }
+#SECTIONlittle-healthy-comp-21-1-1 { counter-set: SECTIONlittle-healthy-comp-21-1-1 0; }
+#SECTIONlittle-healthy-comp-21-1-1 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-21-1-1,lower-roman)""; }
+#SECTIONlittle-healthy-comp-21-1-1 > li { counter-increment: SECTIONlittle-healthy-comp-21-1-1; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 { counter-set: SECTIONlittle-healthy-comp-28-3-1-1-3 0; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-28-3-1-1-3,lower-roman)""; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li { counter-increment: SECTIONlittle-healthy-comp-28-3-1-1-3; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 { counter-set: DEFINITIONLimitAtInfinity-Intuitive-3-1-1 0; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li::marker { content: ""counter(DEFINITIONLimitAtInfinity-Intuitive-3-1-1,decimal)"."; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li { counter-increment: DEFINITIONLimitAtInfinity-Intuitive-3-1-1; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 { counter-set: DEFINITIONHorizontalAsymptotes-3-1-1 0; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li::marker { content: ""counter(DEFINITIONHorizontalAsymptotes-3-1-1,decimal)"."; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li { counter-increment: DEFINITIONHorizontalAsymptotes-3-1-1; }
+#DIGRESSIONLimitNotation-47-1-7 { counter-set: DIGRESSIONLimitNotation-47-1-7 0; }
+#DIGRESSIONLimitNotation-47-1-7 > li::marker { content: ""counter(DIGRESSIONLimitNotation-47-1-7,lower-roman)""; }
+#DIGRESSIONLimitNotation-47-1-7 > li { counter-increment: DIGRESSIONLimitNotation-47-1-7; }
+#THEOREMInfSqueeze-3-1 { counter-set: THEOREMInfSqueeze-3-1 0; }
+#THEOREMInfSqueeze-3-1 > li::marker { content: ""counter(THEOREMInfSqueeze-3-1,decimal)""; }
+#THEOREMInfSqueeze-3-1 > li { counter-increment: THEOREMInfSqueeze-3-1; }
+#SECTIONvertical-asymptotes-14-1-1 { counter-set: SECTIONvertical-asymptotes-14-1-1 0; }
+#SECTIONvertical-asymptotes-14-1-1 > li::marker { content: ""counter(SECTIONvertical-asymptotes-14-1-1,lower-roman)""; }
+#SECTIONvertical-asymptotes-14-1-1 > li { counter-increment: SECTIONvertical-asymptotes-14-1-1; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 { counter-set: PROBLEMFoliumOfDescartes2-6-1-1-1 0; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li::marker { content: ""counter(PROBLEMFoliumOfDescartes2-6-1-1-1,lower-roman)""; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li { counter-increment: PROBLEMFoliumOfDescartes2-6-1-1-1; }
+#SUBSECTIONLHopitalsRule-34-1-1 { counter-set: SUBSECTIONLHopitalsRule-34-1-1 0; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-34-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-34-1-1; }
+#SUBSECTIONLHopitalsRule-38-1-1 { counter-set: SUBSECTIONLHopitalsRule-38-1-1 0; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-38-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-38-1-1; }
+#THEOREMLHRule1-3-1 { counter-set: THEOREMLHRule1-3-1 0; }
+#THEOREMLHRule1-3-1 > li::marker { content: ""counter(THEOREMLHRule1-3-1,decimal)""; }
+#THEOREMLHRule1-3-1 > li { counter-increment: THEOREMLHRule1-3-1; }
+#SUBSECTIONLHopitalsRule-62-1-1 { counter-set: SUBSECTIONLHopitalsRule-62-1-1 0; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-62-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-62-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 { counter-set: SUBSECTIONlhop-rule-horiz-17-2-1-1-1 0; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-2-1-1-1,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-2-1-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 { counter-set: SUBSECTIONlhop-rule-horiz-17-5-1-1-2 0; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-5-1-1-2,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-5-1-1-2; }
+#SUBSECTIONlhop-rule-horiz-26-1 { counter-set: SUBSECTIONlhop-rule-horiz-26-1 0; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-26-1,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-26-1; }
+#SUBSECTIONlhop-rule-horiz-28-4 { counter-set: SUBSECTIONlhop-rule-horiz-28-4 0; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-28-4,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li { counter-increment: SUBSECTIONlhop-rule-horiz-28-4; }
+#SECTIONsecants-tangents-18-1 { counter-set: SECTIONsecants-tangents-18-1 0; }
+#SECTIONsecants-tangents-18-1 > li::marker { content: ""counter(SECTIONsecants-tangents-18-1,decimal)"."; }
+#SECTIONsecants-tangents-18-1 > li { counter-increment: SECTIONsecants-tangents-18-1; }
+#PROBLEMBounds-1-1-4 { counter-set: PROBLEMBounds-1-1-4 0; }
+#PROBLEMBounds-1-1-4 > li::marker { content: ""counter(PROBLEMBounds-1-1-4,lower-roman)""; }
+#PROBLEMBounds-1-1-4 > li { counter-increment: PROBLEMBounds-1-1-4; }
+#SUBSECTIONlimit-comp-cont-5-3 { counter-set: SUBSECTIONlimit-comp-cont-5-3 0; }
+#SUBSECTIONlimit-comp-cont-5-3 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-5-3,decimal)"."; }
+#SUBSECTIONlimit-comp-cont-5-3 > li { counter-increment: SUBSECTIONlimit-comp-cont-5-3; }
+#SUBSECTIONlimit-comp-cont-23-1-1 { counter-set: SUBSECTIONlimit-comp-cont-23-1-1 0; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-23-1-1,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li { counter-increment: SUBSECTIONlimit-comp-cont-23-1-1; }
+#SUBSECTIONlimit-comp-cont-24-1-2 { counter-set: SUBSECTIONlimit-comp-cont-24-1-2 0; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-24-1-2,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li { counter-increment: SUBSECTIONlimit-comp-cont-24-1-2; }
+#PROBLEMTopSineFuncB-1-1-6 { counter-set: PROBLEMTopSineFuncB-1-1-6 0; }
+#PROBLEMTopSineFuncB-1-1-6 > li::marker { content: ""counter(PROBLEMTopSineFuncB-1-1-6,lower-roman)""; }
+#PROBLEMTopSineFuncB-1-1-6 > li { counter-increment: PROBLEMTopSineFuncB-1-1-6; }
+#PROBLEMQRRigorA-1-1-2 { counter-set: PROBLEMQRRigorA-1-1-2 0; }
+#PROBLEMQRRigorA-1-1-2 > li::marker { content: ""counter(PROBLEMQRRigorA-1-1-2,lower-roman)""; }
+#PROBLEMQRRigorA-1-1-2 > li { counter-increment: PROBLEMQRRigorA-1-1-2; }
+#DRILLCircularReasoning-1-1-3 { counter-set: DRILLCircularReasoning-1-1-3 0; }
+#DRILLCircularReasoning-1-1-3 > li::marker { content: ""counter(DRILLCircularReasoning-1-1-3,lower-roman)""; }
+#DRILLCircularReasoning-1-1-3 > li { counter-increment: DRILLCircularReasoning-1-1-3; }
+#DEFINITIONFunctionInverse-3-1-8 { counter-set: DEFINITIONFunctionInverse-3-1-8 0; }
+#DEFINITIONFunctionInverse-3-1-8 > li::marker { content: ""counter(DEFINITIONFunctionInverse-3-1-8,decimal)"."; }
+#DEFINITIONFunctionInverse-3-1-8 > li { counter-increment: DEFINITIONFunctionInverse-3-1-8; }
+#SECTIONinverse-functions-21-1 { counter-set: SECTIONinverse-functions-21-1 0; }
+#SECTIONinverse-functions-21-1 > li::marker { content: ""counter(SECTIONinverse-functions-21-1,decimal)"."; }
+#SECTIONinverse-functions-21-1 > li { counter-increment: SECTIONinverse-functions-21-1; }
+#SECTIONinverse-functions-23-2 { counter-set: SECTIONinverse-functions-23-2 0; }
+#SECTIONinverse-functions-23-2 > li::marker { content: ""counter(SECTIONinverse-functions-23-2,decimal)"."; }
+#SECTIONinverse-functions-23-2 > li { counter-increment: SECTIONinverse-functions-23-2; }
+#THEOREMDerivInvFunc-3-1 { counter-set: THEOREMDerivInvFunc-3-1 0; }
+#THEOREMDerivInvFunc-3-1 > li::marker { content: ""counter(THEOREMDerivInvFunc-3-1,decimal)"."; }
+#THEOREMDerivInvFunc-3-1 > li { counter-increment: THEOREMDerivInvFunc-3-1; }
+#DRILLRollesLemma1-2 { counter-set: DRILLRollesLemma1-2 0; }
+#DRILLRollesLemma1-2 > li::marker { content: ""counter(DRILLRollesLemma1-2,lower-roman)""; }
+#DRILLRollesLemma1-2 > li { counter-increment: DRILLRollesLemma1-2; }
+#THEOREMFDTproved-3-8 { counter-set: THEOREMFDTproved-3-8 0; }
+#THEOREMFDTproved-3-8 > li::marker { content: ""counter(THEOREMFDTproved-3-8,decimal)"."; }
+#THEOREMFDTproved-3-8 > li { counter-increment: THEOREMFDTproved-3-8; }
+#PROBLEMMVTSpecialCase-1-1-2 { counter-set: PROBLEMMVTSpecialCase-1-1-2 0; }
+#PROBLEMMVTSpecialCase-1-1-2 > li::marker { content: ""counter(PROBLEMMVTSpecialCase-1-1-2,decimal)"."; }
+#PROBLEMMVTSpecialCase-1-1-2 > li { counter-increment: PROBLEMMVTSpecialCase-1-1-2; }
+#PROBLEMAbsValDerivA-1-1-5 { counter-set: PROBLEMAbsValDerivA-1-1-5 0; }
+#PROBLEMAbsValDerivA-1-1-5 > li::marker { content: ""counter(PROBLEMAbsValDerivA-1-1-5,decimal)"."; }
+#PROBLEMAbsValDerivA-1-1-5 > li { counter-increment: PROBLEMAbsValDerivA-1-1-5; }
+#DEFINITIONone-sided-deriv-3-1-3 { counter-set: DEFINITIONone-sided-deriv-3-1-3 0; }
+#DEFINITIONone-sided-deriv-3-1-3 > li::marker { content: ""counter(DEFINITIONone-sided-deriv-3-1-3,decimal)"."; }
+#DEFINITIONone-sided-deriv-3-1-3 > li { counter-increment: DEFINITIONone-sided-deriv-3-1-3; }
+#PROBLEMHeaviTranslate-2-1-1-3 { counter-set: PROBLEMHeaviTranslate-2-1-1-3 0; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li::marker { content: ""counter(PROBLEMHeaviTranslate-2-1-1-3,lower-roman)""; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li { counter-increment: PROBLEMHeaviTranslate-2-1-1-3; }
+#PROBLEMHeaviTranslate-3-1-1-4 { counter-set: PROBLEMHeaviTranslate-3-1-1-4 0; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li::marker { content: ""counter(PROBLEMHeaviTranslate-3-1-1-4,lower-roman)""; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li { counter-increment: PROBLEMHeaviTranslate-3-1-1-4; }
+#SECTIONone-sided-deriv-11-3 { counter-set: SECTIONone-sided-deriv-11-3 0; }
+#SECTIONone-sided-deriv-11-3 > li::marker { content: ""counter(SECTIONone-sided-deriv-11-3,decimal)"."; }
+#SECTIONone-sided-deriv-11-3 > li { counter-increment: SECTIONone-sided-deriv-11-3; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 { counter-set: SUBSECTIONVerticalAsymptotes-24-4-2 0; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li::marker { content: ""counter(SUBSECTIONVerticalAsymptotes-24-4-2,decimal)""; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li { counter-increment: SUBSECTIONVerticalAsymptotes-24-4-2; }
+#PROBLEMAntiDiffPractice-1-2 { counter-set: PROBLEMAntiDiffPractice-1-2 0; }
+#PROBLEMAntiDiffPractice-1-2 > li::marker { content: ""counter(PROBLEMAntiDiffPractice-1-2,lower-roman)""; }
+#PROBLEMAntiDiffPractice-1-2 > li { counter-increment: PROBLEMAntiDiffPractice-1-2; }
+#DRILLIntSimpSub-1-4 { counter-set: DRILLIntSimpSub-1-4 0; }
+#DRILLIntSimpSub-1-4 > li::marker { content: ""counter(DRILLIntSimpSub-1-4,lower-roman)""; }
+#DRILLIntSimpSub-1-4 > li { counter-increment: DRILLIntSimpSub-1-4; }
+#SECTIONKnownIntegrals-12-1-2 { counter-set: SECTIONKnownIntegrals-12-1-2 0; }
+#SECTIONKnownIntegrals-12-1-2 > li::marker { content: ""counter(SECTIONKnownIntegrals-12-1-2,lower-roman)""; }
+#SECTIONKnownIntegrals-12-1-2 > li { counter-increment: SECTIONKnownIntegrals-12-1-2; }
+#DefIntProp-18-1-2 { counter-set: DefIntProp-18-1-2 0; }
+#DefIntProp-18-1-2 > li::marker { content: ""counter(DefIntProp-18-1-2,lower-roman)""; }
+#DefIntProp-18-1-2 > li { counter-increment: DefIntProp-18-1-2; }
+#PROBLEMPS1-1-1-4 { counter-set: PROBLEMPS1-1-1-4 0; }
+#PROBLEMPS1-1-1-4 > li::marker { content: ""counter(PROBLEMPS1-1-1-4,lower-roman)""; }
+#PROBLEMPS1-1-1-4 > li { counter-increment: PROBLEMPS1-1-1-4; }
+#SECTIONProbs15-20-2-1-1-2 { counter-set: SECTIONProbs15-20-2-1-1-2 0; }
+#SECTIONProbs15-20-2-1-1-2 > li::marker { content: ""counter(SECTIONProbs15-20-2-1-1-2,lower-roman)""; }
+#SECTIONProbs15-20-2-1-1-2 > li { counter-increment: SECTIONProbs15-20-2-1-1-2; }
+#SECTIONProbs15-20-3-1-1-1 { counter-set: SECTIONProbs15-20-3-1-1-1 0; }
+#SECTIONProbs15-20-3-1-1-1 > li::marker { content: ""counter(SECTIONProbs15-20-3-1-1-1,lower-roman)""; }
+#SECTIONProbs15-20-3-1-1-1 > li { counter-increment: SECTIONProbs15-20-3-1-1-1; }
+</style>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -228,9 +839,9 @@ window.MathJax = {
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
 </ul>
 </li>
@@ -692,34 +1303,49 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONCavalierisMethod"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">20.1</span><span class="space"> </span><span class="title">Historical Precursors to Definite Integration</span>
 </h2>
-<section class="introduction" id="SECTIONCavalierisMethod-2"><div class="para" id="SECTIONCavalierisMethod-2-1">Possibly as a result of the rediscovery of many classical Greek works after the fall of <a class="external" href="https://en.wikipedia.org/wiki/Constantinople" target="_blank">Constantinople</a><a class="xref" id="SECTIONCavalierisMethod-2-1-2" href="" data-knowl="./knowl/fn/SECTIONCavalierisMethod-2-1-2.html" title="Footnote 20.1"><sup> 1 </sup></a> in 1453,  Mathematicians of  the <a class="external" href="https://en.wikipedia.org/wiki/Italian_Renaissance" target="_blank">Italian Renaissance</a><a class="xref" id="SECTIONCavalierisMethod-2-1-4" href="" data-knowl="./knowl/fn/SECTIONCavalierisMethod-2-1-4.html" title="Footnote 20.2"><sup> 2 </sup></a> began investigating the use of what they called “indivisibles” as a tool for mathematical investigations. Today the best known such mathematician was, of course, <a class="external" href="https://mathshistory.st-andrews.ac.uk/Galileo" target="_blank">Galileo</a><a class="xref" id="SECTIONCavalierisMethod-2-1-7" href="" data-knowl="./knowl/fn/SECTIONCavalierisMethod-2-1-7.html" title="Footnote 20.3"><sup> 3 </sup></a> whom we have seen before.</div> <div class="para" id="SECTIONCavalierisMethod-2-2">But the investigations of two others will be of interest to us. Both Bonaventura Cavalieri, and Evangelista Torricelli were deeply influenced by the work and ideas of Galileo.</div> <div class="para" id="SECTIONCavalierisMethod-2-3">Torricelli lived with and assisted Galileo during the final months of Galileo’s life. Cavalieri only met Galileo once but they exchanged a long correspondence over the years.  We will look closely at Cavalieri’s ideas here, and return to Torricelli’s in section <code class="code-inline tex2jax_ignore">[provisional cross-reference: Torricelli]</code>.</div> <aside class="aside aside-like" id="SECTIONCavalierisMethod-2-4"><h3 class="heading"><span class="title">Historical Context.</span></h3>
+<section class="introduction" id="SECTIONCavalierisMethod-2"><div class="para" id="SECTIONCavalierisMethod-2-1">Possibly as a result of the rediscovery of many classical Greek works after the fall of <a class="external" href="https://en.wikipedia.org/wiki/Constantinople" target="_blank">Constantinople</a><details class="ptx-footnote" aria-live="polite" id="SECTIONCavalierisMethod-2-1-2"><summary class="ptx-footnote__number" title="Footnote 20.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="SECTIONCavalierisMethod-2-1-2"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Constantinople</code></div></details> in 1453,  Mathematicians of  the <a class="external" href="https://en.wikipedia.org/wiki/Italian_Renaissance" target="_blank">Italian Renaissance</a><details class="ptx-footnote" aria-live="polite" id="SECTIONCavalierisMethod-2-1-4"><summary class="ptx-footnote__number" title="Footnote 20.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="SECTIONCavalierisMethod-2-1-4"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Italian_Renaissance</code></div></details> began investigating the use of what they called “indivisibles” as a tool for mathematical investigations. Today the best known such mathematician was, of course, <a class="external" href="https://mathshistory.st-andrews.ac.uk/Galileo" target="_blank">Galileo</a><details class="ptx-footnote" aria-live="polite" id="SECTIONCavalierisMethod-2-1-7"><summary class="ptx-footnote__number" title="Footnote 20.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="SECTIONCavalierisMethod-2-1-7"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Galileo</code></div></details> whom we have seen before.</div>
+<div class="para" id="SECTIONCavalierisMethod-2-2">But the investigations of two others will be of interest to us. Both Bonaventura Cavalieri, and Evangelista Torricelli were deeply influenced by the work and ideas of Galileo.</div>
+<div class="para" id="SECTIONCavalierisMethod-2-3">Torricelli lived with and assisted Galileo during the final months of Galileo’s life. Cavalieri only met Galileo once but they exchanged a long correspondence over the years.  We will look closely at Cavalieri’s ideas here, and return to Torricelli’s in section <code class="code-inline tex2jax_ignore">[provisional cross-reference: Torricelli]</code>.</div>
+<aside class="aside aside-like" id="SECTIONCavalierisMethod-2-4"><h3 class="heading"><span class="title">Historical Context.</span></h3>
 <div class="para" id="SECTIONCavalierisMethod-2-4-2">The concept of an indivisible was vehemently opposed by the Catholic Church on religious grounds that are quite fascinating. Unfortunately, since our topic is mathematics, not religion  discussing them here would take us too far afield.</div>
 <div class="para" id="SECTIONCavalierisMethod-2-4-3">They are discussed in detail in the book, <span class="booktitle">Infinitesimal</span>, by Amir Alexander, (2014).</div></aside></section><section class="subsection" id="SUBSECTIONCavalieri"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">20.1.1</span><span class="space"> </span><span class="title">Bonaventura Cavalieri and Indivisibles</span>
 </h3>
 <figure class="figure figure-like" id="FIGURECavalieri"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/IC/Cavalieri.png" class="contained" alt="Portrait of Bonaventura Cavalieri"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.1<span class="period">.</span></span><span class="space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/" target="_blank">Bonaventura Cavalieri</a><a class="xref" id="FIGURECavalieri-1-2" href="" data-knowl="./knowl/fn/FIGURECavalieri-1-2.html" title="Footnote 20.4"><sup> 4 </sup></a> (1598 — 1647)</figcaption></figure><div class="para" id="SUBSECTIONCavalieri-3">
-<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/" target="_blank">Bonaventura Cavalieri</a><a class="xref" id="SUBSECTIONCavalieri-3-2" href="" data-knowl="./knowl/fn/SUBSECTIONCavalieri-3-2.html" title="Footnote 20.5"><sup> 5 </sup></a> was a <a class="external" href="https://en.wikipedia.org/wiki/Jesuati" target="_blank">Jesuat</a><a class="xref" id="SUBSECTIONCavalieri-3-4" href="" data-knowl="./knowl/fn/SUBSECTIONCavalieri-3-4.html" title="Footnote 20.6"><sup> 6 </sup></a> monk who studied mathematics at the University of Pisa under the tutelage of <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/" target="_blank">Benedetto Antonio Castelli</a><a class="xref" id="SUBSECTIONCavalieri-3-6" href="" data-knowl="./knowl/fn/SUBSECTIONCavalieri-3-6.html" title="Footnote 20.7"><sup> 7 </sup></a>. It was Castelli who  introduced Cavalieri to Galileo’s methods. Cavalieri’s ideas were deep, fundamental, and direct precursors to the notion of a differential so it is worthwhile to learn a bit about them before we go on.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.1<span class="period">.</span></span><span class="space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/" target="_blank">Bonaventura Cavalieri</a><details class="ptx-footnote" aria-live="polite" id="FIGURECavalieri-1-2"><summary class="ptx-footnote__number" title="Footnote 20.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="FIGURECavalieri-1-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/</code></div></details> (1598 — 1647)</figcaption></figure><div class="para" id="SUBSECTIONCavalieri-3">
+<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/" target="_blank">Bonaventura Cavalieri</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-3-2"><summary class="ptx-footnote__number" title="Footnote 20.5"><sup> 5 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-3-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/</code></div></details> was a <a class="external" href="https://en.wikipedia.org/wiki/Jesuati" target="_blank">Jesuat</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-3-4"><summary class="ptx-footnote__number" title="Footnote 20.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-3-4"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Jesuati</code></div></details> monk who studied mathematics at the University of Pisa under the tutelage of <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/" target="_blank">Benedetto Antonio Castelli</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-3-6"><summary class="ptx-footnote__number" title="Footnote 20.7"><sup> 7 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-3-6"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/</code></div></details>. It was Castelli who  introduced Cavalieri to Galileo’s methods. Cavalieri’s ideas were deep, fundamental, and direct precursors to the notion of a differential so it is worthwhile to learn a bit about them before we go on.</div>
 <div class="para" id="SUBSECTIONCavalieri-4">In simple terms Cavalieri said that we can compute the area of a planar region by summing up “all of the lines” that make up the region. Similarly, we can compute the volume of a solid by summing up “all of the planes” that make it up. An example will be helpful.</div>
 <article class="example example-like" id="EXAMPLECavalierisPrinciple"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">20.1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Cavalieri’s Principle.</span>
-</h4>  <div class="para" id="EXAMPLECavalierisPrinciple-3">Cavalieri began with the simple observation, seen in <a href="" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" title="Figure 20.1.1.3">Figure 20.1.1.3</a>, that since a rectangle is composed of lines, the area of the rectangle is equal to the sum of “all the lines” that make it up.</div> <figure class="figure figure-like" id="FIGUREAllLines1"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/IC/CavalieriLines.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.3<span class="period">.</span></span><span class="space"> </span>Cavalieri asserted that the area of the rectangle is composed of (infinitely many) horizontal lines. We have only drawn finitely many in this figure and we have separated the lines so they can be seen.</figcaption></figure> <div class="para" id="EXAMPLECavalierisPrinciple-5">He was careful not to say that the area of the rectangle is equal to the sum of the <em class="emphasis">areas of the lines</em>. He knew, as we do, that this would be problematic since line segments do not have an area, and this would have led him into logical contradictions.  Instead, like Newton and Leibniz later, he simply acknowledged the contradictions and then ignored them, proceeding as if line segments do have area.</div> <div class="para" id="EXAMPLECavalierisPrinciple-6">If we accept this premise then clearly any other shape we can create using the same lines will have the same area. For example the sketch below shows the parallelogram constructed from the same lines that make up the rectangle in <a href="" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" title="Figure 20.1.1.3">Figure 20.1.1.3</a>. Clearly both have the same area.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/CavalieriLines2.png" class="contained"></div> <div class="para" id="EXAMPLECavalierisPrinciple-8">Nor is it necessary for the shape to be “regular” in any sense.  The following shapes will also have the same area  as long as “all the lines” are the same.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/CavalieriLines3.png" class="contained"></div> <div class="para" id="EXAMPLECavalierisPrinciple-10">The same idea can be used to compare volumes. For example the image below shows two pictures of the same deck of cards. Obviously the volumes of the stacks are the same since they are made of the same of cards.</div> <figure class="figure figure-like" id="EXAMPLECavalierisPrinciple-11"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/IC/Set.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><div class="para" id="SUBSECTIONCavalieri-6">Generalizing the ideas in <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLECavalierisPrinciple.html" title="Example 20.1.1.2: Cavalieri’s Principle">Example 20.1.1.2</a> slightly gives us <dfn class="terminology">Cavalieri’s Principle</dfn>.</div>
+</h4>
+<div class="para" id="EXAMPLECavalierisPrinciple-3">Cavalieri began with the simple observation, seen in <a href="SECTIONCavalierisMethod.html#FIGUREAllLines1" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 20.1.1.3">Figure 20.1.1.3</a>, that since a rectangle is composed of lines, the area of the rectangle is equal to the sum of “all the lines” that make it up.</div>
+<figure class="figure figure-like" id="FIGUREAllLines1"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/IC/CavalieriLines.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.3<span class="period">.</span></span><span class="space"> </span>Cavalieri asserted that the area of the rectangle is composed of (infinitely many) horizontal lines. We have only drawn finitely many in this figure and we have separated the lines so they can be seen.</figcaption></figure><div class="para" id="EXAMPLECavalierisPrinciple-5">He was careful not to say that the area of the rectangle is equal to the sum of the <em class="emphasis">areas of the lines</em>. He knew, as we do, that this would be problematic since line segments do not have an area, and this would have led him into logical contradictions.  Instead, like Newton and Leibniz later, he simply acknowledged the contradictions and then ignored them, proceeding as if line segments do have area.</div>
+<div class="para" id="EXAMPLECavalierisPrinciple-6">If we accept this premise then clearly any other shape we can create using the same lines will have the same area. For example the sketch below shows the parallelogram constructed from the same lines that make up the rectangle in <a href="SECTIONCavalierisMethod.html#FIGUREAllLines1" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 20.1.1.3">Figure 20.1.1.3</a>. Clearly both have the same area.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/CavalieriLines2.png" class="contained"></div>
+<div class="para" id="EXAMPLECavalierisPrinciple-8">Nor is it necessary for the shape to be “regular” in any sense.  The following shapes will also have the same area  as long as “all the lines” are the same.</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/CavalieriLines3.png" class="contained"></div>
+<div class="para" id="EXAMPLECavalierisPrinciple-10">The same idea can be used to compare volumes. For example the image below shows two pictures of the same deck of cards. Obviously the volumes of the stacks are the same since they are made of the same of cards.</div>
+<figure class="figure figure-like" id="EXAMPLECavalierisPrinciple-11"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/IC/Set.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><div class="para" id="SUBSECTIONCavalieri-6">Generalizing the ideas in <a href="SECTIONCavalierisMethod.html#EXAMPLECavalierisPrinciple" class="xref" data-knowl="./knowl/xref/EXAMPLECavalierisPrinciple.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.1.1.2: Cavalieri’s Principle">Example 20.1.1.2</a> slightly gives us <dfn class="terminology">Cavalieri’s Principle</dfn>.</div>
 <article class="principle theorem-like" id="PRINCIPLECavalieri"><h4 class="heading">
 <span class="type">Principle</span><span class="space"> </span><span class="codenumber">20.1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Cavalieri’s Principle.</span>
 </h4>
 <div class="para" id="PRINCIPLECavalieri-2-1"> If the cross–sectional areas of the corresponding slices of two solid figures are all in the same proportion, say <span class="process-math">\(P\text{,}\)</span> then the proportion of the volumes of the two figures will also be <span class="process-math">\(P\)</span> provided both figures have the same height.</div></article><div class="para" id="SUBSECTIONCavalieri-8">For the deck of cards shown above the proportion, <span class="process-math">\(P\text{,}\)</span> is equal to one. If the cards had been cut in half before making the second stack then <span class="process-math">\(P=1/2\)</span> and the second stack would have half the volume of the first.</div>
-<div class="para" id="SUBSECTIONCavalieri-9">Cavalieri  would eventually publish his results in a book titled <span class="booktitle"><a class="external" href="https://old.maa.org/press/periodicals/convergence/mathematical-treasures-cavalieris-geometry-of-indivisibles" target="_blank">Geometria Indivisibilibus</a><a class="xref" id="SUBSECTIONCavalieri-9-1-2" href="" data-knowl="./knowl/fn/SUBSECTIONCavalieri-9-1-2.html" title="Footnote 20.8"><sup> 8 </sup></a></span>. Of this Howard Eves<a class="xref" id="SUBSECTIONCavalieri-9-2" href="" data-knowl="./knowl/fn/SUBSECTIONCavalieri-9-2.html" title="Footnote 20.9"><sup> 9 </sup></a> said,</div>
+<div class="para" id="SUBSECTIONCavalieri-9">Cavalieri  would eventually publish his results in a book titled <span class="booktitle"><a class="external" href="https://old.maa.org/press/periodicals/convergence/mathematical-treasures-cavalieris-geometry-of-indivisibles" target="_blank">Geometria Indivisibilibus</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-9-1-2"><summary class="ptx-footnote__number" title="Footnote 20.8"><sup> 8 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-9-1-2"><code class="code-inline tex2jax_ignore">https://old.maa.org/press/periodicals/convergence/mathematical-treasures-cavalieris-geometry-of-indivisibles</code></div></details></span>. Of this Howard Eves<details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-9-2"><summary class="ptx-footnote__number" title="Footnote 20.9"><sup> 9 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-9-2">In <span class="booktitle">Great Moments in Mathematics Before 1650</span>
+</div></details> said,</div>
 <blockquote class="blockquote" id="SUBSECTIONCavalieri-10"><div class="para" id="SUBSECTIONCavalieri-10-1">Cavalieri’s treatise on the method of indivisibles is voluble and not clearly written, and it is not easy to learn from it precisely what Cavalieri meant by an ‘indivisible’.</div></blockquote>
 <div class="para" id="SUBSECTIONCavalieri-11">It is likely that this is because Cavalieri was himself unsure what an “indivisible” should be. Nevertheless the fundamental notion of an indivisible was picked up by Leibniz who transformed it into his <i class="foreign">Calculus Differentialis</i>.</div>
 <article class="problem example-like" id="DRILLCavPrinArea"><h4 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">20.1.1.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="DRILLCavPrinArea-1">
-<a href="" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" title="Principle 20.1.1.5: Cavalieri’s Principle">Cavalieri’s Principle 20.1.1.5</a> is normally stated in terms of volumes of solids, as we have here, but it is equally applicable to the areas of planar regions.</div> <div class="para" id="DRILLCavPrinArea-2">State Cavalieri’s Principle for the area of planar regions.</div></article><article class="example example-like" id="EXAMPLECavalieriCircleEllipse"><h4 class="heading">
+<a href="SECTIONCavalierisMethod.html#PRINCIPLECavalieri" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 20.1.1.5: Cavalieri’s Principle">Cavalieri’s Principle 20.1.1.5</a> is normally stated in terms of volumes of solids, as we have here, but it is equally applicable to the areas of planar regions.</div>
+<div class="para" id="DRILLCavPrinArea-2">State Cavalieri’s Principle for the area of planar regions.</div></article><article class="example example-like" id="EXAMPLECavalieriCircleEllipse"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">20.1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Circles and Ellipses.</span>
-</h4> <div class="para" id="EXAMPLECavalieriCircleEllipse-2">To see how Cavalieri used his principle we will find the area enclosed by an ellipse by comparing it to the known area of a related circle.</div> <div class="para logical" id="EXAMPLECavalieriCircleEllipse-3">
+</h4>
+<div class="para" id="EXAMPLECavalieriCircleEllipse-2">To see how Cavalieri used his principle we will find the area enclosed by an ellipse by comparing it to the known area of a related circle.</div>
+<div class="para logical" id="EXAMPLECavalieriCircleEllipse-3">
 <div class="para">We begin with the graph of</div>
 <div class="displaymath process-math" id="EQUATIONCavEllipse">
 \begin{equation}
@@ -733,14 +1359,16 @@ x^2+y^2=a^2\tag{20.2}
 \end{equation}
 </div>
 <div class="para">as shown below.</div>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/CircleAndEllipse.png" class="contained"></div> <div class="para logical" id="EXAMPLECavalieriCircleEllipse-5">
-<div class="para">Solving <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONCavEllipse.html" title="Equation 20.1">equation (20.1)</a> for <span class="process-math">\(y\)</span> gives</div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/CircleAndEllipse.png" class="contained"></div>
+<div class="para logical" id="EXAMPLECavalieriCircleEllipse-5">
+<div class="para">Solving <a href="SECTIONCavalierisMethod.html#EQUATIONCavEllipse" class="xref" data-knowl="./knowl/xref/EQUATIONCavEllipse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.1">equation (20.1)</a> for <span class="process-math">\(y\)</span> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
 \begin{equation*}
 y=\frac{b}{a} \sqrt{a^2-x^2} \text{,}
 \end{equation*}
 </div>
-<div class="para">and solving <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONCavCircle.html" title="Equation 20.2">equation (20.2)</a> for <span class="process-math">\(y\)</span> gives</div>
+<div class="para">and solving <a href="SECTIONCavalierisMethod.html#EQUATIONCavCircle" class="xref" data-knowl="./knowl/xref/EQUATIONCavCircle.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.2">equation (20.2)</a> for <span class="process-math">\(y\)</span> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
 \begin{equation*}
 y=\sqrt{a^2-x^2} \text{.}
@@ -753,7 +1381,7 @@ P= \frac{\frac{b}{a} \sqrt{a^2-x^2}}
 {\sqrt{a^2-x^2}}=\frac{b}{a}\text{.}
 \end{equation*}
 </div>
-<div class="para">Therefore by <a href="" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" title="Principle 20.1.1.5: Cavalieri’s Principle">Principle 20.1.1.5</a> the ratio of the areas enclosed by the ellipse and the circle is also <span class="process-math">\(P\text{.}\)</span>  That is</div>
+<div class="para">Therefore by <a href="SECTIONCavalierisMethod.html#PRINCIPLECavalieri" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 20.1.1.5: Cavalieri’s Principle">Principle 20.1.1.5</a> the ratio of the areas enclosed by the ellipse and the circle is also <span class="process-math">\(P\text{.}\)</span>  That is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
 \begin{equation*}
 \frac{\text{Area of Ellipse}}{\text{Area of
@@ -768,26 +1396,28 @@ Circle}}=P=\frac{b}{a} \text{.}
 Circle}) = \frac{b}{a}(\pi a^2) =\pi ba \text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="EXAMPLECavalieriCircleEllipse-6">Notice that when <span class="process-math">\(a=b\)</span> the ellipse becomes a circle with radius equal to <span class="process-math">\(a\)</span> and our area formula  recovers the area of the circle.</div></article><article class="exercise exercise-like" id="PROBLEMVolSphereCavalieri"><h4 class="heading">
+</div>
+<div class="para" id="EXAMPLECavalieriCircleEllipse-6">Notice that when <span class="process-math">\(a=b\)</span> the ellipse becomes a circle with radius equal to <span class="process-math">\(a\)</span> and our area formula  recovers the area of the circle.</div></article><article class="exercise exercise-like" id="PROBLEMVolSphereCavalieri"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.1.1.8</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="PROBLEMVolSphereCavalieri-1">
 <div class="para" id="PROBLEMVolSphereCavalieri-1-1">To display the power and usefulness of Cavalieri’s Principle we will use it to find the formula for the volume of a sphere with radius <span class="process-math">\(r\text{.}\)</span>
-</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;">
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;">
 <div class="sbspanel middle" style="width:41.1764705882353%;"><figure class="figure figure-like" id="FIGUREHalfSphere"><img src="external/IC/HalfSphere.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.9<span class="period">.</span></span><span class="space"> </span>Half of a sphere with radius <span class="process-math">\(r\text{.}\)</span></figcaption></figure></div>
 <div class="sbspanel middle" style="width:41.1764705882353%;"><figure class="figure figure-like" id="FIGURECylSansCone"><img src="external/IC/CylSansCone.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.1.1.10<span class="period">.</span></span><span class="space"> </span>A cylinder with radius <span class="process-math">\(r\)</span> with a cone removed.</figcaption></figure></div>
 </div></div>
 </div>
 <article class="task exercise-like" id="PROBLEMVolSphereCavalieri-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="PROBLEMVolSphereCavalieri-2-1-1">Show that the red circle in <a href="" class="xref" data-knowl="./knowl/xref/FIGUREHalfSphere.html" title="Figure 20.1.1.9">Figure 20.1.1.9</a> has the same area as the red annulus in <a href="" class="xref" data-knowl="./knowl/xref/FIGURECylSansCone.html" title="Figure 20.1.1.10">Figure 20.1.1.10</a>.</div></article><article class="task exercise-like" id="PROBLEMVolSphereCavalieri-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="PROBLEMVolSphereCavalieri-3-1-1">Show that the volume of the solid in <a href="" class="xref" data-knowl="./knowl/xref/FIGURECylSansCone.html" title="Figure 20.1.1.10">Figure 20.1.1.10</a> is <span class="process-math">\(\frac23 \pi r^3\text{.}\)</span>
+<div class="para" id="PROBLEMVolSphereCavalieri-2-1-1">Show that the red circle in <a href="SECTIONCavalierisMethod.html#FIGUREHalfSphere" class="xref" data-knowl="./knowl/xref/FIGUREHalfSphere.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 20.1.1.9">Figure 20.1.1.9</a> has the same area as the red annulus in <a href="SECTIONCavalierisMethod.html#FIGURECylSansCone" class="xref" data-knowl="./knowl/xref/FIGURECylSansCone.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 20.1.1.10">Figure 20.1.1.10</a>.</div></article><article class="task exercise-like" id="PROBLEMVolSphereCavalieri-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="PROBLEMVolSphereCavalieri-3-1-1">Show that the volume of the solid in <a href="SECTIONCavalierisMethod.html#FIGURECylSansCone" class="xref" data-knowl="./knowl/xref/FIGURECylSansCone.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 20.1.1.10">Figure 20.1.1.10</a> is <span class="process-math">\(\frac23 \pi r^3\text{.}\)</span>
 </div>
-<div class="solutions"><details id="PROBLEMVolSphereCavalieri-3-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="PROBLEMVolSphereCavalieri-3-2-1">You will need a formula for the volume of the cylinder and a formula for the volume of the cone deleted from it.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMVolSphereCavalieri-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="PROBLEMVolSphereCavalieri-4-1-1">Use <a href="" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" title="Principle 20.1.1.5: Cavalieri’s Principle">Cavalieri’s Principle 20.1.1.5</a> to conclude that the volume of a sphere with radius <span class="process-math">\(r\)</span> is <span class="process-math">\(\frac43 \pi r^3\text{.}\)</span>
+<div class="solutions"><details id="PROBLEMVolSphereCavalieri-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMVolSphereCavalieri-3-2-1">You will need a formula for the volume of the cylinder and a formula for the volume of the cone deleted from it.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMVolSphereCavalieri-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="PROBLEMVolSphereCavalieri-4-1-1">Use <a href="SECTIONCavalierisMethod.html#PRINCIPLECavalieri" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 20.1.1.5: Cavalieri’s Principle">Cavalieri’s Principle 20.1.1.5</a> to conclude that the volume of a sphere with radius <span class="process-math">\(r\)</span> is <span class="process-math">\(\frac43 \pi r^3\text{.}\)</span>
 </div></article></article></section><section class="subsection" id="SUBSECTIONCavLeibNotation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">20.1.2</span><span class="space"> </span><span class="title">Cavalieri, Differentials, and Definite Integration</span>
 </h3>
-<div class="para" id="SUBSECTIONCavLeibNotation-2">In view of our discussion in <a href="SECTIONThinkingAboutIntegration.html" class="internal" title='Section 17.1: Two "Ways of Thinking" About Integration: Summation vs. Antidifferentiation'>Section 17.1</a> it should be clear that the “indivisibles” Cavalieri’s is “adding up” are differentials. For example, in <a href="" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" title="Figure 20.1.1.3">Figure 20.1.1.3</a> it is clear that the lines have no width but somehow their “sum” will be a non-zero area. Instead of zero, we will think of the width a line as a differential, say <span class="process-math">\(\dx{x}\text{.}\)</span>
+<div class="para" id="SUBSECTIONCavLeibNotation-2">In view of our discussion in <a href="SECTIONThinkingAboutIntegration.html" class="internal" title='Section 17.1: Two "Ways of Thinking" About Integration: Summation vs. Antidifferentiation'>Section 17.1</a> it should be clear that the “indivisibles” Cavalieri’s is “adding up” are differentials. For example, in <a href="SECTIONCavalierisMethod.html#FIGUREAllLines1" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 20.1.1.3">Figure 20.1.1.3</a> it is clear that the lines have no width but somehow their “sum” will be a non-zero area. Instead of zero, we will think of the width a line as a differential, say <span class="process-math">\(\dx{x}\text{.}\)</span>
 </div>
 <div class="para logical" id="SUBSECTIONCavLeibNotation-3">
 <div class="para">In that case a rectangle consists of “all the lines” with differential area:</div>
@@ -802,16 +1432,19 @@ Circle}) = \frac{b}{a}(\pi a^2) =\pi ba \text{.}
 \int(\text{height})\dx{x}\text{.}
 \end{equation*}
 </div>
-<div class="para">Notice that the real number, height, multiplied by differential <span class="process-math">\(\dx{x}\)</span> is a differential as we observed in <a href="" class="xref" data-knowl="./knowl/xref/DIGRESSIONDifferentialNotation.html" title="Paragraphs: DIGRESSION: Differential Notation">DIGRESSION:Differential Notation</a>.</div>
+<div class="para">Notice that the real number, height, multiplied by differential <span class="process-math">\(\dx{x}\)</span> is a differential as we observed in <a href="SECTIONsome-rules-diff.html#DIGRESSIONDifferentialNotation" class="xref" data-knowl="./knowl/xref/DIGRESSIONDifferentialNotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraphs: DIGRESSION: Differential Notation">DIGRESSION:Differential Notation</a>.</div>
 </div>
 <div class="para" id="SUBSECTIONCavLeibNotation-4">But the formula above doesn’t quite give us everything we’d like. An example will be helpful.</div>
 <article class="example example-like" id="EXAMPLEIntegralIndices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">20.1.2.1</span><span class="period">.</span>
 </h4>
 <div class="para" id="EXAMPLEIntegralIndices-1">To see what we mean suppose we want to express the area of a rectangle with height equal to <span class="process-math">\(2\)</span> and width equal to <span class="process-math">\(4\text{.}\)</span>
-</div> <aside class="aside aside-like" id="EXAMPLEIntegralIndices-2"><h5 class="heading"><span class="title">Comment.</span></h5>
+</div>
+<aside class="aside aside-like" id="EXAMPLEIntegralIndices-2"><h5 class="heading"><span class="title">Comment.</span></h5>
 <div class="para" id="EXAMPLEIntegralIndices-2-2">Yes we know this area is <span class="process-math">\(8\text{.}\)</span> We don’t care about that. We want to find a way to <em class="emphasis">express</em> this simple area using the notation of Calculus so that we can write down expressions for more complicated areas and, hopefully, find ways to actually compute them.</div>
-<div class="para" id="EXAMPLEIntegralIndices-2-3">In fact, ultimately we don’t really care (much) about computing areas <i class="foreign">per se</i>. For us the problem of computing area is just a relatively simple context in which we can develop the skills that will help us compute other quantities that we do care about.</div></aside> <div class="para" id="EXAMPLEIntegralIndices-3">We begin by embedding our rectangle in an <span class="process-math">\(x-y\)</span> coordinate system. In the sketch below the red rectangle is one of Cavalieri’s “all the lines” that make up the rectangle.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/RectangleAreaDiff.png" class="contained"></div> <div class="para logical" id="EXAMPLEIntegralIndices-5">
+<div class="para" id="EXAMPLEIntegralIndices-2-3">In fact, ultimately we don’t really care (much) about computing areas <i class="foreign">per se</i>. For us the problem of computing area is just a relatively simple context in which we can develop the skills that will help us compute other quantities that we do care about.</div></aside><div class="para" id="EXAMPLEIntegralIndices-3">We begin by embedding our rectangle in an <span class="process-math">\(x-y\)</span> coordinate system. In the sketch below the red rectangle is one of Cavalieri’s “all the lines” that make up the rectangle.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/RectangleAreaDiff.png" class="contained"></div>
+<div class="para logical" id="EXAMPLEIntegralIndices-5">
 <div class="para">Clearly the “area” of this line is <span class="process-math">\(2\dx{x}\text{,}\)</span> so the area  of the entire rectangle must be  given by the sum of these, or</div>
 <div class="displaymath process-math" id="EQUATIONIntCav">
 \begin{equation}
@@ -819,15 +1452,19 @@ Circle}) = \frac{b}{a}(\pi a^2) =\pi ba \text{.}
 \end{equation}
 </div>
 <div class="para">Moreover, since this is a <span class="process-math">\(2\times 4\)</span> rectangle we must have <span class="process-math">\(\int 2\dx{x} =8\text{,}\)</span> right?</div>
-</div> <div class="para" id="EXAMPLEIntegralIndices-6">This is correct but there is a problem with our notation. Do you see it? If our rectangle had different dimensions, say <span class="process-math">\(2\times
-5\text{,}\)</span> then <span class="process-math">\(\int 2\dx{x}\)</span> would be equal to <span class="process-math">\(10\text{.}\)</span>  A notation that uses exactly the same symbols to represent two different numbers is inconvenient at best.</div> <div class="para" id="EXAMPLEIntegralIndices-7">But it gets worse!  Recall that in <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONIntCav.html" title="Equation 20.3">formula (20.3)</a>  we used exactly the same notation to represent the most general antiderivative (multifunction) of <span class="process-math">\(f(x)= 2\text{,}\)</span> which is <span class="process-math">\(2x+C\text{.}\)</span>
-</div> <div class="para" id="EXAMPLEIntegralIndices-8">We can’t have this. The meaning of the expression <span class="process-math">\(\int 2\dx{t}\)</span> can’t be <span class="process-math">\(8\)</span> sometimes, <span class="process-math">\(10\)</span> at other times, and a multifunction at yet other times. Our notation needs to be unambiguous.</div></article></section><section class="subsection" id="SUBSECTIONDefIndefInt"><h3 class="heading hide-type">
+</div>
+<div class="para" id="EXAMPLEIntegralIndices-6">This is correct but there is a problem with our notation. Do you see it? If our rectangle had different dimensions, say <span class="process-math">\(2\times
+5\text{,}\)</span> then <span class="process-math">\(\int 2\dx{x}\)</span> would be equal to <span class="process-math">\(10\text{.}\)</span>  A notation that uses exactly the same symbols to represent two different numbers is inconvenient at best.</div>
+<div class="para" id="EXAMPLEIntegralIndices-7">But it gets worse!  Recall that in <a href="SECTIONCavalierisMethod.html#EQUATIONIntCav" class="xref" data-knowl="./knowl/xref/EQUATIONIntCav.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.3">formula (20.3)</a>  we used exactly the same notation to represent the most general antiderivative (multifunction) of <span class="process-math">\(f(x)= 2\text{,}\)</span> which is <span class="process-math">\(2x+C\text{.}\)</span>
+</div>
+<div class="para" id="EXAMPLEIntegralIndices-8">We can’t have this. The meaning of the expression <span class="process-math">\(\int 2\dx{t}\)</span> can’t be <span class="process-math">\(8\)</span> sometimes, <span class="process-math">\(10\)</span> at other times, and a multifunction at yet other times. Our notation needs to be unambiguous.</div></article></section><section class="subsection" id="SUBSECTIONDefIndefInt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">20.1.3</span><span class="space"> </span><span class="title">Functions, Multifunctions and Integral Notation</span>
 </h3>
 <div class="para" id="SUBSECTIONDefIndefInt-2">Because areas and antiderivatives are related we will define several variations on the basic summation symbol originally invented by Leibniz.</div>
 <article class="definition definition-like" id="DEFINITIONIndefInt"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">20.1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Indefinite Integral.</span>
-</h4>  <div class="para logical" id="DEFINITIONIndefInt-4-1">
+</h4>
+<div class="para logical" id="DEFINITIONIndefInt-4-1">
 <div class="para">Given <span class="process-math">\(f(x)\)</span> the formula</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -847,7 +1484,7 @@ f(x)\dx{x}
 </div>
 <div class="para">and call <span class="process-math">\(F(x)\)</span> the indefinite integral of <span class="process-math">\(f(x)\text{,}\)</span> just because it is less to write.</div>
 </div></article><div class="para logical" id="SUBSECTIONDefIndefInt-4">
-<div class="para">The formula <span class="process-math">\(\int 2\dx{x}\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLEIntegralIndices.html" title="Example 20.1.2.1">Example 20.1.2.1</a> does not express everything we would like it to. In particular, the base of our rectangle lies on the line segment <span class="process-math">\([2,6]\)</span> (for a length of <span class="process-math">\(4\)</span>) but nothing in our formula indicates this fact. So, to make it explicit  that we want to begin summing Cavalieri’s “lines” at <span class="process-math">\(x=2\)</span> and end at <span class="process-math">\(x=6\)</span> we’ll insert the endpoints of the interval into the notation like this:</div>
+<div class="para">The formula <span class="process-math">\(\int 2\dx{x}\)</span> from <a href="SECTIONCavalierisMethod.html#EXAMPLEIntegralIndices" class="xref" data-knowl="./knowl/xref/EXAMPLEIntegralIndices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.1.2.1">Example 20.1.2.1</a> does not express everything we would like it to. In particular, the base of our rectangle lies on the line segment <span class="process-math">\([2,6]\)</span> (for a length of <span class="process-math">\(4\)</span>) but nothing in our formula indicates this fact. So, to make it explicit  that we want to begin summing Cavalieri’s “lines” at <span class="process-math">\(x=2\)</span> and end at <span class="process-math">\(x=6\)</span> we’ll insert the endpoints of the interval into the notation like this:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLEIntegralIndices.html">
 \begin{equation*}
 \int_{x=2}^{6}2\dx{x}\text{.}
@@ -857,7 +1494,8 @@ f(x)\dx{x}
 </div>
 <article class="definition definition-like" id="DEFINITIONDefInt"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">20.1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Definite Integral.</span>
-</h4>  <div class="para logical" id="DEFINITIONDefInt-4-1">
+</h4>
+<div class="para logical" id="DEFINITIONDefInt-4-1">
 <div class="para">Given a function <span class="process-math">\(f(x)\text{,}\)</span> the formula</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -880,16 +1518,16 @@ f(x)\dx{x}
 \int_{a}^{b} f(x)\dx{x}\text{.}
 \end{equation*}
 </div>
-</div></aside><div class="para" id="SUBSECTIONDefIndefInt-7">Take care to notice that, although the notations are very similar, the objects being defined in <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONIndefInt.html" title="Definition 20.1.3.1: Indefinite Integral">Definition 20.1.3.1</a> and <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONDefInt.html" title="Definition 20.1.3.2: Definite Integral">Definition 20.1.3.2</a> are very different. An <dfn class="terminology">indefinite integral</dfn> is a multifunction. A <dfn class="terminology">definite integral</dfn> is a number. The reason that we used such similar notation is that they are both built via (infinite) summation of differentials: Cavalieri’s “lines.”</div>
+</div></aside><div class="para" id="SUBSECTIONDefIndefInt-7">Take care to notice that, although the notations are very similar, the objects being defined in <a href="SECTIONCavalierisMethod.html#DEFINITIONIndefInt" class="xref" data-knowl="./knowl/xref/DEFINITIONIndefInt.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 20.1.3.1: Indefinite Integral">Definition 20.1.3.1</a> and <a href="SECTIONCavalierisMethod.html#DEFINITIONDefInt" class="xref" data-knowl="./knowl/xref/DEFINITIONDefInt.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 20.1.3.2: Definite Integral">Definition 20.1.3.2</a> are very different. An <dfn class="terminology">indefinite integral</dfn> is a multifunction. A <dfn class="terminology">definite integral</dfn> is a number. The reason that we used such similar notation is that they are both built via (infinite) summation of differentials: Cavalieri’s “lines.”</div>
 <div class="para logical" id="SUBSECTIONDefIndefInt-8">
-<div class="para">When we speak of an indefinite integral we are thinking of integration as antidifferentiation as in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntAsAntiDiff" class="internal" title="Subsection 17.1.2: Integration as Antidifferentiation">Subsection 17.1.2</a>.  In the case of <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> we sum the differentials <span class="process-math">\(2t\dx{x}\)</span> but since there are no definite bounds indicated for the summation we interpret this as the antiderivative</div>
+<div class="para">When we speak of an indefinite integral we are thinking of integration as antidifferentiation as in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntAsAntiDiff" class="internal" title="Subsection 17.1.2: Integration as Antidifferentiation">Subsection 17.1.2</a>.  In the case of <a href="SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> we sum the differentials <span class="process-math">\(2t\dx{x}\)</span> but since there are no definite bounds indicated for the summation we interpret this as the antiderivative</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SUBSECTIONIntAsAntiDiff.html ./knowl/xref/EXAMPLESimpleInt1.html">
 \begin{equation*}
 \int 2t\dx{t}=t^2+C\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SUBSECTIONDefIndefInt-9">When we talk about a definite integral we are thinking of integration as summation as in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 17.1.1: Integration as  Summation">Subsection 17.1.1</a>. We  sum differentials of the form <span class="process-math">\(f(x)\dx{x}\)</span> and end with the total, <span class="process-math">\(\int_{x=a}^bf(x)\dx{x} \)</span> which will be a number. In the case of <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLEIntegralIndices.html" title="Example 20.1.2.1">Example 20.1.2.1</a> we sum the differentials <span class="process-math">\(2\dx{x}\)</span> from <span class="process-math">\(2\)</span> to <span class="process-math">\(6\text{.}\)</span> Because the integral in that example represents the area of a <span class="process-math">\(4\times 2\)</span> rectangle result should be <span class="process-math">\(4\times
+<div class="para" id="SUBSECTIONDefIndefInt-9">When we talk about a definite integral we are thinking of integration as summation as in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 17.1.1: Integration as  Summation">Subsection 17.1.1</a>. We  sum differentials of the form <span class="process-math">\(f(x)\dx{x}\)</span> and end with the total, <span class="process-math">\(\int_{x=a}^bf(x)\dx{x} \)</span> which will be a number. In the case of <a href="SECTIONCavalierisMethod.html#EXAMPLEIntegralIndices" class="xref" data-knowl="./knowl/xref/EXAMPLEIntegralIndices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.1.2.1">Example 20.1.2.1</a> we sum the differentials <span class="process-math">\(2\dx{x}\)</span> from <span class="process-math">\(2\)</span> to <span class="process-math">\(6\text{.}\)</span> Because the integral in that example represents the area of a <span class="process-math">\(4\times 2\)</span> rectangle result should be <span class="process-math">\(4\times
 2=8\text{.}\)</span>
 </div>
 <div class="para" id="SUBSECTIONDefIndefInt-10">But  notice that we haven’t yet indicated how we would compute this from the integral. We will address the problem of computing the value of an integral next but first a few examples of definite integrals will be illustrative.‘.</div>
@@ -960,12 +1598,15 @@ f(x)\dx{x}
 </div>
 </div></article><div class="para logical" id="SUBSECTIONDefIndefInt-13">
 <div class="para"> Consider the Initial Value Problem</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLESimpleInt1.html ./knowl/xref/EQUATIONMultFuncIVP.html" id="SUBSECTIONDefIndefInt-13-2">
+<div class="displaymath process-math" id="SUBSECTIONDefIndefInt-13-2">
 \begin{align}
 \dfdx{y}{t}=2t\amp{}\amp{} \text{ and }\amp{}\amp{} y(0)=5.\tag{20.4}
 \end{align}
 </div>
-<div class="para">We saw in <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> that</div>
+</div>
+<div class="para" id="SUBSECTIONDefIndefInt-14"><em class="alert">BELOW HERE NEEDS TO BE EDITED.</em></div>
+<div class="para logical" id="SUBSECTIONDefIndefInt-15">
+<div class="para">We saw in <a href="SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLESimpleInt1.html ./knowl/xref/EQUATIONMultFuncIVP.html" id="EQUATIONIntegralNotationModification1">
 \begin{equation}
 y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C\text{.}\tag{20.5}
@@ -977,18 +1618,18 @@ y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C\text{.}\tag{20.5}
 y(0)=0^2+C=5
 \end{equation*}
 </div>
-<div class="para">or <span class="process-math">\(C=5\text{.}\)</span> Thus the solution of <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" title="Equation 20.4">IVP (20.4)</a> is</div>
+<div class="para">or <span class="process-math">\(C=5\text{.}\)</span> Thus the solution of <a href="SECTIONCavalierisMethod.html#SUBSECTIONDefIndefInt-13-2" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.4">IVP (20.4)</a> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLESimpleInt1.html ./knowl/xref/EQUATIONMultFuncIVP.html">
 \begin{equation*}
 y(t)=t^2+5\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SUBSECTIONDefIndefInt-14">But as we saw in <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLEIntegralIndices.html" title="Example 20.1.2.1">Example 20.1.2.1</a> the expression <span class="process-math">\(\int 2t\dx{t}\)</span> can also indicate the solution of the differential equation is To accomplish this we need to solve the differential equation <span class="process-math">\(\dfdx{y}{t}=2t \)</span> to find  the multifunction and then find the <em class="emphasis">particular</em> function which satisfies the initial condition <span class="process-math">\(y(0)=4\text{.}\)</span>
+<div class="para" id="SUBSECTIONDefIndefInt-16">But as we saw in <a href="SECTIONCavalierisMethod.html#EXAMPLEIntegralIndices" class="xref" data-knowl="./knowl/xref/EXAMPLEIntegralIndices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.1.2.1">Example 20.1.2.1</a> the expression <span class="process-math">\(\int 2t\dx{t}\)</span> can also indicate the solution of the differential equation is To accomplish this we need to solve the differential equation <span class="process-math">\(\dfdx{y}{t}=2t \)</span> to find  the multifunction and then find the <em class="emphasis">particular</em> function which satisfies the initial condition <span class="process-math">\(y(0)=4\text{.}\)</span>
 </div>
-<div class="para" id="SUBSECTIONDefIndefInt-15">As we saw in <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> the expression <span class="process-math">\(\int 2t\dx{t} \)</span> represents the most general antiderivative (a multifunction) of <span class="process-math">\(f(t)=2t\text{.}\)</span>
+<div class="para" id="SUBSECTIONDefIndefInt-17">As we saw in <a href="SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> the expression <span class="process-math">\(\int 2t\dx{t} \)</span> represents the most general antiderivative (a multifunction) of <span class="process-math">\(f(t)=2t\text{.}\)</span>
 </div>
-<div class="para logical" id="SUBSECTIONDefIndefInt-16">
+<div class="para logical" id="SUBSECTIONDefIndefInt-18">
 <div class="para">Since <span class="process-math">\(y(t)=\int 2t\dx{t} \)</span> and <span class="process-math">\(y(0)=5 \)</span> we know that the particular function we seek satisfies</div>
 <div class="displaymath process-math" id="EQUATIONIntegralNotationModification2">
 \begin{equation}
@@ -997,20 +1638,20 @@ y(0)= \eval{\int 2t\dx{t}}{t}{0} =5 \text{.}\tag{20.6}
 </div>
 <div class="para">     </div>
 </div>
-<div class="para logical" id="SUBSECTIONDefIndefInt-17">
+<div class="para logical" id="SUBSECTIONDefIndefInt-19">
 <div class="para">While our evaluation notation is clear, an expression like <span class="process-math">\(\eval{\int f(t)\dx{t}}{t}{a}\)</span> is rather clumsy. So we introduce the following slightly more convenient notation:</div>
-<div class="displaymath process-math" id="SUBSECTIONDefIndefInt-17-2">
+<div class="displaymath process-math" id="SUBSECTIONDefIndefInt-19-2">
 \begin{equation}
 \eval{\int
 f(t)\dx{t}}{t}{a}=\int^{t=a} f(t)\dx{t}.\tag{20.7}
 \end{equation}
 </div>
 </div>
-<div class="para" id="SUBSECTIONDefIndefInt-18">Together equations <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification1.html" title="Equation 20.5">(20.5)</a> and         <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification2.html" title="Equation 20.6">(20.6)</a> describe the solution of <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" title="Equation 20.4">IVP (20.4)</a>, but this is  not a very useful description since all we’ve really done is re-express <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" title="Equation 20.4">IVP (20.4)</a> in new notation.</div>
-<div class="para" id="SUBSECTIONDefIndefInt-19">
-<a href="" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification1.html" title="Equation 20.5">Equation (20.5)</a> merely        says that the solution of <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" title="Equation 20.4">IVP (20.4)</a> is one of the antiderivatives of <span class="process-math">\(=2t\text{,}\)</span> and <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "EQUATIONIntegralNotation2" missing or not unique]</code> simply restates the initial condition.</div>
-<div class="para logical" id="SUBSECTIONDefIndefInt-20">
-<div class="para">would be the most we can say. But from <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> we also know that <span class="process-math">\(y(t)\)</span> has the form</div>
+<div class="para" id="SUBSECTIONDefIndefInt-20">Together equations <a href="SECTIONCavalierisMethod.html#EQUATIONIntegralNotationModification1" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.5">(20.5)</a> and         <a href="SECTIONCavalierisMethod.html#EQUATIONIntegralNotationModification2" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.6">(20.6)</a> describe the solution of <a href="SECTIONCavalierisMethod.html#SUBSECTIONDefIndefInt-13-2" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.4">IVP (20.4)</a>, but this is  not a very useful description since all we’ve really done is re-express <a href="SECTIONCavalierisMethod.html#SUBSECTIONDefIndefInt-13-2" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.4">IVP (20.4)</a> in new notation.</div>
+<div class="para" id="SUBSECTIONDefIndefInt-21">
+<a href="SECTIONCavalierisMethod.html#EQUATIONIntegralNotationModification1" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.5">Equation (20.5)</a> merely        says that the solution of <a href="SECTIONCavalierisMethod.html#SUBSECTIONDefIndefInt-13-2" class="xref" data-knowl="./knowl/xref/EQUATIONMultFuncIVP.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.4">IVP (20.4)</a> is one of the antiderivatives of <span class="process-math">\(=2t\text{,}\)</span> and <a href="SECTIONCavalierisMethod.html#EQUATIONIntegralNotationModification2" class="xref" data-knowl="./knowl/xref/EQUATIONIntegralNotationModification2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.6">equation (20.6)</a> simply restates the initial condition.</div>
+<div class="para logical" id="SUBSECTIONDefIndefInt-22">
+<div class="para">would be the most we can say. But from <a href="SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1" class="xref" data-knowl="./knowl/xref/EXAMPLESimpleInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 17.1.2.2: A Simple Integration">Example 17.1.2.2</a> we also know that <span class="process-math">\(y(t)\)</span> has the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLESimpleInt1.html">
 \begin{equation*}
 y(t)=t^2+C
@@ -1024,9 +1665,9 @@ y(0)= \int^{t=0} 2t\dx{t}= \eval{t^2+C}{t}{0}=0^2+C =5\text{.}\tag{20.8}
 </div>
 <div class="para">      </div>
 </div>
-<aside class="aside aside-like" id="SUBSECTIONDefIndefInt-21"><h4 class="heading"><span class="title">Note to Self.</span></h4>
-<div class="para" id="SUBSECTIONDefIndefInt-21-2">When we introduce the lower index we will drop the “t=” part of the upper.</div></aside><div class="para logical" id="SUBSECTIONDefIndefInt-22">
-<div class="para">Using our new notation we see that <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONIntEval.html" title="Equation 20.8">equation (20.8)</a> can be expressed as</div>
+<aside class="aside aside-like" id="SUBSECTIONDefIndefInt-23"><h4 class="heading"><span class="title">Note to Self.</span></h4>
+<div class="para" id="SUBSECTIONDefIndefInt-23-2">When we introduce the lower index we will drop the “t=” part of the upper.</div></aside><div class="para logical" id="SUBSECTIONDefIndefInt-24">
+<div class="para">Using our new notation we see that <a href="SECTIONCavalierisMethod.html#EQUATIONIntEval" class="xref" data-knowl="./knowl/xref/EQUATIONIntEval.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.8">equation (20.8)</a> can be expressed as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONIntEval.html ./knowl/xref/CHAPTERDefiniteIntegration.html">
 \begin{equation*}
 y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5\text{.}
@@ -1034,10 +1675,10 @@ y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5\text{.}
 </div>
 <div class="para">The advantage of this notation may not be clear to you yet but as we proceed you will see that it is very helpful, particularly in the  context of <dfn class="terminology">Definite Integration</dfn> which we will return to in <a href="CHAPTERDefiniteIntegration.html" class="internal" title="Chapter 20: Definite Integration">Chapter 20</a>.</div>
 </div>
-<div class="para" id="SUBSECTIONDefIndefInt-23">Conceptually, it is all well and good to say that the area is the sum of “all the lines” that make it up.  But faced with a real problem we’ll need more information than that. In particular,  we need to know which lines we’re summing. That is, we need to know where to start summing the differential areas (lines) and where to stop.</div>
-<div class="para" id="SUBSECTIONDefIndefInt-24">Since <span class="process-math">\(\int 2\dx{x}\)</span> is the most general antiderivative</div>
-<div class="para logical" id="SUBSECTIONDefIndefInt-25">
-<div class="para">Similar considerations lead the mathematician <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/" target="_blank">Joseph Fourier</a><a class="xref" id="SUBSECTIONDefIndefInt-25-2" href="" data-knowl="./knowl/fn/SUBSECTIONDefIndefInt-25-2.html" title="Footnote 20.10"><sup> 10 </sup></a> (1768–1830) to create the <dfn class="terminology">definite integral</dfn> by adding <dfn class="terminology">indices</dfn> to the integral sign as follows:</div>
+<div class="para" id="SUBSECTIONDefIndefInt-25">Conceptually, it is all well and good to say that the area is the sum of “all the lines” that make it up.  But faced with a real problem we’ll need more information than that. In particular,  we need to know which lines we’re summing. That is, we need to know where to start summing the differential areas (lines) and where to stop.</div>
+<div class="para" id="SUBSECTIONDefIndefInt-26">Since <span class="process-math">\(\int 2\dx{x}\)</span> is the most general antiderivative</div>
+<div class="para logical" id="SUBSECTIONDefIndefInt-27">
+<div class="para">Similar considerations lead the mathematician <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/" target="_blank">Joseph Fourier</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONDefIndefInt-27-2"><summary class="ptx-footnote__number" title="Footnote 20.10"><sup> 10 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONDefIndefInt-27-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/</code></div></details> (1768–1830) to create the <dfn class="terminology">definite integral</dfn> by adding <dfn class="terminology">indices</dfn> to the integral sign as follows:</div>
 <div class="displaymath process-math" id="EQUATIONAreaRect2">
 \begin{equation}
 \int_{x=2}^6 2\dx{x}.\tag{20.9}
@@ -1046,8 +1687,8 @@ y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5\text{.}
 <div class="para">The indices in this expression tell us that we begin summing the differential <span class="process-math">\(2\dx{x}\)</span> at <span class="process-math">\(x=2\)</span> and stop at <span class="process-math">\(x=6\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="SUBSECTIONDefIndefInt-26">Notice that, despite the complexity of the notation, expressions like <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAreaRect2.html" title="Equation 20.9">formula (20.9)</a> simply represent a specific, or definite number; eight in this case. This is why they are called <dfn class="terminology">definite integrals</dfn>.</div>
-<div class="para logical" id="SUBSECTIONDefIndefInt-27">
+<div class="para" id="SUBSECTIONDefIndefInt-28">Notice that, despite the complexity of the notation, expressions like <a href="SECTIONCavalierisMethod.html#EQUATIONAreaRect2" class="xref" data-knowl="./knowl/xref/EQUATIONAreaRect2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.9">formula (20.9)</a> simply represent a specific, or definite number; eight in this case. This is why they are called <dfn class="terminology">definite integrals</dfn>.</div>
+<div class="para logical" id="SUBSECTIONDefIndefInt-29">
 <div class="para">Expressions like</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CHAPTERIndefiniteIntegration.html ./knowl/xref/CHAPTERIndefiniteIntegration.html">
 \begin{equation*}

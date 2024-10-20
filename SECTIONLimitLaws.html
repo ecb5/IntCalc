@@ -58,7 +58,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
+      "pretext": "_static/pretext/js/lib"
     }
   },
   "startup": {
@@ -70,8 +70,8 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -79,16 +79,627 @@ window.MathJax = {
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#PleaForHelp-9-3 { counter-set: PleaForHelp-9-3 0; }
+#PleaForHelp-9-3 > li::marker { content: ""counter(PleaForHelp-9-3,decimal)"."; }
+#PleaForHelp-9-3 > li { counter-increment: PleaForHelp-9-3; }
+#SECTIONFermMethAedeq-22-2-1-1-1 { counter-set: SECTIONFermMethAedeq-22-2-1-1-1 0; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-2-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-2-1-1-1; }
+#SECTIONFermMethAedeq-22-6-1-1-1 { counter-set: SECTIONFermMethAedeq-22-6-1-1-1 0; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-6-1-1-1,lower-roman)""; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-6-1-1-1; }
+#SECTIONFermMethAedeq-22-7-1-1-8 { counter-set: SECTIONFermMethAedeq-22-7-1-1-8 0; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li::marker { content: ""counter(SECTIONFermMethAedeq-22-7-1-1-8,lower-roman)""; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li { counter-increment: SECTIONFermMethAedeq-22-7-1-1-8; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 { counter-set: PROBLEMPROBLEMFermMethX2A-1-1-1 0; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li::marker { content: ""counter(PROBLEMPROBLEMFermMethX2A-1-1-1,lower-roman)""; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li { counter-increment: PROBLEMPROBLEMFermMethX2A-1-1-1; }
+#PROBLEMFermMethX2B-1-1-1 { counter-set: PROBLEMFermMethX2B-1-1-1 0; }
+#PROBLEMFermMethX2B-1-1-1 > li::marker { content: ""counter(PROBLEMFermMethX2B-1-1-1,lower-roman)""; }
+#PROBLEMFermMethX2B-1-1-1 > li { counter-increment: PROBLEMFermMethX2B-1-1-1; }
+#SUBSECTIONSpdVelRofC-31-2-1 { counter-set: SUBSECTIONSpdVelRofC-31-2-1 0; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-31-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-31-2-1; }
+#SUBSECTIONSpdVelRofC-32-2-1 { counter-set: SUBSECTIONSpdVelRofC-32-2-1 0; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-32-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-32-2-1; }
+#SUBSECTIONSpdVelRofC-33-2-1 { counter-set: SUBSECTIONSpdVelRofC-33-2-1 0; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-33-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-33-2-1; }
+#SUBSECTIONSpdVelRofC-34-2-1 { counter-set: SUBSECTIONSpdVelRofC-34-2-1 0; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li::marker { content: ""counter(SUBSECTIONSpdVelRofC-34-2-1,lower-roman)""; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-34-2-1; }
+#DRILLConstantRule-2 { counter-set: DRILLConstantRule-2 0; }
+#DRILLConstantRule-2 > li::marker { content: ""counter(DRILLConstantRule-2,lower-roman)""; }
+#DRILLConstantRule-2 > li { counter-increment: DRILLConstantRule-2; }
+#SUBSECTIONConstMultRule-5-2 { counter-set: SUBSECTIONConstMultRule-5-2 0; }
+#SUBSECTIONConstMultRule-5-2 > li::marker { content: ""counter(SUBSECTIONConstMultRule-5-2,lower-roman)""; }
+#SUBSECTIONConstMultRule-5-2 > li { counter-increment: SUBSECTIONConstMultRule-5-2; }
+#PARTGenPwrRule-1-2-1 { counter-set: PARTGenPwrRule-1-2-1 0; }
+#PARTGenPwrRule-1-2-1 > li::marker { content: ""counter(PARTGenPwrRule-1-2-1,lower-roman)""; }
+#PARTGenPwrRule-1-2-1 > li { counter-increment: PARTGenPwrRule-1-2-1; }
+#SUBSECTIONPowerRule-12-1-1 { counter-set: SUBSECTIONPowerRule-12-1-1 0; }
+#SUBSECTIONPowerRule-12-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-12-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-12-1-1 > li { counter-increment: SUBSECTIONPowerRule-12-1-1; }
+#SUBSECTIONPowerRule-13-1-1 { counter-set: SUBSECTIONPowerRule-13-1-1 0; }
+#SUBSECTIONPowerRule-13-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-13-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-13-1-1 > li { counter-increment: SUBSECTIONPowerRule-13-1-1; }
+#SUBSECTIONPowerRule-14-1-2 { counter-set: SUBSECTIONPowerRule-14-1-2 0; }
+#SUBSECTIONPowerRule-14-1-2 > li::marker { content: ""counter(SUBSECTIONPowerRule-14-1-2,lower-roman)""; }
+#SUBSECTIONPowerRule-14-1-2 > li { counter-increment: SUBSECTIONPowerRule-14-1-2; }
+#SUBSECTIONPowerRule-40-1-4 { counter-set: SUBSECTIONPowerRule-40-1-4 0; }
+#SUBSECTIONPowerRule-40-1-4 > li::marker { content: ""counter(SUBSECTIONPowerRule-40-1-4,lower-roman)""; }
+#SUBSECTIONPowerRule-40-1-4 > li { counter-increment: SUBSECTIONPowerRule-40-1-4; }
+#SUBSECTIONPowerRule-41-1-1 { counter-set: SUBSECTIONPowerRule-41-1-1 0; }
+#SUBSECTIONPowerRule-41-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-41-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-41-1-1 > li { counter-increment: SUBSECTIONPowerRule-41-1-1; }
+#SUBSECTIONPowerRule-42-1-1 { counter-set: SUBSECTIONPowerRule-42-1-1 0; }
+#SUBSECTIONPowerRule-42-1-1 > li::marker { content: ""counter(SUBSECTIONPowerRule-42-1-1,lower-roman)""; }
+#SUBSECTIONPowerRule-42-1-1 > li { counter-increment: SUBSECTIONPowerRule-42-1-1; }
+#DRILLClassicalCurves-1-3 { counter-set: DRILLClassicalCurves-1-3 0; }
+#DRILLClassicalCurves-1-3 > li::marker { content: ""counter(DRILLClassicalCurves-1-3,lower-roman)""; }
+#DRILLClassicalCurves-1-3 > li { counter-increment: DRILLClassicalCurves-1-3; }
+#SUBSECTIONQuotientRule-9-1-2 { counter-set: SUBSECTIONQuotientRule-9-1-2 0; }
+#SUBSECTIONQuotientRule-9-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-9-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-9-1-2 > li { counter-increment: SUBSECTIONQuotientRule-9-1-2; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 { counter-set: SUBSECTIONQuotientRule-10-2-1-1-2 0; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONQuotientRule-10-2-1-1-2,lower-roman)""; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li { counter-increment: SUBSECTIONQuotientRule-10-2-1-1-2; }
+#SECTIONVelocitySlopeTangent-12-1-4 { counter-set: SECTIONVelocitySlopeTangent-12-1-4 0; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li::marker { content: ""counter(SECTIONVelocitySlopeTangent-12-1-4,lower-roman)""; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li { counter-increment: SECTIONVelocitySlopeTangent-12-1-4; }
+#SECTIONdefin-tang-line-23-1-2 { counter-set: SECTIONdefin-tang-line-23-1-2 0; }
+#SECTIONdefin-tang-line-23-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-23-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-23-1-2 > li { counter-increment: SECTIONdefin-tang-line-23-1-2; }
+#SECTIONdefin-tang-line-32-2-1-1-2 { counter-set: SECTIONdefin-tang-line-32-2-1-1-2 0; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-2-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-2-1-1-2; }
+#SECTIONdefin-tang-line-32-3-1-1-2 { counter-set: SECTIONdefin-tang-line-32-3-1-1-2 0; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-3-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-3-1-1-2; }
+#SECTIONdefin-tang-line-32-4-1-1-2 { counter-set: SECTIONdefin-tang-line-32-4-1-1-2 0; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li::marker { content: ""counter(SECTIONdefin-tang-line-32-4-1-1-2,lower-roman)""; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-4-1-1-2; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-3-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-3-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-3-1-1-6; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-4-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-4-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-4-1-1-6; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-5-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-5-1-1-6,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-5-1-1-6; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 { counter-set: PROBLEMHyperbolaTriangles-6-1-1-4 0; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li::marker { content: ""counter(PROBLEMHyperbolaTriangles-6-1-1-4,lower-roman)""; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li { counter-increment: PROBLEMHyperbolaTriangles-6-1-1-4; }
+#SECTIONGalileoDrops-9-2 { counter-set: SECTIONGalileoDrops-9-2 0; }
+#SECTIONGalileoDrops-9-2 > li::marker { content: ""counter(SECTIONGalileoDrops-9-2,decimal)"."; }
+#SECTIONGalileoDrops-9-2 > li { counter-increment: SECTIONGalileoDrops-9-2; }
+#SECTIONGalileoDrops-48-4 { counter-set: SECTIONGalileoDrops-48-4 0; }
+#SECTIONGalileoDrops-48-4 > li::marker { content: ""counter(SECTIONGalileoDrops-48-4,decimal)""; }
+#SECTIONGalileoDrops-48-4 > li { counter-increment: SECTIONGalileoDrops-48-4; }
+#SECONDBringCalc-6-4 { counter-set: SECONDBringCalc-6-4 0; }
+#SECONDBringCalc-6-4 > li::marker { content: ""counter(SECONDBringCalc-6-4,decimal)"."; }
+#SECONDBringCalc-6-4 > li { counter-increment: SECONDBringCalc-6-4; }
+#SECONDBringCalc-12-6 { counter-set: SECONDBringCalc-12-6 0; }
+#SECONDBringCalc-12-6 > li::marker { content: ""counter(SECONDBringCalc-12-6,decimal)"."; }
+#SECONDBringCalc-12-6 > li { counter-increment: SECONDBringCalc-12-6; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-2-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-2-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-2-1-1-2; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-8-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li::marker { content: ""counter(PROBLEMGeneralFallingBalls-8-1-1-2,lower-roman)""; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-8-1-1-2; }
+#SECTIONDerivative-19-1-4 { counter-set: SECTIONDerivative-19-1-4 0; }
+#SECTIONDerivative-19-1-4 > li::marker { content: ""counter(SECTIONDerivative-19-1-4,lower-roman)""; }
+#SECTIONDerivative-19-1-4 > li { counter-increment: SECTIONDerivative-19-1-4; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 { counter-set: PROBLEMDerivProdNEProdDeriv-2-1-1-1 0; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li::marker { content: ""counter(PROBLEMDerivProdNEProdDeriv-2-1-1-1,lower-roman)""; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li { counter-increment: PROBLEMDerivProdNEProdDeriv-2-1-1-1; }
+#SECTIONDerivative-22-1-3 { counter-set: SECTIONDerivative-22-1-3 0; }
+#SECTIONDerivative-22-1-3 > li::marker { content: ""counter(SECTIONDerivative-22-1-3,lower-roman)""; }
+#SECTIONDerivative-22-1-3 > li { counter-increment: SECTIONDerivative-22-1-3; }
+#PROBLEMAirlinerSpeed-3-1-1-2 { counter-set: PROBLEMAirlinerSpeed-3-1-1-2 0; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li::marker { content: ""counter(PROBLEMAirlinerSpeed-3-1-1-2,lower-roman)""; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li { counter-increment: PROBLEMAirlinerSpeed-3-1-1-2; }
+#SECTIONThinkingDynamically-13-1-2-1 { counter-set: SECTIONThinkingDynamically-13-1-2-1 0; }
+#SECTIONThinkingDynamically-13-1-2-1 > li::marker { content: ""counter(SECTIONThinkingDynamically-13-1-2-1,lower-roman)""; }
+#SECTIONThinkingDynamically-13-1-2-1 > li { counter-increment: SECTIONThinkingDynamically-13-1-2-1; }
+#SECTIONFluxions-36-2-1-1-1 { counter-set: SECTIONFluxions-36-2-1-1-1 0; }
+#SECTIONFluxions-36-2-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-2-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-2-1-1-1 > li { counter-increment: SECTIONFluxions-36-2-1-1-1; }
+#SECTIONFluxions-36-3-1-1-1 { counter-set: SECTIONFluxions-36-3-1-1-1 0; }
+#SECTIONFluxions-36-3-1-1-1 > li::marker { content: ""counter(SECTIONFluxions-36-3-1-1-1,lower-roman)""; }
+#SECTIONFluxions-36-3-1-1-1 > li { counter-increment: SECTIONFluxions-36-3-1-1-1; }
+#PROBLEMadfj-1-1-2-2 { counter-set: PROBLEMadfj-1-1-2-2 0; }
+#PROBLEMadfj-1-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-1-1-2-2,lower-roman)""; }
+#PROBLEMadfj-1-1-2-2 > li { counter-increment: PROBLEMadfj-1-1-2-2; }
+#PROBLEMadfj-2-1-2-2 { counter-set: PROBLEMadfj-2-1-2-2 0; }
+#PROBLEMadfj-2-1-2-2 > li::marker { content: ""counter(PROBLEMadfj-2-1-2-2,lower-roman)""; }
+#PROBLEMadfj-2-1-2-2 > li { counter-increment: PROBLEMadfj-2-1-2-2; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-15-2-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-15-2-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-15-2-1-1-2; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 { counter-set: PROBLEMUnitCircleParameterization1-1-1-1-1 0; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li::marker { content: ""counter(PROBLEMUnitCircleParameterization1-1-1-1-1,lower-roman)""; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li { counter-increment: PROBLEMUnitCircleParameterization1-1-1-1-1; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-21-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li::marker { content: ""counter(SECTIONSelfIntersectCurve-20-21-1-1-2,lower-roman)""; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-21-1-1-2; }
+#SUBSECTIONradian-measure-19-2 { counter-set: SUBSECTIONradian-measure-19-2 0; }
+#SUBSECTIONradian-measure-19-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-19-2,lower-roman)""; }
+#SUBSECTIONradian-measure-19-2 > li { counter-increment: SUBSECTIONradian-measure-19-2; }
+#SUBSECTIONradian-measure-20-2 { counter-set: SUBSECTIONradian-measure-20-2 0; }
+#SUBSECTIONradian-measure-20-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-20-2,lower-roman)""; }
+#SUBSECTIONradian-measure-20-2 > li { counter-increment: SUBSECTIONradian-measure-20-2; }
+#SUBSECTIONradian-measure-31-2 { counter-set: SUBSECTIONradian-measure-31-2 0; }
+#SUBSECTIONradian-measure-31-2 > li::marker { content: ""counter(SUBSECTIONradian-measure-31-2,lower-roman)""; }
+#SUBSECTIONradian-measure-31-2 > li { counter-increment: SUBSECTIONradian-measure-31-2; }
+#SECTIONtrig-interl-3-12-2-1-1-2 { counter-set: SECTIONtrig-interl-3-12-2-1-1-2 0; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-2-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-2-1-1-2; }
+#SECTIONtrig-interl-3-12-3-1-1-2 { counter-set: SECTIONtrig-interl-3-12-3-1-1-2 0; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-12-3-1-1-2,lower-roman)""; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-3-1-1-2; }
+#SECTIONtrig-interl-3-14-2 { counter-set: SECTIONtrig-interl-3-14-2 0; }
+#SECTIONtrig-interl-3-14-2 > li::marker { content: ""counter(SECTIONtrig-interl-3-14-2,lower-roman)""; }
+#SECTIONtrig-interl-3-14-2 > li { counter-increment: SECTIONtrig-interl-3-14-2; }
+#PROBLEMSineOscillB-1-1-8 { counter-set: PROBLEMSineOscillB-1-1-8 0; }
+#PROBLEMSineOscillB-1-1-8 > li::marker { content: ""counter(PROBLEMSineOscillB-1-1-8,lower-roman)""; }
+#PROBLEMSineOscillB-1-1-8 > li { counter-increment: PROBLEMSineOscillB-1-1-8; }
+#SECTIONtrig-interl-5-11-2 { counter-set: SECTIONtrig-interl-5-11-2 0; }
+#SECTIONtrig-interl-5-11-2 > li::marker { content: ""counter(SECTIONtrig-interl-5-11-2,lower-roman)""; }
+#SECTIONtrig-interl-5-11-2 > li { counter-increment: SECTIONtrig-interl-5-11-2; }
+#DRILLPolarQuirks2-2 { counter-set: DRILLPolarQuirks2-2 0; }
+#DRILLPolarQuirks2-2 > li::marker { content: ""counter(DRILLPolarQuirks2-2,lower-roman)""; }
+#DRILLPolarQuirks2-2 > li { counter-increment: DRILLPolarQuirks2-2; }
+#PROBLEMPolRectConvertA-1-1-3 { counter-set: PROBLEMPolRectConvertA-1-1-3 0; }
+#PROBLEMPolRectConvertA-1-1-3 > li::marker { content: ""counter(PROBLEMPolRectConvertA-1-1-3,lower-roman)""; }
+#PROBLEMPolRectConvertA-1-1-3 > li { counter-increment: PROBLEMPolRectConvertA-1-1-3; }
+#PROBLEMPolarGraphs-2 { counter-set: PROBLEMPolarGraphs-2 0; }
+#PROBLEMPolarGraphs-2 > li::marker { content: ""counter(PROBLEMPolarGraphs-2,lower-roman)""; }
+#PROBLEMPolarGraphs-2 > li { counter-increment: PROBLEMPolarGraphs-2; }
+#SUBSECTIONCircularMotion-5-1-2 { counter-set: SUBSECTIONCircularMotion-5-1-2 0; }
+#SUBSECTIONCircularMotion-5-1-2 > li::marker { content: ""counter(SUBSECTIONCircularMotion-5-1-2,lower-roman)""; }
+#SUBSECTIONCircularMotion-5-1-2 > li { counter-increment: SUBSECTIONCircularMotion-5-1-2; }
+#EXERCISEDiffPractice1-1-1-3 { counter-set: EXERCISEDiffPractice1-1-1-3 0; }
+#EXERCISEDiffPractice1-1-1-3 > li::marker { content: ""counter(EXERCISEDiffPractice1-1-1-3,lower-roman)""; }
+#EXERCISEDiffPractice1-1-1-3 > li { counter-increment: EXERCISEDiffPractice1-1-1-3; }
+#SUBSECTIONCircularMotion-12-1-9 { counter-set: SUBSECTIONCircularMotion-12-1-9 0; }
+#SUBSECTIONCircularMotion-12-1-9 > li::marker { content: ""counter(SUBSECTIONCircularMotion-12-1-9,lower-roman)""; }
+#SUBSECTIONCircularMotion-12-1-9 > li { counter-increment: SUBSECTIONCircularMotion-12-1-9; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-2-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-2-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-2-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-3-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-3-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-3-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-4-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li::marker { content: ""counter(SUBSECTIONpolar-coord-calc-6-4-1-3-1,lower-roman)""; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-4-1-3-1; }
+#PROBLEMcycloid2-2-1-1-1 { counter-set: PROBLEMcycloid2-2-1-1-1 0; }
+#PROBLEMcycloid2-2-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-2-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-2-1-1-1 > li { counter-increment: PROBLEMcycloid2-2-1-1-1; }
+#PROBLEMcycloid2-3-1-1-1 { counter-set: PROBLEMcycloid2-3-1-1-1 0; }
+#PROBLEMcycloid2-3-1-1-1 > li::marker { content: ""counter(PROBLEMcycloid2-3-1-1-1,lower-roman)""; }
+#PROBLEMcycloid2-3-1-1-1 > li { counter-increment: PROBLEMcycloid2-3-1-1-1; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 { counter-set: SUBSECTIONsimple-harm-oscill-17-3-1-1-4 0; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li::marker { content: ""counter(SUBSECTIONsimple-harm-oscill-17-3-1-1-4,lower-roman)""; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li { counter-increment: SUBSECTIONsimple-harm-oscill-17-3-1-1-4; }
+#SECTIONdiff-other-trig-13-1-1 { counter-set: SECTIONdiff-other-trig-13-1-1 0; }
+#SECTIONdiff-other-trig-13-1-1 > li::marker { content: ""counter(SECTIONdiff-other-trig-13-1-1,lower-roman)""; }
+#SECTIONdiff-other-trig-13-1-1 > li { counter-increment: SECTIONdiff-other-trig-13-1-1; }
+#SECTIONdiff-other-trig-14-1-3 { counter-set: SECTIONdiff-other-trig-14-1-3 0; }
+#SECTIONdiff-other-trig-14-1-3 > li::marker { content: ""counter(SECTIONdiff-other-trig-14-1-3,lower-roman)""; }
+#SECTIONdiff-other-trig-14-1-3 > li { counter-increment: SECTIONdiff-other-trig-14-1-3; }
+#PROBLEMDiffFormTan-3-1-3-1 { counter-set: PROBLEMDiffFormTan-3-1-3-1 0; }
+#PROBLEMDiffFormTan-3-1-3-1 > li::marker { content: ""counter(PROBLEMDiffFormTan-3-1-3-1,lower-roman)""; }
+#PROBLEMDiffFormTan-3-1-3-1 > li { counter-increment: PROBLEMDiffFormTan-3-1-3-1; }
+#DIGRESSIONInverse-function-notation-7-1-1 { counter-set: DIGRESSIONInverse-function-notation-7-1-1 0; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li::marker { content: ""counter(DIGRESSIONInverse-function-notation-7-1-1,lower-roman)""; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li { counter-increment: DIGRESSIONInverse-function-notation-7-1-1; }
+#PROBLEMInvTanDiffeqB-1-1-3 { counter-set: PROBLEMInvTanDiffeqB-1-1-3 0; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMInvTanDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li { counter-increment: PROBLEMInvTanDiffeqB-1-1-3; }
+#PROBLEMArcSinDiffeqB-1-1-3 { counter-set: PROBLEMArcSinDiffeqB-1-1-3 0; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSinDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSinDiffeqB-1-1-3; }
+#PROBLEMArcSecDiffeqB-1-1-3 { counter-set: PROBLEMArcSecDiffeqB-1-1-3 0; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li::marker { content: ""counter(PROBLEMArcSecDiffeqB-1-1-3,lower-roman)""; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSecDiffeqB-1-1-3; }
+#InverseSecCsc-11-1 { counter-set: InverseSecCsc-11-1 0; }
+#InverseSecCsc-11-1 > li::marker { content: ""counter(InverseSecCsc-11-1,decimal)"."; }
+#InverseSecCsc-11-1 > li { counter-increment: InverseSecCsc-11-1; }
+#InverseSecCsc-17-1-1 { counter-set: InverseSecCsc-17-1-1 0; }
+#InverseSecCsc-17-1-1 > li::marker { content: ""counter(InverseSecCsc-17-1-1,lower-roman)""; }
+#InverseSecCsc-17-1-1 > li { counter-increment: InverseSecCsc-17-1-1; }
+#InverseSecCsc-20-2-1-1-1 { counter-set: InverseSecCsc-20-2-1-1-1 0; }
+#InverseSecCsc-20-2-1-1-1 > li::marker { content: ""counter(InverseSecCsc-20-2-1-1-1,lower-roman)""; }
+#InverseSecCsc-20-2-1-1-1 > li { counter-increment: InverseSecCsc-20-2-1-1-1; }
+#EXAMPLESqrt2-2-3-1-1-1 { counter-set: EXAMPLESqrt2-2-3-1-1-1 0; }
+#EXAMPLESqrt2-2-3-1-1-1 > li::marker { content: ""counter(EXAMPLESqrt2-2-3-1-1-1,lower-roman)""; }
+#EXAMPLESqrt2-2-3-1-1-1 > li { counter-increment: EXAMPLESqrt2-2-3-1-1-1; }
+#DRILLNewtonMethod2-2 { counter-set: DRILLNewtonMethod2-2 0; }
+#DRILLNewtonMethod2-2 > li::marker { content: ""counter(DRILLNewtonMethod2-2,lower-roman)""; }
+#DRILLNewtonMethod2-2 > li { counter-increment: DRILLNewtonMethod2-2; }
+#ALGORITHMNewtonsMethod-3-4 { counter-set: ALGORITHMNewtonsMethod-3-4 0; }
+#ALGORITHMNewtonsMethod-3-4 > li::marker { content: ""counter(ALGORITHMNewtonsMethod-3-4,decimal)"."; }
+#ALGORITHMNewtonsMethod-3-4 > li { counter-increment: ALGORITHMNewtonsMethod-3-4; }
+#PROBLEMNewtMethCreateFunction-2-3 { counter-set: PROBLEMNewtMethCreateFunction-2-3 0; }
+#PROBLEMNewtMethCreateFunction-2-3 > li::marker { content: ""counter(PROBLEMNewtMethCreateFunction-2-3,lower-roman)""; }
+#PROBLEMNewtMethCreateFunction-2-3 > li { counter-increment: PROBLEMNewtMethCreateFunction-2-3; }
+#PROBLEMNewton-meth-2-8 { counter-set: PROBLEMNewton-meth-2-8 0; }
+#PROBLEMNewton-meth-2-8 > li::marker { content: ""counter(PROBLEMNewton-meth-2-8,lower-roman)""; }
+#PROBLEMNewton-meth-2-8 > li { counter-increment: PROBLEMNewton-meth-2-8; }
+#PROBLEMNewton-meth2-2-2 { counter-set: PROBLEMNewton-meth2-2-2 0; }
+#PROBLEMNewton-meth2-2-2 > li::marker { content: ""counter(PROBLEMNewton-meth2-2-2,lower-roman)""; }
+#PROBLEMNewton-meth2-2-2 > li { counter-increment: PROBLEMNewton-meth2-2-2; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 { counter-set: SUBSECTIONSubtleFailure-8-3-1-1-3 0; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li::marker { content: ""counter(SUBSECTIONSubtleFailure-8-3-1-1-3,lower-roman)""; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li { counter-increment: SUBSECTIONSubtleFailure-8-3-1-1-3; }
+#SECTIONDEsandIVPS-2-3 { counter-set: SECTIONDEsandIVPS-2-3 0; }
+#SECTIONDEsandIVPS-2-3 > li::marker { content: ""counter(SECTIONDEsandIVPS-2-3,decimal)"."; }
+#SECTIONDEsandIVPS-2-3 > li { counter-increment: SECTIONDEsandIVPS-2-3; }
+#DRILLIVP-sqr-1-1 { counter-set: DRILLIVP-sqr-1-1 0; }
+#DRILLIVP-sqr-1-1 > li::marker { content: ""counter(DRILLIVP-sqr-1-1,lower-roman)""; }
+#DRILLIVP-sqr-1-1 > li { counter-increment: DRILLIVP-sqr-1-1; }
+#SECTIONexponential-growth-23-2 { counter-set: SECTIONexponential-growth-23-2 0; }
+#SECTIONexponential-growth-23-2 > li::marker { content: ""counter(SECTIONexponential-growth-23-2,decimal)"."; }
+#SECTIONexponential-growth-23-2 > li { counter-increment: SECTIONexponential-growth-23-2; }
+#SECTIONexponential-growth-28-1-2 { counter-set: SECTIONexponential-growth-28-1-2 0; }
+#SECTIONexponential-growth-28-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-28-1-2,lower-roman)""; }
+#SECTIONexponential-growth-28-1-2 > li { counter-increment: SECTIONexponential-growth-28-1-2; }
+#SECTIONexponential-growth-29-1-2 { counter-set: SECTIONexponential-growth-29-1-2 0; }
+#SECTIONexponential-growth-29-1-2 > li::marker { content: ""counter(SECTIONexponential-growth-29-1-2,lower-roman)""; }
+#SECTIONexponential-growth-29-1-2 > li { counter-increment: SECTIONexponential-growth-29-1-2; }
+#SECTIONexponential-growth-30-1-1 { counter-set: SECTIONexponential-growth-30-1-1 0; }
+#SECTIONexponential-growth-30-1-1 > li::marker { content: ""counter(SECTIONexponential-growth-30-1-1,lower-roman)""; }
+#SECTIONexponential-growth-30-1-1 > li { counter-increment: SECTIONexponential-growth-30-1-1; }
+#PROBLEMPolyExpA-1-1-2 { counter-set: PROBLEMPolyExpA-1-1-2 0; }
+#PROBLEMPolyExpA-1-1-2 > li::marker { content: ""counter(PROBLEMPolyExpA-1-1-2,lower-roman)""; }
+#PROBLEMPolyExpA-1-1-2 > li { counter-increment: PROBLEMPolyExpA-1-1-2; }
+#SECTIONexponential-growth-34-1-7 { counter-set: SECTIONexponential-growth-34-1-7 0; }
+#SECTIONexponential-growth-34-1-7 > li::marker { content: ""counter(SECTIONexponential-growth-34-1-7,lower-roman)""; }
+#SECTIONexponential-growth-34-1-7 > li { counter-increment: SECTIONexponential-growth-34-1-7; }
+#SECTIONexponential-growth-36-1-1-1-4 { counter-set: SECTIONexponential-growth-36-1-1-1-4 0; }
+#SECTIONexponential-growth-36-1-1-1-4 > li::marker { content: ""counter(SECTIONexponential-growth-36-1-1-1-4,lower-roman)""; }
+#SECTIONexponential-growth-36-1-1-1-4 > li { counter-increment: SECTIONexponential-growth-36-1-1-1-4; }
+#PROBLEMHyperbolicTrig-2-1-1-1 { counter-set: PROBLEMHyperbolicTrig-2-1-1-1 0; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li::marker { content: ""counter(PROBLEMHyperbolicTrig-2-1-1-1,lower-roman)""; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li { counter-increment: PROBLEMHyperbolicTrig-2-1-1-1; }
+#PROBLEMCatenaryTrueC-1-1-4 { counter-set: PROBLEMCatenaryTrueC-1-1-4 0; }
+#PROBLEMCatenaryTrueC-1-1-4 > li::marker { content: ""counter(PROBLEMCatenaryTrueC-1-1-4,lower-roman)""; }
+#PROBLEMCatenaryTrueC-1-1-4 > li { counter-increment: PROBLEMCatenaryTrueC-1-1-4; }
+#PROBLEMBacteriaIVP1D-1-1-3 { counter-set: PROBLEMBacteriaIVP1D-1-1-3 0; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li::marker { content: ""counter(PROBLEMBacteriaIVP1D-1-1-3,lower-roman)""; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li { counter-increment: PROBLEMBacteriaIVP1D-1-1-3; }
+#SECTIONNatLog-4-1-1 { counter-set: SECTIONNatLog-4-1-1 0; }
+#SECTIONNatLog-4-1-1 > li::marker { content: ""counter(SECTIONNatLog-4-1-1,lower-roman)""; }
+#SECTIONNatLog-4-1-1 > li { counter-increment: SECTIONNatLog-4-1-1; }
+#SECTIONNatLog-9-1-1 { counter-set: SECTIONNatLog-9-1-1 0; }
+#SECTIONNatLog-9-1-1 > li::marker { content: ""counter(SECTIONNatLog-9-1-1,lower-roman)""; }
+#SECTIONNatLog-9-1-1 > li { counter-increment: SECTIONNatLog-9-1-1; }
+#SECTIONNatLog-11-1-1 { counter-set: SECTIONNatLog-11-1-1 0; }
+#SECTIONNatLog-11-1-1 > li::marker { content: ""counter(SECTIONNatLog-11-1-1,lower-roman)""; }
+#SECTIONNatLog-11-1-1 > li { counter-increment: SECTIONNatLog-11-1-1; }
+#SECTIONNatLog-12-1-1-1-4 { counter-set: SECTIONNatLog-12-1-1-1-4 0; }
+#SECTIONNatLog-12-1-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-1-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-1-1-1-4 > li { counter-increment: SECTIONNatLog-12-1-1-1-4; }
+#SECTIONNatLog-12-2-1-1-4 { counter-set: SECTIONNatLog-12-2-1-1-4 0; }
+#SECTIONNatLog-12-2-1-1-4 > li::marker { content: ""counter(SECTIONNatLog-12-2-1-1-4,lower-roman)""; }
+#SECTIONNatLog-12-2-1-1-4 > li { counter-increment: SECTIONNatLog-12-2-1-1-4; }
+#SUBSECTIONradioactive-decay-9-1 { counter-set: SUBSECTIONradioactive-decay-9-1 0; }
+#SUBSECTIONradioactive-decay-9-1 > li::marker { content: ""counter(SUBSECTIONradioactive-decay-9-1,lower-roman)""; }
+#SUBSECTIONradioactive-decay-9-1 > li { counter-increment: SUBSECTIONradioactive-decay-9-1; }
+#SECTIONDerivNatLog-4-1-3 { counter-set: SECTIONDerivNatLog-4-1-3 0; }
+#SECTIONDerivNatLog-4-1-3 > li::marker { content: ""counter(SECTIONDerivNatLog-4-1-3,lower-roman)""; }
+#SECTIONDerivNatLog-4-1-3 > li { counter-increment: SECTIONDerivNatLog-4-1-3; }
+#PARAGRAPHSGenExp-16-1-3 { counter-set: PARAGRAPHSGenExp-16-1-3 0; }
+#PARAGRAPHSGenExp-16-1-3 > li::marker { content: ""counter(PARAGRAPHSGenExp-16-1-3,lower-roman)""; }
+#PARAGRAPHSGenExp-16-1-3 > li { counter-increment: PARAGRAPHSGenExp-16-1-3; }
+#PARAGRAPHSGenLog-7-1-3 { counter-set: PARAGRAPHSGenLog-7-1-3 0; }
+#PARAGRAPHSGenLog-7-1-3 > li::marker { content: ""counter(PARAGRAPHSGenLog-7-1-3,lower-roman)""; }
+#PARAGRAPHSGenLog-7-1-3 > li { counter-increment: PARAGRAPHSGenLog-7-1-3; }
+#DIGRESSIONBriggsAndNapier-7-1-1 { counter-set: DIGRESSIONBriggsAndNapier-7-1-1 0; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-7-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-7-1-1; }
+#DIGRESSIONBriggsAndNapier-11-1-1 { counter-set: DIGRESSIONBriggsAndNapier-11-1-1 0; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-11-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-11-1-1; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 { counter-set: DIGRESSIONBriggsAndNapier-12-1-1-1 0; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li::marker { content: ""counter(DIGRESSIONBriggsAndNapier-12-1-1-1,lower-roman)""; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-12-1-1-1; }
+#DRILLIntuitiveSquareOnCircle-1-4 { counter-set: DRILLIntuitiveSquareOnCircle-1-4 0; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li::marker { content: ""counter(DRILLIntuitiveSquareOnCircle-1-4,lower-roman)""; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li { counter-increment: DRILLIntuitiveSquareOnCircle-1-4; }
+#DRILLExtremalSquareCircle-1-1 { counter-set: DRILLExtremalSquareCircle-1-1 0; }
+#DRILLExtremalSquareCircle-1-1 > li::marker { content: ""counter(DRILLExtremalSquareCircle-1-1,lower-roman)""; }
+#DRILLExtremalSquareCircle-1-1 > li { counter-increment: DRILLExtremalSquareCircle-1-1; }
+#PROBLEMMaxOrth1-3-1-3-8 { counter-set: PROBLEMMaxOrth1-3-1-3-8 0; }
+#PROBLEMMaxOrth1-3-1-3-8 > li::marker { content: ""counter(PROBLEMMaxOrth1-3-1-3-8,decimal)"."; }
+#PROBLEMMaxOrth1-3-1-3-8 > li { counter-increment: PROBLEMMaxOrth1-3-1-3-8; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-1-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-1-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-1-2-1; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-2-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-2-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-2-2-1; }
+#SECTIONfive-simil-probl-23-1-3 { counter-set: SECTIONfive-simil-probl-23-1-3 0; }
+#SECTIONfive-simil-probl-23-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-23-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-23-1-3 > li { counter-increment: SECTIONfive-simil-probl-23-1-3; }
+#SECTIONfive-simil-probl-24-1-3 { counter-set: SECTIONfive-simil-probl-24-1-3 0; }
+#SECTIONfive-simil-probl-24-1-3 > li::marker { content: ""counter(SECTIONfive-simil-probl-24-1-3,lower-roman)""; }
+#SECTIONfive-simil-probl-24-1-3 > li { counter-increment: SECTIONfive-simil-probl-24-1-3; }
+#SECTIONrefl-refr-rainb-2-1-2 { counter-set: SECTIONrefl-refr-rainb-2-1-2 0; }
+#SECTIONrefl-refr-rainb-2-1-2 > li::marker { content: ""counter(SECTIONrefl-refr-rainb-2-1-2,decimal)"."; }
+#SECTIONrefl-refr-rainb-2-1-2 > li { counter-increment: SECTIONrefl-refr-rainb-2-1-2; }
+#SECTIONGlobalVsLocalExtrema-18-2 { counter-set: SECTIONGlobalVsLocalExtrema-18-2 0; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li::marker { content: ""counter(SECTIONGlobalVsLocalExtrema-18-2,decimal)"."; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li { counter-increment: SECTIONGlobalVsLocalExtrema-18-2; }
+#DIGRESSIONIntervalNotation-6-1-1 { counter-set: DIGRESSIONIntervalNotation-6-1-1 0; }
+#DIGRESSIONIntervalNotation-6-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-6-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-6-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-6-1-1; }
+#DIGRESSIONIntervalNotation-7-1-1 { counter-set: DIGRESSIONIntervalNotation-7-1-1 0; }
+#DIGRESSIONIntervalNotation-7-1-1 > li::marker { content: ""counter(DIGRESSIONIntervalNotation-7-1-1,lower-roman)""; }
+#DIGRESSIONIntervalNotation-7-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-7-1-1; }
+#THEOREMFDT-lines-2-1 { counter-set: THEOREMFDT-lines-2-1 0; }
+#THEOREMFDT-lines-2-1 > li::marker { content: ""counter(THEOREMFDT-lines-2-1,decimal)"."; }
+#THEOREMFDT-lines-2-1 > li { counter-increment: THEOREMFDT-lines-2-1; }
+#THEOREMFDT-3-3 { counter-set: THEOREMFDT-3-3 0; }
+#THEOREMFDT-3-3 > li::marker { content: ""counter(THEOREMFDT-3-3,decimal)"."; }
+#THEOREMFDT-3-3 > li { counter-increment: THEOREMFDT-3-3; }
+#LEMMAAdjRoots-1-2 { counter-set: LEMMAAdjRoots-1-2 0; }
+#LEMMAAdjRoots-1-2 > li::marker { content: ""counter(LEMMAAdjRoots-1-2,decimal)"."; }
+#LEMMAAdjRoots-1-2 > li { counter-increment: LEMMAAdjRoots-1-2; }
+#PROBLEMFDT1A-1-2 { counter-set: PROBLEMFDT1A-1-2 0; }
+#PROBLEMFDT1A-1-2 > li::marker { content: ""counter(PROBLEMFDT1A-1-2,lower-roman)""; }
+#PROBLEMFDT1A-1-2 > li { counter-increment: PROBLEMFDT1A-1-2; }
+#DRILLFDT2-1-1 { counter-set: DRILLFDT2-1-1 0; }
+#DRILLFDT2-1-1 > li::marker { content: ""counter(DRILLFDT2-1-1,lower-roman)""; }
+#DRILLFDT2-1-1 > li { counter-increment: DRILLFDT2-1-1; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 { counter-set: DEFINITIONOptimalTransitionPoints-4-1-3 0; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li::marker { content: ""counter(DEFINITIONOptimalTransitionPoints-4-1-3,decimal)"."; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li { counter-increment: DEFINITIONOptimalTransitionPoints-4-1-3; }
+#DRILLFDT3-2-2 { counter-set: DRILLFDT3-2-2 0; }
+#DRILLFDT3-2-2 > li::marker { content: ""counter(DRILLFDT3-2-2,lower-roman)""; }
+#DRILLFDT3-2-2 > li { counter-increment: DRILLFDT3-2-2; }
+#SUBSECTIONoptim-clos-interv-5-1 { counter-set: SUBSECTIONoptim-clos-interv-5-1 0; }
+#SUBSECTIONoptim-clos-interv-5-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-5-1,decimal)"."; }
+#SUBSECTIONoptim-clos-interv-5-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-5-1; }
+#THEOREMmax-min-3-2 { counter-set: THEOREMmax-min-3-2 0; }
+#THEOREMmax-min-3-2 > li::marker { content: ""counter(THEOREMmax-min-3-2,decimal)"."; }
+#THEOREMmax-min-3-2 > li { counter-increment: THEOREMmax-min-3-2; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-2-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-2-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-2-1-1-2; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-3-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-13-3-1-1-2,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-3-1-1-2; }
+#SUBSECTIONoptim-clos-interv-14-1-1 { counter-set: SUBSECTIONoptim-clos-interv-14-1-1 0; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-14-1-1,lower-roman)""; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-14-1-1; }
+#DRILLO1O2-2-1-1-2 { counter-set: DRILLO1O2-2-1-1-2 0; }
+#DRILLO1O2-2-1-1-2 > li::marker { content: ""counter(DRILLO1O2-2-1-1-2,lower-roman)""; }
+#DRILLO1O2-2-1-1-2 > li { counter-increment: DRILLO1O2-2-1-1-2; }
+#THEOREMwhat-second-deriv-3-3 { counter-set: THEOREMwhat-second-deriv-3-3 0; }
+#THEOREMwhat-second-deriv-3-3 > li::marker { content: ""counter(THEOREMwhat-second-deriv-3-3,lower-alpha)""; }
+#THEOREMwhat-second-deriv-3-3 > li { counter-increment: THEOREMwhat-second-deriv-3-3; }
+#THEOREMSecondDerivativeTest-3-4 { counter-set: THEOREMSecondDerivativeTest-3-4 0; }
+#THEOREMSecondDerivativeTest-3-4 > li::marker { content: ""counter(THEOREMSecondDerivativeTest-3-4,lower-alpha)""; }
+#THEOREMSecondDerivativeTest-3-4 > li { counter-increment: THEOREMSecondDerivativeTest-3-4; }
+#DRILLSecondDerivativeTest-1-1 { counter-set: DRILLSecondDerivativeTest-1-1 0; }
+#DRILLSecondDerivativeTest-1-1 > li::marker { content: ""counter(DRILLSecondDerivativeTest-1-1,lower-roman)""; }
+#DRILLSecondDerivativeTest-1-1 > li { counter-increment: DRILLSecondDerivativeTest-1-1; }
+#SUBSECTIONconc-second-deriv-44-1-1 { counter-set: SUBSECTIONconc-second-deriv-44-1-1 0; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-44-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-44-1-1; }
+#SUBSECTIONconc-second-deriv-45-1-1 { counter-set: SUBSECTIONconc-second-deriv-45-1-1 0; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li::marker { content: ""counter(SUBSECTIONconc-second-deriv-45-1-1,lower-roman)""; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-45-1-1; }
+#SUBSECTIONOptStrat-3-1 { counter-set: SUBSECTIONOptStrat-3-1 0; }
+#SUBSECTIONOptStrat-3-1 > li::marker { content: ""counter(SUBSECTIONOptStrat-3-1,decimal)"."; }
+#SUBSECTIONOptStrat-3-1 > li { counter-increment: SUBSECTIONOptStrat-3-1; }
+#EXAMPLERectangleFixedPerimeter-6-1 { counter-set: EXAMPLERectangleFixedPerimeter-6-1 0; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li::marker { content: ""counter(EXAMPLERectangleFixedPerimeter-6-1,decimal)"."; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li { counter-increment: EXAMPLERectangleFixedPerimeter-6-1; }
+#PROBLEMMaxPerimeter-5-1-1-2 { counter-set: PROBLEMMaxPerimeter-5-1-1-2 0; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li::marker { content: ""counter(PROBLEMMaxPerimeter-5-1-1-2,lower-roman)""; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li { counter-increment: PROBLEMMaxPerimeter-5-1-1-2; }
+#SUBSUBSECTIONFirstSolution-12-1-1 { counter-set: SUBSUBSECTIONFirstSolution-12-1-1 0; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li::marker { content: ""counter(SUBSUBSECTIONFirstSolution-12-1-1,lower-roman)""; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li { counter-increment: SUBSUBSECTIONFirstSolution-12-1-1; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-2-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-2-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-2-1-1-1; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-3-1-1-1; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-2-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-4-1-1-1; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-3-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-3-1-1-1; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-3-4-1-1-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-4-1-1-1; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 { counter-set: SUBSECTIONVarOptProbs-4-2-1-2-1 0; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-4-2-1-2-1,lower-roman)""; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li { counter-increment: SUBSECTIONVarOptProbs-4-2-1-2-1; }
+#PROBLEMWitchTri1-3-1-1-7 { counter-set: PROBLEMWitchTri1-3-1-1-7 0; }
+#PROBLEMWitchTri1-3-1-1-7 > li::marker { content: ""counter(PROBLEMWitchTri1-3-1-1-7,lower-roman)""; }
+#PROBLEMWitchTri1-3-1-1-7 > li { counter-increment: PROBLEMWitchTri1-3-1-1-7; }
+#SUBSECTIONVarOptProbs-14-3-1-3 { counter-set: SUBSECTIONVarOptProbs-14-3-1-3 0; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-3-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-3-1-3; }
+#SUBSECTIONVarOptProbs-14-4-1-3 { counter-set: SUBSECTIONVarOptProbs-14-4-1-3 0; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li::marker { content: ""counter(SUBSECTIONVarOptProbs-14-4-1-3,lower-roman)""; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-4-1-3; }
+#SECTIONgraph-with-form-19-2 { counter-set: SECTIONgraph-with-form-19-2 0; }
+#SECTIONgraph-with-form-19-2 > li::marker { content: ""counter(SECTIONgraph-with-form-19-2,decimal)"."; }
+#SECTIONgraph-with-form-19-2 > li { counter-increment: SECTIONgraph-with-form-19-2; }
+#SECTIONgraph-with-form-23-1-1 { counter-set: SECTIONgraph-with-form-23-1-1 0; }
+#SECTIONgraph-with-form-23-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-23-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-23-1-1 > li { counter-increment: SECTIONgraph-with-form-23-1-1; }
+#SECTIONgraph-with-form-30-1-1 { counter-set: SECTIONgraph-with-form-30-1-1 0; }
+#SECTIONgraph-with-form-30-1-1 > li::marker { content: ""counter(SECTIONgraph-with-form-30-1-1,lower-roman)""; }
+#SECTIONgraph-with-form-30-1-1 > li { counter-increment: SECTIONgraph-with-form-30-1-1; }
+#SUBSECTIONModelingTrout-17-2 { counter-set: SUBSECTIONModelingTrout-17-2 0; }
+#SUBSECTIONModelingTrout-17-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-17-2,decimal)"."; }
+#SUBSECTIONModelingTrout-17-2 > li { counter-increment: SUBSECTIONModelingTrout-17-2; }
+#SUBSECTIONModelingTrout-23-1-2 { counter-set: SUBSECTIONModelingTrout-23-1-2 0; }
+#SUBSECTIONModelingTrout-23-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-23-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-23-1-2 > li { counter-increment: SUBSECTIONModelingTrout-23-1-2; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 { counter-set: SUBSECTIONModelingTrout-38-2-1-1-2 0; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-38-2-1-1-2,lower-roman)""; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li { counter-increment: SUBSECTIONModelingTrout-38-2-1-1-2; }
+#PROBLEMMinViablePop-6-1-1-3 { counter-set: PROBLEMMinViablePop-6-1-1-3 0; }
+#PROBLEMMinViablePop-6-1-1-3 > li::marker { content: ""counter(PROBLEMMinViablePop-6-1-1-3,lower-roman)""; }
+#PROBLEMMinViablePop-6-1-1-3 > li { counter-increment: PROBLEMMinViablePop-6-1-1-3; }
+#SECTIONlittle-healthy-comp-21-1-1 { counter-set: SECTIONlittle-healthy-comp-21-1-1 0; }
+#SECTIONlittle-healthy-comp-21-1-1 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-21-1-1,lower-roman)""; }
+#SECTIONlittle-healthy-comp-21-1-1 > li { counter-increment: SECTIONlittle-healthy-comp-21-1-1; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 { counter-set: SECTIONlittle-healthy-comp-28-3-1-1-3 0; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li::marker { content: ""counter(SECTIONlittle-healthy-comp-28-3-1-1-3,lower-roman)""; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li { counter-increment: SECTIONlittle-healthy-comp-28-3-1-1-3; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 { counter-set: DEFINITIONLimitAtInfinity-Intuitive-3-1-1 0; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li::marker { content: ""counter(DEFINITIONLimitAtInfinity-Intuitive-3-1-1,decimal)"."; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li { counter-increment: DEFINITIONLimitAtInfinity-Intuitive-3-1-1; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 { counter-set: DEFINITIONHorizontalAsymptotes-3-1-1 0; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li::marker { content: ""counter(DEFINITIONHorizontalAsymptotes-3-1-1,decimal)"."; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li { counter-increment: DEFINITIONHorizontalAsymptotes-3-1-1; }
+#DIGRESSIONLimitNotation-47-1-7 { counter-set: DIGRESSIONLimitNotation-47-1-7 0; }
+#DIGRESSIONLimitNotation-47-1-7 > li::marker { content: ""counter(DIGRESSIONLimitNotation-47-1-7,lower-roman)""; }
+#DIGRESSIONLimitNotation-47-1-7 > li { counter-increment: DIGRESSIONLimitNotation-47-1-7; }
+#THEOREMInfSqueeze-3-1 { counter-set: THEOREMInfSqueeze-3-1 0; }
+#THEOREMInfSqueeze-3-1 > li::marker { content: ""counter(THEOREMInfSqueeze-3-1,decimal)""; }
+#THEOREMInfSqueeze-3-1 > li { counter-increment: THEOREMInfSqueeze-3-1; }
+#SECTIONvertical-asymptotes-14-1-1 { counter-set: SECTIONvertical-asymptotes-14-1-1 0; }
+#SECTIONvertical-asymptotes-14-1-1 > li::marker { content: ""counter(SECTIONvertical-asymptotes-14-1-1,lower-roman)""; }
+#SECTIONvertical-asymptotes-14-1-1 > li { counter-increment: SECTIONvertical-asymptotes-14-1-1; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 { counter-set: PROBLEMFoliumOfDescartes2-6-1-1-1 0; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li::marker { content: ""counter(PROBLEMFoliumOfDescartes2-6-1-1-1,lower-roman)""; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li { counter-increment: PROBLEMFoliumOfDescartes2-6-1-1-1; }
+#SUBSECTIONLHopitalsRule-34-1-1 { counter-set: SUBSECTIONLHopitalsRule-34-1-1 0; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-34-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-34-1-1; }
+#SUBSECTIONLHopitalsRule-38-1-1 { counter-set: SUBSECTIONLHopitalsRule-38-1-1 0; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-38-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-38-1-1; }
+#THEOREMLHRule1-3-1 { counter-set: THEOREMLHRule1-3-1 0; }
+#THEOREMLHRule1-3-1 > li::marker { content: ""counter(THEOREMLHRule1-3-1,decimal)""; }
+#THEOREMLHRule1-3-1 > li { counter-increment: THEOREMLHRule1-3-1; }
+#SUBSECTIONLHopitalsRule-62-1-1 { counter-set: SUBSECTIONLHopitalsRule-62-1-1 0; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li::marker { content: ""counter(SUBSECTIONLHopitalsRule-62-1-1,lower-roman)""; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-62-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 { counter-set: SUBSECTIONlhop-rule-horiz-17-2-1-1-1 0; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-2-1-1-1,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-2-1-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 { counter-set: SUBSECTIONlhop-rule-horiz-17-5-1-1-2 0; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-17-5-1-1-2,lower-roman)""; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-5-1-1-2; }
+#SUBSECTIONlhop-rule-horiz-26-1 { counter-set: SUBSECTIONlhop-rule-horiz-26-1 0; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-26-1,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-26-1; }
+#SUBSECTIONlhop-rule-horiz-28-4 { counter-set: SUBSECTIONlhop-rule-horiz-28-4 0; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-28-4,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li { counter-increment: SUBSECTIONlhop-rule-horiz-28-4; }
+#SECTIONsecants-tangents-18-1 { counter-set: SECTIONsecants-tangents-18-1 0; }
+#SECTIONsecants-tangents-18-1 > li::marker { content: ""counter(SECTIONsecants-tangents-18-1,decimal)"."; }
+#SECTIONsecants-tangents-18-1 > li { counter-increment: SECTIONsecants-tangents-18-1; }
+#PROBLEMBounds-1-1-4 { counter-set: PROBLEMBounds-1-1-4 0; }
+#PROBLEMBounds-1-1-4 > li::marker { content: ""counter(PROBLEMBounds-1-1-4,lower-roman)""; }
+#PROBLEMBounds-1-1-4 > li { counter-increment: PROBLEMBounds-1-1-4; }
+#SUBSECTIONlimit-comp-cont-5-3 { counter-set: SUBSECTIONlimit-comp-cont-5-3 0; }
+#SUBSECTIONlimit-comp-cont-5-3 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-5-3,decimal)"."; }
+#SUBSECTIONlimit-comp-cont-5-3 > li { counter-increment: SUBSECTIONlimit-comp-cont-5-3; }
+#SUBSECTIONlimit-comp-cont-23-1-1 { counter-set: SUBSECTIONlimit-comp-cont-23-1-1 0; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-23-1-1,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li { counter-increment: SUBSECTIONlimit-comp-cont-23-1-1; }
+#SUBSECTIONlimit-comp-cont-24-1-2 { counter-set: SUBSECTIONlimit-comp-cont-24-1-2 0; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-24-1-2,lower-roman)""; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li { counter-increment: SUBSECTIONlimit-comp-cont-24-1-2; }
+#PROBLEMTopSineFuncB-1-1-6 { counter-set: PROBLEMTopSineFuncB-1-1-6 0; }
+#PROBLEMTopSineFuncB-1-1-6 > li::marker { content: ""counter(PROBLEMTopSineFuncB-1-1-6,lower-roman)""; }
+#PROBLEMTopSineFuncB-1-1-6 > li { counter-increment: PROBLEMTopSineFuncB-1-1-6; }
+#PROBLEMQRRigorA-1-1-2 { counter-set: PROBLEMQRRigorA-1-1-2 0; }
+#PROBLEMQRRigorA-1-1-2 > li::marker { content: ""counter(PROBLEMQRRigorA-1-1-2,lower-roman)""; }
+#PROBLEMQRRigorA-1-1-2 > li { counter-increment: PROBLEMQRRigorA-1-1-2; }
+#DRILLCircularReasoning-1-1-3 { counter-set: DRILLCircularReasoning-1-1-3 0; }
+#DRILLCircularReasoning-1-1-3 > li::marker { content: ""counter(DRILLCircularReasoning-1-1-3,lower-roman)""; }
+#DRILLCircularReasoning-1-1-3 > li { counter-increment: DRILLCircularReasoning-1-1-3; }
+#DEFINITIONFunctionInverse-3-1-8 { counter-set: DEFINITIONFunctionInverse-3-1-8 0; }
+#DEFINITIONFunctionInverse-3-1-8 > li::marker { content: ""counter(DEFINITIONFunctionInverse-3-1-8,decimal)"."; }
+#DEFINITIONFunctionInverse-3-1-8 > li { counter-increment: DEFINITIONFunctionInverse-3-1-8; }
+#SECTIONinverse-functions-21-1 { counter-set: SECTIONinverse-functions-21-1 0; }
+#SECTIONinverse-functions-21-1 > li::marker { content: ""counter(SECTIONinverse-functions-21-1,decimal)"."; }
+#SECTIONinverse-functions-21-1 > li { counter-increment: SECTIONinverse-functions-21-1; }
+#SECTIONinverse-functions-23-2 { counter-set: SECTIONinverse-functions-23-2 0; }
+#SECTIONinverse-functions-23-2 > li::marker { content: ""counter(SECTIONinverse-functions-23-2,decimal)"."; }
+#SECTIONinverse-functions-23-2 > li { counter-increment: SECTIONinverse-functions-23-2; }
+#THEOREMDerivInvFunc-3-1 { counter-set: THEOREMDerivInvFunc-3-1 0; }
+#THEOREMDerivInvFunc-3-1 > li::marker { content: ""counter(THEOREMDerivInvFunc-3-1,decimal)"."; }
+#THEOREMDerivInvFunc-3-1 > li { counter-increment: THEOREMDerivInvFunc-3-1; }
+#DRILLRollesLemma1-2 { counter-set: DRILLRollesLemma1-2 0; }
+#DRILLRollesLemma1-2 > li::marker { content: ""counter(DRILLRollesLemma1-2,lower-roman)""; }
+#DRILLRollesLemma1-2 > li { counter-increment: DRILLRollesLemma1-2; }
+#THEOREMFDTproved-3-8 { counter-set: THEOREMFDTproved-3-8 0; }
+#THEOREMFDTproved-3-8 > li::marker { content: ""counter(THEOREMFDTproved-3-8,decimal)"."; }
+#THEOREMFDTproved-3-8 > li { counter-increment: THEOREMFDTproved-3-8; }
+#PROBLEMMVTSpecialCase-1-1-2 { counter-set: PROBLEMMVTSpecialCase-1-1-2 0; }
+#PROBLEMMVTSpecialCase-1-1-2 > li::marker { content: ""counter(PROBLEMMVTSpecialCase-1-1-2,decimal)"."; }
+#PROBLEMMVTSpecialCase-1-1-2 > li { counter-increment: PROBLEMMVTSpecialCase-1-1-2; }
+#PROBLEMAbsValDerivA-1-1-5 { counter-set: PROBLEMAbsValDerivA-1-1-5 0; }
+#PROBLEMAbsValDerivA-1-1-5 > li::marker { content: ""counter(PROBLEMAbsValDerivA-1-1-5,decimal)"."; }
+#PROBLEMAbsValDerivA-1-1-5 > li { counter-increment: PROBLEMAbsValDerivA-1-1-5; }
+#DEFINITIONone-sided-deriv-3-1-3 { counter-set: DEFINITIONone-sided-deriv-3-1-3 0; }
+#DEFINITIONone-sided-deriv-3-1-3 > li::marker { content: ""counter(DEFINITIONone-sided-deriv-3-1-3,decimal)"."; }
+#DEFINITIONone-sided-deriv-3-1-3 > li { counter-increment: DEFINITIONone-sided-deriv-3-1-3; }
+#PROBLEMHeaviTranslate-2-1-1-3 { counter-set: PROBLEMHeaviTranslate-2-1-1-3 0; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li::marker { content: ""counter(PROBLEMHeaviTranslate-2-1-1-3,lower-roman)""; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li { counter-increment: PROBLEMHeaviTranslate-2-1-1-3; }
+#PROBLEMHeaviTranslate-3-1-1-4 { counter-set: PROBLEMHeaviTranslate-3-1-1-4 0; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li::marker { content: ""counter(PROBLEMHeaviTranslate-3-1-1-4,lower-roman)""; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li { counter-increment: PROBLEMHeaviTranslate-3-1-1-4; }
+#SECTIONone-sided-deriv-11-3 { counter-set: SECTIONone-sided-deriv-11-3 0; }
+#SECTIONone-sided-deriv-11-3 > li::marker { content: ""counter(SECTIONone-sided-deriv-11-3,decimal)"."; }
+#SECTIONone-sided-deriv-11-3 > li { counter-increment: SECTIONone-sided-deriv-11-3; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 { counter-set: SUBSECTIONVerticalAsymptotes-24-4-2 0; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li::marker { content: ""counter(SUBSECTIONVerticalAsymptotes-24-4-2,decimal)""; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li { counter-increment: SUBSECTIONVerticalAsymptotes-24-4-2; }
+#PROBLEMAntiDiffPractice-1-2 { counter-set: PROBLEMAntiDiffPractice-1-2 0; }
+#PROBLEMAntiDiffPractice-1-2 > li::marker { content: ""counter(PROBLEMAntiDiffPractice-1-2,lower-roman)""; }
+#PROBLEMAntiDiffPractice-1-2 > li { counter-increment: PROBLEMAntiDiffPractice-1-2; }
+#DRILLIntSimpSub-1-4 { counter-set: DRILLIntSimpSub-1-4 0; }
+#DRILLIntSimpSub-1-4 > li::marker { content: ""counter(DRILLIntSimpSub-1-4,lower-roman)""; }
+#DRILLIntSimpSub-1-4 > li { counter-increment: DRILLIntSimpSub-1-4; }
+#SECTIONKnownIntegrals-12-1-2 { counter-set: SECTIONKnownIntegrals-12-1-2 0; }
+#SECTIONKnownIntegrals-12-1-2 > li::marker { content: ""counter(SECTIONKnownIntegrals-12-1-2,lower-roman)""; }
+#SECTIONKnownIntegrals-12-1-2 > li { counter-increment: SECTIONKnownIntegrals-12-1-2; }
+#DefIntProp-18-1-2 { counter-set: DefIntProp-18-1-2 0; }
+#DefIntProp-18-1-2 > li::marker { content: ""counter(DefIntProp-18-1-2,lower-roman)""; }
+#DefIntProp-18-1-2 > li { counter-increment: DefIntProp-18-1-2; }
+#PROBLEMPS1-1-1-4 { counter-set: PROBLEMPS1-1-1-4 0; }
+#PROBLEMPS1-1-1-4 > li::marker { content: ""counter(PROBLEMPS1-1-1-4,lower-roman)""; }
+#PROBLEMPS1-1-1-4 > li { counter-increment: PROBLEMPS1-1-1-4; }
+#SECTIONProbs15-20-2-1-1-2 { counter-set: SECTIONProbs15-20-2-1-1-2 0; }
+#SECTIONProbs15-20-2-1-1-2 > li::marker { content: ""counter(SECTIONProbs15-20-2-1-1-2,lower-roman)""; }
+#SECTIONProbs15-20-2-1-1-2 > li { counter-increment: SECTIONProbs15-20-2-1-1-2; }
+#SECTIONProbs15-20-3-1-1-1 { counter-set: SECTIONProbs15-20-3-1-1-1 0; }
+#SECTIONProbs15-20-3-1-1-1 > li::marker { content: ""counter(SECTIONProbs15-20-3-1-1-1,lower-roman)""; }
+#SECTIONProbs15-20-3-1-1-1 > li { counter-increment: SECTIONProbs15-20-3-1-1-1; }
+</style>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -228,9 +839,9 @@ window.MathJax = {
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
 </ul>
 </li>
@@ -692,7 +1303,7 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONLimitLaws"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">16.4</span><span class="space"> </span><span class="title">Limit Laws (Theorems)</span>
 </h2>
-<section class="introduction" id="SECTIONLimitLaws-2"><div class="para" id="SECTIONLimitLaws-2-1">If we can prove each of the limit laws in <a href="CHAPTERdiff-rules-with-limits.html" class="internal" title="Chapter 13: The Differentiation Rules via Limits">Chapter 13</a> rigorously (i.e, using <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" title="Definition 16.3.0.1: The Limit at a Point">Definition 16.3.0.1</a>) we will have provided a rigorous foundation for Differential Calculus. We will address these now.</div></section><section class="subsection" id="SUBSECTIONlimit-sum-at"><h3 class="heading hide-type">
+<section class="introduction" id="SECTIONLimitLaws-2"><div class="para" id="SECTIONLimitLaws-2-1">If we can prove each of the limit laws in <a href="CHAPTERdiff-rules-with-limits.html" class="internal" title="Chapter 13: The Differentiation Rules via Limits">Chapter 13</a> rigorously (i.e, using <a href="SECTIONlimits-at-real.html#DEFINITIONlimits-at-real" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.3.0.1: The Limit at a Point">Definition 16.3.0.1</a>) we will have provided a rigorous foundation for Differential Calculus. We will address these now.</div></section><section class="subsection" id="SUBSECTIONlimit-sum-at"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">16.4.1</span><span class="space"> </span><span class="title">The Limit of a Sum</span>
 </h3>
 <div class="para" id="SUBSECTIONlimit-sum-at-2"> To prove the limit laws we will need to make extensive use of what is called the <dfn class="terminology">Triangle Inequality</dfn>. We  state and prove the Triangle Inequality here so that we can cite it as needed.</div>
@@ -701,8 +1312,9 @@ window.MathJax = {
 </h4>
 <div class="para" id="THEOREMTriangIneq-3">For any real numbers <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(\abs{x+y} \leq
 \abs{x}+\abs{y}\text{.}\)</span>
-</div></article><div class="para" id="SUBSECTIONlimit-sum-at-4">The proof of the Triangle Inequality relies on <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" title="Equation 16.5">equation (16.5)</a> from <a href="" class="xref" data-knowl="./knowl/xref/DIGRESSIONAbsoluteValue2.html" title="Paragraphs: DIGRESSION: The Absolute Value, again">Digression: Absolute Value, again</a>.</div>
-<article class="proof" id="PROOFTriIneq"><h4 class="heading"><span class="title">Proof of the Triangle Inequality.</span></h4> <div class="para logical" id="PROOFTriIneq-2">
+</div></article><div class="para" id="SUBSECTIONlimit-sum-at-4">The proof of the Triangle Inequality relies on <a href="SECTIONlimits-at-real.html#DIGRESSIONAbsoluteValue2-3-1" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.5">equation (16.5)</a> from <a href="SECTIONlimits-at-real.html#DIGRESSIONAbsoluteValue2" class="xref" data-knowl="./knowl/xref/DIGRESSIONAbsoluteValue2.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraphs: DIGRESSION: The Absolute Value, again">Digression: Absolute Value, again</a>.</div>
+<article class="proof" id="PROOFTriIneq"><h4 class="heading"><span class="title">Proof of the Triangle Inequality.</span></h4>
+<div class="para logical" id="PROOFTriIneq-2">
 <div class="para">Clearly <span class="process-math">\(-\abs{x}\leq x \leq \abs{x}\)</span> and <span class="process-math">\(-\abs{y}\leq y \leq
 \abs{y}.\)</span> Adding these together we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONAltDefAbsVal.html" id="PROOFTriIneq-2-3">
@@ -711,7 +1323,7 @@ window.MathJax = {
 \underbrace{-\left(\abs{x}+\abs{y}\right)}_{-B}\amp\leq    \underbrace{x+y}_A \leq \underbrace{\abs{x}+\abs{y}}_{B}.
 \end{align*}
 </div>
-<div class="para">so by <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" title="Equation 16.5">(16.5)</a> we have <span class="process-math">\(\abs{x+y} \leq \abs{x}+\abs{y}\text{.}\)</span>
+<div class="para">so by <a href="SECTIONlimits-at-real.html#DIGRESSIONAbsoluteValue2-3-1" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.5">(16.5)</a> we have <span class="process-math">\(\abs{x+y} \leq \abs{x}+\abs{y}\text{.}\)</span>
 </div>
 </div></article><div class="para logical" id="SUBSECTIONlimit-sum-at-6">
 <div class="para">The Limit Laws we need to prove are:</div>
@@ -728,7 +1340,7 @@ window.MathJax = {
 <dd><div class="para" id="SUBSECTIONlimit-sum-at-6-1-5-2">The  Squeeze Theorem</div></dd>
 </dl>
 </div>
-<div class="para" id="SUBSECTIONlimit-sum-at-7">We will provide a proof of the “limit at infinity” version of each of these Theorems using <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONlimit-at-posinfinity.html" title="Definition 16.2.3.8: A Limit at +\infty">Definition 16.2.3.8</a>. We will leave the proof of the “limit at a real number” version using the <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" title="Definition 16.3.0.1: The Limit at a Point">Definition 16.3.0.1</a> as an exercise for you.  In every case you can model your scrapwork and proof on the ones we provide.</div>
+<div class="para" id="SUBSECTIONlimit-sum-at-7">We will provide a proof of the “limit at infinity” version of each of these Theorems using <a href="SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-posinfinity" class="xref" data-knowl="./knowl/xref/DEFINITIONlimit-at-posinfinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.2.3.8: A Limit at +\infty">Definition 16.2.3.8</a>. We will leave the proof of the “limit at a real number” version using the <a href="SECTIONlimits-at-real.html#DEFINITIONlimits-at-real" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.3.0.1: The Limit at a Point">Definition 16.3.0.1</a> as an exercise for you.  In every case you can model your scrapwork and proof on the ones we provide.</div>
 <article class="theorem theorem-like" id="THEOREMLimConstInf"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit at Infinity of a Constant Function is the Constant.</span>
 </h4>
@@ -755,7 +1367,7 @@ window.MathJax = {
 </div></article><article class="exercise exercise-like" id="SUBSECTIONlimit-sum-at-12"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.1.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONlimit-sum-at-12-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimConstInf.html" title="Theorem 16.4.1.2: The Limit at Infinity of a Constant Function is the Constant">Theorem 16.4.1.2</a> as a model to construct a proof of   <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimConstNegInf.html" title="Theorem 16.4.1.3: The Limit at Negative Infinity of a Constant Function is the Constant">Theorem 16.4.1.3</a>.</div></article><article class="theorem theorem-like" id="THEOREMLimConstPoint"><h4 class="heading">
+<div class="para" id="SUBSECTIONlimit-sum-at-12-1-1">Use the proof of <a href="SECTIONLimitLaws.html#THEOREMLimConstInf" class="xref" data-knowl="./knowl/xref/THEOREMLimConstInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.2: The Limit at Infinity of a Constant Function is the Constant">Theorem 16.4.1.2</a> as a model to construct a proof of   <a href="SECTIONLimitLaws.html#THEOREMLimConstNegInf" class="xref" data-knowl="./knowl/xref/THEOREMLimConstNegInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.3: The Limit at Negative Infinity of a Constant Function is the Constant">Theorem 16.4.1.3</a>.</div></article><article class="theorem theorem-like" id="THEOREMLimConstPoint"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit at a Point of a Constant Function is the Constant.</span>
 </h4>
 <div class="para logical" id="THEOREMLimConstPoint-3">
@@ -768,15 +1380,16 @@ window.MathJax = {
 </div></article><article class="exercise exercise-like" id="SUBSECTIONlimit-sum-at-14"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.1.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONlimit-sum-at-14-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimConstInf.html" title="Theorem 16.4.1.2: The Limit at Infinity of a Constant Function is the Constant">Theorem 16.4.1.2</a> as a model to construct a proof of   <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimConstPoint.html" title="Theorem 16.4.1.5: The Limit at a Point of a Constant Function is the Constant">Theorem 16.4.1.5</a>.</div>
-<div class="solutions"><details id="SUBSECTIONlimit-sum-at-14-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="SUBSECTIONlimit-sum-at-14-2-1">Despite the apparent simplicity of this problem there is a lot going on here. Recall that “near” means that <span class="process-math">\(f(x)=K\)</span> on some open interval, say <span class="process-math">\((c,d)\text{,}\)</span> containing <span class="process-math">\(a\)</span> except possibly at <span class="process-math">\(a\)</span> (see <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONnear.html" title="Definition 13.1.1.6: Near">Definition 13.1.1.6</a>). You need to find a <span class="process-math">\(\delta\gt0\)</span> such that if <span class="process-math">\(-\delta\lt x-a \lt\delta\)</span> then <span class="process-math">\(f(x)=K\text{.}\)</span> That is, you need an interval of length <span class="process-math">\(2\delta\)</span> with <span class="process-math">\(a\)</span> as the midpoint where <span class="process-math">\(f(x)=K\text{.}\)</span> But there is no guarantee that <span class="process-math">\(a\)</span> is the midpoint of the interval <span class="process-math">\((c,d)\text{.}\)</span> This would be an excellent time to engage your visual intuition by drawing a sketch so you can “see” the problem.</div></div></details></div></article><article class="theorem theorem-like" id="THEOREMLimSumInf"><h4 class="heading">
+<div class="para" id="SUBSECTIONlimit-sum-at-14-1-1">Use the proof of <a href="SECTIONLimitLaws.html#THEOREMLimConstInf" class="xref" data-knowl="./knowl/xref/THEOREMLimConstInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.2: The Limit at Infinity of a Constant Function is the Constant">Theorem 16.4.1.2</a> as a model to construct a proof of   <a href="SECTIONLimitLaws.html#THEOREMLimConstPoint" class="xref" data-knowl="./knowl/xref/THEOREMLimConstPoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.5: The Limit at a Point of a Constant Function is the Constant">Theorem 16.4.1.5</a>.</div>
+<div class="solutions"><details id="SUBSECTIONlimit-sum-at-14-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="SUBSECTIONlimit-sum-at-14-2-1">Despite the apparent simplicity of this problem there is a lot going on here. Recall that “near” means that <span class="process-math">\(f(x)=K\)</span> on some open interval, say <span class="process-math">\((c,d)\text{,}\)</span> containing <span class="process-math">\(a\)</span> except possibly at <span class="process-math">\(a\)</span> (see <a href="SECTIONlimit-theorems-laws.html#DEFINITIONnear" class="xref" data-knowl="./knowl/xref/DEFINITIONnear.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 13.1.1.6: Near">Definition 13.1.1.6</a>). You need to find a <span class="process-math">\(\delta\gt0\)</span> such that if <span class="process-math">\(-\delta\lt x-a \lt\delta\)</span> then <span class="process-math">\(f(x)=K\text{.}\)</span> That is, you need an interval of length <span class="process-math">\(2\delta\)</span> with <span class="process-math">\(a\)</span> as the midpoint where <span class="process-math">\(f(x)=K\text{.}\)</span> But there is no guarantee that <span class="process-math">\(a\)</span> is the midpoint of the interval <span class="process-math">\((c,d)\text{.}\)</span> This would be an excellent time to engage your visual intuition by drawing a sketch so you can “see” the problem.</div></div></details></div></article><article class="theorem theorem-like" id="THEOREMLimSumInf"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit of a Sum at Infinity.</span>
 </h4>
 <div class="para" id="THEOREMLimSumInf-3">If <span class="process-math">\(\limit{x}{\infty}{f(x)}=L_f\)</span> and <span class="process-math">\(\limit{x}{\infty}{g(x)}=L_g\)</span> then <span class="process-math">\(\limit{x}{\infty}{\left(f(x)+g(x)\right)}=L_f+L_g.\)</span>
 </div></article><article class="investigation project-like" id="SUBSECTIONlimit-sum-at-16"><h4 class="heading">
 <span class="type">Scrapwork</span><span class="space"> </span><span class="codenumber">16.4.1.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONlimit-sum-at-16-1">As always  we begin by assuming that <span class="process-math">\(\eps\gt 0\)</span> has been given.</div> <div class="para logical" id="SUBSECTIONlimit-sum-at-16-2">
+<div class="para" id="SUBSECTIONlimit-sum-at-16-1">As always  we begin by assuming that <span class="process-math">\(\eps\gt 0\)</span> has been given.</div>
+<div class="para logical" id="SUBSECTIONlimit-sum-at-16-2">
 <div class="para">We want to show that if <span class="process-math">\(x\)</span> is large enough (larger than some specified <span class="process-math">\(B\)</span>) then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONDerivSumInf.html" id="EQUATIONDerivSumInf">
 \begin{equation}
@@ -791,7 +1404,7 @@ window.MathJax = {
 }\limit{x}{\infty}{g(x)}=L_g,
 \end{equation*}
 </div>
-<div class="para">which means that we can make <span class="process-math">\(\abs{f(x)-L_f}\)</span> and <span class="process-math">\(\abs{g(x)-L_g}\)</span> as close to zero as we wish, provided we make <span class="process-math">\(x\)</span> large enough. Rewriting the left-hand side of <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONDerivSumInf.html" title="Equation 16.8">equation (16.8)</a> and invoking the Triangle Inequality we see that</div>
+<div class="para">which means that we can make <span class="process-math">\(\abs{f(x)-L_f}\)</span> and <span class="process-math">\(\abs{g(x)-L_g}\)</span> as close to zero as we wish, provided we make <span class="process-math">\(x\)</span> large enough. Rewriting the left-hand side of <a href="SECTIONLimitLaws.html#EQUATIONDerivSumInf" class="xref" data-knowl="./knowl/xref/EQUATIONDerivSumInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.8">equation (16.8)</a> and invoking the Triangle Inequality we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONDerivSumInf.html" id="SUBSECTIONlimit-sum-at-16-2-9">
 \begin{align*}
 \abs{(\textcolor{red}{f(x)}
@@ -805,10 +1418,12 @@ window.MathJax = {
 </div>
 <div class="para">But as we’ve observed we can make <span class="process-math">\(\abs{f(x)-L_f}\)</span> and <span class="process-math">\(\abs{g(x)-L_g}\)</span> as close to zero as we wish, provided we take <span class="process-math">\(x\)</span> large enough. To be precise, there is a number <span class="process-math">\(B_f\)</span> such that if <span class="process-math">\(x\gt B_f\)</span> then <span class="process-math">\(\abs{f(x)-L_f}\lt\frac{\eps}{2}\text{.}\)</span> Similarly there is a number <span class="process-math">\(B_g\)</span> such that if <span class="process-math">\(x\gt B_g\)</span> then <span class="process-math">\(\abs{g(x)-L_f}\lt\frac{\eps}{2}\text{.}\)</span>
 </div>
-</div> <div class="para" id="SUBSECTIONlimit-sum-at-16-3">Since we need for both of these things to happen a sufficiently large value of <span class="process-math">\(x\)</span> is one where <span class="process-math">\(x\gt B_f\)</span> and <span class="process-math">\(x\gt B_g\text{.}\)</span>
-</div> <div class="para" id="SUBSECTIONlimit-sum-at-16-4"><em class="alert">END OF SCRAPWORK</em></div></article><article class="proof" id="SUBSECTIONlimit-sum-at-17"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+</div>
+<div class="para" id="SUBSECTIONlimit-sum-at-16-3">Since we need for both of these things to happen a sufficiently large value of <span class="process-math">\(x\)</span> is one where <span class="process-math">\(x\gt B_f\)</span> and <span class="process-math">\(x\gt B_g\text{.}\)</span>
+</div>
+<div class="para" id="SUBSECTIONlimit-sum-at-16-4"><em class="alert">END OF SCRAPWORK</em></div></article><article class="proof" id="SUBSECTIONlimit-sum-at-17"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
 <div class="para logical" id="SUBSECTIONlimit-sum-at-17-1">
-<div class="para">Let <span class="process-math">\(\eps\gt 0\)</span> be given. Since <span class="process-math">\(\limit{x}{\infty}{f(x)}=L_f\)</span> there is a bound, <span class="process-math">\(B_f\)</span> such that if <span class="process-math">\(x\gt B_f\)</span> then <span class="process-math">\(\abs{f(x)-L_f}\lt \frac{\eps}{2}.\)</span> Since <span class="process-math">\(\limit{x}{\infty}{g(x)}=L_g\)</span> there is a bound, <span class="process-math">\(B_g\)</span> such that if <span class="process-math">\(x\gt B_g\)</span> then <span class="process-math">\(\abs{g(x)-L_g}\lt \frac{\eps}{2}.\)</span> Take <span class="process-math">\(B= \max(B_f,B_g)\text{.}\)</span> Then if <span class="process-math">\(x\gt B\)</span> then <span class="process-math">\(x\gt B_f\)</span> and <span class="process-math">\(x\gt B_g\text{.}\)</span> Thus by the Triangle Inequality (<a href="" class="xref" data-knowl="./knowl/xref/THEOREMTriangIneq.html" title="Theorem 16.4.1.1: The Triangle Inequality">Theorem 16.4.1.1</a>)</div>
+<div class="para">Let <span class="process-math">\(\eps\gt 0\)</span> be given. Since <span class="process-math">\(\limit{x}{\infty}{f(x)}=L_f\)</span> there is a bound, <span class="process-math">\(B_f\)</span> such that if <span class="process-math">\(x\gt B_f\)</span> then <span class="process-math">\(\abs{f(x)-L_f}\lt \frac{\eps}{2}.\)</span> Since <span class="process-math">\(\limit{x}{\infty}{g(x)}=L_g\)</span> there is a bound, <span class="process-math">\(B_g\)</span> such that if <span class="process-math">\(x\gt B_g\)</span> then <span class="process-math">\(\abs{g(x)-L_g}\lt \frac{\eps}{2}.\)</span> Take <span class="process-math">\(B= \max(B_f,B_g)\text{.}\)</span> Then if <span class="process-math">\(x\gt B\)</span> then <span class="process-math">\(x\gt B_f\)</span> and <span class="process-math">\(x\gt B_g\text{.}\)</span> Thus by the Triangle Inequality (<a href="SECTIONLimitLaws.html#THEOREMTriangIneq" class="xref" data-knowl="./knowl/xref/THEOREMTriangIneq.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.1: The Triangle Inequality">Theorem 16.4.1.1</a>)</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMTriangIneq.html" id="SUBSECTIONlimit-sum-at-17-1-15">
 \begin{align*}
 \abs{(f(x)+g(x))-(L_f+L_g)}\amp =    \abs{(f(x)-L_f)+(g(x)-L_g)}\\
@@ -822,14 +1437,14 @@ window.MathJax = {
 </div></article><article class="exercise exercise-like" id="SUBSECTIONlimit-sum-at-18"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.1.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONlimit-sum-at-18-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimSumInf.html" title="Theorem 16.4.1.7: The Limit of a Sum at Infinity">Theorem 16.4.1.7</a> as a model to construct a proof of   <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimSumNegInf.html" title="Theorem 16.4.1.9: The Limit of a Sum at Negative Infinity">Theorem 16.4.1.9</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimSumNegInf"><h4 class="heading">
+<div class="para" id="SUBSECTIONlimit-sum-at-18-1-1">Use the proof of <a href="SECTIONLimitLaws.html#THEOREMLimSumInf" class="xref" data-knowl="./knowl/xref/THEOREMLimSumInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.7: The Limit of a Sum at Infinity">Theorem 16.4.1.7</a> as a model to construct a proof of   <a href="SECTIONLimitLaws.html#THEOREMLimSumNegInf" class="xref" data-knowl="./knowl/xref/THEOREMLimSumNegInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.9: The Limit of a Sum at Negative Infinity">Theorem 16.4.1.9</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimSumNegInf"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit of a Sum at Negative Infinity.</span>
 </h4>
 <div class="para" id="THEOREMLimSumNegInf-3">If <span class="process-math">\(\limit{x}{-\infty}{f(x)}=L_f\)</span> and <span class="process-math">\(\limit{x}{-\infty}{g(x)}=L_g\)</span> then <span class="process-math">\(\limit{x}{-\infty}{\left(f(x)+g(x)\right)}=L_f+L_g.\)</span>
 </div></article><article class="exercise exercise-like" id="SUBSECTIONlimit-sum-at-20"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.1.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONlimit-sum-at-20-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimSumInf.html" title="Theorem 16.4.1.7: The Limit of a Sum at Infinity">Theorem 16.4.1.7</a> as a model to construct a proof of   <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimSumPoint.html" title="Theorem 16.4.1.11: Limit of a Sum at a Point">Theorem 16.4.1.11</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimSumPoint"><h4 class="heading">
+<div class="para" id="SUBSECTIONlimit-sum-at-20-1-1">Use the proof of <a href="SECTIONLimitLaws.html#THEOREMLimSumInf" class="xref" data-knowl="./knowl/xref/THEOREMLimSumInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.7: The Limit of a Sum at Infinity">Theorem 16.4.1.7</a> as a model to construct a proof of   <a href="SECTIONLimitLaws.html#THEOREMLimSumPoint" class="xref" data-knowl="./knowl/xref/THEOREMLimSumPoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.1.11: Limit of a Sum at a Point">Theorem 16.4.1.11</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimSumPoint"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of a Sum at a Point.</span>
 </h4>
 <div class="para logical" id="THEOREMLimSumPoint-3">
@@ -856,7 +1471,7 @@ window.MathJax = {
 <div class="para">then <span class="process-math">\(\limit{x}{\infty}{f(x)} = L\)</span> also.</div>
 </div></article><article class="proof" id="SUBSECTIONsqueeze-theorem-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
 <div class="para logical" id="SUBSECTIONsqueeze-theorem-3-1">
-<div class="para">Let <span class="process-math">\(\eps\gt0\)</span> be given. Since <span class="process-math">\(\limit{x}{\infty}{\alpha(x)} = L\)</span> there is some a real number <span class="process-math">\(B_\alpha\text{,}\)</span> such that if <span class="process-math">\(x\gt B_\alpha\)</span> then <span class="process-math">\(\abs{\alpha(x)-L}\lt \eps\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" title="Equation 16.5">(16.5)</a> we see  that for <span class="process-math">\(x\gt B_\alpha\text{:}\)</span>
+<div class="para">Let <span class="process-math">\(\eps\gt0\)</span> be given. Since <span class="process-math">\(\limit{x}{\infty}{\alpha(x)} = L\)</span> there is some a real number <span class="process-math">\(B_\alpha\text{,}\)</span> such that if <span class="process-math">\(x\gt B_\alpha\)</span> then <span class="process-math">\(\abs{\alpha(x)-L}\lt \eps\text{.}\)</span> From <a href="SECTIONlimits-at-real.html#DIGRESSIONAbsoluteValue2-3-1" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.5">(16.5)</a> we see  that for <span class="process-math">\(x\gt B_\alpha\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONAltDefAbsVal.html ./knowl/xref/EQUATIONAltDefAbsVal.html">
 \begin{equation*}
@@ -878,12 +1493,12 @@ B_\alpha, B_\beta)\text{.}\)</span> Then if <span class="process-math">\(x\gt B\
 -\eps \lt  \alpha(x)-L \lt  f(x)-L \lt  \beta(x)-L \lt  \eps.
 \end{equation*}
 </div>
-<div class="para">In particular, <span class="process-math">\(-\eps \lt  f(x)-L \lt  \eps \)</span> so from <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" title="Equation 16.5">(16.5)</a> we see that <span class="process-math">\(\abs{f(x)-L}\lt \eps \text{.}\)</span> Therefore <span class="process-math">\(\limit{x}{\infty}{f(x)} = L\text{.}\)</span>
+<div class="para">In particular, <span class="process-math">\(-\eps \lt  f(x)-L \lt  \eps \)</span> so from <a href="SECTIONlimits-at-real.html#DIGRESSIONAbsoluteValue2-3-1" class="xref" data-knowl="./knowl/xref/EQUATIONAltDefAbsVal.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.5">(16.5)</a> we see that <span class="process-math">\(\abs{f(x)-L}\lt \eps \text{.}\)</span> Therefore <span class="process-math">\(\limit{x}{\infty}{f(x)} = L\text{.}\)</span>
 </div>
 </div></article><article class="exercise exercise-like" id="SUBSECTIONsqueeze-theorem-4"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.2.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONsqueeze-theorem-4-1-1">Use  the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMSqThmInfinity.html" title="Theorem 16.4.2.1: The Squeeze  Theorem at Infinity">Theorem 16.4.2.1</a> as a model to prove <a href="" class="xref" data-knowl="./knowl/xref/THEOREMSqThmNegInfinity.html" title="Theorem 16.4.2.3: The Squeeze  Theorem at Negative Infinity">Theorem 16.4.2.3</a> below.</div></article><article class="theorem theorem-like" id="THEOREMSqThmNegInfinity"><h4 class="heading">
+<div class="para" id="SUBSECTIONsqueeze-theorem-4-1-1">Use  the proof of <a href="SECTIONLimitLaws.html#THEOREMSqThmInfinity" class="xref" data-knowl="./knowl/xref/THEOREMSqThmInfinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.2.1: The Squeeze  Theorem at Infinity">Theorem 16.4.2.1</a> as a model to prove <a href="SECTIONLimitLaws.html#THEOREMSqThmNegInfinity" class="xref" data-knowl="./knowl/xref/THEOREMSqThmNegInfinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.2.3: The Squeeze  Theorem at Negative Infinity">Theorem 16.4.2.3</a> below.</div></article><article class="theorem theorem-like" id="THEOREMSqThmNegInfinity"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Squeeze  Theorem at Negative Infinity.</span>
 </h4>
 <div class="para logical" id="THEOREMSqThmNegInfinity-3">
@@ -910,13 +1525,13 @@ B_\alpha, B_\beta)\text{.}\)</span> Then if <span class="process-math">\(x\gt B\
 </div></article><article class="exercise exercise-like" id="SUBSECTIONsqueeze-theorem-6"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.2.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONsqueeze-theorem-6-1-1">Use  the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMSqThmInfinity.html" title="Theorem 16.4.2.1: The Squeeze  Theorem at Infinity">Theorem 16.4.2.1</a> as a model to prove <a href="" class="xref" data-knowl="./knowl/xref/THEOREMSqThmFinite.html" title="Theorem 16.4.2.5: The Squeeze  Theorem, at a Point">Theorem 16.4.2.5</a> below.</div></article><article class="theorem theorem-like" id="THEOREMSqThmFinite"><h4 class="heading">
+<div class="para" id="SUBSECTIONsqueeze-theorem-6-1-1">Use  the proof of <a href="SECTIONLimitLaws.html#THEOREMSqThmInfinity" class="xref" data-knowl="./knowl/xref/THEOREMSqThmInfinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.2.1: The Squeeze  Theorem at Infinity">Theorem 16.4.2.1</a> as a model to prove <a href="SECTIONLimitLaws.html#THEOREMSqThmFinite" class="xref" data-knowl="./knowl/xref/THEOREMSqThmFinite.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.2.5: The Squeeze  Theorem, at a Point">Theorem 16.4.2.5</a> below.</div></article><article class="theorem theorem-like" id="THEOREMSqThmFinite"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">The Squeeze  Theorem, at a Point.</span>
 </h4>
 <div class="para" id="THEOREMSqThmFinite-3">If <span class="process-math">\(\alpha(x)\le f(x)\le \beta(x)\)</span> near  <span class="process-math">\(a\)</span> and <span class="process-math">\(\limit{x}{a}{\alpha(x)} = \limit{x}{a}{\beta(x)} = L\)</span> then <span class="process-math">\(\limit{x}{a}{f(x)} = L\)</span> also.</div></article></section><section class="subsection" id="SECTIONlimit-composition"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">16.4.3</span><span class="space"> </span><span class="title">The Limit of a Composition</span>
 </h3>
-<div class="para" id="SECTIONlimit-composition-2">Recall that at the end of <a href="" class="xref" data-knowl="./knowl/xref/EXAMPLELimComp1.html" title="Example 11.4.2.7">Example 11.4.2.7</a> in <a href="SECTIONIndetFormsAndLhop.html" class="internal" title="Section 11.4: Indeterminate Forms and L’Hôpital’s Rule">Section 11.4</a> we commented that it is only true that <span class="process-math">\(\tlimit{x}{a}{f(g(x))}\)</span> is equal to <span class="process-math">\(f\left(\tlimit{x}{a}{g(x)}\right)\)</span> when <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(g(a)\text{.}\)</span>
+<div class="para" id="SECTIONlimit-composition-2">Recall that at the end of <a href="SECTIONIndetFormsAndLhop.html#EXAMPLELimComp1" class="xref" data-knowl="./knowl/xref/EXAMPLELimComp1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.4.2.7">Example 11.4.2.7</a> in <a href="SECTIONIndetFormsAndLhop.html" class="internal" title="Section 11.4: Indeterminate Forms and L’Hôpital’s Rule">Section 11.4</a> we commented that it is only true that <span class="process-math">\(\tlimit{x}{a}{f(g(x))}\)</span> is equal to <span class="process-math">\(f\left(\tlimit{x}{a}{g(x)}\right)\)</span> when <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(g(a)\text{.}\)</span>
 </div>
 <div class="para" id="SECTIONlimit-composition-3">The following example demonstrates why we need for  <span class="process-math">\(f\)</span> to be continuous at  <span class="process-math">\(g(a)\text{.}\)</span>
 </div>
@@ -958,17 +1573,26 @@ f\left(\tlimit{x}{\infty}{g(x)}\right).
 </div></article><article class="investigation project-like" id="SECTIONlimit-composition-6"><h4 class="heading">
 <span class="type">Scrapwork</span><span class="space"> </span><span class="codenumber">16.4.3.1</span><span class="period">.</span>
 </h4>
-<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DC/LimComp2.png" class="contained"></div> <div class="para" id="SECTIONlimit-composition-6-2">It will be  helpful to have a visual guide for this proof so we will rely on diagrams here in the scrapwork. Our finalized  proof below will not.</div> <div class="para" id="SECTIONlimit-composition-6-3">Let <span class="process-math">\(\eps\gt0\)</span> be given. We need to show that we can find a <span class="process-math">\(B\gt0\)</span> such that if <span class="process-math">\(x\gt B\)</span> then <span class="process-math">\(\abs{f(g(x))-f(L_g)}\lt\eps\text{.}\)</span>
-</div> <div class="para" id="SECTIONlimit-composition-6-4">Since <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(y=L_g\)</span> <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONcontinuity.html" title="Definition 13.1.1.15: Continuity at a Point">Definition 13.1.1.15</a> tells us that <span class="process-math">\(\tlimit{y}{L_g}{f(y)}=f(L_g)\)</span>
-</div> <div class="para" id="SECTIONlimit-composition-6-5">Thus <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" title="Definition 16.3.0.1: The Limit at a Point">Definition 16.3.0.1</a>  tells us that there there is a real number <span class="process-math">\(\delta&gt;0\)</span> such that if <span class="process-math">\(\abs{y-L_g}\lt\delta\)</span> then <span class="process-math">\(\abs{f(y)-f(L_g)}\lt\eps\text{,}\)</span> as visualized in the sketch above.</div> <div class="para" id="SECTIONlimit-composition-6-6">Next, consider what it means to say that <span class="process-math">\(\tlimit{x}{\infty}{g(x)}=L_g\text{.}\)</span> It means that if we take <span class="process-math">\(x\)</span> large enough we can make <span class="process-math">\(g(x)\)</span> as close to <span class="process-math">\(L_g\)</span> as we would like. In particular, we would like for <span class="process-math">\(\abs{g(x)-L_g}\lt\delta\)</span> as in the sketch below.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/DC/LimComp1.png" class="contained"></div> <div class="para" id="SECTIONlimit-composition-6-8">Therefore, we can find a number <span class="process-math">\(B\)</span> such that for every <span class="process-math">\(x\gt B\text{,}\)</span> <span class="process-math">\(\abs{g(x)-L_g}\lt\delta\text{.}\)</span> If we take  <span class="process-math">\(y=g(x)\text{,}\)</span> then we have <span class="process-math">\(\abs{y-L_g}\lt\delta\text{.}\)</span>
-</div> <div class="para logical" id="SECTIONlimit-composition-6-9">
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/DC/LimComp2.png" class="contained"></div>
+<div class="para" id="SECTIONlimit-composition-6-2">It will be  helpful to have a visual guide for this proof so we will rely on diagrams here in the scrapwork. Our finalized  proof below will not.</div>
+<div class="para" id="SECTIONlimit-composition-6-3">Let <span class="process-math">\(\eps\gt0\)</span> be given. We need to show that we can find a <span class="process-math">\(B\gt0\)</span> such that if <span class="process-math">\(x\gt B\)</span> then <span class="process-math">\(\abs{f(g(x))-f(L_g)}\lt\eps\text{.}\)</span>
+</div>
+<div class="para" id="SECTIONlimit-composition-6-4">Since <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(y=L_g\)</span> <a href="SECTIONlimit-theorems-laws.html#DEFINITIONcontinuity" class="xref" data-knowl="./knowl/xref/DEFINITIONcontinuity.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 13.1.1.15: Continuity at a Point">Definition 13.1.1.15</a> tells us that <span class="process-math">\(\tlimit{y}{L_g}{f(y)}=f(L_g)\)</span>
+</div>
+<div class="para" id="SECTIONlimit-composition-6-5">Thus <a href="SECTIONlimits-at-real.html#DEFINITIONlimits-at-real" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.3.0.1: The Limit at a Point">Definition 16.3.0.1</a>  tells us that there there is a real number <span class="process-math">\(\delta&gt;0\)</span> such that if <span class="process-math">\(\abs{y-L_g}\lt\delta\)</span> then <span class="process-math">\(\abs{f(y)-f(L_g)}\lt\eps\text{,}\)</span> as visualized in the sketch above.</div>
+<div class="para" id="SECTIONlimit-composition-6-6">Next, consider what it means to say that <span class="process-math">\(\tlimit{x}{\infty}{g(x)}=L_g\text{.}\)</span> It means that if we take <span class="process-math">\(x\)</span> large enough we can make <span class="process-math">\(g(x)\)</span> as close to <span class="process-math">\(L_g\)</span> as we would like. In particular, we would like for <span class="process-math">\(\abs{g(x)-L_g}\lt\delta\)</span> as in the sketch below.</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/DC/LimComp1.png" class="contained"></div>
+<div class="para" id="SECTIONlimit-composition-6-8">Therefore, we can find a number <span class="process-math">\(B\)</span> such that for every <span class="process-math">\(x\gt B\text{,}\)</span> <span class="process-math">\(\abs{g(x)-L_g}\lt\delta\text{.}\)</span> If we take  <span class="process-math">\(y=g(x)\text{,}\)</span> then we have <span class="process-math">\(\abs{y-L_g}\lt\delta\text{.}\)</span>
+</div>
+<div class="para logical" id="SECTIONlimit-composition-6-9">
 <div class="para">From the continuity of <span class="process-math">\(f\)</span> at <span class="process-math">\(L_g\)</span> we know  that <span class="process-math">\(\abs{g(x)-L_g}=\abs{y-L_g}\lt\delta\)</span> means that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \abs{f(g(x))-f(L_g)}=\abs{f(y)-f(L_g)}\lt\eps.
 \end{equation*}
 </div>
-</div> <div class="para" id="SECTIONlimit-composition-6-10"><em class="alert">END OF SCRAPWORK</em></div></article><article class="proof" id="SECTIONlimit-composition-7"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+</div>
+<div class="para" id="SECTIONlimit-composition-6-10"><em class="alert">END OF SCRAPWORK</em></div></article><article class="proof" id="SECTIONlimit-composition-7"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
 <div class="para logical" id="SECTIONlimit-composition-7-1">
 <div class="para">Let <span class="process-math">\(\eps\gt 0\)</span> be given. Since <span class="process-math">\(f(y)\)</span> is continuous at <span class="process-math">\(L_g\)</span> there is a real number <span class="process-math">\(\delta\gt0\)</span> such that</div>
 <div class="displaymath process-math">
@@ -995,7 +1619,7 @@ f\left(\tlimit{x}{\infty}{g(x)}\right).\)</span>
 </div></article><article class="exercise exercise-like" id="SECTIONlimit-composition-8"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.3.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="SECTIONlimit-composition-8-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" title="Theorem 16.4.3.2: The Limit of a Composition at Infinity">Theorem 16.4.3.2</a> as a model to construct a proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompNegInf.html" title="Theorem 16.4.3.4: The Limit of a Composition at Negative Infinity">Theorem 16.4.3.4</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimCompNegInf"><h4 class="heading">
+<div class="para" id="SECTIONlimit-composition-8-1-1">Use the proof of <a href="SECTIONLimitLaws.html#THEOREMLimCompInf" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.3.2: The Limit of a Composition at Infinity">Theorem 16.4.3.2</a> as a model to construct a proof of <a href="SECTIONLimitLaws.html#THEOREMLimCompNegInf" class="xref" data-knowl="./knowl/xref/THEOREMLimCompNegInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.3.4: The Limit of a Composition at Negative Infinity">Theorem 16.4.3.4</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimCompNegInf"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit of a Composition at Negative Infinity.</span>
 </h4>
 <div class="para logical" id="THEOREMLimCompNegInf-3">
@@ -1009,7 +1633,7 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 </div></article><article class="exercise exercise-like" id="SECTIONlimit-composition-10"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.3.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="SECTIONlimit-composition-10-1-1">Use the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" title="Theorem 16.4.3.2: The Limit of a Composition at Infinity">Theorem 16.4.3.2</a> as a model to construct a proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompPoint.html" title="Theorem 16.4.3.6: The Limit of a Composition at a Point">Theorem 16.4.3.6</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimCompPoint"><h4 class="heading">
+<div class="para" id="SECTIONlimit-composition-10-1-1">Use the proof of <a href="SECTIONLimitLaws.html#THEOREMLimCompInf" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.3.2: The Limit of a Composition at Infinity">Theorem 16.4.3.2</a> as a model to construct a proof of <a href="SECTIONLimitLaws.html#THEOREMLimCompPoint" class="xref" data-knowl="./knowl/xref/THEOREMLimCompPoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.3.6: The Limit of a Composition at a Point">Theorem 16.4.3.6</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimCompPoint"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit of a Composition at a Point.</span>
 </h4>
 <div class="para logical" id="THEOREMLimCompPoint-3">
@@ -1035,7 +1659,7 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 </div>
 <div class="para">then <span class="process-math">\(\limit{x}{\infty}{\left(f(x)\cdot g(x)\right)}=L_f\cdot L_g.\)</span>
 </div>
-</div></article><div class="para" id="SUBSECTIONlimit-product-at-3">The proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> is very straightforward once the following two lemmas have been proved. We state these lemmas here so that we can refer to them in the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> but the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> is not complete until these lemmas have been proved.</div>
+</div></article><div class="para" id="SUBSECTIONlimit-product-at-3">The proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> is very straightforward once the following two lemmas have been proved. We state these lemmas here so that we can refer to them in the proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> but the proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> is not complete until these lemmas have been proved.</div>
 <article class="lemma theorem-like" id="LEMMALimProd1"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.4.4.2</span><span class="period">.</span>
 </h4>
@@ -1044,7 +1668,8 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.4.4.3</span><span class="period">.</span>
 </h4>
 <div class="para" id="LEMMALimProd2-1">If <span class="process-math">\(\limit{x}{\infty}{f(x)}=L_f\)</span> and <span class="process-math">\(\limit{x}{\infty}{g(x)}=L_g\)</span> then <span class="process-math">\(\tlimit{x}{\infty}{\left(f(x)\cdot L_g-L_f\cdot L_g\right)}=0\)</span>
-</div></article><article class="proof" id="PROOFLemmaLimProd1"><h4 class="heading"><span class="title">Proof of Theorem 16.4.4.1.</span></h4> <div class="para logical" id="PROOFLemmaLimProd1-2">
+</div></article><article class="proof" id="PROOFLemmaLimProd1"><h4 class="heading"><span class="title">Proof of Theorem 16.4.4.1.</span></h4>
+<div class="para logical" id="PROOFLemmaLimProd1-2">
 <div class="para">Let <span class="process-math">\(\eps \gt 0\)</span> be given.  Observe that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1053,7 +1678,8 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 \end{equation*}
 </div>
 <div class="para">Adding and subtracting the same term like this is a highly non-intuitive, but common “trick.”  Most mathematicians call it “adding zero” since middle terms add to zero. We (the authors) call this “uncanceling” because the middle terms cancel. It is hard to tell <i class="foreign">a priori</i> when this trick will work. Sometimes you just have to try something and see what happens.</div>
-</div> <div class="para logical" id="PROOFLemmaLimProd1-3">
+</div>
+<div class="para logical" id="PROOFLemmaLimProd1-3">
 <div class="para">In this case our uncanceling allows us to use the Triangle Inequality effectively. From the Triangle Inequality we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd1.html ./knowl/xref/LEMMALimProd2.html" id="PROOFLemmaLimProd1-3-1">
 \begin{align*}
@@ -1062,13 +1688,13 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 - L_f\cdot \textcolor{red}{L_g}}
 \end{align*}
 </div>
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> there is a real number <span class="process-math">\(B_1\)</span> such that if <span class="process-math">\(x\gt B_1\)</span> then</div>
+<div class="para">By <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> there is a real number <span class="process-math">\(B_1\)</span> such that if <span class="process-math">\(x\gt B_1\)</span> then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd1.html ./knowl/xref/LEMMALimProd2.html">
 \begin{equation*}
 \abs{f(x)\cdot g(x)-f(x)\cdot L_g}\lt\frac{\eps}{2}.
 \end{equation*}
 </div>
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> there is a real number <span class="process-math">\(B_2\)</span> such that if <span class="process-math">\(x\gt B_2\)</span> then</div>
+<div class="para">By <a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> there is a real number <span class="process-math">\(B_2\)</span> such that if <span class="process-math">\(x\gt B_2\)</span> then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd1.html ./knowl/xref/LEMMALimProd2.html">
 \begin{equation*}
 \abs{f(x)\cdot L_g-L_f\cdot L_g}\lt\frac{\eps}{2}.
@@ -1086,8 +1712,9 @@ f\left(\tlimit{x}{-\infty}{g(x)}\right).
 <div class="para">Therefore <span class="process-math">\(\limit{x}{\infty}{f(x)\cdot
 g(x)}=\limit{x}{\infty}{f(x)}\cdot\limit{x}{\infty}{g(x)}\text{.}\)</span>
 </div>
-</div></article><section class="paragraphs" id="SUBSECTIONlimit-product-at-7"><h4 class="heading"><span class="title">Proving Lemma 16.4.4.2.</span></h4> <div class="para logical" id="SUBSECTIONlimit-product-at-7-2">
-<div class="para">To prove <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> we need to guarantee that if <span class="process-math">\(x\)</span> is large enough then</div>
+</div></article><section class="paragraphs" id="SUBSECTIONlimit-product-at-7"><h4 class="heading"><span class="title">Proving Lemma 16.4.4.2.</span></h4>
+<div class="para logical" id="SUBSECTIONlimit-product-at-7-2">
+<div class="para">To prove <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> we need to guarantee that if <span class="process-math">\(x\)</span> is large enough then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd1.html">
 \begin{equation*}
 \abs{f(x)\cdot g(x)-f(x)\cdot L_g} =\abs{f(x)}\abs{g(x)-L_g} \lt \eps,
@@ -1095,11 +1722,14 @@ g(x)}=\limit{x}{\infty}{f(x)}\cdot\limit{x}{\infty}{g(x)}\text{.}\)</span>
 </div>
 <div class="para">where <span class="process-math">\(\eps\)</span> is an arbitrary, positive, real number. An “obvious” strategy is to observe that since we know that <span class="process-math">\(\tlimit{x}{\infty}{g(x)}=L_g\)</span> it must be that if <span class="process-math">\(x\)</span> is large enough then <span class="process-math">\(\abs{g(x)-L_g} \lt \frac{\eps}{\abs{f(x)}}\text{.}\)</span>
 </div>
-</div> <div class="para" id="SUBSECTIONlimit-product-at-7-3">But that strategy will fail. Here’s why. <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONlimit-at-posinfinity.html" title="Definition 16.2.3.8: A Limit at +\infty">Definition 16.2.3.8</a> says that if <span class="process-math">\(\limit{x}{\infty}{g(x)}=L_g\)</span> then for any single real number <span class="process-math">\(\eps\)</span> we can find a <span class="process-math">\(B\)</span> such that if <span class="process-math">\(x\gt B\)</span> then <span class="process-math">\(\abs{g(x)-L_g}\lt\eps.\)</span> But <span class="process-math">\(\frac{\eps}{\abs{f(x)}}\)</span> is not a single real number. For each distinct value of <span class="process-math">\(x&gt;B\)</span> we’ll have a (possibly) different value of <span class="process-math">\(f(x)\text{.}\)</span>  We have no definition, and no theorem that says we can do this. So we can’t. That strategy won’t work. At least it won’t work in its most obvious form.</div> <div class="para" id="SUBSECTIONlimit-product-at-7-4">But it will work if we can  replace <span class="process-math">\(\abs{f(x)}\)</span> by some fixed value.  The following lemma states that since <span class="process-math">\(f(x)\)</span> has a finite limit, it must be bounded. This will allow us to replace <span class="process-math">\(\abs{f(x)}\)</span> with that bound, which is a fixed parameter, in our proof of <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a>.</div> <article class="lemma theorem-like" id="LEMMABounded1"><h5 class="heading">
+</div>
+<div class="para" id="SUBSECTIONlimit-product-at-7-3">But that strategy will fail. Here’s why. <a href="SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-posinfinity" class="xref" data-knowl="./knowl/xref/DEFINITIONlimit-at-posinfinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.2.3.8: A Limit at +\infty">Definition 16.2.3.8</a> says that if <span class="process-math">\(\limit{x}{\infty}{g(x)}=L_g\)</span> then for any single real number <span class="process-math">\(\eps\)</span> we can find a <span class="process-math">\(B\)</span> such that if <span class="process-math">\(x\gt B\)</span> then <span class="process-math">\(\abs{g(x)-L_g}\lt\eps.\)</span> But <span class="process-math">\(\frac{\eps}{\abs{f(x)}}\)</span> is not a single real number. For each distinct value of <span class="process-math">\(x&gt;B\)</span> we’ll have a (possibly) different value of <span class="process-math">\(f(x)\text{.}\)</span>  We have no definition, and no theorem that says we can do this. So we can’t. That strategy won’t work. At least it won’t work in its most obvious form.</div>
+<div class="para" id="SUBSECTIONlimit-product-at-7-4">But it will work if we can  replace <span class="process-math">\(\abs{f(x)}\)</span> by some fixed value.  The following lemma states that since <span class="process-math">\(f(x)\)</span> has a finite limit, it must be bounded. This will allow us to replace <span class="process-math">\(\abs{f(x)}\)</span> with that bound, which is a fixed parameter, in our proof of <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a>.</div>
+<article class="lemma theorem-like" id="LEMMABounded1"><h5 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.4.4.4</span><span class="period">.</span>
 </h5>
 <div class="para" id="LEMMABounded1-1">If <span class="process-math">\(\tlimit{x}{\infty}{f(x)} = L_f\)</span>  then there are positive real numbers <span class="process-math">\(N\)</span> and <span class="process-math">\(\beta\text{,}\)</span> such that if <span class="process-math">\(x\gt \beta\text{,}\)</span> then <span class="process-math">\(\abs{f(x)} \lt N\text{.}\)</span>
-</div></article> <article class="proof" id="SUBSECTIONlimit-product-at-7-6"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
+</div></article><article class="proof" id="SUBSECTIONlimit-product-at-7-6"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5>
 <div class="para logical" id="SUBSECTIONlimit-product-at-7-6-1">
 <div class="para">Since <span class="process-math">\(\tlimit{x}{\infty}{f(x) = L_f}\)</span> there is a positive number <span class="process-math">\(\beta\)</span> such that if <span class="process-math">\(x\gt \beta\)</span> then <span class="process-math">\(\abs{f(x)-L_f}\lt 1\text{.}\)</span> So for <span class="process-math">\(x\gt\beta\text{,}\)</span>
 </div>
@@ -1117,11 +1747,12 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </div>
 <div class="para">and it follows that if <span class="process-math">\(x\gt\beta\)</span> then <span class="process-math">\(\abs{f(x)}\lt N\text{.}\)</span>
 </div>
-</div></article> <article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-7-7"><h5 class="heading">
+</div></article><article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-7-7"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.4.5</span><span class="period">.</span>
 </h5>
-<div class="para" id="SUBSECTIONlimit-product-at-7-7-1-1">Draw a convincing diagram of <a href="" class="xref" data-knowl="./knowl/xref/LEMMABounded1.html" title="Lemma 16.4.4.4">Lemma 16.4.4.4</a> and its proof.</div></article> <article class="proof" id="SUBSECTIONlimit-product-at-7-8"><h5 class="heading"><span class="title">Proof of Lemma 16.4.4.2.</span></h5> <div class="para logical" id="SUBSECTIONlimit-product-at-7-8-2">
-<div class="para">From <a href="" class="xref" data-knowl="./knowl/xref/LEMMABounded1.html" title="Lemma 16.4.4.4">Lemma 16.4.4.4</a> we see that there are positive real numbers <span class="process-math">\(N\)</span> and <span class="process-math">\(\beta\text{,}\)</span> such that for all <span class="process-math">\(x\gt\beta\)</span>
+<div class="para" id="SUBSECTIONlimit-product-at-7-7-1-1">Draw a convincing diagram of <a href="SECTIONLimitLaws.html#LEMMABounded1" class="xref" data-knowl="./knowl/xref/LEMMABounded1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.4">Lemma 16.4.4.4</a> and its proof.</div></article><article class="proof" id="SUBSECTIONlimit-product-at-7-8"><h5 class="heading"><span class="title">Proof of Lemma 16.4.4.2.</span></h5>
+<div class="para logical" id="SUBSECTIONlimit-product-at-7-8-2">
+<div class="para">From <a href="SECTIONLimitLaws.html#LEMMABounded1" class="xref" data-knowl="./knowl/xref/LEMMABounded1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.4">Lemma 16.4.4.4</a> we see that there are positive real numbers <span class="process-math">\(N\)</span> and <span class="process-math">\(\beta\text{,}\)</span> such that for all <span class="process-math">\(x\gt\beta\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMABounded1.html">
 \begin{equation*}
@@ -1146,16 +1777,22 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </div>
 <div class="para">Therefore    <span class="process-math">\(\tlimit{x}{\infty}{\left(f(x)\cdot g(x)-f(x)\cdot L_g\right)}=0.\)</span>
 </div>
-</div></article></section><section class="paragraphs" id="SUBSECTIONlimit-product-at-8"><h4 class="heading"><span class="title">Proving Lemma 16.4.4.3.</span></h4> <div class="para logical" id="SUBSECTIONlimit-product-at-8-2">
-<div class="para">To prove <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> we need to guarantee that if <span class="process-math">\(x\)</span> is large enough then</div>
+</div></article></section><section class="paragraphs" id="SUBSECTIONlimit-product-at-8"><h4 class="heading"><span class="title">Proving Lemma 16.4.4.3.</span></h4>
+<div class="para logical" id="SUBSECTIONlimit-product-at-8-2">
+<div class="para">To prove <a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> we need to guarantee that if <span class="process-math">\(x\)</span> is large enough then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd2.html ./knowl/xref/LEMMALimProd1.html">
 \begin{equation*}
 \abs{f(x)\cdot L_g-L_fL_g}= \abs{L_g}\abs{f(x)-L_f}\lt \eps,
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\eps\)</span> is an arbitrary real number. This is very similar to our goal in proving <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a>. But this time the “obvious” strategy will work. Almost.</div>
-</div> <div class="para" id="SUBSECTIONlimit-product-at-8-3">That is, as long as <span class="process-math">\(L_g\neq0\)</span> we can guarantee that <span class="process-math">\(\abs{L_g}\abs{f(x)-L_f}\lt \eps\)</span> by taking <span class="process-math">\(x\)</span> large enough to guarantee that <span class="process-math">\(\abs{f(x)-L_f}\lt \frac{\eps}{\abs{L_g}}\text{.}\)</span>
-</div> <div class="para" id="SUBSECTIONlimit-product-at-8-4">We will need to handle the case <span class="process-math">\(L_g=0\)</span> separately.</div> <article class="proof" id="PROOFLemmaLimProd2"><h5 class="heading"><span class="title">Proof of Lemma 16.4.4.3.</span></h5> <div class="para" id="PROOFLemmaLimProd2-2">Let <span class="process-math">\(\eps\gt0\)</span> be given.</div> <div class="para logical" id="PROOFLemmaLimProd2-3">
+<div class="para">where <span class="process-math">\(\eps\)</span> is an arbitrary real number. This is very similar to our goal in proving <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a>. But this time the “obvious” strategy will work. Almost.</div>
+</div>
+<div class="para" id="SUBSECTIONlimit-product-at-8-3">That is, as long as <span class="process-math">\(L_g\neq0\)</span> we can guarantee that <span class="process-math">\(\abs{L_g}\abs{f(x)-L_f}\lt \eps\)</span> by taking <span class="process-math">\(x\)</span> large enough to guarantee that <span class="process-math">\(\abs{f(x)-L_f}\lt \frac{\eps}{\abs{L_g}}\text{.}\)</span>
+</div>
+<div class="para" id="SUBSECTIONlimit-product-at-8-4">We will need to handle the case <span class="process-math">\(L_g=0\)</span> separately.</div>
+<article class="proof" id="PROOFLemmaLimProd2"><h5 class="heading"><span class="title">Proof of Lemma 16.4.4.3.</span></h5>
+<div class="para" id="PROOFLemmaLimProd2-2">Let <span class="process-math">\(\eps\gt0\)</span> be given.</div>
+<div class="para logical" id="PROOFLemmaLimProd2-3">
 <div class="para">There are two cases.</div>
 <dl class="description-list">
 <dt id="PROOFLemmaLimProd2-3-1-1">Case 1:</dt>
@@ -1180,13 +1817,16 @@ L_f-1\amp\lt f(x)\lt L_f+1.
 </dl>
 <div class="para">Since the limit is zero in both cases we see that <span class="process-math">\(\tlimit{x}{\infty}{\left(L_gf(x)-L_gL_f\right)}=0\text{.}\)</span>
 </div>
-</div></article> <div class="para" id="SUBSECTIONlimit-product-at-8-6">Having completed the proofs of <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> our proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> is now also complete.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-7">The proofs of these two lemmas was not for the faint of heart.  None of the individual pieces was difficult to follow, but putting them all together in the right order was delicate.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-8">On the other hand, once <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> are known the proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> becomes even simpler as  <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMLimProdSimpler.html" title="Problem 16.4.4.6">Problem 16.4.4.6</a> shows.</div> <article class="exercise exercise-like" id="PROBLEMLimProdSimpler"><h5 class="heading">
+</div></article><div class="para" id="SUBSECTIONlimit-product-at-8-6">Having completed the proofs of <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> our proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> is now also complete.</div>
+<div class="para" id="SUBSECTIONlimit-product-at-8-7">The proofs of these two lemmas was not for the faint of heart.  None of the individual pieces was difficult to follow, but putting them all together in the right order was delicate.</div>
+<div class="para" id="SUBSECTIONlimit-product-at-8-8">On the other hand, once <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> are known the proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> becomes even simpler as  <a href="SECTIONLimitLaws.html#PROBLEMLimProdSimpler" class="xref" data-knowl="./knowl/xref/PROBLEMLimProdSimpler.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 16.4.4.6">Problem 16.4.4.6</a> shows.</div>
+<article class="exercise exercise-like" id="PROBLEMLimProdSimpler"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.4.6</span><span class="period">.</span>
 </h5>
-<div class="introduction" id="PROBLEMLimProdSimpler-1"><div class="para" id="PROBLEMLimProdSimpler-1-1">As you’ve seen using the limit definition (using <span class="process-math">\(\eps\)</span> and <span class="process-math">\(\delta\)</span>) to prove theorems is hard. But, as we said in <a href="" class="xref" data-knowl="./knowl/xref/DIGRESSIONWhyProveTheorems.html" title="Paragraphs: DIGRESSION: Why We Prove Theorems">DIGRESSION: Why We Prove Theorems</a>, the whole point of proving theorems is to give ourselves more refined tools that we can use instead of resorting to definitions.</div></div>
+<div class="introduction" id="PROBLEMLimProdSimpler-1"><div class="para" id="PROBLEMLimProdSimpler-1-1">As you’ve seen using the limit definition (using <span class="process-math">\(\eps\)</span> and <span class="process-math">\(\delta\)</span>) to prove theorems is hard. But, as we said in <a href="SECTIONlimits-at-real.html#DIGRESSIONWhyProveTheorems" class="xref" data-knowl="./knowl/xref/DIGRESSIONWhyProveTheorems.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraphs: DIGRESSION: Why We Prove Theorems">DIGRESSION: Why We Prove Theorems</a>, the whole point of proving theorems is to give ourselves more refined tools that we can use instead of resorting to definitions.</div></div>
 <article class="task exercise-like" id="PROBLEMLimProdSimpler-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para logical" id="PROBLEMLimProdSimpler-2-1-1">
-<div class="para">Now that we have <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> there is actually a simpler way to prove <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a>. Observe that</div>
+<div class="para">Now that we have <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> there is actually a simpler way to prove <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a>. Observe that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LEMMALimProd1.html ./knowl/xref/LEMMALimProd2.html ./knowl/xref/THEOREMlimit-product-infinity.html ./knowl/xref/LEMMALimProd1.html ./knowl/xref/LEMMALimProd2.html" id="PROBLEMLimProdSimpler-2-1-1-4">
 \begin{align}
 \underbrace{f(x)\cdot g(x) - L_g\cdot L_f}_{\Gamma(x)} = \amp{}\underbrace{\left[f(x)\cdot g(x)-f(x)\cdot
@@ -1195,14 +1835,15 @@ L_g\right]}_{\alpha(x)}\notag\\
 L_g\right]}_{\beta(x)}\tag{16.9}
 \end{align}
 </div>
-<div class="para">and complete the proof by citing <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> and the appropriate, previously proven, limit theorem.</div>
+<div class="para">and complete the proof by citing <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and <a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> and the appropriate, previously proven, limit theorem.</div>
 </div>
-<div class="solutions"><details id="PROBLEMLimProdSimpler-2-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="PROBLEMLimProdSimpler-2-2-1">The right side of <a href="" class="xref" data-knowl="./knowl/xref/EQUATIONLimProd3.html" title="Equation 16.9">equation (16.9)</a> is a sum.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMLimProdSimpler-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="solutions"><details id="PROBLEMLimProdSimpler-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMLimProdSimpler-2-2-1">The right side of <a href="SECTIONLimitLaws.html#PROBLEMLimProdSimpler-2-1-1-4" class="xref" data-knowl="./knowl/xref/EQUATIONLimProd3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.9">equation (16.9)</a> is a sum.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMLimProdSimpler-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="PROBLEMLimProdSimpler-3-1-1">
-<a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> can also be proved without resorting to the limit definition (using <span class="process-math">\(\eps\)</span> and <span class="process-math">\(\delta\)</span>).  Prove it by citing <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and the appropriate, previously proved, limit theorems.</div></article></article> <div class="para" id="SUBSECTIONlimit-product-at-8-10">If you find yourself becoming completely absorbed in, and possibly even enjoying the details of these arguments you are surely a mathematician by inclination, if not by training (yet). There are more, and more interesting, results where these came from.  Change your major and come join us. Sometimes we bring cookies.</div> <article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-8-11"><h5 class="heading">
+<a href="SECTIONLimitLaws.html#LEMMALimProd2" class="xref" data-knowl="./knowl/xref/LEMMALimProd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.3">Lemma 16.4.4.3</a> can also be proved without resorting to the limit definition (using <span class="process-math">\(\eps\)</span> and <span class="process-math">\(\delta\)</span>).  Prove it by citing <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a> and the appropriate, previously proved, limit theorems.</div></article></article><div class="para" id="SUBSECTIONlimit-product-at-8-10">If you find yourself becoming completely absorbed in, and possibly even enjoying the details of these arguments you are surely a mathematician by inclination, if not by training (yet). There are more, and more interesting, results where these came from.  Change your major and come join us. Sometimes we bring cookies.</div>
+<article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-8-11"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.4.7</span><span class="period">.</span>
 </h5>
-<div class="para" id="SUBSECTIONlimit-product-at-8-11-1-1">Use our proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> as a model to prove <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-negative-infinity.html" title="Theorem 16.4.4.8: The Limit of a Product at Negative Infinity">Theorem 16.4.4.8</a> below.</div></article> <article class="theorem theorem-like" id="THEOREMlimit-product-negative-infinity"><h5 class="heading">
+<div class="para" id="SUBSECTIONlimit-product-at-8-11-1-1">Use our proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> as a model to prove <a href="SECTIONLimitLaws.html#THEOREMlimit-product-negative-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-negative-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.8: The Limit of a Product at Negative Infinity">Theorem 16.4.4.8</a> below.</div></article><article class="theorem theorem-like" id="THEOREMlimit-product-negative-infinity"><h5 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit of a Product at Negative Infinity.</span>
 </h5>
 <div class="para logical" id="THEOREMlimit-product-negative-infinity-3">
@@ -1219,10 +1860,10 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 \limit{x}{-\infty}{\left(f(x)\cdot g(x)\right)}=L_f\cdot L_g.
 \end{equation*}
 </div>
-</div></article> <article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-8-13"><h5 class="heading">
+</div></article><article class="exercise exercise-like" id="SUBSECTIONlimit-product-at-8-13"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.4.9</span><span class="period">.</span>
 </h5>
-<div class="para" id="SUBSECTIONlimit-product-at-8-13-1-1">Use our proof of <a href="" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> as a model to prove <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimProdPoint.html" title="Theorem 16.4.4.10: Limit of a Product at a Point">Theorem 16.4.4.10</a> below.</div></article> <article class="theorem theorem-like" id="THEOREMLimProdPoint"><h5 class="heading">
+<div class="para" id="SUBSECTIONlimit-product-at-8-13-1-1">Use our proof of <a href="SECTIONLimitLaws.html#THEOREMlimit-product-infinity" class="xref" data-knowl="./knowl/xref/THEOREMlimit-product-infinity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.1: The Limit of a Product at Infinity">Theorem 16.4.4.1</a> as a model to prove <a href="SECTIONLimitLaws.html#THEOREMLimProdPoint" class="xref" data-knowl="./knowl/xref/THEOREMLimProdPoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.4.10: Limit of a Product at a Point">Theorem 16.4.4.10</a> below.</div></article><article class="theorem theorem-like" id="THEOREMLimProdPoint"><h5 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of a Product at a Point.</span>
 </h5>
 <div class="para logical" id="THEOREMLimProdPoint-3">
@@ -1232,18 +1873,21 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 \limit{x}{a}{\left(f(x)\cdot g(x)\right)}=L_f\cdot L_g.
 \end{equation*}
 </div>
-</div></article> <div class="para" id="SUBSECTIONlimit-product-at-8-15">Finally, we come to the limit of a quotient. Given how much trouble the limit of a product gave us, it is a little scary to think about proving that the limit of a quotient is the quotient of limits from the definition.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-16">This trepidation is justified. It is very tricky to prove --- from the definition --- that the limit of a quotient is what we expect it to be. Fortunately we won’t have to. We now have enough theorems (tools) available that we no longer have to work directly from the limit definition.</div> <div class="para" id="SUBSECTIONlimit-product-at-8-17">However we will need to dispose of the following small detail.</div></section></section><section class="subsection" id="SUBSECTIONOneOverXIsCont"><h3 class="heading hide-type">
+</div></article><div class="para" id="SUBSECTIONlimit-product-at-8-15">Finally, we come to the limit of a quotient. Given how much trouble the limit of a product gave us, it is a little scary to think about proving that the limit of a quotient is the quotient of limits from the definition.</div>
+<div class="para" id="SUBSECTIONlimit-product-at-8-16">This trepidation is justified. It is very tricky to prove --- from the definition --- that the limit of a quotient is what we expect it to be. Fortunately we won’t have to. We now have enough theorems (tools) available that we no longer have to work directly from the limit definition.</div>
+<div class="para" id="SUBSECTIONlimit-product-at-8-17">However we will need to dispose of the following small detail.</div></section></section><section class="subsection" id="SUBSECTIONOneOverXIsCont"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">16.4.5</span><span class="space"> </span><span class="title">The Function    <span class="process-math">\(f(x)=\frac1x\)</span> is Continuous Wherever  It Is Defined</span>
 </h3>
 <article class="lemma theorem-like" id="LEMMA1overxIsCont"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.4.5.1</span><span class="period">.</span>
 </h4>
 <div class="para" id="LEMMA1overxIsCont-1">The function <span class="process-math">\(f(x)=\frac1x\)</span> is continuous at <span class="process-math">\(a\neq0\text{.}\)</span>
-</div></article><div class="para" id="SUBSECTIONOneOverXIsCont-3">You will need <a href="" class="xref" data-knowl="./knowl/xref/LEMMA1overxIsCont.html" title="Lemma 16.4.5.1">Lemma 16.4.5.1</a> to solve <a href="" class="xref" data-knowl="./knowl/xref/PROBLEMProofOfQuotLim.html" title="Problem 16.4.5.4">Problem 16.4.5.4</a> below.  We will provide the scrapwork and leave the formal proof as a problem for you.</div>
+</div></article><div class="para" id="SUBSECTIONOneOverXIsCont-3">You will need <a href="SECTIONLimitLaws.html#LEMMA1overxIsCont" class="xref" data-knowl="./knowl/xref/LEMMA1overxIsCont.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.5.1">Lemma 16.4.5.1</a> to solve <a href="SECTIONLimitLaws.html#PROBLEMProofOfQuotLim" class="xref" data-knowl="./knowl/xref/PROBLEMProofOfQuotLim.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 16.4.5.4">Problem 16.4.5.4</a> below.  We will provide the scrapwork and leave the formal proof as a problem for you.</div>
 <article class="investigation project-like" id="SUBSECTIONOneOverXIsCont-4"><h4 class="heading">
 <span class="type">Scrapwork</span><span class="space"> </span><span class="codenumber">16.4.5.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="SUBSECTIONOneOverXIsCont-4-1">To keep things simple (this is scrapwork, after all) we will first assume that <span class="process-math">\(a\gt0\text{.}\)</span> If we have an <span class="process-math">\(\eps\gt0\)</span> then by <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONcontinuity.html" title="Definition 13.1.1.15: Continuity at a Point">Definition 13.1.1.15</a> we need to find a <span class="process-math">\(\delta\gt0\)</span> such that if <span class="process-math">\(\abs{x-a}\lt\delta\)</span> then <span class="process-math">\(\abs{\frac1x-\frac1a}\lt\eps\text{.}\)</span> As usual we work backwards.</div> <div class="para logical" id="SUBSECTIONOneOverXIsCont-4-2">
+<div class="para" id="SUBSECTIONOneOverXIsCont-4-1">To keep things simple (this is scrapwork, after all) we will first assume that <span class="process-math">\(a\gt0\text{.}\)</span> If we have an <span class="process-math">\(\eps\gt0\)</span> then by <a href="SECTIONlimit-theorems-laws.html#DEFINITIONcontinuity" class="xref" data-knowl="./knowl/xref/DEFINITIONcontinuity.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 13.1.1.15: Continuity at a Point">Definition 13.1.1.15</a> we need to find a <span class="process-math">\(\delta\gt0\)</span> such that if <span class="process-math">\(\abs{x-a}\lt\delta\)</span> then <span class="process-math">\(\abs{\frac1x-\frac1a}\lt\eps\text{.}\)</span> As usual we work backwards.</div>
+<div class="para logical" id="SUBSECTIONOneOverXIsCont-4-2">
 <div class="para">Combining the fractions we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1252,7 +1896,8 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 </div>
 <div class="para">so  we need to find a <span class="process-math">\(\delta\gt0\)</span> such that <span class="process-math">\(\abs{x-a}\lt\delta\)</span> ensures that <span class="process-math">\(\frac{\abs{x-a}}{a\abs{x}}\lt\eps\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="SUBSECTIONOneOverXIsCont-4-3">
+</div>
+<div class="para logical" id="SUBSECTIONOneOverXIsCont-4-3">
 <div class="para">At first it appears that all we need to do choose <span class="process-math">\(\delta
 \lt \eps\cdot a \cdot\abs{x}\text{.}\)</span> If we could do that we’d have <span class="process-math">\(\abs{x-a}\lt\delta = \eps\cdot a
 \cdot\abs{x}\)</span> in which case</div>
@@ -1261,8 +1906,10 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 \abs{\frac1x-\frac1a}=\frac{\abs{x-a}}{a\abs{x}}=\frac{\abs{x-a}}{a}\cdot\frac{1}{\abs{x}}\lt\eps.
 \end{equation*}
 </div>
-</div> <div class="para" id="SUBSECTIONOneOverXIsCont-4-4">But of course we’ve seen this before. Just as in the proof of <a href="" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a>, <span class="process-math">\(\delta\)</span>  cannot depend on <span class="process-math">\(x\text{.}\)</span> So we need to replace <span class="process-math">\(\frac1x\)</span> with a constant somehow.  The Algebra here gets a bit delicate. We strongly recommend that you visualize each step of the following argument with a sketch like the one we used in the scrapwork for <a href="" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" title="Theorem 16.4.3.2: The Limit of a Composition at Infinity">Theorem 16.4.3.2</a>
-</div> <div class="para logical" id="SUBSECTIONOneOverXIsCont-4-5">
+</div>
+<div class="para" id="SUBSECTIONOneOverXIsCont-4-4">But of course we’ve seen this before. Just as in the proof of <a href="SECTIONLimitLaws.html#LEMMALimProd1" class="xref" data-knowl="./knowl/xref/LEMMALimProd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 16.4.4.2">Lemma 16.4.4.2</a>, <span class="process-math">\(\delta\)</span>  cannot depend on <span class="process-math">\(x\text{.}\)</span> So we need to replace <span class="process-math">\(\frac1x\)</span> with a constant somehow.  The Algebra here gets a bit delicate. We strongly recommend that you visualize each step of the following argument with a sketch like the one we used in the scrapwork for <a href="SECTIONLimitLaws.html#THEOREMLimCompInf" class="xref" data-knowl="./knowl/xref/THEOREMLimCompInf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.4.3.2: The Limit of a Composition at Infinity">Theorem 16.4.3.2</a>
+</div>
+<div class="para logical" id="SUBSECTIONOneOverXIsCont-4-5">
 <div class="para">Suppose that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATION1overXBndFromZero.html">
 \begin{equation*}
@@ -1281,16 +1928,18 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 \frac{a}{2}=a -\frac{a}{2}\lt x \lt a+\frac{a}{2}=\frac{3a}{2}.\tag{16.10}
 \end{equation}
 </div>
-<div class="para">Thus if we make <span class="process-math">\(\abs{x-a}\lt\frac{a}{2}\text{,}\)</span> we see that <span class="process-math">\(0\lt\frac{a}{2}\lt x\)</span> and so, from the right side of <a href="" class="xref" data-knowl="./knowl/xref/EQUATION1overXBndFromZero.html" title="Equation 16.10">equation (16.10)</a>.</div>
+<div class="para">Thus if we make <span class="process-math">\(\abs{x-a}\lt\frac{a}{2}\text{,}\)</span> we see that <span class="process-math">\(0\lt\frac{a}{2}\lt x\)</span> and so, from the right side of <a href="SECTIONLimitLaws.html#EQUATION1overXBndFromZero" class="xref" data-knowl="./knowl/xref/EQUATION1overXBndFromZero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.10">equation (16.10)</a>.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATION1overXBndFromZero.html">
 \begin{equation*}
 \frac{1}{\abs{x}}=\frac{1}{x}\lt\frac{2}{a}\text{.}
 \end{equation*}
 </div>
-</div> <aside class="aside aside-like" id="SUBSECTIONOneOverXIsCont-4-6"><h5 class="heading"><span class="title">Comment.</span></h5>
-<div class="para" id="SUBSECTIONOneOverXIsCont-4-6-2">Notice that we are using the left side of <a href="" class="xref" data-knowl="./knowl/xref/EQUATION1overXBndFromZero.html" title="Equation 16.10">equation (16.10)</a>
-</div></aside> <div class="para" id="SUBSECTIONOneOverXIsCont-4-7">Therefore <span class="process-math">\(\abs{\frac1x-\frac1a}=\frac{\abs{x-a}}{a}\cdot\frac{1}{\abs{x}}\lt\frac{2}{a^2}\abs{x-a}\text{.}\)</span> Thus if we choose <span class="process-math">\(\delta\)</span> to be  the lesser of <span class="process-math">\(\frac{a}{2}\)</span> and <span class="process-math">\(\frac{\eps a^2}{2}\)</span> we have everything we need to conclude that <span class="process-math">\(\tlimit{x}{a}{\frac1x}=\frac1a\)</span> for <span class="process-math">\(a\gt 0.\)</span>
-</div> <div class="para" id="SUBSECTIONOneOverXIsCont-4-8"><em class="alert">END OF SCRAPWORK</em></div></article><article class="exercise exercise-like" id="PROBLEM1overXIsCont"><h4 class="heading">
+</div>
+<aside class="aside aside-like" id="SUBSECTIONOneOverXIsCont-4-6"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="SUBSECTIONOneOverXIsCont-4-6-2">Notice that we are using the left side of <a href="SECTIONLimitLaws.html#EQUATION1overXBndFromZero" class="xref" data-knowl="./knowl/xref/EQUATION1overXBndFromZero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 16.10">equation (16.10)</a>
+</div></aside><div class="para" id="SUBSECTIONOneOverXIsCont-4-7">Therefore <span class="process-math">\(\abs{\frac1x-\frac1a}=\frac{\abs{x-a}}{a}\cdot\frac{1}{\abs{x}}\lt\frac{2}{a^2}\abs{x-a}\text{.}\)</span> Thus if we choose <span class="process-math">\(\delta\)</span> to be  the lesser of <span class="process-math">\(\frac{a}{2}\)</span> and <span class="process-math">\(\frac{\eps a^2}{2}\)</span> we have everything we need to conclude that <span class="process-math">\(\tlimit{x}{a}{\frac1x}=\frac1a\)</span> for <span class="process-math">\(a\gt 0.\)</span>
+</div>
+<div class="para" id="SUBSECTIONOneOverXIsCont-4-8"><em class="alert">END OF SCRAPWORK</em></div></article><article class="exercise exercise-like" id="PROBLEM1overXIsCont"><h4 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">16.4.5.2</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="PROBLEM1overXIsCont-1"><div class="para" id="PROBLEM1overXIsCont-1-1"></div></div>
@@ -1307,7 +1956,7 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 <div class="para">Use this observation to prove that if <span class="process-math">\(a\lt0\)</span> then <span class="process-math">\(\tlimit{x}{a}{\frac1x}=\frac1a\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details id="PROBLEM1overXIsCont-3-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="PROBLEM1overXIsCont-3-2-1">Let <span class="process-math">\(y=-x\text{.}\)</span>
+<div class="solutions"><details id="PROBLEM1overXIsCont-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEM1overXIsCont-3-2-1">Let <span class="process-math">\(y=-x\text{.}\)</span>
 </div></div></details></div></article></article><div class="para" id="SUBSECTIONOneOverXIsCont-6">Armed with this and our Limit Theorems, we can tackle the proof of the next theorem without resorting back to definitions.</div>
 <article class="theorem theorem-like" id="THEOREMLimQuot"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.4.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Limit of a Quotient is the Quotient of the Limits.</span>
@@ -1332,7 +1981,7 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="PROBLEMProofOfQuotLim-2-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="PROBLEMProofOfQuotLim-2-2-1">Rewrite <span class="process-math">\(\frac{f(x)}{g(x)}\)</span> as <span class="process-math">\(f(x)\cdot\inverse{(g(x))}\text{.}\)</span> Which of our theorems can you apply?</div></div></details></div></article><article class="task exercise-like" id="PROBLEMProofOfQuotLim-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="solutions"><details id="PROBLEMProofOfQuotLim-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMProofOfQuotLim-2-2-1">Rewrite <span class="process-math">\(\frac{f(x)}{g(x)}\)</span> as <span class="process-math">\(f(x)\cdot\inverse{(g(x))}\text{.}\)</span> Which of our theorems can you apply?</div></div></details></div></article><article class="task exercise-like" id="PROBLEMProofOfQuotLim-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para logical" id="PROBLEMProofOfQuotLim-3-1-1">
 <div class="para">Prove that if <span class="process-math">\(\limit{x}{-\infty}{f(x)}=L_f\)</span> and <span class="process-math">\(\limit{x}{-\infty}{g(x)}=L_g\neq0\)</span> then</div>
 <div class="displaymath process-math">
@@ -1348,10 +1997,11 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 \limit{x}{a}{\frac{f(x)}{g(x)}}=\frac{L_f}{L_g}.
 \end{equation*}
 </div>
-</div></article></article><div class="para" id="SUBSECTIONOneOverXIsCont-9">We have one last loose end to tie up. Recall that <a href="" class="xref" data-knowl="./knowl/xref/THEOREMOneSideLim.html" title="Theorem 15.1.0.13">Theorem 15.1.0.13</a> in <a href="CHAPTERwhen-deriv-doesnt.html" class="internal" title="Chapter 15: When the Derivative Doesn’t Exist">Chapter 15</a> says that a limit exists if and only if the right- and left-hand limits both exist and are equal. One-sided limits are informally defined in <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONOneSidedLimits.html" title="Definition 15.1.0.12: One-sided Limits">Definition 15.1.0.12</a>. But an informal definition is not sufficiently precise to support constructing a proof, so here is the formal Definition of a right-hand limit.</div>
+</div></article></article><div class="para" id="SUBSECTIONOneOverXIsCont-9">We have one last loose end to tie up. Recall that <a href="CHAPTERwhen-deriv-doesnt-2.html#THEOREMOneSideLim" class="xref" data-knowl="./knowl/xref/THEOREMOneSideLim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 15.1.0.13">Theorem 15.1.0.13</a> in <a href="CHAPTERwhen-deriv-doesnt.html" class="internal" title="Chapter 15: When the Derivative Doesn’t Exist">Chapter 15</a> says that a limit exists if and only if the right- and left-hand limits both exist and are equal. One-sided limits are informally defined in <a href="CHAPTERwhen-deriv-doesnt-2.html#DEFINITIONOneSidedLimits" class="xref" data-knowl="./knowl/xref/DEFINITIONOneSidedLimits.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 15.1.0.12: One-sided Limits">Definition 15.1.0.12</a>. But an informal definition is not sufficiently precise to support constructing a proof, so here is the formal Definition of a right-hand limit.</div>
 <article class="definition definition-like" id="DEFINITIONOneSidedLimits-Formal"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Right-Hand Limit.</span>
-</h4>  <div class="para logical" id="DEFINITIONOneSidedLimits-Formal-3-1">
+</h4>
+<div class="para logical" id="DEFINITIONOneSidedLimits-Formal-3-1">
 <div class="para">Suppose <span class="process-math">\(f(x)\)</span> is defined on some interval <span class="process-math">\((a,b)\text{.}\)</span> Let <span class="process-math">\(L\)</span> be a real number. We say that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1366,15 +2016,15 @@ L_g\right]}_{\beta(x)}\tag{16.9}
 <div class="introduction" id="PROBLEMCodaOneSided-1"><div class="para" id="PROBLEMCodaOneSided-1-1"></div></div>
 <article class="task exercise-like" id="PROBLEMCodaOneSided-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para logical" id="PROBLEMCodaOneSided-2-1-1">
-<div class="para">Using <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONOneSidedLimits-Formal.html" title="Definition 16.4.5.5: Right-Hand Limit">Definition 16.4.5.5</a> as a model, state a similar definition for</div>
+<div class="para">Using <a href="SECTIONLimitLaws.html#DEFINITIONOneSidedLimits-Formal" class="xref" data-knowl="./knowl/xref/DEFINITIONOneSidedLimits-Formal.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 16.4.5.5: Right-Hand Limit">Definition 16.4.5.5</a> as a model, state a similar definition for</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DEFINITIONOneSidedLimits-Formal.html">
 \begin{equation*}
 \ltlimit{x}{a}{f(x)}=L\text{.}
 \end{equation*}
 </div>
 </div></article><article class="task exercise-like" id="PROBLEMCodaOneSided-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="PROBLEMCodaOneSided-3-1-1">Prove   <a href="" class="xref" data-knowl="./knowl/xref/THEOREMOneSideLim.html" title="Theorem 15.1.0.13">Theorem 15.1.0.13</a> from <a href="CHAPTERwhen-deriv-doesnt.html" class="internal" title="Chapter 15: When the Derivative Doesn’t Exist">Chapter 15</a>.</div></article></article><div class="para" id="SUBSECTIONOneOverXIsCont-12">As you can see, rigorous demonstrations, as necessary as they are, can become complicated and tedious.  Perhaps this explains why the practice of Calculus predated its theory.</div>
-<div class="para" id="SUBSECTIONOneOverXIsCont-13">We have defined the derivative by <a href="" class="xref" data-knowl="./knowl/xref/DEFINITIONDerivative.html" title="Definition 12.2.0.3: The Derivative">Definition 12.2.0.3</a>, derived all of our differentiation rules via this definition, and shown — rigorously — that founding Calculus on the theory of limits gives us all of the properties we found useful in <a href="DiffCalcFromPractice.html" class="internal" title="Part I: Differential Calculus: From Practice">Part I</a> of this textbook. At long last, this places a solid, logical, and rigorous foundation underneath the Differential Calculus of Newton and Leibniz.</div>
+<div class="para" id="PROBLEMCodaOneSided-3-1-1">Prove   <a href="CHAPTERwhen-deriv-doesnt-2.html#THEOREMOneSideLim" class="xref" data-knowl="./knowl/xref/THEOREMOneSideLim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 15.1.0.13">Theorem 15.1.0.13</a> from <a href="CHAPTERwhen-deriv-doesnt.html" class="internal" title="Chapter 15: When the Derivative Doesn’t Exist">Chapter 15</a>.</div></article></article><div class="para" id="SUBSECTIONOneOverXIsCont-12">As you can see, rigorous demonstrations, as necessary as they are, can become complicated and tedious.  Perhaps this explains why the practice of Calculus predated its theory.</div>
+<div class="para" id="SUBSECTIONOneOverXIsCont-13">We have defined the derivative by <a href="SECTIONsecants-tangents.html#DEFINITIONDerivative" class="xref" data-knowl="./knowl/xref/DEFINITIONDerivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 12.2.0.3: The Derivative">Definition 12.2.0.3</a>, derived all of our differentiation rules via this definition, and shown — rigorously — that founding Calculus on the theory of limits gives us all of the properties we found useful in <a href="DiffCalcFromPractice.html" class="internal" title="Part I: Differential Calculus: From Practice">Part I</a> of this textbook. At long last, this places a solid, logical, and rigorous foundation underneath the Differential Calculus of Newton and Leibniz.</div>
 <div class="para" id="SUBSECTIONOneOverXIsCont-14">And Bishop Berkeley has nothing left to criticize.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="SECTIONlimits-at-real.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="IntCalc.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
