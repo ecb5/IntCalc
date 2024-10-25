@@ -441,9 +441,11 @@
         </p>
       </example>
     </subsection>
+
     
+
     <subsection xml:id="SUBSECTIONDefIndefInt"> 
-      <title>Functions, Multifunctions and Integral Notation</title>
+      <title>TRY ONE; Functions, Multifunctions and Integral Notation</title>
       <p>
         Because areas and antiderivatives are related we will define
         several variations on the basic summation symbol originally
@@ -461,7 +463,7 @@
           </p>
           <p>
             For simplicity, and because it has become standard, we will
-            almost always refer <m>\int f(x)\dx{x}</m> as the 
+            almost always refer to  <m>\int f(x)\dx{x}</m> as the 
             <term>indefinite integral</term> of <m>f(x)</m>, rather
             than as a multifunction.
           </p>
@@ -474,9 +476,12 @@
         </statement>
       </definition>
       <p>
-        The formula <m>\int 2\dx{x}</m> from <xref
-        ref="EXAMPLEIntegralIndices"></xref> does not express
-        everything we would like it to. In particular, the base of our
+        Once <xref ref="DEFINITIONIndefInt"></xref> is in place we see immediately that the formula <m>\int 2\dx{x}</m> from <xref
+        ref="EXAMPLEIntegralIndices"></xref> now represents an indefinite integral, by definition. This is not what we want.
+      </p>
+      <p>
+        It has some other rather serious shortcomings as well. 
+        In particular, the base of our
         rectangle lies on the line segment <m>[2,6]</m> (for a length
         of <m>4</m>) but nothing in our formula indicates this
         fact. So, to make it explicit  that we want to
@@ -514,32 +519,24 @@
       </aside>
 
       <p>
-        Take care to notice that, although the notations are very
-        similar, the objects being defined in <xref
+        Take care to notice that, although the notations in <xref
         ref="DEFINITIONIndefInt"></xref> and <xref
-        ref="DEFINITIONDefInt"></xref> are very different. An
-        <term>indefinite integral</term> is a multifunction. A
-        <term>definite integral</term> is a number. The reason that we
-        used such similar notation is that they are both built via
-        (infinite) summation of differentials: Cavalieri<rsq/>s
-        <q>lines.</q>
+        ref="DEFINITIONDefInt"></xref> are very similar, but that the
+        objects being defined are very different. An <term>indefinite
+        integral</term> is a multifunction. A <term>definite
+        integral</term> is a number. The reason the notations are so
+        similar is that they are both built via (infinite) summation
+        of differentials (Cavalieri<rsq/>s <q>lines</q>).
       </p>
       <p>
         When we speak of an indefinite integral we are thinking of
         integration as antidifferentiation as in <xref
-        ref="SUBSECTIONIntAsAntiDiff"></xref>.  In the case of <xref
-        ref="EXAMPLESimpleInt1"></xref> we sum the differentials
-        <m>2t\dx{x}</m> but since there are no definite bounds
-        indicated for the summation we interpret this as the
-        antiderivative 
-        <me>\int 2t\dx{t}=t^2+C</me>.
-      </p>
-      <p>
+        ref="SUBSECTIONIntAsAntiDiff"></xref>. 
         When we talk about a definite integral we are thinking of
         integration as summation as in <xref
-        ref="SUBSECTIONIntegrationAsASum"></xref>. We  sum
-        differentials of the form <m>f(x)\dx{x}</m> and end with the
-        total, <m>\int_{x=a}^bf(x)\dx{x} </m> which will be a number.
+        ref="SUBSECTIONIntegrationAsASum"></xref>. 
+      </p>
+      <p>
         In the case of <xref
         ref="EXAMPLEIntegralIndices"></xref> we sum the differentials
         <m>2\dx{x}</m> from <m>2</m> to <m>6</m>. 
@@ -557,9 +554,9 @@
       </p>
 
 
-      <example xml:id="EXAMPLEDefInt1">
-        <title>Some Integrals are Areas</title>
-        <task xml:id="PROBLEMEXAMPLEDefInt1A">
+      <example xml:id="EXAMPLEDefIntIsArea">
+        <title>Some Definite Integrals are Areas</title>
+        <task xml:id="PROBLEMEXAMPLEDefIntIsAreaA">
           <statement>
             <p>
               The formula <me>\int_{x=2}^53x\dx{x} </me>
@@ -580,7 +577,7 @@
           </statement>
 
         </task> 
-        <task xml:id="EXAMPLEDefInt1B">
+        <task xml:id="EXAMPLEDefIntIsAreaB">
           <statement>
             <p>
               The formula <me>\int_{x=-2}^2 -x^2+6\dx{x} </me> 
@@ -600,59 +597,130 @@
       </example>
 
       <example xml:id="EXAMPLEIntNotArea">
-        <title>Not All Integrals are Areas</title>
-        <statement>
+        <title>Not All Definite Integrals are Areas</title>
+        <introduction>
           <p>
-            The formula <me>\int_{x=2}^3-x\dx{x} </me>
-            does not represent an area. Before we explain further
-            see if you can guess why not.
+            It is traditional to show students how to use the definite
+            integral to compute the areas of geometric figures. This
+            is apparently a simple application that you are already
+            familiar with from your previous studies. Unfortunately
+            this often has the unfortunate side effect of giving the
+            impression that a definite integral is always an area.
+            That is not true.
           </p>
-          <p>
-            If we sketch this example as before we get the sketch
-            below.  Again the red lines represent two of
-            Cavalieri<rsq/>s <q>lines.</q>
-          </p>
-          <image source="IC/DefInt3.png" width="60%">
-            <shortdescription></shortdescription>
-          </image>
-          <p>
-            Just as in our first two examples the length of the line
-            in the tan colored region at the left
-            will be given by <m>f(x_1)</m>. Thus the definite
-            integral 
-            <me>\int_{x=-2}^0f(x)\dx{x} \text{ (note the upper index)
-            }</me> represents the area of
-            the tan colored region,  as before.
-          </p>
-          <p>
-            However on the right side of the graph <m>f(x_2)</m> is
-            not equal to the length of Cavalieri<rsq/>s <q>line</q>
-            because <m>f(x_2)</m> is clearly negative (it is
-            below the <m>x</m>-axis). But the length of a line
-            segment is always positive. And this is true for every
-            Cavalieri <q>line</q> in the green region on the
-            right. Thus if we compute <me>\int_{x=0}^3f(x)\dx{x}{}</me> we will get
-            a negative number. Since areas are always positive this
-            can clearly not be the area of the green region. 
-          </p>
-          <p>
-            It should be clear however that
-            <m>\int_{x=0}^3-f(x)\dx{x} </m> will be the area of the
-            green region. Do you see why?
-          </p>
-          <p>
-            This is because for every value of <m>x</m> in the green region the absolute value
-            of <m>f(x)</m> will be the length of the Cavalieri
-            <q>line.</q> And since <m>f(x)\lt0 </m> we see that in
-            the green region <m>-f(x)</m> is the length of the
-            Cavalieri <q>line.</q> Thus the area of the green region
-            is given by
-            <me>
-              \int_{x=0}^3 \abs{f(x)}\dx{x} = \int_{x=0}^3
-              -f(x)\dx{x}
-              </me>.
-          </p>
-        </statement>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>
+              To see this suppose that a car is traveling in a
+              straight line with velocity <m>v(t)
+              \frac{\text{miles}}{\text{hour} }</m> between time
+              <m>t=t_0</m> and <m>t=t_1</m>. We can find the distance
+              traveled in the interval <m>[t_0, t_1]</m> by summing
+              the distance traveled at each instant of travel.
+            </p>
+            <p>
+              That is, we assume that time, consists of infinitesimal
+              moments we<rsq/>ll call <m>\dx{t}</m>. During a single
+              such moment the velocity will be constantly equal
+              <m>v(t)</m> and when the velocity is constant we know
+              that
+              <me>
+                \text{(D)istance } =  \text{(R)ate }\times \text{(T)ime }
+                </me>.
+                Therefore the differential of the distance
+                traveled during the instant <m>\dx{t}</m> will be
+                <me>\dx{D} = v(t)\dx{t}</me>.
+
+                Summing both sides between <m>t_0</m> and <m>t_1</m> we
+                see that 
+                <me>D(t)=\int\dx{D} = \int v(t)\dx{t}</me>.
+                <me>D(t_1)-D(t_0) = \int_{t=t_0}^{t_1}v(t)\dx{t}</me>.
+            </p>
+            <p>
+
+
+              if an instant is the time 
+              If <m>v(t)</m> were a constant, say <m>60
+              \frac{\text{miles}}{\text{hour}} </m> this would simply
+              be a (D)istance <m>=</m>  (R)ate 
+              <m>\times </m> (T)ime problem, but of course we
+              didn<rsq/>t specify <m>v(t)</m> so we can<rsq/>t just
+              assume that the velocity is constant. However during an
+              instantaneous interval <m>[t, t+\dx{t}]</m> the velocity
+              is constant, so during any such time interval the
+              distance traveled will be the velocity, <m>v(t)</m>,
+              times the elapsed time. On any time interval <m>[t,
+              t+\dx{t}]</m> the 
+              <me>v(t)(t+\dx{t} </me>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int_{x=a}^a f(x)\dx{x} = 0</m>
+            </p>
+          </statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              The formula <me>\int_{x=2}^3-x\dx{x} </me>
+              does not represent an area. Before we explain further
+              see if you can guess why not.
+            </p>
+            <p>
+              If we sketch this example as before we get the sketch
+              below.  Again the red lines represent two of
+              Cavalieri<rsq/>s <q>lines.</q>
+            </p>
+            <image source="IC/DefInt3.png" width="60%">
+              <shortdescription></shortdescription>
+            </image>
+            <p>
+              Just as in <xref ref="EXAMPLEDefIntIsArea"></xref>  the length of the line
+              in the tan colored region at the left
+              will be given by <m>f(x_1)</m>. Thus the definite
+              integral 
+              <me>\int_{x=-2}^0f(x)\dx{x} \text{ (note the upper index)
+              }</me> represents the area of
+              the tan colored region,  as before.
+            </p>
+            <p>
+              However on the right side of the graph <m>f(x_2)</m> is
+              not equal to the length of Cavalieri<rsq/>s <q>line</q>
+              because <m>f(x_2)</m> is clearly negative (it is
+              below the <m>x</m>-axis). But the length of a line
+              segment is always positive. And this is true for every
+              Cavalieri <q>line</q> in the green region on the
+              right. Thus if we compute <me>\int_{x=0}^3f(x)\dx{x}{}</me> we will get
+              a negative number. Since areas are always positive this
+              can clearly not be the area of the green region. 
+            </p>
+            <p>
+              It should be clear however that
+              <m>\int_{x=0}^3-f(x)\dx{x} </m> will be the area of the
+              green region. Do you see why?
+            </p>
+            <p>
+              This is because for every value of <m>x</m> in the green region the absolute value
+              of <m>f(x)</m> will be the length of the Cavalieri
+              <q>line.</q> And since <m>f(x)\lt0 </m> we see that in
+              the green region <m>-f(x)</m> is the length of the
+              Cavalieri <q>line.</q> Thus the area of the green region
+              is given by
+              <me>
+                \int_{x=0}^3 \abs{f(x)}\dx{x} = \int_{x=0}^3
+                -f(x)\dx{x}
+                </me>.
+            </p>
+          </statement>
+
+
+        </task>
       </example>
 
 
@@ -689,196 +757,198 @@
           </mrow>
         </mdn>
       </p>
+    </subsection>
+
+    <subsection>
+      <title>Try Zero</title>
+
+
       <p>
-        <alert>        BELOW HERE NEEDS TO BE EDITED.</alert>
+
+        We saw in <xref ref="EXAMPLESimpleInt1"></xref> that 
+        <men xml:id="EQUATIONIntegralNotationModification1">
+          y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C
+          </men>.
+          Moreover, from the initial condition we see that 
+          <me>y(0)=0^2+C=5</me> or <m>C=5</m>. Thus the solution of
+          <xref ref="EQUATIONMultFuncIVP">IVP</xref> is 
+          <me>y(t)=t^2+5</me>. 
       </p>
-<p>
 
-  We saw in <xref ref="EXAMPLESimpleInt1"></xref> that 
-  <men xml:id="EQUATIONIntegralNotationModification1">
-    y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C
-    </men>.
-    Moreover, from the initial condition we see that 
-    <me>y(0)=0^2+C=5</me> or <m>C=5</m>. Thus the solution of
-    <xref ref="EQUATIONMultFuncIVP">IVP</xref> is 
-    <me>y(t)=t^2+5</me>. 
-</p>
+      <p>
+        But as we saw in <xref ref="EXAMPLEIntegralIndices"></xref>
+        the expression <m>\int 2t\dx{t}</m> can also indicate
 
-<p>
-  But as we saw in <xref ref="EXAMPLEIntegralIndices"></xref>
-  the expression <m>\int 2t\dx{t}</m> can also indicate
-
-  the
-  solution of the differential equation is 
-  To accomplish this we need to solve the differential equation
-  <m>\dfdx{y}{t}=2t </m> to find  the multifunction
+        the
+        solution of the differential equation is 
+        To accomplish this we need to solve the differential equation
+        <m>\dfdx{y}{t}=2t </m> to find  the multifunction
 
 
-  and then find the <em>particular</em> function which satisfies
-  the initial condition <m>y(0)=4</m>.
-</p>
-<p>
-  As we saw in <xref ref="EXAMPLESimpleInt1"></xref> the
-  expression <m> \int 2t\dx{t} </m> represents the most general
-  antiderivative (a multifunction) of <m>f(t)=2t</m>.
-</p>
+        and then find the <em>particular</em> function which satisfies
+        the initial condition <m>y(0)=4</m>.
+      </p>
+      <p>
+        As we saw in <xref ref="EXAMPLESimpleInt1"></xref> the
+        expression <m> \int 2t\dx{t} </m> represents the most general
+        antiderivative (a multifunction) of <m>f(t)=2t</m>.
+      </p>
 
-<p>
-  Since <m>y(t)=\int 2t\dx{t} </m> and <m>y(0)=5 </m> we know that
-  the particular function we seek satisfies
-  <men xml:id="EQUATIONIntegralNotationModification2">
-    y(0)= \eval{\int 2t\dx{t}}{t}{0} =5 </men>.  
-    <!-- While our evaluation notation is clear, in this context the -->
-    <!-- expression <m>\eval{\int 2t\dx{t}}{t}{0}</m> is also rather -->
-    <!-- clumsy. So we will modify it slightly  as follows: -->
+      <p>
+        Since <m>y(t)=\int 2t\dx{t} </m> and <m>y(0)=5 </m> we know that
+        the particular function we seek satisfies
+        <men xml:id="EQUATIONIntegralNotationModification2">
+          y(0)= \eval{\int 2t\dx{t}}{t}{0} =5 </men>.  
+          <!-- While our evaluation notation is clear, in this context the -->
+          <!-- expression <m>\eval{\int 2t\dx{t}}{t}{0}</m> is also rather -->
+          <!-- clumsy. So we will modify it slightly  as follows: -->
 
-    <!-- <men xml:id="EQUATIONIntegralNotationModification1"> -->
-    <!--   y(0)= \eval{\int 2t\dx{t}}{t}{0}=\int^{t=0}2t\dx{t}  -->
-    <!--   </men>. -->
-</p>
-<p>
-  While our evaluation notation is clear, an expression like
-  <m>\eval{\int f(t)\dx{t}}{t}{a}</m> is rather clumsy. So we introduce
-  the following slightly more convenient notation:
-  <men>
-    \eval{\int
-    f(t)\dx{t}}{t}{a}=\int^{t=a} f(t)\dx{t}.
-  </men>
+          <!-- <men xml:id="EQUATIONIntegralNotationModification1"> -->
+          <!--   y(0)= \eval{\int 2t\dx{t}}{t}{0}=\int^{t=0}2t\dx{t}  -->
+          <!--   </men>. -->
+      </p>
+      <p>
+        While our evaluation notation is clear, an expression like
+        <m>\eval{\int f(t)\dx{t}}{t}{a}</m> is rather clumsy. So we introduce
+        the following slightly more convenient notation:
+        <men>
+          \eval{\int
+          f(t)\dx{t}}{t}{a}=\int^{t=a} f(t)\dx{t}.
+        </men>
 
-</p>
-
-
-<p>
-  Together equations
-  <xref
-      ref="EQUATIONIntegralNotationModification1"></xref>
-  and         <xref
-  ref="EQUATIONIntegralNotationModification2"></xref>
-  describe the solution of <xref
-  ref="EQUATIONMultFuncIVP">IVP</xref>, but this is  not a very
-  useful description since all we<rsq/>ve really done is
-  re-express <xref ref="EQUATIONMultFuncIVP">IVP</xref> in new
-  notation. 
-</p>
-<p>
-  <xref
-      ref="EQUATIONIntegralNotationModification1">Equation</xref>
-  merely        says that the solution of <xref
-  ref="EQUATIONMultFuncIVP">IVP</xref> is one of the
-  antiderivatives of <m>=2t</m>, and <xref
-  ref="EQUATIONIntegralNotationModification2">equation</xref> simply
-  restates the initial condition. 
-</p>
-<p>
-
-  would be the most we can say. But from <xref
-  ref="EXAMPLESimpleInt1"></xref> we also know that <m>y(t)</m>
-  has the form <me>y(t)=t^2+C</me> for some value of <m>C</m>.
-  Thus
-
-  <men xml:id="EQUATIONIntEval">
-    y(0)= \int^{t=0} 2t\dx{t}= \eval{t^2+C}{t}{0}=0^2+C =5
-    </men>.
-    
-    <!-- It  follows that the solution of <xref -->
-    <!-- ref="EQUATIONMultFuncIVP">IVP</xref>  is the  function <m>y(t)</m> -->
-    <!-- selected from our multifunction <m>\int 2t\dx{t} = t^2+C</m>. -->
-    <!-- Specifically, -->
-    <!-- <me> -->
-    <!--   y(t)=t^2+5 -->
-    <!--   </me>. -->
-</p>
-
-<aside>
-  <title>Note to Self</title>
-  <p>
-    When we introduce the lower index we will drop the <q>t=</q>
-    part of the upper.
-  </p>
-</aside>
-
-<!-- <p> -->
-<!--   More generally, the indefinite integral of <m>f(t)</m>,  at -->
-<!--   <m>t=a</m> is given by -->
-<!--   <men xml:id="EQUATIONIntBotIndx"> -->
-<!--     \eval{\int f(t)\dx{t}}{t}{a} = \int^{t=a} f(t)\dx{t}  -->
-<!--     </men>.  -->
-<!-- </p> -->
-<!-- <p> -->
-<!--   At the moment this change may seem to be hardly worth the effort -->
-<!--   but as we mentioned the integral notation has evolved quite a bit -->
-<!--   over time. <xref ref="EQUATIONIntBotIndx">Formula</xref> is just -->
-<!--   the first modification we<rsq/>ll see. -->
-<!-- </p> -->
+      </p>
 
 
-<p>
-  Using our new notation we see that <xref
-  ref="EQUATIONIntEval">equation</xref> can be expressed as 
-  <me>
-    y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5
-    </me>.
-    The advantage of this notation may not be clear to you yet but as
-    we proceed you will see that it is very helpful, particularly in
-    the  context of 
-    <term>Definite Integration</term> which we will return to in
-    <xref ref="CHAPTERDefiniteIntegration"></xref>.
-</p>
+      <p>
+        Together equations
+        <xref
+            ref="EQUATIONIntegralNotationModification1"></xref>
+        and         <xref
+        ref="EQUATIONIntegralNotationModification2"></xref>
+        describe the solution of <xref
+        ref="EQUATIONMultFuncIVP">IVP</xref>, but this is  not a very
+        useful description since all we<rsq/>ve really done is
+        re-express <xref ref="EQUATIONMultFuncIVP">IVP</xref> in new
+        notation. 
+      </p>
+      <p>
+        <xref
+            ref="EQUATIONIntegralNotationModification1">Equation</xref>
+        merely        says that the solution of <xref
+        ref="EQUATIONMultFuncIVP">IVP</xref> is one of the
+        antiderivatives of <m>=2t</m>, and <xref
+        ref="EQUATIONIntegralNotationModification2">equation</xref> simply
+        restates the initial condition. 
+      </p>
+      <p>
 
-<p>
-  Conceptually, it is all well and good to say that the area
-  is the sum of <q>all the lines</q> that make it up.  But
-  faced with a real problem we<rsq/>ll need more information
-  than that. In particular,  we need to know which lines
-  we<rsq/>re summing. That is, we need to
-  know where to start summing the differential areas (lines)
-  and where to stop.
-</p>
+        would be the most we can say. But from <xref
+        ref="EXAMPLESimpleInt1"></xref> we also know that <m>y(t)</m>
+        has the form <me>y(t)=t^2+C</me> for some value of <m>C</m>.
+        Thus
 
-<p>
-  Since <m>\int 2\dx{x}</m> is the most general antiderivative 
-</p>
-<p>
-  Similar considerations lead the mathematician 
-  <url
-      href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
-      visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
-  Fourier</url> (1768<ndash/>1830)
-  to create the 
-  <term>definite integral</term> by adding
-  <term>indices</term> to the integral sign as follows:
-  <men
-      xml:id="EQUATIONAreaRect2">
-    \int_{x=2}^6 2\dx{x}.
-  </men>
-  The indices in this expression tell us that we begin summing the
-  differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>. 
-</p>
+        <men xml:id="EQUATIONIntEval">
+          y(0)= \int^{t=0} 2t\dx{t}= \eval{t^2+C}{t}{0}=0^2+C =5
+          </men>.
+          
+          <!-- It  follows that the solution of <xref -->
+          <!-- ref="EQUATIONMultFuncIVP">IVP</xref>  is the  function <m>y(t)</m> -->
+          <!-- selected from our multifunction <m>\int 2t\dx{t} = t^2+C</m>. -->
+          <!-- Specifically, -->
+          <!-- <me> -->
+          <!--   y(t)=t^2+5 -->
+          <!--   </me>. -->
+      </p>
+
+      <aside>
+        <title>Note to Self</title>
+        <p>
+          When we introduce the lower index we will drop the <q>t=</q>
+          part of the upper.
+        </p>
+      </aside>
+
+      <!-- <p> -->
+      <!--   More generally, the indefinite integral of <m>f(t)</m>,  at -->
+      <!--   <m>t=a</m> is given by -->
+      <!--   <men xml:id="EQUATIONIntBotIndx"> -->
+      <!--     \eval{\int f(t)\dx{t}}{t}{a} = \int^{t=a} f(t)\dx{t}  -->
+      <!--     </men>.  -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   At the moment this change may seem to be hardly worth the effort -->
+      <!--   but as we mentioned the integral notation has evolved quite a bit -->
+      <!--   over time. <xref ref="EQUATIONIntBotIndx">Formula</xref> is just -->
+      <!--   the first modification we<rsq/>ll see. -->
+      <!-- </p> -->
+
+
+      <p>
+        Using our new notation we see that <xref
+        ref="EQUATIONIntEval">equation</xref> can be expressed as 
+        <me>
+          y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5
+          </me>.
+          The advantage of this notation may not be clear to you yet but as
+          we proceed you will see that it is very helpful, particularly in
+          the  context of 
+          <term>Definite Integration</term> which we will return to in
+          <xref ref="CHAPTERDefiniteIntegration"></xref>.
+      </p>
+
+      <p>
+        Conceptually, it is all well and good to say that the area
+        is the sum of <q>all the lines</q> that make it up.  But
+        faced with a real problem we<rsq/>ll need more information
+        than that. In particular,  we need to know which lines
+        we<rsq/>re summing. That is, we need to
+        know where to start summing the differential areas (lines)
+        and where to stop.
+      </p>
+
+      <p>
+        Since <m>\int 2\dx{x}</m> is the most general antiderivative 
+      </p>
+      <p>
+        Similar considerations lead the mathematician 
+        <url
+            href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
+            visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
+        Fourier</url> (1768<ndash/>1830)
+        to create the 
+        <term>definite integral</term> by adding
+        <term>indices</term> to the integral sign as follows:
+        <men
+            xml:id="EQUATIONAreaRect2">
+          \int_{x=2}^6 2\dx{x}.
+        </men>
+        The indices in this expression tell us that we begin summing the
+        differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>. 
+      </p>
 
 
 
 
-<p>
-  Notice that, despite the complexity of the notation, expressions
-  like <xref ref="EQUATIONAreaRect2">formula</xref> simply represent
-  a specific, or definite number; eight in this case. This is why
-  they are called <term>definite integrals</term>.
-</p>
-<p>
-  Expressions like 
-  <me>
-    \int f(x)\dx{x} </me>, without the indices, represent
-    functions as we saw in <xref
-    ref="CHAPTERIndefiniteIntegration"></xref>.  Integrals without
-    indices are called <term>indefinite integrals</term> to
-    distinquish them from definite integrals with indices. In
-    <xref ref="CHAPTERIndefiniteIntegration"></xref> we just
-    called them integrals because they were the only kind we had
-    encountered at the time.
-</p>
+      <p>
+        Notice that, despite the complexity of the notation, expressions
+        like <xref ref="EQUATIONAreaRect2">formula</xref> simply represent
+        a specific, or definite number; eight in this case. This is why
+        they are called <term>definite integrals</term>.
+      </p>
+      <p>
+        Expressions like 
+        <me>
+          \int f(x)\dx{x} </me>, without the indices, represent
+          functions as we saw in <xref
+          ref="CHAPTERIndefiniteIntegration"></xref>.  Integrals without
+          indices are called <term>indefinite integrals</term> to
+          distinquish them from definite integrals with indices. In
+          <xref ref="CHAPTERIndefiniteIntegration"></xref> we just
+          called them integrals because they were the only kind we had
+          encountered at the time.
+      </p>
 
-
-</subsection>
+    </subsection>
   </section>
 
   <section xml:id="SECTIONAreasAndIntegration">  
@@ -1145,7 +1215,9 @@
     <aside>
       <title>Note to Self</title>
       <p>
-    We need more exercises here.  </p></aside>
+        We need more exercises here.  
+      </p>
+    </aside>
   </section>
 
 
@@ -1280,811 +1352,810 @@
             <md>
               <mrow>
                 \int_{x=a}^bx^2\dx{x}+\int_{x=b}^cx^2\dx{x}\amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{b}+\ftceval{\frac{x^3}{x}}{3}{b}{c}
-</mrow>
-<mrow>
-  \amp{}
-  =\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)
-</mrow>
-<mrow>
-  \amp{}=\frac{c^3}{3}-\frac{a^3}{3}
-</mrow>
-<mrow>
-  \amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{c}
-</mrow>
-</md>
-</p>
-</statement>
-</task>
-</example>
-<p>
-  To see that these properties hold geometrically (without the
-  Fundamental Theorem of Calculus), recall that this really is a sum
-  of differentials. Specifically, we have the following diagram
-  illustrating a generic rectangle that we are summing.
-</p>
+              </mrow>
+              <mrow>
+                \amp{}
+                =\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)
+              </mrow>
+              <mrow>
+                \amp{}=\frac{c^3}{3}-\frac{a^3}{3}
+              </mrow>
+              <mrow>
+                \amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{c}
+              </mrow>
+            </md>
+          </p>
+        </statement>
+      </task>
+      </example>
+      <p>
+        To see that these properties hold geometrically (without the
+        Fundamental Theorem of Calculus), recall that this really is a sum
+        of differentials. Specifically, we have the following diagram
+        illustrating a generic rectangle that we are summing.
+      </p>
 
-<figure>
-<caption>A geometic representation of integration</caption>
-<image source="IC/IntGeom.png" width="40%">
-  <shortdescription>A geometic representation of
-integration</shortdescription>
-</image>
-</figure>
+      <figure>
+        <caption>A geometic representation of integration</caption>
+        <image source="IC/IntGeom.png" width="40%">
+          <shortdescription>A geometic representation of
+          integration</shortdescription>
+        </image>
+      </figure>
 
-<p>
-  When we consider <m>\int_{x=b}^ay\dx{x}</m> with <m>a\lt b</m>,
-  then the difference <m>\dx{x}</m> is a positive change. When we
-  consider <m>\int_{x=b}^a y\dx{x}</m>, then the difference
-  <m>\dx{x}</m> represents a negative change. Hence, we have
-<me>\int_{x=b}^ay\dx{x}=-\int_{x=a}^by\dx{x}.</me>
-</p>
+      <p>
+        When we consider <m>\int_{x=b}^ay\dx{x}</m> with <m>a\lt b</m>,
+        then the difference <m>\dx{x}</m> is a positive change. When we
+        consider <m>\int_{x=b}^a y\dx{x}</m>, then the difference
+        <m>\dx{x}</m> represents a negative change. Hence, we have
+        <me>\int_{x=b}^ay\dx{x}=-\int_{x=a}^by\dx{x}.</me>
+      </p>
 
-<exercise>
-  <p>
-    Use the fact that <me>\int_{x=a}^a=-\int_{x=a}^ay\dx{x}</me> to
-    show that <me>\int_{x=a}^ay\dx{x}=0{}</me>.
-</p>
-</exercise>
-
-<p>
-  As for the last property, <me>\int_{x=a}^bf\dx{x}
-  +\int_{x=b}^cf\dx{x}=\int_{x=a}^cf\dx{x}{}</me> Consider the
-  following diagram where <m>a\lt b \lt c</m>.
-</p>
-
-
-<figure>
-<caption>The sum property of integration</caption>
-<image source="IC/SumProp.png" width="60%">
-  <shortdescription>The sum property of
-integration</shortdescription>
-</image>
-</figure>
-
-<p>
-  If we are summing differentials <m>y\dx{x}</m> from <m>x=a</m> to
-  <m>x=b</m> and summing them from <m>x=b</m> to <m>x=c</m>, then
-  this certainly would be the same as summing them from <m>x=a</m> to
-  <m>x=c</m>. Thus <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
-  \int_{x=a}^cf\dx{x}</me>.
-</p>
-<exercise>
-  <statement>
-    <p>
-      Show that for the case where <m>a\lt{c}\lt{b}</m>, we still
-      have <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
-\int_{x=a}^cf\dx{x}.</me>
-</p>
-</statement>
-<hint>
-  <p>
-    We already know that
-    <me>\int_{x=a}^bf\dx{x}+\int_{x=a}^cf\dx{x} =
-\int_{x=c}^bf\dx{x}.</me> Solve for <m>\int_{x=a}^cf\dx{x}</m>
-and use a previous property.
-</p>
-</hint>
-</exercise>
-
-<problem>
-  <p>
-    Suppose <me>\int_{x=0}^5f\dx{x} = 3, \int_{x=0}^7f\dx{x} =8,
-    \text{ and } \int_{x=0}^5g\dx{x} =2.</me> Compute
-    
-    <ol cols="3" marker="i">
-      
-      <li>
+      <exercise>
         <p>
-<m>\int_{x=0}^5(9f-4g)\dx{x}</m>
-</p>
-</li>
+          Use the fact that <me>\int_{x=a}^a=-\int_{x=a}^ay\dx{x}</me> to
+          show that <me>\int_{x=a}^ay\dx{x}=0{}</me>.
+        </p>
+      </exercise>
 
-<li>
-  <p>
-<m>\int_{x=5}^7f\dx{x} </m>
-</p>
-</li>
-
-<li>
-  <p>
-<m>\int_{x=5}^0g\dx{x} </m>
-</p>
-</li>
-
-<li>
-  <p>
-<m>\int_{x=0}^0f\dx{x} </m>
-</p>
-</li>
-
-<li>
-  <p>
-<m>\int_{t=0}^5f(t)\dx{t} </m>
-</p>
-</li>
-</ol>
-</p>
-</problem>
-<aside>
-<title>Note to self</title>
-
-<p>Make this a PreTeXt reference.</p>
-</aside>
-<p>
-  Part e of the last problem brings up an interesting aspect about
-  definite integrals. Since the final answer is a number, then the
-  variable t is immaterial. For example, we have
-  <me>\int_{x=0}^1x^2\dx{x}=\int_{t=0}^1t^2\dx{t}=\int_{u=0}^1u^2\dx{u}
-  =\frac13.</me> With this in mind, many people call the <m>x</m>,
-  <m>t</m>, or <m>u</m> in the integral a <q>dummy</q> variable. This
-  means that you can substitute any letter in and it will not change
-  the results.
-</p>
-<p>
-  Speaking of substitution, all of the techniques we applied when
-  computing indefinite integrals work just as well for definite
-  integrals. We just need to make sure that the limits of integration
-  match.
-</p>
-<example>
-  <p>
-    Consider the integral <me>\int_{x=2}^3{xe^{x^2}\dx{x}}.</me> If
-    we make the substitution <m>z=x^2</m>, then <m>\dx{z} =2x\dx{x}
-    </m>, and so <me>\int_{x=2}^3xe^{x^2}\dx{x} =\frac12
-    \int_{x=2}^3e^z\dx{z}. </me> At this point, we have two options:
-    we can integrate and change the variable back into <m>x</m> to
-    finish the fundamental theorem of calculus, or we can convert
-    everything over to <m>z</m> and not deal with <m>x</m> anymore.
-    We'll show both. In the first approach, we have <me>\frac12
-    \int_{x=2}^3e^z\dx{z} =\ftceval{\frac12e^z}{x}{2}{3}=
-    \ftceval{\frac12e^{x^2}}{x}{2}{3}=\frac{1}{2}\left(e^9-e^4\right)
-</me>
-</p>
-<p>
-  In the second approach we have that <m>z=x^2</m>, so when
-  <m>x=2</m>, <m>z = 4</m> and when <m>y = 3</m>, <m>z = 9</m>, so
-  that <me>\frac12 \int_{x=2}^3e^z\dx{z}
-  =\ftceval{\frac12e^z}{z}{4}{9}=
-\ftceval{\frac12e^z}{z}{4}{9}=\frac{1}{2}\left(e^9-e^4\right){}</me>
-Whichever you do is entirely up to you, usually one is not easier
-than the other. What you cannot do is to substitute an <m>x</m>
-limit for <m>z</m> or vice versa.
-</p>
-</example>
-
-<example>
-  <p>
-    Computing <me>\int_{x=0}^\pi x\sin(x)\dx{x} </me> we see that
-    integration by parts seems to be the way to go. If we let <m>u =
-    x</m> and <m>\dx{v} = \sin( x) \dx{x} </m>, then
-    
-    <md>
-<mrow> y \amp =x \amp \dx{v} \amp =\sin(x)\dx{x} </mrow>
-<mrow>\dx{u}\amp =\dx{x} \amp v \amp =-\cos(x) </mrow>
-</md>
-Using the <xref ref="IntegrationByParts">integration by parts
-formula</xref>, we have
-<md>
-  <mrow>\int_{x=0}^\pi x\sin(x) \dx{x} \amp
-  {}=\ftceval{-x\cos(x)}{x}{0}{\pi} - \int_{x=0}^\pi
-\cos(x)\dx{x}</mrow>
-<mrow>
-  \amp {}=\left( -\pi \cos(\pi)
-  +0\cos(0)\right)-\ftceval{\sin(x)}{x}{0}{-\pi}
-</mrow>
-<mrow>
-  \amp =(\pi +0)-(0-0)
-</mrow>
-<mrow>
-  \amp =\pi.
-</mrow>
-</md>
-</p>
-</example>
-
-<exercise>
-  <task>
-    <p>
-      Suppose that <m>y=y(x)</m> has the property that <m>y(-x)
-      =y(x)</m>. Thus <m>(x,y)</m> is on the curve of this function
-      exactly when <m>(-x,y)</m> is on the curve.
-</p>
-<p>
-  What would such a curve look like?
-</p>
-</task>
-<task>
-  <statement>
-    <p>
-      Show that <me>\int_{x=-a}^ay(x)\dx{x}
-=2\int_{x=0}^ay(x)\dx{x} </me>
-</p>
-<p>
-  Does this make sense geometrically? Explain.
-</p>
-</statement>
-<hint>
-  <p>
-    We know that <me>\int_{x=-a}^a
-y(x)\dx{x}=\int_{x=-a}^0y(x)\dx{x}+\int_0^ay(x)\dx{x}</me>
-Use the substitution <m>z=-x</m> in the integral on the left.
-</p>
-</hint>
-</task>
-<task>
-  <p>
-    Suppose that <m>y=y(x)</m> has the property
-    <m>y(-x)=-y(x)</m>. Thus <m>(x,y)</m> is on the curve of this
-    function exactly when <m>(-x,-y)</m> is on the curve. What
-    would such a curve look like?
-</p>
-<p>
-Show that in this case <me>\int_{x=-a}^a y(x)\dx{x}=0</me>
-</p>
-<p>
-  Does this make sense geometrically? Explain.
-</p>
-</task>
-</exercise>
-
-<exercise xml:id="FourierSeriesProb">
-<title>Fourier Series</title>
-<introduction>
-  <p>
-    <idx>
-      <h>
-        Fourier Series
-</h>
-</idx>
-Mathematicians (and scientists) use these and other symmetry
-properties with integrals to simplify problems whenever they
-can.
-</p>
-<p>
-  For example, in the theory of acoustics, sine and cosine waves
-  form the <q>pure tones</q> from which all other sound waves are
-  formed. Mathematically, we can think of a general sound wave as
-  a function on a closed interval of time (which constitutes one
-  cycle of the sound wave).  We have some pure tones of varying
-  frequencies defined on the interval <m>[-\pi, \pi] </m>.
-</p>
-
-<figure>
-<caption>Graphical representation of some pure tones</caption>
-<image source="IC/PureTones.png" width="100%">
-  <shortdescription>Various sinusoidal
-curves</shortdescription>
-</image>
-</figure>
-<p>
-<idx><h>Vocabulary</h><h>Fourier Series</h></idx>
-It can be shown (though we won't do it here), that if a
-function <m>f(t)</m> defined on the interval <m>[-\pi, \pi]
-</m> can be written as the <term>Fourier Series:</term>
-<me>a_0+a_1\cos(t)+ b_1 \sin(t) +a_2\cos(2t) + b_2\sin(2t) +
-a_3\cos(3t) +b_3\sin(3t) + \cdots </me> then
-
-<md>
-  <mrow>a_0\amp =\frac{1}{2\pi} \int_{t=-\pi }^\pi f(t)\cos(0t)
-\dx{t}=\frac{1}{2\pi}\int_{t=-\pi}^\pi f(t)\dx{t}</mrow>
-<mrow>a_n\amp =\frac1\pi\int_{-\pi }^\pi f(t)\cos(nt)\dx{t},
-\text{ if } n\ge 1</mrow>
-<mrow>b_n\amp =\frac1\pi\int_{-\pi }^\pi f(t)\sin(nt)\dx{t},
-\text{ if } n\ge 1</mrow>
-</md>
+      <p>
+        As for the last property, <me>\int_{x=a}^bf\dx{x}
+        +\int_{x=b}^cf\dx{x}=\int_{x=a}^cf\dx{x}{}</me> Consider the
+        following diagram where <m>a\lt b \lt c</m>.
+      </p>
 
 
-</p>
-</introduction>
-<task>
-  <statement>
-    <p>
-      With the above set up, suppose that <m>f</m> is symmetric
-      about the <m>y</m> axis. That is <m>f(-t)=f(t)</m>. Show that
-in this case, <m>b_n=0</m> for all <m>n</m> and so <m>f</m>
-can be written exclusively as a sum of cosine waves.
-</p>
-</statement>
-</task>
-<task>
-  <statement>
-    <p>
-      With the above set up, suppose that <m>f</m> is symmetric
-      about the origin. That is <m>f(-t)=-f(t)</m>. Show that in
-      this case, <m>a_n=0</m> for all <m>n</m> and so <m>f</m> can
-      be written exclusively as a sum of sine waves.
-</p>
-</statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Given the symmetries of the graphs above, is this surprising?
-      Explain.
-</p>
-</statement>
-</task>
-</exercise>
+      <figure>
+        <caption>The sum property of integration</caption>
+        <image source="IC/SumProp.png" width="60%">
+          <shortdescription>The sum property of
+          integration</shortdescription>
+        </image>
+      </figure>
 
-</section>
+      <p>
+        If we are summing differentials <m>y\dx{x}</m> from <m>x=a</m> to
+        <m>x=b</m> and summing them from <m>x=b</m> to <m>x=c</m>, then
+        this certainly would be the same as summing them from <m>x=a</m> to
+        <m>x=c</m>. Thus <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
+        \int_{x=a}^cf\dx{x}</me>.
+      </p>
+      <exercise>
+        <statement>
+          <p>
+            Show that for the case where <m>a\lt{c}\lt{b}</m>, we still
+            have <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
+            \int_{x=a}^cf\dx{x}.</me>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            We already know that
+            <me>\int_{x=a}^bf\dx{x}+\int_{x=a}^cf\dx{x} =
+            \int_{x=c}^bf\dx{x}.</me> Solve for <m>\int_{x=a}^cf\dx{x}</m>
+            and use a previous property.
+          </p>
+        </hint>
+      </exercise>
 
+      <problem>
+        <p>
+          Suppose <me>\int_{x=0}^5f\dx{x} = 3, \int_{x=0}^7f\dx{x} =8,
+          \text{ and } \int_{x=0}^5g\dx{x} =2.</me> Compute
+          
+          <ol cols="3" marker="i">
+            
+            <li>
+              <p>
+                <m>\int_{x=0}^5(9f-4g)\dx{x}</m>
+              </p>
+            </li>
 
-      <section  xml:id="AppDefInt"> 
-        <title>Applications of Definite Integrals</title>
+            <li>
+              <p>
+                <m>\int_{x=5}^7f\dx{x} </m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{x=5}^0g\dx{x} </m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{x=0}^0f\dx{x} </m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{t=0}^5f(t)\dx{t} </m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </problem>
+      <aside>
+        <title>Note to self</title>
+
+        <p>Make this a PreTeXt reference.</p>
+      </aside>
+      <p>
+        Part e of the last problem brings up an interesting aspect about
+        definite integrals. Since the final answer is a number, then the
+        variable t is immaterial. For example, we have
+        <me>\int_{x=0}^1x^2\dx{x}=\int_{t=0}^1t^2\dx{t}=\int_{u=0}^1u^2\dx{u}
+        =\frac13.</me> With this in mind, many people call the <m>x</m>,
+        <m>t</m>, or <m>u</m> in the integral a <q>dummy</q> variable. This
+        means that you can substitute any letter in and it will not change
+        the results.
+      </p>
+      <p>
+        Speaking of substitution, all of the techniques we applied when
+        computing indefinite integrals work just as well for definite
+        integrals. We just need to make sure that the limits of integration
+        match.
+      </p>
+      <example>
+        <p>
+          Consider the integral <me>\int_{x=2}^3{xe^{x^2}\dx{x}}.</me> If
+          we make the substitution <m>z=x^2</m>, then <m>\dx{z} =2x\dx{x}
+          </m>, and so <me>\int_{x=2}^3xe^{x^2}\dx{x} =\frac12
+          \int_{x=2}^3e^z\dx{z}. </me> At this point, we have two options:
+          we can integrate and change the variable back into <m>x</m> to
+          finish the fundamental theorem of calculus, or we can convert
+          everything over to <m>z</m> and not deal with <m>x</m> anymore.
+          We'll show both. In the first approach, we have <me>\frac12
+          \int_{x=2}^3e^z\dx{z} =\ftceval{\frac12e^z}{x}{2}{3}=
+          \ftceval{\frac12e^{x^2}}{x}{2}{3}=\frac{1}{2}\left(e^9-e^4\right)
+        </me>
+        </p>
+        <p>
+          In the second approach we have that <m>z=x^2</m>, so when
+          <m>x=2</m>, <m>z = 4</m> and when <m>y = 3</m>, <m>z = 9</m>, so
+          that <me>\frac12 \int_{x=2}^3e^z\dx{z}
+          =\ftceval{\frac12e^z}{z}{4}{9}=
+          \ftceval{\frac12e^z}{z}{4}{9}=\frac{1}{2}\left(e^9-e^4\right){}</me>
+          Whichever you do is entirely up to you, usually one is not easier
+          than the other. What you cannot do is to substitute an <m>x</m>
+          limit for <m>z</m> or vice versa.
+        </p>
+      </example>
+
+      <example>
+        <p>
+          Computing <me>\int_{x=0}^\pi x\sin(x)\dx{x} </me> we see that
+          integration by parts seems to be the way to go. If we let <m>u =
+          x</m> and <m>\dx{v} = \sin( x) \dx{x} </m>, then
+          
+          <md>
+            <mrow> y \amp =x \amp \dx{v} \amp =\sin(x)\dx{x} </mrow>
+            <mrow>\dx{u}\amp =\dx{x} \amp v \amp =-\cos(x) </mrow>
+          </md>
+          Using the <xref ref="IntegrationByParts">integration by parts
+          formula</xref>, we have
+          <md>
+            <mrow>\int_{x=0}^\pi x\sin(x) \dx{x} \amp
+            {}=\ftceval{-x\cos(x)}{x}{0}{\pi} - \int_{x=0}^\pi
+            \cos(x)\dx{x}</mrow>
+            <mrow>
+              \amp {}=\left( -\pi \cos(\pi)
+              +0\cos(0)\right)-\ftceval{\sin(x)}{x}{0}{-\pi}
+            </mrow>
+            <mrow>
+              \amp =(\pi +0)-(0-0)
+            </mrow>
+            <mrow>
+              \amp =\pi.
+            </mrow>
+          </md>
+        </p>
+      </example>
+
+      <exercise>
+        <task>
+          <p>
+            Suppose that <m>y=y(x)</m> has the property that <m>y(-x)
+            =y(x)</m>. Thus <m>(x,y)</m> is on the curve of this function
+            exactly when <m>(-x,y)</m> is on the curve.
+          </p>
+          <p>
+            What would such a curve look like?
+          </p>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Show that <me>\int_{x=-a}^ay(x)\dx{x}
+              =2\int_{x=0}^ay(x)\dx{x} </me>
+            </p>
+            <p>
+              Does this make sense geometrically? Explain.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              We know that <me>\int_{x=-a}^a
+              y(x)\dx{x}=\int_{x=-a}^0y(x)\dx{x}+\int_0^ay(x)\dx{x}</me>
+              Use the substitution <m>z=-x</m> in the integral on the left.
+            </p>
+          </hint>
+        </task>
+        <task>
+          <p>
+            Suppose that <m>y=y(x)</m> has the property
+            <m>y(-x)=-y(x)</m>. Thus <m>(x,y)</m> is on the curve of this
+            function exactly when <m>(-x,-y)</m> is on the curve. What
+            would such a curve look like?
+          </p>
+          <p>
+            Show that in this case <me>\int_{x=-a}^a y(x)\dx{x}=0</me>
+          </p>
+          <p>
+            Does this make sense geometrically? Explain.
+          </p>
+        </task>
+      </exercise>
+
+      <exercise xml:id="FourierSeriesProb">
+        <title>Fourier Series</title>
         <introduction>
           <p>
-            Previously, we put indefinite integrals to work by modeling
-            phenomena with differential equations and antidifferentiating to
-            solve these. We will now put definite integrals to work, but in
-            a slightly different manner. Here we will use a differential to
-            measure some quantity on an infinitely small scale where a
-            simple formula applies. We will <q>integrate</q> all of these
-            quantities to give us a total measurement as an integral. Once
-            we have this, then we can calculate this definite integral by
-            antidifferentiation and applying the Fundamental Theorem of
-            Calculus. Sounds easy, huh! As they say, the devil is in the
-            details, but if you follow this basic format and draw and label
-            pictures, you will be surprised by the things you can
-            accomplish. We'll start with the basic problem of computing an
-            area. This is basic enough that there is a tendency to skip all
-            of the steps in setting up the integral, BUT DON'T! Getting into
-            a good work habit when things are relatively straightforward
-            will help when more complicated applications arise, such as
-            computing a volume, or a center of mass, or a moment of inertia,
-            or the kinetic energy of a spinning object.  If these
-            applications sound daunting at this point, don't worry. We will
-            see that the same sort of <q>divide and conquer</q> strategy
-            applies to a wonderful array of situations. All that changes is
-            what we want to measure. This is where the strategy of setting
-            up things on an infinitely small scale (utilizing pictures) and
-            <q>integrating</q> these together will become invaluable.
+            <idx>
+              <h>
+                Fourier Series
+              </h>
+            </idx>
+            Mathematicians (and scientists) use these and other symmetry
+            properties with integrals to simplify problems whenever they
+            can.
+          </p>
+          <p>
+            For example, in the theory of acoustics, sine and cosine waves
+            form the <q>pure tones</q> from which all other sound waves are
+            formed. Mathematically, we can think of a general sound wave as
+            a function on a closed interval of time (which constitutes one
+            cycle of the sound wave).  We have some pure tones of varying
+            frequencies defined on the interval <m>[-\pi, \pi] </m>.
+          </p>
+
+          <figure>
+            <caption>Graphical representation of some pure tones</caption>
+            <image source="IC/PureTones.png" width="100%">
+              <shortdescription>Various sinusoidal
+              curves</shortdescription>
+            </image>
+          </figure>
+          <p>
+            <idx><h>Vocabulary</h><h>Fourier Series</h></idx>
+            It can be shown (though we won't do it here), that if a
+            function <m>f(t)</m> defined on the interval <m>[-\pi, \pi]
+            </m> can be written as the <term>Fourier Series:</term>
+            <me>a_0+a_1\cos(t)+ b_1 \sin(t) +a_2\cos(2t) + b_2\sin(2t) +
+            a_3\cos(3t) +b_3\sin(3t) + \cdots </me> then
+
+            <md>
+              <mrow>a_0\amp =\frac{1}{2\pi} \int_{t=-\pi }^\pi f(t)\cos(0t)
+              \dx{t}=\frac{1}{2\pi}\int_{t=-\pi}^\pi f(t)\dx{t}</mrow>
+              <mrow>a_n\amp =\frac1\pi\int_{-\pi }^\pi f(t)\cos(nt)\dx{t},
+              \text{ if } n\ge 1</mrow>
+              <mrow>b_n\amp =\frac1\pi\int_{-\pi }^\pi f(t)\sin(nt)\dx{t},
+              \text{ if } n\ge 1</mrow>
+            </md>
+
+
           </p>
         </introduction>
-        <subsection xml:id="AreasByIntegration">
-          <title>Areas</title>
-          <example xml:id="ParabolicSection">
+        <task>
+          <statement>
             <p>
-              Find the area of the following region bounded by the curves
-              <m>y=x^2</m> and <m>y=2x</m>. A graph of this region is below.
+              With the above set up, suppose that <m>f</m> is symmetric
+              about the <m>y</m> axis. That is <m>f(-t)=f(t)</m>. Show that
+              in this case, <m>b_n=0</m> for all <m>n</m> and so <m>f</m>
+              can be written exclusively as a sum of cosine waves.
             </p>
-
-            <figure>
-              <caption>Parabolic Section</caption>
-              <image source="IC/ParabolicSection.png" width="50%">
-                <shortdescription>The area between y equals x and y equals x
-                squared</shortdescription>
-              </image>
-            </figure>
-
+          </statement>
+        </task>
+        <task>
+          <statement>
             <p>
-              Utilizing our strategy, we will draw a single generic
-              rectangle of width <m>\dx{x}</m> whose endpoints lie on the
-              bounding curves. We will label the endpoints of this
-              infinitely thin rectangle on the diagram and draw this
-              rectangle on the side with its length and width labeled. You
-              will see that this will make the computation of areas easier
-              (which is the point). We insist that you follow this routine
-              on every application, no matter how easy it may seem. This
-              will serve you well as the applications get more complicated.
+              With the above set up, suppose that <m>f</m> is symmetric
+              about the origin. That is <m>f(-t)=-f(t)</m>. Show that in
+              this case, <m>a_n=0</m> for all <m>n</m> and so <m>f</m> can
+              be written exclusively as a sum of sine waves.
             </p>
-
-            <figure>
-              <caption>Parabolic Section with differential
-              rectangle</caption>
-              <image source="IC/ParabolicSection2.png" width="50%">
-                <shortdescription>The area between y equals x and y equals x
-                squared with differential rectangle</shortdescription>
-              </image>
-            </figure>
-
+          </statement>
+        </task>
+        <task>
+          <statement>
             <p>
-              This is the set up. Notice that by labeling properly, we could
-              read the area of the rectangle right off the picture. This was
-              the point <mdash/> to divide the problem into easily
-              computable parts. The integral just added them together. To
-              compute this integral, we need to put everything in terms of
-              one variable. This can done by noticing that <m>y_2=2x</m> and
-              <m>y_1=x^2</m>. Thus, we have
-              <md>
-                <mrow>\text{ Total area } =\int_{x=0}^2 (y_2-y_1)\dx{x}\amp
-                =\int_{x=0}^2 (2x-x^2)\dx{x}</mrow>
-                <mrow>
-                  \amp =\eval{\left( x^2-\frac{x^3}{3}\right)}{x}{0}^2
-                </mrow>
-                <mrow>\amp =\left( 2^2-\frac{2^3}{3}\right) - \left(
-                0^2-\frac{0^3}{3}\right) </mrow>
-                <mrow>\amp =\frac43.</mrow>
-              </md>
+              Given the symmetries of the graphs above, is this surprising?
+              Explain.
             </p>
-
-            <p>
-              Of course, there is nothing special about getting everything
-              in terms of <m>x</m>. We could divide the region into
-              horizontal rectangles and put everything in terms of
-              <m>y</m>. We should obtain the same area. Notice that in the
-              previous set up out two points had the same <m>x</m>
-              coordinate. In this one, they will have the same <m>y</m>
-              coordinate.
-            </p>
-
-            <figure>
-              <caption>Parabolic Section in the vertical
-              coordinate</caption>
-              <image source="IC/ParabolicSection3.png" width="50%">
-                <shortdescription>Parabolic Segment in terms of
-                y</shortdescription>
-              </image>
-            </figure>
-
-            <p>
-              Using the fact that <m>(x_2,y)</m> lies on the curve
-              <m>y=x^2</m> and that <m>(x_1,y)</m> lies on the curve
-              <m>y=2x</m>, we get
-              <md>
-                <mrow>\text{ Total Area } \amp = \int_{y=0}^4
-                (x_2-x_1)\dx{y}</mrow>
-                <mrow> \amp = \int_{y=0}^4 (y^\frac12
-                -\frac{y}{2}\dx{y}</mrow>
-                <mrow>\amp =\eval{\left(
-                \frac{2y^\frac32}{3}-\frac{y^2}{4}\right)}{y}{0}^4 </mrow>
-                <mrow>\amp =\left(
-                \frac{2(4)^\frac32}{3}-\frac{4^2}{4}\right) -(0-0)</mrow>
-                <mrow>\amp =\frac{16}{3}-4=\frac43{}</mrow>
-              </md>
-              which is the same answer as before. You can choose whichever
-              way you want; it depends on whether you ultimately want things
-              in terms of <m>x</m> or in terms of <m>y</m>. In this example,
-              one was not much harder than the other. Sometimes the
-              difference in difficulty will help you make the decision. In
-              the next example, we willset up the problem in both ways and
-              then determine which will be the easiest route to
-              follow. After you have developed some experience, you will
-              often be able to determine this before actually writing
-              anything down.
-            </p>
-          </example>
-
-          <example xml:id="ParabSectionHoriz">
-            <p>
-              Compute the area of the following region bounded by
-              <m>y=0</m>, <m>y=x+2</m>, and <m>y=\sqrt{4-x}</m>. If we want
-              everything in terms of <m>x</m> then we need to draw a generic
-              vertical rectangle of width <m>\dx{x}</m>, which we've
-              included in the diagram along with all of the appropriate
-              labeling.
-            </p>
-
-            <figure>
-              <caption></caption>
-              <image source="IC/AreaExample1.png" width="100%">
-                <shortdescription></shortdescription>
-              </image>
-            </figure>
+          </statement>
+        </task>
+      </exercise>
+    </section>
 
 
-            <p>
-              Everything is just as before. The real challenge comes from
-              trying to put everything in terms of <m>x</m> on the entire
-              interval. We have <m>y_1=0</m> but the formula for <m>y_2</m>
-              changes. Remember that the rectangle is a generic rectangle
-              and represents only one of the infinitely many rectangles that
-              are being integrated on the interval from <m>x=-2</m> and
-              <m>x=4</m>. On <m>[-2,0]</m>, <m>y_2=x+2</m>, while on
-              <m>[0,4]</m>, <m>y_2=\sqrt{4-x}</m>.
-            </p>
+<section  xml:id="AppDefInt"> 
+  <title>Applications of Definite Integrals</title>
+  <introduction>
+    <p>
+      Previously, we put indefinite integrals to work by modeling
+      phenomena with differential equations and antidifferentiating to
+      solve these. We will now put definite integrals to work, but in
+      a slightly different manner. Here we will use a differential to
+      measure some quantity on an infinitely small scale where a
+      simple formula applies. We will <q>integrate</q> all of these
+      quantities to give us a total measurement as an integral. Once
+      we have this, then we can calculate this definite integral by
+      antidifferentiation and applying the Fundamental Theorem of
+      Calculus. Sounds easy, huh! As they say, the devil is in the
+      details, but if you follow this basic format and draw and label
+      pictures, you will be surprised by the things you can
+      accomplish. We'll start with the basic problem of computing an
+      area. This is basic enough that there is a tendency to skip all
+      of the steps in setting up the integral, BUT DON'T! Getting into
+      a good work habit when things are relatively straightforward
+      will help when more complicated applications arise, such as
+      computing a volume, or a center of mass, or a moment of inertia,
+      or the kinetic energy of a spinning object.  If these
+      applications sound daunting at this point, don't worry. We will
+      see that the same sort of <q>divide and conquer</q> strategy
+      applies to a wonderful array of situations. All that changes is
+      what we want to measure. This is where the strategy of setting
+      up things on an infinitely small scale (utilizing pictures) and
+      <q>integrating</q> these together will become invaluable.
+    </p>
+  </introduction>
+  <subsection xml:id="AreasByIntegration">
+    <title>Areas</title>
+    <example xml:id="ParabolicSection">
+      <p>
+        Find the area of the following region bounded by the curves
+        <m>y=x^2</m> and <m>y=2x</m>. A graph of this region is below.
+      </p>
 
-            <p>
-              We actually know a way to handle this, utilizing our
-              properties of definite integrals. Specifically, we can do the
-              following
-              
-              <md> <mrow>\text{ Total area
-              }\amp =\int_{x=-2}^4(y_2-y_1)\dx{x}</mrow>
-              <mrow>\amp
-              =\int_{x=-2}^0(y_2-y_1)\dx{x}+\int_{x=0}^4(y_2-y_1)\dx{x}</mrow>
-              <mrow>\amp
-              =\int_{x=-2}^0(x+2-0)\dx{x}+\int_{x=-2}^4\sqrt{4-x}-0\dx{x}</mrow>
-              </md> Each integral can be handled separately, and the total
-              area is the sum of those two values. This is a perfectly
-              acceptable way to do the problem, and each integral is not too
-              bad to do. But how about if we try a horizontal rectangle and
-              putting everything in terms of <m>y</m>?
-            </p>
+      <figure>
+        <caption>Parabolic Section</caption>
+        <image source="IC/ParabolicSection.png" width="50%">
+          <shortdescription>The area between y equals x and y equals x
+          squared</shortdescription>
+        </image>
+      </figure>
 
-            <figure>
-              <caption></caption>
-              <image source="IC/AreaExample2.png" width="100%">
-                <shortdescription></shortdescription>
-              </image>
-            </figure>
-          </example>
-          <problem>
-            <p>
-              Compute the three integrals in the previous example and verify
-              that you get the same total area done either way.
-            </p>
-          </problem>
-          <example xml:id="AreaExam3">
-            <p>
-              In the previous example, we had an alternative to dividing the
-              interval into subintervals, but this is not always the case.
-            </p>
-            <p>
-              Compute the following area bounded by the curves <m>x=0</m>,
-              <m>y=\sin(x) </m>, <m>y=\cos(x) </m>, <m>x=\frac{5\pi
-              }{4}</m>.
-            </p>
+      <p>
+        Utilizing our strategy, we will draw a single generic
+        rectangle of width <m>\dx{x}</m> whose endpoints lie on the
+        bounding curves. We will label the endpoints of this
+        infinitely thin rectangle on the diagram and draw this
+        rectangle on the side with its length and width labeled. You
+        will see that this will make the computation of areas easier
+        (which is the point). We insist that you follow this routine
+        on every application, no matter how easy it may seem. This
+        will serve you well as the applications get more complicated.
+      </p>
+
+      <figure>
+        <caption>Parabolic Section with differential
+        rectangle</caption>
+        <image source="IC/ParabolicSection2.png" width="50%">
+          <shortdescription>The area between y equals x and y equals x
+          squared with differential rectangle</shortdescription>
+        </image>
+      </figure>
+
+      <p>
+        This is the set up. Notice that by labeling properly, we could
+        read the area of the rectangle right off the picture. This was
+        the point <mdash/> to divide the problem into easily
+        computable parts. The integral just added them together. To
+        compute this integral, we need to put everything in terms of
+        one variable. This can done by noticing that <m>y_2=2x</m> and
+        <m>y_1=x^2</m>. Thus, we have
+        <md>
+          <mrow>\text{ Total area } =\int_{x=0}^2 (y_2-y_1)\dx{x}\amp
+          =\int_{x=0}^2 (2x-x^2)\dx{x}</mrow>
+          <mrow>
+            \amp =\eval{\left( x^2-\frac{x^3}{3}\right)}{x}{0}^2
+          </mrow>
+          <mrow>\amp =\left( 2^2-\frac{2^3}{3}\right) - \left(
+          0^2-\frac{0^3}{3}\right) </mrow>
+          <mrow>\amp =\frac43.</mrow>
+        </md>
+      </p>
+
+      <p>
+        Of course, there is nothing special about getting everything
+        in terms of <m>x</m>. We could divide the region into
+        horizontal rectangles and put everything in terms of
+        <m>y</m>. We should obtain the same area. Notice that in the
+        previous set up out two points had the same <m>x</m>
+        coordinate. In this one, they will have the same <m>y</m>
+        coordinate.
+      </p>
+
+      <figure>
+        <caption>Parabolic Section in the vertical
+        coordinate</caption>
+        <image source="IC/ParabolicSection3.png" width="50%">
+          <shortdescription>Parabolic Segment in terms of
+          y</shortdescription>
+        </image>
+      </figure>
+
+      <p>
+        Using the fact that <m>(x_2,y)</m> lies on the curve
+        <m>y=x^2</m> and that <m>(x_1,y)</m> lies on the curve
+        <m>y=2x</m>, we get
+        <md>
+          <mrow>\text{ Total Area } \amp = \int_{y=0}^4
+          (x_2-x_1)\dx{y}</mrow>
+          <mrow> \amp = \int_{y=0}^4 (y^\frac12
+          -\frac{y}{2}\dx{y}</mrow>
+          <mrow>\amp =\eval{\left(
+          \frac{2y^\frac32}{3}-\frac{y^2}{4}\right)}{y}{0}^4 </mrow>
+          <mrow>\amp =\left(
+          \frac{2(4)^\frac32}{3}-\frac{4^2}{4}\right) -(0-0)</mrow>
+          <mrow>\amp =\frac{16}{3}-4=\frac43{}</mrow>
+        </md>
+        which is the same answer as before. You can choose whichever
+        way you want; it depends on whether you ultimately want things
+        in terms of <m>x</m> or in terms of <m>y</m>. In this example,
+        one was not much harder than the other. Sometimes the
+        difference in difficulty will help you make the decision. In
+        the next example, we willset up the problem in both ways and
+        then determine which will be the easiest route to
+        follow. After you have developed some experience, you will
+        often be able to determine this before actually writing
+        anything down.
+      </p>
+    </example>
+
+    <example xml:id="ParabSectionHoriz">
+      <p>
+        Compute the area of the following region bounded by
+        <m>y=0</m>, <m>y=x+2</m>, and <m>y=\sqrt{4-x}</m>. If we want
+        everything in terms of <m>x</m> then we need to draw a generic
+        vertical rectangle of width <m>\dx{x}</m>, which we've
+        included in the diagram along with all of the appropriate
+        labeling.
+      </p>
+
+      <figure>
+        <caption></caption>
+        <image source="IC/AreaExample1.png" width="100%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
 
 
-            <figure  xml:id="SinCosArea">
-              <caption>Computing the area between <m>\sin(x) </m> and
-              <m>\cos(x)</m></caption>
-              <image source="IC/SinCosArea.png" width="90%">
-                <shortdescription>Graphs of the sine of x and cosine of
-                x</shortdescription>
-              </image>
-            </figure>
-            <p>
-              You should be able to see that drawing a horizontal rectangle
-              and getting things in terms of <m>y</m> is going to be a
-              mess. So, let's put in a vertical rectangle and see what
-              happens. Remember that we are only drawing a single generic
-              rectangle, but it could be positioned anywhere on the interval
-              <m>\left[0, \frac{5\pi }{4}\right] </m>.
-            </p>
+      <p>
+        Everything is just as before. The real challenge comes from
+        trying to put everything in terms of <m>x</m> on the entire
+        interval. We have <m>y_1=0</m> but the formula for <m>y_2</m>
+        changes. Remember that the rectangle is a generic rectangle
+        and represents only one of the infinitely many rectangles that
+        are being integrated on the interval from <m>x=-2</m> and
+        <m>x=4</m>. On <m>[-2,0]</m>, <m>y_2=x+2</m>, while on
+        <m>[0,4]</m>, <m>y_2=\sqrt{4-x}</m>.
+      </p>
 
-            <figure  xml:id="SinCosAreaWithRect">
-              <caption>Computing the area between <m>\sin(x) </m> and
-              <m>\cos(x)</m></caption>
-              <image source="IC/SinCosArea2.png" width="90%">
-                <shortdescription>Graphs of the sine of x and cosine of x
-                with vertical differential rectangle</shortdescription>
-              </image>
-            </figure>
-          </example>
-          <problem>
-            <p>
-              Compute the area indicated in the previous example.
-            </p>
-          </problem>
-          <exercise xml:id="ArchimedesParab">
-            <title>Archimedes Quadrature of the Parabola</title>
-            <introduction>
-              <p>
-                In his treatise, Quadrature of the Parabola, Archimedes
-                (287-212 BC) shows that the area of a parabolic 4 segment is
-                <m>3</m> the area of its inscribed triangle.
-              </p>
+      <p>
+        We actually know a way to handle this, utilizing our
+        properties of definite integrals. Specifically, we can do the
+        following
+        
+        <md> <mrow>\text{ Total area
+        }\amp =\int_{x=-2}^4(y_2-y_1)\dx{x}</mrow>
+        <mrow>\amp
+        =\int_{x=-2}^0(y_2-y_1)\dx{x}+\int_{x=0}^4(y_2-y_1)\dx{x}</mrow>
+        <mrow>\amp
+        =\int_{x=-2}^0(x+2-0)\dx{x}+\int_{x=-2}^4\sqrt{4-x}-0\dx{x}</mrow>
+        </md> Each integral can be handled separately, and the total
+        area is the sum of those two values. This is a perfectly
+        acceptable way to do the problem, and each integral is not too
+        bad to do. But how about if we try a horizontal rectangle and
+        putting everything in terms of <m>y</m>?
+      </p>
 
-              <figure  xml:id="ArchParWithTri">
-                <caption></caption>
-                <image source="IC/ArchParSection.png" width="40%">
-                  <shortdescription>A parabolic section with inscribed
-                  triangle</shortdescription>
-                </image>
-              </figure>
+      <figure>
+        <caption></caption>
+        <image source="IC/AreaExample2.png" width="100%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+    </example>
+    <problem>
+      <p>
+        Compute the three integrals in the previous example and verify
+        that you get the same total area done either way.
+      </p>
+    </problem>
+    <example xml:id="AreaExam3">
+      <p>
+        In the previous example, we had an alternative to dividing the
+        interval into subintervals, but this is not always the case.
+      </p>
+      <p>
+        Compute the following area bounded by the curves <m>x=0</m>,
+        <m>y=\sin(x) </m>, <m>y=\cos(x) </m>, <m>x=\frac{5\pi
+        }{4}</m>.
+      </p>
 
-              <p>
-                The <q>inscribed triangle</q> is the one where the distance
-                from point <m>C</m> to segment <m>\overline{AB} </m> is a
-                maximum. That The
-                <q>
-                  inscribed triangle
-                </q>
-                is the one where the distance from point <m>C</m> to segment
-                <m>AB</m>. Archimedes did this without calculus, equations,
-                or coordinate geometry is a tribute to his genius and talent
-                as a mathematician. He didn't even have formulas at his
-                disposal; this is why he stated the area as he did.  We will
-                use calculus to confirm Archimedes<rsq/> result. With this
-                in mind, consider the parabola <m>y=x^2</m>, and let
-                <m>A=(a, a^2)</m>, <m>B=(b, b^2)</m>, and <m>C=(c,c^2)</m>.
-              </p>
 
-              <figure  xml:id="ArchParSecProb">
-                <caption></caption>
-                <image source="IC/ArchParSecProb.png" width="90%">
-                  <shortdescription>The parabolic section with vertex at the
-                  origin.</shortdescription>
-                </image>
-              </figure>
+      <figure  xml:id="SinCosArea">
+        <caption>Computing the area between <m>\sin(x) </m> and
+        <m>\cos(x)</m></caption>
+        <image source="IC/SinCosArea.png" width="90%">
+          <shortdescription>Graphs of the sine of x and cosine of
+          x</shortdescription>
+        </image>
+      </figure>
+      <p>
+        You should be able to see that drawing a horizontal rectangle
+        and getting things in terms of <m>y</m> is going to be a
+        mess. So, let's put in a vertical rectangle and see what
+        happens. Remember that we are only drawing a single generic
+        rectangle, but it could be positioned anywhere on the interval
+        <m>\left[0, \frac{5\pi }{4}\right] </m>.
+      </p>
 
-            </introduction>
-            <task>
-              <statement>
-                <p>
-                  Find the area of <m>\triangle ABC</m> in terms of
-                  <m>a</m>, <m>b</m>, <m>c</m>. [Hint: You can do this in
-                  many ways, but the
-                  <q>
-                    easiest
-                  </q>
-                  way might be to draw a vertical line through <m>C</m> and
-                  use this to divide the triangle into two triangles (only a
-                  suggestion).]
-                </p>
-              </statement>
-            </task>
-            <task>
-              <statement>
-                <p>
-                  Find the coordinates of <m>C</m> which maximizes the
-                  distance from <m>C</m> to segment <m>\overline{AB} </m>
-                  and verify Archimedes<rsq/> <m>r</m> result that the area
-                  of the parabolic segment is <m>3</m> the area of
-                  <m>\triangle ABC</m>.
-                </p>
-              </statement>
-              <hint>
-                <p>
-                  Again, you can maximize this distance in many ways, but
-                  the easiest way might be to notice that the maximum
-                  distance (measured along the perpendicular to
-                  <m>\overline{AB} </m>) occurs when the vertical distance
-                  is maximized (again, only a suggestion).
-                </p>
-              </hint>
+      <figure  xml:id="SinCosAreaWithRect">
+        <caption>Computing the area between <m>\sin(x) </m> and
+        <m>\cos(x)</m></caption>
+        <image source="IC/SinCosArea2.png" width="90%">
+          <shortdescription>Graphs of the sine of x and cosine of x
+          with vertical differential rectangle</shortdescription>
+        </image>
+      </figure>
+    </example>
+    <problem>
+      <p>
+        Compute the area indicated in the previous example.
+      </p>
+    </problem>
+    <exercise xml:id="ArchimedesParab">
+      <title>Archimedes Quadrature of the Parabola</title>
+      <introduction>
+        <p>
+          In his treatise, Quadrature of the Parabola, Archimedes
+          (287-212 BC) shows that the area of a parabolic 4 segment is
+          <m>3</m> the area of its inscribed triangle.
+        </p>
 
-            </task>
+        <figure  xml:id="ArchParWithTri">
+          <caption></caption>
+          <image source="IC/ArchParSection.png" width="40%">
+            <shortdescription>A parabolic section with inscribed
+            triangle</shortdescription>
+          </image>
+        </figure>
 
-          </exercise>
+        <p>
+          The <q>inscribed triangle</q> is the one where the distance
+          from point <m>C</m> to segment <m>\overline{AB} </m> is a
+          maximum. That The
+          <q>
+            inscribed triangle
+          </q>
+          is the one where the distance from point <m>C</m> to segment
+          <m>AB</m>. Archimedes did this without calculus, equations,
+          or coordinate geometry is a tribute to his genius and talent
+          as a mathematician. He didn't even have formulas at his
+          disposal; this is why he stated the area as he did.  We will
+          use calculus to confirm Archimedes<rsq/> result. With this
+          in mind, consider the parabola <m>y=x^2</m>, and let
+          <m>A=(a, a^2)</m>, <m>B=(b, b^2)</m>, and <m>C=(c,c^2)</m>.
+        </p>
+
+        <figure  xml:id="ArchParSecProb">
+          <caption></caption>
+          <image source="IC/ArchParSecProb.png" width="90%">
+            <shortdescription>The parabolic section with vertex at the
+            origin.</shortdescription>
+          </image>
+        </figure>
+
+      </introduction>
+      <task>
+        <statement>
           <p>
-            Recall that in Problem 4.5.5, we looked a cycloid. This was a
-            curve traced out by a point <m>P</m> on a circle as the circle
-            rolls along a straight line.
+            Find the area of <m>\triangle ABC</m> in terms of
+            <m>a</m>, <m>b</m>, <m>c</m>. [Hint: You can do this in
+            many ways, but the
+            <q>
+              easiest
+            </q>
+            way might be to draw a vertical line through <m>C</m> and
+            use this to divide the triangle into two triangles (only a
+            suggestion).]
           </p>
-
-
-          <figure  xml:id="fig-CycloidArea">
-            <caption></caption>
-            <image source="IC/CycloidArea.png" width="70%">
-              <shortdescription>A cycloid generated by a rolling
-              circle.</shortdescription>
-            </image>
-          </figure>
-
+        </statement>
+      </task>
+      <task>
+        <statement>
           <p>
-            In that problem, we mentioned that this curve has fascinated
-            mathematicians for a long time. We also had you show that the
-            coordinates of the point <m>P</m> are given by <me>x=a(\theta
-            -\sin (\theta) \text{ and } y=a(1-\cos (\theta )</me>
-
-            Galileo actually gave the curve its name in 1599 (though he was
-            not the first to study it) and attempted to compute the area
-            under one arch. He couldn't accomplish this mathematically, but
-            by weighing pieces of metal, one in the shape of a cycloid and
-            one in the shape of its generating circle, Galileo surmised that
-            the area of the cycloid was approximately three times that of
-            the circle. In 1634, Gilles Personne de Roberval showed that the
-            area under one arch of the cycloid is exactly three times that
-            of its generating circle. This predated the invention of
-            calculus, but he utilized infinitely thin rectangles very much
-            like we have been doing.
+            Find the coordinates of <m>C</m> which maximizes the
+            distance from <m>C</m> to segment <m>\overline{AB} </m>
+            and verify Archimedes<rsq/> <m>r</m> result that the area
+            of the parabolic segment is <m>3</m> the area of
+            <m>\triangle ABC</m>.
           </p>
-
-          <exercise xml:id="exer-CycloidArea">
-            <title>The Area Under a Cycloid</title>
-            <statement>
-              <p>
-                <idx><h>Area</h><h> of a cycloid</h></idx> Show that the
-                area under one arch of the above cycloid is <m>\frac{3\pi
-                }{2}</m>, so it is, in fact, three times the area of the
-                generating circle.
-              </p>
-            </statement>
-            <hint>
-              <p>
-                You can set up the area with vertical rectangles just as
-                before, only now get <m>\dx{x}</m> in terms of <m>\dx{\theta
-                }</m>.
-              </p>
-            </hint>
-          </exercise>
-
-        </subsection>
-
-        <subsection  xml:id="VolumesByIntegration"> 
-          <title>Volumes</title>
+        </statement>
+        <hint>
           <p>
-            As we stated before and as you have seen, we have been focusing
-            on areas to help us understand properties of definite
-            integrals. However, this idea of adding infinitesimal quantities
-            can be applied in a number of other applications. Keep in mind
-            our general strategy of applying a relatively simple formula on
-            an infinitely small piece and then integrating (adding) these
-            infinitely small quantities. Take, for example, the volume of
-            the following box.
+            Again, you can maximize this distance in many ways, but
+            the easiest way might be to notice that the maximum
+            distance (measured along the perpendicular to
+            <m>\overline{AB} </m>) occurs when the vertical distance
+            is maximized (again, only a suggestion).
           </p>
+        </hint>
 
-          <figure  xml:id="GenericRectangle">
-            <caption></caption>
-            <image source="IC/GenRect.png" width="50%">
-              <shortdescription>A generic rectangle</shortdescription>
-            </image>
-          </figure>
-          <p>
-            You probably remember the volume of this box as length times
-            width times height. Let's restate the volume in this way
-            <me>\text{Volume of a box} = \text{Area of a face} \times
-            \text{Thickness}.</me> The advantage of thinking this way is
-            that it applies to more general objects. For example, the volume
-            of the following circular cylinder and prism follow the same
-            formula.
-          </p>
+      </task>
 
-          <figure  xml:id="VolEqualsFaceXThick">
-            <caption></caption>
-            <image source="IC/VolFacThik.png" width="80%">
-              <shortdescription>Pictures and formulas for the volume of a
-              cylinder and a triangular wedge</shortdescription>
-            </image>
-          </figure>
-          <p>
-            This idea even applies to slabs that have an irregular face.
-          </p>
+    </exercise>
+    <p>
+      Recall that in Problem 4.5.5, we looked a cycloid. This was a
+      curve traced out by a point <m>P</m> on a circle as the circle
+      rolls along a straight line.
+    </p>
 
-          <figure  xml:id="VolEqualsFaceXThick2">
-            <caption></caption>
-            <image source="IC/FaceXThickIrreg.png" width="50%">
-              <shortdescription>Picture and formula for the volume of an
-              irregular slab.</shortdescription>
-            </image>
-          </figure>
-          <p>
-            Combining this formula with our idea of dividing and integrating
-            provides a way to compute the volumes of more general
-            solids. For example, if you use the following cone to fill the
-            corresponding cylinder, it seems that it takes three cones to
-            fill the cylinder.
-          </p>
 
-          <figure  xml:id="ConeAndCyl">
-            <caption></caption>
-            <image source="IC/ConeCyl.png" width="50%">
-              <shortdescription>A cone and cylinder of the same
-              height.</shortdescription>
-            </image>
-          </figure>
-          <p>
-            Let's verify this. We know that the volume of the cylinder is
-            given by <m>\pi R^2</m>. We need to show that the volume of the
-            cone is <m>1/3</m> of that. With this in mind, we will put in a
-            vertical axis, label it <m>y</m>, and divide the cone into
-            infinitely thin slices. As before, we will only draw one generic
-            slice, but you must imagine that this cone is comprised of
-            infinitely many such slices stacked.
-          </p>
+    <figure  xml:id="fig-CycloidArea">
+      <caption></caption>
+      <image source="IC/CycloidArea.png" width="70%">
+        <shortdescription>A cycloid generated by a rolling
+        circle.</shortdescription>
+      </image>
+    </figure>
 
-          <figure  xml:id="VolCone">
-            <caption></caption>
-            <image source="IC/VolCone.png" width="60%">
-              <shortdescription>Cone with generic horizontal
-              rectangle.</shortdescription>
-            </image>
-          </figure>
-          <p>
-            Drawing this generic slice separately we can compute its volume.
-          </p>
+    <p>
+      In that problem, we mentioned that this curve has fascinated
+      mathematicians for a long time. We also had you show that the
+      coordinates of the point <m>P</m> are given by <me>x=a(\theta
+      -\sin (\theta) \text{ and } y=a(1-\cos (\theta )</me>
 
-          <figure  xml:id="ConeSlice">
-            <caption></caption>
-            <image source="IC/ConeSlice.png" width="50%">
-              <shortdescription>A generic slice from a cone and a formula
-              for its volume.</shortdescription>
-            </image>
-          </figure>
-          <p>
-            Integrating these volumes, we get <me>\text{ Volume of cone} =
-            \int_{y=0}^R{\pi r^2\dx{y}}.</me>
-          </p>
-          <p>
-            What is left now is to put <m>r</m> in terms of <m>y</m> so the
-            integral can be computed. This can be done by noticing that we
-            have similar triangles.
-          </p>
+      Galileo actually gave the curve its name in 1599 (though he was
+      not the first to study it) and attempted to compute the area
+      under one arch. He couldn't accomplish this mathematically, but
+      by weighing pieces of metal, one in the shape of a cycloid and
+      one in the shape of its generating circle, Galileo surmised that
+      the area of the cycloid was approximately three times that of
+      the circle. In 1634, Gilles Personne de Roberval showed that the
+      area under one arch of the cycloid is exactly three times that
+      of its generating circle. This predated the invention of
+      calculus, but he utilized infinitely thin rectangles very much
+      like we have been doing.
+    </p>
 
-          <figure  xml:id="ConeSimTri">
-            <caption></caption>
+    <exercise xml:id="exer-CycloidArea">
+      <title>The Area Under a Cycloid</title>
+      <statement>
+        <p>
+          <idx><h>Area</h><h> of a cycloid</h></idx> Show that the
+          area under one arch of the above cycloid is <m>\frac{3\pi
+          }{2}</m>, so it is, in fact, three times the area of the
+          generating circle.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You can set up the area with vertical rectangles just as
+          before, only now get <m>\dx{x}</m> in terms of <m>\dx{\theta
+          }</m>.
+        </p>
+      </hint>
+    </exercise>
+
+  </subsection>
+
+  <subsection  xml:id="VolumesByIntegration"> 
+    <title>Volumes</title>
+    <p>
+      As we stated before and as you have seen, we have been focusing
+      on areas to help us understand properties of definite
+      integrals. However, this idea of adding infinitesimal quantities
+      can be applied in a number of other applications. Keep in mind
+      our general strategy of applying a relatively simple formula on
+      an infinitely small piece and then integrating (adding) these
+      infinitely small quantities. Take, for example, the volume of
+      the following box.
+    </p>
+
+    <figure  xml:id="GenericRectangle">
+      <caption></caption>
+      <image source="IC/GenRect.png" width="50%">
+        <shortdescription>A generic rectangle</shortdescription>
+      </image>
+    </figure>
+    <p>
+      You probably remember the volume of this box as length times
+      width times height. Let's restate the volume in this way
+      <me>\text{Volume of a box} = \text{Area of a face} \times
+      \text{Thickness}.</me> The advantage of thinking this way is
+      that it applies to more general objects. For example, the volume
+      of the following circular cylinder and prism follow the same
+      formula.
+    </p>
+
+    <figure  xml:id="VolEqualsFaceXThick">
+      <caption></caption>
+      <image source="IC/VolFacThik.png" width="80%">
+        <shortdescription>Pictures and formulas for the volume of a
+        cylinder and a triangular wedge</shortdescription>
+      </image>
+    </figure>
+    <p>
+      This idea even applies to slabs that have an irregular face.
+    </p>
+
+    <figure  xml:id="VolEqualsFaceXThick2">
+      <caption></caption>
+      <image source="IC/FaceXThickIrreg.png" width="50%">
+        <shortdescription>Picture and formula for the volume of an
+        irregular slab.</shortdescription>
+      </image>
+    </figure>
+    <p>
+      Combining this formula with our idea of dividing and integrating
+      provides a way to compute the volumes of more general
+      solids. For example, if you use the following cone to fill the
+      corresponding cylinder, it seems that it takes three cones to
+      fill the cylinder.
+    </p>
+
+    <figure  xml:id="ConeAndCyl">
+      <caption></caption>
+      <image source="IC/ConeCyl.png" width="50%">
+        <shortdescription>A cone and cylinder of the same
+        height.</shortdescription>
+      </image>
+    </figure>
+    <p>
+      Let's verify this. We know that the volume of the cylinder is
+      given by <m>\pi R^2</m>. We need to show that the volume of the
+      cone is <m>1/3</m> of that. With this in mind, we will put in a
+      vertical axis, label it <m>y</m>, and divide the cone into
+      infinitely thin slices. As before, we will only draw one generic
+      slice, but you must imagine that this cone is comprised of
+      infinitely many such slices stacked.
+    </p>
+
+    <figure  xml:id="VolCone">
+      <caption></caption>
+      <image source="IC/VolCone.png" width="60%">
+        <shortdescription>Cone with generic horizontal
+        rectangle.</shortdescription>
+      </image>
+    </figure>
+    <p>
+      Drawing this generic slice separately we can compute its volume.
+    </p>
+
+    <figure  xml:id="ConeSlice">
+      <caption></caption>
+      <image source="IC/ConeSlice.png" width="50%">
+        <shortdescription>A generic slice from a cone and a formula
+        for its volume.</shortdescription>
+      </image>
+    </figure>
+    <p>
+      Integrating these volumes, we get <me>\text{ Volume of cone} =
+      \int_{y=0}^R{\pi r^2\dx{y}}.</me>
+    </p>
+    <p>
+      What is left now is to put <m>r</m> in terms of <m>y</m> so the
+      integral can be computed. This can be done by noticing that we
+      have similar triangles.
+    </p>
+
+    <figure  xml:id="ConeSimTri">
+      <caption></caption>
             <image source="IC/ConeSimTri.png" width="70%">
               <shortdescription>A right triangle with a similar right
               triangle inside.</shortdescription>
