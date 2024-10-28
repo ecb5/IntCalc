@@ -344,152 +344,452 @@
 
     </subsection>
 
-    <subsection  xml:id="SUBSECTIONCavLeibNotation"> 
+    <subsection  xml:id="SUBSECTIONCavLeibNotation">
       <title>Cavalieri, Differentials, and Definite Integration</title>
-      <!-- <p> -->
-      <!--   Since our purpose is to use Cavalieri<rsq/>s method to inform -->
-      <!--   the use of Calculus in problem solving we will now reinterpret -->
-      <!--   Cavalieri using differentials and differential notation. -->
-      <!-- </p> -->
       <p>
         In view of our discussion in <xref
         ref="SECTIONThinkingAboutIntegration"></xref> it should be
         clear that the <q>indivisibles</q> Cavalieri<rsq/>s is
-        <q>adding up</q> are differentials. For example, in <xref
-        ref="FIGUREAllLines1"></xref> it is clear that the lines have
-        no width but somehow their <q>sum</q> will be a non-zero area.
-        Instead of zero, we will think of the width a line as a
-        differential, say <m>\dx{x}</m>.
+        <q>adding up</q> are the same things as Leibniz<rsq/>
+        differentials so we will adjust our point of view
+        accordingly. In <xref ref="FIGUREAllLines1"></xref> for
+        example, instead of thinking of the <q>lines</q> as line
+        segments with zero width we think of them as having a
+        differential width <m>\dx{x}\neq 0</m>.
       </p>
       <p>
         In that case a rectangle consists of <q>all the lines</q> with
-        differential area: <me>(\text{height})\dx{x}</me> so, as in
+        differential area: <me>(\text{length})\times\dx{x}</me>. Using the
+        summation notation we saw in
         <xref ref="SECTIONThinkingAboutIntegration"></xref> the area
-        of a rectangle is given by the expression
-        <me>\int(\text{height})\dx{x}</me>. Notice that the real
-        number, height, multiplied by differential <m>\dx{x}</m> is a
-        differential as we observed in <xref
+        of a rectangle is thus given by the integral
+        <men xml:id="EQUATIONCavRect">\int(\text{length})\dx{x}</men>. Notice that since the quantity,
+        <m>(\text{length}) \times \dx{x}</m> is a
+        differential (as we observed in <xref
         ref="DIGRESSIONDifferentialNotation"
-        text="custom">DIGRESSION:Differential Notation</xref>.
+        text="custom">DIGRESSION:Differential Notation</xref>) <xref
+        ref="EQUATIONCavRect">formula</xref> has exactly the same form
+        as an integral, as defined in <xref
+        ref="SECTIONThinkingAboutIntegration"></xref>, it appears that
+        we can compute the area of this rectangle , if only we can find a way
+        to compute the integral <m>\int \text{(length)}\dx{x}</m>.
       </p>
+      <aside>
+        <title>Comment</title>
+        <p>
+          Yes we know this area can be found by simpler means. We don<rsq/>t care
+          about that. We want to find a way to <em>express</em> this
+          simple area using the integral notation so that we can
+          write down expressions for more complicated areas and,
+          hopefully, find ways to compute them. Stick with
+          us. We<rsq/>re just getting started.
+        </p>
+        <!-- <p> -->
+        <!--   In fact, ultimately we don<rsq/>t really care (much) about -->
+        <!--   computing areas <foreign>per se</foreign>. For us the -->
+        <!--   problem of computing area is just a relatively simple -->
+        <!--   context in which we can develop the skills that will help -->
+        <!--   us compute other quantities that we do care about. -->
+        <!-- </p> -->
+      </aside>
+
+
       <p>
-        But the formula above doesn<rsq/>t quite give us everything
-        we<rsq/>d like. An example will be helpful.
+        But the notation we<rsq/>ve used here isn<rsq/>t quite as
+        useful, or expressive as we<rsq/>d like so we will pause for a
+        moment to refine our notation.  An example will be helpful.
       </p>
 
       <example xml:id="EXAMPLEIntegralIndices">
         <p>
-          To see what we mean suppose we want to express the area of a
-          rectangle with height equal to <m>2</m> and width equal to
-          <m>4</m>.
-        </p>
-        <aside>
-          <title>Comment</title>
-          <p>
-            Yes we know this area is <m>8</m>. We don<rsq/>t care
-            about that. We want to find a way to <em>express</em> this
-            simple area using the notation of Calculus so that we can
-            write down expressions for more complicated areas and,
-            hopefully, find ways to actually compute them.
-          </p>
-          <p>
-            In fact, ultimately we don<rsq/>t really care (much) about
-            computing areas <foreign>per se</foreign>. For us the
-            problem of computing area is just a relatively simple
-            context in which we can develop the skills that will help
-            us compute other quantities that we do care about.
-          </p>
-        </aside>
-        <p>
-          We begin by embedding our rectangle in an <m>x-y</m>
-          coordinate system. In the sketch below the red rectangle is
-          one of Cavalieri<rsq/>s <q>all the lines</q> that make up
-          the rectangle.
+          Suppose we want to compute the area of the rectangle in the
+          sketch below using an integral.
         </p>
         <image source="IC/RectangleAreaDiff.png" width="60%">
           <shortdescription></shortdescription>
         </image>
         <p>
-          Clearly the <q>area</q> of this line is <m>2\dx{x}</m>, so
-          the area  of the entire rectangle must be  given by
-          the sum of these, or
-          <men xml:id="EQUATIONIntCav"> \int 2\dx{x} </men>. 
-          Moreover,
-          since this is a <m>2\times 4</m> rectangle we must have
-          <m> \int 2\dx{x} =8</m>, right?
-        </p>
-        <p>
-          This is correct 
-          but there is a problem with our notation. Do you see it? If
-          our rectangle had different dimensions, say <m>2\times
-          5</m>, then <m> \int 2\dx{x}</m> would be equal to <m>10</m>.  A notation
-          that uses exactly the same symbols to represent two
-          different numbers is inconvenient at best.
-        </p>
-        <p>
-          But it gets worse!  Recall that in <xref
-          ref="EQUATIONIntCav">formula</xref>  we used exactly the
-          same notation to represent the most
-          general antiderivative (multifunction) of <m>f(x)= 2</m>,
-          which is <m>2x+C</m>.
-        </p>
-        <p>
-          We can<rsq/>t have this. The meaning of the expression
-          <m>\int 2\dx{t}</m> can<rsq/>t be <m>8</m> sometimes,
-          <m>10</m> at other times, and a multifunction at yet
-          other times. Our notation needs to be unambiguous.
+          In our sketch the red line represents one of the Cavalieri
+          lines to be summed.
+          <!-- Each such line has a height of <m>2</m> -->
+          <!-- and a width of <m>\dx{x}</m> so we need to add up the -->
+          <!-- contribution of each line to the total area.  -->
+          Observe that if <m>A</m> represents the area of the
+          rectangle in black then <m>\dx{A}=2\dx{x}</m>. That is, the
+          quantity <m>2\dx{x}</m> is the differential of the area
+          <m>A</m>. So to compute <m>A</m> we need to find a way to
+          compute the sum
+          <men xml:id="EQUATIONIntCav">
+            A=\int\dx{A}=\int 2\dx{x}
+          </men>
+          starting at <m>x=2</m> and ending at <m>x=6</m>.
         </p>
       </example>
-    </subsection>
-
-    
-
-    <subsection xml:id="SUBSECTIONDefIndefInt"> 
-      <title>TRY ONE; Functions, Multifunctions and Integral Notation</title>
       <p>
-        Because areas and antiderivatives are related we will define
-        several variations on the basic summation symbol originally
-        invented by Leibniz.
+        There are two problems with the notation we used in <xref
+        ref="EQUATIONIntCav">equation</xref>.
+
+        <dl>
+          <li>
+            <title>First Problem:</title>
+            <p>
+              <xref ref="EQUATIONIntCav">Equation</xref> does not
+              reflect the fact that we begin summing our differentials
+              at <m>x=2</m> and end at <m>x=6</m>. If we stick with this
+              notation then another rectangle with other beginning and
+              ending points would be written in exactly the same
+              way. We will find it useful to reduce this ambiguity by
+              specifying the interval <m>(2,6)</m> within our definite integral
+              notation.
+            </p>
+          </li>
+          <li>
+            <title>Second Problem:</title>
+            <p>
+              The notation in <xref
+              ref="EQUATIONIntCav">equation</xref> is exactly the same
+              notation we used in <xref
+              ref="SUBSECTIONIntegrationAsAntiDerivative"></xref> to
+              designate the most general antiderivative (multifunction).
+            </p>
+          </li>
+        </dl>
+      </p>
+      <p>
+        The purpose of notation is to clarify not to befuddle. A
+        notation that can be read as either a number (the area of a
+        rectangle in this case) or as an antiderivative, depending
+        on the context of the discussion is not an ideal notation.
+      </p>
+
+      <aside>
+        <title>Comment</title>
+        <p>
+          To be sure, just as there are words in English with more
+          than one meaning, there are also symbols in mathematics
+          with more than one meaning. The problem can<rsq/>t be
+          avoided entirely
+        </p>
+        <p>
+          This flexibility and redundancy is what gives English
+          its beauty and expressive power.
+          But in mathematics it just leads to unnecessary confusion,
+          and is best avoided if possible.
+        </p>
+      </aside>
+      <p>
+        We<rsq/>d like to have a notation that
+        reflects the fact that
+        the antiderivative and the area computation are
+        related (both are built from the summation of
+        differentials), but at the same time clearly distinguishes
+        between them.   It will  take a while to build up all of the
+        necessary ideas so  be patient.
+      </p>
+      <p>
+        We  can address the second problem by simply reserving the
+        notation <m>\int f(x)\dx{x}</m> for the most general
+        antiderivative as we originally used it.  We make the
+        following definition.
       </p>
       <definition xml:id="DEFINITIONIndefInt">
         <title>Indefinite Integral</title>
         <idx><h>Integral</h><h>Indefinite</h></idx>
-        <idx><h>Definition</h><h>Indefinite Integral</h></idx>     
+        <idx><h>Definition</h><h>Indefinite Integral</h></idx>
         <statement>
           <p>
-            Given <m>f(x)</m> the formula <me>\int f(x)\dx{x}</me> 
+            Given the function <m>f(x)</m> the formula <me>\int f(x)\dx{x}</me>
             <em>always</em> represents the multifunction whose
-            derivative is <m>f(x)</m>. 
+            derivative is <m>f(x)</m>. Such an expression is called an
+            <term>indefinite integral</term>.
           </p>
+          
           <p>
-            For simplicity, and because it has become standard, we will
-            almost always refer to  <m>\int f(x)\dx{x}</m> as the 
-            <term>indefinite integral</term> of <m>f(x)</m>, rather
-            than as a multifunction.
+            In particular, if <m>F(x)</m> is any antiderivative of
+            <m>f(x)</m> Then
+            <men xml:id="EQUATIONIndefIntDef">\int f(x)\dx{x} = F(x)
+            +C</men>, where, as before, <m>C</m> represents all possible constants.
           </p>
-          <p>
-            Because <m>f(x)</m> and <m>\int f(x)\dx{x}</m> are so
-            closely related it is common to define <me>F(x)=\int
-            f(x)\dx{x}</me> and call <m>F(x)</m> the indefinite
-            integral of <m>f(x)</m>, just because it is less to write.
-          </p>
+          <!--   <p> -->
+          <!--     For simplicity, and because it has become standard, we will -->
+          <!--     almost always refer to  <m>\int f(x)\dx{x}</m> as the  -->
+          <!--     <term>indefinite integral</term> of <m>f(x)</m>, rather -->
+          <!--     than as a multifunction. -->
+          <!--   </p> -->
+          <!--   <p> -->
+          <!--     Because <m>f(x)</m> and <m>\int f(x)\dx{x}</m> are so -->
+          <!--     closely related it is common to define <me>F(x)=\int -->
+          <!--     f(x)\dx{x}</me> and call <m>F(x)</m> the indefinite -->
+          <!--     integral of <m>f(x)</m>, just because it is less to write. -->
+          <!--   </p> -->
         </statement>
       </definition>
       <p>
-        Once <xref ref="DEFINITIONIndefInt"></xref> is in place we see immediately that the formula <m>\int 2\dx{x}</m> from <xref
-        ref="EXAMPLEIntegralIndices"></xref> now represents an indefinite integral, by definition. This is not what we want.
+        <xref ref="DEFINITIONIndefInt">Definition</xref>
+        formalizes the work we did in <xref
+        ref="CHAPTERIndefiniteIntegration"></xref>, and
+        establishes  the notation we used there as the standard
+        notation for an antidifferentiaton. Our next
+        definition is new. It will establish the standard notation we will use
+        to distinguish the antiderivative problems in <xref
+        ref="CHAPTERIndefiniteIntegration"></xref> and the area
+        problem in <xref ref="EXAMPLEIntegralIndices"></xref>, as well
+        as other kinds of problems that can be addressed using the
+        same ideas. Since the underlying ideas are related the
+        notations we use will also be related. You<rsq/>ll need to
+        read the notation carefully to be sure you understand which
+        kind of problem you are looking at.
+      </p>
+
+      <!-- <p> -->
+      <!--   To address the first problem we modify the notation for -->
+      <!--   <xref ref="DEFINITIONIndefInt"></xref> slightly so as to -->
+      <!--   indicate where to start and where to stop summing the -->
+      <!--   differentials. -->
+      <!-- </p> -->
+
+      <p>
+        We learned in <xref ref="SECTIONGalileoDrops"></xref> that
+        the velocity of an object moving in a straight line is the
+        derivative of its position.  Recasting the previous sentence
+        in the language of integrals we
+        it says that the position of the object is the integral of its
+        velocity. But when we view the the problem from this
+        direction things are complicated by the presence of the
+        <q><m>+C</m></q> from <xref
+        ref="EQUATIONIndefIntDef"></xref>.
+      </p>
+
+      <p>
+        <!-- <m>p(t_1)=p_1 p(t_2)=p_2</m><m>0</m> -->
+
+        To understand why this complication appears suppose that  we are
+        traveling in a straight line (say, from left to right along the
+        <m>x</m><mdash/>axis) with velocity <m>v(t)
+        \frac{\text{miles}}{\text{hour} }</m> and we<rsq/>d like to
+        find out how far we travel
+        between the times
+        <m>t=t_1</m> and <m>t=t_2</m> as shown in the following sketch.
+      </p>
+      <image source="IC/IntPosVel.png" width="80%">
+        <shortdescription></shortdescription>
+      </image>
+      <p>
+        If we suppose that our positions at <m>t_1</m> and
+        <m>t_2</m> are <m>p_1</m> and <m>p_2</m> respectively , then
+        the distance, <m>D</m>, that we travel between those times
+        is clearly <me>D=p_2-p_1</me>.
       </p>
       <p>
-        It has some other rather serious shortcomings as well. 
-        In particular, the base of our
-        rectangle lies on the line segment <m>[2,6]</m> (for a length
-        of <m>4</m>) but nothing in our formula indicates this
-        fact. So, to make it explicit  that we want to
-        begin summing Cavalieri<rsq/>s <q>lines</q> 
-        at <m>x=2</m> and end at <m>x=6</m> we<rsq/>ll insert the
-        endpoints of the interval into the notation like this:
-        <me>\int_{x=2}^{6}2\dx{x}</me>.  This suggests the
-        following definition.
+        So far, so good. Do you see how we find <m>p_1</m> and
+        <m>p_2</m>? Recall that these are our positions, and we have
+        a function that tells us position: the indefinite integral
+        of velocity, <m>\int v(t)\dx{t}</m>. So to find <m>p_1</m>
+        and <m>p_2</m> it appears that  all we have to do is evaluate
+        <me>
+          \eval{\int v(t)\dx{t}}{t}{t_1}\text {and}            \eval{\int v(t)\dx{t}}{t}{t_2}
+          </me>.
+
+      </p>
+      <p>
+        Well, sort of. Remember that <m>\int v(t)\dx{t}</m> is a
+        multifunction. That is, it is a lot of related functions gathered
+        together in a single package. We need to find the one
+        function in the package that reflects the problem at hand
+        before we can evaluate it. So suppose <m>P(t)</m> is that
+        one. That is, <m>P(t)</m> is the antiderivative of
+        <m>v(t)</m>
+        <!--  so that -->
+        <!-- <me> -->
+        <!--   \dfdx{P}{t}=v(t) -->
+        <!--   </me>, and that         -->
+        with the following values:
+        <m>
+          P(0)=0
+          </m>,
+          <m>
+            P(t_1)=p_1
+            </m>,
+            and
+            <m>
+              P(t_2)=p_2
+              </m>.
+              Clearly then
+              <me>D=p_2-p_1=P(t_2)-P(t_1)</me>.
+      </p>
+      <p>
+        There is something interesting here that isn<rsq/>t quite
+        visible yet. To see it suppose that <m>\hat{P(t)}</m> is
+        some other antiderivative of <m>v(t)</m>. From our work in
+        <xref ref="CHAPTERIntSimplest"></xref> that
+        <m>\hat{P(t)}=P(t)+C</m> where in this case <m>C</m> is some
+        fixed constant. Clearly then
+        <md>
+          <mrow>
+            \hat{P}(t_2)-\hat{P}(t_1)\amp{}=\left( P(t_2)+C\right)-\left(
+            P(t_1)+C\right)
+          </mrow>
+          <mrow>
+            \amp{} = P(t_2)-P(t_1)+\underbrace{C-C}_{=0}
+          </mrow>
+          <mrow>
+            \amp{} = p_2-p_1
+          </mrow>
+          <mrow>
+            \amp{}=D.
+          </mrow>
+        </md>
+      </p>
+      <p>
+        In other words it doesn<rsq/>t matter which specific
+        antiderivative we choose from the multifunction <m>\int
+        v(t)\dx{t}</m>. Because we are subtracting its value at
+        two different values of <m>t</m> the constant <m>C</m>
+        that is common to both will simply subtract away.
+      </p>
+      <p>
+        Summarizing our discussion so far we see that
+        <men xml:id="EQUATIONFTCBadNotation">
+          D= \eval{\int v(t)\dx{t}}{t}{t_2} - \eval{\int v(t)\dx{t}}{t}{t_1}
+        </men>
+        Strictly speaking <xref
+        ref="EQUATIONFTCBadNotation">equation</xref> is a slight abuse of
+        our notation since we really mean that we are choosing one
+        antiderivative from the multifunction and evaluating
+        it. Because the constant will subtract out it doesn<rsq/>t
+        matter which one we choose.
+      </p>
+
+
+
+      <!-- <p> -->
+      <!--   The problem now is, if <m>P(t)</m> is one of the antiderivatives how -->
+      <!--   do we compute <m>P(t_1)</m> and <m>P(t_2)</m>? -->
+      <!-- </p> -->
+
+
+
+
+      <!-- <p> -->
+      <!--   Clearly this will be the -->
+      <!--   value of the definite integral  -->
+      <!--   <me>\int_{t_1}^{t_2}v(t) \dx{t}</me> but we don<rsq/>t yet -->
+      <!--   know how to compute that. How else might we find the distance? -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   We need to be able to specify when the point has a given -->
+      <!--   position so we<rsq/>ll assume we have a stopwatch that we -->
+      <!--   can start whenever we want to. At some point to the left of -->
+      <!--   <m>t_1</m> we           Normally we would call this point the origin          At a point we<rsq/>ll call the origin to the left of -->
+      <!--   <m>t_0</m> we start a clock. So the origin is the point -->
+      <!--   where <m>t=0</m>. -->
+      <!-- </p> -->
+
+      <!-- <p> -->
+      <!--   We can find the distance -->
+      <!--   traveled in the interval <m>[t_0, t_1]</m> by summing the -->
+      <!--   distance traveled at each instant of travel. -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   That is, we assume that time consists of infinitesimal -->
+      <!--   moments we<rsq/>ll call <m>\dx{t}</m>. At time <m>t</m> -->
+      <!--   the velocity will be constantly equal to <m>v(t)</m>. When -->
+      <!--   the velocity is constant we know that -->
+      <!--   <me> -->
+      <!--     \text{(D)istance } = \text{(R)ate }\times \text{(T)ime} -->
+      <!--     </me>. -->
+      <!--     Therefore the differential of the distance -->
+      <!--     traveled during a given  instant <m>\dx{t}</m> will be -->
+      <!--     <me>\dx{D} = v(t)\dx{t}</me>. -->
+
+      <!--     Summing both sides between <m>t_0</m> and <m>t_1</m> we -->
+      <!--     see that the total distance traveled can be expressed as  -->
+      <!--     <me>D=\int_{t=t_0}^{t_1}\dx{D} = \int_{t=t_0}^{t_1} v(t)\dx{t}</me>. -->
+      <!--     <!-\- <me>D(t_0)-D(t_0) = \int_{t=t_0}^{t_0}v(t)\dx{t}</me>. -\-> -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   To see how to evaluate this integral directly suppose we -->
+      <!--   know that at time <m>t=0</m> (when we start our clock) we have already moved -->
+      <!--   five miles from our starting point so -->
+      <!--   <me>\eval{\int v(t)\dx{t}}{t}{0}=5</me>. Thus the distance -->
+      <!--   function  -->
+      <!--   <me>S(t)=\int v(t)\dx{t} +5</me> will give -->
+      <!--   our position at any time <m>t</m>. -->
+      <!--   To find the distance we travel from the start time to -->
+      <!--   <m>t_0</m> we need to compute  -->
+      <!--   <me>S(t_0)=\eval{\int v(t)\dx{t}}{t}{t_0} +5</me>. To -->
+      <!--   find the distance we travel from the start time to -->
+      <!--   <m>t_1</m> we need to compute  -->
+      <!--   <me>S(t_1)=\eval{\int v(t)\dx{t}}{t}{t_1} +5</me>. -->
+      <!-- </p> -->
+      <!-- <p> -->
+
+      <!--   All this -->
+      <!--   <m>\int v(t)\dx{t} </m>, where  -->
+      <!--   <me>S(0)=</me>            says is that  -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   Our position at time <m>t=t_0</m> will then be -->
+      <!--   <me>S(t_0)=\eval{\int v(t)\dx{t}}{t}{t_0}</me> and our -->
+      <!--   position at time <m>t=t_1</m> is -->
+      <!--   <me>S(t_1)=\eval{\int v(t)\dx{t}}{t}{t_1}</me>. -->
+      <!-- </p> -->
+      <p>
+        The discussion above has been quite abstract and overladen
+        with new ideas to understand and  new notation to learn to
+        use.
+        Let<rsq/>s use <xref
+        ref="EQUATIONFTCBadNotation">equation</xref> to solve a very
+        simple problem <mdash/> one where we already know the
+        answer <mdash/> and verify that it all makes sense.
+      </p>
+
+
+      <example xml:id="EXAMPLEVelAndPos">
+        
+        <p>
+          Suppose we are traveling on a straight road at <m>60
+          \frac{miles}{hour}</m>. How far do we travel between the
+          third hour and the eighth hour?
+        </p>
+        <p>
+          Of course you see that if we travel for five hours at <m>60
+          \frac{\text{miles}}{\text{hour}}</m> then we travel <m>5\times 60 =
+          300</m> miles.
+        </p>
+        <p>
+          In this problem our velocity is <m>v(t)=60</m>, <m>t_1=3</m>,
+          and <m>t_2=8</m>. So the distance traveled will be <me>
+          D= \eval{\int v(t)\dx{t}}{t}{5} - \eval{\int
+          v(t)\dx{t}}{t}{3}</me>.
+          One antiderivative of <m>v(t)=60</m> is
+          <m>P(t)=60t</m>, so
+          <me>
+            D= \eval{60t}{t}{8} - \eval{60t}{t}{3} = 60\cdot8-60\cdot3=300
+            </me>.
+        </p>
+      </example>
+
+      <problem xml:id="DRILLVerifyAnyAntiDeriv">
+        <p>
+          Find two different  antiderivatives of <m>v(t)=60</m> and show
+          that
+          <me>
+            \eval{\int v(t)\dx{t}}{t}{5} - \eval{\int
+            v(t)\dx{t}}{t}{3}=300</me> using your antiderivatives.
+        </p>
+      </problem>
+      <p>
+        While expressive, the notation
+        <me>
+          \eval{\int f(x)}{x}{a}\dx{x}-\eval{\int f(x)\dx{x}}{x}{b}
+        </me>
+        is too redundant. The only difference between the first
+        and second term is that <m>x=a</m> changes to
+        <m>x=b</m>. So, because mathematicians won<rsq/>t write
+        two symbols when one will do, this notation has been
+        abbreviated to <me>\int_{x=a}^bf(x)\dx{x} </me>. This
+        suggests the following definition.
       </p>
       <definition xml:id="DEFINITIONDefInt">
         <title>Definite Integral</title>
@@ -497,458 +797,753 @@
         <idx><h>Definition</h><h>Definite Integral</h></idx>
         <statement>
           <p>
-            Given a function <m>f(x)</m>, the formula
-            <me>\int_{x=a}^{b}
-            f(x)\dx{x}</me> represents the sum of <q>all the lines</q>
-            enclosed by the <m>x</m>-axis and the graph of
-            <m>f(x)</m>, beginning at <m>x=a</m> and ending at
-            <m>x=b</m>.
-            Such an expression is called  a 
-            <term>definite integral</term>. 
+            Given a function <m>f(x)</m>, the formula <men
+            xml:id="EQUATIONDefInt">\int_{x=a}^{b} f(x)\dx{x}</men>
+            represents the sum of all of the differentials of the form
+            <m>f(x)\dx{x} </m> beginning at <m>x=a</m> and ending at
+            <m>x=b</m>. Such an expression is called a
+            <term>definite integral</term>
+          </p>
+          <p>
+            The integral and can be evaluated by finding any
+            antiderivative, <m>F(x)</m> of <m>f(x)</m> and computing
+            <me>
+              \int_{x=a}^{b} f(x)\dx{x}= \eval{\int f(x)}{x}{a} -
+              \eval{\int f(x)}{x}{b} = F(a)-F(b)
+              </me>.
           </p>
         </statement>
       </definition>
-      <aside>
-        <title>Mathematical Notation</title>
+
+      <p>
+        Take note that we evaluate the antiderivative at the
+        lower   value of <m>x</m> and subtract from it the result
+        of evaluating at the upper value of <m>x</m>. What happens
+        if you do it backwards?
+      </p>
+
+      <!-- <definition xml:id="DEFINITIONDefInt"> -->
+      <!--   <title>Definite Integral</title> -->
+      <!--   <idx><h>Integral</h><h>Definite</h></idx> -->
+      <!--   <idx><h>Definition</h><h>Definite Integral</h></idx> -->
+      <!--   <statement> -->
+      <!--     <p> -->
+      <!--       Given a function <m>f(x)</m>, the formula <men -->
+      <!--       xml:id="EQUATIONDefInt">\int_{x=a}^{b} f(x)\dx{x}</men> -->
+      <!--       represents the sum of all of the differentials of the form -->
+      <!--       <m>f(x)\dx{x} </m> beginning at <m>x=a</m> and ending at -->
+      <!--       <m>x=b</m>. Such an expression is called a  -->
+      <!--       <term>definite integral</term> -->
+      <!--     </p> -->
+      <!--   </statement> -->
+      <!-- </definition> -->
+      <!-- <p> -->
+      <!--   It should be clear from <xref ref="DEFINITIONDefInt"></xref> -->
+      <!--   that the area of the rectangle in <xref -->
+      <!--   ref="EXAMPLEIntegralIndices"></xref>  -->
+      <!--   is given by the definite integral  -->
+
+      <!--   <men xml:id="EQUATIONFirstDefInt"> -->
+      <!--     A=\int_2^6 2\dx{x} -->
+      <!--     </men>.   -->
+
+      <!--     It is also clear that <m>A=\int_2^6 -->
+      <!--     x\dx{x}=8</m> since we<rsq/>re talking about a rectangle with -->
+      <!--     length <m>4</m> and height <m>2</m>.  -->
+      <!-- </p> -->
+
+
+      <!-- <p> -->
+      <!--   But defining the notation and using it are two entirely -->
+      <!--   different matters and nothing we<rsq/>ve said so far gives any -->
+      <!--   indication how we might use <xref -->
+      <!--   ref="EQUATIONFirstDefInt">equation</xref> to conclude that -->
+      <!--   <m>A=8</m>. In order to explain how this is done we will need -->
+      <!--   to understand the relationship between definite and indefinite -->
+      <!--   integration a little more clearly. An easily understood -->
+      <!--   example is the relationship between velocity and position so -->
+      <!--   we will start there. -->
+
+      <!-- </p> -->
+
+
+      <paragraphs>
+        <title>Integration as an Sum (Accumulation)</title>
+
         <p>
-          In this text we will use the notation shown  but 
-          some common variations are 
-          <me>
-            \int_{x=a}^{x=b} f(x)\dx{x}</me> and <me>\int_{a}^{b} f(x)\dx{x}</me>.
+          So far in this section we<rsq/>ve thought of
+          integrals, both definite and indefinite, as
+          antidifferentiation. But we<rsq/>ve observed that an
+          integral can also be thought of a as sum. We will now
+          investigate that point of view. The following problem is
+          more important than it appears to be.
         </p>
-      </aside>
 
-      <p>
-        Take care to notice that, although the notations in <xref
-        ref="DEFINITIONIndefInt"></xref> and <xref
-        ref="DEFINITIONDefInt"></xref> are very similar, but that the
-        objects being defined are very different. An <term>indefinite
-        integral</term> is a multifunction. A <term>definite
-        integral</term> is a number. The reason the notations are so
-        similar is that they are both built via (infinite) summation
-        of differentials (Cavalieri<rsq/>s <q>lines</q>).
-      </p>
-      <p>
-        When we speak of an indefinite integral we are thinking of
-        integration as antidifferentiation as in <xref
-        ref="SUBSECTIONIntAsAntiDiff"></xref>. 
-        When we talk about a definite integral we are thinking of
-        integration as summation as in <xref
-        ref="SUBSECTIONIntegrationAsASum"></xref>. 
-      </p>
-      <p>
-        In the case of <xref
-        ref="EXAMPLEIntegralIndices"></xref> we sum the differentials
-        <m>2\dx{x}</m> from <m>2</m> to <m>6</m>. 
-        Because the integral in that example represents the area of a
-        <m>4\times 2</m> rectangle result should be <m>4\times
-        2=8</m>.
-      </p>
-
-      <p>
-        But  notice that we haven<rsq/>t yet indicated how we
-        would compute this from the integral. 
-        We will address the problem of computing the value of an
-        integral next but first a few examples of definite
-        integrals will be illustrative.<lsq/>.
-      </p>
-
-
-      <example xml:id="EXAMPLEDefIntIsArea">
-        <title>Some Definite Integrals are Areas</title>
-        <task xml:id="PROBLEMEXAMPLEDefIntIsAreaA">
-          <statement>
-            <p>
-              The formula <me>\int_{x=2}^53x\dx{x} </me>
-              represents the area in the following sketch.
-            </p>
-            <image source="IC/DefInt1.png" width="40%">
-              <shortdescription></shortdescription>
-            </image>
-            <p>
-              To see this observe that the red line segment is one of
-              the <q>lines</q> in Cavalieri<rsq/>s sum.  The length of
-              the red line is given by <m>f(x)</m> because <m>f(x)</m>
-              is positive in this case. Thus summing <q>all the
-              lines,</q> <foreign>per</foreign> Cavalieri is the same
-              as summing the differentials, <m>f(x)\dx{x} </m>, which
-              is the meaning of <me>\int_{x=2}^33x\dx{x} </me>.
-            </p>
-          </statement>
-
-        </task> 
-        <task xml:id="EXAMPLEDefIntIsAreaB">
-          <statement>
-            <p>
-              The formula <me>\int_{x=-2}^2 -x^2+6\dx{x} </me> 
-              represents the area in the following sketch. Once
-              again observe that the red
-              line segment is one of the <q>lines</q> in Cavalieri<rsq/>s sum.
-            </p>
-            <image source="IC/DefInt2.png" width="50%">
-              <shortdescription></shortdescription>
-            </image>
-            <p>
-              As in part (a) the sum of <q>all the lines</q> is equal
-              to <m>\int_{x=-2}^{2} f(x)\dx{x}</m>.
-            </p>
-          </statement>
-        </task>
-      </example>
-
-      <example xml:id="EXAMPLEIntNotArea">
-        <title>Not All Definite Integrals are Areas</title>
-        <introduction>
+        <problem>
           <p>
-            It is traditional to show students how to use the definite
-            integral to compute the areas of geometric figures. This
-            is apparently a simple application that you are already
-            familiar with from your previous studies. Unfortunately
-            this often has the unfortunate side effect of giving the
-            impression that a definite integral is always an area.
-            That is not true.
+            Verify that <m>A=8</m> in <xref
+            ref="EQUATIONFirstDefInt">equation</xref>.
           </p>
-        </introduction>
-
-        <task>
-          <statement>
-            <p>
-              To see this suppose that a car is traveling in a
-              straight line with velocity <m>v(t)
-              \frac{\text{miles}}{\text{hour} }</m> between time
-              <m>t=t_0</m> and <m>t=t_1</m>. We can find the distance
-              traveled in the interval <m>[t_0, t_1]</m> by summing
-              the distance traveled at each instant of travel.
-            </p>
-            <p>
-              That is, we assume that time, consists of infinitesimal
-              moments we<rsq/>ll call <m>\dx{t}</m>. During a single
-              such moment the velocity will be constantly equal
-              <m>v(t)</m> and when the velocity is constant we know
-              that
-              <me>
-                \text{(D)istance } =  \text{(R)ate }\times \text{(T)ime }
-                </me>.
-                Therefore the differential of the distance
-                traveled during the instant <m>\dx{t}</m> will be
-                <me>\dx{D} = v(t)\dx{t}</me>.
-
-                Summing both sides between <m>t_0</m> and <m>t_1</m> we
-                see that 
-                <me>D(t)=\int\dx{D} = \int v(t)\dx{t}</me>.
-                <me>D(t_1)-D(t_0) = \int_{t=t_0}^{t_1}v(t)\dx{t}</me>.
-            </p>
-            <p>
+        </problem>
 
 
-              if an instant is the time 
-              If <m>v(t)</m> were a constant, say <m>60
-              \frac{\text{miles}}{\text{hour}} </m> this would simply
-              be a (D)istance <m>=</m>  (R)ate 
-              <m>\times </m> (T)ime problem, but of course we
-              didn<rsq/>t specify <m>v(t)</m> so we can<rsq/>t just
-              assume that the velocity is constant. However during an
-              instantaneous interval <m>[t, t+\dx{t}]</m> the velocity
-              is constant, so during any such time interval the
-              distance traveled will be the velocity, <m>v(t)</m>,
-              times the elapsed time. On any time interval <m>[t,
-              t+\dx{t}]</m> the 
-              <me>v(t)(t+\dx{t} </me>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\int_{x=a}^a f(x)\dx{x} = 0</m>
-            </p>
-          </statement>
-        </task>
-
-        <task>
-          <statement>
-            <p>
-              The formula <me>\int_{x=2}^3-x\dx{x} </me>
-              does not represent an area. Before we explain further
-              see if you can guess why not.
-            </p>
-            <p>
-              If we sketch this example as before we get the sketch
-              below.  Again the red lines represent two of
-              Cavalieri<rsq/>s <q>lines.</q>
-            </p>
-            <image source="IC/DefInt3.png" width="60%">
-              <shortdescription></shortdescription>
-            </image>
-            <p>
-              Just as in <xref ref="EXAMPLEDefIntIsArea"></xref>  the length of the line
-              in the tan colored region at the left
-              will be given by <m>f(x_1)</m>. Thus the definite
-              integral 
-              <me>\int_{x=-2}^0f(x)\dx{x} \text{ (note the upper index)
-              }</me> represents the area of
-              the tan colored region,  as before.
-            </p>
-            <p>
-              However on the right side of the graph <m>f(x_2)</m> is
-              not equal to the length of Cavalieri<rsq/>s <q>line</q>
-              because <m>f(x_2)</m> is clearly negative (it is
-              below the <m>x</m>-axis). But the length of a line
-              segment is always positive. And this is true for every
-              Cavalieri <q>line</q> in the green region on the
-              right. Thus if we compute <me>\int_{x=0}^3f(x)\dx{x}{}</me> we will get
-              a negative number. Since areas are always positive this
-              can clearly not be the area of the green region. 
-            </p>
-            <p>
-              It should be clear however that
-              <m>\int_{x=0}^3-f(x)\dx{x} </m> will be the area of the
-              green region. Do you see why?
-            </p>
-            <p>
-              This is because for every value of <m>x</m> in the green region the absolute value
-              of <m>f(x)</m> will be the length of the Cavalieri
-              <q>line.</q> And since <m>f(x)\lt0 </m> we see that in
-              the green region <m>-f(x)</m> is the length of the
-              Cavalieri <q>line.</q> Thus the area of the green region
-              is given by
-              <me>
-                \int_{x=0}^3 \abs{f(x)}\dx{x} = \int_{x=0}^3
-                -f(x)\dx{x}
-                </me>.
-            </p>
-          </statement>
 
 
-        </task>
-      </example>
+      </paragraphs>
+      <!-- <p> -->
+      <!-- We<rsq/>ll start with the antiderivative problem. -->
+
+      <!-- From <xref -->
+      <!-- ref="SUBSECTIONIntegrationAsAntiDerivative"></xref> we know -->
+      <!-- that the formula <m>\int f(x)\dx{x}</m> represents the most general -->
+      <!-- antiderivative of <m>f(x)=x</m>. -->
+      <!-- which is  -->
+      <!-- <m>  \frac{x^2}{2}+C</m>. -->
+
+      <!-- <p> -->
+      <!--   For the sake of clarity we<rsq/>ll choose a -->
+      <!--   particular antiderivative by specifying a value for -->
+      <!--   <m>C</m>  as        the <q><m>+C</m></q> part of the antiderivative is a bit -->
+      <!--   confusing.  Suppose we know that  -->
+      <!--   <me> -->
+      <!--     \eval{\int x\dx{x}}{x}{0} =1 -->
+      <!--     </me>. -->
+      <!-- </p> -->
+
+      <!--   We can evaluate the (multi)function <m>\int f(x)\dx{x}</m> at an arbitrary -->
+      <!--   point in its domain using our evaluation notation from -->
+      <!--   <xref ref="EvaluationNotation" text="custom">DIGRESSION: -->
+      <!--   Evaluation Notation</xref>. Thus at <m>x=a</m> we -->
+      <!--   have <me>\eval{\int f(x)\dx{x}}{x}{a}</me>. -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   Next recall that we know that <m>F(x)=\frac{x^2}{2}+C</m> -->
+      <!--   is the antiderivative of <m>f(x)=x</m>. Thus -->
+      <!--   <me> -->
+      <!--     F(x) = \int x\dx{x} = \frac{x^2}{2}+C -->
+      <!--   </me> -->
+      <!--   The <q><m>+C</m></q> is necessary because the -->
+      <!--   antiderivative of <m>f(x)</m> is a multifunction.  It is -->
+      <!--   easier to work with ordinary function so we will specify -->
+      <!--   that <m>\eval{\int x\dx{x}}{x}{0}=1</m> so that -->
+      <!--   <m>C=1</m>. In that case we have <me>1=\eval{\int -->
+      <!--   f(x)\dx{x}}{x}{0}=F(0) = \frac{0^2}{2}+C</me>, so that -->
+      <!--   <m>F(x)</m> is now the ordinary function -->
+      <!--   <m>F(x)=\frac{x^2}{2}+1</m>. -->
+      <!-- </p> -->
+      <!-- <problem> -->
+      <!--   <p>             -->
+      <!--     Find a formula for the function <m>F(x)=\int x^2\dx{x}</m> -->
+      <!--     which satisfies the condition.  -->
+      <!--     <ol cols="2" marker="(i)"> -->
+      <!--       <li> -->
+      <!--         <m>\eval{\int x^2\dx{x} }{x}{0} = -2</m> -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <m>\eval{\int x^2\dx{x} }{x}{-1} = 2</m> -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <m>\eval{\int x^2\dx{x} }{x}{\frac32} = 10</m> -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <m>\eval{\int x^2\dx{x} }{x}{\pi } = e</m> -->
+      <!--       </li> -->
+      <!--     </ol> -->
+      <!--   </p> -->
+      <!-- </problem> -->
+      <!-- <aside> -->
+      <!--   <title>Comment</title> -->
+      <!--   <p> -->
+      <!--     Strictly speaking we should use a new symbol to -->
+      <!--     represent  the   -->
+      <!--     ordinary function but making up a new symbol  each time -->
+      <!--     we change the constant <m>C</m> is tedious and -->
+      <!--     confusing. -->
+      <!--   </p> -->
+      <!-- </aside> -->
+
 
 
 
       <!-- <p> -->
-      <!--   It should be clear that the <xref -->
-      <!--   ref="DEFINITIONIndefInt">indefinite integral</xref> and <xref -->
-      <!--   ref="DEFINITIONDefInt">definite integral</xref> are closely -->
-      <!--   related because in both cases we are computing similar -->
-      <!--   sums. We sum Cavalieri<rsq/>s lines to compute an area, and we -->
-      <!--   sum differentials to find an antiderivative. So the <m>\int -->
-      <!--   </m> symbol seems natural in both instances. -->
-      <!-- </p> -->
-
-      <!-- <p> -->
-      <!--   As Calculus developed from the ideas of Leibniz and Newton -->
-      <!--   into the powerful tool is has become, the integral notation -->
-      <!--   evolved from Leibniz<rsq/> simple <q>S</q> (for -->
-      <!--   <foreign>summa</foreign> or <q>sum</q>) into a sophisticated -->
-      <!--   and rather esoteric bit of notation.         Our purpose in -->
-      <!--   this section is to introduce and explain that evolution.  It -->
-      <!--   will take time, -->
-      <!--   effort, and a lot of practice to get comfortable with it. Be -->
-      <!--   patient with yourself. -->
-      <!-- </p> -->
 
 
-      <p>
-        <idx><h>Initial Value Problem (IVP)</h></idx>
-        Consider the Initial Value Problem 
-        <mdn>
-          <mrow xml:id="EQUATIONMultFuncIVP">   
-            \dfdx{y}{t}=2t\amp{}\amp{} \text{ and }\amp{}\amp{} y(0)=5.
-          </mrow>
-        </mdn>
-      </p>
-    </subsection>
-
-    <subsection>
-      <title>Try Zero</title>
-
-
-      <p>
-
-        We saw in <xref ref="EXAMPLESimpleInt1"></xref> that 
-        <men xml:id="EQUATIONIntegralNotationModification1">
-          y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C
-          </men>.
-          Moreover, from the initial condition we see that 
-          <me>y(0)=0^2+C=5</me> or <m>C=5</m>. Thus the solution of
-          <xref ref="EQUATIONMultFuncIVP">IVP</xref> is 
-          <me>y(t)=t^2+5</me>. 
-      </p>
-
-      <p>
-        But as we saw in <xref ref="EXAMPLEIntegralIndices"></xref>
-        the expression <m>\int 2t\dx{t}</m> can also indicate
-
-        the
-        solution of the differential equation is 
-        To accomplish this we need to solve the differential equation
-        <m>\dfdx{y}{t}=2t </m> to find  the multifunction
-
-
-        and then find the <em>particular</em> function which satisfies
-        the initial condition <m>y(0)=4</m>.
-      </p>
-      <p>
-        As we saw in <xref ref="EXAMPLESimpleInt1"></xref> the
-        expression <m> \int 2t\dx{t} </m> represents the most general
-        antiderivative (a multifunction) of <m>f(t)=2t</m>.
-      </p>
-
-      <p>
-        Since <m>y(t)=\int 2t\dx{t} </m> and <m>y(0)=5 </m> we know that
-        the particular function we seek satisfies
-        <men xml:id="EQUATIONIntegralNotationModification2">
-          y(0)= \eval{\int 2t\dx{t}}{t}{0} =5 </men>.  
-          <!-- While our evaluation notation is clear, in this context the -->
-          <!-- expression <m>\eval{\int 2t\dx{t}}{t}{0}</m> is also rather -->
-          <!-- clumsy. So we will modify it slightly  as follows: -->
-
-          <!-- <men xml:id="EQUATIONIntegralNotationModification1"> -->
-          <!--   y(0)= \eval{\int 2t\dx{t}}{t}{0}=\int^{t=0}2t\dx{t}  -->
-          <!--   </men>. -->
-      </p>
-      <p>
-        While our evaluation notation is clear, an expression like
-        <m>\eval{\int f(t)\dx{t}}{t}{a}</m> is rather clumsy. So we introduce
-        the following slightly more convenient notation:
-        <men>
-          \eval{\int
-          f(t)\dx{t}}{t}{a}=\int^{t=a} f(t)\dx{t}.
-        </men>
-
-      </p>
-
-
-      <p>
-        Together equations
-        <xref
-            ref="EQUATIONIntegralNotationModification1"></xref>
-        and         <xref
-        ref="EQUATIONIntegralNotationModification2"></xref>
-        describe the solution of <xref
-        ref="EQUATIONMultFuncIVP">IVP</xref>, but this is  not a very
-        useful description since all we<rsq/>ve really done is
-        re-express <xref ref="EQUATIONMultFuncIVP">IVP</xref> in new
-        notation. 
-      </p>
-      <p>
-        <xref
-            ref="EQUATIONIntegralNotationModification1">Equation</xref>
-        merely        says that the solution of <xref
-        ref="EQUATIONMultFuncIVP">IVP</xref> is one of the
-        antiderivatives of <m>=2t</m>, and <xref
-        ref="EQUATIONIntegralNotationModification2">equation</xref> simply
-        restates the initial condition. 
-      </p>
-      <p>
-
-        would be the most we can say. But from <xref
-        ref="EXAMPLESimpleInt1"></xref> we also know that <m>y(t)</m>
-        has the form <me>y(t)=t^2+C</me> for some value of <m>C</m>.
-        Thus
-
-        <men xml:id="EQUATIONIntEval">
-          y(0)= \int^{t=0} 2t\dx{t}= \eval{t^2+C}{t}{0}=0^2+C =5
-          </men>.
-          
-          <!-- It  follows that the solution of <xref -->
-          <!-- ref="EQUATIONMultFuncIVP">IVP</xref>  is the  function <m>y(t)</m> -->
-          <!-- selected from our multifunction <m>\int 2t\dx{t} = t^2+C</m>. -->
-          <!-- Specifically, -->
-          <!-- <me> -->
-          <!--   y(t)=t^2+5 -->
-          <!--   </me>. -->
-      </p>
-
-      <aside>
-        <title>Note to Self</title>
-        <p>
-          When we introduce the lower index we will drop the <q>t=</q>
-          part of the upper.
-        </p>
-      </aside>
-
-      <!-- <p> -->
-      <!--   More generally, the indefinite integral of <m>f(t)</m>,  at -->
-      <!--   <m>t=a</m> is given by -->
-      <!--   <men xml:id="EQUATIONIntBotIndx"> -->
-      <!--     \eval{\int f(t)\dx{t}}{t}{a} = \int^{t=a} f(t)\dx{t}  -->
-      <!--     </men>.  -->
+      <!--   <me>\eval{F(t)}{t}{a}^b</me> -->
       <!-- </p> -->
       <!-- <p> -->
-      <!--   At the moment this change may seem to be hardly worth the effort -->
-      <!--   but as we mentioned the integral notation has evolved quite a bit -->
-      <!--   over time. <xref ref="EQUATIONIntBotIndx">Formula</xref> is just -->
-      <!--   the first modification we<rsq/>ll see. -->
+
+
+      <!--   Clearly the <q>area</q> of this line is <m>2\dx{x}</m>, so -->
+      <!--   the area  of the entire rectangle must be  given by -->
+      <!--   the sum of these, or -->
+      <!--   <men xml:id="EQUATIONIntCav"> \int 2\dx{x} </men>.  -->
+      <!--   Moreover, -->
+      <!--   since this is a <m>2\times 4</m> rectangle we must have -->
+      <!--   <m> \int 2\dx{x} =8</m>, right? -->
       <!-- </p> -->
-
-
+      <!-- <p> -->
+      <!--   This is correct  -->
+      <!--   but there is a problem with our notation. Do you see it? If -->
+      <!--   our rectangle had different dimensions, say <m>2\times -->
+      <!--   5</m>, then <m> \int 2\dx{x}</m> would be equal to <m>10</m>.  A notation -->
+      <!--   that uses exactly the same symbols to represent two -->
+      <!--   different numbers is inconvenient at best. -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   But it gets worse!  Recall that in <xref -->
+      <!--   ref="EQUATIONIntCav">formula</xref>  we used exactly the -->
+      <!--   same notation to represent the most -->
+      <!--   general antiderivative (multifunction) of <m>f(x)= 2</m>, -->
+      <!--   which is <m>2x+C</m>. -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   We can<rsq/>t have this. The meaning of the expression -->
+      <!--   <m>\int 2\dx{t}</m> can<rsq/>t be <m>8</m> sometimes, -->
+      <!--   <m>10</m> at other times, and a multifunction at yet -->
+      <!--   other times. Our notation needs to be unambiguous. -->
+      <!-- </p> -->
       <p>
-        Using our new notation we see that <xref
-        ref="EQUATIONIntEval">equation</xref> can be expressed as 
-        <me>
-          y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5
-          </me>.
-          The advantage of this notation may not be clear to you yet but as
-          we proceed you will see that it is very helpful, particularly in
-          the  context of 
-          <term>Definite Integration</term> which we will return to in
-          <xref ref="CHAPTERDefiniteIntegration"></xref>.
+        We focused on the relationship between velocity and
+        position as we developed the meaning of the definite
+        integral because this was a familiar example about which
+        we have a great deal of intuition. But notice that we only
+        relied on the derivative/antiderivative relation between
+        velocity and position, not their physical meaning.  So the
+        idea is completely general. To compute the definite
+        integral <me>\int_{x=a}^b f(x)\dx{x}</me> we only need to
+        find an antiderivative of <m>f(x)</m>. The physical
+        quantities represented by <m>f</m> and <m>x</m> are
+        irrelevant to the calculation of the integral.
       </p>
-
-      <p>
-        Conceptually, it is all well and good to say that the area
-        is the sum of <q>all the lines</q> that make it up.  But
-        faced with a real problem we<rsq/>ll need more information
-        than that. In particular,  we need to know which lines
-        we<rsq/>re summing. That is, we need to
-        know where to start summing the differential areas (lines)
-        and where to stop.
-      </p>
-
-      <p>
-        Since <m>\int 2\dx{x}</m> is the most general antiderivative 
-      </p>
-      <p>
-        Similar considerations lead the mathematician 
-        <url
-            href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
-            visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph
-        Fourier</url> (1768<ndash/>1830)
-        to create the 
-        <term>definite integral</term> by adding
-        <term>indices</term> to the integral sign as follows:
-        <men
-            xml:id="EQUATIONAreaRect2">
-          \int_{x=2}^6 2\dx{x}.
-        </men>
-        The indices in this expression tell us that we begin summing the
-        differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>. 
-      </p>
+</subsection>
 
 
+<subsection>
+  <title>saved</title>
+  <p>
+    <xref ref="DEFINITIONIndefInt">Definition</xref>
+    formalizes the work we did in <xref
+    ref="CHAPTERIndefiniteIntegration"></xref>, and
+    establishes  the notation we used there as the standard
+    notation for an antidifferentiaton. Our next
+    definition is new. It will establish the standard notation we will use
+    to distinguish the antiderivative problems in <xref
+    ref="CHAPTERIndefiniteIntegration"></xref> and the area
+    problem in <xref ref="EXAMPLEIntegralIndices"></xref>, as well
+    as other kinds of problems that can be addressed using the
+    same ideas. Since the underlying ideas are related the
+    notations we use will also be related. You<rsq/>ll need to
+    read the notation carefully to be sure you understand which
+    kind of problem you are looking at.
+  </p>
+</subsection>
 
 
-      <p>
-        Notice that, despite the complexity of the notation, expressions
-        like <xref ref="EQUATIONAreaRect2">formula</xref> simply represent
-        a specific, or definite number; eight in this case. This is why
-        they are called <term>definite integrals</term>.
-      </p>
-      <p>
-        Expressions like 
-        <me>
-          \int f(x)\dx{x} </me>, without the indices, represent
-          functions as we saw in <xref
-          ref="CHAPTERIndefiniteIntegration"></xref>.  Integrals without
-          indices are called <term>indefinite integrals</term> to
-          distinquish them from definite integrals with indices. In
-          <xref ref="CHAPTERIndefiniteIntegration"></xref> we just
-          called them integrals because they were the only kind we had
-          encountered at the time.
-      </p>
+<!-- <subsection xml:id="SUBSECTIONDefIndefInt">  -->
+<!--   <title>TRY ONE; Functions, Multifunctions and Integral Notation</title> -->
+<!--   <p> -->
+<!--     Because areas and antiderivatives are related we will define -->
+<!--     several variations on the basic summation symbol originally -->
+<!--     invented by Leibniz. -->
+<!--   </p> -->
+<!--   <definition xml:id="DEFINITIONIndefInt"> -->
+<!--     <title>Indefinite Integral</title> -->
+<!--     <idx><h>Integral</h><h>Indefinite</h></idx> -->
+<!--     <idx><h>Definition</h><h>Indefinite Integral</h></idx>      -->
+<!--     <statement> -->
+<!--       <p> -->
+<!--         Given <m>f(x)</m> the formula <me>\int f(x)\dx{x}</me>  -->
+<!--         <em>always</em> represents the multifunction whose -->
+<!--         derivative is <m>f(x)</m>.  -->
+<!--       </p> -->
+<!--       <p> -->
+<!--         For simplicity, and because it has become standard, we will -->
+<!--         almost always refer to  <m>\int f(x)\dx{x}</m> as the  -->
+<!--         <term>indefinite integral</term> of <m>f(x)</m>, rather -->
+<!--         than as a multifunction. -->
+<!--       </p> -->
+<!--       <p> -->
+<!--         Because <m>f(x)</m> and <m>\int f(x)\dx{x}</m> are so -->
+<!--         closely related it is common to define <me>F(x)=\int -->
+<!--         f(x)\dx{x}</me> and call <m>F(x)</m> the indefinite -->
+<!--         integral of <m>f(x)</m>, just because it is less to write. -->
+<!--       </p> -->
+<!--     </statement> -->
+<!--   </definition> -->
+<!--   <p> -->
+<!--     Once <xref ref="DEFINITIONIndefInt"></xref> is in place we see immediately that the formula <m>\int 2\dx{x}</m> from <xref -->
+<!--     ref="EXAMPLEIntegralIndices"></xref> now represents an indefinite integral, by definition. This is not what we want. -->
+<!--   </p> -->
+<!--   <p> -->
+<!--     It has some other rather serious shortcomings as well.  -->
+<!--     In particular, the base of our -->
+<!--     rectangle lies on the line segment <m>[2,6]</m> (for a length -->
+<!--     of <m>4</m>) but nothing in our formula indicates this -->
+<!--     fact. So, to make it explicit  that we want to -->
+<!--     begin summing Cavalieri<rsq/>s <q>lines</q>  -->
+<!--     at <m>x=2</m> and end at <m>x=6</m> we<rsq/>ll insert the -->
+<!--     endpoints of the interval into the notation like this: -->
+<!--     <me>\int_{x=2}^{6}2\dx{x}</me>.  This suggests the -->
+<!--     following definition. -->
+<!--   </p> -->
+<!--   <definition xml:id="DEFINITIONDefInt"> -->
+<!--     <title>Definite Integral</title> -->
+<!--     <idx><h>Integral</h><h>Definite</h></idx> -->
+<!--     <idx><h>Definition</h><h>Definite Integral</h></idx> -->
+<!--     <statement> -->
+<!--       <p> -->
+<!--         Given a function <m>f(x)</m>, the formula -->
+<!--         <me>\int_{x=a}^{b} -->
+<!--         f(x)\dx{x}</me> represents the sum of <q>all the lines</q> -->
+<!--         enclosed by the <m>x</m>-axis and the graph of -->
+<!--         <m>f(x)</m>, beginning at <m>x=a</m> and ending at -->
+<!--         <m>x=b</m>. -->
+<!--         Such an expression is called  a  -->
+<!--         <term>definite integral</term>.  -->
+<!--       </p> -->
+<!--     </statement> -->
+<!--   </definition> -->
+<!--   <aside> -->
+<!--     <title>Mathematical Notation</title> -->
+<!--     <p> -->
+<!--       In this text we will use the notation shown  but  -->
+<!--       some common variations are  -->
+<!--       <me> -->
+<!--         \int_{x=a}^{x=b} f(x)\dx{x}</me> and <me>\int_{a}^{b} f(x)\dx{x}</me>. -->
+<!--     </p> -->
+<!--   </aside> -->
 
-    </subsection>
+<!--   <p> -->
+<!--     Take care to notice that, although the notations in <xref -->
+<!--     ref="DEFINITIONIndefInt"></xref> and <xref -->
+<!--     ref="DEFINITIONDefInt"></xref> are very similar, but that the -->
+<!--     objects being defined are very different. An <term>indefinite -->
+<!--     integral</term> is a multifunction. A <term>definite -->
+<!--     integral</term> is a number. The reason the notations are so -->
+<!--     similar is that they are both built via (infinite) summation -->
+<!--     of differentials (Cavalieri<rsq/>s <q>lines</q>). -->
+<!--   </p> -->
+<!--   <p> -->
+<!--     When we speak of an indefinite integral we are thinking of -->
+<!--     integration as antidifferentiation as in <xref -->
+<!--     ref="SUBSECTIONIntAsAntiDiff"></xref>.  -->
+<!--     When we talk about a definite integral we are thinking of -->
+<!--     integration as summation as in <xref -->
+<!--     ref="SUBSECTIONIntegrationAsASum"></xref>.  -->
+<!--   </p> -->
+<!--   <p> -->
+<!--     In the case of <xref -->
+<!--     ref="EXAMPLEIntegralIndices"></xref> we sum the differentials -->
+<!--     <m>2\dx{x}</m> from <m>2</m> to <m>6</m>.  -->
+<!--     Because the integral in that example represents the area of a -->
+<!--     <m>4\times 2</m> rectangle result should be <m>4\times -->
+<!--     2=8</m>. -->
+<!--   </p> -->
+
+<!--   <p> -->
+<!--     But  notice that we haven<rsq/>t yet indicated how we -->
+<!--     would compute this from the integral.  -->
+<!--     We will address the problem of computing the value of an -->
+<!--     integral next but first a few examples of definite -->
+<!--     integrals will be illustrative.<lsq/>. -->
+<!--   </p> -->
+
+
+<!--   <example xml:id="EXAMPLEDefIntIsArea"> -->
+<!--     <title>Some Definite Integrals are Areas</title> -->
+<!--     <task xml:id="PROBLEMEXAMPLEDefIntIsAreaA"> -->
+<!--       <statement> -->
+<!--         <p> -->
+<!--           The formula <me>\int_{x=2}^53x\dx{x} </me> -->
+<!--           represents the area in the following sketch. -->
+<!--         </p> -->
+<!--         <image source="IC/DefInt1.png" width="40%"> -->
+<!--           <shortdescription></shortdescription> -->
+<!--         </image> -->
+<!--         <p> -->
+<!--           To see this observe that the red line segment is one of -->
+<!--           the <q>lines</q> in Cavalieri<rsq/>s sum.  The length of -->
+<!--           the red line is given by <m>f(x)</m> because <m>f(x)</m> -->
+<!--           is positive in this case. Thus summing <q>all the -->
+<!--           lines,</q> <foreign>per</foreign> Cavalieri is the same -->
+<!--           as summing the differentials, <m>f(x)\dx{x} </m>, which -->
+<!--           is the meaning of <me>\int_{x=2}^33x\dx{x} </me>. -->
+<!--         </p> -->
+<!--       </statement> -->
+
+<!--     </task>  -->
+<!--     <task xml:id="EXAMPLEDefIntIsAreaB"> -->
+<!--       <statement> -->
+<!--         <p> -->
+<!--           The formula <me>\int_{x=-2}^2 -x^2+6\dx{x} </me>  -->
+<!--           represents the area in the following sketch. Once -->
+<!--           again observe that the red -->
+<!--           line segment is one of the <q>lines</q> in Cavalieri<rsq/>s sum. -->
+<!--         </p> -->
+<!--         <image source="IC/DefInt2.png" width="50%"> -->
+<!--           <shortdescription></shortdescription> -->
+<!--         </image> -->
+<!--         <p> -->
+<!--           As in part (a) the sum of <q>all the lines</q> is equal -->
+<!--           to <m>\int_{x=-2}^{2} f(x)\dx{x}</m>. -->
+<!--         </p> -->
+<!--       </statement> -->
+<!--     </task> -->
+<!--   </example> -->
+
+<!--   <example xml:id="EXAMPLEIntNotArea"> -->
+<!--     <title>Not All Definite Integrals are Areas</title> -->
+<!--     <introduction> -->
+<!--       <p> -->
+<!--         It is traditional to show students how to use the definite -->
+<!--         integral to compute the areas of geometric figures. This -->
+<!--         is apparently a simple application that you are already -->
+<!--         familiar with from your previous studies. Unfortunately -->
+<!--         this often has the unfortunate side effect of giving the -->
+<!--         impression that a definite integral is always an area. -->
+<!--         That is not true. -->
+<!--       </p> -->
+<!--     </introduction> -->
+
+<!--     <task> -->
+<!--       <statement> -->
+<!--         <p> -->
+<!--           To see this suppose that a car is traveling in a -->
+<!--           straight line with velocity <m>v(t) -->
+<!--           \frac{\text{miles}}{\text{hour} }</m> between time -->
+<!--           <m>t=t_0</m> and <m>t=t_1</m>. We can find the distance -->
+<!--           traveled in the interval <m>[t_0, t_1]</m> by summing -->
+<!--           the distance traveled at each instant of travel. -->
+<!--         </p> -->
+<!--         <p> -->
+<!--           That is, we assume that time, consists of infinitesimal -->
+<!--           moments we<rsq/>ll call <m>\dx{t}</m>. During a single -->
+<!--           such moment the velocity will be constantly equal -->
+<!--           <m>v(t)</m> and when the velocity is constant we know -->
+<!--           that -->
+<!--           <me> -->
+<!--             \text{(D)istance } =  \text{(R)ate }\times \text{(T)ime } -->
+<!--             </me>. -->
+<!--             Therefore the differential of the distance -->
+<!--             traveled during the instant <m>\dx{t}</m> will be -->
+<!--             <me>\dx{D} = v(t)\dx{t}</me>. -->
+
+<!--             Summing both sides between <m>t_0</m> and <m>t_1</m> we -->
+<!--             see that  -->
+<!--             <me>D(t)=\int\dx{D} = \int v(t)\dx{t}</me>. -->
+<!--             <me>D(t_1)-D(t_0) = \int_{t=t_0}^{t_1}v(t)\dx{t}</me>. -->
+<!--         </p> -->
+<!--         <p> -->
+
+
+<!--           if an instant is the time  -->
+<!--           If <m>v(t)</m> were a constant, say <m>60 -->
+<!--           \frac{\text{miles}}{\text{hour}} </m> this would simply -->
+<!--           be a (D)istance <m>=</m>  (R)ate  -->
+<!--           <m>\times </m> (T)ime problem, but of course we -->
+<!--           didn<rsq/>t specify <m>v(t)</m> so we can<rsq/>t just -->
+<!--           assume that the velocity is constant. However during an -->
+<!--           instantaneous interval <m>[t, t+\dx{t}]</m> the velocity -->
+<!--           is constant, so during any such time interval the -->
+<!--           distance traveled will be the velocity, <m>v(t)</m>, -->
+<!--           times the elapsed time. On any time interval <m>[t, -->
+<!--           t+\dx{t}]</m> the  -->
+<!--           <me>v(t)(t+\dx{t} </me> -->
+<!--         </p> -->
+<!--       </statement> -->
+<!--     </task> -->
+<!--     <task> -->
+<!--       <statement> -->
+<!--         <p> -->
+<!--           <m>\int_{x=a}^a f(x)\dx{x} = 0</m> -->
+<!--         </p> -->
+<!--       </statement> -->
+<!--     </task> -->
+
+<!--     <task> -->
+<!--       <statement> -->
+<!--         <p> -->
+<!--           The formula <me>\int_{x=2}^3-x\dx{x} </me> -->
+<!--           does not represent an area. Before we explain further -->
+<!--           see if you can guess why not. -->
+<!--         </p> -->
+<!--         <p> -->
+<!--           If we sketch this example as before we get the sketch -->
+<!--           below.  Again the red lines represent two of -->
+<!--           Cavalieri<rsq/>s <q>lines.</q> -->
+<!--         </p> -->
+<!--         <image source="IC/DefInt3.png" width="60%"> -->
+<!--           <shortdescription></shortdescription> -->
+<!--         </image> -->
+<!--         <p> -->
+<!--           Just as in <xref ref="EXAMPLEDefIntIsArea"></xref>  the length of the line -->
+<!--           in the tan colored region at the left -->
+<!--           will be given by <m>f(x_1)</m>. Thus the definite -->
+<!--           integral  -->
+<!--           <me>\int_{x=-2}^0f(x)\dx{x} \text{ (note the upper index) -->
+<!--           }</me> represents the area of -->
+<!--           the tan colored region,  as before. -->
+<!--         </p> -->
+<!--         <p> -->
+<!--           However on the right side of the graph <m>f(x_2)</m> is -->
+<!--           not equal to the length of Cavalieri<rsq/>s <q>line</q> -->
+<!--           because <m>f(x_2)</m> is clearly negative (it is -->
+<!--           below the <m>x</m>-axis). But the length of a line -->
+<!--           segment is always positive. And this is true for every -->
+<!--           Cavalieri <q>line</q> in the green region on the -->
+<!--           right. Thus if we compute <me>\int_{x=0}^3f(x)\dx{x}{}</me> we will get -->
+<!--           a negative number. Since areas are always positive this -->
+<!--           can clearly not be the area of the green region.  -->
+<!--         </p> -->
+<!--         <p> -->
+<!--           It should be clear however that -->
+<!--           <m>\int_{x=0}^3-f(x)\dx{x} </m> will be the area of the -->
+<!--           green region. Do you see why? -->
+<!--         </p> -->
+<!--         <p> -->
+<!--           This is because for every value of <m>x</m> in the green region the absolute value -->
+<!--           of <m>f(x)</m> will be the length of the Cavalieri -->
+<!--           <q>line.</q> And since <m>f(x)\lt0 </m> we see that in -->
+<!--           the green region <m>-f(x)</m> is the length of the -->
+<!--           Cavalieri <q>line.</q> Thus the area of the green region -->
+<!--           is given by -->
+<!--           <me> -->
+<!--             \int_{x=0}^3 \abs{f(x)}\dx{x} = \int_{x=0}^3 -->
+<!--             -f(x)\dx{x} -->
+<!--             </me>. -->
+<!--         </p> -->
+<!--       </statement> -->
+
+
+<!--     </task> -->
+<!--   </example> -->
+
+
+
+<!--   <!-\- <p> -\-> -->
+<!--   <!-\-   It should be clear that the <xref -\-> -->
+<!--   <!-\-   ref="DEFINITIONIndefInt">indefinite integral</xref> and <xref -\-> -->
+<!--   <!-\-   ref="DEFINITIONDefInt">definite integral</xref> are closely -\-> -->
+<!--   <!-\-   related because in both cases we are computing similar -\-> -->
+<!--   <!-\-   sums. We sum Cavalieri<rsq/>s lines to compute an area, and we -\-> -->
+<!--   <!-\-   sum differentials to find an antiderivative. So the <m>\int -\-> -->
+<!--   <!-\-   </m> symbol seems natural in both instances. -\-> -->
+<!--   <!-\- </p> -\-> -->
+
+<!--   <!-\- <p> -\-> -->
+<!--   <!-\-   As Calculus developed from the ideas of Leibniz and Newton -\-> -->
+<!--   <!-\-   into the powerful tool is has become, the integral notation -\-> -->
+<!--   <!-\-   evolved from Leibniz<rsq/> simple <q>S</q> (for -\-> -->
+<!--   <!-\-   <foreign>summa</foreign> or <q>sum</q>) into a sophisticated -\-> -->
+<!--   <!-\-   and rather esoteric bit of notation.         Our purpose in -\-> -->
+<!--   <!-\-   this section is to introduce and explain that evolution.  It -\-> -->
+<!--   <!-\-   will take time, -\-> -->
+<!--   <!-\-   effort, and a lot of practice to get comfortable with it. Be -\-> -->
+<!--   <!-\-   patient with yourself. -\-> -->
+<!--   <!-\- </p> -\-> -->
+
+
+<!--   <p> -->
+<!--     <idx><h>Initial Value Problem (IVP)</h></idx> -->
+<!--     Consider the Initial Value Problem  -->
+<!--     <mdn> -->
+<!--       <mrow xml:id="EQUATIONMultFuncIVP">    -->
+<!--         \dfdx{y}{t}=2t\amp{}\amp{} \text{ and }\amp{}\amp{} y(0)=5. -->
+<!--       </mrow> -->
+<!--     </mdn> -->
+<!--   </p> -->
+<!-- </subsection> -->
+
+<!--         <subsection> -->
+<!--           <title>Try Zero</title> -->
+
+
+<!--           <p> -->
+
+<!--             We saw in <xref ref="EXAMPLESimpleInt1"></xref> that  -->
+<!--             <men xml:id="EQUATIONIntegralNotationModification1"> -->
+<!--               y(t)= \int{}\dx{y}=\int 2t\dx{t} =t^2+C -->
+<!--               </men>. -->
+<!--               Moreover, from the initial condition we see that  -->
+<!--               <me>y(0)=0^2+C=5</me> or <m>C=5</m>. Thus the solution of -->
+<!--               <xref ref="EQUATIONMultFuncIVP">IVP</xref> is  -->
+<!--               <me>y(t)=t^2+5</me>.  -->
+<!--           </p> -->
+
+<!--           <p> -->
+<!--             But as we saw in <xref ref="EXAMPLEIntegralIndices"></xref> -->
+<!--             the expression <m>\int 2t\dx{t}</m> can also indicate -->
+
+<!--             the -->
+<!--             solution of the differential equation is  -->
+<!--             To accomplish this we need to solve the differential equation -->
+<!--             <m>\dfdx{y}{t}=2t </m> to find  the multifunction -->
+
+
+<!--             and then find the <em>particular</em> function which satisfies -->
+<!--             the initial condition <m>y(0)=4</m>. -->
+<!--           </p> -->
+<!--           <p> -->
+<!--             As we saw in <xref ref="EXAMPLESimpleInt1"></xref> the -->
+<!--             expression <m> \int 2t\dx{t} </m> represents the most general -->
+<!--             antiderivative (a multifunction) of <m>f(t)=2t</m>. -->
+<!--           </p> -->
+
+<!--           <p> -->
+<!--             Since <m>y(t)=\int 2t\dx{t} </m> and <m>y(0)=5 </m> we know that -->
+<!--             the particular function we seek satisfies -->
+<!--             <men xml:id="EQUATIONIntegralNotationModification2"> -->
+<!--               y(0)= \eval{\int 2t\dx{t}}{t}{0} =5 </men>.   -->
+<!--               <!-\- While our evaluation notation is clear, in this context the -\-> -->
+<!--               <!-\- expression <m>\eval{\int 2t\dx{t}}{t}{0}</m> is also rather -\-> -->
+<!--               <!-\- clumsy. So we will modify it slightly  as follows: -\-> -->
+
+<!--               <!-\- <men xml:id="EQUATIONIntegralNotationModification1"> -\-> -->
+<!--               <!-\-   y(0)= \eval{\int 2t\dx{t}}{t}{0}=\int^{t=0}2t\dx{t}  -\-> -->
+<!--               <!-\-   </men>. -\-> -->
+<!--           </p> -->
+<!--           <p> -->
+<!--             While our evaluation notation is clear, an expression like -->
+<!--             <m>\eval{\int f(t)\dx{t}}{t}{a}</m> is rather clumsy. So we introduce -->
+<!--             the following slightly more convenient notation: -->
+<!--             <men> -->
+<!--               \eval{\int -->
+<!--               f(t)\dx{t}}{t}{a}=\int^{t=a} f(t)\dx{t}. -->
+<!--             </men> -->
+
+<!--           </p> -->
+
+
+<!--           <p> -->
+<!--             Together equations -->
+<!--             <xref -->
+<!--                 ref="EQUATIONIntegralNotationModification1"></xref> -->
+<!--             and         <xref -->
+<!--             ref="EQUATIONIntegralNotationModification2"></xref> -->
+<!--             describe the solution of <xref -->
+<!--             ref="EQUATIONMultFuncIVP">IVP</xref>, but this is  not a very -->
+<!--             useful description since all we<rsq/>ve really done is -->
+<!--             re-express <xref ref="EQUATIONMultFuncIVP">IVP</xref> in new -->
+<!--             notation.  -->
+<!--           </p> -->
+<!--           <p> -->
+<!--             <xref -->
+<!--                 ref="EQUATIONIntegralNotationModification1">Equation</xref> -->
+<!--             merely        says that the solution of <xref -->
+<!--             ref="EQUATIONMultFuncIVP">IVP</xref> is one of the -->
+<!--             antiderivatives of <m>=2t</m>, and <xref -->
+<!--             ref="EQUATIONIntegralNotationModification2">equation</xref> simply -->
+<!--             restates the initial condition.  -->
+<!--           </p> -->
+<!--           <p> -->
+
+<!--             would be the most we can say. But from <xref -->
+<!--             ref="EXAMPLESimpleInt1"></xref> we also know that <m>y(t)</m> -->
+<!--             has the form <me>y(t)=t^2+C</me> for some value of <m>C</m>. -->
+<!--             Thus -->
+
+<!--             <men xml:id="EQUATIONIntEval"> -->
+<!--               y(0)= \int^{t=0} 2t\dx{t}= \eval{t^2+C}{t}{0}=0^2+C =5 -->
+<!--               </men>. -->
+              
+<!--               <!-\- It  follows that the solution of <xref -\-> -->
+<!--               <!-\- ref="EQUATIONMultFuncIVP">IVP</xref>  is the  function <m>y(t)</m> -\-> -->
+<!--               <!-\- selected from our multifunction <m>\int 2t\dx{t} = t^2+C</m>. -\-> -->
+<!--               <!-\- Specifically, -\-> -->
+<!--               <!-\- <me> -\-> -->
+<!--               <!-\-   y(t)=t^2+5 -\-> -->
+<!--               <!-\-   </me>. -\-> -->
+<!--           </p> -->
+
+<!--           <aside> -->
+<!--             <title>Note to Self</title> -->
+<!--             <p> -->
+<!--               When we introduce the lower index we will drop the <q>t=</q> -->
+<!--               part of the upper. -->
+<!--             </p> -->
+<!--           </aside> -->
+
+<!--           <!-\- <p> -\-> -->
+<!--           <!-\-   More generally, the indefinite integral of <m>f(t)</m>,  at -\-> -->
+<!--           <!-\-   <m>t=a</m> is given by -\-> -->
+<!--           <!-\-   <men xml:id="EQUATIONIntBotIndx"> -\-> -->
+<!--           <!-\-     \eval{\int f(t)\dx{t}}{t}{a} = \int^{t=a} f(t)\dx{t}  -\-> -->
+<!--           <!-\-     </men>.  -\-> -->
+<!--           <!-\- </p> -\-> -->
+<!--           <!-\- <p> -\-> -->
+<!--           <!-\-   At the moment this change may seem to be hardly worth the effort -\-> -->
+<!--           <!-\-   but as we mentioned the integral notation has evolved quite a bit -\-> -->
+<!--           <!-\-   over time. <xref ref="EQUATIONIntBotIndx">Formula</xref> is just -\-> -->
+<!--           <!-\-   the first modification we<rsq/>ll see. -\-> -->
+<!--           <!-\- </p> -\-> -->
+
+
+<!--           <p> -->
+<!--             Using our new notation we see that <xref -->
+<!--             ref="EQUATIONIntEval">equation</xref> can be expressed as  -->
+<!--             <me> -->
+<!--               y(0)=\int^{t=0}2t\dx{t} = 0^2+C=5 -->
+<!--               </me>. -->
+<!--               The advantage of this notation may not be clear to you yet but as -->
+<!--               we proceed you will see that it is very helpful, particularly in -->
+<!--               the  context of  -->
+<!--               <term>Definite Integration</term> which we will return to in -->
+<!--               <xref ref="CHAPTERDefiniteIntegration"></xref>. -->
+<!--           </p> -->
+
+<!--           <p> -->
+<!--             Conceptually, it is all well and good to say that the area -->
+<!--             is the sum of <q>all the lines</q> that make it up.  But -->
+<!--             faced with a real problem we<rsq/>ll need more information -->
+<!--             than that. In particular,  we need to know which lines -->
+<!--             we<rsq/>re summing. That is, we need to -->
+<!--             know where to start summing the differential areas (lines) -->
+<!--             and where to stop. -->
+<!--           </p> -->
+
+<!--           <p> -->
+<!--             Since <m>\int 2\dx{x}</m> is the most general antiderivative  -->
+<!--           </p> -->
+<!--           <p> -->
+<!--             Similar considerations lead the mathematician  -->
+<!--             <url -->
+<!--                 href="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/" -->
+<!--                 visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/">Joseph -->
+<!--             Fourier</url> (1768<ndash/>1830) -->
+<!--             to create the  -->
+<!--             <term>definite integral</term> by adding -->
+<!--             <term>indices</term> to the integral sign as follows: -->
+<!--             <men -->
+<!--                 xml:id="EQUATIONAreaRect2"> -->
+<!--               \int_{x=2}^6 2\dx{x}. -->
+<!--             </men> -->
+<!--             The indices in this expression tell us that we begin summing the -->
+<!--             differential <m>2\dx{x}</m> at <m>x=2</m> and stop at <m>x=6</m>.  -->
+<!--           </p> -->
+
+
+
+
+<!--           <p> -->
+<!--             Notice that, despite the complexity of the notation, expressions -->
+<!--             like <xref ref="EQUATIONAreaRect2">formula</xref> simply represent -->
+<!--             a specific, or definite number; eight in this case. This is why -->
+<!--             they are called <term>definite integrals</term>. -->
+<!--           </p> -->
+<!--           <p> -->
+<!--             Expressions like  -->
+<!--             <me> -->
+<!--               \int f(x)\dx{x} </me>, without the indices, represent -->
+<!--               functions as we saw in <xref -->
+<!--               ref="CHAPTERIndefiniteIntegration"></xref>.  Integrals without -->
+<!--               indices are called <term>indefinite integrals</term> to -->
+<!--               distinquish them from definite integrals with indices. In -->
+<!--               <xref ref="CHAPTERIndefiniteIntegration"></xref> we just -->
+<!--               called them integrals because they were the only kind we had -->
+<!--               encountered at the time. -->
+<!--           </p> -->
+
+<!-- </subsection> -->
   </section>
 
   <section xml:id="SECTIONAreasAndIntegration">  
@@ -1352,140 +1947,140 @@
             <md>
               <mrow>
                 \int_{x=a}^bx^2\dx{x}+\int_{x=b}^cx^2\dx{x}\amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{b}+\ftceval{\frac{x^3}{x}}{3}{b}{c}
-              </mrow>
-              <mrow>
-                \amp{}
-                =\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)
-              </mrow>
-              <mrow>
-                \amp{}=\frac{c^3}{3}-\frac{a^3}{3}
-              </mrow>
-              <mrow>
-                \amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{c}
-              </mrow>
-            </md>
-          </p>
-        </statement>
-      </task>
-      </example>
-      <p>
-        To see that these properties hold geometrically (without the
-        Fundamental Theorem of Calculus), recall that this really is a sum
-        of differentials. Specifically, we have the following diagram
-        illustrating a generic rectangle that we are summing.
-      </p>
+</mrow>
+<mrow>
+  \amp{}
+  =\left(\frac{b^3}{3}-\frac{a^3}{3}\right)+\left(\frac{c^3}{3}-\frac{b^3}{3}\right)
+</mrow>
+<mrow>
+  \amp{}=\frac{c^3}{3}-\frac{a^3}{3}
+</mrow>
+<mrow>
+  \amp{}=\ftceval{\frac{x^3}{3}}{x}{a}{c}
+</mrow>
+</md>
+</p>
+</statement>
+</task>
+</example>
+<p>
+  To see that these properties hold geometrically (without the
+  Fundamental Theorem of Calculus), recall that this really is a sum
+  of differentials. Specifically, we have the following diagram
+  illustrating a generic rectangle that we are summing.
+</p>
 
-      <figure>
-        <caption>A geometic representation of integration</caption>
-        <image source="IC/IntGeom.png" width="40%">
-          <shortdescription>A geometic representation of
-          integration</shortdescription>
-        </image>
-      </figure>
+<figure>
+<caption>A geometic representation of integration</caption>
+<image source="IC/IntGeom.png" width="40%">
+  <shortdescription>A geometic representation of
+integration</shortdescription>
+</image>
+</figure>
 
-      <p>
-        When we consider <m>\int_{x=b}^ay\dx{x}</m> with <m>a\lt b</m>,
-        then the difference <m>\dx{x}</m> is a positive change. When we
-        consider <m>\int_{x=b}^a y\dx{x}</m>, then the difference
-        <m>\dx{x}</m> represents a negative change. Hence, we have
-        <me>\int_{x=b}^ay\dx{x}=-\int_{x=a}^by\dx{x}.</me>
-      </p>
+<p>
+  When we consider <m>\int_{x=b}^ay\dx{x}</m> with <m>a\lt b</m>,
+  then the difference <m>\dx{x}</m> is a positive change. When we
+  consider <m>\int_{x=b}^a y\dx{x}</m>, then the difference
+  <m>\dx{x}</m> represents a negative change. Hence, we have
+<me>\int_{x=b}^ay\dx{x}=-\int_{x=a}^by\dx{x}.</me>
+</p>
 
-      <exercise>
+<exercise>
+  <p>
+    Use the fact that <me>\int_{x=a}^a=-\int_{x=a}^ay\dx{x}</me> to
+    show that <me>\int_{x=a}^ay\dx{x}=0{}</me>.
+</p>
+</exercise>
+
+<p>
+  As for the last property, <me>\int_{x=a}^bf\dx{x}
+  +\int_{x=b}^cf\dx{x}=\int_{x=a}^cf\dx{x}{}</me> Consider the
+  following diagram where <m>a\lt b \lt c</m>.
+</p>
+
+
+<figure>
+<caption>The sum property of integration</caption>
+<image source="IC/SumProp.png" width="60%">
+  <shortdescription>The sum property of
+integration</shortdescription>
+</image>
+</figure>
+
+<p>
+  If we are summing differentials <m>y\dx{x}</m> from <m>x=a</m> to
+  <m>x=b</m> and summing them from <m>x=b</m> to <m>x=c</m>, then
+  this certainly would be the same as summing them from <m>x=a</m> to
+  <m>x=c</m>. Thus <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
+  \int_{x=a}^cf\dx{x}</me>.
+</p>
+<exercise>
+  <statement>
+    <p>
+      Show that for the case where <m>a\lt{c}\lt{b}</m>, we still
+      have <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
+\int_{x=a}^cf\dx{x}.</me>
+</p>
+</statement>
+<hint>
+  <p>
+    We already know that
+    <me>\int_{x=a}^bf\dx{x}+\int_{x=a}^cf\dx{x} =
+\int_{x=c}^bf\dx{x}.</me> Solve for <m>\int_{x=a}^cf\dx{x}</m>
+and use a previous property.
+</p>
+</hint>
+</exercise>
+
+<problem>
+  <p>
+    Suppose <me>\int_{x=0}^5f\dx{x} = 3, \int_{x=0}^7f\dx{x} =8,
+    \text{ and } \int_{x=0}^5g\dx{x} =2.</me> Compute
+    
+    <ol cols="3" marker="(i)">
+      
+      <li>
         <p>
-          Use the fact that <me>\int_{x=a}^a=-\int_{x=a}^ay\dx{x}</me> to
-          show that <me>\int_{x=a}^ay\dx{x}=0{}</me>.
-        </p>
-      </exercise>
+<m>\int_{x=0}^5(9f-4g)\dx{x}</m>
+</p>
+</li>
 
-      <p>
-        As for the last property, <me>\int_{x=a}^bf\dx{x}
-        +\int_{x=b}^cf\dx{x}=\int_{x=a}^cf\dx{x}{}</me> Consider the
-        following diagram where <m>a\lt b \lt c</m>.
-      </p>
+<li>
+  <p>
+<m>\int_{x=5}^7f\dx{x} </m>
+</p>
+</li>
 
+<li>
+  <p>
+<m>\int_{x=5}^0g\dx{x} </m>
+</p>
+</li>
 
-      <figure>
-        <caption>The sum property of integration</caption>
-        <image source="IC/SumProp.png" width="60%">
-          <shortdescription>The sum property of
-          integration</shortdescription>
-        </image>
-      </figure>
+<li>
+  <p>
+<m>\int_{x=0}^0f\dx{x} </m>
+</p>
+</li>
 
-      <p>
-        If we are summing differentials <m>y\dx{x}</m> from <m>x=a</m> to
-        <m>x=b</m> and summing them from <m>x=b</m> to <m>x=c</m>, then
-        this certainly would be the same as summing them from <m>x=a</m> to
-        <m>x=c</m>. Thus <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
-        \int_{x=a}^cf\dx{x}</me>.
-      </p>
-      <exercise>
-        <statement>
-          <p>
-            Show that for the case where <m>a\lt{c}\lt{b}</m>, we still
-            have <me>\int_{x=a}^bf\dx{x}+\int_{x=b}^cf\dx{x} =
-            \int_{x=a}^cf\dx{x}.</me>
-          </p>
-        </statement>
-        <hint>
-          <p>
-            We already know that
-            <me>\int_{x=a}^bf\dx{x}+\int_{x=a}^cf\dx{x} =
-            \int_{x=c}^bf\dx{x}.</me> Solve for <m>\int_{x=a}^cf\dx{x}</m>
-            and use a previous property.
-          </p>
-        </hint>
-      </exercise>
+<li>
+  <p>
+<m>\int_{t=0}^5f(t)\dx{t} </m>
+</p>
+</li>
+</ol>
+</p>
+</problem>
+<aside>
+<title>Note to self</title>
 
-      <problem>
-        <p>
-          Suppose <me>\int_{x=0}^5f\dx{x} = 3, \int_{x=0}^7f\dx{x} =8,
-          \text{ and } \int_{x=0}^5g\dx{x} =2.</me> Compute
-          
-          <ol cols="3" marker="i">
-            
-            <li>
-              <p>
-                <m>\int_{x=0}^5(9f-4g)\dx{x}</m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>\int_{x=5}^7f\dx{x} </m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>\int_{x=5}^0g\dx{x} </m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>\int_{x=0}^0f\dx{x} </m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>\int_{t=0}^5f(t)\dx{t} </m>
-              </p>
-            </li>
-          </ol>
-        </p>
-      </problem>
-      <aside>
-        <title>Note to self</title>
-
-        <p>Make this a PreTeXt reference.</p>
-      </aside>
-      <p>
-        Part e of the last problem brings up an interesting aspect about
-        definite integrals. Since the final answer is a number, then the
-        variable t is immaterial. For example, we have
+<p>Make this a PreTeXt reference.</p>
+</aside>
+<p>
+  Part e of the last problem brings up an interesting aspect about
+  definite integrals. Since the final answer is a number, then the
+  variable t is immaterial. For example, we have
         <me>\int_{x=0}^1x^2\dx{x}=\int_{t=0}^1t^2\dx{t}=\int_{u=0}^1u^2\dx{u}
         =\frac13.</me> With this in mind, many people call the <m>x</m>,
         <m>t</m>, or <m>u</m> in the integral a <q>dummy</q> variable. This
