@@ -2661,7 +2661,7 @@
         <url href="https://www.google.com/books/edition/The_Doctrine_and_Application_of_Fluxions/4r44AAAAMAAJ?hl=en" visual="https://www.google.com/books/edition/The_Doctrine_and_Application_of_Fluxions/4r44AAAAMAAJ?hl=en">            <pubtitle>The
         Doctrine and Application of Fluxions</pubtitle></url>:
       </p>
-      <image source="IC/SimpsonOpt.png" width="70%">
+      <image source="DC/SimpsonOpt.png" width="70%">
         <shortdescription></shortdescription>
       </image>
 
@@ -2775,7 +2775,7 @@
         this curve when <m>a=1</m>, we can see what is happening
         here.
       </p>
-      <image source="IC/SimpsonOptGraph.png" width="60%">
+      <image source="DC/SimpsonOptGraph.png" width="60%">
         <shortdescription></shortdescription>
       </image>
       <!-- \includegraphics*[width=3.90in, height=2.53in]{image67} -->
@@ -2792,7 +2792,7 @@
         evidenced by their graphs.
       </p>
 
-      <image source="IC/UndefinedDerivativeOpt.png" width="80%">
+      <image source="DC/UndefinedDerivativeOpt.png" width="80%">
         <shortdescription></shortdescription>
       </image>
 
@@ -2806,1275 +2806,1275 @@
         looking for maxima and minima. We<rsq/>ll have to get
         organized.
       </p>
-    </subsection>
+</subsection>
 
 
 
 
-    <subsection>
-      <title>Identifying and Distinguishing Maxima and Minima</title>
+<subsection>
+  <title>Identifying and Distinguishing Maxima and Minima</title>
+  <p>
+
+    Use your favorite graphing utility to graph the function
+    <m> O(x)=x^3-3x </m> and confirm visually that it has a local maximum at
+    <m>(-1, 2)</m>, and a local minimum at <m>(1,-2)</m>.  This seems to be easy to
+    do when we have the graph in front of us.  But in the absence of a
+    graph how could we tell which is the maximum and which is the minimum?
+  </p>
+  <p>
+
+    Sometimes even having the graph isn<rsq/>t much help. For example, see if
+    you can visually identify the global maximum and global minimum of
+    the graph of
+    <me>
+      O(x)=(x^4-17x^3+239x)\sin(2x),\; 10\le x\le20.
+    </me>
+  </p>
+  <p>
+    
+    We<rsq/>ll need an analytic method; one that doesn<rsq/>t rely on pictures.
+    To that end, consider the following theorem from elementary Algebra.
+  </p>
+
+  <theorem xml:id="THEOREMFDT-lines">
+    <idx><h>Theorem</h><h>First Derivative Test for Straight Lines</h></idx>
+    <p>
+      <ol>
+        <li>
+          <p>
+            If a line has positive slope then the <m>y</m> coordinate  increases as the <m>x</m> coordinate increases.
+          </p>
+        </li>
+        <li>
+          <p>
+            If a line has negative slope then the <m>y</m> coordinate  decreases as the <m>x</m> coordinate increases.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </theorem>
+
+  <p>
+    Lines are easy to think about of course, because the slope of a line
+    is constant. If the slope of a line is <m>5</m> here, then it is also <m>5</m>
+    over there, and way back there too. But we know that the slope of a
+    curve can change from point to point so we will need to generalize
+    <xref ref="THEOREMFDT-lines">Theorem</xref> to a statement about curves.
+    <xref ref="THEOREMFDT-lines"></xref> generalizes to curves as follows.
+  </p>
+
+  <aside>
+    <title>Comment</title>
+    <p>
+      This is a rather naive statement of this theorem, but
+      it will suffice for our current purposes. We will revisit,
+      restate, and prove the First Derivative Test in
+      <xref ref="SECTIONfirst-deriv-test">Section</xref>
+    </p>
+  </aside>
+  <theorem xml:id="THEOREMFDT">
+    <title>The First Derivative Test</title>
+    <idx><h>Theorem</h><h>First Derivative Test</h></idx>
+
+    <p>
+      Suppose <m>f</m> is a function of <m>x</m>.  The following statements are
+      true:
+      <ol>
+        <li>
+          <p>
+            If <m>f^\prime(a)\gt 0</m>, on some interval then <m>f(x)</m> is    increasing on the interval.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>f^\prime(a)\lt 0</m>, on some interval then <m>f(x)</m> is    decreasing on the interval.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </theorem>
+
+
+  
+  <p>
+    The First Derivative test is precisely the tool we need to
+    distinguish a maximum from a minimum.  It will also turn out to be
+    the tool that will allow us to determine via computation, rather
+    than intuition, if a given objective function has a maximum or
+    minimum.  Take a moment to think about how this might be done before
+    reading further.
+  </p>
+
+
+</subsection>
+<subsection xml:id="SUBSECTIONTransitionPoints">
+  <title>Transition Points, and Possible Transition Points on
+  Open Intervals</title>
+
+  <p>
+
+    For the moment notice that we are confining our attention to
+    functions whose domains are open intervals.
+  </p>
+  <p>
+    
+    From <xref ref="THEOREMFDT">Theorem</xref> we see that if the derivative of <m>O(x)</m>
+    is positive then <m>O(x)</m> is increasing and if the derivative of
+    <m>O(x)</m> is negative then <m>O(x)</m> is decreasing. So, at a maximum
+    <m>O(x)</m> will transition from increasing to decreasing, and
+    <m>O^\prime(x)=\dfdx{O}{x}</m> will transition from positive to
+    negative. We conclude that to find a maximum we need to find those
+    places where the derivative transitions from positive to negative.
+  </p>
+  <p>
+
+    <idx><h>Vocabulary</h><h>optimal transition points</h></idx>
+    Similarly, to find a local minimum, we need to find a place where
+    the derivative transitions from negative to positive.  We call such
+    points <term>optimal transition points</term> because they are the places
+    where (local) optima must occur.
+  </p>
+  <p>
+    <idx><h>Vocabulary</h><h>possible optimal transition points (POTPs)</h></idx>
+    The simplest way for <m>O^\prime(x)=\dfdx{O}{x}</m> to make either
+    transition is for it to pass through zero. Thus the solutions of
+    <m>O^\prime(x) = \dfdx{O}{x} =0</m> are <term>possible optimal transition
+    points (POTPs)</term> because these are points where and optimum might
+    occur. This is not guaranteed.
+  </p>
+  <p>
+    
+    In the simplest case all we have to do is find the solutions of
+    <m>O^\prime(x)=\dfdx{O}{x}</m>, then determine the sign of the derivative
+    on either side of each such point. If it changes then we have a
+    local extremum.
+  </p>
+  <p>
+
+  </p>
+
+  <exercise xml:id="DRILLTransitionQuestion">
+    <statement>
       <p>
-
-        Use your favorite graphing utility to graph the function
-        <m> O(x)=x^3-3x </m> and confirm visually that it has a local maximum at
-        <m>(-1, 2)</m>, and a local minimum at <m>(1,-2)</m>.  This seems to be easy to
-        do when we have the graph in front of us.  But in the absence of a
-        graph how could we tell which is the maximum and which is the minimum?
+        
+        In the paragraph above we used the phrase <q>in the simplest
+        case.</q> We chose our words carefully. Can you think of another
+        way for <m>O^\prime(x) =\dfdx{O}{x}</m> to transition from
+        positive to negative, or from negative to positive?  Give this
+        some thought. We will come back to it.
       </p>
-      <p>
+    </statement>
+  </exercise>
+  <p>
+    The POTPs which are solutions of <m>\dfdx{O}{x}=0</m> are the easiest to
+    think about and work with so we will focus on those for
+    now. Unfortunately, extrema can sometimes occur at other points as
+    well. We will address that possibility once we have thoroughly
+    examined this simpler case.
+  </p>
+  <example xml:id="EXAMPLEPPT">
+    <p>
+      Let <m>O(x)=x^3-3x</m>.  The solutions of <m>\dfdx{O}{x}=3x^2-3=0</m> are
+      <m>x=-1</m> and <m>x=1</m> so these are the POTPs.  Sketch the graph of
+      <m>O(x)</m> and follow along with our reasoning below, confirming our
+      conclusions visually.
+    </p>
+    <p>
+      To determine if they actually are transition points we proceed as
+      follows:
+      <dl>
+        <li>
+          <title>At  <m>x=-1</m>:</title>
+          <p>
+            Pick a number less than <m>-1</m>, say
+            <m>x=-2.</m> Since  <m>\dfdxat{O}{x}{-2}\gt 0</m> we see that <m>O(x)</m> is
+            increasing to the left of <m>x=-1.</m> Next pick a number between
+            <m>-1</m> and the next POTP, <m>x=1</m>. We<rsq/>ll take <m>x=0</m>. Since
+            <m>\dfdxat{O}{x}{0}\lt0</m> we see that <m>O(x)</m> is decreasing to the
+            right of <m>x=-1</m>. Thus <m>O(-1) =2</m> is a local maximum value of
+            <m>O(x)</m>.
+          </p>
+        </li>
+        <li>
+          <title>At   <m>x=1</m>:</title>
+          <p>
+            As we saw above <m>O(x)</m> is decreasing to the left of <m>x=1</m> since
+            <m>\dfdxat{O}{x}{0}\lt0</m>. (Zero is between <m>x=-1</m> and <m>x=1</m>.) Next
+            choose any number to the right of <m>x=1</m>. We<rsq/>ll choose
+            <m>x=2</m>. Since <m>\dfdxat{O}{x}{2}\gt0</m> we see that <m>O(x)</m> is
+            increasing to the right of <m>x=1</m>. Thus <m>O(1)=-2</m> is a local
+            minimum of <m>O(x)</m>.
+          </p>
+        </li>
+      </dl>
 
-        Sometimes even having the graph isn<rsq/>t much help. For example, see if
-        you can visually identify the global maximum and global minimum of
-        the graph of
+    </p>
+    <p>
+
+      
+      In this example we only tested one number between adjacent
+      POTPs. Is that enough? Give this some thought before reading on.
+    </p>
+    <p>
+
+      Of course it is. Consider that the POTPs are precisely those
+      places where <m>O^\prime(x)</m> might change sign. Therefore the sign
+      of <m>O^\prime(x)</m> must either be always positive or always negative
+      in between POTPs. Therefore, we only need to test at one value of
+      <m>x</m> to find the sign of <m>O(x)</m> on the entire interval between
+      POTPs.
+    </p>
+    <p>
+
+      If <m>a</m> is the greatest POTP we need only test the sign of one
+      number greater than <m>a</m> to determine the sign of <m>O^\prime(x)</m> for
+      every value of <m>x</m> greater than <m>a</m>.
+    </p>
+    <p>
+
+      Similarly, if <m>a</m> is the least POTP we need only test the sign of
+      one number less than <m>a</m> to determine the sign of <m>O^\prime(x)</m>
+      for every value of <m>x</m> less than <m>a</m>.
+    </p>
+    <p>
+
+      We state all of this formally in <xref ref="LEMMAAdjRoots"></xref>
+      below.
+    </p>
+  </example>
+
+  <exercise>
+    <statement>
+      <p>
+        Does the graph of <m>O(x)=x^3-3x</m> have a global maximum or
+        minimum?  Explain.
+      </p>
+    </statement>
+  </exercise>
+
+  <lemma xml:id="LEMMAAdjRoots">
+    <p>
+      Let <m>f(x)</m> be a differentiable function.
+      
+      <ol>
+        <li>
+          <p>
+            Suppose <m>r_1</m> and <m>r_2</m> are two POTPs of <m>f(x)</m> such that
+            there is not another POTP between them. If <m>f^\prime(x)\gt
+            0</m> for some <m>x</m> in the domain of <m>f</m> between <m>r_1</m> and
+            <m>r_2</m>, then <m>f^\prime(x)\gt 0</m> for every <m>x</m> in the domain
+            of <m>f</m> between <m>r_1</m> and <m>r_2</m>. Similarly, if
+            <m>f^\prime(x)\lt 0</m> for some <m>x</m> between <m>r_1</m> and <m>r_2</m>,
+            then <m>f^\prime(x)\lt 0</m> for every <m>x</m> in the domain of <m>f</m>
+            between <m>r_1</m> and <m>r_2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>r_1</m> is the greatest POTP of <m>f(x)</m>. If
+            <m>f^\prime(x)\gt0\; (\lt0)</m> for some <m>x\gt r_1</m> then
+            <m>f^\prime(x)\gt 0\; (\lt0)</m> for all <m>x\gt r_1</m>, in the
+            domain of <m>f</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>r_2</m> is the least POTP of <m>f(x)</m>. If
+            <m>f^\prime(x)\gt0\; (\lt0)</m> for some <m>x\lt r_2</m> then
+            <m>f^\prime(x)\gt 0\; (\lt0)</m> for all <m>x\lt r_2</m>, in the
+            domain of <m>f</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </lemma>
+
+  <p>
+    In mathematics Theorems and Lemmas are always stated very formally,
+    very concisely, and with as much generality as possible. There are
+    good reasons for this but it does sometimes make them hard to read.
+  </p>
+  
+  <exercise>
+    <statement>
+      <p>
+        Read <xref ref="LEMMAAdjRoots">Lemma</xref> very carefully and convince
+        yourself that it really does say the same thing as our conclusions
+        at the end of <xref ref="EXAMPLEPPT"></xref>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Remember that POTPs are <em>possible</em> optimal transition
+    points. The existence of a POTP does not imply the existence of an
+    optimum, as the next example demonstrates.
+  </p>
+
+  <example xml:id="EXAMPLEx5">
+    <p>
+
+      Find all extrema of the graph of <m>O(x)=x^5</m>.
+    </p>
+    <p>
+
+      Solving <m>\dfdxat{O}{x}{0}=5x^4=0</m> we see that <m>x=0</m> is the only
+      POTP. But elsewhere <m>O^\prime(x)\gt 0</m> (confirm this) so
+      <m>\dfdx{O}{x}</m> is positive for every value of <m>x</m> except zero. In
+      particular it is positive on the left and on the right of
+      zero. Therefore <m>O(x)=x^5</m> never transitions between increasing
+      and decreasing, so we conclude that it does not have an extremum
+      at <m>x=0</m>, despite the fact that <m>\dfdxat{O}{x}{0}=0</m>. This may
+      seem very curious until you graph the function.
+    </p>
+  </example>
+
+
+  <exercise>
+    <statement>
+      <p>
+        Sketch the graph of <m>O(x)=x^5</m> and use it to explain how we can
+        have <m>\dfdxat{O}{x}{0}=0</m> yet not have either a maximum or a
+        minimum at <m>x=0</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <example xml:id="EXAMPLEParabolaSquare-Redux">
+    <title>Constructing a Parabola on a Square, Revisited</title>
+    <p>
+      Given our new understanding of the distinction between local and
+      global extrema we will revisit
+      <xref ref="EXAMPLEParabolaOptSqr"></xref>. 
+      The objective function is still <m> A = (x-2)^2 + (y-3)^2 </m> so when
+      we substitute the constraint, <m>y = x^2</m>, we get the abstract
+      problem of finding the lowest points on the graph of
+      <me>
+        A(x) = (x-2)^2 + (x^2-3)^2
+      </me>
+
+    </p>
+    <p>
+
+      Solving <m>\dfdx{A}{x}=0</m> gives us three POTPs: <m>x \approx-1.32</m>,
+      <m>x \approx-0.43</m>, and <m>x \approx1.75</m> as before, so the intervals
+      we need are, <m>(-\infty, -1.32)</m>, <m>(-1.32, -0.43)</m>,
+      <m>(-0.43, 1.75)</m>, and <m>(1.75, \infty)</m>.  Because our POTPs are
+      approximations these intervals are also approximate.
+
+    </p>
+    <p>
+
+      Now pretend that you don<rsq/>t already know the solution of this
+      problem.  Just as in <xref ref="EXAMPLEPPT"></xref> we can use the
+      First Derivative Test to determine which of the POTPs we<rsq/>ve
+      identified corresponds to a local minimum or maximum.
+    </p>
+  </example>
+
+
+  <exercise xml:id="PROBLEMFDT1">
+    <task  xml:id="PROBLEMFDT1A">
+      <p>
+        For the objective function
         <me>
-          O(x)=(x^4-17x^3+239x)\sin(2x),\; 10\le x\le20.
+          A(x) = (x-2)^2 + (x^2-3)^2
         </me>
-      </p>
-      <p>
-        
-        We<rsq/>ll need an analytic method; one that doesn<rsq/>t rely on pictures.
-        To that end, consider the following theorem from elementary Algebra.
-      </p>
-
-      <theorem xml:id="THEOREMFDT-lines">
-        <idx><h>Theorem</h><h>First Derivative Test for Straight Lines</h></idx>
-        <p>
-          <ol>
-            <li>
-              <p>
-                If a line has positive slope then the <m>y</m> coordinate  increases as the <m>x</m> coordinate increases.
-              </p>
-            </li>
-            <li>
-              <p>
-                If a line has negative slope then the <m>y</m> coordinate  decreases as the <m>x</m> coordinate increases.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </theorem>
-
-      <p>
-        Lines are easy to think about of course, because the slope of a line
-        is constant. If the slope of a line is <m>5</m> here, then it is also <m>5</m>
-        over there, and way back there too. But we know that the slope of a
-        curve can change from point to point so we will need to generalize
-        <xref ref="THEOREMFDT-lines">Theorem</xref> to a statement about curves.
-        <xref ref="THEOREMFDT-lines"></xref> generalizes to curves as follows.
-      </p>
-
-      <aside>
-        <title>Comment</title>
-        <p>
-          This is a rather naive statement of this theorem, but
-          it will suffice for our current purposes. We will revisit,
-          restate, and prove the First Derivative Test in
-          <xref ref="SECTIONfirst-deriv-test">Section</xref>
-        </p>
-      </aside>
-      <theorem xml:id="THEOREMFDT">
-        <title>The First Derivative Test</title>
-        <idx><h>Theorem</h><h>First Derivative Test</h></idx>
-
-        <p>
-          Suppose <m>f</m> is a function of <m>x</m>.  The following statements are
-          true:
-          <ol>
-            <li>
-              <p>
-                If <m>f^\prime(a)\gt 0</m>, on some interval then <m>f(x)</m> is    increasing on the interval.
-              </p>
-            </li>
-            <li>
-              <p>
-                If <m>f^\prime(a)\lt 0</m>, on some interval then <m>f(x)</m> is    decreasing on the interval.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </theorem>
-
-
-      
-      <p>
-        The First Derivative test is precisely the tool we need to
-        distinguish a maximum from a minimum.  It will also turn out to be
-        the tool that will allow us to determine via computation, rather
-        than intuition, if a given objective function has a maximum or
-        minimum.  Take a moment to think about how this might be done before
-        reading further.
-      </p>
-
-
-    </subsection>
-    <subsection xml:id="SUBSECTIONTransitionPoints">
-      <title>Transition Points, and Possible Transition Points on
-      Open Intervals</title>
-
-      <p>
-
-        For the moment notice that we are confining our attention to
-        functions whose domains are open intervals.
-      </p>
-      <p>
-        
-        From <xref ref="THEOREMFDT">Theorem</xref> we see that if the derivative of <m>O(x)</m>
-        is positive then <m>O(x)</m> is increasing and if the derivative of
-        <m>O(x)</m> is negative then <m>O(x)</m> is decreasing. So, at a maximum
-        <m>O(x)</m> will transition from increasing to decreasing, and
-        <m>O^\prime(x)=\dfdx{O}{x}</m> will transition from positive to
-        negative. We conclude that to find a maximum we need to find those
-        places where the derivative transitions from positive to negative.
-      </p>
-      <p>
-
-        <idx><h>Vocabulary</h><h>optimal transition points</h></idx>
-        Similarly, to find a local minimum, we need to find a place where
-        the derivative transitions from negative to positive.  We call such
-        points <term>optimal transition points</term> because they are the places
-        where (local) optima must occur.
-      </p>
-      <p>
-        <idx><h>Vocabulary</h><h>possible optimal transition points (POTPs)</h></idx>
-        The simplest way for <m>O^\prime(x)=\dfdx{O}{x}</m> to make either
-        transition is for it to pass through zero. Thus the solutions of
-        <m>O^\prime(x) = \dfdx{O}{x} =0</m> are <term>possible optimal transition
-        points (POTPs)</term> because these are points where and optimum might
-        occur. This is not guaranteed.
-      </p>
-      <p>
-        
-        In the simplest case all we have to do is find the solutions of
-        <m>O^\prime(x)=\dfdx{O}{x}</m>, then determine the sign of the derivative
-        on either side of each such point. If it changes then we have a
-        local extremum.
-      </p>
-      <p>
-
-      </p>
-
-      <exercise xml:id="DRILLTransitionQuestion">
-        <statement>
-          <p>
-            
-            In the paragraph above we used the phrase <q>in the simplest
-            case.</q> We chose our words carefully. Can you think of another
-            way for <m>O^\prime(x) =\dfdx{O}{x}</m> to transition from
-            positive to negative, or from negative to positive?  Give this
-            some thought. We will come back to it.
-          </p>
-        </statement>
-      </exercise>
-      <p>
-        The POTPs which are solutions of <m>\dfdx{O}{x}=0</m> are the easiest to
-        think about and work with so we will focus on those for
-        now. Unfortunately, extrema can sometimes occur at other points as
-        well. We will address that possibility once we have thoroughly
-        examined this simpler case.
-      </p>
-      <example xml:id="EXAMPLEPPT">
-        <p>
-          Let <m>O(x)=x^3-3x</m>.  The solutions of <m>\dfdx{O}{x}=3x^2-3=0</m> are
-          <m>x=-1</m> and <m>x=1</m> so these are the POTPs.  Sketch the graph of
-          <m>O(x)</m> and follow along with our reasoning below, confirming our
-          conclusions visually.
-        </p>
-        <p>
-          To determine if they actually are transition points we proceed as
-          follows:
-          <dl>
-            <li>
-              <title>At  <m>x=-1</m>:</title>
-              <p>
-                Pick a number less than <m>-1</m>, say
-                <m>x=-2.</m> Since  <m>\dfdxat{O}{x}{-2}\gt 0</m> we see that <m>O(x)</m> is
-                increasing to the left of <m>x=-1.</m> Next pick a number between
-                <m>-1</m> and the next POTP, <m>x=1</m>. We<rsq/>ll take <m>x=0</m>. Since
-                <m>\dfdxat{O}{x}{0}\lt0</m> we see that <m>O(x)</m> is decreasing to the
-                right of <m>x=-1</m>. Thus <m>O(-1) =2</m> is a local maximum value of
-                <m>O(x)</m>.
-              </p>
-            </li>
-            <li>
-              <title>At   <m>x=1</m>:</title>
-              <p>
-                As we saw above <m>O(x)</m> is decreasing to the left of <m>x=1</m> since
-                <m>\dfdxat{O}{x}{0}\lt0</m>. (Zero is between <m>x=-1</m> and <m>x=1</m>.) Next
-                choose any number to the right of <m>x=1</m>. We<rsq/>ll choose
-                <m>x=2</m>. Since <m>\dfdxat{O}{x}{2}\gt0</m> we see that <m>O(x)</m> is
-                increasing to the right of <m>x=1</m>. Thus <m>O(1)=-2</m> is a local
-                minimum of <m>O(x)</m>.
-              </p>
-            </li>
-          </dl>
-
-        </p>
-        <p>
-
-          
-          In this example we only tested one number between adjacent
-          POTPs. Is that enough? Give this some thought before reading on.
-        </p>
-        <p>
-
-          Of course it is. Consider that the POTPs are precisely those
-          places where <m>O^\prime(x)</m> might change sign. Therefore the sign
-          of <m>O^\prime(x)</m> must either be always positive or always negative
-          in between POTPs. Therefore, we only need to test at one value of
-          <m>x</m> to find the sign of <m>O(x)</m> on the entire interval between
-          POTPs.
-        </p>
-        <p>
-
-          If <m>a</m> is the greatest POTP we need only test the sign of one
-          number greater than <m>a</m> to determine the sign of <m>O^\prime(x)</m> for
-          every value of <m>x</m> greater than <m>a</m>.
-        </p>
-        <p>
-
-          Similarly, if <m>a</m> is the least POTP we need only test the sign of
-          one number less than <m>a</m> to determine the sign of <m>O^\prime(x)</m>
-          for every value of <m>x</m> less than <m>a</m>.
-        </p>
-        <p>
-
-          We state all of this formally in <xref ref="LEMMAAdjRoots"></xref>
-          below.
-        </p>
-      </example>
-
-      <exercise>
-        <statement>
-          <p>
-            Does the graph of <m>O(x)=x^3-3x</m> have a global maximum or
-            minimum?  Explain.
-          </p>
-        </statement>
-      </exercise>
-
-      <lemma xml:id="LEMMAAdjRoots">
-        <p>
-          Let <m>f(x)</m> be a differentiable function.
-          
-          <ol>
-            <li>
-              <p>
-                Suppose <m>r_1</m> and <m>r_2</m> are two POTPs of <m>f(x)</m> such that
-                there is not another POTP between them. If <m>f^\prime(x)\gt
-                0</m> for some <m>x</m> in the domain of <m>f</m> between <m>r_1</m> and
-                <m>r_2</m>, then <m>f^\prime(x)\gt 0</m> for every <m>x</m> in the domain
-                of <m>f</m> between <m>r_1</m> and <m>r_2</m>. Similarly, if
-                <m>f^\prime(x)\lt 0</m> for some <m>x</m> between <m>r_1</m> and <m>r_2</m>,
-                then <m>f^\prime(x)\lt 0</m> for every <m>x</m> in the domain of <m>f</m>
-                between <m>r_1</m> and <m>r_2</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Suppose <m>r_1</m> is the greatest POTP of <m>f(x)</m>. If
-                <m>f^\prime(x)\gt0\; (\lt0)</m> for some <m>x\gt r_1</m> then
-                <m>f^\prime(x)\gt 0\; (\lt0)</m> for all <m>x\gt r_1</m>, in the
-                domain of <m>f</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Suppose <m>r_2</m> is the least POTP of <m>f(x)</m>. If
-                <m>f^\prime(x)\gt0\; (\lt0)</m> for some <m>x\lt r_2</m> then
-                <m>f^\prime(x)\gt 0\; (\lt0)</m> for all <m>x\lt r_2</m>, in the
-                domain of <m>f</m>.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </lemma>
-
-      <p>
-        In mathematics Theorems and Lemmas are always stated very formally,
-        very concisely, and with as much generality as possible. There are
-        good reasons for this but it does sometimes make them hard to read.
-      </p>
-      
-      <exercise>
-        <statement>
-          <p>
-            Read <xref ref="LEMMAAdjRoots">Lemma</xref> very carefully and convince
-            yourself that it really does say the same thing as our conclusions
-            at the end of <xref ref="EXAMPLEPPT"></xref>.
-          </p>
-        </statement>
-      </exercise>
-      <p>
-        Remember that POTPs are <em>possible</em> optimal transition
-        points. The existence of a POTP does not imply the existence of an
-        optimum, as the next example demonstrates.
-      </p>
-
-      <example xml:id="EXAMPLEx5">
-        <p>
-
-          Find all extrema of the graph of <m>O(x)=x^5</m>.
-        </p>
-        <p>
-
-          Solving <m>\dfdxat{O}{x}{0}=5x^4=0</m> we see that <m>x=0</m> is the only
-          POTP. But elsewhere <m>O^\prime(x)\gt 0</m> (confirm this) so
-          <m>\dfdx{O}{x}</m> is positive for every value of <m>x</m> except zero. In
-          particular it is positive on the left and on the right of
-          zero. Therefore <m>O(x)=x^5</m> never transitions between increasing
-          and decreasing, so we conclude that it does not have an extremum
-          at <m>x=0</m>, despite the fact that <m>\dfdxat{O}{x}{0}=0</m>. This may
-          seem very curious until you graph the function.
-        </p>
-      </example>
-
-
-      <exercise>
-        <statement>
-          <p>
-            Sketch the graph of <m>O(x)=x^5</m> and use it to explain how we can
-            have <m>\dfdxat{O}{x}{0}=0</m> yet not have either a maximum or a
-            minimum at <m>x=0</m>.
-          </p>
-        </statement>
-      </exercise>
-
-      <example xml:id="EXAMPLEParabolaSquare-Redux">
-        <title>Constructing a Parabola on a Square, Revisited</title>
-        <p>
-          Given our new understanding of the distinction between local and
-          global extrema we will revisit
-          <xref ref="EXAMPLEParabolaOptSqr"></xref>. 
-          The objective function is still <m> A = (x-2)^2 + (y-3)^2 </m> so when
-          we substitute the constraint, <m>y = x^2</m>, we get the abstract
-          problem of finding the lowest points on the graph of
-          <me>
-            A(x) = (x-2)^2 + (x^2-3)^2
-          </me>
-
-        </p>
-        <p>
-
-          Solving <m>\dfdx{A}{x}=0</m> gives us three POTPs: <m>x \approx-1.32</m>,
-          <m>x \approx-0.43</m>, and <m>x \approx1.75</m> as before, so the intervals
-          we need are, <m>(-\infty, -1.32)</m>, <m>(-1.32, -0.43)</m>,
-          <m>(-0.43, 1.75)</m>, and <m>(1.75, \infty)</m>.  Because our POTPs are
-          approximations these intervals are also approximate.
-
-        </p>
-        <p>
-
-          Now pretend that you don<rsq/>t already know the solution of this
-          problem.  Just as in <xref ref="EXAMPLEPPT"></xref> we can use the
-          First Derivative Test to determine which of the POTPs we<rsq/>ve
-          identified corresponds to a local minimum or maximum.
-        </p>
-      </example>
-
-
-      <exercise xml:id="PROBLEMFDT1">
-        <task  xml:id="PROBLEMFDT1A">
-          <p>
-            For the objective function
-            <me>
-              A(x) = (x-2)^2 + (x^2-3)^2
-            </me>
-            choose a point in each interval and confirm that the following
-            statements are true.
-            <ol  marker="(i)">
-              <li>
-                <p>
-                  On the (approximate) interval        <m>(-\infty, -1.32)</m>:
-                  <m>A^\prime(x) \lt0</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  On the (approximate) interval <m>(-1.32, -0.43)</m>:
-                  <m>A^\prime(x) \gt0</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  On the (approximate) interval <m>(-0.43, 1.75)</m>:
-                  <m>A^\prime(x) \lt0</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  On the (approximate) interval        <m>(1.75, \infty)</m>:
-                  <m>A^\prime(x) \gt0</m>
-                </p>
-              </li>
-            </ol>
-
-          </p>
-        </task>
-
-        <task  xml:id="PROBLEMFDT1B">
-          <statement>
-            <p>
-              Use the First Derivative Test and the data in <xref
-              ref="PROBLEMFDT1A">part</xref>
-              to show that there is a local minimum at <m>x\approx-1.32</m> a
-              local maximum at <m>x\approx-0.43</m> and a local minimum at
-              <m>x\approx1.75</m>.
-            </p>
-          </statement>
-        </task>
-        <task xml:id="PROBLEMFDT1C">
-          <statement>
-            <p>
-              Is the data in <xref ref="PROBLEMFDT1A">part</xref> sufficient
-              to support the conclusion that there is a global minimum at
-              <m>x\approx1.75</m>? Explain why not.
-            </p>
-          </statement>
-        </task>
-        <task xml:id="PROBLEMFDT1D">
-          <statement>
-            <p>
-              What additional data do we need to conclude that there is        a global minimum at <m>x\approx1.75</m>?
-            </p>
-          </statement>
-        </task>
-      </exercise>
-
-      <problem xml:id="DRILLFDT2">
-        <p>
-          Identify all possible optimal transition points, and identify the
-          intervals on which each function is increasing and
-          decreasing. Label each possible optimal transition point as a local or
-          global minimum, or a local or global maximum, or neither.
-          <ol cols="2" marker="(i)">
-            <li>
-              <p>
-                <m>f(x) = x^6-3x^5</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^3-x^2-40x+8</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = 4x^{3}-3x^{4}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^{2}\left(x^{2}-4\right)^{\frac{1}{3}}</m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>f(x) = (4x^{3}-3x^{4})^{\frac43}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = 2x^3+x^2-20x+1</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^6-3x^5+x</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = 8x^5-5x^4-20x^3</m>
-              </p>
-            </li>
-          </ol>
-        </p>
-      </problem>
-      
-    </subsection>
-    <subsection xml:id="SUBSECTIONunderl-deriv">
-      <title>Undefined Derivatives</title>
-
-      <blockquote>
-        <p>
-          Happy families are all alike; every unhappy family is
-          unhappy in its own
-          way.
-        </p>
-        <attribution>
-          <url href="https://en.wikipedia.org/wiki/Leo_Tolstoy" visual="https://en.wikipedia.org/wiki/Leo_Tolstoy">Leo
-          Tolstoy </url> (1847<ndash/>1910)
-        </attribution>
-      </blockquote>
-
-      <p>
-        In <xref ref="DRILLTransitionQuestion"></xref> we asked if you think of a
-        <q>way for <m>O^\prime(x) =\dfdx{O}{x}</m> to transition from positive to
-        negative, or from negative to positive</q> without passing through
-        zero. Clearly this is possible, otherwise we would not have asked.
-        But it<rsq/>s hard to see how this can be isn<rsq/>t it? After all, at a
-        transition point the derivative of the objective function changes
-        signs: It transitions from negative-to-positive or from
-        positive-to-negative. Obviously, the only number that has positive
-        numbers on one side and negative numbers on the other is zero. So
-        won<rsq/>t the solutions of <m>\dfdx{O}{x}=0</m> give us all of the
-        possible transition points?
-      </p>
-
-      <example xml:id="EXAMPLEPOTP-WhereDerivIsUndef">
-        <p>
-          <idx><h>Vocabulary</h><h>undefined derivative</h></idx>
-          No, they won<rsq/>t.  We can also have a transition point wherever
-          <m>\dfdxat{O}{x}{a}</m> is meaningless. That is, when
-          <m>\dfdxat{O}{x}{a}</m> is
-          <term>undefined</term>. <xref ref="DRILLCubeRoot2"></xref> below demonstrates
-          one way in which a derivative might be undefined.
-        </p>
-      </example>
-
-      
-      <exercise xml:id="DRILLCubeRoot2">
-        <introduction>
-          <p>
-            Suppose <me>
-            y(x)=x^\frac13
-          </me>
-          The graph of <m>y(x)</m> looks like this:
-          </p>
-          <image source="DC/CubeRoot1.png" width="60%" />
-
-
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              Show that <m>\dfdxat{y}{x}{0}</m> is undefined.
-            </p>
-          </statement>
-          <hint>
-            <p>
-              Recall <xref ref="DIGRESSIONDivideByZero" text="custom">Digression: Dividing by Zero.</xref>
-            </p>
-          </hint>
-
-        </task>
-        <task>
-          <statement>
-            <p>
-              Graph <m>\dfdx{y}{x}</m> to verify that <m>\dfdx{y}{x}\gt 0</m>
-              when <m>x\ne 0</m>.
-            </p>
-          </statement>
-        </task>
-      </exercise>
-      
-      <p>
-
-        Based on <xref ref="DRILLCubeRoot2"></xref> it would be easy to conclude
-        that the derivative of <m>y(x)</m> can only be undefined at a point <m>x</m>
-        where the formula for <m>\dfdx{y}{x}</m> requires that we divide by
-        zero. But this conclusion is due to the poverty of our experience
-        with non-differentiabilty.
-      </p>
-      <p>
-
-        There are many ways that a function can fail to be differentiable at
-        a point. Dividing by zero is only one of them. In many ways it is
-        the simplest.  The family of non-differentiable functions is a very
-        unhappy family, indeed. We might even call it dysfunctional.
-      </p>
-      <p>
-
-        The  functions whose graphs are shown below is a representative sample of
-        functions which are non-differentiable at
-        <m>x=0</m>. Can you see what they all have in common?\\
-      </p>
-      
-
-      <figure  xml:id="FIGURENonDiffFuncs">
-        <caption>Some non-differentiable functions</caption>
-        <image source="DC/NonDiff3.png" width="100%">
-          <shortdescription></shortdescription>
-        </image>
-      </figure>
-
-
-
-      <p>
-        <idx><h>Principle of Local Linearity</h></idx>
-        In our comments just before <xref ref="DEFINITIONLocalLinearity"></xref> we
-        stated that the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  is exactly what makes
-        Calculus useful and we have relied on that truth in all of our
-        subsequent investigations. But there is more to it than that. The
-        Principle of Local Linearity is not only what makes Differential
-        Calculus useful, its what makes Differential Calculus possible.
-      </p>
-
-      <p>
-        <idx><h>Principle of Local Linearity</h><h>and discontinuous functions</h></idx>
-
-        Take another look at graph of  <m>y(x) = \abs{x}</m> in <xref ref="FIGURENonDiffFuncs"></xref>.  Do you see
-        that the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  is not in play near the point
-        <m>(0,0)</m>? No matter how much we zoom in on this point the graph will
-        never resemble a straight line,  any straight line. It looks like
-        the sketch below at every scale.
-      </p>
-      <image source="DC/NonDiff2.png" width="20%"/>
-      <p>
-        <idx><h>Principle of Local Linearity</h><h>and discontinuous functions</h></idx>
-
-        The same is true of every function shown in <xref
-        ref="FIGURENonDiffFuncs"></xref>. They all violate the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref> . Near <m>x=0</m> none of them looks like a straight
-        line no matter what viewing scale we use.
-      </p>
-      <p>
-
-        The case of a
-        vertical tangent line is slightly problematic because near <m>x=0</m> the graph
-        of, for example, <m>y=x^{\frac13}</m> looks like a vertical straight
-        line. But the derivative of <m>y=x^{\frac13}</m>  is
-        <me>\dfdx{y}{x}=\frac{1}{3x^{\frac23}}</me> so it is  not differentiable
-        at zero, which is the point: Any point where a given function is
-        not differentiable is a POTP.
-      </p>
-      <p>
-
-        We formalize this observation with the following definition.
-      </p>
-      <definition xml:id="DEFINITIONOptimalTransitionPoints">
-        <title>Possible Optimal Transition Points (POTPs)</title>
-        <idx><h>Definition</h><h>Possible Optimal Transition Points (POTPs)</h></idx>
-        <idx><h>Vocabulary</h><h>Possible Optimum Transition Points (POTPs)</h></idx>
-        <statement>
-          <p>
-            
-            The <term>possible optimum transition points</term> of a function,
-            <m>O(x)</m>, come in two categories:
-            
-            <ol>
-              <li>
-                <p>
-                  Any point, <m>x=a</m>, where <m>\dfdxat{O}{x}{a}=0</m> is a possible
-                  optimal transition point.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Any point, <m>x=a</m>, where <m>\dfdxat{O}{x}{a}</m> is not defined
-                  is a possible optimal transition point.
-                </p>
-              </li>
-            </ol>
-
-          </p>
-        </statement>
-      </definition>
-
-
-
-      <problem xml:id="DRILLFDT3">
-        <p>
-          For each function identify all <xref
-          ref="DEFINITIONOptimalTransitionPoints">POTPs</xref>, and identify
-          the intervals on which the function is increasing and
-          decreasing. Label each POTP as a local or global minimum, maximum,
-          or neither.  
-        </p>
-        <p>
-          (For some of these you will have to rely on their
-          graphs to find the POTPs. In <xref
-          ref="CHAPTERwhen-deriv-doesnt"></xref> you will learn how to find
-          them with computation.)
-          <ol cols="2" marker="(i)">
-            <li>
-              <p>
-                <m>f(x) = \frac{x}{x^2+9}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = \frac1x</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = \frac{x^2}{x^2+5}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^\frac13</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^\frac23</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x-3x^\frac13</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^\frac13(x+4)</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = x^\frac23(x^2-8)</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = 5x^\frac23-2x^\frac53</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = \abs{x^2-1}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = \abs{x}-3\abs{x-3}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>f(x) = \abs{x}-\abs{x-3}</m>
-              </p>
-            </li>
-          </ol>
-        </p>
-      </problem>
-      
-    </subsection>
-
-    <subsection xml:id="SUBSECTIONoptim-clos-interv">
-      <title>Transition Points on a Closed Interval; the Problem of Endpoints</title>
-
-
-      <p>
-        Real world optimization problems will have a natural domain on which
-        the objective function is defined.  It is pointless to consider
-        values of <m>x</m> outside of that domain. We actually saw this in
-        <xref ref="EXAMPLECircleDist">Example</xref>, although we didn<rsq/>t remark on it at
-        the time. Recall that in <xref ref="EXAMPLECircleDist">Example</xref> we needed
-        to optimize the area of a square with one of its corners on the unit
-        circle: <m>x^2+y^2=1.</m> Obviously it makes no sense to consider any
-        value of <m>x</m> greater than <m>1</m> or less than <m>-1</m> (why not?), so the
-        natural domain of this problem is <m>-1\le x\le 1</m>.
-      </p>
-
-      <p>
-        When the natural domain of a problem is a closed interval (one that
-        includes both endpoints) it is possible that an extremum might also
-        occur at one of those endpoints.
-      </p>
-
-      <example xml:id="EXAMPLESqrClosed">
-
-        <p>
-          For example, suppose we need to optimize the function,
-          <md>
-            <mrow>  O(x) = x^2, \amp{}\amp{} -1\le x\le 2.</mrow>
-          </md>
-          From the graph below we can see that this function has a
-          global minimum at <m>(0,0)</m>. We can find this minimum by the methods
-          we are already familiar with.  But it also has a local maximum at
-          <m>(-1,1)</m> and global maximum at <m>(2,4)</m>, and nothing we<rsq/>ve done so
-          far would identify these two points as possible extrema.
-        </p>
-        <image source="DC/ObjSqr.png" width="30%"/>
-
-        <p>
-          It is clear from the graph what is happening, though. If we hadn<rsq/>t
-          restricted the domain of our function then the graph would continue
-          to rise on both sides and there would be no local or global maximum
-          at all.  The restriction on the domain forces the graph to stop
-          rising at the endpoints of the interval which makes each of these
-          endpoints a local maximum.
-        </p>
-        <p>
-
-          Thus we see that when the domain of our function is a closed
-          interval there is also the possibility that a local or global
-          extremum might occur at the endpoints of the interval as well. As a
-          result, when searching for extrema we must always check the
-          endpoints of the domain interval (if there are any).
-        </p>
-        <p>
-
-          To be clear, the end points of a closed interval are not transition
-          points because there can be no transition between increasing and
-          decreasing at an endpoint. It simply stops. However, since it is
-          possible to have extrema at the endpoints they must also be checked
-          whenever they are in play.
-        </p>
-        
-        <p>
-          Be careful. When the domain of a function is artificially
-          constrained like this it is easy to forget that the constraint is
-          present. We tend to think of it as <q>not really there.</q>  This is a
-          mistake. Recall from
-          <xref ref="DIGRESSIONTangentHasNoInverse" text="custom">Digression: The Tangent Function Has No Inverse</xref> that the
-          definition of the domain is a part of the definition of a
-          function. Think of the function<rsq/>s domain as the <q>universe</q> for
-          that particular problem. Nothing exists outside of the domain. Thus
-          in this example nothing exists outside of the interval (universe)
-          <m>[-1,2]</m>.
-        </p>
-
-      </example>
-      <p>
-
-        It appears that to find global extrema for a function whose domain
-        consists entirely of closed intervals all we need to do is
-
-        <ol>
+        choose a point in each interval and confirm that the following
+        statements are true.
+        <ol  marker="(i)">
           <li>
             <p>
-              Find the POTPs.
+              On the (approximate) interval        <m>(-\infty, -1.32)</m>:
+              <m>A^\prime(x) \lt0</m>
             </p>
           </li>
           <li>
             <p>
-              Evaluate our objective function at the POTPs and at any end
+              On the (approximate) interval <m>(-1.32, -0.43)</m>:
+              <m>A^\prime(x) \gt0</m>
             </p>
           </li>
           <li>
             <p>
-              Determine which among those is greatest and which is least.
+              On the (approximate) interval <m>(-0.43, 1.75)</m>:
+              <m>A^\prime(x) \lt0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              On the (approximate) interval        <m>(1.75, \infty)</m>:
+              <m>A^\prime(x) \gt0</m>
             </p>
           </li>
         </ol>
 
       </p>
-      <p>
+    </task>
 
-        And that<rsq/>s it. When the domain of our function is a closed interval
-        (or the union of closed intervals) optimization really is that
-        straightforward.
-      </p>
-      <aside>
-        <title>Comment</title>
+    <task  xml:id="PROBLEMFDT1B">
+      <statement>
         <p>
-          Remember that <q>straightforward</q> does not mean
-          <q>easy.</q>
+          Use the First Derivative Test and the data in <xref
+          ref="PROBLEMFDT1A">part</xref>
+          to show that there is a local minimum at <m>x\approx-1.32</m> a
+          local maximum at <m>x\approx-0.43</m> and a local minimum at
+          <m>x\approx1.75</m>.
         </p>
-      </aside>
-
-      <p>
-
-        We formalize all of this in <xref ref="THEOREMmax-min">Theorem</xref> below.
-      </p>
-
-      <theorem xml:id="THEOREMmax-min">
-        <title>Extreme Value Theorem</title>
-        <idx><h>Theorem</h><h>Extreme Value Theorem</h></idx>
+      </statement>
+    </task>
+    <task xml:id="PROBLEMFDT1C">
+      <statement>
         <p>
-          If <m>f(x)</m> is a continuous function whose domain consists entirely of
-          closed, bounded intervals then:
-          
-          <ol>
+          Is the data in <xref ref="PROBLEMFDT1A">part</xref> sufficient
+          to support the conclusion that there is a global minimum at
+          <m>x\approx1.75</m>? Explain why not.
+        </p>
+      </statement>
+    </task>
+    <task xml:id="PROBLEMFDT1D">
+      <statement>
+        <p>
+          What additional data do we need to conclude that there is        a global minimum at <m>x\approx1.75</m>?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <problem xml:id="DRILLFDT2">
+    <p>
+      Identify all possible optimal transition points, and identify the
+      intervals on which each function is increasing and
+      decreasing. Label each possible optimal transition point as a local or
+      global minimum, or a local or global maximum, or neither.
+      <ol cols="2" marker="(i)">
+        <li>
+          <p>
+            <m>f(x) = x^6-3x^5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^3-x^2-40x+8</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 4x^{3}-3x^{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^{2}\left(x^{2}-4\right)^{\frac{1}{3}}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>f(x) = (4x^{3}-3x^{4})^{\frac43}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 2x^3+x^2-20x+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^6-3x^5+x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 8x^5-5x^4-20x^3</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </problem>
+  
+</subsection>
+<subsection xml:id="SUBSECTIONunderl-deriv">
+  <title>Undefined Derivatives</title>
+
+  <blockquote>
+    <p>
+      Happy families are all alike; every unhappy family is
+      unhappy in its own
+      way.
+    </p>
+    <attribution>
+      <url href="https://en.wikipedia.org/wiki/Leo_Tolstoy" visual="https://en.wikipedia.org/wiki/Leo_Tolstoy">Leo
+      Tolstoy </url> (1847<ndash/>1910)
+    </attribution>
+  </blockquote>
+
+  <p>
+    In <xref ref="DRILLTransitionQuestion"></xref> we asked if you think of a
+    <q>way for <m>O^\prime(x) =\dfdx{O}{x}</m> to transition from positive to
+    negative, or from negative to positive</q> without passing through
+    zero. Clearly this is possible, otherwise we would not have asked.
+    But it<rsq/>s hard to see how this can be isn<rsq/>t it? After all, at a
+    transition point the derivative of the objective function changes
+    signs: It transitions from negative-to-positive or from
+    positive-to-negative. Obviously, the only number that has positive
+    numbers on one side and negative numbers on the other is zero. So
+    won<rsq/>t the solutions of <m>\dfdx{O}{x}=0</m> give us all of the
+    possible transition points?
+  </p>
+
+  <example xml:id="EXAMPLEPOTP-WhereDerivIsUndef">
+    <p>
+      <idx><h>Vocabulary</h><h>undefined derivative</h></idx>
+      No, they won<rsq/>t.  We can also have a transition point wherever
+      <m>\dfdxat{O}{x}{a}</m> is meaningless. That is, when
+      <m>\dfdxat{O}{x}{a}</m> is
+      <term>undefined</term>. <xref ref="DRILLCubeRoot2"></xref> below demonstrates
+      one way in which a derivative might be undefined.
+    </p>
+  </example>
+
+  
+  <exercise xml:id="DRILLCubeRoot2">
+    <introduction>
+      <p>
+        Suppose <me>
+        y(x)=x^\frac13
+      </me>
+      The graph of <m>y(x)</m> looks like this:
+      </p>
+      <image source="DC/CubeRoot1.png" width="60%" />
+
+
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Show that <m>\dfdxat{y}{x}{0}</m> is undefined.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Recall <xref ref="DIGRESSIONDivideByZero" text="custom">Digression: Dividing by Zero.</xref>
+        </p>
+      </hint>
+
+    </task>
+    <task>
+      <statement>
+        <p>
+          Graph <m>\dfdx{y}{x}</m> to verify that <m>\dfdx{y}{x}\gt 0</m>
+          when <m>x\ne 0</m>.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+  
+  <p>
+
+    Based on <xref ref="DRILLCubeRoot2"></xref> it would be easy to conclude
+    that the derivative of <m>y(x)</m> can only be undefined at a point <m>x</m>
+    where the formula for <m>\dfdx{y}{x}</m> requires that we divide by
+    zero. But this conclusion is due to the poverty of our experience
+    with non-differentiabilty.
+  </p>
+  <p>
+
+    There are many ways that a function can fail to be differentiable at
+    a point. Dividing by zero is only one of them. In many ways it is
+    the simplest.  The family of non-differentiable functions is a very
+    unhappy family, indeed. We might even call it dysfunctional.
+  </p>
+  <p>
+
+    The  functions whose graphs are shown below is a representative sample of
+    functions which are non-differentiable at
+    <m>x=0</m>. Can you see what they all have in common?
+  </p>
+  
+
+  <figure  xml:id="FIGURENonDiffFuncs">
+    <caption>Some non-differentiable functions</caption>
+    <image source="DC/NonDiff3.png" width="100%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+
+
+  <p>
+    <idx><h>Principle of Local Linearity</h></idx>
+    In our comments just before <xref ref="DEFINITIONLocalLinearity"></xref> we
+    stated that the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  is exactly what makes
+    Calculus useful and we have relied on that truth in all of our
+    subsequent investigations. But there is more to it than that. The
+    Principle of Local Linearity is not only what makes Differential
+    Calculus useful, its what makes Differential Calculus possible.
+  </p>
+
+  <p>
+    <idx><h>Principle of Local Linearity</h><h>and discontinuous functions</h></idx>
+
+    Take another look at graph of  <m>y(x) = \abs{x}</m> in <xref ref="FIGURENonDiffFuncs"></xref>.  Do you see
+    that the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  is not in play near the point
+    <m>(0,0)</m>? No matter how much we zoom in on this point the graph will
+    never resemble a straight line,  any straight line. It looks like
+    the sketch below at every scale.
+  </p>
+  <image source="DC/NonDiff2.png" width="20%"/>
+  <p>
+    <idx><h>Principle of Local Linearity</h><h>and discontinuous functions</h></idx>
+
+    The same is true of every function shown in <xref
+    ref="FIGURENonDiffFuncs"></xref>. They all violate the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref> . Near <m>x=0</m> none of them looks like a straight
+    line no matter what viewing scale we use.
+  </p>
+  <p>
+
+    The case of a
+    vertical tangent line is slightly problematic because near <m>x=0</m> the graph
+    of, for example, <m>y=x^{\frac13}</m> looks like a vertical straight
+    line. But the derivative of <m>y=x^{\frac13}</m>  is
+    <me>\dfdx{y}{x}=\frac{1}{3x^{\frac23}}</me> so it is  not differentiable
+    at zero, which is the point: Any point where a given function is
+    not differentiable is a POTP.
+  </p>
+  <p>
+
+    We formalize this observation with the following definition.
+  </p>
+  <definition xml:id="DEFINITIONOptimalTransitionPoints">
+    <title>Possible Optimal Transition Points (POTPs)</title>
+    <idx><h>Definition</h><h>Possible Optimal Transition Points (POTPs)</h></idx>
+    <idx><h>Vocabulary</h><h>Possible Optimum Transition Points (POTPs)</h></idx>
+    <statement>
+      <p>
+        
+        The <term>possible optimum transition points</term> of a function,
+        <m>O(x)</m>, come in two categories:
+        
+        <ol>
+          <li>
+            <p>
+              Any point, <m>x=a</m>, where <m>\dfdxat{O}{x}{a}=0</m> is a possible
+              optimal transition point.
+            </p>
+          </li>
+          <li>
+            <p>
+              Any point, <m>x=a</m>, where <m>\dfdxat{O}{x}{a}</m> is not defined
+              is a possible optimal transition point.
+            </p>
+          </li>
+        </ol>
+
+      </p>
+    </statement>
+  </definition>
+
+
+
+  <problem xml:id="DRILLFDT3">
+    <p>
+      For each function identify all <xref
+      ref="DEFINITIONOptimalTransitionPoints">POTPs</xref>, and identify
+      the intervals on which the function is increasing and
+      decreasing. Label each POTP as a local or global minimum, maximum,
+      or neither.  
+    </p>
+    <p>
+      (For some of these you will have to rely on their
+      graphs to find the POTPs. In <xref
+      ref="CHAPTERwhen-deriv-doesnt"></xref> you will learn how to find
+      them with computation.)
+      <ol cols="2" marker="(i)">
+        <li>
+          <p>
+            <m>f(x) = \frac{x}{x^2+9}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \frac1x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \frac{x^2}{x^2+5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^\frac13</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^\frac23</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x-3x^\frac13</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^\frac13(x+4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^\frac23(x^2-8)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 5x^\frac23-2x^\frac53</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \abs{x^2-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \abs{x}-3\abs{x-3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \abs{x}-\abs{x-3}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </problem>
+  
+</subsection>
+
+<subsection xml:id="SUBSECTIONoptim-clos-interv">
+  <title>Transition Points on a Closed Interval; the Problem of Endpoints</title>
+
+
+  <p>
+    Real world optimization problems will have a natural domain on which
+    the objective function is defined.  It is pointless to consider
+    values of <m>x</m> outside of that domain. We actually saw this in
+    <xref ref="EXAMPLECircleDist">Example</xref>, although we didn<rsq/>t remark on it at
+    the time. Recall that in <xref ref="EXAMPLECircleDist">Example</xref> we needed
+    to optimize the area of a square with one of its corners on the unit
+    circle: <m>x^2+y^2=1.</m> Obviously it makes no sense to consider any
+    value of <m>x</m> greater than <m>1</m> or less than <m>-1</m> (why not?), so the
+    natural domain of this problem is <m>-1\le x\le 1</m>.
+  </p>
+
+  <p>
+    When the natural domain of a problem is a closed interval (one that
+    includes both endpoints) it is possible that an extremum might also
+    occur at one of those endpoints.
+  </p>
+
+  <example xml:id="EXAMPLESqrClosed">
+
+    <p>
+      For example, suppose we need to optimize the function,
+      <md>
+        <mrow>  O(x) = x^2, \amp{}\amp{} -1\le x\le 2.</mrow>
+      </md>
+      From the graph below we can see that this function has a
+      global minimum at <m>(0,0)</m>. We can find this minimum by the methods
+      we are already familiar with.  But it also has a local maximum at
+      <m>(-1,1)</m> and global maximum at <m>(2,4)</m>, and nothing we<rsq/>ve done so
+      far would identify these two points as possible extrema.
+    </p>
+    <image source="DC/ObjSqr.png" width="30%"/>
+
+    <p>
+      It is clear from the graph what is happening, though. If we hadn<rsq/>t
+      restricted the domain of our function then the graph would continue
+      to rise on both sides and there would be no local or global maximum
+      at all.  The restriction on the domain forces the graph to stop
+      rising at the endpoints of the interval which makes each of these
+      endpoints a local maximum.
+    </p>
+    <p>
+
+      Thus we see that when the domain of our function is a closed
+      interval there is also the possibility that a local or global
+      extremum might occur at the endpoints of the interval as well. As a
+      result, when searching for extrema we must always check the
+      endpoints of the domain interval (if there are any).
+    </p>
+    <p>
+
+      To be clear, the end points of a closed interval are not transition
+      points because there can be no transition between increasing and
+      decreasing at an endpoint. It simply stops. However, since it is
+      possible to have extrema at the endpoints they must also be checked
+      whenever they are in play.
+    </p>
+    
+    <p>
+      Be careful. When the domain of a function is artificially
+      constrained like this it is easy to forget that the constraint is
+      present. We tend to think of it as <q>not really there.</q>  This is a
+      mistake. Recall from
+      <xref ref="DIGRESSIONTangentHasNoInverse" text="custom">Digression: The Tangent Function Has No Inverse</xref> that the
+      definition of the domain is a part of the definition of a
+      function. Think of the function<rsq/>s domain as the <q>universe</q> for
+      that particular problem. Nothing exists outside of the domain. Thus
+      in this example nothing exists outside of the interval (universe)
+      <m>[-1,2]</m>.
+    </p>
+
+  </example>
+  <p>
+
+    It appears that to find global extrema for a function whose domain
+    consists entirely of closed intervals all we need to do is
+
+    <ol>
+      <li>
+        <p>
+          Find the POTPs.
+        </p>
+      </li>
+      <li>
+        <p>
+          Evaluate our objective function at the POTPs and at any end
+        </p>
+      </li>
+      <li>
+        <p>
+          Determine which among those is greatest and which is least.
+        </p>
+      </li>
+    </ol>
+
+  </p>
+  <p>
+
+    And that<rsq/>s it. When the domain of our function is a closed interval
+    (or the union of closed intervals) optimization really is that
+    straightforward.
+  </p>
+  <aside>
+    <title>Comment</title>
+    <p>
+      Remember that <q>straightforward</q> does not mean
+      <q>easy.</q>
+    </p>
+  </aside>
+
+  <p>
+
+    We formalize all of this in <xref ref="THEOREMmax-min">Theorem</xref> below.
+  </p>
+
+  <theorem xml:id="THEOREMmax-min">
+    <title>Extreme Value Theorem</title>
+    <idx><h>Theorem</h><h>Extreme Value Theorem</h></idx>
+    <p>
+      If <m>f(x)</m> is a continuous function whose domain consists entirely of
+      closed, bounded intervals then:
+      
+      <ol>
+        <li>
+          <p>
+            There is at least one point in the domain, say <m>x=c</m> such that
+            <m>f(c)</m> is the global maximum value of <m>f(x)</m>.  Moreover <m>c</m> will
+            either be an end point of one of the domain intervals, or an
+            optimal transition point.
+          </p>
+        </li>
+        <li>
+          <p>
+            There is least one point in the domain, say <m>x=d</m>, and <m>f(d)</m>
+            is the global minimum of <m>f(x)</m>.  Moreover <m>d</m> will either be an
+            end point of one of the domain intervals, or optimal transition
+            point.
+          </p>
+        </li>
+      </ol>
+
+    </p>
+  </theorem>
+
+
+  <exercise xml:id="PROBLEMParabolaSquare-Redux">
+    <statement>
+      <p>
+        We ended <xref ref="EXAMPLEParabolaOptSqr"></xref> after posing the
+        problem of finding the global extrema of
+        <me>
+          A(x) = (x-2)^2 + (x^2-3)^2
+        </me>
+        with the constraint
+        <md>
+          <mrow>  y=x^2,\amp{}\amp{} -2\le x\le 0.5.</mrow>
+        </md>
+        Solve this problem now.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Notice that <m>y=x^2</m> has no extrema on <m>(0,\infty).</m> Explain
+          why this does not violate the Extreme Value Theorem.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Notice that <m>y=\frac{1}{x}</m> has no extrema on <m>[-1,1].</m>
+          Explain why this does not violate the Extreme Value Theorem.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise xml:id="PROBLEMSquareOnCircle">
+    <statement>
+      <p>
+        If we had known <xref ref="THEOREMmax-min">Theorem</xref> when we first looked at
+        <xref ref="EXAMPLECircleDist"></xref> it would have saved us some time.
+        Redo <xref ref="EXAMPLECircleDist"></xref>, using the knowledge that
+        the domain of the problem is <m>-1\le x\le1</m> because the constraint is
+        <m>x^2+y^2=1.</m>
+      </p>
+    </statement>
+  </exercise>
+
+
+
+  <exercise>
+    <introduction>
+      <p>
+        Find the global maximum and global minimum of each function with the
+        domain restricted to the given intervals.  Verify your solution by
+        graphing the function.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>O(x) = x^3-3x</m>
+          <ol cols="3" marker="(i)">
             <li>
               <p>
-                There is at least one point in the domain, say <m>x=c</m> such that
-                <m>f(c)</m> is the global maximum value of <m>f(x)</m>.  Moreover <m>c</m> will
-                either be an end point of one of the domain intervals, or an
-                optimal transition point.
+                <m>[-1.5, 1.5] </m>
               </p>
             </li>
             <li>
               <p>
-                There is least one point in the domain, say <m>x=d</m>, and <m>f(d)</m>
-                is the global minimum of <m>f(x)</m>.  Moreover <m>d</m> will either be an
-                end point of one of the domain intervals, or optimal transition
-                point.
+                <m>[-3, 3]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[1,2]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[0,1]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[-1,0]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>[-2,-1]</m>
               </p>
             </li>
           </ol>
-
         </p>
-      </theorem>
-
-
-      <exercise xml:id="PROBLEMParabolaSquare-Redux">
-        <statement>
-          <p>
-            We ended <xref ref="EXAMPLEParabolaOptSqr"></xref> after posing the
-            problem of finding the global extrema of
-            <me>
-              A(x) = (x-2)^2 + (x^2-3)^2
-            </me>
-            with the constraint
-            <md>
-              <mrow>  y=x^2,\amp{}\amp{} -2\le x\le 0.5.</mrow>
-            </md>
-            Solve this problem now.
-          </p>
-        </statement>
-      </exercise>
-
-      <exercise>
-        <introduction>
-          <p>
-          </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              Notice that <m>y=x^2</m> has no extrema on <m>(0,\infty).</m> Explain
-              why this does not violate the Extreme Value Theorem.
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Notice that <m>y=\frac{1}{x}</m> has no extrema on <m>[-1,1].</m>
-              Explain why this does not violate the Extreme Value Theorem.
-            </p>
-          </statement>
-        </task>
-      </exercise>
-
-      <exercise xml:id="PROBLEMSquareOnCircle">
-        <statement>
-          <p>
-            If we had known <xref ref="THEOREMmax-min">Theorem</xref> when we first looked at
-            <xref ref="EXAMPLECircleDist"></xref> it would have saved us some time.
-            Redo <xref ref="EXAMPLECircleDist"></xref>, using the knowledge that
-            the domain of the problem is <m>-1\le x\le1</m> because the constraint is
-            <m>x^2+y^2=1.</m>
-          </p>
-        </statement>
-      </exercise>
-
-
-
-      <exercise>
-        <introduction>
-          <p>
-            Find the global maximum and global minimum of each function with the
-            domain restricted to the given intervals.  Verify your solution by
-            graphing the function.
-          </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>O(x) = x^3-3x</m>
-              <ol cols="3" marker="(i)">
-                <li>
-                  <p>
-                    <m>[-1.5, 1.5] </m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-3, 3]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[1,2]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[0,1]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-1,0]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-2,-1]</m>
-                  </p>
-                </li>
-              </ol>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m> f(x) = x^3-12x </m>
-              <ol cols="3" marker="(i)">
-                <li>
-                  <p>
-                    <m>[0,4]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-4,0]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-2,2]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-1,3]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-2, 1]</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>[-5, 5]</m>
-                  </p>
-                </li>
-              </ol>
-            </p>
-          </statement>
-        </task>
-      </exercise>
-
-      <problem>
+      </statement>
+    </task>
+    <task>
+      <statement>
         <p>
-          Find the global maximum and global minimum of each of the following
-          functions with domains on the given intervals. Verify your solution
-          with graphing software.
-
-          <ol cols="2" marker="(i)">
+          <m> f(x) = x^3-12x </m>
+          <ol cols="3" marker="(i)">
             <li>
               <p>
-              <m> y=4-x^3</m></p>
-              <p>  on the interval <m>[-2,1]</m>
+                <m>[0,4]</m>
               </p>
             </li>
             <li>
               <p>
-                <m> y =(x^3-27)^{\frac13}</m>
-              </p>
-              <p>
-                on the interval <m>[-5 , 5]</m>
+                <m>[-4,0]</m>
               </p>
             </li>
             <li>
               <p>
-                <m> y=\sqrt[3]{x}</m>
-              </p>
-              <p>
-                on the interval <m>[-1,8]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=-3x^{2/3}</m>
-              </p>
-              <p>
-                on the interval <m>[-1,1]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=x\sqrt{1-x^2} </m>
-              </p>
-              <p>
-                on the interval <m>[-1,1]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=x(2-x)^{1/3}</m>
-              </p>
-              <p>
-                on the interval <m>[1,3]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=x^{1/2}-x^{3/2}</m>
-              </p>
-              <p>
-                on the interval <m>[0,4]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=\frac{7}{x^2+5}</m> 
-              </p>
-              <p>
-                on the interval
                 <m>[-2,2]</m>
               </p>
             </li>
             <li>
               <p>
-                <m> y=\frac{x}{x^2-x+1}</m>
-              </p>
-              <p>
-                on the interval
-                <m>[0,3]</m>
+                <m>[-1,3]</m>
               </p>
             </li>
             <li>
               <p>
-                <m> y=\frac{1-x}{x^2+3}</m>
-              </p>
-              <p>
-                on the interval
-                <m>[-2,5]</m>
+                <m>[-2, 1]</m>
               </p>
             </li>
             <li>
               <p>
-                <m> y=-\frac1x</m>
-              </p>
-              <p>
-                on the interval <m>[1/2,3]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>y=xe^x</m>
-              </p>
-              <p>
-                on the interval <m>[-3,4]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>y=x^2e^x</m>
-              </p>
-              <p>
-                on the interval <m>[-3,1/2]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y = e^{-x^2}</m>
-              </p>
-              <p>
-                on the interval <m>[2 ,10 ]</m> 
-                
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=e^{-x^2}</m>
-              </p>
-              <p>
-                on the interval <m>[-2, 1]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y = e^{-x^2}</m>
-              </p>
-              <p>
-                on the interval <m>[-1 ,2 ]</m> 
-                
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y = e^{-\frac{1}{x^2}}</m>
-              </p>
-              <p>
-                on the interval <m>[2 ,10 ]</m>
-                
-                
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y=x\ln(x)</m>
-              </p>
-              <p>
-                on the interval <m>[1/5,1]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y =x^2\sin(x^2)</m>
-              </p>
-              <p>
-                on the interval<m>[0 ,2 ]</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> y =\frac{\ln(x)}{x}</m>
-              </p>
-              <p>
-                on the interval
-                <m>[2 ,10 ]</m>
+                <m>[-5, 5]</m>
               </p>
             </li>
           </ol>
         </p>
-      </problem>
+      </statement>
+    </task>
+  </exercise>
 
-      <exercise>
-        <introduction>
+  <problem>
+    <p>
+      Find the global maximum and global minimum of each of the following
+      functions with domains on the given intervals. Verify your solution
+      with graphing software.
+
+      <ol cols="2" marker="(i)">
+        <li>
           <p>
-            For each of the following functions defined on closed, bounded
-            intervals, find the maximum and minimum of the function on that
-            interval.
+          <m> y=4-x^3</m></p>
+          <p>  on the interval <m>[-2,1]</m>
           </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>f(x)=2x^3+3x^2-12x+1 \\ \text{ on } [-3,2]</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>f(x)=2x^3+3x^2-12x+1 \\ \text{ on } [-3,3]</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>g(x)=4x^{\frac{3}{2}}-3x^2-2 \\ \text{ on }[0,2]</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>h(z)=3z^{2/3}+2z-4 \\ \text{ on }[-2,1]</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>L(x)=\ln((x-2)^6) -x^2 \\ \text{ on }[-1.5,4]</m>
-            </p>
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
+        </li>
+        <li>
+          <p>
+            <m> y =(x^3-27)^{\frac13}</m>
+          </p>
+          <p>
+            on the interval <m>[-5 , 5]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=\sqrt[3]{x}</m>
+          </p>
+          <p>
+            on the interval <m>[-1,8]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=-3x^{2/3}</m>
+          </p>
+          <p>
+            on the interval <m>[-1,1]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=x\sqrt{1-x^2} </m>
+          </p>
+          <p>
+            on the interval <m>[-1,1]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=x(2-x)^{1/3}</m>
+          </p>
+          <p>
+            on the interval <m>[1,3]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=x^{1/2}-x^{3/2}</m>
+          </p>
+          <p>
+            on the interval <m>[0,4]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=\frac{7}{x^2+5}</m> 
+          </p>
+          <p>
+            on the interval
+            <m>[-2,2]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=\frac{x}{x^2-x+1}</m>
+          </p>
+          <p>
+            on the interval
+            <m>[0,3]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=\frac{1-x}{x^2+3}</m>
+          </p>
+          <p>
+            on the interval
+            <m>[-2,5]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=-\frac1x</m>
+          </p>
+          <p>
+            on the interval <m>[1/2,3]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y=xe^x</m>
+          </p>
+          <p>
+            on the interval <m>[-3,4]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y=x^2e^x</m>
+          </p>
+          <p>
+            on the interval <m>[-3,1/2]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y = e^{-x^2}</m>
+          </p>
+          <p>
+            on the interval <m>[2 ,10 ]</m> 
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=e^{-x^2}</m>
+          </p>
+          <p>
+            on the interval <m>[-2, 1]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y = e^{-x^2}</m>
+          </p>
+          <p>
+            on the interval <m>[-1 ,2 ]</m> 
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y = e^{-\frac{1}{x^2}}</m>
+          </p>
+          <p>
+            on the interval <m>[2 ,10 ]</m>
+            
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y=x\ln(x)</m>
+          </p>
+          <p>
+            on the interval <m>[1/5,1]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y =x^2\sin(x^2)</m>
+          </p>
+          <p>
+            on the interval<m>[0 ,2 ]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m> y =\frac{\ln(x)}{x}</m>
+          </p>
+          <p>
+            on the interval
+            <m>[2 ,10 ]</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </problem>
 
-              <m>f(\theta)=\frac{\theta}{2} -\sin\theta \\\text{ on }[0,2\pi]</m>
-            </p>
-          </statement>
-        </task>
-      </exercise>
+  <exercise>
+    <introduction>
+      <p>
+        For each of the following functions defined on closed, bounded
+        intervals, find the maximum and minimum of the function on that
+        interval.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>f(x)=2x^3+3x^2-12x+1  \text{ on } [-3,2]</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f(x)=2x^3+3x^2-12x+1  \text{ on } [-3,3]</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>g(x)=4x^{\frac{3}{2}}-3x^2-2  \text{ on }[0,2]</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>h(z)=3z^{2/3}+2z-4  \text{ on }[-2,1]</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>L(x)=\ln((x-2)^6) -x^2  \text{ on }[-1.5,4]</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
 
-    </subsection>
+          <m>f(\theta)=\frac{\theta}{2} -\sin\theta \text{ on }[0,2\pi]</m>
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+</subsection>
 
   </section>
   <section xml:id="SECTIONconc-second-deriv-1">
@@ -5307,7 +5307,7 @@
               + \textcolor{red}{\text{margins}}\amp{} =\textcolor{blue}{\sqrt{120} -2}
               +\textcolor{red}{2} 
             </mrow>
-            <mrow>\amp{}=\sqrt{120} \approx 10.95 \text{ cm}\\
+            <mrow>\amp{}=\sqrt{120} \approx 10.95 \text{ cm}
             </mrow>
             <mrow>
               \text{Height of page} = \textcolor{blue}{\text{height of  text}} + \textcolor{red}{\text{margins}}
@@ -5412,10 +5412,10 @@
           Substituting these into <xref ref="EQUATIONLoremIpsum4">equation</xref> we get
           <md>
             <mrow>
-              \dx{(P_A)}\amp =(x-2)\left(-\frac{y}{x}\right)\dx{x}+\left(\frac{90}{x}-\frac32\right)\dx{x}\\
+              \dx{(P_A)}\amp =(x-2)\left(-\frac{y}{x}\right)\dx{x}+\left(\frac{90}{x}-\frac32\right)\dx{x}
             </mrow>
             <mrow>
-              \amp =\left[-(x-2)\left(\frac{90}{x^2}\right)+\frac{90}{x}-\frac32\right]\dx{x}\\
+              \amp =\left[-(x-2)\left(\frac{90}{x^2}\right)+\frac{90}{x}-\frac32\right]\dx{x}
             </mrow>
             <mrow>
               \dfdx{(P_A)}{x} \amp =-(x-2)\left(\frac{90}{x^2}\right)+\frac{90}{x}-\frac32
@@ -5427,16 +5427,16 @@
           Setting this equal to zero and solving for <m>x</m> gives
           <md>
             <mrow>
-              -(x-2)\left(\frac{90}{x^2}\right)+\frac{90}{x}-\frac32 \amp =0\\
+              -(x-2)\left(\frac{90}{x^2}\right)+\frac{90}{x}-\frac32 \amp =0
             </mrow>
             <mrow>
-              \textcolor{red}{-\frac{90}{x}} -\frac{180}{x^2}+\textcolor{red}{\frac{90}{x}}-\frac32\amp =0\\
+              \textcolor{red}{-\frac{90}{x}} -\frac{180}{x^2}+\textcolor{red}{\frac{90}{x}}-\frac32\amp =0
             </mrow>
             <mrow>
-              \frac{180}{x^2}-\frac32 \amp =0\\
+              \frac{180}{x^2}-\frac32 \amp =0
             </mrow>
             <mrow>
-              \frac23\cdot180\amp =x^2 \text{ or}\\
+              \frac23\cdot180\amp =x^2 \text{ or}
             </mrow>
             <mrow>
               x\amp =\pm\sqrt{120}.
