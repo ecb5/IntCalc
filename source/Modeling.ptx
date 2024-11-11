@@ -33,13 +33,13 @@
 
       <blockquote>
         <p>
-          A man may fish with the worm that hath eat of a king,
-          and eat of the fish that hath fed of that
-          worm.
+          A man may fish with the worm that hath eat of a king, and eat of the
+          fish that hath fed of that worm.
         </p>
         <attribution>
           <url href="https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/william-shakespeare-biography/" visual="https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/william-shakespeare-biography/">William
-          Shakespeare</url> (1564<mdash/>1616), Hamlet, Act IV, Scene 3
+          Shakespeare</url> (1564<mdash/>1616),           <url href="http://shakespeare.mit.edu/hamlet/index.html"
+          visual="http://shakespeare.mit.edu/hamlet/index.html"> Hamlet, Act IV, Scene 3</url>
         </attribution>
       </blockquote>
 
@@ -88,7 +88,7 @@
         <me>
           \dfdx{P}{t}=0.1P
         </me>
-        just as we did in <xref ref="SECTIONexponential-growth">Section</xref>.
+        which is very similar to the problems we studied in  <xref ref="SECTIONExponentialGrowth"></xref>.
       </p>
       
       <p>
@@ -104,7 +104,7 @@
         the growth of a bacteria colony in <xref ref="EXAMPLEpopulation-growth"></xref>
         we got
         <xref ref="EQUATIONBacteriaIVP">IVP</xref>,
-        which is almost the same equation, remember? The only difference
+        which is almost the same equation.<lsq/> The only difference
         between them is
         that in <xref ref="EQUATIONFishery1">IVP</xref> the coefficient of <m>P</m> is <m>0.1</m>
         and in <xref ref="EQUATIONBacteriaIVP">IVP</xref> the coefficient of <m>P</m> is
@@ -141,9 +141,15 @@
 
          <p>
            Of course, in practice this is not what happens. We made several
-           simplifying assumptions when we began.  We assumed that (1) we
-           could supply all of the food our growing population needs, and (2)
-           our trout would have all of the room they needed.
+           simplifying assumptions when we began.  We assumed that:
+           <ol>
+             <li>
+               we    could supply all of the food our growing population needs, and 
+             </li>
+             <li>
+               our trout would have all of the room they needed.
+             </li>
+         </ol>
          </p>
 
          <p>
@@ -152,7 +158,7 @@
          </p>
 
          <p>
-           Recall that in <xref ref="CHAPTERlast-elem-funct"></xref>
+           Recall that in <xref ref="SECTIONExponentialGrowth"></xref>
            we described a situation in Lake Erie near Toledo, Ohio
            when, for a few days, the algae population grew
            exponentially in much the same manner as that suggested by
@@ -168,7 +174,7 @@
          <p>
            In building a mathematical model of any physical phenomenon we start
            with the simplest model we can, find out where it goes bad, and then
-           <q>tweak</q> it so that we:
+           <q>tweak</q> it in such a way that we:
            
            <ol>
              <li>
@@ -186,8 +192,7 @@
 
            Thus we need to tweak <xref
            ref="EQUATIONFishery1">IVP</xref> in such a way that
-           <m>\dfdx{P}{t}=0.1P</m> when <m>P</m> is near zero (or, at
-           least, <m>\dfdx{P}{t}\approx0.1P</m>), but which also
+           <m>\dfdx{P}{t}=0.1P</m> when <m>P</m> is near zero, but which also
            recognizes that exponential growth is unsustainable.
          </p>
 
@@ -198,362 +203,373 @@
            be a maximum population level, <m>P(t)</m>, where
            <m>\dfdx{P}{t}=0</m>. Whatever that level is, we'll call it
            <m>C</m>.
-         </p>
-
-         <p>
            One way to tweak <xref ref="EQUATIONFishery1">IVP</xref> to
            reflect this fact is to insert the factor <m>(C-P)</m> as
-           follows
-           <men xml:id="EQUATIONFirstTweak">
-             \dfdx{P}{t}=0.1P(C-P).
-           </men>
-           We see that if the trout population ever reaches <m>C</m> it must level off
-           since in that case <m>\dfdx{P}{t}=0</m>. Therefore this model avoids
-           predicting that the trout population will grow exponentially.
-         </p>
-
-         <p>
-           However, notice that for values of <m>P</m> near zero, <m>C-P\approx
-           C</m>. Thus <xref ref="EQUATIONFirstTweak">equation</xref>
-           says that when <m>P</m> is near zero
-           <me>
-             \dfdx{P}{t}\approx\left(0.1C\right)P
-           </me>
-           but we needed <m> \dfdx{P}{t}\approx0.1P</m> so this
-           particular tweak won't quite work because the difference between
-           <m>\dfdx{P}{t}\approx0.01P</m> and <m>\dfdx{P}{t}\approx\left(0.01C\right)P</m>
-           could be substantial,  depending on the value of
-           <m>C</m> (which we don't know).
-         </p>
-
-         <p>
-           So we will try a slightly different tweak. Instead of <m>(C-P)</m> we will
-           insert the factor <m>\left(1-\frac{P}{C}\right)</m> as in
-           <xref ref="EQUATIONFishery2">IVP</xref> below.
-           <men xml:id="EQUATIONFishery2">
-             
-             \dfdx{P}{t}=0.1P\left(1-\frac{P}{C}\right), \ P(0)=10.
-           </men>
-           Notice that we still have <m>\dfdx{P}{t}=0</m> when <m>P=C</m>. But now we also have
-           <m>\dfdx{P}{t}\approx0.1P</m> when <m>P</m> is close to zero, so this change
-           seems to meet the goal of our tweak.
-           This type of <xref ref="EQUATIONFishery2">IVP</xref> is called the Logistic Equation
-           (or the Logistic Model) and its solution is a better long-term
-           predictor of population growth than is the solution of
-           <xref ref="EQUATIONFishery1">equation</xref> as we will see.
-         </p>
-
-         <p>
-           The parameter <m>C</m> would normally be determined experimentally
-           (measured), but for purposes of this discussion we will arbitrarily
-           assign it the value <m>C=100</m> just to keep the numbers easy to deal
-           with. So, our IVP will be
-           <mdn>
-             <mrow xml:id="EQUATIONLogEq">\dfdx{P}{t}=0.1P\left(1-\frac{P}{100}\right),\amp{}\amp{} P(0)=10.</mrow>
-
-           </mdn>
-         </p>
-
-         <problem>
-           <p>
-             Compute the  growth rate of the trout population
-             for <m>P</m> equal to
-             <ol cols="3" marker="(i)">
-               <li>
-                 <p>
-                   <m>99</m>
-                 </p>
-               </li>
-               <li>
-                 <p>
-                   <m>99.9</m>
-                 </p>
-               </li>
-               <li>
-                 <p>
-                   <m>99.99</m>
-                 </p>
-               </li>
-               <li>
-                 <p>
-                   <m>100.01</m>
-                 </p>
-               </li>
-               <li>
-                 <p>
-                   <m>100.1</m>
-                 </p>
-               </li>
-               <li>
-                 <p>
-                   <m>101</m>
-                 </p>
-               </li>
-             </ol>
+             follows
+             <men xml:id="EQUATIONFirstTweak">
+               \dfdx{P}{t}=0.1P(C-P).
+             </men>
+             We see that if the trout population ever reaches <m>C</m> it must level off
+             since in that case <m>\dfdx{P}{t}=0</m>. Therefore this model avoids
+             predicting that the trout population will grow exponentially.
            </p>
-         </problem>
 
-         <p>
-           It would be nice if we could find a formula for <m>P(t)</m> in terms of
-           <m>t</m> but this will have to wait for a course in Integral Calculus.
-           Still we would like to provide a reasonable sketch of the graph of
-           <m>P = P(t)</m>.  Aside from the initial condition, <m>P(0) = 10</m>, we don't
-           know any specific values of <m>P(t)</m> but we can at least capture the
-           qualitative behavior of the population.
-         </p>
+           <p>
+             However, notice that for values of <m>P</m> near zero, <m>C-P\approx
+             C</m>. Thus <xref ref="EQUATIONFirstTweak">equation</xref>
+             says that when <m>P</m> is near zero
+             <me>
+               \dfdx{P}{t}\approx\left(0.1C\right)P
+             </me>
+             but we needed <m> \dfdx{P}{t}\approx0.1P</m> so this
+             particular tweak won't quite work because the difference between
+             <m>\dfdx{P}{t}\approx0.01P</m> and <m>\dfdx{P}{t}\approx\left(0.01C\right)P</m>
+             could be substantial,  depending on the value of
+             <m>C</m> (which we don't know).
+           </p>
 
-         <p>
-           We will obtain a sketch of the graph of <m>P(t)</m> in the same systematic
-           way as before.  We  can use the first derivative test to determine
-           when the trout population is increasing or decreasing. But keep in mind
-           that we have <m>\dfdx{P}{t}</m> in terms of <m>P</m> <mdash/> not <m>t</m> <mdash/> so we won't
-           be able to say that the population is increasing or decreasing at a
-           particular time. This will change how we interpret the results. For
-           example we can say that when we have <m>25</m> tons of trout the population
-           is increasing even though we do not know <em>when</em> this happens.
-         </p>
+           <p>
+             So we will try a slightly different tweak. Instead of <m>(C-P)</m> we will
+             insert the factor <m>\left(1-\frac{P}{C}\right)</m> as in
+             <xref ref="EQUATIONFishery2">IVP</xref> below.
+             <men xml:id="EQUATIONFishery2">
+               
+               \dfdx{P}{t}=0.1P\left(1-\frac{P}{C}\right), \ P(0)=10.
+             </men>
+             Notice that we still have <m>\dfdx{P}{t}=0</m> when
+             <m>P=C</m>. But now we also have
+             <m>\dfdx{P}{t}\approx0.1P</m> when <m>P</m> is close to
+             zero, so this change seems to meet the goal of our tweak.
+             <xref ref="EQUATIONFishery2">IVP</xref> is called the
+             Logistic Equation, or the Logistic Model, and its
+             solution is a better long-term predictor of population
+             growth than is the solution of <xref
+             ref="EQUATIONFishery1">equation</xref> as we will see.
+           </p>
 
-         <p>
-           It should be straightforward to see that the POTPs are <m>P = 0,
-           100</m>. Since the context of our problem prohibits <m>P \lt  0</m> (why?),
-           we will look at intervals <m>[0,100)</m> and <m>(100, \infty)</m> to determine
-           for which values of <m>P</m> the population is increasing or
-           decreasing. We summarize this analysis in the following  table:
-         </p>
-         <tabular>
-           <row halign="center" bottom="major">
-             <cell>Interval</cell>
-             <cell><m>(0,100)</m></cell>
-             <cell><m>(100,\infty </m></cell>
-           </row>
-           <row halign="center">
-             <cell><m>\dfdx{P}{t} </m></cell>
-             <cell><m>\dfdx{P}{t}\gt 0</m></cell>
-             <cell><m>\dfdx{P}{t}\lt 0</m></cell>
-           </row>
-           <row halign="center">
-             <cell><m>P </m></cell>
-             <cell><m>\nearrow</m></cell>
-             <cell><m>\searrow</m></cell>
-           </row>
-         </tabular>
+           <p>
+             The parameter <m>C</m> would normally be determined experimentally
+             (measured), but for purposes of this discussion we will arbitrarily
+             assign it the value <m>C=100</m> just to keep the numbers easy to deal
+             with. So, our new model is
+             <mdn>
+               <mrow xml:id="EQUATIONLogEq">\dfdx{P}{t}=0.1P\left(1-\frac{P}{100}\right),\amp{}\amp{} P(0)=10.</mrow>
 
-         <problem>
-           <statement>
+             </mdn>
+           </p>
+
+           <problem>
              <p>
-               Suppose we were to use the data in the table above to plot a graph
-               of <m>P</m> versus <m>t</m>. Would there be a maximum when
-               <m>P=100</m>. Explain why or why not..
+               Compute the  rate of growth of the trout population
+               for <m>P</m> equal to
+               <ol cols="3" marker="(i)">
+                 <li>
+                   <p>
+                     <m>99</m>
+                   </p>
+                 </li>
+                 <li>
+                   <p>
+                     <m>99.9</m>
+                   </p>
+                 </li>
+                 <li>
+                   <p>
+                     <m>99.99</m>
+                   </p>
+                 </li>
+                 <li>
+                   <p>
+                     <m>100.01</m>
+                   </p>
+                 </li>
+                 <li>
+                   <p>
+                     <m>100.1</m>
+                   </p>
+                 </li>
+                 <li>
+                   <p>
+                     <m>101</m>
+                   </p>
+                 </li>
+               </ol>
              </p>
-           </statement>
-         </problem>
+           </problem>
 
-         <exercise>
-           <introduction>
-             <p>
-               In this problem we analyze the concavity of the graph of
-               <m>P(t)</m>. In particular we'd like to find all values of <m>P</m> where
-               PITPs occur.
-             </p>
-           </introduction>
-           <task>
+           <p>
+             It would be nice if we could find a formula for
+             <m>P(t)</m> in terms of <m>t</m> but this will have to
+             wait for a course in Integral Calculus.  Still we would
+             like to provide a reasonable sketch of the graph of <m>P
+             = P(t)</m>.  Aside from the initial condition, <m>P(0) =
+             10</m>, we don't know any specific values of <m>P(t)</m>
+             but we can at least capture the qualitative behavior of
+             the population.
+           </p>
+
+           <p>
+             We will obtain a sketch of the graph of <m>P(t)</m> in
+             the same systematic way as before.  We can use the first
+             derivative test to determine when the trout population is
+             increasing or decreasing. But keep in mind that we have
+             <m>\dfdx{P}{t}</m> in terms of <m>P</m>, not <m>t</m>, so
+             we won't be able to say that the population is increasing
+             or decreasing at a particular time. This will change how
+             we interpret the results. For example we can say that
+             when we have <m>25</m> tons of trout the population is
+             increasing even though we do not know <em>when</em> this
+             happens.
+           </p>
+
+           <p>
+             It should be straightforward to see that the POTPs are <m>P = 0,
+             100</m>. Since the context of our problem prohibits <m>P \lt  0</m> (why?),
+             we will look at intervals <m>[0,100)</m> and <m>(100, \infty)</m> to determine
+             for which values of <m>P</m> the population is increasing or
+             decreasing. We summarize this analysis in the following  table:
+           </p>
+           <table xml:id="TABLETroutFarm1">
+             <title>Trout Population</title>
+
+
+             <tabular>
+               <row halign="center" bottom="major">
+                 <cell>Interval</cell>
+                 <cell><m>(0,100)</m></cell>
+                 <cell><m>(100,\infty </m></cell>
+               </row>
+               <row halign="center">
+                 <cell><m>\dfdx{P}{t} </m></cell>
+                 <cell><m>\dfdx{P}{t}\gt 0</m></cell>
+                 <cell><m>\dfdx{P}{t}\lt 0</m></cell>
+               </row>
+               <row halign="center">
+                 <cell><m>P </m></cell>
+                 <cell><m>\nearrow</m></cell>
+                 <cell><m>\searrow</m></cell>
+               </row>
+             </tabular>
+</table>
+
+           <problem>
              <statement>
                <p>
-                 Show that
-                 <me>
-                   \dx\left(\dfdx{P}{t}\right)=0.1\left(1-\frac{P}{50}\right)\dx{P}
-                 </me>
-                 and therefore
-                 <me>
-                   \dfdxn{P}{t}{2}=0.1\left(1-\frac{P}{50}\right)\dfdx{P}{t}.
-                 </me>
+                 Suppose we were to use the data in the table above to plot a graph
+                 of <m>P</m> versus <m>t</m>. Would there be a maximum when
+                 <m>P=100</m>. Explain why or why not..
                </p>
              </statement>
-           </task>
-           <task>
-             <statement>
+           </problem>
+
+           <exercise>
+             <introduction>
                <p>
-                 Find all values of <m>P</m> where a PITP occurs.
+                 In this problem we analyze the concavity of the graph of
+                 <m>P(t)</m>. In particular we'd like to find all values of <m>P</m> where
+                 PITPs occur.
                </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
+             </introduction>
+             <task>
+               <statement>
+                 <p>
+                   Show that
+                   <me>
+                     \dx\left(\dfdx{P}{t}\right)=0.1\left(1-\frac{P}{50}\right)\dx{P}
+                   </me>
+                   and therefore
+                   <me>
+                     \dfdxn{P}{t}{2}=0.1\left(1-\frac{P}{50}\right)\dfdx{P}{t}.
+                   </me>
+                 </p>
+               </statement>
+             </task>
+             <task>
+               <statement>
+                 <p>
+                   Find all values of <m>P</m> where a PITP occurs.
+                 </p>
+               </statement>
+             </task>
+             <task>
+               <statement>
+                 <p>
+                   Create a table similar to <xref ref="TABLETroutFarm1"></xref>  to determine the
+                   (vertical) intervals on which <m>P</m> is concave up or concave down.
+                 </p>
+               </statement>
+             </task>
+           </exercise>
+           <p>
+             We now have enough data on to plot a reasonable sketch of the graph
+             of <m>P=P(t)</m> but because all of our formulas are in terms of the
+             dependent variable <m>P</m>, our transition points and intervals are will
+             all be
+             shown on the vertical axis, not the horizontal as seen below.
+           </p>
+
+           <image source="DC/IncDecChart2.png" width="100%" />
+
+           <p>
+             Notice that we drew solid horizontal lines at <m>P=0</m>
+             and <m>P= 100</m>. At these population levels
+             <m>\dfdx{P}{t}=0</m> so, theoretically at least, once the
+             population has achieved either of these levels it will
+             never change again. This is correct when
+             <m>P(0)=0</m>. Once all of our fish have died the only way
+             we can get more is to buy them and start again. But for
+             other values of <m>P</m> it is still not entirely clear
+             what<rsq/>s happening to our fish population.
+           </p>
+
+           <p>
+             It is not possible to maintain a population of trout at a
+             constant value of <m>100</m> tons. There will always be a little
+             fluctuation above and below. All models are inaccurate in some
+             way. This is one way in which this model is inaccurate.
+           </p>
+
+           <p>
+             In the sketch above the dashed line represents the
+             population level where the graph of the population
+             transitions from concave up to concave down. Physically
+             this means that the growth rate of the population
+             transitions from accelerating to decelerating.  We can
+             visualize this (below) using slope field technique we saw
+             in <xref ref="SECTIONGraphingWithDeriv"></xref>.
+           </p>
+
+           <image source="DC/SlopeField1.png" width="100%"/>
+
+           <p>
+             Starting with an initial value
+             of <m>P(0)=10</m>, we can plot the graph of the  population and make a
+             prediction of what will happened to the population in the long
+             term. We just can<rsq/>t tell what <q>long term</q> means.  That would have to
+             be determined
+             experimentally.
+           </p>
+
+           <p>
+             Notice that on the vertical interval <m>(0,50)</m> the population is
+             accelerating until it reaches <m>P=50</m> tons. After that, it still grows,
+             but is starting to decelerate. Over the long run it will approach (but
+             never quite reach) a level of <m>P=100</m> tons.
+           </p>
+
+           <exercise>
+             <introduction>
                <p>
-                 Create a table similar to the one above to determine the
-                 (vertical) intervals on which <m>P</m> is concave up or concave down.
                </p>
-             </statement>
-           </task>
-         </exercise>
-         <p>
-           We now have enough data on to plot a reasonable sketch of the graph
-           of <m>P=P(t)</m> but because all of our formulas are in terms of the
-           dependent variable <m>P</m>, our transition points and intervals are will
-           all be
-           shown on the vertical axis, not the horizontal as seen below.
-         </p>
+             </introduction>
+             <task>
+               <statement>
+                 <p>
+                   On the same set of axes, plot reasonable graphs for <m>P(t)</m>
+                   with the following initial values:
 
-         <image source="DC/IncDecChart2.png" width="100%" />
+                   <ol cols="2" marker="(i)">
+                     <li>
+                       <p>
+                         <m>P(0)=0</m>,
+                       </p>
+                     </li>
+                     <li>
+                       <p>
+                         <m>P(0)=10</m>,
+                       </p>
+                     </li>
+                     <li>
+                       <p>
+                         <m>P(0)=75</m>,
+                       </p>
+                     </li>
+                     <li>
+                       <p>
+                         <m>P(0)=100</m>.
+                       </p>
+                     </li>
+                   </ol>
 
-         <p>
-           Notice that we drew solid horizontal lines at <m>P=0</m>
-           and <m>P= 100</m>. At these population levels
-           <m>\dfdx{P}{t}=0</m> so, theoretically at least, once the
-           population has achieved either of these levels it will
-           never change again. This is correct when
-           <m>P(0)=0</m>. Once all of our fish have died the only way
-           we can get more is to buy them and start again. But for
-           other values of <m>P</m> it is still not entirely clear
-           what<rsq/>s happening to our fish population.
-         </p>
+                   Is it clear to you that none of these curves can
+                   cross?  Think about it a moment, if two of these
+                   curves crossed, it would force <m>\dfdx{P}{t}</m> to
+                   take on two different values for some value of
+                   <m>P</m>. Do you see why this can<rsq/>t happen?
+                   This fact should help you graph each function.
+                 </p>
+               </statement>
+             </task>
+             <task>
+               <statement>
+                 <p>
+                   Sketch the graph you get if you start by purchasing
+                   <m>150</m> tons of trout, rather than <m>10</m> tons.
+                   Is this a good business decision?
+                 </p>
+               </statement>
+             </task>
+           </exercise>
 
-         <p>
-           It is not possible to maintain a population of trout at a
-           constant value of <m>100</m> tons. There will always be a little
-           fluctuation above and below. All models are inaccurate in some
-           way. This is one way in which this model is inaccurate.
-         </p>
-
-         <p>
-           The dashed line represents the population level where the graph of the
-           population transitions from concave up to concave down. Physically
-           this means that the rate of growth transitions from accelerating to
-           decelerating.  We can visualize this (below) using slope field
-           technique we saw in <xref ref="SECTIONGraphingWithDeriv"></xref>.
-         </p>
-
-         <image source="DC/SlopeField1.png" width="100%"/>
-
-         <p>
-           Starting with an initial value
-           of <m>P(0)=10</m>, we can plot the graph of the  population and make a
-           prediction of what will happened to the population in the long
-           term. We just can<rsq/>t tell what <q>long term</q> means.  That would have to
-           be determined
-           experimentally.
-         </p>
-
-         <p>
-           Notice that on the vertical interval <m>(0,50)</m> the population is
-           accelerating until it reaches <m>P=50</m> tons. After that, it still grows,
-           but is starting to decelerate. Over the long run it will approach (but
-           never quite reach) a level of <m>P=100</m> tons.
-         </p>
-
-         <exercise>
-           <introduction>
-             <p>
-             </p>
-           </introduction>
-           <task>
-             <statement>
+           <exercise xml:id="PROBLEMBassModel">
+             <introduction>
                <p>
-                 On the same set of axes, plot reasonable graphs for <m>P(t)</m>
-                 with the following initial values:
-
-                 <ol cols="2" marker="(i)">
-                   <li>
-                     <p>
-                       <m>P(0)=0</m>,
-                     </p>
-                   </li>
-                   <li>
-                     <p>
-                       <m>P(0)=10</m>,
-                     </p>
-                   </li>
-                   <li>
-                     <p>
-                       <m>P(0)=75</m>,
-                     </p>
-                   </li>
-                   <li>
-                     <p>
-                       <m>P(0)=100</m>.
-                     </p>
-                   </li>
-                 </ol>
-
-                 Is it clear to you that none of these curves can
-                 cross?  Think about it a moment, if two of these
-                 curves crossed, it would force <m>\dfdx{P}{t}</m> to
-                 take on two different values for some value of
-                 <m>P</m>. Do you see why this can<rsq/>t happen?
-                 This fact should help you graph each function.
+                 Suppose our fishery has another lake full of bass and that the
+                 intrinsic growth rate for the bass is
+                 <men xml:id="EQUATIONLogistic2">
+                   \dfdx{B}{t}=.25B\left(1-\frac{B}{500}\right)  \frac{\text{
+                   tons}}{\text{year}}
+                 </men>
                </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
-               <p>
-                 Sketch the graph you get if you start by purchasing
-                 <m>150</m> tons of trout, rather than <m>10</m> tons.
-                 Is this a good business decision?
-               </p>
-             </statement>
-           </task>
-         </exercise>
-
-         <exercise xml:id="PROBLEMBassModel">
-           <introduction>
-             <p>
-               Suppose our fishery has another lake full of bass and that the
-               intrinsic growth rate for the bass is
-               <men xml:id="EQUATIONLogistic2">
-                 \dfdx{B}{t}=.25B\left(1-\frac{B}{500}\right)  \frac{\text{
-                 tons}}{\text{year}}
-               </men>
-             </p>
-           </introduction>
-           <task>
-             <statement>
-               <p>
-                 Analyze this model in the same way we analyzed <xref
-                 ref="EQUATIONFishery2">equation</xref>. Draw several
-                 typical graphs.
-               </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
-               <p>
-                 We can<rsq/>t make any money unless we sell some of our
-                 fish. Modify <xref ref="EQUATIONLogistic2">equation</xref> to account for
-                 harvesting at a uniform rate of
-                 <m>20 \frac{\text{ tons}}{\text{year}}</m>.
-               </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
-               <p>
-                 Suppose <m>B(0)=150</m> tons.  Sketch a graph of the population
-                 assuming that we harvest at a uniform rate of <m>20 \frac{\text{
-                 tons}}{\text{year}}</m> as in part (b).  What does the model
-                 predict about the amount of fish in the lake over a long period of
-                 time?
-               </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
-               <p>
-                 Assume that <m>B(0)</m> is still <m>150</m> tons as
-                 in part (b), but this time the amount of harvesting
-                 is increased from <m>20 \frac{\text{
-                 tons}}{\text{year}}</m> to <m>30 \frac{\text{
-                 tons}}{\text{year}}</m>. Use a slope field to draw a
-                 graph of <m>B(t)</m>. What does the model predict now
-                 about the amount of fish over a long period of time?
-               </p>
+             </introduction>
+             <task>
+               <statement>
+                 <p>
+                   Analyze this model in the same way we analyzed <xref
+                   ref="EQUATIONFishery2">equation</xref>. Draw several
+                   typical graphs.
+                 </p>
+               </statement>
+             </task>
+             <task>
+               <statement>
+                 <p>
+                   We can<rsq/>t make any money unless we sell some of our
+                   fish. Modify <xref ref="EQUATIONLogistic2">equation</xref> to account for
+                   harvesting at a uniform rate of
+                   <m>20 \frac{\text{ tons}}{\text{year}}</m>.
+                 </p>
+               </statement>
+             </task>
+             <task>
+               <statement>
+                 <p>
+                   Suppose <m>B(0)=150</m> tons.  Sketch a graph of the population
+                   assuming that we harvest at a uniform rate of <m>20 \frac{\text{
+                   tons}}{\text{year}}</m> as in part (b).  What does the model
+                   predict about the amount of fish in the lake over a long period of
+                   time?
+                 </p>
+               </statement>
+             </task>
+             <task>
+               <statement>
+                 <p>
+                   Assume that <m>B(0)</m> is still <m>150</m> tons as
+                   in part (b), but this time the amount of harvesting
+                   is increased from <m>20 \frac{\text{
+                   tons}}{\text{year}}</m> to <m>30 \frac{\text{
+                   tons}}{\text{year}}</m>. Use a slope field to draw a
+                   graph of <m>B(t)</m>. What does the model predict now
+                   about the amount of fish over a long period of time?
+                 </p>
              </statement>
            </task>
          </exercise>
          <p>
            <idx><h>Vocabulary</h><h>intrinsic growth rate</h></idx>
            <idx><h>Vocabulary</h><h>carrying capacity</h></idx>
-           The general logistic growth equation is
+           The general logistic growth model is
 
            <men xml:id="EQUATIONGenLogisModel">
              \dfdx{P}{t}= rP\left(1-\frac{P}{C}\right)
@@ -573,7 +589,8 @@
          <exercise>
            <statement>
              <p>
-               Show that in this model <m>P</m> is increasing and
+               Show that if we use <xref
+               ref="EQUATIONGenLogisModel">model</xref> then  <m>P</m> is increasing and
                concave up when <m>0\lt P\lt\frac{C}{2},</m> <m>P</m>
                is increasing and concave down when <m>\frac{C}{2} \lt
                P \lt C,</m> and <m>P</m> is decreasing and concave up
@@ -582,23 +599,23 @@
            </statement>
            <hint>
              <p>
-               This is the same analysis we did above.We<rsq/>re just
+               This is the same analysis we did above. We<rsq/>re just
                not assuming that <m>C=100</m> this time.
              </p>
            </hint>
          </exercise>
-         <p>
-           Of course there is also a risk from underpopulation which
-           our model does not account for. To catch this effect we
-           tweak <xref ref="EQUATIONGenLogisModel">equation</xref> by
-           inserting the factor <m>\left(1-\frac{m}{P}\right)</m>
-           where <m>m\lt C</m> is a small positive constant. We
-           justify this tweak in <xref
-           ref="PROBLEMMinViablePop"></xref> below.
-         </p>
 
          <exercise xml:id="PROBLEMMinViablePop">
            <introduction>
+             <p>
+               Of course there is also a risk from underpopulation which
+               <xref ref="EQUATIONGenLogisModel">model</xref> does not
+               account for. To catch this effect we tweak <xref
+               ref="EQUATIONGenLogisModel">equation</xref> by inserting
+               the factor <m>\left(1-\frac{m}{P}\right)</m> where <m>m\lt
+               C</m> is a small positive constant. We justify this tweak
+               in <xref ref="PROBLEMMinViablePop"></xref> below.
+             </p>
              <p>
                Our new model is then
                <men xml:id="EQUATIONTweakedLogistic">
@@ -843,247 +860,265 @@
            have <m>\dfdx{B}{t}=0</m>.
          </p>
 
-         <image source="DC/CompetingSpeciesModel1.png" width="40%"/>
+         <!-- <image source="DC/CompetingSpeciesModel1.png" width="40%"/> -->
+
+         <figure  xml:id="FIGUREBassWalleye1">
+           <caption></caption>
+           <image source="DC/CompetingSpeciesModel1.png" width="40%">
+             <shortdescription></shortdescription>
+           </image>
+</figure>
 
 
-         <p>
-           Since the two red lines are the only locations where
-           <m>\dfdx{B}{t}=0</m>, it must be that <m>\dfdx{B}{t}</m> is
-           either greater than zero or less that zero in any region
-           bounded by them. Choosing the point <m>(1,1)</m> in the
-           shaded region we see that
+<p>
+  Since the two red lines are the only locations where
+  <m>\dfdx{B}{t}=0</m>, it must be that <m>\dfdx{B}{t}</m> is
+  either greater than zero or less that zero in any region
+  bounded by them. Choosing the point <m>(1,1)</m> in the
+  blue region we see that
 
-           <me>\eval{\dfdx{B}{t}} {(B,W)}{(1,1)}\gt0.</me>
+  <me>\eval{\dfdx{B}{t}} {(B,W)}{(1,1)}\gt0.</me>
 
-           Choosing the point <m>(2000,2000)</m> outside the blue
-           region we see that
+  Choosing the point <m>(2000,2000)</m> outside the blue
+  region we see that
 
-           <me>\eval{\dfdx{B}{t}}{(B,W)}{(2000,2000)}\lt0.</me>
+  <me>\eval{\dfdx{B}{t}}{(B,W)}{(2000,2000)}\lt0.</me>
 
-           So for any bass/walleye pair, <m>(B,W)</m>, the bass
-           population is increasing when <m>(B,W)</m> lies below the
-           diagonal line (in the blue region), and for any
-           bass/walleye pair, <m>(B,W)</m>, above the diagonal line,
-           the amount of bass is decreasing.
-         </p>
+  So for any bass/walleye pair, <m>(B,W)</m>,  below the
+  diagonal line (in the blue region) the bass
+  population is increasing, and for any
+  bass/walleye pair, <m>(B,W)</m>, above the diagonal line,
+  the amount of bass is decreasing.
+</p>
 
-         <p>
-           Finally, notice that when <m>W=0</m> the bass population
-           will increase until it reaches the carrying capacity of the
-           lake for bass alone (<m>500</m>), after which it will start
-           to decrease. But if there are walleye in the lake the bass
-           population will not reach the carrying capacity before it
-           begins to decrease. This is consistent with the notion that
-           the number of walleye adversely affect the growth rate of
-           the bass.
-         </p>
+<p>
+  Finally, notice that when <m>W=0</m> the bass population
+  will increase until it reaches the carrying capacity of the
+  lake for bass alone (<m>500</m>), after which it will start
+  to decrease. But if there are walleye in the lake the bass
+  population will not reach the carrying capacity before it
+  begins to decrease. This is consistent with the notion that
+  the number of walleye adversely affect the growth rate of
+  the bass.
+</p>
 
-         <p>
-           Next we need to perform a similar analysis for the walleye
-           population.
-         </p>
+<p>
+  Next we need to perform a similar analysis for the walleye
+  population.
+</p>
 
-         <exercise xml:id="PROBLEMWalleyeAnalysis">
-           <statement>
-             <p>
-               Apply the same type of analysis to
-           
-               <me>
-                 \dfdx{W}{t}=.2W\left(1-\frac{W}{400}\right)-.0001BW
-               </me>
+<exercise xml:id="PROBLEMWalleyeAnalysis">
+  <statement>
+    <p>
+      Apply the same type of analysis to
+      
+      <me>
+        \dfdx{W}{t}=.2W\left(1-\frac{W}{400}\right)-.0001BW
+      </me>
 
-               to determine where <m>W</m> is increasing and where
-               <m>W</m> is decreasing. Plot these regions in the first
-               quadrant of the <m>B</m>-<m>W</m> plane just as we did
-               above for the bass population.
-             </p>
-           </statement>
-         </exercise>
+      to determine where <m>W</m> is increasing and where
+      <m>W</m> is decreasing. Plot these regions in the first
+      quadrant of the <m>B</m>-<m>W</m> plane just as we did
+      above for the bass population.
+    </p>
+  </statement>
+</exercise>
 
-         <p>
-           If we superimpose the sketch you (should have) obtained from
-           <xref ref="PROBLEMWalleyeAnalysis"></xref> onto the graph we have above,
-           we get the <m>4</m> regions seen in the sketch below.
-         </p>
-
-         <image source="DC/CompetingSpeciesModel9.png" width="60%" />
-
-         <p>
-           <idx><h>Vocabulary</h><h>equilibrium points</h></idx> 
-
-           The points where the green and red lines intersect are
-           called <term>equilibrium points</term>. Theoretically, if
-           the two population levels are at an equilibrium point then
-           neither population will ever change again because the
-           growth rates are both zero.
-         </p>
-
-         <problem>
-           <p>
-             <ol marker="(i)">
-               <li>
-                 <p>
-                   Verify that the points <m>(0,0)</m>,
-                   <m>(500,0)</m>, and <m>(0,400)</m>, are equilibrium
-                   points for our bass/walleye populations.
-                 </p>
-               </li>
-               <li>
-                 <p>
-                   Show that the coordinates of the equilibrium point
-                   <m>E</m> are as given in the <xref
-                   ref="FIGURECompetingSpeciesModel10"></xref> below.
-                 </p>
-
-                 <figure  xml:id="FIGURECompetingSpeciesModel10">
-                   <caption></caption>
-                   <image source="DC/CompetingSpeciesModel10.png" width="60%">
-                     <shortdescription></shortdescription>
-                   </image>
-                 </figure>
+<p>
+  If we superimpose the sketch you (should have) obtained from
+  <xref ref="PROBLEMWalleyeAnalysis"></xref> onto the <xref ref="FIGUREBassWalleye1"></xref>
+  we get the <m>4</m> regions seen in the sketch below.
+</p>
 
 
-               </li>
-             </ol>
-           </p>
-         </problem>
+<figure  xml:id="FIGUREBassWalleye2">
+  <caption></caption>
+  <image source="DC/CompetingSpeciesModel9.png" width="60%">
+    <shortdescription></shortdescription>
+  </image>
+</figure>
+
+<!-- <image source="DC/CompetingSpeciesModel9.png" width="60%" /> -->
+
+<p>
+  <idx><h>Vocabulary</h><h>equilibrium points</h></idx> 
+
+  The points where the green and red lines intersect are
+  called <term>equilibrium points</term>. Theoretically, if
+  the two population levels are at an equilibrium point then
+  neither population will ever change again because the
+  growth rates are both zero.
+</p>
+
+<problem>
+  <p>
+    <ol marker="(i)">
+      <li>
+        <p>
+          Use <xref ref="FIGUREBassWalleye2"></xref> to  verify that the points <m>(0,0)</m>,
+          <m>(500,0)</m>, and <m>(0,400)</m>, are equilibrium
+          points for our bass/walleye populations.
+        </p>
+      </li>
+      <li>
+        <p>
+         Show that the
+         coordinates of the equilibrium point <m>E</m> are as given
+          in  <xref ref="FIGURECompetingSpeciesModel10"></xref>
+          below.
+        </p>
+
+        <figure  xml:id="FIGURECompetingSpeciesModel10">
+          <caption></caption>
+          <image source="DC/CompetingSpeciesModel10.png" width="60%">
+            <shortdescription></shortdescription>
+          </image>
+        </figure>
 
 
-         <p>
-           But what happens if we don’t start at an equilibrium point?  Would the
-           levels tend toward an equilibrium over time  as the name suggests?
-           Take your best guess.
-         </p>
+      </li>
+    </ol>
+  </p>
+</problem>
 
-         <p>
-           We can figure this out by looking at the growth rates in
-           each region.  For example, suppose the initial populations
-           of bass and walleye, <m>(B,W)</m> is in the blue region in
-           <xref ref="FIGURECompetingSpeciesModel10"></xref>. The bass
-           population is increasing. Think of this as an arrow
-           pointing to the right. In the same region the walleye
-           population is decreasing which we can think of as an arrow
-           pointing downward. Combining these arrows gives us an arrow
-           pointing down and to the right.
-         </p>
 
-         <p>
-           Similarly, in the purple area the trajectory of the
-           populations will be up and to the right since both
-           populations are increasing. In the red area it will be up
-           and to the left, while in the white area it will be down
-           and to the left.
-         </p>
+<p>
+  But what happens if we don’t start at an equilibrium point?  Would the
+  levels tend toward an equilibrium over time  as the name suggests?
+  Take your best guess.
+</p>
 
-         <p>
-           <xref ref="FIGURECompetingSpeciesModel10"></xref> gives us
-           an rough, qualitative idea of the population trajectories
-           that this model predicts for the bass and walleye
-           populations starting from various initial values.
-         </p>
+<p>
+  We can figure this out by looking at the growth rates in
+  each region.  For example, suppose the initial populations
+  of bass and walleye, <m>(B,W)</m> is in the blue region in
+  <xref ref="FIGURECompetingSpeciesModel10"></xref>. The bass
+  population is increasing. Think of this as an arrow
+  pointing to the right. In the same region the walleye
+  population is decreasing which we can think of as an arrow
+  pointing downward. Combining these arrows gives us an arrow
+  pointing down and to the right.
+</p>
 
-         <p>
-           <idx><h>Vocabulary</h><h>dynamical system</h></idx>
-           <idx><h>Vocabulary</h><h>trajectory</h></idx> Notice that
-           these trajectories tend toward the equilibrium point,
-           <m>E=\left(437.5, 312.5\right)</m>.  This says that given
-           these initial levels of bass and walleye, the levels will
-           approach <m>E_B</m> tons of bass and <m>E_w</m> tons of
-           walleye.  This kind of problem is called a <term>dynamical
-           system</term> and the path that the point <m>(B,W)</m>
-           follows for any given set of initial conditions is called
-           its <term>trajectory</term>.
-         </p>
+<p>
+  Similarly, in the purple area the trajectory of the
+  populations will be up and to the right since both
+  populations are increasing. In the red area it will be up
+  and to the left, while in the white area it will be down
+  and to the left.
+</p>
 
-         <exercise>
-           <statement>
-             <p>
-               Are there any initial conditions where the trajectory approaches the
-               points <m>(0,0)</m>, <m>(0,400)</m>, or <m>(500,0)</m>?  Explain.
-             </p>
-           </statement>
-         </exercise>
+<p>
+  <xref ref="FIGURECompetingSpeciesModel10"></xref> gives us
+  an rough, qualitative idea of the population trajectories
+  that this model predicts for the bass and walleye
+  populations starting from various initial values.
+</p>
 
-         <exercise>
-           <introduction>
-             <p>
-             </p>
-           </introduction>
-           <task>
-             <statement>
-               <p>
-                 Suppose we adjust our differential equations slightly to
-                 <md>
-                   <mrow>
-                     \dfdx{B}{t}\amp=.25B\left(1-\frac{B}{500}\right)-.0001BW
-                   </mrow>
-                   <mrow>
-                     \dfdx{W}{t}\amp=.2W\left(1-\frac{W}{400}\right)-.001BW
-                   </mrow>
-                 </md>
-                 Perform a similar graphical analysis to show that as
-                 long as <m>B\neq0</m>, then any trajectory will
-                 approach the equilibrium point <m>(500,0)</m>.  That
-                 is, the walleye will become extinct, and the bass
-                 will approach their natural level of <m>500</m> tons.
-                 How is this consistent with the adjustments we made
-                 from the original differential equations?  Explain.
-               </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
-               <p>
-                 Now let<rsq/>s again adjust our differential equations to
-                 <md>
-                   <mrow>
-                     \dfdx{B}{t}\amp=.25B\left(1-\frac{B}{500}\right)-.001BW
-                   </mrow>
-                   <mrow>
-                     \dfdx{W}{t}\amp=.2W\left(1-\frac{W}{400}\right)-.001BW
-                   </mrow>
-                 </md>
+<p>
+  <idx><h>Vocabulary</h><h>dynamical system</h></idx>
+  <idx><h>Vocabulary</h><h>trajectory</h></idx> 
 
-                 <ol  marker="(i)">
-                   <li>
-                     <p>
-                       Identify how this system of equations is
-                       different from the one in part (a), and
-                       interpret the difference in terms of the
-                       influence of each population on the other.
-                     </p>
-                   </li>
-                   <li>
-                     <p>
-                       Perform a similar graphical analysis to show
-                       that the equilibrium points are <m>(0,0)</m>,
-                       <m>(500,0)</m>, <m>(0,400)</m>, and
-                       <m>(100,200)</m>.  While it is theoretically
-                       possible for a trajectory to approach
-                       <m>(100,200)</m>, show that most trajectories
-                       will either approach <m>(500,0)</m> or
-                       <m>(0,400)</m>.  What does this mean for the
-                       fish populations, and is it consistent with the
-                       differential equations?  Explain.
-                     </p>
-                   </li>
-                 </ol>
+  Notice that these trajectories tend toward the equilibrium point,
+  <m>E=\left(E_B=437.5, E_W=312.5\right)</m>.  This says that given
+  these initial levels of bass and walleye, the levels will approach
+  <m>E_B=437.5</m> tons of bass and <m>E_W=312.5</m> tons of walleye.
+  This kind of problem is called a <term>dynamical system</term> and
+  the path that the point <m>(B,W)</m> follows for any given set of
+  initial conditions is called its <term>trajectory</term>.
+</p>
 
-               </p>
-             </statement>
-           </task>
-           <task>
-             <statement>
-               <p>
-                 Compare the results in parts (a) and (b) with the
-                 example that started this section (equations <xref
-                 ref="EQUATIONCompSpec1"></xref> and <xref
-                 ref="EQUATIONCompSpec2"></xref>). How does the
-                 coefficient of the <m>BW</m> term affect the model?
-               </p>
-             </statement>
-           </task>
-         </exercise>
+<exercise>
+  <statement>
+    <p>
+      Use <xref ref="FIGURECompetingSpeciesModel10"></xref> to
+      determine if there are any initial conditions where the
+      trajectory approaches the points <m>(0,0)</m>, <m>(0,400)</m>,
+      or <m>(500,0)</m>?  Explain.
+    </p>
+  </statement>
+</exercise>
+
+<exercise>
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        Suppose we adjust our differential equations slightly to
+        <md>
+          <mrow>
+            \dfdx{B}{t}\amp=.25B\left(1-\frac{B}{500}\right)-.0001BW
+          </mrow>
+          <mrow>
+            \dfdx{W}{t}\amp=.2W\left(1-\frac{W}{400}\right)-.001BW
+          </mrow>
+        </md>
+        Perform a similar graphical analysis to show that as
+        long as <m>B\neq0</m>, then any trajectory will
+        approach the equilibrium point <m>(500,0)</m>.  That
+        is, the walleye will become extinct, and the bass
+        will approach their natural level of <m>500</m> tons.
+        How is this consistent with the adjustments we made
+        from the original differential equations?  Explain.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Now let<rsq/>s again adjust our differential equations to
+        <md>
+          <mrow>
+            \dfdx{B}{t}\amp=.25B\left(1-\frac{B}{500}\right)-.001BW
+          </mrow>
+          <mrow>
+            \dfdx{W}{t}\amp=.2W\left(1-\frac{W}{400}\right)-.001BW
+          </mrow>
+        </md>
+
+        <ol  marker="(i)">
+          <li>
+            <p>
+              Identify how this system of equations is
+              different from the one in part (a), and
+              interpret the difference in terms of the
+              influence of each population on the other.
+            </p>
+          </li>
+          <li>
+            <p>
+              Perform a similar graphical analysis to show
+              that the equilibrium points are <m>(0,0)</m>,
+              <m>(500,0)</m>, <m>(0,400)</m>, and
+              <m>(100,200)</m>.  While it is theoretically
+              possible for a trajectory to approach
+              <m>(100,200)</m>, show that most trajectories
+              will either approach <m>(500,0)</m> or
+              <m>(0,400)</m>.  What does this mean for the
+              fish populations, and is it consistent with the
+              differential equations?  Explain.
+            </p>
+          </li>
+        </ol>
+
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Compare the results in parts (a) and (b) with the
+        example that started this section (equations <xref
+        ref="EQUATIONCompSpec1"></xref> and <xref
+        ref="EQUATIONCompSpec2"></xref>). How does the
+        coefficient of the <m>BW</m> term affect the model?
+      </p>
+    </statement>
+  </task>
+</exercise>
        </subsection>
      </section>
  
@@ -1244,10 +1279,12 @@
 
          <blockquote>
            <p>
-             Truckin<rsq/>, got my chips cashed in
-             Keep truckin<rsq/>, like the do-dah man
-             Together, more or less in line
-             Just keep truckin<rsq/> on.
+             <cd>
+               Truckin', got my chips cashed in
+               Keep truckin', like the do-dah man
+               Together, more or less in line
+               Just keep truckin' on.
+             </cd>
            </p>
            <attribution>
              <url href="https://en.wikipedia.org/wiki/Grateful_Dead" visual="https://en.wikipedia.org/wiki/Grateful_Dead">The Grateful Dead </url>(1967<mdash/>1995)
@@ -1265,38 +1302,54 @@
          <p>
            Recall that initially the center of the rear axle of the tractor is at
            the origin and the center of the rear axle of the trailer is at the
-           point <m>(1,0)</m> Also we assumed that the tractor pulls the front wheels
+           point <m>(1,0)</m>. Also we assumed that the tractor pulls the front wheels
            vertically up the <m>y</m>-axis and that the rear wheels don’t slip.
          </p>
 
-         <p>
-           <xref ref="PROBLEMTractrix"></xref> we showed that the path followed by
-           the center of the rear axle of the trailer follows, <m>y=y(t)</m>, must
-           satisfy the IVP:
-           <men  xml:id="EQUATIONTractrixIVP-2">
-             
-             \dfdx{y}{x}=-\frac{\sqrt{1-x^2}}{x}, \hskip5mm y(1)=0.
-           </men>
-         </p>
 
          <exercise>
            <introduction>
              <p>
-             </p>
+               In <xref ref="PROBLEMTractrix"></xref> you showed that the
+               path followed by the center of the rear axle of the trailer
+               follows, <m>y=y(t)</m>, must satisfy the IVP:
+  
+               <mdn>
+                 <mrow xml:id="EQUATIONTractrixIVP-2">
+                   \dfdx{y}{x}=-\frac{\sqrt{1-x^2}}{x},\amp{}\amp{} y(1)=0.
+                 </mrow>
+               </mdn>
+
+               </p>
+
            </introduction>
            <task>
              <statement>
                <p>
                  Show that
-                 <m>y=\ln\left(\frac{1+\sqrt{1-x^2}}{x}\right)-\sqrt{1-x^2}</m>
-                 satisfies the IVP in part (a). Graph this formula. Does it
-                 match your intuition about the shape of the curve? Does it
-                 match the graph you found using Euler<rsq/>s Method in
-                 <xref ref="PROBLEMTractrix"></xref>?
-
-                 You will learn how to derive this solution from
-                 <xref ref="EQUATIONTractrixIVP-2">IVP</xref> when you take
-                 Integral Calculus.
+                 <m>y(x)=\ln\left(\frac{1+\sqrt{1-x^2}}{x}\right)-\sqrt{1-x^2}</m>
+                 satisfies <xref
+                 ref="EQUATIONTractrixIVP-2">IVP</xref>.
+                 <ol marker="(i)">
+                   <li>
+                     <p>
+                       Graph <m>y(x)</m>.
+                     </p>
+                   </li>
+                   <li>
+                     <p>
+                       Does your graph in part (a) 
+                       match your intuition about the shape of the curve? 
+                     </p>
+                   </li>
+                   <li>
+                     <p>
+                       Does it
+                       match the graph you found using Euler<rsq/>s Method in
+                       <xref ref="PROBLEMTractrix"></xref>?
+                     </p>
+                   </li>
+                 </ol>
                </p>
              </statement>
            </task>
@@ -1308,6 +1361,13 @@
                </p>
              </statement>
            </task>
+           <conclusion>
+             <p>
+               You will learn how to derive this solution from
+               <xref ref="EQUATIONTractrixIVP-2">IVP</xref> when you take
+               Integral Calculus.
+               </p>
+             </conclusion>
          </exercise>
        </subsection>
 
@@ -1333,19 +1393,19 @@
 
          <exercise xml:id="PROBLEMPursuit2">
            <introduction>
-             <image source="DC/PursuitCurve2.png" width="50%"/>
+             <image source="DC/PursuitCurve2.png" width="70%"/>
              <p>
                As in <xref ref="PROBLEMPursuit1"></xref> we assume
-               that rocket <m>R</m> starting is traveling vertically
-               up the line <m>x=1</m> at a constant speed
-               <m>v</m>. When the rocket reaches the point
-               <m>(1,0)</m>, a missile <m>M</m> is fired from the
-               origin directly at the rocket.  Assuming that the
-               missile is always aimed directly at the rocket, and
-               that it travels at a speed which is <m>k</m> times the
-               speed of the rocket (<m>k\gt1</m>) we showed in <xref
-               ref="PROBLEMPursuit2"></xref> that the curve described
-               by the path the missile will satisfy the IVP:
+               that a rocket <m>R</m>, is traveling vertically up the
+               line <m>x=1</m> at a constant speed <m>v</m>. When the
+               rocket reaches the point <m>(1,0)</m>, a missile
+               <m>M</m> is fired from the origin directly at the
+               rocket.  Assuming that the missile is always aimed
+               directly at the rocket, and that it travels at a speed
+               which is <m>k</m> times the speed of the rocket
+               (<m>k\gt1</m>) we showed in <xref
+               ref="PROBLEMPursuit1"></xref> that the curve the
+               missile follows will satisfy the IVP:
                <mdn>
                  <mrow xml:id="EQUATIONPursuitIVP">
                    \dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x},\amp{}\amp{}       y(0)=0.
