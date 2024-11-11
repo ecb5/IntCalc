@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Trigonometric Substitutions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#PleaForHelp-9-3 { counter-set: PleaForHelp-9-3 0; }
+#PleaForHelp-9-3 > li::marker { content: ""counter(PleaForHelp-9-3,decimal)"."; }
+#PleaForHelp-9-3 > li { counter-increment: PleaForHelp-9-3; }
+#SECTIONFermMethAedeq-22-2-1-1-1 { counter-set: SECTIONFermMethAedeq-22-2-1-1-1 0; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li::marker { content: "("counter(SECTIONFermMethAedeq-22-2-1-1-1,lower-roman)")"; }
+#SECTIONFermMethAedeq-22-2-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-2-1-1-1; }
+#SECTIONFermMethAedeq-22-6-1-1-1 { counter-set: SECTIONFermMethAedeq-22-6-1-1-1 0; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li::marker { content: "("counter(SECTIONFermMethAedeq-22-6-1-1-1,lower-roman)")"; }
+#SECTIONFermMethAedeq-22-6-1-1-1 > li { counter-increment: SECTIONFermMethAedeq-22-6-1-1-1; }
+#SECTIONFermMethAedeq-22-7-1-1-8 { counter-set: SECTIONFermMethAedeq-22-7-1-1-8 0; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li::marker { content: "("counter(SECTIONFermMethAedeq-22-7-1-1-8,lower-roman)")"; }
+#SECTIONFermMethAedeq-22-7-1-1-8 > li { counter-increment: SECTIONFermMethAedeq-22-7-1-1-8; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 { counter-set: PROBLEMPROBLEMFermMethX2A-1-1-1 0; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li::marker { content: "("counter(PROBLEMPROBLEMFermMethX2A-1-1-1,lower-roman)")"; }
+#PROBLEMPROBLEMFermMethX2A-1-1-1 > li { counter-increment: PROBLEMPROBLEMFermMethX2A-1-1-1; }
+#PROBLEMFermMethX2B-1-1-1 { counter-set: PROBLEMFermMethX2B-1-1-1 0; }
+#PROBLEMFermMethX2B-1-1-1 > li::marker { content: "("counter(PROBLEMFermMethX2B-1-1-1,lower-roman)")"; }
+#PROBLEMFermMethX2B-1-1-1 > li { counter-increment: PROBLEMFermMethX2B-1-1-1; }
+#SUBSECTIONSpdVelRofC-31-2-1 { counter-set: SUBSECTIONSpdVelRofC-31-2-1 0; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li::marker { content: "("counter(SUBSECTIONSpdVelRofC-31-2-1,lower-roman)")"; }
+#SUBSECTIONSpdVelRofC-31-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-31-2-1; }
+#SUBSECTIONSpdVelRofC-32-2-1 { counter-set: SUBSECTIONSpdVelRofC-32-2-1 0; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li::marker { content: "("counter(SUBSECTIONSpdVelRofC-32-2-1,lower-roman)")"; }
+#SUBSECTIONSpdVelRofC-32-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-32-2-1; }
+#SUBSECTIONSpdVelRofC-33-2-1 { counter-set: SUBSECTIONSpdVelRofC-33-2-1 0; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li::marker { content: "("counter(SUBSECTIONSpdVelRofC-33-2-1,lower-roman)")"; }
+#SUBSECTIONSpdVelRofC-33-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-33-2-1; }
+#SUBSECTIONSpdVelRofC-34-2-1 { counter-set: SUBSECTIONSpdVelRofC-34-2-1 0; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li::marker { content: "("counter(SUBSECTIONSpdVelRofC-34-2-1,lower-roman)")"; }
+#SUBSECTIONSpdVelRofC-34-2-1 > li { counter-increment: SUBSECTIONSpdVelRofC-34-2-1; }
+#DRILLConstantRule-2 { counter-set: DRILLConstantRule-2 0; }
+#DRILLConstantRule-2 > li::marker { content: "("counter(DRILLConstantRule-2,lower-roman)")"; }
+#DRILLConstantRule-2 > li { counter-increment: DRILLConstantRule-2; }
+#SUBSECTIONConstMultRule-5-2 { counter-set: SUBSECTIONConstMultRule-5-2 0; }
+#SUBSECTIONConstMultRule-5-2 > li::marker { content: "("counter(SUBSECTIONConstMultRule-5-2,lower-roman)")"; }
+#SUBSECTIONConstMultRule-5-2 > li { counter-increment: SUBSECTIONConstMultRule-5-2; }
+#PARTGenPwrRule-1-2-1 { counter-set: PARTGenPwrRule-1-2-1 0; }
+#PARTGenPwrRule-1-2-1 > li::marker { content: "("counter(PARTGenPwrRule-1-2-1,lower-roman)")"; }
+#PARTGenPwrRule-1-2-1 > li { counter-increment: PARTGenPwrRule-1-2-1; }
+#SUBSECTIONPowerRule-12-1-1 { counter-set: SUBSECTIONPowerRule-12-1-1 0; }
+#SUBSECTIONPowerRule-12-1-1 > li::marker { content: "("counter(SUBSECTIONPowerRule-12-1-1,lower-roman)")"; }
+#SUBSECTIONPowerRule-12-1-1 > li { counter-increment: SUBSECTIONPowerRule-12-1-1; }
+#SUBSECTIONPowerRule-13-1-1 { counter-set: SUBSECTIONPowerRule-13-1-1 0; }
+#SUBSECTIONPowerRule-13-1-1 > li::marker { content: "("counter(SUBSECTIONPowerRule-13-1-1,lower-roman)")"; }
+#SUBSECTIONPowerRule-13-1-1 > li { counter-increment: SUBSECTIONPowerRule-13-1-1; }
+#SUBSECTIONPowerRule-14-1-2 { counter-set: SUBSECTIONPowerRule-14-1-2 0; }
+#SUBSECTIONPowerRule-14-1-2 > li::marker { content: "("counter(SUBSECTIONPowerRule-14-1-2,lower-roman)")"; }
+#SUBSECTIONPowerRule-14-1-2 > li { counter-increment: SUBSECTIONPowerRule-14-1-2; }
+#SUBSECTIONPowerRule-40-1-4 { counter-set: SUBSECTIONPowerRule-40-1-4 0; }
+#SUBSECTIONPowerRule-40-1-4 > li::marker { content: "("counter(SUBSECTIONPowerRule-40-1-4,lower-roman)")"; }
+#SUBSECTIONPowerRule-40-1-4 > li { counter-increment: SUBSECTIONPowerRule-40-1-4; }
+#SUBSECTIONPowerRule-41-1-1 { counter-set: SUBSECTIONPowerRule-41-1-1 0; }
+#SUBSECTIONPowerRule-41-1-1 > li::marker { content: "("counter(SUBSECTIONPowerRule-41-1-1,lower-roman)")"; }
+#SUBSECTIONPowerRule-41-1-1 > li { counter-increment: SUBSECTIONPowerRule-41-1-1; }
+#SUBSECTIONPowerRule-42-1-1 { counter-set: SUBSECTIONPowerRule-42-1-1 0; }
+#SUBSECTIONPowerRule-42-1-1 > li::marker { content: "("counter(SUBSECTIONPowerRule-42-1-1,lower-roman)")"; }
+#SUBSECTIONPowerRule-42-1-1 > li { counter-increment: SUBSECTIONPowerRule-42-1-1; }
+#DRILLClassicalCurves-1-3 { counter-set: DRILLClassicalCurves-1-3 0; }
+#DRILLClassicalCurves-1-3 > li::marker { content: "("counter(DRILLClassicalCurves-1-3,lower-roman)")"; }
+#DRILLClassicalCurves-1-3 > li { counter-increment: DRILLClassicalCurves-1-3; }
+#SUBSECTIONQuotientRule-9-1-2 { counter-set: SUBSECTIONQuotientRule-9-1-2 0; }
+#SUBSECTIONQuotientRule-9-1-2 > li::marker { content: "("counter(SUBSECTIONQuotientRule-9-1-2,lower-roman)")"; }
+#SUBSECTIONQuotientRule-9-1-2 > li { counter-increment: SUBSECTIONQuotientRule-9-1-2; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 { counter-set: SUBSECTIONQuotientRule-10-2-1-1-2 0; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li::marker { content: "("counter(SUBSECTIONQuotientRule-10-2-1-1-2,lower-roman)")"; }
+#SUBSECTIONQuotientRule-10-2-1-1-2 > li { counter-increment: SUBSECTIONQuotientRule-10-2-1-1-2; }
+#SECTIONVelocitySlopeTangent-12-1-4 { counter-set: SECTIONVelocitySlopeTangent-12-1-4 0; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li::marker { content: "("counter(SECTIONVelocitySlopeTangent-12-1-4,lower-roman)")"; }
+#SECTIONVelocitySlopeTangent-12-1-4 > li { counter-increment: SECTIONVelocitySlopeTangent-12-1-4; }
+#SECTIONdefin-tang-line-23-1-2 { counter-set: SECTIONdefin-tang-line-23-1-2 0; }
+#SECTIONdefin-tang-line-23-1-2 > li::marker { content: "("counter(SECTIONdefin-tang-line-23-1-2,lower-roman)")"; }
+#SECTIONdefin-tang-line-23-1-2 > li { counter-increment: SECTIONdefin-tang-line-23-1-2; }
+#SECTIONdefin-tang-line-32-2-1-1-2 { counter-set: SECTIONdefin-tang-line-32-2-1-1-2 0; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li::marker { content: "("counter(SECTIONdefin-tang-line-32-2-1-1-2,lower-roman)")"; }
+#SECTIONdefin-tang-line-32-2-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-2-1-1-2; }
+#SECTIONdefin-tang-line-32-3-1-1-2 { counter-set: SECTIONdefin-tang-line-32-3-1-1-2 0; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li::marker { content: "("counter(SECTIONdefin-tang-line-32-3-1-1-2,lower-roman)")"; }
+#SECTIONdefin-tang-line-32-3-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-3-1-1-2; }
+#SECTIONdefin-tang-line-32-4-1-1-2 { counter-set: SECTIONdefin-tang-line-32-4-1-1-2 0; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li::marker { content: "("counter(SECTIONdefin-tang-line-32-4-1-1-2,lower-roman)")"; }
+#SECTIONdefin-tang-line-32-4-1-1-2 > li { counter-increment: SECTIONdefin-tang-line-32-4-1-1-2; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-3-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li::marker { content: "("counter(PROBLEMHyperbolaTriangles-3-1-1-6,lower-roman)")"; }
+#PROBLEMHyperbolaTriangles-3-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-3-1-1-6; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-4-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li::marker { content: "("counter(PROBLEMHyperbolaTriangles-4-1-1-6,lower-roman)")"; }
+#PROBLEMHyperbolaTriangles-4-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-4-1-1-6; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 { counter-set: PROBLEMHyperbolaTriangles-5-1-1-6 0; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li::marker { content: "("counter(PROBLEMHyperbolaTriangles-5-1-1-6,lower-roman)")"; }
+#PROBLEMHyperbolaTriangles-5-1-1-6 > li { counter-increment: PROBLEMHyperbolaTriangles-5-1-1-6; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 { counter-set: PROBLEMHyperbolaTriangles-6-1-1-4 0; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li::marker { content: "("counter(PROBLEMHyperbolaTriangles-6-1-1-4,lower-roman)")"; }
+#PROBLEMHyperbolaTriangles-6-1-1-4 > li { counter-increment: PROBLEMHyperbolaTriangles-6-1-1-4; }
+#SECTIONGalileoDrops-9-2 { counter-set: SECTIONGalileoDrops-9-2 0; }
+#SECTIONGalileoDrops-9-2 > li::marker { content: ""counter(SECTIONGalileoDrops-9-2,decimal)"."; }
+#SECTIONGalileoDrops-9-2 > li { counter-increment: SECTIONGalileoDrops-9-2; }
+#SECTIONGalileoDrops-47-4 { counter-set: SECTIONGalileoDrops-47-4 0; }
+#SECTIONGalileoDrops-47-4 > li::marker { content: "("counter(SECTIONGalileoDrops-47-4,decimal)")"; }
+#SECTIONGalileoDrops-47-4 > li { counter-increment: SECTIONGalileoDrops-47-4; }
+#SECONDBringCalc-6-4 { counter-set: SECONDBringCalc-6-4 0; }
+#SECONDBringCalc-6-4 > li::marker { content: ""counter(SECONDBringCalc-6-4,decimal)"."; }
+#SECONDBringCalc-6-4 > li { counter-increment: SECONDBringCalc-6-4; }
+#SECONDBringCalc-12-6 { counter-set: SECONDBringCalc-12-6 0; }
+#SECONDBringCalc-12-6 > li::marker { content: ""counter(SECONDBringCalc-12-6,decimal)"."; }
+#SECONDBringCalc-12-6 > li { counter-increment: SECONDBringCalc-12-6; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-2-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li::marker { content: "("counter(PROBLEMGeneralFallingBalls-2-1-1-2,lower-roman)")"; }
+#PROBLEMGeneralFallingBalls-2-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-2-1-1-2; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 { counter-set: PROBLEMGeneralFallingBalls-8-1-1-2 0; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li::marker { content: "("counter(PROBLEMGeneralFallingBalls-8-1-1-2,lower-roman)")"; }
+#PROBLEMGeneralFallingBalls-8-1-1-2 > li { counter-increment: PROBLEMGeneralFallingBalls-8-1-1-2; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 { counter-set: PROBLEMDerivProdNEProdDeriv-2-1-1-1 0; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li::marker { content: "(("counter(PROBLEMDerivProdNEProdDeriv-2-1-1-1,lower-roman)"))"; }
+#PROBLEMDerivProdNEProdDeriv-2-1-1-1 > li { counter-increment: PROBLEMDerivProdNEProdDeriv-2-1-1-1; }
+#SECTIONDerivative-22-1-3 { counter-set: SECTIONDerivative-22-1-3 0; }
+#SECTIONDerivative-22-1-3 > li::marker { content: "(("counter(SECTIONDerivative-22-1-3,lower-roman)"))"; }
+#SECTIONDerivative-22-1-3 > li { counter-increment: SECTIONDerivative-22-1-3; }
+#SECTIONThinkingDynamically-11-1-2-1 { counter-set: SECTIONThinkingDynamically-11-1-2-1 0; }
+#SECTIONThinkingDynamically-11-1-2-1 > li::marker { content: "(["counter(SECTIONThinkingDynamically-11-1-2-1,lower-roman)")]"; }
+#SECTIONThinkingDynamically-11-1-2-1 > li { counter-increment: SECTIONThinkingDynamically-11-1-2-1; }
+#PROBLEMAirlinerSpeed-3-1-1-2 { counter-set: PROBLEMAirlinerSpeed-3-1-1-2 0; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li::marker { content: "("counter(PROBLEMAirlinerSpeed-3-1-1-2,lower-roman)")"; }
+#PROBLEMAirlinerSpeed-3-1-1-2 > li { counter-increment: PROBLEMAirlinerSpeed-3-1-1-2; }
+#SECTIONFluxions-33-2-1-1-1 { counter-set: SECTIONFluxions-33-2-1-1-1 0; }
+#SECTIONFluxions-33-2-1-1-1 > li::marker { content: "("counter(SECTIONFluxions-33-2-1-1-1,lower-roman)")"; }
+#SECTIONFluxions-33-2-1-1-1 > li { counter-increment: SECTIONFluxions-33-2-1-1-1; }
+#SECTIONFluxions-33-3-1-1-1 { counter-set: SECTIONFluxions-33-3-1-1-1 0; }
+#SECTIONFluxions-33-3-1-1-1 > li::marker { content: "("counter(SECTIONFluxions-33-3-1-1-1,lower-roman)")"; }
+#SECTIONFluxions-33-3-1-1-1 > li { counter-increment: SECTIONFluxions-33-3-1-1-1; }
+#PROBLEMadfj-1-1-2-2 { counter-set: PROBLEMadfj-1-1-2-2 0; }
+#PROBLEMadfj-1-1-2-2 > li::marker { content: "("counter(PROBLEMadfj-1-1-2-2,lower-roman)")"; }
+#PROBLEMadfj-1-1-2-2 > li { counter-increment: PROBLEMadfj-1-1-2-2; }
+#PROBLEMadfj-2-1-2-2 { counter-set: PROBLEMadfj-2-1-2-2 0; }
+#PROBLEMadfj-2-1-2-2 > li::marker { content: "("counter(PROBLEMadfj-2-1-2-2,lower-roman)")"; }
+#PROBLEMadfj-2-1-2-2 > li { counter-increment: PROBLEMadfj-2-1-2-2; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-15-2-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li::marker { content: "("counter(SECTIONSelfIntersectCurve-20-15-2-1-1-2,lower-roman)")"; }
+#SECTIONSelfIntersectCurve-20-15-2-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-15-2-1-1-2; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 { counter-set: PROBLEMUnitCircleParameterization1-1-1-1-1 0; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li::marker { content: "("counter(PROBLEMUnitCircleParameterization1-1-1-1-1,lower-roman)")"; }
+#PROBLEMUnitCircleParameterization1-1-1-1-1 > li { counter-increment: PROBLEMUnitCircleParameterization1-1-1-1-1; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 { counter-set: SECTIONSelfIntersectCurve-20-21-1-1-2 0; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li::marker { content: "("counter(SECTIONSelfIntersectCurve-20-21-1-1-2,lower-roman)")"; }
+#SECTIONSelfIntersectCurve-20-21-1-1-2 > li { counter-increment: SECTIONSelfIntersectCurve-20-21-1-1-2; }
+#SUBSECTIONradian-measure-19-2 { counter-set: SUBSECTIONradian-measure-19-2 0; }
+#SUBSECTIONradian-measure-19-2 > li::marker { content: "("counter(SUBSECTIONradian-measure-19-2,lower-roman)")"; }
+#SUBSECTIONradian-measure-19-2 > li { counter-increment: SUBSECTIONradian-measure-19-2; }
+#SUBSECTIONradian-measure-20-2 { counter-set: SUBSECTIONradian-measure-20-2 0; }
+#SUBSECTIONradian-measure-20-2 > li::marker { content: "("counter(SUBSECTIONradian-measure-20-2,lower-roman)")"; }
+#SUBSECTIONradian-measure-20-2 > li { counter-increment: SUBSECTIONradian-measure-20-2; }
+#SUBSECTIONradian-measure-31-2 { counter-set: SUBSECTIONradian-measure-31-2 0; }
+#SUBSECTIONradian-measure-31-2 > li::marker { content: "("counter(SUBSECTIONradian-measure-31-2,lower-roman)")"; }
+#SUBSECTIONradian-measure-31-2 > li { counter-increment: SUBSECTIONradian-measure-31-2; }
+#SECTIONtrig-interl-3-12-2-1-1-2 { counter-set: SECTIONtrig-interl-3-12-2-1-1-2 0; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li::marker { content: "("counter(SECTIONtrig-interl-3-12-2-1-1-2,lower-roman)")"; }
+#SECTIONtrig-interl-3-12-2-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-2-1-1-2; }
+#SECTIONtrig-interl-3-12-3-1-1-2 { counter-set: SECTIONtrig-interl-3-12-3-1-1-2 0; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li::marker { content: "("counter(SECTIONtrig-interl-3-12-3-1-1-2,lower-roman)")"; }
+#SECTIONtrig-interl-3-12-3-1-1-2 > li { counter-increment: SECTIONtrig-interl-3-12-3-1-1-2; }
+#SECTIONtrig-interl-3-14-2 { counter-set: SECTIONtrig-interl-3-14-2 0; }
+#SECTIONtrig-interl-3-14-2 > li::marker { content: "("counter(SECTIONtrig-interl-3-14-2,lower-roman)")"; }
+#SECTIONtrig-interl-3-14-2 > li { counter-increment: SECTIONtrig-interl-3-14-2; }
+#PROBLEMSineOscillB-1-1-8 { counter-set: PROBLEMSineOscillB-1-1-8 0; }
+#PROBLEMSineOscillB-1-1-8 > li::marker { content: "("counter(PROBLEMSineOscillB-1-1-8,lower-roman)")"; }
+#PROBLEMSineOscillB-1-1-8 > li { counter-increment: PROBLEMSineOscillB-1-1-8; }
+#SECTIONtrig-interl-5-11-2 { counter-set: SECTIONtrig-interl-5-11-2 0; }
+#SECTIONtrig-interl-5-11-2 > li::marker { content: "("counter(SECTIONtrig-interl-5-11-2,lower-roman)")"; }
+#SECTIONtrig-interl-5-11-2 > li { counter-increment: SECTIONtrig-interl-5-11-2; }
+#DRILLPolarQuirks2-2 { counter-set: DRILLPolarQuirks2-2 0; }
+#DRILLPolarQuirks2-2 > li::marker { content: "("counter(DRILLPolarQuirks2-2,lower-roman)")"; }
+#DRILLPolarQuirks2-2 > li { counter-increment: DRILLPolarQuirks2-2; }
+#PROBLEMPolRectConvertA-1-1-3 { counter-set: PROBLEMPolRectConvertA-1-1-3 0; }
+#PROBLEMPolRectConvertA-1-1-3 > li::marker { content: "("counter(PROBLEMPolRectConvertA-1-1-3,lower-roman)")"; }
+#PROBLEMPolRectConvertA-1-1-3 > li { counter-increment: PROBLEMPolRectConvertA-1-1-3; }
+#PROBLEMPolarGraphs-2 { counter-set: PROBLEMPolarGraphs-2 0; }
+#PROBLEMPolarGraphs-2 > li::marker { content: "("counter(PROBLEMPolarGraphs-2,lower-roman)")"; }
+#PROBLEMPolarGraphs-2 > li { counter-increment: PROBLEMPolarGraphs-2; }
+#SUBSECTIONCircularMotion-5-1-2 { counter-set: SUBSECTIONCircularMotion-5-1-2 0; }
+#SUBSECTIONCircularMotion-5-1-2 > li::marker { content: "("counter(SUBSECTIONCircularMotion-5-1-2,lower-roman)")"; }
+#SUBSECTIONCircularMotion-5-1-2 > li { counter-increment: SUBSECTIONCircularMotion-5-1-2; }
+#EXERCISEDiffPractice1-1-1-3 { counter-set: EXERCISEDiffPractice1-1-1-3 0; }
+#EXERCISEDiffPractice1-1-1-3 > li::marker { content: "("counter(EXERCISEDiffPractice1-1-1-3,lower-roman)")"; }
+#EXERCISEDiffPractice1-1-1-3 > li { counter-increment: EXERCISEDiffPractice1-1-1-3; }
+#SUBSECTIONCircularMotion-12-1-9 { counter-set: SUBSECTIONCircularMotion-12-1-9 0; }
+#SUBSECTIONCircularMotion-12-1-9 > li::marker { content: "("counter(SUBSECTIONCircularMotion-12-1-9,lower-roman)")"; }
+#SUBSECTIONCircularMotion-12-1-9 > li { counter-increment: SUBSECTIONCircularMotion-12-1-9; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-2-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li::marker { content: "("counter(SUBSECTIONpolar-coord-calc-6-2-1-3-1,lower-roman)")"; }
+#SUBSECTIONpolar-coord-calc-6-2-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-2-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-3-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li::marker { content: "("counter(SUBSECTIONpolar-coord-calc-6-3-1-3-1,lower-roman)")"; }
+#SUBSECTIONpolar-coord-calc-6-3-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-3-1-3-1; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 { counter-set: SUBSECTIONpolar-coord-calc-6-4-1-3-1 0; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li::marker { content: "("counter(SUBSECTIONpolar-coord-calc-6-4-1-3-1,lower-roman)")"; }
+#SUBSECTIONpolar-coord-calc-6-4-1-3-1 > li { counter-increment: SUBSECTIONpolar-coord-calc-6-4-1-3-1; }
+#PROBLEMcycloid2-2-1-1-1 { counter-set: PROBLEMcycloid2-2-1-1-1 0; }
+#PROBLEMcycloid2-2-1-1-1 > li::marker { content: "("counter(PROBLEMcycloid2-2-1-1-1,lower-roman)")"; }
+#PROBLEMcycloid2-2-1-1-1 > li { counter-increment: PROBLEMcycloid2-2-1-1-1; }
+#PROBLEMcycloid2-3-1-1-1 { counter-set: PROBLEMcycloid2-3-1-1-1 0; }
+#PROBLEMcycloid2-3-1-1-1 > li::marker { content: "("counter(PROBLEMcycloid2-3-1-1-1,lower-roman)")"; }
+#PROBLEMcycloid2-3-1-1-1 > li { counter-increment: PROBLEMcycloid2-3-1-1-1; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 { counter-set: SUBSECTIONsimple-harm-oscill-17-3-1-1-4 0; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li::marker { content: "("counter(SUBSECTIONsimple-harm-oscill-17-3-1-1-4,lower-roman)")"; }
+#SUBSECTIONsimple-harm-oscill-17-3-1-1-4 > li { counter-increment: SUBSECTIONsimple-harm-oscill-17-3-1-1-4; }
+#SECTIONdiff-other-trig-13-1-1 { counter-set: SECTIONdiff-other-trig-13-1-1 0; }
+#SECTIONdiff-other-trig-13-1-1 > li::marker { content: "("counter(SECTIONdiff-other-trig-13-1-1,lower-roman)")"; }
+#SECTIONdiff-other-trig-13-1-1 > li { counter-increment: SECTIONdiff-other-trig-13-1-1; }
+#SECTIONdiff-other-trig-14-1-3 { counter-set: SECTIONdiff-other-trig-14-1-3 0; }
+#SECTIONdiff-other-trig-14-1-3 > li::marker { content: "("counter(SECTIONdiff-other-trig-14-1-3,lower-roman)")"; }
+#SECTIONdiff-other-trig-14-1-3 > li { counter-increment: SECTIONdiff-other-trig-14-1-3; }
+#PROBLEMDiffFormTan-3-1-3-1 { counter-set: PROBLEMDiffFormTan-3-1-3-1 0; }
+#PROBLEMDiffFormTan-3-1-3-1 > li::marker { content: "("counter(PROBLEMDiffFormTan-3-1-3-1,lower-roman)")"; }
+#PROBLEMDiffFormTan-3-1-3-1 > li { counter-increment: PROBLEMDiffFormTan-3-1-3-1; }
+#DIGRESSIONInverse-function-notation-7-1-1 { counter-set: DIGRESSIONInverse-function-notation-7-1-1 0; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li::marker { content: "("counter(DIGRESSIONInverse-function-notation-7-1-1,lower-roman)")"; }
+#DIGRESSIONInverse-function-notation-7-1-1 > li { counter-increment: DIGRESSIONInverse-function-notation-7-1-1; }
+#PROBLEMInvTanDiffeqB-1-1-3 { counter-set: PROBLEMInvTanDiffeqB-1-1-3 0; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li::marker { content: "("counter(PROBLEMInvTanDiffeqB-1-1-3,lower-roman)")"; }
+#PROBLEMInvTanDiffeqB-1-1-3 > li { counter-increment: PROBLEMInvTanDiffeqB-1-1-3; }
+#PROBLEMArcSinDiffeqB-1-1-3 { counter-set: PROBLEMArcSinDiffeqB-1-1-3 0; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li::marker { content: "("counter(PROBLEMArcSinDiffeqB-1-1-3,lower-roman)")"; }
+#PROBLEMArcSinDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSinDiffeqB-1-1-3; }
+#PROBLEMArcSecDiffeqB-1-1-3 { counter-set: PROBLEMArcSecDiffeqB-1-1-3 0; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li::marker { content: "("counter(PROBLEMArcSecDiffeqB-1-1-3,lower-roman)")"; }
+#PROBLEMArcSecDiffeqB-1-1-3 > li { counter-increment: PROBLEMArcSecDiffeqB-1-1-3; }
+#InverseSecCsc-11-1 { counter-set: InverseSecCsc-11-1 0; }
+#InverseSecCsc-11-1 > li::marker { content: ""counter(InverseSecCsc-11-1,decimal)"."; }
+#InverseSecCsc-11-1 > li { counter-increment: InverseSecCsc-11-1; }
+#InverseSecCsc-17-1-1 { counter-set: InverseSecCsc-17-1-1 0; }
+#InverseSecCsc-17-1-1 > li::marker { content: "("counter(InverseSecCsc-17-1-1,lower-roman)")"; }
+#InverseSecCsc-17-1-1 > li { counter-increment: InverseSecCsc-17-1-1; }
+#InverseSecCsc-20-2-1-1-1 { counter-set: InverseSecCsc-20-2-1-1-1 0; }
+#InverseSecCsc-20-2-1-1-1 > li::marker { content: "("counter(InverseSecCsc-20-2-1-1-1,lower-roman)")"; }
+#InverseSecCsc-20-2-1-1-1 > li { counter-increment: InverseSecCsc-20-2-1-1-1; }
+#EXAMPLESqrt2-2-3-1-1-1 { counter-set: EXAMPLESqrt2-2-3-1-1-1 0; }
+#EXAMPLESqrt2-2-3-1-1-1 > li::marker { content: "("counter(EXAMPLESqrt2-2-3-1-1-1,lower-roman)")"; }
+#EXAMPLESqrt2-2-3-1-1-1 > li { counter-increment: EXAMPLESqrt2-2-3-1-1-1; }
+#DRILLNewtonMethod2-2 { counter-set: DRILLNewtonMethod2-2 0; }
+#DRILLNewtonMethod2-2 > li::marker { content: "("counter(DRILLNewtonMethod2-2,lower-roman)")"; }
+#DRILLNewtonMethod2-2 > li { counter-increment: DRILLNewtonMethod2-2; }
+#ALGORITHMNewtonsMethod-3-4 { counter-set: ALGORITHMNewtonsMethod-3-4 0; }
+#ALGORITHMNewtonsMethod-3-4 > li::marker { content: ""counter(ALGORITHMNewtonsMethod-3-4,decimal)"."; }
+#ALGORITHMNewtonsMethod-3-4 > li { counter-increment: ALGORITHMNewtonsMethod-3-4; }
+#PROBLEMNewtMethCreateFunction-2-3 { counter-set: PROBLEMNewtMethCreateFunction-2-3 0; }
+#PROBLEMNewtMethCreateFunction-2-3 > li::marker { content: "("counter(PROBLEMNewtMethCreateFunction-2-3,lower-roman)")"; }
+#PROBLEMNewtMethCreateFunction-2-3 > li { counter-increment: PROBLEMNewtMethCreateFunction-2-3; }
+#PROBLEMNewton-meth-2-8 { counter-set: PROBLEMNewton-meth-2-8 0; }
+#PROBLEMNewton-meth-2-8 > li::marker { content: "("counter(PROBLEMNewton-meth-2-8,lower-roman)")"; }
+#PROBLEMNewton-meth-2-8 > li { counter-increment: PROBLEMNewton-meth-2-8; }
+#PROBLEMNewton-meth2-2-2 { counter-set: PROBLEMNewton-meth2-2-2 0; }
+#PROBLEMNewton-meth2-2-2 > li::marker { content: "("counter(PROBLEMNewton-meth2-2-2,lower-roman)")"; }
+#PROBLEMNewton-meth2-2-2 > li { counter-increment: PROBLEMNewton-meth2-2-2; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 { counter-set: SUBSECTIONSubtleFailure-8-3-1-1-3 0; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li::marker { content: "("counter(SUBSECTIONSubtleFailure-8-3-1-1-3,lower-roman)")"; }
+#SUBSECTIONSubtleFailure-8-3-1-1-3 > li { counter-increment: SUBSECTIONSubtleFailure-8-3-1-1-3; }
+#SECTIONDEsandIVPS-2-3 { counter-set: SECTIONDEsandIVPS-2-3 0; }
+#SECTIONDEsandIVPS-2-3 > li::marker { content: ""counter(SECTIONDEsandIVPS-2-3,decimal)"."; }
+#SECTIONDEsandIVPS-2-3 > li { counter-increment: SECTIONDEsandIVPS-2-3; }
+#DRILLIVP-sqr-1-1 { counter-set: DRILLIVP-sqr-1-1 0; }
+#DRILLIVP-sqr-1-1 > li::marker { content: "("counter(DRILLIVP-sqr-1-1,lower-roman)")"; }
+#DRILLIVP-sqr-1-1 > li { counter-increment: DRILLIVP-sqr-1-1; }
+#SECTIONexponential-growth-23-2 { counter-set: SECTIONexponential-growth-23-2 0; }
+#SECTIONexponential-growth-23-2 > li::marker { content: ""counter(SECTIONexponential-growth-23-2,decimal)"."; }
+#SECTIONexponential-growth-23-2 > li { counter-increment: SECTIONexponential-growth-23-2; }
+#SECTIONexponential-growth-28-1-2 { counter-set: SECTIONexponential-growth-28-1-2 0; }
+#SECTIONexponential-growth-28-1-2 > li::marker { content: "("counter(SECTIONexponential-growth-28-1-2,lower-roman)")"; }
+#SECTIONexponential-growth-28-1-2 > li { counter-increment: SECTIONexponential-growth-28-1-2; }
+#SECTIONexponential-growth-29-1-2 { counter-set: SECTIONexponential-growth-29-1-2 0; }
+#SECTIONexponential-growth-29-1-2 > li::marker { content: "("counter(SECTIONexponential-growth-29-1-2,lower-roman)")"; }
+#SECTIONexponential-growth-29-1-2 > li { counter-increment: SECTIONexponential-growth-29-1-2; }
+#SECTIONexponential-growth-30-1-1 { counter-set: SECTIONexponential-growth-30-1-1 0; }
+#SECTIONexponential-growth-30-1-1 > li::marker { content: "("counter(SECTIONexponential-growth-30-1-1,lower-roman)")"; }
+#SECTIONexponential-growth-30-1-1 > li { counter-increment: SECTIONexponential-growth-30-1-1; }
+#PROBLEMPolyExpA-1-1-2 { counter-set: PROBLEMPolyExpA-1-1-2 0; }
+#PROBLEMPolyExpA-1-1-2 > li::marker { content: "("counter(PROBLEMPolyExpA-1-1-2,lower-roman)")"; }
+#PROBLEMPolyExpA-1-1-2 > li { counter-increment: PROBLEMPolyExpA-1-1-2; }
+#SECTIONexponential-growth-34-1-7 { counter-set: SECTIONexponential-growth-34-1-7 0; }
+#SECTIONexponential-growth-34-1-7 > li::marker { content: "("counter(SECTIONexponential-growth-34-1-7,lower-roman)")"; }
+#SECTIONexponential-growth-34-1-7 > li { counter-increment: SECTIONexponential-growth-34-1-7; }
+#SECTIONexponential-growth-36-1-1-1-4 { counter-set: SECTIONexponential-growth-36-1-1-1-4 0; }
+#SECTIONexponential-growth-36-1-1-1-4 > li::marker { content: "("counter(SECTIONexponential-growth-36-1-1-1-4,lower-roman)")"; }
+#SECTIONexponential-growth-36-1-1-1-4 > li { counter-increment: SECTIONexponential-growth-36-1-1-1-4; }
+#PROBLEMHyperbolicTrig-2-1-1-1 { counter-set: PROBLEMHyperbolicTrig-2-1-1-1 0; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li::marker { content: "("counter(PROBLEMHyperbolicTrig-2-1-1-1,lower-roman)")"; }
+#PROBLEMHyperbolicTrig-2-1-1-1 > li { counter-increment: PROBLEMHyperbolicTrig-2-1-1-1; }
+#PROBLEMCatenaryTrueC-1-1-4 { counter-set: PROBLEMCatenaryTrueC-1-1-4 0; }
+#PROBLEMCatenaryTrueC-1-1-4 > li::marker { content: "("counter(PROBLEMCatenaryTrueC-1-1-4,lower-roman)")"; }
+#PROBLEMCatenaryTrueC-1-1-4 > li { counter-increment: PROBLEMCatenaryTrueC-1-1-4; }
+#PROBLEMBacteriaIVP1D-1-1-3 { counter-set: PROBLEMBacteriaIVP1D-1-1-3 0; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li::marker { content: "("counter(PROBLEMBacteriaIVP1D-1-1-3,lower-roman)")"; }
+#PROBLEMBacteriaIVP1D-1-1-3 > li { counter-increment: PROBLEMBacteriaIVP1D-1-1-3; }
+#SECTIONNatLog-4-1-1 { counter-set: SECTIONNatLog-4-1-1 0; }
+#SECTIONNatLog-4-1-1 > li::marker { content: "("counter(SECTIONNatLog-4-1-1,lower-roman)")"; }
+#SECTIONNatLog-4-1-1 > li { counter-increment: SECTIONNatLog-4-1-1; }
+#SECTIONNatLog-9-1-1 { counter-set: SECTIONNatLog-9-1-1 0; }
+#SECTIONNatLog-9-1-1 > li::marker { content: "("counter(SECTIONNatLog-9-1-1,lower-roman)")"; }
+#SECTIONNatLog-9-1-1 > li { counter-increment: SECTIONNatLog-9-1-1; }
+#SECTIONNatLog-11-1-1 { counter-set: SECTIONNatLog-11-1-1 0; }
+#SECTIONNatLog-11-1-1 > li::marker { content: "("counter(SECTIONNatLog-11-1-1,lower-roman)")"; }
+#SECTIONNatLog-11-1-1 > li { counter-increment: SECTIONNatLog-11-1-1; }
+#SECTIONNatLog-12-1-1-1-4 { counter-set: SECTIONNatLog-12-1-1-1-4 0; }
+#SECTIONNatLog-12-1-1-1-4 > li::marker { content: "("counter(SECTIONNatLog-12-1-1-1-4,lower-roman)")"; }
+#SECTIONNatLog-12-1-1-1-4 > li { counter-increment: SECTIONNatLog-12-1-1-1-4; }
+#SECTIONNatLog-12-2-1-1-4 { counter-set: SECTIONNatLog-12-2-1-1-4 0; }
+#SECTIONNatLog-12-2-1-1-4 > li::marker { content: "("counter(SECTIONNatLog-12-2-1-1-4,lower-roman)")"; }
+#SECTIONNatLog-12-2-1-1-4 > li { counter-increment: SECTIONNatLog-12-2-1-1-4; }
+#SUBSECTIONradioactive-decay-9-1 { counter-set: SUBSECTIONradioactive-decay-9-1 0; }
+#SUBSECTIONradioactive-decay-9-1 > li::marker { content: "("counter(SUBSECTIONradioactive-decay-9-1,lower-roman)")"; }
+#SUBSECTIONradioactive-decay-9-1 > li { counter-increment: SUBSECTIONradioactive-decay-9-1; }
+#SECTIONDerivNatLog-4-1-3 { counter-set: SECTIONDerivNatLog-4-1-3 0; }
+#SECTIONDerivNatLog-4-1-3 > li::marker { content: "("counter(SECTIONDerivNatLog-4-1-3,lower-roman)")"; }
+#SECTIONDerivNatLog-4-1-3 > li { counter-increment: SECTIONDerivNatLog-4-1-3; }
+#PARAGRAPHSGenExp-16-1-3 { counter-set: PARAGRAPHSGenExp-16-1-3 0; }
+#PARAGRAPHSGenExp-16-1-3 > li::marker { content: "("counter(PARAGRAPHSGenExp-16-1-3,lower-roman)")"; }
+#PARAGRAPHSGenExp-16-1-3 > li { counter-increment: PARAGRAPHSGenExp-16-1-3; }
+#PARAGRAPHSGenLog-7-1-3 { counter-set: PARAGRAPHSGenLog-7-1-3 0; }
+#PARAGRAPHSGenLog-7-1-3 > li::marker { content: "("counter(PARAGRAPHSGenLog-7-1-3,lower-roman)")"; }
+#PARAGRAPHSGenLog-7-1-3 > li { counter-increment: PARAGRAPHSGenLog-7-1-3; }
+#DIGRESSIONBriggsAndNapier-7-1-1 { counter-set: DIGRESSIONBriggsAndNapier-7-1-1 0; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li::marker { content: "("counter(DIGRESSIONBriggsAndNapier-7-1-1,lower-roman)")"; }
+#DIGRESSIONBriggsAndNapier-7-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-7-1-1; }
+#DIGRESSIONBriggsAndNapier-11-1-1 { counter-set: DIGRESSIONBriggsAndNapier-11-1-1 0; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li::marker { content: "("counter(DIGRESSIONBriggsAndNapier-11-1-1,lower-roman)")"; }
+#DIGRESSIONBriggsAndNapier-11-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-11-1-1; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 { counter-set: DIGRESSIONBriggsAndNapier-12-1-1-1 0; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li::marker { content: "("counter(DIGRESSIONBriggsAndNapier-12-1-1-1,lower-roman)")"; }
+#DIGRESSIONBriggsAndNapier-12-1-1-1 > li { counter-increment: DIGRESSIONBriggsAndNapier-12-1-1-1; }
+#DRILLIntuitiveSquareOnCircle-1-4 { counter-set: DRILLIntuitiveSquareOnCircle-1-4 0; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li::marker { content: "("counter(DRILLIntuitiveSquareOnCircle-1-4,lower-roman)")"; }
+#DRILLIntuitiveSquareOnCircle-1-4 > li { counter-increment: DRILLIntuitiveSquareOnCircle-1-4; }
+#DRILLExtremalSquareCircle-1-1 { counter-set: DRILLExtremalSquareCircle-1-1 0; }
+#DRILLExtremalSquareCircle-1-1 > li::marker { content: "("counter(DRILLExtremalSquareCircle-1-1,lower-roman)")"; }
+#DRILLExtremalSquareCircle-1-1 > li { counter-increment: DRILLExtremalSquareCircle-1-1; }
+#PROBLEMMaxOrth1-3-1-3-8 { counter-set: PROBLEMMaxOrth1-3-1-3-8 0; }
+#PROBLEMMaxOrth1-3-1-3-8 > li::marker { content: ""counter(PROBLEMMaxOrth1-3-1-3-8,decimal)"."; }
+#PROBLEMMaxOrth1-3-1-3-8 > li { counter-increment: PROBLEMMaxOrth1-3-1-3-8; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-1-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-1-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-1-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-1-2-1; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 { counter-set: EXAMPLEDiffvsDer-5-1-2-2-1 0; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li::marker { content: ""counter(EXAMPLEDiffvsDer-5-1-2-2-1,decimal)"."; }
+#EXAMPLEDiffvsDer-5-1-2-2-1 > li { counter-increment: EXAMPLEDiffvsDer-5-1-2-2-1; }
+#SECTIONfive-simil-probl-23-1-3 { counter-set: SECTIONfive-simil-probl-23-1-3 0; }
+#SECTIONfive-simil-probl-23-1-3 > li::marker { content: "("counter(SECTIONfive-simil-probl-23-1-3,lower-roman)")"; }
+#SECTIONfive-simil-probl-23-1-3 > li { counter-increment: SECTIONfive-simil-probl-23-1-3; }
+#SECTIONfive-simil-probl-24-1-3 { counter-set: SECTIONfive-simil-probl-24-1-3 0; }
+#SECTIONfive-simil-probl-24-1-3 > li::marker { content: "("counter(SECTIONfive-simil-probl-24-1-3,lower-roman)")"; }
+#SECTIONfive-simil-probl-24-1-3 > li { counter-increment: SECTIONfive-simil-probl-24-1-3; }
+#SECTIONrefl-refr-rainb-2-1-2 { counter-set: SECTIONrefl-refr-rainb-2-1-2 0; }
+#SECTIONrefl-refr-rainb-2-1-2 > li::marker { content: ""counter(SECTIONrefl-refr-rainb-2-1-2,decimal)"."; }
+#SECTIONrefl-refr-rainb-2-1-2 > li { counter-increment: SECTIONrefl-refr-rainb-2-1-2; }
+#SECTIONGlobalVsLocalExtrema-18-2 { counter-set: SECTIONGlobalVsLocalExtrema-18-2 0; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li::marker { content: ""counter(SECTIONGlobalVsLocalExtrema-18-2,decimal)"."; }
+#SECTIONGlobalVsLocalExtrema-18-2 > li { counter-increment: SECTIONGlobalVsLocalExtrema-18-2; }
+#DIGRESSIONIntervalNotation-6-1-1 { counter-set: DIGRESSIONIntervalNotation-6-1-1 0; }
+#DIGRESSIONIntervalNotation-6-1-1 > li::marker { content: "("counter(DIGRESSIONIntervalNotation-6-1-1,lower-roman)")"; }
+#DIGRESSIONIntervalNotation-6-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-6-1-1; }
+#DIGRESSIONIntervalNotation-7-1-1 { counter-set: DIGRESSIONIntervalNotation-7-1-1 0; }
+#DIGRESSIONIntervalNotation-7-1-1 > li::marker { content: "("counter(DIGRESSIONIntervalNotation-7-1-1,lower-roman)")"; }
+#DIGRESSIONIntervalNotation-7-1-1 > li { counter-increment: DIGRESSIONIntervalNotation-7-1-1; }
+#THEOREMFDT-lines-2-1 { counter-set: THEOREMFDT-lines-2-1 0; }
+#THEOREMFDT-lines-2-1 > li::marker { content: ""counter(THEOREMFDT-lines-2-1,decimal)"."; }
+#THEOREMFDT-lines-2-1 > li { counter-increment: THEOREMFDT-lines-2-1; }
+#THEOREMFDT-3-3 { counter-set: THEOREMFDT-3-3 0; }
+#THEOREMFDT-3-3 > li::marker { content: ""counter(THEOREMFDT-3-3,decimal)"."; }
+#THEOREMFDT-3-3 > li { counter-increment: THEOREMFDT-3-3; }
+#LEMMAAdjRoots-1-2 { counter-set: LEMMAAdjRoots-1-2 0; }
+#LEMMAAdjRoots-1-2 > li::marker { content: ""counter(LEMMAAdjRoots-1-2,decimal)"."; }
+#LEMMAAdjRoots-1-2 > li { counter-increment: LEMMAAdjRoots-1-2; }
+#PROBLEMFDT1A-1-2 { counter-set: PROBLEMFDT1A-1-2 0; }
+#PROBLEMFDT1A-1-2 > li::marker { content: "("counter(PROBLEMFDT1A-1-2,lower-roman)")"; }
+#PROBLEMFDT1A-1-2 > li { counter-increment: PROBLEMFDT1A-1-2; }
+#DRILLFDT2-1-1 { counter-set: DRILLFDT2-1-1 0; }
+#DRILLFDT2-1-1 > li::marker { content: "("counter(DRILLFDT2-1-1,lower-roman)")"; }
+#DRILLFDT2-1-1 > li { counter-increment: DRILLFDT2-1-1; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 { counter-set: DEFINITIONOptimalTransitionPoints-4-1-3 0; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li::marker { content: ""counter(DEFINITIONOptimalTransitionPoints-4-1-3,decimal)"."; }
+#DEFINITIONOptimalTransitionPoints-4-1-3 > li { counter-increment: DEFINITIONOptimalTransitionPoints-4-1-3; }
+#DRILLFDT3-2-2 { counter-set: DRILLFDT3-2-2 0; }
+#DRILLFDT3-2-2 > li::marker { content: "("counter(DRILLFDT3-2-2,lower-roman)")"; }
+#DRILLFDT3-2-2 > li { counter-increment: DRILLFDT3-2-2; }
+#SUBSECTIONoptim-clos-interv-5-1 { counter-set: SUBSECTIONoptim-clos-interv-5-1 0; }
+#SUBSECTIONoptim-clos-interv-5-1 > li::marker { content: ""counter(SUBSECTIONoptim-clos-interv-5-1,decimal)"."; }
+#SUBSECTIONoptim-clos-interv-5-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-5-1; }
+#THEOREMmax-min-3-2 { counter-set: THEOREMmax-min-3-2 0; }
+#THEOREMmax-min-3-2 > li::marker { content: ""counter(THEOREMmax-min-3-2,decimal)"."; }
+#THEOREMmax-min-3-2 > li { counter-increment: THEOREMmax-min-3-2; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-2-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li::marker { content: "("counter(SUBSECTIONoptim-clos-interv-13-2-1-1-2,lower-roman)")"; }
+#SUBSECTIONoptim-clos-interv-13-2-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-2-1-1-2; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 { counter-set: SUBSECTIONoptim-clos-interv-13-3-1-1-2 0; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li::marker { content: "("counter(SUBSECTIONoptim-clos-interv-13-3-1-1-2,lower-roman)")"; }
+#SUBSECTIONoptim-clos-interv-13-3-1-1-2 > li { counter-increment: SUBSECTIONoptim-clos-interv-13-3-1-1-2; }
+#SUBSECTIONoptim-clos-interv-14-1-1 { counter-set: SUBSECTIONoptim-clos-interv-14-1-1 0; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li::marker { content: "("counter(SUBSECTIONoptim-clos-interv-14-1-1,lower-roman)")"; }
+#SUBSECTIONoptim-clos-interv-14-1-1 > li { counter-increment: SUBSECTIONoptim-clos-interv-14-1-1; }
+#DRILLO1O2-2-1-1-2 { counter-set: DRILLO1O2-2-1-1-2 0; }
+#DRILLO1O2-2-1-1-2 > li::marker { content: "("counter(DRILLO1O2-2-1-1-2,lower-roman)")"; }
+#DRILLO1O2-2-1-1-2 > li { counter-increment: DRILLO1O2-2-1-1-2; }
+#THEOREMwhat-second-deriv-3-3 { counter-set: THEOREMwhat-second-deriv-3-3 0; }
+#THEOREMwhat-second-deriv-3-3 > li::marker { content: "("counter(THEOREMwhat-second-deriv-3-3,lower-alpha)")"; }
+#THEOREMwhat-second-deriv-3-3 > li { counter-increment: THEOREMwhat-second-deriv-3-3; }
+#THEOREMSecondDerivativeTest-3-4 { counter-set: THEOREMSecondDerivativeTest-3-4 0; }
+#THEOREMSecondDerivativeTest-3-4 > li::marker { content: "("counter(THEOREMSecondDerivativeTest-3-4,lower-alpha)")"; }
+#THEOREMSecondDerivativeTest-3-4 > li { counter-increment: THEOREMSecondDerivativeTest-3-4; }
+#DRILLSecondDerivativeTest-1-1 { counter-set: DRILLSecondDerivativeTest-1-1 0; }
+#DRILLSecondDerivativeTest-1-1 > li::marker { content: "("counter(DRILLSecondDerivativeTest-1-1,lower-roman)")"; }
+#DRILLSecondDerivativeTest-1-1 > li { counter-increment: DRILLSecondDerivativeTest-1-1; }
+#SUBSECTIONconc-second-deriv-44-1-1 { counter-set: SUBSECTIONconc-second-deriv-44-1-1 0; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li::marker { content: "("counter(SUBSECTIONconc-second-deriv-44-1-1,lower-roman)")"; }
+#SUBSECTIONconc-second-deriv-44-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-44-1-1; }
+#SUBSECTIONconc-second-deriv-45-1-1 { counter-set: SUBSECTIONconc-second-deriv-45-1-1 0; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li::marker { content: "("counter(SUBSECTIONconc-second-deriv-45-1-1,lower-roman)")"; }
+#SUBSECTIONconc-second-deriv-45-1-1 > li { counter-increment: SUBSECTIONconc-second-deriv-45-1-1; }
+#SUBSECTIONOptStrat-3-1 { counter-set: SUBSECTIONOptStrat-3-1 0; }
+#SUBSECTIONOptStrat-3-1 > li::marker { content: ""counter(SUBSECTIONOptStrat-3-1,decimal)"."; }
+#SUBSECTIONOptStrat-3-1 > li { counter-increment: SUBSECTIONOptStrat-3-1; }
+#EXAMPLERectangleFixedPerimeter-6-1 { counter-set: EXAMPLERectangleFixedPerimeter-6-1 0; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li::marker { content: ""counter(EXAMPLERectangleFixedPerimeter-6-1,decimal)"."; }
+#EXAMPLERectangleFixedPerimeter-6-1 > li { counter-increment: EXAMPLERectangleFixedPerimeter-6-1; }
+#PROBLEMMaxPerimeter-5-1-1-2 { counter-set: PROBLEMMaxPerimeter-5-1-1-2 0; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li::marker { content: "("counter(PROBLEMMaxPerimeter-5-1-1-2,lower-roman)")"; }
+#PROBLEMMaxPerimeter-5-1-1-2 > li { counter-increment: PROBLEMMaxPerimeter-5-1-1-2; }
+#SUBSUBSECTIONFirstSolution-12-1-1 { counter-set: SUBSUBSECTIONFirstSolution-12-1-1 0; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li::marker { content: "("counter(SUBSUBSECTIONFirstSolution-12-1-1,lower-roman)")"; }
+#SUBSUBSECTIONFirstSolution-12-1-1 > li { counter-increment: SUBSUBSECTIONFirstSolution-12-1-1; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-2-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-2-2-1-1-1,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-2-2-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-2-1-1-1; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-2-3-1-1-1,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-2-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-3-1-1-1; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-2-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-2-4-1-1-1,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-2-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-2-4-1-1-1; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-3-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-3-3-1-1-1,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-3-3-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-3-1-1-1; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 { counter-set: SUBSECTIONVarOptProbs-3-4-1-1-1 0; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-3-4-1-1-1,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-3-4-1-1-1 > li { counter-increment: SUBSECTIONVarOptProbs-3-4-1-1-1; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 { counter-set: SUBSECTIONVarOptProbs-4-2-1-2-1 0; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-4-2-1-2-1,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-4-2-1-2-1 > li { counter-increment: SUBSECTIONVarOptProbs-4-2-1-2-1; }
+#PROBLEMWitchTri1-3-1-1-7 { counter-set: PROBLEMWitchTri1-3-1-1-7 0; }
+#PROBLEMWitchTri1-3-1-1-7 > li::marker { content: "("counter(PROBLEMWitchTri1-3-1-1-7,lower-roman)")"; }
+#PROBLEMWitchTri1-3-1-1-7 > li { counter-increment: PROBLEMWitchTri1-3-1-1-7; }
+#SUBSECTIONVarOptProbs-14-3-1-3 { counter-set: SUBSECTIONVarOptProbs-14-3-1-3 0; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-14-3-1-3,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-14-3-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-3-1-3; }
+#SUBSECTIONVarOptProbs-14-4-1-3 { counter-set: SUBSECTIONVarOptProbs-14-4-1-3 0; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li::marker { content: "("counter(SUBSECTIONVarOptProbs-14-4-1-3,lower-roman)")"; }
+#SUBSECTIONVarOptProbs-14-4-1-3 > li { counter-increment: SUBSECTIONVarOptProbs-14-4-1-3; }
+#SECTIONgraph-with-form-19-2 { counter-set: SECTIONgraph-with-form-19-2 0; }
+#SECTIONgraph-with-form-19-2 > li::marker { content: ""counter(SECTIONgraph-with-form-19-2,decimal)"."; }
+#SECTIONgraph-with-form-19-2 > li { counter-increment: SECTIONgraph-with-form-19-2; }
+#SECTIONgraph-with-form-23-1-1 { counter-set: SECTIONgraph-with-form-23-1-1 0; }
+#SECTIONgraph-with-form-23-1-1 > li::marker { content: "("counter(SECTIONgraph-with-form-23-1-1,lower-roman)")"; }
+#SECTIONgraph-with-form-23-1-1 > li { counter-increment: SECTIONgraph-with-form-23-1-1; }
+#SECTIONgraph-with-form-30-1-1 { counter-set: SECTIONgraph-with-form-30-1-1 0; }
+#SECTIONgraph-with-form-30-1-1 > li::marker { content: "("counter(SECTIONgraph-with-form-30-1-1,lower-roman)")"; }
+#SECTIONgraph-with-form-30-1-1 > li { counter-increment: SECTIONgraph-with-form-30-1-1; }
+#SUBSECTIONModelingTrout-17-2 { counter-set: SUBSECTIONModelingTrout-17-2 0; }
+#SUBSECTIONModelingTrout-17-2 > li::marker { content: ""counter(SUBSECTIONModelingTrout-17-2,decimal)"."; }
+#SUBSECTIONModelingTrout-17-2 > li { counter-increment: SUBSECTIONModelingTrout-17-2; }
+#SUBSECTIONModelingTrout-23-1-2 { counter-set: SUBSECTIONModelingTrout-23-1-2 0; }
+#SUBSECTIONModelingTrout-23-1-2 > li::marker { content: "("counter(SUBSECTIONModelingTrout-23-1-2,lower-roman)")"; }
+#SUBSECTIONModelingTrout-23-1-2 > li { counter-increment: SUBSECTIONModelingTrout-23-1-2; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 { counter-set: SUBSECTIONModelingTrout-38-2-1-1-2 0; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li::marker { content: "("counter(SUBSECTIONModelingTrout-38-2-1-1-2,lower-roman)")"; }
+#SUBSECTIONModelingTrout-38-2-1-1-2 > li { counter-increment: SUBSECTIONModelingTrout-38-2-1-1-2; }
+#PROBLEMMinViablePop-6-1-1-3 { counter-set: PROBLEMMinViablePop-6-1-1-3 0; }
+#PROBLEMMinViablePop-6-1-1-3 > li::marker { content: "("counter(PROBLEMMinViablePop-6-1-1-3,lower-roman)")"; }
+#PROBLEMMinViablePop-6-1-1-3 > li { counter-increment: PROBLEMMinViablePop-6-1-1-3; }
+#SECTIONlittle-healthy-comp-21-1-1 { counter-set: SECTIONlittle-healthy-comp-21-1-1 0; }
+#SECTIONlittle-healthy-comp-21-1-1 > li::marker { content: "("counter(SECTIONlittle-healthy-comp-21-1-1,lower-roman)")"; }
+#SECTIONlittle-healthy-comp-21-1-1 > li { counter-increment: SECTIONlittle-healthy-comp-21-1-1; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 { counter-set: SECTIONlittle-healthy-comp-28-3-1-1-3 0; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li::marker { content: "("counter(SECTIONlittle-healthy-comp-28-3-1-1-3,lower-roman)")"; }
+#SECTIONlittle-healthy-comp-28-3-1-1-3 > li { counter-increment: SECTIONlittle-healthy-comp-28-3-1-1-3; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 { counter-set: DEFINITIONLimitAtInfinity-Intuitive-3-1-1 0; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li::marker { content: ""counter(DEFINITIONLimitAtInfinity-Intuitive-3-1-1,decimal)"."; }
+#DEFINITIONLimitAtInfinity-Intuitive-3-1-1 > li { counter-increment: DEFINITIONLimitAtInfinity-Intuitive-3-1-1; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 { counter-set: DEFINITIONHorizontalAsymptotes-3-1-1 0; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li::marker { content: ""counter(DEFINITIONHorizontalAsymptotes-3-1-1,decimal)"."; }
+#DEFINITIONHorizontalAsymptotes-3-1-1 > li { counter-increment: DEFINITIONHorizontalAsymptotes-3-1-1; }
+#DIGRESSIONLimitNotation-47-1-7 { counter-set: DIGRESSIONLimitNotation-47-1-7 0; }
+#DIGRESSIONLimitNotation-47-1-7 > li::marker { content: "("counter(DIGRESSIONLimitNotation-47-1-7,lower-roman)")"; }
+#DIGRESSIONLimitNotation-47-1-7 > li { counter-increment: DIGRESSIONLimitNotation-47-1-7; }
+#THEOREMInfSqueeze-3-1 { counter-set: THEOREMInfSqueeze-3-1 0; }
+#THEOREMInfSqueeze-3-1 > li::marker { content: "("counter(THEOREMInfSqueeze-3-1,decimal)")"; }
+#THEOREMInfSqueeze-3-1 > li { counter-increment: THEOREMInfSqueeze-3-1; }
+#SECTIONvertical-asymptotes-14-1-1 { counter-set: SECTIONvertical-asymptotes-14-1-1 0; }
+#SECTIONvertical-asymptotes-14-1-1 > li::marker { content: "("counter(SECTIONvertical-asymptotes-14-1-1,lower-roman)")"; }
+#SECTIONvertical-asymptotes-14-1-1 > li { counter-increment: SECTIONvertical-asymptotes-14-1-1; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 { counter-set: PROBLEMFoliumOfDescartes2-6-1-1-1 0; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li::marker { content: "("counter(PROBLEMFoliumOfDescartes2-6-1-1-1,lower-roman)")"; }
+#PROBLEMFoliumOfDescartes2-6-1-1-1 > li { counter-increment: PROBLEMFoliumOfDescartes2-6-1-1-1; }
+#SUBSECTIONLHopitalsRule-34-1-1 { counter-set: SUBSECTIONLHopitalsRule-34-1-1 0; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li::marker { content: "("counter(SUBSECTIONLHopitalsRule-34-1-1,lower-roman)")"; }
+#SUBSECTIONLHopitalsRule-34-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-34-1-1; }
+#SUBSECTIONLHopitalsRule-38-1-1 { counter-set: SUBSECTIONLHopitalsRule-38-1-1 0; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li::marker { content: "("counter(SUBSECTIONLHopitalsRule-38-1-1,lower-roman)")"; }
+#SUBSECTIONLHopitalsRule-38-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-38-1-1; }
+#THEOREMLHRule1-3-1 { counter-set: THEOREMLHRule1-3-1 0; }
+#THEOREMLHRule1-3-1 > li::marker { content: "("counter(THEOREMLHRule1-3-1,decimal)")"; }
+#THEOREMLHRule1-3-1 > li { counter-increment: THEOREMLHRule1-3-1; }
+#SUBSECTIONLHopitalsRule-62-1-1 { counter-set: SUBSECTIONLHopitalsRule-62-1-1 0; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li::marker { content: "("counter(SUBSECTIONLHopitalsRule-62-1-1,lower-roman)")"; }
+#SUBSECTIONLHopitalsRule-62-1-1 > li { counter-increment: SUBSECTIONLHopitalsRule-62-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 { counter-set: SUBSECTIONlhop-rule-horiz-17-2-1-1-1 0; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li::marker { content: "("counter(SUBSECTIONlhop-rule-horiz-17-2-1-1-1,lower-roman)")"; }
+#SUBSECTIONlhop-rule-horiz-17-2-1-1-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-2-1-1-1; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 { counter-set: SUBSECTIONlhop-rule-horiz-17-5-1-1-2 0; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li::marker { content: "("counter(SUBSECTIONlhop-rule-horiz-17-5-1-1-2,lower-roman)")"; }
+#SUBSECTIONlhop-rule-horiz-17-5-1-1-2 > li { counter-increment: SUBSECTIONlhop-rule-horiz-17-5-1-1-2; }
+#SUBSECTIONlhop-rule-horiz-26-1 { counter-set: SUBSECTIONlhop-rule-horiz-26-1 0; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-26-1,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-26-1 > li { counter-increment: SUBSECTIONlhop-rule-horiz-26-1; }
+#SUBSECTIONlhop-rule-horiz-28-4 { counter-set: SUBSECTIONlhop-rule-horiz-28-4 0; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li::marker { content: ""counter(SUBSECTIONlhop-rule-horiz-28-4,decimal)"."; }
+#SUBSECTIONlhop-rule-horiz-28-4 > li { counter-increment: SUBSECTIONlhop-rule-horiz-28-4; }
+#SECTIONsecants-tangents-18-1 { counter-set: SECTIONsecants-tangents-18-1 0; }
+#SECTIONsecants-tangents-18-1 > li::marker { content: ""counter(SECTIONsecants-tangents-18-1,decimal)"."; }
+#SECTIONsecants-tangents-18-1 > li { counter-increment: SECTIONsecants-tangents-18-1; }
+#PROBLEMBounds-1-1-4 { counter-set: PROBLEMBounds-1-1-4 0; }
+#PROBLEMBounds-1-1-4 > li::marker { content: "("counter(PROBLEMBounds-1-1-4,lower-roman)")"; }
+#PROBLEMBounds-1-1-4 > li { counter-increment: PROBLEMBounds-1-1-4; }
+#SUBSECTIONlimit-comp-cont-5-3 { counter-set: SUBSECTIONlimit-comp-cont-5-3 0; }
+#SUBSECTIONlimit-comp-cont-5-3 > li::marker { content: ""counter(SUBSECTIONlimit-comp-cont-5-3,decimal)"."; }
+#SUBSECTIONlimit-comp-cont-5-3 > li { counter-increment: SUBSECTIONlimit-comp-cont-5-3; }
+#SUBSECTIONlimit-comp-cont-23-1-1 { counter-set: SUBSECTIONlimit-comp-cont-23-1-1 0; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li::marker { content: "("counter(SUBSECTIONlimit-comp-cont-23-1-1,lower-roman)")"; }
+#SUBSECTIONlimit-comp-cont-23-1-1 > li { counter-increment: SUBSECTIONlimit-comp-cont-23-1-1; }
+#SUBSECTIONlimit-comp-cont-24-1-2 { counter-set: SUBSECTIONlimit-comp-cont-24-1-2 0; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li::marker { content: "("counter(SUBSECTIONlimit-comp-cont-24-1-2,lower-roman)")"; }
+#SUBSECTIONlimit-comp-cont-24-1-2 > li { counter-increment: SUBSECTIONlimit-comp-cont-24-1-2; }
+#PROBLEMTopSineFuncB-1-1-6 { counter-set: PROBLEMTopSineFuncB-1-1-6 0; }
+#PROBLEMTopSineFuncB-1-1-6 > li::marker { content: "("counter(PROBLEMTopSineFuncB-1-1-6,lower-roman)")"; }
+#PROBLEMTopSineFuncB-1-1-6 > li { counter-increment: PROBLEMTopSineFuncB-1-1-6; }
+#PROBLEMQRRigorA-1-1-2 { counter-set: PROBLEMQRRigorA-1-1-2 0; }
+#PROBLEMQRRigorA-1-1-2 > li::marker { content: "("counter(PROBLEMQRRigorA-1-1-2,lower-roman)")"; }
+#PROBLEMQRRigorA-1-1-2 > li { counter-increment: PROBLEMQRRigorA-1-1-2; }
+#DRILLCircularReasoning-1-1-3 { counter-set: DRILLCircularReasoning-1-1-3 0; }
+#DRILLCircularReasoning-1-1-3 > li::marker { content: "("counter(DRILLCircularReasoning-1-1-3,lower-roman)")"; }
+#DRILLCircularReasoning-1-1-3 > li { counter-increment: DRILLCircularReasoning-1-1-3; }
+#DEFINITIONFunctionInverse-3-1-8 { counter-set: DEFINITIONFunctionInverse-3-1-8 0; }
+#DEFINITIONFunctionInverse-3-1-8 > li::marker { content: ""counter(DEFINITIONFunctionInverse-3-1-8,decimal)"."; }
+#DEFINITIONFunctionInverse-3-1-8 > li { counter-increment: DEFINITIONFunctionInverse-3-1-8; }
+#SECTIONinverse-functions-21-1 { counter-set: SECTIONinverse-functions-21-1 0; }
+#SECTIONinverse-functions-21-1 > li::marker { content: ""counter(SECTIONinverse-functions-21-1,decimal)"."; }
+#SECTIONinverse-functions-21-1 > li { counter-increment: SECTIONinverse-functions-21-1; }
+#SECTIONinverse-functions-23-2 { counter-set: SECTIONinverse-functions-23-2 0; }
+#SECTIONinverse-functions-23-2 > li::marker { content: ""counter(SECTIONinverse-functions-23-2,decimal)"."; }
+#SECTIONinverse-functions-23-2 > li { counter-increment: SECTIONinverse-functions-23-2; }
+#THEOREMDerivInvFunc-3-1 { counter-set: THEOREMDerivInvFunc-3-1 0; }
+#THEOREMDerivInvFunc-3-1 > li::marker { content: ""counter(THEOREMDerivInvFunc-3-1,decimal)"."; }
+#THEOREMDerivInvFunc-3-1 > li { counter-increment: THEOREMDerivInvFunc-3-1; }
+#DRILLRollesLemma1-2 { counter-set: DRILLRollesLemma1-2 0; }
+#DRILLRollesLemma1-2 > li::marker { content: "("counter(DRILLRollesLemma1-2,lower-roman)")"; }
+#DRILLRollesLemma1-2 > li { counter-increment: DRILLRollesLemma1-2; }
+#THEOREMFDTproved-3-8 { counter-set: THEOREMFDTproved-3-8 0; }
+#THEOREMFDTproved-3-8 > li::marker { content: ""counter(THEOREMFDTproved-3-8,decimal)"."; }
+#THEOREMFDTproved-3-8 > li { counter-increment: THEOREMFDTproved-3-8; }
+#PROBLEMMVTSpecialCase-1-1-2 { counter-set: PROBLEMMVTSpecialCase-1-1-2 0; }
+#PROBLEMMVTSpecialCase-1-1-2 > li::marker { content: ""counter(PROBLEMMVTSpecialCase-1-1-2,decimal)"."; }
+#PROBLEMMVTSpecialCase-1-1-2 > li { counter-increment: PROBLEMMVTSpecialCase-1-1-2; }
+#PROBLEMAbsValDerivA-1-1-5 { counter-set: PROBLEMAbsValDerivA-1-1-5 0; }
+#PROBLEMAbsValDerivA-1-1-5 > li::marker { content: ""counter(PROBLEMAbsValDerivA-1-1-5,decimal)"."; }
+#PROBLEMAbsValDerivA-1-1-5 > li { counter-increment: PROBLEMAbsValDerivA-1-1-5; }
+#DEFINITIONone-sided-deriv-3-1-3 { counter-set: DEFINITIONone-sided-deriv-3-1-3 0; }
+#DEFINITIONone-sided-deriv-3-1-3 > li::marker { content: ""counter(DEFINITIONone-sided-deriv-3-1-3,decimal)"."; }
+#DEFINITIONone-sided-deriv-3-1-3 > li { counter-increment: DEFINITIONone-sided-deriv-3-1-3; }
+#PROBLEMHeaviTranslate-2-1-1-3 { counter-set: PROBLEMHeaviTranslate-2-1-1-3 0; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li::marker { content: "("counter(PROBLEMHeaviTranslate-2-1-1-3,lower-roman)")"; }
+#PROBLEMHeaviTranslate-2-1-1-3 > li { counter-increment: PROBLEMHeaviTranslate-2-1-1-3; }
+#PROBLEMHeaviTranslate-3-1-1-4 { counter-set: PROBLEMHeaviTranslate-3-1-1-4 0; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li::marker { content: "("counter(PROBLEMHeaviTranslate-3-1-1-4,lower-roman)")"; }
+#PROBLEMHeaviTranslate-3-1-1-4 > li { counter-increment: PROBLEMHeaviTranslate-3-1-1-4; }
+#SECTIONone-sided-deriv-11-3 { counter-set: SECTIONone-sided-deriv-11-3 0; }
+#SECTIONone-sided-deriv-11-3 > li::marker { content: ""counter(SECTIONone-sided-deriv-11-3,decimal)"."; }
+#SECTIONone-sided-deriv-11-3 > li { counter-increment: SECTIONone-sided-deriv-11-3; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 { counter-set: SUBSECTIONVerticalAsymptotes-24-4-2 0; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li::marker { content: "("counter(SUBSECTIONVerticalAsymptotes-24-4-2,decimal)")"; }
+#SUBSECTIONVerticalAsymptotes-24-4-2 > li { counter-increment: SUBSECTIONVerticalAsymptotes-24-4-2; }
+#PROBLEMAntiDiffPractice-1-2 { counter-set: PROBLEMAntiDiffPractice-1-2 0; }
+#PROBLEMAntiDiffPractice-1-2 > li::marker { content: "("counter(PROBLEMAntiDiffPractice-1-2,lower-roman)")"; }
+#PROBLEMAntiDiffPractice-1-2 > li { counter-increment: PROBLEMAntiDiffPractice-1-2; }
+#DRILLIntSimpSub-1-4 { counter-set: DRILLIntSimpSub-1-4 0; }
+#DRILLIntSimpSub-1-4 > li::marker { content: "("counter(DRILLIntSimpSub-1-4,lower-roman)")"; }
+#DRILLIntSimpSub-1-4 > li { counter-increment: DRILLIntSimpSub-1-4; }
+#SECTIONKnownIntegrals-12-1-2 { counter-set: SECTIONKnownIntegrals-12-1-2 0; }
+#SECTIONKnownIntegrals-12-1-2 > li::marker { content: "("counter(SECTIONKnownIntegrals-12-1-2,lower-roman)")"; }
+#SECTIONKnownIntegrals-12-1-2 > li { counter-increment: SECTIONKnownIntegrals-12-1-2; }
+#SUBSECTIONCavLeibNotation-35-2-1-1 { counter-set: SUBSECTIONCavLeibNotation-35-2-1-1 0; }
+#SUBSECTIONCavLeibNotation-35-2-1-1 > li::marker { content: "("counter(SUBSECTIONCavLeibNotation-35-2-1-1,lower-roman)")"; }
+#SUBSECTIONCavLeibNotation-35-2-1-1 > li { counter-increment: SUBSECTIONCavLeibNotation-35-2-1-1; }
+#DefIntProp-18-1-2 { counter-set: DefIntProp-18-1-2 0; }
+#DefIntProp-18-1-2 > li::marker { content: "("counter(DefIntProp-18-1-2,lower-roman)")"; }
+#DefIntProp-18-1-2 > li { counter-increment: DefIntProp-18-1-2; }
+#PROBLEMPS1-1-1-4 { counter-set: PROBLEMPS1-1-1-4 0; }
+#PROBLEMPS1-1-1-4 > li::marker { content: "("counter(PROBLEMPS1-1-1-4,lower-roman)")"; }
+#PROBLEMPS1-1-1-4 > li { counter-increment: PROBLEMPS1-1-1-4; }
+#SECTIONProbs15-20-2-1-1-2 { counter-set: SECTIONProbs15-20-2-1-1-2 0; }
+#SECTIONProbs15-20-2-1-1-2 > li::marker { content: "("counter(SECTIONProbs15-20-2-1-1-2,lower-roman)")"; }
+#SECTIONProbs15-20-2-1-1-2 > li { counter-increment: SECTIONProbs15-20-2-1-1-2; }
+#SECTIONProbs15-20-3-1-1-1 { counter-set: SECTIONProbs15-20-3-1-1-1 0; }
+#SECTIONProbs15-20-3-1-1-1 > li::marker { content: "("counter(SECTIONProbs15-20-3-1-1-1,lower-roman)")"; }
+#SECTIONProbs15-20-3-1-1-1 > li { counter-increment: SECTIONProbs15-20-3-1-1-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="SECTIONKnownIntegrals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERApplicaitonsOfIntegration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="CHAPTERApplicaitonsOfIntegration-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="DiffCalcFromPractice.html" class="internal"><span class="codenumber">I</span> <span class="title">Differential Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CalculusIsARock.html" class="internal"><span class="codenumber">1</span> <span class="title">Calculus is a Rock</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERproblem-solving.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction: Some  Advice on Problem Solving</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECusing-lett-inst.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using Letters Instead of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAn-easy-problem-alg.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Substitution, or Making Things “Easy on the Eyes”</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECan-easy-problem-geo.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An “Easy” Problem From Geometry</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECour-advice-synopsis.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Our advice, a synopsis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERScienceBeforeCalc.html" class="internal"><span class="codenumber">3</span> <span class="title">Science Before Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Apologia.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Apologia</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSomePreliminaries.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Some Preliminaries</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laziness-nature.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The Laziness of Nature</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFermMethAedeq.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Fermat’s Method of Adequality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdescartes-normals.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Descartes’s Method of Normals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Roberval, Conic Sections, and the Dynamic Approach</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Speed, Velocity, and Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanConicSect" class="internal"><span class="codenumber">3.6.2</span> <span class="title">The Tangent Lines of the Conic Sections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanParab" class="internal"><span class="title">The Tangent to a Parabola</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanEllipse" class="internal"><span class="title">The Tangent to an Ellipse</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#TangentHyperbola" class="internal"><span class="title">The Tangent to an Hyperbola</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsnells-law-refr.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Snell’s Law and the Limitations of Adequality:</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERdifferentials.html" class="internal"><span class="codenumber">4</span> <span class="title">Differentials, Differentiation, and the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONHist-intr.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONWarning.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Warning: Be Sure You Understand  the Purpose of This Chapter</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONsome-rules-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The General Differentiation Rules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONConstantRule" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Constant Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONSumRule" class="internal"><span class="codenumber">4.3.2</span> <span class="title">The Sum Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONConstMultRule" class="internal"><span class="codenumber">4.3.3</span> <span class="title">The Constant Multiple Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONProductRule" class="internal"><span class="codenumber">4.3.4</span> <span class="title">The Product Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONPowerRule" class="internal"><span class="codenumber">4.3.5</span> <span class="title">The Power Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONQuotientRule" class="internal"><span class="codenumber">4.3.6</span> <span class="title">The Quotient Rule</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERPTERVelocitySlopeTangent.html" class="internal"><span class="codenumber">5</span> <span class="title">Slopes, Tangents, and Rates of Change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONVelocitySlopeTangent.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Slopes and Tangents</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdefin-tang-line.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Defining the Tangent Line</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvomit-comet.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Vomit Comet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGalileoDrops.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Galileo Drops the Ball</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECONDBringCalc.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Bringing in Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDerivative.html" class="internal"><span class="codenumber">5.6</span> <span class="title">The Derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONThinkingDynamically.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Thinking Dynamically</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFluxions.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Newton’s Method of Fluxions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSelfIntersectCurve.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Self-intersecting Curves and Parametric Equations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Bridges, Chains, Domes, and Telescopes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONBridges" class="internal"><span class="codenumber">5.10.1</span> <span class="title">Bridges</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONChains" class="internal"><span class="codenumber">5.10.2</span> <span class="title">Chains</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONDomes" class="internal"><span class="codenumber">5.10.3</span> <span class="title">Domes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONTelescopes" class="internal"><span class="codenumber">5.10.4</span> <span class="title">Telescopes</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERcalc-trig.html" class="internal"><span class="codenumber">6</span> <span class="title">Calculus and Trigonometry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONtrig-interl.html" class="internal"><span class="codenumber">6.1</span> <span class="title">A Trigonometric Interlude</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONradian-measure" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Radian Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONtrig-interl-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">The Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONmodel-with-trig" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Modeling with Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONtrig-interl-5" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Phase Shifts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONpolar-coordinates" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Polar Coordinates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Differentials of the Sine and Cosine Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Circular Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONpolar-coord-calc" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Polar Coordinates and Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SECTIONdiff-sine-cosine-4" class="internal"><span class="codenumber">6.2.3</span> <span class="title">The Brachistochrone Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SECTIONdiff-sine-cosine-5" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Spin Casting, Redux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONsimple-harm-oscill" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Simple Harmonic Oscillation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-other-trig.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Differentials of the Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONinverse-tan-and-cot.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Inverse Tangent and Cotangent Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONwitch-agnesi-inverse.html" class="internal"><span class="codenumber">6.5</span> <span class="title">The Witch of Agnesi and the Inverse Tangent Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-inverse-tancot.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Differentials of the Inverse Tangent and Inverse Cotangent Functions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONother-inverse-trig.html" class="internal"><span class="codenumber">6.7</span> <span class="title">The Other Inverse Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSine" class="internal"><span class="codenumber">6.7.1</span> <span class="title">The Inverse Sine Function:  <span class="process-math">\(\inverse\sin(x)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSecCsc" class="internal"><span class="codenumber">6.7.2</span> <span class="title">The Inverse Secant and Inverse Cosecant</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONcurvature.html" class="internal"><span class="codenumber">6.8</span> <span class="title">Curvature</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTApproximation.html" class="internal"><span class="codenumber">7</span> <span class="title">Approximation Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONnewtons-method.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Root Finding: Two  Pre-Calculus Approaches</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBisectionMethod" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Bisection Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBabylonianMethod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Babylonian Method for Square Roots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONnewtons-method-1.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Newton’s Method</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONNewtonsMethodBasic" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Idea Behind Newton’s Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSpectacularFailure" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Spectacular Failure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSubtleFailure" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Subtle Failure</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONEulersMethod.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Euler’s Method</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONmore-high-deriv.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Higher Derivatives, Lagrange, and Taylor</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERlast-elem-funct.html" class="internal"><span class="codenumber">8</span> <span class="title">Exponentials and Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDEsandIVPS.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Initial Value Problems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONexponential.html" class="internal"><span class="codenumber">8.2</span> <span class="title">The Natural Exponential</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONexponential-growth.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Exponential Growth and Exponential Notation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONhyperb-trig-hang.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Hyperbolic Trigonometry: The Hanging Chain</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGatewayArch.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Gateway Arch</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERlast-elem-funct-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exponential Growth</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONExpAndCmpndInt.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exponential Functions and Compound Interest</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONnatural-logarithm-1.html" class="internal"><span class="codenumber">8.8</span> <span class="title">John Napier Logs In: A Short Introduction to Logarithms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNatLog.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Logarithms, Natural and Unnatural</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONLogApps.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Applications of Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SUBSECTIONradioactive-decay" class="internal"><span class="codenumber">8.10.1</span> <span class="title">Radioactive Dating</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SECTIONnewtons-law-cooling" class="internal"><span class="codenumber">8.10.2</span> <span class="title">Chillin’ with Newton: The Law of Cooling</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDerivNatLog.html" class="internal"><span class="codenumber">8.11</span> <span class="title">The Derivative of the Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html" class="internal"><span class="codenumber">8.12</span> <span class="title">General Logarithms and Exponentials</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONEulerHarmonicOsc.html" class="internal"><span class="codenumber">8.13</span> <span class="title">Leonhard Euler, Harmonic Oscillators, and Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONEulerHarmonicOsc.html#SUBSECTIONHowEulerDidIt" class="internal"><span class="codenumber">8.13.1</span> <span class="title">How Euler Did It</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERwhat-deriv-tells.html" class="internal"><span class="codenumber">9</span> <span class="title">Optimization: Going to Extremes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONintroduction.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction: Fermat’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfive-simil-probl.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Preliminaries: Some Simple Optimizations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Reflections, Refractions, and Rainbows</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONreflection" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Reflection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrefraction" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Refraction: Snell’s Law</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrainbows" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Rainbows</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONRainbow" class="internal"><span class="codenumber">9.3.4</span> <span class="title">The Colors of the Rainbow</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONDoubleRainbows" class="internal"><span class="codenumber">9.3.5</span> <span class="title">Double Rainbows</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGlobalVsLocalExtrema.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Global vs. Local Extrema</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Optimization, the Abstract Problem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SECTIONIntroOptim" class="internal"><span class="codenumber">9.5.1</span> <span class="title">An Illustrative Example from <span class="process-math">\(1750\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-abstr-probl-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Identifying and Distinguishing Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Transition Points, and Possible Transition Points on Open Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONunderl-deriv" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Undefined Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-clos-interv" class="internal"><span class="codenumber">9.5.5</span> <span class="title">Transition Points on a Closed Interval; the Problem of Endpoints</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Concavity and the Second Derivative Test</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv" class="internal"><span class="codenumber">9.6.1</span> <span class="title">The Second Derivative Test</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONoptim-probl.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONOptStrat" class="internal"><span class="codenumber">9.7.1</span> <span class="title">Optimization Strategy</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONPageOfText" class="internal"><span class="codenumber">9.7.2</span> <span class="title">Two Ways to Optimize</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONFirstSolution" class="internal"><span class="title">First Solution:</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONSecondSolution" class="internal"><span class="title">Second Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONVarOptProbs" class="internal"><span class="codenumber">9.7.3</span> <span class="title">Selected Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERPTshape-things.html" class="internal"><span class="codenumber">10</span> <span class="title">Graphing with Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgraph-with-form.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(y(x)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgraph-without-form.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphing Without Formulas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(\dfdx{y}{t}\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERmodel-with-calc.html" class="internal"><span class="codenumber">11</span> <span class="title">Modeling with Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Population Dynamics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Modeling a Trout Farm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp" class="internal"><span class="codenumber">11.1.2</span> <span class="title">The Competing Species Model</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONselect-model-probl.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Selected Modeling Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SECTIONepidemic-blues" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Epidemics, The SIR Model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#subSECTIONtractrix" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The Tractrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SUBSECTIONPursuit" class="internal"><span class="codenumber">11.2.3</span> <span class="title">The  Pursuit Problem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERlimits-lhop-rule.html" class="internal"><span class="codenumber">12</span> <span class="title">Limits and L’Hôpital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Horizontal Asymptotes: Limits “at Infinity”</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsqueeze-theorem-informal.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvertical-asymptotes.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Vertical Asymptotes: “Infinite” Limits</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Indeterminate Forms and L’Hôpital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html#SUBSECTIONLHopitalsRule" class="internal"><span class="codenumber">12.4.1</span> <span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html#SUBSECTIONlhop-rule-horiz" class="internal"><span class="codenumber">12.4.2</span> <span class="title">L’Hôpital’s Rule and Horizontal Asymptotes</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="DiffCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Differential Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERWhatsWrong.html" class="internal"><span class="codenumber">13</span> <span class="title">What’s Wrong with Differentials?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CalcAndBerkeley.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Calculus and Bishop Berkeley</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsecants-tangents.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Secants and Tangents</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERdiff-rules-with-limits.html" class="internal"><span class="codenumber">14</span> <span class="title">The Differentiation Rules via Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html" class="internal"><span class="codenumber">14.1</span> <span class="title">The Limit Rules (Theorems)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont" class="internal"><span class="codenumber">14.1.1</span> <span class="title">The Limit of a Composition and Continuity at a Point</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-rules-via.html" class="internal"><span class="codenumber">14.2</span> <span class="title">The General Differentiation Theorems, via Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONChainRule.html" class="internal"><span class="codenumber">14.3</span> <span class="title">The Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONproduct-rule-limits.html" class="internal"><span class="codenumber">14.4</span> <span class="title">The Product Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONother-gener-diff.html" class="internal"><span class="codenumber">14.5</span> <span class="title">The Other General Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-trig-funct.html" class="internal"><span class="codenumber">14.6</span> <span class="title">Derivatives of the Trigonometric Functions, via Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONinverse-functions.html" class="internal"><span class="codenumber">14.7</span> <span class="title">Inverse Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERFDT-Redux.html" class="internal"><span class="codenumber">15</span> <span class="title">The First Derivative Test, Redux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfermats-theorem.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Fermat’s Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONrolles-lemma-mean.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Rolle’s Lemma and the Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfirst-deriv-test.html" class="internal"><span class="codenumber">15.3</span> <span class="title">The Proof of the First Derivative Test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt.html" class="internal"><span class="codenumber">16</span> <span class="title">When the Derivative Doesn’t Exist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">One Sided Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONone-sided-deriv.html" class="internal"><span class="codenumber">16.2</span> <span class="title">One Sided Derivatives</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERformal-limits.html" class="internal"><span class="codenumber">17</span> <span class="title">Formal Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonIntuitExample.html" class="internal"><span class="codenumber">17.1</span> <span class="title">A Non-Intuitive Limit</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Getting Around Infinity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONEpsDelt1" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Horizontal Asymptotes, Redux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONconvincing-skeptic" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Convincing Berkeley</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Refining the Definition of a Limit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes" class="internal"><span class="codenumber">17.2.4</span> <span class="title">Vertical Asymptotes, Redux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONlimits-at-real.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Finite Limits at a Real Number</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONLimitLaws.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Limit Laws (Theorems)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at" class="internal"><span class="codenumber">17.4.1</span> <span class="title">The Limit of a Sum</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONsqueeze-theorem" class="internal"><span class="codenumber">17.4.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SECTIONlimit-composition" class="internal"><span class="codenumber">17.4.3</span> <span class="title">The Limit of a Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONlimit-product-at" class="internal"><span class="codenumber">17.4.4</span> <span class="title">The Limit of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONOneOverXIsCont" class="internal"><span class="codenumber">17.4.5</span> <span class="title">The Function    <span class="process-math">\(f(x)=\frac1x\)</span> is Continuous Wherever  It Is Defined</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">III</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntSimplest.html" class="internal"><span class="codenumber">18</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal"><span class="codenumber">18.1.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsAntiDerivative" class="internal"><span class="codenumber">18.1.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationRules1.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Rules for Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">19</span> <span class="title">Differential Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Separation of Variables</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration.html" class="internal"><span class="codenumber">20</span> <span class="title">Applications of Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Accounting for Air Resistance: This is a Job for Substitution!</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONKnownIntegrals.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Substitution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23" class="internal"><span class="codenumber">20.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration-4.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Trigonometric Substitutions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration-5.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Back to Logistic Growth: Partial Fractions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration-5.html#CHAPTERApplicaitonsOfIntegration-5-2" class="internal"><span class="codenumber">20.4.1</span> <span class="title">Intro</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration-5.html#PartialFractionSubsection" class="internal"><span class="codenumber">20.4.2</span> <span class="title">The Partial Fraction Decomposition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">20.5</span> <span class="title">Integration By Parts — The Opposite of the Product Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDefiniteIntegration.html" class="internal"><span class="codenumber">21</span> <span class="title">Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Historical Precursors to Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">21.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavLeibNotation" class="internal"><span class="codenumber">21.1.2</span> <span class="title">Cavalieri, Differentials, and Definite Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Accumulation: The Indefinite Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAreasAndIntegration.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Areas and Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AppDefInt.html" class="internal"><span class="codenumber">21.5</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">21.5.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">21.5.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">21.5.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">21.5.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">21.5.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">21.5.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#subsub-WorkEnergy" class="internal"><span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="AppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">22</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">22.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">IV</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="IntCalcToTheory-2.html" class="internal"><span class="codenumber">23</span> <span class="title">Title Goes Here</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTBobsClasroomProblems.html" class="internal"><span class="codenumber">V</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">24</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">24.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">24.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">24.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs9.html" class="internal"><span class="codenumber">24.4</span> <span class="title">Homework #9: Applications of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs10.html" class="internal"><span class="codenumber">24.5</span> <span class="title">Homework #10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs11.html" class="internal"><span class="codenumber">24.6</span> <span class="title">Homework #11: Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">24.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">24.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">24.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">24.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">VI</span> <span class="title">Stuff Written But Without a Home</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">25</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">25.2</span> <span class="title">Integration as a Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">25.3</span> <span class="title">Random Stuff</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">VII</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">26</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="CHAPTERApplicaitonsOfIntegration-4"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">20.3</span><span class="space"> </span><span class="title">Trigonometric Substitutions</span>
+</h2>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-2">
+<div class="para">Recall that earlier in this section we encountered the integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int{\frac{1}{\sqrt{1+z^2}}\dx{z}{}}
+\end{equation*}
+</div>
+<div class="para">when we were trying to determine the solution to the catenary. We actually have the tools to solve this type of integral once we notice that (surprisingly!) we would like to use the substitution <span class="process-math">\(z=\tan{z}{}\text{.}\)</span>  As strange as it sounds to take a perfectly good integral and purposely insert trigonometry into it, this is just the ticket here.  Since we have the trigonometric identity <span class="process-math">\(\tan^2(\theta)+1=\sec^2(\theta)\text{,}\)</span> then this substitution is just the thing to rid us of the square root, which poses more of an issue than the trigonometry does.</div>
+</div>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-3">
+<div class="para">Specifically, if we let <span class="process-math">\(z=\tan{\theta }\text{,}\)</span> then <span class="process-math">\(\dx{\theta{}}=\sec^2(\theta)\dx{\theta}\text{,}\)</span> and so we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{1}{\sqrt{1+z^2}}\dx{z}= \int\frac{1}
+{\sqrt{1+\tan^2(\theta)}}\dx{\theta} =
+\int\frac{\sec^2(\theta)}{\sec(\theta)}\dx{\theta}=\int\sec(\theta)\dx{\theta}=\ln\abs{\tan(\theta)+\sec(\theta)}+c
+\end{equation*}
+</div>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-4">The trick now is to put things back in terms of <span class="process-math">\(z\text{.}\)</span>  We have <span class="process-math">\(\tan(\theta)=z\)</span> , but what about <span class="process-math">\(\sec(\theta)\text{?}\)</span>  We could certainly use the trigonometric identity from before, but a more general way to do this is to draw a triangle.  The beauty of this is that we don’t know what the angle <span class="process-math">\(\theta{}\)</span> is, nor do we really care.  All we need is that <span class="process-math">\(\tan(\theta)=\frac{z}{1}\text{.}\)</span>  This leads to the following triangle</div>
+<figure class="figure figure-like" id="CHAPTERApplicaitonsOfIntegration-4-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/zeqtan.png" class="contained" alt="Diagram of a right triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.3.0.1<span class="period">.</span></span><span class="space"> </span>Diagram of a right triangle.</figcaption></figure><div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-6">
+<div class="para">With this triangle, not only can we obtain the aforementioned <span class="process-math">\(\tan(\theta)=\frac{z}{1}\)</span> and <span class="process-math">\(\sec(\theta)=\frac{\sqrt{1+z^2}}{1}\)</span> which is what we need in the problem, but we could also obtain the following if we needed it:</div>
+<div class="displaymath process-math" id="CHAPTERApplicaitonsOfIntegration-4-6-3">
+\begin{align*}
+\sin(\theta)\amp =\frac{z}{\sqrt{1+z^2}},\amp{}\cos(\theta)\amp =\frac{1}{\sqrt{1+z^2}},\\
+\cot(\theta)\amp =\frac1z,\amp{}\csc(\theta)\amp =\frac{\sqrt{1+z^2}}{z}.
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-7">
+<div class="para">We really urge you to do this (DRAW A TRIANGLE) instead of relying on memorizing trigonometric identities which actually are derived from the triangle. This gives us that the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}
+\end{equation*}
+</div>
+<div class="para">is satisfied by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ln\left(z+\sqrt{1+z^2}\right)=\frac{w}{H}x+c.
+\end{equation*}
+</div>
+</div>
+<article class="exercise exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-8"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.2</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-8-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-8-1-1-1">
+<div class="para">Use the formula <span class="process-math">\(z=\dfdx{y}{x}\)</span> for the catenary and <span class="process-math">\(z(0)=\dfdx{y}{x}{0}=0\)</span> (this was the low point on the hanging chain) to show that <span class="process-math">\(c=0\)</span> and so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfdx{y}{x}=z=\frac12\left(e^{\frac{w}{H}x}-e^{-\frac{w}{H}x}\right).
+\end{equation*}
+</div>
+</div> <aside class="aside aside-like" id="CHAPTERApplicaitonsOfIntegration-4-8-1-1-2"><h5 class="heading"><span class="title">Note to self.</span></h5>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-8-1-1-2-2">The use of <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> interchangeably is confusing.</div></aside></article><article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-8-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-8-2-1-1">
+<div class="para">Integrate the result in part (a) to obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)+c
+\end{equation*}
+</div>
+<div class="para">which is the equation of the catenary as stated earlier.</div>
+</div></article></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-9">Consider the top view of an airplane <span class="process-math">\(P\)</span> starting at the point <span class="process-math">\((1,0)\)</span> and traveling up the line <span class="process-math">\(x=1\)</span> at a constant speed <span class="process-math">\(v\text{.}\)</span>  When the plane is at <span class="process-math">\((1,0)\text{,}\)</span> a homing missile <span class="process-math">\(M\)</span> is fired from the origin directly at the plane. Assuming that the missile travels at a speed which is <span class="process-math">\(k\)</span> times the speed of the plane <span class="process-math">\((k&gt;1)\)</span> and is always aimed directly at the plane, find the path the missile takes.  [Such a path is called a pursuit curve.]  The diagram below shows the situation at time <span class="process-math">\(t\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="CHAPTERApplicaitonsOfIntegration-4-10"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/IC/PursuitCurve.png" class="contained" alt="Image of a pursuit curve."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.3.0.3<span class="period">.</span></span><span class="space"> </span>Image of a pursuit curve.</figcaption></figure><article class="exercise exercise-like" id="PursuitCurve1"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.4</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="PursuitCurve1-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="PursuitCurve1-2-1-1">
+<div class="para">If we let <span class="process-math">\(s\)</span> denote the distance the missile has traveled at time <span class="process-math">\(t\text{,}\)</span> show that the missile’s path must satisfy the IVP</div>
+<div class="displaymath process-math" id="PursuitCurve1-2-1-1-3">
+\begin{align}
+\dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x},\amp{}\amp{}
+y(0)=0.\tag{20.18}
+\end{align}
+</div>
+</div></article><article class="task exercise-like" id="PursuitCurve1-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="PursuitCurve1-3-1-1">Obviously we can solve <a href="CHAPTERApplicaitonsOfIntegration-4.html#PursuitCurve1-2-1-1-3" class="xref" data-knowl="./knowl/xref/PursuitEquation1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.18">equation (20.18)</a> for <span class="process-math">\(y\)</span> but then we would have <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(s\text{,}\)</span> and <span class="process-math">\(\dfdx{y}{x}\)</span> which isn’t very helpful. The <span class="process-math">\(s\)</span> term is particularly problematic since we know almost nothing about it.</div> <div class="para" id="PursuitCurve1-3-1-2">But only almost. We do know that <span class="process-math">\(\dx{s}^2=\dx{x}^2+\dx{y}^2\text{.}\)</span>
+</div> <div class="para logical" id="PursuitCurve1-3-1-3">
+<div class="para">Differentiate <a href="CHAPTERApplicaitonsOfIntegration-4.html#PursuitCurve1-2-1-1-3" class="xref" data-knowl="./knowl/xref/PursuitEquation1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.18">equation (20.18)</a> to show that the missile’s path must satisfy the differential equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PursuitEquation1.html" id="PursuitCurve1-3-1-3-3">
+\begin{gather*}
+(1-x)\dfdxn{y}{x}{2}=\frac{1}{k}\dfdx{s}{x}=\frac1k\sqrt{1+\left(\dfdx{y}{x}\right)^2{}}
+\end{gather*}
+</div>
+<div class="para">with the initial conditions <span class="process-math">\(y(0)=0\text{,}\)</span> and <span class="process-math">\(\dfdxat{y}{x}{0}=0\text{.}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="PursuitCurve1-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="PursuitCurve1-4-1-1">
+<div class="para">Let’s make this a little easier on our eyes. Let <span class="process-math">\(z=\dfdx{y}{x} \text{,}\)</span> and show that <a href="CHAPTERApplicaitonsOfIntegration-4.html#PursuitCurve1-2-1-1-3" class="xref" data-knowl="./knowl/xref/PursuitEquation1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.18">equation (20.18)</a> becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PursuitEquation1.html" id="PursuitEquation2">
+\begin{equation}
+\frac{1}{\sqrt{1+z^2}}\dx{z}=\frac1k\cdot\frac{1}{1-x}\tag{20.19}
+\end{equation}
+</div>
+<div class="para">with initial conditions <span class="process-math">\(z(0)=0\text{.}\)</span>  and use the trigonometric substitution <span class="process-math">\(z=\tan(\theta)\)</span> as before to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PursuitEquation1.html">
+\begin{equation*}
+z=\frac12\left(\left(1-x\right)^{\frac{-1}{k}}-\left(1-x\right)^{\frac1k}\right){}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="PursuitCurve1-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para logical" id="PursuitCurve1-5-1-1">
+<div class="para">Use the initial condition <span class="process-math">\(y(0)=0\)</span> and the substitution <span class="process-math">\(z=\dfdx{y}{x}\)</span> to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y=\frac{k}{2}\left[\frac{(1-x)^{\frac{k+1}{k}}}{k+1}+\frac{(1-x)^{\frac{k-1}{k}}}{k-1}\right]+\frac{k}{k^2-1}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="PursuitCurve1-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="PursuitCurve1-6-1-1">How far has the plane gone when the missile reaches it? What happens as <span class="process-math">\(x\rightarrow1\text{?}\)</span>
+</div></article></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-12">Of course, the tangent function is not the only trigonometric function at our disposal.</div>
+<article class="exercise exercise-like" id="TractrixProblem1"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="TractrixProblem1-1">
+<div class="para" id="TractrixProblem1-1-1">The following is the view from above of a tractor-trailer. Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point <span class="process-math">\((1,0)\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="TractrixProblem1-1-2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/IC/Tractrix.png" class="contained" alt="Sketch of a tractor-trailer in the act of turning."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.3.0.6<span class="period">.</span></span><span class="space"> </span>Sketch of a tractor-trailer in the act of turning.</figcaption></figure><div class="para" id="TractrixProblem1-1-3">Suppose the tractor pulls the front wheels up the <span class="process-math">\(u\)</span>-axis and that the rear wheels don’t slip.</div>
+</div>
+<article class="task exercise-like" id="TractrixProblem1-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="TractrixProblem1-2-1-1">
+<div class="para">show the path that the center of the rear axle of the trailer follows must satisfy the equations</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfdx{y}{x}=\frac{-\sqrt{1-x^2}}{x}, \hskip5mm y(1)=0
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="TractrixProblem1-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="TractrixProblem1-3-1-1">Find the equation, <span class="process-math">\(y=y(x)\)</span> of the tractrix.</div>
+<div class="solutions"><details id="TractrixProblem1-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="TractrixProblem1-3-2-1">After you separate the variables substitute <span class="process-math">\(x=\sin(\theta)\)</span> in your integral.</div></div></details></div></article><article class="task exercise-like" id="TractrixProblem1-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="TractrixProblem1-4-1-1">Plot your solution on the <span class="process-math">\(x-y\)</span> plane.</div></article></article><article class="exercise exercise-like" id="TrigSub1"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.7</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="TrigSub1-1"><div class="para logical" id="TrigSub1-1-1">
+<div class="para">Again, having trigonometry involved was a better option than having the square root.  Here, we utilized the trigonometric identity <span class="process-math">\(\sin^2(\theta)+\cos^2(\theta)=1\text{.}\)</span>  A surprising number of integrals involve terms such as <span class="process-math">\(\sqrt{1-x^2}\text{,}\)</span> <span class="process-math">\(\sqrt{1+x^2}\)</span> or <span class="process-math">\(\sqrt{x^2-1}\text{.}\)</span>  In these cases, it is often advantageous to utilize a trigonometric substitution, using the identities or to remove the square root, which typically is more a concern than the trigonometry. However, you should remember that there are other techniques at your disposal, so you need to be judicious about what you utilize.  For example, consider the integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{x}{\sqrt{1+x^2}}\dx{x}.
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="TrigSub1-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="TrigSub1-2-1-1">Use the trigonometric substitution <span class="process-math">\(x=\tan(\theta)\)</span> to compute the above integral.</div></article><article class="task exercise-like" id="TrigSub1-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="TrigSub1-3-1-1">Now use the non-trigonometric substitution <span class="process-math">\(x=1+x^2\)</span> to compute the integral</div></article><article class="task exercise-like" id="TrigSub1-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="TrigSub1-4-1-1">Which method do you find more appealing? (Or least unappealing?)</div></article></article><article class="exercise exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-15"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.8</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="CHAPTERApplicaitonsOfIntegration-4-15-1"><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-15-1-1">This problems asks you to verify Integration Rules <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-12" class="xref" data-knowl="./knowl/xref/IntRuleInvSin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.15">(18.15)</a>, <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-13" class="xref" data-knowl="./knowl/xref/IntRuleInvTan.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.16">(18.16)</a>, and <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-14" class="xref" data-knowl="./knowl/xref/IntRuleInvSec.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.17">(18.17)</a>, directly.</div></div>
+<article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-15-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-15-2-1-1">Use the substitution <span class="process-math">\(x=\sin(\theta)\)</span> to compute <span class="process-math">\(\int\frac{1}{\sqrt{1-x^2}}\dx{x}\text{.}\)</span>
+</div></article><article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-15-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-15-3-1-1">Use the substitution <span class="process-math">\(x=\tan(\theta)\)</span> to compute <span class="process-math">\(\int{\frac{1}{1+x^2}}\dx{x}\text{.}\)</span>
+</div></article><article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-15-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-15-4-1-1">Use the substitution <span class="process-math">\(x=\sec(\theta)\)</span> to compute <span class="process-math">\(\int\frac{1}{x\sqrt{x^2-1}}\dx{x}\)</span>
+</div></article></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-16">This is all well and good, but the forms <span class="process-math">\(\sqrt{1-x^2}\text{,}\)</span> <span class="process-math">\(\sqrt{1+x^2}\text{,}\)</span> and <span class="process-math">\(\sqrt{x^2-1}\)</span> are all very specific. Can we use them for an integral like <span class="process-math">\(\int\frac{1}{\sqrt{4+x^2}}\dx{x} \text{?}\)</span>
+</div>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-17">
+<div class="para">Of course we can. We just need to rearrange it using Algebra. Observe that if we had a <span class="process-math">\(1\)</span> where the <span class="process-math">\(4\)</span> is we’d be fine. We can’t just change it. That would change the entire integral. But if we factor  out the <span class="process-math">\(4\)</span> we get</div>
+<div class="displaymath process-math" id="TrigSubst1">
+\begin{equation}
+\int\frac{1}{\sqrt{4+x^2}}\dx{x}=\int\frac{1}{\sqrt{4\left(1+\frac{x^2}{4}\right)}}\dx{x}=\frac12\int\frac{1}{\sqrt{1+\left(\frac{x}{2}\right)^2}}\dx{x}\tag{20.20}
+\end{equation}
+</div>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-18">Of course, now we have another problem. We have <span class="process-math">\(\left(\frac{x}{2}\right)^2\)</span> where we were happy to have <span class="process-math">\(x^2\)</span> before. But since we were going to substitute <span class="process-math">\(x\)</span> away anyhow we’ll just substitute <span class="process-math">\(\frac{x}{2}\)</span> away instead.</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-19">Letting <span class="process-math">\(\frac{x}{2}=\tan(\theta)\text{,}\)</span> we proceed as before.</div>
+<article class="exercise exercise-like" id="TrigSubst2"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.9</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="TrigSubst2-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="TrigSubst2-1-1-1">Finish computing the integral in <a href="CHAPTERApplicaitonsOfIntegration-4.html#TrigSubst1" class="xref" data-knowl="./knowl/xref/TrigSubst1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.20">equation (20.20)</a>
+</div></article><article class="task exercise-like" id="TrigSubst2-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="TrigSubst2-2-1-1">Compute <span class="process-math">\(\int\frac{1}{\sqrt{5-x^2}}\dx{x}\)</span>
+</div></article><article class="task exercise-like" id="TrigSubst2-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="TrigSubst2-3-1-1">Compute <span class="process-math">\(\int\frac{1}{\sqrt{x^2-9}}\dx{x}\)</span>
+</div></article><article class="task exercise-like" id="TrigSubst2-4"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="TrigSubst2-4-1-1">Compute <span class="process-math">\(\int\frac{1}{\sqrt{x^2-6x}}\dx{x}\)</span>
+</div>
+<div class="solutions"><details id="TrigSubst2-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="TrigSubst2-4-2-1">This integral appears to be a completely different from the others in this problem, but it really isn’t. Complete the square on <span class="process-math">\(x^2-6x\)</span> and then use your result in part (c).</div></div></details></div></article></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-21">It should be clear from <a href="CHAPTERApplicaitonsOfIntegration-4.html#TrigSubst2" class="xref" data-knowl="./knowl/xref/TrigSubst2.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 20.3.0.9">Problem 20.3.0.9</a> that as long as the expression inside the radical is a quadratic, we can manipulate it algebraically to produce something of the form <span class="process-math">\(\sqrt{1+\left(\frac{x-b}{a}\right)^2}\text{,}\)</span> <span class="process-math">\(\sqrt{1-\left(\frac{x-b}{a}\right)^2}\)</span>or <span class="process-math">\(\sqrt{\left(\frac{x-b}{a}\right)^2-1}\text{.}\)</span>  From there, we can use the appropriate trigonometric substitution.</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-22">Earlier we computed terminal velocity when considering linear drag. Now we will compare this to terminal velocity when the drag is proportional to the square of the velocity. An example of this would be a ball of mass <span class="process-math">\(M\)</span> falling in air. (We can include buoyancy again, but it is typically negligible so we will discount it). Again, to model this, let<span class="process-math">\(y(t)\)</span> be distance the ball has fallen (so the positive <span class="process-math">\(y\)</span> axis is pointing downward), with <span class="process-math">\(y(0)=0\)</span> representing the initial position of the ball. In a similar analysis to before, we denote the acceleration due to gravity by <span class="process-math">\(g\text{,}\)</span> so the weight of the ball is <span class="process-math">\(Mg\text{.}\)</span> The drag, which we assume is now quadratic, is proportional to the square of the velocity, so we will denote this by <span class="process-math">\(-Rv^2\text{,}\)</span> where <span class="process-math">\(R\)</span> is a constant and <span class="process-math">\(v=\dfdx{v}{t}\)</span> is the velocity. For simplicity, we will assume <span class="process-math">\(v(0)=0\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="FallingWithDrag"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.10</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="FallingWithDrag-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="FallingWithDrag-1-1-1">
+<div class="para">Use Newton’s Third Law of Motion: (<span class="process-math">\(F\)</span>)<span class="process-math">\(=\)</span>(<span class="process-math">\(M\)</span>)ass<span class="process-math">\(\cdot{}\)</span>(<span class="process-math">\(A\)</span>)cceleration, to show that the velocity of the ball must satisfy the equations:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M\dfdx{v}{t}=Mg-Rv^2, \hskip5mm{}v(0)=0 \text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="FallingWithDrag-1-1-2">
+<div class="para">Show that the IVP above is equivalent to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\dx{v}}{1-\frac{R}{Mg}v^2}=g\dx{t}, \hskip5mm
+v(0)=0 \text{.}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="FallingWithDrag-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="FallingWithDrag-2-1-1">
+<div class="para">Use the substitution <span class="process-math">\(\sqrt{\frac{R}{Mg}}v =
+\sin(\theta)\)</span> to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]                      \text{.}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="FallingWithDrag-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="FallingWithDrag-3-1-1">Compute <span class="process-math">\(\limit{t}{\infty}{v}\text{.}\)</span> Compare this terminal velocity with our previous results.</div></article></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-24">The trigonometric substitutions we’ve dealt with so far have all involved square roots. What about this integral: <span class="process-math">\(\int\frac{\dx{x}}{(1-x^2)^\frac32}\text{?}\)</span> Do you see that this is only slightly more complicated?</div>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-25">
+<div class="para">If we make the substitution <span class="process-math">\(x=\sin(\theta)\text{,}\)</span> then <span class="process-math">\(\dx{x}=\cos(\theta)\)</span> as before so,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{\dx{x}}{(1-x^2)^\frac32} =
+\int\frac{\cos(\theta)}{\left(\sqrt{1-\sin^2(\theta)}\right)^3}\dx{\theta}=\int\frac{\cos(\theta)}{\cos^3(\theta)}\dx{\theta}=\int\sec^2(\theta)\dx{\theta}=\tan(\theta)+c\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-26">Since <span class="process-math">\(\sin(\theta)=\frac{x}{2}\text{,}\)</span> we get the triangle</div>
+<figure class="figure figure-like" id="CHAPTERApplicaitonsOfIntegration-4-27"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IC/TrigTri1.png" class="contained" alt="Image of the triangle with theta in standard position and legs x and square root of one - x squared."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20.3.0.11<span class="period">.</span></span><span class="space"> </span>Image of the triangle</figcaption></figure><div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-28">
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{\dx{x}}{\left(x^2-1\right)^\frac32}=\tan(\theta)+c=\frac{x}{\sqrt{1-x^2}}+c\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="problem example-like" id="CHAPTERApplicaitonsOfIntegration-4-29"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">20.3.0.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-29-1">Confirm that this is correct by differentiating: <span class="process-math">\(\frac{x}{\sqrt{1-x^2}}+c\text{.}\)</span>
+</div></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-30">Fortunately, we were still able to handle this, but what if we started with the integral: <span class="process-math">\(\int\frac{x}{\left(x^2-1\right)^\frac32}\dx{x}{}\text{?}\)</span>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-31">The substitution <span class="process-math">\(x=\sec(\theta)\)</span> leads to: <span class="process-math">\(\int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}\text{.}\)</span> How do we handle that?</div>
+<aside class="aside aside-like" id="CHAPTERApplicaitonsOfIntegration-4-32"><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-32-1">Confirm this yourself.</div></aside><div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-33">
+<div class="para">We rewrite it as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}=\int\frac{1/\cos(\theta)}{\sin^2(\theta)/\cos^2(\theta)}\dx{\theta}=\int\frac{\cos(\theta)}{\sin^2(\theta)}\dx{\theta}=\int\cot(\theta)\csc(\theta)\dx{\theta}=-\csc(\theta)+c\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-34">This example underscores the need to be able to compute a variety of integrals involving trigonometric functions. Again, it is a trial and error kind of thing, but there are some standard tricks to learn. It is probably best to learn these tricks by looking at some specific examples, but as you do, focus on the technique being used and how it can be used on similar integrals, not the specific example.</div>
+<article class="example example-like" id="OddSinPower"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">20.3.0.13</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="OddSinPower-1">
+<div class="displaymath process-math">
+\begin{equation*}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}
+\end{equation*}
+</div>
+<div class="para">Since sine is raised to an odd power, it makes sense to “save one of the sines” and convert everything else to cosine, utilizing the Pythagorean identity <span class="process-math">\(\sin^2(\theta)=1-\cos^2(\theta)\text{,}\)</span> and then apply a substitution as follows. First we “save a sine.”</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} =
+\int\sin(\theta)\sin^2(\theta)\cos^2(\theta)\dx{\theta}=\int(1-\cos^2(\theta))\cos^2(\theta)\sin(\theta)\dx{\theta}\text{.}
+\end{equation*}
+</div>
+<div class="para">Next we let <span class="process-math">\(z=\cos(\theta)\text{,}\)</span> so that <span class="process-math">\(\dx{z}=-\sin(\theta)\dx{\theta}\text{,}\)</span> which gives</div>
+<div class="displaymath process-math" id="OddSinPower-1-8">
+\begin{align*}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp =
+\int(1-z^2)z^2(-\dx{z})\\
+\amp =\int(z^4-z^2)\dx{z}\\
+\amp =\frac{z^5}{5}=\frac{z^3}{3}+c\\
+\amp
+=\frac{\cos^5(\theta)}{5}=\frac{\cos^3(\theta)}{3}+c\text{.}
+\end{align*}
+</div>
+</div></article><article class="exercise exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-36"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.14</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="CHAPTERApplicaitonsOfIntegration-4-36-1"><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-36-1-1">Had the cosine been raised to an odd power in <a href="CHAPTERApplicaitonsOfIntegration-4.html#OddSinPower" class="xref" data-knowl="./knowl/xref/OddSinPower.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.3.0.13">Example 20.3.0.13</a>, we could have “saved one of the cosines” instead.</div></div>
+<article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-36-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-36-2-1-1">Compute <span class="process-math">\(\int\sin^2(\theta)\cos^3(\theta)\dx{\theta}\text{.}\)</span>
+</div></article></article><article class="example example-like" id="CHAPTERApplicaitonsOfIntegration-4-37"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">20.3.0.15</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-37-1">
+<div class="para">Notice that in <a href="CHAPTERApplicaitonsOfIntegration-4.html#OddSinPower" class="xref" data-knowl="./knowl/xref/OddSinPower.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.3.0.13">Example 20.3.0.13</a> there would have been nothing wrong with computing <span class="process-math">\(\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}\)</span> as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/OddSinPower.html" id="CHAPTERApplicaitonsOfIntegration-4-37-1-3">
+\begin{align*}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp{}=
+\int\sin^3(\theta)\cos(\theta)\cos(\theta)\dx{\theta}\\
+\amp{}=
+\int\sin^3(\theta)\sqrt{1-\sin^2(\theta)}\cos(\theta)\dx{\theta}.
+\end{align*}
+</div>
+<div class="para">It’s just that it is not immediately clear how to continue from here.  Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.</div>
+</div>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-37-2">
+<div class="para">First, the elementary substitution <span class="process-math">\(x=\sin(\theta)\)</span> will give:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} = \int
+x^3\sqrt{1-x^2}\dx{x} \text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-37-3">You see why we wouldn’t want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we <em class="emphasis">started</em> with an integral involving trigonometric functions.</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-37-4">While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.</div></article><article class="exercise exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-38"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.16</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="CHAPTERApplicaitonsOfIntegration-4-38-1"><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-38-1-1">Compute the integral <span class="process-math">\(\int x^3\sqrt{1-x^2}\dx{x}\)</span> using these substitutions:</div></div>
+<article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-38-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-38-2-1-1"><span class="process-math">\(x=\sin(\theta)\)</span></div></article><article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-38-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-38-3-1-1"><span class="process-math">\(u=1-x^2\)</span></div></article><div class="conclusion" id="CHAPTERApplicaitonsOfIntegration-4-38-4"><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-38-4-1">Finish <a href="CHAPTERApplicaitonsOfIntegration-4.html#OddSinPower" class="xref" data-knowl="./knowl/xref/OddSinPower.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 20.3.0.13">example 20.3.0.13</a> using each of the substitutions above. Do you get the same solution as before?</div></div></article><article class="exercise exercise-like" id="SinCosOddPower"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.17</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SinCosOddPower-1"><div class="para" id="SinCosOddPower-1-1">Compute the integral <span class="process-math">\(\int\sin^3(\theta)\cos^3(\theta)\dx{\theta}\)</span> by:</div></div>
+<article class="task exercise-like" id="SinCosOddPower-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SinCosOddPower-2-1-1">Saving one of the cosines and converting everthing else into sines.</div></article><article class="task exercise-like" id="SinCosOddPower-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SinCosOddPower-3-1-1">Saving one of the sines and converting everthing else into cosines.</div></article><article class="task exercise-like" id="SinCosOddPower-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SinCosOddPower-4-1-1">Do you get the same result in parts (a) and (b)? Explain.</div></article></article><article class="example example-like" id="SinCosEven"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">20.3.0.18</span><span class="period">.</span>
+</h3>
+<div class="para" id="SinCosEven-1">What happens if you don’t have an odd power of sine or cosine?  For example, suppose you have <span class="process-math">\(\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}\text{.}\)</span>
+</div>
+<div class="para logical" id="SinCosEven-2">
+<div class="para">Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In this case, there are a couple of trigonometric identities that can help. They the Half-Angle formlas:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sin^2(\theta) = \frac12\left(1-\cos(2\theta)\right) \text{
+and } \cos^2(\theta)=\frac12\left(1+\cos(2\theta)\right)\text{.}
+\end{equation*}
+</div>
+<div class="para">Using these identities in our integral we see that</div>
+<div class="displaymath process-math" id="SinCosEven-2-2">
+\begin{align*}
+\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}\amp
+=\frac14\int(1-\cos(2\theta))(1+\cos(2\theta))\dx{\theta}\\
+\amp =\frac14\int (1-\cos^2(2\theta))\dx{\theta}\\
+\amp =\frac{1}{4}\int\sin^2(2\theta)\dx{\theta}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="SinCosEven-3">
+<div class="para">Using the Half-Angle formula again we obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{4}\int\sin^2(2\theta)\dx{\theta} =
+\frac18\int(1-\cos(4\theta))\dx{\theta} =
+\frac18\left(\theta-\frac14\sin(4\theta)\right)+c
+\end{equation*}
+</div>
+</div></article><article class="problem example-like" id="CHAPTERApplicaitonsOfIntegration-4-41"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">20.3.0.19</span><span class="period">.</span>
+</h3>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-41-1">Show that we get the same result if we use the Double Angle formula: <span class="process-math">\(\sin(2\theta)=2\sin(\theta)\cos(\theta)\text{.}\)</span>
+</div></article><article class="example example-like" id="CHAPTERApplicaitonsOfIntegration-4-42"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">20.3.0.20</span><span class="period">.</span>
+</h3>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-42-1"><span class="process-math">\(\int\sec^4(\theta)\tan^2(\theta)\dx{\theta}\)</span></div>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-42-2">
+<div class="para">In this example, we can save a <span class="process-math">\(\sec^2(\theta)\)</span> as part of the differential and use the identity <span class="process-math">\(\sec^2(\theta)=1+\tan^2(\theta)\)</span> to change everything else into an expression in tangent. Since the secant is to an even power this again avoids square roots, which is the general idea.</div>
+<div class="displaymath process-math" id="CHAPTERApplicaitonsOfIntegration-4-42-2-3">
+\begin{align*}
+\int \sec^4(\theta)\tan^2(\theta)\dx{\theta}\amp
+=\int
+\sec^2(\theta)\tan^2(\theta)\sec^2(\theta)\dx{\theta}\\
+\int(1+\tan^2(\theta))\tan^2(\theta)\sec^2(\theta)\dx{\theta}
+\end{align*}
+</div>
+<div class="para">Letting <span class="process-math">\(y=\tan(\theta)\)</span> we have <span class="process-math">\(\dx{y}=\sec^2(\theta)\dx{\theta}\text{,}\)</span> so we obtain</div>
+<div class="displaymath process-math" id="CHAPTERApplicaitonsOfIntegration-4-42-2-6">
+\begin{gather*}
+\int(1+y^2)y^2\dx{y}=\int(y^2+y^4)\dx{y}=\frac{y^3}{3}+\frac{y^5}{5}+c=\frac{\tan^3(\theta)}{3}+\frac{\tan^5(\theta)}{5}+c
+\end{gather*}
+</div>
+</div></article><article class="example example-like" id="CHAPTERApplicaitonsOfIntegration-4-43"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">20.3.0.21</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-43-1">
+<div class="para">If tangent occurs to an odd power, we can save a tangent and a secant as part of the differential and use the same identity to convert everything else to secant.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\sec^2(\theta)\tan^3(\theta)\dx{\theta} =
+\int\sec^2(\theta)\tan^2(\theta)\sec(\theta)\tan(\theta)\dx{\theta{}}=\int\sec^2(\theta)(\sec^2(\theta)-1)\sec(\theta)\tan(\theta)\dx{\theta}\text{.}
+\end{equation*}
+</div>
+<div class="para">Letting <span class="process-math">\(u=\sec(\theta)\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int u^2(u^2-1)\dx{u}=\int
+(u^4-u^2)\dx{u}=\frac{u^5}{5}-\frac{u^3}{3}+c=\frac{\sec^5(\theta)}{5}-\frac{\sec^3(\theta)}{3}+c\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-44"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.22</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="CHAPTERApplicaitonsOfIntegration-4-44-1"><div class="para logical" id="CHAPTERApplicaitonsOfIntegration-4-44-1-1">
+<div class="para">Consider the integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\sec^4(\theta)\tan^3(\theta)\dx{\theta}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-44-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-44-2-1-1">Compute this integral by saving a <span class="process-math">\(\sec^2(\theta)\)</span> and converting the rest into an expression in tangent.</div></article><article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-44-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-44-3-1-1">Compute this integral by saving a <span class="process-math">\(\sec(\theta)\tan(\theta)\)</span> and converting the rest into an expression in secant.</div></article><article class="task exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-44-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-44-4-1-1">Verify the at you get the same result in (a) and (b).</div></article></article><article class="exercise exercise-like" id="CHAPTERApplicaitonsOfIntegration-4-45"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">20.3.0.23</span><span class="period">.</span>
+</h3>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-45-1">Previously we computed <span class="process-math">\(\int \tan(\theta)\dx{\theta}\)</span> using the identity <span class="process-math">\(\tan(\theta)=\frac{\cos(\theta)}{\sin(\theta)}\text{.}\)</span> We could also use the identity <span class="process-math">\(\tan(\theta)=\frac{\sec(\theta)\tan(\theta)}{\sec(\theta)}\dx{\theta}\text{.}\)</span>
+</div>
+<div class="para" id="CHAPTERApplicaitonsOfIntegration-4-45-2">Do we get a different answer? Explain.</div></article><div class="para" id="CHAPTERApplicaitonsOfIntegration-4-46">The same tricks we applied with secant and tangent would apply equally well to integrals involving cosecant and cotangent using the identity <span class="process-math">\(\csc^2(\theta)=1+\cot^2(\theta)\text{.}\)</span> Of course, we have not covered every type of integral that can occur and you can always find integrals that will take other tricks. We’ve only provided some basics that you can build on as you gain experience. So practice, practice, practice!</div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="SECTIONKnownIntegrals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="CHAPTERApplicaitonsOfIntegration-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
