@@ -3,167 +3,190 @@
 
   <section xml:id="SECTIONintroduction">
     <title>Introduction: Fermat<rsq/>s Theorem</title>
-
-    <p>
-      While it would not be correct to say that Calculus was invented solely
-      to solve optimization problems, it<rsq/>s pretty close. Once it was
-      invented, of course, Calculus turned out to be a very useful tool
-      for lots of other problems as well. Recall that one of the
-      fundamental tenets of modern science is that nature is lazy. Light
-      follows the fastest (minimal) path between two points. Soap bubbles
-      are spherical because that is the shape that encloses the most
-      (maximal) volume for a given surface area. Alternatively, a soap
-      bubble uses the least (minimal) surface area to enclose a particular
-      volume. Nature optimizes.
-    </p>
-
-    <aside>
-      <title>Comment</title>
+    <blockquote>
       <p>
-        Actually, a physicist would say that soap bubbles are
-        spherical because that is the shape the minimizes the potential
-        energy contained in the soap film. It all comes to the same
-        end. Something must be optimized.
+        And perhaps, posterity will thank me for having shown that the
+        ancients did not know everything.
       </p>
-    </aside>
+      <attribution>
 
+        <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/">Pierre Fermat</url>
+        (1601<ndash/>1665)
+      </attribution>
+    </blockquote>
+<p>
+  While it would not be correct to say that Calculus was invented solely
+  to solve optimization problems, it<rsq/>s pretty close. Once it was
+  invented, of course, Calculus turned out to be a very useful tool
+  for lots of other problems as well but it began with optimization.
+</p>
+<p>
+  Recall that one of the fundamental tenets of modern science is that
+  nature is lazy. Light follows the fastest (minimal) path between two
+  points. Soap bubbles are spherical because that is the shape that
+  encloses the most (maximal) volume for a given surface
+  area. Alternatively, a soap bubble uses the least (minimal) surface
+  area to enclose a particular volume. Because it is lazy, nature
+  optimizes.
+</p>
+
+<aside>
+  <title>Comment</title>
+  <p>
+    Actually, a physicist would say that soap bubbles are
+    spherical because that is the shape the minimizes the potential
+    energy contained in the soap film. It all comes to the same
+    end. Something must be optimized.
+  </p>
+</aside>
+
+<p>
+  <idx><h>Vocabulary</h><h>objective function</h></idx>
+  <idx><h>Vocabulary</h><h>constraints</h></idx>
+  Mathematically speaking all optimization starts in the same place: We
+  have some quantity (revenue, tax liability, temperature, resource
+  consumption, travel time, potential energy, volume, surface area,
+  whatever), which depends on one or more variables. The variables are
+  (usually) constrained in some way, and we need to find conditions that
+  make the quantity as large, or as small as possible within those
+  constraints.  The <q>thing to be optimized</q> is called the
+  <term>objective function</term> and the constraints on the variables are
+  called . . . well, they<rsq/>re called the <term>constraints</term>.
+</p>
+
+<p>
+  When we looked at Fermat<rsq/>s Method of Adequality in
+  <xref ref="SECTIONFermMethAedeq">Section</xref> we observed that if <m>f(x)</m> is a
+  (continuous) function then near an optimal point <m>f(x+h)\approx f(x)</m>
+  as long as <m>h</m> is not too big.  Loosely speaking, this says that near
+  an extremum the graph of the function is practically
+  horizontal. More precisely 
+  (and more formally) we have:
+</p>
+
+<theorem xml:id="THEOREMFermatsTheorem">
+  <title>Fermat<rsq/>s Theorem</title>
+  <idx><h>Theorem</h><h>Fermat<rsq/>s Theorem</h></idx>
+  <p>
+    If a function, <m>f(x)</m>, is differentiable at <m>x=a</m> and
+    <m>f(a)</m> is either a maximum or a minimum then
+    <m>\dfdxat{f}{x}{a}=0</m>.
+  </p>
+</theorem>
+
+<p>
+  In view of Fermat<rsq/>s Theorem it appears that a likely strategy for
+  attacking optimization problems is to find an expression, say <m>f(x)</m>,
+  for the objective function and then solve the equation
+  <m>\dfdx{f}{x} = 0</m>. In fact, this is precisely the strategy we used in
+  <xref ref="SECTIONGalileoDrops">Section</xref> to find the maximal height attained by
+  a tossed ball. If we toss a ball upward we know that it will reach a
+  maximal height.  At the top of its flight, when the ball transitions
+  from upward movement to downward movement, there is a moment when its
+  velocity is zero. Thus we saw that if <m>p(t)</m> is a formula that gives
+  the height of the ball at any time, setting <m> \dfdx{p}{t}=0</m> and
+  solving for <m>t</m> will yield the time when the ball is at the top of its
+  flight.
+</p>
+
+<exercise>
+  <idx><h>Problems</h></idx>
+
+  <statement>
     <p>
-      <idx><h>Vocabulary</h><h>objective function</h></idx>
-      <idx><h>Vocabulary</h><h>constraints</h></idx>
-      Mathematically speaking all optimization starts in the same place: We
-      have some quantity (revenue, tax liability, temperature, resource
-      consumption, travel time, potential energy, volume, surface area,
-      whatever), which depends on one or more variables. The variables are
-      (usually) constrained in some way, and we need to find conditions that
-      make the quantity as large, or as small as possible within those
-      constraints.  The <q>thing to be optimized</q> is called the
-      <term>objective function</term> and the constraints on the variables are
-      called . . . well, they<rsq/>re called the <term>constraints</term>.
+      Suppose a ball is tossed vertically from the surface of the earth
+      with an initial velocity of <m>20
+      \frac{\text{meters}}{\text{sec}}</m>. Show that the ball reaches its
+      maximum
+      height when <m>t=\frac{20}{9.8}\approx 2</m> seconds.
     </p>
-
+  </statement>
+  <hint>
     <p>
-      When we looked at Fermat<rsq/>s Method of Adequality in
-      <xref ref="SECTIONFermMethAedeq">Section</xref> we observed that if <m>f(x)</m> is a
-      (continuous) function then near an optimal point <m>f(x+h)\approx f(x)</m>
-      as long as <m>h</m> is not too big.  Loosely speaking, this says that near
-      an extremum the graph of the function is practically horizontal. More
-      formally we have:
+      You may want to review
+      <xref ref="PROBLEMGeneralFallingBalls"></xref>.
     </p>
+  </hint>
 
-    <theorem xml:id="THEOREMFermatsTheorem">
-      <title>Fermat<rsq/>s Theorem</title>
-      <idx><h>Theorem</h><h>Fermat<rsq/>s Theorem</h></idx>
+</exercise>
+
+<p>
+  At their simplest, optimization problems really are just that
+  straightforward. But <q>straightforward</q> does not necessarily mean
+  easy. There are several nuances that, if not clearly understood, can
+  cause much confusion and difficulty. We will proceed carefully.
+</p>
+
+<p>
+  To begin, take careful note of what Fermat<rsq/>s Theorem says and, just as
+  important, what it does not say: It says that if <m>(a, f(a))</m> is a
+  point on the graph of a differentiable function <m>f(x)</m>, and if <m>f(a)</m>
+  is known to be an extremum (either a maximum or a minimum) then
+  <m>\dfdxat{f}{x}{a}=0</m>.
+</p>
+
+<p>
+  Fermat<rsq/>s Theorem does not say that if <m>\dfdxat{f}{x}{a}=0</m>
+  then <m>f(a)</m> must be an extremum. In fact, that is not necessarily
+  true.  For example, if <m>f(x)=x^3</m> then <m>\dfdxat{f}{x}{0}=0</m>
+  but the graph has neither a maximum or a minimum at <m>(0, f(0))</m>.
+</p>
+
+<problem xml:id="DRILLFermatThmNeg">
+  <p>
+    Confirm that the converse of <xref
+    ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref> is not true   graphing
+    <m>f(x)=x^3</m> and locating the only point where
+    <m>\eval{\dfdx{f}{x}}{x}{0}=0</m>.
+  </p>
+</problem>
+<p>
+  You have a lifetime of experience with tossed balls. You know
+  that a tossed ball will reach a maximum height.  Since <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref>  tells us
+  that whenever that maximum height is attained, <m>\dfdx{p}{t}</m> will be
+  zero all we have to do for this problem is find the one and only
+  time when <m>\dfdx{p}{t}=0</m>. This is the time when the maximum height is
+  reached.
+</p>
+<p>
+  But suppose after the ball is released there are forces other than gravity  involved.  Suppose,
+  for example, that our tossed ball is being buffeted by the wind on a
+  blustery day is such a way that the height of the ball is given by
+  <me>
+    p(t)=(t-1)^4+(t-1)^3+5.
+  </me>
+  We  have no experience, hence no intuition, with a ball moving in
+  this fashion so we have no way to decide if there even is a maximum,
+  let alone what it might be.  We also have no tools to help us find the
+  maximum height of the ball if it does exist.  <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref>  doesn<rsq/>t help because it
+  tells us what happens at an extremum <m>\left(\dfdx{p}{t}=0\right)</m>, not
+  how to find an extremum.  In this chapter we will build up some tools to help
+  us find extrema.
+</p>
+
+<exercise xml:id="DRILLNonTrivialMaxExample">
+  <idx><h sortby="AAA">Problems</h></idx>
+
+  <introduction>
+    <p>
+      Let <m> p(t)=(t-1)^4+(t-1)^3+5.</m>
+    </p>
+  </introduction>
+  <task>
+    <statement>
       <p>
-        If a function, <m>f(x)</m>, is differentiable at <m>x=a</m> and
-        <m>f(a)</m> is either a maximum or a minimum then
-        <m>\dfdxat{f}{x}{a}=0</m>.
+        Show that <m>\dfdx{p}{t}=0</m> when <m>t=1</m> and when <m>t=\frac14</m>.
       </p>
-    </theorem>
-
-    <p>
-      In view of Fermat<rsq/>s Theorem it appears that a likely strategy for
-      attacking optimization problems is to find an expression, say <m>f(x)</m>,
-      for the objective function and then solve the equation
-      <m>\dfdx{f}{x} = 0</m>. In fact, this is precisely the strategy we used in
-      <xref ref="SECTIONGalileoDrops">Section</xref> to find the maximal height attained by
-      a tossed ball. If we toss a ball upward we know that it will reach a
-      maximal height.  At the top of its flight, when the ball transitions
-      from upward movement to downward movement, there is a moment when its
-      velocity is zero. Thus we saw that if <m>p(t)</m> is a formula that gives
-      the height of the ball at any time, setting <m> \dfdx{p}{t}=0</m> and
-      solving for <m>t</m> will yield the time when the ball is at the top of its
-      flight.
-    </p>
-
-    <exercise>
-      <idx><h>Problems</h></idx>
-
-      <statement>
-        <p>
-          Suppose a ball is tossed vertically from the surface of the earth
-          with an initial velocity of <m>20
-          \frac{\text{meters}}{\text{sec}}</m>. Show that the ball reaches its
-          maximum
-          height when <m>t=\frac{20}{9.8}\approx 2</m> seconds.
-        </p>
-      </statement>
-      <hint>
-        <p>
-          You may want to review
-          <xref ref="PROBLEMGeneralFallingBalls"></xref>.
-        </p>
-      </hint>
-
-    </exercise>
-
-    <p>
-      At their simplest, optimization problems really are just that
-      straightforward. But <q>straightforward</q> does not necessarily mean
-      easy. There are several nuances that, if not clearly understood, can
-      cause much confusion and difficulty. We will proceed carefully.
-    </p>
-
-    <p>
-      To begin, take careful note of what Fermat<rsq/>s Theorem says and, just as
-      important, what it does not say: It says that if <m>(a, f(a))</m> is a
-      point on the graph of a differentiable function <m>f(x)</m>, and if <m>f(a)</m>
-      is known to be an extremum (either a maximum or a minimum) then
-      <m>\\dfdxat{f}{x}{a}=0</m>.
-    </p>
-
-    <p>
-      Fermat<rsq/>s Theorem does not say that if <m>\dfdxat{f}{x}{a}=0</m>
-      then <m>f(a)</m> must be an extremum. In fact, that is not necessarily
-      true.  For example, if <m>f(x)=x^3</m> then <m>\\dfdxat{f}{x}{0}=0</m>
-      but the graph has neither a maximum or a minimum at <m>(0, f(0))</m>.
-      Confirm this by graphing it.
-    </p>
-
-    <p>
-      We have a lifetime of experience with tossed balls telling us
-      that a tossed ball will reach a maximum height.  Fermat<rsq/>s Theorem tells us
-      that whenever that maximum height is attained, <m>\dfdx{p}{t}</m> will be
-      zero. So all we had to do for this problem is find the one and only
-      time when <m>\dfdx{p}{t}=0</m>. This is the time when the maximum height is
-      reached.
-      But suppose after the ball is released there are forces other than gravity  involved.  Suppose,
-      for example, that our tossed ball is being buffeted by the wind on a
-      blustery day is such a way that the height of the ball is given by
-      <me>
-        p(t)=(t-1)^4+(t-1)^3+5.
-      </me>
-      We  have no experience, hence no intuition, with a ball moving in
-      this fashion so we have no way to decide if there even is a maximum,
-      let alone what it might be.  We also have no tools to help us find the
-      maximum height of the ball if it does exist.  Fermat<rsq/>s Theorem doesn<rsq/>t help because it
-      tells us what happens at an extremum <m>\left(\dfdx{p}{t}=0\right)</m>, not
-      how to find it.  In this chapter we will build up some tools to help
-      us find extrema.
-    </p>
-
-    <exercise xml:id="DRILLNonTrivialMaxExample">
-      <idx><h sortby="AAA">Problems</h></idx>
-
-      <introduction>
-        <p>
-          Let <m> p(t)=(t-1)^4+(t-1)^3+5.</m>
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            Show that <m>\dfdx{p}{t}=0</m> when <m>t=1</m> and when <m>t=\frac14</m>.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Graph <m>p(t)</m>. Does it have a maximum? Explain.
-          </p>
-        </statement>
-      </task>
-    </exercise>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Graph <m>p(t)</m>. Does it have a maximum? Explain.
+      </p>
+    </statement>
+  </task>
+</exercise>
 
   </section>
 
@@ -171,22 +194,27 @@
     <title>Preliminaries: Some Simple Optimizations</title>
 
     <p>
-      To begin we will consider problems that will allow us to use our
-      intuition. Our goal is to build a set of tools. By the end of this
-      chapter we will be able to rely more on the tools of Calculus and less
-      on intuition to solve a wide variety of optimization problems. This
-      does not mean that you should stop using your intuition, only that you
-      will have a set of tools that will allow you to either confirm your
-      instincts, or refute them.
+      Our first goal is to build a set of tools for
+      optimization. By the end of this chapter we want to be able to
+      rely more on the tools of Calculus and less on intuition to
+      solve optimization problems. This does not mean that you should
+      stop using your intuition. But by the end of this chapter you
+      will have a set of tools that will allow you to either confirm
+      your instincts, or refute them.
     </p>
 
     <p>
-      Many of the examples in this section can be solved by more elementary
-      methods than Calculus. If you can see a more fundamental way to solve
-      these problems and examples, that<rsq/>s great!  Do that. But keep the goal
-      in mind. We<rsq/>re interested in these examples as a means to elucidate
-      the subtleties inherent in optimization problems. These problems are a
-      means to that end, not an end in themselves.
+      To begin we will consider problems that allow us to use our
+      intuition. As a result many of the examples in this section can
+      be solved by more elementary methods than Calculus. If you can
+      see a more fundamental way to solve these problems and examples,
+      that<rsq/>s great!  Do that. But keep your learning goal in
+      mind. We<rsq/>re interested in these examples as a means to
+      elucidate the subtleties inherent in optimization
+      problems. These problems are a means to that end, not an end in
+      themselves. Don<rsq/>t just <q>get the right answer</q> and
+      stop. Learn the process and look for where difficulties could
+      arise in a more complex situations.
     </p>
 
 
@@ -261,9 +289,10 @@
 
       <p>
         
-        We<rsq/>ve seen visually that this problem has a solution and Fermat<rsq/>s
-        Theorem tells us that the derivative of our objective function will
-        be zero at that solution.  So we differentiate both sides of
+        We<rsq/>ve seen visually that this problem has a solution and
+        <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref>
+        tells us that the derivative of our objective function will be
+        zero at that solution.  So we differentiate both sides of
 
         <me>    A =(x-2)^2+(y-3)^2</me>
         which gives
@@ -283,20 +312,22 @@
         </me>
         Setting <m>\dfdx{A}{x}</m> equal to zero we have
 
-        <mdn>
-          <mrow number="no">
-            \textcolor{red}{2}(x-2) + \textcolor{red}{2}(y-3)\left(-\frac{5}{3}\right) \amp = 0.
+        <md>
+          <mrow>
+            \textcolor{red}{2}(x-2) + \textcolor{red}{2}(y-3)\left(-\frac{5}{3}\right) \amp = 0
           </mrow>
-          <mrow number="no">
-            (x-2) + (y-3)\left(-\frac{5}{3}\right) \amp = 0.
+          <mrow>
+            (x-2) + (y-3)\left(-\frac{5}{3}\right) \amp = 0
           </mrow>
-          <mrow number="no">
+          <mrow>
             x-2-\frac53y+5\amp =0.
           </mrow>
-          <mrow  xml:id="EQUATIONLineDist1">
-            x+3-\frac53\textcolor{red}{y}\amp =0.
-          </mrow>
-        </mdn>
+        </md>
+        So finally
+        <men  xml:id="EQUATIONLineDist1">
+          x+3-\frac53\textcolor{red}{y} =0.
+        </men>
+
         From our constraint we have
         <m>\textcolor{red}{y=\frac13(2-5x)}</m>. Inserting this into
         <xref ref="EQUATIONLineDist1">equation</xref> we see that
@@ -334,7 +365,13 @@
       <p>
 
         So we have found that the minimal square occurs when <m>x=-\frac12</m>,
-        and <m>y=\frac32</m> and it feels like we<rsq/>re done, doesn<rsq/>t it? We<rsq/>re not.
+        and <m>y=\frac32</m> and it feels like we<rsq/>re done, doesn<rsq/>t it?
+      </p>
+      <p>
+        We<rsq/>re not.
+      </p>
+      <p>
+
         The question asked was <q>What is the area of the smallest possible
         square?</q> To find the area we need to put <m>(x,y)=(-1/2, 3/2)</m> into
         our area formula which yields
@@ -366,7 +403,7 @@
         <statement>
           <p>
             Do you see that the point <m>(x,y)</m> which minimizes the area
-            of our square also minimizes the length of the line segment from
+            of our square in <xref ref="EXAMPLESqOnLine"></xref> also minimizes the length of the line segment from
             <m>(2,3)</m> to <m>(x,y)</m>? What objective function would we get if we
             tried to minimize the length of the segment instead of the area
             of the square. Does this change the problem? If so, how?
@@ -390,7 +427,8 @@
 
       <introduction>
         <p>
-          It seems fairly intuitively clear that the minimal square occurs
+          It seems fairly intuitively clear that the minimal square in
+          <xref ref="EXAMPLESqOnLine"></xref> occurs
           when the line through <m>(2,3)</m> is orthogonal  to the
           graph of the line <m>5x+3y=2</m>.
         </p>
@@ -419,19 +457,19 @@
           </p>
         </statement>
       </task>
-</exercise>
+    </exercise>
 
     <p>
       We have  a few general comments regarding <xref ref="EXAMPLESqOnLine">Example</xref>.
       <ul>
-        <li>
-          <p>
-            The first step in any optimization problem is to identify the
-            objective function. Sometimes more than one will work. In that case
-            use the simplest one, but without an objective function we can<rsq/>t
-            even get started.
-          </p>
-        </li>
+        <!-- <li> -->
+        <!--   <p> -->
+        <!--     The first step in any optimization problem is to identify the -->
+        <!--     objective function. Sometimes more than one will work. In that case -->
+        <!--     use the simplest one, but without an objective function we can<rsq/>t -->
+        <!--     even get started. -->
+        <!--   </p> -->
+        <!-- </li> -->
         <li>
           <p>
             The first step in any optimization problem is to identify the
@@ -520,45 +558,51 @@
       <p>
 
         The solution of this problem is very clear once it has been
-        sketched. The purpose of <xref ref="DRILLIntuitiveSquareOnCircle"></xref>
-        is for you to see the solution intuitively. We will solve it again
+        sketched.  We will solve it again
         analytically below.
       </p>
     </example>
     
     <problem xml:id="DRILLIntuitiveSquareOnCircle">
       <idx><h sortby="AAB">Drills</h></idx>
+
+
+      <p>
+        The purpose of this drill is for you to see the solution of
+        <xref ref="EXAMPLECircleDist"></xref> intuitively.
+      </p>
+
       <p>
         Sketch the unit circle, plot the point <m>(2,3)</m>, and draw the
         smallest and largest squares you can which have one corner at the
         point <m>(2,3)</m> and an adjacent corner on the unit circle: <m>
         x^2+y^2=1</m>.
-      <ol marker="(i)">
-        <li>
-          <p>
-            Explain how you can tell from your sketch that
-            that there is both a maximal (largest area) and a minimal
-            (smallest area) square.
-          </p>
-        </li>
-        <li>
-          <p>
-            Explain how you can tell from your sketch, that the second
-            corner of the maximal and minimal squares are at the
-            intersection points of the line <m>y=\frac32x</m> and the unit
-            circle.
-          </p>
-        </li>
-        <li>
-          <p>
-            Show that the areas of the maximal square is <m>A\approx 21.2</m>
-            units and that the area of the minimal square is <m>A\approx6.8</m>
-            units.
-          </p>
-        </li> 
-      </ol>
+        <ol marker="(i)">
+          <li>
+            <p>
+              Explain how you can tell from your sketch that
+              that there is both a maximal (largest area) and a minimal
+              (smallest area) square.
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain how you can tell from your sketch, that the second
+              corner of the maximal and minimal squares are at the
+              intersection points of the line <m>y=\frac32x</m> and the unit
+              circle.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that the areas of the maximal square is <m>A\approx 21.2</m>
+              units and that the area of the minimal square is <m>A\approx6.8</m>
+              units.
+            </p>
+          </li> 
+        </ol>
       </p>
-</problem>
+    </problem>
     
     <p>
       The solution in <xref ref="DRILLIntuitiveSquareOnCircle"></xref> relies
@@ -600,7 +644,7 @@
 
     <p>
 
-      In order to use Fermat<rsq/>s Theorem we must first know that one maximum
+      In order to use <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref>  we must first know that one maximum
       and one minimum exists. No computation we<rsq/>ve done guarantees the
       existence of an extremum, let alone its location. However, as a
       result of the work you did to solve
@@ -619,8 +663,8 @@
         
         3x=2y,
       </men>
-      and since (from our constraint,
-      <xref ref="EQUATIONSqCircleConstraint">equation</xref>)) <m>y=\pm\sqrt{1-x^2}</m> we have
+      and since  <m>y=\pm\sqrt{1-x^2}</m> (from our constraint,
+      <xref ref="EQUATIONSqCircleConstraint">equation</xref>) we have
       <men  xml:id="EQUATIONSqrt">
         3x=\pm2\sqrt{1-x^2}.
 
@@ -637,11 +681,12 @@
     <p>
 
       So we have two solutions: <m>x=\frac{2}{\sqrt{13}}</m> and
-      <m>x=-\frac{2}{\sqrt{13}}</m>.  From
-      <xref ref="DRILLIntuitiveSquareOnCircle"></xref> we know that these must
-      correspond to the maximal and minimal solutions. Fermat<rsq/>s Theorem
-      doesn<rsq/>t tell us which is which but now all we need to do is
-      distinguish between them by evaluating <m>A(x)</m> for each.
+      <m>x=-\frac{2}{\sqrt{13}}</m>.  From <xref
+      ref="DRILLIntuitiveSquareOnCircle"></xref> we know that these
+      must correspond to the maximal and minimal solutions. <xref
+      ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref>
+      doesn<rsq/>t tell us which is which but all we need to do is
+      distinguish between them is evaluate <m>A(x)</m> for each.
     </p>
 
     <problem xml:id="DRILLExtremalSquareCircle">
@@ -664,12 +709,6 @@
       </p>
     </problem>
     
-    <p>
-      Since a circle is a special case of an ellipse the following problem
-      is a slight generalization of
-      <xref ref="DRILLIntuitiveSquareOnCircle"></xref>. But the algebra is a bit
-      trickier.
-    </p>
 
 
     <exercise xml:id="PROBLEMEllipseDist">
@@ -685,10 +724,16 @@
           Find the area of each one of them.
         </p>
         <p>
-          Steps (a) through (g) will guide you through the process. 
-          Not all of the problems in these steps are easily solved
-          algebraically. Use Newton<rsq/>s Method or computational software as
-          needed to find approximations.
+          In solving this problem it is possible that you will
+          encounter a sub<ndash/>problem that cannot be easily solved
+          algebraically. In that case use Newton<rsq/>s Method or some
+          computational software as needed to find approximations.
+        </p>
+        <p>
+          Since a circle is a special case of an ellipse this problem
+          is a slight generalization of <xref
+          ref="DRILLIntuitiveSquareOnCircle"></xref> so the algebra is
+          a bit trickier.
         </p>
       </introduction>
       <task>
@@ -703,9 +748,8 @@
         <statement>
           <p>
             The objective function for this problem is, once again:
-            <m> A(x) = (x-2)^2+(y-3)^2.  </m>
-            
-            What is the constraint?
+            <me> A(x) = (x-2)^2+(y-3)^2.  </me> What is the
+            constraint?
           </p>
         </statement>
       </task>
@@ -749,9 +793,11 @@
           </p>
         </statement>
       </task>
-</exercise>
+    </exercise>
 
     <exercise xml:id="PROBLEMMaxOrth1">
+      <title>Constructing a Square on an Ellipse</title>
+
       <idx><h sortby="AAA">Problems</h></idx>
 
       <introduction>
@@ -822,22 +868,24 @@
           </p>
         </statement>
       </task>
-</exercise>
+    </exercise>
 
     <example xml:id="EXAMPLEDiffvsDer">
       <title>Differentials vs. Derivatives</title>
+
+
       <p>
-        Take a moment to consider <xref
-        ref="PROBLEMEllipseDist"></xref>. Is it clear to you that there must
+        Take a moment to reconsider <xref
+        ref="EXAMPLEFixedPerimeter"></xref>. Is it clear to you that there must
         be such a maximal rectangle?  If so then, as before, setting the
         derivative of the objective function equal to zero and solving for
         the variable will provide all of the values of the variable where the
         maximal rectangle might occur. If we<rsq/>re lucky there will only be
         a few such and we can check them one at a time.
       </p>
-      <p>
 
-        Finding the objective function is easy. The area <m>A</m>, of any
+      <p>
+        Finding the objective function in this case is  easy. The area <m>A</m>, of any
         rectangle is its length, <m>l</m>, times its width, <m>w</m>, so
         <men  xml:id="EQUATIONSquareObjFun">
           A=lw
@@ -939,7 +987,7 @@
       </p>
       <p>
         As we said, the two approaches are completely equivalent.  Use
-        whichever feels most comfortable to you.
+        whichever feels most comfortable to you. 
       </p>
     </example>
     <p>
@@ -962,7 +1010,7 @@
           method do you prefer?
         </p>
       </statement>
-</exercise>
+    </exercise>
 
 
     <exercise>
@@ -1036,27 +1084,27 @@
       <p>
         Sketch the graphs of <m>y=e^x</m> and <m>y=\ln(x)</m> and convince yourself
         that there is a point on each graph which is closest to the origin.
-      <ol marker="(i)">
-        <li>
-          <p>
-            Find the approximate coordinates of the point on the curve
-            <m>y=e^x</m> that is closest to the origin.
-          </p>
-        </li>
-        <li>
-          <p>
-            Find the approximate coordinates of the point on the curve
-            <m>y=\ln(x)</m> that is closest to the origin.
-          </p>
-        </li>
-        <li>
-          <p>
-            Are the solutions of parts (a) and (b) related? Explain.
-          </p>
-        </li>
-      </ol>
+        <ol marker="(i)">
+          <li>
+            <p>
+              Find the approximate coordinates of the point on the curve
+              <m>y=e^x</m> that is closest to the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the approximate coordinates of the point on the curve
+              <m>y=\ln(x)</m> that is closest to the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              Are the solutions of parts (a) and (b) related? Explain.
+            </p>
+          </li>
+        </ol>
       </p>
-</problem>
+    </problem>
 
     <problem>
       <idx><h sortby="AAB">Drills</h></idx>
@@ -1080,9 +1128,10 @@
         </li>
       </ol>
       </p>
-</problem>
+    </problem>
 
     <exercise xml:id="PROBLEMRectInscEll">
+      <title>Find the Pattern</title>
       <idx><h sortby="AAA">Problems</h></idx>
 
       <introduction>
@@ -1124,7 +1173,7 @@
           </p>
         </statement>
       </task>
-</exercise>
+    </exercise>
 
     <paragraphs  xml:id="PARAGRAPHTrianglesWithFixedPerimeters">
       <title>DIGRESSION: Triangles With Fixed Perimeters</title>
@@ -1154,13 +1203,13 @@
       </p>
       <p>
 
-        A standard ploy for solving difficult problems is to first try a
-        simpler <q>adjacent</q> problem. To create such a problem in this case
-        we hold one side fixed and only allow two sides of our triangle to
-        vary. We<rsq/>ll show that when the area of the triangle is maximal the
-        two varying sides must be the same length. We want to use this
-        adjacent problem to gain some insight into how to solve our actual
-        problem.
+        A standard ploy for solving difficult problems is to first try
+        a simpler <q>adjacent</q> problem. In this case to create an
+        <q>adjacent</q> problem we hold one side fixed and only allow
+        two sides of our triangle to vary. We<rsq/>ll show that when
+        the area of the triangle is maximal the two varying sides must
+        be the same length. We want to use this adjacent problem to
+        gain some insight into how to solve our actual problem.
       </p>
       <p>
 
@@ -1251,7 +1300,7 @@
             </p>
           </statement>
         </task>
-</exercise>
+      </exercise>
       
       <p>
         To show that the maximal area of an arbitrary triangle with a fixed
@@ -1298,48 +1347,48 @@
           are possible, as in this problem, the method is also called
           <term>Proof by Contradiction</term>.
         </p>
-        </aside>
-        <p>
-          Our solution will
-          follow Holmes<rsq/> lead: We will eliminate what is impossible leaving
-          only the truth behind.
-        </p>
+      </aside>
+      <p>
+        Our solution will
+        follow Holmes<rsq/> lead: We will eliminate what is impossible leaving
+        only the truth behind.
+      </p>
 
-        
+      
 
-        <exercise  xml:id="DRILLMaximalTriangle">
-          <title>The Largest Triangle with a Fixed Perimeter is Equilateral</title>
-          <idx><h sortby="AAA">Problems</h></idx>
+      <exercise  xml:id="DRILLMaximalTriangle">
+        <title>The Largest Triangle with a Fixed Perimeter is Equilateral</title>
+        <idx><h sortby="AAA">Problems</h></idx>
 
-          <introduction>
+        <introduction>
+          <p>
+            Observe that every triangle is either equilateral, or it is not
+            equilateral.
+            
+          </p>
+        </introduction>
+        <task>
+          <statement>
             <p>
-              Observe that every triangle is either equilateral, or it is not
-              equilateral.
-              
+              Suppose we have a triangle with sides <m>a</m>, <m>b</m>, and <m>c</m>
+              which is not equilateral. Then at least two sides, say <m>a</m> and
+              <m>c</m>, are not equal.  Explain how
+              <xref ref="PROBLEMMaximalIsoceles1"></xref> implies that there must
+              be another triangle with the same perimeter and a larger area.
             </p>
-          </introduction>
-          <task>
-            <statement>
-              <p>
-                Suppose we have a triangle with sides <m>a</m>, <m>b</m>, and <m>c</m>
-                which is not equilateral. Then at least two sides, say <m>a</m> and
-                <m>c</m>, are not equal.  Explain how
-                <xref ref="PROBLEMMaximalIsoceles1"></xref> implies that there must
-                be another triangle with the same perimeter and a larger area.
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                Use Holmes<rsq/> maxim to explain why a triangle with a fixed
-                perimeter enclosing maximal area must be equilateral.
-              </p>
-            </statement>
-          </task>
-        </exercise>
-        
-        <p><alert>END OF DIGRESSION</alert></p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Use Holmes<rsq/> maxim to explain why a triangle with a fixed
+              perimeter enclosing maximal area must be equilateral.
+            </p>
+          </statement>
+        </task>
+      </exercise>
+      
+      <p><alert>END OF DIGRESSION</alert></p>
     </paragraphs>
 
   </section>
@@ -1349,18 +1398,19 @@
 
     <introduction>
       <p>
-        Because they are called <q>Optimization Problems</q> it is natural to assume that such
-        problems are always about finding the maximum or minimum value of
-        something. Certainly many of them are, but not all.  Optimization
-        problems come in two flavors:
+        Because they are called <q>Optimization Problems</q> it is
+        natural to assume that they are always about finding the
+        maximum or minimum value of something. Certainly that<rsq/>s
+        true of many of them, but not all.  Optimization problems come
+        in two flavors:
         <ol>
           <li>
             <p>
               Find the extreme values of some objective function, if there
               are any.  Examples of this kind of problem are
-              <xref ref="EXAMPLESqOnLine"></xref>, and
+              <xref ref="EXAMPLEFixedPerimeter"></xref>, and
+              <xref ref="EXAMPLESqOnLine"></xref>,
               <xref ref="EXAMPLECircleDist"></xref>,
-              <xref ref="DRILLExtremalSquareCircle"></xref>,
               and
               <xref ref="PROBLEMEllipseDist"></xref>.
             </p>
@@ -1395,14 +1445,15 @@
 
       <p>
 
-        The geometric argument was actually pretty easy to understand once we
-        found the right trick. But that<rsq/>s the difficulty. The geometric
-        argument required the very counter-intuitive trick of pretending that
-        the light passed through the mirror instead of reflecting off of it!
-        Calculus provides a more systematic approach, one that does not
-        require a stroke-of-genius level of insight to solve each new
-        problem. Let<rsq/>s re-solve this problem, this time using the Calculus
-        tools we<rsq/>ve learned.
+        The geometric argument was actually pretty easy to understand
+        once we found the right trick. But that<rsq/>s the
+        difficulty. The geometric argument required the very
+        counter-intuitive trick of pretending that the light passed
+        through the mirror instead of reflecting off of it. Calculus
+        provides a more systematic approach, one that does not require
+        a stroke<ndash/>of<ndash/>genius level of insight to solve each new
+        problem. Let<rsq/>s re<ndash/>solve this problem, this time using the
+        Calculus tools we<rsq/>ve learned.
       </p>
       <p>
 
@@ -1497,12 +1548,25 @@
         Calculus based argument wasn<rsq/>t at all visual and it involved a lot of
         computation. But, believe it or not, this is a strength not a
         weakness.  None of the computations are particularly hard, just
-        tedious and detailed. But -- and this is the point -- we also had a
-        clearly defined procedure to follow. We needed to: (1) Compute
-        <m>\dfdx{L}{x}</m>, and (2) set <m>\dfdx{L}{x}</m> equal to zero.  The rest was
+        tedious and detailed. But <mdash/> and this is the point <mdash/> we also had a
+        clearly defined procedure to follow. We needed to: 
+        <ol  marker="(1)">
+          <li>
+            <p>
+              Compute
+            <m>\dfdx{L}{x}</m>, and 
+            </p>
+          </li>
+          <li>
+            <p>
+            
+              set <m>\dfdx{L}{x}</m> equal to zero.
+            </p>
+          </li>
+        </ol>
+        The rest was
         Algebra which is straightforward though not necessarily easy.
       </p>
-
 
       <exercise>
         <idx><h>Problems</h></idx>
@@ -1547,7 +1611,18 @@
         velocity of light in
         Medium 2 is <m>v_2</m>.
       </p>
-      <image source="DC/Refraction4.png" width="60%" />
+
+
+      <figure  xml:id="FIGURESnellsLaw">
+        <caption>The velocity of light in Medium 1 is <m>v_1</m>, and the
+        velocity of light in
+        Medium 2 is <m>v_2</m>.</caption>
+        <image source="DC/Refraction4.png" width="60%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+
+      <!-- <image source="DC/Refraction4.png" width="60%" /> -->
 
       <p>
         In <xref ref="PROBLEMFermatSnell"></xref>
@@ -1558,16 +1633,16 @@
         </me>
         But we stopped there with the comment that, although Fermat
         successfully proved Snell<rsq/>s Law by minimizing <m>T(x)</m> using his Method
-        of Adequality, it is very very difficult to do. We said we would
+        of Adequality, it was very difficult to do. We said we would
         return to the problem when we could use the rules of Calculus. The
         time to do that has arrived.
       </p>
       <p>
 
-        Notice that we have an optimization problem. The objective function we
-        need to minimize is <m>T(x)</m>.  There are several constraints. For
-        example, <m>x+y=c</m> is one. Another is <m>a^2+x^2=z^2</m>. There is at least
-        one more.
+        Notice that this is an optimization problem. The objective
+        function we need to minimize is <m>T(x)</m> and there are
+        several constraints. For example, <m>x+y=c</m> is one. Another
+        is <m>a^2+x^2=z^2</m>. There is at least one more.
       </p>
       <p>
 
@@ -1577,13 +1652,16 @@
       </p>
       <p>
 
-        The real issue is solving <m>\dfdx{T}{x}=0</m> for <m>x</m>. Unfortunately, this
-        is still rather difficult to accomplish.  But fortunately we we are
-        not really interested in the value of <m>x</m> when <m>T(x)</m> is minimal. We
-        want to show that the tie traveled along the path from <m>A</m> to <m>C</m> to
-        <m>B</m> is minimal when
-        <m>\frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}</m>.  We<rsq/>ll proceed
-        carefully.
+        The real issue is solving <m>\dfdx{T}{x}=0</m> for
+        <m>x</m>. Unfortunately, this is still rather difficult to
+        accomplish.  Fortunately, we are not really interested in the
+        value of <m>x</m> or <m>T</m> when <m>T(x)</m> is
+        minimal. Instead, we want to show
+        that the time traveled along the path from <m>A</m> to
+        <m>C</m> to <m>B</m> is minimal when
+        <m>\frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}</m>.  This
+        is the second type of optimization problem.  We<rsq/>ll
+        proceed carefully.
       </p>
 
       <exercise xml:id="PROBLEMSnellsLawWithCalculus">
@@ -1591,16 +1669,18 @@
 
         <introduction>
           <p>
+            We know that the total time traveled from <m>A</m> to
+            <m>C</m> to <m>B</m> is given by <me>
+            T(x)=\dfrac{z}{v_1}+\dfrac{w}{v_2}.  </me> 
           </p>
         </introduction>
         <task xml:id="PROBLEMSnellsLawWithCalculusA">
           <statement>
             <p>
-              We  know that the total time traveled from point <m>A</m>  to <m>C</m> to <m>B</m> is given by
-              <me> T(x)=\dfrac{z}{v_1}+\dfrac{w}{v_2}.  </me> Write down
-              all of the constraints involving the variables <m>x</m>, <m>y</m>, <m>z</m>, and
-              <m>w</m>, and the constants <m>a</m>, <m>b</m>, and <m>c</m>.  (We<rsq/>ll ignore <m>\alpha</m>
-              and <m>\beta</m> for now.)
+              Use the sketch in <xref ref="FIGURESnellsLaw"></xref> to
+              Write down all of the constraints involving the
+              variables <m>x</m>, <m>y</m>, <m>z</m>, and <m>w</m>,
+              and the constants <m>a</m>, <m>b</m>, and <m>c</m>.
             </p>
           </statement>
         </task>
@@ -1626,31 +1706,33 @@
         </task>
         <task xml:id="PROBLEMSnellsLawWithCalculusD">
           <statement>
-            <p>
-              Assuming that the speed of light in water is about <m>3/4</m> of
-              the speed of light in air, use Snell<rsq/>s Law to determine the range
-              of possible angles for <m>\beta</m> as <m>\alpha</m> ranges from <m>0</m> to
-              <m>\pi/2</m>.
-            </p>
             <image source="DC/RangeBeta.png" width="60%" />
+            <p>
+              Assuming that the speed of light in water is about
+              <m>3/4</m> of the speed of light in air, use
+              Snell<rsq/>s Law to determine the range of possible
+              angles for <m>\beta</m> as <m>\alpha</m> ranges from
+              <m>0</m> to <m>\pi/2</m>.
+            </p>
+
 
             
           </statement>
         </task>
-</exercise>
+      </exercise>
 
       <p>
-        <idx><h>Snell<rsq/>s Window</h></idx>
-        Physically, what
-        <xref ref="PROBLEMSnellsLawWithCalculusD">Part</xref> says is that when you
-        are beneath the surface of a pond and look upward the entire view of the
-        world above the surface is compressed into 
-        a circle at the top of a cone with central
-        angle <m>\beta</m>. Attempts to
-        look beyond that angle will result in you seeing a (probably dark)
-        reflection from the bottom of the pond as no light that enters from above and
-        outside this circle will reach your eye at point <m>P</m>.  This phenomenon
-        is called Snell<rsq/>s Window and is illustrated in the image below.
+        <idx><h>Snell<rsq/>s Window</h></idx> What <xref
+        ref="PROBLEMSnellsLawWithCalculusD">Part</xref> means
+        physically is that when you look upward from beneath the
+        surface of a pond the entire view of the world above the
+        surface is compressed into a circle at the top of a cone with
+        central angle <m>\beta</m>. Attempts to look beyond that angle
+        will result in you seeing a (probably dark) reflection from
+        the bottom of the pond as no light that enters from above and
+        outside this circle will reach your eye at point <m>P</m>.
+        This phenomenon is called Snell<rsq/>s Window and is
+        illustrated in the image below.
       </p>
       <figure>
         <caption>
@@ -1669,10 +1751,11 @@
 
         <introduction>
           <p>
-            Suppose that the cost to run a fiber optic cable underwater is
-            <m>k</m> (<m>k\ge1</m>) times the cost to run it on land.  We wish to run a
-            fiber optic cable from point <m>A</m> <m>1</m> km from the river, to point <m>B</m>
-            on the other side <m>10</m> km
+            Suppose that the cost to run a fiber optic cable
+            underwater is <m>k</m> (<m>k\ge1</m>) times the cost to
+            run it on land.  We wish to run a fiber optic cable from
+            a point <m>A</m> which is <m>1</m> km from the river, to
+            a point <m>B</m> on the other side <m>10</m> km
             downstream. The river is <m>1</m> km wide.
           </p>
           <image source="DC/FiberOptic1.png" width="60%" />
@@ -1695,7 +1778,8 @@
             <p>
               When the formulas we<rsq/>re working with get this complicated it
               is a good idea to check them against our intuition in simple
-              cases. Does this formula make sense to you when <m>k=1</m>?
+              cases. Explain how  this formula makes intuitive sense
+              when <m>k=1</m>.
             </p>
           </statement>
         </task>
@@ -1706,68 +1790,136 @@
               approximate values for <m>x</m> in the following table
             </p>
             <tabular>
+              <row bottom="minor">
 
-              <row  bottom="minor">
-                <cell halign="right"><m>k</m></cell>
-                <cell halign="right"><m>x</m></cell>
-              </row>
-
-              <row>
-                <cell halign="left"><m>1.1</m></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell halign="left"><m>1.2</m></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell halign="left"><m>1.3</m></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell halign="left"><m>1.4</m></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell halign="left"><m>1.5</m></cell>
-                <cell></cell>
+                <cell><m>k=</m></cell> 
+                <cell><m>0</m></cell>
+                <cell><m>1</m></cell>
+                <cell><m>2</m></cell>
+                <cell><m>3</m></cell>
+                <cell><m>4</m></cell>
+                <cell><m>5</m></cell>
+                <cell><m>6</m></cell>
+                <cell><m>7</m></cell>
+                <cell><m>8</m></cell>
+                <cell><m>9</m></cell>
+                <cell><m>10</m></cell>
               </row>
 
+              <row>
+                <cell>x=</cell>
+              </row>
             </tabular>
-            
             <p>
-              Do these values surprise you? Explain.
+              What do these values  tell you about the solution of
+              this problem? Explain.
             </p>
+            <!-- <tabular> -->
+
+            <!--   <row  bottom="minor"> -->
+            <!--     <cell halign="right"><m>k</m></cell> -->
+            <!--     <cell halign="right"><m>x</m></cell> -->
+            <!--   </row> -->
+
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>0</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>1</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>2</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>3</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>4</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>5</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>6</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>7</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>8</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>9</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+            <!--   <row> -->
+            <!--     <cell halign="left"><m>10</m></cell> -->
+            <!--     <cell></cell> -->
+            <!--   </row> -->
+
+            <!-- </tabular> -->
           </statement>
         </task>
-</exercise>
+      </exercise>
 
     </subsection>
     <subsection xml:id="SUBSECTIONrainbows">
       <title>Rainbows</title>
 
       <p>
-        Look carefully at the double rainbow in the pictures below and notice
-        that the order of the colors is reversed from the primary (brighter)
-        to the secondary rainbow?  Why do you think this
-        happens?
+        Look carefully at the double rainbows in the pictures
+        below. What do you notice?
       </p>
       <image source="DC/SavageEnariRainbow.png" width="90%" />
 
       <p>
-
-        A few other questions come readily to mind. What conditions are
-        required for a rainbow to form? Why is red on the top of the primary
-        rainbow but at the bottom of the secondary?  Why is the primary
-        rainbow below the secondary one? Why is the primary rainbow brighter
-        and why are double rainbows so rare?
-      </p>
-      <p>
-
-        To tackle these questions the first thing we<rsq/>ll need to do is build a
-        mathematical model of the problem. As you will see developing the
-        model is probably the most challenging part.
-      </p>
+        A few questions come readily to mind:
+        <ul>
+          <li>
+            <p>
+              What conditions are
+              required for a rainbow to form?
+            </p>
+          </li>
+          <li>
+            <p>
+              Why is red on the top of the brighter
+              primary rainbow but at the bottom of the secondary?
+            </p>
+          </li>
+          <li>
+            <p>
+              Why is
+              the primary rainbow below the secondary one?
+            </p>
+          </li>
+          <li>
+            <p>
+              Why is the
+              primary rainbow brighter?
+            </p>
+        </li>
+        <li>
+          <p>
+            And finally, why are double rainbows so rare?
+          </p>
+        </li>
+      </ul>           
+    </p>
+    <p>
+      To tackle these questions the first thing we<rsq/>ll need to do
+      is build a mathematical model of the problem. As you will see
+      developing the model is probably the most challenging part.
+    </p>
       <p>
 
         When a ray of light enters a raindrop it gets both refracted and
@@ -1787,8 +1939,10 @@
         the line tangent to the surface. Since we<rsq/>re assuming for simplicity
         that our raindrops are spherical this means that the light will
         reflect or refract as if it is striking the tangent line of the circle
-        in the diagram at the point where the light enters the droplet, <m>A</m>,
-        exits the droplet, <m>C</m>, or reflects inside of the droplet, <m>B</m>.  All
+        in the diagram at the points <m>A</m>, <m>B</m>, or <m>C</m>
+        where the light enters the droplet, reflects inside the
+        droplet, and where it
+        exits the droplet, respectively.  All
         of the angles in the diagram above are measured between the
         light beam (in red) and the extended radii (blue, dashed lines) at
         points <m>A</m>, <m>B</m>, and <m>C</m>.
@@ -1861,9 +2015,9 @@
         occurs when the angle at which the light enters the raindrop is
         <m>\alpha\approx1.03 \text{ radians }\approx59.4^\circ</m>.  Notice (from
         the enlargement of the graph near that minimum) that because the graph
-        of <m>D(\alpha)</m> is nearly horizontal (This is Fermat<rsq/>s Theorem
-        coming into play again.) for values of <m>\alpha</m> near <m>1.03</m> the
-        amount of deviation is roughly the same for those values of <m>\alpha</m>.
+        of <m>D(\alpha)</m> is nearly horizontal (this is <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref> 
+        coming into play again) for values of <m>\alpha</m> near <m>1.03</m> the
+        amount of deviation is roughly the same.
       </p>
 
 
@@ -1948,26 +2102,28 @@
         <statement>
 
           <p>
-            Differentiate the objective function, <m>D(\alpha)</m>, and the
-            constraint, <xref ref="EQUATIONSnellConstraint">equation</xref>, and use
-            <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s Theorem</xref> to
-            show that when <m>D</m> is a minimum
+            Differentiate the objective function
+
+            <me> D(\alpha)=\pi-4\beta+2\alpha</me>
+
+            and the constraint, <xref
+            ref="EQUATIONSnellConstraint">equation</xref>, and use
+            <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s
+            Theorem</xref> to show that when <m>D</m> is a minimum
             <men  xml:id="EQUATIONMinimumDeflect">
-              
               \cos(\alpha)=\frac{k}{2}\cos(\beta).
             </men>
           </p>
         </statement>
       </exercise>
 
-      <p>
-        Combining <xref ref="EQUATIONMinimumDeflect">equation</xref> with our constraint, we
-        see that we need to solve the following system of two equations in two
-        unknowns,
-        <md>
-          <mrow>  \cos(\alpha)\amp =\frac{k}{2}\cos(\beta)</mrow>
-          <mrow>  \sin(\alpha)\amp =k\sin(\beta).</mrow>
-        </md>
+      <p> Combining <xref ref="EQUATIONMinimumDeflect">equation</xref>
+      with our constraint, <xref
+      ref="EQUATIONSnellConstraint">equation</xref> we see that we can
+      find <m>\alpha </m> and <m>\beta </m> by solving the following
+      system of two equations in two unknowns, <md> <mrow>
+      \cos(\alpha)\amp =\frac{k}{2}\cos(\beta)</mrow> <mrow>
+      \sin(\alpha)\amp =k\sin(\beta).</mrow> </md>
 
       </p>
 
@@ -2002,858 +2158,875 @@
             <p>
               Use <xref ref="EQUATIONTrigTrick">equation</xref> to show that for a given
               index of refraction <m>k</m>, <m>D(\alpha)</m> is minimized when
-              <m>\sin(\beta)=\sqrt{\frac{4-k^2}{3k^2}}</m> and
-              <m>\sin(\alpha)=\sqrt{\frac{4-k^2}{3}}</m>.
+              <md>
+                <mrow>\sin(\beta)=\sqrt{\frac{4-k^2}{3k^2}}\amp{}\amp{}
+                \text{and}\amp{}\amp{}\sin(\alpha)=\sqrt{\frac{4-k^2}{3}}.</mrow>
+              </md>
             </p>
           </statement>
-        </task>
-        <task  xml:id="PROBLEMRainbowAngleB">
-          <statement>
-            <p>
-              Use the result in <xref ref="PROBLEMRainbowAngleA">part</xref> to complete the following table:
-            </p>
-            <tabular>
-
-              <row bottom="minor" halign="center">
-                <cell>Color</cell>
-                <cell><m>k</m></cell>
-                <cell><line><m>\beta{}</m></line><line> (in degrees)</line></cell>
-                <cell><line><m>\alpha </m></line><line> (in degrees)</line></cell>
-                <cell><line><m>D(\alpha) </m></line> <line>(in degrees)</line></cell>
-                <cell><line><m>R(\alpha) </m></line> <line>(in degrees)</line></cell>
-              </row>
-
-              <row>
-                <cell>        Red</cell><cell> 1.331</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Orange</cell><cell> 1.332</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Yellow</cell><cell> 1.333</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Green</cell><cell> 1.335</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Blue</cell><cell> 1.337</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Indigo</cell><cell> 1.340</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Violet</cell><cell> 1.344</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-
-            </tabular>
-            
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              How does the table in <xref ref="PROBLEMRainbowAngleB">part</xref> explain the order of the colors in the primary
-              rainbow?
-            </p>
-          </statement>
-        </task>
-      </exercise>
-
-      <p>
-        The values of <m>R(\alpha)</m> you obtained in the table account for the
-        various color bands that appear in the rainbow as sunlight hits
-        droplets at various angles.
-      </p>
-
-    </subsection>
-    <subsection xml:id="SUBSECTIONDoubleRainbows">
-      <title>Double Rainbows</title>
-
-      <p>
-
-        In a double rainbow the primary rainbow is created from light entering
-        the upper portion of the droplet and exiting from the bottom. If light
-        is bright enough then a secondary rainbow is created from light
-        entering the lower portion and exiting the upper portion of the
-        droplet as in
-        the diagram below.
-      </p>
-      <image source="DC/Droplet2.png" width="50%"/>
-
-      <p>
-        For the secondary rainbow the deviation angle <m>D(\alpha)</m> is the total
-        amount of counterclockwise rotation and the rainbow angle would
-        be <m>R(\alpha)=D(\alpha)-\pi</m>.  Note that the extra reflection explains
-        why the secondary rainbow is not as bright as the primary.
-      </p>
-      <p>
-
-      </p>
-
-      <exercise  xml:id="PROBLEMSecondaryRainbow">
-        <idx><h sortby="AAA">Problems</h></idx>
-
-        <introduction>
+      </task>
+      <task  xml:id="PROBLEMRainbowAngleB">
+        <statement>
           <p>
+            Use the result in <xref ref="PROBLEMRainbowAngleA">part</xref> to complete the following table:
           </p>
-        </introduction>
-        <task xml:id="PROBLEMSecondaryRainbowA">
-          <statement>
-            <p>
-              Show that in the case of the secondary rainbow,
-              <m>D(\alpha)=2\pi+2\alpha-6\beta</m>. This is our objective function
-              for the secondary rainbow.
-            </p>
-          </statement>
-        </task>
-        <task xml:id="PROBLEMSecondaryRainbowB">
-          <statement>
-            <p>
-              Show that <m>D(\alpha)</m> is minimized when
-              <m>\sin(\beta)=\sqrt{\frac{9-k^2}{8k^2}}</m> and
-              <m>\sin(\alpha)=\sqrt{\frac{9-k^2}{8}}</m>.
-            </p>
-          </statement>
-        </task>
-        <task xml:id="PROBLEMSecondaryRainbowC">
-          <statement>
-            <p>
-              Use  <xref ref="PROBLEMSecondaryRainbowB">part</xref> to complete the following table:
-            </p>
-            <tabular>
+          <tabular>
 
-              <row bottom="minor" halign="center">
-                <cell>Color</cell>
-                <cell><m>k</m></cell>
-                <cell><line><m>\beta{}</m></line><line> (in degrees)</line></cell>
-                <cell><line><m>\alpha </m></line><line> (in degrees)</line></cell>
-                <cell><line><m>D(\alpha) </m></line> <line>(in degrees)</line></cell>
-                <cell><line><m>R(\alpha) </m></line> <line>(in degrees)</line></cell>
-              </row>
+            <row bottom="minor" halign="center">
+              <cell>Color</cell>
+              <cell><m>k</m></cell>
+              <cell><line><m>\beta{}</m></line><line> (in degrees)</line></cell>
+              <cell><line><m>\alpha </m></line><line> (in degrees)</line></cell>
+              <cell><line><m>D(\alpha) </m></line> <line>(in degrees)</line></cell>
+              <cell><line><m>R(\alpha) </m></line> <line>(in degrees)</line></cell>
+            </row>
 
-              <row>
-                <cell>        Red</cell><cell> 1.331</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Orange</cell><cell> 1.332</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Yellow</cell><cell> 1.333</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Green</cell><cell> 1.335</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Blue</cell><cell> 1.337</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Indigo</cell><cell> 1.340</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>Violet</cell><cell> 1.344</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
+            <row>
+              <cell>        Red</cell><cell> 1.331</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Orange</cell><cell> 1.332</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Yellow</cell><cell> 1.333</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Green</cell><cell> 1.335</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Blue</cell><cell> 1.337</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Indigo</cell><cell> 1.340</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Violet</cell><cell> 1.344</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
 
-            </tabular>
-            
-          </statement>
-        </task>
-        <task xml:id="PROBLEMSecondaryRainbowD">
-          <statement>
-            <p>
-              Use the table in <xref ref="PROBLEMSecondaryRainbowC">part</xref> of this problem and the table in <xref ref="PROBLEMRainbowAngleB">part</xref> of <xref ref="PROBLEMRainbowAngle"></xref> to explain why the secondary rainbow is above the
-              primary rainbow and its colors are reversed.
-            </p>
-          </statement>
-        </task>
-</exercise>
-
-    </subsection>
-  </section>
-  <section xml:id="SECTIONGlobalVsLocalExtrema">
-    <title>Global vs. Local Extrema</title>
-
-    <p>
-      So far in this chapter we<rsq/>ve relied heavily on our intuition. For
-      instance, in <xref ref="EXAMPLESqOnLine">Example</xref> it was very clear that a
-      minimal square exists. Moreover, when we differentiated the objective
-      function we found that <m>x=-\frac12</m> was the only solution of
-      <m>\dfdx{A}{x}=0</m>. So it was reasonable to conclude that the minimum
-      occurs when <m>x=-\frac12</m>.
-    </p>
-
-    <p>
-      Similarly in <xref ref="PROBLEMEllipseDist">Problem</xref> it was intuitively
-      clear that there was both a maximal and a minimal square, so when
-      we found two solutions of <m>\dfdx{A}{x}=0</m> it made sense to conclude
-      that they correspond to the maximal and minimal squares, respectively.
-    </p>
-
-    <p>
-      Unfortunately things are rarely this straightforward.  Consider the
-      following example.
-    </p>
-
-    <example xml:id="EXAMPLEParabolaOptSqr">
-      <title>Constructing a Square on a Parabola</title>
-      <p>
-        We would like to find the area of the smallest square which can be
-        constructed with one corner at the point <m>(2,3)</m> and an adjacent
-        corner on the graph of <m> y = x^2</m>.  This example is very similar to
-        <xref ref="PROBLEMMinSqLine">Problem</xref> or <xref ref="PROBLEMEllipseDist">Problem</xref>
-        so we will proceed in much the same way.  The objective function is
-        the same
-        <men  xml:id="EQUATIONParabolaObjective">
+          </tabular>
           
-          A = (x-2)^2 + (y-3)^2
-        </men>
-        but this time the constraint is
-        <men  xml:id="EQUATIONParabolaConstraint">
-          
-          y = x^2.
-        </men>
-      </p>
-      <p>
-        
-        In our previous examples we began by differentiating both the
-        objective function and the constraint. This time substitute the
-        constraint <m>y=x^2</m> into <m>A(x)</m> to obtain the objective function
-        <me>
-          A(x) = (x-2)^2 + (x^2-3)^2
-        </me>
-        in terms of a single variable. We make this change of strategy
-        simply to demonstrate that the two procedures are equivalent.  In
-        fact, for this particular problem they are almost identical. For
-        more complex problems you may find that you prefer one strategy or
-        the other.
-      </p>
-    </example>
-    <exercise xml:id="DRILLSqParab">
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How does the table in <xref ref="PROBLEMRainbowAngleB">part</xref> explain the order of the colors in the primary
+            rainbow?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <p>
+      The values of <m>R(\alpha)</m> you obtained in the table account for the
+      various color bands that appear in the rainbow as sunlight hits
+      droplets at various angles.
+    </p>
+
+  </subsection>
+  <subsection xml:id="SUBSECTIONDoubleRainbows">
+    <title>Double Rainbows</title>
+
+    <p>
+
+      In a double rainbow the primary rainbow is created from light entering
+      the upper portion of the droplet and exiting from the bottom. If light
+      is bright enough then a secondary rainbow is created from light
+      entering the lower portion and exiting the upper portion of the
+      droplet as in
+      the diagram below.
+    </p>
+    <image source="DC/Droplet2.png" width="50%"/>
+
+    <p>
+      For the secondary rainbow the deviation angle <m>D(\alpha)</m> is the total
+      amount of counterclockwise rotation and the rainbow angle would
+      be <m>R(\alpha)=D(\alpha)-\pi</m>.  Note that the extra reflection explains
+      why the secondary rainbow is not as bright as the primary.
+    </p>
+    <p>
+
+    </p>
+
+    <exercise  xml:id="PROBLEMSecondaryRainbow">
       <idx><h sortby="AAA">Problems</h></idx>
 
-      <statement>
+      <introduction>
         <p>
-          Show that <m>\dfdx{A}{x}=0</m> when <m>x \approx1.75</m>, <m>x \approx-1.32</m>
-          and <m>x \approx-0.43</m>.  Getting three distinct solutions of
-          <m>\dfdx{A}{x}=0</m> is quite unexpected in light of our previous work.
-          Can you explain what<rsq/>s going on here?
         </p>
-      </statement>
+      </introduction>
+      <task xml:id="PROBLEMSecondaryRainbowA">
+        <statement>
+          <p>
+            Show that in the case of the secondary rainbow,
+            <me>D(\alpha)=2\pi+2\alpha-6\beta</me>. This is our objective function
+            for the secondary rainbow.
+          </p>
+        </statement>
+      </task>
+      <task xml:id="PROBLEMSecondaryRainbowB">
+        <statement>
+          <p>
+            Show that <m>D(\alpha)</m> is minimized when
+            <md>
+              <mrow>\sin(\beta)=\sqrt{\frac{9-k^2}{8k^2}}\amp{}\amp{} \text{and}
+              \amp{}\amp{}\sin(\alpha)=\sqrt{\frac{9-k^2}{8}}.</mrow>
+            </md>
+          </p>
+        </statement>
+      </task>
+      <task xml:id="PROBLEMSecondaryRainbowC">
+        <statement>
+          <p>
+            Use  <xref ref="PROBLEMSecondaryRainbowB">part</xref> to complete the following table:
+          </p>
+          <tabular>
+
+            <row bottom="minor" halign="center">
+              <cell>Color</cell>
+              <cell><m>k</m></cell>
+              <cell><line><m>\beta{}</m></line><line> (in degrees)</line></cell>
+              <cell><line><m>\alpha </m></line><line> (in degrees)</line></cell>
+              <cell><line><m>D(\alpha) </m></line> <line>(in degrees)</line></cell>
+              <cell><line><m>R(\alpha) </m></line> <line>(in degrees)</line></cell>
+            </row>
+
+            <row>
+              <cell>        Red</cell><cell> 1.331</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Orange</cell><cell> 1.332</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Yellow</cell><cell> 1.333</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Green</cell><cell> 1.335</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Blue</cell><cell> 1.337</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Indigo</cell><cell> 1.340</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Violet</cell><cell> 1.344</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+
+          </tabular>
+          
+        </statement>
+      </task>
+      <task xml:id="PROBLEMSecondaryRainbowD">
+        <statement>
+          <p>
+            Use the table in <xref ref="PROBLEMSecondaryRainbowC">part</xref> of this problem and the table in <xref ref="PROBLEMRainbowAngleB">part</xref> of <xref ref="PROBLEMRainbowAngle"></xref> to explain why the secondary rainbow is above the
+            primary rainbow and its colors are reversed.
+          </p>
+        </statement>
+      </task>
     </exercise>
 
-    <p>  
-      To find the minimal square in <xref ref="DRILLSqParab"></xref> we
-      need only substitute the <m>x</m>-values into <m>A(x)</m>. We get
+  </subsection>
+</section>
+<section xml:id="SECTIONGlobalVsLocalExtrema">
+  <title>Global vs. Local Extrema</title>
 
-      <md>
-        <mrow>
-          A(1.75) \amp  \approx 0.07,
-        </mrow>
-        <mrow>
-          A(-1.32)\amp \approx 12.6,
-        </mrow>
-        <mrow>
-          A(-0.43)\amp \approx 13.83. 
+  <p>
+    So far in this chapter we<rsq/>ve relied heavily on our intuition. For
+    instance, in <xref ref="EXAMPLESqOnLine">Example</xref> it was very clear that a
+    minimal square exists. Moreover, when we differentiated the objective
+    function we found that <m>x=-\frac12</m> was the only solution of
+    <m>\dfdx{A}{x}=0</m>. So it was reasonable to conclude that the minimum
+    occurs when <m>x=-\frac12</m>.
+  </p>
 
-        </mrow>
-      </md>
-    </p>
-    <image source="DC/ParabolaThreeSquares.png" width="40%"/>
+  <p>
+    Similarly in <xref ref="PROBLEMEllipseDist">Problem</xref> it was intuitively
+    clear that there was both a maximal and a minimal square, so when
+    we found two solutions of <m>\dfdx{A}{x}=0</m> it made sense to conclude
+    that they correspond to the maximal and minimal squares, respectively.
+  </p>
+
+  <p>
+    Unfortunately things are rarely this straightforward.  Consider the
+    following example.
+  </p>
+
+  <example xml:id="EXAMPLEParabolaOptSqr">
+    <title>Constructing a Square on a Parabola</title>
     <p>
-
-      From these numbers, and
-      from the  sketch above we can see that the minimal square
-      seems to be the one whose second corner lies on the parabola at the
-      point (approximately) <m>(1.75, 3.06)</m>. But those other two
-      solutions of <m>\dfdx{A}{x}=0</m> are troubling.  Do we get a
-      maximal square at <m>\left(-0.43,(-0.43)^2\right)</m> since
-      <m>A(-0.43) \approx 13.83</m> is the largest value of <m>A(x)</m>
-      among the three we<rsq/>ve identified. And what about the point
-      <m>(-1.32, (-1.32)^2)</m>?  We clearly get neither a minimum nor a
-      maximum there. Why did our solution procedure point to it? This is all
-      very puzzling.
-    </p>
-
-    <p>
-      To begin addressing these questions let<rsq/>s look at the graph of our
-      objective function, <m>A(x) = (x-2)^2 + (x^2-3)^2</m>. 
-    </p>
-
-<figure  xml:id="FIGUREParabolaThreeSquares2">
-<caption></caption>
-<image source="DC/ParabolaThreeSquares2.png" width="50%">
-<shortdescription></shortdescription>
-</image>
-</figure>
-
-    <p>
-      The first
-      coordinate of each point on the graph in <xref ref="FIGUREParabolaThreeSquares2"></xref>  corresponds to the
-      <m>x</m>-coordinate of the corner of a square which lies on the
-      constraint, <m>y=x^2</m>, and the second coordinate on the graph is the
-      area of that square. Thus the minimal square will correspond to the
-      lowest point on the graph  which is the square with a
-      second corner at <m>x=1.75</m> as we have already concluded.  But since
-      the graph  continues to rise as we look farther to the
-      right (or left) it should also be clear that there is no maximal
-      square.
-    </p>
-
-    <p>
-      The graph in <xref ref="FIGUREParabolaThreeSquares2"></xref>  also explains the why our procedure identified the
-      squares with a second corner at both <m>x=-1.32</m> and <m>x=-0.43</m> as
-      possible minimal squares as well.  When we solve <m>\dfdx{A}{x}=0</m> we
-      are locating the points on the graph of our objective function where
-      its derivative is zero. That is, points where the slope of the line tangent
-      is horizontal. Fermat<rsq/>s Theorem only assures us that if <m>A(x)</m> has
-      an extremum at <m>x=a</m> then <m>\dfdxat{A}{x}{a}=0</m>. In particular it
-      does not tell us that there are no other values of <m>x</m> where
-      <m>\dfdx{A}{x}=0</m>.
-    </p>
-
-    <p>
-      The problem here is that we have not been precise in our
-      language. When we say <q>maximum</q> (or minimum) in ordinary speech we
-      mean <q>the largest one,</q> and it is clear that there can only be one
-      <q>largest.</q>
-    </p>
-
-    <aside>
-      <title>Comment</title>
-      <p>
-        Although the largest value can occur more than once, at different
-        places. Think about the graph of <m>y=\sin(x)</m>. At every value
-        of <m>x</m> where <m>\sin(x)=1 </m> there is a maximum.
-      </p>
-    </aside>
-
-
-
-    <p>
-      However, if we confine our attention to the part of <xref ref="FIGUREParabolaThreeSquares2"></xref>  inside
-      the blue rectangle  we see that the point at
-      <m>(-1.32, 12.6)</m> is a minimum <alert>locally</alert> and the point at
-      <m>(-0.43, 13.83)</m> is a maximum <alert>locally</alert>. By <q>locally</q> we
-      mean <q>if we restrict our attention to the graph near those two
-      points</q> as seen at the right. We will need to distinguish between
-      local and global optima in the future.
-    </p>
-    <p>
-
-      There are other issues as well.
-    </p>
-    <p>
-
-      Recall from <xref ref="DIGRESSIONTangentHasNoInverse" text="custom">Digression: The Tangent Function Has No Inverse</xref> that a
-      function has two parts:
-      
-      <ol>
-        <li>
-          <p>
-            A rule to associate input with output, and
-          </p>
-        </li>
-        <li>
-          <p>
-            A domain.
-          </p>
-        </li>
-      </ol>
-      Change either of these and you have a different function.
-    </p>
-    <p>
-
-      In this example our objective function is
-      <men  xml:id="EQUATIONParabolaSquareDomainR">
+      We would like to find the area of the smallest square which can be
+      constructed with one corner at the point <m>(2,3)</m> and an adjacent
+      corner on the graph of <m> y = x^2</m>.  This example is very similar to
+      <xref ref="PROBLEMMinSqLine">Problem</xref> or <xref ref="PROBLEMEllipseDist">Problem</xref>
+      so we will proceed in much the same way.  The objective function is
+      the same
+      <men  xml:id="EQUATIONParabolaObjective">
         
-        A(x) =
-        (x-2)^2 + (x^2-3)^2
+        A = (x-2)^2 + (y-3)^2
       </men>
-      and the constraint is
+      but this time the constraint is
+      <men  xml:id="EQUATIONParabolaConstraint">
+        
+        y = x^2.
+      </men>
+    </p>
+    <p>
+      
+      In our previous examples we began by differentiating both the
+      objective function and the constraint. This time substitute the
+      constraint <m>y=x^2</m> into <m>A(x)</m> to obtain the objective function
       <me>
-        y=x^2, \text{ with domain }\RR.
+        A(x) = (x-2)^2 + (x^2-3)^2
       </me>
-      But suppose we change the constraint to
-      <men  xml:id="EQUATIONParabolaSquareConstraintRestricted">
-        
-        y=x^2, \text{ with domain }-2\le x\le 0.5,
-      </men>
-      so that the domain is just the part of the real line inside the blue
-      rectangle above.
+      in terms of a single variable. We make this change of strategy
+      simply to demonstrate that the two procedures are equivalent.  In
+      fact, for this particular problem they are almost identical. For
+      more complex problems you may find that you prefer one strategy or
+      the other.
     </p>
+  </example>
+  <exercise xml:id="DRILLSqParab">
+    <idx><h sortby="AAA">Problems</h></idx>
 
-    <p>
-      We now have a different problem because the only part of the graph
-      we are interested in is the piece inside the blue rectangle. The
-      global minimum no longer occurs at <m>x\approx1.75</m> because <m>1.75</m> is
-      not in the problem domain, <m>x\approx1.75</m> simply
-      doesn<rsq/>t exist in the domain of the function <m>y=x^2</m>,  with
-      domain; <m>-2\le x\le 0.5</m>.  However, since <m>x=-0.43</m> and <m>x=-1.32</m> are in the
-      domain they still correspond to a local maximum and a local minimum,
-      respectively. Are they also the global maximum and minimum?  Give
-      this question some thought and take your best guess. We will return
-      to it in <xref ref="PROBLEMParabolaSquare-Redux"></xref>.
-    </p>
+    <statement>
+      <p>
+        Show that <m>\dfdx{A}{x}=0</m> when <m>x \approx1.75</m>, <m>x \approx-1.32</m>
+        and <m>x \approx-0.43</m>.  Getting three distinct solutions of
+        <m>\dfdx{A}{x}=0</m> is quite unexpected in light of our previous work.
+        Can you explain what<rsq/>s going on here?
+      </p>
+    </statement>
+  </exercise>
 
-    <p>
-      <idx><h>Vocabulary</h><h>local extrema</h></idx>
-      The existence of <term>local extrema</term> really complicates things for us
-      because it means we have to find all of the <term>local extrema</term> and
-      then figure out which of them, if any, are global.  If we don<rsq/>t get
-      organized we<rsq/>re likely to have a lot of trouble keeping this all
-      straight.
-    </p>
+  <p>  
+    To find the minimal square in <xref ref="DRILLSqParab"></xref> we
+    need only substitute the <m>x</m>-values into <m>A(x)</m>. We get
 
-    <image source="DC/LocalGlobalDef.png" width="50%"/>
-    <p>
-      <idx><h>Vocabulary</h><h>global minimum</h></idx>
-      In the sketch above <m>y(a)</m> is the <term>global minimum</term> of <m>y</m>
-      since it is the lowest point on the graph of <m>y(x)</m>, whereas <m>y(c)</m> is
-      a local minimum because it is the lowest point on the graph when the
-      domain of <m>y(x)</m> is restricted to the interval <m>(c-\eps, c+\eps)</m>
-      (between the dashed lines).  In this sketch the global maximum of
-      <m>y(x)</m> occurs at the endpoints of the interval, <m>\alpha</m> and <m>\beta</m>.
-      The fact that extrema can also occur at endpoints is another complicating
-      detail we will come back to shortly.
-    </p>
-    <p>
+    <md>
+      <mrow>
+        A(1.75) \amp  \approx 0.07,
+      </mrow>
+      <mrow>
+        A(-1.32)\amp \approx 12.6,
+      </mrow>
+      <mrow>
+        A(-0.43)\amp \approx 13.83. 
 
-      Since the domain of the function affects the location of the extrema a
-      definition of extrema  will
-      need to reference the function<rsq/>s domain. It is easy to get lost in the technicalities so keep
-      <xref ref="EXAMPLEParabolaOptSqr"></xref> in mind as we proceed.
-    </p>
-    <p>
-      We have the following definitions.
-    </p>
+      </mrow>
+    </md>
+  </p>
+  <image source="DC/ParabolaThreeSquares.png" width="40%"/>
+  <p>
 
-    <definition xml:id="DEFINITIONGlobalMin">
-      <title>Global Minimum</title>
-      <idx><h>Definition</h><h>Global Minimum</h></idx>
-      <statement>
+    From these numbers, and
+    from the  sketch above we can see that the minimal square
+    seems to be the one whose second corner lies on the parabola at the
+    point (approximately) <m>(1.75, 3.06)</m>. But those other two
+    solutions of <m>\dfdx{A}{x}=0</m> are troubling.  Do we get a
+    maximal square at <m>\left(-0.43,(-0.43)^2\right)</m> since
+    <m>A(-0.43) \approx 13.83</m> is the largest value of <m>A(x)</m>
+    among the three we<rsq/>ve identified. And what about the point
+    <m>(-1.32, (-1.32)^2)</m>?  We clearly get neither a minimum nor a
+    maximum there. Why did our solution procedure point to it? This is all
+    very puzzling.
+  </p>
+
+  <p>
+    To begin addressing these questions let<rsq/>s look at the graph of our
+    objective function, <m>A(x) = (x-2)^2 + (x^2-3)^2</m>. 
+  </p>
+
+  <figure  xml:id="FIGUREParabolaThreeSquares2">
+    <caption></caption>
+    <image source="DC/ParabolaThreeSquares2.png" width="50%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    The first
+    coordinate of each point on the graph in <xref ref="FIGUREParabolaThreeSquares2"></xref>  corresponds to the
+    <m>x</m>-coordinate of the corner of a square which lies on the
+    constraint, <m>y=x^2</m>, and the second coordinate on the graph is the
+    area of that square. Thus the minimal square will correspond to the
+    lowest point on the graph  which is the square with a
+    second corner at <m>x=1.75</m> as we have already concluded.  But since
+    the graph  continues to rise as we look farther to the
+    right (or left) it should also be clear that there is no maximal
+    square.
+  </p>
+
+  <p>
+    The graph in <xref ref="FIGUREParabolaThreeSquares2"></xref>  also explains the why our procedure identified the
+    squares with a second corner at both <m>x=-1.32</m> and <m>x=-0.43</m> as
+    possible minimal squares as well.  When we solve <m>\dfdx{A}{x}=0</m> we
+    are locating the points on the graph of our objective function where
+    its derivative is zero. That is, points where the slope of the line tangent
+    is horizontal. Fermat<rsq/>s Theorem only assures us that if <m>A(x)</m> has
+    an extremum at <m>x=a</m> then <m>\dfdxat{A}{x}{a}=0</m>. In particular it
+    does not tell us that there are no other values of <m>x</m> where
+    <m>\dfdx{A}{x}=0</m>.
+  </p>
+
+  <p>
+    The problem here is that we have not been precise in our
+    language. When we say <q>maximum</q> (or minimum) in ordinary speech we
+    mean <q>the largest one,</q> and it is clear that there can only be one
+    <q>largest.</q>
+  </p>
+
+  <aside>
+    <title>Comment</title>
+    <p>
+      Although the largest value can occur more than once, at different
+      places. Think about the graph of <m>y=\sin(x)</m>. At every value
+      of <m>x</m> where <m>\sin(x)=1 </m> there is a maximum.
+    </p>
+  </aside>
+
+
+
+  <p>
+    However, if we confine our attention to the part of <xref ref="FIGUREParabolaThreeSquares2"></xref>  inside
+    the blue rectangle  we see that the point at
+    <m>(-1.32, 12.6)</m> is a minimum <alert>locally</alert> and the point at
+    <m>(-0.43, 13.83)</m> is a maximum <alert>locally</alert>. By <q>locally</q> we
+    mean <q>if we restrict our attention to the graph near those two
+    points</q> as seen at the right. We will need to distinguish between
+    local and global optima in the future.
+  </p>
+  <p>
+
+    There are other issues as well.
+  </p>
+  <p>
+
+    Recall from <xref ref="DIGRESSIONTangentHasNoInverse" text="custom">Digression: The Tangent Function Has No Inverse</xref> that a
+    function has two parts:
+    
+    <ol>
+      <li>
         <p>
-          <idx><h>Vocabulary</h><h>global minimum</h></idx>
-          Suppose that <m>g</m> is a number in the domain of <m>y</m> such
-          that
-          <m>y(g)\le y(x)</m> for every <m>x</m> in the domain of <m>y</m>.  Then <m>y(g)</m> is
-          the <term>global minimum</term> of <m>y</m>.
-
+          A rule to associate input with output, and
         </p>
-      </statement>
-    </definition>
-    <aside>
-      <title>Mathematical Terminology</title>
-      <p>
-        The phrase <q>such that</q> is a term of art in
-        mathematics. It means, <q>with the following property.</q>
-      </p>
-    </aside>
-
-    <problem xml:id="PROBLEMMaximaDefinition">
-      <idx><h sortby="AAB">Drills</h></idx>
-      <statement>
+      </li>
+      <li>
         <p>
-          Provide a definition of Global Maximum modeled on
-          <xref ref="DEFINITIONGlobalMin"></xref>.
+          A domain.
         </p>
-      </statement>
-    </problem>
+      </li>
+    </ol>
+    Change either of these and you have a different function.
+  </p>
+  <p>
 
-    <p>
-      To define local extrema we need the concept of an open interval, so we
-      digress briefly.
-    </p>
-
-    <paragraphs  xml:id="DIGRESSIONIntervalNotation">
-      <title>DIGRESSION: Interval Notation </title>
-      <idx><h>Digression</h><h>Interval Notation </h></idx>
-
-      <p>
-        <idx><h>Vocabulary</h><h>interval</h></idx>
-        <idx><h>Vocabulary</h><h>interval</h><h>open</h></idx>
-        An <term>interval</term> is a contiguous set of real numbers. For example,
-        the set of numbers strictly between zero and one is an
-        interval. Because the endpoints are not included it is called an
-        <term>open interval</term> and is denoted by <m>(0,1)</m>. Think of this
-        notation as an abbreviation of the the two inequalities
-        <me>
-          0\lt x \text{ and } x\lt1
-        </me>
-        (This is also abbreviated sometimes as <m> 0\lt x\lt1</m>.)
-      </p>
-      <p>
-        Be
-        careful. This notation can be ambiguous. Without some context it is
-        not clear whether the notation <m>(a,b)</m> represents the open
-        interval satisfying the inequalities
-        <m>
-          a\lt x \lt b</m>, or the  point <m>(a,b)</m> in the
-          <m>x</m>-<m>y</m> plane.
-      </p>
-
-      <p>
-        <idx><h>Vocabulary</h><h>interval</h><h>closed</h></idx>
-        If we include the endpoints we have a <term>closed interval</term>,
-        denoted by the ordered pair <m>[a,b]</m>.  Think of this as an
-        abbreviated form of the two inequalities
-        <me>
-          a\le x \text{ and }x\le b.
-        </me>
-        (This is also abbreviated sometimes as <m>a\le x\le b</m>.)
-      </p>
-
+    In this example our objective function is
+    <men  xml:id="EQUATIONParabolaSquareDomainR">
       
-      <problem>
-        <idx><h sortby="AAB">Drills</h></idx>
-        <p>
-          Re-express each of the following intervals using inequalities and
-          state whether it is open, closed, or neither.
-        <ol cols="2" marker="(i)">
-          <li>
-            <p>
-              <m>(-1,1)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>[-1,1]</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>[-10,25)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>(-32,100]</m>
-            </p>
-          </li>
-        </ol>
-        </p>
-</problem>
-
-      <problem>
-        <idx><h sortby="AAB">Drills</h></idx>
-        <p>
-          Re-express each of the following intervals using inequalities and
-          state whether it is open, closed, or neither.
-        <ol cols="2" marker="(i)">
-          <li>
-            <p>
-              <m>(-1,1)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>[-1,1]</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>[-10,25)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>(-32,100]</m>
-            </p>
-          </li>
-        </ol>
-        </p>
-</problem>
+      A(x) =
+      (x-2)^2 + (x^2-3)^2
+    </men>
+    and the constraint is
+    <me>
+      y=x^2, \text{ with domain }\RR.
+    </me>
+    But suppose we change the constraint to
+    <men  xml:id="EQUATIONParabolaSquareConstraintRestricted">
       
+      y=x^2, \text{ with domain }-2\le x\le 0.5,
+    </men>
+    so that the domain is just the part of the real line inside the blue
+    rectangle above.
+  </p>
+
+  <p>
+    We now have a different problem because the only part of the graph
+    we are interested in is the piece inside the blue rectangle. The
+    global minimum no longer occurs at <m>x\approx1.75</m> because <m>1.75</m> is
+    not in the problem domain, <m>x\approx1.75</m> simply
+    doesn<rsq/>t exist in the domain of the function <m>y=x^2</m>,  with
+    domain; <m>-2\le x\le 0.5</m>.  However, since <m>x=-0.43</m> and <m>x=-1.32</m> are in the
+    domain they still correspond to a local maximum and a local minimum,
+    respectively. Are they also the global maximum and minimum?  Give
+    this question some thought and take your best guess. We will return
+    to it in <xref ref="PROBLEMParabolaSquare-Redux"></xref>.
+  </p>
+
+  <p>
+    <idx><h>Vocabulary</h><h>local extrema</h></idx>
+    The existence of <term>local extrema</term> really complicates things for us
+    because it means we have to find all of the <term>local extrema</term> and
+    then figure out which of them, if any, are global.  If we don<rsq/>t get
+    organized we<rsq/>re likely to have a lot of trouble keeping this all
+    straight.
+  </p>
+
+  <image source="DC/LocalGlobalDef.png" width="50%"/>
+  <p>
+    <idx><h>Vocabulary</h><h>global minimum</h></idx>
+    In the sketch above <m>y(a)</m> is the <term>global minimum</term> of <m>y</m>
+    since it is the lowest point on the graph of <m>y(x)</m>, whereas <m>y(c)</m> is
+    a local minimum because it is the lowest point on the graph when the
+    domain of <m>y(x)</m> is restricted to the interval <m>(c-\eps, c+\eps)</m>
+    (between the dashed lines).  In this sketch the global maximum of
+    <m>y(x)</m> occurs at the endpoints of the interval, <m>\alpha</m> and <m>\beta</m>.
+    The fact that extrema can also occur at endpoints is another complicating
+    detail we will come back to shortly.
+  </p>
+  <p>
+
+    Since the domain of the function affects the location of the extrema a
+    definition of extrema  will
+    need to reference the function<rsq/>s domain. It is easy to get lost in the technicalities so keep
+    <xref ref="EXAMPLEParabolaOptSqr"></xref> in mind as we proceed.
+  </p>
+  <p>
+    We have the following definitions.
+  </p>
+
+  <definition xml:id="DEFINITIONGlobalMin">
+    <title>Global Minimum</title>
+    <idx><h>Definition</h><h>Global Minimum</h></idx>
+    <statement>
       <p>
+        <idx><h>Vocabulary</h><h>global minimum</h></idx>
+        Suppose that <m>g</m> is a number in the domain of <m>y</m> such
+        that
+        <m>y(g)\le y(x)</m> for every <m>x</m> in the domain of <m>y</m>.  Then <m>y(g)</m> is
+        the <term>global minimum</term> of <m>y</m>.
 
-        If we want to identify the interval of all numbers greater than, say
-        <m>x=1</m> there is no right endpoint of the interval. Rather than
-        writing this out in words every time we encounter it (which will be
-        often) we force our notation to adapt to our need and denote this
-        interval as: <m>(1, \infty)</m>. Similarly the interval of all numbers
-        less than or equal to <m>7</m> is denoted: <m>(-\infty, 7]</m>. We<rsq/>ve been
-        using the symbol <q><m>\RR</m></q> to denote all real numbers, but since the
-        set of all real numbers is a (very large) interval we will sometimes
-        use the interval notation, <m>(-\infty, \infty)</m> as well.
       </p>
+    </statement>
+  </definition>
+  <aside>
+    <title>Mathematical Terminology</title>
+    <p>
+      The phrase <q>such that</q> is a term of art in
+      mathematics. It means, <q>with the following property.</q>
+    </p>
+  </aside>
+
+  <problem xml:id="PROBLEMMaximaDefinition">
+    <idx><h sortby="AAB">Drills</h></idx>
+    <statement>
       <p>
-
-        Do not be fooled by this. <q>Infinity</q> (<m>\infty</m>) is not a number
-        and cannot be treated like one. This is just a notational shorthand
-        that we use for our own convenience.
+        Provide a definition of Global Maximum modeled on
+        <xref ref="DEFINITIONGlobalMin"></xref>.
       </p>
+    </statement>
+  </problem>
 
+  <p>
+    To define local extrema we need the concept of an open interval, so we
+    digress briefly.
+  </p>
 
-      <p><alert>END OF DIGRESSION</alert></p>
-    </paragraphs>
+  <paragraphs  xml:id="DIGRESSIONIntervalNotation">
+    <title>DIGRESSION: Interval Notation </title>
+    <idx><h>Digression</h><h>Interval Notation </h></idx>
 
     <p>
-      Now we can define local extrema.
+      <idx><h>Vocabulary</h><h>interval</h></idx>
+      <idx><h>Vocabulary</h><h>interval</h><h>open</h></idx>
+      An <term>interval</term> is a contiguous set of real numbers. For example,
+      the set of numbers strictly between zero and one is an
+      interval. Because the endpoints are not included it is called an
+      <term>open interval</term> and is denoted by <m>(0,1)</m>. Think of this
+      notation as an abbreviation of the the two inequalities
+      <me>
+        0\lt x \text{ and } x\lt1
+      </me>
+      (This is also abbreviated sometimes as <m> 0\lt x\lt1</m>.)
+    </p>
+    <p>
+      Be
+      careful. This notation can be ambiguous. Without some context it is
+      not clear whether the notation <m>(a,b)</m> represents the open
+      interval satisfying the inequalities
+      <m>
+        a\lt x \lt b</m>, or the  point <m>(a,b)</m> in the
+        <m>x</m>-<m>y</m> plane.
     </p>
 
-    <definition xml:id="DEFINITIONLocalMin">
-      <title>Local Minimum</title>
-      <idx><h>Definition</h><h>Local Minimum</h></idx>
-      <statement>
-        <p>
-          <idx><h>Vocabulary</h><h>local minimum</h></idx>
-          Suppose that <m>l</m> is a number in the domain of <m>y(x)</m>. Then <m>y(l)</m> is
-          a <term>local minimum</term> of <m>y</m> if there is an open interval, <m>I</m>, such
-          that <m>y(l)\le y(x)</m> for every <m>x</m> in the interval <m>I</m> and in the
-          domain of <m>y(x)</m>.
-
-        </p>
-      </statement>
-    </definition>
-
-    <problem xml:id="PROBLEMLocalMaximaDefinition">
-      <idx><h sortby="AAB">Drills</h></idx>
-      <statement>
-        <p>
-          Provide a definition of Local Maximum modeled on
-          <xref ref="DEFINITIONLocalMin"></xref>.
-        </p>
-      </statement>
-    </problem>
-
+    <p>
+      <idx><h>Vocabulary</h><h>interval</h><h>closed</h></idx>
+      If we include the endpoints we have a <term>closed interval</term>,
+      denoted by the ordered pair <m>[a,b]</m>.  Think of this as an
+      abbreviated form of the two inequalities
+      <me>
+        a\le x \text{ and }x\le b.
+      </me>
+      (This is also abbreviated sometimes as <m>a\le x\le b</m>.)
+    </p>
 
     
-    <exercise>
-      <idx><h>Problems</h></idx>
+    <problem>
+      <idx><h sortby="AAB">Drills</h></idx>
+      <p>
+        Re-express each of the following intervals using inequalities and
+        state whether it is open, closed, or neither.
+        <ol cols="2" marker="(i)">
+          <li>
+            <p>
+              <m>(-1,1)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[-1,1]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[-10,25)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-32,100]</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </problem>
 
-      <statement>
+    <problem>
+      <idx><h sortby="AAB">Drills</h></idx>
+      <p>
+        Re-express each of the following intervals using inequalities and
+        state whether it is open, closed, or neither.
+        <ol cols="2" marker="(i)">
+          <li>
+            <p>
+              <m>(-1,1)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[-1,1]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[-10,25)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-32,100]</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </problem>
+    
+    <p>
+
+      If we want to identify the interval of all numbers greater than, say
+      <m>x=1</m> there is no right endpoint of the interval. Rather than
+      writing this out in words every time we encounter it (which will be
+      often) we force our notation to adapt to our need and denote this
+      interval as: <m>(1, \infty)</m>. Similarly the interval of all numbers
+      less than or equal to <m>7</m> is denoted: <m>(-\infty, 7]</m>. We<rsq/>ve been
+      using the symbol <q><m>\RR</m></q> to denote all real numbers, but since the
+      set of all real numbers is a (very large) interval we will sometimes
+      use the interval notation, <m>(-\infty, \infty)</m> as well.
+    </p>
+    <p>
+
+      Do not be fooled by this. <q>Infinity</q> (<m>\infty</m>) is not a number
+      and cannot be treated like one. This is just a notational shorthand
+      that we use for our own convenience.
+    </p>
+
+
+    <p><alert>END OF DIGRESSION</alert></p>
+  </paragraphs>
+
+  <p>
+    Now we can define local extrema.
+  </p>
+
+  <definition xml:id="DEFINITIONLocalMin">
+    <title>Local Minimum</title>
+    <idx><h>Definition</h><h>Local Minimum</h></idx>
+    <statement>
+      <p>
+        <idx><h>Vocabulary</h><h>local minimum</h></idx>
+        Suppose that <m>l</m> is a number in the domain of <m>y(x)</m>. Then <m>y(l)</m> is
+        a <term>local minimum</term> of <m>y</m> if there is an open interval, <m>I</m>, such
+        that <m>y(l)\le y(x)</m> for every <m>x</m> in the interval <m>I</m> and in the
+        domain of <m>y(x)</m>.
+
+      </p>
+    </statement>
+  </definition>
+
+  <problem xml:id="PROBLEMLocalMaximaDefinition">
+    <idx><h sortby="AAB">Drills</h></idx>
+    <statement>
+      <p>
+        Provide a definition of Local Maximum modeled on
+        <xref ref="DEFINITIONLocalMin"></xref>.
+      </p>
+    </statement>
+  </problem>
+
+
+  
+  <exercise>
+    <idx><h>Problems</h></idx>
+
+    <statement>
+      <p>
+        <idx><h>Vocabulary</h><h>global maximum</h></idx>
+        <idx><h>Vocabulary</h><h>global minimum</h></idx>
+        Explain why we can find a <term>global maximum (minimum)</term> by finding
+        all of the <term>local maxima (minima)</term> and selecting the largest
+        (smallest) among these.
+      </p>
+    </statement>
+  </exercise>
+
+</section>
+<section xml:id="SUBSECTIONoptim-abstr-probl">
+  <title>Optimization, the Abstract Problem</title>
+
+
+  <introduction>
+    <blockquote>
+      <p>
+        Premature optimization is the root of all evils.
+      </p>
+      <attribution>
+        <url
+            href="https://mathshistory.st-andrews.ac.uk/Biographies/Knuth/"
+            visual="https://mathshistory.st-andrews.ac.uk/Biographies/Knuth/">Donald
+        Knuth</url> (1938<ndash/>)
+
+      </attribution>
+    </blockquote>
+    <p>
+      As we saw in <xref ref="EXAMPLEParabolaOptSqr"></xref> once we<rsq/>ve found
+      the objective function, <m>O(x)</m>, our optimization problem becomes the
+      more abstract problem of finding the extreme points of the graph of
+      <m>O(x)</m>. An optimization problem ultimately comes down to finding all
+      of the local extrema. The maximum among those will be the global
+      maximum, and the minimum among those will be the global
+      minimum. Assuming of course, that either exists.
+    </p>
+    
+    <p>
+      Thus our first task is to identify all of the local extrema.
+      But finding the local extreme points of the graph of an
+      arbitrary objective function can be more complicated than
+      we<rsq/>ve seen in any of our examples so far.  In this
+      section we will address these complications. By the end of the
+      section we will have a general procedure for solving this more
+      abstract optimization problem.
+    </p>
+
+  </introduction>
+  <subsection xml:id="SECTIONIntroOptim">
+    <title>An Illustrative Example from <m>1750</m></title>
+
+    <p>
+      <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Simpson/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Simpson/">Thomas Simpson</url>
+      included the following problem            on page 42 of his 1750 textbook 
+      <url href="https://www.google.com/books/edition/The_Doctrine_and_Application_of_Fluxions/4r44AAAAMAAJ?hl=en" visual="https://www.google.com/books/edition/The_Doctrine_and_Application_of_Fluxions/4r44AAAAMAAJ?hl=en">            <pubtitle>The
+      Doctrine and Application of Fluxions</pubtitle></url>:
+    </p>
+    <image source="DC/SimpsonOpt.png" width="70%">
+      <shortdescription></shortdescription>
+    </image>
+
+    <p>
+      As a proud Englishman, Simpson used Newton<rsq/>s fluxional
+      notation exclusively but we will stick with  differential
+      notation  since we are more familiar with that.
+    </p>
+
+
+    <exercise xml:id="PROBLEMSimpsonOpt">
+      <idx><h sortby="AAA">Problems</h></idx>
+
+      <introduction>
         <p>
-          <idx><h>Vocabulary</h><h>global maximum</h></idx>
-          <idx><h>Vocabulary</h><h>global minimum</h></idx>
-          Explain why we can find a <term>global maximum (minimum)</term> by finding
-          all of the <term>local maxima (minima)</term> and selecting the largest
-          (smallest) among these.
+          <!-- We will extend Simpson<rsq/>s problem to finding both -->
+          <!-- the maximum and the minimum values of <m>y</m>, if they -->
+          <!-- exist. -->  
+          In modern parlance the problem is stated as follows: Find
+          the maximum and minimum values of <m>y</m> subject to the
+          constraint that <me>a^4x^2={\left(x^2+y^2\right)}^3</me>,
+          if either exists.
         </p>
-      </statement>
+      </introduction>
+      <task>
+        <p>
+          According to <xref
+          ref="THEOREMFermatsTheorem">Fermat<rsq/>s
+          Theorem</xref>, if <m>y</m> is differentiable at
+          a point and <m>y</m>  is a maximum (or a minimum) at that
+          point then the line tangent to the curve will be
+          horizontal  at that point. So we will need
+          to compute the derivative of <m>y</m> with respect to
+          <m>x</m>.
+        </p>
+        <p>
+          Show that             
+          <men
+              xml:id="EQUATIONSimpsonOptDeriv">\dfdx{y}{x}=\frac{\frac{1}{3}a^{\frac{4}{3}}x^{-\frac{1}{3}}-x}{y}
+          </men>.
+          is the derivative of the curve <m>a^4x^2={\left(x^2+y^2\right)}^3</m>,
+        </p>
+      </task>
+      <task>
+        <p>
+          By setting the numerator of <xref
+          ref="EQUATIONSimpsonOptDeriv">equation</xref> equal to
+          zero show that <m>x=\pm \frac{1}{3^{\frac{3}{4}}}a</m> and
+          use these values to show that when <m>\dfdx{y}{x}=0</m>, <m>y=\pm
+          a\sqrt{\frac{2}{3\sqrt{3}}}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Conclude that the maximum value of <m>y</m> is
+          <m>a\sqrt{\frac{2}{3\sqrt{3}}}</m> and the minimum value
+          is <m>-a\sqrt{\frac{2}{3\sqrt{3}}}</m>.
+        </p>
+      </task>
     </exercise>
 
-  </section>
-  <section xml:id="SUBSECTIONoptim-abstr-probl">
-    <title>Optimization, the Abstract Problem</title>
+    <!--       <exercise xml:id="PROBLEMSimpsonOptimizationProblem"> -->
+    <!--         <title>A Problem from <m>1750</m></title> -->
+    <!--         <introduction> -->
+    <!--           <p> -->
 
-    <introduction>
-      <p>
-        As we saw in <xref ref="EXAMPLEParabolaOptSqr"></xref> once we<rsq/>ve found
-        the objective function, <m>O(x)</m>, our optimization problem becomes the
-        more abstract problem of finding the extreme points of the graph of
-        <m>O(x)</m>. An optimization problem ultimately comes down to finding all
-        of the local extrema. The maximum among those will be the global
-        maximum, and the minimum among those will be the global
-        minimum. Assuming of course, that either exists.
-      </p>
-        
-      <p>
-        Thus our first task is to identify all of the local extrema.
-        But finding the local extreme points of the graph of an
-        arbitrary objective function can be more complicated than
-        we<rsq/>ve seen in any of our examples so far.  In this
-        section we will address these complications. By the end of the
-        section we will have a general procedure for solving this more
-        abstract optimization problem.
-      </p>
+    <!--           </p> -->
+    <!-- </introduction> -->
 
-    </introduction>
-    <subsection xml:id="SECTIONIntroOptim">
-      <title>An Illustrative Example from <m>1750</m></title>
-
-      <p>
-        <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Simpson/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Simpson/">Thomas Simpson</url>
-        included the following problem            on page 42 of his 1750 textbook 
-        <url href="https://www.google.com/books/edition/The_Doctrine_and_Application_of_Fluxions/4r44AAAAMAAJ?hl=en" visual="https://www.google.com/books/edition/The_Doctrine_and_Application_of_Fluxions/4r44AAAAMAAJ?hl=en">            <pubtitle>The
-        Doctrine and Application of Fluxions</pubtitle></url>:
-      </p>
-      <image source="DC/SimpsonOpt.png" width="70%">
-        <shortdescription></shortdescription>
-      </image>
-
-      <p>
-        As a proud Englishman, Simpson used Newton<rsq/>s fluxional
-        notation exclusively but we will stick with  differential
-        notation  since we are more familiar with that.
-      </p>
-
-
-      <exercise xml:id="PROBLEMSimpsonOpt">
-        <idx><h sortby="AAA">Problems</h></idx>
-
-        <introduction>
-          <p>
-            <!-- We will extend Simpson<rsq/>s problem to finding both -->
-            <!-- the maximum and the minimum values of <m>y</m>, if they -->
-            <!-- exist. -->  
-            In modern parlance the problem is stated as follows: Find
-            the maximum and minimum values of <m>y</m> subject to the
-            constraint that <me>a^4x^2={\left(x^2+y^2\right)}^3</me>,
-            if either exists.
-          </p>
-        </introduction>
-        <task>
-          <p>
-            According to <xref
-            ref="THEOREMFermatsTheorem">Fermat<rsq/>s
-            Theorem</xref>, if <m>y</m> is differentiable at
-            a point and <m>y</m>  is a maximum (or a minimum) at that
-            point then the line tangent to the curve will be
-            horizontal  at that point. So we will need
-            to compute the derivative of <m>y</m> with respect to
-            <m>x</m>.
-          </p>
-          <p>
-            Show that             
-            <men
-                xml:id="EQUATIONSimpsonOptDeriv">\dfdx{y}{x}=\frac{\frac{1}{3}a^{\frac{4}{3}}x^{-\frac{1}{3}}-x}{y}
-            </men>.
-            is the derivative of the curve <m>a^4x^2={\left(x^2+y^2\right)}^3</m>,
-          </p>
-        </task>
-        <task>
-          <p>
-            By setting the numerator of <xref
-            ref="EQUATIONSimpsonOptDeriv">equation</xref> equal to
-            zero show that <m>x=\pm \frac{1}{3^{\frac{3}{4}}}a</m> and
-            use these values to show that when <m>\dfdx{y}{x}=0</m>, <m>y=\pm
-            a\sqrt{\frac{2}{3\sqrt{3}}}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Conclude that the maximum value of <m>y</m> is
-            <m>a\sqrt{\frac{2}{3\sqrt{3}}}</m> and the minimum value
-            is <m>-a\sqrt{\frac{2}{3\sqrt{3}}}</m>.
-          </p>
-        </task>
-      </exercise>
-
-      <!--       <exercise xml:id="PROBLEMSimpsonOptimizationProblem"> -->
-      <!--         <title>A Problem from <m>1750</m></title> -->
-      <!--         <introduction> -->
-      <!--           <p> -->
-
-      <!--           </p> -->
-      <!-- </introduction> -->
-
-      <!-- <task> -->
-      <!--   <p> -->
-      <!--     Show that for the curve <m>a^4x^2={\left(x^2+y^2\right)}^3</m>,  -->
-      <!--     <me>\frac{dy}{dx}=\frac{\frac{2}{3}a^{\frac{4}{3}}x^{-\frac{1}{3}}-2x}{y}</me>  -->
-      <!--   </p> -->
-      <!-- </task> -->
-      <!-- <task> -->
-      <!--   <p> -->
-      <!--     Show that by setting the numerator equal to zero we obtain <m>x=\pm \frac{1}{3^{\frac{3}{4}}}a</m> and use these values to show that <m>y=\pm a\sqrt{\frac{2}{3\sqrt{3}}}</m> -->
-      <!--   </p> -->
-      <!-- </task> -->
-      <!-- <conclusion> -->
+    <!-- <task> -->
+    <!--   <p> -->
+    <!--     Show that for the curve <m>a^4x^2={\left(x^2+y^2\right)}^3</m>,  -->
+    <!--     <me>\frac{dy}{dx}=\frac{\frac{2}{3}a^{\frac{4}{3}}x^{-\frac{1}{3}}-2x}{y}</me>  -->
+    <!--   </p> -->
+    <!-- </task> -->
+    <!-- <task> -->
+    <!--   <p> -->
+    <!--     Show that by setting the numerator equal to zero we obtain <m>x=\pm \frac{1}{3^{\frac{3}{4}}}a</m> and use these values to show that <m>y=\pm a\sqrt{\frac{2}{3\sqrt{3}}}</m> -->
+    <!--   </p> -->
+    <!-- </task> -->
+    <!-- <conclusion> -->
 
 
 
-      <!--   <p> -->
+    <!--   <p> -->
 
-      <!--     Thus, the maximum value of <m>y</m> is -->
-      <!--     <m>a\sqrt{\frac{2}{3\sqrt{3}}}</m> and the minimum value -->
-      <!--     is <m>-a\sqrt{\frac{2}{3\sqrt{3}}}</m>. -->
-      <!--   </p> -->
-      <!--       </conclusion> -->
-      <!--       </exercise> -->
+    <!--     Thus, the maximum value of <m>y</m> is -->
+    <!--     <m>a\sqrt{\frac{2}{3\sqrt{3}}}</m> and the minimum value -->
+    <!--     is <m>-a\sqrt{\frac{2}{3\sqrt{3}}}</m>. -->
+    <!--   </p> -->
+    <!--       </conclusion> -->
+    <!--       </exercise> -->
 
-      <p>
-        <xref ref="PROBLEMSimpsonOpt">Problem</xref> seems pretty
-        straightforward until you examine it closely. Then some
-        difficult questions pop up.
-      </p>
-      <p>
-        First, <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s
-        Theorem</xref> does not say that if <m>\dfdx{y}{x}=0 </m>
-        there will be an extremum, it says that if there is an
-        extremum then <m>\dfdx{y}{x}=0 </m>. So our conclusion is
-        dubious at best. To be clear, we have found the maximum
-        and minimum. But we can<rsq/>t conclude so from the work
-        we<rsq/>ve done here. We will address this in the next
-        section.
-      </p>
+    <p>
+      <xref ref="PROBLEMSimpsonOpt">Problem</xref> seems pretty
+      straightforward until you examine it closely. Then some
+      difficult questions pop up.
+    </p>
+    <p>
+      First, <xref ref="THEOREMFermatsTheorem">Fermat<rsq/>s
+      Theorem</xref> does not say that if <m>\dfdx{y}{x}=0 </m>
+      there will be an extremum, it says that if there is an
+      extremum then <m>\dfdx{y}{x}=0 </m>. So our conclusion is
+      dubious at best. To be clear, we have found the maximum
+      and minimum. But we can<rsq/>t conclude so from the work
+      we<rsq/>ve done here. We will address this in the next
+      section.
+    </p>
 
-      <p>
-        Second notice that <m>\dfdx{y}{x}</m> is not meaningful
-        when <m>x=0</m> (why not?).  If we sketch the graph of
-        this curve when <m>a=1</m>, we can see what is happening
-        here.
-      </p>
-      <image source="DC/SimpsonOptGraph.png" width="60%">
-        <shortdescription></shortdescription>
-      </image>
-      <!-- \includegraphics*[width=3.90in, height=2.53in]{image67} -->
+    <p>
+      Second notice that <m>\dfdx{y}{x}</m> is not meaningful
+      when <m>x=0</m> (why not?).  If we sketch the graph of
+      this curve when <m>a=1</m>, we can see what is happening
+      here.
+    </p>
+    <image source="DC/SimpsonOptGraph.png" width="60%">
+      <shortdescription></shortdescription>
+    </image>
+    <!-- \includegraphics*[width=3.90in, height=2.53in]{image67} -->
 
-      <p>
-        When <m>x=0</m> the slope of the curve appears to be
-        infinite (or is it negatively infinite?). This doesn't
-        cause any issues in this problem since the origin is
-        not an extremal point for this curve.  But for other
-        curves it could be.  For example,  neither of the
-        derivatives of <m>y=x^{\frac{2}{3}}</m> or 
-        <m>y=\sqrt{1-x^{\frac{5}{3}}}</m> exist at the origin, but they
-        have very different behaviors with regard to extrema as
-        evidenced by their graphs.
-      </p>
+    <p>
+      When <m>x=0</m> the slope of the curve appears to be
+      infinite (or is it negatively infinite?). This doesn't
+      cause any issues in this problem since the origin is
+      not an extremal point for this curve.  But for other
+      curves it could be.  For example,  neither of the
+      derivatives of <m>y=x^{\frac{2}{3}}</m> or 
+      <m>y=\sqrt{1-x^{\frac{5}{3}}}</m> exist at the origin, but they
+      have very different behaviors with regard to extrema as
+      evidenced by their graphs.
+    </p>
 
-      <image source="DC/UndefinedDerivativeOpt.png" width="80%">
-        <shortdescription></shortdescription>
-      </image>
+    <image source="DC/UndefinedDerivativeOpt.png" width="80%">
+      <shortdescription></shortdescription>
+    </image>
 
-      <!-- \includegraphics*[width=2.53in, height=1.49in]{image68}   \includegraphics*[width=2.92in, height=1.45in]{image69} -->
+    <!-- \includegraphics*[width=2.53in, height=1.49in]{image68}   \includegraphics*[width=2.92in, height=1.45in]{image69} -->
 
-      <p>
-        Combining these examples with Simpson<rsq/>s, we see that a
-        non-existent derivative can result in a maximum, a minimum or
-        no extremum at all.
-        Things can become very complicated very quickly when we start
-        looking for maxima and minima. We<rsq/>ll have to get
-        organized.
-      </p>
+    <p>
+      Combining these examples with Simpson<rsq/>s, we see that a
+      non-existent derivative can result in a maximum, a minimum or
+      no extremum at all.
+      Things can become very complicated very quickly when we start
+      looking for maxima and minima. We<rsq/>ll have to get
+      organized.
+    </p>
 </subsection>
 
 
@@ -3038,10 +3211,16 @@
           <p>
             Pick a number less than <m>-1</m>, say
             <m>x=-2.</m> Since  <m>\dfdxat{O}{x}{-2}\gt 0</m> we see that <m>O(x)</m> is
-            increasing to the left of <m>x=-1.</m> Next pick a number between
+            increasing to the left of <m>x=-1.</m>
+          </p>
+          <p>
+            Next pick a number between
             <m>-1</m> and the next POTP, <m>x=1</m>. We<rsq/>ll take <m>x=0</m>. Since
             <m>\dfdxat{O}{x}{0}\lt0</m> we see that <m>O(x)</m> is decreasing to the
-            right of <m>x=-1</m>. Thus <m>O(-1) =2</m> is a local maximum value of
+            right of <m>x=-1</m>. 
+          </p>
+          <p>
+            Thus <m>O(-1) =2</m> is a local maximum value of
             <m>O(x)</m>.
           </p>
         </li>
@@ -3049,10 +3228,16 @@
           <title>At   <m>x=1</m>:</title>
           <p>
             As we saw above <m>O(x)</m> is decreasing to the left of <m>x=1</m> since
-            <m>\dfdxat{O}{x}{0}\lt0</m>. (Zero is between <m>x=-1</m> and <m>x=1</m>.) Next
+            <m>\dfdxat{O}{x}{0}\lt0</m>. (Zero is between <m>x=-1</m> and <m>x=1</m>.)
+          </p>
+          <p>
+            Next
             choose any number to the right of <m>x=1</m>. We<rsq/>ll choose
             <m>x=2</m>. Since <m>\dfdxat{O}{x}{2}\gt0</m> we see that <m>O(x)</m> is
-            increasing to the right of <m>x=1</m>. Thus <m>O(1)=-2</m> is a local
+            increasing to the right of <m>x=1</m>. 
+          </p>
+          <p>
+            Thus <m>O(1)=-2</m> is a local
             minimum of <m>O(x)</m>.
           </p>
         </li>
@@ -3067,30 +3252,27 @@
     </p>
     <p>
 
-      Of course it is. Consider that the POTPs are precisely those
-      places where <m>O^\prime(x)</m> might change sign. Therefore the sign
+      Of course it is. Since the POTPs are precisely those
+      places where <m>O^\prime(x)</m> might change sign it follows that the sign
       of <m>O^\prime(x)</m> must either be always positive or always negative
       in between POTPs. Therefore, we only need to test at one value of
       <m>x</m> to find the sign of <m>O(x)</m> on the entire interval between
       POTPs.
     </p>
     <p>
-
-      If <m>a</m> is the greatest POTP we need only test the sign of one
+      Similarly,
+      if <m>a</m> is the greatest POTP we need only test the sign of one
       number greater than <m>a</m> to determine the sign of <m>O^\prime(x)</m> for
       every value of <m>x</m> greater than <m>a</m>.
-    </p>
-    <p>
-
-      Similarly, if <m>a</m> is the least POTP we need only test the sign of
+      and if <m>a</m> is the least POTP we need only test the sign of
       one number less than <m>a</m> to determine the sign of <m>O^\prime(x)</m>
-      for every value of <m>x</m> less than <m>a</m>.
-    </p>
-    <p>
+        for every value of <m>x</m> less than <m>a</m>.
+      </p>
+      <p>
 
-      We state all of this formally in <xref ref="LEMMAAdjRoots"></xref>
-      below.
-    </p>
+        We state all of this formally in <xref ref="LEMMAAdjRoots"></xref>
+        below.
+      </p>
   </example>
 
   <exercise>
