@@ -1,10 +1,10 @@
 all: jing latex pdf web view 
 
 web: *.ptx  Makefile 
-	pretext build web
+	/home/ecb5/.local/bin/pretext build web
 
 deploy: *.ptx  Makefile
-	pretext deploy -u
+	/home/ecb5/.local/bin/pretext deploy -u
 
 jing: *.ptx 
 	jing /home/ecb5/.ptx/2.8.0/core/schema/pretext.rng main.ptx
@@ -12,24 +12,26 @@ jing: *.ptx
 
 
 latex: *.ptx Makefile 
-	pretext build latex
+	/home/ecb5/.local/bin/pretext build latex
 
 pdf: *.ptx Makefile 
-	pretext build print
+	/home/ecb5/.local/bin/pretext build print
 
 epub: *.ptx Makefile
-	pretext build epub
+	/home/ecb5/.local/bin/pretext build epub
 
 view: Makefile
-	pretext view
+	/home/ecb5/.local/bin/pretext view
 
 viewpdf: 
-#	pretext view print
+#	/home/ecb5/.local/bin/pretext view print
 	evince /home/ecb5/Dropbox/CalcText/Boman/IntCalc/output/print/main.pdf
 
 debug:
-	pretext -v debug build web
+	/home/ecb5/.local/bin/pretext -v debug build web
 
 support:
-	pretext support
+	/home/ecb5/.local/bin/pretext support
 
+pathcheck:
+	/home/ecb5/.local/bin/pretext
