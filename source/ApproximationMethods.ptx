@@ -37,7 +37,7 @@
       it for the square root of two (<m>\approx 1.414213562</m>) or
       the fifth root of seven (<m>\approx 1.475773162</m>), and
       instantly obtain those numbers, accurate to nine decimal
-      places it is difficult to convey the profound importance of
+      places, it is difficult to convey the profound importance of
       having good methods of approximation. With this level of
       accuracy available to us there appears to be no need for
       approximations.
@@ -90,6 +90,7 @@
 
 
     <aside>
+      <title>Comment</title>
       <p>
         Ok, paper and pencil are not strictly necessary either because more
         modern technology is rapidly replacing even that. But the need for
@@ -204,12 +205,13 @@
 
         <introduction>
           <p>
+            This problem refers to <xref ref="EXAMPLESqrt2-1"></xref>.
           </p>
         </introduction>
         <task>
           <statement>
             <p>
-              Show that the next two iterations for this example are
+              Show that the next two iterations  are
               <m>r_3=\frac{11}{8}=1.375</m> and
               <m>r_4=\frac{23}{16}=1.4375</m>.
             </p>
@@ -480,7 +482,7 @@
 
         Of course the answer to all of these questions is yes, otherwise we
         wouldn<rsq/>t have asked. But  to see why we<rsq/>ll have to step away
-        from the Babylonians for a bit.
+        from Heron and the Babylonians for a bit.
       </p>
 
 
@@ -608,7 +610,7 @@
           approximation.  Now find and sketch the line tangent to
           <m>f(x)</m> at <m>(r_1, f(r_1)=(4,f(4))</m> as seen in the sketch
           above (in red). If our first guess is close enough to the
-          actual root the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  guarantees that
+          actual root the <xref ref="DEFINITIONLocalLinearity" text="custom">Principle of Local Linearity</xref>  guarantees that
           the tangent line will cross the <m>x</m>-axis very near to
           the actual root.  So the value of <m>x</m>, whatever it is,
           where the tangent line crosses seems like it would be a
@@ -632,15 +634,19 @@
         <ol marker="(i)">
           <li xml:id="DRILLNewtonMethod2i">
             <p>
-              Show that in this example an equation of the line tangent to
-              <m>f(x)</m> at <m>r_1=4</m> is
-              <men xml:id="EQUATIONNewtonMethod2"> y+10=19(x-4).  </men>
+              Show that in <xref ref="EXAMPLEnewtons-method1"></xref>
+              an equation of the line tangent to <m>f(x)</m> at
+              <m>r_1=4</m> is 
+              <men xml:id="EQUATIONNewtonMethod2">              
+              y+10=19(x-4)
+              </men>.
             </p>
           </li>
           <li xml:id="DRILLNewtonMethod2ii">
             <p>
               Our second approximation (<m>r_2</m>) to the root we seek will be
-              the <m>x</m> coordinate of the point where the line in <xref ref="DRILLNewtonMethod2i">part</xref> 
+              the <m>x</m> coordinate of the point where the graph of
+              <xref ref="EQUATIONNewtonMethod2">equation</xref> 
               crosses the <m>x-</m>axis. That is, where <m>y=0.</m>
 
               Set <m>y=0</m> and show that the line in <xref ref="EQUATIONNewtonMethod2">equation</xref> crosses the
@@ -668,17 +674,6 @@
       <exercise xml:id="PROBLEMTanToCubic">
         <idx><h sortby="AAA">Problems</h></idx>
 
-        <introduction>
-
-<figure  xml:id="FIGURENewtonMethodNPlusOne">
-<caption></caption>
-<image source="DC/NewtonsMethod4.png" width="50%">
-<shortdescription></shortdescription>
-</image>
-</figure>
-
-          <!-- <image source="DC/NewtonsMethod4.png" width="50%"/> -->
-        </introduction>
         <task xml:id="PROBLEMTanToCubicA">
           <statement>
             <p>
@@ -692,10 +687,10 @@
         <task xml:id="PROBLEMTanToCubicB">
           <statement>
             <p>
-              Repeat <xref ref="PROBLEMTanToCubicA">part</xref> using the line tangent at <m>r_3=4.436</m> to
+              Repeat part (a) using the line tangent at <m>r_3=4.436</m> to
               obtain the next approximation <m>r_4</m>, but this time round it off to
               <m>6</m> decimal places.
-              (You will need <m>6</m> digits for  <xref ref="PROBLEMTanToCubicD">part</xref>.
+              (You will need <m>6</m> digits for  part (d).
             </p>
           </statement>
         </task>
@@ -728,71 +723,84 @@
         be worth the effort needed to organize our computations as much as we
         can. Fortunately this is not hard to do.
       </p>
-      <p>
 
-        In  the diagram in <xref ref="FIGURENewtonMethodNPlusOne"></xref>  we see the graph of a generic function
-        <m>y=y(x)</m>. Suppose we have used Newton<rsq/>s Method repeatedly and found
-        the <m>n</m>th approximation, <m>r_n</m>, of the the root (the <m>n</m>th iterate).
-        We<rsq/>d like to find a formula to compute the next
-        iterate, <m>r_{n+1}</m>, without having to draw the sketch and solve a new
-        equation.
-        <xref ref="PROBLEMNewtonsMethod3"></xref> leads you through this process.
-      </p>
 
 
       <exercise xml:id="PROBLEMNewtonsMethod3">
         <idx><h sortby="AAA">Problems</h></idx>
 
         <introduction>
-          <p>
-          </p>
-        </introduction>
-        <task xml:id="PROBLEMNewtonsMethod3A">
-          <statement>
-            <p>
-              Find the equation of the line tangent to the curve <m>y=y(x)</m> at
-              the point <m>(r_n, y(r_n))</m>. Show that it can be written in the form
-              <me>
-                y=y(r_n)+\dfdxat{y}{x}{r_n}(x-r_n).
-              </me>
-            </p>
-          </statement>
-        </task>
-        <task xml:id="PROBLEMNewtonsMethod3B">
-          <statement>
-            <p>
-              Use your answer to <xref ref="PROBLEMNewtonsMethod3A">part</xref> to show that
-              <men  xml:id="EQUATIONNewtonMethod">
-                r_{n+1}=r_n-\frac{y(r_n)}{y^\prime(r_n)}.
-              </men>
-              is the general formula for Newton<rsq/>s Method.
-            </p>
-          </statement>
-        </task>
-        <task xml:id="PROBLEMNewtonsMethod3C">
-          <statement>
-            <p>
-              If we get lucky and <m>r_n</m> is the actual root of the function
-              <m>y(x)</m> (not just an approximation). Explain  what happens at the next
-              iteration if <m>r_n</m> is not the root.
-            </p>
 
-          </statement>
-        </task>
-</exercise>
+          <p>
+            Suppose we have used Newton<rsq/>s Method repeatedly and found the
+            <m>n</m>th approximation, <m>r_n</m>, of the the root (the <m>n</m>th
+            iterate) of some generic function <m>y=y(x)</m> as shown in the
+            following figure.
+          </p>
+          <figure  xml:id="FIGURENewtonMethodNPlusOne">
+            <caption></caption>
+            <image source="DC/NewtonsMethod4.png" width="50%">
+              <shortdescription></shortdescription>
+            </image>
+          </figure>
+          <p>
+            We<rsq/>d like to find a formula to compute the
+            next iterate, <m>r_{n+1}</m>, without having to draw the
+            sketch and solve a new equation.
+          </p>
+          </introduction>
+          <task xml:id="PROBLEMNewtonsMethod3A">
+            <statement>
+              <p>
+                Show that the equation of the line tangent to the curve <m>y=y(x)</m> at
+                the point <m>(r_n, y(r_n))</m> can be written in the form
+                <me>
+                  y=y(r_n)+\dfdxat{y}{x}{r_n}(x-r_n).
+                </me>
+              </p>
+            </statement>
+          </task>
+          <task xml:id="PROBLEMNewtonsMethod3B">
+            <statement>
+              <p>
+                Use your answer to part (a)  to show that
+                <men  xml:id="EQUATIONNewtonMethod">
+                  r_{n+1}=r_n-\frac{y(r_n)}{y^\prime(r_n)}.
+                </men>
+                is the general formula for Newton<rsq/>s Method.
+              </p>
+            </statement>
+          </task>
+          <task xml:id="PROBLEMNewtonsMethod3C">
+            <statement>
+              <p>
+                If we get lucky and <m>r_n</m> is the actual root of the function
+                <m>y(x)</m> (not just an approximation). Explain  what happens at the next
+                iteration if <m>r_n</m> is not the root.
+              </p>
+
+            </statement>
+          </task>
+      </exercise>
 
       <p>
         In <xref ref="SECTIONDerivative"></xref> we introduced Lagrange<rsq/>s <lsq/>prime<rsq/>
-        notation for the derivative: If <m>y=y(x)</m> then
-        <m>\dfdx{y}{x}=y^\prime(x)</m>. We also commented that when the
+        notation for the derivative: 
+        <md>
+          <mrow>
+            \text{If}\amp{}\amp{}            y=y(x) \amp{}\amp{}  \text{then}\amp{}\amp{}
+            \dfdx{y}{x}=y^\prime(x).
+          </mrow>
+        </md>
+        We also commented that when the
         differential form becomes cumbersome we would switch to Lagrange<rsq/>s
         notation.  Such a time has come.
       </p>
 
       <p>
-        Lagrange had conceptual reasons for this change in notation, but we
-        just want to streamline our notation a bit.  Since we will be looking at
-        tangent lines to curves it will be easier on the eyes to write
+        Lagrange had conceptual reasons for this change in notation,
+        but we just want to streamline our notation a bit. It will be
+        easier on the eyes to write
         <men  xml:id="EQUATIONLineWPrime">
           y=y(r_n)+y^\prime(r_n)(x-r_n)
         </men>
@@ -853,12 +861,8 @@
         <m>r_n,</m> is quite close to the root we seek then we can safely
         assume  that the curve and its tangent line
         are practically the same (at least, most of the time). This is, of course, the
-        <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  again.
+        <xref ref="DEFINITIONLocalLinearity" text="custom">Principle of Local Linearity</xref>  again.
       </p>
-
-
-
-
 
       <p>
         At the end of  step <m>2</m>  we used the phrase <q>until the desired
@@ -925,7 +929,7 @@
             </li>
           </ol>
         </p>
-</problem>
+      </problem>
 
       <problem xml:id="PROBLEMNewton-meth">
         <idx><h sortby="AAB">Drills</h></idx>
@@ -969,7 +973,7 @@
             </li>
           </ol>
         </p>
-</problem>
+      </problem>
 
       <problem xml:id="PROBLEMNewton-meth2">
         <idx><h sortby="AAB">Drills</h></idx>
@@ -995,7 +999,7 @@
             </li>
           </ol>
         </p>
-</problem>
+      </problem>
 
 
       <problem xml:id="PROBLEMXCosx">
@@ -1029,12 +1033,12 @@
         <introduction>
 
 
-<figure  xml:id="FIGURENewtonsMethodInitGuessClose">
-<caption></caption>
-<image source="DC/NewtonsMethod1.png" width="50%">
-<shortdescription></shortdescription>
-</image>
-</figure>
+          <figure  xml:id="FIGURENewtonsMethodInitGuessClose">
+            <caption></caption>
+            <image source="DC/NewtonsMethod1.png" width="50%">
+              <shortdescription></shortdescription>
+            </image>
+          </figure>
 
         </introduction>
         <task>
@@ -1124,9 +1128,11 @@
         being used you will also be aware of the limitations of your software.
         Perhaps more importantly, you are less likely to believe a wrong
         answer when you get it. Depending on what you are computing an
-        incorrect approximation could mean anything from a minor annoyance --
-        if you are calculating <m>\sqrt{2}</m> just for fun<mdash/>to a deadly disaster
-       <mdash/>if you are designing a control procedure for a self-driving car.
+        incorrect approximation could mean anything from a minor
+        annoyance (if you are calculating <m>\sqrt{2}</m> just for
+        fun) to a deadly disaster
+        (if you are designing a control procedure for a self-driving
+        car).
       </p>
 
       <exercise xml:id="PROBLEMNewtMethSignOfIterates">
@@ -1161,11 +1167,12 @@
           <statement>
             <p>
               Suppose you are trying to compute a numerical
-              approximation of <m>\sqrt{2}</m> using an implementation of
-              Newton<rsq/>s Method, but you accidentally enter <m>x^2+2</m> as
-              your function (instead of <m>x^2-2</m>). Explain how you can
-              use the results of <xref ref="PROBLEMNewtMethSignOfIteratesA">part </xref> and <xref ref="PROBLEMNewtMethSignOfIteratesB">part </xref> to see that the algorithm
-              is failing at the third iteration.
+              approximation of <m>\sqrt{2}</m> using an implementation
+              of Newton<rsq/>s Method, but you accidentally enter
+              <m>x^2+2</m> as your function (instead of
+              <m>x^2-2</m>). Explain how you can use the results of
+              part (a) and part (b) to see that the algorithm is
+              failing at the third iteration.
             </p>
           </statement>
         </task>
@@ -1181,9 +1188,11 @@
       </p>
 
       <p>
-        For example, Newton<rsq/>s Method is not perfect. It can fail in two distinct ways:
-        Subtle and Spectacular. Let<rsq/>s take a look at them.
-          </p>
+        For example, Newton<rsq/>s Method is not perfect. It can fail
+        in two distinct ways that we<rsq/>ll call
+        Spectacular Failure and Subtle Failure. Let<rsq/>s take a look
+        at them in turn.
+      </p>
 
         </subsection>
 
@@ -1259,11 +1268,14 @@
             </task>
           </exercise>
           <p>
-            Obviously we don<rsq/>t need to use Newton<rsq/>s Method to compute the root of
-            <m>f(x)=x^{1/3}.</m> The point of this example is that Newton<rsq/>s Method will
-            not find the root no matter how close our initial guess is. Instead it
-            will continue to generate alternately positive and negative
-            <q>approximations</q> to zero, that are farther and farther from zero.
+            Obviously we don<rsq/>t need to use Newton<rsq/>s Method
+            to compute the root of <m>f(x)=x^{1/3}.</m> The point of
+            <xref ref="PROBLEMNewtonsMethodOneThird"></xref> is that
+            Newton<rsq/>s Method will not find the root no matter how
+            close our initial guess is. Instead it will continue to
+            generate alternately positive and negative
+            <q>approximations</q> to zero, that are farther and
+            farther from zero.
           </p>
 
 
@@ -1272,8 +1284,7 @@
         <subsection xml:id="SUBSECTIONSubtleFailure">
           <title>Subtle Failure</title>
           <p>
-            The other way Newton<rsq/>s Method fails can be quite subtle. That is, it
-            can converge, but not to the number we seek.
+            The other way Newton<rsq/>s Method fails can be quite subtle.
             The best way to demonstrate this is with an example.
           </p>
           <example xml:id="EXAMPLE-SubtleFailCos">
@@ -1351,7 +1362,7 @@
                 Find approximations to all real roots of
                 <me>
                   f(x) =
-                  t  (10x^2-21x+11)(x-0.05)(x^3+7).
+                   (10x^2-21x+11)(x-0.05)(x^3+7).
                 </me>
               </p>
             </statement>
@@ -1456,11 +1467,11 @@
   <task xml:id="PROBLEMNMByGraphingB">
     <statement>
       <p>
-        We said <q>almost never</q> in <xref ref="PROBLEMNMByGraphingA">part</xref> because there is a
-        small interval of numbers greater than <m>2</m> with the property that Newton<rsq/>s Method
-        will converge if <m>r_1</m> is any number in the
-        interval. Find an interval that works. It doesn<rsq/>t have to be
-        the largest possible interval.
+        We said <q>almost never</q> in part (a) because there is a
+        small interval of numbers greater than <m>2</m> with the
+        property that Newton<rsq/>s Method will converge if <m>r_1</m>
+        is any number in the interval. Find an interval that works. It
+        doesn<rsq/>t have to be the largest possible interval.
       </p>
     </statement>
   </task>
@@ -1501,7 +1512,7 @@
     <image source="DC/EulerFig1.png" width="40%"/>
   <p>
     Suppose <m>B</m> is a point on the graph of an unknown function <m>y(x)</m> (in
-    green in the figure above). Suppose further that if the line
+    green in the sketch above). Suppose further that if the line
     tangent to the graph at <m>B</m> (in red) crosses the <m>x</m>-axis at <m>(a, 0)</m>
     as shown.
   </p>
@@ -1547,15 +1558,15 @@
     </mdn>
 <idx><h>Vocabulary</h><h>Initial Value Problem</h></idx>
     A problem like the one stated in <xref ref="IVPExpDiffeq1">Formula</xref> is
-    called an <term>Initial Value Problem</term>, or IVP. We will give a formal
+    called an <term>Initial Value Problem (Ivp)</term>. We will give a formal
     definition below (<xref ref="DEFINITIONIVP">Definition</xref>).
   </p>
   <p>
 
-    We do not know a formula for <m>y</m> which will satisfy
+    We do not know a formula for <m>y(x)</m> which will satisfy
     <xref ref="IVPExpDiffeq1">IVP</xref>, nor do we have the tools to find such a
     formula, yet.  We will return to this question in
-    <xref ref="CHAPTERLastElemFunc"></xref>) where we will solve
+    <xref ref="CHAPTERLastElemFunc"></xref> where we will solve
     <xref ref="IVPExpDiffeq1">IVP</xref>) exactly. For the moment we will be
     satisfied if we can find an approximate graph of the solution.  That
     will give us a general sense of its shape.
@@ -1582,7 +1593,7 @@
   <p>
     <idx><h>Principle of Local Linearity</h><h>and Newton<rsq/>s Method</h></idx>
 
-    By the <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref> , the line tangent to the curve and
+    By the <xref ref="DEFINITIONLocalLinearity" text="custom">Principle of Local Linearity</xref> , the line tangent to the curve and
     the curve itself are going to be nearly indistinguishable near to the
     point <m>(0,1)</m>. Moreover, we can find any point on the tangent line
     since we have its equation.  If we increment the <m>x</m>-coordinate just a
@@ -1601,32 +1612,36 @@
     <m>y</m>-coordinate on the line tangent to the curve at <m>x=0.1</m> is <m>1.1</m>
     (since the equation of our tangent line is <m>y=x+1</m>).
   </p>
-  <p>
 
-    We now have two points on our curve: <m>(0,1)</m> and <m>(0.1, 1.1).</m> The
-    point <m>(0.1, 1.1)</m> isn<rsq/>t on the curve, but it<rsq/>s close. Remember we<rsq/>re
-    only trying to approximate the curve. Connecting these with a straight
-    line we have the red segment on the graph above.  So far, so
-    good.
+  <p>
+    We now have two points. The point <m>(0,1)</m> is on the curve.
+    The point <m>(0.1, 1.1)</m> isn<rsq/>t on the curve, but it<rsq/>s
+    close. Remember we<rsq/>re only trying to approximate the
+    curve. Connecting these with a straight line we have the red
+    segment on the graph above.  So far, so good.
   </p>
+
   <p>
     <idx><h>Principle of Local Linearity</h><h>and Newton<rsq/>s Method</h></idx>
 
-    Next we increment <m>x</m> by <m>0.1</m> again, to <m>x=0.2</m>.  We would really
-    like to have the equation of the line tangent to the curve at
-    <m>(0.1, y(0.1))</m> but we simply have no way to obtain it. All we have is
-    the point <m>(0.1, 1.1)</m>. But we know that <m>y(0.1)\approx1.1</m> so the
-    differential equation from <xref ref="IVPExpDiffeq1">IVP</xref>) tells us that
-    <m>\eval{\dfdx{y}{x}}{x}{0.1}\approx1.1</m> also. Thus we see that the curve
-    will pass (approximately) through the point <m>(0.1, 1.1)</m> with slope
-    (approximately) equal to <m>1.1</m>. Therefore the equation of the line
-    tangent to the curve at (approximately) <m>(0.1, 1.1)</m> will be
-    <m>y-1.1=1.1(x-0.1)</m> and as long as we don<rsq/>t move too far the
-    <xref ref="DEFINITIONLocalLinearity">Principle of Local Linearity</xref>  guarantees that this line and the curve
-    we seek are close together. So we use the blue line segment from
-    <m>(0.1, 1.1)</m> to <m>(0.2, 1.21)</m> in our figure above to approximate the
-    curve on the interval <m>(0.1, 0.2)</m>.
-         </p>
+    Next we increment <m>x</m> by <m>0.1</m> again, to <m>x=0.2</m>.
+    We would really like to have the equation of the line tangent to
+    the curve at <m>(0.1, y(0.1))</m> but we simply have no way to
+    obtain it. All we have is the point <m>(0.1, 1.1)</m>. But we know
+    that <m>y(0.1)\approx1.1</m> so the differential equation from
+    <xref ref="IVPExpDiffeq1">IVP</xref>) tells us that
+    <m>\eval{\dfdx{y}{x}}{x}{0.1}\approx1.1</m> also. Thus we see that
+    the curve will pass (approximately) through the point <m>(0.1,
+    1.1)</m> with slope (approximately) equal to <m>1.1</m>. Therefore
+    the equation of the line tangent to the curve at (approximately)
+    <m>(0.1, 1.1)</m> will be <m>y-1.1=1.1(x-0.1)</m> and as long as
+    we don<rsq/>t move too far the <xref
+    ref="DEFINITIONLocalLinearity" text="custom">Principle of Local
+    Linearity</xref> guarantees that this line and the curve we seek
+    are close together. So we use the blue line segment from <m>(0.1,
+    1.1)</m> to <m>(0.2, 1.21)</m> in our figure above to approximate
+    the curve on the interval <m>(0.1, 0.2)</m>.
+  </p>
 
   <p>
     We now repeat this process to compute the points:<m>(0.3,1.331)</m>,
@@ -1694,20 +1709,17 @@
     <m>\left( \text{that is, } \dfdx{y}{x}\right)</m>, is given by some formula, <m>f(x,y)</m>,
     which may involve both <m>x</m> and <m>y</m>.  And  that at a
     particular value of <m>x</m> (specifically, at  <m>x=x_0</m>) we
-    know the value of <m>y(x)</m>: <m>y(x_0)=y_0</m>.
+    know the value of <m>y</m>: <me>y(x_0)=y_0</me>.
   </p>
 <aside>
 <title>Comment</title>
 <p>
  In our problem above we had
-    <m>\dfdx{y}{x}=f(x,y)=y</m>.
+ <m>\dfdx{y}{x}=f(x,y)=y</m>, <m>x_0=0</m>, and <m>y(x_0)=1</m>.
 </p>
 </aside>
 
   <p>
-
-    To write down Euler<rsq/>s Method clearly we will need some
-    notation.
     We know that the equation of the tangent line to the curve <m>y=y(x)</m> at
     the point <m>(x_0,y_0)</m> is given by
     <md>
@@ -2031,13 +2043,12 @@ pull.</q>
   <statement>
     <p>
       Show that the tractrix must satisfy the Initial Value Problem
-      <men  xml:id="EQUATIONTractrixIVP">
-
-        <!-- \label{eq:TractrixIVP} -->
-        \dfdx{y}{x}=-\frac{\sqrt{1-x^2 }}{x}\ \ y(1)=0.
-        
-</men>
-</p>
+      <mdn>
+        <mrow  xml:id="EQUATIONTractrixIVP">
+          \dfdx{y}{x}=-\frac{\sqrt{1-x^2 }}{x}\amp{}\amp{} y(1)=0.
+        </mrow>
+      </mdn>
+    </p>
 </statement>
 <hint>
 <p>
@@ -2119,8 +2130,10 @@ are proportional.
     <p>
       Show that the missile<rsq/>s path must satisfy the IVP
       <md>
-    <mrow>    \dfdx{y}{x}\amp{}=\frac{\frac{2s}{3}-y}{1-x},\amp{}       y(0)=0.</mrow>
-</md>
+        <mrow>
+          \dfdx{y}{x}\amp{}=\frac{\frac{2s}{3}-y}{1-x},\amp{}\amp{}
+        y(0)=0.</mrow>
+      </md>
 
 </p>
 </statement>
@@ -2238,7 +2251,9 @@ are proportional.
     <men  xml:id="EQUATIONSHO3">
       \dfdxn{\theta}{t}{2}=\frac{g}{l}\sin(\theta).
     </men>
-    But it does not satisfy <xref ref="EQUATIONSHO">equation</xref>). Therefore a
+    The presence of <m>\sin (\theta )</m> shows that  <xref
+    ref="EQUATIONSHO3">equation</xref>  does not have the
+    same form as  <xref ref="EQUATIONSHO">equation</xref>. Therefore a
     swinging pendulum is not a Simple Harmonic Oscillator. Its
     motion is slightly more complex.
   </p>
@@ -2357,7 +2372,7 @@ are proportional.
 
     <introduction>
       <p>
-        This drill demonstrates how we can obtain a first degree polynomial
+        This problem demonstrates how we can obtain a first degree polynomial
         that approximates <m>f(x_0)</m> near <m>x=0</m>.
         
         Suppose that  <m>f(x)</m> is some (differentiable) function and that
@@ -2410,7 +2425,7 @@ are proportional.
   </p>
 
 
-  <exercise>
+  <exercise xml:id="PROBLEMTaylorPolyGen">
     <idx><h sortby="AAA">Problems</h></idx>
 
     <introduction>
@@ -2461,11 +2476,11 @@ are proportional.
     tractable by replacing differentials and differential notation,
     which are very cumbersome to use here, with derivatives and his
     prime notation. In general this approximating polynomial is called a
-    <term>Taylor Polynomial</term> named after the English mathematician
+    <term>Taylor Polynomial</term>  after the English mathematician
     <url
         href="https://mathshistory.st-andrews.ac.uk/Biographies/Taylor/"
         visual="https://mathshistory.st-andrews.ac.uk/Biographies/Taylor/">Brook
-    Taylor</url> (1685<ndash/>1731), but was known to mathematiciasn before Taylor
+    Taylor</url> (1685<ndash/>1731), but was known to mathematicians  before Taylor
     (including Newton and Leibniz).
   </p>
 
@@ -2474,15 +2489,17 @@ are proportional.
 
     <introduction>
       <p>
-        This is the process we used to generate our cubic approximation to the
-        sine function just before <xref ref="EQUATIONSHO5">equation</xref>.
+        The process in <xref ref="PROBLEMTaylorPolyGen"></xref> is how
+        we generated our cubic approximation to the
+        sine function just before <xref
+        ref="EQUATIONSHO5">equation</xref>. In this problem you will
+        replicate and extend that computation.
       </p>
     </introduction>
     <task>
       <statement>
         <p>
-          Show that using this process on <m>y=\sin(x)</m> will generate
-          the polynomial that we showed you earlier:
+          Use the process in <xref ref="PROBLEMTaylorPolyGen"></xref> to show that
           <m>\sin(x)\approx x-\frac{x^3}{6}</m>.
         </p>
       </statement>
@@ -2492,11 +2509,16 @@ are proportional.
         <p>
           Find the fourth degree Taylor Polynomial approximation for
           <m>f(x)=\sin(x)</m>.
-          \comment{You may find this puzzling for a moment or two. Make sure
-          you do all the calculations correctly and then believe
-          your calculations.}
-        </p>
+                  </p>
       </statement>
+      <hint>
+        <p>
+          You may find this puzzling for a moment or two. Make sure
+          you do all the calculations correctly and then believe
+          your calculations.
+        </p>
+</hint>
+
     </task>
     <task>
       <statement>
