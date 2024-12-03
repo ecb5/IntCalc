@@ -10117,119 +10117,11 @@ var ptx_lunr_docs = [
   "body": "Problems     Using as a model, state a similar definition for .   Prove from .  "
 },
 {
-  "id": "SECTIONThinkingAboutIntegration",
-  "level": "1",
-  "url": "SECTIONThinkingAboutIntegration.html",
-  "type": "Section",
-  "number": "18.1",
-  "title": "Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation",
-  "body": " Two Ways of Thinking About Integration: Summation vs. Antidifferentiation   Beginning in we observed that when we think about differentiation it is helpful to view differentiation through either the lens of geometry (Leibniz), or the lens of dynamics (Newton), depending on the particular context. Similarly the next section describes two different, but equilvalent, ways to think about integration. As before these two viewpoints are, more or less, equivalent, but they provide different insights. Some are easier to see through one lens, others through the other.    Integration as Summation  Suppose a point traces out a line segment of some unknown length .                 We next partition the line segment between and by selecting points , , , such that .   A partitioned interval.         The partition points subdivide the interval into subintervals. We represent the length of the first subinterval of with , of the second with , and so on. In general represents the length of the th subinterval of . Clearly the length of the line segment is . If the subintervals are all the same length, say , then we no longer need the subscripts to distinguish them so we could write instead. But this is cumbersome and we are far too lazy to write all of that each time we want to indicate such a sum. Leibniz proposed using the letter S (first letter of the word sum ) to simplify the summation notation. He would have written: .   Historical Background  Leibniz chose the letter S because it is the first letter of Latin word summa , from which we get the English word sum.   To a modern eye the integral sign looks like a stylized letter S, and that is often how it is described. But it isn t stylized at all. In the seventeenth century a printed letter S typically had one of several forms, depending on where it appeared in a word. One of these extended above and below the line of text, much as the letter f extends above and the letter j extends below the line of text. Leibniz adopted this doubly extended form of S as his summation sign. So the integral symbol isn t a stylized S at all. It is an archaic letter S .    Vocabulary Integral and the Integral Sign We assume, with Leibniz, that equation remains true when the finite differences ( ) are replaced with infinitesimal differences ( ): . The symbol is called an integral sign , and any expression starting with  followed by a differential is called an integral .   Finite vs. Infinitesimal Summation  For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used and more or less interchangebly.  But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since comes from Greek and comes from Latin, we extend this convention to finite summation by writing equation as because is the Greek version of the Latin capital letter S .    Equation is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from to we will get its length, .   Fundamental Theorem of Calculus This is surely not surprising to you and you are probably wondering why we've taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: equation is a very simple form of what is known as the Fundamental Theorem of Calculus which we will need to become very comfortable with. Later, when things get complex, it will be helpful to refer back to equation and remind ourselves that, at its heart, integration is about adding up differentials.   DIGRESSION: Coordinates and Variable Names     In we were rather careless about the distinction between the label of a point, e.g. or , and its coordinate, e.g. or . A natural question would be Aren t they the same thing?   No, actually they aren t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it s (horizontal) distance from the origin. Consider the following diagram.         The labels (names) of the two points are and . Since measures the distance between zero and it is by definition the coordinate of the point labeled . Similarly is the coordinate of .   Comment  If a vertical axis were present zero would be the second coordinate of both points. Do you see why?   On the other hand since  the distance between and  is not measured from the origin it is neither a coordinate nor the label of a point.           It is the length of the line segment . If we partition this line segment and compute we get equation .  Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.     Strictly speaking this is an abuse of our notation and it can cause confusion because it isn t always clear whether and refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.  END OF DIGRESSION     Integration as Antidifferentiation   Antiderivative  Vocabulary Antiderivative   Suppose we have a function with derivative . Then is called an antiderivative of .    From , we see that .  We know from our work in (specifically equation ) that . So if we sum all of the differentials on the left and right sides of equation we have . Observe that since is a differential it follows that is also a differential so the expression is a valid integral.  Thus it appears that if is known then will be the antiderivative of . That is to say, integration appears to be differentiation run backwards. This seems reasonable since differentiation consists of subtracting (finding differentials) and integration consists of adding (summing differentials). Addition and subtraction can both be thought of as doing the the other backwards.   It follows immediately from and the Constant Rule that if a function has one antiderivative then it has infinitely many. That is, if is an antiderivative of then so is . And . In fact if ia a constant then so is for every possible value of because we get a (slightly) different antiderivative each time we add a constant to .  Thus if we know one antiderivative of , then we know all (infinitely many) of the antiderivatives of . Remember this. We will return to it when we discuss below.   A Simple Integration  For example, can you find a formula for this integral: ? Before reading on give it a try.  Clearly so from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus .   Vocabulary Antiderivative most general This shows that the expression represents a multifunction much like the  functions we encountered in . An alternative way to think of this is to say that represents the set of all antiderivatives of , each of which differs from the others by a constant.     Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call the most general antiderivative of .  There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for the problem in front of us so we won t fuss over it too much. If we write without conditions it means the set of all antiderivatives of . To specify a particular antiderivative we will still write but we will also explicitly indicate which antiderivative we mean.   Beginning in the early twentieth century integration theory has grown considerably beyond what we will be learning in this course. But the underlying notions of the integral as a sum and the integral as an antiderivative are still very helpful and we will rely on them rather heavily, at least at first.  Problems Antiderivative  Show that the following statements are true. Assume is an arbitrary constant. (We have not shown you how to compute any of these integrals. But you know how to differentiate. Read again carefully.)               Notice that we ve used instead of for our variable. Does that matter? Explain.               The exercises in were all a bit contrived. Since we gave you the antiderivatives you don t really need to know how tho integrate.  The real question here is How could you find these antiderivatives if we hadn t given them to you?     We Integrate Differentials, Not Functions  Integration can be usefully thought of as either summation or antidifferentiation. We will flip between these two mindsets as convenient in much the same way that we flipped between the dynamic (Newtonian) and geometric (Leibnizian) viewpoints in .  Since it is valid to think of as representing an antiderivative of the function it is customary to speak these symbols aloud as the integral of of . While this is not wrong, it is not quite right either. Properly speaking, we should say the integral of the differential times . But no one does that so we won t either.  But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop unfortunate habits of mind. We will take a moment to try to prevent that from happening.  The integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final , of writing instead of , and then calling them both the integral of the function .  This is an unfortunate, but common, abuse of the notation. You can not integrate a function, only a differential. We strongly suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.  Remember that is meaningless no matter how convenient it might be because it indicates that we are summing a function, not a differential.   Notation  By calling meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don t fall into this habit while you are still learning the basics.   But the meaning of is clear. We're summing up all of the differentials of the form .  Finally, there is a puzzle here. In we introduced integration as summation, and we invented the integral sign to reflect that idea. But in this section we have reinterpreted the integral to mean antidifferentiation and the idea of integral as summation seems to have died a quiet death. Nowhere in does a summation appear.  But this is the point. Finding the sum by addition is a very daunting task. Where would you even begin? By reinterpreting it as an antidifferentiation problem we are able to find the sum, without the bother of adding up (infinitely many) differentials of the form . Antidifferentiation gives us a way to compute the sum indirectly.                     "
-},
-{
-  "id": "FIGUREPartitionedInterval",
-  "level": "2",
-  "url": "SECTIONThinkingAboutIntegration.html#FIGUREPartitionedInterval",
-  "type": "Figure",
-  "number": "18.1.1.1",
-  "title": "",
-  "body": " A partitioned interval.        "
-},
-{
-  "id": "SUBSECTIONIntegrationAsASum-8",
-  "level": "2",
-  "url": "SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum-8",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "integral sign integral "
-},
-{
-  "id": "SUBSECTIONIntegrationAsASum-9",
-  "level": "2",
-  "url": "SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum-9",
-  "type": "Comment",
-  "number": "18.1.1.2",
-  "title": "Finite vs. Infinitesimal Summation.",
-  "body": " Finite vs. Infinitesimal Summation  For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used and more or less interchangebly.  But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since comes from Greek and comes from Latin, we extend this convention to finite summation by writing equation as because is the Greek version of the Latin capital letter S .  "
-},
-{
-  "id": "DEFINITIONAntiderivative",
-  "level": "2",
-  "url": "SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative",
-  "type": "Definition",
-  "number": "18.1.2.1",
-  "title": "Antiderivative.",
-  "body": " Antiderivative  Vocabulary Antiderivative   Suppose we have a function with derivative . Then is called an antiderivative of .   "
-},
-{
-  "id": "EXAMPLESimpleInt1",
-  "level": "2",
-  "url": "SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1",
-  "type": "Example",
-  "number": "18.1.2.2",
-  "title": "A Simple Integration.",
-  "body": " A Simple Integration  For example, can you find a formula for this integral: ? Before reading on give it a try.  Clearly so from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus .   Vocabulary Antiderivative most general This shows that the expression represents a multifunction much like the  functions we encountered in . An alternative way to think of this is to say that represents the set of all antiderivatives of , each of which differs from the others by a constant.     Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call the most general antiderivative of .  There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for the problem in front of us so we won t fuss over it too much. If we write without conditions it means the set of all antiderivatives of . To specify a particular antiderivative we will still write but we will also explicitly indicate which antiderivative we mean.  "
-},
-{
-  "id": "EXERCISEAntiDerivPractice",
-  "level": "2",
-  "url": "SECTIONThinkingAboutIntegration.html#EXERCISEAntiDerivPractice",
-  "type": "Problem",
-  "number": "18.1.2.3",
-  "title": "",
-  "body": "Problems Antiderivative  Show that the following statements are true. Assume is an arbitrary constant. (We have not shown you how to compute any of these integrals. But you know how to differentiate. Read again carefully.)               Notice that we ve used instead of for our variable. Does that matter? Explain.              "
-},
-{
-  "id": "SECTIONIntegrationRules1",
-  "level": "1",
-  "url": "SECTIONIntegrationRules1.html",
-  "type": "Section",
-  "number": "18.2",
-  "title": "Rules for Integration",
-  "body": " Rules for Integration  Since integration can be thought of as the reverse of differentiation it is not too surprising to learn that each differentiation rule has its counterpart as an integration rule. The following list illustrates some of the rules we already know from Differential Calculus in both their differential and integral form.                                                                                               Drills   Integration Rules and appear to violate Integration Rule , don t they? Isn t it true that where and are arbitrary constants, and that . Explain how Integration Rules and are legitimate as stated.   In light of , it is common practice integrate each term of a differential and then combine all of the arbitrary constants into a single constant.   For example, consider , where .   As with differentiation, when you get more comfortable with integration, you will probably do many of these steps in your head. But that ability will only come with practice.   Drills  Use Integration Rules to find the most general antiderivative.                             Conspicuously absent from our list of rules are the integral form of the Product Rule, the Quotient Rule, and the Chain Rule. The reverse of the Quotient Rule is rather limited in its applicability and typically is not used. Reversing the others can be quite useful but we are not quite ready to discuss them in depth.         A Few Comments on Integration Rule         First, notice that Integration Rule will work if the exponent has any value except  . If we try to apply it we ll get which we know is meaningless.  For this single exception we have to turn to Integration Rule : .  Does it seem strange to you that there would be this single exception to Integration Rule ? Us too.  Also notice the absolute value in the formula:   We saw in DIGRESSION: The Absolute Value Function that an alternative definition of the absolute value function is .  Problems  Show that if we differentiate the definition we still obtain the formula .   Be careful that you do not try to take the logarithm of a negative number.   It is common (though incorrect) practice to disregard the absolute value and write , even though this is only valid for . We will also adopt this practice but you should always bear in mind that there are situations where the absolute value must be used.              "
-},
-{
-  "id": "DRILLIntSum",
-  "level": "2",
-  "url": "SECTIONIntegrationRules1.html#DRILLIntSum",
-  "type": "Drill",
-  "number": "18.2.0.1",
-  "title": "",
-  "body": " Drills   Integration Rules and appear to violate Integration Rule , don t they? Isn t it true that where and are arbitrary constants, and that . Explain how Integration Rules and are legitimate as stated.  "
-},
-{
-  "id": "SECTIONIntegrationRules1-5",
-  "level": "2",
-  "url": "SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-5",
-  "type": "Example",
-  "number": "18.2.0.2",
-  "title": "",
-  "body": " For example, consider , where .  "
-},
-{
-  "id": "PROBLEMAntiDiffPractice",
-  "level": "2",
-  "url": "SECTIONIntegrationRules1.html#PROBLEMAntiDiffPractice",
-  "type": "Drill",
-  "number": "18.2.0.3",
-  "title": "",
-  "body": " Drills  Use Integration Rules to find the most general antiderivative.                            "
-},
-{
-  "id": "SECTIONIntegrationRules1-9-7",
-  "level": "2",
-  "url": "SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-9-7",
-  "type": "Problem",
-  "number": "18.2.0.4",
-  "title": "",
-  "body": "Problems  Show that if we differentiate the definition we still obtain the formula .   Be careful that you do not try to take the logarithm of a negative number.  "
-},
-{
   "id": "SECTIONTwoSimpleDiffeqs",
   "level": "1",
   "url": "SECTIONTwoSimpleDiffeqs.html",
   "type": "Section",
-  "number": "19.1",
+  "number": "18.1",
   "title": "Separation of Variables",
   "body": " Separation of Variables       Many natural phenomena can be modeled by a differential equation. You ve already seen this a couple of times. For example, you saw in that the differential equation models the force on a spinning vat of liquid glass. By recognizing that the parabola is one solution of equation we concluded that forming a telescope lens by spin casting would guarantee a parabolic shape.  We obtained our solution in , essentially, by guessing. As we ve said before guessing is an important tool and we encourage you to use it. But, as we ve also said, it is not enough to guess and move on if we happen to make a correct guess. We need to stop and examine the intuition that gave us this guess.  In particular in this case, we want to recast this problem in integral form so we can use the more descriptive, and helpful, notation of integration. We can rewrite equation as As you can see this is the same problem we need to find an antiderivative of . But whereas the differential notation merely tells us what the differential of is, the integral notation clearly suggests an action for us to take: Sum up all of the differentials of the form . And we know how to compute this sum using equations and . With a standard methodology and a clear notation we can successfully attack a wider variety of problems.  Problems   Problems Use the rules of integration to finish solving equation . Notice that when you integrate, you will have the arbitrary constant in your answer. We do not yet have enough information to determine this constant. We will address this at a later    Vocabulary Separation of Variables Again, the point is that integration gives us a more systematic way of solving differential equations. The solution strategy we used when we rewrote equation is called separation of variables and it will enable us to solve a great many simple differential equations.  To see this consider the differential equation .   Drills  Before we continue see if you can come up with a solution of equation on your own. Notice how it is similar to, and different from, equation . Does that help?    Separation of Variables  To find a way to approach this problem we will take our cue from basic Algebra. Suppose we want to solve the algebraic equation for . One obvious solution is . This is a valid solution, but it is uninteresting, so we will not consider it. Assuming that , we can divide by obtaining Once the variables have been separated like this, we can take the square root of each side and obtain .  Notice that it was helpful to put all of the variables on one side, and all of the variables on the other. It was not immediately clear that separating the variables would be helpful but once it was done, the next step was clear.  Similarly it is not clear that separating the variables in equation will help, but let s try it and see what happens. Separating the variables, we see that which says that the differentials on either side of the equation are the same. Integrating (summing) both sides gives .   Problems   Problems    Integrate both sides of equation and then show that must satisfy where are arbitrary constants.   Show that    Since are arbitrary constants, it follows that is also an arbitrary constant. (Why?) For simplicity we will set , so provides the general solution for the original differential equation.  Separation of variable is not always possible. For example, try separating the variables in or .  Even when it can be done it is not always helpful. For example, suppose we had the algebraic equation .  Separating the variables gives , but it would take an application of the Cubic Formula which is not so trivial.   Comment  The Cubic Formula is like the Quadratic Formula , only more fun.   There are whole books and college courses, at both the undergraduate and graduate levels, on the solution of various kinds of differential equations, and it is still an active area of mathematical research. Separable differential equations are among the simplest to solve and even these can be quite challenging at times. Consider the following example.   A Hard Differential Equation  In of we saw that if is the shape that a hanging chain naturally settles into under the pull of gravity then will necessarily be a solution of the second order differential equation: which is a model for the Hanging Chain problem. That is, the graph of a function which solves equation will be the shape of a hanging chain.  It is one thing to confirm a given solution, as you did in , but finding the solution in the first place is not at all a simple task. A start might be to let , so we have .       Adding all of the differentials on both sides of equation , we see that .   As you can see, this is separable, and we can certainly integrate the right-hand side of equation . When we do that we get .  Nothing in our table of integrals from quite matches the left hand side of equation so we ll need to develop more integration techniques before we can compute the solution of equation .  However we can confirm the solution if it is already known. We did this in .   Drills  Confirm (again) that is the solution of equation .   To keep his experiments (and the analysis of his experiments) simple Galileo assumed that the resistance of the Earth s atmosphere to the motion of a falling body was negligible, which it is in simple cases. However since we now have the tools we need to describe the effect of air resistance on a falling body we will analyze this effect in the next section.  "
 },
@@ -10238,7 +10130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONTwoSimpleDiffeqs.html#SECTIONTwoSimpleDiffeqs-5",
   "type": "Problem",
-  "number": "19.1.0.1",
+  "number": "18.1.0.1",
   "title": "",
   "body": "Problems   Problems Use the rules of integration to finish solving equation . Notice that when you integrate, you will have the arbitrary constant in your answer. We do not yet have enough information to determine this constant. We will address this at a later  "
 },
@@ -10256,7 +10148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONTwoSimpleDiffeqs.html#SECTIONTwoSimpleDiffeqs-8",
   "type": "Drill",
-  "number": "19.1.0.2",
+  "number": "18.1.0.2",
   "title": "",
   "body": " Drills  Before we continue see if you can come up with a solution of equation on your own. Notice how it is similar to, and different from, equation . Does that help?  "
 },
@@ -10265,7 +10157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONTwoSimpleDiffeqs.html#EXAMPLESepVar",
   "type": "Example",
-  "number": "19.1.0.3",
+  "number": "18.1.0.3",
   "title": "Separation of Variables.",
   "body": " Separation of Variables  To find a way to approach this problem we will take our cue from basic Algebra. Suppose we want to solve the algebraic equation for . One obvious solution is . This is a valid solution, but it is uninteresting, so we will not consider it. Assuming that , we can divide by obtaining Once the variables have been separated like this, we can take the square root of each side and obtain .  Notice that it was helpful to put all of the variables on one side, and all of the variables on the other. It was not immediately clear that separating the variables would be helpful but once it was done, the next step was clear.  Similarly it is not clear that separating the variables in equation will help, but let s try it and see what happens. Separating the variables, we see that which says that the differentials on either side of the equation are the same. Integrating (summing) both sides gives .  "
 },
@@ -10274,7 +10166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONTwoSimpleDiffeqs.html#SECTIONTwoSimpleDiffeqs-10",
   "type": "Problem",
-  "number": "19.1.0.4",
+  "number": "18.1.0.4",
   "title": "",
   "body": "Problems   Problems    Integrate both sides of equation and then show that must satisfy where are arbitrary constants.   Show that   "
 },
@@ -10301,7 +10193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONTwoSimpleDiffeqs.html#EXAMPLEHardDiffeq",
   "type": "Example",
-  "number": "19.1.0.5",
+  "number": "18.1.0.5",
   "title": "A Hard Differential Equation.",
   "body": " A Hard Differential Equation  In of we saw that if is the shape that a hanging chain naturally settles into under the pull of gravity then will necessarily be a solution of the second order differential equation: which is a model for the Hanging Chain problem. That is, the graph of a function which solves equation will be the shape of a hanging chain.  It is one thing to confirm a given solution, as you did in , but finding the solution in the first place is not at all a simple task. A start might be to let , so we have .       Adding all of the differentials on both sides of equation , we see that .  "
 },
@@ -10310,7 +10202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONTwoSimpleDiffeqs.html#DRILLHangingChainSolution",
   "type": "Drill",
-  "number": "19.1.0.6",
+  "number": "18.1.0.6",
   "title": "",
   "body": " Drills  Confirm (again) that is the solution of equation .  "
 },
@@ -10319,7 +10211,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONSubstMethed.html",
   "type": "Section",
-  "number": "20.1",
+  "number": "19.1",
   "title": "Accounting for Air Resistance: This is a Job for Substitution!",
   "body": " Accounting for Air Resistance: This is a Job for Substitution!  to keep things simple we ignored air resistance in . But air resistance can have a substantial effect on a falling body s motion. So let s tweak our model to account for it.   Vocabulary drag In general, the faster the body is moving through a fluid (like air or water) the more the fluid tends to resist the motion. Hence the resistive force, or drag , is most simply modeled as a function of the body s velocity. You can experience this directly by holding your hand out a car window. The faster the car moves, the more force you will feel on your hand. Similarly if you are swimming, the harder you pump your hands and feet the more force you will feel resisting the motion.  Some of the variables that affect the resistance of a body moving through a fluid are the speed of the body, the viscosity of the fluid, the shape and size of the body, and the turbulence of the fluid. For a medium with a relatively high viscosity and a relatively small object the assumption that the drag is proportional to the velocity of the object makes for a reasonably accurate model. An example of this is a grain of sand falling in water.   Terminology   Vocabulary viscosity Loosely speaking, viscosity is the thickness of the fluid. Thus molasses is more viscous (has a higher viscosity) than water. The concept can be formally defined but we won t need a formal definition.   For a medium with a relatively low viscosity, such as air, and a relatively large object, the drag is assumed to be proportional to the square of the velocity. This would be the model to use for a baseball falling in the air.   Vocabulary linear drag Of course to get a really accurate picture, we could use both a linear term and a quadratic term to represent the drag, but we will keep things as simple as possible for now. In our first example we ll assume that the drag is proportional to the velocity. This is called linear drag .   Sand Falling in Water  To model a grain of sand with mass descending in water we let be the distance the sand has fallen (so the positive axis is pointing downward). Then is the surface of the water. From the diagram below we see that there are three forces acting on the sand particle: (1) the weight of the particle, (2) the drag that the water imposes on it, and (3) its buoyancy.   A circle labeled mass with one arrow, labeled \"weight\", pointing down, and two arrows, labeled \"drag\" and \"buoyancy\", pointing up.   The total force acting on the grain, , will be equal to the sum of these three forces.  If, as usual, we denote the acceleration due to gravity by then the weight of the sand (the downward force due to gravity) is . This is positive because always has a positive value.   Vocabulary drag We have assumed that the drag is linear so it will be proportional to the velocity. That is, the drag is , where the parameter is some positive constant and is the velocity. Notice that this force is negative as the drag is necessarily in the direction opposite of the motion.  Since we have not discussed buoyancy before, a short explanation is in order. The buoyancy of an object is the upward (negative) force that a surrounding fluid applies to any submerged object. This force is equal to the weight of the fluid being displaced by the object. If we denote the mass of the displaced fluid as then the buoyant force is .   Comment  If the density of the object is less than the density of water then the weight of the object and it s boyancy will balance before the object is completely covered by the fluid. That is, any object less dense than water will float in water.   Again we invoke Newton s Second Law. The total of all of the forces on the particle is: and the individual forces are  the weight: ,  the drag: , and  the bouyancy: .  At the beginning of its fall the velocity of the grain is zero, or . Thus our model is the IVP     Problems  Let and note that (why?). Show that IVP can be re expressed as the IVP    The result in says that the differential is equal to the differential . Summing the differentials on either side of the equation we get .                                      Assuming that we know the values of and it appears that we can find the velocity of the falling grain of sand by simply finding the antiderivatives on both sides of equation . The right side is straightforward.   Drills   Show that     The left side of equation is more complex, but only a little more. All we need to do is make it a little easier on the eyes with an appropriate substitution.  Terminal Velocity Problems  Let and use this to show that   Remember that is a constant (why?).   Use the substitution and the appropriate Integration Rule from to show that .   Combine equations , to show that .   This problem is both harder and simpler than it might appear to be.  It is harder because it is not just a matter of combining equations . After that is done, you will still have to solve for .  It is simpler because we ve developed equation in full generality. That is, we have not assigned numerical values to the parameters (constants). As a result it looks more complicated than it really is. Recall .  Vocabulary terminal velocity  Compute , and explain why this value is called the terminal velocity of the sand grain settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.   Because we developed equation in full generality we can find the velocity of any object falling in any fluid simply by varying the parameters , , and . Of course this assumes that the assumptions that lead to IVP still hold.                       "
 },
@@ -10355,7 +10247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#EXAMPLEFallingWithDrag1",
   "type": "Example",
-  "number": "20.1.0.1",
+  "number": "19.1.0.1",
   "title": "Sand Falling in Water.",
   "body": " Sand Falling in Water  To model a grain of sand with mass descending in water we let be the distance the sand has fallen (so the positive axis is pointing downward). Then is the surface of the water. From the diagram below we see that there are three forces acting on the sand particle: (1) the weight of the particle, (2) the drag that the water imposes on it, and (3) its buoyancy.   A circle labeled mass with one arrow, labeled \"weight\", pointing down, and two arrows, labeled \"drag\" and \"buoyancy\", pointing up.   The total force acting on the grain, , will be equal to the sum of these three forces.  If, as usual, we denote the acceleration due to gravity by then the weight of the sand (the downward force due to gravity) is . This is positive because always has a positive value.   Vocabulary drag We have assumed that the drag is linear so it will be proportional to the velocity. That is, the drag is , where the parameter is some positive constant and is the velocity. Notice that this force is negative as the drag is necessarily in the direction opposite of the motion.  Since we have not discussed buoyancy before, a short explanation is in order. The buoyancy of an object is the upward (negative) force that a surrounding fluid applies to any submerged object. This force is equal to the weight of the fluid being displaced by the object. If we denote the mass of the displaced fluid as then the buoyant force is .   Comment  If the density of the object is less than the density of water then the weight of the object and it s boyancy will balance before the object is completely covered by the fluid. That is, any object less dense than water will float in water.   Again we invoke Newton s Second Law. The total of all of the forces on the particle is: and the individual forces are  the weight: ,  the drag: , and  the bouyancy: .  At the beginning of its fall the velocity of the grain is zero, or . Thus our model is the IVP   "
 },
@@ -10364,7 +10256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMTerminalVelocity",
   "type": "Problem",
-  "number": "20.1.0.2",
+  "number": "19.1.0.2",
   "title": "",
   "body": "Problems  Let and note that (why?). Show that IVP can be re expressed as the IVP   "
 },
@@ -10373,7 +10265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#DRILLMFallingGrain",
   "type": "Drill",
-  "number": "20.1.0.3",
+  "number": "19.1.0.3",
   "title": "",
   "body": " Drills   Show that    "
 },
@@ -10382,7 +10274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethed.html#PROBLEMFallingGrain2",
   "type": "Problem",
-  "number": "20.1.0.4",
+  "number": "19.1.0.4",
   "title": "Terminal Velocity.",
   "body": "Terminal Velocity Problems  Let and use this to show that   Remember that is a constant (why?).   Use the substitution and the appropriate Integration Rule from to show that .   Combine equations , to show that .   This problem is both harder and simpler than it might appear to be.  It is harder because it is not just a matter of combining equations . After that is done, you will still have to solve for .  It is simpler because we ve developed equation in full generality. That is, we have not assigned numerical values to the parameters (constants). As a result it looks more complicated than it really is. Recall .  Vocabulary terminal velocity  Compute , and explain why this value is called the terminal velocity of the sand grain settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.  "
 },
@@ -10391,7 +10283,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONKnownIntegrals.html",
   "type": "Section",
-  "number": "20.2",
+  "number": "19.2",
   "title": "Substitution",
   "body": " Substitution  The easiest way to compute an integral is to simply know what it is in the first place. For example, Integration Rule tells us that, . But with a little cleverness we can use Integration Rule to evaluate other integrals as well.  We will need to be able to find antiderivatives of wide variety of functions. But so far we only know the thirteen listed in . A significant portion of any course in Integral Calculus is devoted to extending the list of known antiderivatives. We begin that process in this section.  We start by simply extending the rules we already know. For example at first it seems that Integration Rule only tells us that an antiderivative of is , but with a little cleverness, and basic Algebra, we can use it to compute other integrals that are close to  as in the following example.   Integration By Simple Substitution  For example, to compute , first make the substitution . In that case . Substituting these into our integral we have , and Integration Rule tells us that . Substituting back to the original variable (unsubstituting?) we have .    Drills  Do all of the algebra necessary to show that equation is correct. Explain each step.    Drills   Integration by Simple Substitution Emulate the computations in to compute each of the integrals. Assume is a constant.                          Problems  Integration by substitution seems to be a fairly simple technique when you first encounter it. But it will turn out to be a very sophisticated technique. We will explore this a bit here.   Verify that the identity is correct by differentiating.   Recall that . Use this and the result of part to compute the value of .   Now use the formula from part and the substitution to compute where is an arbitrary constant. Was your result the same as in part ?   Differentiate the function you found in part to confirm that your solution is correct.   As you saw in integrals can be unpredictable, even when you are computing them correctly. You ll need to discipline yourself. You will save yourself a great deal of time and frustration if you don t try to anticipate the solution. And only skip the steps that you are very confident of.  For the first four hundred years or so after Calculus was invented it was necessary for scientists, engineers, and mathematicians to memorize a table of integrals like we showed you in (but much larger) and to own a reference book of known integrals. The image below is a scan of two pages of such a reference.         Drills  Use the entries in the partial table in to evaluate each of the integrals.                 In the modern world the value of a published table of integrals has diminished considerably due to the creation of several very sophisticated mathematical software packages that will perform integrations, sometimes even very complex integrations very quickly. Most such packages are able to compute all of the integrals you will see in this course.  That being so, students are often left wondering why we insist that you memorize the simpler integrals and learn the basice techniques that allow you to compute more complex integrals.  There are a couple of reasons.   Convenience  Integrals are not stand alone problems. Except in this course, they will always come to you as part of a larger, more complicated problem. If you are working on such a problem and the expression comes up you d like to know that this is equal to zero without interupting your work to enter this integral into some software package so you can move on to the next step.  Eventually it will be obvious that but it certainly is not obvious right now. For one thing we haven t yet shown you what it means when we attach symbols to the top and bottom of the integral symbol: means. We ll come back to that in .  You need to be able to use your tools smoothly and efficiently when you are working, and integration is one of your tools. Having to stop working in the middle of every large computation you encounter in order to enter the smaller computions into software is like having to stop to watch a video explaining every step needed to do a small carpentry job on your home. It can be done, but it will be an onerous task at best.    Intuition (or the lack thereof)  A similar question can be asked about arithmetic. Was it really necessary for you to learn the arithmetic rules in grade school? After all, any calculuation you need to do now, as an adult, can be done more reliably by posing the question to your phone. Was learning arithmetic a wasted effort?  Suppose that,  you had never learned any arithmetic,  you are planning a road trip of miles, and  there is no source of fuel on the trip.  If your car gets miles per gallon of fuel. How much fuel do you need to bring? You ask your phone to compute and it tells you that you need one hundred gallons of fuel. Easy right?  But remember you don t know how to do this calculation yourself. You must rely completely on your phone for the answer so you can only pray that you posed the the problem correctly because and this is the point never having done any arithmetic computations yourself you have know way of knowing whether the computation should yield gallons or of a gallon.  If you hadn t spent large chucks of your childhood doing these kinds of computations yourself you d have no intuition to bring to bear on the problem and you d be unable to see that gallon is far too small.  Mistakes happen, even with software. When they do you need to have enough insight into the problem to know when the numbers are coming out wrong. A very good way to develop that kind of insight is to do problems without any assistance (software or otherwise).    Software Doesn t Always Give a Useful Answer  The most sophisticated mathematical software has the cumulative experience and knowledge of the entire mathematical community built into it. As a result such software will often give answers which, although correct, are not helpful. Especially for a beginner.  For example we entered the integral into one such system. The answer we got back was which is correct, but what does it mean? If you can t tell it is probably because you don t know what means.  You will see the function again in where we will explain what it means.  The same system returned when fed it the integral . Even we (the authors) needed to do some investigating to figure out what this means as the symbolism is not part of our core knowledge. It turns out that is a particular Appell hypergeometric function.  Does that help you to understand?  The good news is that we re just making a point. You don t need to know what an Appell hypergeometric function is for this course.     This is not to say that you should not use these tools at all. Mathematical software is available and it can be a marvelous help. But it is no substitute for skill, knowledge, or understanding and that is what you need to gain from this course. So use the software to help you learn. Use it to check your computations after you ve completed them yourself. When you and the software disagree take the time to figure out what is wrong and who is right.   Suppose we need to solve the differential equation . We proceed as above. . But of course we haven t really made much progress until we can evaluate .                    The Integral of the Tangent Function  Use Integration Rule to compute by making the substitution .  Thus .   Problems  Show that is a solution of equation .   Find if .    Drills  Use a similar substitution to show that     Substitution, the Good, the Bad, and the Ugly  Making a substitution in an integral is just the first step. We still have to compute the integral. Our substitution just makes it a little simpler to apply formulas and techniques with which we are already familiar. As simple as it is, substitution is no mere trick. It is a very powerful technique, not just in differentiation and but in all of mathematics.  The good news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  But the bad news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong.  That is to say, you can make any substitution you wish. As long as all calculations are done correctly, it will not be wrong in any absolute sense. But it may not be helpful either and it won t always be easy to tell until you ve done a lot of computations whether the substitution you chose is viable. This issue will be mitigated as you gain experience but, especially in the beginning, be careful. It is very easy to make what looks like a reasonable substitution which is either unworkable or, if it is workable, is much harder to do than different substitution would be.  For example, when computing , we could have let . In that case we would have which is true, but it is not helpful.  Another approach would be to let so that or . In that case we have .  This is a true statement we haven t made any computational errors but it appears that after the substitution we will need to evaluate , which looks hard. It is actually possible to compute this integral using the knowledge you now have. It is simply a matter of finding the right substitution. However, since we have already computed in it is pointless to continue with this example.               A comparably bad choice is . With this substitution we have or . In this case we have which is nearly the same, formally, as equation . The only difference seems to be that the in the denominator in equation became a in equation .   Observation  We say formally because they aren't really the same. We ve used the substitution variable to represent two entirely different functions in each of these formula.   Problems  On the other hand we know from that and we can use this knowledge.  Suppose we need to compute or . The same substitution we used to transform these into the integrals (seen in equation and equation ) will work in reverse.   Use the substitution to show that:   Now use your Algebra and Trigonometry skills to show that so that .   Use the substitution to show that   Now use your Algebra and Trigonometry skills to show that so that .    Advice and Encouragement  You have surely noticed that the calculations you had to do to evaluate the integrals in Problem were quite intricate. Not hard, per se, but there were a lot of steps and at each point you had to draw on just the right tool from Algebra, or Trigonometry, or Differential Calculus.  For example, to get the one-half factor out in front you needed first to recognize that and then you needed the following property of logarithms: .  This is what your math courses are going to be like from now on. You will continue to learn new techniques and acquire new tools. But the new material will frequently be fairly simple to understand  but not so simple to implement. When struggling with a problem it is easy to make the mistake of thinking that you must have misunderstood the new material, but it will frequently be the case that you you really just don't see which is the right tool to use, or how to use it.  This will be frustrating at times. Don't give up. Ask for help if you need it. But be patient with yourself. When you are deep into a problem it is easy to overlook simple things, and then to be embarrassed when your teacher or a classmate shows you that all you had to do was factor out an . When this happens just learn the lesson, remember it, and move on. Embarassment is a wast of waste your time. And it will sap your self-confidence. We've all been there. Don t waste your time on embarassment.   Problems  The integrals in Problem and Problem can be evaluated by means of several different substitutions as we've seen. There are others that will also work but our principle point for now is that no substitution is wrong , some result in a new integral that is easier than the original and some will not. If our goal is simply to evaluate the integral we'll want to look for the simplest method we can find.   Find a simpler substitution than the one we used in Problem to evaluate the integral    Notice that is almost the differential of .   Find a simpler substitution than the one we used in Problem to evaluate the integral    The substitution you used in part will probably work here.    Vocabulary integrand A good Rule of Thumb for choosing a substitution is to look a the integrand (the part between and the differential) and see if you can find an expression and its derivative. That is how we chose the substitution in , and what the hints in tried to lead you to. If you can t find an expression and its derivative try to find an expression and almost its derivative.   An Unhelpful Substitution For example, consider the integral We let so that . This gives  This is all correct, but leads to an integral far worse than the original, But and this is the point of this example we have no way of seeing that this particular substitution will not be helpful until after we ve done the computations above. The lessons here are (1) Be patient with yourself, because this is hard, and (2) Don t give up, because this is hard.  A Helpful Substitution But notice that is almost the derivative of . So let's make instead. Thus . Will that extra factor of be a problem for us? Let s see. Making the substitution we have    So what's the method for making a substitution? Unfortunately, there is none. Basically, you can try anything. If it works, great! If it doesn't, don't do something incorrectly to try and force it. Try something else. Our Rule of Thumb will help, but there are no guarantees. This is what makes integration harder than differentiation, much as long division is harder than multiplication.  The problem will not solve itself. Try something! As you practice, you will gain more experience. Look for formulas, methods, and ideas that you have seen before. Maybe they can be tweaked to address your problem. Maybe they can be applied directly. You won t know until you try.  And Practice, Practice, Practice!  As a general rule the more integrals you know the better. This is because the integration techniques you will be learning do not allow you to compute an integral. They merely show you how to transform one integral into another. You saw this in equation when we transformed into and in when we transformed into . We did not compute these integrals, we merely transformed them. In we transformed into an integral that we already knew.  For that reason it is best to simply know that is, to have memorized as many integrals as you can. Each integral you know provides a target, something you can aim for as you try to transform a new integral into one you know.                                       The Integrals of the Secant and Cosecant Functions Problems  At this point we have know the integrals of the , , , and . The first two were immediate consequences of the differentiation rules, but the , and were harder.   Confirm the identity:    Confirm the identity:    Use the observations in Problem and Problem and a well chosen substitution to show that    Comment:  We have absolute value bars around the expression to ensure that we are not trying to take the logarithm of a negative number. These will not appear obviously in any of the computations you need to do. Just tack them on at the end, like we did.    Compute similarly.     DIGRESSION: The Integral of an Arbitrary Polynomial in and  In many Calculus textbooks the integral of the secant function is developed using the following This digression is based on the paper  Integrating Polynomials in Secant and Tangent  , by Jonathan P. McCammond, The American Mathematical Monthly, Nov., 1999, Vol. 106, No. 9 trick:   Clearly whoever first computed the value of this integral found it by some other means (possibly by guessing) and then realized that multiplying by and using the substitution would suffice, even if it is not very illuminative.  As an means of computing the integral this is fine. But as a teaching example it leaves a lot to be desired. In particular, there is no discernible reason for multiplying the integrand by one in this particular form. It is clearly a trick that was devised after the value of the integral had already been determined.   Comment  An old joke says that a technique is a trick that you use more than once.   We have called this a trick, but we can turn it into a technique by finding the underlying structure of the problem. We begin by defining: from which we see that    Drills   Show that     Show that       For our first example we will compute From equation we have and from equation we have So, finally,                                                                            In fact, in the paper cited above, McCammond shows that if is any polynomial in two variables then can be evaluated using the substitutions in equations and , their properties in equations and above, and the judicious use of the Pythagorean trigonometric identity   Problems   Problems Integration Drills Evaluate the integrals and differentiate your solution to confirm that it is correct.                   These substitutions are clever and they give us an elegant solution but we do not necessarily want an elegant solution. In most cases where the evaluation of an integral is required we ll just want obtain a solution in the most efficient manner possible.  Problems Integration Drills  Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available.                   Problems Integration Drills  Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available. (You will need to find substitutions analogous to those we developed above.)                   END OF DIGRESSION    Problems   Integration by Substitution   These integrals can be computed using the Integration Rule or one of the integrals appearing in . Compute each antiderivative.   Problems      This problem can be done by simply expanding the integrand algebraically. Do you really want to do that?   Problems      Do you want to expand the integrand algebraically this time?   Problems      Problems      Problems      Problems      Problems      Problems      Problems      Problems      Problems      Be careful. This one is a little trickier than the others.   Problems        "
 },
@@ -10400,7 +10292,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#EXAMPLEIntSimpSub",
   "type": "Example",
-  "number": "20.2.0.1",
+  "number": "19.2.0.1",
   "title": "Integration By Simple Substitution.",
   "body": " Integration By Simple Substitution  For example, to compute , first make the substitution . In that case . Substituting these into our integral we have , and Integration Rule tells us that . Substituting back to the original variable (unsubstituting?) we have .  "
 },
@@ -10409,7 +10301,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-6",
   "type": "Drill",
-  "number": "20.2.0.2",
+  "number": "19.2.0.2",
   "title": "",
   "body": " Drills  Do all of the algebra necessary to show that equation is correct. Explain each step.  "
 },
@@ -10418,7 +10310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#DRILLIntSimpSub",
   "type": "Drill",
-  "number": "20.2.0.3",
+  "number": "19.2.0.3",
   "title": "",
   "body": " Drills   Integration by Simple Substitution Emulate the computations in to compute each of the integrals. Assume is a constant.                         "
 },
@@ -10427,7 +10319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMIntlnax",
   "type": "Problem",
-  "number": "20.2.0.4",
+  "number": "19.2.0.4",
   "title": "",
   "body": "Problems  Integration by substitution seems to be a fairly simple technique when you first encounter it. But it will turn out to be a very sophisticated technique. We will explore this a bit here.   Verify that the identity is correct by differentiating.   Recall that . Use this and the result of part to compute the value of .   Now use the formula from part and the substitution to compute where is an arbitrary constant. Was your result the same as in part ?   Differentiate the function you found in part to confirm that your solution is correct.  "
 },
@@ -10436,7 +10328,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#FIGURECRC",
   "type": "Figure",
-  "number": "20.2.0.5",
+  "number": "19.2.0.5",
   "title": "",
   "body": "     "
 },
@@ -10445,7 +10337,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-12",
   "type": "Drill",
-  "number": "20.2.0.6",
+  "number": "19.2.0.6",
   "title": "",
   "body": " Drills  Use the entries in the partial table in to evaluate each of the integrals.                "
 },
@@ -10454,7 +10346,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#EXAMPLESeparableDE1",
   "type": "Example",
-  "number": "20.2.0.7",
+  "number": "19.2.0.7",
   "title": "",
   "body": " Suppose we need to solve the differential equation . We proceed as above. . But of course we haven t really made much progress until we can evaluate .  "
 },
@@ -10463,7 +10355,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#EXAMPLEIntTan",
   "type": "Example",
-  "number": "20.2.0.8",
+  "number": "19.2.0.8",
   "title": "The Integral of the Tangent Function.",
   "body": " The Integral of the Tangent Function  Use Integration Rule to compute by making the substitution .  Thus .  "
 },
@@ -10472,7 +10364,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-19",
   "type": "Problem",
-  "number": "20.2.0.9",
+  "number": "19.2.0.9",
   "title": "",
   "body": "Problems  Show that is a solution of equation .   Find if .  "
 },
@@ -10481,7 +10373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-20",
   "type": "Drill",
-  "number": "20.2.0.10",
+  "number": "19.2.0.10",
   "title": "",
   "body": " Drills  Use a similar substitution to show that   "
 },
@@ -10490,7 +10382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMTrickySubstitution1",
   "type": "Problem",
-  "number": "20.2.0.11",
+  "number": "19.2.0.11",
   "title": "",
   "body": "Problems  On the other hand we know from that and we can use this knowledge.  Suppose we need to compute or . The same substitution we used to transform these into the integrals (seen in equation and equation ) will work in reverse.   Use the substitution to show that:   Now use your Algebra and Trigonometry skills to show that so that .   Use the substitution to show that   Now use your Algebra and Trigonometry skills to show that so that .  "
 },
@@ -10499,7 +10391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMAlgebraicSubst1",
   "type": "Problem",
-  "number": "20.2.0.12",
+  "number": "19.2.0.12",
   "title": "",
   "body": "Problems  The integrals in Problem and Problem can be evaluated by means of several different substitutions as we've seen. There are others that will also work but our principle point for now is that no substitution is wrong , some result in a new integral that is easier than the original and some will not. If our goal is simply to evaluate the integral we'll want to look for the simplest method we can find.   Find a simpler substitution than the one we used in Problem to evaluate the integral    Notice that is almost the differential of .   Find a simpler substitution than the one we used in Problem to evaluate the integral    The substitution you used in part will probably work here.  "
 },
@@ -10517,7 +10409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PARAGRAPHSubstGBU-15",
   "type": "Example",
-  "number": "20.2.0.13",
+  "number": "19.2.0.13",
   "title": "",
   "body": " An Unhelpful Substitution For example, consider the integral We let so that . This gives  This is all correct, but leads to an integral far worse than the original, But and this is the point of this example we have no way of seeing that this particular substitution will not be helpful until after we ve done the computations above. The lessons here are (1) Be patient with yourself, because this is hard, and (2) Don t give up, because this is hard.  A Helpful Substitution But notice that is almost the derivative of . So let's make instead. Thus . Will that extra factor of be a problem for us? Let s see. Making the substitution we have   "
 },
@@ -10526,7 +10418,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMIntSECCSC",
   "type": "Problem",
-  "number": "20.2.0.14",
+  "number": "19.2.0.14",
   "title": "The Integrals of the Secant and Cosecant Functions.",
   "body": "The Integrals of the Secant and Cosecant Functions Problems  At this point we have know the integrals of the , , , and . The first two were immediate consequences of the differentiation rules, but the , and were harder.   Confirm the identity:    Confirm the identity:    Use the observations in Problem and Problem and a well chosen substitution to show that    Comment:  We have absolute value bars around the expression to ensure that we are not trying to take the logarithm of a negative number. These will not appear obviously in any of the computations you need to do. Just tack them on at the end, like we did.    Compute similarly.  "
 },
@@ -10535,7 +10427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#DIGRESSIONIntPolySecTan-7",
   "type": "Drill",
-  "number": "20.2.0.15",
+  "number": "19.2.0.15",
   "title": "",
   "body": " Drills   Show that     Show that    "
 },
@@ -10544,7 +10436,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#EXAMPLEIntPolySecTan",
   "type": "Example",
-  "number": "20.2.0.16",
+  "number": "19.2.0.16",
   "title": "",
   "body": "  For our first example we will compute From equation we have and from equation we have So, finally,                                                                           "
 },
@@ -10553,7 +10445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMPolySecTan",
   "type": "Problem",
-  "number": "20.2.0.17",
+  "number": "19.2.0.17",
   "title": "",
   "body": "Problems   Problems Integration Drills Evaluate the integrals and differentiate your solution to confirm that it is correct.                  "
 },
@@ -10562,7 +10454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMPolySecTanByTrigSub",
   "type": "Problem",
-  "number": "20.2.0.18",
+  "number": "19.2.0.18",
   "title": "",
   "body": "Problems Integration Drills  Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available.                  "
 },
@@ -10571,7 +10463,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#PROBLEMPolyCscCot",
   "type": "Problem",
-  "number": "20.2.0.19",
+  "number": "19.2.0.19",
   "title": "",
   "body": "Problems Integration Drills  Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in this digression will work, but is not the necessarily always the most efficient method available. (You will need to find substitutions analogous to those we developed above.)                  "
 },
@@ -10580,7 +10472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-3",
   "type": "Exercise",
-  "number": "20.2.1",
+  "number": "19.2.1",
   "title": "",
   "body": "Problems      This problem can be done by simply expanding the integrand algebraically. Do you really want to do that?  "
 },
@@ -10589,7 +10481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-4",
   "type": "Exercise",
-  "number": "20.2.2",
+  "number": "19.2.2",
   "title": "",
   "body": "Problems      Do you want to expand the integrand algebraically this time?  "
 },
@@ -10598,7 +10490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-5",
   "type": "Exercise",
-  "number": "20.2.3",
+  "number": "19.2.3",
   "title": "",
   "body": "Problems     "
 },
@@ -10607,7 +10499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-6",
   "type": "Exercise",
-  "number": "20.2.4",
+  "number": "19.2.4",
   "title": "",
   "body": "Problems     "
 },
@@ -10616,7 +10508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-7",
   "type": "Exercise",
-  "number": "20.2.5",
+  "number": "19.2.5",
   "title": "",
   "body": "Problems     "
 },
@@ -10625,7 +10517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-8",
   "type": "Exercise",
-  "number": "20.2.6",
+  "number": "19.2.6",
   "title": "",
   "body": "Problems     "
 },
@@ -10634,7 +10526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-9",
   "type": "Exercise",
-  "number": "20.2.7",
+  "number": "19.2.7",
   "title": "",
   "body": "Problems     "
 },
@@ -10643,7 +10535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-10",
   "type": "Exercise",
-  "number": "20.2.8",
+  "number": "19.2.8",
   "title": "",
   "body": "Problems     "
 },
@@ -10652,7 +10544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-11",
   "type": "Exercise",
-  "number": "20.2.9",
+  "number": "19.2.9",
   "title": "",
   "body": "Problems     "
 },
@@ -10661,7 +10553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-12",
   "type": "Exercise",
-  "number": "20.2.10",
+  "number": "19.2.10",
   "title": "",
   "body": "Problems     "
 },
@@ -10670,7 +10562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-13",
   "type": "Exercise",
-  "number": "20.2.11",
+  "number": "19.2.11",
   "title": "",
   "body": "Problems      Be careful. This one is a little trickier than the others.  "
 },
@@ -10679,7 +10571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONKnownIntegrals.html#SECTIONKnownIntegrals-23-2-14",
   "type": "Exercise",
-  "number": "20.2.12",
+  "number": "19.2.12",
   "title": "",
   "body": "Problems     "
 },
@@ -10688,7 +10580,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html",
   "type": "Section",
-  "number": "20.3",
+  "number": "19.3",
   "title": "Trigonometric Substitutions",
   "body": " Trigonometric Substitutions  Recall that earlier in this section we encountered the integral when we were trying to determine the solution to the catenary. We actually have the tools to solve this type of integral once we notice that (surprisingly!) we would like to use the substitution . As strange as it sounds to take a perfectly good integral and purposely insert trigonometry into it, this is just the ticket here. Since we have the trigonometric identity , then this substitution is just the thing to rid us of the square root, which poses more of an issue than the trigonometry does.  Specifically, if we let , then , and so we have   The trick now is to put things back in terms of . We have , but what about ? We could certainly use the trigonometric identity from before, but a more general way to do this is to draw a triangle. The beauty of this is that we don't know what the angle is, nor do we really care. All we need is that . This leads to the following triangle   Diagram of a right triangle.   Diagram of a right triangle.    With this triangle, not only can we obtain the aforementioned and which is what we need in the problem, but we could also obtain the following if we needed it:   We really urge you to do this (DRAW A TRIANGLE) instead of relying on memorizing trigonometric identities which actually are derived from the triangle. This gives us that the differential equation is satisfied by   Problems  Use the formula for the catenary and (this was the low point on the hanging chain) to show that and so    Note to self  The use of and interchangeably is confusing.    Integrate the result in part (a) to obtain which is the equation of the catenary as stated earlier.   Consider the top view of an airplane starting at the point and traveling up the line at a constant speed . When the plane is at , a homing missile is fired from the origin directly at the plane. Assuming that the missile travels at a speed which is times the speed of the plane and is always aimed directly at the plane, find the path the missile takes. [Such a path is called a pursuit curve.] The diagram below shows the situation at time .   Image of a pursuit curve.   Image of a pursuit curve.    Problems Pursuit Curve  If we let denote the distance the missile has traveled at time , show that the missile's path must satisfy the IVP    Obviously we can solve equation for but then we would have in terms of , , and which isn't very helpful. The term is particularly problematic since we know almost nothing about it.  But only almost. We do know that .  Differentiate equation to show that the missile s path must satisfy the differential equation with the initial conditions , and .   Let's make this a little easier on our eyes. Let , and show that equation becomes with initial conditions . and use the trigonometric substitution as before to show that    Use the initial condition and the substitution to show that    How far has the plane gone when the missile reaches it? What happens as ?   Of course, the tangent function is not the only trigonometric function at our disposal.  Problems  The following is the view from above of a tractor-trailer. Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point .   Sketch of a tractor-trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels up the -axis and that the rear wheels don't slip.   show the path that the center of the rear axle of the trailer follows must satisfy the equations    Find the equation, of the tractrix.   After you separate the variables substitute in your integral.   Plot your solution on the plane.   Problems  Again, having trigonometry involved was a better option than having the square root. Here, we utilized the trigonometric identity . A surprising number of integrals involve terms such as , or . In these cases, it is often advantageous to utilize a trigonometric substitution, using the identities or to remove the square root, which typically is more a concern than the trigonometry. However, you should remember that there are other techniques at your disposal, so you need to be judicious about what you utilize. For example, consider the integral    Use the trigonometric substitution to compute the above integral.   Now use the non-trigonometric substitution to compute the integral   Which method do you find more appealing? (Or least unappealing?)   Problems                                  This problems asks you to verify Integration Rules , , and , directly.   Use the substitution to compute .   Use the substitution to compute .   Use the substitution to compute    This is all well and good, but the forms , , and are all very specific. Can we use them for an integral like ?  Of course we can. We just need to rearrange it using Algebra. Observe that if we had a where the is we d be fine. We can't just change it. That would change the entire integral. But if we factor out the we get   Of course, now we have another problem. We have where we were happy to have before. But since we were going to substitute away anyhow we'll just substitute away instead.  Letting , we proceed as before.  Problems  Finish computing the integral in equation    Compute    Compute    Compute    This integral appears to be a completely different from the others in this problem, but it really isn't. Complete the square on and then use your result in part (c).   It should be clear from that as long as the expression inside the radical is a quadratic, we can manipulate it algebraically to produce something of the form , or . From there, we can use the appropriate trigonometric substitution.  Earlier we computed terminal velocity when considering linear drag. Now we will compare this to terminal velocity when the drag is proportional to the square of the velocity. An example of this would be a ball of mass falling in air. (We can include buoyancy again, but it is typically negligible so we will discount it). Again, to model this, let be distance the ball has fallen (so the positive axis is pointing downward), with representing the initial position of the ball. In a similar analysis to before, we denote the acceleration due to gravity by , so the weight of the ball is . The drag, which we assume is now quadratic, is proportional to the square of the velocity, so we will denote this by , where is a constant and is the velocity. For simplicity, we will assume .  Problems  Use Newton's Third Law of Motion: ( ) ( )ass ( )cceleration, to show that the velocity of the ball must satisfy the equations: .  Show that the IVP above is equivalent to .   Use the substitution to show that .   Compute . Compare this terminal velocity with our previous results.   The trigonometric substitutions we've dealt with so far have all involved square roots. What about this integral: ? Do you see that this is only slightly more complicated?  If we make the substitution , then as before so, .  Since , we get the triangle   Image of the triangle   Image of the triangle with theta in standard position and legs x and square root of one - x squared.    so .   Drills  Confirm that this is correct by differentiating: .   Fortunately, we were still able to handle this, but what if we started with the integral: ?  The substitution leads to: . How do we handle that?   Confirm this yourself.   We rewrite it as .  This example underscores the need to be able to compute a variety of integrals involving trigonometric functions. Again, it is a trial and error kind of thing, but there are some standard tricks to learn. It is probably best to learn these tricks by looking at some specific examples, but as you do, focus on the technique being used and how it can be used on similar integrals, not the specific example.    Since sine is raised to an odd power, it makes sense to save one of the sines and convert everything else to cosine, utilizing the Pythagorean identity , and then apply a substitution as follows. First we save a sine.  . Next we let , so that , which gives .   Problems  Had the cosine been raised to an odd power in , we could have saved one of the cosines instead.   Compute .    Notice that in there would have been nothing wrong with computing as follows: It's just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn't want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.   Problems  Compute the integral using these substitutions:           Finish example using each of the substitutions above. Do you get the same solution as before?   Problems  Compute the integral by:   Saving one of the cosines and converting everthing else into sines.   Saving one of the sines and converting everthing else into cosines.   Do you get the same result in parts (a) and (b)? Explain.    What happens if you don't have an odd power of sine or cosine? For example, suppose you have .  Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In this case, there are a couple of trigonometric identities that can help. They the Half-Angle formlas: . Using these identities in our integral we see that   Using the Half-Angle formula again we obtain     Drills  Show that we get the same result if we use the Double Angle formula: .       In this example, we can save a as part of the differential and use the identity to change everything else into an expression in tangent. Since the secant is to an even power this again avoids square roots, which is the general idea. Letting we have , so we obtain     If tangent occurs to an odd power, we can save a tangent and a secant as part of the differential and use the same identity to convert everything else to secant. . Letting we have .   Problems  Consider the integral    Compute this integral by saving a and converting the rest into an expression in tangent.   Compute this integral by saving a and converting the rest into an expression in secant.   Verify the at you get the same result in (a) and (b).   Problems Previously we computed using the identity . We could also use the identity . Do we get a different answer? Explain.  The same tricks we applied with secant and tangent would apply equally well to integrals involving cosecant and cotangent using the identity . Of course, we have not covered every type of integral that can occur and you can always find integrals that will take other tricks. We've only provided some basics that you can build on as you gain experience. So practice, practice, practice!  "
 },
@@ -10697,7 +10589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-5",
   "type": "Figure",
-  "number": "20.3.0.1",
+  "number": "19.3.0.1",
   "title": "",
   "body": " Diagram of a right triangle.   Diagram of a right triangle.   "
 },
@@ -10706,7 +10598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-8",
   "type": "Problem",
-  "number": "20.3.0.2",
+  "number": "19.3.0.2",
   "title": "",
   "body": "Problems  Use the formula for the catenary and (this was the low point on the hanging chain) to show that and so    Note to self  The use of and interchangeably is confusing.    Integrate the result in part (a) to obtain which is the equation of the catenary as stated earlier.  "
 },
@@ -10715,7 +10607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-10",
   "type": "Figure",
-  "number": "20.3.0.3",
+  "number": "19.3.0.3",
   "title": "",
   "body": " Image of a pursuit curve.   Image of a pursuit curve.   "
 },
@@ -10724,7 +10616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#PursuitCurve1",
   "type": "Problem",
-  "number": "20.3.0.4",
+  "number": "19.3.0.4",
   "title": "",
   "body": "Problems Pursuit Curve  If we let denote the distance the missile has traveled at time , show that the missile's path must satisfy the IVP    Obviously we can solve equation for but then we would have in terms of , , and which isn't very helpful. The term is particularly problematic since we know almost nothing about it.  But only almost. We do know that .  Differentiate equation to show that the missile s path must satisfy the differential equation with the initial conditions , and .   Let's make this a little easier on our eyes. Let , and show that equation becomes with initial conditions . and use the trigonometric substitution as before to show that    Use the initial condition and the substitution to show that    How far has the plane gone when the missile reaches it? What happens as ?  "
 },
@@ -10733,7 +10625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#TractrixProblem1",
   "type": "Problem",
-  "number": "20.3.0.5",
+  "number": "19.3.0.5",
   "title": "",
   "body": "Problems  The following is the view from above of a tractor-trailer. Initially, the center of the rear axle of the tractor is at the origin and the center of the rear axle of the trailer is at the point .   Sketch of a tractor-trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels up the -axis and that the rear wheels don't slip.   show the path that the center of the rear axle of the trailer follows must satisfy the equations    Find the equation, of the tractrix.   After you separate the variables substitute in your integral.   Plot your solution on the plane.  "
 },
@@ -10742,7 +10634,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#TrigSub1",
   "type": "Problem",
-  "number": "20.3.0.7",
+  "number": "19.3.0.7",
   "title": "",
   "body": "Problems  Again, having trigonometry involved was a better option than having the square root. Here, we utilized the trigonometric identity . A surprising number of integrals involve terms such as , or . In these cases, it is often advantageous to utilize a trigonometric substitution, using the identities or to remove the square root, which typically is more a concern than the trigonometry. However, you should remember that there are other techniques at your disposal, so you need to be judicious about what you utilize. For example, consider the integral    Use the trigonometric substitution to compute the above integral.   Now use the non-trigonometric substitution to compute the integral   Which method do you find more appealing? (Or least unappealing?)  "
 },
@@ -10751,7 +10643,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-15",
   "type": "Problem",
-  "number": "20.3.0.8",
+  "number": "19.3.0.8",
   "title": "",
   "body": "Problems                                  This problems asks you to verify Integration Rules , , and , directly.   Use the substitution to compute .   Use the substitution to compute .   Use the substitution to compute   "
 },
@@ -10760,7 +10652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#TrigSubst2",
   "type": "Problem",
-  "number": "20.3.0.9",
+  "number": "19.3.0.9",
   "title": "",
   "body": "Problems  Finish computing the integral in equation    Compute    Compute    Compute    This integral appears to be a completely different from the others in this problem, but it really isn't. Complete the square on and then use your result in part (c).  "
 },
@@ -10769,7 +10661,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#FallingWithDrag",
   "type": "Problem",
-  "number": "20.3.0.10",
+  "number": "19.3.0.10",
   "title": "",
   "body": "Problems  Use Newton's Third Law of Motion: ( ) ( )ass ( )cceleration, to show that the velocity of the ball must satisfy the equations: .  Show that the IVP above is equivalent to .   Use the substitution to show that .   Compute . Compare this terminal velocity with our previous results.  "
 },
@@ -10778,7 +10670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-27",
   "type": "Figure",
-  "number": "20.3.0.11",
+  "number": "19.3.0.11",
   "title": "",
   "body": " Image of the triangle   Image of the triangle with theta in standard position and legs x and square root of one - x squared.   "
 },
@@ -10787,7 +10679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-29",
   "type": "Drill",
-  "number": "20.3.0.12",
+  "number": "19.3.0.12",
   "title": "",
   "body": " Drills  Confirm that this is correct by differentiating: .  "
 },
@@ -10796,7 +10688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#OddSinPower",
   "type": "Example",
-  "number": "20.3.0.13",
+  "number": "19.3.0.13",
   "title": "",
   "body": "  Since sine is raised to an odd power, it makes sense to save one of the sines and convert everything else to cosine, utilizing the Pythagorean identity , and then apply a substitution as follows. First we save a sine.  . Next we let , so that , which gives .  "
 },
@@ -10805,7 +10697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-36",
   "type": "Problem",
-  "number": "20.3.0.14",
+  "number": "19.3.0.14",
   "title": "",
   "body": "Problems  Had the cosine been raised to an odd power in , we could have saved one of the cosines instead.   Compute .  "
 },
@@ -10814,7 +10706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-37",
   "type": "Example",
-  "number": "20.3.0.15",
+  "number": "19.3.0.15",
   "title": "",
   "body": " Notice that in there would have been nothing wrong with computing as follows: It's just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn't want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.  "
 },
@@ -10823,7 +10715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-38",
   "type": "Problem",
-  "number": "20.3.0.16",
+  "number": "19.3.0.16",
   "title": "",
   "body": "Problems  Compute the integral using these substitutions:           Finish example using each of the substitutions above. Do you get the same solution as before?  "
 },
@@ -10832,7 +10724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#SinCosOddPower",
   "type": "Problem",
-  "number": "20.3.0.17",
+  "number": "19.3.0.17",
   "title": "",
   "body": "Problems  Compute the integral by:   Saving one of the cosines and converting everthing else into sines.   Saving one of the sines and converting everthing else into cosines.   Do you get the same result in parts (a) and (b)? Explain.  "
 },
@@ -10841,7 +10733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#SinCosEven",
   "type": "Example",
-  "number": "20.3.0.18",
+  "number": "19.3.0.18",
   "title": "",
   "body": " What happens if you don't have an odd power of sine or cosine? For example, suppose you have .  Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In this case, there are a couple of trigonometric identities that can help. They the Half-Angle formlas: . Using these identities in our integral we see that   Using the Half-Angle formula again we obtain   "
 },
@@ -10850,7 +10742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-41",
   "type": "Drill",
-  "number": "20.3.0.19",
+  "number": "19.3.0.19",
   "title": "",
   "body": " Drills  Show that we get the same result if we use the Double Angle formula: .  "
 },
@@ -10859,7 +10751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-42",
   "type": "Example",
-  "number": "20.3.0.20",
+  "number": "19.3.0.20",
   "title": "",
   "body": "    In this example, we can save a as part of the differential and use the identity to change everything else into an expression in tangent. Since the secant is to an even power this again avoids square roots, which is the general idea. Letting we have , so we obtain   "
 },
@@ -10868,7 +10760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-43",
   "type": "Example",
-  "number": "20.3.0.21",
+  "number": "19.3.0.21",
   "title": "",
   "body": " If tangent occurs to an odd power, we can save a tangent and a secant as part of the differential and use the same identity to convert everything else to secant. . Letting we have .  "
 },
@@ -10877,7 +10769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-44",
   "type": "Problem",
-  "number": "20.3.0.22",
+  "number": "19.3.0.22",
   "title": "",
   "body": "Problems  Consider the integral    Compute this integral by saving a and converting the rest into an expression in tangent.   Compute this integral by saving a and converting the rest into an expression in secant.   Verify the at you get the same result in (a) and (b).  "
 },
@@ -10886,7 +10778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-4.html#CHAPTERApplicaitonsOfIntegration-4-45",
   "type": "Problem",
-  "number": "20.3.0.23",
+  "number": "19.3.0.23",
   "title": "",
   "body": "Problems Previously we computed using the identity . We could also use the identity . Do we get a different answer? Explain. "
 },
@@ -10895,7 +10787,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html",
   "type": "Section",
-  "number": "20.4",
+  "number": "19.4",
   "title": "Back to Logistic Growth: Partial Fractions",
   "body": " Back to Logistic Growth: Partial Fractions   Intro  Recall the IVP .   In we analyzed this growth rate to draw a qualitative graph of , but we could not produce specific values of for where things happened, because we didn't have a formula for . We now have the techniques needed to find .  First we separate the variables: . To integrate the left-hand side, we could expand the denominator to complete the square and apply the appropriate trigonometric substitution.  As we've mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider the following modification of the logistic model above In this case, is called the minimum viability level of the population. (Why?) Solving this would require that we compute the integral . This form of this integral does not suggest any obvious trigonometric substitution so we will need a new idea.   Vocabulary partial fractions The next technique is wholly algebraic in nature. The trick to try and separate the integrand into partial fractions each of which will be easier to integrate than the original. For example, consider the expression . With begin by making a reasonable, educated guess that such a fraction can be written as , where and are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original. Comparing this with we see that if they are to be equal we must have and . Therefore . Thus . Substituting into the original integral we see that and so    Comment  This isn't really a guess. There is a theorem from algebra that says that there will always be constants and such that but since we haven't discussed this yet we'll just roll with it for now.   Problems  Use equation to find for the logistic growth model with the initial condition  for the case when .   Solve the same problem for the case where .   Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.      The Partial Fraction Decomposition   Vocabulary rational functions Now that we've seen that decomposing a ratio of polynomials (these are called rational functions ) into a sum of partial fractions is possible, we'll look for a systematic way of doing this for any rational function . Our method will hinge on the following theoretical, algebraic fact.  Suppose we have two polynomials and which have no common factors (other than constants). Then there are polynomials and such that .   For example notice that if and are constants then and have no common factors. Since it follows that .   Comment  Notice that since and are constants they are polynomials of degree zero.    Our approach to the problem in example was somewhat ad-hoc. We will eventualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an (educated) guess and check method. Notice that in the example we had   It is generally true that if then . Multiplying by we have . Setting and gives .   Vocabulary Partial Fraction Decomposition Everything we've just shown assumes that if and are known then and can be found so that . For arbitrary functions this is a very restrictive condition. However as we observed above, if and are polynomials having only trivial common factors then the existence of and is guaranteed. Thus for polynomials the Partial Fraction Decomposition is also guaranteed.   Mathematical Language  The word trivial is very context dependent in mathematics. In this context a trivial common factor would be a constant. For example, is a trivial common factor of and .   We formalize this in the following theorem.   The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non-trivial common factors with then there exist polynomials and , and , such that .   As stated in Theorem the PFD is very comprehensive. We will  To extend this idea further, if have no nontrivial factors, then there are polynomials with and this can be extended to any number of factors in the denominator. Again, this can be proven theoretically, and this partial fractions decomposition can be obtained systematically, but we will adopt a guess and check method to find . To make our guess a little more educated, the following fact can be employed. You can make peace with this in your own closet.  If the degree of is less than the degree of , then can be chosen with .   Recall we had To compute this we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, the numerators must also be equal. Thus   Solve these equations anyway you wish, but you should get , , and . Thus so     The PFD is Algebra, not Calculus, but as the problems and examples above show it can be very tedious algebra. There are shortcuts to the process which can eliminate some of the tedium, but the problem with shorcuts is that if you do not thoroughly understand the underlying goal it is all too easy to mess up the computation. As a rule, you should not start using computational shortcuts until you have thoroughly mastered the full calculation.   Heaviside's Cover-up Method  Suppose we wish to find the partial fractions decomposition of . As before, we have This leads to   Observe that will be true for every real (or complex) value of . The factor appears in two of the terms on the right suggests that we let In that case we have or    Comment  Actually we are replacing with 1.   We did not simplify this last formula in order to highlight the following Observe that we get the same result if we simply cover up the factor on the left side of above and set    In precisely the same fashion (setting and ) we get: and so that    Warning!  In order to use Heaviside's Cover-Up Method you must have distinct linear factors in the denominator.  In this example they were , , and . If our rational function had been Heaviside's Method would not work because is not linear.  Try it and see what goes wrong.    Vocabulary Heaviside s Cover-Up Method (HCUM) This trick is known as Heaviside s Cover-Up Method (HCUM) . It is well known, and can be used to find the PFD of a rational function as long as the denominator can be factored into distinct linear factors.   In the previous partial fractions decompositions, we started with a rational function where the degree of the numerator was less than the degree of the denominator and where the factors in the denominator were linear. In this section, we will expand our techniques to encompass other situations.  For example, suppose the degree of the numerator is not less than the degree of the denominator. If this is the case, then we can perform long division first and then find the partial fractions decomposition of the remainder. For example, suppose we have We first perform long division of the original rational function.   We can now perform a partial fractions decomposition on the remaining fraction.   Drills  Use HCUM to complete the decomposition in .    The PFD With Nonlinear Factors in the Denominator  What about something like Since this function satisfies all of the conditions of we can still decompose it into partial fractions. However since is not linear we can't use Heaviside's Method.  Recall that in the decomposition, the numerators in the individual terms can be chosen so that the degrees are less than the degrees in the denominators. This being said, we make the following educated guess as to the form of the partial fractions decomposition.   We can now recombine this to determine and .  This leads to     Solving this (any way you can) we get so that   If we wanted to integrate this, we would obtain       Notice in this example that we really needed to look at the most general possible polynomial of degree one less than the denominators in the partial fractions decomposition; we would not have obtained the correct answer otherwise.    Comment  This problem shows that we really need to use the most general polynomial of degree one less than the denominators in the partial fractions decomposition.   Problems   Partial Fraction Decomposition Show that if we tried the following decomposition then no values for and would satisfy this.    Suppose we need to compute Applying our partial fractions decomposition, we get     This leads to Solving this (any way you can), we get   Getting back to the integral, we have   Notice that the last two integrals were pretty straightforward. This first integral is more problematic. There is a little algebraic trick which will allow us to break up that integral even further.       Putting this all together, we finally have The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as   The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as    Note from Bob  Bud -- at this point, how much of the paper you wrote should we put in? Will putting it in be too much at this point? Should be some practice exercises first? Should it be appendicized? I'm afraid I've already written too much on partial fractions decompositions. I need your fresh view on this.   Integrating this would be a matter of utilizing the substitution . Of course, this could have been done earlier to produce The point is that you have more tools at your disposal to transform integrals you don't know how to do into ones that you recognize.  Before we send you off to practice such integrals, we want to present you one more option. You have probably noticed that there is more algebra involved than calculus. Some of it is unavoidable, but there are some shortcuts. For example, finding in the original partial fractions decomposition required solving 4 equations in 4 unknowns. Again, this was straightforward, but it turns out that there is a shortcut for this similar to the HCUM. We will present it here.    "
 },
@@ -10913,7 +10805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#CHAPTERApplicaitonsOfIntegration-5-2-7",
   "type": "Problem",
-  "number": "20.4.1.1",
+  "number": "19.4.1.1",
   "title": "",
   "body": "Problems  Use equation to find for the logistic growth model with the initial condition  for the case when .   Solve the same problem for the case where .   Comment  This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.   "
 },
@@ -10931,7 +10823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#ElementaryPartFracDecomp",
   "type": "Example",
-  "number": "20.4.2.1",
+  "number": "19.4.2.1",
   "title": "",
   "body": " For example notice that if and are constants then and have no common factors. Since it follows that .   Comment  Notice that since and are constants they are polynomials of degree zero.   "
 },
@@ -10949,7 +10841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#PartialFractionDecomp",
   "type": "Theorem",
-  "number": "20.4.2.2",
+  "number": "19.4.2.2",
   "title": "The Partial Fraction Decomposition (PFD).",
   "body": " The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non-trivial common factors with then there exist polynomials and , and , such that .  "
 },
@@ -10958,7 +10850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#EXAMPLEPFD1",
   "type": "Example",
-  "number": "20.4.2.3",
+  "number": "19.4.2.3",
   "title": "",
   "body": " Recall we had To compute this we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, the numerators must also be equal. Thus   Solve these equations anyway you wish, but you should get , , and . Thus so    "
 },
@@ -10967,7 +10859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#EXAMPLEHeaviCover",
   "type": "Example",
-  "number": "20.4.2.4",
+  "number": "19.4.2.4",
   "title": "Heaviside’s Cover-up Method.",
   "body": " Heaviside's Cover-up Method  Suppose we wish to find the partial fractions decomposition of . As before, we have This leads to   Observe that will be true for every real (or complex) value of . The factor appears in two of the terms on the right suggests that we let In that case we have or    Comment  Actually we are replacing with 1.   We did not simplify this last formula in order to highlight the following Observe that we get the same result if we simply cover up the factor on the left side of above and set    In precisely the same fashion (setting and ) we get: and so that    Warning!  In order to use Heaviside's Cover-Up Method you must have distinct linear factors in the denominator.  In this example they were , , and . If our rational function had been Heaviside's Method would not work because is not linear.  Try it and see what goes wrong.    Vocabulary Heaviside s Cover-Up Method (HCUM) This trick is known as Heaviside s Cover-Up Method (HCUM) . It is well known, and can be used to find the PFD of a rational function as long as the denominator can be factored into distinct linear factors.  "
 },
@@ -10976,7 +10868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#PROBLEM",
   "type": "Drill",
-  "number": "20.4.2.5",
+  "number": "19.4.2.5",
   "title": "",
   "body": " Drills  Use HCUM to complete the decomposition in .  "
 },
@@ -10985,7 +10877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#EXAMPLEHeaviNonLinear",
   "type": "Example",
-  "number": "20.4.2.6",
+  "number": "19.4.2.6",
   "title": "The PFD With Nonlinear Factors in the Denominator.",
   "body": " The PFD With Nonlinear Factors in the Denominator  What about something like Since this function satisfies all of the conditions of we can still decompose it into partial fractions. However since is not linear we can't use Heaviside's Method.  Recall that in the decomposition, the numerators in the individual terms can be chosen so that the degrees are less than the degrees in the denominators. This being said, we make the following educated guess as to the form of the partial fractions decomposition.   We can now recombine this to determine and .  This leads to     Solving this (any way you can) we get so that   If we wanted to integrate this, we would obtain       Notice in this example that we really needed to look at the most general possible polynomial of degree one less than the denominators in the partial fractions decomposition; we would not have obtained the correct answer otherwise.  "
 },
@@ -10994,7 +10886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#EXERCISEHeaviNonLinear",
   "type": "Problem",
-  "number": "20.4.2.7",
+  "number": "19.4.2.7",
   "title": "",
   "body": "Problems   Partial Fraction Decomposition Show that if we tried the following decomposition then no values for and would satisfy this.  "
 },
@@ -11003,7 +10895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERApplicaitonsOfIntegration-5.html#EXAMPLEPFD2",
   "type": "Example",
-  "number": "20.4.2.8",
+  "number": "19.4.2.8",
   "title": "",
   "body": " Suppose we need to compute Applying our partial fractions decomposition, we get     This leads to Solving this (any way you can), we get   Getting back to the integral, we have   Notice that the last two integrals were pretty straightforward. This first integral is more problematic. There is a little algebraic trick which will allow us to break up that integral even further.       Putting this all together, we finally have The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as   The trick that we employed above is something you might want to remember. It allows us to take our partial fractions decomposition a bit further. For example, if we start with we could rewrite this as    Note from Bob  Bud -- at this point, how much of the paper you wrote should we put in? Will putting it in be too much at this point? Should be some practice exercises first? Should it be appendicized? I'm afraid I've already written too much on partial fractions decompositions. I need your fresh view on this.   Integrating this would be a matter of utilizing the substitution . Of course, this could have been done earlier to produce The point is that you have more tools at your disposal to transform integrals you don't know how to do into ones that you recognize.  Before we send you off to practice such integrals, we want to present you one more option. You have probably noticed that there is more algebra involved than calculus. Some of it is unavoidable, but there are some shortcuts. For example, finding in the original partial fractions decomposition required solving 4 equations in 4 unknowns. Again, this was straightforward, but it turns out that there is a shortcut for this similar to the HCUM. We will present it here.  "
 },
@@ -11012,7 +10904,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONIntParts.html",
   "type": "Section",
-  "number": "20.5",
+  "number": "19.5",
   "title": "Integration By Parts — The Opposite of the Product Rule",
   "body": " Integration By Parts The Opposite of the Product Rule  Substitution is a powerful tool, but it is not a panacea. For example, consider the integral    Comment  Actually, we should be more careful here. There is always a substitution that will work. The question is, can we find it?   Try as you might you will find that no substitution you might try will work here. A common error that beginners make is to assume that that they can just integrate the two factors separately. But we know that because    Vocabulary Integration by Parts Since integration can be seen as the reversal of differentiation, if we want to integrate the product of two functions it seems reasonable to try to find a way to reverse the Product Rule . then perhaps its analog would be of use here. If the product rule for differentiation is rearranged a bit it can be expressed as the Integration by Parts Formula :   Integration by Parts      Differential Form:       Functional Form:         Vocabulary Integration by Parts As we ve indicated when it is written in this form the Product Rule is called Integration by Parts and it is exactly what we need to compute the previous integral.   Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.   Problems  Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula    Problems Notice that in Integration Rule shows us how to integrate the natural exponential function but we have no analog for the integral of . Perform Integration By Parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.   As with differentiation techniques and formulas, techniques such as integration by parts and substitution are performed in concert, utilizing whatever technique that is appropriate at the time. As an example of this consider the next problem.  Problems Perform integration by parts and then substitution to compute and .  Just as integration by parts can be used with other techniques, it can be used with itself multiple times.   A Word of Advice  If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.       Problems Compute using integration by parts.  Before we send you off to practice, we will look at one more trick one could do with integration by parts. We will also illustrate a way to keep track of , , , and d .   Consider If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .   "
 },
@@ -11030,7 +10922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#IntegrationByParts",
   "type": "Theorem",
-  "number": "20.5.0.1",
+  "number": "19.5.0.1",
   "title": "Integration by Parts.",
   "body": " Integration by Parts      Differential Form:       Functional Form:       "
 },
@@ -11048,7 +10940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#EXAMPLEIntParts1",
   "type": "Example",
-  "number": "20.5.0.2",
+  "number": "19.5.0.2",
   "title": "",
   "body": " Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.  "
 },
@@ -11057,7 +10949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-9",
   "type": "Problem",
-  "number": "20.5.0.3",
+  "number": "19.5.0.3",
   "title": "",
   "body": "Problems  Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula   "
 },
@@ -11066,7 +10958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-10",
   "type": "Problem",
-  "number": "20.5.0.4",
+  "number": "19.5.0.4",
   "title": "",
   "body": "Problems Notice that in Integration Rule shows us how to integrate the natural exponential function but we have no analog for the integral of . Perform Integration By Parts on using and to compute the integral.  A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.  "
 },
@@ -11075,7 +10967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-12",
   "type": "Problem",
-  "number": "20.5.0.5",
+  "number": "19.5.0.5",
   "title": "",
   "body": "Problems Perform integration by parts and then substitution to compute and . "
 },
@@ -11084,7 +10976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-15",
   "type": "Problem",
-  "number": "20.5.0.6",
+  "number": "19.5.0.6",
   "title": "",
   "body": "Problems Compute using integration by parts. "
 },
@@ -11093,9 +10985,117 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-17",
   "type": "Example",
-  "number": "20.5.0.7",
+  "number": "19.5.0.7",
   "title": "",
   "body": " Consider If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .  "
+},
+{
+  "id": "SECTIONThinkingAboutIntegration",
+  "level": "1",
+  "url": "SECTIONThinkingAboutIntegration.html",
+  "type": "Section",
+  "number": "20.1",
+  "title": "Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation",
+  "body": " Two Ways of Thinking About Integration: Summation vs. Antidifferentiation   Beginning in we observed that when we think about differentiation it is helpful to view differentiation through either the lens of geometry (Leibniz), or the lens of dynamics (Newton), depending on the particular context. Similarly the next section describes two different, but equilvalent, ways to think about integration. As before these two viewpoints are, more or less, equivalent, but they provide different insights. Some are easier to see through one lens, others through the other.    Integration as Summation  Suppose a point traces out a line segment of some unknown length .                 We next partition the line segment between and by selecting points , , , such that .   A partitioned interval.         The partition points subdivide the interval into subintervals. We represent the length of the first subinterval of with , of the second with , and so on. In general represents the length of the th subinterval of . Clearly the length of the line segment is . If the subintervals are all the same length, say , then we no longer need the subscripts to distinguish them so we could write instead. But this is cumbersome and we are far too lazy to write all of that each time we want to indicate such a sum. Leibniz proposed using the letter S (first letter of the word sum ) to simplify the summation notation. He would have written: .   Historical Background  Leibniz chose the letter S because it is the first letter of Latin word summa , from which we get the English word sum.   To a modern eye the integral sign looks like a stylized letter S, and that is often how it is described. But it isn t stylized at all. In the seventeenth century a printed letter S typically had one of several forms, depending on where it appeared in a word. One of these extended above and below the line of text, much as the letter f extends above and the letter j extends below the line of text. Leibniz adopted this doubly extended form of S as his summation sign. So the integral symbol isn t a stylized S at all. It is an archaic letter S .    Vocabulary Integral and the Integral Sign We assume, with Leibniz, that equation remains true when the finite differences ( ) are replaced with infinitesimal differences ( ): . The symbol is called an integral sign , and any expression starting with  followed by a differential is called an integral .   Finite vs. Infinitesimal Summation  For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used and more or less interchangebly.  But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since comes from Greek and comes from Latin, we extend this convention to finite summation by writing equation as because is the Greek version of the Latin capital letter S .    Equation is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from to we will get its length, .   Fundamental Theorem of Calculus This is surely not surprising to you and you are probably wondering why we've taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: equation is a very simple form of what is known as the Fundamental Theorem of Calculus which we will need to become very comfortable with. Later, when things get complex, it will be helpful to refer back to equation and remind ourselves that, at its heart, integration is about adding up differentials.   DIGRESSION: Coordinates and Variable Names     In we were rather careless about the distinction between the label of a point, e.g. or , and its coordinate, e.g. or . A natural question would be Aren t they the same thing?   No, actually they aren t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it s (horizontal) distance from the origin. Consider the following diagram.         The labels (names) of the two points are and . Since measures the distance between zero and it is by definition the coordinate of the point labeled . Similarly is the coordinate of .   Comment  If a vertical axis were present zero would be the second coordinate of both points. Do you see why?   On the other hand since  the distance between and  is not measured from the origin it is neither a coordinate nor the label of a point.           It is the length of the line segment . If we partition this line segment and compute we get equation .  Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.     Strictly speaking this is an abuse of our notation and it can cause confusion because it isn t always clear whether and refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.  END OF DIGRESSION     Integration as Antidifferentiation   Antiderivative  Vocabulary Antiderivative   Suppose we have a function with derivative . Then is called an antiderivative of .    From , we see that .  We know from our work in (specifically equation ) that . So if we sum all of the differentials on the left and right sides of equation we have . Observe that since is a differential it follows that is also a differential so the expression is a valid integral.  Thus it appears that if is known then will be the antiderivative of . That is to say, integration appears to be differentiation run backwards. This seems reasonable since differentiation consists of subtracting (finding differentials) and integration consists of adding (summing differentials). Addition and subtraction can both be thought of as doing the the other backwards.   It follows immediately from and the Constant Rule that if a function has one antiderivative then it has infinitely many. That is, if is an antiderivative of then so is . And . In fact if ia a constant then so is for every possible value of because we get a (slightly) different antiderivative each time we add a constant to .  Thus if we know one antiderivative of , then we know all (infinitely many) of the antiderivatives of . Remember this. We will return to it when we discuss below.   A Simple Integration  For example, can you find a formula for this integral: ? Before reading on give it a try.  Clearly so from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus .   Vocabulary Antiderivative most general This shows that the expression represents a multifunction much like the  functions we encountered in . An alternative way to think of this is to say that represents the set of all antiderivatives of , each of which differs from the others by a constant.     Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call the most general antiderivative of .  There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for the problem in front of us so we won t fuss over it too much. If we write without conditions it means the set of all antiderivatives of . To specify a particular antiderivative we will still write but we will also explicitly indicate which antiderivative we mean.   Beginning in the early twentieth century integration theory has grown considerably beyond what we will be learning in this course. But the underlying notions of the integral as a sum and the integral as an antiderivative are still very helpful and we will rely on them rather heavily, at least at first.  Problems Antiderivative  Show that the following statements are true. Assume is an arbitrary constant. (We have not shown you how to compute any of these integrals. But you know how to differentiate. Read again carefully.)               Notice that we ve used instead of for our variable. Does that matter? Explain.               The exercises in were all a bit contrived. Since we gave you the antiderivatives you don t really need to know how tho integrate.  The real question here is How could you find these antiderivatives if we hadn t given them to you?     We Integrate Differentials, Not Functions  Integration can be usefully thought of as either summation or antidifferentiation. We will flip between these two mindsets as convenient in much the same way that we flipped between the dynamic (Newtonian) and geometric (Leibnizian) viewpoints in .  Since it is valid to think of as representing an antiderivative of the function it is customary to speak these symbols aloud as the integral of of . While this is not wrong, it is not quite right either. Properly speaking, we should say the integral of the differential times . But no one does that so we won t either.  But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop unfortunate habits of mind. We will take a moment to try to prevent that from happening.  The integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final , of writing instead of , and then calling them both the integral of the function .  This is an unfortunate, but common, abuse of the notation. You can not integrate a function, only a differential. We strongly suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.  Remember that is meaningless no matter how convenient it might be because it indicates that we are summing a function, not a differential.   Notation  By calling meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don t fall into this habit while you are still learning the basics.   But the meaning of is clear. We're summing up all of the differentials of the form .  Finally, there is a puzzle here. In we introduced integration as summation, and we invented the integral sign to reflect that idea. But in this section we have reinterpreted the integral to mean antidifferentiation and the idea of integral as summation seems to have died a quiet death. Nowhere in does a summation appear.  But this is the point. Finding the sum by addition is a very daunting task. Where would you even begin? By reinterpreting it as an antidifferentiation problem we are able to find the sum, without the bother of adding up (infinitely many) differentials of the form . Antidifferentiation gives us a way to compute the sum indirectly.                     "
+},
+{
+  "id": "FIGUREPartitionedInterval",
+  "level": "2",
+  "url": "SECTIONThinkingAboutIntegration.html#FIGUREPartitionedInterval",
+  "type": "Figure",
+  "number": "20.1.1.1",
+  "title": "",
+  "body": " A partitioned interval.        "
+},
+{
+  "id": "SUBSECTIONIntegrationAsASum-8",
+  "level": "2",
+  "url": "SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "integral sign integral "
+},
+{
+  "id": "SUBSECTIONIntegrationAsASum-9",
+  "level": "2",
+  "url": "SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum-9",
+  "type": "Comment",
+  "number": "20.1.1.2",
+  "title": "Finite vs. Infinitesimal Summation.",
+  "body": " Finite vs. Infinitesimal Summation  For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used and more or less interchangebly.  But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since comes from Greek and comes from Latin, we extend this convention to finite summation by writing equation as because is the Greek version of the Latin capital letter S .  "
+},
+{
+  "id": "DEFINITIONAntiderivative",
+  "level": "2",
+  "url": "SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative",
+  "type": "Definition",
+  "number": "20.1.2.1",
+  "title": "Antiderivative.",
+  "body": " Antiderivative  Vocabulary Antiderivative   Suppose we have a function with derivative . Then is called an antiderivative of .   "
+},
+{
+  "id": "EXAMPLESimpleInt1",
+  "level": "2",
+  "url": "SECTIONThinkingAboutIntegration.html#EXAMPLESimpleInt1",
+  "type": "Example",
+  "number": "20.1.2.2",
+  "title": "A Simple Integration.",
+  "body": " A Simple Integration  For example, can you find a formula for this integral: ? Before reading on give it a try.  Clearly so from we see that is one antiderivative, and we can capture all of the antiderivatives by adding an arbitrary constant. Thus .   Vocabulary Antiderivative most general This shows that the expression represents a multifunction much like the  functions we encountered in . An alternative way to think of this is to say that represents the set of all antiderivatives of , each of which differs from the others by a constant.     Since the multifunctions arising from integration are relatively simple, we will dispense with the formal language and call the most general antiderivative of .  There will be times when we will want to choose only one of the functions represented by . This will consist entirely of choosing the value of that works for the problem in front of us so we won t fuss over it too much. If we write without conditions it means the set of all antiderivatives of . To specify a particular antiderivative we will still write but we will also explicitly indicate which antiderivative we mean.  "
+},
+{
+  "id": "EXERCISEAntiDerivPractice",
+  "level": "2",
+  "url": "SECTIONThinkingAboutIntegration.html#EXERCISEAntiDerivPractice",
+  "type": "Problem",
+  "number": "20.1.2.3",
+  "title": "",
+  "body": "Problems Antiderivative  Show that the following statements are true. Assume is an arbitrary constant. (We have not shown you how to compute any of these integrals. But you know how to differentiate. Read again carefully.)               Notice that we ve used instead of for our variable. Does that matter? Explain.              "
+},
+{
+  "id": "SECTIONIntegrationRules1",
+  "level": "1",
+  "url": "SECTIONIntegrationRules1.html",
+  "type": "Section",
+  "number": "20.2",
+  "title": "Rules for Integration",
+  "body": " Rules for Integration  Since integration can be thought of as the reverse of differentiation it is not too surprising to learn that each differentiation rule has its counterpart as an integration rule. The following list illustrates some of the rules we already know from Differential Calculus in both their differential and integral form.                                                                                               Drills   Integration Rules and appear to violate Integration Rule , don t they? Isn t it true that where and are arbitrary constants, and that . Explain how Integration Rules and are legitimate as stated.   In light of , it is common practice integrate each term of a differential and then combine all of the arbitrary constants into a single constant.   For example, consider , where .   As with differentiation, when you get more comfortable with integration, you will probably do many of these steps in your head. But that ability will only come with practice.   Drills  Use Integration Rules to find the most general antiderivative.                             Conspicuously absent from our list of rules are the integral form of the Product Rule, the Quotient Rule, and the Chain Rule. The reverse of the Quotient Rule is rather limited in its applicability and typically is not used. Reversing the others can be quite useful but we are not quite ready to discuss them in depth.         A Few Comments on Integration Rule         First, notice that Integration Rule will work if the exponent has any value except  . If we try to apply it we ll get which we know is meaningless.  For this single exception we have to turn to Integration Rule : .  Does it seem strange to you that there would be this single exception to Integration Rule ? Us too.  Also notice the absolute value in the formula:   We saw in DIGRESSION: The Absolute Value Function that an alternative definition of the absolute value function is .  Problems  Show that if we differentiate the definition we still obtain the formula .   Be careful that you do not try to take the logarithm of a negative number.   It is common (though incorrect) practice to disregard the absolute value and write , even though this is only valid for . We will also adopt this practice but you should always bear in mind that there are situations where the absolute value must be used.              "
+},
+{
+  "id": "DRILLIntSum",
+  "level": "2",
+  "url": "SECTIONIntegrationRules1.html#DRILLIntSum",
+  "type": "Drill",
+  "number": "20.2.0.1",
+  "title": "",
+  "body": " Drills   Integration Rules and appear to violate Integration Rule , don t they? Isn t it true that where and are arbitrary constants, and that . Explain how Integration Rules and are legitimate as stated.  "
+},
+{
+  "id": "SECTIONIntegrationRules1-5",
+  "level": "2",
+  "url": "SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-5",
+  "type": "Example",
+  "number": "20.2.0.2",
+  "title": "",
+  "body": " For example, consider , where .  "
+},
+{
+  "id": "PROBLEMAntiDiffPractice",
+  "level": "2",
+  "url": "SECTIONIntegrationRules1.html#PROBLEMAntiDiffPractice",
+  "type": "Drill",
+  "number": "20.2.0.3",
+  "title": "",
+  "body": " Drills  Use Integration Rules to find the most general antiderivative.                            "
+},
+{
+  "id": "SECTIONIntegrationRules1-9-7",
+  "level": "2",
+  "url": "SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-9-7",
+  "type": "Problem",
+  "number": "20.2.0.4",
+  "title": "",
+  "body": "Problems  Show that if we differentiate the definition we still obtain the formula .   Be careful that you do not try to take the logarithm of a negative number.  "
 },
 {
   "id": "SECTIONCavalierisMethod",
