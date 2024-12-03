@@ -4545,7 +4545,7 @@
       <p>
         In general, we define an arcfunction as <m>\text{arcfunction}(x)=y</m>
         precisely when <m>\text{function}(y)=x</m>. So, <m>\arcsin(x)=y</m> when
-        <m>\sin(y)=x</m> and <m>\arccos(x)=y</m> when <m>\cos(x)=y</m>.
+        <m>\sin(y)=x</m> and <m>\arccos(x)=y</m> when <m>\cos(y)=x</m>.
       </p>
     </introduction>
 
@@ -4558,9 +4558,10 @@
         When we graph <m>\arcsin(x)</m> by flipping the graph of <m>\sin(x)</m> across
         the graph of the line <m>y=x</m> we get the sketch below. For the
         value of <m>x</m> shown in the sketch the arrows point to a few of the
-        possible values of <m>\arcsin(x)</m>. There are infinitely many, so
+        possible values of <m>\arcsin(x)</m>. There are infinitely many so
         obviously <m>\arcsin(x)</m> is also a multifunction, not a function.
       </p>
+
       <image source="DC/arcsin5.png" width="30%"/>
 
       <p>
@@ -4578,6 +4579,8 @@
           </mrow>
         </md>
       </p>
+
+
 
       <problem xml:id="DRILLInvSin1">
         <idx><h sortby="AAB">Drills</h></idx>
@@ -4628,20 +4631,12 @@
         </task>
       </exercise>
 
-      <figure  xml:id="FIGUREFIGUREBadDrawing-InvSine">
-        <caption>The World<rsq/>s Most Evil Mathematician, by 
-        <url href="https://mathwithbaddrawings.com/" visual="https://mathwithbaddrawings.com/">Ben Orlin</url></caption>
-        <image source="DC/BadDrawing-InvSine.png" width="60%">
-          <shortdescription></shortdescription>
-        </image>
-      </figure>
-
 
       <p>
         The plus/minus and minus/plus that appear in <xref
         ref="EQUATIONInvSin11">equations</xref> and <xref
         ref="EQUATIONInvCos1"></xref>, respectively, are present
-        because, <m>\arcsin(x)</m> and <m>\arccos(x)</m> are both
+        because <m>\arcsin(x)</m> and <m>\arccos(x)</m> are both
         multifunctions like <m>\arctan(x)</m>.
       </p>
 
@@ -4653,6 +4648,15 @@
         range of <m>\inverse\tan(x)</m>.  The question is, what restriction should
         we impose?
       </p>
+
+      <figure  xml:id="FIGUREFIGUREBadDrawing-InvSine">
+        <caption>The World<rsq/>s Most Evil Mathematician, by 
+        <url href="https://mathwithbaddrawings.com/" visual="https://mathwithbaddrawings.com/">Ben Orlin</url></caption>
+        <image source="DC/BadDrawing-InvSine.png" width="60%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+
 
       <p>
         When we were looking to restrict the range of the <m>\inverse\tan(x)</m>
@@ -4704,9 +4708,8 @@
         <idx><h>Definition</h><h>The Derivative of the Inverse Sine</h></idx>
         <statement>
           <p>
-            
             The derivative of the inverse sine function is defined to be,
-            <me>\displaystyle\dfdx{(\inverse\sin(x)}{x}=\frac{1}{\sqrt{1-x^2}}</me>,
+            <me>\dfdx{(\inverse\sin(x))}{x}=\frac{1}{\sqrt{1-x^2}}</me>,
             where <m>-\frac{\pi}{2}\lt \inverse\sin(x)\lt \frac{\pi}{2}</m>.
           </p>
         </statement>
@@ -4928,10 +4931,9 @@
 
         <introduction>
           <p>
-            The sketch below
-            
-            shows that if we constrain the range of the <m>\inverse\sec(x)</m> to be
-            the interval <m>(0, \pi/2)\cup(\pi/2,\pi)</m> then
+            The sketch below shows that if we constrain the range of
+            the <m>\inverse\sec(x)</m> to be the interval <m>(0,
+            \pi/2)\cup(\pi/2,\pi)</m> then
             <me>
               \dfdx{(\inverse\sec(x)}{x}=\frac{1}{\abs{x}\sqrt{x^2-1}}.
             </me>
@@ -4946,6 +4948,13 @@
               <me> \dfdx{(\inverse\csc(x))}{x}=\frac{-1}{\abs{x}\sqrt{x^2-1}}.  </me>
             </p>
           </statement>
+        </task>
+        <task>
+          <p>
+            Give constraints on the range of <m>\inverse\csc (x)</m>
+            which guarantee that its derivative will always be
+            negative.
+          </p>
         </task>
       </exercise>
 
@@ -5440,10 +5449,11 @@
     </p>
 
     <p>
-      A good test of the value of a new definition is whether or not it
-      produces the same results that earlier, more intuitive musings
-      that led us to. It should be clear that with this definition, the
-      curvature of a straight line would still be zero. (Why?)
+      A good test of the value of a new definition is whether or not
+      it produces the same results that earlier, more intuitive
+      musings led us to. It should be clear that with this definition,
+      the curvature of a straight line is zero  (Why?) just like Oresme<rsq/>s
+      definition.
     </p>
 
     <exercise xml:id="PROBLEMCircleCurvature">
@@ -5473,28 +5483,37 @@
     </p>
 
     <p>
-      Dividing both sides of <xref ref="EQUATIONDiffTheta">equation</xref> by <m>\dx{s}</m> we
-      have,
       <mdn>
         <mrow  xml:id="EQUATIONDiffTheta">
           \dx{\theta}\amp =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\dx\left(\hskip-1mm\dfdx{y}{x}\right).
         </mrow>
-        <mrow number="no">\dfdx{\theta}{s}\amp =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\dfdx{\left(\dfdx{y}{x}\right)}{s}.</mrow>
       </mdn>
-      Next we <q>uncancel</q> a <m>\textcolor{red}{\frac{1}{\dx{x}}}</m>
-      <mdn>
-        <mrow number="no">\dfdx{\theta}{s}\amp =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\dfdx{\left(\dfdx{y}{x}\right)}{s}\cdot\textcolor{red}{\frac{\frac{1}{\dx{x}}}{\frac{1}{\dx{x}}}}
-        </mrow>
-        <mrow  xml:id="EQUATIONSecondDifferentials">
-          \dfdx{\theta}{s}\amp
-          =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\frac{\textcolor{blue}{\dfdx{\left(\dfdx{y}{x}\right)}{x}}}{\dfdx{s}{x}} 
-        </mrow>
-      </mdn>
-      or
-      <men  xml:id="EQUATIONCurvaturePreamble">
-        \dfdx{\theta}{s}
-        =\frac{\textcolor{blue}{\dfdxn{y}{x}{2}}}{\left[1+\left(\dfdx{y}{x}\right)^2\right]\dfdx{s}{x}}.
-      </men>
+
+      Dividing both sides of <xref
+      ref="EQUATIONDiffTheta">equation</xref> by <m>\dx{s}</m> we
+        have,
+
+        <men>
+          \dfdx{\theta}{s}\amp =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\dfdx{\left(\dfdx{y}{x}\right)}{s}
+          </men>.
+
+          Next we <q>uncancel</q> a <m>\textcolor{red}{\frac{1}{\dx{x}}}</m>
+
+        <mdn>
+          <mrow number="no">\dfdx{\theta}{s}\amp =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\dfdx{\left(\dfdx{y}{x}\right)}{s}\cdot\textcolor{red}{\frac{\frac{1}{\dx{x}}}{\frac{1}{\dx{x}}}}
+          </mrow>
+          <mrow  xml:id="EQUATIONSecondDifferentials">
+            \dfdx{\theta}{s}\amp
+            =\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\cdot\frac{\textcolor{blue}{\dfdx{\left(\dfdx{y}{x}\right)}{x}}}{\dfdx{s}{x}} 
+          </mrow>
+        </mdn>
+
+        or
+
+        <men  xml:id="EQUATIONCurvaturePreamble">
+          \dfdx{\theta}{s}
+          =\frac{\textcolor{blue}{\dfdxn{y}{x}{2}}}{\left[1+\left(\dfdx{y}{x}\right)^2\right]\dfdx{s}{x}}.
+        </men>
     </p>
 
     <exercise  xml:id="PROBLEMCurvatureDef2">
@@ -5540,9 +5559,12 @@
       </p>
       <figure>
         <caption>
-          <url href="https://en.wikipedia.org/wiki/Hunt-Lenox_Globe" visual="https://en.wikipedia.org/wiki/Hunt-Lenox_Globe">The Lennox Globe</url>
+          <url href="https://en.wikipedia.org/wiki/Hunt-Lenox_Globe"
+               visual="https://en.wikipedia.org/wiki/Hunt-Lenox_Globe">The
+          Lennox Globe</url> You can see the Latin inscription in the
+          inset at the upper right.
         </caption>
-        <image source="DC/LennoxGlobe2.png" width="50%"/>
+        <image source="DC/LennoxGlobe4.png" width="60%"/>
       </figure>
 
       <p>
