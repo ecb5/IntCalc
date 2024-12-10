@@ -1,188 +1,188 @@
 <?xml version='1.0' encoding='utf-8'?>
 <chapter xml:id="Taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-<title>Taylor Series</title>
+  <title>Taylor Series</title>
 
-<section>
-<title>The Representation of Numbers</title>
-<p>
-The decimal place-value representation of a number like <m>43527</m> is so
-familiar that it feels easy and natural, even simple. It is anything
-but. Our familiar  base ten number representation notation is actually
-extremely sophisticated. It only seems simple because we learn it in
-childhood and use it every day for  all of our lives. 
+  <section>
+    <title>The Representation of Numbers</title>
+    <p>
+      The decimal place-value representation of a number like <m>43527</m> is so
+      familiar that it feels easy and natural, even simple. It is anything
+      but. Our familiar  base ten number representation notation is actually
+      extremely sophisticated. It only seems simple because we learn it in
+      childhood and use it every day for  all of our lives. 
 
 
-</p>
+    </p>
 
-<p>
-For example the notation "<m>43527</m>" is actually a condensed form of
+    <p>
+      For example the notation "<m>43527</m>" is actually a condensed form of
 
-<md>
-<mrow>4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0,</mrow>
-</md>
-but numbers written in this form are very difficult to work with. We
-get our usual representation "<m>43527</m>" by observing that the powers of
-ten needn't be explicitly written down since they are clearly
-indicated by the position of each digit. Hence the name <q>place
-value.</q>
-</p>
-<p>
-However, once the place value system is adopted we do lose
-some flexibility, since the digits  must appear in the proper
-order. For example "<m>72534</m>" is a completely different number than
-"<m>43527</m>," but 
-<md>
-<mrow>4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0</mrow>
-</md>
-and 
-<md>
-<mrow>7\cdot10^0+2\cdot10^1+5\cdot10^2+3\cdot10^3+4\cdot10^4</mrow>
-</md>
-are the same. It will be convenient for us to use this last ordering. Notice that it is the reverse of the ordering that comes from the place value representation.
-</p>
-<p>
-As long as our base  is <m>10</m> the place value notation prevents us
-from confusing the number "<m>43527</m>" with, say, "<m>18263</m>."
-</p>
-<p>
-But suppose our base is <m>8</m>. The then number 
-<md>
-<mrow>43527 = 4\cdot8^4+3\cdot8^3+5\cdot8^2+2\cdot8^1+7\cdot8^0 = 18263.</mrow>
-</md>
-</p>
+      <md>
+        <mrow>4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0,</mrow>
+      </md>
+      but numbers written in this form are very difficult to work with. We
+      get our usual representation "<m>43527</m>" by observing that the powers of
+      ten needn't be explicitly written down since they are clearly
+      indicated by the position of each digit. Hence the name <q>place
+      value.</q>
+    </p>
+    <p>
+      However, once the place value system is adopted we do lose
+      some flexibility, since the digits  must appear in the proper
+      order. For example "<m>72534</m>" is a completely different number than
+      "<m>43527</m>," but 
+      <md>
+        <mrow>4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0</mrow>
+      </md>
+      and 
+      <md>
+        <mrow>7\cdot10^0+2\cdot10^1+5\cdot10^2+3\cdot10^3+4\cdot10^4</mrow>
+      </md>
+      are the same. It will be convenient for us to use this last ordering. Notice that it is the reverse of the ordering that comes from the place value representation.
+    </p>
+    <p>
+      As long as our base  is <m>10</m> the place value notation prevents us
+      from confusing the number "<m>43527</m>" with, say, "<m>18263</m>."
+    </p>
+    <p>
+      But suppose our base is <m>8</m>. The then number 
+      <md>
+        <mrow>43527 = 4\cdot8^4+3\cdot8^3+5\cdot8^2+2\cdot8^1+7\cdot8^0 = 18263.</mrow>
+      </md>
+    </p>
 
-<p>
-Clearly we can't allow this kind of ambiguity. We can't allow the same
-set of digits, written in the same order, to mean both ``forty-three
-thousand five hundred twenty-nine,''  <em>and</em> ``eighteen
-thousand two hundred sixty three,''  <em>and</em> ``sixty-three
-thousand one hundred ninety-one,'' which is what we would get if we
-interpreted the digits "<m>43527</m>" using ``<m>11</m>'' as the base. To prevent
-this sort of confusion we will use subscripts. That is, 
-<md>
-<mrow>43527_{10} = 4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0</mrow>
-</md>
-whereas
-<md>
-<mrow>43527_{8} = 4\cdot8^4+3\cdot8^3+5\cdot8^2+2\cdot8^1+7\cdot8^0 = 18263_{10}, </mrow>
-</md>
-and 
-<md>
-<mrow>43527_{11} = 4\cdot11^4+3\cdot11^3+5\cdot11^2+2\cdot11^1+7\cdot11^0 = 63191_{10}.</mrow>
-</md>
-Naturally as long as we only use base 10 notation there is no
-ambiguity. Since this is the usual situation we usually suppress the
-subscripts.
-</p>
-<p>
-But sometimes it is necessary to use a base other than <m>10</m> and it is
-necessary to convert from one base to another. This conversion can be
-difficult at first, mainly because it is unfamiliar. That is, in base
-<m>10</m> the number one hundred twenty-one is written <m>121_{10}</m> but in
-base <m>5</m> it is <m>441_5</m>.
-</p>
-<problem>
-  <idx><h sortby="AAB">Drills</h></idx>
-  <p>
-    Verify that <m>121_{10} = 441_5</m>.
+    <p>
+      Clearly we can't allow this kind of ambiguity. We can't allow the same
+      set of digits, written in the same order, to mean both ``forty-three
+      thousand five hundred twenty-nine,''  <em>and</em> ``eighteen
+      thousand two hundred sixty three,''  <em>and</em> ``sixty-three
+      thousand one hundred ninety-one,'' which is what we would get if we
+      interpreted the digits "<m>43527</m>" using ``<m>11</m>'' as the base. To prevent
+      this sort of confusion we will use subscripts. That is, 
+      <md>
+        <mrow>43527_{10} = 4\cdot10^4+3\cdot10^3+5\cdot10^2+2\cdot10^1+7\cdot10^0</mrow>
+      </md>
+      whereas
+      <md>
+        <mrow>43527_{8} = 4\cdot8^4+3\cdot8^3+5\cdot8^2+2\cdot8^1+7\cdot8^0 = 18263_{10}, </mrow>
+      </md>
+      and 
+      <md>
+        <mrow>43527_{11} = 4\cdot11^4+3\cdot11^3+5\cdot11^2+2\cdot11^1+7\cdot11^0 = 63191_{10}.</mrow>
+      </md>
+      Naturally as long as we only use base 10 notation there is no
+      ambiguity. Since this is the usual situation we usually suppress the
+      subscripts.
+    </p>
+    <p>
+      But sometimes it is necessary to use a base other than <m>10</m> and it is
+      necessary to convert from one base to another. This conversion can be
+      difficult at first, mainly because it is unfamiliar. That is, in base
+      <m>10</m> the number one hundred twenty-one is written <m>121_{10}</m> but in
+      base <m>5</m> it is <m>441_5</m>.
+    </p>
+    <problem>
+      <idx><h>Drills</h></idx>
+      <p>
+        Verify that <m>121_{10} = 441_5</m>.
+      </p>
+    </problem>
+    <p>
+      If we did not know the base <m>5</m> representation how could we find it?
+    </p>
+    <p>
+      This sounds harder than it is. If we write  
+      <md>
+        <mrow>121_{10} = a_0 +a_1\cdot5 + a_2\cdot5^2</mrow>
+      </md>
+      we can find the unknown coefficients in the
+      order given as follows. Divide each side of the above equation by <m>5</m>.
+      On the right we get 
+      <md>
+        <mrow>a_1+a_2\cdot5, \text{ with a remainder of } a_0.</mrow>
+      </md>
+      On the left we get <m>\frac{121}{5} = 24</m> with a remainder of <m>1</m>. So
+      <m>a_0 = 1</m> and 
+      <md>
+        <mrow>24 = a_1+a_2\cdot5.
+      </mrow>
+    </md>
   </p>
-</problem>
-<p>
-If we did not know the base <m>5</m> representation how could we find it?
+
+  <p>
+    Dividing both sides of this last formula by <m>5</m> again gives a
+    remainder of <m>a_1</m> on the right and of <m>4</m> on the left, and <m>a_2=4</m> as
+    well. Therefore
+    <md>
+      <mrow>121_{10} = 441_5.</mrow>
+    </md>
+  </p>
+  <problem>
+    <idx><h>Drills</h></idx>
+    <introduction>
+      <p>  Convert <m>121_{10}</m> to each of the following bases.</p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>3</m>
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>4</m>
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>8</m>
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>9</m>
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          <m>11</m>
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+<m>2</m>
 </p>
-<p>
-This sounds harder than it is. If we write  
-<md>
-<mrow>121_{10} = a_0 +a_1\cdot5 + a_2\cdot5^2</mrow>
-</md>
-we can find the unknown coefficients in the
-order given as follows. Divide each side of the above equation by <m>5</m>.
-On the right we get 
-<md>
-<mrow>a_1+a_2\cdot5, \text{ with a remainder of } a_0.</mrow>
-</md>
-On the left we get <m>\frac{121}{5} = 24</m> with a remainder of <m>1</m>. So
-<m>a_0 = 1</m> and 
-<md>
-<mrow>24 = a_1+a_2\cdot5.
-</mrow>
-</md>
-</p>
-
-<p>
-Dividing both sides of this last formula by <m>5</m> again gives a
-remainder of <m>a_1</m> on the right and of <m>4</m> on the left, and <m>a_2=4</m> as
-well. Therefore
-<md>
-<mrow>121_{10} = 441_5.</mrow>
-</md>
-</p>
-<problem>
-  <idx><h sortby="AAB">Drills</h></idx>
-  <introduction>
-    <p>  Convert <m>121_{10}</m> to each of the following bases.</p>
-  </introduction>
-  <task>
-    <statement>
-      <p>
-        <m>3</m>
-      </p>
-    </statement>
-  </task>
-
-  <task>
-    <statement>
-      <p>
-        <m>4</m>
-      </p>
-    </statement>
-  </task>
-
-  <task>
-    <statement>
-      <p>
-        <m>8</m>
-      </p>
-    </statement>
-  </task>
-
-  <task>
-    <statement>
-      <p>
-        <m>9</m>
-      </p>
-    </statement>
-  </task>
-
-
-  <task>
-    <statement>
-      <p>
-        <m>11</m>
-      </p>
-    </statement>
-  </task>
-
-
-  <task>
-    <statement>
-      <p>
-        <m>2</m>
-      </p>
-    </statement>
-  </task>
+</statement>
+</task>
 </problem>
 </section>
 
 <section>
 <title>Representations of Polynomials</title>
 <p>
-Notice that when we write <m>121_{10}</m> as
+  Notice that when we write <m>121_{10}</m> as
 
-<md>
-<mrow>
-121_{10} = 1+2\cdot10+1\cdot10^2
+  <md>
+    <mrow>
+      121_{10} = 1+2\cdot10+1\cdot10^2
 </mrow>
 </md>
 the expression on the right has the form of a polynomial. That is, if
@@ -191,20 +191,20 @@ we replace each instance of the base <m>10</m> with <m>x</m> we get the polynomi
 where the base is <m>x</m> (or that it is unspecified).
 </p>
 <p>
-We will very soon find it very convenient to to be able to convert
-polynomials to different bases just like we converted numbers in the
-last section. Fortunately, the method we've just developed carries
-over unchanged.
+  We will very soon find it very convenient to to be able to convert
+  polynomials to different bases just like we converted numbers in the
+  last section. Fortunately, the method we've just developed carries
+  over unchanged.
 </p>
 <example>
-<p>
-  The polynomial <m>p(x) = 1+2x+x^2</m> is represented  with  <m>x</m> as the
-  base. Convert it to the base <m>(x-1)</m>.
+  <p>
+    The polynomial <m>p(x) = 1+2x+x^2</m> is represented  with  <m>x</m> as the
+    base. Convert it to the base <m>(x-1)</m>.
 </p>
 <p>
   As before, we want to find coefficients <m>a_0, a_1,</m> and <m>a_2</m> so
   that
-<md>
+  <md>
 <mrow> 1+2x+x^2 = a_0 + a_1(x-1) + a_2(x-1)^2.</mrow>
 </md>
 Dividing both sides by <m>x-1</m> we get
@@ -212,18 +212,18 @@ Dividing both sides by <m>x-1</m> we get
   <li>
     <title>
       On the right:
-    </title>
- <p><m>a_1+a_2(x-1)</m> with the remainder <m>a_0</m>.</p>
-  </li>
-  <li>
-    <title>On the left:</title>
+</title>
+<p><m>a_1+a_2(x-1)</m> with the remainder <m>a_0</m>.</p>
+</li>
+<li>
+<title>On the left:</title>
 <p>    <m>x+3</m> with the remainder <m>4</m>.
-    So <m>a_0=4</m> and <m>x+3=a_1+a_2(x-1)</m>. </p>
-  </li>
+So <m>a_0=4</m> and <m>x+3=a_1+a_2(x-1)</m>. </p>
+</li>
 </dl>
 Dividing again by <m>x-1</m> gives
 <dl>
-<li>
+  <li>
 <title>On the right:</title>
 <p> <m>a_2</m> with the remainder <m>a_1</m>.
 </p>
@@ -231,51 +231,51 @@ Dividing again by <m>x-1</m> gives
 <li>
 <title>On the left:</title>
 <p>
- <m>1</m> with the remainder <m>4</m>.
+  <m>1</m> with the remainder <m>4</m>.
 </p>
 </li>
 </dl>
 </p>
 <p>
-Therefore
-<md>
+  Therefore
+  <md>
 <mrow>1+2x+x^2 = 4+4(x-1)+(x-1)^2.</mrow>
 </md>
 </p>
 </example>
 <problem>
-  <idx><h sortby="AAB">Drills</h></idx>
-  <p>  Confirm the result in the previous example.</p>
+<idx><h>Drills</h></idx>
+<p>  Confirm the result in the previous example.</p>
 </problem>
 
 
 <p>
-For reasons that we will make clear later, we don't normally refer to
-this re-representation of polynomials as a "change of base."
-Instead, when we convert from base <m>x</m> to base <m>x-a</m> for some <m>a</m> we
-say we are "expanding the polynomial about the number <m>a</m>." When the
-base is <m>x</m> we say that the polynomial is expanded about  the number
-<m>0</m>.
+  For reasons that we will make clear later, we don't normally refer to
+  this re-representation of polynomials as a "change of base."
+  Instead, when we convert from base <m>x</m> to base <m>x-a</m> for some <m>a</m> we
+  say we are "expanding the polynomial about the number <m>a</m>." When the
+  base is <m>x</m> we say that the polynomial is expanded about  the number
+  <m>0</m>.
 </p>
 
 <aside>
 <title>Aside:</title>
 <p>
-Even
-though that is really what it is.
+  Even
+  though that is really what it is.
 </p>
 </aside>
 
 <p>A more substantial example is in order.</p>
 <example>
-<p>
-  Expand the polynomial <m>p(x) = x^5+3x^4-15x^2+1</m> about the number
-  <m>2</m>.
+  <p>
+    Expand the polynomial <m>p(x) = x^5+3x^4-15x^2+1</m> about the number
+    <m>2</m>.
 </p>
 <p>
   As before we have
-<md>
-<mrow>x^5+3x^4-15x^2+1 =
+  <md>
+    <mrow>x^5+3x^4-15x^2+1 =
 a_0+a_1(x-2)+a_2(x-2)^2+a_3(x-2)^3+a_4(x-2)^4+a_5(x-2)^5.</mrow>
 </md>
 Dividing both sides by <m>x-2</m> gives
@@ -285,7 +285,7 @@ Dividing both sides by <m>x-2</m> gives
 </li>
 <li>
 <title>On the left:</title>
- <p><m>x^4+5x^3+10x^2+5x+10</m> with remainder <m>21</m>.</p>
+<p><m>x^4+5x^3+10x^2+5x+10</m> with remainder <m>21</m>.</p>
 </li>
 </dl>
 Thus <m>a_0 = 21</m> and
@@ -294,15 +294,15 @@ Thus <m>a_0 = 21</m> and
 </md>
 Dividing again we have
 <dl>
-<li>
+  <li>
 <title>On the right:</title>
 <p> <m>a_2+a_3(x-2)+a_4(x-2)^2+a_5(x-2)^3</m> with
-  remainder <m>a_1</m>.</p>
+remainder <m>a_1</m>.</p>
 </li>
 <li>
 
 <title>On the left:</title>
- <p><m>x^3+7x^2+24x+53</m> with remainder <m>116</m>.</p>
+<p><m>x^3+7x^2+24x+53</m> with remainder <m>116</m>.</p>
 </li>
 </dl>
 Thus <m>a_1=116</m> and
@@ -311,8 +311,8 @@ Thus <m>a_1=116</m> and
 </md>
 </p>
 <p>
-Continuing in this fashion gives <m>a_2= 137</m> and
-<md>
+  Continuing in this fashion gives <m>a_2= 137</m> and
+  <md>
 <mrow>x^2+9x+42 = a_3+a_4(x-2)+a_5(x-2)^2,</mrow>
 </md>
 and then <m>a_3=64</m> and
@@ -322,24 +322,24 @@ and then <m>a_3=64</m> and
 from which it is clear that <m>a_5= 1</m> and <m>a_4=13</m>.
 </p>
 <p>
-Therefore
-<md>
-<mrow>x^5+3x^4-15x^2+1 =
-21+116(x-2)+137(x-2)^2+64(x-2)^3+13(x-2)^4+(x-2)^5.
+  Therefore
+  <md>
+    <mrow>x^5+3x^4-15x^2+1 =
+    21+116(x-2)+137(x-2)^2+64(x-2)^3+13(x-2)^4+(x-2)^5.
 </mrow>
 </md>
 </p>
 </example>
 <problem>
-  <idx><h sortby="AAB">Drills</h></idx>
-  <p>  Verify the result in the previous example.</p>
+<idx><h>Drills</h></idx>
+<p>  Verify the result in the previous example.</p>
 </problem>
 
 <p>
-If we expand the polynomial <m>p(x) = x^3</m> about the number <m>1</m> we get
+  If we expand the polynomial <m>p(x) = x^3</m> about the number <m>1</m> we get
 
-<md>
-<mrow>x^3 = a_0+a_1(x-1) +a_2(x-1)^2+a_3(x-1)^3.
+  <md>
+    <mrow>x^3 = a_0+a_1(x-1) +a_2(x-1)^2+a_3(x-1)^3.
 </mrow>
 </md>
 
@@ -352,27 +352,27 @@ same set of axes we see the following.\\
 \centerline{\includegraphics*[height=2in,width=2in]{../Figures/LinearTaylor}}
 </p>
 <p>
-Hey! Wait a second! We've seen things like this before!
+  Hey! Wait a second! We've seen things like this before!
 </p>
 <p>
-This appears to be the graph of <m>p(x)=x^3</m> and its tangent line
-at <m>x=1</m>. Is this just an artifact of this particular problem or
-is it generally true?
+  This appears to be the graph of <m>p(x)=x^3</m> and its tangent line
+  at <m>x=1</m>. Is this just an artifact of this particular problem or
+  is it generally true?
 </p>
 <p>
-Clearly this is general. If we have an unspecified polynomial expanded
-about the number <m>a</m>, <m>p(x) = a_0 + a_1(x-a) + a_2(x-a)^2 + \cdots +
-a_m(x-a)^n</m> then clearly <m>p(a) = a_1</m> and <m>\dfdx{p}{x}(a) = a_1</m>. So
-it seems that in computing the coefficients <m>a_0</m> and <m>a_1</m> we have
-found the line tangent to <m>p(x)</m> at <m>x=a</m>. What do you suppose we will
-find when we compute <m>a_2</m>?
+  Clearly this is general. If we have an unspecified polynomial expanded
+  about the number <m>a</m>, <m>p(x) = a_0 + a_1(x-a) + a_2(x-a)^2 + \cdots +
+  a_m(x-a)^n</m> then clearly <m>p(a) = a_1</m> and <m>\dfdx{p}{x}(a) = a_1</m>. So
+  it seems that in computing the coefficients <m>a_0</m> and <m>a_1</m> we have
+  found the line tangent to <m>p(x)</m> at <m>x=a</m>. What do you suppose we will
+  find when we compute <m>a_2</m>?
 </p>
 <problem>
-  <idx><h sortby="AAB">Drills</h></idx>
-  <p>
-    Find <m>a_2</m> graph <m>x^3</m> and <m>a_0 + a_1(x-a) + a_2(x-a)^2</m>
-    on the same set of axes. What do you observe?
-  </p>
+<idx><h>Drills</h></idx>
+<p>
+Find <m>a_2</m> graph <m>x^3</m> and <m>a_0 + a_1(x-a) + a_2(x-a)^2</m>
+on the same set of axes. What do you observe?
+</p>
 </problem>
 
 </section>
