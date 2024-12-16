@@ -1193,6 +1193,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">19.5</span> <span class="title">Integration By Parts — The Opposite of the Product Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONStoneArch.html" class="internal"><span class="codenumber">19.6</span> <span class="title">The Stone Arch Bridge</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -1302,53 +1303,127 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONTwoSimpleDiffeqs"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">18.1</span><span class="space"> </span><span class="title">Separation of Variables</span>
 </h2>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-2">
-<div class="para">Many natural phenomena can be modeled by a differential equation. You’ve already seen this a couple of times.  For example, you saw in <a href="SECTIONbridg-chains-telesc.html#PROBLEMSpinCast1" class="xref" data-knowl="./knowl/xref/PROBLEMSpinCast1.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 5.10.4.3">Problem 5.10.4.3</a> that the differential equation</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMSpinCast1.html ./knowl/xref/EQUATIONSpinCastDiffeq.html" id="EQUATIONSpinCastDiffeq">
+<div class="para" id="SECTIONTwoSimpleDiffeqs-2">Many phenomena can be modeled by a differential equation.  For example, by recognizing that the parabola <span class="process-math">\(y=\frac{{\omega
+}^2}{2g}x^2\)</span> is one solution of <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a> in <a href="SECTIONbridg-chains-telesc.html#PROBLEMSpinCast1" class="xref" data-knowl="./knowl/xref/PROBLEMSpinCast1.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 5.10.4.3">Problem 5.10.4.3</a> we concluded that forming a telescope lens via the spin casting process will shape a spinning vat of liquid glass into a parabolic form. Thus <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a> models the forces in play for spin casting.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-3">We obtained our solution in <a href="SECTIONbridg-chains-telesc.html#PROBLEMSpinCast1" class="xref" data-knowl="./knowl/xref/PROBLEMSpinCast1.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 5.10.4.3">Problem 5.10.4.3</a>, essentially, by guessing. As we’ve said before guessing is an important tool and we encourage you to use it. But as we’ve also said, it is not enough to simply guess and then move on. We also need to pause and examine our solution. We need to bring any insights it offers into our conscious mind so that the next time we won’t need to guess.</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-4">
+<div class="para">Notice that <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a> is equivalent to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSpinCastDiffeq.html" id="EQUATIONIntNotation">
 \begin{equation}
-\dfdx{y}{x} =\frac{\omega^2}{g}x\tag{18.2}
+\dx{y}=\frac{{\omega}^2}{g}x\dx{x}\text{.}\tag{18.2}
 \end{equation}
 </div>
-<div class="para">models the force on a spinning vat of liquid glass.  By recognizing that the parabola <span class="process-math">\(y=\frac{{\omega }^2}{2g}x^2\)</span> is one solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.2">equation (18.2)</a> we concluded that forming a telescope lens by spin casting would guarantee a parabolic shape.</div>
+<div class="para">As always we think of <span class="process-math">\(\dx{y}\)</span> as a “little bit” of <span class="process-math">\(y\text{.}\)</span> If we sum up all of the “little bits” of <span class="process-math">\(y\)</span> we will recover <span class="process-math">\(y\)</span> itself in the same way that summing all of the “little bits” of <span class="process-math">\(10\)</span> (e.g., ten ones, or a hundred one–tenths) we recover <span class="process-math">\(10\)</span> itself.</div>
 </div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-3">We obtained  our solution in <a href="SECTIONbridg-chains-telesc.html#PROBLEMSpinCast1" class="xref" data-knowl="./knowl/xref/PROBLEMSpinCast1.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 5.10.4.3">Problem 5.10.4.3</a>, essentially, by guessing. As we’ve said before guessing is an important tool and we encourage you to use it. But, as we’ve also said, it is not enough to guess and move on if we happen to make a correct guess. We need to stop and examine the intuition that gave us this guess.</div>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-4">
-<div class="para">In particular in this case, we want to recast this problem in integral form so we can use the more descriptive, and helpful, notation of integration. We can rewrite <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.2">equation (18.2)</a>  as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSpinCastDiffeq.html ./knowl/xref/IntRuleConstMult.html ./knowl/xref/IntRuleMonomial.html" id="SECTIONTwoSimpleDiffeqs-4-2">
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-5">
+<div class="para">We were taught how to compute the sum</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1+1+1+1+1+1+1+1+1+1=10
+\end{equation*}
+</div>
+<div class="para">in childhood but it is not (yet) entirely clear how we could sum all of the differentials of <span class="process-math">\(y\text{.}\)</span> Or even what that might mean, given that there are infinitely many of them. The idea is fundamentally the same in either case but we’ll need some new notation when infinitely many summands are involved.</div>
+</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-6">
+<div class="para">Leibniz suggested using the letter “S” (from the Latin word <i class="foreign">summa</i>, meaning “total”) to indicate such a sum.  He wrote the sum of all of the differentials of <span class="process-math">\(y\)</span> as: <span class="process-math">\(S\dx{y} \text{.}\)</span> His suggestion has since been universally adopted. Of course, he used the form of the letter “S” which was common in his time, and which is a bit different from the one we use today. So, ever since Leibniz’ time the statement that the sum of all the differentials of <span class="process-math">\(y\)</span> is equal to <span class="process-math">\(y\)</span> has been written as:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y=\int\dx{y}\text{.}
+\end{equation*}
+</div>
+</div>
+<aside class="aside aside-like" id="SECTIONTwoSimpleDiffeqs-7"><h3 class="heading"><span class="title">Historical Background.</span></h3>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-7-2">To a modern eye the integral sign looks like a stylized letter “S,” and that is often how it is described. But it isn’t stylized at all. In the seventeenth century a printed letter “S” typically had one of several forms, depending on where it appeared in a word.  One of these extended above and below the line of text, much as the letter “f” extends above and the letter “j” extends below the line of text today.  Leibniz adopted this doubly extended form of “S” as his summation sign. So the integral symbol isn’t a stylized “S” at all.  It is an archaic letter “S”.</div></aside><div class="para" id="SECTIONTwoSimpleDiffeqs-8">As we’ve seen the notion of differentiation comes from subtraction. We get <span class="process-math">\(\dx{x}\)</span> by taking the difference <span class="process-math">\(x_2-x_1\)</span> where <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_1\)</span> are infinitely close together. Of course, this is just a manner of thinking and speaking.  We know that there is really a limit process going on “behind the curtain.”</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-9">Summing up all of the differentials to recover <span class="process-math">\(y\)</span> — re–integrating them back into <span class="process-math">\(y\)</span> — is thus called <dfn class="terminology">integration</dfn>.  Leibniz’ symbol “<span class="process-math">\(\int\)</span>” is called the <dfn class="terminology">integral sign</dfn>, and the expression <span class="process-math">\(\int \dx{y}\)</span> is called an <dfn class="terminology">integral</dfn>.</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-10">
+<div class="para">The integral <span class="process-math">\(\int \dx{y}\)</span> is interesting because there are two distinct ways to “think about” it.  Although as we will soon see that these different modes of though are really equivalent they feel quite different. In the first instance, we can think of <span class="process-math">\(\int \dx{y}\)</span> as we have described it above: We are summing all of the differentials of <span class="process-math">\(y\text{.}\)</span> Of course the result of this summation <span class="process-math">\(y\)</span> or</div>
+<div class="displaymath process-math" id="EQUATIONIntNotation2">
+\begin{equation}
+y=\int \dx{y}\text{.}\tag{18.3}
+\end{equation}
+</div>
+</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-11">But since <span class="process-math">\(\dx{y}\)</span> is the differential of <span class="process-math">\(y\)</span> we can also understand <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONIntNotation2" class="xref" data-knowl="./knowl/xref/EQUATIONIntNotation2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.3">equation (18.3)</a> to mean that <span class="process-math">\(y\)</span> is what we must differentiate to get <span class="process-math">\(\dx{y}\text{.}\)</span> This does not seem very important until we look back at <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONIntNotation" class="xref" data-knowl="./knowl/xref/EQUATIONIntNotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.2">equation (18.2)</a>, especially the right–hand side.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-12">It seems clear enough that if two differentials (like <span class="process-math">\(\dx{y}\)</span> and <span class="process-math">\(\frac{\omega^2 }{g}x\dx{x}\)</span>) are equal then their integrals will also be equal. Integrating both sides we see that on the left we get <span class="process-math">\(y=\int \dx{y}\)</span> as before.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-13">But how do we evaluate the  right–hand side: <span class="process-math">\(\int
+\frac{\omega^2 }{g}x\dx{x}\text{?}\)</span> Do you see what to do? Before reading on think about this question for a few minutes.</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-14">
+<div class="para">Reasoning as we did earlier we see that the result of <span class="process-math">\(\int
+\frac{\omega^2 }{g}x\dx{x}\)</span> will be the expression whose derivative is <span class="process-math">\(\frac{\omega^2 }{g}x\text{.}\)</span> Since <span class="process-math">\(\frac{\omega^2}{g}\)</span> is a constant this is clearly going to be <span class="process-math">\(\frac{\omega^2 }{g}\frac{x^2}{2}\text{.}\)</span> Putting all of this together we see that if we know that the differential of <span class="process-math">\(y\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dx{y}= \frac{\omega^2 }{g}x\dx{x}
+\end{equation*}
+</div>
+<div class="para">and we can recover <span class="process-math">\(y\)</span> by integrating both sides</div>
+<div class="displaymath process-math" id="SECTIONTwoSimpleDiffeqs-14-8">
 \begin{align*}
-\dx{y}\amp{}=\frac{{\omega}^2}{g}x\dx{x}\\
-\end{align*}
-<div class="para intertext">or</div>
-\begin{align*}
-y=\int\dx{y}\amp{}=\int\frac{{\omega}^2}{g}x\dx{x}
+\int\dx{y}\amp{}= \int\frac{\omega^2 }{g}x\dx{x}\\
+y\amp{}=\frac{\omega^2 x^2}{2g}\text{.}
 \end{align*}
 </div>
-<div class="para">As you can see this is the same problem — we need to find an antiderivative of <span class="process-math">\(\frac{{\omega}^2}{g}x\text{.}\)</span> But whereas the differential notation merely tells us what the differential of <span class="process-math">\(y\)</span> is, the integral notation clearly suggests  an action for us to take: Sum up all of the differentials of the form <span class="process-math">\(\frac{\omega^2}{g}x\dx{x}
-\text{.}\)</span> And we know how to compute this sum using equations <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-4" class="xref" data-knowl="./knowl/xref/IntRuleConstMult.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.7">(20.7)</a> and <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-5" class="xref" data-knowl="./knowl/xref/IntRuleMonomial.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.8">(20.8)</a>. With a standard methodology and a clear notation we can successfully attack a wider variety of problems.</div>
 </div>
-<article class="exercise exercise-like" id="SECTIONTwoSimpleDiffeqs-5"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.1</span><span class="period">.</span>
+<article class="example example-like" id="EXAMPLEArbitraryConstant"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Indefinite Integral.</span>
 </h3>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-5-2-1"> Use the rules of integration to finish solving <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.2">equation (18.2)</a>. Notice that when you integrate, you will have the arbitrary constant <span class="process-math">\(C\)</span> in your answer. We do not yet have enough information to  determine  this constant. We will address this at a later</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-6"> Again,  the point is that integration  gives us a more systematic way of solving differential equations. The solution strategy we used when we rewrote <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.2">equation (18.2)</a> is called <dfn class="terminology">separation of variables</dfn> and it will enable us to solve a great many simple differential equations.</div>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-7">
+<div class="para" id="EXAMPLEArbitraryConstant-2">This all seems straightforward enough but there is a small error in our development so far.  This will cause us a multitude of headaches if we don’t address it. Earlier we observed that if two differential are equal then it seems reasonable that their integrals will also be equal. It is true that it seems reasonable, but in fact this is not true.</div>
+<div class="para logical" id="EXAMPLEArbitraryConstant-3">
+<div class="para">To see what goes wrong consider the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dx{y}=2x\dx{x}\text{.}
+\end{equation*}
+</div>
+<div class="para">Clearly <span class="process-math">\(y=x^2\)</span> is a solution because <span class="process-math">\(\dx (x^2) = 2x\dx{x}\)</span> as required. But by the same reasoning <span class="process-math">\(y=x^2+1\)</span> is also a solution. As is <span class="process-math">\(y=x^2+20\text{.}\)</span> In fact, if <span class="process-math">\(C\)</span> is any constant whatsoever <span class="process-math">\(y=x^2+C\)</span> will be a solution of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dx{y}=2x\dx{x}
+\end{equation*}
+</div>
+<div class="para">because</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dx (x^2 +C) = \dx (x^2)
++ \dx (C) = 2x\dx{x}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="EXAMPLEArbitraryConstant-4">Integration is sometimes informally described as “differentiation run backwards” but we see from this example that this isn’t quite true.  If we know that <span class="process-math">\(F^\prime (x) = f(x)\)</span> that does not necessarily mean that <span class="process-math">\(F(x)=\int f(x)\dx{x}\text{.}\)</span>
+</div>
+<div class="para logical" id="EXAMPLEArbitraryConstant-5">
+<div class="para">The  fact is that unlike a derivative, an integral is not unique. In this case we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int 2x\dx{x} =x^2+C
+\end{equation*}
+</div>
+<div class="para">is true regardless of the value of the constant <span class="process-math">\(C\text{.}\)</span> For this reason <span class="process-math">\(\int 2x\dx{x}\)</span> is called an <dfn class="terminology">indefinite integral</dfn> and <span class="process-math">\(F(x)=x^2+C\)</span> is the <dfn class="terminology">most general antiderivative</dfn> of <span class="process-math">\(f(x)=2x\text{.}\)</span> That is, <span class="process-math">\(F(x) = x^2 + 1\text{,}\)</span> <span class="process-math">\(F(x) =
+x^2 + \pi \text{,}\)</span> and <span class="process-math">\(F(x) = x^2 -10\text{,}\)</span> are all specific antiderivatives and <span class="process-math">\(F(x)=x^2+C\)</span> is the most general form of the antiderivative of <span class="process-math">\(f(x)= 2x\text{.}\)</span>
+</div>
+</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-16">As you can see this is the same problem — we need to find an antiderivative of <span class="process-math">\(\frac{{\omega}^2}{g}x\text{.}\)</span> But whereas the differential notation merely tells us what the differential of <span class="process-math">\(y\)</span> is, the integral notation clearly suggests an action for us to take: Sum up all of the differentials of the form <span class="process-math">\(\frac{\omega^2}{g}x\dx{x} \text{.}\)</span> And we know how to compute this sum using equations <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-4" class="xref" data-knowl="./knowl/xref/IntRuleConstMult.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.7">(20.7)</a> and <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-5" class="xref" data-knowl="./knowl/xref/IntRuleMonomial.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.8">(20.8)</a>. With a standard methodology and a clear notation we can successfully attack a wider variety of problems.</div>
+<article class="exercise exercise-like" id="SECTIONTwoSimpleDiffeqs-17"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-17-2-1"> Use the rules of integration to finish solving <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a>. Notice that when you integrate, you will have the arbitrary constant <span class="process-math">\(C\)</span> in your answer. We do not yet have enough information to  determine  this constant. We will address this at a later</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-18"> Again,  the point is that integration  gives us a more systematic way of solving differential equations. The solution strategy we used when we rewrote <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a> is called <dfn class="terminology">separation of variables</dfn> and it will enable us to solve a great many simple differential equations.</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-19">
 <div class="para">To see this consider the differential equation</div>
 <div class="displaymath process-math" id="EQUATIONSepVar1">
 \begin{equation}
-\dfdx{y}{x} =xy\text{.}\tag{18.3}
+\dfdx{y}{x} =xy\text{.}\tag{18.4}
 \end{equation}
 </div>
 </div>
-<article class="problem example-like" id="SECTIONTwoSimpleDiffeqs-8"><h3 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.2</span><span class="period">.</span>
+<article class="problem example-like" id="SECTIONTwoSimpleDiffeqs-20"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-8-2">Before we continue see if you can come up with a solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.3">equation (18.3)</a> on your own. Notice how it is similar to, and different from, <a href="SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-7-6" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.19">equation (8.19)</a>. Does that help?</div></article><article class="example example-like" id="EXAMPLESepVar"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.3</span><span class="period">.</span><span class="space"> </span><span class="title">Separation of Variables.</span>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-20-2">Before we continue see if you can come up with a solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.4">equation (18.4)</a> on your own. Notice how it is similar to, and different from, <a href="SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-7-6" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.19">equation (8.19)</a>. Does that help?</div></article><article class="example example-like" id="EXAMPLESepVar"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.4</span><span class="period">.</span><span class="space"> </span><span class="title">Separation of Variables.</span>
 </h3>
 <div class="para logical" id="EXAMPLESepVar-2">
 <div class="para">To find a way to approach this problem we will take our cue from basic Algebra.  Suppose we want to solve the algebraic equation</div>
 <div class="displaymath process-math" id="EQUATIONycubedeqxy">
 \begin{equation}
-y^3=xy\tag{18.4}
+y^3=xy\tag{18.5}
 \end{equation}
 </div>
 <div class="para">for <span class="process-math">\(y\text{.}\)</span>  One obvious solution is <span class="process-math">\(y=0\text{.}\)</span> This is a valid solution, but it is uninteresting, so we will not consider it. Assuming that <span class="process-math">\(y\neq 0\text{,}\)</span> we can divide by <span class="process-math">\(y\)</span>  obtaining</div>
@@ -1362,7 +1437,7 @@ y^2=x
 </div>
 <div class="para" id="EXAMPLESepVar-3">Notice that it was helpful to put all of the “<span class="process-math">\(y\)</span>” variables on one side, and all of the “<span class="process-math">\(x\)</span>” variables on the other. It was not immediately clear that “separating the variables” would be helpful but once it was done, the next step was clear.</div>
 <div class="para logical" id="EXAMPLESepVar-4">
-<div class="para">Similarly it is not clear that separating the variables in <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.3">equation (18.3)</a> will help, but let’s try it and see what happens. Separating the variables, we see that</div>
+<div class="para">Similarly it is not clear that separating the variables in <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.4">equation (18.4)</a> will help, but let’s try it and see what happens. Separating the variables, we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSepVar1.html">
 \begin{equation*}
 \frac{\dx{y}}{y}=x\dx{x}
@@ -1371,34 +1446,34 @@ y^2=x
 <div class="para">which says that the differentials on either side of the equation are the same.  Integrating (summing)  both sides gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSepVar1.html" id="EQUATIONSepVar2">
 \begin{equation}
-\int{\frac{1}{y}} \dx{y}=\int{x\dx{x}}\text{.}\tag{18.5}
+\int{\frac{1}{y}} \dx{y}=\int{x\dx{x}}\text{.}\tag{18.6}
 \end{equation}
 </div>
-</div></article><article class="exercise exercise-like" id="SECTIONTwoSimpleDiffeqs-10"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.4</span><span class="period">.</span>
+</div></article><article class="exercise exercise-like" id="SECTIONTwoSimpleDiffeqs-22"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.5</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="SECTIONTwoSimpleDiffeqs-10-2"><div class="para" id="SECTIONTwoSimpleDiffeqs-10-2-1"></div></div>
-<article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-10-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-10-3-1-1">
-<div class="para">Integrate both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar2" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.5">equation (18.5)</a> and then show that <span class="process-math">\(y\)</span> must satisfy</div>
+<div class="introduction" id="SECTIONTwoSimpleDiffeqs-22-2"><div class="para" id="SECTIONTwoSimpleDiffeqs-22-2-1"></div></div>
+<article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-22-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-22-3-1-1">
+<div class="para">Integrate both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar2" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.6">equation (18.6)</a> and then show that <span class="process-math">\(y\)</span> must satisfy</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSepVar2.html">
 \begin{equation*}
 \ln \abs{y}+C_1=\frac{x^2}{2}+C_2
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(C_1,\ C_2\)</span> are arbitrary constants.</div>
-</div></article><article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-10-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-10-4-1-1">
+</div></article><article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-22-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-22-4-1-1">
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y=\pm \left(e^{C_2-C_1}\right)e^{\frac{x^2}{2}}
 \end{equation*}
 </div>
-</div></article></article><div class="para" id="SECTIONTwoSimpleDiffeqs-11">Since <span class="process-math">\(C_1,\ C_2\)</span> are arbitrary constants, it follows that <span class="process-math">\(e^{C_2-C_1}\)</span> is also an arbitrary constant. (Why?) For simplicity we will set <span class="process-math">\(A=e^{C_2-C_1}\text{,}\)</span> so <span class="process-math">\(y=\pm Ae^{\frac{x^2}{2}}\)</span> provides the general solution for the original differential equation.</div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-12">Separation of variable is not always possible. For example, try separating the variables in <span class="process-math">\(y=\sin(xy)\)</span> or <span class="process-math">\(\dfdx{y}{x}=\cos(xy)\text{.}\)</span>
+</div></article></article><div class="para" id="SECTIONTwoSimpleDiffeqs-23">Since <span class="process-math">\(C_1,\ C_2\)</span> are arbitrary constants, it follows that <span class="process-math">\(e^{C_2-C_1}\)</span> is also an arbitrary constant. (Why?) For simplicity we will set <span class="process-math">\(A=e^{C_2-C_1}\text{,}\)</span> so <span class="process-math">\(y=\pm Ae^{\frac{x^2}{2}}\)</span> provides the general solution for the original differential equation.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-24">Separation of variable is not always possible. For example, try separating the variables in <span class="process-math">\(y=\sin(xy)\)</span> or <span class="process-math">\(\dfdx{y}{x}=\cos(xy)\text{.}\)</span>
 </div>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-13">
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-25">
 <div class="para">Even when it can be done it is not always helpful.  For example, suppose we had the algebraic equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1406,48 +1481,48 @@ y^3=x+y\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-14">Separating the variables gives <span class="process-math">\(y^3-y=x\text{,}\)</span> but it would take an application of the <dfn class="terminology">Cubic Formula</dfn> which is not so trivial.</div>
-<aside class="aside aside-like" id="SECTIONTwoSimpleDiffeqs-15"><h3 class="heading"><span class="title">Comment.</span></h3>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-15-2">The <dfn class="terminology">Cubic Formula</dfn> is like the <dfn class="terminology">Quadratic Formula</dfn>, only more fun.</div></aside><div class="para" id="SECTIONTwoSimpleDiffeqs-16">There are whole books and college courses, at both the undergraduate and graduate levels, on the solution of various kinds of differential equations, and it is still an active area of mathematical research. Separable differential equations are among the simplest to solve and even these can be quite challenging at times.  Consider the following  example.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-26">Separating the variables gives <span class="process-math">\(y^3-y=x\text{,}\)</span> but it would take an application of the <dfn class="terminology">Cubic Formula</dfn> which is not so trivial.</div>
+<aside class="aside aside-like" id="SECTIONTwoSimpleDiffeqs-27"><h3 class="heading"><span class="title">Comment.</span></h3>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-27-2">The <dfn class="terminology">Cubic Formula</dfn> is like the <dfn class="terminology">Quadratic Formula</dfn>, only more fun.</div></aside><div class="para" id="SECTIONTwoSimpleDiffeqs-28">There are whole books and college courses, at both the undergraduate and graduate levels, on the solution of various kinds of differential equations, and it is still an active area of mathematical research. Separable differential equations are among the simplest to solve and even these can be quite challenging at times.  Consider the following  example.</div>
 <article class="example example-like" id="EXAMPLEHardDiffeq"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.5</span><span class="period">.</span><span class="space"> </span><span class="title">A Hard Differential Equation.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.6</span><span class="period">.</span><span class="space"> </span><span class="title">A Hard Differential Equation.</span>
 </h3>
 <div class="para logical" id="EXAMPLEHardDiffeq-2">
 <div class="para">In <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a> of <a href="SECTIONhyperb-trig-hang.html" class="internal" title="Section 8.4: Hyperbolic Trigonometry: The Hanging Chain">Section 8.4</a> we saw that if <span class="process-math">\(y(x)\)</span> is the shape that a hanging chain naturally settles into under the pull of gravity then <span class="process-math">\(y(x)\)</span> will necessarily be a solution of the second order differential equation:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMHangingChain.html ./knowl/xref/SECTIONhyperb-trig-hang.html ./knowl/xref/EQUATIONHangChainModel.html" id="EQUATIONHangChainModel">
 \begin{equation}
 \dfdxn{y}{x}{2} =
-\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.\tag{18.6}
+\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.\tag{18.7}
 \end{equation}
 </div>
-<div class="para">which is a model for the Hanging Chain problem. That is, the graph of a function which solves <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.6">equation (18.6)</a> will be the shape of a hanging chain.</div>
+<div class="para">which is a model for the Hanging Chain problem. That is, the graph of a function which solves <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.7">equation (18.7)</a> will be the shape of a hanging chain.</div>
 </div>
 <div class="para logical" id="EXAMPLEHardDiffeq-3">
 <div class="para">It is one thing to confirm a given solution, as you did in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>, but finding the solution in the first place is not at all a simple task.  A start might be to let <span class="process-math">\(z=\dfdx{y}{x}\text{,}\)</span> so we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMHangingChain.html ./knowl/xref/EQUATIONHangingChainInt1.html" id="EXAMPLEHardDiffeq-3-3">
 \begin{align}
 \dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}\notag\\
-\frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}\text{.}\tag{18.7}
+\frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}\text{.}\tag{18.8}
 \end{align}
 </div>
-<div class="para">       Adding  all of the differentials  on both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EXAMPLEHardDiffeq-3-3" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.7">equation (18.7)</a>, we see that</div>
+<div class="para">       Adding  all of the differentials  on both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EXAMPLEHardDiffeq-3-3" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.8">equation (18.8)</a>, we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMHangingChain.html ./knowl/xref/EQUATIONHangingChainInt1.html" id="EQUATIONHangingChainInt2">
 \begin{equation}
-\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}\text{.}\tag{18.8}
+\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}\text{.}\tag{18.9}
 \end{equation}
 </div>
-</div></article><div class="para logical" id="SECTIONTwoSimpleDiffeqs-18">
-<div class="para">As you can see, this is separable, and we can certainly integrate the right-hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.8">equation (18.8)</a>. When we do that we get</div>
+</div></article><div class="para logical" id="SECTIONTwoSimpleDiffeqs-30">
+<div class="para">As you can see, this is separable, and we can certainly integrate the right-hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.9">equation (18.9)</a>. When we do that we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONHangingChainInt2.html">
 \begin{equation*}
 \int{\frac{w}{H}dx}=\frac{w}{H}x+C\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-19">Nothing in our table of integrals from <a href="SECTIONIntegrationRules1.html" class="internal" title="Section 20.2: Rules for Integration">Section 20.2</a> quite matches the left hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.8">equation (18.8)</a> so we’ll need to develop more integration techniques before we can compute the solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.6">equation (18.6)</a>.</div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-20">However we can confirm the solution if it is already known. We did this in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-31">Nothing in our table of integrals from <a href="SECTIONIntegrationRules1.html" class="internal" title="Section 20.2: Rules for Integration">Section 20.2</a> quite matches the left hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.9">equation (18.9)</a> so we’ll need to develop more integration techniques before we can compute the solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.7">equation (18.7)</a>.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-32">However we can confirm the solution if it is already known. We did this in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>.</div>
 <article class="problem example-like" id="DRILLHangingChainSolution"><h3 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.6</span><span class="period">.</span>
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.7</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="DRILLHangingChainSolution-2">
 <div class="para">Confirm (again) that</div>
@@ -1456,8 +1531,8 @@ y^3=x+y\text{.}
 y=\frac{H}{2w}\left(e^{\frac{wx}{H}}+e^{-\frac{wx}{H}}\right)
 \end{equation*}
 </div>
-<div class="para">is the solution of<a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.8">equation (18.8)</a>.</div>
-</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-22">To keep his experiments (and the analysis of his experiments) simple Galileo assumed that the resistance of the Earth’s atmosphere to the motion of a falling body was negligible, which it is in simple cases. However since we now have the tools we need to describe the effect of air resistance on a falling body we will analyze this effect in the next section.</div></section></div>
+<div class="para">is the solution of<a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.9">equation (18.9)</a>.</div>
+</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-34">To keep his experiments (and the analysis of his experiments) simple Galileo assumed that the resistance of the Earth’s atmosphere to the motion of a falling body was negligible, which it is in simple cases. However since we now have the tools we need to describe the effect of air resistance on a falling body we will analyze this effect in the next section.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="CHAPTERDiffeqsIVPS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="CHAPTERApplicaitonsOfIntegration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
