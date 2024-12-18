@@ -675,6 +675,9 @@ window.MathJax = {
 #SUBSECTIONVerticalAsymptotes-24-4-2 { counter-set: SUBSECTIONVerticalAsymptotes-24-4-2 0; }
 #SUBSECTIONVerticalAsymptotes-24-4-2 > li::marker { content: "("counter(SUBSECTIONVerticalAsymptotes-24-4-2,decimal)")"; }
 #SUBSECTIONVerticalAsymptotes-24-4-2 > li { counter-increment: SUBSECTIONVerticalAsymptotes-24-4-2; }
+#PROBLEMSeparableDiffeqs-1-1-1 { counter-set: PROBLEMSeparableDiffeqs-1-1-1 0; }
+#PROBLEMSeparableDiffeqs-1-1-1 > li::marker { content: "("counter(PROBLEMSeparableDiffeqs-1-1-1,lower-roman)")"; }
+#PROBLEMSeparableDiffeqs-1-1-1 > li { counter-increment: PROBLEMSeparableDiffeqs-1-1-1; }
 #DRILLIntSimpSub-2-4 { counter-set: DRILLIntSimpSub-2-4 0; }
 #DRILLIntSimpSub-2-4 > li::marker { content: "("counter(DRILLIntSimpSub-2-4,lower-roman)")"; }
 #DRILLIntSimpSub-2-4 > li { counter-increment: DRILLIntSimpSub-2-4; }
@@ -1177,7 +1180,7 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Separation of Variables</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration.html" class="internal"><span class="codenumber">19</span> <span class="title">Applications of Integration</span></a></div>
+<div class="toc-title-box"><a href="CHAPTERApplicaitonsOfIntegration.html" class="internal"><span class="codenumber">19</span> <span class="title">Integration Techniques</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Accounting for Air Resistance: This is a Job for Substitution!</span></a></div></li>
 <li class="toc-item toc-section">
@@ -1220,7 +1223,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Accumulation: The Indefinite Integral</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAreasAndIntegration.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Areas and Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="AppDefInt.html" class="internal"><span class="codenumber">21.5</span> <span class="title">Applications of Definite Integrals</span></a></div>
@@ -1355,44 +1358,54 @@ y=\int \dx{y}\text{.}\tag{18.3}
 \dx{y}= \frac{\omega^2 }{g}x\dx{x}
 \end{equation*}
 </div>
-<div class="para">and we can recover <span class="process-math">\(y\)</span> by integrating both sides</div>
-<div class="displaymath process-math" id="SECTIONTwoSimpleDiffeqs-14-8">
-\begin{align*}
-\int\dx{y}\amp{}= \int\frac{\omega^2 }{g}x\dx{x}\\
-y\amp{}=\frac{\omega^2 x^2}{2g}\text{.}
-\end{align*}
+<div class="para">and we can recover <span class="process-math">\(y\)</span> by integrating both sides:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\dx{y}= \int\frac{\omega^2 }{g}x\dx{x}
+\end{equation*}
+</div>
+<div class="para">which leaves</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y=\frac{\omega^2 x^2}{2g}\text{.}
+\end{equation*}
 </div>
 </div>
-<article class="example example-like" id="EXAMPLEArbitraryConstant"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Indefinite Integral.</span>
-</h3>
-<div class="para" id="EXAMPLEArbitraryConstant-2">This all seems straightforward enough but there is a small error in our development so far.  This will cause us a multitude of headaches if we don’t address it now. Earlier we observed that if two differentials are equal then it seems reasonable that their integrals will also be equal. As reasonable as this sounds it is,  in fact, not true.</div>
-<div class="para logical" id="EXAMPLEArbitraryConstant-3">
+<section class="paragraphs" id="SECTIONTwoSimpleDiffeqs-15"><h3 class="heading"><span class="title">The Indefinite Integral.</span></h3>
+<article class="example example-like" id="EXAMPLEArbitraryConstant"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="EXAMPLEArbitraryConstant-1">This all seems straightforward enough but there is a small error in our development so far that will cause us a multitude of headaches if we don’t address it now. Earlier we observed that if two differentials are equal then it seems reasonable that their integrals will also be equal. As reasonable as this sounds it is,  in fact, not true.</div>
+<div class="para logical" id="EXAMPLEArbitraryConstant-2">
 <div class="para">To see what goes wrong consider the differential equation</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMConstRule.html">
+<div class="displaymath process-math">
 \begin{equation*}
 \dx{y}=2x\dx{x}\text{.}
 \end{equation*}
 </div>
-<div class="para">Clearly <span class="process-math">\(y=x^2\)</span> is a solution because <span class="process-math">\(\dx (x^2) = 2x\dx{x}\)</span> as required. But by the same reasoning <span class="process-math">\(y=x^2+1\)</span> is also a solution. As is <span class="process-math">\(y=x^2+20\text{.}\)</span> In fact, if <span class="process-math">\(C\)</span> is any constant whatsoever <span class="process-math">\(y=x^2+C\)</span> will be a solution of</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMConstRule.html">
+<div class="para">Clearly <span class="process-math">\(y=x^2\)</span> is a solution because <span class="process-math">\(\dx (x^2) = 2x\dx{x}\)</span> as required. But by the same reasoning <span class="process-math">\(y=x^2+1\)</span> is also a solution. As is <span class="process-math">\(y=x^2+20\text{.}\)</span> In fact, if <span class="process-math">\(C\)</span> is any constant whatsoever then <span class="process-math">\(y=x^2+C\)</span> will be a solution of <span class="process-math">\(\dx{y}=2x\dx{x}\)</span> because when we differentiate <span class="process-math">\(x^2+C\)</span> we get</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\dx{y}=2x\dx{x}
-\end{equation*}
-</div>
-<div class="para">because when we differentiate the <a href="SECTIONsome-rules-diff.html#THEOREMConstRule" class="xref" data-knowl="./knowl/xref/THEOREMConstRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Fact 4.3.1.1: The Constant Rule">Constant Rule</a>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMConstRule.html">
-\begin{equation*}
-\dx (x^2 +C) = \dx (x^2)
-+ \dx (C) = 2x\dx{x}\text{.}
+\dx (x^2 +C) = \dx (x^2) + \dx (C) = 2x\dx{x}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="EXAMPLEArbitraryConstant-4">Integration is sometimes informally described as “differentiation run backwards” but we can see from this example that this isn’t quite accurate.  If we know that <span class="process-math">\(F^\prime (x) = f(x)\)</span> that does not necessarily mean that <span class="process-math">\(F(x)=\int f(x)\dx{x}\text{.}\)</span>
+<div class="para logical" id="EXAMPLEArbitraryConstant-3">
+<div class="para">Integration is sometimes informally described as “differentiation run backwards” but we can see from this example that this isn’t quite accurate.  If</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^\prime (x) = f(x)
+\end{equation*}
 </div>
-<div class="para logical" id="EXAMPLEArbitraryConstant-5">
-<div class="para">The fact is that unlike a derivative, an integral is not unique. In this case we see that</div>
+<div class="para">it is not necessarily true that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(x)=\int f(x)\dx{x}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="EXAMPLEArbitraryConstant-4">
+<div class="para">Unlike a derivative, an integral is not unique. In this case we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int 2x\dx{x} =x^2+C
@@ -1401,43 +1414,175 @@ y\amp{}=\frac{\omega^2 x^2}{2g}\text{.}
 <div class="para">is true regardless of the value of the constant <span class="process-math">\(C\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="EXAMPLEArbitraryConstant-6">Because <span class="process-math">\(\int 2x\dx{x}\)</span> does not have a unique value it is called an <dfn class="terminology">indefinite integral</dfn>. The function <span class="process-math">\(F(x)=x^2\)</span> is called an <dfn class="terminology">antiderivative</dfn> of <span class="process-math">\(f(x) =2x\)</span> and <span class="process-math">\(F(x)=x^2+C\)</span> is called the <dfn class="terminology">most general antiderivative</dfn> of <span class="process-math">\(f(x)=2x\text{.}\)</span>
+<div class="para" id="EXAMPLEArbitraryConstant-5">Because <span class="process-math">\(\int 2x\dx{x}\)</span> does not have a unique value it is called an <dfn class="terminology">indefinite integral</dfn>. The function <span class="process-math">\(F(x)=x^2\)</span> is called an <dfn class="terminology">antiderivative</dfn> of <span class="process-math">\(f(x) =2x\)</span> and <span class="process-math">\(F(x)=x^2+C\)</span> is called the <dfn class="terminology">most general antiderivative</dfn> of <span class="process-math">\(f(x)=2x\text{.}\)</span>
 </div>
-<aside class="aside aside-like" id="EXAMPLEArbitraryConstant-7"><h4 class="heading"><span class="title">Comment.</span></h4>
-<div class="para" id="EXAMPLEArbitraryConstant-7-2">Because <span class="process-math">\(C\)</span> can be any constant the expression <span class="process-math">\(F(x)=\int f(x)\dx{x}\)</span> is, strictly speaking, a multifunction like the inverse trigonometric functions we saw in <a href="CHAPTERcalc-trig.html" class="internal" title="Chapter 6: Calculus and Trigonometry">Chapter 6</a>.  But because there are no domain and range issues the multifunctions that result from integration are simpler to deal with.  Different branches (functions) of these multifunctions are  distinguished by selecting a different value of the arbitrary constant.</div></aside><div class="para" id="EXAMPLEArbitraryConstant-8">Eventually we will encounter problems where we need to find a specific antiderivative of some function, but for now we simply want to develop skill at evaluating indefinite integrals.</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-16"> Again,  the point is that integration  gives us a more systematic way of solving differential equations. The solution strategy we used when we rewrote <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a> is called <dfn class="terminology">separation of variables</dfn> and it will enable us to solve a great many simple differential equations.</div>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-17">
+<aside class="aside aside-like" id="EXAMPLEArbitraryConstant-6"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="EXAMPLEArbitraryConstant-6-2">We last saw this sort of thing in <a href="CHAPTERcalc-trig.html" class="internal" title="Chapter 6: Calculus and Trigonometry">Chapter 6</a> when we encountered the multifunctions   <span class="process-math">\(\arcsin(x) \text{,}\)</span> <span class="process-math">\(\arccos(x)\text{,}\)</span> etc. Because <span class="process-math">\(C\)</span> can be any constant the expression <span class="process-math">\(F(x)=\int f(x)\dx{x}\)</span> is, strictly speaking, a multifunction like the inverse trigonometric functions we saw in <a href="CHAPTERcalc-trig.html" class="internal" title="Chapter 6: Calculus and Trigonometry">Chapter 6</a>.  But because there are no domain and range issues the multifunctions that result from integration are simpler to deal with.  Different branches (functions) of these multifunctions are distinguished by selecting a different value of the arbitrary constant.</div></aside><div class="para" id="EXAMPLEArbitraryConstant-7">Eventually we will encounter problems where we need to find a specific antiderivative of some function, but for now we simply want to develop skill at evaluating indefinite integrals.</div></article></section><div class="para logical" id="SECTIONTwoSimpleDiffeqs-16">
+<div class="para">Integration gives us a more systematic way of solving differential equations (and, eventually, Initial Value Problems) than we’ve been able to so far. For instance suppose we need  to solve the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfdx{y}{x} = x-e^x\text{.}
+\end{equation*}
+</div>
+<div class="para">We first multiply through by <span class="process-math">\(\dx{x}\)</span> and then integrate both sides, giving</div>
+<div class="displaymath process-math" id="EQUATIONIntViolateAlg">
+\begin{equation}
+\int \dx{y}=\int x-e^x\dx{x}  \text{.}\tag{18.4}
+\end{equation}
+</div>
+<div class="para">The result on the left is <span class="process-math">\(y\text{.}\)</span>
+</div>
+</div>
+<aside class="aside aside-like" id="SECTIONTwoSimpleDiffeqs-17"><h3 class="heading"><span class="title">Comment.</span></h3>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-17-2">No doubt you noticed that in writing <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONIntViolateAlg" class="xref" data-knowl="./knowl/xref/EQUATIONIntViolateAlg.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.4">equation (18.4)</a> we committed one of the cardinal sins of algebra, we failed to distribute <span class="process-math">\(\dx{x}\)</span> over the sum <span class="process-math">\(x-e^x\text{.}\)</span>
+</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-17-3">
+<div class="para">It is clear that the function on the right side is <span class="process-math">\(f(x) =
+x-e^x\)</span> and since the differential <span class="process-math">\(\dx{x}\)</span> multiplies the entire function the integral on the right is properly written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\left(x-e^x\right)\dx{x}\text{.}
+\end{equation*}
+</div>
+<div class="para">This is true, and good for you for noticing.</div>
+</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-17-4">Sadly this is a place where we mathematicians have allowed ourselves to be unreasonably sloppy. The reason for this is simple. Every well–formed integral begins with <span class="process-math">\(\int{}\)</span> and ends with <span class="process-math">\(\dx(\text{something})\text{.}\)</span> Although the parentheses should be in place there is really nothing added by including them. So we generally don’t include them.</div></aside><div class="para logical" id="SECTIONTwoSimpleDiffeqs-18">
+<div class="para">Next we need to find an antiderivative of <span class="process-math">\(f(x)=x-e^x\)</span> which we can clearly build from the antiderivatives of <span class="process-math">\(x\)</span> and <span class="process-math">\(e^x\text{.}\)</span> An antiderivative of <span class="process-math">\(x\)</span> is <span class="process-math">\(\frac{x^2}{2}\)</span> and <span class="process-math">\(e^x\)</span> is its own antiderivative. So an antiderivative of <span class="process-math">\(x-e^x\)</span> is <span class="process-math">\(\frac{x^2}{2}-e^x\)</span> and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int
+x-e^x\dx{x} = \frac{x^2}{2} - e^x +C 
+\end{equation*}
+</div>
+<div class="para">(where <span class="process-math">\(C\)</span> is an unspecified constant) because <span class="process-math">\(\frac{x^2}{2} - e^x+C\)</span> is the <dfn class="terminology">most general antiderivative</dfn> of <span class="process-math">\(f(x)=x-e^x\text{.}\)</span>
+</div>
+</div>
+<article class="problem example-like" id="SECTIONTwoSimpleDiffeqs-19"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-19-1">Assume that <span class="process-math">\(C\)</span> is a constant. Differentiate  <span class="process-math">\(F(x)=\frac{x^2}{2}-e^x+C\)</span> to show that <span class="process-math">\(F^\prime(x) =x-e^x\text{.}\)</span>
+</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-20">Since integration is “almost” differentiation run backwards every differentiation formula we know provides an integration formula as well. The following list displays the most baskic integration rules.                                                                                         </div>
+<figure class="table table-like" id="TABLEBasicIntegration"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">18.1.0.3<span class="period">.</span></span><span class="space"> </span>Integration Rules Inherited from Differentiation Rules</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b3 r0 l0 t0 lines">#</th>
+<th scope="col" class="c m b3 r0 l0 t0 lines">Differentiation Rule</th>
+<th scope="col" class="c m b3 r0 l0 t0 lines">Integration  Rule<br>(In all cases <span class="process-math">\(C\)</span> is an arbitrary  constant.)</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\text{constant})=0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(\displaystyle\int0\dx{x}=C\text{,}\)</span> where <span class="process-math">\(C\)</span> is a constant.</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(f+g)=\dx{f}+\dx{g}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(\displaystyle\int\dx(f+g)=\int\dx{f}+\int\dx{g}\)</span><span class="process-math">\(=f+g+C\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines">If <span class="process-math">\(a\)</span> is a constant, then<span class="process-math">\(\dx(ay)=a\dx(y)\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(\displaystyle\int a\dx{y}=\int\dx(ay)=a\int\dx{y}\)</span><span class="process-math">\(=ay+C\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(x^{n+1})=(n+1)x^n\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq
+-1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int x^{-1}\dx{x} = \ln\abs{x}+C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(e^x)= e^x\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int e^x\dx{x} = e^x+C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">7</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\sin(x))=\cos(x)\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int \cos(x)\dx{x} = \sin(x) +C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">8</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\cos(x))=-\sin(x)\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int \sin(x)\dx{x} = -\cos(x) +C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">9</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\tan(x))=\sec^2(x)\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int\sec^2(x)\dx{x} = \tan(x)+C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">10</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\sec(x))= \sec(x)\tan(x)\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int\sec(x)\tan(x)\dx{x}=\sec(x)+C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">11</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\inverse\sin(x))=
+\frac{1}{\sqrt{1-x^2}}\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">12</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\inverse\tan(x))=
+\frac{1}{1+x^2}\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">13</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\dx(\inverse\sec(x))=
+\frac{1}{x\sqrt{x^2-1}}\dx{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C\)</span></td>
+</tr>
+</table></div></figure><div class="para" id="SECTIONTwoSimpleDiffeqs-22">The solution strategy we used when we rewrote <a href="SECTIONbridg-chains-telesc.html#EQUATIONSpinCastDiffeq" class="xref" data-knowl="./knowl/xref/EQUATIONSpinCastDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.16">equation (5.16)</a> is called <dfn class="terminology">separation of variables</dfn> and it will enable us to solve a great many simple differential equations.</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-23">
 <div class="para">To see this consider the differential equation</div>
 <div class="displaymath process-math" id="EQUATIONSepVar1">
 \begin{equation}
-\dfdx{y}{x} =xy\text{.}\tag{18.4}
+\dfdx{y}{x} =xy\text{.}\tag{18.5}
 \end{equation}
 </div>
 </div>
-<article class="problem example-like" id="SECTIONTwoSimpleDiffeqs-18"><h3 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.2</span><span class="period">.</span>
+<article class="problem example-like" id="SECTIONTwoSimpleDiffeqs-24"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-18-2">Before we continue see if you can come up with a solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.4">equation (18.4)</a> on your own. Notice how it is similar to, and different from, <a href="SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-7-6" class="xref" data-knowl="./knowl/xref/IVPExpGeneral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.19">equation (8.19)</a>. Does that help?</div></article><article class="example example-like" id="EXAMPLESepVar"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.3</span><span class="period">.</span>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-24-2">Before we continue see if you can come up with a solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.5">equation (18.5)</a> on your own.  </div></article><article class="example example-like" id="EXAMPLESepVar"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.5</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="EXAMPLESepVar-1">
-<div class="para">To find a way to approach this problem we will take our cue from basic Algebra.  Suppose we want to solve the algebraic equation</div>
+<div class="para">Separating variables is not new. This is how you were taught to solve algebraic equations. For example, suppose we want to solve the algebraic equation</div>
 <div class="displaymath process-math" id="EQUATIONycubedeqxy">
 \begin{equation}
-y^3=xy\tag{18.5}
+y^3-x^2y - 6y=0\tag{18.6}
 \end{equation}
 </div>
-<div class="para">for <span class="process-math">\(y\text{.}\)</span>  One obvious solution is <span class="process-math">\(y=0\text{.}\)</span> This is a valid solution, but it is uninteresting, so we will not consider it. Assuming that <span class="process-math">\(y\neq 0\text{,}\)</span> we can divide by <span class="process-math">\(y\)</span>  obtaining</div>
+<div class="para">for <span class="process-math">\(y\text{.}\)</span> One obvious solution is <span class="process-math">\(y=0\text{.}\)</span> This is a valid solution, but it is uninteresting, so we will not consider it.  Assuming that <span class="process-math">\(y\neq 0\text{,}\)</span> we can divide by <span class="process-math">\(y\)</span> obtaining</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y^2=x
+y^2-x^2-6=0
 \end{equation*}
 </div>
-<div class="para">Once the variables have been separated like this, we can take the square root of each side and obtain <span class="process-math">\(y=\pm \sqrt{x}\text{.}\)</span>
+<div class="para">At this point  we separate the variables     by rearranging the terms algebraically so that  all of the terms involving <span class="process-math">\(y\)</span> are on on one side, and all of the terms involving <span class="process-math">\(x\)</span> (or involving neither <span class="process-math">\(x\)</span> nor <span class="process-math">\(y\)</span>)  on the other</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y^2=x^2+6\text{.}
+\end{equation*}
+</div>
+<div class="para">It is clear that the expression on the right is positive so  we can take the square root of each side and obtain <span class="process-math">\(y=\pm \sqrt{x^2+6}\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="EXAMPLESepVar-2">Notice that it was helpful to put all of the “<span class="process-math">\(y\)</span>” variables on one side, and all of the “<span class="process-math">\(x\)</span>” variables on the other. It was not immediately clear that “separating the variables” would be helpful but once it was done, the next step was clear.</div>
+<div class="para" id="EXAMPLESepVar-2">Notice that it was not immediately clear that separating the variables would be helpful but once it was done, the next step was clear.</div>
 <div class="para logical" id="EXAMPLESepVar-3">
-<div class="para">Similarly it is not clear that separating the variables in <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.4">equation (18.4)</a> will help, but let’s try it and see what happens. Separating the variables, we see that</div>
+<div class="para">It is similarly  not clear that separating the variables in <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar1" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.5">equation (18.5)</a> will help, but let’s try it and see what happens. Separating the variables, we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSepVar1.html">
 \begin{equation*}
 \frac{\dx{y}}{y}=x\dx{x}
@@ -1446,83 +1591,132 @@ y^2=x
 <div class="para">which says that the differentials on either side of the equation are the same.  Integrating (summing)  both sides gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSepVar1.html" id="EQUATIONSepVar2">
 \begin{equation}
-\int{\frac{1}{y}} \dx{y}=\int{x\dx{x}}\text{.}\tag{18.6}
+\int{\frac{1}{y}} \dx{y}=\int{x\dx{x}}\text{.}\tag{18.7}
 \end{equation}
 </div>
-</div></article><article class="exercise exercise-like" id="SECTIONTwoSimpleDiffeqs-20"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.4</span><span class="period">.</span>
+</div></article><article class="exercise exercise-like" id="SECTIONTwoSimpleDiffeqs-26"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.6</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="SECTIONTwoSimpleDiffeqs-20-2"><div class="para" id="SECTIONTwoSimpleDiffeqs-20-2-1"></div></div>
-<article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-20-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-20-3-1-1">
-<div class="para">Integrate both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar2" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.6">equation (18.6)</a> and then show that <span class="process-math">\(y\)</span> must satisfy</div>
+<div class="introduction" id="SECTIONTwoSimpleDiffeqs-26-2"><div class="para" id="SECTIONTwoSimpleDiffeqs-26-2-1"></div></div>
+<article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-26-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-26-3-1-1">
+<div class="para">Integrate both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONSepVar2" class="xref" data-knowl="./knowl/xref/EQUATIONSepVar2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.7">equation (18.7)</a> and then show that <span class="process-math">\(y\)</span> must satisfy</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONSepVar2.html">
 \begin{equation*}
 \ln \abs{y}+C_1=\frac{x^2}{2}+C_2
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(C_1,\ C_2\)</span> are arbitrary constants.</div>
-</div></article><article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-20-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-20-4-1-1">
+</div></article><article class="task exercise-like" id="SECTIONTwoSimpleDiffeqs-26-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-26-4-1-1">
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y=\pm \left(e^{C_2-C_1}\right)e^{\frac{x^2}{2}}
+y=\pm \left(e^{C_2-C_1}\right)e^{\frac{x^2}{2}}\text{.}
 \end{equation*}
 </div>
-</div></article></article><div class="para" id="SECTIONTwoSimpleDiffeqs-21">Since <span class="process-math">\(C_1,\ C_2\)</span> are arbitrary constants, it follows that <span class="process-math">\(e^{C_2-C_1}\)</span> is also an arbitrary constant. (Why?) For simplicity we will set <span class="process-math">\(A=e^{C_2-C_1}\text{,}\)</span> so <span class="process-math">\(y=\pm Ae^{\frac{x^2}{2}}\)</span> provides the general solution for the original differential equation.</div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-22">Separation of variable is not always possible. For example, try separating the variables in <span class="process-math">\(y=\sin(xy)\)</span> or <span class="process-math">\(\dfdx{y}{x}=\cos(xy)\text{.}\)</span>
-</div>
-<div class="para logical" id="SECTIONTwoSimpleDiffeqs-23">
-<div class="para">Even when it can be done it is not always helpful.  For example, suppose we had the algebraic equation</div>
+</div></article><div class="conclusion" id="SECTIONTwoSimpleDiffeqs-26-5"><div class="para" id="SECTIONTwoSimpleDiffeqs-26-5-1">Since <span class="process-math">\(C_1,\ C_2\)</span> are arbitrary constants, it follows that <span class="process-math">\(e^{C_2-C_1}\)</span> is also an arbitrary constant. (Why?) For simplicity we will set <span class="process-math">\(A=e^{C_2-C_1}\text{,}\)</span> so <span class="process-math">\(y=\pm Ae^{\frac{x^2}{2}}\)</span> provides the general solution for the original differential equation.</div></div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-27">It is not always possible to separate variables. For example, try separating the variables in <span class="process-math">\(y=\sin(xy)\)</span> or <span class="process-math">\(\dfdx{y}{x}=\cos(xy)\text{.}\)</span> You won’t get far.</div>
+<div class="para logical" id="SECTIONTwoSimpleDiffeqs-28">
+<div class="para">Even when it is possible it is not always helpful.  For example, suppose we had the algebraic equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y^3=x+y\text{.}
 \end{equation*}
 </div>
+<div class="para">Separating the variables gives <span class="process-math">\(y^3-y=x\text{,}\)</span> but it would take an application of the <dfn class="terminology">Cubic Formula</dfn> which is not so trivial.</div>
 </div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-24">Separating the variables gives <span class="process-math">\(y^3-y=x\text{,}\)</span> but it would take an application of the <dfn class="terminology">Cubic Formula</dfn> which is not so trivial.</div>
-<aside class="aside aside-like" id="SECTIONTwoSimpleDiffeqs-25"><h3 class="heading"><span class="title">Comment.</span></h3>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-25-2">The <dfn class="terminology">Cubic Formula</dfn> is like the <dfn class="terminology">Quadratic Formula</dfn>, only more fun.</div></aside><div class="para" id="SECTIONTwoSimpleDiffeqs-26">There are whole books and college courses, at both the undergraduate and graduate levels, on the solution of various kinds of differential equations, and it is still an active area of mathematical research. Separable differential equations are among the simplest to solve and even these can be quite challenging at times.  Consider the following  example.</div>
-<article class="example example-like" id="EXAMPLEHardDiffeq"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.5</span><span class="period">.</span><span class="space"> </span><span class="title">A Hard Differential Equation.</span>
+<aside class="aside aside-like" id="SECTIONTwoSimpleDiffeqs-29"><h3 class="heading"><span class="title">Comment.</span></h3>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-29-2">The <dfn class="terminology">Cubic Formula</dfn> is like the <dfn class="terminology">Quadratic Formula</dfn>, only more fun.</div></aside><div class="para" id="SECTIONTwoSimpleDiffeqs-30">There are whole books and college courses, at both the undergraduate and graduate levels, on the solution of various kinds of differential equations, and it is still an active area of mathematical research. Separable differential equations are among the simplest to solve but even these can be quite challenging at times.</div>
+<article class="exercise exercise-like" id="PROBLEMSeparableDiffeqs"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.7</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="PROBLEMSeparableDiffeqs-1"><div class="para logical" id="PROBLEMSeparableDiffeqs-1-1"><ol class="lower-roman cols2" id="PROBLEMSeparableDiffeqs-1-1-1">
+<li id="PROBLEMSeparableDiffeqs-1-1-1-1"><div class="para" id="p-derived-PROBLEMSeparableDiffeqs-1-1-1-1">Confirm that the function <span class="process-math">\(y(x)\)</span> shown solves the separable differential equation.</div></li>
+<li id="PROBLEMSeparableDiffeqs-1-1-1-2"><div class="para" id="PROBLEMSeparableDiffeqs-1-1-1-2-1">Then find the most general solution.</div></li>
+</ol></div></div>
+<article class="task exercise-like" id="PROBLEMSeparableDiffeqs-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="PROBLEMSeparableDiffeqs-2-1">
+<span class="process-math">\(\dfdx{y}{x} = 9x^2y^x\text{,}\)</span> <span class="process-math">\(y=\frac{-1}{3x^3}\)</span>
+</div></article><article class="task exercise-like" id="PROBLEMSeparableDiffeqs-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="PROBLEMSeparableDiffeqs-3-1">
+<span class="process-math">\(y=\frac{x^2}{2}\text{,}\)</span> <span class="process-math">\(\dfdx{y}{x}=x^3\inverse{y}\)</span>
+</div></article><article class="task exercise-like" id="PROBLEMSeparableDiffeqs-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="PROBLEMSeparableDiffeqs-4-1">
+<span class="process-math">\(y=-2\ln(x)\text{,}\)</span> <span class="process-math">\(\dx{y}+2xe^{-y}\dx{x} =0 \)</span>
+</div></article><article class="task exercise-like" id="PROBLEMSeparableDiffeqs-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="PROBLEMSeparableDiffeqs-5-1">
+<span class="process-math">\(y=\frac{x^3}{\sqrt{1-\left( \frac{x^4}{4}\right)^2 }}\text{,}\)</span>   <span class="process-math">\(\dfdx{y}{x}=x^3\sec(y)\)</span>
+</div></article></article><article class="exercise exercise-like" id="PROBLEMFirstOrderLinearDiffeq"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">18.1.0.8</span><span class="period">.</span><span class="space"> </span><span class="title">Find the pattern.</span>
+</h3>
+<article class="task exercise-like" id="PROBLEMFirstOrderLinearDiffeq-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="PROBLEMFirstOrderLinearDiffeq-2-1">
+<div class="para">Solve the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y^{\prime} +2y =0 
+\end{equation*}
+</div>
+<div class="para">(This is a <dfn class="terminology">first order</dfn> differential equation because  the highest order derivative that appears in it is the first.)</div>
+</div></article><article class="task exercise-like" id="PROBLEMFirstOrderLinearDiffeq-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="PROBLEMFirstOrderLinearDiffeq-3-1-1">
+<div class="para">Solve the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y^{\prime\prime} +2y^\prime =0 
+\end{equation*}
+</div>
+<div class="para">(This is a <dfn class="terminology">second order</dfn> differential equation because  the highest order derivative that appears in it is the second.)</div>
+</div>
+<div class="solutions">
+<details id="PROBLEMFirstOrderLinearDiffeq-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMFirstOrderLinearDiffeq-3-2-1">Make it “easier on your eyes.”</div></div></details><details id="PROBLEMFirstOrderLinearDiffeq-3-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMFirstOrderLinearDiffeq-3-3-1">Make the substitution: <span class="process-math">\(z=y^\prime \text{.}\)</span>
+</div></div></details>
+</div></article><article class="task exercise-like" id="PROBLEMFirstOrderLinearDiffeq-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="PROBLEMFirstOrderLinearDiffeq-4-1-1">
+<div class="para">Solve the differential equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3y^{\prime\prime\prime} -5y^{\prime\prime} =0 
+\end{equation*}
+</div>
+</div> <div class="para" id="PROBLEMFirstOrderLinearDiffeq-4-1-2">What is the order of this differential equation?</div></article></article><article class="example example-like" id="EXAMPLEHardDiffeq"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">18.1.0.9</span><span class="period">.</span><span class="space"> </span><span class="title">The Hanging Chain, again.</span>
 </h3>
 <div class="para logical" id="EXAMPLEHardDiffeq-2">
 <div class="para">In <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a> of <a href="SECTIONhyperb-trig-hang.html" class="internal" title="Section 8.4: Hyperbolic Trigonometry: The Hanging Chain">Section 8.4</a> we saw that if <span class="process-math">\(y(x)\)</span> is the shape that a hanging chain naturally settles into under the pull of gravity then <span class="process-math">\(y(x)\)</span> will necessarily be a solution of the second order differential equation:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMHangingChain.html ./knowl/xref/SECTIONhyperb-trig-hang.html ./knowl/xref/EQUATIONHangChainModel.html" id="EQUATIONHangChainModel">
 \begin{equation}
 \dfdxn{y}{x}{2} =
-\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.\tag{18.7}
+\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}.\tag{18.8}
 \end{equation}
 </div>
-<div class="para">which is a model for the Hanging Chain problem. That is, the graph of a function which solves <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.7">equation (18.7)</a> will be the shape of a hanging chain.</div>
+<div class="para">which is a model for the Hanging Chain problem. That is, the graph of a function which solves <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.8">equation (18.8)</a> will be the shape of a hanging chain.</div>
 </div>
-<div class="para logical" id="EXAMPLEHardDiffeq-3">
-<div class="para">It is one thing to confirm a given solution, as you did in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>, but finding the solution in the first place is not at all a simple task.  A start might be to let <span class="process-math">\(z=\dfdx{y}{x}\text{,}\)</span> so we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMHangingChain.html ./knowl/xref/EQUATIONHangingChainInt1.html" id="EXAMPLEHardDiffeq-3-3">
-\begin{align}
-\dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}\notag\\
-\frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}\text{.}\tag{18.8}
-\end{align}
-</div>
-<div class="para">       Adding  all of the differentials  on both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EXAMPLEHardDiffeq-3-3" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.8">equation (18.8)</a>, we see that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMHangingChain.html ./knowl/xref/EQUATIONHangingChainInt1.html" id="EQUATIONHangingChainInt2">
+<div class="para" id="EXAMPLEHardDiffeq-3">It is one thing to confirm a given solution, as you did in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>, but as you’ve seen finding the solution in the first place is not always a simple task. We can’t actually derive the solution of this equation yet, but we have developed enough tools to get started.</div>
+<div class="para logical" id="EXAMPLEHardDiffeq-4">
+<div class="para">First we  let <span class="process-math">\(z=\dfdx{y}{x}\text{,}\)</span> so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONHangingChainInt1.html" id="EXAMPLEHardDiffeq-4-2">
 \begin{equation}
-\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}\text{.}\tag{18.9}
+\dfdx{z}{x}=\frac{w}{H}\sqrt{1+z^2}.\tag{18.9}
 \end{equation}
 </div>
-</div></article><div class="para logical" id="SECTIONTwoSimpleDiffeqs-28">
-<div class="para">As you can see, this is separable, and we can certainly integrate the right-hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.9">equation (18.9)</a>. When we do that we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONHangingChainInt2.html">
-\begin{equation*}
-\int{\frac{w}{H}dx}=\frac{w}{H}x+C\text{.}
-\end{equation*}
+<div class="para">Separating the variable next we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONHangingChainInt1.html" id="EQUATIONHangingChainInt1">
+\begin{equation}
+\frac{1}{\sqrt{1+z^2}}\dx{z} =\frac{w}{H}\dx{x}\text{.}\tag{18.10}
+\end{equation}
 </div>
+<div class="para">       Integrating  both sides of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt1" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.10">equation (18.10)</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONHangingChainInt1.html" id="EQUATIONHangingChainInt2">
+\begin{equation}
+\int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x} =
+\frac{\omega}{H}x+C\text{.}\tag{18.11}
+\end{equation}
 </div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-29">Nothing in our table of integrals from <a href="SECTIONIntegrationRules1.html" class="internal" title="Section 20.2: Rules for Integration">Section 20.2</a> quite matches the left hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.9">equation (18.9)</a> so we’ll need to develop more integration techniques before we can compute the solution of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangChainModel" class="xref" data-knowl="./knowl/xref/EQUATIONHangChainModel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.7">equation (18.7)</a>.</div>
-<div class="para" id="SECTIONTwoSimpleDiffeqs-30">However we can confirm the solution if it is already known. We did this in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>.</div>
+</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-34">Unfortunately nothing in our <a href="SECTIONTwoSimpleDiffeqs.html#TABLEBasicIntegration" class="xref" data-knowl="./knowl/xref/TABLEBasicIntegration.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 18.1.0.3: Integration Rules Inherited from Differentiation Rules">table of integrals</a>  quite matches the left hand side of <a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.11">equation (18.11)</a> so we can’t take this problem any further right now. We’ll return to it after we have developed more integration techniques.</div>
+<div class="para" id="SECTIONTwoSimpleDiffeqs-35">However we can confirm the solution if it is already known. We did this in <a href="SECTIONhyperb-trig-hang.html#PROBLEMHangingChain" class="xref" data-knowl="./knowl/xref/PROBLEMHangingChain.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.4.0.1: The Shape of a Hanging Chain">Problem 8.4.0.1</a>.</div>
 <article class="problem example-like" id="DRILLHangingChainSolution"><h3 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.6</span><span class="period">.</span>
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">18.1.0.10</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="DRILLHangingChainSolution-2">
 <div class="para">Confirm (again) that</div>
@@ -1531,8 +1725,8 @@ y^3=x+y\text{.}
 y=\frac{H}{2w}\left(e^{\frac{wx}{H}}+e^{-\frac{wx}{H}}\right)
 \end{equation*}
 </div>
-<div class="para">is the solution of<a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.9">equation (18.9)</a>.</div>
-</div></article><div class="para" id="SECTIONTwoSimpleDiffeqs-32">To keep his experiments (and the analysis of his experiments) simple Galileo assumed that the resistance of the Earth’s atmosphere to the motion of a falling body was negligible, which it is in simple cases. However since we now have the tools we need to describe the effect of air resistance on a falling body we will analyze this effect in the next section.</div></section></div>
+<div class="para">is the solution of<a href="SECTIONTwoSimpleDiffeqs.html#EQUATIONHangingChainInt2" class="xref" data-knowl="./knowl/xref/EQUATIONHangingChainInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 18.11">equation (18.11)</a>.</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="CHAPTERDiffeqsIVPS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="CHAPTERApplicaitonsOfIntegration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
