@@ -168,118 +168,383 @@
       be <m>\frac{\omega^2 }{g}\frac{x^2}{2}</m>. Putting all of this
       together we see that if we know that the differential of
       <m>y</m> is given by <me>\dx{y}= \frac{\omega^2 }{g}x\dx{x}</me>
-      and we can recover <m>y</m> by integrating both sides
+      and we can recover <m>y</m> by integrating both sides:
 
-      <md>
-        <mrow>
-          \int\dx{y}\amp{}= \int\frac{\omega^2 }{g}x\dx{x}
-        </mrow>
-        <mrow>y\amp{}=\frac{\omega^2 x^2}{2g}</mrow>
-        </md>.
+      <me>
+        \int\dx{y}= \int\frac{\omega^2 }{g}x\dx{x}
+      </me>
+      which leaves
+      <me>y=\frac{\omega^2 x^2}{2g}</me>.
     </p>
 
-    <example xml:id="EXAMPLEArbitraryConstant">
+    <paragraphs>
       <title>The Indefinite Integral</title>
-      <p>
-        This all seems straightforward enough but there is a small
-        error in our development so far.  This will cause us a
-        multitude of headaches if we don<rsq/>t address it
-        now. Earlier we observed that if two differentials are equal
-        then it seems reasonable that their integrals will also be
-        equal. As reasonable as this sounds it is,  in fact, not true.
-      </p>
-      <p>
-        To see what goes wrong consider the differential equation
-        <me>\dx{y}=2x\dx{x}</me>. Clearly <m>y=x^2</m> is a solution
-        because <m>\dx (x^2) = 2x\dx{x}</m> as required. But by the
-        same reasoning <m>y=x^2+1</m> is also a solution. As is
-        <m>y=x^2+20</m>. In fact, if <m>C</m> is any constant
-        whatsoever <m>y=x^2+C</m> will be a solution of
-        <me>\dx{y}=2x\dx{x}</me> because when we differentiate the
-        <xref ref="THEOREMConstRule" text="custom">Constant Rule</xref>  <me>\dx (x^2 +C) = \dx (x^2)
-        + \dx (C) = 2x\dx{x}</me>.
-      </p>
-      <p>
-        Integration is sometimes informally described as
-        <q>differentiation run backwards</q> but we can see from this
-        example that this isn<rsq/>t quite accurate.  If we know that
-        <m>F^\prime (x) = f(x)</m> that does not necessarily mean that
-        <m>F(x)=\int f(x)\dx{x}</m>.
-      </p>
-      <p>
-        The fact is that unlike a derivative, an integral is not
-        unique. In this case we see that <me>\int 2x\dx{x} =x^2+C</me>
-        is true regardless of the value of the constant
-        <m>C</m>. 
-      </p>
 
-      <p>
-        Because <m>\int 2x\dx{x}</m> does not have a unique value it
-        is called an <term>indefinite integral</term>. The function
-        <m>F(x)=x^2</m> is called an <term>antiderivative</term> of
-        <m>f(x) =2x</m> and <m>F(x)=x^2+C</m> is called the <term>most
-        general antiderivative</term> of <m>f(x)=2x</m>.
-      </p>
-      <aside>
-        <title>Comment</title>
+      <example xml:id="EXAMPLEArbitraryConstant">
+        <!-- <title>The Indefinite Integral</title> -->
         <p>
-          Because <m>C</m> can be any constant the expression
-          <m>F(x)=\int f(x)\dx{x}</m> is, strictly speaking, a
-          multifunction like the inverse trigonometric functions we
-          saw in <xref ref="CHAPTERcalc-trig"></xref>.  But because
-          there are no domain and range issues the 
-          multifunctions that result from integration are simpler to
-          deal with.  Different branches (functions) of
-          these multifunctions are  distinguished by selecting a
-          different value of the arbitrary constant.
+          This all seems straightforward enough but there is a small
+          error in our development so far that will cause us a
+          multitude of headaches if we don<rsq/>t address it
+          now. Earlier we observed that if two differentials are equal
+          then it seems reasonable that their integrals will also be
+          equal. As reasonable as this sounds it is,  in fact, not true.
         </p>
-      </aside>
+        <p>
+          To see what goes wrong consider the differential equation
+          <me>\dx{y}=2x\dx{x}</me>. Clearly <m>y=x^2</m> is a solution
+          because <m>\dx (x^2) = 2x\dx{x}</m> as required. But by the
+          same reasoning <m>y=x^2+1</m> is also a solution. As is
+          <m>y=x^2+20</m>. In fact, if <m>C</m> is any constant
+          whatsoever then <m>y=x^2+C</m> will be a solution of
+          <m>\dx{y}=2x\dx{x}</m> because when we differentiate
+          <m>x^2+C</m> we get 
 
-      <p>
-        Eventually we will encounter problems where we need to find a
-        specific antiderivative of some function, but for now we
-        simply want to develop skill at evaluating indefinite
-        integrals.
-      </p>
-    </example>
+          <me>\dx (x^2 +C) = \dx (x^2) + \dx (C) = 2x\dx{x}</me>.
+        </p>
+        <p>
+          Integration is sometimes informally described as
+          <q>differentiation run backwards</q> but we can see from
+          this example that this isn<rsq/>t quite accurate.  If
+          <me>F^\prime (x) = f(x)</me> it is not necessarily true that
+          <me>F(x)=\int f(x)\dx{x}</me>.
+        </p>
+        <p>
+          Unlike a derivative, an integral is not unique. In this case
+          we see that <me>\int 2x\dx{x} =x^2+C</me> is true regardless
+          of the value of the constant <m>C</m>.
+        </p>
 
-    <!-- <p> -->
-    <!--   As you can see this is the same problem <mdash/> we need to find -->
-    <!--   an antiderivative of <m>\frac{{\omega}^2}{g}x</m>. But whereas -->
-    <!--   the differential notation merely tells us what the differential -->
-    <!--   of <m>y</m> is, the integral notation clearly suggests an action -->
-    <!--   for us to take: Sum up all of the differentials of the form -->
-    <!--   <m>\frac{\omega^2}{g}x\dx{x} </m>. And we know how to compute -->
-    <!--   this sum using equations <xref ref="IntRuleConstMult"></xref> -->
-    <!--   and <xref ref="IntRuleMonomial"></xref>. With a standard -->
-    <!--   methodology and a clear notation we can successfully attack a -->
-    <!--   wider variety of problems. -->
+        <p>
+          Because <m>\int 2x\dx{x}</m> does not have a unique value it
+          is called an <term>indefinite integral</term>. The function
+          <m>F(x)=x^2</m> is called an <term>antiderivative</term> of
+          <m>f(x) =2x</m> and <m>F(x)=x^2+C</m> is called the <term>most
+          general antiderivative</term> of <m>f(x)=2x</m>.
+        </p>
+        <aside>
+          <title>Comment</title>
+          <p>
+            We last saw this sort of thing in <xref
+            ref="CHAPTERcalc-trig"></xref> when we encountered the
+            multifunctions   <m>\arcsin(x) </m>, <m>\arccos(x)</m>,
+            etc. Because <m>C</m> can be
+            any constant the expression <m>F(x)=\int f(x)\dx{x}</m>
+            is, strictly speaking, a multifunction like the inverse
+            trigonometric functions we saw in <xref
+            ref="CHAPTERcalc-trig"></xref>.  But because there are no
+            domain and range issues the multifunctions that result
+            from integration are simpler to deal with.  Different
+            branches (functions) of these multifunctions are
+            distinguished by selecting a different value of the
+            arbitrary constant.
+          </p>
+        </aside>
 
-    <!-- </p> -->
+        <p>
+          Eventually we will encounter problems where we need to find a
+          specific antiderivative of some function, but for now we
+          simply want to develop skill at evaluating indefinite
+          integrals.
+        </p>
+      </example>
 
-    <!-- <exercise> -->
-    <!--   <idx><h>Problems</h></idx> -->
+      <!-- <p> -->
+      <!--   As you can see this is the same problem <mdash/> we need to find -->
+      <!--   an antiderivative of <m>\frac{{\omega}^2}{g}x</m>. But whereas -->
+      <!--   the differential notation merely tells us what the differential -->
+      <!--   of <m>y</m> is, the integral notation clearly suggests an action -->
+      <!--   for us to take: Sum up all of the differentials of the form -->
+      <!--   <m>\frac{\omega^2}{g}x\dx{x} </m>. And we know how to compute -->
+      <!--   this sum using equations <xref ref="IntRuleConstMult"></xref> -->
+      <!--   and <xref ref="IntRuleMonomial"></xref>. With a standard -->
+      <!--   methodology and a clear notation we can successfully attack a -->
+      <!--   wider variety of problems. -->
 
-    <!--   <statement> -->
-    <!--     <p> -->
-    <!--       <idx><h>Problems</h></idx>  -->
+      <!-- </p> -->
 
-    <!--       Use the rules of integration to finish solving <xref -->
-    <!--       ref="EQUATIONSpinCastDiffeq">equation</xref>. Notice that when you integrate, -->
-    <!--       you will have the arbitrary constant <m>C</m> in your answer.  -->
-    <!--       We do not yet have enough information to  determine  this constant. We will address this at a later  -->
-    <!--     </p> -->
-    <!--   </statement> -->
-    <!-- </exercise> -->
+      <!-- <exercise> -->
+      <!--   <idx><h>Problems</h></idx> -->
+
+      <!--   <statement> -->
+      <!--     <p> -->
+      <!--       <idx><h>Problems</h></idx>  -->
+
+      <!--       Use the rules of integration to finish solving <xref -->
+      <!--       ref="EQUATIONSpinCastDiffeq">equation</xref>. Notice that when you integrate, -->
+      <!--       you will have the arbitrary constant <m>C</m> in your answer.  -->
+      <!--       We do not yet have enough information to  determine  this constant. We will address this at a later  -->
+      <!--     </p> -->
+      <!--   </statement> -->
+      <!-- </exercise> -->
+    </paragraphs>
 
     <p>
-      <idx><h>Vocabulary</h><h>Separation of Variables</h></idx>
-      Again,  the point is that integration  gives us a more systematic way
-      of solving differential equations. 
+      Integration gives us a more systematic way of solving differential
+      equations (and, eventually, Initial Value Problems) than we<rsq/>ve
+      been able to so far. For instance suppose we need  to solve the
+      differential equation 
+      <me>\dfdx{y}{x} = x-e^x</me>.
+      We first multiply through by <m>\dx{x}</m> and then integrate both
+      sides, giving
+      <men xml:id="EQUATIONIntViolateAlg">\int \dx{y}=\int x-e^x\dx{x}  </men>. 
+      The result on the left is
+      <m>y</m>. 
+    </p>
+    <aside>
+      <title>Comment</title>
+      <p>
+        No doubt you noticed that in writing <xref
+        ref="EQUATIONIntViolateAlg">equation</xref> we committed one of
+        the cardinal sins of algebra, we failed to distribute
+        <m>\dx{x}</m> over the sum <m>x-e^x</m>. 
+      </p>
+      <p>
+        It is clear that the function on the right side is <m>f(x) =
+        x-e^x</m> and since the differential <m>\dx{x}</m> multiplies the
+        entire function the integral on the right is properly written as
+        <me>\int\left(x-e^x\right)\dx{x}</me>.  This is true, and good for you
+        for noticing.
+      </p>
+      <p>
+        Sadly this is a place where we mathematicians have allowed
+        ourselves to be unreasonably sloppy. The reason for this is
+        simple. Every well<ndash/>formed integral begins with
+        <m>\int{}</m> and ends with <m>\dx(\text{something})</m>. Although
+        the parentheses should be in place there is really nothing added
+        by including them. So we generally don<rsq/>t include them.
+      </p>
+
+    </aside>
+
+    <p>
+      Next we need to find an antiderivative of <m>f(x)=x-e^x</m> which we
+      can clearly build from the antiderivatives of <m>x</m> and
+      <m>e^x</m>. An antiderivative of <m>x</m> is <m>\frac{x^2}{2}</m>
+      and <m>e^x</m> is its own antiderivative. So an antiderivative of
+      <m>x-e^x</m> is <m>\frac{x^2}{2}-e^x</m> and thus  <me>\int
+      x-e^x\dx{x} = \frac{x^2}{2} - e^x +C </me> (where <m>C</m> is an
+      unspecified constant) because <m>\frac{x^2}{2} - e^x+C</m> is the
+      <term>most general antiderivative</term> of <m>f(x)=x-e^x</m>.
+    </p>
+    <problem>
+      <p>
+        Assume that <m>C</m> is a constant.
+        Differentiate  <m>F(x)=\frac{x^2}{2}-e^x+C</m> to show that
+        <m>F^\prime(x) =x-e^x</m>.
+      </p>
+    </problem>
+    <p>
+      Since integration is <q>almost</q> differentiation run backwards
+      every differentiation formula we know provides an integration
+      formula as well. The following list displays the most baskic
+      integration rules.
+
+
+
+      <!-- <mdn> -->
+      <!--   <mrow number="no"> -->
+      <!--     \text{Differentiation}\text{ Rule}\amp{}\amp{}\text{Integration} \text{ Rule} -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+
+      <!--   <mrow xml:id="IntRuleConstant"> -->
+      <!--     \dx(\text{constant})=0;\amp{}\amp{}\int0\dx{x}=C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleSum"> -->
+      <!--     \dx(f+g)=\dx{f}+\dx{g};\amp{}\amp{}\int\dx(f+g)=f+g+C -->
+      <!--     <!-\- \int\dx{f}+\int\dx{g} -\-> -->
+      <!--   </mrow> -->
+      <!--   <!-\- <mrow> -\-> -->
+      <!--   <!-\- \amp{}\amp{}=f+g+C -\-> -->
+      <!--   <!-\-     </mrow> -\-> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow number="no"> -->
+      <!--     \text{If }a\text{ is constant, then }           -->
+      <!--   </mrow> -->
+      <!--   <mrow xml:id="IntRuleConstMult"> -->
+      <!--     \dx(ay)=a\dx(y);\amp{}\amp{}\int a\dx{y}<!-\- =\int\dx(ay) -\->=a\int\dx{y}=ay+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleMonomial"> -->
+      <!--     \dx(x^{n+1})=(n+1)x^n\dx{x} -->
+      <!--     ;\amp{}\amp{}\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq -->
+      <!--     -1 -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleOneOver"> -->
+      <!--     \dx(\ln(x))<!-\- =\frac1x\dx{x} -\->=x^{-1}\dx{x} -->
+      <!--     ;\amp{}\amp{}\int x^{-1}\dx{x} = \ln\abs{x}+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleExp"> -->
+      <!--     \dx(e^x)= e^x\dx{x} -->
+      <!--     ;\amp{}\amp{}\int e^x\dx{x} = e^x+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleCos"> -->
+      <!--     \dx(\sin(x))=\cos(x)\dx{x} -->
+      <!--     ;\amp{}\amp{}\int \cos(x)\dx{x} = \sin(x) +C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleSin"> -->
+      <!--     \dx(\cos(x))=-\sin(x)\dx{x} -->
+      <!--     ;\amp{}\amp{}\int \sin(x)\dx{x} = -\cos(x) +C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleTan"> -->
+      <!--     \dx(\tan(x))=\sec^2(x)\dx{x} -->
+      <!--     ;\amp{}\amp{}\int\sec^2(x)\dx{x} = \tan(x)+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleSec"> -->
+      <!--     \dx(\sec(x))= \sec(x)\tan(x)\dx{x} -->
+      <!--     ;\amp{}\amp{}\int\sec(x)\tan(x)\dx{x}=\sec(x)+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleInvSin"> -->
+      <!--     \dx(\inverse\sin(x))= -->
+      <!--     \frac{1}{\sqrt{1-x^2}}\dx{x} -->
+      <!--     ;\amp{}\amp{}\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleInvTan"> -->
+      <!--     \dx(\inverse\tan(x))=   \frac{1}{1+x^2}\dx{x} -->
+      <!--     ;\amp{}\amp{}\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+
+      <!-- <mdn> -->
+
+      <!--   <mrow xml:id="IntRuleInvSec"> -->
+      <!--     \dx(\inverse\sec(x))=    \frac{1}{x\sqrt{x^2-1}}\dx{x} -->
+      <!--     ;\amp{}\amp{}\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C -->
+      <!--   </mrow> -->
+      <!-- </mdn> -->
+    </p>
+    <table xml:id="TABLEBasicIntegration">
+      <title>Integration Rules Inherited from Differentiation Rules</title>
+      <tabular halign="center">
+        <row bottom="major" header="yes">
+
+          <cell>#</cell>
+          <cell>Differentiation Rule</cell>
+          <cell>
+            <line>Integration  Rule</line>
+            <line> (In all cases <m>C</m> is an arbitrary  constant.)  </line>
+          </cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell><m>\dx(\text{constant})=0</m></cell>
+          <cell><line><m>\displaystyle\int0\dx{x}=C</m>, where <m> C
+          </m> is a constant.</line></cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell>
+          <cell>
+          <line><m>\displaystyle\int\dx(f+g)=\int\dx{f}+\int\dx{g}</m><m>=f+g+C</m></line></cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>
+            <line>If <m>a</m> is a constant, then<m>\dx(ay)=a\dx(y)</m></line>
+          </cell>
+          <cell>
+          <line><m>\displaystyle\int a\dx{y}=\int\dx(ay)=a\int\dx{y}</m><m>=ay+C</m></line></cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell>
+          <cell><m>\displaystyle\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq
+          -1</m></cell>
+        </row>
+        <row>
+          <cell>5</cell>          <cell><m>\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}</m></cell>
+          <cell><m>\displaystyle\int x^{-1}\dx{x} = \ln\abs{x}+C</m></cell>
+        </row>
+        <row>
+          <cell>6</cell>          <cell><m>\dx(e^x)= e^x\dx{x}</m></cell>
+          <cell><m>\displaystyle\int e^x\dx{x} = e^x+C</m></cell>
+        </row>
+        <row>
+          <cell>7</cell>          <cell><m>\dx(\sin(x))=\cos(x)\dx{x}</m></cell>
+          <cell><m>\displaystyle\int \cos(x)\dx{x} = \sin(x) +C</m></cell>
+        </row>
+        <row>
+          <cell>8</cell>          <cell><m>\dx(\cos(x))=-\sin(x)\dx{x}</m></cell>
+          <cell><m>\displaystyle\int \sin(x)\dx{x} = -\cos(x) +C</m></cell>
+        </row>
+        <row>
+          <cell>9</cell>          <cell><m>\dx(\tan(x))=\sec^2(x)\dx{x}</m></cell>
+          <cell><m>\displaystyle\int\sec^2(x)\dx{x} = \tan(x)+C</m></cell>
+        </row>
+        <row>
+          <cell>10</cell>          <cell><m>\dx(\sec(x))= \sec(x)\tan(x)\dx{x}</m></cell>
+          <cell><m>\displaystyle\int\sec(x)\tan(x)\dx{x}=\sec(x)+C</m></cell>
+        </row>
+        <row>
+          <cell>11</cell>          <cell><m>\dx(\inverse\sin(x))=
+          \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell>
+          <cell><m>\displaystyle\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C</m></cell>
+        </row>
+        <row>
+          <cell>12</cell>          <cell><m>\dx(\inverse\tan(x))=
+          \frac{1}{1+x^2}\dx{x}</m></cell>
+          <cell><m>\displaystyle\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C</m></cell>
+        </row>
+        <row>
+          <cell>13</cell>          <cell><m>\dx(\inverse\sec(x))=
+          \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell>
+          <cell><m>\displaystyle\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+
+    <p>
       The solution strategy we used when we rewrote <xref
-      ref="EQUATIONSpinCastDiffeq">equation</xref> is called 
-      <term>separation of variables</term> and it will enable us to solve a
-      great many simple differential equations.
+      ref="EQUATIONSpinCastDiffeq">equation</xref> is called
+      <term>separation of variables</term> and it will enable us to solve
+      a great many simple differential equations.
     </p>
     <p>
       To see this consider the differential equation
@@ -290,37 +555,44 @@
       <idx><h>Drills</h></idx>
       <p>
         Before we continue see if you can come up with a solution of <xref
-        ref="EQUATIONSepVar1">equation</xref> on your own. Notice how it is
-        similar to, and different from, <xref
-        ref="IVPExpGeneral">equation</xref>. Does that help?
+        ref="EQUATIONSepVar1">equation</xref> on your own.<!--  Notice how it is -->
+        <!-- similar to, and different from, <xref -->
+        <!-- ref="IVPExpGeneral">equation</xref>. Does that help? -->
       </p>
     </problem>
 
     <example xml:id="EXAMPLESepVar">
       <!-- <title>Separation of Variables</title> -->
       <p>
-        To find a way to approach this problem we will take our cue from basic
-        Algebra.  Suppose we want to solve the algebraic equation
+        Separating variables is not new. This is how you were taught to
+        solve algebraic equations. For example, suppose we want to solve
+        the algebraic equation
 
-        <men  xml:id="EQUATIONycubedeqxy">y^3=xy</men> for <m>y</m>.  One obvious solution is
-        <m>y=0</m>. This is a valid solution, but it is uninteresting, so we
-        will not consider it.
-        Assuming that <m>y\neq 0</m>, we can divide by <m>y</m>  obtaining
+        <men xml:id="EQUATIONycubedeqxy">y^3-x^2y - 6y=0</men> for <m>y</m>.
+        One obvious solution is <m>y=0</m>. This is a valid solution, but
+        it is uninteresting, so we will not consider it.  Assuming that
+        <m>y\neq 0</m>, we can divide by <m>y</m> obtaining
 
-        <me>y^2=x</me> 
+        <me>y^2-x^2-6=0</me> 
 
-        Once the variables have been separated like this, we can take the
-        square root of each side and obtain <m>y=\pm \sqrt{x}</m>.
+        At this point  we separate the variables     by
+        rearranging the terms algebraically so that  all of the terms
+        involving <m>y</m> are on 
+        on one side, and all of the terms involving <m>x</m> (or involving
+        neither <m>x</m> nor <m>y</m>)  on the
+        other
+        <me>y^2=x^2+6</me>.
+        It is clear that
+        the expression on the right is positive so  we can take the
+        square root of each side and obtain <m>y=\pm \sqrt{x^2+6}</m>.
       </p>
       <p>
-        Notice that it was helpful to put all of the <q><m>y</m></q> variables
-        on one side, and all of the <q><m>x</m></q> variables on the
-        other. It was
-        not immediately clear that <q>separating the variables</q> would be
+        Notice that it was
+        not immediately clear that separating the variables would be
         helpful but once it was done, the next step was clear. 
       </p>
       <p>
-        Similarly it is not clear that separating the variables in <xref
+        It is similarly  not clear that separating the variables in <xref
         ref="EQUATIONSepVar1">equation</xref> will help, but let<rsq/>s try
         it and see what happens.
         Separating the variables, we see that
@@ -350,7 +622,6 @@
 
             <me>\ln \abs{y}+C_1=\frac{x^2}{2}+C_2</me> 
             where <m>C_1,\ C_2</m> are arbitrary constants.
-
           </p>
         </statement>
       </task>
@@ -358,29 +629,31 @@
         <statement>
           <p>
             Show that 
-            <me>y=\pm \left(e^{C_2-C_1}\right)e^{\frac{x^2}{2}}</me> 
+            <me>y=\pm \left(e^{C_2-C_1}\right)e^{\frac{x^2}{2}}</me>.
           </p>
         </statement>
       </task>
+      <conclusion>
+        <p>
+          Since <m>C_1,\ C_2</m> are arbitrary constants, it follows that <m>
+          e^{C_2-C_1}</m> is also an arbitrary constant. (Why?) For simplicity
+          we will set <m>A=e^{C_2-C_1}</m>, so <m>y=\pm Ae^{\frac{x^2}{2}}</m>
+          provides the general solution for the original differential equation.
+        </p>
+      </conclusion>
+
     </exercise>
 
+
     <p>
-      Since <m>C_1,\ C_2</m> are arbitrary constants, it follows that <m>
-      e^{C_2-C_1}</m> is also an arbitrary constant. (Why?) For simplicity
-      we will set <m>A=e^{C_2-C_1}</m>, so <m>y=\pm Ae^{\frac{x^2}{2}}</m>
-      provides the general solution for the original differential equation.
-    </p>
-    <p>
-      Separation of variable is not always possible. For example, try
+      It is not always possible to separate variables. For example, try
       separating the variables in <m>y=\sin(xy)</m> or
-      <m>\dfdx{y}{x}=\cos(xy)</m>.
+      <m>\dfdx{y}{x}=\cos(xy)</m>. You won<rsq/>t get far.
     </p>
     <p>
-      Even when it can be done it is not always helpful.  For
+      Even when it is possible it is not always helpful.  For
       example, suppose we had the algebraic equation
       <me>y^3=x+y</me>.
-    </p>
-    <p>
       Separating the variables gives <m>y^3-y=x</m>, but it would take an
       application of the <term>Cubic Formula</term> which is not so
       trivial.
@@ -391,7 +664,6 @@
         The 
         <term>Cubic Formula</term> is like the 
         <term>Quadratic Formula</term>, only more fun.
-
       </p>
     </aside>
 
@@ -400,13 +672,104 @@
       There are whole books and college courses, at both the undergraduate
       and graduate levels, on the solution of various kinds of differential
       equations, and it is still an active area of mathematical research.
-      Separable differential equations are among the simplest to solve and
-      even these can be quite challenging at times.  Consider the following  example.
+      Separable differential equations are among the simplest to solve but
+      even these can be quite challenging at times.
     </p>
 
+    <exercise xml:id="PROBLEMSeparableDiffeqs">
+      <introduction>
+        <p>
+          <ol cols="2" marker="(i)">
+            <li>
+              Confirm that the function <m>y(x)</m> shown solves the
+              separable differential equation.
+            </li>
+            <li>
+              <p>
+                Then find the most general solution.
+              </p>
+            </li>
+          </ol>   
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\dfdx{y}{x} = 9x^2y^x</m>,
+          <m>y=\frac{-1}{3x^3}</m>
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>y=\frac{x^2}{2}</m>, <m>\dfdx{y}{x}=x^3\inverse{y}</m>
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>y=-2\ln(x)</m>, <m>\dx{y}+2xe^{-y}\dx{x} =0 </m>
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>y=\frac{x^3}{\sqrt{1-\left( \frac{x^4}{4}\right)^2 }}</m>,   <m>\dfdx{y}{x}=x^3\sec(y)</m>
+        </p>
+      </task>
+      <!-- <task> -->
+      <!--   <p> -->
+      <!--     <m>y=\ln\abs{ \frac{x^2}{2}+2x}-1</m>, <m>\dfdx{y}{x}=xy+x+2y+2</m> -->
+      <!--   </p> -->
+      <!-- </task> -->
+    </exercise>
+    <exercise xml:id="PROBLEMFirstOrderLinearDiffeq">
+      <title>Find the pattern</title>
+      <task>
+        <p>
+          Solve the differential equation 
+          <me>y^{\prime} +2y =0 </me>
+          (This is a <term>first order</term> differential equation
+          because  the  
+          highest order derivative that appears in
+          it is the first.)
+        </p>
+      </task>
+      
+      <task>
+        <statement>
+          <p>
+            Solve the differential equation 
+            <me>y^{\prime\prime} +2y^\prime =0 </me>
+            (This is a <term>second order</term> differential equation
+            because  the  
+            highest order derivative that appears in
+            it is the second.)
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Make it <q>easier on your eyes.</q>
+          </p>
+        </hint>
+        <hint>
+          <p>
+            Make the substitution: <m>z=y^\prime </m>.
+          </p>
+        </hint>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Solve the differential equation 
+            <me>3y^{\prime\prime\prime} -5y^{\prime\prime} =0 </me>
+          </p>
+          <p>
+            What is the order of this differential equation?
+          </p>
+        </statement>
+      </task>
+    </exercise>
 
     <example xml:id="EXAMPLEHardDiffeq">
-      <title>A Hard Differential Equation</title>
+      <title>The Hanging Chain, again</title>
       <p>
         In <xref ref="PROBLEMHangingChain"></xref> of <xref
         ref="SECTIONhyperb-trig-hang"></xref> we saw that if <m>y(x)</m>
@@ -426,19 +789,23 @@
       </p>
 
       <p>
-        It is one thing to confirm a given solution, as you did in <xref
-        ref="PROBLEMHangingChain"></xref>, but finding the solution in
-        the first place is not at all a simple task.  A start might be to let
-        <m>z=\dfdx{y}{x}</m>, so we have
-        
-        <mdn>
-          <mrow number="no">
-            \dfdx{z}{x}\amp=\frac{w}{H}\sqrt{1+z^2}
-          </mrow>
-          <mrow xml:id="EQUATIONHangingChainInt1">
-            \frac{1}{\sqrt{1+z^2}}\dx{z}\amp =\frac{w}{H}\dx{x}
-          </mrow>
-          </mdn>.
+        It is one thing to confirm a given solution, as you did in
+        <xref ref="PROBLEMHangingChain"></xref>, but as you<rsq/>ve
+        seen finding the solution in the first place is not always a
+        simple task. We can<rsq/>t actually derive the solution of
+        this equation yet, but we have developed enough tools to get
+        started.
+      </p>
+      <p>
+        First we  let <m>z=\dfdx{y}{x}</m>, so that        
+        <men>
+          \dfdx{z}{x}=\frac{w}{H}\sqrt{1+z^2}.
+        </men>
+        Separating the variable next we see that 
+        <men xml:id="EQUATIONHangingChainInt1">
+          \frac{1}{\sqrt{1+z^2}}\dx{z} =\frac{w}{H}\dx{x}
+          </men>.
+
           <!-- As we saw in <xref ref="DIGRESSIONDifferentialNotation">DIGRESSION: -->
           <!-- Differential Notation</xref> the product of a number and a -->
           <!-- differential is a differential so  -->
@@ -446,27 +813,22 @@
           <!-- differential of the form <m>\frac{1}{\sqrt{1+z^2}}\dx{z}</m> is -->
           <!-- equal to a differential of the form <m>\frac{w}{H}\dx{z} -->
           <!-- </m>.  -->
-          Adding  all of the differentials  on both sides of <xref
+          Integrating  both sides of <xref
           ref="EQUATIONHangingChainInt1">equation</xref>, we see that
           <men  xml:id="EQUATIONHangingChainInt2">
-            \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}
+            \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x} =
+            \frac{\omega}{H}x+C
             </men>.
       </p>
     </example>
-    <p>
-      As you can see, this is separable, and we can certainly integrate
-      the right-hand side of <xref
-      ref="EQUATIONHangingChainInt2">equation</xref>. When we do that we get
-      <me>\int{\frac{w}{H}dx}=\frac{w}{H}x+C</me>.
-    </p>
 
     <p>
-      Nothing in our table of integrals from <xref
-      ref="SECTIONIntegrationRules1"></xref> quite matches the left hand
+      Unfortunately nothing in our <xref
+      ref="TABLEBasicIntegration" text="custom">table of integrals</xref>  quite matches the left hand
       side of <xref ref="EQUATIONHangingChainInt2">equation</xref> so
-      we<rsq/>ll need to develop more integration techniques before we can
-      compute the solution of <xref
-      ref="EQUATIONHangChainModel">equation</xref>.
+      we can<rsq/>t take this problem any further right now. 
+      We<rsq/>ll return to it after we have developed more integration
+      techniques.
     </p>
 
     <p>
@@ -484,15 +846,6 @@
       </p>
     </problem>
 
-
-    <p>
-      To keep his experiments (and the analysis of his experiments) simple
-      Galileo assumed that the resistance of the Earth<rsq/>s atmosphere
-      to the motion of a falling body was negligible, which it is in
-      simple cases. However since we now have the tools we need to
-      describe the effect of air resistance on a falling body we will
-      analyze this effect in the next section.
-    </p>
 
   </section>
 
