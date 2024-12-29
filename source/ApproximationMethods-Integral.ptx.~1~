@@ -1,0 +1,63 @@
+<chapter xml:id="ApproximationIntegral">
+  <title>More Approximation Methods</title>
+  <section xml:id="SECTIONGaussianDistribution">
+    <title>The Gaussian Distribution</title>
+<p>
+
+     Back in Section 21.5, where we mentioned that it is widely accepted that a person's IQ (intelligence quotient) is normally distributed with a mean of <m>100</m> and a standard deviation of 15.  We mentioned that it is also widely accepted that someone with an IQ of 140 or above is in the genius range and that the probability of a random person having an IQ less than or equal to 140 is given by
+     <me>\frac{1}{15\sqrt{2}}\int^{140}_{x=-\infty }{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}dx\approx 0.99617</me> 
+     Using this measurement, someone is considered to be of ``superior intelligence'' if they have an IQ between 110 and 120.  A reasonable question to ask is ``what is the probability of a person chosen at random having an IQ score which is considered superior intelligence level?''  Mathematically, this is given by the area of the blue region under the following bell- shaped curve.
+</p>
+<p>
+
+     <m>\frac{}{\sqrt{}}{}^{\frac{}{}{\left(\frac{}{}\right)}}</me>\frac{}{\sqrt{}}{}^{\frac{}{}{\left(\frac{}{}\right)}}</m>\includegraphics*[width=6.44in, height=1.37in, trim=0.00in 1.67in 0.00in 0.56in]{image99}
+</p>
+<p>
+
+     
+
+     As we mentioned in Section 21.5, the equation of the curve may look strange, but it takes into account that the curve is centered at the mean of 100 and has a standard deviation of 15.  It also has the property that the total area under the curve is equal to one so that the probability that a person's IQ falls between <m>-\infty </m> and <m>\infty </m> is one.  This bell-shaped curve is called the Gaussian distribution in honor of Karl Friedrich Gauss (1777-1855), who developed such a curve to determine the probability of errors in astronomical observations, though he was not the first to consider such a probability distribution.  Nonetheless, the probability of a random person's IQ falling between 110 and 120 is given by
+     <me>\frac{1}{15\sqrt{2\pi }}\int^{120}_{x=110}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\ dx</me> 
+</p>
+<p>
+
+
+     As we mentioned before, computing this integral poses a problem, as none of the antidifferentiation techniques we learned can determine an antiderivative for <m>e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}.\ \ </m>In fact, the antiderivative of this cannot be written in any form utilizing the functions we are familiar with.  
+</p>
+<p>
+
+     One way to handle this in a statistics class is to use a substitution to simplify the integrand a bit.  We want the random variable <m>x</m> representing a person's IQ score to satisfy
+</p>
+<p>
+
+     
+  <me>110\le x\le 120</me> 
+  Manipulating this, we have
+</p>
+<p>
+
+     
+  <me>110-100\le x-100\le 120-100</me> 
+  <me>\frac{10}{15}\le \frac{x-100}{15}\le \frac{20}{15}</me> 
+  Setting <m>z=\frac{x-100}{15}</m>, we see that we want a value for
+</p>
+<p>
+
+     
+  <me>\frac{1}{\sqrt{2\pi }}\int^{4/3}_{z=2/3}{e^{-{\frac{1}{2}z}^2}dz}</me> 
+</p>
+<p>
+
+
+  The random variable <m>z</m> follows a standard normal distribution meaning that it has a normal distribution which has been ``standardized'' to have a mean of 0 and a standard deviation of 1.  However, we still don't have any techniques for computing an antiderivative for <m>e^{-{\frac{1}{2}z}^2}</m>.  There are tables and computer programs which provide approximations for such ``<m>z</m> values.''  For example, using such approximation techniques, we can determine that 
+     <me>\frac{1}{\sqrt{2\pi }}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{e^{-{\frac{1}{2}z}^2}dz}\approx .1627</me> 
+     But this still begs the question, ``How was this approximation determined?''  There are many other integrands for which antiderivatives cannot be determined.  In this chapter, we will be exploring two such methods.  The first method is to replace the integrand (in this case <m>e^{-{\frac{1}{2}z}^2}</m>) with a function which is more easily integrated, hoping we can keep control of how far off this approximation is.  The second is to actually replace the integral which is an infinite sum of infinitesimals with a finite sum of finite quantities.  Again, we will want to keep track of how close our approximation is.  Both approaches have their advantages and disadvantages.
+</p>
+<p>
+
+</p>
+
+
+</section>
+
+</chapter>
