@@ -708,8 +708,23 @@
     <me>10s-s=9.9999\dots -0.9999\dots </me>
     <me>9s=9</me>
     <me>0.9999\dots =s=\frac{9}{9}=1</me>
-    Still skeptical?  A big question might be how we started by flippantly saying, <q>Let <m>s=0.9999\dots </m> .</q> We should be a bit more careful about this. If we carefully look at our decimal representation <m>0.9999\dots </m> , we really have
-    <me>0.9999\dots =\frac{9}{10}+\frac{9}{{10}^2}+\frac{9}{{10}^3}+\dots =\frac{9}{10}\left(1+\frac{1}{10}+{\left(\frac{1}{10}\right)}^2+{\left(\frac{1}{10}\right)}^3+\dots \right)=\frac{9}{10}\left(\sum^{\infty }_{n=0}{{\left(\frac{1}{10}\right)}^n}\right)</me>
+    Still skeptical?  A big question might be how we started by
+    flippantly saying, <q>Let <m>s=0.9999\dots </m> .</q> We should be
+    a bit more careful about this. If we carefully look at our decimal
+    representation <m>0.9999\dots </m> , we really have
+
+
+    <md>
+      <mrow>0.9999\dots
+      \amp{}=\frac{9}{10}+\frac{9}{{10}^2}+\frac{9}{{10}^3}+\dots</mrow>
+      <mrow>  \amp{}
+      =\frac{9}{10}\left(1+\frac{1}{10}+{\left(\frac{1}{10}\right)}^2+{\left(\frac{1}{10}\right)}^3+\dots
+      \right)</mrow>
+      <mrow>\amp{}     =\frac{9}{10}\left(\sum^{\infty
+      }_{n=0}{{\left(\frac{1}{10}\right)}^n}\right).</mrow>
+    </md>
+
+
   </p>
   <p>
 
@@ -807,14 +822,16 @@
     <task>
       <statement>
         <p>
-          Substitute <m>x=\frac{1}{10}</m> into the binomial series to compute <m>1+\frac{1}{10}+{\left(\frac{1}{10}\right)}^2+{\left(\frac{1}{10}\right)}^3+\dots =\sum^{\infty }_{n=0}{{\left(\frac{1}{10}\right)}^n}</m>
+          Substitute <m>x=\frac{1}{10}</m> into the binomial series to
+          compute 
+          <me>1+\frac{1}{10}+{\left(\frac{1}{10}\right)}^2+{\left(\frac{1}{10}\right)}^3+\dots =\sum^{\infty }_{n=0}{{\left(\frac{1}{10}\right)}^n}</me>
         </p>
       </statement>
     </task>
     <task>
       <statement>
         <p>
-          Use your result from Part a to determine <m>0.9999\dots </m>
+          Use your result from part (a) to determine <m>0.9999\dots </m>
         </p>
       </statement>
     </task>
@@ -834,9 +851,17 @@
     numbers.  In binary, the only <q>digits</q> are <m>0</m> and
     <m>1</m>, so a binary number such as
     <m>{\left(101101\right)}_2</m> is really
-    <me>{\left(101101\right)}_2=1\times 2^5+0\times 2^4+1\times
-    2^3+1\times 2^2+0\times 2^1+1\times 2^0=32+8+4+1=45</me> in base
-    10.  This also works for numbers less than <m>1</m>.  For example,
+
+
+    <md>
+      <mrow>{\left(101101\right)}_2\amp{}=1\times 2^5+0\times 2^4+1\times
+      2^3+1\times 2^2+0\times 2^1+1\times 2^0</mrow>
+      <mrow>\amp{} =32+8+4+1</mrow>
+      <mrow>\amp{}      =45</mrow>
+    </md>
+
+    in base
+    <m>10</m>.  This also works for numbers less than <m>1</m>.  For example,
     <me>{\left(0.1011\right)}_2=\frac{1}{2}+\frac{0}{2^2}+\frac{1}{2^3}+\frac{1}{2^4}</me>
     in base 10.
   </p>
@@ -863,7 +888,15 @@
   <p>
 
 
-    <me>\frac{1}{1+x}=\frac{1}{1-\left(-x\right)}=\sum^{\infty }_{n=0}{{\left(-x\right)}^n}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}=1-x+x^2-x^3+\dots </me>
+
+    <md>
+      <mrow>\frac{1}{1+x}=\frac{1}{1-\left(-x\right)}\amp{}=\sum^{\infty
+      }_{n=0}{{\left(-x\right)}^n}</mrow>
+      <mrow>\amp{}      =\sum^{\infty
+      }_{n=0}{{\left(-1\right)}^nx^n}</mrow>
+      <mrow>\amp{} =1-x+x^2-x^3+\dots </mrow>
+    </md>
+
     Again, this is valid for <m>-1\lt x\lt 1</m>.
   </p>
 
@@ -940,15 +973,34 @@
   <p>
     Integrating the geometric series (or one of its variants) opens up
     a whole new level of power series representations and
-    applications.  For example, what if we integrate
-    <me>\frac{1}{1+x}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}</me>
+    applications.  For example,  if we integrate
+    <m>\frac{1}{1+x}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}</m>
+    we see that
 
-    <me>\int{\frac{1}{1+x}\dx{x}}=\int{\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}}\dx{x}=\sum^{\infty }_{n=0}{{\left(-1\right)}^n\int{x^n\dx{x}}}</me>
+    <md>
 
-    <me>
-      \ln\left(1+x\right) =C+\sum^{\infty}_{n=0}
-      {\frac{\left(-1\right)^n}{n+1}x^{n+1}}=C+\frac{x^1}{1}-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots
-    </me>
+      <mrow>
+        \int{\frac{1}{1+x}\dx{x}}\amp{}=\int{\sum^{\infty
+        }_{n=0}{{\left(-1\right)}^nx^n}}\dx{x}</mrow>
+        <mrow>\amp{}=\sum^{\infty
+        }_{n=0}{{\left(-1\right)}^n\int{x^n\dx{x}}}.
+        </mrow>
+
+    </md>
+
+    Computing the integral gives
+
+    <md>
+      <mrow>
+        \ln\left(1+x\right) \amp{}=C+\sum^{\infty}_{n=0}
+        {\frac{\left(-1\right)^n}{n+1}x^{n+1}}
+      </mrow>
+      <mrow>
+        \amp{}
+        =C+\frac{x^1}{1}-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots
+      </mrow>
+
+    </md>
     Setting <m>x=0</m>, we get <m>0=\ln\left(1\right)=C+0+0+0+\dots  </m>, so <m>C=0</m>.  This gives us the power series representation
   </p>
 
@@ -1230,12 +1282,23 @@
   <p>
 
 
-    If one had patience, they could use the triangle to determine the expansion of <m>{\left(1+x\right)}^{20}</m>.  Fortunately, there is a quicker way to do this.
+    If one had patience, they could use the triangle to determine the
+    expansion of <m>{\left(1+x\right)}^{20}</m>.  Fortunately, there
+    is a quicker way to do this.
   </p>
   <p>
 
 
-    <me>{\left(1+x\right)}^{20}=1+\frac{20}{1}x+\frac{20\cdot 19}{2\cdot 1}x^2+\frac{20\cdot 19\cdot 18}{3\cdot 2\cdot 1}x^3+\frac{20\cdot 19\cdot 18\cdot 17}{4\cdot 3\cdot 2\cdot 1}x^4+\dots +\frac{20\cdot 19\cdot 18\cdot \dots \cdot 1}{20\cdot \dots \cdot 3\cdot 2\cdot 1}x^{20}</me>
+
+    <md>
+      <mrow>{\left(1+x\right)}^{20}=1\amp{}+\frac{20}{1}x
+      +\frac{20\cdot 19}{2\cdot 1}x^2+\frac{20\cdot 19\cdot 18}{3\cdot
+      2\cdot 1}x^3</mrow>
+      <mrow>\amp{}     +\frac{20\cdot 19\cdot 18\cdot 17}{4\cdot 3\cdot 2\cdot
+      1}x^4+\dots </mrow>
+      <mrow>\amp{}      +\frac{20\cdot 19\cdot 18\cdot \dots \cdot 1}{20\cdot \dots \cdot 3\cdot 2\cdot 1}x^{20}</mrow>
+    </md>
+
   </p>
 
 
@@ -1243,16 +1306,33 @@
   <exercise>
     <p>
       Based on the formula we stated above, we should have
-      <me>
-        {\left(1+x\right)}^7=1+\frac{7}{1}x+\frac{7\cdot 6}{2\cdot
-        1}x^2+\frac{7\cdot 6\cdot 5}{3\cdot 2\cdot 1}x^3+\frac{7\cdot
-        6\cdot 5\cdot 4}{4\cdot 3\cdot 2\cdot 1}x^4+\frac{7\cdot
-        6\cdot 5\cdot 4\cdot 3}{5\cdot 4\cdot 3\cdot 2\cdot
-        1}x^5+\frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2}{6\cdot
-        5\cdot 4\cdot 3\cdot 2\cdot 1}x^6+\frac{7\cdot 6\cdot 5\cdot
-        4\cdot 3\cdot 2\cdot 1}{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot
-        2\cdot 1}x^7
-      </me>
+
+      <md>
+
+        <mrow>
+          {\left(1+x\right)}^7=1+\frac{7}{1}x+\amp{}\frac{7\cdot 6}{2\cdot
+          1}x^2
+        </mrow>
+        <mrow>
+          \amp{} +\frac{7\cdot 6\cdot 5}{3\cdot 2\cdot
+          1}x^3
+        </mrow>
+        <mrow>
+          \amp{}          +\frac{7\cdot 6\cdot 5\cdot 4}{4\cdot 3\cdot 2\cdot
+          1}x^4
+          </mrow>
+          <mrow>
+            \amp{}          +\frac{7\cdot 6\cdot 5\cdot 4\cdot 3}{5\cdot 4\cdot
+            3\cdot 2\cdot 1}x^5
+            </mrow>
+            <mrow>\amp{}            +\frac{7\cdot 6\cdot 5\cdot 4\cdot
+            3\cdot 2}{6\cdot 5\cdot 4\cdot 3\cdot 2\cdot
+            1}x^6</mrow>
+            <mrow> \amp{}            +\frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot
+            1}{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}x^7
+          </mrow> 
+      </md>
+
       Compute these coefficients to verify that we get the same
       result as we did using Pascal<rsq/>s Triangle.  If you cancel
       out terms before you multiply, you can do these without a
@@ -1272,7 +1352,17 @@
   <p>
 
 
-    <me>{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N</me>
+
+    <md>
+      <mrow>
+      {\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}\amp{}x^2
+      </mrow>
+<mrow>
+  +\amp{}\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3
+</mrow>
+<mrow>\amp{} + \dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N</mrow>
+    </md>
+
   </p>
   <p>
 
