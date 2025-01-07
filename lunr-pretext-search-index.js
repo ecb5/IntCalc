@@ -12691,9 +12691,9 @@ var ptx_lunr_docs = [
   "body": " Integrate the above series term by term to obtain for .   Substitute into the above to determine that so that   "
 },
 {
-  "id": "SUBSECTIONBinomial Series-3",
+  "id": "SUBSECTIONBinomialSeries-3",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-3",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-3",
   "type": "Problem",
   "number": "22.2.5.1",
   "title": "",
@@ -12709,90 +12709,90 @@ var ptx_lunr_docs = [
   "body": " Pascal's Triangle     "
 },
 {
-  "id": "SUBSECTIONBinomial Series-23",
+  "id": "SUBSECTIONBinomialSeries-23",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-23",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-23",
   "type": "Problem",
   "number": "22.2.5.3",
   "title": "",
   "body": "Based on the formula we stated above, we should have Compute these coefficients to verify that we get the same result as we did using Pascal s Triangle. If you cancel out terms before you multiply, you can do these without a calculator. "
 },
 {
-  "id": "SUBSECTIONBinomial Series-27",
+  "id": "SUBSECTIONBinomialSeries-27",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-27",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-27",
   "type": "Problem",
   "number": "22.2.5.4",
   "title": "",
   "body": "In most books, you will see the binomial theorem written as You can see that our formulation is a special case of this where and . It turns out that our formulation can be used to obtain the general formula as well, so they are logically equivalent. To see this, rewrite . Let in  to obtain the general formula   "
 },
 {
-  "id": "SUBSECTIONBinomial Series-30",
+  "id": "SUBSECTIONBinomialSeries-30",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-30",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-30",
   "type": "Problem",
   "number": "22.2.5.5",
   "title": "",
   "body": "Write out some of the terms in the above summation to verify that it agrees with what we wrote as the Binomial Theorem. Of special note is what the terms look like when and when . "
 },
 {
-  "id": "SUBSECTIONBinomial Series-33",
+  "id": "SUBSECTIONBinomialSeries-33",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-33",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-33",
   "type": "Problem",
   "number": "22.2.5.6",
   "title": "",
   "body": "Substitute into the formula  to obtain a series representation for . How does this compare to the result you got from substituting into the geometric series? "
 },
 {
-  "id": "SUBSECTIONBinomial Series-34",
+  "id": "SUBSECTIONBinomialSeries-34",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-34",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-34",
   "type": "Problem",
   "number": "22.2.5.7",
   "title": "",
   "body": "In the last section, you differentiated the geometric series to obtain a series for . Show that you get the same result by substituting into the binomial series with . "
 },
 {
-  "id": "SUBSECTIONBinomial Series-38",
+  "id": "SUBSECTIONBinomialSeries-38",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-38",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-38",
   "type": "Problem",
   "number": "22.2.5.8",
   "title": "",
   "body": "In a letter to Henry Oldenburg dated June 13, 1676, Newton described his binomial series and included the example  Rewrite and substitute into the binomial series with to obtain Newton s result. "
 },
 {
-  "id": "SUBSECTIONBinomial Series-40",
+  "id": "SUBSECTIONBinomialSeries-40",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-40",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-40",
   "type": "Problem",
   "number": "22.2.5.9",
   "title": "",
   "body": "If the series is correct, then multiplying the series by itself should result in . We can apply the box method of multiplying polynomials below to see if this how this starts to play out. Fill in the rest of this multiplication table and use it to show that if you multiply the series by itself, then you get  "
 },
 {
-  "id": "SUBSECTIONBinomial Series-44",
+  "id": "SUBSECTIONBinomialSeries-44",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-44",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-44",
   "type": "Problem",
   "number": "22.2.5.10",
   "title": "",
   "body": "Use the power series to obtain the series   "
 },
 {
-  "id": "SUBSECTIONBinomial Series-46",
+  "id": "SUBSECTIONBinomialSeries-46",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-46",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-46",
   "type": "Problem",
   "number": "22.2.5.11",
   "title": "",
   "body": " Use the fact that to show that      Substitute into the result from Part a to show that    Sum up the first five terms in the above series to find an approximation for . How does this compare to the other two approximations we obtained?  "
 },
 {
-  "id": "SUBSECTIONBinomial Series-47",
+  "id": "SUBSECTIONBinomialSeries-47",
   "level": "2",
-  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomial Series-47",
+  "url": "SECTIONPowerSeries.html#SUBSECTIONBinomialSeries-47",
   "type": "Problem",
   "number": "22.2.5.12",
   "title": "",
