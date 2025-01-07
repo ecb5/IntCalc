@@ -5,7 +5,7 @@
 
     <p>
       Back in <xref ref="SECTIONAppDefInt"></xref>, where we mentioned
-      that it is widely accepted that a person's IQ (intelligence
+      that it is widely accepted that a person<rsq/>s IQ (intelligence
       quotient) is normally distributed with a mean of <m>100</m> and
       a standard deviation of 15.  We mentioned that it is also widely
       accepted that someone with an IQ of 140 or above is in the
@@ -38,14 +38,14 @@
       account that the curve is centered at the mean of <m>100</m> and has a
       standard deviation of <m>15</m>.  It also has the property that the
       total area under the curve is equal to one so that the
-      probability that a person's IQ falls between <m>-\infty </m> and
+      probability that a person<rsq/>s IQ falls between <m>-\infty </m> and
       <m>\infty </m> is one.  This bell<ndash/>shaped curve is called the
       Gaussian distribution in honor of 
       <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/" visual="/mathshistory.st-andrews.ac.uk/Biographies/Gauss/">Karl Friedrich Gauss</url>
       (1777<ndash/>1855), who developed such a curve to determine the
       probability of errors in astronomical observations, though he
       was not the first to consider such a probability distribution.
-      Nonetheless, the probability of a random person's IQ falling
+      Nonetheless, the probability of a random person<rsq/>s IQ falling
       between 110 and 120 is given by <me>\frac{1}{15\sqrt{2\pi
       }}\int^{120}_{x=110}{e^{-\frac{1}{2}{\left(\frac{x-100}{15}\right)}^2}}\
       \dx{x}</me>
@@ -63,7 +63,7 @@
     <p>
       One way to handle this in a statistics class is to use a
       substitution to simplify the integrand a bit.  We want the
-      random variable <m>x</m> representing a person's IQ score to
+      random variable <m>x</m> representing a person<rsq/>s IQ score to
       satisfy <me>110\le x\le 120</me> Manipulating this, we have
 
       <me>110-100\le x-100\le 120-100</me>
@@ -76,7 +76,7 @@
       The random variable <m>z</m> follows a standard normal
       distribution meaning that it has a normal distribution which
       has been <q>standardized</q> to have a mean of <m>0</m> and a
-      standard deviation of <m>1</m>.  However, we still don't have any
+      standard deviation of <m>1</m>.  However, we still don<rsq/>t have any
       techniques for computing an antiderivative for
       <m>e^{-{\frac{1}{2}z}^2}</m>.  There are tables and computer
       programs which provide approximations for such <q><m>z</m>
@@ -100,6 +100,1485 @@
       track of how close our approximation is.  Both approaches have
       their advantages and disadvantages.
     </p>
-  </section>
 
+  </section>
+  <section xml:id="SECTIONPowerSeries">
+    <title>Representing the Natural Exponential Function by a Power Series</title>
+    <introduction>
+
+      <p>
+        As we said in the last section, one way to approximate integrals
+        such as
+        <m>\int^{\frac{4}{3}}_{z=\frac{2}{3}}{e^{-{\frac{1}{2}z}^2}\dx{z}}</m>
+        is to replace the integrand with a function which is easier to
+        integrate.  The easiest functions to integrate are polynomials, but
+        alas, an exponential function is not a polynomial.  This is evident
+        from our work in Section 12.4 where we showed that the exponential
+        function <m>e^x</m> outgrows any polynomial.  However, we did lay
+        some groundwork for replacing the exponential function by an
+        <q>infinite polynomial.</q>  A lot of ideas that we touched upon before
+        will be brought together here.
+      </p>
+    </introduction>
+    <subsection>
+      <title>The Natural Exponential as a Power Series</title>
+
+
+      <p>
+        Recall that in Chapter 8, we introduced the natural exponential
+        function <m>y=e^x</m> as the solution to the IVP 
+        <md>
+
+          <mrow>
+            \dfdx{y}{x}=y,\amp{}\amp{}      y\left(0\right)=1
+          </mrow>
+
+        </md>
+      </p>
+      <p>
+
+
+        We also showed in Problem 8.3.0.3 that if we differentiated
+        <me>y=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots </me>
+        term by term then it will satisfy the same IVP and produced the representation
+      </p>
+      <p>
+
+
+        <me>e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots </me>
+      </p>
+      <p>
+
+
+        The right-hand side of this equation is called a power series to
+        emphasize that it is not actually a polynomial.  It may seem strange
+        to represent a function by a power series, but to mathematicians in
+        the 18th century, this was quite natural and quite useful.  For
+        example, if we substitute <m>x=1</m> into the above expression, we
+        get <me>e=1+1+\frac{1}{2!}+\frac{1}{3!}+\dots </me>
+      </p>
+      <p>
+
+
+        Though we can<rsq/>t actually add all of the terms on the right-hand side, we can add a finite number of them to approximate the value of <m>e</m> to any degree of accuracy we wish.  The table below demonstrates this.
+      </p>
+
+      <!-- <p> -->
+      <!--   TABLE -->
+      <!--   \begin{tabular}{|p{0.2in}|p{1.0in}|} \hline -->
+      <!--   <m>n</m> & <m>1+\frac{1}{1!}+\frac{1}{2!}+\dots +\frac{1}{n!}</m> \\hline -->
+      <!--   <m>1</m> & <m>2</m> \\hline -->
+      <!--   <m>2</m> & <m>2.5</m> \\hline -->
+      <!--   <m>3</m> & <m>2.66667</m> \\hline -->
+      <!--   <m>4</m> & <m>2.70833</m> \\hline -->
+      <!--   <m>5</m> & <m>2.71667</m> \\hline -->
+      <!--   <m>6</m> & <m>2.71806</m> \\hline -->
+      <!--   <m>7</m> & <m>2.71825</m> \\hline -->
+      <!--   <m>8</m> & <m>2.71828</m> \\hline -->
+      <!--   <m>9</m> & <m>2.71828</m> \\hline -->
+      <!--   \end{tabular} -->
+      <!-- </p>  -->
+
+      <p>
+
+        As you can see from the table, adding just the first ten terms of the series will get an approximation for <m>e</m> accurate to within five decimal places.  In the days when calculations had to be completed by hand, such fast-converging representations were much more practical than the actual function representation.  The invention of calculus made power series an important theoretical tool as well.  Differentiating and integrating a power series term-by-term proved very useful for solving various differential and integral equations.  For example, consider our problem of computing
+      </p>
+      <p>
+
+
+        <me>\int^{\frac{4}{3}}_{z=\frac{2}{3}}{e^{-{\frac{1}{2}z}^2}\dx{z}}</me>
+      </p>
+      <p>
+
+
+        If we substitute <m>x=-\frac{1}{2}z^2</m> into our power series representation for <m>e^x</m>, we get
+      </p>
+      <p>
+        <md>
+
+          <mrow>
+            \int^{\frac{4}{3}}_{z=\frac{2}{3}}{e^{-{\frac{1}{2}z}^2}\dx{z}}=\amp{}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{\left(1-\frac{z^2}{1!\cdot
+            2}+\frac{z^4}{2!\cdot 2^2}-\frac{z^6}{3!\cdot
+            2^3}+\frac{z^8}{4!\cdot 2^4}-\dots \right)\dx{z}}
+          </mrow>
+          <mrow>
+            =\amp{}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{1\dx{z}}-\frac{1}{1!\cdot
+            2}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{z^2\dx{z}}+\frac{1}{2!\cdot
+            2^2}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{z^4\dx{z}}
+            </mrow>
+            <mrow>           \amp{} -\frac{1}{3!\cdot
+            2^3}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{z^6\dx{z}}+\frac{1}{4!\cdot
+            2^4}\int^{\frac{4}{3}}_{z=\frac{2}{3}}{z^8\dx{z}}-\dots 
+            </mrow>
+          <mrow>
+            =\amp{}\left(\frac{4}{3}-\frac{2}{3}\right)-\frac{1}{1!\cdot
+            2\cdot
+            3}\left({\left(\frac{4}{3}\right)}^3-{\left(\frac{2}{3}\right)}^3\right)
+          </mrow>
+          <mrow>
+            \amp{} +\frac{1}{2!\cdot
+            2^2\cdot
+            5}\left({\left(\frac{4}{3}\right)}^5-{\left(\frac{2}{3}\right)}^5\right)-\frac{1}{3!\cdot
+            2^3\cdot
+            7}\left({\left(\frac{4}{3}\right)}^7-{\left(\frac{2}{3}\right)}^7\right)
+            </mrow>
+            <mrow>
+              \amp{}          +\frac{1}{4!\cdot
+              2^4\cdot
+              9}\left({\left(\frac{4}{3}\right)}^9-{\left(\frac{2}{3}\right)}^9\right)-\dots 
+            </mrow>
+
+        </md>
+      </p>
+
+      <p>
+        By summing a finite number of these terms together we can obtain an approximation to our integral which we can make as close as we wish, provided we add enough of them.  For example, just adding these first 5 terms gives an approximation of <m>0.404769</m> whereas a computer algebra system gives that the integral is approximately <m>0.404272</m>.  It is possible that a computer algebra system could be adding more terms of this series to obtain its answer.
+      </p>
+      <p>
+
+        Notice how we didn<rsq/>t multiply things out so we could better see the pattern.  For example, if we multiplied the numbers out, could you tell that the next term would be <m>-\frac{1}{5!\cdot 2^5\cdot 11}\left({\left(\frac{4}{3}\right)}^{11}-{\left(\frac{2}{3}\right)}^{11}\right)</m>?  Remember this as you do the following problems.
+      </p>
+
+
+      <exercise>
+        <p>
+          Utilize the same technique we employed in our example above to represent
+        </p>
+        <p>
+
+
+
+          <me>\int^a_{z=0}{e^{-{\frac{1}{2}z}^2}\dx{z}}</me>
+          as a series.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Compute
+          <me>\int^a_{x=0}{e^{x^3}\dx{x}}</me>
+          as a series.
+        </p>
+      </exercise>
+
+      <p>
+        As you can see the expressions involved start to get cumbersome
+        indeed, even when we don<rsq/>t hide the patterns.  Before we go
+        further, we need to develop a summation notation for representing
+        both finite sums and infinite series which is comparable to our
+        integral notation for representing integrals of differentials.
+      </p>
+</subsection>
+
+<subsection>
+  <title>Summation Notation</title>
+
+  <p>
+    Recall that Leibniz used a stylized Latin S to represent a sum of differentials in his notation <m>\int{y \dx{x}}</m>.  In Section 20.1, we introduced the Greek letter sigma <m>\Sigma</m> to represent a sum of finite quantities.  Later when introducing definite integrals, we made this more precise with the notation <m>\int^b_{x=a}{y \dx{x}}</m> to indicate summing differentials for all real numbers between <m>x=a</m> and <m>x=b</m>.  With this in mind, we will use the following notation.
+  </p>
+  <p>
+
+
+
+    Let <m>a</m> and <m>b</m> be integers with <m>a\le b</m>. Then
+  </p>
+  <p>
+
+
+    <me>\sum^b_{n=a}{y(n)}=y\left(a\right)+y\left(a+1\right)+y\left(a+2\right)+\dots +y(b)</me>
+  </p>
+  <p>
+
+
+    Since we will eventually be applying our notation to power series, it is customary to write <m>y(n)</m> as <m>y_n</m> and to write
+  </p>
+  <p>
+
+
+    <me>\sum^b_{n=a}{y_n}=y_a+y_{a+1}+y_{a+2}+\dots +y_b</me>
+    We can also write
+    <me>\sum^{\infty }_{n=a}{y_a}=y_a+y_{a+1}+y_{a+2}+\dots </me>
+  </p>
+
+  <example>
+
+    <task>
+      <statement>
+        <p>
+          <m>\displaystyle\sum^1_{n=1}{n}=1        \sum^2_{n=1}{n}=1+2        \sum^8_{n=3}{n^2}=3^2+4^2+5^2+6^2+7^2+8^2     </m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\displaystyle\sum^{\infty }_{n=0}{{\left(\frac{1}{2}\right)}^n}={\left(\frac{1}{2}\right)}^0+{\left(\frac{1}{2}\right)}^1+{\left(\frac{1}{2}\right)}^2+\dots </m>
+        </p>
+      </statement>
+    </task>
+  </example>
+
+
+  <exercise>
+    <introduction>
+      <p>
+        Write the following using summation notation.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <ol cols="2" marker="(i)">
+            <li>
+              <p>
+                <m>\frac{1}{1}+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{1}{2}+\frac{1}{4}+\frac{1}{6}+\frac{1}{8}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{1}{1}+\frac{1}{3}+\frac{1}{5}+\frac{1}{7}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>1+5+9+13+\dots +401</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Write the following summations as actual sums.
+          <ol cols="2" marker="(i)">
+
+            <li>
+
+              <p>
+                <m>\sum^{10}_{n=5}{(3n+1)}</m> 
+              </p>
+
+            </li>
+            
+            <li>
+
+              <p>
+                <m>\sum^6_{n=0}{x^n}</m>
+              </p>
+
+            </li>
+            
+            <li>
+
+              <p>
+                <m>\sum^6_{j=0}{x^j}</m>
+              </p>
+
+            </li>
+
+            <li>
+
+              <p>
+                <m>\sum^{\infty }_{n=1}{\frac{1}{n^2}}</m>
+              </p>
+
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </task>
+
+  </exercise>
+
+  <p>
+
+    Notice in part b of the previous drill that
+    <me>\sum^6_{n=0}{x^n}=\sum^6_{j=0}{x^j}</me>
+    and that neither <m>n</m> nor <m>j</m> appear in the final answer.  This is very similar to the fact that
+    <me>\int^b_{x=a}{x}\dx{x}=\int^b_{z=a}{z \dx{z}}=\frac{b^2}{2}-\frac{a^2}{2}</me>
+    and <m>n</m> and <m>j</m> are often called dummy variables.  You can change the dummy variable to anything you wish and the result will be the same.
+  </p>
+
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Show that the following are true.
+          <me>\sum^b_{n=a}{\left(x_n+y_n\right)}=\sum^b_{n=a}{x_n}+\sum^b_{n=a}{y_n}</me>
+        </p>
+        <p>
+          <me>\sum^b_{n=a}{c\cdot y_n=c\sum^b_{n=a}{y_n}}</me>
+          where <m>c</m> is a constant.
+          What arithmetic properties do these represent?
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Is it true that
+          <m>\sum^b_{n=a}{(x_n\cdot y_n)}=\left(\sum^b_{n=a}{x_n}\right)\cdot\left(\sum^b_{n=a}{y_n}\right)?</m>
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+
+  <problem>
+    <title>Find the Pattern</title>
+
+    <p>
+      <ol cols="2" marker="(a)">
+        <li>
+          <p>
+            <m>\sum^1_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^2_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>             
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^3_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^4_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>             
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^5_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>             
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^6_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>             
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^{100}_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>           
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sum^{101}_{n=1}{{\sin \left(\frac{n\pi }{2}\right) }}</m>             
+          </p>
+        </li>
+      </ol>
+    </p>
+  </problem>
+
+
+  <exercise xml:id="PROBLEMHuygensLeibniz">
+    <title>Sum of the Reciprocals of the Triangular Numbers</title>
+
+    <introduction>
+      <p>
+        Back when we were talking about Leibniz and the Fundamental Theorem
+        of Calculus, we mentioned that Huygens gave Leibniz the problem of
+        summing the reciprocals of a all of the triangular numbers.  That is,
+        he had to sum
+        <men xml:id="EQUATIONSumRecipTri">
+          \frac{1}{1}+\frac{1}{1+2}+\frac{1}{1+2+3}+\dots 
+        </men>
+      </p>
+
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Use summation notation to express <xref
+          ref="equationSumRecipTri">formula</xref>.
+
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          The numbers <m>T_n=1+2+3+\dots +n</m> is called the
+          <m>n\text{th}</m> triangular number because they
+          represent the number of dots arranged in a triangular
+          pattern.
+        </p>
+        <figure  xml:id="FIGURETriNums">
+          <caption>
+            Image from 
+            <url
+                href="https://en.wikipedia.org/wiki/Triangular_number"
+                visual="https://en.wikipedia.org/wiki/Triangular_number">Wikipedia</url>.
+          </caption>
+          <image source="IC/TriNums.png" width="50%"></image>
+        </figure>
+
+      </statement>
+    </task>
+    <task>
+      <statement>
+
+        <p>
+          We also mentioned the formula
+          <me>T_n=\frac{n\left(n+1\right)}{2}</me>
+          There are different ways, both geometric and algebraic, to show this formula.  We will use summation notation to obtain it.
+        </p>
+        <p>
+          Show that
+          <me>\sum^n_{j=1}{j}=T_n=\sum^n_{j=1}{(n+1-j)}</me>
+          and use this to show that
+        </p>
+        <p>
+          <me>2T_n=\sum^n_{j=1}{(n+1)}</me>
+          to obtain the formula for <m>T_n</m>.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <p>
+    In the previous problem, it was easier to see that
+    <m>T_n=\sum^n_{j=1}{(n+1-j)}</m> by writing out a few terms and
+    noticing the pattern.  Summation notation is very precise and does
+    not rely on the reader noticing the correct pattern, but it can
+    also look more complicated, especially for those who are
+    unfamiliar with it.  Using it or not using it are both correct
+    (provided you demonstrate a definite pattern if you expand it
+    out).  Whether you use it or not will depend on the situation as
+    demonstrated above.  When you do the next problem, try and decide
+    if it is better to use summation notation or to expand the sum in
+    each instance.
+  </p>
+
+
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Show that
+          <me>d\left(\sum^{n_1}_{n=n_0}{y_n\left(x\right)}\right)=\sum^{n_1}_{n=n_0}{{d(y}_n\left(x\right))}</me>
+          and 
+          <me>\int{\left(\sum^{n_1}_{n=n_0}{y_n\left(x\right)}\right)\dx{x}}=\sum^{n_1}_{n=n_0}{\int{y_n\left(x\right)}\dx{x}}</me>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Compute the following
+          <ol cols="2" marker="(i)">
+            <li>
+              <m> \dx\left(\sum^N_{n=0}{x^n}\right)</m>
+            </li>
+            <li>
+              <m>\int{\left(\sum^N_{n=0}{x^n}\right)} \dx{x}</m>
+            </li>
+            <li>
+              <m>\int^{2\pi }_{x=0}\left(\sum^N_{n=1} \sin(nx)\right)\dx{x}</m>
+            </li>
+          </ol>      
+        </p>
+      </statement>
+    </task>
+
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        Earlier, we obtained
+        <me>\int^{\frac{4}{3}}_{z=\frac{2}{3}}{e^{-{\frac{1}{2}z}^2}\dx{z}}=\left(\frac{4}{3}-\frac{2}{3}\right)-\frac{1}{1!\cdot
+        2\cdot
+        3}\left({\left(\frac{4}{3}\right)}^3-{\left(\frac{2}{3}\right)}^3\right)+\frac{1}{2!\cdot
+        2^2\cdot
+        5}\left({\left(\frac{4}{3}\right)}^5-{\left(\frac{2}{3}\right)}^5\right)-\frac{1}{3!\cdot
+        2^3\cdot
+        7}\left({\left(\frac{4}{3}\right)}^7-{\left(\frac{2}{3}\right)}^7\right)+\frac{1}{4!\cdot
+        2^4\cdot
+        9}\left({\left(\frac{4}{3}\right)}^9-{\left(\frac{2}{3}\right)}^9\right)-\dots
+        </me>
+
+        by integrating the power series
+        <me>e^{-\frac{1}{2}z^2}=1-\frac{z^2}{1!\cdot
+        2}+\frac{z^4}{2!\cdot 2^2}-\frac{z^6}{3!\cdot
+        2^3}+\frac{z^8}{4!\cdot 2^4}-\dots </me> term by term.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Write this final answer in summation notation.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Redo this integral in another way.
+          <ol marker="(i)">
+            <li>
+              Write <m>e^x=1+\frac{x^1}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots </m> in summation notation.
+            </li>
+            <li>
+              Substitute <m>x=-\frac{1}{2}z^2</m> into your summation.
+            </li>
+            <li>
+              Use the result of the previous problem (assuming that it holds for infinite sums as well)
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </task>
+    <conclusion>
+      <p>
+        Did you get the same result?  Which way seems easier?
+
+      </p>
+    </conclusion>
+
+  </exercise>
+
+
+  <p>
+    In part b, of the above problem, you should have obtained something like
+    <me>e^x=1+\sum^{\infty }_{n=1}{\frac{x^n}{n!}}</me>
+    In many books you will see this written as
+    <me>e^x=\sum^{\infty }_{n=0}{\frac{x^n}{n!}}=\frac{x^0}{0!}+\frac{x^1}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots </me>
+  </p>
+  <p>
+
+
+    It is understood that <m>0!=1</m>.  Not only does this work in such a pattern as above, but it also makes sense if you think of computing such a product on a computer.  For example, to program a computer to compute say <m>20!</m>, one would initially define the product <m>P=1</m> and then successively multiply the product by <m>n=1</m>, then <m>n=2</m>, then <m>n=3</m>, etc. and stop this loop when <m>n>20.</m>  For a computer to compute <m>0!</m>, it would start with an initial product of <m>P=1</m> and end before it looped since <m>n=1>0</m>.  Go ahead and plug this into any calculator; you will get <m>0!=1</m>.
+  </p>
+
+  <p>
+    In a similar fashion, if you ever see a summation
+    <m>\sum^b_{n=a}{y_n} </m>where <m>b\lt a</m>, this will automatically
+    be <m>0</m>.  The same reasoning applies.  If one wanted to program
+    a computer to compute say <m>\sum^{100}_{n=1}{n}</m>, one would
+    start with a sum <m>S=0</m> and successively add <m>n=1, 2, 3,
+    </m>etc. and stop when <m>n\gt 100</m>.  To compute
+    <m>\sum^0_{n=1}{n}</m>, the sum would be <m>0</m> and the loop would
+    end before it started as <m>1\gt0</m>.
+  </p>
+
+  <p>
+
+    In the next section, we will express sums expanded out and in summation notation for a little while.  Eventually, we will interchange between the two depending on our needs.  We expect at that point that you can comfortably go from one notation to the other.
+  </p>
+
+</subsection>
+
+<subsection xml:id="SUBSECTIONGeoSeries">
+  <title>Geometric Series</title>
+  <p>
+    Likely the first repeating decimal you encountered was
+    <m>\frac{1}{3}=0.3333\dots </m> and you probably accepted this
+    without question.  But what if we multiply both sides by
+    <m>3</m> to obtain
+    <me>3\left(\frac{1}{3}\right)=3\left(0.3333\dots \right)</me>
+    <me>1=0.9999\dots </me> Are you as accepting of this result?
+    Perhaps we need to be a little more careful.  How about this?
+  </p>
+  <p>
+
+    Let
+    <me>s=0.3333\dots </me>
+    then
+    <me>10s=3.3333\dots </me>
+    so
+    <me>10s-s=3.3333\dots -0.3333\dots </me>
+    <me>9s=3</me>
+    <me>0.3333\dots =s=\frac{3}{9}=\frac{1}{3}</me>
+    This agrees with what you were taught in school.
+  </p>
+  <p>
+
+    Let<rsq/>s do this again with <m>s=0.9999\dots </m>
+    <me>10s=9.9999\dots </me>
+    <me>10s-s=9.9999\dots -0.9999\dots </me>
+    <me>9s=9</me>
+    <me>0.9999\dots =s=\frac{9}{9}=1</me>
+    Still skeptical?  A big question might be how we started by flippantly saying, <q>Let <m>s=0.9999\dots </m> .</q> We should be a bit more careful about this. If we carefully look at our decimal representation <m>0.9999\dots </m> , we really have
+    <me>0.9999\dots =\frac{9}{10}+\frac{9}{{10}^2}+\frac{9}{{10}^3}+\dots =\frac{9}{10}\left(1+\frac{1}{10}+{\left(\frac{1}{10}\right)}^2+{\left(\frac{1}{10}\right)}^3+\dots \right)=\frac{9}{10}\left(\sum^{\infty }_{n=0}{{\left(\frac{1}{10}\right)}^n}\right)</me>
+  </p>
+  <p>
+
+
+    It may sound a bit strange, but things will be easier to deal with if we denote <m>\frac{1}{10}</m> by <m>x</m> and look at the power series
+    <me>1+x+x^2+x^3+\dots =\sum^{\infty }_{n=0}{x^n}</me>
+  </p>
+  <p>
+
+
+    Since an infinite sum is difficult to grasp, let<rsq/>s first consider the finite sum
+  </p>
+  <p>
+
+
+    <me>1+x+x^2+\dots +x^N=\sum^N_{n=0}{x^n}</me>
+  </p>
+
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Show that
+          <me>\left(1-x\right)\left(1+x+x^2+\dots +x^N\right)=1-x^{N+1}</me>
+        </p>
+        <p>
+          Assuming <m>x\neq -1</m>, we have
+          <me>\sum^N_{n=0}{x^n}=\frac{1-x^{N+1}}{1-x}</me>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Using the result from Part a, compute
+          <me>\sum^{\infty }_{n=0}{x^n}=
+          \limit{N}{\infty}
+          {\left(\sum^N_{n=0}{x^n}\right) }
+          </me>
+        </p>
+      </statement>
+    </task>
+
+  </exercise>
+
+  <p>
+
+
+    For what values of <m>x</m> does this limit exist?
+  </p>
+  <p>
+
+
+
+
+
+    You should have noticed in Part b of the previous problem that this
+    limit only exists for <m>\abs{x} \lt 1</m> and in this case, we have the power series representation
+  </p>
+  <p>
+
+
+    <me>\frac{1}{1-x}=1+x+x^2+x^3+\dots =\sum^{\infty }_{n=0}{x^n}</me>
+  </p>
+  <p>
+
+
+    This is known as the <alert>geometric series</alert> and was
+    actually studied long before power series were studied in general.
+    The fact that this representation only works for
+    <m>\left|x\right|\lt 1</m> is evident if you try to substitute a
+    number such as <m>x=2</m> into it.  In this case, you would obtain
+  </p>
+  <p>
+
+
+    <me>1+2+2^2+2^3+\dots =\frac{1}{1-2}=-1</me>
+    which doesn<rsq/>t make much sense.  This is different than our representation
+    <me>e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots </me>
+    which actually has no restriction on the value of <m>x</m>.
+  </p>
+  <p>
+
+    Clearly, there are subtleties with power series that we will need to examine in more detail later.  For now, let<rsq/>s apply this to our decimal representation above.
+  </p>
+
+
+
+  <exercise>
+    <introduction>
+      <p>
+
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Substitute <m>x=\frac{1}{10}</m> into the binomial series to compute <m>1+\frac{1}{10}+{\left(\frac{1}{10}\right)}^2+{\left(\frac{1}{10}\right)}^3+\dots =\sum^{\infty }_{n=0}{{\left(\frac{1}{10}\right)}^n}</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Use your result from Part a to determine <m>0.9999\dots </m>
+        </p>
+      </statement>
+    </task>
+
+  </exercise>
+
+  <p>
+
+
+
+
+
+
+
+
+    Computers work in binary which are base 2 representations of
+    numbers.  In binary, the only <q>digits</q> are <m>0</m> and
+    <m>1</m>, so a binary number such as
+    <m>{\left(101101\right)}_2</m> is really
+    <me>{\left(101101\right)}_2=1\times 2^5+0\times 2^4+1\times
+    2^3+1\times 2^2+0\times 2^1+1\times 2^0=32+8+4+1=45</me> in base
+    10.  This also works for numbers less than <m>1</m>.  For example,
+    <me>{\left(0.1011\right)}_2=\frac{1}{2}+\frac{0}{2^2}+\frac{1}{2^3}+\frac{1}{2^4}</me>
+    in base 10.
+  </p>
+
+    <exercise>
+      <p>
+        Use the geometric series with <m>x=\frac{1}{2}</m> to show that
+        <me>{\left(0.111\dots \right)}_2=1</me>
+      </p>
+    </exercise>
+</subsection>
+
+<subsection>
+  <title>Manipulating the Geometric Series</title>
+
+
+
+  <p>
+    It turns out that manipulating the geometric series provides power
+    series representations for a surprising number of functions, as long
+    as we understand that this only works for <m>-1\lt x\lt 1</m>.  For
+    example, if we substitute <m>-x</m> in for <m>x</m> we get
+  </p>
+  <p>
+
+
+    <me>\frac{1}{1+x}=\frac{1}{1-\left(-x\right)}=\sum^{\infty }_{n=0}{{\left(-x\right)}^n}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}=1-x+x^2-x^3+\dots </me>
+    Again, this is valid for <m>-1\lt x\lt 1</m>.
+  </p>
+
+
+  <exercise>
+    <statement>
+      <p>
+        For <m>a\neq 0</m>, substitute <m>ax</m> into the geometric series to obtain a power series represent for <m>\frac{1}{1+ax}</m>.  For what values of <m>x</m> is this valid?  What happens if <m>a=0</m>.  Do we still get a valid power series representation?  Explain.
+      </p>
+    </statement>
+  </exercise>
+
+  <p>
+
+    Consider the following manipulation
+    <me>\frac{1}{2-x}=\frac{1}{2}\left(\frac{1}{1-\frac{x}{2}}\right)=\frac{1}{2}\sum^{\infty }_{n=0}{{\left(\frac{x}{2}\right)}^n}=\sum^{\infty }_{n=0}{{\left(\frac{1}{2}\right)}^{n+1}x^n}</me>
+  </p>
+
+  <exercise>
+    <statement>
+      <p>
+        Mimicking the previous example, find a power series expansion for <m>\frac{1}{a-x}</m> where <m>a\neq 0</m>.  For what values of <m>x</m> is this valid?
+      </p>
+    </statement>
+  </exercise>
+
+  <p>
+    Suppose we differentiate the geometric series term-by-term.
+  </p>
+  <p>
+
+
+    <me>\dx{}\left({\left(1-x\right)}^{-1}\right)=d\left(\sum^{\infty
+    }_{n=0}{x^n}\right)=\sum^{\infty }_{n=0}{\dx{}\left(x^n\right)}</me>
+  </p>
+  <p>
+
+    <me>{\left(1-x\right)}^{-2}=\sum^{\infty }_{n=0}{nx^{n-1}\dx{x}}=\left(0+1+2x+3x^2+4x^3+\dots \right)\dx{x}</me>
+  </p>
+  <p>
+
+
+    Could you imagine trying to multiply the geometric series by itself to obtain this result?
+  </p>
+
+
+
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Differentiate the series for <m>{\left(1-x\right)}^{-2}</m> to obtain a power series representation for <m>{\left(1-x\right)}^{-3}</m>.  It is best you don<rsq/>t <q>simplify</q> things which would hide the pattern.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find the power series expansion for <m>{\left(1-x\right)}^{-4}</m>. 
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find the power series expansion for <m>{\left(1-x\right)}^{-k}</m> where <m>k</m> is any positive integer. 
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+
+
+  <p>
+    Integrating the geometric series (or one of its variants) opens up
+    a whole new level of power series representations and
+    applications.  For example, what if we integrate
+    <me>\frac{1}{1+x}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}</me>
+
+    <me>\int{\frac{1}{1+x}\dx{x}}=\int{\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}}\dx{x}=\sum^{\infty }_{n=0}{{\left(-1\right)}^n\int{x^n\dx{x}}}</me>
+
+    <me>
+      \ln\left(1+x\right) =C+\sum^{\infty}_{n=0}
+      {\frac{\left(-1\right)^n}{n+1}x^{n+1}}=C+\frac{x^1}{1}-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots
+    </me>
+    Setting <m>x=0</m>, we get <m>0=\ln\left(1\right)=C+0+0+0+\dots  </m>, so <m>C=0</m>.  This gives us the power series representation
+  </p>
+
+  <p>
+    <me>\ln\left(1+x\right)= \sum^{\infty}_{n=0}
+    \frac{\left(-1\right)^n}{n+1}x^{n+1}
+    =\frac{x^1}{1}-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots
+    </me>
+    which is valid for <m>-1\lt x \lt 1.</m>  Actually, it is also valid for <m>x=1</m>, as we can gather from the following calculations.
+    <me>\ln\left(2\right) \approx .69314718056</me>
+    <me>\sum^{100}_{n=0}{\frac{\left(-1\right)^n}{n+1}}\approx .698073169</me>
+  </p>
+  <p>
+
+
+    Be honest, would you ever have guessed that
+    <me>1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\dots </me>
+    added up to <m>\ln(2)</m>?
+  </p>
+  <p>
+
+    Perhaps even more interesting is the fact that
+    <m>\frac{1}{1+x}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}
+    </m>is not valid for <m>x=1</m>, but its integral <m>{ln
+    \left(1+x\right) }=\sum^{\infty
+    }_{n=0}{\frac{{\left(-1\right)}^n}{n+1}x^{n+1}}</m> is.  If
+    nothing else, this says that power series is more nuanced than we
+    are acknowledging at this point.  We will come back to these
+    issues in the theory part, but for now, let<rsq/>s be cavalier and
+    see what interesting results we can get.
+  </p>
+
+
+
+
+
+  <exercise>
+    <introduction>
+      <p>
+        Starting with the geometric series
+        <m>\frac{1}{1-x}=1+x+x^2+x^3+\dots =\sum^{\infty
+        }_{n=0}{x^n} </m> or any of its consequences that we<rsq/>ve
+        just found, find power series representations for the
+        following functions.  Don<rsq/>t forget that when you
+        integrate, you need to determine the value of the arbitrary
+        constant <m>C</m>.  Also, there may be more than one way to
+        obtain a series representation.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>f\left(x\right)=\frac{1}{3+5x}</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f\left(x\right)=\frac{1}{1-x^3}</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f\left(x\right)=\ln(3+x) </m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f\left(x\right)=x^2{\ln}\left(1+x\right)</m>
+        </p>
+      </statement>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>f\left(x\right)=x^2{\ln}\left(1+x\right)</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f\left(x\right)={\ln}(1-x^2)</m>
+        </p>
+      </statement>
+    </task>
+
+  </exercise>
+
+
+
+
+
+
+  <exercise>
+    <introduction>
+      <p>
+        Compute each integral as a series.  Add the first 5 terms
+        of each power series to determine an approximation for the
+        integral.  Compute the integral on a computer algebra
+        system to see how close the approximation is.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>\displaystyle\int^{\frac{1}{2}}_{x=0}{\frac{1}{1-x^4} \dx{x}}</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\displaystyle\int^1_{x=0}{\frac{1}{2-x^3} \dx{x} }</m>
+        </p>
+      </statement>
+    </task>
+
+  </exercise>
+
+  <p>
+
+    A logarithm is not the only function whose power series we can get from manipulating the geometric series.  For example, substituting <m>x^2</m> into the series
+  </p>
+  <p>
+
+
+    <me>\frac{1}{1+x}=1-x+x^2-x^3+\dots =\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^n}</me>
+  </p>
+  <p>
+
+
+    we get
+    <me>\frac{1}{1+x^2}=\sum^{\infty }_{n=0}{{\left(-1\right)}^nx^{2n}}</me>
+    which is valid for <m>-1\lt x\lt 1</m>.
+  </p>
+
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Integrate the above series term by term to obtain 
+          <me>\inverse{\tan (x)} =C+\sum^{\infty }_{n=0}{{\left(-1\right)}^n\frac{x^{2n+1}}{2n+1}}</me>
+          for <m>-1\lt x\lt 1</m>.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Substitute <m>x=0</m> into the above to determine that
+          <m>C=0</m> so that       <me>{\inverse{\tan} (x) }=\sum^{\infty }_{n=0}{{\left(-1\right)}^n\frac{x^{2n+1}}{2n+1}}</me>
+        </p>
+      </statement>
+    </task>
+  </exercise>
+</subsection>
+
+<subsection xml:id="SUBSECTIONBinomial Series">
+  <title>The Binomial Series</title>
+  <p>
+
+    The series we obtained for the inverse tangent function in the previous problem is actually also valid for <m>x=1</m>.
+  </p>
+
+  <exercise>
+
+    <p>
+      Use this to obtain
+
+
+      <me>\pi =4\left(\sum^{\infty }_{n=0}{\frac{{\left(-1\right)}^n}{2n+1}}\right)=\frac{4}{1}-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\dots </me>
+    </p>
+  </exercise>
+  <p>
+
+
+    Now be honest, would you have ever thought that the right-hand side would converge to <m>\pi </m>?
+  </p>
+  <p>
+
+
+
+
+
+    The above series for the arctangent was known to James Gregory (1638-1675) before the invention of calculus.  Leibniz independently discovered the series by examining the area of a circle and communicated his ideas for determining areas via series to Newton through an intermediary, John Collins, who also was in contact with Gregory and communicated his ideas to Newton.
+  </p>
+  <p>
+
+    It is true that the value of <m>\pi </m> can be approximated to any degree of accuracy by summing a finite number of terms of the series
+    <me>4\left(\sum^{\infty }_{n=0}{\frac{{\left(-1\right)}^n}{2n+1}}\right)=\frac{4}{1}-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\dots </me>
+    but, unfortunately, this converges very slowly and it takes adding an enormous amount of terms to get any accuracy.  For example, we have the approximation
+  </p>
+  <p>
+
+
+    <me>4\left(\sum^{1000}_{n=0}{\frac{{\left(-1\right)}^n}{2n+1}}\right)=\frac{4}{1}-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\dots +\frac{1}{2001}\approx 3.142591654</me>
+  </p>
+  <p>
+
+
+    which is only accurate to two decimal places.  While Newton praised the elegance of Leibniz in his methods, he set about to find a series approximation for <m>\pi </m> which would converge faster.  We will use modern terminology to streamline Newton<rsq/>s ideas.  First notice that
+    <me>\frac{\pi }{4}=\int^1_{x=0}{\sqrt{1-x^2}} \dx{x}</me>
+    as this integral gives the area of one quarter of the unit circle.  The trick now is to find a power series which represents <m>\sqrt{1-x^2}</m>.  We will start with something you may or may not have seen in precalculus: the Binomial Theorem.
+  </p>
+  <p>
+
+    It is pretty straightforward to expand <m>{\left(1+x\right)}^2=1+2x+x^2</m> but let<rsq/>s do it carefully to recognize the pattern.
+    <me>{\left(1+x\right)}^2=\left(1+x\right)\left(1+x\right)=1\left(1+x\right)+x\left(1+x\right)=\left(1+x\right)+\left(x+x^2\right)</me>
+    <me>=1+\left(x+x\right)+x^2=1+2x+x^2</me>
+  </p>
+  <p>
+
+
+    Proceeding in a similar manner, we get
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^3=\left(1+x\right){\left(1+x\right)}^2=\left(1+x\right)\left(1+2x+x^2\right)</me>
+    <me>=1\left(1+2x+x^2\right)+x\left(1+2x+x^2\right)=\left(1+2x+x^2\right)+\left(x+2x^2+x^3\right)</me>
+    <me>=1+\left(2+1\right)x+\left(1+2\right)x^2+x^3=1+3x+3x^2+x^3</me>
+  </p>
+  <p>
+
+    <me>{\left(1+x\right)}^4=\left(1+x\right)\left(1+3x+3x^2+x^3\right)=1\left(1+3x+3x^2+x^3\right)+x\left(1+3x+3x^2+x^3\right)</me>
+    <me>=\left(1+3x+3x^2+x^3\right)+\left(x+3x^2+3x^3+x^4\right)=1+\left(3+1\right)x+\left(3+3\right)x^2+\left(1+3\right)x^3+x^4</me>
+    <me>=1+4x+6x^2+4x^3+{1x}^4</me>
+  </p>
+  <p>
+
+
+    At this point could you recognize that
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^5=1+\left(4+1\right)x+\left(6+4\right)x^2+\left(4+6\right)x^3+\left(1+4\right)x^4+x^5</me>
+  </p>
+  <p>
+
+    <me>=1+5x+10x^2+10x^3+5x^4+{1x}^5</me>
+  </p>
+  <p>
+
+    <me>{\left(1+x\right)}^6=1+\left(5+1\right)x+\left(10+5\right)x^2+\left(10+10\right)x^3+\left(5+10\right)x^4+\left(1+5\right)x^5+x^6</me>
+    <me>=1+6x+15x^2+20x^3+15x^4+6x^5+x^6</me>
+  </p>
+  <p>
+
+
+    Keeping track of the exponents is straightforward enough.  To keep track of the coefficients, mathematicians devised the following
+  </p>
+
+
+
+  <figure  xml:id="FIGUREPascalsTriangle">
+    <caption>Pascal's Triangle</caption>
+    <image source="IC/PascalTri.png" width="70%">
+      <shortdescription></shortdescription>
+    </image>
+  </figure>
+
+  <p>
+
+    This is known as Pascal<rsq/>s Triangle in honor of Blaise Pascal (1623-1662) though it was known to Persian, Hindu, and Chinese mathematicians some 500-600 years before Pascal.  Pascal called this triangle an Arithmetical Triangle and utilized it to solve problems dealing with probability.  The name fits: notice that each entry is obtained by adding the two entries directly above it as we did in our expansions.  As such, this provides the coefficients in our expansion.  For example,
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^7=1+7x+21x^2+35x^3+35x^4+21x^5+7x^6+x^7</me>
+  </p>
+  <p>
+
+
+    If one had patience, they could use the triangle to determine the expansion of <m>{\left(1+x\right)}^{20}</m>.  Fortunately, there is a quicker way to do this.
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^{20}=1+\frac{20}{1}x+\frac{20\cdot 19}{2\cdot 1}x^2+\frac{20\cdot 19\cdot 18}{3\cdot 2\cdot 1}x^3+\frac{20\cdot 19\cdot 18\cdot 17}{4\cdot 3\cdot 2\cdot 1}x^4+\dots +\frac{20\cdot 19\cdot 18\cdot \dots \cdot 1}{20\cdot \dots \cdot 3\cdot 2\cdot 1}x^{20}</me>
+  </p>
+
+
+
+  <exercise>
+    <p>
+      Based on the formula we stated above, we should have
+      <me>
+        {\left(1+x\right)}^7=1+\frac{7}{1}x+\frac{7\cdot 6}{2\cdot
+        1}x^2+\frac{7\cdot 6\cdot 5}{3\cdot 2\cdot 1}x^3+\frac{7\cdot
+        6\cdot 5\cdot 4}{4\cdot 3\cdot 2\cdot 1}x^4+\frac{7\cdot
+        6\cdot 5\cdot 4\cdot 3}{5\cdot 4\cdot 3\cdot 2\cdot
+        1}x^5+\frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2}{6\cdot
+        5\cdot 4\cdot 3\cdot 2\cdot 1}x^6+\frac{7\cdot 6\cdot 5\cdot
+        4\cdot 3\cdot 2\cdot 1}{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot
+        2\cdot 1}x^7
+      </me>
+      Compute these coefficients to verify that we get the same
+      result as we did using Pascal<rsq/>s Triangle.  If you cancel
+      out terms before you multiply, you can do these without a
+      calculator.
+    </p>
+
+  </exercise>
+
+  <p>
+
+
+
+
+
+    The general form of this expansion is
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N</me>
+  </p>
+  <p>
+
+
+    and this result is known as the Binomial Theorem which holds for any nonnegative integer <m>N</m>.
+  </p>
+
+
+
+  <exercise>
+    <p>
+
+      In most books, you will see the binomial theorem written as
+      
+      
+
+      <me>{\left(a+b\right)}^N=a^Nb^0+\frac{N}{1!}a^{N-1}b^1+\frac{N\left(N-1\right)}{2!}a^{N-2}b^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}{a^{N-3}b}^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}{a^0b}^N</me>
+      You can see that our formulation is a special case of this where <m>a=1</m> and <m>b=x</m>.  It turns out that our formulation can be used to obtain the general formula as well, so they are logically equivalent.  To see this, rewrite <m>{\left(a+b\right)}^N=a^N{\left(1+\frac{b}{a}\right)}^N</m>.  Let <m>x=\frac{b}{a}</m> in
+    </p>
+    <p>
+
+
+      <me>{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N</me>
+      to obtain the general formula
+    </p>
+    <p>
+
+
+      <me>{\left(a+b\right)}^N=a^Nb^0+\frac{N}{1!}a^{N-1}b^1+\frac{N\left(N-1\right)}{2!}a^{N-2}b^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}{a^{N-3}b}^3+\dots
+      +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot
+      \dots \cdot 2\cdot 1}{N!}{a^0b}^N</me>
+
+    </p>
+  </exercise>
+  <p>
+
+
+
+
+    In summation notation, our version of the binomial theorem looks like this.
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^N=1+\sum^N_{n=1}{\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\dots \left(N-\left(n-1\right)\right)}{n!}x^n}</me>
+  </p>
+
+
+
+  <exercise>
+    <p>
+
+
+      Write out some of the terms in the above summation to verify that it agrees with what we wrote as the Binomial Theorem.  Of special note is what the terms look like when <m>n=1</m> and when <m>n=N</m>.
+    </p>
+  </exercise>
+
+  <p>
+
+    Our formulation of the Binomial Theorem is a finite sum, but if we followed the pattern, we could have written this as a power series.
+    <me>{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N+\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1\cdot 0}{\left(N+1\right)!}x^{N+1}+\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1\cdot 0\cdot \left(-1\right)}{\left(N+2\right)!}x^{N+2}+\dots </me>
+    <me>=1+\sum^{\infty }_{n=1}{\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\dots \left(N-\left(n-1\right)\right)}{n!}x^n}</me>
+  </p>
+  <p>
+
+
+    Notice that after the <m>x^N</m> term, all of the coefficients would be zero.  The reason we did this is to be as audacious as Newton and try this for values of <m>N</m> that are not nonnegative integers.  For example, suppose we try this for <m>N=-1</m>.
+  </p>
+
+  <exercise>
+    <p>
+      Substitute <m>N=-1</m> into the formula
+      <me>{\left(1+x\right)}^N=1+\sum^{\infty }_{n=1}{\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\dots \left(N-\left(n-1\right)\right)}{n!}x^n}</me>
+      <me>=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots </me>
+
+
+
+      to obtain a series representation for <m>{\left(1+x\right)}^{-1}</m>.  How does this compare to the result you got from substituting <m>-x</m> into the geometric series?
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+
+
+
+
+
+
+
+      In the last section, you differentiated the geometric series to obtain a series for <m>{\left(1-x\right)}^{-k}</m>.  Show that you get the same result by substituting <m>-x</m> into the binomial series with <m>N=-k</m>.
+    </p>
+  </exercise>
+
+  <p>
+
+    Notice that unlike the case where <m>N</m> was a nonnegative
+    integer, these series do not end.  Also notice that this says that
+    there is a limitation to this binomial series as this only works for
+    <m>-1\lt x\lt 1</m>.
+  </p>
+  <p>
+
+    Newton was so audacious that he proposed that this binomial series representation works for non-integer values of <m>N</m> as well.  For example, if <m>N</m> is the rational number <m>p/q</m> where <m>p,q</m> are integers with <m>q\neq 0</m>, then
+    <me>{\left(1+x\right)}^{\frac{p}{q}}=1+\sum^{\infty }_{n=1}{\frac{\frac{p}{q}\left(\frac{p}{q}-1\right)\left(\frac{p}{q}-2\right)\left(\frac{p}{q}-3\right)\dots \left(\frac{p}{q}-\left(n-1\right)\right)}{n!}x^n}</me>
+    <me>=1+\frac{\frac{p}{q}}{1!}x+\frac{\frac{p}{q}\left(\frac{p}{q}-1\right)}{2!}x^2+\frac{\frac{p}{q}\left(\frac{p}{q}-1\right)\left(\frac{p}{q}-2\right)}{3!}x^3+\dots </me>
+  </p>
+  <p>
+
+
+    Again, notice that unless <m>\frac{p}{q}</m> is a nonnegative integer, the coefficients in this sum will never be zero and it truly will be an infinite series.
+  </p>
+
+  <exercise>
+    <p>
+      In a letter to Henry Oldenburg dated June 13, 1676, Newton described his binomial series and included the example
+      <me>\sqrt{c^2+x^2}=c+\frac{x^2}{2c}-\frac{x^4}{8c^3}+\frac{x^6}{16c^5}-\frac{5x^8}{128c^7}+\frac{7x^{10}}{256c^9}+\dots </me>
+    </p>
+    <p>
+
+      Rewrite <m>\sqrt{c^2+x^2}=c{\left(1+{\left(\frac{x}{c}\right)}^2\right)}^{\frac{1}{2}}</m> and substitute <m>\frac{x}{c}</m> into the binomial series with <m>N=\frac{1}{2}</m> to obtain Newton<rsq/>s result.
+    </p>
+  </exercise>
+  <p>
+
+    It should be noted that Newton did not prove that his general binomial series was correct but convinced himself that the pattern worked for rational powers beyond nonnegative integers.  We did not prove that this is correct either, though we have some evidence that it is as we saw with negative integer powers.
+  </p>
+
+  <exercise>
+    <p>
+      If the series
+
+      <me>{\left(1+x\right)}^2=1+\frac{1}{2}x+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)}{2!}x^2+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}x^3+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}x^4+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)\left(\frac{1}{2}-4\right)}{5!}x^5+\dots =1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots </me>
+
+
+      is correct, then multiplying the series by itself should result in <m>1-x</m>.  We can apply the <q>box method</q> of multiplying polynomials below to see if this how this starts to play out.
+    </p>
+    <!-- TABLE -->
+    <!-- <p> -->
+    <!--   \begin{tabular}{|p{0.9in}|p{0.4in}|p{0.5in}|p{0.7in}|p{0.6in}|p{0.9in}|p{0.3in}|} \hline -->
+    <!--   <m>\times </m> & <m>1</m> & <m>\frac{1}{2}x</m> & <m>-\frac{1}{8}x^2</m> & <m>\frac{1}{16}x^3</m> & <m>-\frac{5}{128}x^4</m> & <m>\dots </m> \ \hline -->
+    <!--   <m>1</m> & <m>1</m> & <m>\frac{1}{2}x</m> &  &  &  &  \ \hline -->
+    <!--   <m>\frac{1}{2}x</m> & <m>\frac{1}{2}x</m> & <m>\frac{1}{4}x^2</m> &  &  &  &  \ \hline -->
+    <!--   <m>-\frac{1}{8}x^2</m> &  &  &  &  &  &  \ \hline -->
+    <!--   <m>\frac{1}{16}x^3</m> &  &  &  &  &  &  \ \hline -->
+    <!--   <m>-\frac{5}{128}x^4</m> &  &  &  &  &  &  \ \hline -->
+    <!--   <m>\vdots </m> &  &  &  &  &  &  \ \hline -->
+    <!--   \end{tabular} -->
+    <!-- </p> -->
+
+
+    <p>
+      Fill in the rest of this multiplication table and use it to show that if you multiply the series
+      <me>1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots </me>
+      by itself, then you get
+      <me>1+x+0x^2+0x^3+0x^4+\dots </me>
+    </p>
+
+  </exercise>
+  <p>
+    Of course, this is still not proof that the series is correct
+    (unless we compute all of the coefficients), but we are getting a
+    good amount of evidence that Newton<rsq/>s binomial series is correct.
+    We also know from our work with the geometric series that it seems
+    to converge for <m>-1\lt x\lt 1</m>.  In fact, the series
+    <me>{\left(1+x\right)}^{\frac{1}{2}}=1+\frac{1}{2}x+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)}{2!}x^2+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}x^3+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}x^4+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)\left(\frac{1}{2}-4\right)}{5!}x^5+\dots =1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots </me>
+  </p>
+
+
+  <p>
+    Also converges for <m>x=\pm 1</m>, but this is beyond this course.  [For a proof of this, you can refer to the open-source textbook 
+    <pubtitle>
+      How We Got From There to Here: A Story of Real Analysis,
+    </pubtitle>
+    by <em>Boman and Rogers</em>.
+  </p>
+
+
+  <p>
+    Recall that Newton intended to provide a series representation for <m>\frac{\pi }{4}=\int^1_{x=0}{\sqrt{1-x^2}} \dx{x}</m> to find a series which converges to <m>\pi </m> faster than Gregory<rsq/>s series.
+  </p>
+
+  <exercise>
+    <p>
+      Use the power series
+      <me>{\left(1+x\right)}^{\frac{1}{2}}=1+\frac{1}{2}x+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)}{2!}x^2+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}x^3+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}x^4+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)\left(\frac{1}{2}-4\right)}{5!}x^5+\dots =1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots </me>
+      to obtain the series
+      <me>\frac{\pi }{4}=\int^1_{x=0}{\sqrt{1-x^2}} \dx{x}=1+\sum^{\infty }_{n=1}{\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\dots \left(\frac{1}{2}-\left(n-1\right)\right)}{n!}}\left(\frac{{\left(-1\right)}^n}{2n+1}\right)</me>
+      <me>=1-\frac{1}{6}-\frac{1}{40}-\frac{1}{112}-\frac{5}{1152}-\dots </me>
+    </p>
+  </exercise>
+  <p>
+
+    Adding the first 50 terms of this gives us the approximation
+    <me>\pi \approx 1+\sum^{49}_{n=1}{\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\dots \left(\frac{1}{2}-\left(n-1\right)\right)}{n!}}\left(\frac{{\left(-1\right)}^n}{2n+1}\right)\approx 3.14267</me>
+    which provides the same sort of accuracy that Gregory<rsq/>s series took 1000 terms to get.  Utilizing the binomial series, Newton was able to obtain series that converge even faster.  We can also use this series to obtain some more power series representations and faster converging approximations for <m>\pi </m>.
+  </p>
+
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Use the fact that
+          <me>\int{\frac{\dx{x}}{\sqrt{1-x^2}}}=\inverse{\sin} \left(x\right) +C</me>
+          to show that
+          <me>{\inverse{\sin} \left(x\right) }=x+\sum^{\infty }_{n=1}{\frac{\frac{1}{2}\left(\frac{1}{2}+1\right)\left(\frac{1}{2}+2\right)\dots \left(\frac{1}{2}+\left(n-1\right)\right)}{n!}\frac{{ x}^{2n+1}}{2n+1}}</me>
+
+          <me>=x+\sum^{\infty }_{n=1}{\frac{1\cdot 3\cdot 5\cdot \dots \cdot \left(2n-1\right)}{2\cdot 4\cdot 6\cdot \dots \cdot 2n}}\frac{x^{2n+1}}{2n+1}</me>
+          <me>=x+\frac{1}{2} \frac{x^3}{3}+\frac{1\cdot 3}{2\cdot 4} \frac{x^5}{5}+\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6} \frac{x^7}{7}+\frac{1\cdot 3\cdot 5\cdot 7}{2\cdot 4\cdot 6\cdot 8} \frac{x^9}{9}+\dots </me>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Substitute <m>x=\frac{1}{2}</m> into the result from Part a to show that
+          <me>\pi =6\left(\frac{1}{2}+\frac{1}{2} \frac{{\left(\frac{1}{2}\right)}^3}{3}+\frac{1\cdot 3}{2\cdot 4} \frac{{\left(\frac{1}{2}\right)}^5}{5}+\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6} \frac{{\left(\frac{1}{2}\right)}^7}{7}+\frac{1\cdot 3\cdot 5\cdot 7}{2\cdot 4\cdot 6\cdot 8} \frac{{\left(\frac{1}{2}\right)}^9}{9}+\dots \right)</me>      
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Sum up the first five terms in the above series to find an approximation for <m>\pi </m>.  How does this compare to the other two approximations we obtained?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        Evaluate the following integrals as series.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>\displaystyle\int^1_{x=0}{\sqrt[3]{\left(1-x^3\right)}} \dx{x}</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\displaystyle\int^1_{x=0}{{\left(1-x^2\right)}^{\frac{3}{2}}}\dx{x}</m>
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <p>
+
+    We do want to warn you that we have been very flippant in our use of power series so far.  Everything we have done is correct, but it is much more nuanced than we may have led you to believe.  For example, consider the general binomial series
+  </p>
+  <p>
+
+
+    <me>{\left(1+x\right)}^{\alpha }=1+\sum^{\infty }_{n=1}{(\alpha \left(\alpha -1\right)\left(\alpha -2\right)\dots \frac{\alpha -\left(n-1\right)}{n!}} x^n</me>
+  </p>
+  <p>
+
+
+    The values of <m>x</m> for which this is valid depend on the value
+    of <m>\alpha </m>.  For example, if <m>\alpha </m> is a nonnegative
+    integer then this works for <m>x</m> as the sum is finite, and it is
+    really the binomial theorem.  For other <m>\alpha </m>, we have that
+    this holds for <m>x\in [-1,1]</m> when <m>\alpha >0</m>, for <m>x\in
+    (-1,1]</m> when <m>-1 \lt \alpha \lt 0</m>, and for <m>x\in
+    (-1,1)</m> when <m>\alpha \le -1</m>.  We will be getting into some
+    of these nuances later in the theory part, but for now let<rsq/>s
+    just start with the following question: Which functions can be
+    represented by a power series at all?
+  </p>
+</subsection>
+
+
+<subsection xml:id="SUBSECTIONPowSerOtherPoints">
+  <title>Power Series Expanded About Other Points</title>
+
+  <p>
+  </p>
+</subsection>
+
+<subsection xml:id="SUBSECTIONTaylorSeries">
+  <title>Taylor Series</title>
+
+  <aside>
+    <title>Note to Self</title>
+
+    <p>
+
+      Obtain power series for <m>\frac{1}{1-x^2}</m> in two ways (Uniqueness of power series).  Find power series for sine and cosine and give derivation of Euler<rsq/>s Formula.
+    </p>
+    <p>
+
+
+
+      I<rsq/>m thinking that convergence issues and numerical series should go in the theory section
+    </p>
+
+
+  </aside>
+
+</subsection>
+</section>
 </chapter>
+
+
