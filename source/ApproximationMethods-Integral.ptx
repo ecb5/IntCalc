@@ -1864,7 +1864,7 @@ which is valid for <m>-1\lt x-1\lt 1</m> or <m>0\lt x \lt 2</m>.  This is called
     Leibniz<rsq/> differential notation becomes cumbersome when doing
     this.  As such we will state Taylor<rsq/>s result using the prime
     notation 
-    <m>\left(y^{\prime}\left(x\right)=\frac{dy}{dx}\right)</m>
+    <m>\left(y^{\prime}\left(x\right)=\dfdx{y}{x}\right)</m>
 
     developed by Joseph Louis Lagrange (1736-1813) in 1797.  In fact,
     Lagrange developed this notation specifically with power series in
@@ -2198,52 +2198,339 @@ which is valid for <m>-1\lt x-1\lt 1</m> or <m>0\lt x \lt 2</m>.  This is called
 
         <exercise>
           <p>
+            Do the sam to derive Euler<rsq/>s formula:
             <me>e^{i\theta }={\mathrm{cos} \left(\theta \right) }+i{\mathrm{sin} \left(\theta \right) }</me> 
           </p>
         </exercise>
 
+        <!-- <p> -->
+        <!--   Taylor<rsq/>s formula gives us a systematic way of -->
+        <!--   representing functions by power series, but it still does -->
+        <!--   not address the issue of which values of <m>x </m>this -->
+        <!--   power series converge to the function.  For sure the -->
+        <!--   series -->
+        <!-- </p> -->
+        <!-- <p> -->
+
+        
+        <!--   <me>a_0+a_1\left(x-a\right)+a_2{\left(x-a\right)}^2+a_3{\left(x-a\right)}^3+\dots </me>  -->
+        <!-- </p> -->
+        <!-- <p> -->
+
+
+        <!--   converges for <m>x=a</m> as we get <m>a_0=a_1\left(a-a\right)+a_2{\left(a-a\right)}^2+\dots =a_0</m>.  As we mentioned before, finding all the values for which a power series converges is a much deeper issue, which we will take up in the theory section.  Before that, we need to look at our other method for approximating integrals that we mentioned in the introduction to this chapter.  This will lead towards questions directed more at the integral itself than at the integrand. -->
+        <!-- </p> -->
+
+      </subsection>
+
+      <subsection xml:id="SUBSECTIONPowSerSol">
+        <title>Power Series Solutions of Differential Equations</title>
+
+
         <p>
-          Taylor<rsq/>s formula gives us a systematic way of
-          representing functions by power series, but it still does
-          not address the issue of which values of <m>x </m>this
-          power series converge to the function.  For sure the
-          series
+          As we have seen throughout the book, many physical phenomena
+          can be modeled as the solution of a differential equation.
+          This is a primary reason why calculus grew into the powerful
+          tool we have today.  We have presented some applications
+          where the related differential equation can be solved by
+          separating the variables and integrating.  However, you
+          should not be lulled into thinking that all differential
+          equations can be solved in with this method.  Solving
+          differential equations by various means is a course in
+          itself and even then, there are differential equations that
+          the techniques taught in that course cannot handle.
+          Mathematicians recognized this, and this is where power
+          series really shone.  In fact, we started this section by
+          noting that
+          <me>e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots
+          </me>. 
+          Because they both satisfy the IVP
+          
+          <me>\dfdx{y}{x}=y\ \ \ \ \ \ \ \ y\left(0\right)=1</me>.
         </p>
+
         <p>
+          Again, not all differential equations are easily solved with
+          power series, but they do provide a powerful tool for
+          handling a number of them.  For example, consider the
+          differential equation
+
+          <me>\dfdxn{y}{x}{2}=-4y</me> 
+
+          You may or may not recognize the solution to this, but in
+          case you do, pretend that you don't.  Assume that the
+          solution to this can be written as a power series
+
+          <me>y=a_0+a_1x+a_2x^2+a_3x^3+\dots </me>
+        </p>
+
+        <p>
+          The trick here is to substitute this power series into the
+          differential equation and see what pattern emerges from the
+          coefficients.  Since we are looking for patterns, we will
+          refrain from doing any ``simplifications'' which will hide
+          the patterns.  Our experience is that students need to be
+          told this since ``simplifying'' has been ingrained into your
+          heads.  Differentiating our power series twice, we have
 
           
-          <me>a_0+a_1\left(x-a\right)+a_2{\left(x-a\right)}^2+a_3{\left(x-a\right)}^3+\dots </me> 
+          <me>\dfdx{y}{x}=1a_1+2a_2x+3a_3x^2+4a_4x^3+5a_5x^4+\dots </me> 
+
+          <me>\dfdxn{y}{x}{2}=2\cdot 1a_2+3\cdot 2a_3x+4\cdot 3a_4x^2+5\cdot 4a_5x^3+6\cdot 5a_6x^4+\dots </me> 
         </p>
+
         <p>
+          Notice that we wrote out enough terms to establish a definite pattern and we didn't hide it.  Now let's substitute into our differential equation.
+
+          <me>2\cdot 1a_2+3\cdot 2a_3x+4\cdot 3a_4x^2+5\cdot
+          4a_5x^3+6\cdot 5a_6x^4+\dots =\dfdxn{y}{x}{2}</me> 
+          <me>=-4y=-4\left(a_0+a_1x+a_2x^2+a_3x^3+a_4x^4+\dots \right)</me> 
+          <me>=-4a_0-4a_1x-4a_2x^2-4a_3x^3-4a_4x^4-\dots </me> 
+          Equating coefficients, we have
 
 
-          converges for <m>x=a</m> as we get <m>a_0=a_1\left(a-a\right)+a_2{\left(a-a\right)}^2+\dots =a_0</m>.  As we mentioned before, finding all the values for which a power series converges is a much deeper issue, which we will take up in the theory section.  Before that, we need to look at our other method for approximating integrals that we mentioned in the introduction to this chapter.  This will lead towards questions directed more at the integral itself than at the integrand.
+          <md>
+            <mrow>2\cdot 1a_2\amp{}=-4a_0 \amp{}  a_2\amp{}=-\frac{4}{2!}a_0</mrow>
+
+            <mrow>3\cdot 2a_3\amp{}=-4a_1 \amp{}a_3\amp{}=-\frac{4}{3!}a_1</mrow>
+
+            <mrow>4\cdot 3a_4\amp{}=-4a_2 \amp{} a_4=-\frac{4}{4\cdot 3}a_2\amp{}=-\frac{4}{4\cdot 3}\left(-\frac{4}{2!}a_0\right)=\frac{4^2}{4!}a_0</mrow>
+
+            <mrow>5\cdot 4a_5\amp{}=-4a_3 \amp{} a_5=-\frac{4}{5\cdot 4}a_3\amp{}=-\frac{4}{5\cdot 4}\left(-\frac{4}{3!}a_1\right)=\frac{4^2}{5!}a_1</mrow>
+
+            <mrow>6\cdot 5a_6\amp{}=-4a_4 \amp{} a_6=-\frac{4}{6\cdot
+            5}a_4\amp{}=-\frac{4}{6\cdot
+            5}\left(\frac{4^2}{4!}a_0\right)=-\frac{4^3}{6!}a_0</mrow>
+
+            <mrow>7\cdot 6a_7\amp{}=-4a_5 \amp{} a_7=-\frac{4}{7\cdot
+            6}a_5\amp{}=-\frac{4}{7\cdot
+            6}\left(\frac{4^2}{5!}a_1\right)=-\frac{4^3}{7!}a_1</mrow>
+
+            <mrow>\vdots \amp{}\amp{}\amp{}\vdots </mrow>
+          </md>
         </p>
 
-</subsection>
 
-<!-- <subsection xml:id="SUBSECTIONTaylorSeries-tmp"> -->
-<!--   <title>Taylor Series</title> -->
+        <p>
+          Substituting these coefficients back into our power
+          series, we get that the solution to the differential
+          equation <me>\dfdxn{y}{x}{2}=-4y</me> is given by the
+          power series
 
-<!--   <aside> -->
-<!--     <title>Note to Self</title> -->
+          <me>y=a_0+a_1x-\frac{4}{2!}a_0x^2-\frac{4}{3!}a_1x^3+\frac{4^2}{4!}a_0x^4+\frac{4^2}{5!}a_1x^5-\frac{4^3}{6!}a_0x^6-\frac{4^3}{7!}a_1x^7+\dots </me> 
 
-<!--     <p> -->
+          where <m>a_0</m> and <m>a_1</m> are arbitrary constants.
+        </p>
 
-<!--       Obtain power series for <m>\frac{1}{1-x^2}</m> in two ways (Uniqueness of power series).  Find power series for sine and cosine and give derivation of Euler<rsq/>s Formula. -->
-<!--     </p> -->
-<!--     <p> -->
+            <exercise>
+              <task>
+                <statement>
+                  <p>
+                    What would the next four terms in the above series look like?  Remember this is all about pattern recognition.
+                  </p>
+</statement>
+</task>
+<task>
+  <statement>
+    <p>
+      Show that the above solution can be written as
+
+      <me>y=a_0\left(1-\frac{1}{2!}{\left(2x\right)}^2+\frac{1}{4!}{\left(2x\right)}^4-\frac{1}{6!}{\left(2x\right)}^6+\dots \right)+\frac{a_1}{2}\left(2x-\frac{1}{3!}{\left(2x\right)}^3+\frac{1}{5!}{\left(2x\right)}^5-\frac{1}{7!}{\left(2x\right)}^7+\dots \right)</me> 
+      
+    </p>
+  </statement>
+</task>
+<task>
+  <statement>
+    <p>
+  How does this compare to the solution
+
+        
+  <me>y=c_1{\mathrm{cos} \left(2x\right)\ }+c_2{\mathrm{sin} \left(2x\right)\ }</me> 
+  for the same equation?
+  
+    </p>
+  </statement>
+</task>
+            </exercise>
+              
+            <exercise>
+              <task>
+
+                <statement>
+                  <p>
+                    Mimic the technique used in the above example to
+                    show that the power series solution to the
+                    differential equation
+                    <me>\frac{d^2y}{dx^2}=4y</me> 
+                    is given by
+                    <me>y=a_0+\frac{a_1}{1!}x+\frac{4a_0}{2!}x^2+\frac{4a_1}{3!}x^3+\frac{4^2a_0}{4!}x^4+\frac{4^2a_1}{5!}x^5+\frac{4^3a_0}{6!}x^6+\frac{4^3a_1}{7!}x^7+\dots </me> 
+                    where <m>a_0</m> and <m>a_1</m> are arbitrary constants.
+                  </p>
+                </statement>
+              </task>
+                <task>
+                  <statement>
+                    <p>
+                      Since <m>a_0</m> and <m>a_1</m> are arbitrary,
+                      let <m>a_0=c_1+c_2</m> and <m>a_1=2c_1-2c_2</m>
+                      and see how your answer compares to the solution
+                      <me>y=c_1e^{2x}+c_2e^{-2x}</me>
+                    </p>
+                  </statement>
+                </task>
+            </exercise>
 
 
+            <p>
+              In the above problems, the solutions to the differential
+              equations could be expressed as functions which are not
+              power series, but this is not always the case.  For
+              example, consider the differential equation
+                
+              <me>\frac{d^2y}{dx^2}=xy</me> 
+              </p>
+              <p>
 
-<!--       I<rsq/>m thinking that convergence issues and numerical series should go in the theory section -->
-<!--     </p> -->
+                Again, we assume that the solution can be written as a power series
+              </p>
+              <p>
+
+                
+                <me>y=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4+\dots </me> 
+                and differentiate twice to get
+              </p>
+              <p>
+
+                
+                <me>\dfdx{y}{x}=1a_1+2a_2x+3a_3x^2+4a_4x^3+5a_5x^4+\dots </me> 
+              </p>
+              <p>
+
+                <me>\dfdx{y}{x}{2}=2\cdot 1a_2+3\cdot 2a_3x+4\cdot 3a_4x^2+5\cdot 4a_5x^3+6\cdot 5a_6x^4+\dots </me> 
+              </p>
+              <p>
 
 
-<!--   </aside> -->
+                Substituting this into our differential equation, we get
+              </p>
+              <p>
 
-<!-- </subsection> -->
-</section>
+                
+                <me>2\cdot 1a_2+3\cdot 2a_3x+4\cdot 3a_4x^2+5\cdot 4a_5x^3+6\cdot 5a_6x^4+\dots =\frac{d^2y}{dx^2}</me> 
+                <me>=xy=x\left(a_0+a_1x+a_2x^2+a_3x^3+a_4x^4+\dots \right)</me> 
+                <me>=a_0x+a_1x^2+a_2x^3+a_3x^4+a_4x^5+\dots </me> 
+              </p>
+              <p>
+
+
+                If we equate coefficients this time, we get
+              </p>
+
+              <p>
+                <md>
+                  <mrow>2\cdot 1a_2\amp{}=0 \amp{} a_2\amp{}=0</mrow>
+
+                  <mrow>3\cdot 2a_3\amp{}=a_0 \amp{} a_3\amp{}=\frac{1}{2\cdot 3}a_0</mrow>
+
+                  <mrow>4\cdot 3a_4\amp{}=a_1 \amp{} a_4\amp{}=\frac{1}{3\cdot 4}a_1 </mrow>
+
+                  <mrow>5\cdot 4a_5\amp{}=a_2 \amp{} a_5\amp{}=\frac{1}{4\cdot 5}a_2=0</mrow>
+
+                  <mrow> 6\cdot 5a_6\amp{}=a_3 \amp{} a_6=\frac{1}{5\cdot 6}a_3\amp{}=\frac{1}{5\cdot 6}\left(\frac{1}{2\cdot 3}a_0\right)=\frac{1}{(2\cdot 3)(5\cdot 6)}a_0</mrow>
+
+                  <mrow>7\cdot 6a_7\amp{}=a_4 \amp{} a_7=\frac{1}{6\cdot 7}a_4\amp{}=\frac{1}{6\cdot 7}\left(\frac{1}{3\cdot 4}a_1\right)=\frac{1}{(3\cdot 4)(6\cdot 7)}a_1                </mrow>
+
+                  <mrow> 8\cdot 7a_8\amp{}=a_5 \amp{} a_8\amp{}=\frac{1}{7\cdot 8}a_5=0</mrow>
+
+                  <mrow> 9\cdot 8a_9\amp{}=a_6 \amp{} a_9=\frac{1}{8\cdot 9}a_6\amp{}=\frac{1}{8\cdot 9}\left(\frac{1}{\left(2\cdot 3\right)\left(5\cdot 6\right)}a_0\right)=\frac{1}{(2\cdot 3)(5\cdot 6)(8\cdot 9)}a_0</mrow>
+
+                  <mrow>10\cdot 9a_{10}\amp{}=a_7 \amp{} a_{10}=\frac{1}{9\cdot 10}a_7\amp{}=\frac{1}{9\cdot 10}\left(\frac{1}{\left(3\cdot 4\right)\left(6\cdot 7\right)}a_1\right)=\frac{1}{(3\cdot 4)(6\cdot 7)(9\cdot 10)}a_1
+                  </mrow>
+
+                  <mrow>  \amp{}\vdots \amp{} \amp{}\vdots</mrow>
+
+                </md>
+
+                <!-- \begin{tabular}{|p{1.0in}|p{3.1in}|} \hline  -->
+                <!-- <m>2\cdot 1a_2=0</m> & <m>a_2=0</m> \\ \hline  -->
+                <!-- <m>3\cdot 2a_3=a_0</m> & <m>a_3=\frac{1}{2\cdot 3}a_0</m> \\ \hline  -->
+                <!-- <m>4\cdot 3a_4=a_1</m> & <m>a_4=\frac{1}{3\cdot 4}a_1</m> \\ \hline  -->
+                <!-- <m>5\cdot 4a_5=a_2</m> & <m>a_5=\frac{1}{4\cdot 5}a_2=0</m> \\ \hline  -->
+                <!-- <m>6\cdot 5a_6=a_3</m> & <m>a_6=\frac{1}{5\cdot 6}a_3=\frac{1}{5\cdot 6}\left(\frac{1}{2\cdot 3}a_0\right)=\frac{1}{(2\cdot 3)(5\cdot 6)}a_0</m> \\ \hline  -->
+                <!-- <m>7\cdot 6a_7=a_4</m> & <m>a_7=\frac{1}{6\cdot 7}a_4=\frac{1}{6\cdot 7}\left(\frac{1}{3\cdot 4}a_1\right)=\frac{1}{(3\cdot 4)(6\cdot 7)}a_1</m> \\ \hline  -->
+                <!-- <m>8\cdot 7a_8=a_5</m> & <m>a_8=\frac{1}{7\cdot 8}a_5=0</m> \\ \hline  -->
+                <!-- <m>9\cdot 8a_9=a_6</m> & <m>a_9=\frac{1}{8\cdot 9}a_6=\frac{1}{8\cdot 9}\left(\frac{1}{\left(2\cdot 3\right)\left(5\cdot 6\right)}a_0\right)=\frac{1}{(2\cdot 3)(5\cdot 6)(8\cdot 9)}a_0</m> \\ \hline  -->
+                <!-- <m>10\cdot 9a_{10}=a_7</m> & <m>a_{10}=\frac{1}{9\cdot 10}a_7=\frac{1}{9\cdot 10}\left(\frac{1}{\left(3\cdot 4\right)\left(6\cdot 7\right)}a_1\right)=\frac{1}{(3\cdot 4)(6\cdot 7)(9\cdot 10)}a_1</m> \\ \hline  -->
+                <!-- <m>\vdots </m> & <m>\vdots </m> \\ \hline  -->
+                <!-- \end{tabular} -->
+              </p>
+
+
+              <exercise>
+                <statement>
+                  <p>
+                    Substitute these coefficients into the power series to show that the solution to the differential equation
+                    <me>\frac{d^2y}{dx^2}=xy</me> 
+                    can be written as
+                    <me>y=a_0\left(1+\frac{1}{2\cdot 3}x^3+\frac{1}{\left(2\cdot 3\right)\left(5\cdot 6\right)}x^6+\frac{1}{\left(2\cdot 3\right)\left(5\cdot 6\right)\left(8\cdot 9\right)}x^9+\dots \right)+a_1\left(x+\frac{1}{3\cdot 4}x^4+\frac{1}{\left(3\cdot 4\right)\left(6\cdot 7\right)}x^7+\frac{1}{\left(3\cdot 4\right)\left(6\cdot 7\right)\left(9\cdot 10\right)}x^{10}+\dots \right)</me> 
+                    for arbitrary constants <m>a_0</m> and
+                    <m>a_1</m>. 
+                  </p>
+                  <p>
+                    What would the next term in each sum look like?
+                  </p>
+                </statement>
+              </exercise>
+
+                  
+              <exercise>
+                <statement>
+                  <p>
+                    Mimic the technique we used in the previous example to show that the solution to the differential equation
+                    <me>\frac{d^2y}{dx^2}=x^2y</me> 
+                    can be written as
+                    <me>y=a_0\left(1+\frac{1}{3\cdot 4}x^4+\frac{1}{\left(3\cdot 4\right)\left(7\cdot 8\right)}x^8+\frac{1}{\left(3\cdot 4\right)\left(7\cdot 8\right)\left(11\cdot 12\right)}x^{12}+\dots \right)+a_1\left(x+\frac{1}{4\cdot 5}x^5+\frac{1}{\left(4\cdot 5\right)\left(8\cdot 9\right)}x^9+\frac{1}{\left(4\cdot 5\right)\left(8\cdot 9\right)\left(12\cdot 13\right)}x^{13}+\dots \right)</me> 
+
+                    for arbitrary constants <m>a_0</m> and
+                    <m>a_1</m>. What would the next term in each
+                    sum look like?
+                  </p>
+                </statement>
+              </exercise>
+
+
+              
+
+                <p>
+                  
+                  As you can from what we've done in this section,
+                  power series provide a powerful tool for solving
+                  various integrals and differential equations.  It is
+                  no wonder that mathematicians in the
+                  18<m>{}^{th}</m> century utilized them.
+                  Furthermore, the fact that a solution was given as
+                  an infinite series did not seem to faze them.  That
+                  being said, natural questions arose from their
+                  repeated use.  For example, Taylor's formula gives
+                  us a systematic way of representing functions by
+                  power series, but it still does not address the
+                  issue of which values of <m>x\ </m>this power series
+                  converge to the function.  For sure the series
+                </p>
+                <p>
+
+                  
+                  <me>a_0+a_1\left(x-a\right)+a_2{\left(x-a\right)}^2+a_3{\left(x-a\right)}^3+\dots </me> 
+                </p>
+                <p>
+
+
+                  converges for <m>x=a</m> as we get <m>a_0=a_1\left(a-a\right)+a_2{\left(a-a\right)}^2+\dots =a_0</m>.  As we mentioned before, finding all the values for which a power series converges is a much deeper issue, which we will take up in the theory section.  Before that, we will look at our other method for approximating integrals that we mentioned in the introduction to this chapter.  This will lead towards questions directed more at the integral itself than at the integrand.
+                </p>
+
+      </subsection>
+    </section>
 </chapter>
 
 

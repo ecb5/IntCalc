@@ -28,7 +28,7 @@
       natural world. In the next section we<rsq/>ll see how we can use
       the notion of an integral to extend <xref
       ref="SECTIONGalileoDrops" text="custom">Galileo<rsq/>s work </xref>  on
-      falling bodies
+      falling bodies.
     </p>
 
 
@@ -39,18 +39,19 @@
     <title>Integration by Substitution</title>
     <introduction>
       <p>
-        Differential equations have proven to be excellent models for a
-        great may natural phenomena. Unfortunately unless it is very
-        simple, finding the solution to a given differential equation
-        can be they can be very difficult, So, over the years many very
-        ingenious techniques (and tricks) have been employed to reduce a
-        complex differential equation to something more manageable. Very
-        often these tricks and techniques come down to finding a clever
-        substitution which reduces the equation in front of us to one
-        that we already know how to solve. We saw a simple example of
-        this in <xref ref="DRILLVerySimpleSubst"></xref> where <m>\int
-        \cos(5x) \dx{x} </m> was reduced to <m>\int \cos(y)
-        \dx{y}</m>. Here is a more substantial example.
+        Differential equations have proven to be excellent models for
+        a great may natural phenomena. Unfortunately finding the
+        solution to a given differential equation can be they can be
+        very difficult unless it is particularly simple. So, over the
+        years many very ingenious techniques (and tricks) have been
+        employed to reduce a complex differential equation to
+        something more manageable. Very often these tricks and
+        techniques come down to finding a clever substitution which
+        reduces the equation in front of us to one that we already
+        know how to solve. We saw a simple example of this in <xref
+        ref="DRILLVerySimpleSubst"></xref> where <m>\int \cos(5x)
+        \dx{x} </m> was reduced to <m>\int \cos(y) \dx{y}</m>. Here is
+        a more substantial example.
       </p>
       <aside>
         <title>Comment</title>
@@ -477,101 +478,162 @@
 <subsection  xml:id="SUBSECTIONKnownIntegrals">
   <title> Simple Substitutions</title>
   <p>
-    As <xref ref="EXAMPLEFallingWithDrag1"></xref> shows it can be
-    very helpful  We will need to be able to find the antiderivatives of a wide
-    variety of functions. But so far we only know the thirteen listed in
-    <xref ref="TABLEBasicIntegration"></xref>. A significant portion of
-    any course in Integral Calculus is devoted to extending the list of
-    known antiderivatives. We begin that process in this section.
+    A clever substitution can be very helpful.  As we saw in <xref
+    ref="EXERCISETerminalVelocity">exercise</xref>  the
+    right substitution enabled you to  turn the integral on the left side  <xref
+    ref="EQUATIONFallingGrain2">equation</xref> into another
+    integral. But the new one was on the list in in 
+    <xref ref="TABLEBasicIntegration"></xref>  we could simply look it up. 
   </p>
   <p>
-    We start by simply extending the rules we already know.  For example
-    at first it seems that entry #7 of the <xref
-    ref="TABLEBasicIntegration" text="custom">table</xref> 
-    only tells us that an antiderivative of <m>\cos(x) </m> is
-    <m>\sin(x)</m>. But with  basic Algebra and a little cleverness we
-    can use it to compute other integrals that are <q>close to</q> <m>\int
-    \cos(x)\dx{x}</m> as in the following example.
+    This will be true of nearly every integral you will ever
+    compute. You can<rsq/>t memorize every conceivable integral that
+    you might encounter.  You will need a list of basic
+    integrals that you simply know. Your goal when faced with an
+    integral that is not on your list is to apply one of the Any nintegral  establish a foundational
+    list  Although they will all be called <q>integration
+    technique<rsq/>s</q> they do not compute integrals. An integration
+    technique  simply transforms one integral into another. Your goal
+    will always be for the new integral to be one that you 
+    recognize  so that you can write
+    down its<rsq/> value, either from memory or from a small table of
+    integrals like <xref
+    ref="TABLEBasicIntegration" text="custom">table</xref>.
+
   </p>
-  <example xml:id="EXAMPLEIntSimpSub">
-    <title>A Simple Substitution</title>
+  <p>
+    Just as with differentiation, as you become more comfortable you
+    will begin to do the simpler steps in your head. This is normal,
+    expected, and even encouraged. However any integration you do can
+    always be broken down into small steps, each of which can be
+    justified.
+  </p>
+
+  <example xml:id="EXAMPLEPolyInt">
+    <title>The Integral of a Polynomial</title>
     <p>
-      For example, to compute <me>\int\cos(5x) \dx{x}</me>, first make the substitution
-      <m>u=5x</m>. In that case <m>\dx{u}=5\dx{x}</m>. Substituting these
-      into our integral we have
-
-      <men xml:id="EQUATIONIntCos5x">
-        \int\cos(5x) \dx{x}= \frac15\int\cos(u) \dx{u} </men>,
-
-        and entry #7 of the <xref ref="TABLEBasicIntegration"></xref>  tells us that
-
-        <me>\int\cos(5x) \dx{x} =\frac15\sin(u) +c</me>.  
-
-        Returning the problem to its original variable
-        (unsubstituting?) we have
-
-        <me>\int\cos(5x) \dx{x}= \frac15\sin(5x)+c</me>.
+      To demonstrate this consider the integral 
+      <me>\int 4x^3+\frac12 x^2 - 17 x - 12 \dx{x}</me>. 
+      This is not
+      difficult to compute. In fact you may already see the answer but
+      we<rsq/>ll take it very slowly in order to establish the
+      procedure.
+      First notice that each of the terms  <m> 4x^3</m>, <m>\frac12
+      x^2</m>, <m> - 17 x</m>, and <m> - 12</m> is a function on its own. Thus by
+      entry #2 of <xref ref="TABLEBasicIntegration"></xref> we have 
+      <me>\int 4x^3\dx{x}+\int \frac12 x^2 \dx{x}- \int  17 x \dx{x}
+      -\int  12 \dx{x}</me>. 
+      Of these, only the last on has an entry in out table. By entry
+      #3 we have
+      <me>\int 4x^3\dx{x}+\int \frac12 x^2 \dx{x}- \int  17 x \dx{x}
+      -12x</me>. 
     </p>
+    <p>
+      Next we notice that the expression <m>x^3\dx{x}</m> is a
+      differential. We don<rsq/>t know what it is the differential of
+      yet, but the presence of the differnential <m>\dx{x}</m>
+      guarantees that <m>x^3\dx{x}</m> is the differential of
+      something. So the first integral above has the form 
+      <me>\int 4x^3\dx{x} = \int 4\dx{y}</me> where <m>\dx{y} =
+      x^3\dx{x}</m>. Therefore by entry #3 in our table we see that 
+      <me>\int 4x^3\dx{x} = 4\int x^3\dx{x}</me>.
+      Each of the remaining integrals has the same general form so we
+      see that 
+      <me>      \int 4x^3+\frac12 x^2 - 17 x - 12 \dx{x} =  4\int
+      x^3\dx{x} +\frac12\int  x^2\dx{x} - 17 \int x\dx{x} - 12x</me>,
+      and each of these fits the pattern of entry #4 (from the Product
+      Rule) so finally we have 
+      <md>
+        <mrow>        \int 4x^3+\frac12 x^2 - 17 x - 12 \dx{x} \amp{}=
+        \frac{4}{4}x^4 +\frac{\frac12}{3}x^3 - \frac{17}{2} x^2 -
+        12x
+        </mrow>
+        <mrow>\amp{}=
+        x^4 +\frac16x^3 - \frac{17}{2} x^2 -        12x + C.</mrow> 
+      </md>
+      Did you forget the arbitrary constant? It<rsq/>s easy to do. Be
+      careful.
+    </p>
+
+    <p>
+      Very soon you will be able to integrate a polynomial as quickly
+      and easily as you can differentiate a polynomial. It isn<rsq/>t
+      nearly as hard as we<rsq/>ve made it look in this example.
+    </p>
+    <p>
+      We were careful to put in every step just so you could see that
+      each step can  justified. This is not magic. The rules are the
+      same whether the integral is easy or hard. If you get stuck on
+      an integral take one small, completely clear step at a time. 
+    </p>
+
+    <!-- <p> -->
+
+    <!--   For example, to compute <me>\int\cos(5x) \dx{x}</me>, first make the substitution -->
+    <!--   <m>u=5x</m>. In that case <m>\dx{u}=5\dx{x}</m>. Substituting these -->
+    <!--   into our integral we have -->
+
+    <!--   <men xml:id="EQUATIONIntCos5x"> -->
+    <!--     \int\cos(5x) \dx{x}= \frac15\int\cos(u) \dx{u} </men>, -->
+
+    <!--     and entry #7 of the   tells us that -->
+
+    <!--     <me>\int\cos(5x) \dx{x} =\frac15\sin(u) +c</me>.   -->
+
+    <!--     Returning the problem to its original variable -->
+    <!--     (unsubstituting?) we have -->
+
+    <!--     <me>\int\cos(5x) \dx{x}= \frac15\sin(5x)+c</me>. -->
+    <!-- </p> -->
   </example>
 
-  <problem>
+  <!-- <problem> -->
+  <!--   <idx><h>Drills</h></idx> -->
+  <!--   <p> -->
+  <!--     Do all of the algebra necessary to show that <xref -->
+  <!--     ref="EQUATIONIntCos5x">equation</xref>  is correct. Explain each step. -->
+  <!--   </p> -->
+  <!-- </problem> -->
+
+  <problem xml:id="DRILLIntSubDrills">
     <idx><h>Drills</h></idx>
+    <idx><h>Integration by Substitution</h></idx>
     <p>
-      Do all of the algebra necessary to show that <xref
-      ref="EQUATIONIntCos5x">equation</xref>  is correct. Explain each step.
-    </p>
-    </problem>
-
-    <p>
-      When you first encounter it integration by substitution seems to
-      be a fairly simple technique. And it is simple in concept. All
-      we really do is make the formula simpler. That is we make things
-      <q>easier on the eyes</q> as we have always done.  But in fact
+      Integration by substitution seems to be a fairly simple
+      technique. And it is simple, at least in concept.  But in fact
       substitution is a very sophisticated idea which is used at all
-      levels of mathematics. 
+      levels of mathematics as you<rsq/>ve already seen.  Nearly every
+      integral you do from now on will involve some sort of a
+      substitution at some point in the computation.  You
+      need to get as much practice with it as you can. 
     </p>
     <p>
-      As an integration technique it is
-      fundamental. Nearly every integral you do from now on will
-      involve a substitution, either as a first step just to simplify
-      the formulas a bit or later after the other techniques you will
-      be learning have transformed the integral. You<rsq/>ll see what
-      we mean as we go along. For now just be aware that integration
-      by substitution is fundamental. You need to get as much practice
-      with it as you can.
-    </p>
+      Compute each of these integrals by making the indicated
+      substitution.  Assume <m>a</m> is a constant.
 
-    <problem xml:id="DRILLIntSimpSub">
-      <idx><h>Drills</h></idx>
-
-      <p>
-        <idx><h>Integration by Simple Substitution</h></idx>
-        Emulate the computations in <xref ref="EXAMPLEIntSimpSub"></xref>  to
-        compute each of the integrals. Assume <m>a</m> is a constant.
-
-        <ol cols="2" marker="(i)">
-          <li>
-            <p>
-              <m>\int \sin(ax)\dx{x}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int \sec(ax)\tan(ax)\dx{x}</m>
-            </p>
-          </li>
+      <ol cols="2" marker="(i)">
         <li>
           <p>
-            <m>\int \frac{1}{\sqrt{1+a^2x^2}}\dx{x}</m>
+            <m>\int \sin(2x)\dx{x}</m>, <m>u=ax</m>
           </p>
         </li>
         <li>
           <p>
-            <m>\displaystyle\int \frac{1}{1+ax^2}\dx{x}</m>
+            <m>\int \sec(ax)\tan(ax)\dx{x}</m>, <m>u=ax</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\int \frac{1}{\sqrt{1+a^2x^2}}\dx{x}</m>, <m>u=ax</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle\int \frac{1}{1+ax^2}\dx{x}</m>, <m>y=\sqrt{a}x</m>
           </p>
           <!-- <p> Be careful! Don<rsq/>t make assumptions.</p> -->
         </li>
-      </ol>
+      </ol>   
     </p>
   </problem>
 
@@ -807,643 +869,643 @@
     it is probably because you don<rsq/>t know what <m>\erf(x)
     </m> means.
     You will see the function <m>\erf(x) </m>  again in <xref
-      ref="EXERCISEWolframAlpha1"></xref> where we will explain what it
+    ref="EXERCISEWolframAlpha1"></xref> where we will explain what it
     means. Until then you have no way to interpret this output.
   </p>
+  <p>
+    The same system returned <m>x_2\text{F}_1\left(-\frac12,
+    \frac13; \frac43; x^3\right) </m> when fed it the integral
+    <me>\int\sqrt{1-x^3}\dx{x} </me>. Even we (the authors)
+    needed to do some investigating to figure out what this
+    means as the symbolism is not part of our core
+    knowledge. It turns out that <m>\text{F}_1\left(-\frac12,
+    \frac13; \frac43; x^3\right)</m> is a particular Appell
+    hypergeometric function.
+  </p>
+  <p>
+    Does that help you to understand?
+  </p>
+  <p>
+    The good news is that we<rsq/>re just making the point that any
+    software you use will have built in assumptions about your level
+    of expertise. If the assumptions are wrong may not be able to
+    understand the output even when it is correct. Or, worse, you<rsq/>ll think you
+    understand when you don<rsq/>t.
+  </p>
+  <p>
+    The really good news is that for this course
+    don<rsq/>t need to know what an Appell hypergeometric
+    function is. Possibly you never will.
+  </p>
+  <p>
+    This is not to say that you should not use these tools at all.
+    Mathematical software is available and it can be a marvelous
+    help. But it is no substitute for the skill, knowledge, and
+    understanding. So use the software to help you learn. Use it to
+    check your computations <em>after</em> you<rsq/>ve completed
+    them yourself. When you and the software disagree take the time
+    to figure out what is wrong and who is right. This is when the
+    learning takes place.
+  </p>
+
+
+  <example xml:id="EXAMPLESeparableDE1">
+
     <p>
-      The same system returned <m>x_2\text{F}_1\left(-\frac12,
-      \frac13; \frac43; x^3\right) </m> when fed it the integral
-      <me>\int\sqrt{1-x^3}\dx{x} </me>. Even we (the authors)
-      needed to do some investigating to figure out what this
-      means as the symbolism is not part of our core
-      knowledge. It turns out that <m>\text{F}_1\left(-\frac12,
-      \frac13; \frac43; x^3\right)</m> is a particular Appell
-      hypergeometric function.
-    </p>
-    <p>
-      Does that help you to understand?
-    </p>
-    <p>
-      The good news is that we<rsq/>re just making the point that any
-      software you use will have built in assumptions about your level
-      of expertise. If the assumptions are wrong may not be able to
-      understand the output even when it is correct. Or, worse, you<rsq/>ll think you
-      understand when you don<rsq/>t.
-    </p>
-    <p>
-      The really good news is that for this course
-      don<rsq/>t need to know what an Appell hypergeometric
-      function is. Possibly you never will.
-    </p>
-    <p>
-      This is not to say that you should not use these tools at all.
-      Mathematical software is available and it can be a marvelous
-      help. But it is no substitute for the skill, knowledge, and
-      understanding. So use the software to help you learn. Use it to
-      check your computations <em>after</em> you<rsq/>ve completed
-      them yourself. When you and the software disagree take the time
-      to figure out what is wrong and who is right. This is when the
-      learning takes place.
-    </p>
+      Suppose we need to solve the differential equation
+      <men xml:id="EQUATIONSeparableDE1">
+        \dfdx{y}{x} = \tan(x)
+        </men>.
+        We proceed as above.
 
-
-    <example xml:id="EXAMPLESeparableDE1">
-
-      <p>
-        Suppose we need to solve the differential equation
-        <men xml:id="EQUATIONSeparableDE1">
-          \dfdx{y}{x} = \tan(x)
-          </men>.
-          We proceed as above.
-
-          <md>
-            <mrow>
-              \dfdx{y}{x} \amp{}= \tan(x)
-            </mrow>
-            <mrow>
-              \dx{y} \amp{}= \tan(x)\dx{x}
-            </mrow>
-            <mrow>
-              \int\dx{y} \amp{}= \int\tan(x)\dx{x}
-            </mrow>
-            <mrow>
-              y \amp{}= \int\tan(x)\dx{x}
-            </mrow>
-            </md>.
-            But of course we haven<rsq/>t really made much progress until we can
-            evaluate  <m>\int\tan(x)\dx{x}</m>.
-
-      </p>
-    </example>
-
-
-    
-    <!-- <paragraphs xml:id="PARAGRAPHSubstGBU"> -->
-    <!--   <title>DIGRESSION:  Substitution, the Good, the Bad, and the Ugly</title> -->
-
-    <!--   <p> -->
-    <!--     <xref ref="PROBLEMTerminalVelocity"></xref> uses the technique of -->
-    <!--     substitution. When we were learning differentiation  we  called this <q>making things easier on the -->
-    <!--     eyes</q>  because in that context -->
-    <!--     the substitutions we made almost always resulted in simpler formulas -->
-    <!--     that were easier to deal with than the originals.. -->
-    <!--   </p> -->
-    <!--   <p> -->
-    <!--     Our goal when making a substitution is to -->
-    <!--     simplify things -->
-    <!--     <em>eventually</em>. But sometimes things will get more complicated -->
-    <!--     first. We will proceed slowly. -->
-    <!--   </p> -->
-    <!-- <!-\- </paragraphs> -\-> -->
-    <example xml:id="EXAMPLEIntTan">
-      <title>The Integral of the Tangent Function</title>
-
-      <p>
-        Use <xref ref="IntRuleSin">Integration Rule</xref> to
-        compute <m>\int\tan(x)\dx{x}</m> by making the substitution
         <md>
           <mrow>
-            z=\cos(x),
+            \dfdx{y}{x} \amp{}= \tan(x)
           </mrow>
-          <intertext>which means that</intertext>
-          <mrow>\dx{z}=-\sin(x)\dx{x}</mrow>
-          <intertext> or</intertext>
-          <mrow>\textcolor{red}{-\dx{z}=\sin(x)\dx{z}}</mrow>
-          </md>.
-      </p>
-      <p>
-        Thus
-        <md>
-          <mrow>\int\tan(x)\dx{x} =
-          \int\frac{\textcolor{red}{\sin(x)}}{\cos(x)}\textcolor{red}{\dx{x}}
-          <!-- \amp -->
-          <!--            =\int\frac{\sin(x)}{z}\cdot\frac{-\dx{z}}{\sin(x)}</mrow> -->
-          \amp =-\int\frac{\dx{z}}{z}
+          <mrow>
+            \dx{y} \amp{}= \tan(x)\dx{x}
           </mrow>
-          <mrow>\amp =-\ln(z)+C</mrow>
-          <mrow>\amp =(-1)\ln(\cos(x))+C</mrow>
-          <mrow>\amp =\ln\left((\cos(x))^{-1}\right)+C</mrow>
-          <mrow>\amp =\ln\left(\sec(x)\right)+C</mrow>
+          <mrow>
+            \int\dx{y} \amp{}= \int\tan(x)\dx{x}
+          </mrow>
+          <mrow>
+            y \amp{}= \int\tan(x)\dx{x}
+          </mrow>
           </md>.
-      </p>
-    </example>
-    <exercise>
+          But of course we haven<rsq/>t really made much progress until we can
+          evaluate  <m>\int\tan(x)\dx{x}</m>.
 
-      
-      <task>
-        <statement>
-          <p>
-            Show that <m>y(x)= \ln(\sec (x))+C</m> is a solution of <xref
-            ref="EQUATIONSeparableDE1">equation</xref>.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Find <m>C</m> if <m>y(0)=2</m>.
-          </p>
-        </statement>
-      </task>
-    </exercise>
-
-    <problem>
-      <idx><h>Drills</h></idx>
-      <p>
-        Use a similar substitution to show that
-        <me>\int\cot(x)\dx{x}=-\ln(\csc(x)+C</me>
-      </p>
-    </problem>
-
-<!--     <paragraphs xml:id="PARAGRAPHSubstGBU"> -->
-<!--       <title>DIGRESSION:  Substitution, the Good, the Bad, and the Ugly</title> -->
-
-<!--       <p> -->
-<!--         Making a substitution in an integral is just the first -->
-<!--         step. We still have to compute the integral. Our substitution -->
-<!--         just -->
-<!--         makes it a little  simpler to apply formulas and techniques with which we -->
-<!--         are already familiar.  As simple as it is, substitution is no -->
-<!--         mere trick. It is a very powerful technique, not just in -->
-<!--         differentiation and but in all of mathematics. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         The good news is that you can do any substitution you wish and -->
-<!--         as long as it is performed correctly, it is not wrong. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         But the bad news is that you can do any substitution you wish -->
-<!--         and as long as it is performed correctly, it is not wrong. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         That is to say, you can make any substitution you wish.  As -->
-<!--         long as all calculations are done correctly, it will not be -->
-<!--         <em>wrong</em> in any absolute sense. But it may not be -->
-<!--         helpful either and it won<rsq/>t always be easy to tell until -->
-<!--         you<rsq/>ve done a lot of computations whether the -->
-<!--         substitution you chose is viable. This issue will be mitigated -->
-<!--         as you gain experience but, especially in the beginning, be -->
-<!--         careful.  It is very easy to make what looks like a reasonable -->
-<!--         substitution which is either unworkable or, if it is workable, -->
-<!--         is much harder to do than different substitution would be. -->
-<!--       </p> -->
-
-<!--       <p> -->
-<!--         For example, when computing -->
-<!--         <m>\int\tan(x)\dx{x}</m>, we could have let <m>z=x</m>. In that -->
-<!--         case we would have <m>\int\tan(x)\dx{x}=\int\tan(z)\dx{z}</m> -->
-<!--         which is true, but it  is not helpful. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         Another approach would be to let <m>u=\tan(x)</m> so that -->
-<!--         <m>\dx{u}=\sec^2(x)\dx{x}</m> or <m>\dx{x} =\frac{\dx{u} -->
-<!--         }{\sec^2(x) }</m>. In that case we have -->
-<!--         <mdn> -->
-<!--           <mrow number="no"> -->
-<!--             \int\tan(x)\dx{x}\amp{}=\int\frac{u}{\sec^2(x)}\dx{u} -->
-<!--           </mrow> -->
-<!--           <mrow number="no"> -->
-<!--             \amp{}=\int\frac{u}{1+\tan^2(x)}\dx{u} -->
-<!--           </mrow> -->
-<!--           <intertext>so that</intertext> -->
-<!--           <mrow xml:id="EQUATIONBadTanInt1"> -->
-<!--             \int\tan(x)\dx{x}=\amp{}=\int\frac{u}{1+u^2}\dx{u} -->
-<!--           </mrow> -->
-<!--           </mdn>. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         This is a true statement <mdash/> we haven<rsq/>t made any -->
-<!--         computational errors <mdash/> but it appears that after the -->
-<!--         substitution we will need to evaluate <m>\int -->
-<!--         \frac{u}{1+u^2}\dx{y}</m>, which looks hard. It is actually -->
-<!--         possible to compute this integral using the knowledge you now -->
-<!--         have. It is simply a matter of finding the right -->
-<!--         substitution. However, since we have already computed <m>\int -->
-<!--         \tan(x) \dx{x}</m> in <xref ref="EXAMPLEIntTan"></xref> it is -->
-<!--         pointless to continue with this example. -->
-<!--       </p> -->
-<!--       <!-\- <p> -\-> -->
-<!--       <!-\- However knowing that  -\-> -->
-<!--       <!-\- <men xml:id="EQUATIONIntTan3"> -\-> -->
-<!--       <!-\- \int\tan(x)\dx{x}=\int\frac{u}{\sec^2(x)}\dx{u}=\int\frac{u}{1+u^2}\dx{u}.</men> -\-> -->
-<!--       <!-\- will be helpful to us in <xref -\-> -->
-<!--       <!-\- ref="PROBLEMTrickySubstitution1"></xref> below so we take specific -\-> -->
-<!--       <!-\- notice of this fact here. -\-> -->
-<!--       <!-\- </p> -\-> -->
-<!--       <!-\- <p> -\-> -->
+    </p>
+  </example>
 
 
-<!--       <!-\- This is an  integral you can do today if you are clever enough, but it will require that you make another substitution. Since we<rsq/>ve already done at least as much work to get to <xref ref="EQUATIONBadTanInt1">equation</xref> as we did  this approach seems like it -\-> -->
-<!--       <!-\-         will be much harder than our original strategy so we're -\-> -->
-<!--       <!-\-         inclined to abandon it immediately. -\-> -->
-<!--       <!-\-       </p> -\-> -->
-<!--       <p> -->
-<!--         A comparably bad choice is   <m>u=\sin(x)</m>. With this -->
-<!--         substitution we have -->
-<!--         <m>\dx{u}=\cos(x)\dx{x}</m> or -->
-<!--         <m>\dx{x}=\frac{\dx{u}}{\cos(x)}</m>. In this case we have -->
-<!--         <mdn> -->
-<!--           <mrow number="no">  -->
-<!--             \int\tan(x)\dx{x} =\amp{} \int\frac{\sin(x)}{\cos(x)}\dx{x} -->
-<!--           </mrow> -->
-<!--           <mrow xml:id="EQUATIONBadTanInt2"> -->
-<!--             \amp{}= \int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right) -->
-<!--             =\int\frac{u}{1-u^2}\dx{u} -->
-<!--           </mrow> -->
-<!--         </mdn> -->
-<!--         which is nearly the same, formally, as <xref ref="EQUATIONBadTanInt1"> -->
-<!--         equation</xref>. The only difference seems to be that the -->
-<!--         <q><m>+</m></q> in the denominator in <xref -->
-<!--         ref="EQUATIONBadTanInt1">equation</xref> became a -->
-<!--         <q><m>-</m></q> in <xref -->
-<!--         ref="EQUATIONBadTanInt2">equation</xref>. -->
-<!--       </p> -->
-<!--       <aside> -->
-<!--         <title>Observation</title> -->
-<!--         <p> -->
-<!--           We say <q>formally</q> because they aren't really the -->
-<!--           same. We<rsq/>ve used the substitution variable <m>u</m> to -->
-<!--           represent two entirely different functions in each of these -->
-<!--           formula. -->
-<!--         </p> -->
-<!--       </aside> -->
-<!--       <exercise xml:id="PROBLEMTrickySubstitution1"> -->
+  
+  <!-- <paragraphs xml:id="PARAGRAPHSubstGBU"> -->
+  <!--   <title>DIGRESSION:  Substitution, the Good, the Bad, and the Ugly</title> -->
 
-        
-<!--         <introduction> -->
-<!--           <p> -->
-<!--             On the other hand we  know from <xref ref="EXAMPLEIntTan"></xref> that -->
-<!--             <m>\int\tan(x)\dx{x}=\ln(\sec(x)+c</m> and we can use this -->
-<!--             knowledge. -->
-<!--           </p> -->
-<!--           <p> -->
-<!--             Suppose we need to compute -->
-<!--             <m>\int\frac{u}{1+u^2}\dx{u}</m> or -->
-<!--             <m>\int\frac{u}{1-u^2}\dx{u}</m>. The same substitution we -->
-<!--             used to transform <m>\int\tan(x)\dx{x}</m> these into the -->
-<!--             integrals (seen in <xref -->
-<!--             ref="EQUATIONBadTanInt1">equation</xref> and <xref -->
-<!--             ref="EQUATIONBadTanInt2">equation</xref>) -->
-<!--             will work in reverse. -->
-<!--           </p> -->
-<!--         </introduction> -->
-<!--         <task  xml:id="PROBLEMTrickySubstitution1A"> -->
-<!--           <statement> -->
-<!--             <p> -->
-<!--               Use the substitution <m>u=\tan(x)</m> to show that: -->
-<!--               <me> -->
-<!--                 \int\frac{u}{1+u^2}\dx{u} = -->
-<!--                 \ln\left(\sec\left(\inverse\tan(u)\right)\right)+c. -->
-<!--               </me> -->
-<!--             </p> -->
-<!--             <p> -->
-<!--               Now use your Algebra and Trigonometry skills to show that -->
-<!--               <m>\sec\left(\inverse\tan(u)\right) = \sqrt{1+u^2}</m> so -->
-<!--               that <me> \int\frac{u}{1+u^2}\dx{u} = -->
-<!--               \frac12\ln\left(1+u^2\right)+c</me>. -->
-<!--             </p> -->
-<!--           </statement> -->
-<!--         </task> -->
-        
-<!--         <task xml:id="PROBLEMTrickySubstitution1B"> -->
-<!--           <statement> -->
-<!--             <p> -->
-<!--               Use the substitution <m>u=\sin(x)</m> to show that -->
-<!--               <me> -->
-<!--                 \int\frac{u}{1-u^2}\dx{u}= -->
-<!--                 \ln\left(\sec\left(\inverse\sin(u)\right)\right)+c. -->
-<!--               </me> -->
-<!--             </p> -->
-<!--             <p> -->
-<!--               Now use your Algebra and Trigonometry skills to show that -->
-<!--               <m>\sec\left(\inverse\sin(u)\right) = \sqrt{1-u^2}</m> so -->
-<!--               that <me> \int\frac{u}{1-u^2}\dx{u} = -->
-<!--               -\frac{1}{2}\ln\left(1-u^2\right)+c</me>. -->
-<!--             </p> -->
-<!--           </statement> -->
-<!--         </task> -->
-        
-<!--       </exercise> -->
-<!--       <aside> -->
-<!--         <title>Advice and Encouragement</title> -->
-<!--         <p> -->
-<!--           You have surely noticed that the calculations you had to do -->
-<!--           to evaluate the integrals in <xref -->
-<!--           ref="PROBLEMTrickySubstitution1">Problem</xref> were quite -->
-<!--           intricate. Not hard, <foreign> per se, </foreign> but there -->
-<!--           were a lot of steps and at each point you had to draw on just -->
-<!--           the right tool from Algebra, or Trigonometry, or Differential -->
-<!--           Calculus. -->
-<!--         </p> -->
-        
-<!--         <p> For example, to get the one-half factor out in front you -->
-<!--         needed first to recognize that <m>\sqrt{x}=x^{1/2}</m> and then -->
-<!--         you needed the following property of logarithms: -->
-<!--         <m>\ln(a^b)=b\ln(a)</m>. -->
-<!--         </p> -->
-        
-<!--         <p> -->
-<!--           This is what your math courses are going to be like from now -->
-<!--           on. You will continue to learn new techniques and acquire new -->
-<!--           tools.  But the new material will frequently be fairly simple -->
-<!--           to <em> understand<em></em> </em> but not so simple to -->
-<!--           implement. When struggling with a problem it is easy to make -->
-<!--           the mistake of thinking that you must have misunderstood the -->
-<!--           new material, but it will frequently be the case that you you -->
-<!--           really just don't see which is the right tool to use, or how -->
-<!--           to use it. -->
-          
-<!--         </p> -->
-<!--         <p> -->
-<!--           This will be frustrating at times. Don't give up. Ask for -->
-<!--           help if you need it. But be patient with yourself. When you -->
-<!--           are deep into a problem it is easy to overlook simple things, -->
-<!--           and then to be embarrassed when your teacher or a classmate -->
-<!--           shows you that all you had to do was factor out an -->
-<!--           <m>x</m>. When this happens just learn the lesson, remember -->
-<!--           it, and move on.  Embarassment is a wast of  waste your -->
-<!--           time.  And it will sap your self-confidence. We've -->
-<!--           all been there. Don<rsq/>t waste your time on embarassment. -->
-<!--         </p> -->
-<!--       </aside> -->
-      
-<!--       <exercise xml:id="PROBLEMAlgebraicSubst1"> -->
+  <!--   <p> -->
+  <!--     <xref ref="PROBLEMTerminalVelocity"></xref> uses the technique of -->
+  <!--     substitution. When we were learning differentiation  we  called this <q>making things easier on the -->
+  <!--     eyes</q>  because in that context -->
+  <!--     the substitutions we made almost always resulted in simpler formulas -->
+  <!--     that were easier to deal with than the originals.. -->
+  <!--   </p> -->
+  <!--   <p> -->
+  <!--     Our goal when making a substitution is to -->
+  <!--     simplify things -->
+  <!--     <em>eventually</em>. But sometimes things will get more complicated -->
+  <!--     first. We will proceed slowly. -->
+  <!--   </p> -->
+  <!-- <!-\- </paragraphs> -\-> -->
+  <example xml:id="EXAMPLEIntTan">
+    <title>The Integral of the Tangent Function</title>
 
-        
-<!--         <introduction> -->
-<!--           <p> -->
-<!--             The integrals in <xref ref="PROBLEMTrickySubstitution1A"> Problem </xref> and -->
-<!--             <xref ref="PROBLEMTrickySubstitution1B"> Problem </xref> can be evaluated by -->
-<!--             means of several different substitutions as we've seen. -->
-<!--             There are others that will also work but our principle -->
-<!--             point for now is that no substitution is <q>wrong</q>, some -->
-<!--             result in a new integral that is easier than the original -->
-<!--             and some will not. If our goal is simply to evaluate the -->
-<!--             integral we'll want to look for the simplest method we can -->
-<!--             find. -->
-<!--           </p> -->
-<!--         </introduction> -->
-        
-<!--         <task xml:id="PROBLEMAlgebraicSubst1A"> -->
-<!--           <statement> -->
-<!--             <p> -->
-<!--               Find a simpler substitution than the one we used in <xref -->
-<!--               ref="PROBLEMTrickySubstitution1A">Problem</xref> to evaluate the integral -->
-<!--               <me> -->
-<!--                 \int\frac{x}{1+x^2}\dx{x} -->
-<!--               </me> -->
-<!--             </p> -->
-<!--           </statement> -->
-<!--           <!-\- <hint> -\-> -->
-<!--           <!-\-   <p> -\-> -->
-<!--           <!-\-     Notice that we're back to using <m>x</m> as the -\-> -->
-<!--           <!-\-     variable. Does this matter? -\-> -->
-<!--           <!-\-   </p> -\-> -->
-<!--           <!-\- </hint> -\-> -->
-<!--           <hint> -->
-<!--             <p> -->
-<!--               Notice that <m>x\dx{x}</m> is <em>almost</em> the -->
-<!--               differential of <m>1+x^2</m>. -->
-<!--             </p> -->
-<!--           </hint> -->
-<!--         </task> -->
-<!--         <task  xml:id="PROBLEMAlgebraicSubst1B"> -->
-<!--           <statement> -->
-<!--             <p> -->
-<!--               Find a simpler substitution than the one we used in <xref -->
-<!--               ref="PROBLEMTrickySubstitution1B">Problem</xref> to evaluate the integral -->
-<!--               <me> -->
-<!--                 \int\frac{x}{1-x^2}\dx{x} -->
-<!--               </me> -->
-<!--             </p> -->
-<!--           </statement> -->
-<!--           <hint> -->
-<!--             <p>The substitution you used in <xref -->
-<!--             ref="PROBLEMAlgebraicSubst1A">part</xref> will probably work here.</p> -->
-<!--           </hint> -->
-<!--         </task> -->
-<!--       </exercise> -->
+    <p>
+      Use <xref ref="IntRuleSin">Integration Rule</xref> to
+      compute <m>\int\tan(x)\dx{x}</m> by making the substitution
+      <md>
+        <mrow>
+          z=\cos(x),
+        </mrow>
+        <intertext>which means that</intertext>
+        <mrow>\dx{z}=-\sin(x)\dx{x}</mrow>
+        <intertext> or</intertext>
+        <mrow>\textcolor{red}{-\dx{z}=\sin(x)\dx{z}}</mrow>
+        </md>.
+    </p>
+    <p>
+      Thus
+      <md>
+        <mrow>\int\tan(x)\dx{x} =
+        \int\frac{\textcolor{red}{\sin(x)}}{\cos(x)}\textcolor{red}{\dx{x}}
+        <!-- \amp -->
+        <!--            =\int\frac{\sin(x)}{z}\cdot\frac{-\dx{z}}{\sin(x)}</mrow> -->
+        \amp =-\int\frac{\dx{z}}{z}
+        </mrow>
+        <mrow>\amp =-\ln(z)+C</mrow>
+        <mrow>\amp =(-1)\ln(\cos(x))+C</mrow>
+        <mrow>\amp =\ln\left((\cos(x))^{-1}\right)+C</mrow>
+        <mrow>\amp =\ln\left(\sec(x)\right)+C</mrow>
+        </md>.
+    </p>
+  </example>
+  <exercise>
 
-<!--       <p> -->
-<!--         <idx><h>Vocabulary</h><h>integrand</h></idx> -->
-<!--         A good -->
-<!--         <url href="https://en.wikipedia.org/wiki/Rule_of_thumb" visual="https://en.wikipedia.org/wiki/Rule_of_thumb">Rule of Thumb</url> -->
-<!--         for choosing a substitution is to look a the -->
-<!--         <term>integrand</term> (the part between <m>\int </m> and the -->
-<!--         differential) and see if you can find an expression and its -->
-<!--         derivative. That is how we chose the substitution <m>z=\cos(x) </m> in -->
-<!--         <xref ref="EXAMPLEIntTan"></xref>, and what the hints in <xref -->
-<!--         ref="PROBLEMAlgebraicSubst1"></xref> tried to lead you to. If you -->
-<!--         can<rsq/>t find an expression and its derivative try to find an -->
-<!--         expression and -->
-<!--         <em>almost</em> its derivative. -->
-<!--       </p> -->
+    
+    <task>
+      <statement>
+        <p>
+          Show that <m>y(x)= \ln(\sec (x))+C</m> is a solution of <xref
+          ref="EQUATIONSeparableDE1">equation</xref>.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find <m>C</m> if <m>y(0)=2</m>.
+        </p>
+      </statement>
+    </task>
+  </exercise>
 
-<!--       <example> -->
-<!--         <task> -->
-<!--           <title>An Unhelpful Substitution</title> -->
-<!--           <p> -->
-<!--             For example, consider the integral -->
+  <problem>
+    <idx><h>Drills</h></idx>
+    <p>
+      Use a similar substitution to show that
+      <me>\int\cot(x)\dx{x}=-\ln(\csc(x)+C</me>
+    </p>
+  </problem>
 
-<!--             <me> \int       x^2\sqrt{x^3+1}\dx{x} </me> -->
+  <!--     <paragraphs xml:id="PARAGRAPHSubstGBU"> -->
+  <!--       <title>DIGRESSION:  Substitution, the Good, the Bad, and the Ugly</title> -->
 
-<!--             We  let <m>u = x^2</m> so that -->
-<!--             <m>\dx{u} = 2x \dx{x}</m>. This gives -->
+  <!--       <p> -->
+  <!--         Making a substitution in an integral is just the first -->
+  <!--         step. We still have to compute the integral. Our substitution -->
+  <!--         just -->
+  <!--         makes it a little  simpler to apply formulas and techniques with which we -->
+  <!--         are already familiar.  As simple as it is, substitution is no -->
+  <!--         mere trick. It is a very powerful technique, not just in -->
+  <!--         differentiation and but in all of mathematics. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         The good news is that you can do any substitution you wish and -->
+  <!--         as long as it is performed correctly, it is not wrong. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         But the bad news is that you can do any substitution you wish -->
+  <!--         and as long as it is performed correctly, it is not wrong. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         That is to say, you can make any substitution you wish.  As -->
+  <!--         long as all calculations are done correctly, it will not be -->
+  <!--         <em>wrong</em> in any absolute sense. But it may not be -->
+  <!--         helpful either and it won<rsq/>t always be easy to tell until -->
+  <!--         you<rsq/>ve done a lot of computations whether the -->
+  <!--         substitution you chose is viable. This issue will be mitigated -->
+  <!--         as you gain experience but, especially in the beginning, be -->
+  <!--         careful.  It is very easy to make what looks like a reasonable -->
+  <!--         substitution which is either unworkable or, if it is workable, -->
+  <!--         is much harder to do than different substitution would be. -->
+  <!--       </p> -->
 
-<!--             <md> -->
-<!--               <mrow> \int   x^2\sqrt{x^3+1}\dx{x}= \int -->
-<!--               u\sqrt{u^{3/2}+1}\left(\frac{\dx{u}}{2x}\right)</mrow> -->
-<!--               <intertext> Notice -->
-<!--               that we can bring the <m>1/2</m> outside the integral because -->
-<!--               it is a constant, but since <m>\frac{1}{x}</m> is not a -->
-<!--               constant (it depends on <m>u</m>) we cannot do the same with -->
-<!--               with it so</intertext> -->
-<!--               <mrow> \amp{}= -->
-<!--               \frac12\int\frac{u\sqrt{u^{3/2}+1}}{x}\dx{u}.</mrow> -->
-<!--               <intertext> -->
-<!--                 We could rewrite <m>x = \sqrt{u}</m> , so that -->
-<!--               </intertext> -->
-<!--               <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp{}= -->
-<!--               \frac12\int\frac{u\sqrt{u^{3/2}}}{\sqrt{u}}\dx{u}</mrow> -->
-<!--               <mrow>\amp = -->
-<!--               \frac12 \int\sqrt{u}\sqrt{u^{3/2}+1}\dx{u}</mrow> -->
-<!--               <mrow>\amp -->
-<!--               =\frac12\int\sqrt{u^{5/2}+u}\dx{u}.</mrow> -->
-<!--             </md> -->
-<!--           </p> -->
-<!--           <p> -->
-<!--             This is all correct, but leads to an integral far worse than the -->
-<!--             original, But <mdash/> and this is the point of this example -->
-<!--             <mdash/> we have no way of seeing that this particular -->
-<!--             substitution will not be helpful until after we<rsq/>ve done the -->
-<!--             computations above. -->
-<!--           </p> -->
-<!--           <p> -->
-<!--           The lessons here are (1) Be patient with yourself, because this is hard, and (2) -->
-<!--           Don<rsq/>t give up, because this is hard. -->
-<!--         </p> -->
-<!--       </task> -->
-<!--       <task> -->
-<!--         <title>A Helpful Substitution</title> -->
-<!--         <p> -->
-<!--           But notice that <m>x^2</m> is almost the derivative of <m>x^3 + -->
-<!--           1</m>. So let's make <m>y = x^3 + 1</m> instead. Thus -->
-<!--           <m>\dx{y} = 3x^2 \dx{x}</m>. Will that extra  factor of <m>3</m> -->
-<!--           be a problem for us? Let<rsq/>s see. -->
-<!--         </p> -->
-<!--         <p> -->
-<!--           Making the substitution we have -->
-<!--           <md> -->
-<!--             <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp =\int -->
-<!--             x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)</mrow> -->
-<!--             <mrow>\amp =\frac13\int y^{1/2}\dx{y}</mrow> -->
-<!--             <mrow>\amp =\frac13\left(\frac{y^{3/2}}{3/2}\right)+c</mrow> -->
-<!--             <mrow>\amp =\frac29\left(x^3+1\right)^{3/2}+c</mrow> -->
-<!--           </md> -->
-<!--         </p> -->
-<!--       </task> -->
-<!--     </example> -->
-<!--     <p> -->
-<!--       So what's the method for making a  substitution? -->
-<!--       Unfortunately, there is none. Basically, you can try -->
-<!--       anything. If it works, great!  If it doesn't, don't do -->
-<!--       something incorrectly to try and force it. Try something -->
-<!--       else. Our Rule of Thumb will help, but there are no guarantees. This is -->
-<!--       what makes integration harder than differentiation, much as -->
-<!--       long division is harder than multiplication. -->
-<!--     </p> -->
-<!--     <p> -->
-<!--       The problem will not solve itself.  Try something!  As you practice, -->
-<!--       you will gain more experience.  Look for formulas, methods, and -->
-<!--         ideas  that you have seen before. Maybe they can be tweaked to -->
-<!--         address your problem. Maybe they can be applied directly. You -->
-<!--         won<rsq/>t know until you try. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         And Practice, Practice, Practice! -->
-<!--       </p> -->
+  <!--       <p> -->
+  <!--         For example, when computing -->
+  <!--         <m>\int\tan(x)\dx{x}</m>, we could have let <m>z=x</m>. In that -->
+  <!--         case we would have <m>\int\tan(x)\dx{x}=\int\tan(z)\dx{z}</m> -->
+  <!--         which is true, but it  is not helpful. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         Another approach would be to let <m>u=\tan(x)</m> so that -->
+  <!--         <m>\dx{u}=\sec^2(x)\dx{x}</m> or <m>\dx{x} =\frac{\dx{u} -->
+  <!--         }{\sec^2(x) }</m>. In that case we have -->
+  <!--         <mdn> -->
+  <!--           <mrow number="no"> -->
+  <!--             \int\tan(x)\dx{x}\amp{}=\int\frac{u}{\sec^2(x)}\dx{u} -->
+  <!--           </mrow> -->
+  <!--           <mrow number="no"> -->
+  <!--             \amp{}=\int\frac{u}{1+\tan^2(x)}\dx{u} -->
+  <!--           </mrow> -->
+  <!--           <intertext>so that</intertext> -->
+  <!--           <mrow xml:id="EQUATIONBadTanInt1"> -->
+  <!--             \int\tan(x)\dx{x}=\amp{}=\int\frac{u}{1+u^2}\dx{u} -->
+  <!--           </mrow> -->
+  <!--           </mdn>. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         This is a true statement <mdash/> we haven<rsq/>t made any -->
+  <!--         computational errors <mdash/> but it appears that after the -->
+  <!--         substitution we will need to evaluate <m>\int -->
+  <!--         \frac{u}{1+u^2}\dx{y}</m>, which looks hard. It is actually -->
+  <!--         possible to compute this integral using the knowledge you now -->
+  <!--         have. It is simply a matter of finding the right -->
+  <!--         substitution. However, since we have already computed <m>\int -->
+  <!--         \tan(x) \dx{x}</m> in <xref ref="EXAMPLEIntTan"></xref> it is -->
+  <!--         pointless to continue with this example. -->
+  <!--       </p> -->
+  <!--       <!-\- <p> -\-> -->
+  <!--       <!-\- However knowing that  -\-> -->
+  <!--       <!-\- <men xml:id="EQUATIONIntTan3"> -\-> -->
+  <!--       <!-\- \int\tan(x)\dx{x}=\int\frac{u}{\sec^2(x)}\dx{u}=\int\frac{u}{1+u^2}\dx{u}.</men> -\-> -->
+  <!--       <!-\- will be helpful to us in <xref -\-> -->
+  <!--       <!-\- ref="PROBLEMTrickySubstitution1"></xref> below so we take specific -\-> -->
+  <!--       <!-\- notice of this fact here. -\-> -->
+  <!--       <!-\- </p> -\-> -->
+  <!--       <!-\- <p> -\-> -->
 
 
-<!--       <p> -->
-<!--         As a general rule the more integrals you know the better. This is -->
-<!--         because the integration techniques you will be learning do not allow -->
-<!--         you to compute an integral. They merely show you how to transform one -->
-<!--         integral into another. You saw this in <xref -->
-<!--         ref="EQUATIONBadTanInt1">equation</xref> when we transformed -->
-<!--         <m>\int\tan(x)\dx{x}</m> into -->
-<!--         <m>\int\frac{u}{1+u^2}\dx{u}</m> and in <xref -->
-<!--         ref="EXAMPLEIntTan"></xref> when we transformed -->
-<!--         <m>\int\tan(x)\dx{x}</m> into -->
-<!--         <m>-\int\frac{\dx{z}}{z}</m>. We did not compute these integrals, we -->
-<!--         merely transformed them. In <xref -->
-<!--         ref="EXAMPLEIntTan"></xref> we transformed <m>\int\tan(x)\dx{x} </m> -->
-<!--         into an integral that we already knew. -->
-<!--       </p> -->
-<!--       <p> -->
-<!--         For that reason it is best to simply know <mdash/> that is, to  have memorized -->
-<!--         <mdash/> as many integrals as you can. Each integral you know provides -->
-<!--         a target, something you can aim for as you try to transform  a new -->
-<!--         integral into one you know. -->
-<!--       </p> -->
-<!--       <!-\- <problem  xml:id="IntSECCSC"> -\-> -->
-<!--       <!-\-   <title>The Integrals of the Secant and Cosecant Functions</title> -\-> -->
-<!--       <!-\-   <introduction> -\-> -->
-<!--       <!-\-     <p> -\-> -->
-<!--       <!-\-       At this point we have know the integrals of the <m>\sin(x) </m>, -\-> -->
-<!--       <!-\-       <m>\cos(x) </m>, <m>\tan(x) </m>, and <m>\cot(x) </m>. The first two -\-> -->
-<!--       <!-\-       were immediate consequences of the differentiation rules, but the -\-> -->
-<!--       <!-\-       <m>\tan(x) </m>, and <m>\cot(x) </m> were harder.  -\-> -->
-<!--       <!-\-     </p> -\-> -->
-<!--       <!-\-   </introduction> -\-> -->
-<!--       <!-\-   <task> -\-> -->
-<!--       <!-\-     <statement> -\-> -->
-<!--       <!-\-       <p> -\-> -->
-<!--       <!-\-         Compute <m>\int\sec(x)\dx{x} </m> using the following trick: -\-> -->
-<!--       <!-\-         <me>\int\sec(x)\dx{x} = \int\sec(x)\underbrace{\frac{\tan (x)+\sec (x)}{\tan -\-> -->
-<!--       <!-\-         (x)+\sec (x)}}_{=1}\dx{x}.</me> -\-> -->
-<!--       <!-\-       </p> -\-> -->
-<!--       <!-\-       <p> -\-> -->
-<!--       <!-\-         Differentiate your solution to verify that its derivative is -\-> -->
-<!--       <!-\-         <m>\sec(x) </m>. -\-> -->
-<!--       <!-\-       </p> -\-> -->
-<!--       <!-\-     </statement> -\-> -->
-<!--       <!-\-     <hint> -\-> -->
-<!--       <!-\-       <p> -\-> -->
-<!--       <!-\-         Do you recognize a substitution that can be used? If so, use it. If -\-> -->
-<!--       <!-\-         not, try something. -\-> -->
-<!--       <!-\-       </p> -\-> -->
-<!--       <!-\-     </hint> -\-> -->
-<!--       <!-\-   </task> -\-> -->
-<!--       <!-\-   <task> -\-> -->
-<!--       <!-\-     <statement> -\-> -->
-<!--       <!-\-       <p> -\-> -->
-<!--       <!-\-         Use a similar trick to compute <m>\int \csc(x) \dx{x} </m>. -\-> -->
-<!--       <!-\-       </p> -\-> -->
-<!--       <!-\-     </statement> -\-> -->
-<!--       <!-\-   </task> -\-> -->
+  <!--       <!-\- This is an  integral you can do today if you are clever enough, but it will require that you make another substitution. Since we<rsq/>ve already done at least as much work to get to <xref ref="EQUATIONBadTanInt1">equation</xref> as we did  this approach seems like it -\-> -->
+  <!--       <!-\-         will be much harder than our original strategy so we're -\-> -->
+  <!--       <!-\-         inclined to abandon it immediately. -\-> -->
+  <!--       <!-\-       </p> -\-> -->
+  <!--       <p> -->
+  <!--         A comparably bad choice is   <m>u=\sin(x)</m>. With this -->
+  <!--         substitution we have -->
+  <!--         <m>\dx{u}=\cos(x)\dx{x}</m> or -->
+  <!--         <m>\dx{x}=\frac{\dx{u}}{\cos(x)}</m>. In this case we have -->
+  <!--         <mdn> -->
+  <!--           <mrow number="no">  -->
+  <!--             \int\tan(x)\dx{x} =\amp{} \int\frac{\sin(x)}{\cos(x)}\dx{x} -->
+  <!--           </mrow> -->
+  <!--           <mrow xml:id="EQUATIONBadTanInt2"> -->
+  <!--             \amp{}= \int\left(\frac{u}{\cos(x)}\cdot\frac{\dx{u}}{\cos(x)}\right) -->
+  <!--             =\int\frac{u}{1-u^2}\dx{u} -->
+  <!--           </mrow> -->
+  <!--         </mdn> -->
+  <!--         which is nearly the same, formally, as <xref ref="EQUATIONBadTanInt1"> -->
+  <!--         equation</xref>. The only difference seems to be that the -->
+  <!--         <q><m>+</m></q> in the denominator in <xref -->
+  <!--         ref="EQUATIONBadTanInt1">equation</xref> became a -->
+  <!--         <q><m>-</m></q> in <xref -->
+  <!--         ref="EQUATIONBadTanInt2">equation</xref>. -->
+  <!--       </p> -->
+  <!--       <aside> -->
+  <!--         <title>Observation</title> -->
+  <!--         <p> -->
+  <!--           We say <q>formally</q> because they aren't really the -->
+  <!--           same. We<rsq/>ve used the substitution variable <m>u</m> to -->
+  <!--           represent two entirely different functions in each of these -->
+  <!--           formula. -->
+  <!--         </p> -->
+  <!--       </aside> -->
+  <!--       <exercise xml:id="PROBLEMTrickySubstitution1"> -->
 
-<!--       <!-\- </problem> -\-> -->
+  
+  <!--         <introduction> -->
+  <!--           <p> -->
+  <!--             On the other hand we  know from <xref ref="EXAMPLEIntTan"></xref> that -->
+  <!--             <m>\int\tan(x)\dx{x}=\ln(\sec(x)+c</m> and we can use this -->
+  <!--             knowledge. -->
+  <!--           </p> -->
+  <!--           <p> -->
+  <!--             Suppose we need to compute -->
+  <!--             <m>\int\frac{u}{1+u^2}\dx{u}</m> or -->
+  <!--             <m>\int\frac{u}{1-u^2}\dx{u}</m>. The same substitution we -->
+  <!--             used to transform <m>\int\tan(x)\dx{x}</m> these into the -->
+  <!--             integrals (seen in <xref -->
+  <!--             ref="EQUATIONBadTanInt1">equation</xref> and <xref -->
+  <!--             ref="EQUATIONBadTanInt2">equation</xref>) -->
+  <!--             will work in reverse. -->
+  <!--           </p> -->
+  <!--         </introduction> -->
+  <!--         <task  xml:id="PROBLEMTrickySubstitution1A"> -->
+  <!--           <statement> -->
+  <!--             <p> -->
+  <!--               Use the substitution <m>u=\tan(x)</m> to show that: -->
+  <!--               <me> -->
+  <!--                 \int\frac{u}{1+u^2}\dx{u} = -->
+  <!--                 \ln\left(\sec\left(\inverse\tan(u)\right)\right)+c. -->
+  <!--               </me> -->
+  <!--             </p> -->
+  <!--             <p> -->
+  <!--               Now use your Algebra and Trigonometry skills to show that -->
+  <!--               <m>\sec\left(\inverse\tan(u)\right) = \sqrt{1+u^2}</m> so -->
+  <!--               that <me> \int\frac{u}{1+u^2}\dx{u} = -->
+  <!--               \frac12\ln\left(1+u^2\right)+c</me>. -->
+  <!--             </p> -->
+  <!--           </statement> -->
+  <!--         </task> -->
+  
+  <!--         <task xml:id="PROBLEMTrickySubstitution1B"> -->
+  <!--           <statement> -->
+  <!--             <p> -->
+  <!--               Use the substitution <m>u=\sin(x)</m> to show that -->
+  <!--               <me> -->
+  <!--                 \int\frac{u}{1-u^2}\dx{u}= -->
+  <!--                 \ln\left(\sec\left(\inverse\sin(u)\right)\right)+c. -->
+  <!--               </me> -->
+  <!--             </p> -->
+  <!--             <p> -->
+  <!--               Now use your Algebra and Trigonometry skills to show that -->
+  <!--               <m>\sec\left(\inverse\sin(u)\right) = \sqrt{1-u^2}</m> so -->
+  <!--               that <me> \int\frac{u}{1-u^2}\dx{u} = -->
+  <!--               -\frac{1}{2}\ln\left(1-u^2\right)+c</me>. -->
+  <!--             </p> -->
+  <!--           </statement> -->
+  <!--         </task> -->
+  
+  <!--       </exercise> -->
+  <!--       <aside> -->
+  <!--         <title>Advice and Encouragement</title> -->
+  <!--         <p> -->
+  <!--           You have surely noticed that the calculations you had to do -->
+  <!--           to evaluate the integrals in <xref -->
+  <!--           ref="PROBLEMTrickySubstitution1">Problem</xref> were quite -->
+  <!--           intricate. Not hard, <foreign> per se, </foreign> but there -->
+  <!--           were a lot of steps and at each point you had to draw on just -->
+  <!--           the right tool from Algebra, or Trigonometry, or Differential -->
+  <!--           Calculus. -->
+  <!--         </p> -->
+  
+  <!--         <p> For example, to get the one-half factor out in front you -->
+  <!--         needed first to recognize that <m>\sqrt{x}=x^{1/2}</m> and then -->
+  <!--         you needed the following property of logarithms: -->
+  <!--         <m>\ln(a^b)=b\ln(a)</m>. -->
+  <!--         </p> -->
+  
+  <!--         <p> -->
+  <!--           This is what your math courses are going to be like from now -->
+  <!--           on. You will continue to learn new techniques and acquire new -->
+  <!--           tools.  But the new material will frequently be fairly simple -->
+  <!--           to <em> understand<em></em> </em> but not so simple to -->
+  <!--           implement. When struggling with a problem it is easy to make -->
+  <!--           the mistake of thinking that you must have misunderstood the -->
+  <!--           new material, but it will frequently be the case that you you -->
+  <!--           really just don't see which is the right tool to use, or how -->
+  <!--           to use it. -->
+  
+  <!--         </p> -->
+  <!--         <p> -->
+  <!--           This will be frustrating at times. Don't give up. Ask for -->
+  <!--           help if you need it. But be patient with yourself. When you -->
+  <!--           are deep into a problem it is easy to overlook simple things, -->
+  <!--           and then to be embarrassed when your teacher or a classmate -->
+  <!--           shows you that all you had to do was factor out an -->
+  <!--           <m>x</m>. When this happens just learn the lesson, remember -->
+  <!--           it, and move on.  Embarassment is a wast of  waste your -->
+  <!--           time.  And it will sap your self-confidence. We've -->
+  <!--           all been there. Don<rsq/>t waste your time on embarassment. -->
+  <!--         </p> -->
+  <!--       </aside> -->
+  
+  <!--       <exercise xml:id="PROBLEMAlgebraicSubst1"> -->
 
-<!--       <exercise xml:id="PROBLEMIntSECCSC"> -->
-<!--         <title>The Integrals of the Secant and Cosecant Functions</title> -->
-        
-        
-<!--         <introduction> -->
-<!--           <p> -->
-<!--             At this point we have know the integrals of the <m>\sin(x) </m>, -->
-<!--             <m>\cos(x) </m>, <m>\tan(x) </m>, and <m>\cot(x) </m>. The first two -->
-<!--             were immediate consequences of the differentiation rules, but the -->
-<!--             <m>\tan(x) </m>, and <m>\cot(x) </m> were harder. -->
-<!--           </p> -->
-<!--         </introduction> -->
-<!--         <task xml:id="PROBLEMIntSECCSCA"> -->
-<!--           <statement> -->
-<!--             <p> -->
-<!--               Confirm the identity: -->
-<!-- <m>\sec(x) =\frac{\cos(x) }{1-\sin^2(x) }. </m> -->
-<!-- </p> -->
-<!-- </statement> -->
-<!-- </task> -->
-<!-- <task xml:id="PROBLEMIntSECCSCB"> -->
-<!--   <statement> -->
-<!--     <p> -->
-<!--       Confirm the identity: <m>\frac{1}{1-\sin^2(x) }= -->
-<!-- \frac12{\left[\frac{1}{1+\sin(x) } + \frac{1}{1-\sin(x) }\right] }</m> -->
-<!-- </p> -->
-<!-- </statement> -->
-<!-- </task> -->
-<!-- <task> -->
-<!--   <statement> -->
-<!--     <p> -->
-<!--       Use the observations in <xref ref="PROBLEMIntSECCSCA">Problem</xref> and -->
-<!--       <xref ref="PROBLEMIntSECCSCB">Problem</xref> and a well chosen substitution -->
-<!--       to show that -->
+  
+  <!--         <introduction> -->
+  <!--           <p> -->
+  <!--             The integrals in <xref ref="PROBLEMTrickySubstitution1A"> Problem </xref> and -->
+  <!--             <xref ref="PROBLEMTrickySubstitution1B"> Problem </xref> can be evaluated by -->
+  <!--             means of several different substitutions as we've seen. -->
+  <!--             There are others that will also work but our principle -->
+  <!--             point for now is that no substitution is <q>wrong</q>, some -->
+  <!--             result in a new integral that is easier than the original -->
+  <!--             and some will not. If our goal is simply to evaluate the -->
+  <!--             integral we'll want to look for the simplest method we can -->
+  <!--             find. -->
+  <!--           </p> -->
+  <!--         </introduction> -->
+  
+  <!--         <task xml:id="PROBLEMAlgebraicSubst1A"> -->
+  <!--           <statement> -->
+  <!--             <p> -->
+  <!--               Find a simpler substitution than the one we used in <xref -->
+  <!--               ref="PROBLEMTrickySubstitution1A">Problem</xref> to evaluate the integral -->
+  <!--               <me> -->
+  <!--                 \int\frac{x}{1+x^2}\dx{x} -->
+  <!--               </me> -->
+  <!--             </p> -->
+  <!--           </statement> -->
+  <!--           <!-\- <hint> -\-> -->
+  <!--           <!-\-   <p> -\-> -->
+  <!--           <!-\-     Notice that we're back to using <m>x</m> as the -\-> -->
+  <!--           <!-\-     variable. Does this matter? -\-> -->
+  <!--           <!-\-   </p> -\-> -->
+  <!--           <!-\- </hint> -\-> -->
+  <!--           <hint> -->
+  <!--             <p> -->
+  <!--               Notice that <m>x\dx{x}</m> is <em>almost</em> the -->
+  <!--               differential of <m>1+x^2</m>. -->
+  <!--             </p> -->
+  <!--           </hint> -->
+  <!--         </task> -->
+  <!--         <task  xml:id="PROBLEMAlgebraicSubst1B"> -->
+  <!--           <statement> -->
+  <!--             <p> -->
+  <!--               Find a simpler substitution than the one we used in <xref -->
+  <!--               ref="PROBLEMTrickySubstitution1B">Problem</xref> to evaluate the integral -->
+  <!--               <me> -->
+  <!--                 \int\frac{x}{1-x^2}\dx{x} -->
+  <!--               </me> -->
+  <!--             </p> -->
+  <!--           </statement> -->
+  <!--           <hint> -->
+  <!--             <p>The substitution you used in <xref -->
+  <!--             ref="PROBLEMAlgebraicSubst1A">part</xref> will probably work here.</p> -->
+  <!--           </hint> -->
+  <!--         </task> -->
+  <!--       </exercise> -->
 
-<!-- <me>\int\sec(x)\dx{x} = \ln \abs{\sec(x) + \tan(x)} +C</me> -->
-<!-- </p> -->
-<!-- <aside> -->
-<!-- <title>Comment:</title> -->
-<!-- <p> -->
-<!--   We have absolute value bars around the expression <m>\sec(x)+\tan(x) -->
-<!--   </m> to ensure that we are not trying to take the logarithm of a -->
-<!--   negative number. These will not appear obviously in any of the  computations -->
-<!--   you need to do. Just tack them on at the end, like we did. -->
-<!-- </p> -->
-<!-- </aside> -->
-<!-- </statement> -->
-<!-- </task> -->
+  <!--       <p> -->
+  <!--         <idx><h>Vocabulary</h><h>integrand</h></idx> -->
+  <!--         A good -->
+  <!--         <url href="https://en.wikipedia.org/wiki/Rule_of_thumb" visual="https://en.wikipedia.org/wiki/Rule_of_thumb">Rule of Thumb</url> -->
+  <!--         for choosing a substitution is to look a the -->
+  <!--         <term>integrand</term> (the part between <m>\int </m> and the -->
+  <!--         differential) and see if you can find an expression and its -->
+  <!--         derivative. That is how we chose the substitution <m>z=\cos(x) </m> in -->
+  <!--         <xref ref="EXAMPLEIntTan"></xref>, and what the hints in <xref -->
+  <!--         ref="PROBLEMAlgebraicSubst1"></xref> tried to lead you to. If you -->
+  <!--         can<rsq/>t find an expression and its derivative try to find an -->
+  <!--         expression and -->
+  <!--         <em>almost</em> its derivative. -->
+  <!--       </p> -->
 
-<!-- <task> -->
-<!--   <statement> -->
-<!--     <p> -->
-<!--       Compute <m>\int \csc(x) \dx{x} </m> similarly. -->
-<!-- </p> -->
-<!-- </statement> -->
-<!-- </task> -->
+  <!--       <example> -->
+  <!--         <task> -->
+  <!--           <title>An Unhelpful Substitution</title> -->
+  <!--           <p> -->
+  <!--             For example, consider the integral -->
 
-<!-- </exercise> -->
-<!-- <p><alert>END OF DIGRESSION</alert></p> -->
-<!-- </paragraphs> -->
+  <!--             <me> \int       x^2\sqrt{x^3+1}\dx{x} </me> -->
+
+  <!--             We  let <m>u = x^2</m> so that -->
+  <!--             <m>\dx{u} = 2x \dx{x}</m>. This gives -->
+
+  <!--             <md> -->
+  <!--               <mrow> \int   x^2\sqrt{x^3+1}\dx{x}= \int -->
+  <!--               u\sqrt{u^{3/2}+1}\left(\frac{\dx{u}}{2x}\right)</mrow> -->
+  <!--               <intertext> Notice -->
+  <!--               that we can bring the <m>1/2</m> outside the integral because -->
+  <!--               it is a constant, but since <m>\frac{1}{x}</m> is not a -->
+  <!--               constant (it depends on <m>u</m>) we cannot do the same with -->
+  <!--               with it so</intertext> -->
+  <!--               <mrow> \amp{}= -->
+  <!--               \frac12\int\frac{u\sqrt{u^{3/2}+1}}{x}\dx{u}.</mrow> -->
+  <!--               <intertext> -->
+  <!--                 We could rewrite <m>x = \sqrt{u}</m> , so that -->
+  <!--               </intertext> -->
+  <!--               <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp{}= -->
+  <!--               \frac12\int\frac{u\sqrt{u^{3/2}}}{\sqrt{u}}\dx{u}</mrow> -->
+  <!--               <mrow>\amp = -->
+  <!--               \frac12 \int\sqrt{u}\sqrt{u^{3/2}+1}\dx{u}</mrow> -->
+  <!--               <mrow>\amp -->
+  <!--               =\frac12\int\sqrt{u^{5/2}+u}\dx{u}.</mrow> -->
+  <!--             </md> -->
+  <!--           </p> -->
+  <!--           <p> -->
+  <!--             This is all correct, but leads to an integral far worse than the -->
+  <!--             original, But <mdash/> and this is the point of this example -->
+  <!--             <mdash/> we have no way of seeing that this particular -->
+  <!--             substitution will not be helpful until after we<rsq/>ve done the -->
+  <!--             computations above. -->
+  <!--           </p> -->
+  <!--           <p> -->
+  <!--           The lessons here are (1) Be patient with yourself, because this is hard, and (2) -->
+  <!--           Don<rsq/>t give up, because this is hard. -->
+  <!--         </p> -->
+  <!--       </task> -->
+  <!--       <task> -->
+  <!--         <title>A Helpful Substitution</title> -->
+  <!--         <p> -->
+  <!--           But notice that <m>x^2</m> is almost the derivative of <m>x^3 + -->
+  <!--           1</m>. So let's make <m>y = x^3 + 1</m> instead. Thus -->
+  <!--           <m>\dx{y} = 3x^2 \dx{x}</m>. Will that extra  factor of <m>3</m> -->
+  <!--           be a problem for us? Let<rsq/>s see. -->
+  <!--         </p> -->
+  <!--         <p> -->
+  <!--           Making the substitution we have -->
+  <!--           <md> -->
+  <!--             <mrow>\int x^2\sqrt{x^3+1}\dx{x}\amp =\int -->
+  <!--             x^2\sqrt{y}\left(\frac{\dx{y}}{3x^2}\right)</mrow> -->
+  <!--             <mrow>\amp =\frac13\int y^{1/2}\dx{y}</mrow> -->
+  <!--             <mrow>\amp =\frac13\left(\frac{y^{3/2}}{3/2}\right)+c</mrow> -->
+  <!--             <mrow>\amp =\frac29\left(x^3+1\right)^{3/2}+c</mrow> -->
+  <!--           </md> -->
+  <!--         </p> -->
+  <!--       </task> -->
+  <!--     </example> -->
+  <!--     <p> -->
+  <!--       So what's the method for making a  substitution? -->
+  <!--       Unfortunately, there is none. Basically, you can try -->
+  <!--       anything. If it works, great!  If it doesn't, don't do -->
+  <!--       something incorrectly to try and force it. Try something -->
+  <!--       else. Our Rule of Thumb will help, but there are no guarantees. This is -->
+  <!--       what makes integration harder than differentiation, much as -->
+  <!--       long division is harder than multiplication. -->
+  <!--     </p> -->
+  <!--     <p> -->
+  <!--       The problem will not solve itself.  Try something!  As you practice, -->
+  <!--       you will gain more experience.  Look for formulas, methods, and -->
+  <!--         ideas  that you have seen before. Maybe they can be tweaked to -->
+  <!--         address your problem. Maybe they can be applied directly. You -->
+  <!--         won<rsq/>t know until you try. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         And Practice, Practice, Practice! -->
+  <!--       </p> -->
+
+
+  <!--       <p> -->
+  <!--         As a general rule the more integrals you know the better. This is -->
+  <!--         because the integration techniques you will be learning do not allow -->
+  <!--         you to compute an integral. They merely show you how to transform one -->
+  <!--         integral into another. You saw this in <xref -->
+  <!--         ref="EQUATIONBadTanInt1">equation</xref> when we transformed -->
+  <!--         <m>\int\tan(x)\dx{x}</m> into -->
+  <!--         <m>\int\frac{u}{1+u^2}\dx{u}</m> and in <xref -->
+  <!--         ref="EXAMPLEIntTan"></xref> when we transformed -->
+  <!--         <m>\int\tan(x)\dx{x}</m> into -->
+  <!--         <m>-\int\frac{\dx{z}}{z}</m>. We did not compute these integrals, we -->
+  <!--         merely transformed them. In <xref -->
+  <!--         ref="EXAMPLEIntTan"></xref> we transformed <m>\int\tan(x)\dx{x} </m> -->
+  <!--         into an integral that we already knew. -->
+  <!--       </p> -->
+  <!--       <p> -->
+  <!--         For that reason it is best to simply know <mdash/> that is, to  have memorized -->
+  <!--         <mdash/> as many integrals as you can. Each integral you know provides -->
+  <!--         a target, something you can aim for as you try to transform  a new -->
+  <!--         integral into one you know. -->
+  <!--       </p> -->
+  <!--       <!-\- <problem  xml:id="IntSECCSC"> -\-> -->
+  <!--       <!-\-   <title>The Integrals of the Secant and Cosecant Functions</title> -\-> -->
+  <!--       <!-\-   <introduction> -\-> -->
+  <!--       <!-\-     <p> -\-> -->
+  <!--       <!-\-       At this point we have know the integrals of the <m>\sin(x) </m>, -\-> -->
+  <!--       <!-\-       <m>\cos(x) </m>, <m>\tan(x) </m>, and <m>\cot(x) </m>. The first two -\-> -->
+  <!--       <!-\-       were immediate consequences of the differentiation rules, but the -\-> -->
+  <!--       <!-\-       <m>\tan(x) </m>, and <m>\cot(x) </m> were harder.  -\-> -->
+  <!--       <!-\-     </p> -\-> -->
+  <!--       <!-\-   </introduction> -\-> -->
+  <!--       <!-\-   <task> -\-> -->
+  <!--       <!-\-     <statement> -\-> -->
+  <!--       <!-\-       <p> -\-> -->
+  <!--       <!-\-         Compute <m>\int\sec(x)\dx{x} </m> using the following trick: -\-> -->
+  <!--       <!-\-         <me>\int\sec(x)\dx{x} = \int\sec(x)\underbrace{\frac{\tan (x)+\sec (x)}{\tan -\-> -->
+  <!--       <!-\-         (x)+\sec (x)}}_{=1}\dx{x}.</me> -\-> -->
+  <!--       <!-\-       </p> -\-> -->
+  <!--       <!-\-       <p> -\-> -->
+  <!--       <!-\-         Differentiate your solution to verify that its derivative is -\-> -->
+  <!--       <!-\-         <m>\sec(x) </m>. -\-> -->
+  <!--       <!-\-       </p> -\-> -->
+  <!--       <!-\-     </statement> -\-> -->
+  <!--       <!-\-     <hint> -\-> -->
+  <!--       <!-\-       <p> -\-> -->
+  <!--       <!-\-         Do you recognize a substitution that can be used? If so, use it. If -\-> -->
+  <!--       <!-\-         not, try something. -\-> -->
+  <!--       <!-\-       </p> -\-> -->
+  <!--       <!-\-     </hint> -\-> -->
+  <!--       <!-\-   </task> -\-> -->
+  <!--       <!-\-   <task> -\-> -->
+  <!--       <!-\-     <statement> -\-> -->
+  <!--       <!-\-       <p> -\-> -->
+  <!--       <!-\-         Use a similar trick to compute <m>\int \csc(x) \dx{x} </m>. -\-> -->
+  <!--       <!-\-       </p> -\-> -->
+  <!--       <!-\-     </statement> -\-> -->
+  <!--       <!-\-   </task> -\-> -->
+
+  <!--       <!-\- </problem> -\-> -->
+
+  <!--       <exercise xml:id="PROBLEMIntSECCSC"> -->
+  <!--         <title>The Integrals of the Secant and Cosecant Functions</title> -->
+  
+  
+  <!--         <introduction> -->
+  <!--           <p> -->
+  <!--             At this point we have know the integrals of the <m>\sin(x) </m>, -->
+  <!--             <m>\cos(x) </m>, <m>\tan(x) </m>, and <m>\cot(x) </m>. The first two -->
+  <!--             were immediate consequences of the differentiation rules, but the -->
+  <!--             <m>\tan(x) </m>, and <m>\cot(x) </m> were harder. -->
+  <!--           </p> -->
+  <!--         </introduction> -->
+  <!--         <task xml:id="PROBLEMIntSECCSCA"> -->
+  <!--           <statement> -->
+  <!--             <p> -->
+  <!--               Confirm the identity: -->
+  <!-- <m>\sec(x) =\frac{\cos(x) }{1-\sin^2(x) }. </m> -->
+  <!-- </p> -->
+  <!-- </statement> -->
+  <!-- </task> -->
+  <!-- <task xml:id="PROBLEMIntSECCSCB"> -->
+  <!--   <statement> -->
+  <!--     <p> -->
+  <!--       Confirm the identity: <m>\frac{1}{1-\sin^2(x) }= -->
+  <!-- \frac12{\left[\frac{1}{1+\sin(x) } + \frac{1}{1-\sin(x) }\right] }</m> -->
+  <!-- </p> -->
+  <!-- </statement> -->
+  <!-- </task> -->
+  <!-- <task> -->
+  <!--   <statement> -->
+  <!--     <p> -->
+  <!--       Use the observations in <xref ref="PROBLEMIntSECCSCA">Problem</xref> and -->
+  <!--       <xref ref="PROBLEMIntSECCSCB">Problem</xref> and a well chosen substitution -->
+  <!--       to show that -->
+
+  <!-- <me>\int\sec(x)\dx{x} = \ln \abs{\sec(x) + \tan(x)} +C</me> -->
+  <!-- </p> -->
+  <!-- <aside> -->
+  <!-- <title>Comment:</title> -->
+  <!-- <p> -->
+  <!--   We have absolute value bars around the expression <m>\sec(x)+\tan(x) -->
+  <!--   </m> to ensure that we are not trying to take the logarithm of a -->
+  <!--   negative number. These will not appear obviously in any of the  computations -->
+  <!--   you need to do. Just tack them on at the end, like we did. -->
+  <!-- </p> -->
+  <!-- </aside> -->
+  <!-- </statement> -->
+  <!-- </task> -->
+
+  <!-- <task> -->
+  <!--   <statement> -->
+  <!--     <p> -->
+  <!--       Compute <m>\int \csc(x) \dx{x} </m> similarly. -->
+  <!-- </p> -->
+  <!-- </statement> -->
+  <!-- </task> -->
+
+  <!-- </exercise> -->
+  <!-- <p><alert>END OF DIGRESSION</alert></p> -->
+  <!-- </paragraphs> -->
 
 
 <paragraphs xml:id="DIGRESSIONIntPolySecTan">
@@ -3990,7 +4052,3 @@ satisfies the above differential equation for any constants <m>A,\ B</m>.
 </section>
 </chapter>
 
-<!-- Local Variables:  -->
-<!-- eval:(flyspell-mode) -->
-<!-- eval:(load-file "./elisp/Local.el") -->
-<!-- End:  -->
