@@ -475,7 +475,7 @@
       <!-- </paragraphs> -->
 </subsection>
 
-<subsection  xml:id="SUBSECTIONKnownIntegrals">
+<subsection  xml:id="SUBSECTIONSimpleSubstitution">
   <title> Simple Substitutions</title>
   <p>
     A clever substitution can be very helpful.  As we saw in <xref
@@ -845,11 +845,11 @@
 
 
   <p>
-    In the modern world the value of a published table of integrals has
-    diminished considerably due to the creation of several very
-    sophisticated mathematical software packages that will perform
-    integrations, sometimes even very complex integrations very
-    quickly.  Most such packages are able to compute all of the
+    Due to the creation of several very sophisticated mathematical
+    software packages that will perform integrations, sometimes even
+    very complex integrations very quickly the value of a published
+    table of integrals has diminished considerably in the modern
+    world. Indeed, most such packages are able to compute all of the
     integrals you will see in this course.
   </p>
   <p>
@@ -949,7 +949,7 @@
           it into some software in the required format. Perhaps more
           importantly when you do the computation yourself you will
           know it is correct. You have no such assurance when using
-          software.
+          software (see below).
         </p>
         <p>
           You need to be able to use your tools smoothly and efficiently
@@ -962,27 +962,38 @@
         </p>
       </li>
       <li>
-        <title>Software Doesn<rsq/>t Always Give a Useful
+        <title>Software Doesn<rsq/>t Always Give a Useful, Or Even a
+        Correct,
         Answer:</title>
         <p>
+          Sometimes computers give the wrong answers. It is
+          that simple. Computer programs are written, either by people
+          or by other programs. In either case errors in programming
+          are unavoidable. They will occur. Even in the best written,
+          best tested software will have bugs. 
+        </p>
 
-        The most sophisticated mathematical software packages available
-        today have the cumulative experience and knowledge of the entire
-        mathematical community built into them    . As a result such software
-        will often give answers which, although correct, are not
-        helpful. Especially for a beginner.
+        <p>
+          Of course well written, well tested software is usually
+          right. But the most sophisticated mathematical software packages available
+          today have the cumulative experience and knowledge of the entire
+          mathematical community built into them. As a result such software
+          will often give answers which, although correct, are not
+          helpful. Especially for a beginner.
         </p>
         <p>
-          For example we entered the integral <me>\int
-          e^{-x^2}\dx{x}</me> into one such system. The answer we
-          got back was <me>\frac12 \sqrt{\pi }\erf(x) +C </me> which
-          is correct, but what does it mean? If you can<rsq/>t tell
-          it is probably because you don<rsq/>t know what <m>\erf(x)
-          </m> means.
-          You will see the function <m>\erf(x) </m>  again in <xref
-          ref="EXERCISEWolframAlpha1"></xref> where we will explain what it
-          means. Until then you have no way to interpret this output.
+          For example we (the authors) entered the integral <me>\int
+          e^{-x^2}\dx{x}</me> into one such system. ( We used <url
+          href="https://www.wolframalpha.com/"
+          visual="www.wolframalpha.com/">Wolfram Alpha</url>.)  The
+          answer we got back was <me>\frac12 \sqrt{\pi }\erf(x) +C
+          </me> which is correct, but what does it mean?  You will see
+          the function <m>\erf(x) </m> again in <xref
+          ref="EXERCISEWolframAlpha1"></xref> where we will explain
+          what it means. Until then you probably have no way to
+          interpret this output, so it is useless to you.
         </p>
+
         <p>
           The same system returned <m>x_2\text{F}_1\left(-\frac12,
           \frac13; \frac43; x^3\right) </m> when fed it the integral
@@ -1622,45 +1633,66 @@
   <!-- </paragraphs> -->
 
 
-  <paragraphs xml:id="DIGRESSIONIntPolySecTan">
-    <title>DIGRESSION:  The Integral of an Arbitrary Polynomial
-    in
-    <m>\sec(x) </m> and <m>\tan{x} </m></title>
+  <example xml:id="EXAMPLEIntegralSecant">
+    <title>The Integral of the Secant</title>
     <p>
-      In
-      many Calculus textbooks  the integral of the secant function is
-      developed using the following<fn>This digression is based on the paper
-      <pubtitle>
-        <url href="https://www.jstor.org/stable/2589620" visual="https://www.jstor.org/stable/2589620">Integrating Polynomials in Secant and Tangent</url>
-        </pubtitle>, by
-        Jonathan P. McCammond,
-        The American Mathematical Monthly, Nov.,
-        1999, Vol. 106, No. 9</fn> trick:
+      As we<rsq/>ve just seen
+      once integration by substitution has been mastered finding the
+      integral of <m>\tan (x)</m> is straightforward. Based on this
+      experience it would seem reasonable to assume that 
+      <m>\int \sec (x)\dx{x}</m> would be equally straightforward. 
+    </p>
+    <p>
+      And it is, sort of. We just need to make the right substitution
+      but what that could be is far from obvious.
+    </p>
+    <p>
+      We<rsq/>ll use the substitution <m>u=\tan (x) +\sec(x) </m>. You
+      almost certainly don<rsq/>e see how this will work, but that is
+      part of the point we want to make with this example. You are
+      free to make any substitution you like, and sometimes the right
+      substitution is not obvious. The only way to find out if a given
+      substitution will work is to try it and see. 
+    </p>
+    <p>
+      Observe that if
 
-        <md>
-          <mrow>\int\sec(x)\dx{x} \amp{}= \int\sec(x)\underbrace{\frac{\tan (x)+\sec (x)}{\tan
-          (x)+\sec (x)}}_{=1}\dx{x}.
-          </mrow>
-          <intertext>Now let <m>u=\tan(x)+\sec(x) </m> so that <m>\dx{u}
-          =\sec(x)\tan(x)+\sec^2(x) </m> so that</intertext>
-          <mrow>\amp{}=\int\frac1u\dx{u}</mrow>
-          <mrow>\amp{}=\ln\abs{u}+C</mrow>
-          <mrow>\amp{}=\ln\abs{\sec(x)+\tan(x)} +C</mrow>
-        </md>
+      <me>
+                u=\tan(x)+\sec(x)
+      </me>
+      then
+      <md>
+        <mrow>        \dx{u}\amp{}= \left( \sec^2(x) +
+        \sec(x)\tan(x)\right){} \dx{x}</mrow>
+        <mrow>\amp{}=\sec(x)\underbrace{\left(\sec(x)+\tan(x) \right)}_{=u} \dx{x} </mrow>
+      </md>
+      and so 
+      <me>\sec (x)\dx{x} = \frac{\dx{u}}{u}.</me>
+      Thus
+      <me>
+        \int\sec (x)\dx{x} =\int \frac{\dx{u}}{u}
+        =\ln\abs{u} +C =
+        \ln\abs{\sec (x) + \tan (x)} +C
+      </me>
     </p>
     <p>
-      Clearly whoever first computed the value of this integral found it by
-      some other means (possibly by guessing) and then realized that
-      multiplying by <m>\frac{\tan (x)+\sec (x)}{\tan(x)+\sec (x)}</m> and
-      using the substitution <m>u=\tan(x)+\sec(x) </m> would suffice, even
-      if it is not very illuminative.
+      This integration is sometimes taught using the following
+      <q>trick</q> which is equivalent to our development above:
+
+      <md>
+        <mrow>\int\sec(x)\dx{x} \amp{}= \int\sec(x)\underbrace{\frac{\tan (x)+\sec (x)}{\tan
+        (x)+\sec (x)}}_{=1}\dx{x}.
+        </mrow>
+        <intertext>Now let <m>u=\tan(x)+\sec(x) </m> so that <m>\dx{u}
+        =\sec(x)\tan(x)+\sec^2(x) </m> so that</intertext>
+        <mrow>\amp{}=\int\frac1u\dx{u}</mrow>
+        <mrow>\amp{}=\ln\abs{u}+C</mrow>
+        <mrow>\amp{}=\ln\abs{\sec(x)+\tan(x)} +C</mrow>
+      </md>
     </p>
+
     <p>
-      As an means of computing the integral this is fine. But as a teaching
-      example it leaves a lot to be desired. In particular, there is no
-      discernible reason for multiplying the integrand by one in this
-      particular form. It is clearly a trick that was devised after the
-      value of the integral had already been determined.
+      As an means of computing the integral this trick is acceptable. 
     </p>
     <aside>
       <title>Comment</title>
@@ -1670,334 +1702,380 @@
       </p>
     </aside>
     <p>
-      We have called this a trick, but we can turn it into a technique by
-      finding the underlying structure of the problem. We begin by defining:
-
-      <mdn>
-        <mrow xml:id="EQUATIONPolySecTanUSubA">u\amp{}=\sec(x)+\tan(x)</mrow>
-        <mrow xml:id="EQUATIONPolySecTanUSubB">v\amp{}=\sec(x)-\tan(x)</mrow>
-      </mdn>
-
-      from which we see that
-
-      <mdn>
-        <mrow xml:id="EQUATIONSecTanInvSubA">\sec(x) \amp{}=\frac12 (u+v)</mrow>
-        <mrow xml:id="EQUATIONSecTanInvSubB">\tan(x) \amp{}=\frac12 (u-v).</mrow>
-      </mdn>
+      But as a teaching example it leaves a lot to be desired.<!--  In -->
+      <!--   particular, there is no discernible reason for the substition -->
+      <!--   <m>u=\sec (x)+\tan(x) </m> (equivalently, multiplying by <m>1</m> in -->
+      <!--   the form <m>\frac{\sec (x)+\tan(x)}{\sec (x)+\tan(x)}</m>). -->
+      <!--   These are both  clearly tricks that were devised after the value of the -->
+      <!--   integral had  been determined in some fashion. -->
+      <!-- </p> -->
+      <!-- <p> -->
+      Clearly whoever first computed the value of this integral found it by
+      some other means (possibly by guessing) and then realized that
+      <!-- multiplying by <m>\frac{\tan (x)+\sec (x)}{\tan(x)+\sec (x)}</m> and -->
+      using the substitution <m>u=\tan(x)+\sec(x) </m> would suffice, even
+      if it is not very illuminative.
     </p>
-    <problem>
-      <idx><h>Drills</h></idx>
-      <task>
-        <statement>
-          <p>
-            Show that <men xml:id="EQUATIONSecTanEq1">uv=1.</men>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Show that <men xml:id="EQUATIONSetTanDifferentials">\sec(x)\dx{x} = \frac1u \dx{u} = - \frac1v \dx{v}. </men>
-          </p>
-        </statement>
-      </task>
+  </example>
+  <paragraphs xml:id="DIGRESSIONIntPolySecTan">
+    <title>DIGRESSION:  The Integral of an Arbitrary Polynomial
+    in
+    <m>\sec(x) </m> and <m>\tan{x} </m></title>
 
-    </problem>
-
-    <example xml:id="EXAMPLEIntPolySecTan">
-      <task xml:id="PROBLEMIntPolySecTanA">
-        <statement>
-          <p>
-            For our first example we will compute 
-            <md>
-              <mrow>
-                \int\sec^3(x)\dx{x} \amp{}= \int \sec^2(x)\sec{x}\dx{x} 
-              </mrow>
-            </md>
-            From <xref ref="EQUATIONSecTanInvSubA">equation</xref> we have
-            <md>
-              <mrow>
-                \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u+v)^2\sec(x)\dx{x}
-              </mrow>
-              <mrow>
-                \amp{}=\frac14\int(u^2+2uv+v^2)\sec(x)\dx{x}
-              </mrow>
-            </md>
-            and from <xref ref="EQUATIONSecTanEq1">equation</xref> we have
-            <md>
-              <mrow>
-                \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u^2+2+v^2))\sec(x)\dx{x}
-              </mrow>
-              <mrow>
-                =\amp{}\frac14\int u^2\left(\frac{1}{u}\dx{u}\right) -\frac14
-                \int v^2\left(\frac{1}{v}\dx{v}\right)+\frac12\int\sec(x)\dx{x}
-              </mrow>
-              <mrow>
-                =\amp{}\frac18\left(u^2-v^2\right)+\frac12\int\sec(x)\dx{x}
-              </mrow>
-              <mrow>
-                =\amp{}\frac18\left[\sec(x)+\tan(x)\right]^2
-                <!-- </mrow> -->
-                <!-- <mrow> -->
-                <!--   \amp{} -->-\frac18\left[\sec(x)-\tan(x)\right]^2
-                <!-- </mrow> -->
-                <!-- <mrow> -->
-                <!--   \amp{} -->+\frac12\abs{\sec(x)+\tan(x)}+C
-              </mrow>
-              <mrow>
-                =\amp{}\frac18\left[\sec^2(x)+2\sec(x)\tan(x)
-                +\tan^2(x)\right]
-              </mrow>              
-              <mrow>
-                \amp{}-\frac18\left[\sec^2(x)-2\sec(x)\tan(x) +\tan^2(x)\right]
-              </mrow>
-              <mrow>
-                \amp{}+\frac12\abs{\sec(x)+\tan(x)}+C.
-              </mrow>                  
-            </md>
-            So, finally,
-            <me>
-              \int\sec^3(x)\dx{x}=\frac12\left(\sec(x)\tan(x)+\abs{\sec(x)+\tan(x)}\right)+C.
-            </me>
-          </p>
-        </statement>
-      </task>
-
-      <!-- <task  xml:id="PROBLEMEXAMPLEIntPolySecTanA"> -->
-      <!-- <statement> -->
-      <!-- <p> -->
-      <!-- For our first example we will compute <m>\int\sec(x)\dx{x} </m> again. -->
-      <!-- <me> -->
-      <!-- \int\sec(x)\dx{x}=\int\frac1u\dx{u} = \ln\abs{u}+c=\ln\abs{\sec{x}+\tan{x}}+c -->
-      <!-- </me> -->
-      <!-- </p> -->
-      <!-- </statement> -->
-      <!-- </task> -->
-      <!-- <task xml:id="PROBLEMEXAMPLEIntPolySecTanB"> -->
-      <!-- <p> -->
-      <!-- Since <m>\dx{\left(\sec(x)\right)}=\tan(x)\sec(x) -->
-      <!--   </m> and <m>\dx{\left( -->
-      <!-- \tan(x)\right)} =\sec^2(x) </m>   we know that -->
-      <!-- <m>\int\sec^2(x)\dx{x} = \tan(x)+c</m> and -->
-      <!-- <m>\int\tan(x)\sec(x)\dx{x} -->
-      <!-- </m>. For our second example we will -->
-      <!-- re-derive these results. -->
-
-      <!-- <ol marker="(i)"> -->
-      <!-- <li> -->
-
-      <!-- <md> -->
-      <!-- <mrow>\int\tan(x)\sec(x)\dx{x} \amp{}=\frac12 \int -->
-      <!-- (u-v)\sec(x)\dx{x} </mrow> -->
-      <!-- <mrow>\amp{}=\frac12\int u\left(\frac{1}{u}\dx{u}\right) + \frac12 -->
-      <!-- \int v\left(\frac{1}{v}\dx{v}\right)</mrow> -->
-      <!-- <mrow>\amp{}=\frac12(u+v)+c</mrow> -->
-      <!-- <mrow>\amp{}=\sec(x)+c</mrow> -->
-      <!-- </md> -->
-
-      <!-- </li> -->
-      <!-- <li> -->
-      <!-- <p> -->
-      <!-- <md> -->
-      <!-- <mrow>\int\sec^2(x) \dx{x} \amp{}= \int \sec(x)\sec(x)\dx{x}{}</mrow> -->
-      <!-- <mrow>\amp{}=\frac12\int(u+v)\sec(x)\dx{x}</mrow> -->
-      <!-- <mrow>\amp{}=\frac12\left[\int u\sec(x)\dx{x} + \int v\sec(x)\dx{x}\right]</mrow> -->
-      <!-- <mrow> -->
-      <!-- \amp{}=\frac12\left[\int u\left(\frac{1}{u}\dx{u}\right) - \int v\left(-\frac{1}{v}\dx{v}\right)\right] -->
-      <!-- </mrow> -->
-      <!-- <mrow> -->
-      <!-- \amp{}=\frac12\left(\int\dx{u} - \int\dx{v}\right) -->
-      <!-- </mrow> -->
-      <!-- <mrow> -->
-      <!-- \amp{}=\frac12\left(u-v\right)+c -->
-      <!-- </mrow> -->
-      <!-- <mrow> -->
-      <!-- \amp{}= \frac12\left[\sec(x)+\tan(x)- -->
-      <!-- \left(\sec(x)-\tan(x)\right)\right] +c -->
-      <!-- </mrow> -->
-      <!-- <mrow> \amp{}= \tan(x)+c</mrow> -->
-      <!-- </md> -->
-
-      <!-- </p> -->
-      <!-- </li> -->
-      <!-- <li> -->
-
-      <!-- <md> -->
-      <!-- <mrow>\int\sec^2(x)\tan(x)\dx{x} \amp{}= \int -->
-      <!-- \sec(x)\tan(x)\left(\sec{x}\dx{x}\right) </mrow> -->
-      <!-- <mrow>\amp{}=\frac14\int(u+v)(u-v)\sec(x)\dx{x}</mrow> -->
-      <!-- <mrow>\amp{}=\frac14\int u^2\left(\frac1u\dx{u}\right) + \frac14\int -->
-      <!-- v^2\left(\frac1v\dx{v}\right)</mrow> -->
-      <!-- <mrow>\amp{}=\frac18\left(u^2 + v^2\right) +c</mrow> -->
-      <!-- <mrow> -->
-      <!-- \amp{}=\frac18\left[\sec^2(x) +2\sec(x)\tan(x) +\tan^2(x) -->
-      <!-- -\left(\sec^2(x) + 2\sec(x)\tan(x) +\tan^2(x)\right)\right]+c -->
-      <!-- </mrow> -->
-      <!-- <mrow>\amp{}=\frac14\left(\sec^2(x)+\tan^2(x)\right)+c</mrow> -->
-      <!-- </md> -->
-
-
-
-      <!-- </li> -->
-      <!-- </ol> -->
-      <!-- </p> -->
-      <!-- </task> -->
-
-    </example>
+ 
     <p>
-      In fact, in the paper cited above, McCammond shows that if
-      <m>P(s,t)</m> is any polynomial in two variables then
-
-      <me>\int P\left(\sec(x), \tan(x)\right)\dx{x}</me>
-
-      can be evaluated using the substitutions in equations <xref
-      ref="EQUATIONPolySecTanUSubA"></xref> and <xref
-      ref="EQUATIONPolySecTanUSubB"></xref>, their properties in equations
-      <xref ref="EQUATIONSecTanInvSubA"></xref> and <xref ref=",
-      EQUATIONSecTanInvSubB"></xref> above, and the judicious use of the
-      Pythagorean trigonometric identity 
-      <men xml:id="EQUATIONPythSecTan">\tan^2(x)+1=\sec^2(x).</men>
+      This digression is based on the paper
+      <pubtitle>
+        <url href="https://www.jstor.org/stable/2589620"
+        visual="https://www.jstor.org/stable/2589620">Integrating
+        Polynomials in Secant and Tangent</url> </pubtitle>, by
+        Jonathan P. McCammond, The American Mathematical Monthly,
+        Nov., 1999, Vol. 106, No. 9
     </p>
 
-    <exercise  xml:id="PROBLEMPolySecTan">
+    <aside>
+      <title>Comment</title>
+      <p>
+        There is an old joke that a technique is a trick that
+        you use more than once.
+      </p>
+      </aside>
+      <p>
+        We have called the substitution <m>u=\tan(x)+\sec(x) </m> a
+        trick but what seems to be a trick is often a special case of
+        more general technique. Th is the situation here.
+        We would like to find the underlying structure behind <xref ref="EXAMPLEIntegralSecant"></xref>. 
+      </p>
+      <p>
+        The technique follows from definitions <xref
+        first="EQUATIONPolySecTanUSubA"
+        last="EQUATIONPolySecTanUSubB"></xref> and equations <xref
+        first="EQUATIONSecTanInvSubA" last="EQUATIONSetTanDifferentials"></xref> 
+        below.
+
+        <mdn>
+          <mrow xml:id="EQUATIONPolySecTanUSubA">u\amp{}=\sec(x)+\tan(x)</mrow>
+          <mrow xml:id="EQUATIONPolySecTanUSubB">v\amp{}=\sec(x)-\tan(x)</mrow>
+        </mdn>
+
+        from which we see that
+
+        <mdn>
+          <mrow xml:id="EQUATIONSecTanInvSubA">\sec(x) \amp{}=\frac12 (u+v)</mrow>
+          <mrow xml:id="EQUATIONSecTanInvSubB">\tan(x) \amp{}=\frac12 (u-v).</mrow>
+        </mdn>
+      </p>
+      <problem>
+        <idx><h>Drills</h></idx>
+        <task>
+          <statement>
+            <p>
+              Show that <men xml:id="EQUATIONSecTanEq1">uv=1</men>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Show that <men xml:id="EQUATIONSetTanDifferentials">\sec(x)\dx{x} = \frac1u \dx{u} = - \frac1v \dx{v}. </men>
+            </p>
+          </statement>
+        </task>
+
+      </problem>
+
+      <example xml:id="EXAMPLEIntPolySecTan">
+        <task xml:id="PROBLEMIntPolySecTanA">
+          <statement>
+            <p>
+              For our first example we will compute 
+              <md>
+                <mrow>
+                  \int\sec^3(x)\dx{x} \amp{}= \int \sec^2(x)\sec{x}\dx{x} 
+                </mrow>
+              </md>
+              From <xref ref="EQUATIONSecTanInvSubA">equation</xref> we have
+              <md>
+                <mrow>
+                  \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u+v)^2\sec(x)\dx{x}
+                </mrow>
+                <mrow>
+                  \amp{}=\frac14\int(u^2+2uv+v^2)\sec(x)\dx{x}
+                </mrow>
+              </md>
+              and from <xref ref="EQUATIONSecTanEq1">equation</xref> we have
+              <md>
+                <mrow>
+                  \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u^2+2+v^2))\sec(x)\dx{x}
+                </mrow>
+                <mrow>
+                  \amp{}=\frac14\int
+                  u^2\left(\frac{1}{u}\dx{u}\right)+\frac{1}{2}\int\sec(x)\dx{x} -\frac14
+                  \int v^2\left(\frac{1}{v}\dx{v}\right)
+                </mrow>
+                <mrow>
+                  \amp{}=\frac18\left(u^2-v^2\right)+\frac12\int\sec(x)\dx{x}
+                </mrow>
+                <mrow>
+                  =\amp{}\frac18\left[\left(\sec(x)+\tan(x)\right)^2-\left(
+                  \sec(x)-\tan(x)\right)^2  \right] 
+                  +\frac12\abs{\sec(x)+\tan(x)}+C
+                </mrow>
+                <!-- <mrow> -->
+                <!--   =\amp{}\frac12\left(\sec(x)\tan(x) -->
+                <!--   +\abs{\sec(x)+\tan(x)}\right)+C. -->
+                <!-- </mrow>                   -->
+              </md>
+              So finally,
+              <me>
+                \int\sec^3(x)\dx{x}=\frac12\left(\sec(x)\tan(x)+\abs{\sec(x)+\tan(x)}\right)+C.
+              </me>
+            </p>
+          </statement>
+        </task>
+
+        <!-- <task  xml:id="PROBLEMEXAMPLEIntPolySecTanA"> -->
+        <!-- <statement> -->
+        <!-- <p> -->
+        <!-- For our first example we will compute <m>\int\sec(x)\dx{x} </m> again. -->
+        <!-- <me> -->
+        <!-- \int\sec(x)\dx{x}=\int\frac1u\dx{u} = \ln\abs{u}+c=\ln\abs{\sec{x}+\tan{x}}+c -->
+        <!-- </me> -->
+        <!-- </p> -->
+        <!-- </statement> -->
+        <!-- </task> -->
+        <!-- <task xml:id="PROBLEMEXAMPLEIntPolySecTanB"> -->
+        <!-- <p> -->
+        <!-- Since <m>\dx{\left(\sec(x)\right)}=\tan(x)\sec(x) -->
+        <!--   </m> and <m>\dx{\left( -->
+        <!-- \tan(x)\right)} =\sec^2(x) </m>   we know that -->
+        <!-- <m>\int\sec^2(x)\dx{x} = \tan(x)+c</m> and -->
+        <!-- <m>\int\tan(x)\sec(x)\dx{x} -->
+        <!-- </m>. For our second example we will -->
+        <!-- re-derive these results. -->
+
+        <!-- <ol marker="(i)"> -->
+        <!-- <li> -->
+
+        <!-- <md> -->
+        <!-- <mrow>\int\tan(x)\sec(x)\dx{x} \amp{}=\frac12 \int -->
+        <!-- (u-v)\sec(x)\dx{x} </mrow> -->
+        <!-- <mrow>\amp{}=\frac12\int u\left(\frac{1}{u}\dx{u}\right) + \frac12 -->
+        <!-- \int v\left(\frac{1}{v}\dx{v}\right)</mrow> -->
+        <!-- <mrow>\amp{}=\frac12(u+v)+c</mrow> -->
+        <!-- <mrow>\amp{}=\sec(x)+c</mrow> -->
+        <!-- </md> -->
+
+        <!-- </li> -->
+        <!-- <li> -->
+        <!-- <p> -->
+        <!-- <md> -->
+        <!-- <mrow>\int\sec^2(x) \dx{x} \amp{}= \int \sec(x)\sec(x)\dx{x}{}</mrow> -->
+        <!-- <mrow>\amp{}=\frac12\int(u+v)\sec(x)\dx{x}</mrow> -->
+        <!-- <mrow>\amp{}=\frac12\left[\int u\sec(x)\dx{x} + \int v\sec(x)\dx{x}\right]</mrow> -->
+        <!-- <mrow> -->
+        <!-- \amp{}=\frac12\left[\int u\left(\frac{1}{u}\dx{u}\right) - \int v\left(-\frac{1}{v}\dx{v}\right)\right] -->
+        <!-- </mrow> -->
+        <!-- <mrow> -->
+        <!-- \amp{}=\frac12\left(\int\dx{u} - \int\dx{v}\right) -->
+        <!-- </mrow> -->
+        <!-- <mrow> -->
+        <!-- \amp{}=\frac12\left(u-v\right)+c -->
+        <!-- </mrow> -->
+        <!-- <mrow> -->
+        <!-- \amp{}= \frac12\left[\sec(x)+\tan(x)- -->
+        <!-- \left(\sec(x)-\tan(x)\right)\right] +c -->
+        <!-- </mrow> -->
+        <!-- <mrow> \amp{}= \tan(x)+c</mrow> -->
+        <!-- </md> -->
+
+        <!-- </p> -->
+        <!-- </li> -->
+        <!-- <li> -->
+
+        <!-- <md> -->
+        <!-- <mrow>\int\sec^2(x)\tan(x)\dx{x} \amp{}= \int -->
+        <!-- \sec(x)\tan(x)\left(\sec{x}\dx{x}\right) </mrow> -->
+        <!-- <mrow>\amp{}=\frac14\int(u+v)(u-v)\sec(x)\dx{x}</mrow> -->
+        <!-- <mrow>\amp{}=\frac14\int u^2\left(\frac1u\dx{u}\right) + \frac14\int -->
+        <!-- v^2\left(\frac1v\dx{v}\right)</mrow> -->
+        <!-- <mrow>\amp{}=\frac18\left(u^2 + v^2\right) +c</mrow> -->
+        <!-- <mrow> -->
+        <!-- \amp{}=\frac18\left[\sec^2(x) +2\sec(x)\tan(x) +\tan^2(x) -->
+        <!-- -\left(\sec^2(x) + 2\sec(x)\tan(x) +\tan^2(x)\right)\right]+c -->
+        <!-- </mrow> -->
+        <!-- <mrow>\amp{}=\frac14\left(\sec^2(x)+\tan^2(x)\right)+c</mrow> -->
+        <!-- </md> -->
 
 
-      <introduction>
-        <p>
+
+        <!-- </li> -->
+        <!-- </ol> -->
+        <!-- </p> -->
+        <!-- </task> -->
+
+      </example>
+      <p>
+        In fact, in the paper cited above, McCammond shows that if
+        <m>P(s,t)</m> is any polynomial in two variables then
+
+        <me>\int P\left(\sec(x), \tan(x)\right)\dx{x}</me>
+
+        can be evaluated using the substitutions in equations <xref
+        ref="EQUATIONPolySecTanUSubA"></xref>,        <xref
+        ref="EQUATIONPolySecTanUSubB"></xref>, <xref
+        ref="EQUATIONSecTanInvSubA"></xref>, <xref
+        ref="EQUATIONSecTanInvSubB"></xref>,  <xref
+        ref="EQUATIONSecTanEq1"></xref>, <xref
+        ref="EQUATIONSetTanDifferentials"></xref>,
+        <!--  and <xref -->
+        <!-- ref="EQUATIONPolySecTanUSubB"></xref>, their properties in equations -->
+        <!-- <xref ref="EQUATIONSecTanInvSubA"></xref> and <xref ref=", -->
+        <!-- EQUATIONSecTanInvSubB"></xref> above, --> 
+        and the judicious use of the
+        Pythagorean trigonometric identity 
+        <men xml:id="EQUATIONPythSecTan">\tan^2(x)+1=\sec^2(x).</men>
+      </p>
+
+      <exercise  xml:id="PROBLEMPolySecTan">
 
 
-          Evaluate the integrals and differentiate your  solution to confirm
-          that it is  correct.
-        </p>
-      </introduction>
-      <task>
-        <statement>
+        <introduction>
           <p>
-            <m>\int \sec^5(x) \dx{x} </m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \tan^3(x) \dx{x} </m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \sec^4(x)\tan(x) \dx{x} </m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \sec^3(x)\tan^5(x) \dx{x} </m>
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    <p>
-      These substitutions are clever and they give us an elegant solution
-      but we do not necessarily want an elegant solution. In most cases
-      where the evaluation of an integral is required we<rsq/>ll just want
-      obtain a
-      solution in the most efficient manner possible.
-    </p>
-
-    <exercise xml:id="PROBLEMPolySecTanByTrigSub">
-
-      <introduction>
-        <p>
-          Evaluate the following integrals and differentiate your  solution to confirm
-          that it is  correct. The method we<rsq/>ve described in this
-          digression will work, but is not the necessarily always the most efficient
-          method available.
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>\int \sec^2(x)+\sec(x)\tan(x)\dx{x} </m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \sec^3(x)\tan(x)+\tan^3(x)\sec(x)\dx{x} </m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \left(1+\sec(x)+\sec^2(x)+\sec^3(x)+\sec^4(x) \right)\tan(x)
-            \dx{{x}  }</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \left(1+\tan(x)+\tan^2(x)+\tan^3(x)+\tan^4(x) \right)\sec(x)
-            \dx{{x}  }</m>
-          </p>
-        </statement>
-      </task>
-
-    </exercise>
 
 
-    <exercise xml:id="PROBLEMPolyCscCot">
-
-      <introduction>
-        <p>
-          Evaluate the following integrals and differentiate your  solution to confirm
-          that it is  correct. The method we<rsq/>ve described in this
-          digression will work, but is not the necessarily always the most efficient
-          method available.
-          (You will need to find substitutions analogous to those we developed
-          above.)
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>\int \csc^2(x)+\csc(x)\cot(x)\dx{x} </m>
+            Evaluate the integrals and differentiate your  solution to confirm
+            that it is  correct.
           </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \csc^3(x)\cot(x)+\cot^3(x)\csc(x)\dx{x} </m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \left(1+\csc(x)+\csc^2(x)+\csc^3(x)+\csc^4(x) \right)\cot(x)
-            \dx{{x}  }</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\int \left(1+\cot(x)+\cot^2(x)+\cot^3(x)+\cot^4(x) \right)\csc(x)
-            \dx{{x}  }</m>
-          </p>
-        </statement>
-      </task>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>\int \sec^5(x) \dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \tan^3(x) \dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \sec^4(x)\tan(x) \dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \sec^3(x)\tan^5(x) \dx{x} </m>
+            </p>
+          </statement>
+        </task>
+      </exercise>
+      <!-- <p> -->
+      <!--   These substitutions are clever and they give us an elegant solution -->
+      <!--   but we do not necessarily want an elegant solution. In most cases -->
+      <!--   where the evaluation of an integral is required we<rsq/>ll just want -->
+      <!--   obtain a -->
+      <!--   solution in the most efficient manner possible. -->
+      <!-- </p> -->
 
-    </exercise>
+      <exercise xml:id="PROBLEMPolySecTanByTrigSub">
+
+        <introduction>
+          <p>
+            Evaluate the following integrals and differentiate your  solution to confirm
+            that it is  correct. The method we<rsq/>ve described in this
+            digression will work, but is not the necessarily always the most efficient
+            method available.
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>\int \sec^2(x)+\sec(x)\tan(x)\dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \sec^3(x)\tan(x)+\tan^3(x)\sec(x)\dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \left(1+\sec(x)+\sec^2(x)+\sec^3(x)+\sec^4(x) \right)\tan(x)
+              \dx{{x}  }</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \left(1+\tan(x)+\tan^2(x)+\tan^3(x)+\tan^4(x) \right)\sec(x)
+              \dx{{x}  }</m>
+            </p>
+          </statement>
+        </task>
+
+      </exercise>
 
 
-    <p><alert>END OF DIGRESSION</alert></p>
+      <exercise xml:id="PROBLEMPolyCscCot">
+
+        <introduction>
+          <p>
+            Evaluate the following integrals and differentiate your  solution to confirm
+            that it is  correct. The method we<rsq/>ve described in this
+            digression will work, but is not the necessarily always the most efficient
+            method available.
+            (You will need to find substitutions analogous to those we developed
+            above.)
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>\int \csc^2(x)+\csc(x)\cot(x)\dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \csc^3(x)\cot(x)+\cot^3(x)\csc(x)\dx{x} </m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \left(1+\csc(x)+\csc^2(x)+\csc^3(x)+\csc^4(x) \right)\cot(x)
+              \dx{{x}  }</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\int \left(1+\cot(x)+\cot^2(x)+\cot^3(x)+\cot^4(x) \right)\csc(x)
+              \dx{{x}  }</m>
+            </p>
+          </statement>
+        </task>
+
+      </exercise>
+
+
+      <p><alert>END OF DIGRESSION</alert></p>
   </paragraphs>
 
 <exercises>
@@ -2198,6 +2276,14 @@
         </p>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+<m>\displaystyle \int \frac{x-1}{x+1}\dx{x}</m>
+        </p>
+</statement>
+    </exercise>
+
 
 
 
@@ -2216,39 +2302,61 @@
   <title> Trigonometric (Inverse) Substitutions</title>
 
   <p>
-    Recall that     when we were trying to determine the solution to the catenary in <xref ref="EXAMPLEHardDiffeq"></xref>  we encountered the integral
+    Recall that when we were trying to determine the solution to the
+    catenary in <xref ref="EXAMPLEHardDiffeq"></xref> we encountered
+    the integral
     <me>
       \int{\frac{1}{\sqrt{1+z^2}}\dx{z} }
     </me>
-    which we didn<rsq/>t (and still don<rsq/>t) know how to do.
+    which we didn<rsq/>t (and still don<rsq/>t) know how to do. This
+    integral can be computed using a substitution also, but the
+    substitution to use here is <q>backwards</q> compared to the ones
+    we used in <xref ref="SUBSECTIONSimpleSubstitution"></xref>. This
+    sort of substitution comes up frequently when the integrand
+    involves trigonometric functions so it is often called
+    <term>Trigonometric</term>  or <term>Inverse Substitution</term>.
+  </p>
+  <p>
+    The
+    substitution we need is <m>z=\tan{\theta } </m>. We will come back
+    and address how we might have guessed this once we have finished
+    computing the integral. For now, do you see why we said this is
+    <q>backwards?</q> 
+  </p>
 
-    We actually have the tools to solve this type of integral once
-    we notice that (surprisingly!) we would like to use the
-    substitution <m>z=\tan{\theta } </m>.  As strange as it sounds to
-    take a perfectly good algebraic integral and purposely insert
-    trigonometry into it, this is just the ticket here.  Since we
-    have the trigonometric identity
-    <m>\tan^2(\theta)+1=\sec^2(\theta)</m>, then this substitution
-    is just the thing to rid us of the square root, which poses
-    more of an issue than the trigonometry does.
+  <p>
+    Previously, we have set the substitution variable (usually
+    <m>u</m>) to be some expression in the integration variable
+    (usually <m>x</m>). This usually makes the integrand simpler. For
+    example, given <m>\int \cos(2x){\dx{x}}</m> we<rsq/>d let
+    <m>u=2x</m>.
+
+  </p>
+  <p>
+    But    if we let <m>z=\tan{\theta }</m>, then
+    <m>\dx{\theta{}}=\sec^2(\theta)\dx{\theta}</m>, and so we have
+
+
+    <me>      \int\frac{1}{\sqrt{1+z^2}}\dx{z}=
+    \int\frac{\sec^2(\theta )}
+    {\sqrt{1+\tan^2(\theta)}}\dx{\theta}</me>
+    which seems to be considerably more complicated than the original
+    problem. 
   </p>
   <aside>
     <title>Comment</title>
     <p>
-      One of the author<rsq/>s former teachers was fond of saying
-      <q>Why simplify when you can complicate?</q> 
+      A former teacher of one of the authors was fond of saying
+      <q>Why simplify when you can complicate?</q> in this situation.
     </p>
   </aside>
-
   <p>
-    Specifically, if we let <m>z=\tan{\theta }</m>, then
-    <m>\dx{\theta{}}=\sec^2(\theta)\dx{\theta}</m>, and so we have
-
+    But remember that our goal is not to make the integral
+    simpler. Our goal is to make the integral doable. In this case
+    observe that <men xml:id="EQUATIONPythTrigSecTan">\sec^2( \theta ) = 1+\tan^2 (\theta )</men> so we
+    see that  
     <md>
-
-      <mrow>      \int\frac{1}{\sqrt{1+z^2}}\dx{z}\amp{}= \int\frac{1}
-      {\sqrt{1+\tan^2(\theta)}}\dx{\theta}</mrow>
-      <mrow>\amp{}      =
+      <mrow>\int\frac{1}{\sqrt{1+z^2}}\dx{z}\amp{}      =
       \int\frac{\sec^2(\theta)}{\sec(\theta)}\dx{\theta}</mrow>
       <mrow> \amp{}     =\int\sec(\theta)\dx{\theta}
       </mrow>
@@ -2259,17 +2367,22 @@
   </p>
   <p>
     The trick now is to put everything back in terms of <m>z</m>.  We
-    have <m>\tan(\theta)=z</m> , but what about
+    have <m>\tan(\theta)=z</m> from our substitution, but what about
     <m>\sec(\theta)</m>?  We could certainly use the trigonometric
-    identity from before, but a more general way to do this is to
-    draw a triangle.  The beauty of this is that we don't know what
-    the angle <m>\theta{}</m> is, nor do we really care.  All we
-    need is that <m>\tan(\theta)=\frac{z}{1}</m>.  This leads to
-    the following triangle
+    identity in <xref ref="EQUATIONPythTrigSecTan">equation</xref>,
+    but it is often simpler to draw an appropriate triangle. 
+  </p>
+  <p>
+    The appropriate triangle in this case is the one with <m>\theta
+    </m> in standard position. The beauty of this is that we
+    don<rsq/>t need to know what the angle <m>\theta{}</m> is.  All we
+    need to know is that <m>\tan(\theta)=\frac{z}{1}</m>. Since in a
+    right triangle <m>\tan( \theta ) =
+    \frac{\text{opposite}}{\text{adjacent}}</m> we have this triangle:
   </p>
   <figure>
     <caption>Diagram of a right triangle  where <m>\tan (\theta ) =z</m></caption>
-    <image source="IC/zeqtan.png" width="50%">
+    <image source="IC/zeqtan.png" width="40%">
       <shortdescription>Diagram of a right
       triangle.</shortdescription>
     </image>
@@ -2278,15 +2391,19 @@
 
 
   <p>
-    With this triangle, not only can we obtain the aforementioned
-    <m>\tan(\theta)=\frac{z}{1}</m> and
-    <m>\sec(\theta)=\frac{\sqrt{1+z^2}}{1}</m> which is what we
-    need in the problem, but we could also obtain the following if
-    we needed it:
+    Notice that since we<rsq/>ve got two sides of a right triangle we
+    can compute the third side as shown.  And knowing the length of
+    all three sides of a right triangle allows us to compute all of
+    the trigonometic functions of <m>\theta </m> triangle, not only can we obtain the aforementioned
+    <m>\tan(\theta)=\frac{z}{1}=z</m> and
+    <m>\sec(\theta)=\frac{\sqrt{1+z^2}}{1}</m>. These are the two
+    formulas  we
+    need for this problem, but we could also obtain the formulas 
     <md>
       <mrow>\sin(\theta)\amp =\frac{z}{\sqrt{1+z^2}},\amp{}\cos(\theta)\amp =\frac{1}{\sqrt{1+z^2}},</mrow>
       <mrow>\cot(\theta)\amp =\frac1z,\amp{}\csc(\theta)\amp =\frac{\sqrt{1+z^2}}{z}.</mrow>
     </md>
+    if we needed them.
   </p>
   <p>
     We really urge you to do this (DRAW A TRIANGLE) instead of
@@ -2831,6 +2948,8 @@
     How do we handle that?
   </p>
   <aside>
+    <title>Comment</title>
+
     <p>
       Confirm this yourself.
     </p>
@@ -3354,7 +3473,7 @@
       Decomposition </term> is also guaranteed.
     </p>
     <aside>
-      <title>Mathematical Language</title>
+      <title>Mathematical Terminology</title>
       <p>
         The word <q>trivial</q> is very context dependent in
         mathematics. In this context a <q>trivial common factor</q>
