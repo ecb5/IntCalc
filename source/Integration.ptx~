@@ -1,0 +1,1122 @@
+<?xml version='1.0' encoding='utf-8'?>  
+<chapter xml:id="CHAPTERIntSimplest" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Integration in Its Simplest Forms  </title>
+
+  <introduction>
+    <blockquote>
+      <p>
+        Those interested in celestial navigation are advised to first
+        obtain a rudimentary knowledge of integral calculus,
+        phlebotomy, astral physics and related subjects. The use of
+        liquor is strictly forbidden on interplanetary flights.
+      </p>
+      <attribution>
+        <url href="https://en.wikipedia.org/wiki/Henry_Miller/" visual="https://en.wikipedia.org/wiki/Henry_Miller">Henry Miller</url>
+        (1891<mdash/>1980)
+      </attribution>
+    </blockquote>
+    <p>
+      If asked for a one sentence description of Integral Calculus, most
+      mathematicians will say something like, <q>It is the opposite of
+      Differential Calculus,</q> or, <q>It is Differential Calculus run
+      backwards.</q>
+    </p>
+ 
+    <p>
+      While not inaccurate, this characterization is woefully inadequate.
+      <!-- </p> -->
+      <!-- <figure  xml:id="FIGURE"> -->
+      <!--   <caption> -->
+      <!--     <url href="https://www.frankandernest.com" visual="https://www.frankandernest.com">Frank and Ernest</url> -->
+      <!--   </caption> -->
+      <!--   <image source="IC/FredGinger.png" width="80%"> -->
+      <!--     <shortdescription></shortdescription> -->
+      <!--   </image> -->
+      <!-- </figure> -->
+      <!-- <p> -->
+      Integration is a deep and complex subject, as the
+      following chapters will show. In it<rsq/>s more advanced forms
+      integration is more like differentiationg backwards,
+      blindfolded, while juggling and riding a unicycle. There is a
+      lot to keep track of.
+    </p>
+    <p>
+      But it is helpful to remember that integration began as
+      <q>differentiation run backwards.</q> Even in its more advanced
+      forms this is a useful way to <q>think about</q> integration.
+    </p>
+
+    <!-- <title>A Quick Review of Differential Calculus</title> -->
+    <!-- <p> -->
+    <!--   In <xref ref="DiffCalcFromPractice"></xref> we saw that the notation for an infinitesimal -->
+    <!--   difference, <m>\dx{x} </m>, can be thought of as a -->
+    <!--   refinement of the <q>change of <m>x</m></q> symbol <m>\Delta -->
+    <!--   x</m> which you learned when you were studying straight -->
+    <!--   lines. The distinction between the two is that we think of <m>\Delta x = -->
+    <!--   x_2-x_1</m> as a measurable distance between <m>x_2</m> and -->
+    <!--   <m>x_1</m> whereas <m>\dx{x}</m> represents and infinitesimal -->
+    <!--   distance.  -->
+    <!-- </p> -->
+
+    <!-- <p> -->
+    <!--   By thinking in this way we found in <xref ref="SECTIONGalileoDrops"></xref> that we could extend the idea -->
+    <!--   of the slope of a straight line to curved lines. The slope of a -->
+    <!--   straight line is given by <m>\frac{\Delta y}{\Delta x}</m> (the -->
+    <!--   change of <m>y</m> over the change of <m>x</m>) so the slope of -->
+    <!--   a curved line at the point <m>x=a</m> is given by the notation -->
+    <!--   <me>\dfdxat{y}{x}{a} </me>.  It is necessary to specify -->
+    <!--   the slope of the curve at the particular point <m>x=a</m> -->
+    <!--   because, unlike a straight line, the slope of a curved line -->
+    <!--   changes from point to point. We found this generalized notion of -->
+    <!--   slope to be very useful. -->
+    <!-- </p> -->
+
+    <!-- <p> -->
+    <!--   Our physical interpretation of the differential ratio (the derivative), -->
+    <!--   <m>\dfdx{y}{x}</m>, varies depending on what the quantities -->
+    <!--   <m>x</m> and <m>y</m> happen to represent. In one simple -->
+    <!--   interpretation if the variable <m>y</m> measures a vertical -->
+    <!--   displacement and the variable <m>x</m> measures the passage of -->
+    <!--   time then <m>\dfdx{y}{x}</m> represents the velocity in the -->
+    <!--   vertical direction. -->
+    <!-- </p> -->
+    <!-- <aside> -->
+    <!--   <title>Mathematical Customs</title> -->
+    <!--   <p> -->
+    <!--     We would probably actually use <m>t</m> instead of <m>x</m> in -->
+    <!--     this case in order evoke the word <q>time.</q> The names we -->
+    <!--     choose for our variables are generally irrelevant. When it -->
+    <!--     matters we choose variable names to help us remember what the -->
+    <!--     variable represents. Otherwise we use more generic variable -->
+    <!--     names like <m>x</m>, <m>y</m>, or <m>z</m>. -->
+    <!--   </p> -->
+    <!-- </aside> -->
+
+    <!-- <p> -->
+    <!--   As a logical foundation for our -->
+    <!--   investigations the notion of an infinitesimal is very -->
+    <!--   problematic. But as a way of thinking, as an appeal to -->
+    <!--   intuition, it can be very useful.  Naturally, any conclusions we draw -->
+    <!--   from this intuitive approach must be confirmed rigorously, -->
+    <!--   but we needn<rsq/>t fuss about that yet. -->
+    <!-- </p> -->
+
+    <!-- <p> -->
+    <!--   For example, the position of a ball tossed -->
+    <!--   vertically with an initial velocity <m>v_0</m>, from an initial -->
+    <!--   height <m>y_0</m>, will be <me>y(t)=-4.9t^2+v_0t+y_0</me> if -->
+    <!--   <m>y</m> is measured in meters and <m>t</m> is measured in -->
+    <!--   seconds. -->
+    <!-- </p> -->
+
+    <!-- <p> -->
+    <!--   Thus the ball<rsq/>s velocity will be <me>v(t) = \dfdx{y}{t} = -->
+    <!--   -9.8t+v_0</me> and its acceleration will be -->
+    <!--   <me>a(t)=\dfdx{v}{t}=\dfdxn{y}{t}{2}=-9.8,</me> which is, of -->
+    <!--   course, the rate of acceleration of an object falling near the -->
+    <!--   surface of the earth, as determined experimentally by <url -->
+    <!--   href="https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/" -->
+    <!--   visual="https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/">Galileo</url> -->
+    <!-- </p> -->
+
+    <!-- <p> -->
+    <!--   One of the exercises in <pubtitle>Differential -->
+    <!--   Calculus</pubtitle> asked you to show that if <m>y(x)</m> -->
+    <!--   represents the shape of a catenary curve then <m>y(x)</m> will -->
+    <!--   satisfy the differential equation -->
+    <!--   <men xml:id="EQUATIONCatenaryIVP"> -->
+    <!--     \dfdxn{y}{x}{2} =\frac{w}{H}\sqrt{1+\left(\dfdx{y}{x}\right)^2}. -->
+    <!--   </men> -->
+    <!-- </p> -->
+    <!-- <!-\- <problem xml:id="DRILLCatenaryRedux"> -\-> -->
+    <!-- <!-\-   <statement> -\-> -->
+    <!-- <!-\-     <p> -\-> -->
+    <!-- <!-\-       <idx><h>Catenary</h></idx>  -\-> -->
+    <!-- <!-\-       A later exercise had you show that in fact the function -\-> -->
+    <!-- <!-\-       <me> -\-> -->
+    <!-- <!-\-         y(x)=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right) -\-> -->
+    <!-- <!-\-       </me> -\-> -->
+    <!-- <!-\-       satisfies <xref ref="EQUATIONCatenaryIVP">equation</xref>. Repeat -\-> -->
+    <!-- <!-\-       that computation by computing <m>\dfdx{y}{x} </m> and -\-> -->
+    <!-- <!-\-       <m>\dfdxn{y}{x}{2} </m> and showing that <m>y(x)</m> -\-> -->
+    <!-- <!-\-       satisfies <xref ref="EQUATIONCatenaryIVP">equation</xref>. -\-> -->
+    <!-- <!-\-     </p> -\-> -->
+    <!-- <!-\-   </statement> -\-> -->
+    <!-- <!-\- </problem> -\-> -->
+
+    <!-- <p> -->
+    <!--   A natural question is <q>How did we find <m>y(x)</m>?</q> Our -->
+    <!--   current topic, Integral Calculus, will answer that question. -->
+    <!-- </p> -->
+  </introduction>
+
+  <section xml:id="SECTIONThinkingAboutIntegration">
+    <title>Two <q>Ways of Thinking</q> About Integration: Summation vs. Antidifferentiation</title>
+    <introduction>
+      <p>
+        Beginning in <xref ref="SECTIONHist-intr"></xref> we observed
+        that when we think about differentiation it is helpful to view
+        differentiation through either the lens of geometry (Leibniz),
+        or the lens of dynamics (Newton), depending on the particular
+        context.  Similarly the next section describes two different,
+        but equilvalent, ways to <q>think about</q> integration. As
+        before these two viewpoints are, more or less, equivalent, but
+        they provide different insights. Some are easier to see
+        through one lens, others through the other.
+      </p>
+    </introduction>
+
+    <subsection  xml:id="SUBSECTIONIntegrationAsASum">
+      <title>Integration as  Summation</title>
+
+      <p>
+        Suppose a point <m>P</m> traces out a line segment of some
+        unknown length <m>x</m>.
+      </p>
+
+      <image source="IC/X0toX.png" width="35%">
+        <shortdescription></shortdescription>
+      </image>
+
+<!-- <remark>       -->
+<!--         <p> -->
+<!--           Notice that in this setting <m>x</m> represents the -->
+<!--           <em>length</em> of the line segment which <m>P</m> has -->
+<!--           traced out, and <m>P_0</m> represents the starting position -->
+<!--           of the point, and <m>P</m> represents its current position. -->
+<!--           In particular <m>x</m> is <em>not</em> the position -->
+<!--           (coordinate) of <m>P</m> on the line. It can't be because we -->
+<!--           have not specified an origin (zero) point from which to -->
+<!--           measure position. -->
+<!--         </p> -->
+<!-- </remark> -->
+
+      <p>
+        We next partition the line segment between <m>x_0</m> and
+        <m>x_n</m> by selecting points <m>x_1</m>, <m>x_2</m>,
+        <m>\ldots </m>, <m>x_{n-1}</m> such that
+        <me>
+          x_0\lt x_1 \lt x_2 \lt \cdots \lt x_{n-1} \lt x_n
+          </me>.
+      </p>
+
+      <figure  xml:id="FIGUREPartitionedInterval">
+        <caption>
+          A partitioned interval.<!--  Notice that we use <m>x_i</m> to -->
+          <!-- represent both the position of a partition point and its -->
+          <!-- coordinate. -->
+</caption>
+        <image source="IC/FTC1.png" width="70%">
+          <shortdescription></shortdescription>
+        </image>
+      </figure>
+
+      <p>
+        The partition points subdivide the interval <m>[x_0, x_n]</m>
+         into subintervals.  We represent the length of the first
+        subinterval of <m>x</m> with <m>\Delta x_1</m>, of the second
+        with <m>\Delta x_2</m>, and so on.  In general
+        <m>\Delta{x_i}</m> represents the length of the <m>i</m>th
+        subinterval of <m>x</m>. Clearly the length of the line
+        segment <m>[x_0, x_n]</m> is
+        <md>
+          <mrow>\Delta{x_1}\amp{}+\Delta{x_2}+\Delta{x_3} +\cdots  +\Delta{x_{n-1}}+\Delta{x_n}</mrow>
+          <mrow>\amp{} =  (x_1-x_0)+(x_2-x_1)+(x_3-x_2) +\cdots + (x_{n-1}-x_{n-2})+(x_n-x_{n-1})</mrow>
+          <mrow>\amp{}=x_n-x_0</mrow>
+          <mrow>\amp{}=x</mrow>
+          </md>.
+          If the subintervals are all the same length, say
+          <m>\Delta{x}</m>, then we no longer need the subscripts to
+          distinguish them so we could write
+          <me> \underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+          copies}}=x_n-x_0=x</me>
+          
+          instead.  But this is cumbersome and we are far too lazy to write
+          all of that each time we want to indicate such a sum.  Leibniz proposed using 
+          the letter <q>S</q> (first letter of the word <q>sum</q>) to
+          simplify the summation  notation. He would have written:
+
+          <men xml:id="EQUATIONFinDiffSum">
+            \int{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+          copies}} = x_n-x_0 =x
+</men>.
+</p>
+
+      <aside>
+        <title>Historical Background</title>
+        <p>
+          Leibniz chose the letter <q>S</q> because
+          it is the first letter of Latin word <foreign>summa</foreign>,
+          from which we get the English word <q>sum.</q>
+        </p>
+        <p>
+          To a modern eye the integral sign looks like a stylized
+          letter <q>S,</q> and that is often how it is described. But
+          it isn<rsq/>t stylized at all. In the seventeenth century a
+          printed letter <q>S</q> typically had one of several forms,
+          depending on where it appeared in a word.  One of these
+          extended above and below the line of text, much as the
+          letter <q>f</q> extends above and the letter <q>j</q>
+          extends below the line of text.  Leibniz adopted this doubly
+          extended form of <q>S</q> as his summation sign. So the
+          integral symbol isn<rsq/>t a stylized <q>S</q> at all.  It is an 
+          archaic letter <q>S</q>.
+        </p>
+      </aside>
+
+      <p> 
+<idx><h>Vocabulary</h><h>Integral and the Integral Sign</h></idx>
+        We assume, with Leibniz, that <xref
+        ref="EQUATIONFinDiffSum">equation</xref> remains true when the finite
+        differences (<m>\Delta{x}</m>) are replaced with infinitesimal
+        differences (<m>\dx{x}{}</m>): <men
+        xml:id="EQUATIONDefInt2">\int{\dx{x} }=x_n-x_0=x</men>.
+        The symbol 
+        <q><m>\int </m></q> is called an 
+        <term>integral sign</term>, and any expression starting with 
+        <q><m>\int </m> </q> followed by a differential is called an 
+        <term>integral</term>. 
+      </p>
+<remark>
+<title>Finite vs. Infinitesimal Summation</title>
+<p>
+For Leibniz the distinction between the summation of infinitesimals
+and of very small but finite real numbers, was somewhat blurred. Thus
+he used <q><m>\dx{x}</m></q>  and <q><m>\Delta{x} </m></q>
+ more or less interchangebly.
+</p>
+<p>
+But we will need to keep them distinct. In modern times it has become
+customary to distinguish finite and infinitesimal sums by using
+different alphabets. Since <m>\Delta </m> comes from Greek and
+<m>\int </m> comes from Latin,  we extend this convention to finite
+summation by writing <xref ref="EQUATIONFinDiffSum">equation </xref>
+as
+          <me>
+            \sum{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+          copies}} = x_n-x_0 =x
+</me>
+because <q><m>\Sigma </m></q> is the Greek version of the Latin capital letter
+<q>S</q>.
+
+</p>
+</remark>
+
+
+      <p>
+        <xref ref="EQUATIONDefInt2">Equation</xref> is the simplest
+        possible integral. It says that if we add up the lengths of
+        all of the differentials that make up the line segment from
+        <m>x_0</m> to <m>x_n</m> we will get its length,
+        <m>x_n-x_0=x</m>.
+      </p>
+      <p>
+        <idx><h>Fundamental Theorem of Calculus</h></idx>
+
+        This is surely not surprising to you and you are probably
+        wondering why we've taken the trouble to wrap such an obvious
+        statement in this arcane notation. The reason is this: <xref
+        ref="EQUATIONDefInt2">equation</xref> is a very simple form of
+        what is known as the Fundamental Theorem of Calculus which we
+        will need to become very comfortable with. Later, when things
+        get complex, it will be helpful to refer back to <xref
+        ref="EQUATIONDefInt2">equation</xref> and remind ourselves
+        that, at its heart, integration is about adding up
+        differentials.
+      </p>
+
+      <paragraphs  xml:id="PARAGRAPHCoordinatesAndVariables">
+        <title>DIGRESSION:  Coordinates and  Variable Names</title>
+        <p>
+          <!-- You may also be wondering why we are being so punctilious about -->
+          <!-- distinguishing the label of a point <m>P</m>, and its coordinate -->
+          <!-- <m>x_n</m>.  -->
+          In <xref ref="FIGUREPartitionedInterval"></xref> we were
+          rather careless about the distinction between the label of a
+          point, e.g.  <m>P</m> or <m>P_0</m>, and its coordinate,
+          e.g. <m>x_1</m> or <m>x_2</m>. A natural question would be
+          <q>Aren<rsq/>t they the same thing?</q>
+        </p>
+        <p> No, actually they aren<rsq/>t. The label of a point is the
+        name we use to distinguish it from other points. The
+        (horizontal) coordinate of a point is it<rsq/>s (horizontal)
+        distance from the origin.  Consider the following diagram.<!--
+        Suppose <m>P</m> is a point on -->
+        <!-- the <m>x</m>-axis located at a distance of <m>x</m> to the right of -->
+        <!-- the origin. Does <m>x</m> represent a length? If so, what is <m>x</m> -->
+        <!-- the length of? -->
+        </p>
+        <image source="IC/VarX2.png" width="60%">
+          <shortdescription></shortdescription>
+        </image>
+        <p>
+          The labels (names) of the two points are <m>P_0</m> and <m>P</m>. Since
+          <m>x_0</m> measures the distance between zero and <m>P_0</m> it is by
+          definition the coordinate of the point labeled <m>P_0</m>.  Similarly <m>x_n</m> is the coordinate of <m>P</m>.
+        </p>
+        <aside>
+          <title>Comment</title>
+          <p>
+            If a vertical axis were present zero would be the second
+            coordinate of both points. Do you see why?
+          </p>
+        </aside>
+
+        <p>
+          On the
+          other hand since <m>x</m> <mdash/> the distance between <m>P_0</m> and
+          <m>P</m> <mdash/> is not measured from the origin it is
+          neither a coordinate nor the label of a point. 
+          <!-- <p> -->
+          <!-- Do you see -->
+          <!-- what<rsq/>s going on here? The cooordinate <m>x</m> is indeed the length of the line segment between the origin and <m>P</m>. By definition every coordinate is the length of a line segment. But not every length  is necessarily a cooordinate. To see why consider the following sketch.  -->
+          <!-- </p> -->
+          <!-- <image source="IC/VarX2.png" width="60%"> -->
+          <!-- <shortdescription></shortdescription> -->
+          <!-- </image> -->
+          <!-- <p> -->
+          <!-- In this case <m>P</m> and <m>P_0</m> are the labels of the two points, -->
+          <!-- whereas <m>x_n</m> and <m>x_0</m> are their coordinates, respectively. -->
+          <!-- </p> -->
+          It is the length of the line segment
+          <m>\overline{P_0P}</m>. If we partition this line segment and
+          compute <m>\int\dx{x} </m> we get 
+          <xref ref="EQUATIONDefInt2">equation</xref>.
+        </p>
+        <p>
+          Since their coordinates distinguish one point from another
+          as well as their labels do, a (very) common practice is to
+          dispense with the labels altogether and make the coordinates
+          serve both purposes as in the diagram below.
+        </p>
+        <image source="IC/VarX3.png" width="60%">
+          <shortdescription></shortdescription>
+        </image>
+        <p>
+          Strictly speaking this is an abuse of our notation and it can cause
+          confusion because it isn<rsq/>t always clear whether <m>x_0</m> and
+          <m>x_n</m> refer to points on the line, or their distance from the
+          origin (their coordinates). Always be sure it is clear to you which
+          usage is intended.
+        </p>
+
+        <p><alert>END OF DIGRESSION</alert></p>
+      </paragraphs>
+    </subsection>
+
+    <subsection  xml:id="SUBSECTIONIntegrationAsAntiDerivative">
+      <title>Integration as Antidifferentiation</title>
+
+      <definition  xml:id="DEFINITIONAntiderivative">
+        <title>Antiderivative</title>
+<idx><h>Vocabulary</h><h>Antiderivative</h></idx>
+        <statement>
+          <p>
+            Suppose we have a function <men
+            xml:id="EQUATIONDefAntideriv">y=F(t)</men> with derivative
+            <m>\dfdx{y}{t}=F^\prime(t)=f(t)</m>. Then <m>F(t)</m> is
+            called an <term>antiderivative</term> of <m>f(t)</m>.
+          </p>
+        </statement>
+      </definition>
+      <p>
+        From <xref ref="DEFINITIONAntiderivative"></xref> , we
+        see that
+        
+        <men xml:id="EQUATIONIntAsAntiDiff">\dx{y}=F^\prime(t)\dx{t}=f(t)\dx{t}</men>.
+
+</p>
+<p>
+
+
+ We know from our work in
+        <xref ref="SUBSECTIONIntegrationAsASum"></xref> (specifically
+        <xref ref="EQUATIONDefInt2">equation</xref>) that
+        
+        <me>y=\int\dx{y}</me>.
+
+        So if we sum all of the differentials on the left and right sides of <xref ref="EQUATIONIntAsAntiDiff">equation</xref>  we have
+
+        <me>y=\int\dx{y}= \int f(t)\dx{t}</me>.
+          Observe that since <m>\dx{y} </m> is a differential it follows
+          that <m>f(t)\dx{t}</m> is also a differential so the expression
+          <m>\int f(t)\dx{t}</m> is a valid integral.
+
+      </p>
+
+
+
+      <p>
+        Thus it appears that if <m>\dx{y}=f(t)\dx{t} </m> is known
+        then <m>y=F(t)</m> will be the antiderivative of
+        <m>f(t)</m>. That is to say, integration appears to be
+        <q>differentiation run backwards.</q> This seems reasonable
+        since differentiation consists of subtracting (finding
+        differentials) and integration consists of adding (summing
+        differentials). Addition and subtraction can  both be thought of as <q>doing the the other backwards.</q>
+
+      </p>
+
+      <p>
+        It follows immediately from <xref
+        ref="DEFINITIONAntiderivative"></xref> and the <xref
+        ref="THEOREMConstRule">Constant Rule</xref> that if a function has one antiderivative
+        then it has infinitely many.  That is, if <m>F(x)</m> is an antiderivative of
+        <m>f(x)</m> then so is <m>F(x)+5</m>. And <m>F(x)+80</m>. In
+        fact if <m>C</m> ia a constant then so is <m>F(x)+C</m> for
+        every possible value of <m>C</m>
+        because we get a (slightly) different antiderivative
+        each time we add a constant to <m>F(x)</m>.  
+</p>
+<p>
+Thus if
+        we know  one antiderivative of <m>f(x)</m>,
+        then we know all (infinitely many) of the antiderivatives of
+        <m>f(x)</m>.
+        Remember this. We
+        will return to it when we discuss <xref ref="THEOREMFTC"></xref> below.
+      </p>
+
+      <example xml:id="EXAMPLESimpleInt1">
+        <title>A Simple Integration</title>
+        <p>
+          For example, can you find a formula for this integral:
+          <m>\int2t\dx{t}</m>? Before reading on give it a try.
+        </p>
+        <p>
+          Clearly <m>f(t)=2t</m> so from <xref
+          ref="DEFINITIONAntiderivative"></xref> we see that <m>F(t) =
+          t^2</m> is one antiderivative, and we can capture all of the
+          antiderivatives by adding an arbitrary constant. Thus
+          <me>\int 2t\dx{t} = t^2 + C</me>.
+        </p>
+        <p>
+          <idx><h>Vocabulary</h><h>Antiderivative</h><h>most general</h></idx>
+
+          This shows that the expression <m>\int f(t)\dx{t} </m>
+          represents a multifunction much like the <q>
+          <m>\text{arc}</m></q> functions we encountered in <xref
+          ref="CHAPTERcalc-trig"></xref>. An alternative way to think
+          of this is to say that <m>\int f(t)\dx{t} </m> represents
+          the set of all antiderivatives of <m>f(t)</m>, each of which
+          differs from the others by a constant. 
+          <!-- However, none of the -->
+          <!-- complicated domain and range difficulties that caused so -->
+          <!-- many headaches in <xref -->
+          <!-- ref="SECTIONinverse-tan-and-cot"></xref> will be in play -->
+          <!-- here. -->
+          Since the multifunctions arising from integration are
+          relatively simple, we will dispense with the formal language
+          and call <me>\int 2t\dx{t} = t^2+C</me> the <term>most
+          general antiderivative</term> of <m>f(t) = 2t</m>. 
+        </p>
+        <p>
+          There will be times when we will want to choose only one of
+          the functions represented by <m>\int f(t)\dx{t}</m>. This
+          will consist entirely of choosing the value of <m>C</m> that
+          works for the problem in front of us so we won<rsq/>t fuss
+          over it too much. If we write <m>\int f(t)\dx{t}</m> without
+          conditions it means the set of all antiderivatives of
+          <m>f(x)</m>. To specify a particular antiderivative we will
+          still write <m>\int f(t)\dx{t}</m> but we will also
+          explicitly indicate which antiderivative we mean.
+        </p>
+      </example>
+
+      <p>
+        Beginning in  the early twentieth century integration theory has grown considerably beyond
+        what we will be learning in this course. But the underlying
+        notions of the integral as a sum and the integral as an
+        antiderivative are still very helpful and we will rely on them
+        rather heavily, at least at first.
+      </p>
+
+
+      <exercise xml:id="EXERCISEAntiDerivPractice">
+        
+
+        <idx><h>Antiderivative</h></idx>
+        <introduction>
+          <p>
+            Show that  the following statements are true. Assume
+            <m>C</m> is an arbitrary constant.
+
+            (We have not shown you how to compute any of these
+            integrals. But  you know how to differentiate. Read <xref
+            ref="DEFINITIONAntiderivative"></xref>  again carefully.)
+</p>
+
+
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>\displaystyle\int 2te^{t^2}\dx{t} = e^{t^2} +C</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\displaystyle\int te^t\dx{t} = (t-1)e^t+C</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\displaystyle\int \sin(x)\cos(x)\dx{x} =\frac12\sin^2(x)+C</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              Notice that we<rsq/>ve used <m>x</m> instead of <m>t</m> for our
+              variable. Does that matter? Explain.
+            </p>
+          </hint>
+        </task>
+        <task  xml:id="PROBLEMSinsqcossqantider">
+          <statement>
+            <p>
+              <m>\displaystyle\int \sin(\theta )\cos(\theta )\dx{\theta } =
+              -\frac12\cos^2(\theta )+C</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\displaystyle\int u\cos(u) \dx{u} = u\sin(u)+\cos(u)+C</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>\displaystyle\int x\ln(x) \dx{x} = x(\ln{x}-1)+C</m>
+            </p>
+          </statement>
+        </task>
+
+
+      </exercise>
+
+<p>
+The exercises in <xref ref="PROBLEMAntiDiffPractice"></xref> were all
+a bit contrived. Since we gave you the antiderivatives you don<rsq/>t
+really need to know how tho integrate.
+</p>
+<p>
+ The real question here is <q>How could you find these antiderivatives
+ if we hadn<rsq/>t given them to you?</q>
+</p>
+
+    </subsection>
+
+<conclusion>
+
+        <title>We Integrate Differentials, Not Functions</title>
+        <p>
+          Integration can be usefully thought of as either summation or
+          antidifferentiation. We will flip between these two mindsets as
+          convenient in much the same way that we flipped between the
+          dynamic (Newtonian) and geometric (Leibnizian) viewpoints in
+          <xref ref="DiffCalcFromPractice"></xref>.
+        </p>
+<p>
+Since it is valid to think of <m>\int
+f(x)\dx{x}</m> as representing an antiderivative of the function
+<m>f</m> it is customary to speak these symbols aloud as <q>the integral of <m>f</m>
+of <m>x</m>.</q> While this is not wrong, it is not quite right
+either. Properly speaking, we should say <q>the integral of the
+differential <m>f(x)</m> times <m>\dx{x}</m>.</q> But no one does that
+so we won<rsq/>t either.
+</p>
+<p>
+But if we (the authors or your instructor) consistently speak
+incorrectly (as we tend to do in this instance) it is easy for 
+you (the student) to develop  unfortunate habits of mind. 
+We will take a moment to try to  prevent that from happening.
+</p>
+        <p>
+         The integral sign was designed (by Leibniz) to indicate summation, not
+          antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people
+          will fall into the habit of dropping the final
+          <q><m>\dx{x}</m>,</q>  of writing <m>\int f(x)</m> instead of
+          <m>\int f(x)\dx{x}</m>, and then calling them both the integral
+          of the function <m>f(x)</m>.
+</p>
+<p>
+ This is an unfortunate, but
+          common, abuse of the notation.  You can not integrate a
+          function, only a differential. We <em>strongly</em> suggest
+          that you take care to avoid this bad habit for as long as
+          you can because it can be very confusing. Especially when
+          the concepts are new.
+        </p>
+        <p>
+          Remember that <me>\int f(x)</me> is meaningless no matter how
+          convenient it might be because it indicates that we are summing
+          a function, not a differential.
+        </p>
+<aside>
+          <title>Notation</title>
+          <p>
+            By calling <m>\int f(x)</m> meaningless we have overstated
+            the situation a bit. If you study mathematics long enough
+            you will encounter situations where <m>\int{f(x)}</m> is a
+            perfectly reasonable notation to use. But we will not
+            encounter them here, and it is best if you don<rsq/>t fall
+            into this habit while you are still learning the basics.
+          </p>
+</aside>
+
+
+        <p>
+          But the meaning of <me>\int
+          f(x)\dx{x}</me> is clear. We're summing up all of the
+          differentials of the form <m>f(x)\dx{x} </m>.
+        </p>
+
+<p>
+Finally, there is a puzzle here. In <xref
+ref="SUBSECTIONIntegrationAsASum"></xref> we introduced
+integration as summation, and we invented the integral sign
+<m>\left(\int{}\right)</m> to reflect that idea. But in this section we have
+reinterpreted the integral to mean antidifferentiation and the idea of
+<q>integral as summation</q> seems to have died a quiet death. Nowhere in
+<xref ref="EXAMPLESimpleInt1"></xref> does a summation appear. 
+</p>
+<p>
+  But this is the point. Finding the sum <m>\int 2x\dx{x}</m> by
+  addition is a very daunting task. Where would you even begin? By
+  reinterpreting it as an antidifferentiation problem we are able to
+  find the sum, <m>\int 2x\dx{x}+C</m> without the bother of adding up
+  (infinitely many) differentials of the form
+  <m>2x\dx{x}</m>. Antidifferentiation gives us a way to compute the
+  sum indirectly.
+</p>
+        <!-- <p> -->
+        <!--   Suppose that <m>y=t^2</m> then <m>\dx{y} =2t\dx{t}</m>. Then -->
+        <!--   <m>\int 2t\dx{t}</m> makes sense because the product -->
+        <!--   <m>2t\dx{t}=\dx{y}</m> is a differential. But <m>\int 2t</m> -->
+        <!--   is nonsense because <m>2t</m> alone is not a differential. -->
+        <!-- </p> -->
+        <!-- <p> -->
+        <!--   In particular, <m>\int 2t</m> is meaningless. However  if <m>y=t^2</m> -->
+        <!--   then what is probably meant is -->
+        <!--   <men  xml:id="EQUATIONPlusCMissing">\int 2t\dx{t} = \int \dx{y}</men> which is equal to <m>y</m> since <m>\int \dx{y}</m> means  -->
+        <!--   <q>add up the differentials of <m>y</m>.</q> -->
+        <!-- </p> -->
+
+      <!-- <p> -->
+      <!--   But remember that the title of this -->
+      <!--   chapter is <q>Integration in its <em>Simplest</em> Form.</q> Running -->
+      <!--   differentiation backwards is not as straightforward as it first -->
+      <!--   appears to be. -->
+      <!-- </p> -->
+</conclusion>
+
+
+  </section>
+
+  <section  xml:id="SECTIONIntegrationRules1">
+    <title>Rules for Integration</title>
+    <p>
+      Since integration can be thought of as the reverse of
+      differentiation it is not too surprising to learn that each
+      differentiation rule has its counterpart as an integration rule.
+      The following list illustrates some of the rules we already know
+      from Differential Calculus in both their differential and
+      integral form.
+
+  <mdn>
+    <mrow number="no">
+      \text{Differentiation}\text{ Rule}\amp{}\amp{}\text{Integration} \text{ Rule}
+    </mrow>
+  </mdn>
+
+<mdn>
+
+
+    <mrow xml:id="IntRuleConstant">
+      \dx(\text{constant})=0;\amp{}\amp{}\int0\dx{x}=C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleSum">
+      \dx(f+g)=\dx{f}+\dx{g};\amp{}\amp{}\int\dx(f+g)=f+g+C
+<!-- \int\dx{f}+\int\dx{g} -->
+    </mrow>
+<!-- <mrow> -->
+<!-- \amp{}\amp{}=f+g+C -->
+<!--     </mrow> -->
+</mdn>
+
+<mdn>
+
+<mrow number="no">
+      \text{If }a\text{ is constant, then }          
+    </mrow>
+    <mrow xml:id="IntRuleConstMult">
+\dx(ay)=a\dx(y);\amp{}\amp{}\int a\dx{y}=a\int\dx{y}=ay+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleMonomial">
+      \dx(x^{n+1})=(n+1)x^n\dx{x}
+      ;\amp{}\amp{}\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq
+      -1
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleOneOver">
+      \dx(\ln(x))<!-- =\frac1x\dx{x} -->=x^{-1}\dx{x}
+      ;\amp{}\amp{}\int x^{-1}\dx{x} = \ln\abs{x}+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleExp">
+      \dx(e^x)= e^x\dx{x}
+      ;\amp{}\amp{}\int e^x\dx{x} = e^x+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleCos">
+      \dx(\sin(x))=\cos(x)\dx{x}
+      ;\amp{}\amp{}\int \cos(x)\dx{x} = \sin(x) +C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleSin">
+      \dx(\cos(x))=-\sin(x)\dx{x}
+      ;\amp{}\amp{}\int \sin(x)\dx{x} = -\cos(x) +C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleTan">
+      \dx(\tan(x))=\sec^2(x)\dx{x}
+      ;\amp{}\amp{}\int\sec^2(x)\dx{x} = \tan(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleSec">
+      \dx(\sec(x))= \sec(x)\tan(x)\dx{x}
+      ;\amp{}\amp{}\int\sec(x)\tan(x)\dx{x}=\sec(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleInvSin">
+      \dx(\inverse\sin(x))=
+      \frac{1}{\sqrt{1-x^2}}\dx{x}
+      ;\amp{}\amp{}\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleInvTan">
+      \dx(\inverse\tan(x))=   \frac{1}{1+x^2}\dx{x}
+      ;\amp{}\amp{}\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C
+    </mrow>
+</mdn>
+
+<mdn>
+
+    <mrow xml:id="IntRuleInvSec">
+      \dx(\inverse\sec(x))=    \frac{1}{x\sqrt{x^2-1}}\dx{x}
+      ;\amp{}\amp{}\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C
+    </mrow>
+</mdn>
+    </p>
+
+
+
+
+
+    <!-- <table xml:id="TABLEBasicIntegration"> -->
+    <!--   <title>Integration Rules Inherited from Differentiation Rules</title> -->
+    <!--   <tabular halign="center"> -->
+    <!--     <row bottom="major" header="yes"> -->
+          
+    <!--       <cell></cell> -->
+    <!--       <cell>Differentiation Rule</cell> -->
+    <!--       <cell> -->
+    <!--         <line>Integration  Rule</line> -->
+    <!--         <line> (Assume that <m>C</m> is an arbitrary  constant.)  </line> -->
+    <!--       </cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>1</cell>           -->
+    <!--       <cell><m>\dx(\text{constant})=0</m></cell> -->
+    <!--       <cell><line><m>\displaystyle\int0\dx{x}=C</m>, where <m> C -->
+    <!--       </m> is a constant.</line></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>2</cell>           -->
+    <!--       <cell><m>\dx(f+g)=\dx{f}+\dx{g}</m></cell> -->
+    <!--       <cell> -->
+    <!--         <line><m>\displaystyle\int\dx(f+g)=\int\dx{f}+\int\dx{g}</m><m>=f+g+C</m></line></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>3</cell>           -->
+    <!--       <cell> -->
+    <!--         <line>If <m>a</m> is a constant, then<m>\dx(ay)=a\dx(y)</m></line> -->
+    <!--     </cell> -->
+    <!--     <cell> -->
+    <!--       <line><m>\displaystyle\int a\dx{y}=\int\dx(ay)=a\int\dx{y}</m><m>=ay+C</m></line></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>4</cell>           -->
+    <!--       <cell><m>\dx(x^{n+1})=(n+1)x^n\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int x^n\dx{x} = \frac{x^{n+1}}{n+1}+C, n\neq -->
+    <!--       -1</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>5</cell>          <cell><m>\dx(\ln(x))=\frac1x\dx{x}=x^{-1}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int x^{-1}\dx{x} = \ln\abs{x}+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>6</cell>          <cell><m>\dx(e^x)= e^x\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int e^x\dx{x} = e^x+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>7</cell>          <cell><m>\dx(\sin(x))=\cos(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int \cos(x)\dx{x} = \sin(x) +C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>8</cell>          <cell><m>\dx(\cos(x))=-\sin(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int \sin(x)\dx{x} = -\cos(x) +C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>9</cell>          <cell><m>\dx(\tan(x))=\sec^2(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\sec^2(x)\dx{x} = \tan(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>10</cell>          <cell><m>\dx(\sec(x))= \sec(x)\tan(x)\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\sec(x)\tan(x)\dx{x}=\sec(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>11</cell>          <cell><m>\dx(\inverse\sin(x))= -->
+    <!--       \frac{1}{\sqrt{1-x^2}}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>12</cell>          <cell><m>\dx(\inverse\tan(x))= -->
+    <!--       \frac{1}{1+x^2}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\frac{1}{1+x^2}\dx{x}=\inverse\tan(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--     <row> -->
+    <!--       <cell>13</cell>          <cell><m>\dx(\inverse\sec(x))= -->
+    <!--       \frac{1}{x\sqrt{x^2-1}}\dx{x}</m></cell> -->
+    <!--       <cell><m>\displaystyle\int\frac{1}{x\sqrt{x^2-1}}\dx{x}=\inverse\sec(x)+C</m></cell> -->
+    <!--     </row> -->
+    <!--   </tabular> -->
+    <!-- </table> -->
+    
+    
+
+    
+    
+    <problem xml:id="DRILLIntSum">
+      <idx><h>Drills</h></idx>
+      <p>
+        <xref
+        ref="IntRuleSum" >Integration Rules</xref> and <xref
+        ref="IntRuleConstMult"></xref> appear to violate <xref
+        ref="IntRuleConstant">Integration Rule</xref>, don<rsq/>t
+they?   Isn<rsq/>t it true that
+        <me>
+        \int\dx(f+g)=  \int \dx{f} +\int \dx{g} = f+C_1+g+C_2
+        </me>
+        where <m>C_1</m> and <m>C_2</m> are arbitrary constants, and that
+        <me>
+          a\int\dx{y}=a(y+c)=ay+aC </me>.
+          Explain how <xref
+        ref="IntRuleSum" >Integration Rules</xref> and <xref
+        ref="IntRuleConstMult"></xref> are legitimate as stated.
+      </p>
+    </problem>
+    
+    <p>
+      In light of <xref ref="DRILLIntSum"></xref>, it is common
+      practice integrate each term of a differential and then combine
+      all of the arbitrary constants into a single constant.
+    </p>
+<example>
+  <p>
+For example,
+      consider
+      
+      <md>
+        <mrow>
+          \int\left(5x^2-3\sqrt{x}+\frac{2}{1+x^2}\right)\amp{}\dx{x}
+        </mrow>
+      <mrow>
+          \amp{}=5\int x^2\dx{x}-3\int x^\frac12
+          \dx{x}+2\int\frac{1}{1+x^2}\dx{x}
+        </mrow>
+        <mrow>
+          \amp =5\left(\frac{x^3}{3}\right) +C_1-
+          \frac{3\left(x^{\frac12}\right)}{\frac32} + C_2 +
+          2\inverse\tan(x)+C_3
+        </mrow>
+        <mrow>
+          \amp =\frac53x^3-2x^{\frac32}+2\inverse\tan(x)+C
+        </mrow>
+      </md>,
+where <m>C=C_1+C_2+C_3</m>.
+  </p>
+</example>
+<p>
+      As with differentiation, when you get more comfortable
+      with integration, you will probably do many of these steps in your
+      head.  But that ability will only come with practice.
+    </p>
+
+    <problem  xml:id="PROBLEMAntiDiffPractice">
+      <idx><h>Drills</h></idx>
+      <p>
+        Use <xref first="IntRuleConstant"
+        last="IntRuleInvSec">Integration Rules</xref>  to find the most
+        general antiderivative.
+        <ol cols="2" marker="(i)">
+          <li>
+            <m>\int t^2\dx{t}</m>
+          </li>
+          <li>
+            <m>\int 3t-2\dx{t}</m>
+          </li>
+          <li>
+            <m>\int 7\dx{t}</m>
+          </li>
+          <li>
+            <m>\int \sin(t)\dx{t}</m>
+          </li>
+          <li>
+            <m>\int 5\cos(t)\dx{t}</m>
+          </li>
+          <li>
+            <m>\int \sec(t)\tan(t)\dx{t}</m>
+          </li>
+          <li>
+            <m>\int t + e^t\dx{t}</m>
+          </li>
+          <li>
+            <m>\int \frac{1}{1+\theta^2}\dx{\theta{}}</m>
+          </li>
+        </ol>
+      </p>
+      </problem>
+
+
+    <p>
+      Conspicuously absent from our list of rules are the integral
+      form of the Product Rule, the Quotient Rule, and the Chain Rule.
+      The reverse of the Quotient Rule is rather limited in its
+      applicability and typically is not used.  Reversing the others
+      can be quite useful but we are not quite ready to discuss them
+      in depth. 
+    </p>
+
+    <paragraphs>
+      <title>DIGRESSION: A Few Comments on  <xref ref="IntRuleOneOver">Integration Rule</xref>  </title>
+
+      <!-- <p> -->
+      <!--   <xref ref="TABLEBasicIntegration">>Table</xref> is not -->
+      <!--   exhaustive. It couldn<rsq/>t possibly be since every -->
+      <!--   differentiation formula gives rise to a corresponding -->
+      <!--   integration formula. -->
+      <!-- </p> -->
+      <p>
+        First,      notice that <xref ref="IntRuleMonomial">Integration Rule</xref>  will work if the
+        exponent has any value 
+        <em>except</em> <m>n=-1</m>. If we try to apply it we<rsq/>ll get 
+        <me>
+          \int \inverse{x}\dx{x} = \frac{x^{1-1}}{1-1} = \frac{1}{0}
+        </me> 
+        which we know is meaningless.
+      </p>
+      <p>
+        For this
+        single exception we have to turn to <xref ref="IntRuleOneOver">Integration Rule</xref>:
+        <m>\int\frac1x\dx{x}=\ln\abs{x}+C{}</m>. 
+      </p>
+      <p>
+        Does it seem strange to you that there would be this single exception
+        to <xref ref="IntRuleMonomial">Integration Rule</xref>? Us too.
+      </p>
+      
+      <p>
+        Also notice the absolute value in the formula:
+        <me>
+          \int\inverse x\dx{x}=\ln\abs{x}+C.
+        </me> 
+      </p>
+      <p>
+        We saw in <xref ref="DIGRESSIONAbsValSqrt" text="custom"> The Absolute Value Function</xref>  that an
+        alternative definition of the absolute value function is
+        <me>\abs{x}=\sqrt{x^2}</me>.
+      </p>
+      <exercise>
+        
+
+        <statement>
+          <p>
+            Show that if we differentiate the definition <m>\ln(x)
+            =\sqrt{x^2}</m> we still obtain the formula
+            <me>
+              \dx(\ln\abs{x})=\frac1x \dx{x}
+              </me>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Be careful that you do not try to take the logarithm of a
+            negative number.
+          </p>
+        </hint>
+      </exercise>
+      <p>
+        It is common (though incorrect) practice to disregard the
+        absolute value and  write <m>\int\inverse
+        x\dx{x}=\ln(x)+C</m>, even though this is only valid for
+        <m>x\gt{0}</m>.  We will also adopt this practice but you
+        should always bear in mind that there are situations where
+        the absolute value must be used. 
+      </p>
+      <p><alert>END OF DIGRESSION</alert></p>
+    </paragraphs>
+
+    <!-- <p> -->
+    <!--   If you read each of these Differentiation and Integration Rules -->
+    <!--   verbally you can hear that they reverse each other. For example in -->
+    <!--   line 4 we see that to differentiate <m>x</m> to a power, we -->
+    <!--   <q>multiply by the exponent and then subtract one from the -->
+    <!--   exponent.</q> To reverse the process notice that everything gets run -->
+    <!--   backwards: We first <q>add one to the exponent, then we divide by -->
+    <!--   the exponent.</q> (In the same way that when dressing you put your -->
+    <!--   socks on and then your shoes and to reverse it you take off your -->
+    <!--     shoes first and then your socks). -->
+    <!-- </p> -->
+  </section>
+
+</chapter>

@@ -1,4 +1,522 @@
+<section xml:id="SECTIONApprIntViaRiemSums">
+  <title>Approximating Integrals with Riemann Sums</title>
+  <p>
+    As we saw in the last section, representing a function as a power
+    series was a powerful tool for computing both indefinite and
+    definite integrals and for solving differential equations.  As the
+    focus of integral calculus turned more toward computing areas,
+    volumes, arc lengths, etc. via definite integrals, a more natural
+    approach to approximating them came into view.  This idea was to
+    replace an infinite sum of infinitesimals with a finite sum of
+    finite quantities.  More specifically, instead of dividing the
+    interval into infinitely small pieces <m>\dx{x}</m> or <m>\dx{y}</m> and
+    integrating differentials together, we could divide the interval
+    into a finite number of pieces and create a finite sum.  This could
+    be used to approximate the integral itself and, in theory, if the
+    lengths <m>\mathrm{\Delta }x</m> are made smaller (meaning more
+    terms to sum together) then the approximation would be more
+    accurate.  In fact, in a rigorous formulation of integrals, we
+    could take the limit of these finite sums and it should converge to
+    what we call the definite integral.
+  </p>
+  <p>
 
-<p>
-  ladsjkf 
+    For example, suppose we wanted to approximate
+  </p>
+  <p>
+
+    
+    <me>\int^1_{x=0}{e^{-x^2}}\dx{x}</me> 
+  </p>
+  <p>
+
+
+    This would be the area under the curve <m>y=e^{-x^2}</m> from <m>x=0</m> to <m>x=1</m>.  We could divide the interval <m>[0,1]</m> into a finite number of equal pieces, say 10.  The length of each subinterval would be <m>\mathrm{\Delta }x=\frac{1}{10}</m>. We could then choose a point <m>x^*</m> in each subinterval and create the finite sum
+  </p>
+  <p>
+
+    
+    <me>e^{-{\left(x^*_1\right)}^2}\mathrm{\Delta }x+e^{-{\left(x^*_2\right)}^2}\mathrm{\Delta }x+\dots +e^{{-\left(x^*_{10}\right)}^2}\mathrm{\Delta }x=\sum^{10}_{n=1}{e^{{-\left(x^*_n\right)}^2}\mathrm{\Delta }x}</me> 
+  </p>
+  <p>
+    
+
+    It is hard to digest what is going on without a picture so here is the situation.
+  </p>
+
+
+  \includegraphics*[width=4.15in, height=3.89in, trim=2.11in 0.38in 1.88in 0.29in]{image106}
+
+  <p>
+
+    
+
+    As you can see, the sum
+    <me>e^{{-\left(x^*_1\right)}^2}\mathrm{\Delta }x+e^{{-\left(x^*_2\right)}^2}\mathrm{\Delta }x+\dots +e^{{-\left(x^*_{10}\right)}^2}\mathrm{\Delta }x=e^{{-\left(x^*_1\right)}^2}\mathrm{.1}+e^{{-\left(x^*_2\right)}^2}\mathrm{.1}+\dots +e^{{-\left(x^*_{10}\right)}^2}\mathrm{.1}=.1\sum^{10}_{n=1}{e^{{-\left(x^*_n\right)}^2}}</me> 
+    represents the (finite) sum of the areas of boxes and we can use this to approximate the area under the curve given by <m>\int^1_{x=0}{e^{-x^2}}\dx{x}</m>.  We are free to choose <m>x^*_n</m> to be any value inside each subinterval.  For example, we can choose the midpoints in each interval (<m>0.05,  0.15,  0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95)</m>.  This finite sum can be calculated on a computer.  Furthermore, if we have enough computing power, we could divide the interval <m>[0,1]</m> into as many subintervals as we wish, and they don't even need to be the same size.  A sum such as above is called a Riemann sum named after Bernhard Riemann (1826-1866) who took limits of these sums as <m>\mathrm{\Delta }x\to 0</m> to carefully define what a definite integral is without having to resort to differentials.  We'll get more into this story in the theory part, but for now let's focus on approximating integrals. 
+  </p>
+  <p>
+
+    
+
+    
+
+    \textbf{Problem F.  }
+  </p>
+  <p>
+
+
+    \title{ Choose <m>x^*_n</m> to be the left-hand endpoint of each subinterval and compute the approximating sum. This is called the left endpoint approximation.  Is this approximation smaller than or larger than the actual integral in this example?}\maketitle 
+  </p>
+  <p>
+
+    
+
+
+    \title{ Choose <m>x^*_n</m> to be the right-hand endpoint of each subinterval and compute the approximating sum.   This is called the right endpoint approximation. Is this approximation smaller than or larger than the actual integral in this example?}\maketitle 
+  </p>
+  <p>
+
+    
+
+
+    \title{ What is the difference between these two approximations and what does this tell you about the accuracy of either approximation?}\maketitle 
+  </p>
+  <p>
+
+    
+    \title{}\maketitle 
+  </p>
+  <p>
+
+
+    \title{ How accurate would our approximation be if we had divided the interval <m>[0,1]</m> into 100 equal pieces?}\maketitle 
+  </p>
+  <p>
+
+    
+    \title{}\maketitle 
+  </p>
+  <p>
+
+
+    \title{ What would our approximation be if we divided the interval into 10 equal pieces and let <m>x^*_n</m> the midpoint of each subinterval?  How would this approximation compare to the ones from part a and part b?  }\maketitle 
+  </p>
+  <p>
+
+    
+
+    
+
+    If we choose the points <m>x^*_n</m> to be the midpoint of each subinterval, then the approximation formed is said to be obtained using the midpoint rule.  For reasonable functions, this is typically a pretty good approximation, but there are places where using the left-hand approximation or right-hand approximation is appropriate.  For example, suppose we have a function to integrate but don't have a formula for it.  For example, suppose we measure the velocity of a car (in meters/sec) every one second over a ten second period.  Could we estimate how far the car traveled in that time period?
+  </p>
+  <p>
+
+    
+
+    If we let <m>v=\dfdx{s}{t}</m> represent the velocity of the car at time <m>t</m>, then 
+  </p>
+  <p>
+
+    
+    <me>s=\int^{10}_{t=0}{v(t) \dx{t}}</me> 
+  </p>
+  <p>
+
+
+    would represent how far we traveled over that ten second interval.  The problem is that we don't have a formula for <m>v</m>.  We only have the following data.
+  </p>
+  <p>
+
+   
+
+  \begin{tabular}{|p{0.6in}|p{0.3in}|p{0.4in}|p{0.4in}|p{0.4in}|p{0.4in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|} \hline 
+  <m>t</m> sec & <m>012345678910</me>v(t)</m> meters/sec & <m>911121513</m>10\textit{} & <m>9</m>8 & 6 & 4 & 2 &   \hline 
+  \hline 
+  \end{tabular}
 </p>
+<p>
+
+  
+
+   
+
+   
+
+   \textbf{Problem.}  
+</p>
+<p>
+
+
+  \title{ Use the left endpoint approximation to approximate the value of <m>s</m>.}\maketitle 
+</p>
+<p>
+
+   
+
+
+  \title{ Use the right endpoint approximation to approximate the value of <m>s</m>.}\maketitle 
+</p>
+<p>
+
+   
+  \title{}\maketitle 
+</p>
+<p>
+
+
+  \title{ Without knowing anything about the values of <m>v</m> between these particular times, can anything be said about the accuracy of these approximations?  Explain.}\maketitle 
+</p>
+<p>
+
+   
+  \title{}\maketitle 
+</p>
+<p>
+
+   
+
+   
+
+   If we average the two approximations in the above problem, we have what is known as the trapezoidal rule for approximating an integral.  As a formula, it would look like this.
+</p>
+<p>
+
+   
+  <me>\frac{\mathrm{\Delta }t\left(v\left(0\right)+v\left(1\right)+v\left(2\right)+\dots +v\left(9\right)\right)+\mathrm{\Delta }t\left(v\left(1\right)+v\left(2\right)+\dots +v\left(9\right)+v\left(10\right)\right)}{2}</me> 
+  <me>=\frac{\mathrm{\Delta }t}{2}\left(v\left(0\right)+2v\left(1\right)+2v\left(2\right)+\dots +2v\left(9\right)+v\left(10\right)\right)</me> 
+</p>
+<p>
+
+
+   The reason it is called the trapezoidal rule comes from the following problem.
+</p>
+<p>
+
+   
+
+   
+
+   \textbf{Problem.}
+</p>
+<p>
+
+
+  \title{ Use the following diagram to explain why the area of a trapezoid is equal to ½ the height times the sum of the bases.}\maketitle 
+</p>
+<p>
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+  \title{ Consider the following diagram, where the interval <m>[a,b]</m> is divided into <m>n</m> equal pieces and 
+  <me>\mathrm{\Delta }x=\frac{b-a}{n} .</me> }\maketitle 
+</p>
+<p>
+
+
+   <m>{}<me>{}</me>{}<me>{}</me>{}<me>{}</me>{}<me>{}</me>{}<me>{}</me>{}<me>{}</me>{}<me>{}</me>{}</me>{}</m>\includegraphics*[width=5.08in, height=3.60in, trim=1.17in 0.00in 0.00in 0.00in]{image107}
+</p>
+<p>
+
+   Show that the sum of the areas of the trapezoids is given by
+</p>
+<p>
+
+   
+  <me>\frac{\mathrm{\Delta }x}{2}\left(f\left(x_0\right)+2f\left(x_1\right)+2f\left(x_2\right)+\dots +2f\left(x_{n-1}\right)+f\left(x_n\right)\right)</me> 
+</p>
+<p>
+
+
+   
+
+   \textbf{Drill with midpoint and trapezoidal rules.}
+</p>
+<p>
+
+   
+
+   
+
+   
+
+   \textbf{Digression: Simpson's Rule and Errors}
+</p>
+<p>
+
+   
+
+   If you look at the midpoint rule geometrically, you will notice that we are replacing the curve <m>y=f(x)</m> on each subinterval <m>\left[x_{k-1},x_k\right]</m> with the horizontal line <m>y=f(x^*_k)</m> where <m>x^*_k</m> is the midpoint of the subinterval.  Said in a different way, on each subinterval, we are replacing the curve with the zero-degree polynomial <m>y=f(x^*_k)</m>.  In the trapezoidal rule, we are replacing the curve <m>y=f(x)</m> on each subinterval <m>[x_{k-1},x_k]</m> with the first-degree polynomial (line) passing through the points <m>\left(x_{k-1},f\left(x_{k-1}\right)\right)</m> and <m>\left(x_k,f\left(x_k\right)\right)</m>.  What if we were to replace the curve <m>y=f(x)</m> on each subinterval with an appropriate second-degree polynomial?  Since a zero-degree polynomial requires the single point <m>\left(x^*_k,f\left(x^*_k\right)\right)</m> to determine and the trapezoidal rule requires two points <m>\left(x_{k-1},f\left(x_{k-1}\right)\right)</m> and <m>\left(x_k,f\left(x_k\right)\right)</m> to determine, it stands to reason that replacing the curve <m>y=f(x)</m> with a parabola on each subinterval would require three points.  The natural choice would be the endpoints and midpoint of each subinterval.  With that in mind, let's just consider a function <m>y=f\left(x\right)</m> defined on <m>[a,b]</m> and replace it by the parabola <m>y=P(x)</m> passing through the points <m>\left(a,f\left(a\right)\right), \left(b,f\left(b\right)\right)</m> and <m>\left(m,f\left(m\right)\right)</m> where <m>m=\frac{a+b}{2}</m> is the midpoint of the interval <m>[a,b]</m>.  Here is a picture depicting this.
+</p>
+<p>
+
+   \includegraphics*[width=2.29in, height=2.07in]{image108}
+</p>
+<p>
+
+   
+
+   To make things a bit easier, let's shift the graph over so that <m>m=0.  </m>In this case we will denote <m>h=b-m=\frac{b-a}{2}</m> so that <m>a-m=\frac{a-b}{2}=-h.</m>
+</p>
+<p>
+
+   
+
+   
+
+   \textbf{Problem.}  Show that if <m>P(x)=Ax^2+Bx+C</m> then 
+</p>
+<p>
+
+   
+  <me>\int^h_{x=-h}{P\left(x\right)} \dx{x}=\frac{h}{3}\left(2Ah^2+6C\right)</me> 
+</p>
+<p>
+
+
+   
+
+   
+
+   Notice that since our parabola <m>P(x)</m> must pass through the points <m>\left(-h,f\left(a\right)\right),\left(0,f\left(m\right)\right)</m> and <m>\left(h,f\left(b\right)\right)</m> then we have
+</p>
+<p>
+
+   
+  <me>f\left(a\right)=A{\left(-h\right)}^2+B\left(-h\right)+C</me> 
+  <me>f\left(m\right)=A{\left(0\right)}^2+B\left(0\right)+C</me> 
+  <me>f\left(b\right)=Ah^2+Bh+C</me> 
+</p>
+<p>
+
+
+   
+
+   \textbf{Problem.}  Show that <m>C=f(m)</m> and <m>f\left(a\right)+f\left(b\right)=2Ah^2+2C</m> and deduce that 
+</p>
+<p>
+
+   
+  <me>\int^h_{x=-h}{P\left(x\right)} \dx{x}=\frac{h}{3}\left[f\left(a\right)+4f\left(m\right)+f\left(b\right)\right]</me> 
+</p>
+<p>
+
+
+   
+
+   The approximation 
+</p>
+<p>
+
+   
+  <me>\int^b_{x=a}{f\left(x\right)\dx{x}}\approx \int^h_{x=-h}{P\left(x\right)} dx=\frac{h}{3}\left[f\left(a\right)+4f\left(m\right)+f\left(b\right)\right]</me> 
+</p>
+<p>
+
+
+   where <m>h=\frac{b-a}{2}</m> and <m>m=\frac{a+b}{2}</m> is called Simpson's 1/3 rule named after Thomas Simpson (1710-1761) who included a version of it in his book \textit{Mathematical Dissertations} (1743).  Versions of it were known to Cavalieri, Gregory, and Kepler in the 17<m>{}^{th}</m> century, but Simpson's book popularized it.  
+</p>
+<p>
+
+  We can use this special case where we divided the interval <m>[a,b]</m> into 2 equal subintervals to the case where we divide an even number <m>n=2m</m> of subintervals each of length <m>\mathrm{\Delta }x=\frac{b-a}{2m}</m>.  We need an even number of subintervals so we can apply Simpson's 1/3 rule to each pair of adjacent intervals.  It's easy to get lost in the notation, so here is a picture of the case where <m>m=3</m> and we are dividing the interval <m>[a,b]</m> into <m>6</m> subintervals of width <m>\mathrm{\Delta }x=\frac{b-a}{6}</m>.
+</p>
+<p>
+
+   
+
+   \includegraphics*[width=3.54in, height=2.87in]{image109}
+</p>
+<p>
+
+   
+
+   Image from https://www.sciencedirect.com/topics/mathematics/simpsons-rule 
+</p>
+<p>
+
+   
+
+   \textbf{}
+</p>
+<p>
+
+   Black curve is <m>y=f(x)</m> and notice that it is being approximated by three different parabolas.
+</p>
+<p>
+
+   
+
+   
+
+   \textbf{Problem. }
+</p>
+<p>
+
+
+  \title{ Apply Simpson's 1/3 rule to each of the three parabolas in the above diagram to show that }\maketitle 
+</p>
+<p>
+
+   
+  <me>\int^b_{x=a}{f\left(x\right)\dx{x}}\approx \frac{\mathrm{\Delta }x}{3}[f\left(x_0\right)+4f\left(x_1\right)+2f\left(x_2\right)+4f\left(x_3\right)+2f\left(x_4\right)+4f\left(x_5\right)+f\left(x_6)\right]</me> 
+</p>
+<p>
+
+
+   where <m>\mathrm{\Delta }x=\frac{b-a}{6}</m>.
+</p>
+<p>
+
+   
+
+
+  \title{ Show that in general if we divide the interval <m>[a,b]</m> into <m>n=2m</m> subintervals of length <m>\mathrm{\Delta }x=\frac{b-a}{2m}</m>, then Simpson's Rule becomes}\maketitle 
+</p>
+<p>
+
+   
+
+   
+  <me>\int^b_{x=a}{f\left(x\right)\dx{x}}\approx \frac{\mathrm{\Delta }x}{3}[f\left(x_0\right)+4f\left(x_1\right)+2f\left(x_2\right)+4f\left(x_3\right)+2f\left(x_4\right)+\dots +2f(x_{2m-2})+4f\left(x_{2m-1}\right)+f\left(x_{2m})\right]</me> 
+</p>
+<p>
+
+
+   
+
+   
+
+   
+
+   \textbf{Problem.}  If <m>M_n</m> and <m>T_n</m> represent the approximations using the midpoint rule and trapezoidal rule with<m> n</m> equal subintervals, respectively and <m>S_{2n}</m> represents Simpson's rule with <m>2n</m> equal subintervals, show that 
+</p>
+<p>
+
+   
+  <me>\frac{1}{3}T_n+\frac{2}{3}M_n=S_{2n}</me> 
+</p>
+<p>
+
+
+   
+
+   
+
+   \textbf{Drill with Simpson's rules???}
+</p>
+<p>
+
+   \textbf{}
+</p>
+<p>
+
+   \textbf{}
+</p>
+<p>
+
+   
+
+   An obvious question regarding any approximation is how accurate it is.  This question is typically addressed in a numerical analysis course, but we can state a few things here.  First of all, we can see geometrically that the midpoint rule and trapezoidal rule will provide an exact answer for a linear function <m>f\left(x\right)=Mx+B</m>.
+</p>
+<p>
+
+   
+
+   \includegraphics*[width=4.54in, height=3.36in, trim=1.86in 1.32in 2.68in 0.51in]{image110}
+</p>
+<p>
+
+   
+
+   \includegraphics*[width=4.54in, height=3.36in, trim=1.86in 1.32in 2.68in 0.51in]{image111}
+</p>
+<p>
+
+   For more general curves, we have the following results (stated without proof).
+</p>
+<p>
+
+   
+
+   \textbf{Error Bounds.  }Suppose <m>\left|f''\left(x\right)\right|\le K</m> on <m>[a,b]</m>, if <m>E_M</m> and <m>E_T</m> represent the errors in the midpoint and trapezoidal rules with <m>n</m> equal subintervals, then 
+</p>
+<p>
+
+   
+  <me>\left|E_M\right|\le \frac{K{\left(b-a\right)}^3}{24n^2}            \left|E_T\right|\le \frac{K{\left(b-a\right)}^3}{12n^2}</me> 
+</p>
+<p>
+
+
+   
+
+   \textbf{Problem.}  Use the error bounds above to show that the midpoint and trapezoidal rules provide the correct answer when integrating a linear function.
+</p>
+<p>
+
+   
+
+   
+
+   
+
+   \textbf{Error Bound for Simpson's Rule.}  Suppose that <m>\left|f^{\left(4\right)}\left(x\right)\right|\le K</m> on <m>[a,b]</m>.  Then the error <m>E_S</m> when approximating using Simpson's rule with <m>n=2m</m> equal subintervals satisfies
+</p>
+<p>
+
+   
+   <me>\left|E_S\right|\le \frac{K{\left(b-a\right)}^5}{180n^4}</me> 
+</p>
+<p>
+
+
+   
+
+  \textbf{Problem.}  Show that if <m>f\left(x\right)=Ax^3+Bx^2+Cx+D</m> represents any cubic polynomial, then Simpson's rule will provide the exact answer for <m>\int^b_{x=a}{f(x)} \dx{x}</m>.
+</p>
+<p>
+
+  
+
+  
+
+  \textbf{End of Digression}
+</p>
+<p>
+
+  
+
+  
+
+  
+
+  As we said before, a finite sum such as 
+</p>
+<p>
+
+  
+  <me>\sum^n_{k=1}{f(x^*_k)} \mathrm{\Delta }x</me> 
+</p>
+<p>
+
+
+  is called a Riemann sum named after Bernhard Riemann (1826-1866) who took limits of these sums as <m>\mathrm{\Delta }x\to 0</m> to carefully define what a definite integral is without having to resort to differentials.  You should note that the integral symbol ʃ was developed by Leibniz in 1696, some 130 years before the birth of Riemann.  So why did Riemann feel the need to do this?  The answer to this is in the next chapter.
+</p>
+
+
+
+
+</section>

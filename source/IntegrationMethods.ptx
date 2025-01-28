@@ -2294,170 +2294,596 @@
 </subsection>
 
 
-
-
-
-
-
-
-<subsection xml:id="SUBSECTIONTrigSubst">
-  <title> Trigonometric (Inverse) Substitutions</title>
+<subsection xml:id="SUBSECTIONHangingChainSolDeriv">
+  <title>Deriving the Solution of the Hanging Chain Problem</title>
 
   <p>
-    Recall that when we were trying to determine the solution to the
-    catenary in <xref ref="EXAMPLEHardDiffeq"></xref> we encountered
-    the integral
-    <me>
-      \int{\frac{1}{\sqrt{1+z^2}}\dx{z} }
-    </me>
-    which we didn<rsq/>t (and still don<rsq/>t) know how to do. This
-    integral can be computed using a substitution also, but the
-    substitution to use here is <q>backwards</q> compared to the ones
-    we used in <xref ref="SUBSECTIONSimpleSubstitution"></xref>. This
-    sort of substitution comes up frequently when the integrand
-    involves trigonometric functions so it is often called
-    <term>Trigonometric</term>  or <term>Inverse Substitution</term>.
+    We have seen (in <xref ref="EXAMPLEHardDiffeq"></xref>) that in
+    order to derive the  formula for the catenary curve we need to
+    determine  <m>z(x)</m> from <xref
+    ref="EQUATIONHangingChainInt2">equation</xref>. This will require
+    that we compute the  integral
+
+    <me> \int{\frac{1}{\sqrt{1+z^2}}\dx{z} } </me>.
+
+    It is not at all obvious but the substitution we need is
+    <m>z=\tan{\theta } </m>. We will discuss how we came up with
+    this particular substitution  in the <xref
+    ref="SUBSECTIONTrigSubst" text="custom">next section</xref>.
   </p>
   <p>
-    The
-    substitution we need is <m>z=\tan{\theta } </m>. We will come back
-    and address how we might have guessed this once we have finished
-    computing the integral. For now, do you see why we said this is
-    <q>backwards?</q> 
+    The substitution <m>z=\tan{\theta } </m> has a slightly different
+    character than the substitutions we made in <xref
+    ref="SUBSECTIONSimpleSubstitution"></xref>.
+  </p>
+
+
+  <p>
+    Previously, we would set the substitution variable (usually
+    <m>u</m>) to be some complex expression in the integration
+    variable (usually <m>x</m>) in order to make the integrand
+    simpler, or <q>easier on the eyes.</q> For example, given <m>\int
+    \cos(2x){\dx{x}}</m> we<rsq/>d let <m>u=2x</m> to obtain the
+    simpler integral
+    <m>\frac12\int \cos(u)\dx{u} </m> which we can compute via entry
+    #7 of <xref ref="TABLEBasicIntegration"></xref>.
   </p>
 
   <p>
-    Previously, we have set the substitution variable (usually
-    <m>u</m>) to be some expression in the integration variable
-    (usually <m>x</m>). This usually makes the integrand simpler. For
-    example, given <m>\int \cos(2x){\dx{x}}</m> we<rsq/>d let
-    <m>u=2x</m>.
+    But    if we let <m>z=\tan(\theta)</m>, we are not making the integral simpler, we are making it more complicated. 
+    Observe that if we let 
+    <m>z=\tan(\theta)</m> then 
 
-  </p>
-  <p>
-    But    if we let <m>z=\tan{\theta }</m>, then
-    <m>\dx{\theta{}}=\sec^2(\theta)\dx{\theta}</m>, and so we have
+    <m>\dx{\theta{}}=\sec^2(\theta)\dx{\theta}</m>,
 
+    and so the new integral is
 
-    <me>      \int\frac{1}{\sqrt{1+z^2}}\dx{z}=
-    \int\frac{\sec^2(\theta )}
-    {\sqrt{1+\tan^2(\theta)}}\dx{\theta}</me>
-    which seems to be considerably more complicated than the original
-    problem. 
+    <men  xml:id="EQUATIONInvSubst1"> 
+      \int\frac{1}{\sqrt{1+z^2}}\dx{z}= \int\frac{\sec^2(\theta )}
+      {\sqrt{1+\tan^2(\theta)}}\dx{\theta}
+      </men>.
+
+      For that reason this form of substitution is sometimes called <term>Inverse Substitution</term>.
   </p>
   <aside>
     <title>Comment</title>
     <p>
-      A former teacher of one of the authors was fond of saying
-      <q>Why simplify when you can complicate?</q> in this situation.
+      In this situation a former teacher of one of the authors was fond
+      of joking <q>Why simplify when you can complicate?</q>
     </p>
   </aside>
+
   <p>
-    But remember that our goal is not to make the integral
-    simpler. Our goal is to make the integral doable. In this case
-    observe that <men xml:id="EQUATIONPythTrigSecTan">\sec^2( \theta ) = 1+\tan^2 (\theta )</men> so we
-    see that  
+    Clearly <xref ref="EQUATIONInvSubst1">equation</xref> 
+    considerably more complicated than the original
+    problem. 
+    But remember that our goal is not to make the integral simpler,
+    our goal is to make the integral doable. In this case  the trigonometric identity
+    <men xml:id="EQUATIONPythTrigSecTan">\sec^2( \theta ) = 1+\tan^2
+    (\theta )</men> 
+    will be very helpful.
+  </p>
+  <p>
+    From <xref ref="EQUATIONPythTrigSecTan">equation</xref>  we see that 
     <md>
       <mrow>\int\frac{1}{\sqrt{1+z^2}}\dx{z}\amp{}      =
       \int\frac{\sec^2(\theta)}{\sec(\theta)}\dx{\theta}</mrow>
       <mrow> \amp{}     =\int\sec(\theta)\dx{\theta}
       </mrow>
-      <mrow>\amp{}      =\ln\abs{\tan(\theta)+\sec(\theta)}+c
-      </mrow>
-
     </md>
+    so that 
+    <men xml:id="EQUATIONSecInt">\int\frac{1}{\sqrt{1+z^2}}\dx{z}
+    =\ln\abs{\tan(\theta)+\sec(\theta)}+c
+    </men>.
+  </p>
+
+
+  <p>
+    The trick now is to put everything back in terms of
+    <m>z</m>. Howeever before we do that, observe that the absolute
+    value that appears in <xref ref="EQUATIONSecInt">equation</xref>,
+    although necessary, willl make the
+    following computations a little tricky to follow. So we will ignore
+    it for the moment, and  assume that
+    <me>\int\frac{1}{\sqrt{1+z^2}}\dx{z}
+    =\ln\left(\tan(\theta)+\sec(\theta)\right)+C </me>.  In fact, this
+    is true as long as <m>\tan(\theta)+\sec(\theta)\ge 0</m>.  We will
+    return to this matter once we<rsq/>ve completed the integral.
+  </p>
+
+  <p>
+    From our substitution we have <m>\tan(\theta)=z</m>, but what about
+    <m>\sec(\theta)</m>?  We could certainly use <xref
+    ref="EQUATIONPythTrigSecTan">equation</xref>, but this will lead to
+    difficulties similar to the ones we tried to avoid by dropping the
+    absolute value.  It is simpler to draw an appropriate triangle.
   </p>
   <p>
-    The trick now is to put everything back in terms of <m>z</m>.  We
-    have <m>\tan(\theta)=z</m> from our substitution, but what about
-    <m>\sec(\theta)</m>?  We could certainly use the trigonometric
-    identity in <xref ref="EQUATIONPythTrigSecTan">equation</xref>,
-    but it is often simpler to draw an appropriate triangle. 
-  </p>
-  <p>
-    The appropriate triangle in this case is the one with <m>\theta
+    In this case the appropriate triangle is the one with <m>\theta
     </m> in standard position. The beauty of this is that we
     don<rsq/>t need to know what the angle <m>\theta{}</m> is.  All we
     need to know is that <m>\tan(\theta)=\frac{z}{1}</m>. Since in a
     right triangle <m>\tan( \theta ) =
     \frac{\text{opposite}}{\text{adjacent}}</m> we have this triangle:
   </p>
-  <figure>
-    <caption>Diagram of a right triangle  where <m>\tan (\theta ) =z</m></caption>
+  <figure xml:id="FIGURETrigIdent">
+    <caption>Diagram of a right triangle  where <m>\tan (\theta ) =z</m>
+    and <m>0\le \theta \le \frac{\pi }{2}</m></caption>
     <image source="IC/zeqtan.png" width="40%">
       <shortdescription>Diagram of a right
-      triangle.</shortdescription>
+      triangle with angle theta in standard position.</shortdescription>
     </image>
   </figure>
 
 
 
   <p>
-    Notice that since we<rsq/>ve got two sides of a right triangle we
+    Since we<rsq/>ve got two sides of a right triangle we
     can compute the third side as shown.  And knowing the length of
     all three sides of a right triangle allows us to compute all of
-    the trigonometic functions of <m>\theta </m> triangle, not only can we obtain the aforementioned
-    <m>\tan(\theta)=\frac{z}{1}=z</m> and
-    <m>\sec(\theta)=\frac{\sqrt{1+z^2}}{1}</m>. These are the two
-    formulas  we
-    need for this problem, but we could also obtain the formulas 
-    <md>
-      <mrow>\sin(\theta)\amp =\frac{z}{\sqrt{1+z^2}},\amp{}\cos(\theta)\amp =\frac{1}{\sqrt{1+z^2}},</mrow>
-      <mrow>\cot(\theta)\amp =\frac1z,\amp{}\csc(\theta)\amp =\frac{\sqrt{1+z^2}}{z}.</mrow>
-    </md>
-    if we needed them.
+    the trigonometic functions of <m>\theta</m>. Not only can we obtain the aforementioned
+
+    <mdn>
+
+      <mrow xml:id="EQUATIONHangingSolution">\tan(\theta)=\frac{z}{1}=z\amp{}\amp{}
+      \text{ and } \amp{}\amp{}\sec(\theta)=\frac{\sqrt{1+z^2}}{1}</mrow>
+      </mdn>,
+
+      but we could also obtain
+      the formulas 
+      <md>
+        <mrow>\sin(\theta)\amp{} =\frac{z}{\sqrt{1+z^2}}, \amp{}\amp{}\amp{}\cos(\theta)
+        \amp{}=\frac{1}{\sqrt{1+z^2}},</mrow>
+        <mrow>\cot(\theta) \amp{}=\frac1z,\amp{}\amp{} \text{ and }\amp{}\csc(\theta) \amp{} =\frac{\sqrt{1+z^2}}{z}</mrow>
+      </md>
+      if we needed them.
   </p>
   <p>
-    We really urge you to do this (DRAW A TRIANGLE) instead of
-    relying on memorizing trigonometric identities which actually
-    are derived from the triangle. This gives us that the
-    differential equation
-    <me>
-      \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x}
-    </me>
-    is satisfied by
-    <me>
-      \ln\left(z+\sqrt{1+z^2}\right)=\frac{w}{H}x+c.
-    </me>
+    In <xref ref="FIGURETrigIdent"></xref> we placed <m>\theta </m> in
+    the first quadrant which assumes that all of the trigonometric
+    functions are positive. But we have no assurance that they are.  As
+    a result any one of these values could be either positive or
+    negative, depending on the value of  <m>\theta </m>.
   </p>
-  <exercise>
-    
+  <p>
+    Working with a triangle like this will give us the right formula up to
+    the algebraic sign.  That<rsq/>s why we called it a mnemonic and not a
+    technique. Whether the values are positive or negative needs to be
+    determined by you on a problem<ndash/>by<ndash/>problem basis.
+  </p>
+
+
+  <p>
+    Despite that small difficulty it is almost always easier to
+    determine the values of the trigonometric functions by working from
+    a mnemonic triangle than by using the various identites (which were
+    originally derived from the triangle anyway). 
+  </p>
 
 
 
+  <!-- <p> -->
+
+  <!--   This gives us that the -->
+  <!--   differential equation -->
+  <!--   <me> -->
+  <!--     \int\frac{1}{\sqrt{1+z^2}}\dx{z}=\int\frac{w}{H}\dx{x} -->
+  <!--   </me> -->
+  <!--   is satisfied by -->
+  <!--   <me> -->
+  <!--     \ln\left(z+\sqrt{1+z^2}\right)=\frac{w}{H}x+c. -->
+  <!--   </me> -->
+  <!-- </p> -->
+  <exercise xml:id="PROBLEMHngChainDeriveSol">
+    <title>Deriving the Solution of the Hanging Chain</title>
+    <idx><h>The Hanging Chain</h><h>Derivation of the Solution</h></idx>
+
+    <introduction>
+      <p>
+        Returning to the <xref ref="EXAMPLEHardDiffeq"></xref> we see
+        that it was originally given in terms of <m>y</m> where <m>y(x)</m>
+        represents the vertical position of the Hanging Chain.
+        We had
+        made the substitution <m>z=\dfdx{y}{x}</m> to make the
+        original equation a little <q>easier on the eyes.</q>
+      </p>
+      <p>
+        So we are interested in
+        finding <m>y</m> not <m>z</m>. 
+      </p>
+      <p>
+        For convenience we take the lowest point to be the origin of our
+        coordinate system so that at the lowest point
+        <m>(x,y)=(0,0)</m>.
+      </p>
+      <p>
+        Observe that at the lowest point of the
+        curve the catenary will be horizontal so its slope will
+        <m>\eval{\dfdx{y}{x}}{x}{0}=0</m>.
+        <!-- that Therefore if we let take the lowest point to be the -->
+        <!-- point where <m>x=0</m> we have the initial condition: -->
+        <!--         <me>z(0)=</me>. -->
+      </p>
+      <p>
+        So our problem can be re<ndash/>cast as  the IVP
+
+        <mdn>
+          <mrow xml:id="EQUATIONHangChainIC">            
+            \dfdx{y}{x},\amp{}=z\amp{}z(0)=0.
+          </mrow>
+        </mdn>
+        We will address this IVP once we have found <m>z(x)</m>.
+      </p>
+
+      <!--   we seek -->
+      <!--   the  -->
+      <!--   solution of the differential equation  -->
+      <!--   <me>\int \frac{1}{\sqrt{1+z^2}\dx{z}} = \int \frac{W}{H}\dx{x} -->
+      <!--   </me>. -->
+      <!-- </p> -->
+    </introduction>
     <task>
       <statement>
         <p>
-          Use the formula <m>z=\dfdx{y}{x}</m> for the catenary and
-          <m>z(0)=\dfdx{y}{x}{0}=0</m> (this was the low
-          point on the hanging chain) to show that <m>c=0</m> and
-          so
-          <me>
-            \dfdx{y}{x}=z=\frac12\left(e^{\frac{w}{H}x}-e^{-\frac{w}{H}x}\right).
-          </me>
+          Integrate both sides of <xref
+          ref="EQUATIONHangingChainInt1">equation</xref> (from <xref
+          ref="EXAMPLEHardDiffeq"></xref>) to
+          show that 
+          <men xml:id="EQUATIONHangChInz">\ln\abs{z+ \sqrt{1+z^2}} = \frac{W}{H}x +C</men>.
         </p>
-        <aside>
-          <title>Note to self</title>
-          <p>The use of <m>y</m> and <m>z</m> interchangeably is
-          confusing.</p>
-        </aside>
       </statement>
     </task>
 
     <task>
       <statement>
         <p>
-          Integrate the result in part (a) to obtain
-          <me>
-            y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right)+c
-          </me>
-          which is the equation of the catenary as stated earlier.
+          Use the initial conditions from <xref
+          ref="EQUATIONHangChainIC">equation</xref> to show that
+          <m>C=0</m>.
         </p>
       </statement>
     </task>
+    <task>
+      <statement>
+        <p>
+          Next solve <xref
+          ref="EQUATIONHangChInz">equation</xref> for <m>z(x)</m> to
+          show that 
+          <me>
+            z=\dfdx{y}{x}=\frac12\left(e^{\frac{w}{H}x}-e^{-\frac{w}{H}x}\right)
+            </me>. 
+        </p>
+        <p>
+          This
+          is purely a problem in Algebra. As such it is completely
+          straightforward,  but remember  that <q>straightforward</q>
+          does not mean <q>easy.</q> In fact, this is a long, complex,
+          and rather difficult
+          computation. Be careful. Organize   your calculations and 
+          write them down so you can follow them when you come back to
+          check your work (as you will surely need to do from time to
+          time). We (the authors) recommend that you work with a partner
+          (or a group) so that you can check each other<rsq/>s work for
+          errors. Above all be patient with yourself.
+        </p>
+        <p>
+          We have provided several hints below, but do not open them all
+          immediately. You will not learn that way. Take your best shot
+          at getting started. When you get stuck open the first hint and
+          take the problem as far as you can. When you get stuck again
+          open the next hint, and so on. It is OK if you have to open
+          the first hint just to get started as long as you have made a
+          real effort at the problem. But if you give up too soon you
+          won<rsq/>t learn what you need to from this
+          problem. Don<rsq/>t rob yourself of your own education.
+        </p>
+      </statement>
+      <hint>
+        <title>If You Don<rsq/>t Know Where To Begin.</title>
+        <p>
+          The absolute value is a problem here. Try ignoring it at first. Later
+          when  you have <m>z(x)</m> you can come back and verify that
+          your solution still works with the absolute value in place. Or
+          you can adjust it if needed.
+        </p>
+        <p>
+          Now your problem is to get <m>z</m> out of the logarithm. How
+          can you do that?
+        </p>
+
+      </hint>
+      <hint>
+        <title> When You<rsq/>ve Eliminated The Natural Logarithm.</title>
+        <p>
+          Most likely you know what you have to do now. But it<rsq/>s
+          really scary and most people will try to convince themselves
+          that there must be an easier way. There isn<rsq/>t.
+        </p>
+        <p>
+          You need to get rid of the <m>\sqrt{\ }</m> symbol and the
+          only way to do that is to square both sides of the
+          equation. It will work if  you square both sides of the
+          equation in the form you probably have. It is slightly
+          less work if you move <m>z</m> to one side by itself
+          first. But only slightly.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          By now you might be very frustrated, and possibly angry with us, because when you
+          squared both sides the <m>\sqrt{\ }</m> symbol didn<rsq/>t go
+          away. That<rsq/>s right. You<rsq/>ll have to square it again,
+          but first cancel everything you can legitimately cancel, and
+          isolate  the term that contains the   <m>\sqrt{\ }</m> symbol on
+          one side of the equation.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Now solve for <m>z^2</m>. What appears on the other side
+          is a perfect square if you did all of the Algebra correctly.
+        </p>
+      </hint>
+
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          Solve
+          the differential equation in <xref
+          ref="EQUATIONHangChainIC">IVP</xref> and show that 
+          <me>
+            y=\frac{H}{w}\left(\frac{e^{\frac{wx}{H}}+e^{\frac{-wx}{H}}}{2}\right) +C
+            </me>.
+            You used the  initial condition given in the IVP in part (b)
+            to show that the integration constant from <xref
+            ref="EQUATIONHangingChainInt1">equation</xref> was equal to
+            zero. The constant here comes from solving <xref
+            ref="EQUATIONHangChainIC">IVP</xref> so it is not
+            (necessarily) the same. 
+        </p>
+      </statement>
+      <hint>
+        <title>Don<rsq/>t Frighten Yourself</title>
+        <p>
+          Given how difficult the computations in part (c) were it is
+          only natural to expect the next step to be equally complex. Is
+          it?
+        </p>
+      </hint>
+
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find an initial condition for the differential equation in <xref
+          ref="EQUATIONHangChainIC">IVP</xref> that will allow you of
+          find the integration constant in part (d).
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What is the slope of <m>y(x)</m> at <m>x=0</m>?
+        </p>
+      </hint>
+
+    </task>
+
   </exercise>
 
+</subsection>
 
+<subsection xml:id="SUBSECTIONTrigSubst">
+  <title> Trigonometric (Inverse) Substitutions</title>
+  <p>
+    In the previous section we saw that the substitution <m>z=\tan
+    (\theta )</m> helps us to compute the integral <m>\int
+    \frac{1}{1+z^2}\dx{z}</m>, and that this substitution is suggested
+    by the similarity of the two formulas <m> 1+z^2</m>, and <m>
+    1+\tan^2 (\theta) </m>, along with the identity 
+    <me>
+      1+\tan^2   (\theta )=\sec^2 (\theta )
+      </me>.
+  </p>
+  <p>
+    There is a larger pattern here which we will investigate in this
+    subsection.
+  </p>
+  <p>
+    The sheer number of trig identities available to as tools make them
+    a rich source of potential substitutions.
+    In fact, it is the similarity of the formulas 
+
+    <md>
+      <mrow>1+z^2 \amp{}\amp{}  \text{and} \amp{}\amp{}1+\tan^2(\theta )</mrow> 
+
+    </md>
+    that suggested the substitution <m>z=\tan (\theta )</m> in the
+      first place. They may not look similar to you at first, but look
+      again more closely. Both have the form
+      <m>1+(\text{something})^2</m>. 
+      <!-- In the first the <q>something</q> is <m>z</m> -->
+      <!-- in the second the <q>something</q> is<m>\tan(\theta)</m>. Because we -->
+      <!-- are familiar with <xref ref="EQUATIONPythSecTan"></xref> we can see -->
+      <!-- that there is  reason to hope that by making this change we will -->
+      <!-- eventually be able to generate an integral we can do. -->
+    The two <q>somethings,</q> of course, are <m>z</m> and <m>\tan
+    (\theta )</m>.
+    If we set them equal then the two formulas are the same. And
+    because we also know that 
+    <me>1+\tan^2 (\theta )=\sec^2 (\theta )</me> 
+    we can begin to simplify the integrand immediately after making
+    the substitution. 
+    </p>
+    <p>
+      Let<rsq/>s examine this in a more familiar context. Because we
+      know that <me>\dfdx{\inverse \tan
+      (x)}{x}=\frac{1}{1+x}</me> we also know that that <me>\int
+      \frac{1}{1+x^2}\dx{x} = \inverse\tan(x) +C </me>. 
+      This is the content entry #12 of <xref
+      ref="TABLEBasicIntegration"></xref>. 
+    </p>
+    <p>
+      But if we did not know this we could compute this integral
+      directly by making the substitution
+      <me>x=\tan (\theta )</me>, 
+      <me> \dx{x}= \sec^2 (\theta )\dx{\theta{}}</me> as follows.
+      <md>
+        <mrow>\int \frac{1}{1+x^2}\dx{x} \amp{}= \int
+        \frac{1}{1+\tan^2} \sec^2 (\theta)\dx{\theta } )</mrow>
+        <mrow>
+          \amp{}=\int \frac{\sec^2 (\theta )}{\sec^2 (\theta )}\dx{\theta }
+        </mrow>
+        <mrow>
+          \amp{}=\int \dx{\theta }=\theta +C.
+        </mrow>
+      </md>
+      Since <m>x=\inverse\tan (\theta )</m> when we      put this back
+      in terms of <m>x</m> we have 
+      <me>\int \frac{1}{1+x^2}\dx{x} = \inverse\tan (x)+C</me>.
+      Thus the presence of the expression <m>1+x^2</m> suggests that
+      the substitution <m>x=\tan (\theta )</m> might be helpful.
+    </p>
+    <example xml:id="EXAMPLETrigSubstTan">
+      <p>
+        For example if we make the substitution <m>x=\tan (\theta
+        )</m>, <m>\dx{x}=\sec^2 (\theta )</m> in the integral
+        <m>\int \frac{1}{(1+x^2)^2}\dx{x}</m> we get
+        <md>
+          <mrow>\int \frac{1}{(1+x^2)^2}\dx{x} \amp{}= \int
+          \frac{1}{\sec^2 (\theta )}\dx{\theta}
+          </mrow>
+          <mrow>
+            \amp{}=\int \cos^2 (\theta )\dx{\theta }.
+          </mrow>
+        </md>
+        It  may not be obvious at the moment how to compute this last integral
+        but it is straightforward to show that 
+        <men xml:id="EQUATIONIntCosSq">
+          \int \cos^2 (\theta )\dx{\theta }= \frac12 \theta +\frac14 \sin
+          (2\theta ) +C 
+        </men> so that 
+        <me>
+          \int \frac{1}{(1+x^2)^2}\dx{x} = \frac12 \theta +\frac14 \sin
+          (2\theta )+C
+        </me>
+        We will confirm <xref ref="EQUATIONIntCosSq">equation</xref>
+        in <xref ref="PROBLEMIntCosSqr"></xref>.
+      </p>
+      <p>
+        Now all that is left
+        is to put everything back in terms of <m>x</m> which we will
+        leave to you.
+      </p>
+      </example> 
+      <exercise>
+
+        <statement>
+
+          <p>
+            Confirm the result in <xref
+            ref="EXAMPLETrigSubstTan"></xref> by 
+            using
+            the substitution <m>x=\tan (\theta )</m> to show that 
+            <me>
+              \frac12 \theta + \frac14 \sin (2\theta ) =
+              \frac12\left(\inverse\tan(x) +\frac{x}{1+x^2}\right)
+              </me>.
+          </p>
+
+        </statement>
+<hint>
+  <p>
+    You will need the Double<ndash/>Angle formula from Trigonometry.
+  </p>
+</hint>
+
+      </exercise>
+
+      <exercise xml:id="PROBLEMIntCosSqr">
+
+        <statement>
+          <p>
+            Show that <me>\int \cos^2 (\theta )\dx{\theta }=\frac12 \theta
+            +\frac14 \sin (2\theta )+C
+          </me>
+          as we stated in <xref ref="EXAMPLETrigSubstTan"></xref>. 
+          </p>
+
+        </statement>
+
+        <hint>
+          <p>
+            Recall the Half<ndash/>Angle formula from Trigonometry:
+            <me>\cos^2(x) = \frac12 \left( 1+\cos(2x)\right)</me>
+          </p>
+        </hint>
+      </exercise>
+
+      <exercise xml:id="PROBLEMTrigSubstCosSec">
+
+        <statement>
+
+          <p>
+            From entry #11 and #13 of <xref ref="TABLEBasicIntegration"></xref> we know that 
+            <me>\int \frac{1}{\sqrt{1-x^2}}\dx{x}=\inverse\sin (x)+C</me>
+            and
+            <me>\int \frac{1}{\abs{x}\sqrt{x^2-1}}\dx{x}=\inverse\sec
+            (x)+C</me>.
+            Emulate our discussion in <xref
+            ref="EXAMPLETrigSubstTan"></xref> to compute these integrals
+            directly. 
+            <md>
+              <mrow>
+                \int\frac{1}{\sqrt{1-x^2}}\dx{x}\amp{}\text{ and }
+                \amp{} \int \frac{1}{\abs{x}\sqrt{x^2-1}}\dx{x}.
+              </mrow>
+            </md>
+
+          </p>
+          <p>
+            To avoid complications caused by the absolute value assume
+            that <m>\sec (\theta )\ge 0</m>.
+          </p>
+
+        </statement>
+      </exercise>
+
+      <problem>
+        <p>
+          In <xref ref="PROBLEMTrigSubstCosSec"></xref> we  see that the
+          presence of <m>1-x^2</m> suggests the substitution
+          <m>x=\sin(x) </m>, and the presence of <m>x^2-1</m> suggests
+          the substitution <m>x=\sec(x) </m>.
+        </p>
+        <p>
+          Use those substitutions to compute these integrals. You may
+          need to make other substitutions  or you may need to
+          rearrange the integrand algebraically first.
+
+          <ol cols="2" marker="(a)">
+            <li>
+              <p>
+
+              </p>
+            </li>
+          </ol>
+        </p>
+      </problem>
+
+
+
+
+
+
+
+</subsection>
+
+
+<subsection>
+  <title>The Pursuit Problem</title>
   <p>
     Consider the top view of an airplane <m>P</m> starting at the
     point <m>(1,0)</m> and traveling up the line <m> x=1</m> at a
