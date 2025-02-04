@@ -1693,15 +1693,6 @@
 
     <p>
       As an means of computing the integral this trick is acceptable. 
-    </p>
-    <aside>
-      <title>Comment</title>
-      <p>
-        An old joke says that a <q>technique</q> is a <q>trick</q> that you
-        use more than once.
-      </p>
-    </aside>
-    <p>
       But as a teaching example it leaves a lot to be desired.<!--  In -->
       <!--   particular, there is no discernible reason for the substition -->
       <!--   <m>u=\sec (x)+\tan(x) </m> (equivalently, multiplying by <m>1</m> in -->
@@ -1714,8 +1705,8 @@
       some other means (possibly by guessing) and then realized that
       <!-- multiplying by <m>\frac{\tan (x)+\sec (x)}{\tan(x)+\sec (x)}</m> and -->
       using the substitution <m>u=\tan(x)+\sec(x) </m> would suffice, even
-      if it is not very illuminative.
-    </p>
+        if it is not very illuminative.
+      </p>
   </example>
   <paragraphs xml:id="DIGRESSIONIntPolySecTan">
     <title>DIGRESSION:  The Integral of an Arbitrary Polynomial
@@ -1748,12 +1739,6 @@
       </p>
       <p>
         The technique follows from definitions 
-<alert>BAD XREFS COMMENTED OUT HERE.</alert>
-<!-- <xref -->
-<!--         first="EQUATIONPolySecTanUSubA" -->
-<!--         last="EQUATIONPolySecTanUSubB"></xref> and equations <xref -->
-<!--         first="EQUATIONSecTanInvSubA" last="EQUATIONSetTanDifferentials"></xref>  -->
-<!--         below. -->
 
         <mdn>
           <mrow xml:id="EQUATIONPolySecTanUSubA">u\amp{}=\sec(x)+\tan(x)</mrow>
@@ -1808,113 +1793,59 @@
               and from <xref ref="EQUATIONSecTanEq1">equation</xref> we have
               <md>
                 <mrow>
-                  \int\sec^3(x)\dx{x}\amp{}=\frac14\int(u^2+2+v^2))\sec(x)\dx{x}
+                  \int\sec^3(x)\dx{x}=\amp{}\frac14\int(u^2+2+v^2))\sec(x)\dx{x}
                 </mrow>
                 <mrow>
-                  \amp{}=\frac14\int
+                  =\amp{}\frac14\int
                   u^2\left(\frac{1}{u}\dx{u}\right)+\frac{1}{2}\int\sec(x)\dx{x} -\frac14
                   \int v^2\left(\frac{1}{v}\dx{v}\right)
                 </mrow>
                 <mrow>
-                  \amp{}=\frac18\left(u^2-v^2\right)+\frac12\int\sec(x)\dx{x}
+                  =\amp{}\frac18\left(u^2-v^2\right)+\frac12\int\sec(x)\dx{x}
                 </mrow>
                 <mrow>
                   =\amp{}\frac18\left[\left(\sec(x)+\tan(x)\right)^2-\left(
                   \sec(x)-\tan(x)\right)^2  \right] 
-                  +\frac12\abs{\sec(x)+\tan(x)}+C
                 </mrow>
-                <!-- <mrow> -->
-                <!--   =\amp{}\frac12\left(\sec(x)\tan(x) -->
-                <!--   +\abs{\sec(x)+\tan(x)}\right)+C. -->
-                <!-- </mrow>                   -->
+                <mrow>
+                \amp{}+\frac12\ln{\abs{\sec(x)+\tan(x)}}+C
+                </mrow>
               </md>
               So finally,
-              <me>
-                \int\sec^3(x)\dx{x}=\frac12\left(\sec(x)\tan(x)+\abs{\sec(x)+\tan(x)}\right)+C.
-              </me>
+              <men xml:id="EQUATIONAverageIntegral">
+                \int\sec^3(x)\dx{x}=\frac12\left(\sec(x)\tan(x)+\ln{\abs{\sec(x)+\tan(x)}}\right)+C.
+              </men>
             </p>
           </statement>
         </task>
+        <conclusion>
+          <p>
+            Do you notice anything interesting about <xref
+            ref="EQUATIONAverageIntegral">equation</xref>? Look
+            closely. It says that the integral of <m>\sec^3(x) </m> is
+            the average of the derivative of <m>\sec(x) </m> and the
+            integral of <m>\sec(x) </m>. 
+          </p>
 
-        <!-- <task  xml:id="PROBLEMEXAMPLEIntPolySecTanA"> -->
-        <!-- <statement> -->
-        <!-- <p> -->
-        <!-- For our first example we will compute <m>\int\sec(x)\dx{x} </m> again. -->
-        <!-- <me> -->
-        <!-- \int\sec(x)\dx{x}=\int\frac1u\dx{u} = \ln\abs{u}+c=\ln\abs{\sec{x}+\tan{x}}+c -->
-        <!-- </me> -->
-        <!-- </p> -->
-        <!-- </statement> -->
-        <!-- </task> -->
-        <!-- <task xml:id="PROBLEMEXAMPLEIntPolySecTanB"> -->
-        <!-- <p> -->
-        <!-- Since <m>\dx{\left(\sec(x)\right)}=\tan(x)\sec(x) -->
-        <!--   </m> and <m>\dx{\left( -->
-        <!-- \tan(x)\right)} =\sec^2(x) </m>   we know that -->
-        <!-- <m>\int\sec^2(x)\dx{x} = \tan(x)+c</m> and -->
-        <!-- <m>\int\tan(x)\sec(x)\dx{x} -->
-        <!-- </m>. For our second example we will -->
-        <!-- re-derive these results. -->
+        <p>
+          As far as we know this is not an extremely useful fact, but
+          it is interesting. Prof. Rick Poss of Norbert College found
+          noticed this fact and found it sufficiently interesting that
+          he and his colleague John Frohliger decided to determine if there were
+          other functions with this property. The results of their
+          investigations were  published in 
+          <pubtitle>
+            Mathematics Magazine, Vol. 62, #4, October 1989
+            </pubtitle> with the title 
 
-        <!-- <ol marker="(i)"> -->
-        <!-- <li> -->
+            <url href="https://www-jstor-org.ezaccess.libraries.psu.edu/stable/2689766?seq=1" visual="https://www-jstor-org.ezaccess.libraries.psu.edu">Just
+            an Average Integral</url>
 
-        <!-- <md> -->
-        <!-- <mrow>\int\tan(x)\sec(x)\dx{x} \amp{}=\frac12 \int -->
-        <!-- (u-v)\sec(x)\dx{x} </mrow> -->
-        <!-- <mrow>\amp{}=\frac12\int u\left(\frac{1}{u}\dx{u}\right) + \frac12 -->
-        <!-- \int v\left(\frac{1}{v}\dx{v}\right)</mrow> -->
-        <!-- <mrow>\amp{}=\frac12(u+v)+c</mrow> -->
-        <!-- <mrow>\amp{}=\sec(x)+c</mrow> -->
-        <!-- </md> -->
+        </p>
 
-        <!-- </li> -->
-        <!-- <li> -->
-        <!-- <p> -->
-        <!-- <md> -->
-        <!-- <mrow>\int\sec^2(x) \dx{x} \amp{}= \int \sec(x)\sec(x)\dx{x}{}</mrow> -->
-        <!-- <mrow>\amp{}=\frac12\int(u+v)\sec(x)\dx{x}</mrow> -->
-        <!-- <mrow>\amp{}=\frac12\left[\int u\sec(x)\dx{x} + \int v\sec(x)\dx{x}\right]</mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac12\left[\int u\left(\frac{1}{u}\dx{u}\right) - \int v\left(-\frac{1}{v}\dx{v}\right)\right] -->
-        <!-- </mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac12\left(\int\dx{u} - \int\dx{v}\right) -->
-        <!-- </mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac12\left(u-v\right)+c -->
-        <!-- </mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}= \frac12\left[\sec(x)+\tan(x)- -->
-        <!-- \left(\sec(x)-\tan(x)\right)\right] +c -->
-        <!-- </mrow> -->
-        <!-- <mrow> \amp{}= \tan(x)+c</mrow> -->
-        <!-- </md> -->
-
-        <!-- </p> -->
-        <!-- </li> -->
-        <!-- <li> -->
-
-        <!-- <md> -->
-        <!-- <mrow>\int\sec^2(x)\tan(x)\dx{x} \amp{}= \int -->
-        <!-- \sec(x)\tan(x)\left(\sec{x}\dx{x}\right) </mrow> -->
-        <!-- <mrow>\amp{}=\frac14\int(u+v)(u-v)\sec(x)\dx{x}</mrow> -->
-        <!-- <mrow>\amp{}=\frac14\int u^2\left(\frac1u\dx{u}\right) + \frac14\int -->
-        <!-- v^2\left(\frac1v\dx{v}\right)</mrow> -->
-        <!-- <mrow>\amp{}=\frac18\left(u^2 + v^2\right) +c</mrow> -->
-        <!-- <mrow> -->
-        <!-- \amp{}=\frac18\left[\sec^2(x) +2\sec(x)\tan(x) +\tan^2(x) -->
-        <!-- -\left(\sec^2(x) + 2\sec(x)\tan(x) +\tan^2(x)\right)\right]+c -->
-        <!-- </mrow> -->
-        <!-- <mrow>\amp{}=\frac14\left(\sec^2(x)+\tan^2(x)\right)+c</mrow> -->
-        <!-- </md> -->
+      </conclusion>
 
 
-
-        <!-- </li> -->
-        <!-- </ol> -->
-        <!-- </p> -->
-        <!-- </task> -->
 
       </example>
       <p>
