@@ -3164,7 +3164,12 @@
       There is one more trigonometric substitution that can come up. 
       When dealing with <m>\sqrt{x^2-1}</m>, it is often advantageous to
       let <m>x=\sec (\theta )</m> so that
-      <m>\sqrt{x^2-1}=\sqrt{\sec^2 \left(\theta      \right)-1}=\abs{{\tan (\theta )}</m>.  If we restrict
+
+      <me>
+        \sqrt{x^2-1}=\sqrt{\sec^2 \left(\theta \right)-1}=\abs{\tan
+        (\theta )} </me>.
+
+        If we restrict
       <m>\theta </m> to the values in <m>\left[0,\frac{\pi }{2}\right)\cup
       \left[\pi ,\frac{3\pi }{2}\right)</m>, then this will ensure that
       <m>x</m> can take on any value in <m>\left(-\infty ,-1\right]\cup
@@ -3182,21 +3187,21 @@
 
       <md>
         <mrow>
-          \text{involving }\sqrt{1-x^2},
+          \text{involving }1-x^2,
           \amp{}\amp{} 
           \text{ let } x=\sin\left(\theta \right)
           \amp{}\amp{}
           \text{ so that }\sqrt{1-x^2}=\cos(\theta),
         </mrow>
         <mrow>
-          \text{involving }\sqrt{1+x^2}, 
+          \text{involving }1+x^2, 
           \amp{}\amp{}
           \text{ let }x=\tan(\theta )
           \amp{}\amp{}
           \text{ so that }\sqrt{1+x^2}=\sec(\theta ),
         </mrow>
         <mrow>
-          \text{involving }\sqrt{x^2-1},
+          \text{involving } x^2-1,
           \amp{}\amp{}
           \text{ let }x=\sec (\theta )
           \amp{}\amp{}
@@ -3208,6 +3213,17 @@
       manner which makes it unnecessary to fuss over any absolute
       values that might come up.
     </p>
+    <p>
+      There is an easy mnemonic to help you remember these
+      substitutions. Notice that the expession <m>1-x^2</m> appears in
+      the derivative of <m>\inverse\sin(x)</m>, and that when
+      <m>1-x^2</m> appears you make the substitution <m>x=\sin( \theta
+      )</m> (not <m>\inverse \sin (x )</m>; that<rsq/>s a different
+      function). Similarly <m>1+x^2</m> appears in the derivative of
+      <m>\inverse \tan( x )</m> and <m>x^2-1</m> appears in the
+      derivative of <m>\inverse \sec( x)</m>.
+    </p>
+
 
 
     <!-- <p> -->
@@ -3324,7 +3340,7 @@
       </statement>
       <hint>
         <p>
-          You will need the Double<ndash/>Angle formula for the Sine from Trigonometry.
+          You will need the Double<ndash/>Angle formula for the sine function from Trigonometry.
         </p>
       </hint>
 
@@ -3801,405 +3817,405 @@
               v(0)=0 </me>.
           </p>
         </statement>
-      </task>
+  </task>
 
-      <task>
-        <statement>
-          <p>
-            Use the substitution <m>\sqrt{\frac{R}{Mg}}v =
-            \sin(\theta)</m> to show that 
-            
-            <me>
-              v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]                      </me>.
-          </p>
-        </statement>
-      </task>
+  <task>
+    <statement>
+      <p>
+        Use the substitution <m>\sqrt{\frac{R}{Mg}}v =
+        \sin(\theta)</m> to show that 
+        
+        <me>
+          v=\sqrt{\frac{Mg}{R}}\left[\frac{1-e^{-2gt}}{1+e^{-2gt}}\right]                      </me>.
+      </p>
+    </statement>
+  </task>
 
-      <task>
-        <statement>
-          <p>
-            Compute <m>\limit{t}{\infty}{v}</m>. Compare this
-            terminal velocity with our previous results.
-          </p>
-        </statement>
-      </task>
+  <task>
+    <statement>
+      <p>
+        Compute <m>\limit{t}{\infty}{v}</m>. Compare this
+        terminal velocity with our previous results.
+      </p>
+    </statement>
+  </task>
 
-    </exercise>
+</exercise>
 
+<p>
+  The trigonometric substitutions we've dealt with so far have
+  all involved square roots. What about this integral:
+  <m>\int\frac{\dx{x}}{(1-x^2)^\frac32}</m>? Do you see that this
+  is only slightly more complicated?
+</p>
+<p>
+  If we make the substitution <m>x=\sin(\theta)</m>, then
+  <m>\dx{x}=\cos(\theta)</m> as before so,
+  <me>
+    \int\frac{\dx{x}}{(1-x^2)^\frac32} =
+    \int\frac{\cos(\theta)}{\left(\sqrt{1-\sin^2(\theta)}\right)^3}\dx{\theta}=\int\frac{\cos(\theta)}{\cos^3(\theta)}\dx{\theta}=\int\sec^2(\theta)\dx{\theta}=\tan(\theta)+c
+    </me>.
+</p>
+<p>
+  Since <m>\sin(\theta)=\frac{x}{2}</m>, we get the triangle
+</p>
+<figure>
+  <caption>Image of the triangle</caption>
+  <image source="IC/TrigTri1.png" width="40%">
+    <shortdescription>Image of the triangle with theta in
+    standard position and legs x and square root of one - x
+    squared.</shortdescription>
+  </image>
+</figure>
+<p>
+  so
+  <me>
+    \int\frac{\dx{x}}{\left(x^2-1\right)^\frac32}=\tan(\theta)+c=\frac{x}{\sqrt{1-x^2}}+c
+    </me>.
+</p>
+<problem>
+  <idx><h>Drills</h></idx>
+  <p>
+    Confirm that this is correct by differentiating:
+    <m>\frac{x}{\sqrt{1-x^2}}+c</m>.
+  </p>
+</problem>
+
+<p>
+  Fortunately, we were still able to handle this, but what if we
+  started with the integral:
+  <m>\int\frac{x}{\left(x^2-1\right)^\frac32}\dx{x}{}</m>?
+</p>
+<p>
+  The substitution <m>x=\sec(\theta)</m> leads to:
+  <m>\int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}</m>.
+  How do we handle that?
+</p>
+<aside>
+  <title>Comment</title>
+
+  <p>
+    Confirm this yourself.
+  </p>
+</aside>
+<p>
+  We rewrite it as
+  <me>
+    \int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}=\int\frac{1/\cos(\theta)}{\sin^2(\theta)/\cos^2(\theta)}\dx{\theta}=\int\frac{\cos(\theta)}{\sin^2(\theta)}\dx{\theta}=\int\cot(\theta)\csc(\theta)\dx{\theta}=-\csc(\theta)+c
+    </me>.
+</p>
+<p>
+  This example underscores the need to be able to compute a
+  variety of integrals involving trigonometric functions. Again,
+  it is a trial and error kind of thing, but there are some
+  standard tricks to learn. It is probably best to learn these
+  tricks by looking at some specific examples, but as you do,
+  focus on the technique being used and how it can be used on
+  similar integrals, not the specific example.
+</p>
+
+<example xml:id="OddSinPower">
+  
+  <p>
+    <me>
+      \int\sin^3(\theta)\cos^2(\theta)\dx{\theta}
+    </me>
+
+    Since sine is raised to an odd power, it makes sense to
+    <q>save one of the sines</q> and convert everything else to
+    cosine, utilizing the Pythagorean identity
+    <m>\sin^2(\theta)=1-\cos^2(\theta)</m>, and then apply a
+    substitution as follows. First we <q>save a sine.</q>
+    <me>
+      \int\sin^3(\theta)\cos^2(\theta)\dx{\theta} =
+      \int\sin(\theta)\sin^2(\theta)\cos^2(\theta)\dx{\theta}=\int(1-\cos^2(\theta))\cos^2(\theta)\sin(\theta)\dx{\theta}
+      </me>.  Next we let <m>z=\cos(\theta)</m>, so that
+      <m>\dx{z}=-\sin(\theta)\dx{\theta}</m>, which gives
+      <md>
+        <mrow>\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp =
+        \int(1-z^2)z^2(-\dx{z})</mrow>
+        <mrow>\amp =\int(z^4-z^2)\dx{z}</mrow>
+        <mrow>\amp =\frac{z^5}{5}=\frac{z^3}{3}+c</mrow>
+        <mrow>\amp
+        =\frac{\cos^5(\theta)}{5}=\frac{\cos^3(\theta)}{3}+c</mrow>
+        </md>.
+  </p>
+</example>
+<exercise>
+  
+
+  <introduction>
     <p>
-      The trigonometric substitutions we've dealt with so far have
-      all involved square roots. What about this integral:
-      <m>\int\frac{\dx{x}}{(1-x^2)^\frac32}</m>? Do you see that this
-      is only slightly more complicated?
+      Had the cosine been raised to an odd power in <xref
+      ref="OddSinPower"></xref>, we could have <q>saved
+      one of the cosines</q> instead.
     </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        Compute
+        <m>\int\sin^2(\theta)\cos^3(\theta)\dx{\theta}</m>.
+      </p>
+    </statement>
+  </task>
+</exercise>
+
+<example>
+  <p>
+    Notice that in <xref ref="OddSinPower"></xref> there
+    would have been nothing wrong with computing
+    <m>\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}</m> as
+    follows:
+    <md>
+      <mrow>           \int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp{}=
+      \int\sin^3(\theta)\cos(\theta)\cos(\theta)\dx{\theta}</mrow>
+      <mrow>\amp{}=
+      \int\sin^3(\theta)\sqrt{1-\sin^2(\theta)}\cos(\theta)\dx{\theta}.</mrow>
+    </md>
+    It's just that it is not immediately clear how to
+    continue from here.  Most people will shy away from this
+    because of the square root but in fact, this integral can
+    be computed using techniques you already know.
+  </p>
+  <p>
+    First, the elementary substitution <m>x=\sin(\theta)</m> will
+    give:
+    <me>
+      \int\sin^3(\theta)\cos^2(\theta)\dx{\theta} = \int
+      x^3\sqrt{1-x^2}\dx{x} </me>.
+  </p>
+  <p>
+    You see why we wouldn't want to go this route, right? Recall
+    that we introduced trigonometric substitutions precisely so
+    we could handle integrals like this last one. It would seem
+    to be counterproductive to take this path since we <em>
+    started </em> with an integral involving trigonometric
+    functions.
+  </p>
+  <p>
+    While our goal is to be able to work out integrals by the
+    simplest possible method, not the most difficult, it can
+    instructive to see that a computation can be done in more
+    than one manner so we will pursue this just a bit farther.
+  </p>
+</example>
+<exercise>
+  
+
+  <introduction>
     <p>
-      If we make the substitution <m>x=\sin(\theta)</m>, then
-      <m>\dx{x}=\cos(\theta)</m> as before so,
+      Compute the integral <m>\int x^3\sqrt{1-x^2}\dx{x}</m>
+      using these substitutions:
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        <m>x=\sin(\theta)</m>
+      </p>
+    </statement>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>u=1-x^2</m>
+      </p>
+    </statement>
+  </task>
+  <conclusion>
+    <p>
+      Finish <xref ref="OddSinPower">example</xref> using each of
+      the substitutions above. Do you get the same solution as
+      before?
+    </p>
+  </conclusion>
+</exercise>
+<exercise xml:id="SinCosOddPower">
+  
+
+  <introduction>
+    <p>
+      Compute the integral
+      <m>\int\sin^3(\theta)\cos^3(\theta)\dx{\theta}</m> by:
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        Saving one of the cosines and converting everthing else
+        into sines.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Saving one of the sines and converting everthing else
+        into cosines.
+      </p>
+    </statement>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        Do you get the same result in parts (a) and (b)? Explain.
+      </p>
+    </statement>
+  </task>
+</exercise>
+
+<example xml:id="SinCosEven">
+  <p>
+    What happens if you don't have an odd power of sine or
+    cosine?  For example, suppose you have
+    <m>\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}</m>.
+  </p>
+  <p>
+    Saving a sine or cosine would lead to an integrand with a
+    square root, which we are trying to avoid, if we can help
+    it. In this case, there are a couple of trigonometric
+    identities that can help. They the Half-Angle formlas:
+    <me>
+      \sin^2(\theta) = \frac12\left(1-\cos(2\theta)\right) \text{
+      and } \cos^2(\theta)=\frac12\left(1+\cos(2\theta)\right)
+      </me>.  Using these identities in our integral we see that
+      <md>
+        <mrow>\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}\amp
+        =\frac14\int(1-\cos(2\theta))(1+\cos(2\theta))\dx{\theta}</mrow>
+        <mrow>
+          \amp =\frac14\int (1-\cos^2(2\theta))\dx{\theta}
+        </mrow>
+        <mrow>
+          \amp =\frac{1}{4}\int\sin^2(2\theta)\dx{\theta}
+        </mrow>
+      </md>
+  </p>
+  <p>
+    Using the Half-Angle formula again we obtain
+    <me>
+      \frac{1}{4}\int\sin^2(2\theta)\dx{\theta} =
+      \frac18\int(1-\cos(4\theta))\dx{\theta} =
+      \frac18\left(\theta-\frac14\sin(4\theta)\right)+c
+    </me>
+  </p>
+</example>
+<problem>
+  <idx><h>Drills</h></idx>
+  <p>
+    Show that we get the same result if we use the Double Angle
+    formula: <m>\sin(2\theta)=2\sin(\theta)\cos(\theta)</m>.
+  </p>
+</problem>
+<example>
+  <p>
+    <m>
+      \int\sec^4(\theta)\tan^2(\theta)\dx{\theta}
+    </m>
+  </p>
+  <p>
+    In this example, we can save a <m>\sec^2(\theta)</m> as part
+    of the differential and use the identity
+    <m>\sec^2(\theta)=1+\tan^2(\theta)</m> to change everything
+    else into an expression in tangent. Since the secant is to an
+    even power this again avoids square roots, which is the
+    general idea.
+    <md>
+      <mrow>\int \sec^4(\theta)\tan^2(\theta)\dx{\theta}\amp
+      =\int
+      \sec^2(\theta)\tan^2(\theta)\sec^2(\theta)\dx{\theta}</mrow>
+      <mrow>
+        \int(1+\tan^2(\theta))\tan^2(\theta)\sec^2(\theta)\dx{\theta}
+      </mrow>
+    </md>
+    Letting <m>y=\tan(\theta)</m> we have
+    <m>\dx{y}=\sec^2(\theta)\dx{\theta}</m>, so we obtain
+
+    <md>
+      <mrow>\int(1+y^2)y^2\dx{y}=\int(y^2+y^4)\dx{y}=\frac{y^3}{3}+\frac{y^5}{5}+c=\frac{\tan^3(\theta)}{3}+\frac{\tan^5(\theta)}{5}+c</mrow>
+    </md>
+  </p>
+</example>
+
+<example>
+  <p>
+    If tangent occurs to an odd power, we can save a tangent and
+    a secant as part of the differential and use the same
+    identity to convert everything else to secant.
+    <me>
+      \int\sec^2(\theta)\tan^3(\theta)\dx{\theta} =
+      \int\sec^2(\theta)\tan^2(\theta)\sec(\theta)\tan(\theta)\dx{\theta{}}=\int\sec^2(\theta)(\sec^2(\theta)-1)\sec(\theta)\tan(\theta)\dx{\theta}
+      </me>.  Letting <m>u=\sec(\theta)</m> we have
       <me>
-        \int\frac{\dx{x}}{(1-x^2)^\frac32} =
-        \int\frac{\cos(\theta)}{\left(\sqrt{1-\sin^2(\theta)}\right)^3}\dx{\theta}=\int\frac{\cos(\theta)}{\cos^3(\theta)}\dx{\theta}=\int\sec^2(\theta)\dx{\theta}=\tan(\theta)+c
+        \int u^2(u^2-1)\dx{u}=\int
+        (u^4-u^2)\dx{u}=\frac{u^5}{5}-\frac{u^3}{3}+c=\frac{\sec^5(\theta)}{5}-\frac{\sec^3(\theta)}{3}+c
         </me>.
-    </p>
+  </p>
+</example>
+
+<exercise>
+  
+
+  <introduction>
     <p>
-      Since <m>\sin(\theta)=\frac{x}{2}</m>, we get the triangle
-    </p>
-    <figure>
-      <caption>Image of the triangle</caption>
-      <image source="IC/TrigTri1.png" width="40%">
-        <shortdescription>Image of the triangle with theta in
-        standard position and legs x and square root of one - x
-        squared.</shortdescription>
-      </image>
-    </figure>
-    <p>
-      so
+      Consider the integral
       <me>
-        \int\frac{\dx{x}}{\left(x^2-1\right)^\frac32}=\tan(\theta)+c=\frac{x}{\sqrt{1-x^2}}+c
-        </me>.
+        \int\sec^4(\theta)\tan^3(\theta)\dx{\theta}
+      </me>
     </p>
-    <problem>
-      <idx><h>Drills</h></idx>
+  </introduction>
+  <task>
+    <statement>
       <p>
-        Confirm that this is correct by differentiating:
-        <m>\frac{x}{\sqrt{1-x^2}}+c</m>.
+        Compute this integral by saving a <m>\sec^2(\theta)</m>
+        and converting the rest into an expression in tangent.
       </p>
-    </problem>
-
-    <p>
-      Fortunately, we were still able to handle this, but what if we
-      started with the integral:
-      <m>\int\frac{x}{\left(x^2-1\right)^\frac32}\dx{x}{}</m>?
-    </p>
-    <p>
-      The substitution <m>x=\sec(\theta)</m> leads to:
-      <m>\int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}</m>.
-      How do we handle that?
-    </p>
-    <aside>
-      <title>Comment</title>
-
+    </statement>
+  </task>
+  <task>
+    <statement>
       <p>
-        Confirm this yourself.
+        Compute this integral by saving a
+        <m>\sec(\theta)\tan(\theta)</m> and converting the rest
+        into an expression in secant.
       </p>
-    </aside>
-    <p>
-      We rewrite it as
-      <me>
-        \int{\frac{\sec(\theta)}{\tan^2(\theta)}}\dx{\theta}=\int\frac{1/\cos(\theta)}{\sin^2(\theta)/\cos^2(\theta)}\dx{\theta}=\int\frac{\cos(\theta)}{\sin^2(\theta)}\dx{\theta}=\int\cot(\theta)\csc(\theta)\dx{\theta}=-\csc(\theta)+c
-        </me>.
-    </p>
-    <p>
-      This example underscores the need to be able to compute a
-      variety of integrals involving trigonometric functions. Again,
-      it is a trial and error kind of thing, but there are some
-      standard tricks to learn. It is probably best to learn these
-      tricks by looking at some specific examples, but as you do,
-      focus on the technique being used and how it can be used on
-      similar integrals, not the specific example.
-    </p>
+    </statement>
+  </task>
 
-    <example xml:id="OddSinPower">
-      
+  <task>
+    <statement>
       <p>
-        <me>
-          \int\sin^3(\theta)\cos^2(\theta)\dx{\theta}
-        </me>
-
-        Since sine is raised to an odd power, it makes sense to
-        <q>save one of the sines</q> and convert everything else to
-        cosine, utilizing the Pythagorean identity
-        <m>\sin^2(\theta)=1-\cos^2(\theta)</m>, and then apply a
-        substitution as follows. First we <q>save a sine.</q>
-        <me>
-          \int\sin^3(\theta)\cos^2(\theta)\dx{\theta} =
-          \int\sin(\theta)\sin^2(\theta)\cos^2(\theta)\dx{\theta}=\int(1-\cos^2(\theta))\cos^2(\theta)\sin(\theta)\dx{\theta}
-          </me>.  Next we let <m>z=\cos(\theta)</m>, so that
-          <m>\dx{z}=-\sin(\theta)\dx{\theta}</m>, which gives
-          <md>
-            <mrow>\int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp =
-            \int(1-z^2)z^2(-\dx{z})</mrow>
-            <mrow>\amp =\int(z^4-z^2)\dx{z}</mrow>
-            <mrow>\amp =\frac{z^5}{5}=\frac{z^3}{3}+c</mrow>
-            <mrow>\amp
-            =\frac{\cos^5(\theta)}{5}=\frac{\cos^3(\theta)}{3}+c</mrow>
-            </md>.
+        Verify the at you get the same result in (a) and (b).
       </p>
-    </example>
-    <exercise>
-      
+    </statement>
+  </task>
+</exercise>
+<exercise>
+  
 
-      <introduction>
-        <p>
-          Had the cosine been raised to an odd power in <xref
-          ref="OddSinPower"></xref>, we could have <q>saved
-          one of the cosines</q> instead.
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            Compute
-            <m>\int\sin^2(\theta)\cos^3(\theta)\dx{\theta}</m>.
-          </p>
-        </statement>
-      </task>
-    </exercise>
-
-    <example>
-      <p>
-        Notice that in <xref ref="OddSinPower"></xref> there
-        would have been nothing wrong with computing
-        <m>\int\sin^3(\theta)\cos^2(\theta)\dx{\theta}</m> as
-        follows:
-        <md>
-          <mrow>           \int\sin^3(\theta)\cos^2(\theta)\dx{\theta} \amp{}=
-          \int\sin^3(\theta)\cos(\theta)\cos(\theta)\dx{\theta}</mrow>
-          <mrow>\amp{}=
-          \int\sin^3(\theta)\sqrt{1-\sin^2(\theta)}\cos(\theta)\dx{\theta}.</mrow>
-        </md>
-        It's just that it is not immediately clear how to
-        continue from here.  Most people will shy away from this
-        because of the square root but in fact, this integral can
-        be computed using techniques you already know.
-      </p>
-      <p>
-        First, the elementary substitution <m>x=\sin(\theta)</m> will
-        give:
-        <me>
-          \int\sin^3(\theta)\cos^2(\theta)\dx{\theta} = \int
-          x^3\sqrt{1-x^2}\dx{x} </me>.
-      </p>
-      <p>
-        You see why we wouldn't want to go this route, right? Recall
-        that we introduced trigonometric substitutions precisely so
-        we could handle integrals like this last one. It would seem
-        to be counterproductive to take this path since we <em>
-        started </em> with an integral involving trigonometric
-        functions.
-      </p>
-      <p>
-        While our goal is to be able to work out integrals by the
-        simplest possible method, not the most difficult, it can
-        instructive to see that a computation can be done in more
-        than one manner so we will pursue this just a bit farther.
-      </p>
-    </example>
-    <exercise>
-      
-
-      <introduction>
-        <p>
-          Compute the integral <m>\int x^3\sqrt{1-x^2}\dx{x}</m>
-          using these substitutions:
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>x=\sin(\theta)</m>
-          </p>
-        </statement>
-      </task>
-
-      <task>
-        <statement>
-          <p>
-            <m>u=1-x^2</m>
-          </p>
-        </statement>
-      </task>
-      <conclusion>
-        <p>
-          Finish <xref ref="OddSinPower">example</xref> using each of
-          the substitutions above. Do you get the same solution as
-          before?
-        </p>
-      </conclusion>
-    </exercise>
-    <exercise xml:id="SinCosOddPower">
-      
-
-      <introduction>
-        <p>
-          Compute the integral
-          <m>\int\sin^3(\theta)\cos^3(\theta)\dx{\theta}</m> by:
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            Saving one of the cosines and converting everthing else
-            into sines.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Saving one of the sines and converting everthing else
-            into cosines.
-          </p>
-        </statement>
-      </task>
-
-      <task>
-        <statement>
-          <p>
-            Do you get the same result in parts (a) and (b)? Explain.
-          </p>
-        </statement>
-      </task>
-    </exercise>
-
-    <example xml:id="SinCosEven">
-      <p>
-        What happens if you don't have an odd power of sine or
-        cosine?  For example, suppose you have
-        <m>\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}</m>.
-      </p>
-      <p>
-        Saving a sine or cosine would lead to an integrand with a
-        square root, which we are trying to avoid, if we can help
-        it. In this case, there are a couple of trigonometric
-        identities that can help. They the Half-Angle formlas:
-        <me>
-          \sin^2(\theta) = \frac12\left(1-\cos(2\theta)\right) \text{
-          and } \cos^2(\theta)=\frac12\left(1+\cos(2\theta)\right)
-          </me>.  Using these identities in our integral we see that
-          <md>
-            <mrow>\int\sin^2(\theta)\cos^2(\theta)\dx{\theta}\amp
-            =\frac14\int(1-\cos(2\theta))(1+\cos(2\theta))\dx{\theta}</mrow>
-            <mrow>
-              \amp =\frac14\int (1-\cos^2(2\theta))\dx{\theta}
-            </mrow>
-            <mrow>
-              \amp =\frac{1}{4}\int\sin^2(2\theta)\dx{\theta}
-            </mrow>
-          </md>
-      </p>
-      <p>
-        Using the Half-Angle formula again we obtain
-        <me>
-          \frac{1}{4}\int\sin^2(2\theta)\dx{\theta} =
-          \frac18\int(1-\cos(4\theta))\dx{\theta} =
-          \frac18\left(\theta-\frac14\sin(4\theta)\right)+c
-        </me>
-      </p>
-    </example>
-    <problem>
-      <idx><h>Drills</h></idx>
-      <p>
-        Show that we get the same result if we use the Double Angle
-        formula: <m>\sin(2\theta)=2\sin(\theta)\cos(\theta)</m>.
-      </p>
-    </problem>
-    <example>
-      <p>
-        <m>
-          \int\sec^4(\theta)\tan^2(\theta)\dx{\theta}
-        </m>
-      </p>
-      <p>
-        In this example, we can save a <m>\sec^2(\theta)</m> as part
-        of the differential and use the identity
-        <m>\sec^2(\theta)=1+\tan^2(\theta)</m> to change everything
-        else into an expression in tangent. Since the secant is to an
-        even power this again avoids square roots, which is the
-        general idea.
-        <md>
-          <mrow>\int \sec^4(\theta)\tan^2(\theta)\dx{\theta}\amp
-          =\int
-          \sec^2(\theta)\tan^2(\theta)\sec^2(\theta)\dx{\theta}</mrow>
-          <mrow>
-            \int(1+\tan^2(\theta))\tan^2(\theta)\sec^2(\theta)\dx{\theta}
-          </mrow>
-        </md>
-        Letting <m>y=\tan(\theta)</m> we have
-        <m>\dx{y}=\sec^2(\theta)\dx{\theta}</m>, so we obtain
-
-        <md>
-          <mrow>\int(1+y^2)y^2\dx{y}=\int(y^2+y^4)\dx{y}=\frac{y^3}{3}+\frac{y^5}{5}+c=\frac{\tan^3(\theta)}{3}+\frac{\tan^5(\theta)}{5}+c</mrow>
-        </md>
-      </p>
-    </example>
-
-    <example>
-      <p>
-        If tangent occurs to an odd power, we can save a tangent and
-        a secant as part of the differential and use the same
-        identity to convert everything else to secant.
-        <me>
-          \int\sec^2(\theta)\tan^3(\theta)\dx{\theta} =
-          \int\sec^2(\theta)\tan^2(\theta)\sec(\theta)\tan(\theta)\dx{\theta{}}=\int\sec^2(\theta)(\sec^2(\theta)-1)\sec(\theta)\tan(\theta)\dx{\theta}
-          </me>.  Letting <m>u=\sec(\theta)</m> we have
-          <me>
-            \int u^2(u^2-1)\dx{u}=\int
-            (u^4-u^2)\dx{u}=\frac{u^5}{5}-\frac{u^3}{3}+c=\frac{\sec^5(\theta)}{5}-\frac{\sec^3(\theta)}{3}+c
-            </me>.
-      </p>
-    </example>
-
-    <exercise>
-      
-
-      <introduction>
-        <p>
-          Consider the integral
-          <me>
-            \int\sec^4(\theta)\tan^3(\theta)\dx{\theta}
-          </me>
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            Compute this integral by saving a <m>\sec^2(\theta)</m>
-            and converting the rest into an expression in tangent.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Compute this integral by saving a
-            <m>\sec(\theta)\tan(\theta)</m> and converting the rest
-            into an expression in secant.
-          </p>
-        </statement>
-      </task>
-
-      <task>
-        <statement>
-          <p>
-            Verify the at you get the same result in (a) and (b).
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    <exercise>
-      
-
-      <p>
-        Previously we computed <m>\int \tan(\theta)\dx{\theta}</m>
-        using the identity
-        <m>\tan(\theta)=\frac{\cos(\theta)}{\sin(\theta)}</m>. We
-        could also use the identity
-        <m>\tan(\theta)=\frac{\sec(\theta)\tan(\theta)}{\sec(\theta)}\dx{\theta}</m>.
-      </p>
-      <p>
-        Do we get a different answer? Explain.
-      </p>
-    </exercise>
-    <p>
-      The same tricks we applied with secant and tangent would apply
-      equally well to integrals involving cosecant and cotangent
-      using the identity <m>\csc^2(\theta)=1+\cot^2(\theta)</m>. Of
-      course, we have not covered every type of integral that can
-      occur and you can always find integrals that will take other
-      tricks. We've only provided some basics that you can build on
-      as you gain experience. So practice, practice, practice!
-    </p>
-    </subsection>
+  <p>
+    Previously we computed <m>\int \tan(\theta)\dx{\theta}</m>
+    using the identity
+    <m>\tan(\theta)=\frac{\cos(\theta)}{\sin(\theta)}</m>. We
+    could also use the identity
+    <m>\tan(\theta)=\frac{\sec(\theta)\tan(\theta)}{\sec(\theta)}\dx{\theta}</m>.
+  </p>
+  <p>
+    Do we get a different answer? Explain.
+  </p>
+</exercise>
+<p>
+  The same tricks we applied with secant and tangent would apply
+  equally well to integrals involving cosecant and cotangent
+  using the identity <m>\csc^2(\theta)=1+\cot^2(\theta)</m>. Of
+  course, we have not covered every type of integral that can
+  occur and you can always find integrals that will take other
+  tricks. We've only provided some basics that you can build on
+  as you gain experience. So practice, practice, practice!
+</p>
+</subsection>
   </section>
 
 
