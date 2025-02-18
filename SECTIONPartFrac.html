@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Logistic Growth and the  Partial Fraction Decomposition</title>
+<title>The  Partial Fraction Decomposition</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -98,7 +98,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.8';
+eBookConfig.runestone_version = '7.5.9';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -620,12 +620,14 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Logistic Growth and the  Partial Fraction Decomposition</span></a></div>
+<div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">19.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation" class="internal"><span class="codenumber">19.2.1</span> <span class="title">The Logistic Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple" class="internal"><span class="codenumber">19.2.2</span> <span class="title">The Partial Fraction Decomposition: Elementary</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple" class="internal"><span class="codenumber">19.2.3</span> <span class="title">The Partial Fraction Decomposition: Advanced</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SECTIONPartFrac-6" class="internal"><span class="codenumber">19.2.4</span> <span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple" class="internal"><span class="codenumber">19.2.1</span> <span class="title">Simple Decompositions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation" class="internal"><span class="title">Heaviside’s Cover–up Method (HCUM)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple" class="internal"><span class="codenumber">19.2.2</span> <span class="title">Advanced Decompositions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SECTIONPartFrac-5" class="internal"><span class="codenumber">19.2.3</span> <span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Integration By Parts — The Opposite of the Product Rule</span></a></div></li>
@@ -748,14 +750,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONPartFrac"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">19.2</span><span class="space"> </span><span class="title">Logistic Growth and the  Partial Fraction Decomposition</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">19.2</span><span class="space"> </span><span class="title">The  Partial Fraction Decomposition</span>
 </h2>
-<section class="introduction" id="SECTIONPartFrac-2"><div class="para" id="SECTIONPartFrac-2-1">When we analyzed the  <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-21-3" class="xref" data-knowl="./knowl/xref/EQUATIONLogEq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4">Logistic Equation</a>    in <a href="SECTIONpopulation-dynamics.html" class="internal" title="Section 11.1: Population Dynamics">Section 11.1</a> we were able to gain a strong sense of its solution by generating its graph, not by solving the equation but by analyzing the IVP directly. But the graph was qualitative in nature because but we could not produce a formula for the solution. We now have the techniques needed to find such a formula.</div></section><section class="subsection" id="SUBSECTIONLogisticEquation"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.1</span><span class="space"> </span><span class="title">The Logistic Equation</span>
+<section class="introduction" id="SECTIONPartFrac-2"><div class="para" id="SECTIONPartFrac-2-1">When we analyzed the  <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-21-3" class="xref" data-knowl="./knowl/xref/EQUATIONLogEq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4">Logistic Equation</a>    in <a href="SECTIONpopulation-dynamics.html" class="internal" title="Section 11.1: Population Dynamics">Section 11.1</a> we were unable to actually solve the problem and find a formula for <span class="process-math">\(P(t)\text{.}\)</span> So instead we analyzed the IVP directly. This allowed us to  generating its graph which in a  qualitative sense. That is, we were able to get a general sense of the shape of the graph of <span class="process-math">\(P(t)\)</span> even if the coordinates of particular points were unavailable.</div>
+<div class="para" id="SECTIONPartFrac-2-2">While a qualitative graph is better than nothing, it would be more useful to have an explicit formula for <span class="process-math">\(P(t)\text{,}\)</span> if we can find it. With integration we now have the tool we need to find such a formula.</div></section><section class="subsection" id="SUBSECTIONPFDSimple"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.1</span><span class="space"> </span><span class="title">Simple Decompositions</span>
 </h3>
-<div class="para logical" id="SUBSECTIONLogisticEquation-2">
+<section class="introduction" id="SUBSECTIONPFDSimple-2"><h4 class="heading">The Logistic Equation, Redux.<span></span>
+</h4>
+<div class="para logical" id="SUBSECTIONPFDSimple-2-2">
 <div class="para">Starting with the Logistic Equation,</div>
-<div class="displaymath process-math" id="SUBSECTIONLogisticEquation-2-1">
+<div class="displaymath process-math" id="SUBSECTIONPFDSimple-2-2-1">
 \begin{align}
 \dfdx{P}{t} \amp{}= 0.1P \left( 1-\frac{P}{100}
 \right),\amp{}P(0)\amp{}=10,\tag{19.31}
@@ -770,20 +775,22 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">If  we integrate both sides of this equation the result will be an equation in which  <span class="process-math">\(P(t)\)</span> appears. If we can solve that for <span class="process-math">\(P(t)\)</span> we will have our formula for <span class="process-math">\(P(t)\text{.}\)</span>
 </div>
 </div>
-<div class="para logical" id="SUBSECTIONLogisticEquation-3">
-<div class="para">Integratiing the right sides presents no difficulties:</div>
+<div class="para logical" id="SUBSECTIONPFDSimple-2-3">
+<div class="para">Integrating the right sides presents no difficulties:</div>
 <div class="displaymath process-math" id="EQUATIONLogisticLeftSide">
 \begin{equation}
 \int 0.0001\dx{t} = 0.0001t+C\text{.}\tag{19.33}
 \end{equation}
 </div>
 </div>
-<div class="para" id="SUBSECTIONLogisticEquation-4">But at our current level of skill with integration the only option that presents itself is to to complete the square in the denominator and apply the appropriate trigonometric substitution.</div>
-<article class="problem example-like" id="SUBSECTIONLogisticEquation-5"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.1</span><span class="period">.</span>
+<div class="para" id="SUBSECTIONPFDSimple-2-4">But at our current level of skill with integration the only option that presents itself is to to complete the square in the denominator and apply the appropriate trigonometric substitution.</div></section><section class="subsubsection" id="SUBSECTIONLogisticEquation"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Heaviside’s Cover–up Method (HCUM)</span>
 </h4>
-<div class="para logical" id="SUBSECTIONLogisticEquation-5-1">
-<div class="para">By completing the square in the denominator and making the substitution <span class="process-math">\(\frac{P-50}{50}=\sin (\theta )\)</span>         integrate the right side of <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac1" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.32">equation (19.32)</a> and show that</div>
+<article class="problem example-like" id="SUBSECTIONLogisticEquation-2"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.1</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="SUBSECTIONLogisticEquation-2-1">
+<div class="para">By completing the square in the denominator and making the substitution <span class="process-math">\(\frac{P-50}{50}=\sin (\theta )\)</span>         integrate the left side of <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac1" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.32">equation (19.32)</a> and show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONLogisticPartFrac1.html">
 \begin{equation*}
 \frac{1}{\sqrt{1-
@@ -796,8 +803,8 @@ eBookConfig.enable_chatcodes =  false;
 = 0.0001t+C\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="SUBSECTIONLogisticEquation-6">As you can see, while it is entirely within the range of our current skill set, finding <span class="process-math">\(P(t)\)</span> that way will be rather daunting. We’d really like to find a simpler way.</div>
-<div class="para logical" id="SUBSECTIONLogisticEquation-7">
+</div></article><div class="para" id="SUBSECTIONLogisticEquation-3">As you can see, while it is entirely within the range of our current skill set, finding <span class="process-math">\(P(t)\)</span> that way will be rather daunting. We’d really like to find a simpler way.</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-4">
 <div class="para">Here’s a simpler way. Observe that the fraction <span class="process-math">\(\frac{1}{P(100-P)}\)</span> can be decomposed as</div>
 <div class="displaymath process-math" id="EQUATIONLogisticPartFrac2">
 \begin{equation}
@@ -805,12 +812,12 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation}
 </div>
 </div>
-<article class="problem example-like" id="DRILLLogisticPartFrac2"><h4 class="heading">
+<article class="problem example-like" id="DRILLLogisticPartFrac2"><h5 class="heading">
 <span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.2</span><span class="period">.</span>
-</h4>
-<div class="para" id="DRILLLogisticPartFrac2-1">Confirm <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">(19.34)</a>.</div></article><div class="para logical" id="SUBSECTIONLogisticEquation-9">
+</h5>
+<div class="para" id="DRILLLogisticPartFrac2-1">Confirm <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">(19.34)</a>.</div></article><div class="para logical" id="SUBSECTIONLogisticEquation-6">
 <div class="para">With <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">the identity (19.34)</a> in hand we can integrate the right side of <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac1" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.32">equation (19.32)</a> as follows.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONLogisticPartFrac2.html ./knowl/xref/EQUATIONLogisticPartFrac1.html ./knowl/xref/EQUATIONLogisticLeftSide.html" id="SUBSECTIONLogisticEquation-9-3">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONLogisticPartFrac2.html ./knowl/xref/EQUATIONLogisticPartFrac1.html ./knowl/xref/EQUATIONLogisticLeftSide.html" id="SUBSECTIONLogisticEquation-6-3">
 \begin{align*}
 \int \frac{1}{P(100-P)}\dx{x} \amp{}=
 \int\frac{\frac{-1}{100}}{P}+\frac{\frac{1}{100}}{100-P}\dx{x} \\
@@ -839,44 +846,46 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">which is much easier to solve for <span class="process-math">\(P(t)\text{.}\)</span>
 </div>
 </div>
-<article class="exercise exercise-like" id="SUBSECTIONLogisticEquation-10"><h4 class="heading">
+<article class="exercise exercise-like" id="SUBSECTIONLogisticEquation-7"><h5 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.1.3</span><span class="period">.</span>
-</h4>
-<div class="introduction" id="SUBSECTIONLogisticEquation-10-1"><div class="para" id="SUBSECTIONLogisticEquation-10-1-1"></div></div>
-<article class="task exercise-like" id="SUBSECTIONLogisticEquation-10-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="SUBSECTIONLogisticEquation-10-2-1-1">Solve <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac3" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.35">equation (19.35)</a> and show that <span class="process-math">\(P(t) = \frac{100}{Ke^{-0.01t}+1}\)</span> where <span class="process-math">\(K\)</span> is an arbitrary constant.</div></article><article class="task exercise-like" id="SUBSECTIONLogisticEquation-10-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="SUBSECTIONLogisticEquation-10-3-1-1">
-<div class="para">Use the initial condition in <a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation-2-1" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticRedux.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.31">IVP (19.31)</a> to show that in part (a) <span class="process-math">\(K=9\text{,}\)</span> so that</div>
+</h5>
+<div class="introduction" id="SUBSECTIONLogisticEquation-7-1"><div class="para" id="SUBSECTIONLogisticEquation-7-1-1"></div></div>
+<article class="task exercise-like" id="SUBSECTIONLogisticEquation-7-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="SUBSECTIONLogisticEquation-7-2-1-1">Solve <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac3" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.35">equation (19.35)</a> and show that <span class="process-math">\(P(t) = \frac{100}{Ke^{-0.01t}+1}\)</span> where <span class="process-math">\(K\)</span> is an arbitrary constant.</div></article><article class="task exercise-like" id="SUBSECTIONLogisticEquation-7-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para logical" id="SUBSECTIONLogisticEquation-7-3-1-1">
+<div class="para">Use the initial condition in <a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple-2-2-1" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticRedux.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.31">IVP (19.31)</a> to show that in part (a) <span class="process-math">\(K=9\text{,}\)</span> so that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONLogisticRedux.html">
 \begin{equation*}
 P(t) = \frac{100}{9e^{-0.01t}+1}
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="SUBSECTIONLogisticEquation-10-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="SUBSECTIONLogisticEquation-10-4-1-1">Graph <span class="process-math">\(P(t)\)</span> from part (b) and confirm that it has the same general shape that we discovered in <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout" class="internal" title="Subsection 11.1.1: Modeling a Trout Farm">Subsection 11.1.1</a>.</div></article></article><div class="para" id="SUBSECTIONLogisticEquation-11">This is great but the roadblock is, where did <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">equation (19.34)</a> come from? How did we find this decomposition of the fraction <span class="process-math">\(\frac{1}{P(100-P)}\text{?}\)</span>
-</div></section><section class="subsection" id="SUBSECTIONPFDSimple"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.2</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition: Elementary</span>
-</h3>
-<div class="para" id="SUBSECTIONPFDSimple-2">We found <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">equation (19.34)</a> by an algebraic technique called the <dfn class="terminology">Partial Fraction Decomposition</dfn> or <dfn class="terminology">PFD</dfn>. There are several places in mathematics where it is useful to break a single rational expresstion into the sum of simpler rational expression. We will use it to simplify  integration in certain cases.</div>
-<div class="para" id="SUBSECTIONPFDSimple-3">A fully  general statement of the PFD is rather cumbersome so we will work through a number of examples before giving the general statement.</div>
-<div class="para logical" id="SUBSECTIONPFDSimple-4">
-<div class="para">To begin, if we have an expression of the form <span class="process-math">\(\frac{1}{(x-a)(x-b)}\)</span> where <span class="process-math">\(a\text{,}\)</span> and <span class="process-math">\(b\)</span> are known constants then there are constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> such that as</div>
+</div></article><article class="task exercise-like" id="SUBSECTIONLogisticEquation-7-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="SUBSECTIONLogisticEquation-7-4-1-1">Graph <span class="process-math">\(P(t)\)</span> from part (b) and confirm that it has the same general shape that we discovered in <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout" class="internal" title="Subsection 11.1.1: Modeling a Trout Farm">Subsection 11.1.1</a>.</div></article></article><div class="para" id="SUBSECTIONLogisticEquation-8">This is great but the roadblock is, where did <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">equation (19.34)</a> come from? How did we find this decomposition of the fraction <span class="process-math">\(\frac{1}{P(100-P)}\text{?}\)</span>
+</div>
+<div class="para" id="SUBSECTIONLogisticEquation-9">We found <a href="SECTIONPartFrac.html#EQUATIONLogisticPartFrac2" class="xref" data-knowl="./knowl/xref/EQUATIONLogisticPartFrac2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.34">equation (19.34)</a> by an algebraic technique called the <dfn class="terminology">Partial Fraction Decomposition</dfn> or <dfn class="terminology">PFD</dfn>. There are several places in mathematics where it is useful to break a single rational expresstion into the sum of simpler rational expression. We will use it to simplify  integration in certain cases.</div>
+<div class="para" id="SUBSECTIONLogisticEquation-10">A fully general statement of the PFD is given in <a href="SECTIONPartFrac.html#THEOREMPartialFractionDecomp" class="xref" data-knowl="./knowl/xref/THEOREMPartialFractionDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 19.2.3.3: The Partial Fraction Decomposition (PFD)">Theorem 19.2.3.3</a> but as you can see the general statement is quite comprehensive. Moreover the statement of the theorem doesn’t indicate how it can be used as a practical tool. So we will work through a number of increasingly complex examples to build things up slowly.</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-11">
+<div class="para">To begin, if we have an expression of the form <span class="process-math">\(\frac{1}{(x-a)(x-b)}\)</span> where <span class="process-math">\(a\text{,}\)</span> and <span class="process-math">\(b\)</span> are known constants then the PFD says that there are constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> such that as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}\text{.}
 \end{equation*}
 </div>
-<div class="para">The theorem guarantees that the constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> exist but it doesn’t tell us how to find them. That we have to do for ourselves.</div>
+<div class="para">Our task is to find values for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
 </div>
-<div class="para" id="SUBSECTIONPFDSimple-5">There are a couple of ways we can find <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> What we’d like to do is find the simplest, least difficult to implement method we can. After all, we’re not here to do fraction decompositions. This is just one step toward computing an integral and we’d like for this step to be as simple as possible.</div>
-<div class="para logical" id="SUBSECTIONPFDSimple-6">
-<div class="para">Conceptually the simplest method available is to simply to choose values for <span class="process-math">\(x\text{.}\)</span> This is valid because the equation</div>
+</div>
+<div class="para" id="SUBSECTIONLogisticEquation-12">There are a couple of ways we can find <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> What we’d like to do is find the simplest, least difficult to implement method we can. After all, we’re not here to do fraction decompositions. This is just one step toward computing an integral and we’d like for the decomposition step to be as simple and painless as possible.</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-13">
+<div class="para">Conceptually the simplest method available is to simply to choose values for <span class="process-math">\(x\text{.}\)</span> This is a valid approach because the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}
 \end{equation*}
 </div>
-<div class="para">is actually an identity — it will be true no matter what the value of <span class="process-math">\(x\)</span> is. But the constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are fixed. If we choose <span class="process-math">\(x=0\)</span> we get</div>
+<div class="para">is actually an identity — it will be true no matter what the value of <span class="process-math">\(x\)</span> is. But the constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are fixed.</div>
+</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-14">
+<div class="para">If we choose <span class="process-math">\(x=0\)</span> we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
 Ab+Ba =-1\text{.}
@@ -890,14 +899,15 @@ Ab+Ba =-1\text{.}
 </div>
 <div class="para">and we have a system of two equations in the unknowns <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> which we can solve.</div>
 </div>
-<article class="problem example-like" id="DRILLPFD2x2-1"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.2.1</span><span class="period">.</span>
-</h4>
+<article class="problem example-like" id="DRILLPFD2x2-1"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.4</span><span class="period">.</span>
+</h5>
 <div class="para logical" id="DRILLPFD2x2-1-1">
 <div class="para">In the form we have them thus far the equations</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Ab+Ba =-1
+Ab+Ba
+=-1
 \end{equation*}
 </div>
 <div class="para">and, especially</div>
@@ -906,43 +916,43 @@ Ab+Ba =-1
 \frac{1}{(1-a)(1-b)}=\frac{A}{1-a} + \frac{B}{1-b}
 \end{equation*}
 </div>
-<div class="para">are a little scary. But it’s not really that bad. Clear the fractions and solve for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
+<div class="para">are a little scary. But it’s not really as bad as it looks. Clear the fractions and then solve for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
 </div>
-</div></article><div class="para" id="SUBSECTIONPFDSimple-8">The method we’ve just outlined will work, and it will always work.  But this is only our first example of the PFD and you can surely see that that for a  more complex problem the difficulty of solving for the coefficients can become extreme. But again, this method works and it will always work, so it is something we can always fall back on if we can’t find something simpler.</div>
-<div class="para" id="SUBSECTIONPFDSimple-9">Since this will work no matter what value we choose for <span class="process-math">\(x\)</span> one possible way to lighten the load is to look for values of <span class="process-math">\(x\)</span> that will make the resulting equations simpler to solve. Do you see a choice that will do that?</div>
-<div class="para" id="SUBSECTIONPFDSimple-10">Sadly, nothing obvious presents itself. But hold that thought for a bit. We’ll return to it.</div>
-<div class="para logical" id="SUBSECTIONPFDSimple-11">
+</div></article><div class="para" id="SUBSECTIONLogisticEquation-16">The method we’ve just outlined will work, and it will always work.  But this is only our first example of the PFD and you can surely see that that for a  more complex problem the difficulty of solving for the coefficients can become extreme. But again, this method works and it will always work, so it is something we can always fall back on if we can’t find something simpler.</div>
+<div class="para" id="SUBSECTIONLogisticEquation-17">Since the method just oulined will work no matter what values we choose for <span class="process-math">\(x\)</span> one possible way to lighten the load is to look for values of <span class="process-math">\(x\)</span> that will make the resulting equations simpler to solve. Do you see a choice that will do that?</div>
+<div class="para" id="SUBSECTIONLogisticEquation-18">Sadly, nothing obvious presents itself. But hold that thought for a bit. We’ll return to it.</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-19">
 <div class="para">Another possible method available is to simply clear the fractions and compare like terms. (In fact, our previous method can be made a little more palatable by clearing the fractions first.) Thus</div>
-<div class="displaymath process-math" id="SUBSECTIONPFDSimple-11-1">
+<div class="displaymath process-math" id="SUBSECTIONLogisticEquation-19-1">
 \begin{align}
 (x-a)(x-b)\cdot\left[\frac{1}{(x-a)(x-b)}\right]\amp{}=\left[ \frac{A}{x-a}+\frac{B}{x-b}\right]\cdot(x-a)(x-b)\notag\\
 1\amp{}=A(x-b)+B(x-a)\tag{19.36}\\
-0x+ 1\amp{}=(A+B)x + \left(-Ab-aB\right)  \notag
+\textcolor{red}{0}x+ \textcolor{blue}{1}\amp{}=(\textcolor{red}{A+B})x + \left(\textcolor{blue}{-Ab-aB}\right)  \notag
 \end{align}
 </div>
 <div class="para">Comparing the coefficients of <span class="process-math">\(x\)</span> and the constant terms we see that we need to solve  the following system of two equations in the two unknowns <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span>
 </div>
-<div class="displaymath process-math" id="SUBSECTIONPFDSimple-11-5">
+<div class="displaymath process-math" id="SUBSECTIONLogisticEquation-19-5">
 \begin{align}
 A+B\amp{}=0\tag{19.37}\\
 Ab+Ba \amp{}=-1.\notag
 \end{align}
 </div>
 </div>
-<article class="problem example-like" id="DRILLDRILLPFD2x2-2"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.2.2</span><span class="period">.</span>
-</h4>
-<div class="para" id="DRILLDRILLPFD2x2-2-1">Solve the <a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple-11-5" class="xref" data-knowl="./knowl/xref/EQUATIONPFD2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.37">system of equations (19.37)</a> and show that you get the same solution that you got in <a href="SECTIONPartFrac.html#DRILLPFD2x2-1" class="xref" data-knowl="./knowl/xref/DRILLPFD2x2-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 19.2.2.1">Drill 19.2.2.1</a>.</div></article><div class="para" id="SUBSECTIONPFDSimple-13">This is a little better. We’ve still got a system of two equations to solve, but at least it seems to be a little more manageable. Still, as the problems get more complex the number of equations in our system will grow. We’d still like to find something simpler than this if we can.</div>
-<div class="para" id="SUBSECTIONPFDSimple-14">But wait! Take another look at <a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple-11-1" class="xref" data-knowl="./knowl/xref/EQUATIONPFD1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.36">equation (19.36)</a>. With a judicious use of that formula you can actually compute this PFD almost completely in your head. It’s that simple. Really.</div>
-<div class="para logical" id="SUBSECTIONPFDSimple-15">
-<div class="para">In the paragraph following <a href="SECTIONPartFrac.html#DRILLPFD2x2-1" class="xref" data-knowl="./knowl/xref/DRILLPFD2x2-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 19.2.2.1">Drill 19.2.2.1</a> we emphasized  that <a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple-11-1" class="xref" data-knowl="./knowl/xref/EQUATIONPFD1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.36">equation (19.36)</a> is an identity, that it is true regardless of the value of <span class="process-math">\(x\text{.}\)</span> That is still true and we have <a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple-11-1" class="xref" data-knowl="./knowl/xref/EQUATIONPFD1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.36">equation (19.36)</a> in three equivalent forms. The second one is</div>
+<article class="problem example-like" id="DRILLDRILLPFD2x2-2"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.5</span><span class="period">.</span>
+</h5>
+<div class="para" id="DRILLDRILLPFD2x2-2-1">Solve the <a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation-19-5" class="xref" data-knowl="./knowl/xref/EQUATIONPFD2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.37">system of equations (19.37)</a> and show that you get the same solution that you got in <a href="SECTIONPartFrac.html#DRILLPFD2x2-1" class="xref" data-knowl="./knowl/xref/DRILLPFD2x2-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 19.2.1.4">Drill 19.2.1.4</a>.</div></article><div class="para" id="SUBSECTIONLogisticEquation-21">This is a little better. We’ve still got a system of two equations to solve, but at least it seems to be a little more manageable. Still, as the problems get more complex the number of equations in our system will grow. We’d still like to find something simpler than this if we can.</div>
+<div class="para" id="SUBSECTIONLogisticEquation-22">But wait! Take another look at <a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation-19-1" class="xref" data-knowl="./knowl/xref/EQUATIONPFD1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.36">equation (19.36)</a>. With a judicious use of that formula you can actually compute this PFD almost completely in your head. It’s that simple. Really.</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-23">
+<div class="para">In the paragraph following <a href="SECTIONPartFrac.html#DRILLPFD2x2-1" class="xref" data-knowl="./knowl/xref/DRILLPFD2x2-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 19.2.1.4">Drill 19.2.1.4</a> we emphasized  that <a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation-19-1" class="xref" data-knowl="./knowl/xref/EQUATIONPFD1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.36">equation (19.36)</a> is an identity, that it is true regardless of value of <span class="process-math">\(x\text{.}\)</span> That is still true and we have <a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation-19-1" class="xref" data-knowl="./knowl/xref/EQUATIONPFD1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.36">equation (19.36)</a> in three equivalent forms. The second one is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DRILLPFD2x2-1.html ./knowl/xref/EQUATIONPFD1.html ./knowl/xref/EQUATIONPFD1.html">
 \begin{equation*}
 1=A(x-b)+B(x-a)
 \end{equation*}
 </div>
-<div class="para">and  this is also true regardless of the value of <span class="process-math">\(x\)</span> we choose. Choosing <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\)</span> gives us</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DRILLPFD2x2-1.html ./knowl/xref/EQUATIONPFD1.html ./knowl/xref/EQUATIONPFD1.html" id="SUBSECTIONPFDSimple-15-9">
+<div class="para">and, as we keep saying,  this is an identity — it is true regardless of which values of <span class="process-math">\(x\)</span> we choose. Choosing <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\)</span> gives us</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DRILLPFD2x2-1.html ./knowl/xref/EQUATIONPFD1.html ./knowl/xref/EQUATIONPFD1.html" id="SUBSECTIONLogisticEquation-23-10">
 \begin{align*}
 A=\frac{1}{a-b} \amp{}\amp{}\text{ and }\amp{}\amp{} B=\frac{1}{b-a}
 \end{align*}
@@ -955,54 +965,76 @@ A=\frac{1}{a-b} \amp{}\amp{}\text{ and }\amp{}\amp{} B=\frac{1}{b-a}
 \end{equation}
 </div>
 </div>
-<article class="problem example-like" id="SUBSECTIONPFDSimple-16"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.2.3</span><span class="period">.</span>
-</h4>
-<div class="para" id="SUBSECTIONPFDSimple-16-1">Verify the <a href="SECTIONPartFrac.html#EQUATIONPFD3" class="xref" data-knowl="./knowl/xref/EQUATIONPFD3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.38">identity (19.38)</a>  by adding the fractions on the right side together.</div></article><article class="problem example-like" id="DRILLPFDWithoutCoverup"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.2.4</span><span class="period">.</span>
-</h4>
+<article class="problem example-like" id="SUBSECTIONLogisticEquation-24"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.6</span><span class="period">.</span>
+</h5>
+<div class="para" id="SUBSECTIONLogisticEquation-24-1">Verify the <a href="SECTIONPartFrac.html#EQUATIONPFD3" class="xref" data-knowl="./knowl/xref/EQUATIONPFD3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.38">identity (19.38)</a>  by adding the fractions on the right side together.</div></article><article class="problem example-like" id="DRILLPFDWithoutCoverup"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.7</span><span class="period">.</span>
+</h5>
 <div class="para logical" id="DRILLPFDWithoutCoverup-1">
 <div class="para">Compute each integral by decomposing the integrand  using any of the methods you’ve seen so far.</div>
 <ol class="lower-roman ol-marker-1 cols2" id="DRILLPFDWithoutCoverup-1-2">
 <li id="DRILLPFDWithoutCoverup-1-2-1"><div class="para" id="DRILLPFDWithoutCoverup-1-2-1-1"><span class="process-math">\(\displaystyle \int\frac{1}{(x-2)(x-1)}\dx{x}\)</span></div></li>
-<li id="DRILLPFDWithoutCoverup-1-2-2"><div class="para" id="DRILLPFDWithoutCoverup-1-2-2-1"><span class="process-math">\(\displaystyle \int          \frac{1} {x(x-100 )}\dx{x}\)</span></div></li>
-<li id="DRILLPFDWithoutCoverup-1-2-3"><div class="para" id="DRILLPFDWithoutCoverup-1-2-3-1"><span class="process-math">\(\displaystyle \int       \frac{1}{(x+2 )(x-2 )}\dx{x}\)</span></div></li>
-<li id="DRILLPFDWithoutCoverup-1-2-4"><div class="para" id="DRILLPFDWithoutCoverup-1-2-4-1"><span class="process-math">\(\displaystyle \int    \frac{6}{(x-3 )(x+10 )}\dx{x}\)</span></div></li>
-<li id="DRILLPFDWithoutCoverup-1-2-5"><div class="para" id="DRILLPFDWithoutCoverup-1-2-5-1"><span class="process-math">\(\displaystyle \int \frac{\frac{1}{10}}{(x-10 )(x-100 )}\dx{x}\)</span></div></li>
-<li id="DRILLPFDWithoutCoverup-1-2-6"><div class="para" id="DRILLPFDWithoutCoverup-1-2-6-1"><span class="process-math">\(\displaystyle \int  \frac{-17}{(x- 5)(x- 1)}\dx{x}\)</span></div></li>
+<li id="DRILLPFDWithoutCoverup-1-2-2"><div class="para" id="DRILLPFDWithoutCoverup-1-2-2-1"><span class="process-math">\(\displaystyle \int \frac{1} {x(x-100 )}\dx{x}\)</span></div></li>
+<li id="DRILLPFDWithoutCoverup-1-2-3"><div class="para" id="DRILLPFDWithoutCoverup-1-2-3-1"><span class="process-math">\(\displaystyle \int \frac{4}{(x+2 )(x-2 )}\dx{x}\)</span></div></li>
+<li id="DRILLPFDWithoutCoverup-1-2-4"><div class="para" id="DRILLPFDWithoutCoverup-1-2-4-1"><span class="process-math">\(\displaystyle \int \frac{6}{(x-3 )(x+10 )}\dx{x}\)</span></div></li>
+<li id="DRILLPFDWithoutCoverup-1-2-5"><div class="para" id="DRILLPFDWithoutCoverup-1-2-5-1"><span class="process-math">\(\displaystyle \int \frac{\frac{2}{10}}{(x-10 )(x-100 )}\dx{x}\)</span></div></li>
+<li id="DRILLPFDWithoutCoverup-1-2-6"><div class="para" id="DRILLPFDWithoutCoverup-1-2-6-1"><span class="process-math">\(\displaystyle \int  \frac{1}{(2x- 5)(3x- 1)}\dx{x}\)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="SUBSECTIONPFDSimple-18"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.2.5</span><span class="period">.</span>
-</h4>
-<div class="introduction" id="SUBSECTIONPFDSimple-18-1"><div class="para" id="SUBSECTIONPFDSimple-18-1-1">Compute each integral by decomposing the integrand  using any of the methods you’ve seen so far.</div></div>
-<article class="task exercise-like" id="SUBSECTIONPFDSimple-18-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="SUBSECTIONPFDSimple-18-2-1-1"><span class="process-math">\(\displaystyle \int \frac{1}{x^2-9}\dx{x}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONPFDSimple-18-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="SUBSECTIONPFDSimple-18-3-1-1"><span class="process-math">\(\displaystyle\int \frac{1}{x^2-5x+6 }\dx{x}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONPFDSimple-18-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="SUBSECTIONPFDSimple-18-4-1-1"><span class="process-math">\(\displaystyle
+</div></article><article class="exercise exercise-like" id="SUBSECTIONLogisticEquation-26"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.1.8</span><span class="period">.</span>
+</h5>
+<div class="introduction" id="SUBSECTIONLogisticEquation-26-1"><div class="para" id="SUBSECTIONLogisticEquation-26-1-1">Compute each integral by decomposing the integrand  using any of the methods you’ve seen so far.</div></div>
+<article class="task exercise-like" id="SUBSECTIONLogisticEquation-26-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="SUBSECTIONLogisticEquation-26-2-1-1"><span class="process-math">\(\displaystyle \int \frac{1}{x^2-9}\dx{x}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONLogisticEquation-26-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="SUBSECTIONLogisticEquation-26-3-1-1"><span class="process-math">\(\displaystyle\int \frac{1}{x^2-5x+6 }\dx{x}\)</span></div></article><article class="task exercise-like" id="SUBSECTIONLogisticEquation-26-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="SUBSECTIONLogisticEquation-26-4-1-1"><span class="process-math">\(\displaystyle
 \int        \frac{1}{x^4-5x^2+6 }\)</span></div>
-<div class="solutions"><details id="SUBSECTIONPFDSimple-18-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="SUBSECTIONPFDSimple-18-4-2-1">Let <span class="process-math">\(y=x^2\)</span> and use the results of parts (a) and (b).</div></div></details></div></article></article><article class="exercise exercise-like" id="PROBLEMPFDSimplestForm"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">The PFD in its Simplest Form (Find the Pattern).</span>
-</h4>
+<div class="solutions"><details id="SUBSECTIONLogisticEquation-26-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="SUBSECTIONLogisticEquation-26-4-2-1">Let <span class="process-math">\(y=x^2\)</span> and use the results of parts (a) and (b).</div></div></details></div></article></article><article class="example example-like" id="EXAMPLEExtendedLogistic"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.1.9</span><span class="period">.</span>
+</h5>
+<div class="para" id="EXAMPLEExtendedLogistic-1">As we’ve mentioned before, all mathematical models make subject to simplifying assumptions. It is important to know what  are the simplifications are so we know the conditions under which the model is unrealistic. For example, <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-8-1" class="xref" data-knowl="./knowl/xref/EQUATIONFishery1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1">IVP (11.1)</a> works fine in the short term but in the long term it predicts explosive growth which is not sustainable. We addressed this when  we generated the <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-21-3" class="xref" data-knowl="./knowl/xref/EQUATIONLogEq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4">Logistic Equation (11.4)</a> by including as a factor, <span class="process-math">\(\left( 1-\frac{P}{100}\right)\text{.}\)</span> That modification put an upper bound on the population size as we have seen.</div>
+<div class="para logical" id="EXAMPLEExtendedLogistic-2">
+<div class="para">However the Logistic Equation doesn’t put any lower bound on the population size. This is also unrealistic since we know that if a population of critters is too small they tend to die out. The following tweak to the logistic model:</div>
+<div class="displaymath process-math" id="EQUATIONLogEqMinViable">
+\begin{equation}
+\dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(\frac{P}{10}-1\right),\tag{19.39}
+\end{equation}
+</div>
+<div class="para">forces a population which is too small to die out.  In this case, <span class="process-math">\(10\)</span> is called the <dfn class="terminology">minimum viability level</dfn> of the population.</div>
+</div></article><article class="exercise exercise-like" id="PROBLEMLogistExtend"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">An Extension of the Logistic Equation.</span>
+</h5>
+<article class="task exercise-like" id="PROBLEMLogistExtend-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="PROBLEMLogistExtend-2-1-1">Use the graphical techniques of <a href="SECTIONExponentialGrowth.html" class="internal" title="Section 8.6: Exponential Growth">Section 8.6</a> to sketch the graph of the solution <span class="process-math">\(P(t)\)</span> of <a href="SECTIONPartFrac.html#EQUATIONLogEqMinViable" class="xref" data-knowl="./knowl/xref/EQUATIONLogEqMinViable.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.39">equation (19.39)</a>.  Explain what happens if our population drops below the <dfn class="terminology">minimum viability level</dfn>
+</div></article></article><aside class="aside aside-like" id="SUBSECTIONLogisticEquation-29"><h5 class="heading"><span class="title">Note to Bob.</span></h5>
+<div class="para" id="SUBSECTIONLogisticEquation-29-2">Bob, I haven’t worked through this problem to make sure it is workable yet. One of us should do that and make sure.</div></aside><div class="para" id="SUBSECTIONLogisticEquation-30">Of course we would prefer to have a formula for <span class="process-math">\(P(t)\text{.}\)</span> It appears that we can obtain a formula if we can integrate the left side of <a href="SECTIONPartFrac.html#EQUATIONLogEqMinViable" class="xref" data-knowl="./knowl/xref/EQUATIONLogEqMinViable.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.39">equation (19.39)</a>.  As the following problem shows, the PFD extends in the obvious way to three or more factors.</div>
+<article class="exercise exercise-like" id="PROBLEMPFDSimplestForm"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">The PFD in its Simplest Form (Find the Pattern).</span>
+</h5>
 <div class="introduction" id="PROBLEMPFDSimplestForm-3"><div class="para" id="PROBLEMPFDSimplestForm-3-1">We’ve arrived at a very clever algorithm for computing the PFD of a rational function of the form <span class="process-math">\(\frac{c}{(x-a)(x-b)}\)</span> but we’ll need to extend it considerably if it is going to be more than minimally useful. This extension is straightforward.</div></div>
-<article class="task exercise-like" id="PROBLEMPFDSimplestForm-4"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="PROBLEMPFDSimplestForm-4"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para" id="PROBLEMPFDSimplestForm-4-1-1">Show that the PFD of <span class="process-math">\(\frac{1}{(x-a)(x-b)(x-c)}\)</span> can be computed in exactly the same manner as our most recent method for <span class="process-math">\(\frac{1}{(x-a)(x-b)}\text{.}\)</span>
-</div></article><article class="task exercise-like" id="PROBLEMPFDSimplestForm-5"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></article><article class="task exercise-like" id="PROBLEMPFDSimplestForm-5"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="PROBLEMPFDSimplestForm-5-1-1">Show the same for <span class="process-math">\(\frac{1}{(x-a)(x-b)(x-c)(x-d)}\text{.}\)</span>
-</div></article><article class="task exercise-like" id="PROBLEMPFDSimplestForm-6"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+</div></article><article class="task exercise-like" id="PROBLEMPFDSimplestForm-6"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <div class="para" id="PROBLEMPFDSimplestForm-6-1-1">Show the same for <span class="process-math">\(\frac{1}{(x-x_1)(x-x_2)(x-x_3)\cdots(x-x_n)}\text{.}\)</span>
-</div></article></article><div class="para" id="SUBSECTIONPFDSimple-20">As you can see from <a href="SECTIONPartFrac.html#PROBLEMPFDSimplestForm" class="xref" data-knowl="./knowl/xref/PROBLEMPFDSimplestForm.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 19.2.2.6: The PFD in its Simplest Form (Find the Pattern)">Problem 19.2.2.6</a> even in its simplest form the PFD can become a very large problem. For example suppose <span class="process-math">\(n=100\text{.}\)</span> We’d really like to get as much efficiency as we possibly can, and there is one more refinement we’ll need before moving on to more general problems.</div>
-<div class="para logical" id="SUBSECTIONPFDSimple-21">
-<div class="para">When he was computing some PFDs related to his work solving differential equations <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" target="_blank">Oliver Heaviside</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONPFDSimple-21-2"><summary class="ptx-footnote__number" title="Footnote 19.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONPFDSimple-21-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/</code></div></details> (1850—1925) made the following observation. Look closely at the numerators of the fractions the right side of</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONPFD3.html" id="SUBSECTIONPFDSimple-21-4">
+</div></article></article><article class="exercise exercise-like" id="SUBSECTIONLogisticEquation-32"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.1.12</span><span class="period">.</span>
+</h5>
+<div class="para" id="SUBSECTIONLogisticEquation-32-1">Try to find a formula for <span class="process-math">\(P(t)\)</span> in <a href="SECTIONpopulation-dynamics.html#PROBLEMMinViablePop" class="xref" data-knowl="./knowl/xref/PROBLEMMinViablePop.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 11.1.1.9">Problem 11.1.1.9</a> by integrating both sides and solving the result for <span class="process-math">\(P\text{.}\)</span> Explain what goes wrong.</div></article><div class="para" id="SUBSECTIONLogisticEquation-33">As you can see from <a href="SECTIONPartFrac.html#PROBLEMPFDSimplestForm" class="xref" data-knowl="./knowl/xref/PROBLEMPFDSimplestForm.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 19.2.1.11: The PFD in its Simplest Form (Find the Pattern)">Problem 19.2.1.11</a> even in its simplest form the PFD can become a very large problem. For example suppose <span class="process-math">\(n=100\text{.}\)</span> So we’d really like to make the method as efficient as possible. To that end there is one more refinement we’ll need before moving on to more general problems.</div>
+<div class="para logical" id="SUBSECTIONLogisticEquation-34">
+<div class="para">When he was computing some PFDs related to his work solving differential equations <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" target="_blank">Oliver Heaviside</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONLogisticEquation-34-2"><summary class="ptx-footnote__number" title="Footnote 19.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONLogisticEquation-34-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/</code></div></details> (1850—1925) made the following observation. Look closely at the numerators of the fractions the right side of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONPFD3.html" id="SUBSECTIONLogisticEquation-34-4">
 \begin{equation}
 \frac{1}{(x-a)(x-b)}=
-\frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}\tag{19.39}
+\frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}\tag{19.40}
 \end{equation}
 </div>
 <div class="para">(this is <a href="SECTIONPartFrac.html#EQUATIONPFD3" class="xref" data-knowl="./knowl/xref/EQUATIONPFD3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.38">equation (19.38)</a>). Do you see that the numerator above <span class="process-math">\(x-a\)</span> is what we would get if we simply replaced <span class="process-math">\(x\)</span> with <span class="process-math">\(a\)</span> on the left and “covered up” <span class="process-math">\(x-a\text{?}\)</span>
 </div>
 </div>
-<div class="para logical" id="SUBSECTIONPFDSimple-22">
+<div class="para logical" id="SUBSECTIONLogisticEquation-35">
 <div class="para">That is, if <span class="process-math">\(\frac{1}{(x-a)(x-b)}=
 \frac{A}{x-a}+\frac{B}{x-b}\)</span> then</div>
 <div class="displaymath process-math">
@@ -1018,50 +1050,32 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 </div>
 <div class="para">This is known as <dfn class="terminology">Heaviside’s Cover–up Method</dfn> and it is the simplest way we know to compute the coefficients of the PFD of the rational functions we’ve seen so far.</div>
 </div>
-<article class="problem example-like" id="SUBSECTIONPFDSimple-23"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.2.7</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="SUBSECTIONPFDSimple-23-1">
+<article class="problem example-like" id="SUBSECTIONLogisticEquation-36"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.13</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="SUBSECTIONLogisticEquation-36-1">
 <div class="para">Compute each integral by decomposing the integrand using using <dfn class="terminology">Heaviside’s Cover–up Method</dfn>.</div>
-<ol class="lower-roman ol-marker-1" id="SUBSECTIONPFDSimple-23-1-2">
-<li id="SUBSECTIONPFDSimple-23-1-2-1"><div class="para" id="SUBSECTIONPFDSimple-23-1-2-1-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x^2-4 )(x^2- 9)}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-23-1-2-2"><div class="para" id="SUBSECTIONPFDSimple-23-1-2-2-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x-1 )(x-2 )(x-3 )}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-23-1-2-3"><div class="para" id="SUBSECTIONPFDSimple-23-1-2-3-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x+1 )(x+2)(x+3 )}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-23-1-2-4"><div class="para" id="SUBSECTIONPFDSimple-23-1-2-4-1"><span class="process-math">\(\displaystyle \int \frac{1}{x(x^2-1)(x-3 )(x+8 )}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-23-1-2-5"><div class="para" id="SUBSECTIONPFDSimple-23-1-2-5-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}\)</span></div></li>
+<ol class="lower-roman ol-marker-1" id="SUBSECTIONLogisticEquation-36-1-2">
+<li id="SUBSECTIONLogisticEquation-36-1-2-1"><div class="para" id="SUBSECTIONLogisticEquation-36-1-2-1-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x^2-4 )(x^2- 9)}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-36-1-2-2"><div class="para" id="SUBSECTIONLogisticEquation-36-1-2-2-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x-1 )(x-2 )(x-3 )}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-36-1-2-3"><div class="para" id="SUBSECTIONLogisticEquation-36-1-2-3-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x+1 )(x+2)(x+3 )}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-36-1-2-4"><div class="para" id="SUBSECTIONLogisticEquation-36-1-2-4-1"><span class="process-math">\(\displaystyle \int \frac{1}{x(x^2-1)(x-3 )(x+8 )}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-36-1-2-5"><div class="para" id="SUBSECTIONLogisticEquation-36-1-2-5-1"><span class="process-math">\(\displaystyle \int \frac{1}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}\)</span></div></li>
 </ol>
-</div></article><article class="problem example-like" id="SUBSECTIONPFDSimple-24"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.2.8</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="SUBSECTIONPFDSimple-24-1">
+</div></article><article class="problem example-like" id="SUBSECTIONLogisticEquation-37"><h5 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.1.14</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="SUBSECTIONLogisticEquation-37-1">
 <div class="para">To avoid obscuring our point,   so far we’ve kept the numerators simple. They’ve always been some constant, usually <span class="process-math">\(1\text{.}\)</span> But this is not necessary. Use Heaviside’s method to compute each of the following integrals.</div>
-<ol class="lower-roman ol-marker-1" id="SUBSECTIONPFDSimple-24-1-5">
-<li id="SUBSECTIONPFDSimple-24-1-5-1"><div class="para" id="SUBSECTIONPFDSimple-24-1-5-1-1"><span class="process-math">\(\displaystyle \int \frac{x}{(x^2-4 )(x^2- 9)}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-24-1-5-2"><div class="para" id="SUBSECTIONPFDSimple-24-1-5-2-1"><span class="process-math">\(\displaystyle \int \frac{x^2-1}{(x-1 )(x-2 )(x-3 )}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-24-1-5-3"><div class="para" id="SUBSECTIONPFDSimple-24-1-5-3-1"><span class="process-math">\(\displaystyle \int \frac{(x-1)(x-2)}{(x+1 )(x+2)(x+3 )}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-24-1-5-4"><div class="para" id="SUBSECTIONPFDSimple-24-1-5-4-1"><span class="process-math">\(\displaystyle \int \frac{x^3}{x(x^2-1)(x-3 )(x+8 )}\dx{x}\)</span></div></li>
-<li id="SUBSECTIONPFDSimple-24-1-5-5"><div class="para" id="SUBSECTIONPFDSimple-24-1-5-5-1"><span class="process-math">\(\displaystyle \int \frac{x(x^3-1)}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}\)</span></div></li>
+<ol class="lower-roman ol-marker-1" id="SUBSECTIONLogisticEquation-37-1-5">
+<li id="SUBSECTIONLogisticEquation-37-1-5-1"><div class="para" id="SUBSECTIONLogisticEquation-37-1-5-1-1"><span class="process-math">\(\displaystyle \int \frac{x}{(x^2-4 )(x^2- 9)}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-37-1-5-2"><div class="para" id="SUBSECTIONLogisticEquation-37-1-5-2-1"><span class="process-math">\(\displaystyle \int \frac{x^2-1}{(x-1 )(x-2 )(x-3 )}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-37-1-5-3"><div class="para" id="SUBSECTIONLogisticEquation-37-1-5-3-1"><span class="process-math">\(\displaystyle \int \frac{(x-1)(x-2)}{(x+1 )(x+2)(x+3 )}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-37-1-5-4"><div class="para" id="SUBSECTIONLogisticEquation-37-1-5-4-1"><span class="process-math">\(\displaystyle \int \frac{x^3}{x(x^2-1)(x-3 )(x+8 )}\dx{x}\)</span></div></li>
+<li id="SUBSECTIONLogisticEquation-37-1-5-5"><div class="para" id="SUBSECTIONLogisticEquation-37-1-5-5-1"><span class="process-math">\(\displaystyle \int \frac{x(x^3-1)}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}\)</span></div></li>
 </ol>
-</div></article><article class="exercise exercise-like" id="PROBLEMLogistExtend"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">An Extension of the Logistic Equation.</span>
-</h4>
-<div class="introduction" id="PROBLEMLogistExtend-2">
-<div class="para" id="PROBLEMLogistExtend-2-1">As we’ve mentioned before, all mathematical models make subject to simplifying assumptions. It is important to know what  are the simplifications are so we know the conditions under which the model is unrealistic. For example, <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-8-1" class="xref" data-knowl="./knowl/xref/EQUATIONFishery1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1">IVP (11.1)</a> works fine in the short term but in the long term it predicts explosive growth which is not sustainable. We addressed this when  we generated the <a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout-21-3" class="xref" data-knowl="./knowl/xref/EQUATIONLogEq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4">Logistic Equation (11.4)</a> by including as a factor, <span class="process-math">\(\left( 1-\frac{P}{100}\right)\text{.}\)</span> That modification put an upper bound on the population size as we have seen.</div>
-<div class="para logical" id="PROBLEMLogistExtend-2-2">
-<div class="para">However theLogistic Equation doesn’t put any lower bound on the population size. This is also unrealistic since we know that if a population of critters is too small they tend to die out. The following tweak to the logistic model:</div>
-<div class="displaymath process-math" id="PROBLEMLogistExtend-2-2-2">
-\begin{align}
-\dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(\frac{P}{10}-1\right),
-\amp{}\amp{}P(0)=50.\tag{19.40}
-\end{align}
-</div>
-<div class="para">forces a population which is to small to die out.</div>
-</div>
-</div>
-<article class="task exercise-like" id="PROBLEMLogistExtend-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="PROBLEMLogistExtend-3-1-1">In this case, <span class="process-math">\(10\)</span> is called the <dfn class="terminology">minimum viability level of the population</dfn>. Use the graphical techniques of <a href="SECTIONExponentialGrowth.html" class="internal" title="Section 8.6: Exponential Growth">Section 8.6</a> to explain what happens if our population drops below this value.</div></article><article class="task exercise-like" id="PROBLEMLogistExtend-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="PROBLEMLogistExtend-4-1-1">Of course it would be better to have a formula for <span class="process-math">\(P(t)\text{,}\)</span> and it appears that we obtain one simply by integrating both sides of <a href="SECTIONPartFrac.html#PROBLEMLogistExtend-2-2-2" class="xref" data-knowl="./knowl/xref/EQUATIONLogEqMinViable.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.40">equation (19.40)</a>. Can we? Try it and see what happens.</div></article></article></section><section class="subsection" id="SUBSECTIONPFDNonSimple"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.3</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition: Advanced</span>
+</div></article></section></section><section class="subsection" id="SUBSECTIONPFDNonSimple"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.2</span><span class="space"> </span><span class="title">Advanced Decompositions</span>
 </h3>
 <div class="para logical" id="SUBSECTIONPFDNonSimple-2">
 <div class="para">Heaviside’s method will not work on the rational function <span class="process-math">\(\frac{1}{x^2(x-1)}\text{.}\)</span> If you try it you’ll get</div>
@@ -1089,7 +1103,7 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 </div>
 </div>
 <article class="exercise exercise-like" id="SUBSECTIONPFDNonSimple-4"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.3.1</span><span class="period">.</span>
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.2.1</span><span class="period">.</span>
 </h4>
 <article class="task exercise-like" id="SUBSECTIONPFDNonSimple-4-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para logical" id="SUBSECTIONPFDNonSimple-4-1-1-1">
@@ -1102,7 +1116,7 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 </div>
 </div></article><article class="task exercise-like" id="SUBSECTIONPFDNonSimple-4-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="SUBSECTIONPFDNonSimple-4-2-1-1">The Cover–up method won’t find <span class="process-math">\(A\)</span> for us (yet). Find <span class="process-math">\(A\)</span> by any method you can.</div></article></article><article class="exercise exercise-like" id="SUBSECTIONPFDNonSimple-5"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Find the Pattern.</span>
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Find the Pattern.</span>
 </h4>
 <div class="introduction" id="SUBSECTIONPFDNonSimple-5-2"><div class="para" id="SUBSECTIONPFDNonSimple-5-2-1">Compute the coefficients of the  PFD indicated.</div></div>
 <article class="task exercise-like" id="SUBSECTIONPFDNonSimple-5-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
@@ -1135,17 +1149,17 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 \end{equation*}
 </div>
 </div></article><article class="task exercise-like" id="SUBSECTIONPFDNonSimple-5-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="SUBSECTIONPFDNonSimple-5-6-1-1">In each of these problems we only asked you to find the coefficients that are attainable using the Cover–up method. The others will have to be computed by other methods.</div> <div class="para" id="SUBSECTIONPFDNonSimple-5-6-1-2">Explain as clearly as you can from the evidence above which kinds of coefficients we can compute using the Heaviside Cover–up method.</div></article></article></section><section class="subsection" id="SECTIONPartFrac-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.4</span><span class="space"> </span><span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span>
+<div class="para" id="SUBSECTIONPFDNonSimple-5-6-1-1">In each of these problems we only asked you to find the coefficients that are attainable using the Cover–up method. The others will have to be computed by other methods.</div> <div class="para" id="SUBSECTIONPFDNonSimple-5-6-1-2">Explain as clearly as you can from the evidence above which kinds of coefficients we can compute using the Heaviside Cover–up method.</div></article></article></section><section class="subsection" id="SECTIONPartFrac-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">19.2.3</span><span class="space"> </span><span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span>
 </h3>
-<div class="para logical" id="SECTIONPartFrac-6-2">
+<div class="para logical" id="SECTIONPartFrac-5-2">
 <div class="para">As we’ve mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider the following modification of the logistic model above</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \dfdx{y}{t}=.01y\left(1-\frac{y}{100}\right)\left(\frac{y}{10}-1\right)=0.00001y(100-y)(y-10)
 \end{equation*}
 </div>
-<div class="para">In this case, <span class="process-math">\(10\)</span> is called the <em class="emphasis">minimum viability level of the population</em>. (Why?) Solving this would require that we compute the integral</div>
+<div class="para">In this case, <span class="process-math">\(10\)</span> is called the <dfn class="terminology">minimum viability level</dfn> of the population. (Why?) Solving this would require that we compute the integral</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int
@@ -1154,7 +1168,7 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 </div>
 <div class="para">This form of this integral does not suggest any obvious trigonometric substitution so we will need a new idea.</div>
 </div>
-<div class="para logical" id="SECTIONPartFrac-6-3">
+<div class="para logical" id="SECTIONPartFrac-5-3">
 <div class="para"> The next technique is wholly algebraic in nature. The trick to try and separate the integrand into <dfn class="terminology">partial fractions</dfn> each of which will be easier to integrate than the original. For example, consider the expression <span class="process-math">\(\frac{1}{y(100-y)}\text{.}\)</span> With begin by making a reasonable, educated guess that such a fraction can be written as <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\text{,}\)</span> where <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are constant to be determined. We can see if this guess pans out by combining the partial fractions to obtain the original.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1168,7 +1182,7 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 \end{equation*}
 </div>
 <div class="para">Substituting into the original integral we see that</div>
-<div class="displaymath process-math" id="SECTIONPartFrac-6-3-13">
+<div class="displaymath process-math" id="SECTIONPartFrac-5-3-13">
 \begin{align*}
 \int\frac{\dx{y}}{y(100-y)}\amp
 =\int\frac{1/100}{y}\dx{y}+\int\frac{1/100}{100-y}\dx{y}\\
@@ -1177,19 +1191,19 @@ B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}\text{.}
 \end{align*}
 </div>
 <div class="para">and so</div>
-<div class="displaymath process-math" id="SECTIONPartFrac-6-3-14">
+<div class="displaymath process-math" id="SECTIONPartFrac-5-3-14">
 \begin{gather}
 \int\frac{\dx{y}}{y(100-y)}=\frac{1}{100}\left(\ln(y)-\ln(100-y)\right)+C\tag{19.41}
 \end{gather}
 </div>
 </div>
-<aside class="aside aside-like" id="SECTIONPartFrac-6-4"><h4 class="heading"><span class="title">Comment.</span></h4>
-<div class="para" id="SECTIONPartFrac-6-4-2">This isn’t really a guess. There is a theorem from algebra that says that there will always be constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> such that <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\)</span> but since we haven’t discussed this yet we’ll just roll with it for now.</div></aside><article class="exercise exercise-like" id="SECTIONPartFrac-6-5"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.4.1</span><span class="period">.</span>
+<aside class="aside aside-like" id="SECTIONPartFrac-5-4"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para" id="SECTIONPartFrac-5-4-2">This isn’t really a guess. There is a theorem from algebra that says that there will always be constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> such that <span class="process-math">\(\frac{1}{y(100-y)}=\frac{A}{y}+\frac{B}{100-y}\)</span> but since we haven’t discussed this yet we’ll just roll with it for now.</div></aside><article class="exercise exercise-like" id="SECTIONPartFrac-5-5"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.3.1</span><span class="period">.</span>
 </h4>
-<article class="task exercise-like" id="SECTIONPartFrac-6-5-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="SECTIONPartFrac-6-5-1-1-1">
-<div class="para">Use <a href="SECTIONPartFrac.html#SECTIONPartFrac-6-3-14" class="xref" data-knowl="./knowl/xref/PartFrac1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.41">equation (19.41)</a> to find <span class="process-math">\(y\)</span> for the logistic growth model with the initial condition <span class="process-math">\(y(0)=0\)</span>
+<article class="task exercise-like" id="SECTIONPartFrac-5-5-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="SECTIONPartFrac-5-5-1-1-1">
+<div class="para">Use <a href="SECTIONPartFrac.html#SECTIONPartFrac-5-3-14" class="xref" data-knowl="./knowl/xref/PartFrac1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.41">equation (19.41)</a> to find <span class="process-math">\(y\)</span> for the logistic growth model with the initial condition <span class="process-math">\(y(0)=0\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PartFrac1.html">
 \begin{equation*}
@@ -1199,13 +1213,13 @@ y(0)=0
 </div>
 <div class="para">for the case when <span class="process-math">\(y\lt 100\text{.}\)</span>
 </div>
-</div></article><article class="task exercise-like" id="SECTIONPartFrac-6-5-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="SECTIONPartFrac-6-5-2-1-1">Solve the same problem for the case where <span class="process-math">\(y\gt
+</div></article><article class="task exercise-like" id="SECTIONPartFrac-5-5-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SECTIONPartFrac-5-5-2-1-1">Solve the same problem for the case where <span class="process-math">\(y\gt
 100\text{.}\)</span>
-</div> <aside class="aside aside-like" id="SECTIONPartFrac-6-5-2-1-2"><h6 class="heading"><span class="title">Comment.</span></h6>
-<div class="para" id="SECTIONPartFrac-6-5-2-1-2-2">This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.</div></aside></article></article><div class="para" id="SECTIONPartFrac-6-6">
+</div> <aside class="aside aside-like" id="SECTIONPartFrac-5-5-2-1-2"><h6 class="heading"><span class="title">Comment.</span></h6>
+<div class="para" id="SECTIONPartFrac-5-5-2-1-2-2">This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.</div></aside></article></article><div class="para" id="SECTIONPartFrac-5-6">
 <dfn class="terminology">The Partial Fraction Decomposition</dfn>  Now that we’ve seen that decomposing a ratio of polynomials (these are called <dfn class="terminology">rational functions</dfn>) into a sum of partial fractions is possible, we’ll look for a systematic way of doing this for any <dfn class="terminology">rational function</dfn>. Our method will hinge on the following theoretical, algebraic fact.</div>
-<div class="para logical" id="SECTIONPartFrac-6-7">
+<div class="para logical" id="SECTIONPartFrac-5-7">
 <div class="para">Suppose we have two polynomials <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> which have no common factors (other than constants). Then there are polynomials <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1214,7 +1228,7 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 </div>
 </div>
 <article class="example example-like" id="ElementaryPartFracDecomp"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.4.2</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.3.2</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ElementaryPartFracDecomp-1">
 <div class="para">For example notice that if <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants then <span class="process-math">\(x+a\)</span> and <span class="process-math">\(x+b\)</span> have no common factors. Since <span class="process-math">\((x+a)-(x+b)=a-b\)</span> it follows that</div>
@@ -1225,9 +1239,9 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 </div>
 </div>
 <aside class="aside aside-like" id="ElementaryPartFracDecomp-2"><h5 class="heading"><span class="title">Comment.</span></h5>
-<div class="para" id="ElementaryPartFracDecomp-2-2">Notice that since <span class="process-math">\(\frac{1}{a-b}\)</span> and <span class="process-math">\(\frac{-1}{a-b}\)</span> are constants they are polynomials of degree zero.</div></aside></article><div class="para logical" id="SECTIONPartFrac-6-9">
-<div class="para">Our approach to the problem in <a href="SECTIONPartFrac.html#ElementaryPartFracDecomp" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.2.4.2">example 19.2.4.2</a> was  somewhat ad–hoc. We will eventualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an       (educated) guess and check method. Notice that in the <a href="SECTIONPartFrac.html#ElementaryPartFracDecomp" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.2.4.2">example 19.2.4.2</a> we had</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ElementaryPartFracDecomp.html ./knowl/xref/ElementaryPartFracDecomp.html" id="SECTIONPartFrac-6-9-4">
+<div class="para" id="ElementaryPartFracDecomp-2-2">Notice that since <span class="process-math">\(\frac{1}{a-b}\)</span> and <span class="process-math">\(\frac{-1}{a-b}\)</span> are constants they are polynomials of degree zero.</div></aside></article><div class="para logical" id="SECTIONPartFrac-5-9">
+<div class="para">Our approach to the problem in <a href="SECTIONPartFrac.html#ElementaryPartFracDecomp" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.2.3.2">example 19.2.3.2</a> was  somewhat ad–hoc. We will eventualy need a more systematic approach but it will be useful to look at some more examples first. So for now we will use an       (educated) guess and check method. Notice that in the <a href="SECTIONPartFrac.html#ElementaryPartFracDecomp" class="xref" data-knowl="./knowl/xref/ElementaryPartFracDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.2.3.2">example 19.2.3.2</a> we had</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ElementaryPartFracDecomp.html ./knowl/xref/ElementaryPartFracDecomp.html" id="SECTIONPartFrac-5-9-4">
 \begin{align*}
 \frac{1}{(x+a)(x+b)}\amp =\frac{\frac{1}{a-b}(x+a)+\frac{-1}{a-b}(x+b)}{(x+a)(x+b)}\\
 \amp = \frac{\frac{1}{a-b}}{x+b}+\frac{\frac{-1}{a-b}}{x+a}\\
@@ -1235,7 +1249,7 @@ r(x)\cdot{}p(x)+s(x)\cdot{}q(x)=1\text{.}
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="SECTIONPartFrac-6-10">
+<div class="para logical" id="SECTIONPartFrac-5-10">
 <div class="para">It is generally true that if <span class="process-math">\(r(x)\cdot p(x+s(x)\cdot
 q(x)=1\)</span> then</div>
 <div class="displaymath process-math">
@@ -1253,21 +1267,21 @@ s(x)}{p(x)}+\frac{t(x)\cdot{}r(x)}{q(x)}\text{.}
 \end{equation*}
 </div>
 <div class="para">Setting <span class="process-math">\(A(x)=t(x)\cdot{}s(x)\)</span> and <span class="process-math">\(B(x)=t(x)\cdot r(x)\)</span> gives</div>
-<div class="displaymath process-math" id="SECTIONPartFrac-6-10-7">
+<div class="displaymath process-math" id="SECTIONPartFrac-5-10-7">
 \begin{gather*}
 \frac{t(x)}{p(x)\cdot{}q(x)}=
 \frac{A(x)}{p(x)}+\frac{B(x)}{q(x)}\text{.}
 \end{gather*}
 </div>
 </div>
-<div class="para" id="SECTIONPartFrac-6-11"> Everything we’ve just shown assumes that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are known then <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> can be found so that <span class="process-math">\(r(x)\cdot p(x)+ s(x)\cdot q(x)=1\text{.}\)</span> For arbitrary functions this is a very restrictive condition. However as we observed above, if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomials having only trivial common factors then the existence of <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> is guaranteed. Thus for polynomials the <dfn class="terminology">Partial Fraction Decomposition</dfn> is also guaranteed.</div>
-<aside class="aside aside-like" id="SECTIONPartFrac-6-12"><h4 class="heading"><span class="title">Mathematical Terminology.</span></h4>
-<div class="para" id="SECTIONPartFrac-6-12-2">The word “trivial” is very context dependent in mathematics. In this context a “trivial common factor” would be a constant. For example, <span class="process-math">\(2\)</span> is a trivial common factor of <span class="process-math">\((2x-4)\)</span> and <span class="process-math">\(2x+6\text{.}\)</span>
-</div></aside><div class="para" id="SECTIONPartFrac-6-13">We formalize this in the following theorem.</div>
-<article class="theorem theorem-like" id="PartialFractionDecomp"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">19.2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition (PFD).</span>
+<div class="para" id="SECTIONPartFrac-5-11"> Everything we’ve just shown assumes that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are known then <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> can be found so that <span class="process-math">\(r(x)\cdot p(x)+ s(x)\cdot q(x)=1\text{.}\)</span> For arbitrary functions this is a very restrictive condition. However as we observed above, if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomials having only trivial common factors then the existence of <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> is guaranteed. Thus for polynomials the <dfn class="terminology">Partial Fraction Decomposition</dfn> is also guaranteed.</div>
+<aside class="aside aside-like" id="SECTIONPartFrac-5-12"><h4 class="heading"><span class="title">Mathematical Terminology.</span></h4>
+<div class="para" id="SECTIONPartFrac-5-12-2">The word “trivial” is very context dependent in mathematics. In this context a “trivial common factor” would be a constant. For example, <span class="process-math">\(2\)</span> is a trivial common factor of <span class="process-math">\((2x-4)\)</span> and <span class="process-math">\(2x+6\text{.}\)</span>
+</div></aside><div class="para" id="SECTIONPartFrac-5-13">We formalize this in the following theorem.</div>
+<article class="theorem theorem-like" id="THEOREMPartialFractionDecomp"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">19.2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Partial Fraction Decomposition (PFD).</span>
 </h4>
-<div class="para logical" id="PartialFractionDecomp-2">
+<div class="para logical" id="THEOREMPartialFractionDecomp-2">
 <div class="para">If <span class="process-math">\(P(x)\text{,}\)</span> <span class="process-math">\(Q(x)\text{,}\)</span> and <span class="process-math">\(R(x)\)</span> are polynomials having no non–trivial common factors with <span class="process-math">\(\deg(P)\lt\deg(Q)+ \deg(R)\)</span> then there exist polynomials <span class="process-math">\(A(x)\)</span> and <span class="process-math">\(B(x)\text{,}\)</span> <span class="process-math">\(\deg{A}\lt\deg{Q}\)</span> and <span class="process-math">\(\deg(B)\lt\deg(R)\text{,}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1275,8 +1289,8 @@ s(x)}{p(x)}+\frac{t(x)\cdot{}r(x)}{q(x)}\text{.}
 \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="SECTIONPartFrac-6-15">As stated in <a href="SECTIONPartFrac.html#PartialFractionDecomp" class="xref" data-knowl="./knowl/xref/PartialFractionDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 19.2.4.3: The Partial Fraction Decomposition (PFD)">Theorem 19.2.4.3</a> the PFD is very comprehensive. We will</div>
-<div class="para logical" id="SECTIONPartFrac-6-16">
+</div></article><div class="para" id="SECTIONPartFrac-5-15">As stated in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "PartialFractionDecomp" missing or not unique]</code> the PFD is very comprehensive. We will</div>
+<div class="para logical" id="SECTIONPartFrac-5-16">
 <div class="para">To extend this idea further, if <span class="process-math">\(p\left(x\right),\
 q\left(x\right),\ r(x)\)</span> have no nontrivial factors, then there are polynomials <span class="process-math">\(A\left(x\right),\ B\left(x\right),\
 C(x)\)</span> with</div>
@@ -1289,11 +1303,11 @@ r(x)}=\frac{A\left(x\right)}{p\left(x\right)}+\frac{B\left(x\right)}{q\left(x\ri
 </div>
 <div class="para">and this can be extended to any number of factors in the denominator.  Again, this can be proven theoretically, and this partial fractions decomposition can be obtained systematically, but we will adopt a guess and check method to find <span class="process-math">\(A,\ B,\ C\text{.}\)</span>  To make our guess a little more educated, the following fact can be employed.  You can make peace with this in your own closet.</div>
 </div>
-<div class="para" id="SECTIONPartFrac-6-17">If the degree of <span class="process-math">\(t(x)\)</span> is less than the degree of <span class="process-math">\(p(x)\cdot q(x)\cdot r(x)\text{,}\)</span> then <span class="process-math">\(A,B,C\)</span> can be chosen with <span class="process-math">\(\deg( A)\lt \deg(p), \deg(B)\lt \deg(q),
+<div class="para" id="SECTIONPartFrac-5-17">If the degree of <span class="process-math">\(t(x)\)</span> is less than the degree of <span class="process-math">\(p(x)\cdot q(x)\cdot r(x)\text{,}\)</span> then <span class="process-math">\(A,B,C\)</span> can be chosen with <span class="process-math">\(\deg( A)\lt \deg(p), \deg(B)\lt \deg(q),
 \deg(C)\lt \deg(r)\text{.}\)</span>
 </div>
 <article class="example example-like" id="EXAMPLEPFD1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.4.4</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.3.4</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="EXAMPLEPFD1-1">
 <div class="para">Recall we had</div>
@@ -1356,9 +1370,9 @@ r(x)}=\frac{A\left(x\right)}{p\left(x\right)}+\frac{B\left(x\right)}{q\left(x\ri
 }+\frac{1}{900}{\mathrm{ln} \left(y-10\right)\ }+c
 \end{equation*}
 </div>
-</div></article><div class="para" id="SECTIONPartFrac-6-19">The PFD is Algebra, not Calculus, but as the problems and examples above show it can be very tedious algebra. There are shortcuts to the process which can eliminate some of the tedium, but the problem with shorcuts is that if you do not thoroughly understand the underlying goal it is all too easy to mess up the computation. As a rule, you should not start using computational shortcuts until you have thoroughly mastered the full calculation.</div>
+</div></article><div class="para" id="SECTIONPartFrac-5-19">The PFD is Algebra, not Calculus, but as the problems and examples above show it can be very tedious algebra. There are shortcuts to the process which can eliminate some of the tedium, but the problem with shorcuts is that if you do not thoroughly understand the underlying goal it is all too easy to mess up the computation. As a rule, you should not start using computational shortcuts until you have thoroughly mastered the full calculation.</div>
 <article class="example example-like" id="EXAMPLEHeaviCover"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Heaviside’s Cover-up Method.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Heaviside’s Cover-up Method.</span>
 </h4>
 <div class="para logical" id="EXAMPLEHeaviCover-2">
 <div class="para">Suppose we wish to find the partial fractions decomposition of <span class="process-math">\(\frac{3x+1}{(x-1)(x-2)(x-5)}\text{.}\)</span>  As before, we have</div>
@@ -1431,8 +1445,8 @@ C=\frac{\left(3\right)5+1}{(5-1)(5-2)(\text{covered})}=\frac{4}{3},
 </div>
 <div class="para">Heaviside’s Method would not work because <span class="process-math">\((x-1)^2\)</span> is not linear.</div>
 </div>
-<div class="para" id="EXAMPLEHeaviCover-7-4">Try it and see what goes wrong.</div></aside><div class="para" id="EXAMPLEHeaviCover-8"> This trick is known as <dfn class="terminology">Heaviside’s Cover-Up Method (HCUM)</dfn>. It is well known, and can be used to find the PFD of a rational function as long as the denominator can be factored into distinct linear factors.</div></article><div class="para" id="SECTIONPartFrac-6-21">In the previous partial fractions decompositions, we started with a rational function where the degree of the numerator was less than the degree of the denominator and where the factors in the denominator were linear.  In this section, we will expand our techniques to encompass other situations.</div>
-<div class="para logical" id="SECTIONPartFrac-6-22">
+<div class="para" id="EXAMPLEHeaviCover-7-4">Try it and see what goes wrong.</div></aside><div class="para" id="EXAMPLEHeaviCover-8"> This trick is known as <dfn class="terminology">Heaviside’s Cover-Up Method (HCUM)</dfn>. It is well known, and can be used to find the PFD of a rational function as long as the denominator can be factored into distinct linear factors.</div></article><div class="para" id="SECTIONPartFrac-5-21">In the previous partial fractions decompositions, we started with a rational function where the degree of the numerator was less than the degree of the denominator and where the factors in the denominator were linear.  In this section, we will expand our techniques to encompass other situations.</div>
+<div class="para logical" id="SECTIONPartFrac-5-22">
 <div class="para">For example, suppose the degree of the numerator is not less than the degree of the denominator.  If this is the case, then we can perform long division first and then find the partial fractions decomposition of the remainder.  For example, suppose we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1440,7 +1454,7 @@ C=\frac{\left(3\right)5+1}{(5-1)(5-2)(\text{covered})}=\frac{4}{3},
 \end{equation*}
 </div>
 <div class="para">We first perform long division of the original rational function.</div>
-<div class="displaymath process-math" id="SECTIONPartFrac-6-22-2">
+<div class="displaymath process-math" id="SECTIONPartFrac-5-22-2">
 \begin{align}
 \frac{x^3-2x+1}{x^2+x-6}&amp;
 =x-1+\frac{5x-5}{x^2+x-6}\notag\\
@@ -1448,21 +1462,21 @@ C=\frac{\left(3\right)5+1}{(5-1)(5-2)(\text{covered})}=\frac{4}{3},
 \end{align}
 </div>
 </div>
-<div class="para" id="SECTIONPartFrac-6-23">We can now perform a partial fractions decomposition on the remaining fraction.</div>
+<div class="para" id="SECTIONPartFrac-5-23">We can now perform a partial fractions decomposition on the remaining fraction.</div>
 <article class="problem example-like" id="PROBLEM"><h4 class="heading">
-<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.4.6</span><span class="period">.</span>
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.2.3.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="PROBLEM-2">Use HCUM to complete the decomposition in <a href="SECTIONPartFrac.html#SECTIONPartFrac-6-22-2" class="xref" data-knowl="./knowl/xref/EQUATIONHeaviNotLowest.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.43">(19.43)</a>.</div></article><article class="example example-like" id="EXAMPLEHeaviNonLinear"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">The PFD With Nonlinear Factors in the Denominator.</span>
+<div class="para" id="PROBLEM-2">Use HCUM to complete the decomposition in <a href="SECTIONPartFrac.html#SECTIONPartFrac-5-22-2" class="xref" data-knowl="./knowl/xref/EQUATIONHeaviNotLowest.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.43">(19.43)</a>.</div></article><article class="example example-like" id="EXAMPLEHeaviNonLinear"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">The PFD With Nonlinear Factors in the Denominator.</span>
 </h4>
 <div class="para logical" id="EXAMPLEHeaviNonLinear-2">
 <div class="para">What about something like</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PartialFractionDecomp.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \frac{3x+2}{x^2\left(x-1\right)}
 \end{equation*}
 </div>
-<div class="para">Since this function satisfies all of the conditions of <a href="SECTIONPartFrac.html#PartialFractionDecomp" class="xref" data-knowl="./knowl/xref/PartialFractionDecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 19.2.4.3: The Partial Fraction Decomposition (PFD)">Theorem 19.2.4.3</a> we can still decompose it into partial fractions. However since <span class="process-math">\(x^2\)</span> is not linear we can’t use Heaviside’s Method.</div>
+<div class="para">Since this function satisfies all of the conditions of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "PartialFractionDecomp" missing or not unique]</code> we can still decompose it into partial fractions. However since <span class="process-math">\(x^2\)</span> is not linear we can’t use Heaviside’s Method.</div>
 </div>
 <div class="para logical" id="EXAMPLEHeaviNonLinear-3">
 <div class="para">Recall that in the decomposition, the numerators in the individual terms can be chosen so that the degrees are less than the degrees in the denominators.  This being said, we make the following educated guess as to the form of the partial fractions decomposition.</div>
@@ -1537,9 +1551,9 @@ C=5
 \end{equation*}
 </div>
 </div>
-<div class="para" id="EXAMPLEHeaviNonLinear-8">Notice in this example that we really needed to look at the most general possible polynomial of degree one less than the denominators in the partial fractions decomposition; we would not have obtained the correct answer otherwise.</div></article><aside class="aside aside-like" id="SECTIONPartFrac-6-26"><h4 class="heading"><span class="title">Comment.</span></h4>
-<div class="para" id="SECTIONPartFrac-6-26-2">This problem shows that we really need to use the most general polynomial of degree one less than the denominators in the partial fractions decomposition.</div></aside><article class="exercise exercise-like" id="EXERCISEHeaviNonLinear"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.4.8</span><span class="period">.</span>
+<div class="para" id="EXAMPLEHeaviNonLinear-8">Notice in this example that we really needed to look at the most general possible polynomial of degree one less than the denominators in the partial fractions decomposition; we would not have obtained the correct answer otherwise.</div></article><aside class="aside aside-like" id="SECTIONPartFrac-5-26"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para" id="SECTIONPartFrac-5-26-2">This problem shows that we really need to use the most general polynomial of degree one less than the denominators in the partial fractions decomposition.</div></aside><article class="exercise exercise-like" id="EXERCISEHeaviNonLinear"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.2.3.8</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="EXERCISEHeaviNonLinear-1-1">
 <div class="para"> Show that if we tried the following decomposition</div>
@@ -1550,7 +1564,7 @@ C=5
 </div>
 <div class="para">then no values for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> would satisfy this.</div>
 </div></article><article class="example example-like" id="EXAMPLEPFD2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.4.9</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.3.9</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="EXAMPLEPFD2-1">
 <div class="para">Suppose we need to compute</div>
