@@ -4434,7 +4434,7 @@
         </p>
         <problem xml:id="DRILLLogisticPartFrac2">
           <p>
-            Confirm <xref ref="EQUATIONLogisticPartFrac2"></xref>.
+            Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>.
           </p>
         </problem>
 
@@ -4993,13 +4993,17 @@
           terms.</q> In this context that means that the degree (the
           value of the largest exponent) of the numerator must be
           strictly less than the degree of the denominator. In this
-          example <m>\deg{(x-2)(x-3)}=\deg{x^2-5x+6}=\deg{x^2}=2</m>,
-          so the PFD doesn<rsq/>t apply.
+          example the degree of the numerator is
+          <m>\deg\left((x-2)(x-3)\right)=\deg\left(x^2-5x+6\right)=2</m>
+          which is the same as  the degree of the denominator:
+          <m> \deg\left(x^2\right)=2</m>.
+          So the PFD doesn<rsq/>t apply.
         </p>
         <p>
-          This looks at first like it will be a major obstacle but all
-          that is really required is that we do the polynomial
-          division indicated. In this case that means computing <men
+          At first this looks like it will be a major obstacle but it
+          really isn<rsq/>t too bad. We simply need to do the
+          polynomial division indicated. In this case that means
+          computing <men
           xml:id="EQUATIONPFDUnreduced1">\frac{x^2}{x^2-5x+6} = 1+
           \frac{5x-6}{(x-2)(x-3)}</men>.
         </p>
@@ -5015,15 +5019,23 @@
         </p>
       </problem>
 
+      <aside>
+        <title>Note to self</title>
+        <p>
+          We need a representative and instructive set of problems
+          here.
+        </p>
+      </aside>
 
-      <example>
+
+      <example xml:id="EXAMPLEHeaviNonLinear1">
         <p>
           Heaviside<rsq/>s method will also fail on this function:
           <me>\frac{x^2+x-3}{x^2(x-1)}</me>. 
           If you  apply it you<rsq/>ll get 
           <me>\frac{x^2+x-3}{x^2(x-1)} = \frac{3}{x^2} +
           \frac{-1}{x-1}</me> 
-          which is also incorrect. Check it and see. 
+          which is incorrect. Check it and see. 
         </p>
         
         <!--   <p> -->
@@ -5056,111 +5068,104 @@
         <!-- </p> -->
         <p>
           The problem here is the factor <m>x^2</m> in the
-          denominator. If you look back at the problems we<rsq/>ve
-          done so far you<rsq/>ll see that in every case the fractions
-          in our decomposition (the right hand side) included a term
-          with every possible factor of the denominator of our
-          rational function (the left hand side). In this case clearly
-          both <m>x^2</m> and <m>x-1</m> are factors of <m>x^2(x-1)</m>,
-          so the decomposition <me>\frac{x}{x^2(x-1)} = \frac{A}{x^2}
-          + \frac{B}{x-1}</me> is good as far as it goes. But
-          <m>x</m> is also a factor so we need to find the constants
-          <m>A</m>, <m>B</m>, and <m>C</m> in the decomposition 
-          <me>\frac{x}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2}+
-          \frac{C}{x-1}</me>.
-        </p>
-        <p>
-          The correct values are <m>A=2</m>, <m>B=3</m>, and
-          <m>C=-1</m>. Notice that Heaviside<rsq/>s method correctly
-          identified both <m>B</m> and <m>C</m> so all we have to do
-          is find <m>A</m>. There is hope.
-        </p>
-        <p>
-          To find <m>A</m> we set up  
+          denominator. If you look back at the problems and examples
+          we<rsq/>ve looked at so far you<rsq/>ll see that in every
+          case every possible factor which appeared in the denominator
+          of the fraction on the left side also appeared in one of the
+          denominators on the right side. In this case clearly both
+          <m>x^2</m> and <m>x-1</m> are factors of <m>x^2(x-1)</m>,
+          but <m>x</m> is also a factor so the correct decomposition
+
           <me>
             \frac{x}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2}+
-            \frac{C}{x-1} 
-          </me> 
-          as before and compute <m>B=3</m> and <m>C=-1</m> as
-            before. So
+            \frac{C}{x-1}
+            </me>, 
+
+            and we need to find the constants <m>A</m>, <m>B</m>, and
+            <m>C</m>.
+        </p>
+        <p>
+          The values <m>B=3</m>, and <m>C=-1</m> can still be found
+          using the HCUM, so we have
+          <men xml:id="EQUATIONHeaviIdentity1">
+            \frac{x}{x^2(x-1)} = \frac{A}{x} +
+            \frac{3}{x^2}- \frac{1}{x-1}
+            </men>.
+        </p>
+        <p>
+          To find <m>A</m> recall that <xref
+          ref="EQUATIONHeaviIdentity1">equation</xref> is an identity
+          so it is true regardless of the value of <m>x</m>. Since
+          <m>A</m> is the only parameter left we can find it by
+          setting <m>x=2</m> (or anything else). This gives
+          <m>
+            \frac{2}{2^2(2-1)} = \frac{A}{2} +
+            \frac{3}{2^2}- \frac{1}{2-1}
+            </m>, or <m>A=2</m>.
+            So the full decomposition is 
             <me>
-              \frac{x}{x^2(x-1)} = \frac{A}{x} +
-              \frac{3}{x^2}- \frac{1}{x-1}
+              \frac{x}{x(x-1)} -
+              \frac{3}{x}+ \frac{x}{x-1} =  A
               </me>.
-              
-              Notice that this last equation is still and indentity
-              and so it is true regardless of the value of <m>x</m>.
-              The obvious thing to do then is simply set <m>x</m>
-              equal to any number except zero or one (why?) and solve
-              for <m>A</m>.
-              <p>
-                Taking <m>x=2</m> we have
-                <md>
-                  <mrow>              \frac{2}{2^2(2-1)} = \frac{A}{2} +
-                  \frac{3}{2^2}- \frac{1}{2-1}
-                  </mrow>
-              </md>            
-              </p>
-              clear all of the
-              fractions and isolate <m>A</m> on one side of the
-              equation.  Since <m>A</m> is a constant everything
-              involving an <m>x</m> will cancel and the value of
-              <m>A</m> will be left.
         </p>
-        <p>
-          Solving for <m>A</m> we have
-          <me>
-            \frac{x}{x(x-1)} -
-            \frac{3}{x}+ \frac{x}{x-1} =  A
-            </me>.
-
-        </p>
-        <p>
-
-        </p>
-
-
-
       </example>
       <exercise>
         <task>
           <statement>
             <p>
-              Use the Heaviside<rsq/>s Cover<ndash/>up method to show
-              that in the decomposition
-              <me>\frac{x}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2}+
-              \frac{C}{x-1}</me>
-              <m>B=</m>
-              and <m>C</m> 
-
+              Explain why  the  HCUM can be used  to find  <m>B</m> and
+              <m>C</m> in <xref ref="EXAMPLEHeaviNonLinear1"></xref>.
             </p>
           </statement>
+          <hint>
+            <p>
+              It<rsq/>s the same reason it worked in <xref
+              ref="EQUATIONLogisticPartFrac2">equation</xref>. 
+            </p>
+          </hint>
         </task>
         <task>
           <statement>
             <p>
-              The Cover<ndash/>up method won<rsq/>t find <m>A</m> for us
-              (yet). Find <m>A</m> by any method you can. 
+              Confirm that you can solve <xref
+              ref="EQUATIONHeaviIdentity1">equation</xref> for
+              <m>A</m> by setting <m>x=\pm2</m>, <m>x=\pm 3 </m>, and 
+              <m>x=\pm 10</m>. 
+            </p>
+            <p>
+              There are two values of <m>x</m> which will not allow
+              us to compute <m>A</m>. What are they? 
             </p>
           </statement>
         </task>
 
       </exercise>
 
-      <exercise>
-        <title>Find the Pattern</title>
+      <exercise xml:id="PROBLEMPFDDistinctLinearFactors">
 
         <introduction>
           <p>
-            Compute the coefficients of the  PFD indicated.
+            Use the HCUM to
+            compute the coefficients of the  PFD indicated.
           </p>
         </introduction>
         <task>
           <statement>
             <p>
-              Find <m>B</m>, <m>C</m>, and <m>D</m>.
-              <me>\displaystyle \frac{1}{x^2(x-1)(x-3)}=\frac{A}{x} +
-              \frac{B}{x^2} + \frac{C}{x-1} + \frac{D}{x-3}</me>
+              Find <m>B</m>, <m>C</m>, and <m>F</m>.
+
+              <md>
+
+                <mrow>\displaystyle \frac{1}{x^2(x-1)(x-3)^3}=\amp{}\frac{A}{x} +
+                \frac{B}{x^2} + \frac{C}{x-1}
+                </mrow>
+                <mrow>
+                \amp{}+ \frac{D}{x-3} +
+                \frac{E}{(x-3)^2}
+                +
+                \frac{F}{(x-3)^3}
+                </mrow>
+              </md>
             </p>
           </statement>
         </task>
@@ -5199,6 +5204,133 @@
 
 
       </exercise>
+
+      <example xml:id="EXAMPLEPFDDistinctLin">
+        <title>The PFD With Linear Distinct Factors</title>
+
+        <p>
+          Let<rsq/>s finish up the decomposition of 
+          <me>\displaystyle \frac{x}{(x-1)^2(x+2)^2}= \frac{A}{x-1} +
+          \frac{B}{(x-1)^2} +\frac{C}{x+2} +\frac{D}{(x+2)^2} </me>
+          from part (b) of <xref
+          ref="PROBLEMPFDDistinctLinearFactors"></xref>. You should
+          have found that <m>B=\frac19</m> and <m>D=\frac{-2}{9}</m> so that 
+          <me>\displaystyle \frac{x}{(x-1)^2(x+2)^2}= \frac{A}{x-1} +
+          \frac{\frac19}{(x-1)^2} +\frac{C}{x+2}
+          -\frac{\frac29}{(x+2)^2} </me>
+          When we reached this point in <xref
+          ref="EXAMPLEHeaviNonLinear1"></xref> we simply chose a value
+          for <m>x</m>. We could do that here as well but we<rsq/>d
+          have to  choose two values for
+          <m>x</m> thereby  generating a pair of equations to solve
+          and  we<rsq/>ve already seen that there are more efficient
+          methods available that solving a system   of
+          equations. Instead we<rsq/>ll isolate all of the terms with
+          our unknowns on one side of the equation, thus:
+          <men xml:id="EQUATIONPFDDistLin1">\displaystyle \frac{x}{(x-1)^2(x+2)^2} -
+          \frac{\frac19}{(x-1)^2} +\frac{\frac29}{(x+2)^2} =          \frac{A}{x-1}  +\frac{C}{x+2}
+          </men>
+        </p>
+        <p>
+          Now look closely at the right side of <xref
+          ref="EQUATIONPFDDistLin1">equation</xref>. Do you see that
+          this is the PFD of <em>some</em> rational function whose
+          denominator is <m>(x-1)(x+2)</m>? That is, the right side of
+          <xref ref="EQUATIONPFDDistLin1">equation</xref>  is the PFD
+          of a rational function of the form 
+          <me>\frac{P(x)}{(x-1)(x+2)}</me> for some polynomial <m>P(x)</m>. And so is  left side
+          (why?). Therefore it must be that 
+          <men xml:id="EQUATIONPFDDistLin1">\displaystyle \frac{x}{(x-1)^2(x+2)^2} -
+          \frac{\frac19}{(x-1)^2} +\frac{\frac29}{(x+2)^2} =  \frac{P(x)}{(x-1)(x+2)}
+          </men>
+          for some polynomial <m>P(x)</m>, and if we can find
+          that polynomial we can compute <m>A</m> and <m>C</m> by the
+          HCUM.
+        </p>
+        <p>
+          We can find <m>P(x)</m> by essentially the same method we
+          used to find the constant <m>A</m> in <xref
+          ref="EXAMPLEHeaviNonLinear1"></xref>. First we clear the
+          fraction on the right
+          <men xml:id="EQUATIONPFDDistinctLin2">
+            \frac{x}{(x-1)(x+2)} -
+            \frac19
+            \left(
+              \frac{x+2}{x-1}
+            \right)
+            +\frac29
+            \left(
+              \frac{x-1}{x+2}
+\right) =  P(x)
+          </men>
+          Since the left side is guaranteed to reduce to the
+          polynomial it is tempting to add the three fractions on the
+          left together by finding a common denominator
+          (<m>(x-1)(x+2)</m> will work). Then it must be that there will be a factor
+          in the top that will cancel with the denominator (since we
+          have to end up with the polynomial <m>P(x)</m>)
+        </p>
+        <p>
+          That will work. Good luck. 
+        </p>
+        <p>
+          Instead we<rsq/>re going to make judicious use of the
+          knowledge that we must end up with a polynomial. We<rsq/>ll
+          begin by thinking about the expression in the second term on
+          the left:
+          <m>\frac{x+2}{x-1}</m>. If we perform this division we get
+          <me>\frac{x+2}{x-1} = 1 +\frac{3}{x-1}</me>. Similarly if we
+          computing the division in the third term we get
+          <m>\frac{x-1}{x+2}= 1-\frac{3}{x+2}</m>. Putting these back
+          into <xref ref="EQUATIONPFDDistinctLin2">equation</xref> we
+          have 
+          <me>
+            \frac{x}{(x-1)(x+2)} -
+            \frac19
+            \left(
+            1 +\frac{3}{x-1}
+            \right)
+            +\frac29
+            \left(
+            1-\frac{3}{x+2}
+            \right) =  P(x)
+</me>
+or
+<me>
+  \frac{x}{(x-1)(x+2)} -
+  \frac19
+  -\frac{\frac13}{x-1}
+  +\frac29
+  -\frac{\frac23}{x+2}
+  =  P(x)
+  </me>.
+   Since we must get a polynomial we can it must be that the fractions
+   in this last equation must sum to zero so we can ignore them and
+   conclude that 
+   our  polynomial is given by the other terms. So
+   <me>P(x)=-\frac19 + \frac29 =\frac19 </me>.
+        </p>
+        <p>
+          To finish the decomposition we observe that 
+          <me>\frac{\frac19 }{(x-1)(x+2)} =
+          \frac{A}{x-1}+\frac{C}{x+2}</me> 
+          and from the HCUM we see that <m>A=\frac{1}{27}        </m>
+          and <m>C=-\frac19</m>.
+        </p>
+        <p>
+          Having found all of the constants we conclude that
+          of 
+          <me>\frac{x}{(x-1)^2(x+2)^2}= \frac{\frac{1}{27}}{x-1} +
+          \frac{\frac19 }{(x-1)^2} -\frac{\frac19}{x+2} -\frac{\frac29
+          }{(x+2)^2} 
+          </me>.
+        </p>
+
+
+
+
+      </example> 
+
     </subsection>
 
 
