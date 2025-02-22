@@ -1,5 +1,6 @@
 (defvar ProjectFiles 
   (list
+   "/home/ecb5/Dropbox/CalcText/Boman/IntCalc/source/PFD.ptx"
    "/home/ecb5/Dropbox/CalcText/Boman/IntCalc/source/IntegrationMethods.ptx"
    "/home/ecb5/Dropbox/CalcText/Boman/IntCalc/source/ApproximationMethods-Differential.ptx"
    "/home/ecb5/Dropbox/CalcText/Boman/IntCalc/source/backmatter.ptx"
