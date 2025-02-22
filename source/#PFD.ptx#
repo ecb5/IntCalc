@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='utf-8'?>  
+<chapter xml:id="CHAPTERPFDTheory" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The  Theory Behind the  Partial Fraction Decomposition  </title>
+
+  <p>
+    Previously, we provided a number of ways to compute the
+    coefficients in the partial fractions decomposition of a rational
+    function.  In all those instances, we assumed that a rational
+    function had such a decomposition.  The fact that there is a
+    partial fractions decomposition is actually an algebraic result
+    not a calculus one, but we will provide some rationale as to why
+    this is true.  Let's start with something relatively easy to see
+    where the ideas come from.
+  </p>
+
+  <p>
+    Suppose <m>a,b</m> are two distinct numbers.  Then
+    <me>\left(x-b\right)-\left(x-a\right)=a-b</me> 
+    so
+    <men xml:id="EQUATIONPFD2">
+      \left(\frac{1}{a-b}\right)\left(x-b\right)+\left(\frac{1}{b-a}\right)\left(x-a\right)=1
+    </men>
+    and finally
+    <me>
+    \frac{1}{\left(x-a\right)\left(x-b\right)}=\frac{\left(\frac{1}{a-b}\right)\left(x-b\right)+\left(\frac{1}{b-a}\right)\left(x-a\right)}{\left(x-a\right)\left(x-b\right)}=\frac{\left(\frac{1}{a-b}\right)}{x-a}+\frac{\left(\frac{1}{b-a}\right)}{x-b}
+    </me> 
+    </p>
+    <p>
+      <xref ref="EQUATIONPFD2">Equation</xref> is a special case of a
+      more general fact stated below:
+    </p>
+
+    <p>
+      Given two polynomials <m>p(x)</m> and <m>q(x)</m> with no common
+      factors (except trivial ones such as constants), then there are
+      polynomials <m>r(x)</m> and <m>s(x)</m> such that
+    </p>
+      
+    <p>
+      <me>r\left(x\right)p\left(x\right)+s\left(x\right)q\left(x\right)=1</me> 
+    </p>
+    <p>
+      It should be noted that having no common non<ndash/>trivial factors is
+      the equivalent to having no common roots (real or complex).  We
+      will not prove this result here, but we will note that its
+      derivation is exactly the same as the following number theory
+      result (which we will not prove either).
+    </p>
+
+    <p>
+      Let <m>p</m> and <m>q</m> be two positive integers with
+      <m>{\mathrm{gcd} (p,q) }=1</m> [i.e.: <m>p</m> and <m>q</m>
+      have no common factors, except for the trivial factor 1].  Then
+      there exist integers <m>r, s</m> with <me>r\cdot p+s\cdot
+      q=1</me>
+    </p>
+
+    <p>
+      As an example, notice that <m>{\mathrm{gcd} \left(9, \
+      7\right)=1 }</m>, and so <m>-3\cdot 9+4\cdot 7=1</m>.  There is
+      a systematic way to find the integers <m>r, s</m> (and
+      analogously, the polynomials <m>r\left(x\right), s(x)</m>) in
+      general, but we will just use the fact that these exist for our
+      purposes.  With the above polynomial result in place, we can
+      manipulate as we did above
+
+      <me>1=r\left(x\right)p\left(x\right)+s\left(x\right)q\left(x\right)</me> 
+
+      <me>\frac{1}{p\left(x\right)q\left(x\right)}=\frac{r\left(x\right)p\left(x\right)+s\left(x\right)q\left(x\right)}{p\left(x\right)q\left(x\right)}=\frac{s\left(x\right)}{p\left(x\right)}+\frac{r\left(x\right)}{q\left(x\right)}</me> 
+      </p>
+      <p>
+
+
+        Thus if <m>f(x)</m> is any polynomial, then we have
+
+          
+        <me>\frac{f(x)}{p\left(x\right)q\left(x\right)}=\frac{f(x)s\left(x\right)}{p\left(x\right)}+\frac{f(x)r\left(x\right)}{q\left(x\right)}</me> 
+        </p>
+
+        <p>
+          This says that our goal of finding a partial fractions
+          decomposition is theoretically possible.  Before we make our
+          <q>educated guess</q> as to what the numerators will look
+          like, we will make an observation that might make our guess
+          even more educated and narrow our search.
+        </p>
+
+        <p>
+          Observation: Notice that if the degree of <m>f(x)</m> is
+          less than the degree of <m>p\left(x\right)q(x)</m>, then we
+          can assume that the degree of the numerators in the partial
+          fractions will be less than the degrees of the denominators.
+        </p>
+
+        <p>
+          If you think about this, it makes sense.  First, we should
+          point out that the numerators in the partial fractions are
+          not unique, but there is no sense introducing higher degree
+          terms in the numerators that would just cancel out anyway
+          when these fractions are combined.  For example, if we had
+
+            
+          <me>\frac{3x-4}{\left(x-1\right)\left(x+2\right)}=\frac{ax+b}{x-1}+\frac{cx+d}{x+2}</me> 
+          then
+            
+          <me>\frac{3x-4}{\left(x-1\right)\left(x+2\right)}=\frac{\left(ax+b\right)\left(x+2\right)+(cx+d)(x-1)}{\left(x-1\right)\left(x+2\right)}=\frac{\left(a+c\right)x^2+\left(2a+b-c+d\right)x+(2b-d)}{\left(x-1\right)\left(x+2\right)}</me> 
+          </p>
+
+          <p>
+            We might as well assume that <m>a=c=0</m> and try to find <m>b, d</m> such that 
+
+            <me>3x-4=\left(b+d\right)x+(2b-d)</me> 
+          </p>
+
+          <p>
+            Again, we want to point out that this is not necessary,
+            but it makes for a more <q>educated</q> guess and cuts out
+            some unnecessary work.
+          </p>
+              
+          <p>
+            The same ideas can be extended if we have three or more
+            polynomials in the denominator which pairwise have no
+            non<ndash/>trivial factors.
+          </p>
+
+          <theorem xml:id="THEOREMPFDThreeFactor">
+            <title>The PFD with Three Factors</title>
+            <p>
+              Suppose we have three polynomials
+              <m>n\left(x\right),p\left(x\right), q\left(x\right)</m>
+              which pairwise have no non-trivial common factors.  Then
+              there exist polynomials
+              <m>r\left(x\right),s\left(x\right),t(x)</m> with
+              <me>\frac{1}{n\left(x\right)\cdot p\left(x\right)\cdot
+              q(x)}=\frac{r\left(x\right)}{n\left(x\right)}+\frac{s\left(x\right)}{p\left(x\right)}+\frac{t\left(x\right)}{q\left(x\right)}</me>
+            </p>
+          </theorem>
+
+
+          <exercise xml:id="PROBLEMPFDThreeFactor">
+
+            <statement>
+              <p>
+                Prove Theorem <xref ref="THEOREMPFDThreeFactor"></xref>.
+              </p>
+
+            </statement>
+            <hint>
+              <p>
+                We can write <m>\frac{1}{n\left(x\right)\cdot p\left(x\right)\cdot q(x)}=\frac{r\left(x\right)}{n\left(x\right)}+\frac{m\left(x\right)}{p\left(x\right)\cdot q(x)}=\frac{r\left(x\right)}{n\left(x\right)}+m\left(x\right)\left(\frac{1}{p\left(x\right)\cdot q\left(x\right)}\right)</m> for some polynomials <m>r\left(x\right), m(x)</m>.
+              </p>
+            </hint>
+          </exercise>
+
+          <p>
+            Since the goal in a partial fractions decomposition is
+            to split a rational function into as many <q>simpler</q>
+            pieces as possible, we will explore what can happen.
+            We will use specific examples to illustrate these
+            situations, but the ideas involved apply in general.
+          </p>
+
+          <p>
+            We already took care of the case where we have
+            distinct linear factors.  What if we have a factor
+            which is repeated.  For example, suppose we have
+            <me>\frac{1}{x^3\left(x-1\right)}</me> 
+          </p>
+
+          <p>
+            Since <m>x^3</m> and <m>3x-1</m> have no non trivial common factors, then we already know we can write
+            <me>\frac{1}{x^3\left(x-1\right)}=\frac{Ax^2+Bx+C}{x^3}+\frac{D}{x-1}</me> 
+            where the constants <m>A,B,C,D</m> need to be determined by one of the methods we employed before.  Of course, this can be rewritten as
+            <me>\frac{1}{x^3\left(x-1\right)}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x^3}+\frac{D}{x-1}</me> 
+
+            which represents our partial fractions decomposition.
+          </p>
+
+                <p>
+                  We can employ a similar idea if we have something like <m>\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}</m>
+                </p>
+
+                <p>
+                  In this case we have
+                    
+                  <me>\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}=\frac{Ax^2+Bx+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}</me>. 
+                </p>
+
+                <p>
+                  If we rewrite this as
+                    
+                  <me>\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}=\frac{A{[\left(x+1)-1\right]}^2+B[\left(x+1\right)-1]+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}</me> 
+                  <me>=\frac{{A\left(x+1\right)}^2-2A\left(x+1\right)+A+B\left(x+1\right)-B+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}</me> 
+                  <me>=\frac{A}{x+1}+\frac{-2A+B}{{\left(x+1\right)}^2}+\frac{-2A-B+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}</me> 
+                  </p>
+
+                  <p>
+                    If we relabel things, we get our partial fractions decomposition
+                    <me>\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}=\frac{A}{x+1}+\frac{B}{{\left(x+1\right)}^2}+\frac{C}{{\left(x+1\right)}^3}+\frac{D}{x-1}</me> 
+                    where <m>A,B,C,D</m> are constants that need to be determined using methods we learned before.
+                    </p>
+                    <p>
+                      Suppose our repeated factor is not linear, say we had <m>\frac{1}{{\left(x^2+1\right)}^2x}</m>.  By our general result above, we have
+
+                      <me>\frac{1}{{\left(x^2+1\right)}^2x}=\frac{Ax^3+Bx^2+Cx+D}{{\left(x^2+1\right)}^2}+\frac{E}{x}</me> 
+                    </p>
+
+                    <p>
+                      Employing a similar trick to what we did with a repeated linear factor, we have
+
+                        
+                      <me>\frac{1}{{\left(x^2+1\right)}^2x}=\frac{A\left(x^3+x\right)+B\left(x^2+1\right)+Cx-Ax-B+D}{{\left(x^2+1\right)}^2}+\frac{E}{x}</me> 
+                      <me>=\frac{Ax\left(x^2+1\right)+B\left(x^2+1\right)+\left(C-A\right)x+D-B}{{\left(x^2+1\right)}^2}+\frac{E}{x}</me> 
+                      <me>=\frac{Ax+B}{x^2+1}+\frac{\left(C-A\right)x+D-B}{{\left(x^2+1\right)}^2}+\frac{E}{x}</me> 
+                      </p>
+
+                      <p>
+                        Relabeling, we have our partial fractions decomposition
+                      </p>
+
+                      <p>
+                        <me>\frac{1}{{\left(x^2+1\right)}^2x}=\frac{Ax+B}{x^2+1}+\frac{Cx+D}{{\left(x^2+1\right)}^2}+\frac{E}{x}</me> 
+
+                        where the coefficients <m>A,B,C,D,E</m> can be
+                        determined by one of our previous methods.
+                      </p>
+
+                        <p>
+                          We will stop at linear and quadratic factors
+                          even though the ideas we just illustrated
+                          would work for them as well.  The fact is
+                          that any polynomial of degree three or
+                          higher can be factored into two or more
+                          other polynomials of lesser degree.  This
+                          says that linear and quadratic factors are
+                          the only possible irreducible factors.  The
+                          reason that this is true follows by
+                          extending our roots to complex numbers as
+                          well.  There are a couple of reasons for
+                          doing this.
+                        </p>
+
+                        <p>
+                          First: The Fundamental Theorem of Algebra,
+                          says that any polynomial <m>q(x)</m> with
+                          real coefficients can factored into the form
+                          <m>q\left(x\right)=a_n\left(x-r_1\right)\left(x-r_2\right)\cdots
+                          \left(x-r_n\right)</m> where
+                          <m>r_1,r_2,\dots ,r_n</m> are the (possibly
+                          complex) roots of <m>q(x)</m>.
+                        </p>
+
+                        <p>
+                          Second: If <m>r=a+bi</m> is a root of
+                          <m>q(x)</m> then its complex conjugate
+                          <m>\overline{r}=a-bi</m> is also a root.
+                        </p>
+
+                        <p>
+                          When we multiply two such linear factors together, we have
+                          <me>\left(x-\left(a+bi\right)\right)\left(x-\left(a-bi\right)\right)=x^2-2ax+(a^2+b^2)</me> 
+                          which is a quadratic factor with real coefficients.
+                        </p>
+
+                        <p>
+                          The upshot of all this is that if we want to
+                          find the partial fractions decomposition of
+                          a rational function
+                          <m>\frac{p\left(x\right)}{q\left(x\right)}</m>,
+                          we do the following:
+                        </p>
+                        <algorithm xml:id="ALGORITHMPFD">
+                          <title>The Partial Fraction Decomposition</title>
+                          <p>
+                            <ol  marker="(1)">
+                              <li>
+                                Use long division to ensure that the
+                                degree of the numerator is less than the
+                                degree of the denominator.
+                              </li>
+                              <li>
+                                Factor the denominator completely (over
+                                the real numbers).  These irreducible
+                                factors will either be linear or
+                                quadratic.
+                              </li>
+                              <li>
+                                For any linear factor of the form
+                                <m>{\left(ax+b\right)}^n</m>, form the
+                                sum
+                                <me>\frac{A_1}{ax+b}+\frac{A_2}{{\left(ax+b\right)}^2}+\dots
+                                +\frac{A_n}{{\left(ax+b\right)}^n}</me>
+                              </li>
+                              <li>
+                                For any quadratic factor of the form
+                                <m>{\left(ax^2+bx+c\right)}^m</m>, form
+                                the sum
+                                <me>\frac{B_1x+C_1}{ax^2+bx+c}+\frac{B_2x+C_2}{{\left(ax^2+bx+c\right)}^2}+\dots
+                                +\frac{B_mx+C_m}{{\left(ax^2+bx+c\right)}^m}</me>
+                              </li>
+                              <li>
+                                Find all the coefficients using one of
+                                the methods we employed before.
+                              </li>
+                            </ol>
+
+</p>
+                        </algorithm>
+
+
+                        <exercise xml:id="PROBLEMPFDBig">
+                          <introduction>
+                            <p>
+                              Write down the form of the partial fractions decomposition for each of the following rational functions.  DO NOT TRY TO DETERMINE THE COEFFICIENTS (unless you have nothing better to do)!
+                            </p>
+                          </introduction>
+                          <task>
+                            <statement>
+                              <p>
+                                <m>\displaystyle\frac{1}{\left(3x+1\right)\left(x-2\right)}</m> 
+                              </p>
+                            </statement>
+                          </task>
+                          <task>
+                            <statement>
+                              <p>
+                                <m>\displaystyle\frac{2x-1}{{\left(x^2+x+1\right)}^3{\left(5x-4\right)}^2}</m> 
+                              </p>
+                            </statement>
+                          </task>
+                          <task>
+                            <statement>
+                              <p>
+                                <m>\displaystyle\frac{x^4}{\left(x^2+1\right){\left(x-1\right)}^2}</m> 
+                              </p>
+                            </statement>
+                          </task>
+                        </exercise>
+
+                      </chapter>
