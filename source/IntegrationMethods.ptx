@@ -5260,7 +5260,7 @@
             <m>P(x)</m> then our first step would be to write down the   right side of
             <xref ref="EQUATIONPFDDistLin1">equation</xref>. 
             Therefore it must be that 
-            <men xml:id="EQUATIONPFDDistLin1">\displaystyle \frac{x}{(x-1)^2(x+2)^2} -
+            <men xml:id="EQUATIONPFDDistLin2">\displaystyle \frac{x}{(x-1)^2(x+2)^2} -
             \frac{\frac19}{(x-1)^2} +\frac{\frac29}{(x+2)^2} =  \frac{P(x)}{(x-1)(x+2)}
             </men>
             for some polynomial <m>P(x)</m>, and if we can find
@@ -5370,7 +5370,7 @@
                 ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
                 learned from <xref ref="EXAMPLEPFDDistinctLin"></xref>  to compute
                 <me> \int \frac{1}{x^2(x-1)(x-3)^3}\dx{x}</me>
-              </p>
+                </p>
             </statement>
           </task>
           <task>
@@ -5385,6 +5385,7 @@
           </task>
 
         </exercise>
+
       </subsubsection>
 
       <subsubsection xml:id="SUBSUBSECTIONPFDIrreducQuadFac">
@@ -5506,128 +5507,323 @@
         <exercise>
           <task>
             <statement>
-
               <p>
                 Confirm that <xref
-                ref="EQUATIONFirstPFDExample">equation</xref> is correct
-                by getting a common denominator and adding the terms on
-                the right together.
+                ref="EQUATIONFirstPFDExample">equation</xref> is
+                correct by getting a common denominator and adding the
+                terms on the right together.
               </p>
-</statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Compute the integral <m>\displaystyle
-      \int\frac{1}{(x-2)(x^2+1)}\dx{x}
-      </m>.
-    </p>
-</statement>
-</task>
-
-
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Compute the integral <m>\displaystyle
+                \int\frac{1}{(x-2)(x^2+1)}\dx{x}</m>.
+              </p>
+            </statement>
+          </task>
         </exercise>
+        <p>
+          So, at long last here is the full statement of the Partial
+          Fraction Decomposition.
+        </p>
 
         <theorem xml:id="THEOREMPartialFractionDecomp">
-          
           <title>The Partial Fraction Decomposition (PFD)</title>
           <p>
             If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
             polynomials having no non<ndash/>trivial common factors with
             <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
-            polynomials <m>A(x)</m> and <m>B(x)</m>,
-            <m>\deg{A}\lt\deg{Q}</m> and <m>\deg(B)\lt\deg(R)</m>, such
+            polynomials <m>A(x)</m> and <m>B(x)</m>, with 
+            <m>\deg(A)\lt\deg(Q)</m> and <m>\deg(B)\lt\deg(R)</m>, such
             that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
             \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
           </p>
         </theorem>
-
-
         <p>
-          In his PhD dissertation <url
-          href="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
-          visual="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/">
-          Gauss</url> proved that every polynomial can be completely
-          factored into (possibly repeated) linear factors. These days
-          this is known as the rather bombastic name <term>The
-          Fundamental Theorem of Algebra</term>. 
+          You can see why we did not begin this section by stating
+          this theorem. The language is so terse that it is actually
+          hard to recognize this theorem as describing everything we
+          have been through in this section. Nevertheless, <xref
+          ref="THEOREMPartialFractionDecomp"></xref> covers every kind
+          of decomposition we have looked at in this section.
         </p>
 
-        <p>
-          Since we have covered all cases where the denominator of a
-          rational function can be factored into (possibly repeated)
-          linear factors, it appears that we need say no more about
-          integrating such functions via the PFD. 
-        </p>
-        <p>
-          But that is, unfortunately, not true. For the Fundamental
-          Theorem of Algebra to hold we need to allow the polynomial
-          to have <term>complex</term> as apposed to <term>real</term>
-          roots.  That is we need to expand our number system to
-          include the <term>complex numbers <m>\CC </m></term> (a
-          complex number is a real number plus an imaginary
-          number). We first encountered the complex numbers in <xref
-          ref="PROBLEMEulersFormula"></xref> in connection with
-          <term>Euler<rsq/>s Identity</term>. 
-        </p>
-        <example>
+        <paragraphs xml:id="DIGRESSIONComplexPFD">
+          <title>DIGRESSION: </title>
+
           <p>
-            Suppose we want to decompose the rational function
-            <m>\frac{x-2}{x(x^2+1)}</m>. There are no real numbers,
-            <m>a</m> and <m>b</m>, with
-            the property that <m>x^2+1=(x-a)(x-b)</m> but <m>a=i</m>
-            and <m>b=-i</m> (where as before <m>i^2=-1</m>) will work
-            just fine since
-            <me>(x-i)(x+i)=x^2-i^2=x^2-(-1)=x^2+1</me>. 
-          </p>
-          <p>
-            Thus we can use the HCUM to compute
-            <me>\frac{x-2}{x(x^2+1)}=\frac{x-2}{x(x-1)(x+1)} =\frac{-2}{x}+\frac{\frac{i-2}{i(2i)}}{x-i}+\frac{\frac{i+2}{i(-2i)}}{x+i}=
-            \frac{-2}{x}+\frac{\frac{i-2}{-2}}{x-i}+\frac{\frac{-i-2}{-2}}{x+i}
-            =\frac{-2}{x}+\frac{1-\frac12i}{x-i}+\frac{1+\frac12 }{x+1}
-            </me>.
-          </p>
-          <p>
-            But, unfortunately, in this course we confine our attention to the real
-            numbers and treat the complex numbers as a guilty secret,
-            even when using them would make more sense. To get the
-            decomposition back into just the real number we compute
-            the sum <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12
-            }{x+1}</m> as follows
-            <men xml:id="EQUATIONPFDComplex1">
-              \frac{1-\frac12i}{x-i}+\frac{1+\frac12 }{x+1}=2x+1
-              </men>. 
-              Thus our decompostion over the real numbers (rather
-              than the complex numbers is
-              <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
+            In his PhD dissertation <url
+            href="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
+            visual="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/">
+            C. F. Gauss</url> (1777<ndash/>1855) proved that every polynomial can be completely
+            factored into (possibly repeated) linear factors. These days
+            this is known as the rather bombastic name <term>The
+            Fundamental Theorem of Algebra</term>. 
           </p>
 
-        </example>
+          <p>
+            In view of this theorem an obvious question presents
+            itself: <q>Why did we bother with the Irreducible
+            Quadratic case when discussing the Partial Fraction
+            Decomposition?</q> That is, why did we (the authors) tell
+            you that <m>x^2+1</m> can<rsq/>t be factored, when
+            Gauss<rsq/>s theorem clearly says that it can.
+          </p>
+          <p>
+            Recall that in the first paragraph of <xref
+            ref="SUBSUBSECTIONPFDIrreducQuadFac"></xref> we were
+            careful to state that <q><m>x^2+1</m></q> cannot be
+            factored over the <term>real numbers</term>. But it can be
+            factored over the <term>complex numbers</term> (real
+            numbers plus imaginary numbers). 
+            </p>
+            <p>
+              While Gauss<rsq/>s proof didn<rsq/>t make explicit use
+              of  <term>complex
+              numbers</term> they were implicit in his approach. Moreover,
+              his proof was generally recognized as valid. This was
+              quite a puzzle at the time because his proof said that
+              <m>x^2+1</m> could be factored, but the nature of the
+              factors was not clear because when Gauss proved the
+              Fundamental Theorem of Algebra the <term>complex
+              numbers</term> were not well understood at all and had
+              not been accepted.  The Fundamental Theorem of Algebra
+              is one of the results that forced mathematicians to
+              undertake the study of the  <term>complex
+              numbers</term>.
+            </p>
+            <!-- <p> -->
+            <!--   If it can be factored into say <m>x^2+1=(x-a)(x=b)</m> -->
+            <!--   then we didn<rsq/>t need the Irreducible Quadratic case at -->
+            <!--   all. The decomposition of <m>\frac{1}{x^2+1}</m> is just -->
 
-        <exercise>
-          <task>
-            <statement>
+
+            <!--   <md> -->
+            <!--     <mrow> -->
+            <!--       \frac{1}{x^2+1}= -->
+            <!--       \frac{1}{(x-a)(x-b)}\amp{}=\frac{\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}}{x-a} -->
+            <!--       +\frac{\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}}{1-b}  -->
+            <!--     </mrow> -->
+            <!--     <mrow> -->
+            <!--       \amp{}=\frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}, -->
+            <!--     </mrow> -->
+            <!--   </md> -->
+            <!--   and we can compute the integral from there. Why is the -->
+            <!--   Irreducible Quadratic case needed. -->
+            <!-- </p> -->
+
+            <!-- <aside> -->
+            <!--   <title>Historical Context</title> -->
+            <!--   <p> -->
+            <!--     While Gauss<rsq/>s proof didn<rsq/>t make explicit use -->
+            <!--     of  <term>complex -->
+            <!--     numbers</term> they were implicit in his approach. Moreover, -->
+            <!--     his proof was generally recognized as valid. This was -->
+            <!--     quite a puzzle at the time because his proof said that -->
+            <!--     <m>x^2+1</m> could be factored, but the nature of the -->
+            <!--     factors was not clear because when Gauss proved the -->
+            <!--     Fundamental Theorem of Algebra the <term>complex -->
+            <!--     numbers</term> were not well understood at all and had -->
+            <!--     not been accepted.  The Fundamental Theorem of Algebra -->
+            <!--     is one of the results that forced mathematicians to -->
+            <!--     undertake the study of the  <term>complex -->
+            <!--     numbers</term>. -->
+            <!--   </p> -->
+            <!-- </aside> -->
+
+            <exercise>
+              <task>
+                <statement>
+                  <p>
+                    Let <m>i=\sqrt{-1}</m> as in <xref
+                    ref="SECTIONEulerHarmonicOsc"></xref>  and show that 
+                    <me>x^2+1 = (x-i)(x_i)</me>.
+                  </p>
+                </statement>
+              </task>
+              <task>
+                <statement>
+                  <p>
+                    Use the result of part (a) to show that 
+                    <me>\int \frac{1}{x^2+1}\dx{x} = \frac{i}{2}\ln
+                    \left(
+                    \frac{x-i}{x+i} 
+                    \right)   +C
+                    </me>
+                  </p>
+                </statement>
+              </task>
+              <task>
+                <statement>
+                  <p>
+                    Recall that we<rsq/>ve already seen that <m>\int
+                    \frac{1}{x^2+1}\dx{x} = \inverse \tan(x) +C</m>. In
+                    view of the result in part (b), do you believe
+                    that
+                    <men xml:id="EQUATIONLnArctan">\frac{i}{2}\ln
+                    \left(
+                    \frac{x-i}{x+i} 
+                    \right)   +C = \inverse \tan(x) +C
+                    </men>?
+                  </p>
+                  <p>
+                    Notice that we have not asked if this is true,
+                    only if you believe it. Hence there is no right or
+                    wrong answer to the following question: Explain
+                    why you do or don<rsq/>t believe that <xref
+                    ref="EQUATIONLnArctan">equation</xref>. Give mathematical
+                    reasons to support your opinion either way.
+                  </p>
+
+                </statement>
+              </task>
+
+
+            </exercise>
+
+            <!-- <p> -->
+            
+
+            <!--   For suppose we want to decompose the rational function -->
+            <!--   <m>\frac{x-2}{x(x^2+1)}</m>. According to Gauss<rsq/>s -->
+            <!--   theorem There are no real numbers, <m>a</m> and <m>b</m>, -->
+            <!--   with the property that <m>x^2+1=(x-a)(x-b)</m> but -->
+            <!--   <m>a=i</m> and <m>b=-i</m> (where as before <m>i^2=-1</m>) -->
+            <!--   will work just fine since -->
+            <!--   <me>(x-i)(x+i)=x^2-i^2=x^2-(-1)=x^2+1</me> -->
+            <!-- </p> -->
+            <!-- <p> -->
+            <!--   Unfortunately, Gauss<rsq/>s theorem  not true. For the Fundamental -->
+            <!--   Theorem of Algebra to hold we need to allow the polynomial -->
+            <!--   to have <term>complex</term> as apposed to <term>real</term> -->
+            <!--   roots.  That is we need to expand our number system to -->
+            <!--   include the <term>complex numbers <m>\CC </m></term> (a -->
+            <!--   complex number is a real number plus an imaginary -->
+            <!--   number). We first encountered the complex numbers in <xref -->
+            <!--   ref="PROBLEMEulersFormula"></xref> in connection with -->
+            <!--   <term>Euler<rsq/>s Identity</term>.  -->
+            <!-- </p> -->
+            <example>
               <p>
-                Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
-                correct.
+                By allowing the use of <term>complex numbers</term> we
+                can use the HCUM to compute
+
+                <md>
+
+                  <mrow>\frac{x-2}{x(x^2+1)}=\frac{x-2}{x(x-1)(x+1)}
+                  \amp{}=\frac{-2}{x}+\frac{\frac{i-2}{i(2i)}}{x-i}+\frac{\frac{i+2}{i(-2i)}}{x+i}</mrow>
+                  <mrow>
+                      \amp{}=
+                      \frac{-2}{x}+\frac{\frac{i-2}{-2}}{x-i}+\frac{\frac{-i-2}{-2}}{x+i}
+                  </mrow>
+<mrow>
+                  \amp{}=\frac{-2}{x}+\frac{1-\frac12i}{x-i}+\frac{1+\frac12
+                  }{x+1}.
+</mrow>
+
+                </md>
 
               </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
               <p>
-                Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
-                correct.
-
+                But unfortunately, in this course we confine our attention to the real
+                numbers and treat the complex numbers as if they are
+                somehow unsavory,
+                even when using them would make more sense. To get the
+                decomposition back into just the real number we compute
+                the sum <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12
+                }{x+1}</m> as follows
+                <men xml:id="EQUATIONPFDComplex1">
+                  \frac{1-\frac12i}{x-i}+\frac{1+\frac12 }{x+1}=2x+1
+                  </men>. 
+                  Thus our decompostion over the real numbers (rather
+                  than the complex numbers is
+                  <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
               </p>
-            </statement>
-          </task>
 
-        </exercise>
+            </example>
+
+            <exercise>
+              <task>
+                <statement>
+                  <p>
+                    Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
+                    correct.
+
+                  </p>
+                </statement>
+              </task>
+              <task>
+                <statement>
+                  <p>
+                    Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
+                    correct.
+                  </p>
+                </statement>
+              </task>
+            </exercise>
+
+            <p><alert>END OF DIGRESSION</alert></p>
+        </paragraphs>
+
       </subsubsection>
-
-      </subsection>
+      <exercises>
+        <exercisegroup  cols="2">
+          <introduction>
+            <p>
+              Use the Partial Fraction Decomposition to compute each
+              of the integrals.
+            </p>
+          </introduction>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x^3}{2x-1}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x}{x^2+4}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x^2}{x^2+4}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x^3}{x^2+4}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x^2}{x^2-1}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x}{x^2-1}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x-3}{x^4-16}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{1}{x^3+5x}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{}{}\dx{x}</m>
+            </p>
+          </exercise>
+        </exercisegroup>
+      </exercises>
+    </subsection>
 
 
 
