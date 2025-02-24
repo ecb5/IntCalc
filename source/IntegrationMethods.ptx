@@ -4539,438 +4539,452 @@
           <m>\frac{1}{(x-a)(x-b)}</m> where <m>a</m>, and <m>b</m> are
           known constants then the PFD says that there are constants
           <m>A</m> and <m>B</m> such that as
-          <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me>. Our
+          <men xml:id="EQUATIONPFDDegrees">\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</men>. Our
           task is to find values for <m>A</m> and <m>B</m>.
         </p>
         <p>
-          There are a couple of ways we can find <m>A</m> and
-          <m>B</m>. What we<rsq/>d like to do is find the simplest, least
-          difficult to implement method we can. After all, we<rsq/>re not
-          here to do fraction decompositions. This is just one step toward
-          computing an integral and we<rsq/>d like for the decomposition
-          step to be as simple and painless as possible.
+          Take note of the following fact: The right side of <xref
+          ref="EQUATIONPFDDegrees"></xref> consists of rational
+          functions where the degree of the numerator is one less than
+          the degree of the denominator. Since the numerators are all
+          constants (polynomials of degree zero) and the denominators
+          are all linear (polynomials of degree one) this is, at the
+          moment, a rather bombastic way to state this fact. However
+          we use  return to and finally use this fact in <xref
+          ref="SUBSUBSECTIONPFDIrreducQuadFac"></xref> we will find it
+          very useful.
         </p>
+
+<p>
+  There are a couple of ways we can find <m>A</m> and
+  <m>B</m>. What we<rsq/>d like to do is find the simplest, least
+  difficult to implement method we can. After all, we<rsq/>re not
+  here to do fraction decompositions. This is just one step toward
+  computing an integral and we<rsq/>d like for the decomposition
+  step to be as simple and painless as possible.
+</p>
+<p>
+  Conceptually the simplest method available is to simply to choose
+  values for <m>x</m>. 
+  This is a valid approach because the equation
+  <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me> 
+  is actually an identity <mdash/> it will be true no matter what
+  the value of <m>x</m> is. 
+</p>
+<p>
+  If we choose <m>x=0</m> we get <me> Ab+Ba =-1</me>, and if we
+  choose <m>x=1</m> we get <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a}
+  + \frac{B}{1-b}</me> and we have a system of two equations in
+  the unknowns <m>A</m> and <m>B</m> which we can solve.
+</p>
+<problem xml:id="DRILLPFD2x2-1">
+  <p>
+    In this form the equations <me> Ab+Ba =-1</me> and,
+    <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a} + \frac{B}{1-b}</me>
+    are a little intimidating. But it<rsq/>s not really as bad as
+    it looks. Clear the fractions and then solve for <m>A</m> and
+    <m>B</m>.
+  </p>
+</problem>
+<p>
+  The method we<rsq/>ve just outlined will work, and it will always
+  work.  But this is only our first example of the PFD and you can
+  surely see that that if we have more than two constants the difficulty of
+  solving for the coefficients will increase rapidly. But again, this method
+  works and it will always work, so it is something we can always fall back
+  on if we can<rsq/>t find something simpler.
+</p>
+
+<p>
+  Since the method just outlined will always work one possible way
+  to lighten the load is to look for values of <m>x</m> that will
+  make the resulting equations simpler to solve.  Sadly, no
+  obvious choice presents itself, but hold that thought for a
+  bit. We<rsq/>ll return to it.
+</p>
+
+<p>
+  Another possible method is to simply clear the fractions and
+  compare like terms. (In fact, our previous method can be made
+  a little more palatable by clearing the fractions first.) Thus
+  <me>
+    (x-a)(x-b)\cdot\left[\frac{1}{(x-a)(x-b)}\right]=\left[
+    \frac{A}{x-a}+\frac{B}{x-b}\right]\cdot(x-a)(x-b)
+    </me>.
+    Multiplying through and cancelling, we have
+
+    <men  xml:id="EQUATIONPFD1">
+      1=A(x-b)+B(x-a)
+    </men>
+    so that
+    <me>
+      \textcolor{red}{0}x+ \textcolor{blue}{1}=(\textcolor{red}{A+B})x + \left(\textcolor{blue}{-Ab-aB}\right)  
+      </me>.
+      Comparing the coefficient of <m>x</m>
+      and the constant terms we see that we need to solve  the following system of
+      two equations in the two unknowns <m>A</m> and <m>B</m>
+      <mdn>
+        <mrow xml:id="EQUATIONPFD2">A+B\amp{}=0</mrow>
+        <mrow number="no">
+          Ab+Ba \amp{}=-1.
+        </mrow>
+      </mdn>
+</p>
+<problem xml:id="DRILLDRILLPFD2x2-2" >
+  <p>
+    Solve the <xref ref="EQUATIONPFD2">system of equations</xref>
+    and show that you get the same solution that you got in <xref
+    ref="DRILLPFD2x2-1"></xref>.
+  </p>
+</problem>
+
+<p>
+  This is a little better. We<rsq/>ve still got a system of two
+  equations to solve, but it seems to be a little more
+  manageable. Still, as the problems get more complex the number
+  of equations in our system will grow. We<rsq/>d still like to
+  find something simpler than this if we can.
+</p>
+<p>
+  But wait! Take another look at <xref
+  ref="EQUATIONPFD1">equation</xref>. With a judicious use of that
+  formula you can actually compute this PFD almost completely in
+  your head. It<rsq/>s that simple. Really.
+</p>
+<p>
+  Because <xref ref="EQUATIONPFD1">equation</xref> is an
+  identity, <mdash/> it is true regardless of which value of
+  <m>x</m> we choose.  So of we choose <m>x=a</m> we get
+  <me>A=\frac{1}{a-b}</me> immediately. Similarly choosing
+  <m>x=b</m> gives <m> B=\frac{1}{b-a}</m>, also
+  immediately.Thus the PFD of <m>\frac{1}{(x-a)(x-b)}</m> is
+  <men xml:id="EQUATIONPFD3">\frac{1}{(x-a)(x-b)}=
+  \frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}</men>.
+</p>
+<problem>
+  <p>
+    Verify the 
+    <xref ref="EQUATIONPFD3">identity</xref>  by adding
+    the fractions on the right side together.
+  </p>
+</problem>
+
+<problem xml:id="DRILLPFDWithoutCoverup">
+
+  <p>
+    Compute each integral by decomposing the integrand  using any of the methods you<rsq/>ve seen so far.
+    <ol cols="2" marker="(i)">
+      <li>
         <p>
-          Conceptually the simplest method available is to simply to choose
-          values for <m>x</m>. 
-          This is a valid approach because the equation
-          <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me> 
-          is actually an identity <mdash/> it will be true no matter what
-          the value of <m>x</m> is. 
+          <m>\int\frac{1}{(x-2)(x-1)}\dx{x}</m>   
         </p>
+      </li>
+      <li>
         <p>
-          If we choose <m>x=0</m> we get <me> Ab+Ba =-1</me>, and if we
-          choose <m>x=1</m> we get <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a}
-          + \frac{B}{1-b}</me> and we have a system of two equations in
-          the unknowns <m>A</m> and <m>B</m> which we can solve.
+          <m>\int \frac{1} {x(x-100 )}\dx{x}</m>
         </p>
-        <problem xml:id="DRILLPFD2x2-1">
-          <p>
-            In this form the equations <me> Ab+Ba =-1</me> and,
-            <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a} + \frac{B}{1-b}</me>
-            are a little intimidating. But it<rsq/>s not really as bad as
-            it looks. Clear the fractions and then solve for <m>A</m> and
-            <m>B</m>.
-          </p>
-        </problem>
+      </li>
+      <li>
         <p>
-          The method we<rsq/>ve just outlined will work, and it will always
-          work.  But this is only our first example of the PFD and you can
-          surely see that that if we have more than two constants the difficulty of
-          solving for the coefficients will increase rapidly. But again, this method
-          works and it will always work, so it is something we can always fall back
-          on if we can<rsq/>t find something simpler.
+          <m>\int \frac{4}{(x+2 )(x-2 )}\dx{x}</m>
         </p>
-
+      </li>
+      <li>
         <p>
-          Since the method just outlined will always work one possible way
-          to lighten the load is to look for values of <m>x</m> that will
-          make the resulting equations simpler to solve.  Sadly, no
-          obvious choice presents itself, but hold that thought for a
-          bit. We<rsq/>ll return to it.
+          <m>\int \frac{6}{(x-3 )(x+10 )}\dx{x}</m>
         </p>
-
+      </li>
+      <li>
         <p>
-          Another possible method is to simply clear the fractions and
-          compare like terms. (In fact, our previous method can be made
-          a little more palatable by clearing the fractions first.) Thus
-          <me>
-            (x-a)(x-b)\cdot\left[\frac{1}{(x-a)(x-b)}\right]=\left[
-            \frac{A}{x-a}+\frac{B}{x-b}\right]\cdot(x-a)(x-b)
-            </me>.
-            Multiplying through and cancelling, we have
-
-            <men  xml:id="EQUATIONPFD1">
-              1=A(x-b)+B(x-a)
-            </men>
-            so that
-            <me>
-              \textcolor{red}{0}x+ \textcolor{blue}{1}=(\textcolor{red}{A+B})x + \left(\textcolor{blue}{-Ab-aB}\right)  
-              </me>.
-              Comparing the coefficient of <m>x</m>
-              and the constant terms we see that we need to solve  the following system of
-              two equations in the two unknowns <m>A</m> and <m>B</m>
-              <mdn>
-                <mrow xml:id="EQUATIONPFD2">A+B\amp{}=0</mrow>
-                <mrow number="no">
-                  Ab+Ba \amp{}=-1.
-                </mrow>
-              </mdn>
+          <m>\int \frac{\frac{2}{10}}{(x-10 )(x-100 )}\dx{x}</m>
         </p>
-        <problem xml:id="DRILLDRILLPFD2x2-2" >
-          <p>
-            Solve the <xref ref="EQUATIONPFD2">system of equations</xref>
-            and show that you get the same solution that you got in <xref
-            ref="DRILLPFD2x2-1"></xref>.
-          </p>
-        </problem>
-
+      </li>
+      <li>
         <p>
-          This is a little better. We<rsq/>ve still got a system of two
-          equations to solve, but it seems to be a little more
-          manageable. Still, as the problems get more complex the number
-          of equations in our system will grow. We<rsq/>d still like to
-          find something simpler than this if we can.
+          <m>\int  \frac{1}{(2x- 5)(3x- 1)}\dx{x}</m>
         </p>
+      </li>
+    </ol>
+
+  </p>
+</problem>
+<exercise>
+  <introduction>
+    <p>
+      Compute each integral by decomposing the integrand  using any of the methods you<rsq/>ve seen so far.
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle \int \frac{1}{x^2-9}\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle\int \frac{1}{x^2-5x+6 }\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m> \displaystyle
+        \int        \frac{1}{x^4-5x^2+6 }</m>
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Let <m>y=x^2</m> and use the results of parts (a) and (b).
+      </p>
+    </hint>
+  </task>
+
+</exercise>
+<example xml:id="EXAMPLEExtendedLogistic">
+  <p>
+    As we<rsq/>ve mentioned before, all mathematical models make
+    simplifying assumptions. It is important to know what are
+    the simplifications are so we know the conditions under
+    which the model is unrealistic. For example, <xref
+    ref="EQUATIONFishery1">IVP</xref> works fine in the short
+    term but in the long term it predicts explosive growth which
+    is not sustainable. We addressed this when we generated the
+    <xref ref="EQUATIONLogEq">Logistic Equation</xref> by
+    including as a factor, <m>\left(
+    1-\frac{P}{100}\right)</m>. That modification put an upper
+    bound on the population size as we have seen.
+  </p>
+
+  <p>
+    However the Logistic Equation doesn<rsq/>t put any lower bound on
+    the population size. This is also unrealistic since we know that
+    if a population of critters is too small they tend to die
+    out. The following tweak to the logistic model: 
+    <men xml:id="EQUATIONLogEqMinViable">
+      \dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(\frac{P}{10}-1\right),
+    </men>
+
+    forces a population which is too small to die out.  In this
+    case, <m>10</m> is called the <term>minimum viability level</term> of
+    the population.
+  </p>
+
+</example>
+<exercise xml:id="PROBLEMLogistExtend">
+
+  <title>An Extension of the Logistic Equation</title>
+  <statement>
+    <p>
+      Use the graphical techniques
+      of <xref ref="SECTIONExponentialGrowth"></xref> to sketch
+      the graph of the solution <m>P(t)</m> of <xref
+      ref="EQUATIONLogEqMinViable">equation</xref>.  Explain
+      what happens if our population drops below the <term>minimum
+      viability level</term>
+    </p>
+  </statement>
+</exercise>
+<aside>
+  <title>Note to Bob</title>
+  <p>
+    Bob, I haven<rsq/>t worked through this problem to make sure it
+    is workable yet. One of us should do that and make sure.
+  </p>
+</aside>
+
+<p>
+  Of course we would prefer to have a formula for <m>P(t)</m>. It
+  appears that we can obtain a formula if we can integrate the left
+  side of <xref ref="EQUATIONLogEqMinViable">equation</xref>.  As
+  the following problem shows, the PFD extends in the obvious way to
+  three or more factors.
+</p>
+<exercise xml:id="PROBLEMPFDSimplestForm">
+  <title>The PFD in its Simplest Form (Find the Pattern)</title>
+  <idx><h>Partial Fraction Decomposition</h><h> simplest form of the PFD </h></idx>
+  <introduction>
+    <p>
+      We<rsq/>ve arrived at a very clever algorithm for computing the PFD
+      of a rational function of the form <m>\frac{c}{(x-a)(x-b)}</m> but
+      we<rsq/>ll need to extend it considerably if it is going to be more
+      than minimally useful. This extension is straightforward.
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        Show that the PFD of <m>\frac{1}{(x-a)(x-b)(x-c)}</m> can be
+        computed in exactly the same manner as our most recent method
+        for <m>\frac{1}{(x-a)(x-b)}</m>.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Show the same for
+        <m>\frac{1}{(x-a)(x-b)(x-c)(x-d)}</m>.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Show the same for
+        <m>\frac{1}{(x-x_1)(x-x_2)(x-x_3)\cdots(x-x_n)}</m>.
+      </p>
+    </statement>
+  </task>
+</exercise>
+
+<exercise>
+  <p>
+    Try to find a formula for <m>P(t)</m> in <xref
+    ref="PROBLEMMinViablePop"></xref> by integrating both sides and
+    solving the result for <m>P</m>. Explain what goes wrong.
+  </p>
+</exercise>
+
+
+<p>
+  As you can see from <xref ref="PROBLEMPFDSimplestForm"></xref>
+  even in its simplest form the PFD can become a very large
+  problem. For example suppose <m>n=100</m>. In that case
+  we<rsq/>d need to find <m>100</m> coefficients. We <rsq/>d really
+  like to make the method as efficient as possible. To that end
+  there is one more refinement we<rsq/>ll need before moving on to
+  more general problems.
+</p>
+<p>
+  When he was computing some PFDs related to his work solving
+  differential equations
+  <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/">Oliver Heaviside</url>
+  (1850<mdash/>1925) made the following observation. Look closely at
+  the numerators of the fractions the right side of
+  <men>
+    \frac{1}{(x-a)(x-b)}=
+    \frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}
+  </men> 
+  (this is <xref ref="EQUATIONPFD3">equation</xref>). Do you see that
+  the numerator above <m>x-a</m> is what we would get if we simply
+  replaced <m>x</m> with <m>a</m> on the left and 
+  <q>covered up</q> <m>x-a</m>?
+</p>
+<p>
+  That is, if <m>\frac{1}{(x-a)(x-b)}=
+  \frac{A}{x-a}+\frac{B}{x-b}</m> then 
+  
+  <me>A=\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}=\frac{1}{a-b}
+  </me>.
+  Similarly
+  <me>B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}
+  </me>.
+  <idx><h>Vocabulary</h><h>Heaviside<rsq/>s Cover<ndash/>up Method</h></idx>
+  <idx><h>Vocabulary</h><h>HCUM</h></idx>
+  This is known as <term>Heaviside<rsq/>s Cover<ndash/>up
+  Method (hcum)</term> and it is the simplest way we know to compute the
+  coefficients of the PFD of the rational functions we<rsq/>ve seen so
+  far.
+</p>
+
+<problem>
+  <p>
+    Compute each integral by decomposing the integrand using using
+    <term>Heaviside<rsq/>s Cover<ndash/>up Method</term>.
+
+    <ol marker="(i)">
+      <li>
         <p>
-          But wait! Take another look at <xref
-          ref="EQUATIONPFD1">equation</xref>. With a judicious use of that
-          formula you can actually compute this PFD almost completely in
-          your head. It<rsq/>s that simple. Really.
+          <m>\int \frac{1}{(x^2-4 )(x^2- 9)}\dx{x}</m>
         </p>
+      </li>
+      <li>
         <p>
-          Because <xref ref="EQUATIONPFD1">equation</xref> is an
-          identity, <mdash/> it is true regardless of which value of
-          <m>x</m> we choose.  So of we choose <m>x=a</m> we get
-          <me>A=\frac{1}{a-b}</me> immediately. Similarly choosing
-          <m>x=b</m> gives <m> B=\frac{1}{b-a}</m>, also
-          immediately.Thus the PFD of <m>\frac{1}{(x-a)(x-b)}</m> is
-          <men xml:id="EQUATIONPFD3">\frac{1}{(x-a)(x-b)}=
-          \frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}</men>.
+          <m>\int \frac{1}{(x-1 )(x-2 )(x-3 )}\dx{x}</m>
         </p>
-        <problem>
-          <p>
-            Verify the 
-            <xref ref="EQUATIONPFD3">identity</xref>  by adding
-            the fractions on the right side together.
-          </p>
-        </problem>
-
-        <problem xml:id="DRILLPFDWithoutCoverup">
-
-          <p>
-            Compute each integral by decomposing the integrand  using any of the methods you<rsq/>ve seen so far.
-            <ol cols="2" marker="(i)">
-              <li>
-                <p>
-                  <m>\int\frac{1}{(x-2)(x-1)}\dx{x}</m>   
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{1} {x(x-100 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{4}{(x+2 )(x-2 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{6}{(x-3 )(x+10 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{\frac{2}{10}}{(x-10 )(x-100 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int  \frac{1}{(2x- 5)(3x- 1)}\dx{x}</m>
-                </p>
-              </li>
-            </ol>
-
-          </p>
-        </problem>
-        <exercise>
-          <introduction>
-            <p>
-              Compute each integral by decomposing the integrand  using any of the methods you<rsq/>ve seen so far.
-            </p>
-          </introduction>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle \int \frac{1}{x^2-9}\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle\int \frac{1}{x^2-5x+6 }\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-
-          <task>
-            <statement>
-              <p>
-                <m> \displaystyle
-                \int        \frac{1}{x^4-5x^2+6 }</m>
-              </p>
-            </statement>
-            <hint>
-              <p>
-                Let <m>y=x^2</m> and use the results of parts (a) and (b).
-              </p>
-            </hint>
-          </task>
-
-        </exercise>
-        <example xml:id="EXAMPLEExtendedLogistic">
-          <p>
-            As we<rsq/>ve mentioned before, all mathematical models make
-            simplifying assumptions. It is important to know what are
-            the simplifications are so we know the conditions under
-            which the model is unrealistic. For example, <xref
-            ref="EQUATIONFishery1">IVP</xref> works fine in the short
-            term but in the long term it predicts explosive growth which
-            is not sustainable. We addressed this when we generated the
-            <xref ref="EQUATIONLogEq">Logistic Equation</xref> by
-            including as a factor, <m>\left(
-            1-\frac{P}{100}\right)</m>. That modification put an upper
-            bound on the population size as we have seen.
-          </p>
-
-          <p>
-            However the Logistic Equation doesn<rsq/>t put any lower bound on
-            the population size. This is also unrealistic since we know that
-            if a population of critters is too small they tend to die
-            out. The following tweak to the logistic model: 
-            <men xml:id="EQUATIONLogEqMinViable">
-              \dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(\frac{P}{10}-1\right),
-            </men>
-
-            forces a population which is too small to die out.  In this
-            case, <m>10</m> is called the <term>minimum viability level</term> of
-            the population.
-          </p>
-
-        </example>
-        <exercise xml:id="PROBLEMLogistExtend">
-
-          <title>An Extension of the Logistic Equation</title>
-          <statement>
-            <p>
-              Use the graphical techniques
-              of <xref ref="SECTIONExponentialGrowth"></xref> to sketch
-              the graph of the solution <m>P(t)</m> of <xref
-              ref="EQUATIONLogEqMinViable">equation</xref>.  Explain
-              what happens if our population drops below the <term>minimum
-              viability level</term>
-            </p>
-          </statement>
-        </exercise>
-        <aside>
-          <title>Note to Bob</title>
-          <p>
-            Bob, I haven<rsq/>t worked through this problem to make sure it
-            is workable yet. One of us should do that and make sure.
-          </p>
-        </aside>
-
+      </li>
+      <li>
         <p>
-          Of course we would prefer to have a formula for <m>P(t)</m>. It
-          appears that we can obtain a formula if we can integrate the left
-          side of <xref ref="EQUATIONLogEqMinViable">equation</xref>.  As
-          the following problem shows, the PFD extends in the obvious way to
-          three or more factors.
+          <m>\int \frac{1}{(x+1 )(x+2)(x+3 )}\dx{x}</m>
         </p>
-        <exercise xml:id="PROBLEMPFDSimplestForm">
-          <title>The PFD in its Simplest Form (Find the Pattern)</title>
-          <idx><h>Partial Fraction Decomposition</h><h> simplest form of the PFD </h></idx>
-          <introduction>
-            <p>
-              We<rsq/>ve arrived at a very clever algorithm for computing the PFD
-              of a rational function of the form <m>\frac{c}{(x-a)(x-b)}</m> but
-              we<rsq/>ll need to extend it considerably if it is going to be more
-              than minimally useful. This extension is straightforward.
-            </p>
-          </introduction>
-          <task>
-            <statement>
-              <p>
-                Show that the PFD of <m>\frac{1}{(x-a)(x-b)(x-c)}</m> can be
-                computed in exactly the same manner as our most recent method
-                for <m>\frac{1}{(x-a)(x-b)}</m>.
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                Show the same for
-                <m>\frac{1}{(x-a)(x-b)(x-c)(x-d)}</m>.
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                Show the same for
-                <m>\frac{1}{(x-x_1)(x-x_2)(x-x_3)\cdots(x-x_n)}</m>.
-              </p>
-            </statement>
-          </task>
-        </exercise>
-
-        <exercise>
-          <p>
-            Try to find a formula for <m>P(t)</m> in <xref
-            ref="PROBLEMMinViablePop"></xref> by integrating both sides and
-            solving the result for <m>P</m>. Explain what goes wrong.
-          </p>
-        </exercise>
-
-
+      </li>
+      <li>
         <p>
-          As you can see from <xref ref="PROBLEMPFDSimplestForm"></xref>
-          even in its simplest form the PFD can become a very large
-          problem. For example suppose <m>n=100</m>. In that case
-          we<rsq/>d need to find <m>100</m> coefficients. We <rsq/>d really
-          like to make the method as efficient as possible. To that end
-          there is one more refinement we<rsq/>ll need before moving on to
-          more general problems.
+          <m>\int \frac{1}{x(x^2-1)(x-3 )(x+8 )}\dx{x}</m>
         </p>
+      </li>
+      <li>
         <p>
-          When he was computing some PFDs related to his work solving
-          differential equations
-          <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/">Oliver Heaviside</url>
-          (1850<mdash/>1925) made the following observation. Look closely at
-          the numerators of the fractions the right side of
-          <men>
-            \frac{1}{(x-a)(x-b)}=
-            \frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}
-          </men> 
-          (this is <xref ref="EQUATIONPFD3">equation</xref>). Do you see that
-          the numerator above <m>x-a</m> is what we would get if we simply
-          replaced <m>x</m> with <m>a</m> on the left and 
-          <q>covered up</q> <m>x-a</m>?
+          <m>\int \frac{1}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
         </p>
-        <p>
-          That is, if <m>\frac{1}{(x-a)(x-b)}=
-          \frac{A}{x-a}+\frac{B}{x-b}</m> then 
-          
-          <me>A=\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}=\frac{1}{a-b}
-          </me>.
-          Similarly
-          <me>B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}
-          </me>.
-
-          This is known as <term>Heaviside<rsq/>s Cover<ndash/>up
-          Method</term> and it is the simplest way we know to compute the
-          coefficients of the PFD of the rational functions we<rsq/>ve seen so
-          far.
-        </p>
-
-        <problem>
-          <p>
-            Compute each integral by decomposing the integrand using using
-            <term>Heaviside<rsq/>s Cover<ndash/>up Method</term>.
-
-            <ol marker="(i)">
-              <li>
-                <p>
-                  <m>\int \frac{1}{(x^2-4 )(x^2- 9)}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{1}{(x-1 )(x-2 )(x-3 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{1}{(x+1 )(x+2)(x+3 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{1}{x(x^2-1)(x-3 )(x+8 )}\dx{x}</m>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <m>\int \frac{1}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
-                </p>
-              </li>
-              <!-- <li> -->
-              <!--   <p> -->
-              <!--     <m>\int \frac{1}{(x- )(x- )(x- )}\dx{x}</m> -->
-              <!--   </p> -->
-              <!-- </li> -->
-            </ol>
-          </p>
-        </problem>
+      </li>
+      <!-- <li> -->
+      <!--   <p> -->
+      <!--     <m>\int \frac{1}{(x- )(x- )(x- )}\dx{x}</m> -->
+      <!--   </p> -->
+      <!-- </li> -->
+    </ol>
+  </p>
+</problem>
 
 
-        <exercise>
-          <introduction>
+<exercise>
+  <introduction>
 
-            <p>
-              To avoid obscuring our point, so far we<rsq/>ve kept the
-              numerators and the coefficients of <m>x</m> simple. The
-              numerators have always been some constant, usually <m>1</m>,
-              and the coefficients of <m>x</m> have always been
-              <m>1</m>. But this is not necessary. 
-            </p>
-            <p>
-              Use Heaviside<rsq/>s
-              method to compute each of the following integrals. Once you
-              have the decomposition confirm that it is correct by adding
-              your fractions together.
-            </p>
-          </introduction>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle\int \frac{x}{(x^2-4 )(16x^2- 9)}\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle\int \frac{x^2-1}{(3x-1 )(x-2 )(x-3 )}\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle\int \frac{(x-1)(x-2)}{(2x+1 )(x+2)(3-x)}\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle\int \frac{x^3}{x(x^2-1)(x-3)(5x+8)}\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                <m>\displaystyle\int \frac{x(x^3-1)}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
-              </p>
-            </statement>
-          </task>
-        </exercise>
+    <p>
+      To avoid obscuring our point, so far we<rsq/>ve kept the
+      numerators and the coefficients of <m>x</m> simple. The
+      numerators have always been some constant, usually <m>1</m>,
+      and the coefficients of <m>x</m> have always been
+      <m>1</m>. But this is not necessary. 
+    </p>
+    <p>
+      Use Heaviside<rsq/>s
+      method to compute each of the following integrals. Once you
+      have the decomposition confirm that it is correct by adding
+      your fractions together.
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle\int \frac{x}{(x^2-4 )(16x^2- 9)}\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle\int \frac{x^2-1}{(3x-1 )(x-2 )(x-3 )}\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle\int \frac{(x-1)(x-2)}{(2x+1 )(x+2)(3-x)}\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle\int \frac{x^3}{x(x^2-1)(x-3)(5x+8)}\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle\int \frac{x(x^3-1)}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
+      </p>
+    </statement>
+  </task>
+</exercise>
 
       </subsubsection>
     </subsection>
@@ -5193,15 +5207,13 @@
             <statement>
               <p>
                 In each of these problems we only asked you to find the
-                coefficients that are attainable using the Cover<ndash/>up
-                method. The others will have to be computed by the
+                coefficients that are attainable using the HCUM. The others will have to be computed by the
                 method we<rsq/>ll describe in the <xref
                 ref="EXAMPLEPFDDistinctLin" text="custom">next example</xref>. 
               </p>
               <p>
                 Explain as clearly as you can from the evidence above which
-                kinds of coefficients we can compute using the Heaviside
-                Cover<ndash/>up method.
+                kinds of coefficients we can compute using the HCUM.
               </p>
 
             </statement>
@@ -5211,7 +5223,7 @@
         </exercise>
 
         <example xml:id="EXAMPLEPFDDistinctLin">
-          <title>The PFD With Linear Factors Only</title>
+          <title>The PFD With Distinct Linear Factors</title>
 
           <p>
             Let<rsq/>s finish up the decomposition of 
@@ -5372,14 +5384,149 @@
             </statement>
           </task>
 
-
-
-
-
         </exercise>
       </subsubsection>
-      <subsubsection>
+
+      <subsubsection xml:id="SUBSUBSECTIONPFDIrreducQuadFac">
         <title>Irreducible Quadratic Factors</title>
+        <p>
+          In the problems and examples we<rsq/>ve encountered so far
+          whenever there was a quadratic factor in the denominator we
+          were able to either factor it into two distinct linear
+          factors (e.g. <m>(x^2-x+6) = (x+2)(x-3)</m> or into one such
+          factor, squared (e.g.  <m>(x^2+6x+9)=(x+3)^2</m>).
+          Unfortunately we cannot yet compute the integral <me>\int
+          \frac{1}{(x-2)(x^2+1)}\dx{x}</me>, because the factor
+          <m>x^2+1</m> cannot be factored (over the real numbers).
+          So we<rsq/>ll need to extend our procedure to account for
+          this.
+        </p>
+        <aside>
+          <title>Comment</title>
+          <p>
+            But it can be factored over the complex numbers. We will
+            address this at the end of this section.
+          </p>
+        </aside>
+
+      
+        <p>
+          The PFD  still guarantees that <m>\frac{A}{x+2}</m> will
+          appear as a term in the decomposition and the HCUM will
+          still allow us to find 
+          <me>
+            A= \frac{\eval{\frac{1}{(\text{covered})(x^2+1)}}{x}{2}}{x-2}= \frac{\frac15}{x-2}
+            </me>.
+            Thus we have 
+
+            <me>
+              \frac{1}{(x-2)(x^2+1)}=  \frac{\frac15}{x+2} 
+              + \ParamEqTwo
+              {\text{ other stuff we}}
+              {\text{ don't know yet}}
+              </me>.
+              The computation of the <q>other stuff</q> is the next
+              topic. 
+        </p>
+        <p>
+          Fortunately the setup for the <q>other stuff</q> is not
+          substantially different from what we have done
+          heretofore. First, since the factor <m>x+2</m> and
+          <m>x^2+1</m> cannot be factored there will be  a term in the
+          decompostion which corresponds to each:
+          To identify the <q>unknown</q> recall that in the paragraph
+          following <xref ref="EQUATIONPFDDegrees">equation</xref> 
+          we observed that in the PFD the degrees of the numerators
+          were always one less than the degrees of the
+          denominators. Following that pattern it is reasonable to
+          speculate that the decomposition is
+          <me>\frac{1}{(x-2)(x^2+1)}=
+          \frac{A}{x+2}+ \frac{Bx+C}{x^2+1}</me> where <m>A</m>, <m>B</m>, and
+          <m>C</m> are constants to be determined.
+          And our speculation is correct. If we can find <m>A</m>,
+          <m>B</m>, and <m>C</m> the decomposition will be complete.
+        </p>
+        <p>
+          Reasoning by analogy it seems reasonable to speculate that
+          the PFD of <m>\frac{1}{x^2(x^2+1)^3(x^2+9)(x-5)}    </m> will be 
+
+          <mdn>
+            <mrow
+                xml:id="EQUATIONBigPFD">\frac{1}{x^2(x^2+1)^3(x^2+9(x-5))}
+            =\amp{}
+            \frac{A}{x}+\frac{B}{x^2}+\frac{Cx+D}{x^2+1}+\frac{Ex+F}{(x^2+1)^2}</mrow>
+            <mrow number="no">
+              \amp{}+\frac{Gx+H}{(x^2+1)^3}
+            + \frac{Ix+J}{x^2+9}+\frac{K}{x-5},</mrow>
+          </mdn>
+          and that is correct.
+        </p>
+        <p>
+          The good news is that we are done.  <xref
+          ref="EQUATIONBigPFD">Equation</xref> is an example of the
+          most general form that a Partial Fraction Decomposition can
+          have. Beyond that they just get bigger.
+        </p>
+        <p>
+          The HCUM can still be used to compute <m>B</m> and <m>K</m>.
+          It can even be extended to compute <m>I</m> and
+          <m>J</m>, but for the kinds of problems we will be
+          encountering extending the HCUM  is not worth the
+          effort. 
+        </p>
+        <p>
+          Let<rsq/>s finish  the decomposition of
+          <m>\frac{1}{(x-2)(x^2+1}</m> which we had interupted. We had
+          reached this point:
+          <me>\frac{1}{(x-2)(x^2+1)}=
+          \frac{\frac15}{x+2}+ \frac{Bx+C}{x^2+1}</me>
+        </p>
+        <p>
+          which, as we keep repeating, is an identity. So if we
+          isolate the expression <m>Bx+C</m> on the right side of the
+          equation then the left side will reduce to a linear
+          expression in <m>x</m>. We can then simply compare the
+          coefficients.  
+        </p>
+        <p>
+          Multiplying both sides by <m>x^2+1</m> we have 
+          <me>\frac{1}{x-2}=\frac15 \left(\frac{x^2+1}{x-2}\right)+(Ax+B)
+          </me>
+          and isolating <m>Ax+B</m> gives
+          <me>\frac{1}{x-2}-\frac15\left( \frac{x^2+1}{x-2}\right)=Ax+B
+          </me>,
+          and if we simplify the expression on the left we will see
+          that 
+          <me>Ax+B=\frac15x +\frac25 </me>, so 
+          <men xml:id="EQUATIONFirstPFDExample">\frac{1}{(x-2)(x^2+1)}=
+          \frac15\left(\frac{1}{x+2}\right)+ \frac15\left(
+          \frac{x}{x^2+1}\right) +\frac25\left(\frac{1}{x^2+1}\right)</men>.
+        </p>
+
+        <problem>
+          <p>
+            Confirm that <xref
+            ref="EQUATIONFirstPFDExample">equation</xref> is correct
+            by getting a common denominator and adding the terms on
+            the right together.
+          </p>
+        </problem>
+
+        <theorem xml:id="THEOREMPartialFractionDecomp">
+          
+          <title>The Partial Fraction Decomposition (PFD)</title>
+          <p>
+            If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
+            polynomials having no non<ndash/>trivial common factors with
+            <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
+            polynomials <m>A(x)</m> and <m>B(x)</m>,
+            <m>\deg{A}\lt\deg{Q}</m> and <m>\deg(B)\lt\deg(R)</m>, such
+            that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
+            \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
+          </p>
+        </theorem>
+
+
         <p>
           In his PhD dissertation <url
           href="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
@@ -5442,44 +5589,29 @@
         </example>
 
         <exercise>
-<task>
-  <statement>
-    <p>
-      Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
-      correct.
+          <task>
+            <statement>
+              <p>
+                Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
+                correct.
 
-    </p>
-  </statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
-      correct.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
+                correct.
 
-    </p>
-  </statement>
-</task>
+              </p>
+            </statement>
+          </task>
 
         </exercise>
-
-
-        <theorem xml:id="THEOREMPartialFractionDecomp">
-          
-          <title>The Partial Fraction Decomposition (PFD)</title>
-          <p>
-            If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
-            polynomials having no non<ndash/>trivial common factors with
-            <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
-            polynomials <m>A(x)</m> and <m>B(x)</m>,
-            <m>\deg{A}\lt\deg{Q}</m> and <m>\deg(B)\lt\deg(R)</m>, such
-            that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
-            \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
-          </p>
-        </theorem>
       </subsubsection>
 
-    </subsection>
+      </subsection>
 
 
 
