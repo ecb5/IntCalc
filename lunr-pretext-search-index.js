@@ -10996,7 +10996,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.2",
   "title": "The  Partial Fraction Decomposition",
-  "body": " The Partial Fraction Decomposition   When we analyzed the Logistic Equation    in we were unable to find a formula for . But, by analyzing the IVP directly we were able to generate a qualitative graph of . That is, we were able to get a general sense of the shape of the graph of even if the coordinates of particular points were unavailable.  While a qualitative graph is better than nothing, it would be more useful to have an explicit formula for , if we can find it. With integration we now have the tool we need to find such a formula.    Simple Decompositions   The Logistic Equation, Redux  Starting with the Logistic Equation, the first step is to separate the variables: . If we integrate both sides of this equation the result will be an equation in which appears. If we can solve that for we will have our formula for .  Integrating the right sides presents no difficulties: .  But at our current level of skill with integration the only option that presents itself for integrating the left side is to to complete the square in the denominator and apply the appropriate trigonometric substitution.    Heaviside s Cover up Method (HCUM)   By completing the square in the denominator and making the substitution integrate the left side of equation and show that .   As you have just seen, this integration is entirely within the range of our current skill set but it is rather daunting. And we re not even finished yet. We must still solve equation for . Before we do that we d really like to find a simpler way to compute the integral.  Here s a simpler way. Observe that the fraction can be decomposed as .   Confirm equation .   With the identity in hand we can integrate the right side of equation as follows. Combining this with equation we see that which is much easier to solve for than and equation .      Solve equation and show that where is an arbitrary constant.   Use the initial condition in IVP to show that in part (a) , so that and then confirm that you get the same solution when you solve equation for .   Graph from part (b) and confirm that it has the same general shape that we discovered in .   This is much simpler but the roadblock is this: where did equation come from? How did we find this decomposition of the fraction ?  We found equation by an algebraic technique called the Partial Fraction Decomposition or PFD . There are several places in mathematics where it is useful to break a single rational expresstion into the sum of simpler rational expressions. We will be using it to simplify the integration when the integrand is a rational function.  A fully general statement of the PFD is given in but as you can see the general statement is quite comprehensive. Moreover the statement of the theorem doesn t help us use it as a practical tool. So we will work through a number of increasingly complex examples to build things up slowly.  To begin, if we have an expression of the form where , and are known constants then the PFD says that there are constants and such that as . Our task is to find values for and .  Take note of the following fact: The right side of consists of rational functions where the degree of the numerator is one less than the degree of the denominator. Since the numerators are all constants (polynomials of degree zero) and the denominators are all linear (polynomials of degree one) this is, at the moment, a rather bombastic way to state this fact. However we use return to and finally use this fact in we will find it very useful.  There are a couple of ways we can find and . What we d like to do is find the simplest, least difficult to implement method we can. After all, we re not here to do fraction decompositions. This is just one step toward computing an integral and we d like for the decomposition step to be as simple and painless as possible.  Conceptually the simplest method available is to simply to choose values for . This is a valid approach because the equation is actually an identity it will be true no matter what the value of is.  If we choose we get , and if we choose we get and we have a system of two equations in the unknowns and which we can solve.   In this form the equations and, are a little intimidating. But it s not really as bad as it looks. Clear the fractions and then solve for and .   The method we ve just outlined will work, and it will always work. But this is only our first example of the PFD and you can surely see that that if we have more than two constants the difficulty of solving for the coefficients will increase rapidly. But again, this method works and it will always work, so it is something we can always fall back on if we can t find something simpler.  Since the method just outlined will always work one possible way to lighten the load is to look for values of that will make the resulting equations simpler to solve. Sadly, no obvious choice presents itself, but hold that thought for a bit. We ll return to it.  Another possible method is to simply clear the fractions and compare like terms. (In fact, our previous method can be made a little more palatable by clearing the fractions first.) Thus . Multiplying through and cancelling, we have so that . Comparing the coefficient of and the constant terms we see that we need to solve the following system of two equations in the two unknowns and     Solve the system of equations and show that you get the same solution that you got in .   This is a little better. We ve still got a system of two equations to solve, but it seems to be a little more manageable. Still, as the problems get more complex the number of equations in our system will grow. We d still like to find something simpler than this if we can.  But wait! Take another look at equation . With a judicious use of that formula you can actually compute this PFD almost completely in your head. It s that simple. Really.  Because equation is an identity, it is true regardless of which value of we choose. So of we choose we get immediately. Similarly choosing gives , also immediately.Thus the PFD of is .   Verify the identity by adding the fractions on the right side together.    Compute each integral by decomposing the integrand using any of the methods you ve seen so far.                                    Compute each integral by decomposing the integrand using any of the methods you ve seen so far.               Let and use the results of parts (a) and (b).    As we ve mentioned before, all mathematical models make simplifying assumptions. It is important to know what are the simplifications are so we know the conditions under which the model is unrealistic. For example, IVP works fine in the short term but in the long term it predicts explosive growth which is not sustainable. We addressed this when we generated the Logistic Equation by including as a factor, . That modification put an upper bound on the population size as we have seen.  However the Logistic Equation doesn t put any lower bound on the population size. This is also unrealistic since we know that if a population of critters is too small they tend to die out. The following tweak to the logistic model: forces a population which is too small to die out. In this case, is called the minimum viability level of the population.   An Extension of the Logistic Equation  Use the graphical techniques of to sketch the graph of the solution of equation . Explain what happens if our population drops below the minimum viability level     Note to Bob  Bob, I haven t worked through this problem to make sure it is workable yet. One of us should do that and make sure.   Of course we would prefer to have a formula for . It appears that we can obtain a formula if we can integrate the left side of equation . As the following problem shows, the PFD extends in the obvious way to three or more factors.  The PFD in its Simplest Form (Find the Pattern) Partial Fraction Decomposition simplest form of the PFD  We ve arrived at a very clever algorithm for computing the PFD of a rational function of the form but we ll need to extend it considerably if it is going to be more than minimally useful. This extension is straightforward.   Show that the PFD of can be computed in exactly the same manner as our most recent method for .   Show the same for .   Show the same for .   Try to find a formula for in by integrating both sides and solving the result for . Explain what goes wrong.  As you can see from even in its simplest form the PFD can become a very large problem. For example suppose . In that case we d need to find coefficients. We d really like to make the method as efficient as possible. To that end there is one more refinement we ll need before moving on to more general problems.  When he was computing some PFDs related to his work solving differential equations Oliver Heaviside (1850 1925) made the following observation. Look closely at the numerators of the fractions the right side of (this is equation ). Do you see that the numerator above is what we would get if we simply replaced with on the left and covered up  ?  That is, if then . Similarly . Vocabulary Heaviside s Cover up Method  Vocabulary HCUM This is known as Heaviside s Cover up Method (hcum) and it is the simplest way we know to compute the coefficients of the PFD of the rational functions we ve seen so far.   Compute each integral by decomposing the integrand using using Heaviside s Cover up Method .                                    To avoid obscuring our point, so far we ve kept the numerators and the coefficients of simple. The numerators have always been some constant, usually , and the coefficients of have always been . But this is not necessary.  Use Heaviside s method to compute each of the following integrals. Once you have the decomposition confirm that it is correct by adding your fractions together.                          Advanced Decompositions   Linear Factors   Heaviside s method will not work on the rational functions . If you try to apply it you ll get which is wrong. Try it and see.  The difficulty here is that the PFD requires that the rational function to be decomposed must be in lowest terms. In this context that means that the degree (the value of the largest exponent) of the numerator must be strictly less than the degree of the denominator. In this example the degree of the numerator is which is the same as the degree of the denominator: . So the PFD doesn t apply.  At first this looks like it will be a major obstacle but it really isn t too bad. We simply need to do the polynomial division indicated. In this case that means computing .  From there we can compute the PFD of as before.    Complete the decomposition of .    Note to self  We need a representative and instructive set of problems here.    Heaviside s method will also fail on this function: . If you apply it you ll get which is incorrect. Check it and see.                            The problem here is the factor in the denominator. If you look back at the problems and examples we ve looked at so far you ll see that in every case every possible factor which appeared in the denominator of the fraction on the left side also appeared in one of the denominators on the right side. In this case clearly both and are factors of , but is also a factor so the correct decomposition , and we need to find the constants , , and .  The values , and can still be found using the HCUM, so we have .  To find recall that equation is an identity so it is true regardless of the value of . Since is the only parameter left we can find it by setting (or anything else). This gives , or . So the full decomposition is .    Explain why the HCUM can be used to find and in .   It s the same reason it worked in equation .   Confirm that you can solve equation for by setting , , and .  There are two values of which will not allow us to compute . What are they?    Use the HCUM to compute the coefficients of the PFD indicated.   Find , , and .    Find and .    Find .    In each of these problems we only asked you to find the coefficients that are attainable using the HCUM. The others will have to be computed by the method we ll describe in the next example .  Explain as clearly as you can from the evidence above which kinds of coefficients we can compute using the HCUM.    The PFD With Distinct Linear Factors  Let s finish up the decomposition of from part (b) of . From the HCUM You should have found that and so that When we reached this point in our next step was to simply choose a value for . We could do that here as well but we d have to choose two values for thereby generating a pair of equations to solve and we ve already seen that there are more efficient methods for computing the PFD than solving a system of equations.  Instead we ll isolate all of the terms with our unknowns on one side of the equation, thus:   It is clear that the right side of equation is the PFD of some rational function whose denominator is . That is, if we were asked to begin the process of computing the PFD of for some polynomial then our first step would be to write down the right side of equation . Therefore it must be that for some polynomial , and if we can find that polynomial we can compute and by the HCUM.  We can find by essentially the same method we used to find the constant in . First we clear the fraction on the right Since the left side is guaranteed to reduce to the polynomial it is tempting to find a common denominator and add the three fractions on the left together. Since we have to end up with the polynomial it must be that once the addition is done there will be a factor in the top that will cancel with the common denominator.  That will work. Give it a try if you want. Good luck.  But we re trying to find the most efficient method we can so instead we re going to make judicious use of the knowledge that we must end up with a polynomial.  First think about the expression in the second term on the left: . If we perform this division we get . Similarly if we computing the division in the third term we get . Putting these back into equation we have or . Since we must get a polynomial it must be that the fractions in this last equation will sum to zero. So we can ignore them and conclude that our polynomial is given by the other terms. So .  To finish the decomposition we observe that and from the HCUM we see that and .  Having found all of the constants we conclude that .    Of course, we re not just computing the PFDs for fun. For us the Partial Fraction Decomposition is a tool which will enable us compute integrals we can t compute by other means. Notice that we cannot compute any of the integrals in this problem without using the PFD.   Use the results of to compute .   Combine your results from part (a) of and what you learned from to compute    Combine your results from part (c) of and what you learned from to compute .     Irreducible Quadratic Factors  In the problems and examples we ve encountered so far whenever there was a quadratic factor in the denominator we were able to either factor it into two distinct linear factors (e.g. or into one such factor, squared (e.g. ). Unfortunately we cannot yet compute the integral , because the factor cannot be factored (over the real numbers). So we ll need to extend our procedure to account for this.   Comment  But it can be factored over the complex numbers. We will address this at the end of this section.   The PFD still guarantees that will appear as a term in the decomposition and the HCUM will still allow us to find . Thus we have . The computation of the other stuff is the next topic.  Fortunately the setup for the other stuff is not substantially different from what we have done heretofore. First, since the factor and cannot be factored there will be a term in the decompostion which corresponds to each: To identify the unknown recall that in the paragraph following equation we observed that in the PFD the degrees of the numerators were always one less than the degrees of the denominators. Following that pattern it is reasonable to speculate that the decomposition is where , , and are constants to be determined. And our speculation is correct. If we can find , , and the decomposition will be complete.  Reasoning by analogy it seems reasonable to speculate that the PFD of will be and that is correct.  The good news is that we are done. Equation is an example of the most general form that a Partial Fraction Decomposition can have. Beyond that they just get bigger.  The HCUM can still be used to compute and . It can even be extended to compute and , but for the kinds of problems we will be encountering extending the HCUM is not worth the effort.  Let s finish the decomposition of which we had interupted. We had reached this point:   which, as we keep repeating, is an identity. So if we isolate the expression on the right side of the equation then the left side will reduce to a linear expression in . We can then simply compare the coefficients.  Multiplying both sides by we have and isolating gives , and if we simplify the expression on the left we will see that , so .   Confirm that equation is correct by getting a common denominator and adding the terms on the right together.   Compute the integral .   So, at long last here is the full statement of the Partial Fraction Decomposition.   The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non trivial common factors with then there exist polynomials and , with and , such that .   You can see why we did not begin this section by stating this theorem. The language is so terse that it is actually hard to recognize this theorem as describing everything we have been through in this section. Nevertheless, covers every kind of decomposition we have looked at in this section.   DIGRESSION:  In his PhD dissertation C. F. Gauss (1777 1855) proved that every polynomial can be completely factored into (possibly repeated) linear factors. These days this is known as the rather bombastic name The Fundamental Theorem of Algebra .  In view of this theorem an obvious question presents itself: Why did we bother with the Irreducible Quadratic case when discussing the Partial Fraction Decomposition? That is, why did we (the authors) tell you that can t be factored, when Gauss s theorem clearly says that it can.  Recall that in the first paragraph of we were careful to state that cannot be factored over the real numbers . But it can be factored over the complex numbers (real numbers plus imaginary numbers).  While Gauss s proof didn t make explicit use of complex numbers they were implicit in his approach. Moreover, his proof was generally recognized as valid. This was quite a puzzle at the time because his proof said that could be factored, but the nature of the factors was not clear because when Gauss proved the Fundamental Theorem of Algebra the complex numbers were not well understood at all and had not been accepted. The Fundamental Theorem of Algebra is one of the results that forced mathematicians to undertake the study of the complex numbers .                                      Let as in and show that .   Use the result of part (a) to show that    Recall that we ve already seen that . In view of the result in part (b), do you believe that ?  Notice that we have not asked if this is true, only if you believe it. Hence there is no right or wrong answer to the following question: Explain why you do or don t believe that equation . Give mathematical reasons to support your opinion either way.                        By allowing the use of complex numbers we can use the HCUM to compute   But unfortunately, in this course we confine our attention to the real numbers and treat the complex numbers as if they are somehow unsavory, even when using them would make more sense. To get the decomposition back into just the real number we compute the sum as follows . Thus our decompostion over the real numbers (rather than the complex numbers is .    Confirm that equation is correct.   Confirm that equation is correct.   END OF DIGRESSION       Use the Partial Fraction Decomposition to compute each of the integrals.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "
+  "body": " The Partial Fraction Decomposition   When we analyzed the Logistic Equation    in we were unable to find a formula for . But, by analyzing the IVP directly we were able to generate a qualitative graph of . That is, we were able to get a general sense of the shape of the graph of even if the coordinates of particular points were unavailable.  While a qualitative graph is better than nothing, it would be more useful to have an explicit formula for , if we can find it. With integration we now have the tool we need to find such a formula.    Simple Decompositions   The Logistic Equation, Redux  Starting with the Logistic Equation, the first step is to separate the variables: . If we integrate both sides of this equation the result will be an equation in which appears. If we can solve that for we will have our formula for .  Integrating the right sides presents no difficulties: .  But at our current level of skill with integration the only option that presents itself for integrating the left side is to to complete the square in the denominator and apply the appropriate trigonometric substitution.    Heaviside s Cover up Method (HCUM)   By completing the square in the denominator and making the substitution integrate the left side of equation and show that .   As you have just seen, integrating the left side of equation is entirely within the range of our current skill set but it is rather daunting. And we re not even finished yet. We must still solve equation for . Before we do that we d really like to find a simpler way to compute the integral.  Here s a simpler way. Observe that the fraction can be decomposed as .       With the identity in hand we can integrate the right side of equation as follows. Combining this with equation we see that which is much easier to solve for than equation .   Confirm equation .   Use the result of part (a) to show that      Use the result of part (b) to show that equation yields where is an arbitrary constant.   Use the initial condition in IVP to show that in part (c) , and then confirm that you get the same solution when you solve equation for .   Graph from part (c) and confirm that it has the same general shape that we discovered in .   This is much simpler but the roadblock is this: where did equation come from? How did we find this decomposition of the fraction ?  We found equation by an algebraic technique called the Partial Fraction Decomposition or PFD . There are several places in mathematics where it is useful to break a single rational expresstion into the sum of simpler rational expressions. We will be using it to simplify the integration when the integrand is a rational function.  A fully general statement of the PFD is given in but as you can see the general statement is quite comprehensive. Moreover the statement of the theorem doesn t help us use it as a practical tool. So we will work through a number of increasingly complex examples to build things up slowly.  To begin, if we have an expression of the form where , and are known constants, and , then the PFD says that there are constants and such that as . Our task is to find values for and .  Take note of the following fact: The right side of equation consists of rational functions where the degree of the numerator is one less than the degree of the denominator. Since the numerators are all constants (polynomials of degree zero) and the denominators are all linear (polynomials of degree one) this is, at the moment, a rather bombastic way to state this fact. However in we will find it very useful.  There are a couple of ways we can find and . What we d like to do is find the simplest, least difficult to implement method we can. After all, we re not here to do fraction decompositions. This is just one step toward computing an integral and we d like for the decomposition step to be as simple and painless as possible.  Conceptually the simplest method available is to simply to choose values for . This is a valid approach because the equation is actually an identity it will be true no matter what the value of is.  If we choose we get , and if we choose we get and we have a system of two equations in the unknowns and which we can solve.   In this form the equations and, are a little intimidating. But it s not really as bad as it looks. Clear the fractions and then solve for and .   The method we ve just outlined will work, and it will always work. But this is only our first example of the PFD and you can surely see that that if we have more than two constants the difficulty of solving for the coefficients will increase rapidly. But again, this method works and it will always work, so it is something we can always fall back on if we can t find something simpler.  Since the method just outlined will always work one possible way to lighten the load is to look for values of that will make the resulting equations simpler to solve. Sadly, no obvious choice presents itself, but hold that thought for a bit. We ll return to it.  Another possible method is to simply clear the fractions and compare like terms. (In fact, our previous method can be made a little more palatable by clearing the fractions first.) Thus . Multiplying through and cancelling, we have so that . Comparing the coefficient of and the constant terms we see that we need to solve the following system of two equations in the two unknowns and     Solve the system of equations and show that you get the same solution that you got in .   This is a little better. We ve still got a system of two equations to solve, but it seems to be a little more manageable. Still, as the problems get more complex the number of equations in our system will grow. We d still like to find something simpler than this if we can.  But wait! Take another look at equation . With a judicious use of that formula you can actually compute this PFD almost completely in your head. It s that simple. Really.  Because equation is an identity, it is true regardless of which value of we choose. So of we choose we get immediately. Similarly choosing gives , also immediately.Thus the PFD of is .   Verify the identity by adding the fractions on the right side together.   The PFD in its Simplest Form (Find the Pattern) Partial Fraction Decomposition simplest form of the PFD  We ve arrived at a very clever algorithm for computing the PFD of a rational function of the form but we ll need to extend it several times if it is going to be more than minimally useful. The first extension is straightforward.   Show that the PFD of can be computed in exactly the same manner as our most recent method for .   Show the same for .   Show the same for .   As you can see from even in its simplest form the PFD can become a very large problem. For example suppose . In that case we d need to find coefficients. We d really like to make the method as efficient as possible. To that end there is one more refinement we ll need before moving on to more general problems.   Compute each integral by decomposing the integrand using any of the methods you ve seen so far.                                    Compute each integral by decomposing the integrand using any of the methods you ve seen so far.               Let and use the results of parts (a) and (b).    As we ve mentioned before, all mathematical models make simplifying assumptions. It is important to know what are the simplifications are so we know the conditions under which the model is unrealistic. For example, IVP works fine in the short term but in the long term it predicts explosive growth which is not sustainable. We addressed this when we generated the Logistic Equation by including as a factor, . That modification put an upper bound on the population size as we have seen.  However the Logistic Equation doesn t put any lower bound on the population size. This is also unrealistic since we know that if a population of critters is too small they tend to die out. The following tweak to the logistic model: forces a population which is too small to die out. In this case, is called the minimum viability level of the population.   Find the PFD of and verify that your decomposition is correct.   Use the result of part (a) to show that is satisfied by where is an arbitrary constant.   Use the graphical techniques of to sketch a qualitative graph of the solution of equation .  Does the curve you get resemble the graph of ?  Explain what happens if our population drops below the minimum viability level    When he was computing some PFDs related to his work with differential equations Oliver Heaviside (1850 1925) made the following observation. Look closely at the numerators of the fractions the right side of (this is equation ). Do you see that the numerator above is what we would get if we simply replaced with on the left and covered up, (or ignored) the factor ?  That is, if then . Similarly . Vocabulary Heaviside s Cover up Method  Vocabulary HCUM This is known as Heaviside s Cover up Method (HCUM) and it is the simplest way we know to compute the coefficients of the PFD of the rational functions we ve seen so far.  The HCUM is a very convenient shortcut. But it is necessary to understand why any shortcut works. Otherwise all we have is the shortcut. If we encounter a problem where the shortcut wont t work but the underlying principle will, and all we know is the shortcut we can t make any progress.  To see why the HCUM works take another look at the decomposition . If we multiply both sides by , we get which holds as long as . Notice that . Next, if we take we get .  By a similar argument, show that the HCUM will also compute the correct value of , , and in the decomposition . It is straightforward to generalize this result to an arbitrary number of linear factors.   Compute each integral by decomposing the integrand using using Heaviside s Cover up Method and confirm that your decomposition is correct.                        To avoid obscuring our point, so far we ve kept the numerators and the coefficients of simple. The numerators have always been some constant, usually , and the coefficients of have always been . But this is not necessary.  Use Heaviside s method to compute each of the following integrals. Once you have the decomposition confirm that it is correct by adding your fractions together.                          Advanced Decompositions   Linear Factors   Heaviside s method, as we have seen it so far, will not work on the rational function . If you try to apply it you ll get which is wrong. Try it and see.  The difficulty here is that, as a practical matter, the PFD requires that we want the degree of the numerator of our rational function to be strictly less than the degree of the denominator. (This is somewhat analogous to putting a fraction in lowest terms. ) In this example the degree of the numerator is which is the same as the degree of the denominator: . So the PFD, as stated so far, doesn t apply.           At first this looks like it will be a major obstacle but it really isn t too bad. There are two ways we can address the issue.   Dividing First: The first is simply to do the polynomial division indicated. In practice that means multiplying out the denominator first: and then dividing:   From there we can compute the PFD of as before, finally obtaining .   Dividing Last: The second is to factor out the numerator: , compute the PFD of as before. This gives   These two methods are equivalent so which to use is entirely up to you. We (the authors) prefer dividing last because it doesn t require that we factor and un factor the denominator, and because we only ever have to divide by a linear expression, which we find less burdensome.  However, we do advise that you pick one method that you like and use it consistently, at least until you have fully mastered the Partial Fraction Decomposition.    Complete the decompositions in equations and .   Show that the expression cannot be decomposed by the dividing last method described in , but it can be decomposed by the dividing first method. Are we really decomposing the fraction in this case. Explain.   Note to self  We need a representative and instructive set of problems here.    Heaviside s Cover up Method will also fail on this function: . If you apply it you ll get which is incorrect. Check it and see.                            The problem here is the factor in the denominator. If you look back at the problems and examples we ve looked at so far you ll see that in every distinct factor which appeared in the denominator of the fraction on the left side also appeared in one of the denominators on the right side. In this case the distinct factors are and so the decomposition will be . But now the question is, What is the something? Up until now none of the distinct factors in the denominator appeared with a power higher than one. So a factor of is altogether new and different.  Looking back at our earlier, and simpler, examples we see that every case the terms on the left were rational functions where the degree of the numerator (which was always in those examples) was one less than the degree of the denominator (which was always in those examples). If we keep that pattern here then it appears that the decomposition must be because and . We can break this up a bit more by observing that so we need to find , , and where .  The values , and can still be found using the HCUM, so we have .  To find recall that equation is an identity so it is true regardless of the value of . Since is the only parameter left we can find it by setting (or anything else). This gives , or . So the full decomposition is .    Explain why the HCUM can be used to find and in .   It s the same reason it worked in equation .   You can solve equation for by setting equal to (almost) any value we choose. Confirm this by showing that we get when , , and .   There are two values of which will not allow us to compute . What are they and why can t we use them?    Use the HCUM to compute the coefficients of the PFD indicated.   Find , , and .    Find and .    Find .    Explain as clearly as you can from the evidence above which kinds of coefficients we can compute using the HCUM.   In we only asked you to find the coefficients that are attainable using the HCUM. The others will have to be computed by the method we ll describe in the next example.   The PFD With Repeated Linear Factors  Let s finish up the decomposition of from part (b) of . From the HCUM You should have found that and so that When we reached this point in our next step was to simply choose a value for . We could do that here as well but we d have to choose two values for thereby generating a pair of equations to solve and we ve already seen that there are more efficient methods for computing the PFD than solving a system of equations.  Instead we ll isolate all of the terms with our unknowns on one side of the equation, thus:   It is clear that the right side of equation is the PFD of some rational function whose denominator is . That is, if we were asked to begin the process of computing the PFD of for some polynomial then our first step would be to write down the right side of equation . Therefore it must be that for some polynomial , and if we can find that polynomial we can compute and by the HCUM.  We can find by essentially the same method we used to find the constant in . First we clear the fraction on the right Since the left side is guaranteed to reduce to the polynomial it is tempting to find a common denominator and add the three fractions on the left together. Since we have to end up with the polynomial it must be that once the addition is done there will be a factor in the top that will cancel with the common denominator.  That will work. Give it a try if you want. Good luck.  But we re trying to find the most efficient method we can so instead we re going to make judicious use of the knowledge that we must end up with a polynomial.  First think about the expression in the second term on the left: . If we perform this division we get . Similarly if we computing the division in the third term we get . Putting these back into equation we have or . Since must be a polynomial it follows that (everything that isn t a polynomial) must sum to zero. So we can ignore them and conclude that our polynomial is given by the other terms. So .  To finish the decomposition we observe that and from the HCUM we see that and .  Having found all of the constants we conclude that .    Of course, we re not just computing the PFDs for fun. For us the Partial Fraction Decomposition is a tool which will enable us compute integrals we can t compute by other means. Notice that we cannot compute any of the integrals in this problem without using the PFD.   Use the results of to compute .   Combine your results from part (a) of and what you learned from to compute    Combine your results from part (c) of and what you learned from to compute .     Irreducible Quadratic Factors  In the problems and examples we ve encountered so far whenever there was a quadratic factor in the denominator we were able to either factor it into two distinct linear factors (e.g. or into one such factor, squared, e.g. . Unfortunately we cannot yet compute the integral , because the factor cannot be factored (over the real numbers). So we ll need to extend our procedure to account for this.   Comment  But it can be factored over the complex numbers. We will address this at the end of this section.   From our previous work we know that so by the HCUM . Therefore   which, as we keep repeating, is an identity. If we isolate the expression on the right side of the equation then the left side will reduce to a linear expression in . We can then simply compare the coefficients.  Multiplying both sides by we have and isolating gives , and if we simplify the expression on the left we will see that , so .   Confirm that equation is correct by getting a common denominator and adding the terms on the right together.   Compute the integral .   Reasoning by analogy it seems reasonable to speculate that the PFD of will be and that is correct.  The good news is that we are done. Equation is an example of the most general form that a Partial Fraction Decomposition can have. Beyond that they just get bigger.  The HCUM can still be used to compute and . It can even be extended to compute and , but for the kinds of problems we will be encountering that extension is not worth the effort.  So, at long last here is the full statement of the Partial Fraction Decomposition.   The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non trivial common factors with then there exist polynomials and , with and , such that .   You can see why we did not begin this section by stating this theorem. The language is so terse that it is actually hard to recognize this theorem as describing everything we have been through in this section. Nevertheless, covers every kind of decomposition we have looked at in this section.   DIGRESSION: Avoiding the Irreducible Case by Allowing Complex Numbers  In his PhD dissertation C. F. Gauss (1777 1855) proved that every polynomial can be completely factored into (possibly repeated) linear factors. These days this is known by the rather pompous name The Fundamental Theorem of Algebra .  In view of this theorem an obvious question presents itself: Why did we bother with the Irreducible Quadratic case when discussing the Partial Fraction Decomposition? That is, why did we (the authors) tell you that can t be factored, when Gauss s theorem clearly says that it can.  Recall that in the first paragraph of the subsection Irreducible Quadratic Factors we were careful to state that cannot be factored over the real numbers . But it can be factored over the complex numbers (real numbers plus imaginary numbers).  While Gauss s proof didn t make explicit use of complex numbers they were implicit in his approach and his proof was valid. This was quite a puzzle at the time because while his proof said that could be factored, the nature of the factors was not clear. When Gauss proved the Fundamental Theorem of Algebra the complex numbers were not well understood at all and had not been accepted. The Fundamental Theorem of Algebra is one of the results that forced mathematicians to undertake the study of the complex numbers and eventually accept them as an extension of the real numbers.                                      Let as in and show that .   Use the result of part (a) to show that    Recall that we ve already seen that . In view of the result in part (b), do you believe that ?  Notice that we have not asked if this is true, only if you believe it. Hence there is no right or wrong answer to the following question: Explain why you do or don t believe that equation . Give mathematical reasons to support your opinion either way.                        By allowing the use of complex numbers we can use the HCUM to compute   But unfortunately, in this course we confine our attention to the real numbers and treat the complex numbers as if they are somehow unsavory, even when using them would make more sense. To get the decomposition back into just the real number we compute the sum as follows . Thus our decompostion over the real numbers (rather than the complex numbers is .    Confirm that equation is correct.   Confirm that equation is correct.   END OF DIGRESSION       Use the Partial Fraction Decomposition to compute each of the integrals.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "
 },
 {
   "id": "PROBLEMLogisticTrigSubst",
@@ -11008,27 +11008,18 @@ var ptx_lunr_docs = [
   "body": " By completing the square in the denominator and making the substitution integrate the left side of equation and show that .  "
 },
 {
-  "id": "DRILLLogisticPartFrac2",
+  "id": "SUBSUBSECTIONLogisticEquation-6",
   "level": "2",
-  "url": "SECTIONPartFrac.html#DRILLLogisticPartFrac2",
-  "type": "Drill",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-6",
+  "type": "Problem",
   "number": "19.2.1.2",
   "title": "",
-  "body": " Confirm equation .  "
+  "body": " Confirm equation .   Use the result of part (a) to show that      Use the result of part (b) to show that equation yields where is an arbitrary constant.   Use the initial condition in IVP to show that in part (c) , and then confirm that you get the same solution when you solve equation for .   Graph from part (c) and confirm that it has the same general shape that we discovered in .  "
 },
 {
-  "id": "SUBSECTIONLogisticEquation-7",
+  "id": "SUBSUBSECTIONLogisticEquation-8",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-7",
-  "type": "Problem",
-  "number": "19.2.1.3",
-  "title": "",
-  "body": "    Solve equation and show that where is an arbitrary constant.   Use the initial condition in IVP to show that in part (a) , so that and then confirm that you get the same solution when you solve equation for .   Graph from part (b) and confirm that it has the same general shape that we discovered in .  "
-},
-{
-  "id": "SUBSECTIONLogisticEquation-9",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-9",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-8",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -11039,7 +11030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#DRILLPFD2x2-1",
   "type": "Drill",
-  "number": "19.2.1.4",
+  "number": "19.2.1.3",
   "title": "",
   "body": " In this form the equations and, are a little intimidating. But it s not really as bad as it looks. Clear the fractions and then solve for and .  "
 },
@@ -11048,18 +11039,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#DRILLDRILLPFD2x2-2",
   "type": "Drill",
-  "number": "19.2.1.5",
+  "number": "19.2.1.4",
   "title": "",
   "body": " Solve the system of equations and show that you get the same solution that you got in .  "
 },
 {
-  "id": "SUBSECTIONLogisticEquation-24",
+  "id": "SUBSUBSECTIONLogisticEquation-23",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-24",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-23",
   "type": "Drill",
-  "number": "19.2.1.6",
+  "number": "19.2.1.5",
   "title": "",
   "body": " Verify the identity by adding the fractions on the right side together.  "
+},
+{
+  "id": "PROBLEMPFDSimplestForm",
+  "level": "2",
+  "url": "SECTIONPartFrac.html#PROBLEMPFDSimplestForm",
+  "type": "Problem",
+  "number": "19.2.1.6",
+  "title": "The PFD in its Simplest Form (Find the Pattern).",
+  "body": "The PFD in its Simplest Form (Find the Pattern) Partial Fraction Decomposition simplest form of the PFD  We ve arrived at a very clever algorithm for computing the PFD of a rational function of the form but we ll need to extend it several times if it is going to be more than minimally useful. The first extension is straightforward.   Show that the PFD of can be computed in exactly the same manner as our most recent method for .   Show the same for .   Show the same for .  "
 },
 {
   "id": "DRILLPFDWithoutCoverup",
@@ -11071,85 +11071,67 @@ var ptx_lunr_docs = [
   "body": " Compute each integral by decomposing the integrand using any of the methods you ve seen so far.                                  "
 },
 {
-  "id": "SUBSECTIONLogisticEquation-26",
+  "id": "SUBSUBSECTIONLogisticEquation-27",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-26",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-27",
   "type": "Problem",
   "number": "19.2.1.8",
   "title": "",
   "body": " Compute each integral by decomposing the integrand using any of the methods you ve seen so far.               Let and use the results of parts (a) and (b).  "
 },
 {
-  "id": "EXAMPLEExtendedLogistic",
+  "id": "EXERCISEExtendedLogistic",
   "level": "2",
-  "url": "SECTIONPartFrac.html#EXAMPLEExtendedLogistic",
-  "type": "Example",
+  "url": "SECTIONPartFrac.html#EXERCISEExtendedLogistic",
+  "type": "Problem",
   "number": "19.2.1.9",
   "title": "",
-  "body": " As we ve mentioned before, all mathematical models make simplifying assumptions. It is important to know what are the simplifications are so we know the conditions under which the model is unrealistic. For example, IVP works fine in the short term but in the long term it predicts explosive growth which is not sustainable. We addressed this when we generated the Logistic Equation by including as a factor, . That modification put an upper bound on the population size as we have seen.  However the Logistic Equation doesn t put any lower bound on the population size. This is also unrealistic since we know that if a population of critters is too small they tend to die out. The following tweak to the logistic model: forces a population which is too small to die out. In this case, is called the minimum viability level of the population.  "
+  "body": " As we ve mentioned before, all mathematical models make simplifying assumptions. It is important to know what are the simplifications are so we know the conditions under which the model is unrealistic. For example, IVP works fine in the short term but in the long term it predicts explosive growth which is not sustainable. We addressed this when we generated the Logistic Equation by including as a factor, . That modification put an upper bound on the population size as we have seen.  However the Logistic Equation doesn t put any lower bound on the population size. This is also unrealistic since we know that if a population of critters is too small they tend to die out. The following tweak to the logistic model: forces a population which is too small to die out. In this case, is called the minimum viability level of the population.   Find the PFD of and verify that your decomposition is correct.   Use the result of part (a) to show that is satisfied by where is an arbitrary constant.   Use the graphical techniques of to sketch a qualitative graph of the solution of equation .  Does the curve you get resemble the graph of ?  Explain what happens if our population drops below the minimum viability level   "
 },
 {
-  "id": "PROBLEMLogistExtend",
+  "id": "SUBSUBSECTIONLogisticEquation-30",
   "level": "2",
-  "url": "SECTIONPartFrac.html#PROBLEMLogistExtend",
-  "type": "Problem",
-  "number": "19.2.1.10",
-  "title": "An Extension of the Logistic Equation.",
-  "body": "An Extension of the Logistic Equation  Use the graphical techniques of to sketch the graph of the solution of equation . Explain what happens if our population drops below the minimum viability level   "
-},
-{
-  "id": "PROBLEMPFDSimplestForm",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#PROBLEMPFDSimplestForm",
-  "type": "Problem",
-  "number": "19.2.1.11",
-  "title": "The PFD in its Simplest Form (Find the Pattern).",
-  "body": "The PFD in its Simplest Form (Find the Pattern) Partial Fraction Decomposition simplest form of the PFD  We ve arrived at a very clever algorithm for computing the PFD of a rational function of the form but we ll need to extend it considerably if it is going to be more than minimally useful. This extension is straightforward.   Show that the PFD of can be computed in exactly the same manner as our most recent method for .   Show the same for .   Show the same for .  "
-},
-{
-  "id": "SUBSECTIONLogisticEquation-32",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-32",
-  "type": "Problem",
-  "number": "19.2.1.12",
-  "title": "",
-  "body": "Try to find a formula for in by integrating both sides and solving the result for . Explain what goes wrong. "
-},
-{
-  "id": "SUBSECTIONLogisticEquation-35",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-35",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-30",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Heaviside s Cover up Method (hcum) "
+  "body": "Heaviside s Cover up Method (HCUM) "
 },
 {
-  "id": "SUBSECTIONLogisticEquation-36",
+  "id": "SUBSUBSECTIONLogisticEquation-33",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-36",
-  "type": "Drill",
-  "number": "19.2.1.13",
-  "title": "",
-  "body": " Compute each integral by decomposing the integrand using using Heaviside s Cover up Method .                                  "
-},
-{
-  "id": "SUBSECTIONLogisticEquation-37",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONLogisticEquation-37",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-33",
   "type": "Problem",
-  "number": "19.2.1.14",
+  "number": "19.2.1.10",
+  "title": "",
+  "body": "By a similar argument, show that the HCUM will also compute the correct value of , , and in the decomposition . It is straightforward to generalize this result to an arbitrary number of linear factors. "
+},
+{
+  "id": "SUBSUBSECTIONLogisticEquation-34",
+  "level": "2",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-34",
+  "type": "Problem",
+  "number": "19.2.1.11",
+  "title": "",
+  "body": " Compute each integral by decomposing the integrand using using Heaviside s Cover up Method and confirm that your decomposition is correct.                      "
+},
+{
+  "id": "SUBSUBSECTIONLogisticEquation-35",
+  "level": "2",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONLogisticEquation-35",
+  "type": "Problem",
+  "number": "19.2.1.12",
   "title": "",
   "body": " To avoid obscuring our point, so far we ve kept the numerators and the coefficients of simple. The numerators have always been some constant, usually , and the coefficients of have always been . But this is not necessary.  Use Heaviside s method to compute each of the following integrals. Once you have the decomposition confirm that it is correct by adding your fractions together.                      "
 },
 {
-  "id": "SUBSECTIONPFDNonSimple-2-2",
+  "id": "EXAMPLEPFDUnreducedTwoMethods",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2-2",
+  "url": "SECTIONPartFrac.html#EXAMPLEPFDUnreducedTwoMethods",
   "type": "Example",
   "number": "19.2.2.1",
   "title": "",
-  "body": " Heaviside s method will not work on the rational functions . If you try to apply it you ll get which is wrong. Try it and see.  The difficulty here is that the PFD requires that the rational function to be decomposed must be in lowest terms. In this context that means that the degree (the value of the largest exponent) of the numerator must be strictly less than the degree of the denominator. In this example the degree of the numerator is which is the same as the degree of the denominator: . So the PFD doesn t apply.  At first this looks like it will be a major obstacle but it really isn t too bad. We simply need to do the polynomial division indicated. In this case that means computing .  From there we can compute the PFD of as before.  "
+  "body": " Heaviside s method, as we have seen it so far, will not work on the rational function . If you try to apply it you ll get which is wrong. Try it and see.  The difficulty here is that, as a practical matter, the PFD requires that we want the degree of the numerator of our rational function to be strictly less than the degree of the denominator. (This is somewhat analogous to putting a fraction in lowest terms. ) In this example the degree of the numerator is which is the same as the degree of the denominator: . So the PFD, as stated so far, doesn t apply.           At first this looks like it will be a major obstacle but it really isn t too bad. There are two ways we can address the issue.   Dividing First: The first is simply to do the polynomial division indicated. In practice that means multiplying out the denominator first: and then dividing:   From there we can compute the PFD of as before, finally obtaining .   Dividing Last: The second is to factor out the numerator: , compute the PFD of as before. This gives   These two methods are equivalent so which to use is entirely up to you. We (the authors) prefer dividing last because it doesn t require that we factor and un factor the denominator, and because we only ever have to divide by a linear expression, which we find less burdensome.  However, we do advise that you pick one method that you like and use it consistently, at least until you have fully mastered the Partial Fraction Decomposition.  "
 },
 {
   "id": "SUBSECTIONPFDNonSimple-2-3",
@@ -11158,59 +11140,68 @@ var ptx_lunr_docs = [
   "type": "Drill",
   "number": "19.2.2.2",
   "title": "",
-  "body": " Complete the decomposition of .  "
+  "body": " Complete the decompositions in equations and .  "
+},
+{
+  "id": "SUBSECTIONPFDNonSimple-2-4",
+  "level": "2",
+  "url": "SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2-4",
+  "type": "Problem",
+  "number": "19.2.2.3",
+  "title": "",
+  "body": "Show that the expression cannot be decomposed by the dividing last method described in , but it can be decomposed by the dividing first method. Are we really decomposing the fraction in this case. Explain. "
 },
 {
   "id": "EXAMPLEHeaviNonLinear1",
   "level": "2",
   "url": "SECTIONPartFrac.html#EXAMPLEHeaviNonLinear1",
   "type": "Example",
-  "number": "19.2.2.3",
-  "title": "",
-  "body": " Heaviside s method will also fail on this function: . If you apply it you ll get which is incorrect. Check it and see.                            The problem here is the factor in the denominator. If you look back at the problems and examples we ve looked at so far you ll see that in every case every possible factor which appeared in the denominator of the fraction on the left side also appeared in one of the denominators on the right side. In this case clearly both and are factors of , but is also a factor so the correct decomposition , and we need to find the constants , , and .  The values , and can still be found using the HCUM, so we have .  To find recall that equation is an identity so it is true regardless of the value of . Since is the only parameter left we can find it by setting (or anything else). This gives , or . So the full decomposition is .  "
-},
-{
-  "id": "SUBSECTIONPFDNonSimple-2-6",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2-6",
-  "type": "Problem",
   "number": "19.2.2.4",
   "title": "",
-  "body": " Explain why the HCUM can be used to find and in .   It s the same reason it worked in equation .   Confirm that you can solve equation for by setting , , and .  There are two values of which will not allow us to compute . What are they?  "
+  "body": " Heaviside s Cover up Method will also fail on this function: . If you apply it you ll get which is incorrect. Check it and see.                            The problem here is the factor in the denominator. If you look back at the problems and examples we ve looked at so far you ll see that in every distinct factor which appeared in the denominator of the fraction on the left side also appeared in one of the denominators on the right side. In this case the distinct factors are and so the decomposition will be . But now the question is, What is the something? Up until now none of the distinct factors in the denominator appeared with a power higher than one. So a factor of is altogether new and different.  Looking back at our earlier, and simpler, examples we see that every case the terms on the left were rational functions where the degree of the numerator (which was always in those examples) was one less than the degree of the denominator (which was always in those examples). If we keep that pattern here then it appears that the decomposition must be because and . We can break this up a bit more by observing that so we need to find , , and where .  The values , and can still be found using the HCUM, so we have .  To find recall that equation is an identity so it is true regardless of the value of . Since is the only parameter left we can find it by setting (or anything else). This gives , or . So the full decomposition is .  "
+},
+{
+  "id": "SUBSECTIONPFDNonSimple-2-7",
+  "level": "2",
+  "url": "SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2-7",
+  "type": "Problem",
+  "number": "19.2.2.5",
+  "title": "",
+  "body": " Explain why the HCUM can be used to find and in .   It s the same reason it worked in equation .   You can solve equation for by setting equal to (almost) any value we choose. Confirm this by showing that we get when , , and .   There are two values of which will not allow us to compute . What are they and why can t we use them?  "
 },
 {
   "id": "PROBLEMPFDDistinctLinearFactors",
   "level": "2",
   "url": "SECTIONPartFrac.html#PROBLEMPFDDistinctLinearFactors",
   "type": "Problem",
-  "number": "19.2.2.5",
-  "title": "",
-  "body": " Use the HCUM to compute the coefficients of the PFD indicated.   Find , , and .    Find and .    Find .    In each of these problems we only asked you to find the coefficients that are attainable using the HCUM. The others will have to be computed by the method we ll describe in the next example .  Explain as clearly as you can from the evidence above which kinds of coefficients we can compute using the HCUM.  "
-},
-{
-  "id": "EXAMPLEPFDDistinctLin",
-  "level": "2",
-  "url": "SECTIONPartFrac.html#EXAMPLEPFDDistinctLin",
-  "type": "Example",
   "number": "19.2.2.6",
-  "title": "The PFD With Distinct Linear Factors.",
-  "body": " The PFD With Distinct Linear Factors  Let s finish up the decomposition of from part (b) of . From the HCUM You should have found that and so that When we reached this point in our next step was to simply choose a value for . We could do that here as well but we d have to choose two values for thereby generating a pair of equations to solve and we ve already seen that there are more efficient methods for computing the PFD than solving a system of equations.  Instead we ll isolate all of the terms with our unknowns on one side of the equation, thus:   It is clear that the right side of equation is the PFD of some rational function whose denominator is . That is, if we were asked to begin the process of computing the PFD of for some polynomial then our first step would be to write down the right side of equation . Therefore it must be that for some polynomial , and if we can find that polynomial we can compute and by the HCUM.  We can find by essentially the same method we used to find the constant in . First we clear the fraction on the right Since the left side is guaranteed to reduce to the polynomial it is tempting to find a common denominator and add the three fractions on the left together. Since we have to end up with the polynomial it must be that once the addition is done there will be a factor in the top that will cancel with the common denominator.  That will work. Give it a try if you want. Good luck.  But we re trying to find the most efficient method we can so instead we re going to make judicious use of the knowledge that we must end up with a polynomial.  First think about the expression in the second term on the left: . If we perform this division we get . Similarly if we computing the division in the third term we get . Putting these back into equation we have or . Since we must get a polynomial it must be that the fractions in this last equation will sum to zero. So we can ignore them and conclude that our polynomial is given by the other terms. So .  To finish the decomposition we observe that and from the HCUM we see that and .  Having found all of the constants we conclude that .  "
+  "title": "",
+  "body": " Use the HCUM to compute the coefficients of the PFD indicated.   Find , , and .    Find and .    Find .    Explain as clearly as you can from the evidence above which kinds of coefficients we can compute using the HCUM.  "
 },
 {
-  "id": "SUBSECTIONPFDNonSimple-2-9",
+  "id": "EXAMPLEPFDRepeatedLinearFactors",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2-9",
-  "type": "Problem",
+  "url": "SECTIONPartFrac.html#EXAMPLEPFDRepeatedLinearFactors",
+  "type": "Example",
   "number": "19.2.2.7",
+  "title": "The PFD With Repeated Linear Factors.",
+  "body": " The PFD With Repeated Linear Factors  Let s finish up the decomposition of from part (b) of . From the HCUM You should have found that and so that When we reached this point in our next step was to simply choose a value for . We could do that here as well but we d have to choose two values for thereby generating a pair of equations to solve and we ve already seen that there are more efficient methods for computing the PFD than solving a system of equations.  Instead we ll isolate all of the terms with our unknowns on one side of the equation, thus:   It is clear that the right side of equation is the PFD of some rational function whose denominator is . That is, if we were asked to begin the process of computing the PFD of for some polynomial then our first step would be to write down the right side of equation . Therefore it must be that for some polynomial , and if we can find that polynomial we can compute and by the HCUM.  We can find by essentially the same method we used to find the constant in . First we clear the fraction on the right Since the left side is guaranteed to reduce to the polynomial it is tempting to find a common denominator and add the three fractions on the left together. Since we have to end up with the polynomial it must be that once the addition is done there will be a factor in the top that will cancel with the common denominator.  That will work. Give it a try if you want. Good luck.  But we re trying to find the most efficient method we can so instead we re going to make judicious use of the knowledge that we must end up with a polynomial.  First think about the expression in the second term on the left: . If we perform this division we get . Similarly if we computing the division in the third term we get . Putting these back into equation we have or . Since must be a polynomial it follows that (everything that isn t a polynomial) must sum to zero. So we can ignore them and conclude that our polynomial is given by the other terms. So .  To finish the decomposition we observe that and from the HCUM we see that and .  Having found all of the constants we conclude that .  "
+},
+{
+  "id": "SUBSECTIONPFDNonSimple-2-11",
+  "level": "2",
+  "url": "SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2-11",
+  "type": "Problem",
+  "number": "19.2.2.8",
   "title": "",
   "body": " Of course, we re not just computing the PFDs for fun. For us the Partial Fraction Decomposition is a tool which will enable us compute integrals we can t compute by other means. Notice that we cannot compute any of the integrals in this problem without using the PFD.   Use the results of to compute .   Combine your results from part (a) of and what you learned from to compute    Combine your results from part (c) of and what you learned from to compute .  "
 },
 {
-  "id": "SUBSUBSECTIONPFDIrreducQuadFac-12",
+  "id": "SUBSUBSECTIONPFDIrreducQuadFac-7",
   "level": "2",
-  "url": "SECTIONPartFrac.html#SUBSUBSECTIONPFDIrreducQuadFac-12",
+  "url": "SECTIONPartFrac.html#SUBSUBSECTIONPFDIrreducQuadFac-7",
   "type": "Problem",
-  "number": "19.2.2.8",
+  "number": "19.2.2.9",
   "title": "",
   "body": " Confirm that equation is correct by getting a common denominator and adding the terms on the right together.   Compute the integral .  "
 },
@@ -11219,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#THEOREMPartialFractionDecomp",
   "type": "Theorem",
-  "number": "19.2.2.9",
+  "number": "19.2.2.10",
   "title": "The Partial Fraction Decomposition (PFD).",
   "body": " The Partial Fraction Decomposition (PFD)  If , , and are polynomials having no non trivial common factors with then there exist polynomials and , with and , such that .  "
 },
@@ -11255,7 +11246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#DIGRESSIONComplexPFD-6",
   "type": "Problem",
-  "number": "19.2.2.10",
+  "number": "19.2.2.11",
   "title": "",
   "body": " Let as in and show that .   Use the result of part (a) to show that    Recall that we ve already seen that . In view of the result in part (b), do you believe that ?  Notice that we have not asked if this is true, only if you believe it. Hence there is no right or wrong answer to the following question: Explain why you do or don t believe that equation . Give mathematical reasons to support your opinion either way.  "
 },
@@ -11264,7 +11255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#DIGRESSIONComplexPFD-7",
   "type": "Example",
-  "number": "19.2.2.11",
+  "number": "19.2.2.12",
   "title": "",
   "body": " By allowing the use of complex numbers we can use the HCUM to compute   But unfortunately, in this course we confine our attention to the real numbers and treat the complex numbers as if they are somehow unsavory, even when using them would make more sense. To get the decomposition back into just the real number we compute the sum as follows . Thus our decompostion over the real numbers (rather than the complex numbers is .  "
 },
@@ -11273,7 +11264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#DIGRESSIONComplexPFD-8",
   "type": "Problem",
-  "number": "19.2.2.12",
+  "number": "19.2.2.13",
   "title": "",
   "body": " Confirm that equation is correct.   Confirm that equation is correct.  "
 },
@@ -13438,11 +13429,92 @@ var ptx_lunr_docs = [
   "body": "Show that if represents any cubic polynomial, then Simpson s rule will provide the exact answer for . "
 },
 {
+  "id": "Taylor-2",
+  "level": "1",
+  "url": "Taylor-2.html",
+  "type": "Section",
+  "number": "23.1",
+  "title": "The Representation of Numbers",
+  "body": " The Representation of Numbers  The decimal place-value representation of a number like is so familiar that it feels easy and natural, even simple. It is anything but. Our familiar base ten number representation notation is actually extremely sophisticated. It only seems simple because we learn it in childhood and use it every day for all of our lives.  For example the notation \" \" is actually a condensed form of but numbers written in this form are very difficult to work with. We get our usual representation \" \" by observing that the powers of ten needn't be explicitly written down since they are clearly indicated by the position of each digit. Hence the name place value.   However, once the place value system is adopted we do lose some flexibility, since the digits must appear in the proper order. For example \" \" is a completely different number than \" ,\" but and are the same. It will be convenient for us to use this last ordering. Notice that it is the reverse of the ordering that comes from the place value representation.  As long as our base is the place value notation prevents us from confusing the number \" \" with, say, \" .\"  But suppose our base is . The then number   Clearly we can't allow this kind of ambiguity. We can't allow the same set of digits, written in the same order, to mean both ``forty-three thousand five hundred twenty-nine,'' and ``eighteen thousand two hundred sixty three,'' and ``sixty-three thousand one hundred ninety-one,'' which is what we would get if we interpreted the digits \" \" using `` '' as the base. To prevent this sort of confusion we will use subscripts. That is, whereas and Naturally as long as we only use base 10 notation there is no ambiguity. Since this is the usual situation we usually suppress the subscripts.  But sometimes it is necessary to use a base other than and it is necessary to convert from one base to another. This conversion can be difficult at first, mainly because it is unfamiliar. That is, in base the number one hundred twenty-one is written but in base it is .   Drills  Verify that .   If we did not know the base representation how could we find it?  This sounds harder than it is. If we write we can find the unknown coefficients in the order given as follows. Divide each side of the above equation by . On the right we get On the left we get with a remainder of . So and   Dividing both sides of this last formula by again gives a remainder of on the right and of on the left, and as well. Therefore    Drills   Convert to each of the following bases.                                  "
+},
+{
+  "id": "Taylor-2-9",
+  "level": "2",
+  "url": "Taylor-2.html#Taylor-2-9",
+  "type": "Drill",
+  "number": "23.1.0.1",
+  "title": "",
+  "body": " Drills  Verify that .  "
+},
+{
+  "id": "Taylor-2-13",
+  "level": "2",
+  "url": "Taylor-2.html#Taylor-2-13",
+  "type": "Drill",
+  "number": "23.1.0.2",
+  "title": "",
+  "body": " Drills   Convert to each of the following bases.                                 "
+},
+{
+  "id": "Taylor-3",
+  "level": "1",
+  "url": "Taylor-3.html",
+  "type": "Section",
+  "number": "23.2",
+  "title": "Representations of Polynomials",
+  "body": " Representations of Polynomials  Notice that when we write as the expression on the right has the form of a polynomial. That is, if we replace each instance of the base with we get the polynomial . Polynomials can be thought of as numbers where the base is (or that it is unspecified).  We will very soon find it very convenient to to be able to convert polynomials to different bases just like we converted numbers in the last section. Fortunately, the method we've just developed carries over unchanged.   The polynomial is represented with as the base. Convert it to the base .  As before, we want to find coefficients and so that Dividing both sides by we get   On the right:  with the remainder .    On the left:   with the remainder . So and .   Dividing again by gives   On the right:   with the remainder .    On the left:   with the remainder .     Therefore     Drills  Confirm the result in the previous example.   For reasons that we will make clear later, we don't normally refer to this re-representation of polynomials as a \"change of base.\" Instead, when we convert from base to base for some we say we are \"expanding the polynomial about the number .\" When the base is we say that the polynomial is expanded about the number .   Comment  Even though that is really what it is.   A more substantial example is in order.   Expand the polynomial about the number .  As before we have Dividing both sides by gives  On the right:   with remainder .    On the left:  with remainder .   Thus and Dividing again we have   On the right:   with remainder .    On the left:  with remainder .   Thus and   Continuing in this fashion gives and and then and from which it is clear that and .  Therefore     Drills  Verify the result in the previous example.   If we expand the polynomial about the number we get Proceeding as before we find that and . If, rather than completing the conversion we stop here it is reasonable to expect that the graphs of and should be related, and indeed, when we graph both polynomials on the same set of axes we see the following.\\\\ \\centerline{\\includegraphics*[height=2in,width=2in]{..\/Figures\/LinearTaylor}}  Hey! Wait a second! We've seen things like this before!  This appears to be the graph of and its tangent line at . Is this just an artifact of this particular problem or is it generally true?  Clearly this is general. If we have an unspecified polynomial expanded about the number , then clearly and . So it seems that in computing the coefficients and we have found the line tangent to at . What do you suppose we will find when we compute ?   Drills  Find graph and on the same set of axes. What do you observe?   "
+},
+{
+  "id": "Taylor-3-4",
+  "level": "2",
+  "url": "Taylor-3.html#Taylor-3-4",
+  "type": "Example",
+  "number": "23.2.0.1",
+  "title": "",
+  "body": " The polynomial is represented with as the base. Convert it to the base .  As before, we want to find coefficients and so that Dividing both sides by we get   On the right:  with the remainder .    On the left:   with the remainder . So and .   Dividing again by gives   On the right:   with the remainder .    On the left:   with the remainder .     Therefore   "
+},
+{
+  "id": "Taylor-3-5",
+  "level": "2",
+  "url": "Taylor-3.html#Taylor-3-5",
+  "type": "Drill",
+  "number": "23.2.0.2",
+  "title": "",
+  "body": " Drills  Confirm the result in the previous example.  "
+},
+{
+  "id": "Taylor-3-9",
+  "level": "2",
+  "url": "Taylor-3.html#Taylor-3-9",
+  "type": "Example",
+  "number": "23.2.0.3",
+  "title": "",
+  "body": " Expand the polynomial about the number .  As before we have Dividing both sides by gives  On the right:   with remainder .    On the left:  with remainder .   Thus and Dividing again we have   On the right:   with remainder .    On the left:  with remainder .   Thus and   Continuing in this fashion gives and and then and from which it is clear that and .  Therefore   "
+},
+{
+  "id": "Taylor-3-10",
+  "level": "2",
+  "url": "Taylor-3.html#Taylor-3-10",
+  "type": "Drill",
+  "number": "23.2.0.4",
+  "title": "",
+  "body": " Drills  Verify the result in the previous example.  "
+},
+{
+  "id": "Taylor-3-15",
+  "level": "2",
+  "url": "Taylor-3.html#Taylor-3-15",
+  "type": "Drill",
+  "number": "23.2.0.5",
+  "title": "",
+  "body": " Drills  Find graph and on the same set of axes. What do you observe?  "
+},
+{
   "id": "IntCalcToTheory-2",
   "level": "1",
   "url": "IntCalcToTheory-2.html",
   "type": "Chapter",
-  "number": "23",
+  "number": "24",
   "title": "Title Goes Here",
   "body": "Title Goes Here  Text goes here.  "
 },
@@ -13451,7 +13523,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs1.html",
   "type": "Section",
-  "number": "24.1",
+  "number": "25.1",
   "title": "Homework #2",
   "body": " Homework #2  Up to now, we have ignored any sort of air resistance. We will start to consider resistance (drag) in such problems. It turns out that modeling projectile motion with drag is a more complicated matter. In general, resistance in a medium is modeled to be a function of velocity. You ve probably experienced this if you held your hand out a car window while it was moving. The faster the car went, the more force you felt on your hand. Likewise, the faster you moved your hand under water, the more force you felt on it. Many things affect the drag (speed, viscosity of the medium, shape and size of the object, turbulence). To keep a model simple, for a medium with a relatively high viscosity and a relatively small object we will assume that the drag is proportional to the velocity of the object. An example of this is a grain of sand falling in water. For a medium with a relatively low viscosity, such as air, and a relatively large object, the drag is assumed to be proportional to the square of the velocity. This would be the model to use for a baseball falling in the air.  To get a really accurate picture, one could use both a linear term and a quadratic term in the drag, but we will keep it simple at this point and keep these separate. We will look at the simpler model of linear drag and look at quadratic drag a little later and re-examine a ball falling in air.   To look at linear drag, let s look at the case of a grain of sand of mass descending in water. To model this, let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. If we draw a diagram of the sand, there are three forces we need to consider: the weight of the object, the buoyancy of the object, and the drag.     If we denote the acceleration due to gravity by , then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a constant and is the velocity. Notice that this force is negative as it points up (the negative direction). The buoyancy is really just the upward force that water would apply if the sand wasn t there. That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.   Use Newton Second Law: , to show that the velocity of the grain of sand must satisfy the IVP  Let and note that (why?). Show that the above leads to the IVP    Use the substitution , to rewrite the above equation as and show that     Compute This will be the terminal velocity of the sand settling in the water. Notice that this should be independent of . How does your answer for terminal velocity depend on and ? Does this make sense physically?   The above problem used the technique of substitution and is the integration analog of the Chain Rule , which itself was the technique of substitution applied to differentiation. As with differentiation, this did not actually compute the integral, but made it simpler to apply formulas and techniques with which we are already familiar. This technique of substitution is very powerful and allows us to integrate differentials which are not in our table. We already saw one example in our previous problem. For another, consider that in the table, we had and , but we did not have . Now we have the tools to do this one.   If we make the substitution , then and so   Thus   The beauty of a substitution is that there is no such thing as a wrong substitution. For example, in the above computation of , we could have let , so that , and we would have , which though correct, would not have been very helpful. Alternatively, we could have let so that , and so   This is a doable integral, but this seems worse than the original strategy. Hey! If we originally had the integral , we could utilize the same substitution, to transform this into the integral , which we now know how to do. This would be entirely correct, but alas, it is doing this integral the hard way. We could compute , more easily by letting , so that , and so    It appears that we have two different answers for . Show that these are in fact the same result.   The lesson in all of this is that the good news is that you can do any substitution you wish and as long as it is performed correctly, it is not wrong. The bad news is that you can do any substitution you wish, and as long as it is performed correctly, it is not wrong, but it may not be useful. Sometimes they can not only lead to harder integrals, but ones where there is nothing you can really do (at least readily). For example, consider   We could let so that . This would lead to   Notice that we can bring the outside the integral because it is a constant, but we cannot do the same with because is not a constant. We could set , so that   This is all correct, but leads to an integral far worse than the original, especially if you notice that is almost the derivative of . It is off by a factor of 3, but as we ve seen, constants can be brought outside of the integral, so this is not really a problem. So let s make , so that . Thus   So what s the definitive answer on a substitution? Unfortunately, there is none. Basically, you can try anything. If it works, great! If it doesn t, don t do something incorrectly to try and force it. Try something else. Something you can look for is parts of the integrand (the thing you are integrating) which are differentials of other parts of the integrand. But there are no guarantees. This is what makes integration harder than differentiation, much as long division is harder than multiplication. But try something! As you practice, you will gain more experience, so make sure you start looking for things that you have seen before. And Practice, Practice, Practice!  "
 },
@@ -13460,7 +13532,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXAMPLE",
   "type": "Example",
-  "number": "24.1.0.1",
+  "number": "25.1.0.1",
   "title": "",
   "body": " To look at linear drag, let s look at the case of a grain of sand of mass descending in water. To model this, let be distance the sand has fallen (so the positive axis is pointing downward), with representing the surface of the water. If we draw a diagram of the sand, there are three forces we need to consider: the weight of the object, the buoyancy of the object, and the drag.     If we denote the acceleration due to gravity by , then the weight of the sand is . The drag, which we assume is linear, is proportional to the velocity, so we will denote this by , where is a constant and is the velocity. Notice that this force is negative as it points up (the negative direction). The buoyancy is really just the upward force that water would apply if the sand wasn t there. That is, it is the weight of the water that the grain of sand displaces. This is just , where is the mass of the water displaced.  "
 },
@@ -13469,7 +13541,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISENewtonsSecondLaw",
   "type": "Problem",
-  "number": "24.1.0.2",
+  "number": "25.1.0.2",
   "title": "",
   "body": "Use Newton Second Law: , to show that the velocity of the grain of sand must satisfy the IVP  Let and note that (why?). Show that the above leads to the IVP  "
 },
@@ -13478,7 +13550,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISESubsRvmMg",
   "type": "Problem",
-  "number": "24.1.0.3",
+  "number": "25.1.0.3",
   "title": "",
   "body": " Use the substitution , to rewrite the above equation as and show that   "
 },
@@ -13487,7 +13559,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISETerminalVelocity",
   "type": "Problem",
-  "number": "24.1.0.4",
+  "number": "25.1.0.4",
   "title": "",
   "body": " Compute This will be the terminal velocity of the sand settling in the water. Notice that this should be independent of . How does your answer for terminal velocity depend on and ? Does this make sense physically?  "
 },
@@ -13505,7 +13577,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs1.html#EXERCISEInvTanReconcile",
   "type": "Problem",
-  "number": "24.1.0.5",
+  "number": "25.1.0.5",
   "title": "",
   "body": " It appears that we have two different answers for . Show that these are in fact the same result.  "
 },
@@ -13514,7 +13586,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs3.html",
   "type": "Section",
-  "number": "24.2",
+  "number": "25.2",
   "title": "Homework #3:The Opposite of the Product Rule — Integration by Parts",
   "body": " Homework #3:The Opposite of the Product Rule Integration by Parts  Substitution is a powerful tool, but it is not a cure all. For example, consider You can try, but there is no substitution that will really get you anywhere. Unfortunately, so that is out of the question. (It doesn t work for differentiation, what would make you think that the integral of a product would ever equal the product of the integrals? Also, where do you see two s in the original?)  Since the product rule is what we use to differentiate a product, then perhaps its analog would be of use here. In general, we have the product rule as   Rearranging this, we have    This formula is called the integration by parts formula and is the opposite of the product rule and is just what we need for the previous integral. Specifically, if we let and , then and (don t worry about the arbitrary constant here for the moment). Substituting these into our integration by parts formula, , we have   At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with s or s in it. These were introduced just to keep track of the integration by parts formula. Along that vein, notice that we needed to use the entire integrand as opposed to a substitution where we looked for parts of the integrand which were differentials of other parts of the integrand.  Second, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful. For example, in   we could have let and . This would give and . Substituting these into the integration by parts formula, we get Everything is correct, but we have an integral that is worse than before. So, you will need to develop some experience with using this technique as well.  Lastly, notice that we suppressed the arbitrary constant in . We will see that this does not alter the result.   Show that if we let in the integration by parts formula, where is any constant, then we will obtain the same result as before, namely .   Use integration by parts with and to obtain    Use integration by parts on with and and substitute this into the result in part (a). What happened? This is not a fluke! It will happen every time if you switch the roles of and .   Perform integration by parts again on the result in part a to obtain a final answer for .    Perform integration by parts and then substitution to compute and    "
 },
@@ -13523,7 +13595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs3.html#EXERCISEProdRule",
   "type": "Problem",
-  "number": "24.2.0.1",
+  "number": "25.2.0.1",
   "title": "",
   "body": " Show that if we let in the integration by parts formula, where is any constant, then we will obtain the same result as before, namely .   Use integration by parts with and to obtain    Use integration by parts on with and and substitute this into the result in part (a). What happened? This is not a fluke! It will happen every time if you switch the roles of and .   Perform integration by parts again on the result in part a to obtain a final answer for .  "
 },
@@ -13532,7 +13604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs3.html#EXERCISEInvSinInvTan",
   "type": "Problem",
-  "number": "24.2.0.2",
+  "number": "25.2.0.2",
   "title": "",
   "body": " Perform integration by parts and then substitution to compute and   "
 },
@@ -13541,7 +13613,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs6.html",
   "type": "Section",
-  "number": "24.3",
+  "number": "25.3",
   "title": "Homework #6: Back to Logistic Growth: Partial Fractions",
   "body": " Homework #6: Back to Logistic Growth: Partial Fractions  Recall that in differential calculus we had an example for logistic growth We analyzed this growth rate to draw a qualitative graph of , but we really could not produce specific values of for where things happened, because we didn t have a formula for . For reasons that will become clearer later, let s suppose that . Separating the variables is no problem   To integrate the left-hand side, we could expand the denominator to complete the square and apply the appropriate trigonometric substitution. Specifically, we can manipulate this integral as follows   Applying the trigonometric substitution we have , so we get   Utilizing the triangle     We get    Solve the original initial value problem for the case .       As we ve mentioned before, all mathematical models are simplifications of reality, and typically are modified to take into account more complexities. For example, consider a modification of the logistic model above   In this case, 10 is called the minimum viability level of the population. (Why?) Solving this would require solving which is not really conducive to a trigonometric substitution.   Apply the same calculations we did before and the substitution to obtain    Here, we will examine a technique which does not involve trigonometry and is really algebraic in nature. It will also be useful for examining integrals such as the two above. The trick is to try and separate the fraction into partial fractions which will be easier to integrate. For example, consider . Unfortunately, we cannot just expand the denominator and divide this into two fractions as we could if it was the numerator. This is due to the fact that fractions are added by finding a common denominator, not just adding denominators. However, it is reasonable to make an educated guess that such a fraction can be written as for some as yet to be determined and . We can see if this guess pans out by combining the partial fractions to obtain the original.   This says that , and so that and . Hence   Back to our integration problem, we would obtain which is the same integral we obtained before.   Explain why we had to restrict ourselves to in what we did above.   Use the integral provided above to obtain an equation for in the logistic growth model for the case where . Show that (surprisingly?) this yields the same equation as in . [This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.]   Now that we ve shown you an example where decomposing a fraction of polynomials (called a rational function) into a sum of partial fractions is practical, let s look into a systematic way of doing this algebraically. All of this hinges on the following theoretical fact about polynomials.  Suppose we have two polynomials and which have no common factors (other than constants, which are considered trivial. For example, , which would make 2 a trivial common factor of and .) Then there are polynomials and such that   In other words, there is some (linear) combination of and which produces 1. For example, notice that so if , then   We determined this combination in a somewhat ad-hoc way, but there is a systematic way to do this involving no more than long division of polynomials. We won t delve into this, but will adopt a more (educated) guess and check method. Notice that in the above example   In general, if we have then Notice that if is any polynomial, then where and are two polynomials.  To summarize all of this, we have, in theory, that if and are two polynomials with no non-trivial common factors, then for any polynomial , there are polynomials and such that To extend this idea further, if have no nontrivial common factors, then there are polynomials with and this can be extended to any number of factors in the denominator. Again, this can be proven theoretically, and this partial fraction decomposition can be obtained systematically, but we will adopt a guess and check method to find . To make our guess a little more educated, the following fact can be employed. You can make peace with this in your own closet.  If the degree of is less than the degree of , then can be chosen with    Recall we had To compute this, we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.  Solve this any way you wish, but you should get Thus so     In the above example, it said to find any way you can. We illustrated the brute force method of expanding and setting this equal to . This led us to our three equations in the three unknowns . While solving this may be routine, it is tedious. There are a number of shortcuts to this process, and we will illustrate one here. Remember that the brute force will always work and does not require one to be clever, but it can be tedious. For a less tedious method, remember that we want to find so that for all values of . What if we judiciously choose various values of . For example, if we let , we get   Similarly, if we let , we get  Finally, we let and get  Again, you can let equal anything you wish to find what the unknowns are. Or you can always resort to the brute force method of expanding and equating coefficients. Whatever gets the job done.  "
 },
@@ -13550,7 +13622,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#EXERCISEPFD1",
   "type": "Problem",
-  "number": "24.3.0.1",
+  "number": "25.3.0.1",
   "title": "",
   "body": " Solve the original initial value problem for the case .      "
 },
@@ -13568,7 +13640,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#EXERCISEPFD2",
   "type": "Problem",
-  "number": "24.3.0.2",
+  "number": "25.3.0.2",
   "title": "",
   "body": " Apply the same calculations we did before and the substitution to obtain   "
 },
@@ -13577,7 +13649,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#EXERCISEPFD3",
   "type": "Problem",
-  "number": "24.3.0.3",
+  "number": "25.3.0.3",
   "title": "",
   "body": " Explain why we had to restrict ourselves to in what we did above.   Use the integral provided above to obtain an equation for in the logistic growth model for the case where . Show that (surprisingly?) this yields the same equation as in . [This is a spot where you need to look at the absolute value in the logarithm. We told you it comes up occasionally.]  "
 },
@@ -13586,7 +13658,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs6.html#SECTIONProbs6-23",
   "type": "Example",
-  "number": "24.3.0.4",
+  "number": "25.3.0.4",
   "title": "",
   "body": " Recall we had To compute this, we will find the partial fractions decomposition of . We make the educated guess and determine what are. This can be done in a number of ways, but the most direct (and labor intensive) way to do this is to combine the terms in the right-hand side and compare coefficients.     Since the fractions must be equal and the denominators are the same, then we can set the numerators equal.  Solve this any way you wish, but you should get Thus so    "
 },
@@ -13595,7 +13667,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs9.html",
   "type": "Section",
-  "number": "24.4",
+  "number": "25.4",
   "title": "Homework #9: Applications of Definite Integrals",
   "body": " Homework #9: Applications of Definite Integrals  Previously, we put indefinite integrals to work by modeling phenomena with differential equations and antidifferentiating to solve these. We will now put definite integrals to work, but in a slightly different manner. Here we will use a differential to measure some quantity on an infinitely small scale where a simple formula applies. We will integrate all of these quantities to give us a total measurement as an integral. Once we have this, then we can calculate this definite integral by antidifferentiation and applying the Fundamental Theorem of Calculus. Sounds easy, huh! As they say, the devil is in the details, but if you follow this basic format and draw and label pictures, you will be surprised by the things you can accomplish. We ll start with the basic problem of computing an area. This is basic enough that there is a tendency to skip all of the steps in setting up the integral, BUT DON T! Getting into a good work habit when things are relatively straightforward will help when more complicated applications arise, such as computing a volume, or a center of mass, or a moment of inertia, or the kinetic energy of a spinning object. If these applications sound daunting at this point, don t worry. We will see that the same sort of divide and conquer strategy applies to a wonderful array of situations. All that changes is what we want to measure. This is where the strategy of setting up things on an infinitely small scale (utilizing pictures) and integrating these together will become invaluable.   DIGRESSION: Areas  The simple formula for the area of a rectangle (length times width) provides the basis for determining the area of a more general shape. You will probably notice that we had been using this area model in looking at definite integrals already so this should not be too big a jump. However, do not take a short cut and utilize our general strategy. That is divide the region into infinitely thin rectangles where our simple length times width formula applies, and then integrate them into the area of the entire region. Let s demonstrate this with the following example.   Find the area of the following region bounded by the curves and . A graph of this region is below.      Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). \\textbf{ We insist that you follow this routine on every application, no matter how easy it may seem.} This will serve you well as the applications get more complicated.        This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have  Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.        Utilizing the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we will set up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.    Compute the area of the following region bounded by and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we ve included in the diagram along with all of the appropriate labeling.          Everything is just as before. The real challenge comes from trying to put everything in terms of . on the entire interval, but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , while on .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following  Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?            Drills  Problem A: Compute the three integrals in the previous example and verify that you get the same total area done either way.   In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.   Compute the following area bounded by the curves .      You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let s put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .            Drills  Finish the previous example to compute the area.   A cycloid is a curve traced out by a point on a circle as the circle rolls along a straight line without slipping.      This curve has fascinated mathematicians for a long time. In class, we showed that the coordinates of the point are given by Galileo actually gave the curve its name in 1599 (though he was not the first to study it) and attempted to compute the area under one arch. He couldn t accomplish this mathematically, but by weighing pieces of metal, one in the shape of a cycloid and one in the shape of its generating circle, Galileo surmised that the area of the cycloid was approximately three times that of the circle. In 1634, Gilles Personne de Roberval showed that the area under one arch of the cycloid is exactly three times that of its generating circle. This predated the invention of calculus, but he utilized infinitely thin rectangles very much like we have been doing.   Drills   Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.    You can set up the area with vertical rectangles just as before, only now get and in terms of .     "
 },
@@ -13604,7 +13676,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#SECTIONProbs9-3-3",
   "type": "Example",
-  "number": "24.4.0.1",
+  "number": "25.4.0.1",
   "title": "",
   "body": " Find the area of the following region bounded by the curves and . A graph of this region is below.      Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). \\textbf{ We insist that you follow this routine on every application, no matter how easy it may seem.} This will serve you well as the applications get more complicated.        This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have  Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.        Utilizing the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we will set up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.  "
 },
@@ -13613,7 +13685,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#SECTIONProbs9-3-4",
   "type": "Example",
-  "number": "24.4.0.2",
+  "number": "25.4.0.2",
   "title": "",
   "body": " Compute the area of the following region bounded by and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we ve included in the diagram along with all of the appropriate labeling.          Everything is just as before. The real challenge comes from trying to put everything in terms of . on the entire interval, but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , while on .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following  Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          "
 },
@@ -13622,7 +13694,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#PROBLEMA",
   "type": "Drill",
-  "number": "24.4.0.3",
+  "number": "25.4.0.3",
   "title": "",
   "body": " Drills  Problem A: Compute the three integrals in the previous example and verify that you get the same total area done either way.  "
 },
@@ -13631,7 +13703,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#SECTIONProbs9-3-7",
   "type": "Example",
-  "number": "24.4.0.4",
+  "number": "25.4.0.4",
   "title": "",
   "body": " Compute the following area bounded by the curves .      You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let s put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .          "
 },
@@ -13640,7 +13712,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#PROBLEMB",
   "type": "Drill",
-  "number": "24.4.0.5",
+  "number": "25.4.0.5",
   "title": "",
   "body": " Drills  Finish the previous example to compute the area.  "
 },
@@ -13649,7 +13721,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs9.html#PROBLEMD",
   "type": "Drill",
-  "number": "24.4.0.6",
+  "number": "25.4.0.6",
   "title": "",
   "body": " Drills   Show that the area under one arch of the above cycloid is , so it is, in fact, three times the area of the generating circle.    You can set up the area with vertical rectangles just as before, only now get and in terms of .   "
 },
@@ -13658,7 +13730,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs10.html",
   "type": "Section",
-  "number": "24.5",
+  "number": "25.5",
   "title": "Homework #10",
   "body": " Homework #10   Volumes: As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.     You probably remember the volume of this box as length times width times height. Let s restate the volume in this way   The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula         This idea even applies to slabs that have an irregular face.        Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids. For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     Let s verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that. With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Drawing this generic slice separately (remember our insistence on this), we can compute its volume.        Integrating these volumes, we get What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     This gives us the proportion So .  The Volume of a Cone   Volume cone is of cylinder Substitute this value for into the integral and show that the volume of the cone is, in fact, 1\/3 the volume of the cylinder.    The Volume of a Square Based Pyramid  Drills  Volume of a square based pyramid   Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height       The Moscow Mathematical Papyrus (circa. 1850 BC) provided a formula for the volume of a truncated square based pyramid (called a frustum of a pyramid). Written in modern terms we have that volume of the following truncated pyramid     is given by The papyrus does not indicate how this was obtained. Use calculus to verify this formula.    Verify equation by computing the volume of the frustum and the difference between two pyramids.   Begin by adding in the part of the pyramid that was cut off to make the frustum.     Marcus Tullius Cicero (106-43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic . When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, he set out to find the tomb of the great Greek mathematician Archimedes (287 212 BC) who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but when Cicero discovered a tombstone, overgrown with brambles and thorns, bearing the following symbol     he knew that he had found the elusive grave of Archimedes.  How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is 2\/3 that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use integral calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the axis. As before, we will draw and label the disk on the side.         Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn t determining the volume of disk relatively easy. The integral only came in when we wanted to add up the volumes of all of the disks together.    Volume of a sphere Compute integral to show that the volume of the sphere is, in fact, .     Volume of revolution the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.         Of course, this technique can be applied to find the volume of a more general solid of revolution.     Volume of revolution general Consider the following region bounded by the curves and and a generic rectangle of width inside it.      Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.     Volume of revolution general Consider the following region bounded by the curves and and the vertical line to the left of this region.      Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.   Integrate your answer from part a. to show that the volume of the solid formed by revolving the region about the line is given by    "
 },
@@ -13667,7 +13739,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMConeVolume",
   "type": "Problem",
-  "number": "24.5.0.1",
+  "number": "25.5.0.1",
   "title": "The Volume of a Cone.",
   "body": "The Volume of a Cone   Volume cone is of cylinder Substitute this value for into the integral and show that the volume of the cone is, in fact, 1\/3 the volume of the cylinder.  "
 },
@@ -13676,7 +13748,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMSqBasePyramid",
   "type": "Drill",
-  "number": "24.5.0.2",
+  "number": "25.5.0.2",
   "title": "The Volume of a Square Based Pyramid.",
   "body": " The Volume of a Square Based Pyramid  Drills  Volume of a square based pyramid   Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height       The Moscow Mathematical Papyrus (circa. 1850 BC) provided a formula for the volume of a truncated square based pyramid (called a frustum of a pyramid). Written in modern terms we have that volume of the following truncated pyramid     is given by The papyrus does not indicate how this was obtained. Use calculus to verify this formula.    Verify equation by computing the volume of the frustum and the difference between two pyramids.   Begin by adding in the part of the pyramid that was cut off to make the frustum.   "
 },
@@ -13685,7 +13757,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMSphereVolume",
   "type": "Problem",
-  "number": "24.5.0.3",
+  "number": "25.5.0.3",
   "title": "",
   "body": "  Volume of a sphere Compute integral to show that the volume of the sphere is, in fact, .  "
 },
@@ -13694,7 +13766,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMCycloidVolume",
   "type": "Problem",
-  "number": "24.5.0.4",
+  "number": "25.5.0.4",
   "title": "",
   "body": "  Volume of revolution the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.        "
 },
@@ -13703,7 +13775,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMGenSolidOfRevX",
   "type": "Problem",
-  "number": "24.5.0.5",
+  "number": "25.5.0.5",
   "title": "",
   "body": "  Volume of revolution general Consider the following region bounded by the curves and and a generic rectangle of width inside it.      Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.   Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by    To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.  "
 },
@@ -13712,7 +13784,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs10.html#PROBLEMGenSolidOfRevY",
   "type": "Problem",
-  "number": "24.5.0.6",
+  "number": "25.5.0.6",
   "title": "",
   "body": "  Volume of revolution general Consider the following region bounded by the curves and and the vertical line to the left of this region.      Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.   Integrate your answer from part a. to show that the volume of the solid formed by revolving the region about the line is given by   "
 },
@@ -13721,7 +13793,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs11.html",
   "type": "Section",
-  "number": "24.6",
+  "number": "25.6",
   "title": "Homework #11: Surface Area and Arc Length",
   "body": " Homework #11: Surface Area and Arc Length  Recall that we mentioned that in his treatise On the Sphere and the Cylinder, Archimedes not only showed that the sphere had the volume of its circumscribing cylinder, but it also had the surface area. Again, we will not duplicate how Archimedes did it, but we will verify it with Calculus.  Surface area poses a bit more of a challenge than volume. This can be illustrated by the following two boxes     The boxes have the same base and same height, so they have the same volume. However, the slanted box clearly has more surface and could be stretched as far as you like, so there really is no limit to how large the surface area could be made. The slant makes a difference in surface area. To see this more carefully, we will need to first develop the notion of arc length.  You have already been exposed to arc length in differential calculus. Recall that in looking at the catenary, we had that the hanging chain satisfied the equation where were the weight density of the chain and horizontal tension, respectively, and is the length of the chain from the lowest point to . We then differentiated and applied the Pythagorean Theorem to the differential triangle        We will exploit this to look at the arc length of a curve. Specifically, suppose we have a curve from point to point and want to compute the length of this curve .     If we divide this curve into infinitely small segments as above, then we can compute its length by integrating the lengths of these segments. In other words, we have where denotes a generic point on the curve. Using our infinitesimal Pythagorean Theorem, we have To actually compute this integral (via the Fundamental Theorem), we need to put this integral into a form that we can anti-differentiate. For example, we could put everything in terms of or in terms of yielding these two possibilities The absolute value is necessary since we are factoring out or . In practice, if is always increasing then and so the absolute value isn t necessary. The same applies to . In many applications, this will be the case, but you should be wary that it can happen.   Consider the quarter circle given by  . Since the circumference of the unit circle is , then the length of this quarter circle should be . Use an integral to verify this result. [There is a reason we didn t have you compute the length of the entire semicircle  . If you can t see what it is, don t worry, we will come back to it later.]   Suppose we tried to compute the length of a quarter of the circle in the following way. What is the problem?   Again, there is real temptation to try to memorize the two formulas but we urge you not to. First, why try to remember two formulas, when one just needs to remember the Pythagorean Theorem? This seems much more natural. At this point, it is just a matter of determining what variable you wish to put everything in terms of. The variable doesn t even need to be or . For example, suppose we have . So we don t need to deal with absolute values, let s assume that the parameter is always increasing so that . Then we could put everything in terms of .    Use the parameterization , to verify that the circumference of the unit circle is .    Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid      , Show that the length of one arch of the cycloid is .   "
 },
@@ -13730,7 +13802,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs11.html#SECTIONProbs11-12",
   "type": "Problem",
-  "number": "24.6.0.1",
+  "number": "25.6.0.1",
   "title": "",
   "body": " Consider the quarter circle given by  . Since the circumference of the unit circle is , then the length of this quarter circle should be . Use an integral to verify this result. [There is a reason we didn t have you compute the length of the entire semicircle  . If you can t see what it is, don t worry, we will come back to it later.]   Suppose we tried to compute the length of a quarter of the circle in the following way. What is the problem?  "
 },
@@ -13739,7 +13811,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs11.html#SECTIONProbs11-14",
   "type": "Problem",
-  "number": "24.6.0.2",
+  "number": "25.6.0.2",
   "title": "",
   "body": " Use the parameterization , to verify that the circumference of the unit circle is .  "
 },
@@ -13748,7 +13820,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs11.html#SECTIONProbs11-15",
   "type": "Problem",
-  "number": "24.6.0.3",
+  "number": "25.6.0.3",
   "title": "",
   "body": " Here is another interesting fact about the cycloid. Sir Christopher Wren (best known for the buildings he designed after the great fire of London in 1666, including St. Paul s Cathedral), showed in 1658 that the length of one arch of the cycloid is 8 times the radius of the generating circle. He did this without calculus, but we will use integration to verify his result. Consider the following cycloid      , Show that the length of one arch of the cycloid is .  "
 },
@@ -13757,7 +13829,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs12.html",
   "type": "Section",
-  "number": "24.7",
+  "number": "25.7",
   "title": "Homework #12: Volumes by Shells and Kinetic Energy",
   "body": " Homework #12: Volumes by Shells and Kinetic Energy  As you no doubt noticed, when we had to compute the volume of a solid generated by revolving a region about the -axis (or any horizontal line), we obtained an integral with in it, which meant that we would put everything in terms of . Likewise, when we revolved about the -axis, we had to put everything in terms of . Sometimes this is not practical or leads to an undesirable integral. Consider the following example of the region bounded by and revolved about the -axis. Going through our set up (Yes, we must do it too!), we have the following generic rectangle revolved around to create a washer.          This set up (with the picture) was really the easy part. The harder part is putting everything in terms of and integrating. For instance, we would need to solve for in terms of . Furthermore, we would need to figure out the maximum value of on the interval .  All of this is doable, but inconvenient. What would be preferable would be to leave everything in terms of , but this would entail drawing a vertical box instead.      If we were to treat the right-hand object as a very tall washer with inside radius , outside radius , and height , we would get its volume to be Recalling our reasoning with the Product Rule, we can ignore as it is infinitely small compared to , so that the volume of this tall washer is which we could then integrate to obtain   If you feel as funny (or perhaps more) about ignoring the as you did with the product rule, there is another way to look at this that might help your queasiness and provide a better way of remembering what to do in this situation. Basically, instead of calling the revolution of the generic rectangle a tall washer, we will call it a (cylindrical) shell. This sounds somewhat silly, but it really points out the difference. For a washer, the height is infinitesimal, whereas for a shell, the thickness of the wall is infinitesimal. For a physical analogy, this is the difference between an actual metal washer and a piece of metal tubing. To figure out the volume of the tubing (shell), we can slice it open and flatten it out into a rectangular piece of metal. This is not so easily done with a washer. This provides a shortcut (and device) for computing the volume of a shell; just compute the volume of the flattened version.     Using the flattened-out version, we have that the volume of the shell is given by as we obtained before.  Actually, a similar formula works for any washer.   While this is interesting geometrically, it does not help with computing an integral using washers.   Consider the following region bounded by the curves and        Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by    In HW \\# 11 we found the surface area of a torus formed a circle of radius , whose center revolves around a line distance away.  Specifically, consider the following torus generated by revolving the circle about the line       Use shells to show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line.   Historical Background  This resulet was derived by Johannes Kepler (1571-1630) and is a special case of a theorem by Pappus of Alexandria (290 350 AD).    If you utilize what you already know about symmetry and areas, this problem can be done without having to actually compute an integral. Work smarter, not harder!   So, a natural question arises, Which should I use, washers or shells? The answer is that you can use either one; sometimes it is more convenient to use one over the other, other times it really doesn t matter. The real question you need to ask in a particular problem is, ``Is it better to put things all in terms of or in terms of . This will determine if you want to utilize a vertical rectangle (of width ) or a horizontal rectangle (of width ). This will determine whether washers or shells are more appropriate.        If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don t look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.    Find the volumes of the solids generated by revolving this region about the -axis and -axis utilizing horizontal rectangles.    Other Applications    The Tautochrone You may have noticed that we keep bringing up the cycloid in a number of problems involving areas, arc lengths, volumes, and centers of mass. As we said, this curve has fascinated mathematicians for a long time and many of these elegant results were cleverly obtained before the invention of calculus. We will now see how the cycloid was utilized to address a more practical problem.  In the 1600 s there was race among naval superpowers (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to (about million or $ million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.  Since longitude is measured by time zones, then it became necessary to develop an accurate way of measuring time at sea. A regular pendulum clock, invented by the Dutch mathematician, scientist, and inventor Christiaan Huygens (1629-1695), utilized the fact that the oscillation of a pendulum is regular as long as it maintains the same amount of swing per oscillation. This made for an accurate timepiece on land, but it was not accurate at sea where a moving deck would make the pendulum swing at different angles and thus not have a constant period. To remedy this, Huygens developed a pendulum that would follow a tautochrone (a same time curve where a pendulum, exclusively under the influence of gravity, following that path would take the same amount of time to reach the bottom, no matter where it started on the curve). Huygens showed that an inverted cycloid was such a tautochrone.      A pendulum following the path of an inverted cycloid will take the same amount of time to reach the bottom no matter where it starts.    Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to appears below.     To get the pendulum to swing along a cycloidal path, Huygen s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen below.     This curve traced out is called the involute (of the cycloid).  In practice, the clock did not work any more accurately than a regular pendulum clock as it assumed the only force involved was gravity, whereas a clock at sea was subject to many more forces which could not be ignored. Subsequently, the Englishman John Harrison (1693-1776), a Yorkshire carpenter, invented a chronometer which ran on springs and proved to be very accurate.  Even still, many mathematicians cited Huygens work on this as being very elegant mathematically. Furthermore, Huygens developed his mathematics without calculus as it hadn t been invented (discovered?) yet. We will not prove that the involute of a cycloid is a cycloid, but we will utilize calculus to prove Huygens claim that the cycloid is, in fact, a tautochrone.  To start, recall that the speed at which the pendulum is traveling is given by where is the arc length traveled and is time. For simplicity, we will let the radius of the circle generating the cycloid be .   Show that the total time it takes for the pendulum to move along the (inverted) cycloid    from a starting position to the bottom of the cycloid is given by    At this point we ve hit an impasse, as the speed of the pendulum is not a constant. Gravity will cause the pendulum to speed up as it swings downward. We will assume that the pendulum does not swing too wide, not too fast, and ignore air resistance. Thus, the only force we will consider is due to gravity and we will denote that by , where is the mass of the pendulum and is the acceleration due to gravity. Below is a diagram of a pendulum following the path of a cycloid with the forces at work.     The force due to gravity is always directed downward, so only a portion of it moves the pendulum along the curve. This tangential force has a magnitude where is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.      Use the fact that the two triangles are similar to show that and use the fact that to conclude that    Integrate both sides from to to show that if the pendulum starts from rest at , then the velocity at any point is given by    Substituting this formula for into our integral for the total time traveled by the pendulum, we get   Before we proceed any further, notice that if we utilize the appropriate trigonometric identity, we get      so our formula for the total time traveled by the pendulum from to becomes   As formidable as this integral may look, bear in mind that is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let and    Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point . Thus, the cycloid really is a tautochrone.    Work and Kinetic Energy   If you go back to our proof that the cycloid is a tautochrone, you will notice that we had the equation   If we multiply both sides by our mass and integrate from to , we get    The left hand side is called the work done by gravity moving an object from the height to the height and the right hand side is called the change in kinetic energy from the beginning point to the terminal point . So, this equation really says that At some point, you may have heard the expression that energy is the ability to do work. Kinematically, this is what we just showed. We will explore these two concepts in more detail to apply them to some natural questions that arise from things we did before.   Work and Kinetic Energy   Suppose we apply a force of newtons to move an object 2 meters (in that direction), then we will have done newton meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton-meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if we are not traveling in a straight line?   Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve. Let denote arc length from point to and represent velocity (speed) and acceleration. Using Newton s Second Law which states that force , we have that the work done by to move the mass from to is given by    Show that   Note that the kinetic energy is measured in .   The Richard F. Caris Mirror Laboratory at the University of Arizona uses a revolving oven to spin cast large parabolic mirrors for reflective telescopes. They load borosilicate glass which has a density of into the furnace and start spinning the furnace. Let s assume that the glass is a disk which measures in radius and is thick.  Compute the kinetic energy of the disk when it is rotating around its axis at a rate of .   Suppose you have a 100 horsepower motor that produces of power. How long will it take (in minutes) for this motor to accelerate the disk from rest to ?   "
 },
@@ -13766,7 +13838,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-14",
   "type": "Problem",
-  "number": "24.7.0.1",
+  "number": "25.7.0.1",
   "title": "",
   "body": " Consider the following region bounded by the curves and        Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.   Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by    In HW \\# 11 we found the surface area of a torus formed a circle of radius , whose center revolves around a line distance away.  Specifically, consider the following torus generated by revolving the circle about the line       Use shells to show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line.   Historical Background  This resulet was derived by Johannes Kepler (1571-1630) and is a special case of a theorem by Pappus of Alexandria (290 350 AD).    If you utilize what you already know about symmetry and areas, this problem can be done without having to actually compute an integral. Work smarter, not harder!  "
 },
@@ -13775,7 +13847,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-16",
   "type": "Example",
-  "number": "24.7.0.2",
+  "number": "25.7.0.2",
   "title": "",
   "body": "     If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don t look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.  "
 },
@@ -13784,7 +13856,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-17",
   "type": "Problem",
-  "number": "24.7.0.3",
+  "number": "25.7.0.3",
   "title": "",
   "body": " Find the volumes of the solids generated by revolving this region about the -axis and -axis utilizing horizontal rectangles.  "
 },
@@ -13793,7 +13865,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-32",
   "type": "Problem",
-  "number": "24.7.0.4",
+  "number": "25.7.0.4",
   "title": "",
   "body": " Show that the total time it takes for the pendulum to move along the (inverted) cycloid    from a starting position to the bottom of the cycloid is given by   "
 },
@@ -13802,7 +13874,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-37",
   "type": "Problem",
-  "number": "24.7.0.5",
+  "number": "25.7.0.5",
   "title": "",
   "body": " Use the fact that the two triangles are similar to show that and use the fact that to conclude that    Integrate both sides from to to show that if the pendulum starts from rest at , then the velocity at any point is given by   "
 },
@@ -13811,7 +13883,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-41",
   "type": "Problem",
-  "number": "24.7.0.6",
+  "number": "25.7.0.6",
   "title": "",
   "body": " Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point . Thus, the cycloid really is a tautochrone.  "
 },
@@ -13820,7 +13892,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs12.html#SECTIONProbs12-48",
   "type": "Problem",
-  "number": "24.7.0.7",
+  "number": "25.7.0.7",
   "title": "",
   "body": " Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve. Let denote arc length from point to and represent velocity (speed) and acceleration. Using Newton s Second Law which states that force , we have that the work done by to move the mass from to is given by    Show that   Note that the kinetic energy is measured in .   The Richard F. Caris Mirror Laboratory at the University of Arizona uses a revolving oven to spin cast large parabolic mirrors for reflective telescopes. They load borosilicate glass which has a density of into the furnace and start spinning the furnace. Let s assume that the glass is a disk which measures in radius and is thick.  Compute the kinetic energy of the disk when it is rotating around its axis at a rate of .   Suppose you have a 100 horsepower motor that produces of power. How long will it take (in minutes) for this motor to accelerate the disk from rest to ?  "
 },
@@ -13829,7 +13901,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs13.html",
   "type": "Section",
-  "number": "24.8",
+  "number": "25.8",
   "title": "Homework #13: Escape Velocity and Improper Integrals",
   "body": " Homework #13: Escape Velocity and Improper Integrals  Many people have heard the term escape velocity . A quick look on the internet says that the escape velocity from the surface of the earth is approximately or about times the speed of sound. What does this mean and where did such a number come from? The key is our discovery that work can be obtained by looking at the change in kinetic energy. This also affords us a chance to delve into a new topic: improper integrals.  First, we all know that if you throw a ball into the air, then it will go up and come back down. We actually showed in Differential Calculus: Practice Before Theory that, ignoring air resistance, if you throw a ball up with an initial velocity of , then the maximum height the ball attains is where is the acceleration due to gravity (which we presumed was constantly equal to ). We noted that this formula said that if we double the initial velocity, then the ball will go 4 times as high, triple it it will go 9 times as high, etc. Is it possible to throw the ball up so fast that it never comes back down. The answer would be no if the acceleration due to gravity remained constant at all altitudes, which is what we assumed in the original problem. This works fine near the surface of the earth, but is not reasonable at higher and higher altitudes. In fact, Newton s Law of Gravitation states that the magnitude of force of gravity between two objects of masses and is given by where is a constant referred to as the universal gravitational constant and is the distance between the centers of mass of the two objects. For objects near the surface of the earth, was so close to constant that we assumed it to be. This is not the case for our projectile being propelled into outer space. Surprisingly, the amount of work that it takes to perform this task is finite and this is where escape velocity comes in.  If we had an unlimited power supply, then we could rise at whatever rate we wanted and still keep rising indefinitely. Unfortunately, as with throwing a ball into the air, we can only impart an initial velocity and hope it is fast enough to overcome gravity indefinitely. We have the means to deal with this.  The key is remembering that the work done by a force moving a mass along a straight line from point to point is equal to the change in kinetic energy. In symbols it is   However, this was not the definition of work as work was simply . We use Calculus in case the force was not constant.   Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by where is the universal gravitational constant and is the distance between the centers of mass of the two objects. [We are assuming the positive axis points away from the planet so the force is negative.] Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by -->    You should get a negative number because gravity is doing a negative amount of work in moving the object.   If we take , then this will represent the amount of work done by gravity moving a mass from the surface of the planet to infinity. In other words, the amount of work (and energy) it takes to propel the object so it doesn t come back is finite.   Assuming that the original velocity of the mass is and that the velocity at infinity will be , use the result of the previous problem and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by   Interestingly, the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately    Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?   The above problems show that the work to launch a projectile from the surface of a planet to infinity is given by . This prompts a new name and notation. The notation is which is called an improper integral . Improper comes from the fact that a proper definite integral should be defined on a closed bounded interval. In general, we that the improper integral converges if exists and we say that it is equal to that value. In the above problem, we have   Notice that to compute this improper integral, we had to first compute a proper definite integral from to and then take the limit of this as .  The previous section looked at a definite integral that is improper because it was being integrated on an infinite interval. There is another type of improper integral that can occur on a finite interval. Furthermore, they can occur in a natural setting.   We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by Thus, the arc length would be Suppose instead we use the equation  . In this case we would get the integral If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.      The area of that region would be computed by the same even though the region itself is unbounded. Before you say big deal, it worked , consider the area of this region.       The area of this region would be given by     Try to compute this integral. What happens?   Both integrals are improper because the functions involved are unbounded on the interval . If fact they are not even defined at one of the endpoints of the interval. The way to handle the first integral is to write it as The same technique can be used for the second integral This leads to the general idea that if a function is unbounded at the right endpoint of an interval then we can compute the improper integral by evaluating     provided that limit exists.   Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from to compute the following improper integrals.    Plot these two curves on the same set of axes for . Staring at these graphs, are you surprised by the results in part b?    Torricelli s Trumpet and the Painter s Paradox  Example Torricelli s Trumpet  In we observed that the idea of computing areas and volumes using infinitely thin slices indivisibles predates the invention of Differential Calculus considerably. The earliest known results by this method were obtained by Archimedes (circa 250 BC). This predates the first publication Differential Calculus (1684 AD) by almost 2000 years! We also mentioned that it was likely the rediscovery of scientific works from antiquity after the fall of Constantinoble that led Galileo, and his students Cavalieri and Toricelli, to begin investigating the use of indivisibles. We looked at the ideas of Cavalieri in and we will return to Archimedes work in section .  1643 Evangelista Torricelli (1608 1647) created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem.   Historical Background  This is taken from De solido hyperbolico acuto. Evangelista Torricelli . 1643. Translated G. Loria and G. Vassura 1919.     Theorem: An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   In more modern terms, Torricelli showed that if the following function is rotated about the axis, then the infinitely long solid has a finite volume of . Here is picture of what has been dubbed Torricelli s Trumpet .      Torricelli s Trumpet Volume  Use an improper integral with volumes of disks to obtain Torricelli s result. Again, it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.   This caused a philosophical debate about the nature of mathematical thinking and understanding of the infinite that persisted into the twentieth century. Even more paradoxical was a later result which showed that the surface area of solid is infinite. This is now called the Painter s Paradox because we have a solid which holds a finite amount of paint but would require an infinite amount of paint to paint the inside surface!   Let s assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by    Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.  "
 },
@@ -13838,7 +13910,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-7",
   "type": "Problem",
-  "number": "24.8.0.1",
+  "number": "25.8.0.1",
   "title": "",
   "body": " Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by where is the universal gravitational constant and is the distance between the centers of mass of the two objects. [We are assuming the positive axis points away from the planet so the force is negative.] Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by -->    You should get a negative number because gravity is doing a negative amount of work in moving the object.  "
 },
@@ -13847,7 +13919,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-9",
   "type": "Problem",
-  "number": "24.8.0.2",
+  "number": "25.8.0.2",
   "title": "",
   "body": " Assuming that the original velocity of the mass is and that the velocity at infinity will be , use the result of the previous problem and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by   Interestingly, the escape velocity is independent of the mass of the projectile .   Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately    Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?  "
 },
@@ -13865,7 +13937,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-13",
   "type": "Example",
-  "number": "24.8.0.3",
+  "number": "25.8.0.3",
   "title": "",
   "body": " We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by Thus, the arc length would be Suppose instead we use the equation  . In this case we would get the integral If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.      The area of that region would be computed by the same even though the region itself is unbounded. Before you say big deal, it worked , consider the area of this region.       The area of this region would be given by   "
 },
@@ -13874,7 +13946,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-14",
   "type": "Problem",
-  "number": "24.8.0.4",
+  "number": "25.8.0.4",
   "title": "",
   "body": " Try to compute this integral. What happens?  "
 },
@@ -13883,7 +13955,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#PROBLEMImproperIntegral",
   "type": "Problem",
-  "number": "24.8.0.5",
+  "number": "25.8.0.5",
   "title": "",
   "body": " Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .   Apply your technique from to compute the following improper integrals.    Plot these two curves on the same set of axes for . Staring at these graphs, are you surprised by the results in part b?  "
 },
@@ -13892,7 +13964,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#EXAMPLEPainterParadox",
   "type": "Example",
-  "number": "24.8.0.6",
+  "number": "25.8.0.6",
   "title": "Torricelli’s Trumpet and the Painter’s Paradox.",
   "body": " Torricelli s Trumpet and the Painter s Paradox  Example Torricelli s Trumpet  In we observed that the idea of computing areas and volumes using infinitely thin slices indivisibles predates the invention of Differential Calculus considerably. The earliest known results by this method were obtained by Archimedes (circa 250 BC). This predates the first publication Differential Calculus (1684 AD) by almost 2000 years! We also mentioned that it was likely the rediscovery of scientific works from antiquity after the fall of Constantinoble that led Galileo, and his students Cavalieri and Toricelli, to begin investigating the use of indivisibles. We looked at the ideas of Cavalieri in and we will return to Archimedes work in section .  1643 Evangelista Torricelli (1608 1647) created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem.   Historical Background  This is taken from De solido hyperbolico acuto. Evangelista Torricelli . 1643. Translated G. Loria and G. Vassura 1919.     Theorem: An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   In more modern terms, Torricelli showed that if the following function is rotated about the axis, then the infinitely long solid has a finite volume of . Here is picture of what has been dubbed Torricelli s Trumpet .     "
 },
@@ -13901,7 +13973,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-18",
   "type": "Problem",
-  "number": "24.8.0.7",
+  "number": "25.8.0.7",
   "title": "",
   "body": "Torricelli s Trumpet Volume  Use an improper integral with volumes of disks to obtain Torricelli s result. Again, it should be noted that Torricelli obtained this before the invention of calculus.   Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.  "
 },
@@ -13910,7 +13982,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs13.html#SECTIONProbs13-20",
   "type": "Problem",
-  "number": "24.8.0.8",
+  "number": "25.8.0.8",
   "title": "",
   "body": " Let s assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by    Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this fact to show that the surface area is infinite.   Putting the original integral in terms of , show that the surface area is given by   "
 },
@@ -13919,7 +13991,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs14.html",
   "type": "Section",
-  "number": "24.9",
+  "number": "25.9",
   "title": "Homework #14: Power Series",
   "body": " Homework #14: Power Series  You may have found it surprising in the last homework that an improper integral from to could have a real-world application such as escape velocity. Actually, there is an example of an improper integral of the form which has an application a little closer to home.    Integral Improper Define what it means for the improper integral to converge. What its value would be?   No doubt you have heard of a bell shaped curve or perhaps have been in a statistics course that talks about values. What does any of this mean and what does it have to do with improper integrals? First, the bell shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss (1777 1855) to look at the probability that a measurement should deviate from the actual mean of a population. The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels. Specifically, a normal distribution with a mean of and a standard deviation of has the equation as its probability density function. The fact that it is called a bell shaped curve can be seen in the following graph.     This is called the probability density function because the probability that the random variable takes on a value less than or equal to is given by which is the area of the shaded region above. It is not easy to see, but Gauss cleverly showed that the area under this entire curve is exactly one, which is a requirement to be a probability density function.  Of course, the values of and will affect the shape of the graph as seen below.        Of particular importance is the red curve where the mean and the standard deviation . Any random variable which has a normal distribution with probability density function is said to have a standard normal distribution and a result from probability theory says that if the random variable is normally distributed with mean and standard deviation , then will have a standard normal distribution. We've said a lot here in the way of theory, so let's provide a concrete example. It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean and standard deviation . It is also widely accepted that someone with an IQ of 140 or above is in the genius range. Suppose we chose someone at random. If we want to compute the probability that this person's IQ is less than or equal to 140, then mathematically, we want to compute   Unfortunately, none of our integration techniques will compute this integral exactly. In fact, there are no integration techniques that will do this. Let's do what any person would do and see what the internet says. If we type this into a computer algebra system, we get   This says that the probability that this random person's IQ is less than or equal to 140 is approximately .99617. Or alternatively, the probability that this person's IQ is greater than 140 is . Said another way, a person with an IQ of 140 has a higher IQ than approximately of the entire human population.  We will get into approximating techniques later, but for now let's talk about scores and tables. To compute the score of the above IQ of 140, books and websites will say to compute   In the old days, one would then look on a table and arrive at the approximation . Now you would input this score in an appropriate piece of software and obtain the same result. Why are you doing this? The following problem might shed some light   Use the the substitution in equation to obtain This is what the approximation represents in the old tables and in the statistical software. Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for . It is expected that a person uses the above substitution to compute a score and the table or software provides the approximation for the integral of the standard normal distribution.    Actually, Wolfram Alpha provides the following output where   The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation    Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer. This begs the question, how does one approximate integrals such as the above? There are several different ways. We will introduce the notion of a power series as one way. We will come back to , but let's start with something easier.  Imagine what integrating would be like if every function was a polynomial. If this were the case, then we wouldn't have needed to learn so many integration techniques. For example, if we wanted to compute we could certainly use a trigonometric substitution, but an easier approach would be to rewrite this as which would be perfectly valid provided . Alas, not every function is a polynomial. For example, consider . Since and no polynomial has this property, then cannot be written as a polynomial (even if we exclude certain points as we did above). However mathematicians realized that there are some things we can do. First notice that   As long as , we can divide by to obtain so it would seem that we can represent as an infinite polynomial. Is what we did legitimate? We certainly cannot substitute in as we can't divide by zero, but what about something like . This would give us    Multiplying by , gives use the familiar   Also notice that multiplying by gives us which is a little more subtle, but is nonetheless as true as the decimal representation of that you are familiar with. If nothing else, this says we must be a bit more careful about dealing with these infinite polynomials. For example, we can only stretch this representation so far. We already know that we can't substitute into . What about ? Could we have   If you look at it, then this is silly as the left hand side grows arbitrarily large and the right hand side is . Let's be a bit more careful utilizing limits. First notice that while writing may be a bit questionable, we can certainly write so we have      As long as , then , so that for , we have . The sum is called the geometric series since the ratio two consecutive terms is constantly equal to and these were studied by mathematicians before the invention of calculus. As such, these infinite polynomials were called power series .  Mathematicians in the 18 century were certainly aware of the geometric series and such limitations, but it didn't stop them from exploiting this powerful tool in applying the ``new'' calculus. For example, suppose we wanted to compute We already know that this is , but suppose we do the following   Thus, we have Setting , we get   Thus, we have a power series representation for the function . If we substitute into here (which is dubious, since we couldn't substitute it into the original , we get which provides a way to approximate to whatever degree of accuracy we wish. Again, this approach to calculus is full of subtleties and dangers, but it did not stop mathematicians from trying to represent non polynomial functions as power series.   Mimic the above techniques to find a power series representation for the following functions.               Interestingly, we can get power series representation for the natural logarithm from the geometric series, but getting one for the exponential function is a bit more problematic. To do this, we will go back to basic principles. Recall from Calculus I that the natural exponential function came from the need to solve the following initial value problem   This is the unique solution to that IVP. Suppose we tried to write that solution as a power series, namely   where are as yet to be determined coefficients. Differentiating, we get  Substituting this into , we have Since these must be equal for all , then the coefficients must be equal. This leads to        Rewriting this pattern, we get        If we adopt the notation (read factorial) to be then all this says that the power series  satisfies . If we apply our initial condition , we get   Thus satisfies the IVP . But we already knew that the unique solution is so we have the power series for , namely   To test this, let's substitute in . We get We can't add up infinitely many terms like this, but let's add the terms   to see if we get a reasonable approximation for . Comparing this to the approximation for given on a calculator , we see this is accurate to 7 decimal places. Adding more terms would get us even more accuracy. In fact, for any real number , we have which is different than the limitation we had for the geometric series. The entire study of power series is more subtle than we've done so far, but for now, let's go with the fact that we can represent for any real number . Let's apply this to our error function       Use the power series to obtain a power series for and use this to show    Add the first ten terms of the series you obtained in part a with to obtain an approximation for . How does your calculation compare to the approximate answer given by Wolfram Alpha which is    As you can see, power series coupled with the new calculus became (and still is) a powerful tool. As people utilized it more, issues about legitimacy came into play, but for now and in the next homework, we won't worry about the nuances and just see what it can get us.  "
 },
@@ -13928,7 +14000,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-3",
   "type": "Problem",
-  "number": "24.9.0.1",
+  "number": "25.9.0.1",
   "title": "",
   "body": "  Integral Improper Define what it means for the improper integral to converge. What its value would be?  "
 },
@@ -13937,7 +14009,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-15",
   "type": "Problem",
-  "number": "24.9.0.2",
+  "number": "25.9.0.2",
   "title": "",
   "body": " Use the the substitution in equation to obtain This is what the approximation represents in the old tables and in the statistical software. Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for . It is expected that a person uses the above substitution to compute a score and the table or software provides the approximation for the integral of the standard normal distribution.  "
 },
@@ -13946,7 +14018,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#PROBLEMErf",
   "type": "Problem",
-  "number": "24.9.0.3",
+  "number": "25.9.0.3",
   "title": "",
   "body": " Actually, Wolfram Alpha provides the following output where   The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.   Use the substitution to show that    Use the result of and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha's equation   "
 },
@@ -13964,7 +14036,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-27",
   "type": "Problem",
-  "number": "24.9.0.4",
+  "number": "25.9.0.4",
   "title": "",
   "body": " Mimic the above techniques to find a power series representation for the following functions.              "
 },
@@ -13973,7 +14045,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs14.html#SECTIONProbs14-36",
   "type": "Problem",
-  "number": "24.9.0.5",
+  "number": "25.9.0.5",
   "title": "",
   "body": "    Use the power series to obtain a power series for and use this to show    Add the first ten terms of the series you obtained in part a with to obtain an approximation for . How does your calculation compare to the approximate answer given by Wolfram Alpha which is   "
 },
@@ -13982,7 +14054,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONProbs15.html",
   "type": "Section",
-  "number": "24.10",
+  "number": "25.10",
   "title": "Homework #15: More on Power Series",
   "body": " Homework #15: More on Power Series  In HW # 14, we introduced power series as a way to represent functions and use them to approximate various integrals. Alas, there are some functions for which we can t do that. For example, could we write for the appropriate choice of coefficients ?  A quick look says no, for if we substituted in , we would get which doesn t work. However, all is not lost as we can do the following. which is valid for or . This is called the power series expansion of expanded about 1.   For each of the following functions, find the power series expansion for the indicated value of by manipulating a known series. [Make sure you write out enough terms so there is a discernible pattern.]              As you can see, we can represent a lot of functions by power series if we are clever enough to see how to manipulate existing series. But what if we are not clever enough on a particular day. Is there a systematic way to construct the power series for a given function? As mathematicians in the 18 century saw how power series could be powerful tool for the then new calculus, they sought such a systematic way. A number of them found such a way. They were all basically the same, and finally a mathematician named Brook Taylor (1685-1731) wrote down this systematic method in a book in 1715. Taylor wrote his result utilizing Newton s dot notation (somewhat) and it is not easy to read. Even using Leibniz differential notation becomes cumbersome when doing this. As such we will state Taylor s result using the prime notation developed by Joseph Louis Lagrange (1736-1813) in 1797. In fact, Lagrange developed this notation specifically with power series in mind. Lagrange s idea was to define functions by power series in an attempt to find a more rigorous foundation for calculus than infinitely small differentials. Here is Taylor s idea with Lagrange s notation.  Suppose we could write a function as a power series expanded about . That is suppose The goal is to find out what the coefficients are in a systematic way. First notice that so . Computing the derivative, we have Substituting again, we get so . Computing the next derivative and then substituting , we have Substituting again, we get So .   Continue this process to show    You will notice that we were careful to not multiply things out and were very careful about putting in 1 s etc. This was not only because of laziness, but it was also to see the pattern developing. The fact that is immaterial and in fact would hide the pattern, which goes against our goal of finding a systematic method. Following this pattern, we have that if is going to be represented as a power series expanded about , then it must be This is called the Taylor series expansion of expanded about . In the particular case when , we have   This specific Taylor series expanded about is often called the Maclaurin series of in honor of the mathematician Colin Maclaurin (1698-1746). Both Taylor and Maclaurin were writing systematic expositions of Newton s version of the calculus when they formulated these series expansions. Again, the notation is Lagrange s and comes later. Before we go any further, let s introduce some notation to make writing this a little less tedious. For example, if we follow the pattern in Taylor s formula, we would have the coefficient of the 100 term look like this. where we have 100 slashes (primes) in the exponent. We need something a little more compact. With this in mind, we denote by . This is read one hundred factorial. In general, for a positive integer , . Thus, we have but again, I want to emphasize that the pattern is actually more important at this point than the product. With this in mind, Taylor s Formula looks like this.   This takes care of the denominators, but we still need to streamline something like The notation for the derivative is . For this one you need to be careful. The first one is the second derivative. The second one is the function squared.   With these notations, Taylor s formula looks like this. so the hundredth term in this series would look like this.   Let s test this systematic approach on something we already know. The geometric series is valid for . Suppose we use this Taylor machine to generate the power series of expanded about . We will do this systematically.                                Applying Taylor s Formula   to this, we have  which is the geometric series we had before. Using Taylor s formula is more labor intensive, but it is systematic. My own preference is to try to obtain a power series in some other clever fashion, and if I m not clever enough, then rely on the Taylor formula as a back up.   Drills   Drills Verify your answers in by applying Taylor s formula to each of the functions in that problem to verify that you obtain the same series.                                     Use Taylor s formula to derive the following power series    We could use Taylor s formula to obtain a power series for , but instead, differentiate the series you obtained in part a to get the series    You might have noticed the similarity between the power series for sine and cosine and the series This was also noticed by Leonard Euler (1707 1783). He substituted into the series for , where . Do the same to derive the important formula [Note: This formula is important in many fields such as electrical engineering, quantum physics, and mechanics and is the basis for all of complex analysis.]   At this point, we should introduce some more notation which makes things a bit more compact and admittedly more precise. People will often write Taylor s Formula   as   The upper case Greek letter sigma signifies a sum, and this is read as the sum from to of . Again, this is just a notation. More specifically, we could write Notice that we started our summation at instead of , and in fact, people adopted the notations and so that Taylor s formula could be written as   This summation notation has an advantage that it leaves no doubt as to what the pattern is, but many people find it sophisticated. To get you more comfortable, here is a problem to give you practice going back and forth between the notations.      Write the following summations in the form [Make sure you put in enough terms to establish a pattern.]              Write the following using summation notation.           We have talked about representing functions by power series, but the theory of power series goes much deeper than that. For example, the geometric series only works for , and the series for obtained by integrating the alternating geometric series works for . By contrast, the series for and work for all real numbers . In general, a power series will either converge for all real numbers , or there will be a non-negative number such that it will converge for with and diverge for with or . This is called the radius of convergence of the power series. What happens at is an even harder question. We ran out of time to do this, but you can read about it in Mendelson, Chapters 42 -- 46.  While we are at it, I mentioned in HW # 14 (and in class) that there is another way to approximate a definite integral using finite sums rather than power series. Instead of dividing the interval into infinitely small pieces or and integrating quantities together, we could divide the interval into a finite number of pieces and create a finite sum. This could be used to approximate the integral itself and, in theory, if the lengths are made smaller (meaning more terms to sum together) then the approximation would be more accurate. In fact, in a rigorous formulation of integrals, we could take the limit of these finite sums and it should converge to what we call the definite integral.  For example, suppose we wanted to approximate This would be the area under the curve from to . We could divide the interval into a finite number of equal pieces, say 10. The length of each subinterval would be . We could then choose a point in each subinterval and create the finite sum   It is hard to digest what is going on without a picture so here is the situation.        As you can see, the sum represents the (finite) sum of the areas of boxes and we can use this to approximate the area under the curve given by . We are free to choose to be any value inside each subinterval. For example, we can choose the midpoints in each interval as in below.  This finite sum can be calculated on a computer. Furthermore, if we have enough computing power, we could divide the interval into as many subintervals as we wish and they don t even need to be the same size.   Drills  Approximate the value of by summing the areas of the rectangles shown in where the height of each rectangle is the function value at the midpoint of each interval:       A sum such as above is called a Riemann sum named after Berhard Riemann (1826 1866) who took limits of these sums as to carefully define what a definite integral is without having to resort to differentials. You should note that the integral symbol was developed by Leibniz in 1696, some 130 years before the birth of Riemann. Riemann developed his theory of integration to address the question of integrability, not necessarily for approximating integrals, though people were using finite sums to approximate integrals before Riemann.  We mentioned in HW # 8 that integrals could be used to determine the coefficients when trying to express a function as a sum of sine and cosine curves. A major theoretical question in Riemann s day was how strange a function could look and still have such a representation. This led to a more careful approach to integration using finite sums and limits. However, for applications as we have done throughout the semester, utilizing differentials as we have makes integration an easier tool to work with. But you should be wary that the theory behind integration is much more nuanced than our introduction in this course.  "
 },
@@ -13991,7 +14063,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#PROBLEMPS1",
   "type": "Problem",
-  "number": "24.10.0.1",
+  "number": "25.10.0.1",
   "title": "",
   "body": " For each of the following functions, find the power series expansion for the indicated value of by manipulating a known series. [Make sure you write out enough terms so there is a discernible pattern.]             "
 },
@@ -14000,7 +14072,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-7",
   "type": "Problem",
-  "number": "24.10.0.2",
+  "number": "25.10.0.2",
   "title": "",
   "body": " Continue this process to show   "
 },
@@ -14009,7 +14081,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-15",
   "type": "Drill",
-  "number": "24.10.0.3",
+  "number": "25.10.0.3",
   "title": "",
   "body": " Drills   Drills Verify your answers in by applying Taylor s formula to each of the functions in that problem to verify that you obtain the same series.  "
 },
@@ -14018,7 +14090,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-16",
   "type": "Problem",
-  "number": "24.10.0.4",
+  "number": "25.10.0.4",
   "title": "",
   "body": "    Use Taylor s formula to derive the following power series    We could use Taylor s formula to obtain a power series for , but instead, differentiate the series you obtained in part a to get the series    You might have noticed the similarity between the power series for sine and cosine and the series This was also noticed by Leonard Euler (1707 1783). He substituted into the series for , where . Do the same to derive the important formula [Note: This formula is important in many fields such as electrical engineering, quantum physics, and mechanics and is the basis for all of complex analysis.]  "
 },
@@ -14027,7 +14099,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#SECTIONProbs15-20",
   "type": "Problem",
-  "number": "24.10.0.5",
+  "number": "25.10.0.5",
   "title": "",
   "body": "    Write the following summations in the form [Make sure you put in enough terms to establish a pattern.]              Write the following using summation notation.          "
 },
@@ -14036,7 +14108,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#FIGUREMidPointRule",
   "type": "Figure",
-  "number": "24.10.0.6",
+  "number": "25.10.0.6",
   "title": "",
   "body": "     "
 },
@@ -14045,7 +14117,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONProbs15.html#DRILLMidPointRule1",
   "type": "Drill",
-  "number": "24.10.0.7",
+  "number": "25.10.0.7",
   "title": "",
   "body": " Drills  Approximate the value of by summing the areas of the rectangles shown in where the height of each rectangle is the function value at the midpoint of each interval:   "
 },
@@ -14054,7 +14126,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "PARAGRAPHSIntegrationLimits.html",
   "type": "Section",
-  "number": "25.1",
+  "number": "26.1",
   "title": "Limits of Integration",
   "body": " Limits of Integration  Starting at some fixed point we lay all of the differentials, , end to end, forming the partitioned interval as shown in the diagram below.   Comment  In practice, integration is always a summation between two points so there really should be indices on our integral sign  . We have discarded them for now because they would only distract from the larger point we re about to make. We will circle back to this issue in the next DIGRESSION.      In the early nineteenth century Joseph Fourier (1768 1830) found that Leibniz original integral symbol was not quite descriptive enough for his purposes. In particular the expression gives no clue where we need to start, or stop, summing the differentials. To clarify things Fourier modified Leibniz notation by inserting upper and lower indices on the integral sign as follows: . equation is equivalent to equation but it has the advantage that it clearly indicates the limits of integration. We start summing the differentials at , and end at , resulting in the difference .  Summation of differentials is called integration . An integral consists of two parts: The integral sign , , which indicates summation, and the differentials to be summed represented by in this case.  "
 },
@@ -14072,7 +14144,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONIntegrationAsFunction.html",
   "type": "Section",
-  "number": "25.2",
+  "number": "26.2",
   "title": "Integration as a Function",
   "body": " Integration as a Function  Next we define the function, which sums the differentials from a fixed point to a variable point . There is a lot going on in equation but it is important that you understand very clearly the nature of the function . We will proceed slowly.  To repeat, is the function which sums all of the differentials up to the point , starting at the number . Thus will be the sum of the differentials up to , is the sum up to .  Recall that a function consists of a domain (all real numbers ( in this case) and a procedure for assigning outputs to inputs. In this instance the procedure is, for each sum of all of the differentials from to . So is a function of . Take particular notice of the fact that the integration variable ( in this case) does not represent a variable in the domain of . The integration variable is sometimes called a dummy variable because in a very real sense it isn t really there. This is very confusing at first, but don t concern yourself over it right now. We will demonstrate what we mean with an example later.   Drills  Explain why .   From equation we see that . Therefore Finally, since (see equation ) we see that Despite its apparent simplicity equation is quite profound. First, observe that is a constant. To emphasize this fact we set , so that it looks like a constant.   A Little Algebra   is a constant for the same reason that if then is a constant. When we evaluate a function at a single element of its domain the result will be a single element of its range, i.e., a constant..   With this notational change we have . From our observations at the begining of this section we see that is also an antiderivative of (we ve added to the antiderivative ).  But equation tells us more than that. It says that if we know another antiderivative of , say we can find by computing  equation is an informal statement of the Fundamental Theorem of Calculus . We will now state it formally.   The Fundamental Theorem of Calculus (FTC)  Let be any constant. If is defined by then is an antiderivative of .  In the FTC, notice where, and how, we used the variable name and where we used . It is important to keep the distinction clear in your mind.            From and equation it follows that if is any other antiderivative of then              Definite Integration  Let and be constants. Then from and it follows that     The Problem of Zero Differentials       Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.   "
 },
@@ -14090,7 +14162,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#PROBLEMIntAtoA",
   "type": "Drill",
-  "number": "25.2.0.1",
+  "number": "26.2.0.1",
   "title": "",
   "body": " Drills  Explain why .  "
 },
@@ -14108,7 +14180,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#THEOREMFTC",
   "type": "Theorem",
-  "number": "25.2.0.2",
+  "number": "26.2.0.2",
   "title": "The Fundamental Theorem of Calculus (FTC).",
   "body": " The Fundamental Theorem of Calculus (FTC)  Let be any constant. If is defined by then is an antiderivative of .  "
 },
@@ -14117,7 +14189,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#SECTIONIntegrationAsFunction-12",
   "type": "Corollary",
-  "number": "25.2.0.3",
+  "number": "26.2.0.3",
   "title": "",
   "body": " From and equation it follows that if is any other antiderivative of then            "
 },
@@ -14126,7 +14198,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#SECTIONIntegrationAsFunction-13",
   "type": "Corollary",
-  "number": "25.2.0.4",
+  "number": "26.2.0.4",
   "title": "Definite Integration.",
   "body": " Definite Integration  Let and be constants. Then from and it follows that   "
 },
@@ -14135,7 +14207,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntegrationAsFunction.html#EXAMPLEZeroDiff",
   "type": "Example",
-  "number": "25.2.0.5",
+  "number": "26.2.0.5",
   "title": "The Problem of Zero Differentials.",
   "body": " The Problem of Zero Differentials       Naturally, things are not quite this simple. Consider Clearly so the sum of and the sum of would seem to be the same as. But clearly whereas . This apparent contradiction needs to be resolved.  One way to resolve it is to form the function and notice that since it follows that Dividing by and thinking of and as slopes, we have . This says that the curve has a slope which is constantly equal to zero. A moment’s thought will suggest that this curve must be a horizontal line for if not then somewhere it should have a nonzero slope. This argument can be made rigorous, but we will not fuss over that right now.  "
 },
@@ -14144,7 +14216,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONRandomStuff.html",
   "type": "Section",
-  "number": "25.3",
+  "number": "26.3",
   "title": "Random Stuff",
   "body": " Random Stuff   Note to self  When the integral of a product is the product of the integrals.    Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .   "
 },
@@ -14153,7 +14225,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRandomStuff.html#ProblemMisplaced",
   "type": "Problem",
-  "number": "25.3.0.1",
+  "number": "26.3.0.1",
   "title": "",
   "body": " Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
 },
@@ -14162,7 +14234,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "CHAPTERPFDTheory.html",
   "type": "Chapter",
-  "number": "26",
+  "number": "27",
   "title": "The  Theory Behind the  Partial Fraction Decomposition",
   "body": " The Theory Behind the Partial Fraction Decomposition  Previously, we provided a number of ways to compute the coefficients in the partial fractions decomposition of a rational function. In all those instances, we assumed that a rational function had such a decomposition. The fact that there is a partial fractions decomposition is actually an algebraic result not a calculus one, but we will provide some rationale as to why this is true. Let's start with something relatively easy to see where the ideas come from.  Suppose are two distinct numbers. Then so and finally    Equation is a special case of a more general fact stated below:  Given two polynomials and with no common factors (except trivial ones such as constants), then there are polynomials and such that     It should be noted that having no common non trivial factors is the equivalent to having no common roots (real or complex). We will not prove this result here, but we will note that its derivation is exactly the same as the following number theory result (which we will not prove either).  Let and be two positive integers with [i.e.: and have no common factors, except for the trivial factor 1]. Then there exist integers with   As an example, notice that , and so . There is a systematic way to find the integers (and analogously, the polynomials ) in general, but we will just use the fact that these exist for our purposes. With the above polynomial result in place, we can manipulate as we did above    Thus if is any polynomial, then we have   This says that our goal of finding a partial fractions decomposition is theoretically possible. Before we make our educated guess as to what the numerators will look like, we will make an observation that might make our guess even more educated and narrow our search.  Observation: Notice that if the degree of is less than the degree of , then we can assume that the degree of the numerators in the partial fractions will be less than the degrees of the denominators.  If you think about this, it makes sense. First, we should point out that the numerators in the partial fractions are not unique, but there is no sense introducing higher degree terms in the numerators that would just cancel out anyway when these fractions are combined. For example, if we had then   We might as well assume that and try to find such that   Again, we want to point out that this is not necessary, but it makes for a more educated guess and cuts out some unnecessary work.  The same ideas can be extended if we have three or more polynomials in the denominator which pairwise have no non trivial factors.   The PFD with Three Factors  Suppose we have three polynomials which pairwise have no non-trivial common factors. Then there exist polynomials with     Prove Theorem .   We can write for some polynomials .   Since the goal in a partial fractions decomposition is to split a rational function into as many simpler pieces as possible, we will explore what can happen. We will use specific examples to illustrate these situations, but the ideas involved apply in general.  We already took care of the case where we have distinct linear factors. What if we have a factor which is repeated. For example, suppose we have   Since and have no non trivial common factors, then we already know we can write where the constants need to be determined by one of the methods we employed before. Of course, this can be rewritten as which represents our partial fractions decomposition.  We can employ a similar idea if we have something like   In this case we have .  If we rewrite this as     If we relabel things, we get our partial fractions decomposition where are constants that need to be determined using methods we learned before.  Suppose our repeated factor is not linear, say we had . By our general result above, we have   Employing a similar trick to what we did with a repeated linear factor, we have     Relabeling, we have our partial fractions decomposition   where the coefficients can be determined by one of our previous methods.  We will stop at linear and quadratic factors even though the ideas we just illustrated would work for them as well. The fact is that any polynomial of degree three or higher can be factored into two or more other polynomials of lesser degree. This says that linear and quadratic factors are the only possible irreducible factors. The reason that this is true follows by extending our roots to complex numbers as well. There are a couple of reasons for doing this.  First: The Fundamental Theorem of Algebra, says that any polynomial with real coefficients can factored into the form where are the (possibly complex) roots of .  Second: If is a root of then its complex conjugate is also a root.  When we multiply two such linear factors together, we have which is a quadratic factor with real coefficients.  The upshot of all this is that if we want to find the partial fractions decomposition of a rational function , we do the following:   The Partial Fraction Decomposition    Use long division to ensure that the degree of the numerator is less than the degree of the denominator.  Factor the denominator completely (over the real numbers). These irreducible factors will either be linear or quadratic.  For any linear factor of the form , form the sum   For any quadratic factor of the form , form the sum   Find all the coefficients using one of the methods we employed before.      Write down the form of the partial fractions decomposition for each of the following rational functions. DO NOT TRY TO DETERMINE THE COEFFICIENTS (unless you have nothing better to do)!               "
 },
@@ -14171,7 +14243,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERPFDTheory.html#THEOREMPFDThreeFactor",
   "type": "Theorem",
-  "number": "26.0.0.1",
+  "number": "27.0.0.1",
   "title": "The PFD with Three Factors.",
   "body": " The PFD with Three Factors  Suppose we have three polynomials which pairwise have no non-trivial common factors. Then there exist polynomials with   "
 },
@@ -14180,7 +14252,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERPFDTheory.html#PROBLEMPFDThreeFactor",
   "type": "Problem",
-  "number": "26.0.0.2",
+  "number": "27.0.0.2",
   "title": "",
   "body": " Prove Theorem .   We can write for some polynomials .  "
 },
@@ -14189,7 +14261,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERPFDTheory.html#ALGORITHMPFD",
   "type": "Algorithm",
-  "number": "26.0.0.3",
+  "number": "27.0.0.3",
   "title": "The Partial Fraction Decomposition.",
   "body": " The Partial Fraction Decomposition    Use long division to ensure that the degree of the numerator is less than the degree of the denominator.  Factor the denominator completely (over the real numbers). These irreducible factors will either be linear or quadratic.  For any linear factor of the form , form the sum   For any quadratic factor of the form , form the sum   Find all the coefficients using one of the methods we employed before.    "
 },
@@ -14198,16 +14270,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "CHAPTERPFDTheory.html#PROBLEMPFDBig",
   "type": "Problem",
-  "number": "26.0.0.4",
+  "number": "27.0.0.4",
   "title": "",
   "body": " Write down the form of the partial fractions decomposition for each of the following rational functions. DO NOT TRY TO DETERMINE THE COEFFICIENTS (unless you have nothing better to do)!              "
+},
+{
+  "id": "CHAPTEREulerId",
+  "level": "1",
+  "url": "CHAPTEREulerId.html",
+  "type": "Chapter",
+  "number": "28",
+  "title": "Alternate Proof of Euler Identity",
+  "body": " Alternate Proof of Euler Identity   Note from Bob  I'm thinking this could be inserted somewhere in the section on Trigonometric Substitutions.   Euler s Identity  In Section 8.13, we derived Euler's Identity where by showing that both of these satisfy the IVP   It would be hard to overstate the importance of Euler s Identity in electrical engineering and complex analysis. For Euler, it was an important connection between exponential functions and trigonometric functions. This was so important that Euler produced multiple proofs of this in his lifetime. According to math historian William Dunham, it was customary of Euler to produce multiple proofs of important results. Perhaps the (then) novelty of utilizing imaginary numbers to prove results was a motivation for producing multiple proofs of this result, but here is another proof attributed to Euler [Reference: Euler: Master of Us All -- Dunham, p. 94]. This one involves a trigonometric substitution.  We know that satisfies so that    Perform the substitution to transform the above integral into .   Perform the appropriate trigonometric substitution (you done it before) to show that .   Substitute into the result from part (b) to determine and obtain .   Labeling , show that the equation in part (c) can be rewritten as and use that obtain Euler's Identity   "
+},
+{
+  "id": "PROBLEMEulersIdentTrigSub2",
+  "level": "2",
+  "url": "CHAPTEREulerId.html#PROBLEMEulersIdentTrigSub2",
+  "type": "Problem",
+  "number": "28.0.0.1",
+  "title": "Euler’s Identity.",
+  "body": "Euler s Identity  In Section 8.13, we derived Euler's Identity where by showing that both of these satisfy the IVP   It would be hard to overstate the importance of Euler s Identity in electrical engineering and complex analysis. For Euler, it was an important connection between exponential functions and trigonometric functions. This was so important that Euler produced multiple proofs of this in his lifetime. According to math historian William Dunham, it was customary of Euler to produce multiple proofs of important results. Perhaps the (then) novelty of utilizing imaginary numbers to prove results was a motivation for producing multiple proofs of this result, but here is another proof attributed to Euler [Reference: Euler: Master of Us All -- Dunham, p. 94]. This one involves a trigonometric substitution.  We know that satisfies so that    Perform the substitution to transform the above integral into .   Perform the appropriate trigonometric substitution (you done it before) to show that .   Substitute into the result from part (b) to determine and obtain .   Labeling , show that the equation in part (c) can be rewritten as and use that obtain Euler's Identity  "
 },
 {
   "id": "Quotes",
   "level": "1",
   "url": "Quotes.html",
   "type": "Chapter",
-  "number": "27",
+  "number": "29",
   "title": "Quotes",
   "body": " Quotes   I have had my results for a long time: but I do not yet know how I am to arrive at them.   Carl Friederich Gauss , (1777 1855) (Quoted in The Mind and the Eye by A. Arber)    If in the first act you have hung a pistol on the wall, then in the following one it should be fired   Anton Chekhov , (1860 1904)    . . . certain things first became clear to me by a mechanical method, although they had to be demonstrated by geometry aftrwards because their investigation by the said method did not furnish an actual demonstration. But it is of course easier, when we have previously acquired, by the method, some knowledge of the questions, to supply the proof than it is to find it without any previous knowledge.   Archimedes , (287BC 212BC)    I cannot but see a stark contradiction between the intuitively clear fundamental formulas of the integral calculus and the incomparably artificial and complex work of their \"justification\" and their \"proofs\". One must be quite stupid not to see this at once, and quite careless if, after having seen this, one can get used to this artificial, logical atmosphere, and can later on forget this stark contradiction.   Nikolai Nikolaievich Luzin , (1883 1950)    Everyone knows what a curve is, until he has studied enough mathematics to become confused through the countless number of possible exceptions.  Felix Klein    Obvious is the most dangerous word in mathematics.  Eric Temple Bell    Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding.  William Thurston    If religion is a system of thought that requires belief in unprovable propositions, then thanks to Gödel, we know mathematics is the only religion that can prove it is one.  John Barrow    Mathematics is not a careful march down a well-cleared highway, but a journey into a strange wilderness, where the explorers often get lost. Rigour should be a signal to the historian that the maps have been made, and the real explorers have gone elsewhere.  W.S. Anglin    Anyone who cannot cope with mathematics is not fully human. At best, he is a tolerable subhuman who has learned to wear his shoes, bathe, and not make messes in the house.  Robert A. Heinlein    Begin with the simplest examples.  David Hilbert    The mathematician does not study pure mathematics because it is useful; he studies it because he delights in it and he delights in it because it is beautiful.  Henri Poincare    What science can there be more noble, more excellent, more useful for men, more admirably high and demonstrative, than this of mathematics?  Benjamin Franklin    Kids will be using computers instead of memorizing their multiplication tables. This will give them more time to solve word problems, which is much more useful. That's the real problem. Not the arithmetic but the interpretation.  Admiral Grace Hopper    In mathematics, you don't understand things. You just get used to them.  Johann von Neumann    It appears to me that if one wants to make progress in mathematics, one should study themasters and not the pupils.  Niels Henrik Abel    First guess, then prove.  George Polya    Confused is . . . the best state a mathematician can be in; the struggle out of that state is the primary drive for progress.   Dror Bar-Natan     The answer to a math problem is not a number, it is an argument, a proof.   Paul Lockhart     Science is the Differential Calculus of the mind. Art the Integral Calculus; they may be beautiful when apart, but are greatest only when combined.   Ronald Ross (1857 1932)    As far as the laws of mathematics refer to reality, they are not certain, and as far as they are certain, they do not refer to reality.  Albert Einstein (1879 1955)    In my free time I do differential and integral calculus.   Karl Marx (1818 1883)    But just as much as it is easy to find the differential [derivative] of a given quantity, so it is difficult to find the integral of a given differential. Moreover, sometimes we cannot say with certainty whether the integral of a given quantity can be found or not.   Johnann Bernoulli (1667 748)      I'm very good at integral and differential calculus,  I know the scientific names of beings animalculous;  In short, in matters vegetable, animal, and mineral,  I am the very model of a modern Major-General.    W. S. Gilbert (1836 1911)    After years of finding mathematics easy, I finally reached integral calculus and came up against a barrier. I realized that this was as far as I could go, and to this day I have never successfully gone beyond it in any but the most superficial way.   Isaac Asimov (1920 1992)    Self-education is, I firmly believe, the only kind of education there is. The only function of a school is to make self-education easier; failing that, it does nothing.   Isaac Asimov (1920 1992)    The true delight is in the finding out rather than in the knowing.   Isaac Asimov (1920 1992)    . . . when it is a case of making transcendental analysis an instrument of exploration for questons presented by astronomy, marine engineering, geodesy, and the different brances of science of the engineer, the consideration of the infinitely small leads to the aim in a manner which is more felicitous, more prompt, and more immediately adapted to the nature of the questions, and that is why Leibnizian method has, in general, prevailed in French schools.   Gaspard de Prony (1755 1839)    I do not feel obliged to believe that the same God who has endowed us with senses, reason, and intellect has intended us to forego their use.   Galileo Galilei (1564 1642)    If one looks at the different problems of the integral calculus which arise naturally when one wishes to go deep into the different parts of physics, it is impossible not to be struck by the analogies existing.   Henri Poincare (1854 1912)    But just as much as it is easy to find the differential [derivative] of a given quantity, so it is difficult to find the integral of a given differential. Moreover, sometimes we cannot say with certainty whether the integral of a given quantity can be found or not.   Johann Bernoulli 1667( 1748)    But just as much as it is easy to find the differential [derivative] of a given quantity, so it is difficult to find the integral of a given differential. Moreover, sometimes we cannot say with certainty whether the integral of a given quantity can be found or not.   Georg C. Lichtenberg (1742 1799)    Every one who understands the subject will agree that even the basis on which the scientific explanation of nature rests is intelligible only to those who have learned at least the elements of the differential and integral calculus, as well as analytical geometry.   Felix Klein (1849 1925)    Heat, like gravity, penetrates every substance of the universe, its rays occupy all parts of space. The object of our work is to set forth the mathematical laws which this element obeys. The theory of heat will hereafter form one of the most important branches of general physics.   Joseph Fourier (1768 1830)    Civilization advances by extending the number of important operations which we can perform without thinking of them.   Alfred North Whitehead (1861 1947)    If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.   John von Neumann (1903 1957)    Mathematicians are like Frenchmen: whenever you say something to them, they translate it into their own language, and at once it is something entirely different.   Johan Wolfgang Göthe (1749 1832)    Young man, in mathematics you don't understand things. You just get used to them.   John von Neuman (1903 1957)    If the doors of perception were cleansed, everything would appear to man as it is — infinite.  William Blake (1757 1827)    It is a narrow mind which cannot look at a subject from various points of view.  George Eliot (1819 1880)    In all affairs it's a healthy thing now and then to hang a question mark on the things you have long taken for granted.  Bertrand Russell (1872 1970)         "
 },

@@ -12,52 +12,86 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.2.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.2.2.4</span><span class="period">.</span>
 </h5>
 <div class="para logical">
-<div class="para">Heaviside’s method will also fail on this function:</div>
+<div class="para">Heaviside’s Cover–up Method will also fail on this function:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{x^2+x-3}{x^2(x-1)}\text{.}
 \end{equation*}
 </div>
-<div class="para">If you  apply it you’ll get</div>
+<div class="para">If you apply it you’ll get</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{x^2+x-3}{x^2(x-1)} = \frac{3}{x^2} +
-\frac{-1}{x-1}
+\frac{x^2+x-3}{x^2(x-1)} =
+\frac{3}{x^2} + \frac{-1}{x-1}
 \end{equation*}
 </div>
 <div class="para">which is incorrect. Check it and see.</div>
 </div>
 <div class="para logical">
-<div class="para">The problem here is the factor <span class="process-math">\(x^2\)</span> in the denominator. If you look back at the problems and examples we’ve looked at so far you’ll see that in every case every possible factor which appeared in the denominator of the fraction on the left side also appeared in one of the denominators on the right side. In this case clearly both <span class="process-math">\(x^2\)</span> and <span class="process-math">\(x-1\)</span> are factors of <span class="process-math">\(x^2(x-1)\text{,}\)</span> but <span class="process-math">\(x\)</span> is also a factor so the correct decomposition</div>
+<div class="para">The problem here is the factor <span class="process-math">\(x^2\)</span> in the denominator. If you look back at the problems and examples we’ve looked at so far you’ll see that in every distinct  factor which appeared in the denominator of the fraction on the left side also appeared in one of the denominators on the right side. In this case the distinct factors are <span class="process-math">\(x^2\)</span> and <span class="process-math">\(x-1\)</span> so the decomposition will be</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{x}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2}+
-\frac{C}{x-1}\text{,}
+\frac{x^2+x-3}{x^2(x-1)} =
+\frac{\text{something}}{x^2} + \frac{C}{x-1} \text{.}
 \end{equation*}
 </div>
-<div class="para">and we need to find the constants <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span>
+<div class="para">But now the question is, “What is the something?” Up until now none of the distinct factors in the denominator appeared with a power higher than one. So a factor of <span class="process-math">\(x^2\)</span> is altogether new and different.</div>
+</div>
+<div class="para logical">
+<div class="para">Looking back at our earlier, and simpler, examples we see that every case the terms on the left were rational functions where the degree of the numerator (which was always <span class="process-math">\(0\)</span> in those examples) was one less than the degree of the denominator (which was always <span class="process-math">\(1\)</span> in those examples). If we keep that pattern here then it appears that the decomposition must be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x^2+x-3}{x^2(x-1)} =
+\frac{Ax+B}{x^2} + \frac{C}{x-1} 
+\end{equation*}
+</div>
+<div class="para">because</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\deg (Ax+B)=1
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\deg(x^2) =2\text{.}
+\end{equation*}
+</div>
+<div class="para">We can break this up a bit more by observing that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{Ax+B}{x^2}
+=\frac{A}{x}+\frac{B}{x^2}
+\end{equation*}
+</div>
+<div class="para">so we need to find <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x^2+x-3}{x^2(x-1)} =
+\frac{A}{x}+\frac{B}{x^2} + \frac{C}{x-1} \text{.}
+\end{equation*}
 </div>
 </div>
 <div class="para logical">
 <div class="para">The values <span class="process-math">\(B=3\text{,}\)</span> and <span class="process-math">\(C=-1\)</span> can still be found using the HCUM, so we have</div>
 <div class="displaymath process-math">
 \begin{equation}
-\frac{x}{x^2(x-1)} = \frac{A}{x} +
-\frac{3}{x^2}- \frac{1}{x-1}\text{.}\tag{19.44}
+\frac{x^2+x-3}{x^2(x-1)} = \frac{A}{x} +
+\frac{3}{x^2}- \frac{1}{x-1}\text{.}\tag{19.45}
 \end{equation}
 </div>
 </div>
 <div class="para logical">
-<div class="para">To find <span class="process-math">\(A\)</span> recall that <a href="SECTIONPartFrac.html#EQUATIONHeaviIdentity1" class="xref" data-knowl="./knowl/xref/EQUATIONHeaviIdentity1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.44">equation (19.44)</a> is an identity so it is true regardless of the value of <span class="process-math">\(x\text{.}\)</span> Since <span class="process-math">\(A\)</span> is the only parameter left we can find it by setting <span class="process-math">\(x=2\)</span> (or anything else). This gives <span class="process-math">\(\frac{2}{2^2(2-1)} = \frac{A}{2} +
+<div class="para">To find <span class="process-math">\(A\)</span> recall that <a href="SECTIONPartFrac.html#EQUATIONHeaviIdentity1" class="xref" data-knowl="./knowl/xref/EQUATIONHeaviIdentity1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.45">equation (19.45)</a> is an identity so it is true regardless of the value of <span class="process-math">\(x\text{.}\)</span> Since <span class="process-math">\(A\)</span> is the only parameter left we can find it by setting <span class="process-math">\(x=2\)</span> (or anything else). This gives <span class="process-math">\(\frac{2}{2^2(2-1)} = \frac{A}{2} +
 \frac{3}{2^2}- \frac{1}{2-1}
 \text{,}\)</span> or <span class="process-math">\(A=2\text{.}\)</span> So the full decomposition is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONHeaviIdentity1.html">
 \begin{equation*}
-\frac{x}{x(x-1)} -
-\frac{3}{x}+ \frac{x}{x-1} =  A\text{.}
+\frac{x^2+x-3}{x^2(x-1)} = 
+\frac{2}{x}+ \frac{3}{x^2}-\frac{1}{x-1}\text{.}
 \end{equation*}
 </div>
 </div></article><span class="incontext"><a class="internal" href="SECTIONPartFrac.html#EXAMPLEHeaviNonLinear1">in-context</a></span>
