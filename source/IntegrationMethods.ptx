@@ -4395,7 +4395,7 @@
       </introduction>
 
 
-      <subsubsection  xml:id="SUBSECTIONLogisticEquation">
+      <subsubsection  xml:id="SUBSUBSECTIONLogisticEquation">
         <title>  Heaviside<rsq/>s Cover<ndash/>up Method (HCUM)</title>
 
         <exercise xml:id="PROBLEMLogisticTrigSubst">
@@ -4410,7 +4410,7 @@
               <men xml:id="EQUATIONLogisticTrigSubst">
                 \frac{1}{50}\ln
                 \left[
-                \frac{P}{\sqrt{P(100-P)}}
+                \sqrt{\frac{100-P}{P}}
                 \right]
                 = 0.0001t+C</men>.
             </p>
@@ -4418,7 +4418,7 @@
         </exercise>
 
         <p>
-          As you have just seen, this integration is entirely within the
+          As you have just seen, integrating the left side of <xref ref="EQUATIONLogisticPartFrac1">equation</xref>  is entirely within the
           range of our current skill set but it is rather daunting. And
           we<rsq/>re not even finished yet.  We must still solve <xref
           ref="EQUATIONLogisticTrigSubst">equation</xref> for
@@ -4432,11 +4432,11 @@
             \frac{1}{P(100-P)}=\frac{\frac{-1}{100}}{P}+\frac{\frac{1}{100}}{100-P}
             </men>. 
         </p>
-        <problem xml:id="DRILLLogisticPartFrac2">
-          <p>
-            Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>.
-          </p>
-        </problem>
+        <!-- <problem xml:id="DRILLLogisticPartFrac2"> -->
+        <!--   <p> -->
+        <!--     Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>. -->
+        <!--   </p> -->
+        <!-- </problem> -->
 
         <p>
           With <xref ref="EQUATIONLogisticPartFrac2">the identity</xref>
@@ -4466,33 +4466,51 @@
           ref="EQUATIONLogisticLeftSide">equation</xref> we see that <men
           xml:id="EQUATIONLogisticPartFrac3"> -\frac{1}{100} \ln \left(
           \frac{100-P}{P} \right) = \int 0.0001\dx{t} = 0.0001t+C</men>
-          which is much easier to solve for <m>P(t)</m> than  and <xref
+          which is much easier to solve for <m>P(t)</m> than  <xref
           ref="EQUATIONLogisticTrigSubst">equation</xref>. 
         </p>
         <exercise>
-          <introduction>
-            <p>
-
-            </p>
-          </introduction>
           <task>
             <statement>
               <p>
-                Solve <xref ref="EQUATIONLogisticPartFrac3">equation</xref> and show
-                that 
-                <m>P(t) = \frac{100}{Ke^{-0.01t}+1}</m> where <m>K</m> is an
-                arbitrary constant.
+                Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>.
               </p>
             </statement>
           </task>
           <task>
             <statement>
               <p>
-                Use the initial condition in <xref
-                ref="EQUATIONLogisticRedux">IVP</xref> to show that in part (a)
-                <m>K=9</m>, so that 
-                <me>P(t) = \frac{100}{9e^{-0.01t}+1}</me> 
-                and then confirm that you get the same solution when you
+                Use the result of part (a) to show
+                that 
+<me>\int \frac{\dx{P}}{P(100-P)}=-\frac{1}{100}\ln 
+\left(
+\frac{100-P}{P}
+\right)+C_2</me>
+<!-- <m>P(t) = \frac{100}{Ke^{-0.01t}+1}</m> where <m>K</m> is an -->
+<!-- arbitrary constant. -->
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Use the result of part (b) to show that <xref
+                ref="EQUATIONLogisticPartFrac1">equation</xref>
+                yields
+                <me>P(t)=\frac{100}{1+Ke^{-0.001t}}</me> where <m>K</m>
+                is an arbitrary constant. 
+                </p>
+                </statement>
+                </task>
+                <task>
+                  <statement>
+                    <p>
+                      Use the 
+                      initial condition in <xref
+                      ref="EQUATIONLogisticRedux">IVP</xref> to show
+                      that in part (c)
+                      <m>K=9</m>, 
+                      and then confirm that you get the same solution when you
                 solve <xref
                 ref="EQUATIONLogisticTrigSubst">equation</xref> for
                 <m>P(t)</m>.
@@ -4502,8 +4520,8 @@
           <task>
             <statement>
               <p>
-                Graph <m>P(t)</m> from part (b) and confirm that it has the same
-                general shape that we discovered in <xref
+                Graph <m>P(t)</m> from part (c) and confirm that it
+                has the same general shape that we discovered in <xref
                 ref="SUBSECTIONModelingTrout"></xref>.
               </p>
             </statement>
@@ -4537,21 +4555,20 @@
         <p>
           To begin, if we have an expression of the form
           <m>\frac{1}{(x-a)(x-b)}</m> where <m>a</m>, and <m>b</m> are
-          known constants then the PFD says that there are constants
+          known constants, and <m>a\neq b</m>, then the PFD says that there are constants
           <m>A</m> and <m>B</m> such that as
           <men xml:id="EQUATIONPFDDegrees">\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</men>. Our
           task is to find values for <m>A</m> and <m>B</m>.
         </p>
         <p>
           Take note of the following fact: The right side of <xref
-          ref="EQUATIONPFDDegrees"></xref> consists of rational
+          ref="EQUATIONPFDDegrees">equation</xref> consists of rational
           functions where the degree of the numerator is one less than
           the degree of the denominator. Since the numerators are all
           constants (polynomials of degree zero) and the denominators
           are all linear (polynomials of degree one) this is, at the
-          moment, a rather bombastic way to state this fact. However
-          we use  return to and finally use this fact in <xref
-          ref="SUBSUBSECTIONPFDIrreducQuadFac"></xref> we will find it
+          moment, a rather bombastic way to state this fact. However in <xref
+          ref="SUBSECTIONPFDNonSimple"></xref> we will find it
           very useful.
         </p>
 
@@ -4669,6 +4686,56 @@
   </p>
 </problem>
 
+<exercise xml:id="PROBLEMPFDSimplestForm">
+  <title>The PFD in its Simplest Form (Find the Pattern)</title>
+  <idx><h>Partial Fraction Decomposition</h><h> simplest form of the PFD </h></idx>
+  <introduction>
+    <p>
+      We<rsq/>ve arrived at a very clever algorithm for computing the PFD
+      of a rational function of the form <m>\frac{c}{(x-a)(x-b)}</m> but
+      we<rsq/>ll need to extend it several times if it is going to be more
+      than minimally useful. The first extension is straightforward.
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        Show that the PFD of <m>\frac{1}{(x-a)(x-b)(x-c)}</m> can be
+        computed in exactly the same manner as our most recent method
+        for <m>\frac{1}{(x-a)(x-b)}</m>.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Show the same for
+        <m>\frac{1}{(x-a)(x-b)(x-c)(x-d)}</m>.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Show the same for
+        <m>\frac{1}{(x-x_1)(x-x_2)(x-x_3)\cdots(x-x_n)}</m>.
+      </p>
+    </statement>
+  </task>
+</exercise>
+
+
+
+<p>
+  As you can see from <xref ref="PROBLEMPFDSimplestForm"></xref>
+  even in its simplest form the PFD can become a very large
+  problem. For example suppose <m>n=100</m>. In that case
+  we<rsq/>d need to find <m>100</m> coefficients. We <rsq/>d really
+  like to make the method as efficient as possible. To that end
+  there is one more refinement we<rsq/>ll need before moving on to
+  more general problems.
+</p>
+
 <problem xml:id="DRILLPFDWithoutCoverup">
 
   <p>
@@ -4744,250 +4811,247 @@
   </task>
 
 </exercise>
-<example xml:id="EXAMPLEExtendedLogistic">
-  <p>
-    As we<rsq/>ve mentioned before, all mathematical models make
-    simplifying assumptions. It is important to know what are
-    the simplifications are so we know the conditions under
-    which the model is unrealistic. For example, <xref
-    ref="EQUATIONFishery1">IVP</xref> works fine in the short
-    term but in the long term it predicts explosive growth which
-    is not sustainable. We addressed this when we generated the
-    <xref ref="EQUATIONLogEq">Logistic Equation</xref> by
-    including as a factor, <m>\left(
-    1-\frac{P}{100}\right)</m>. That modification put an upper
-    bound on the population size as we have seen.
-  </p>
-
-  <p>
-    However the Logistic Equation doesn<rsq/>t put any lower bound on
-    the population size. This is also unrealistic since we know that
-    if a population of critters is too small they tend to die
-    out. The following tweak to the logistic model: 
-    <men xml:id="EQUATIONLogEqMinViable">
-      \dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(\frac{P}{10}-1\right),
-    </men>
-
-    forces a population which is too small to die out.  In this
-    case, <m>10</m> is called the <term>minimum viability level</term> of
-    the population.
-  </p>
-
-</example>
-<exercise xml:id="PROBLEMLogistExtend">
-
-  <title>An Extension of the Logistic Equation</title>
-  <statement>
-    <p>
-      Use the graphical techniques
-      of <xref ref="SECTIONExponentialGrowth"></xref> to sketch
-      the graph of the solution <m>P(t)</m> of <xref
-      ref="EQUATIONLogEqMinViable">equation</xref>.  Explain
-      what happens if our population drops below the <term>minimum
-      viability level</term>
-    </p>
-  </statement>
-</exercise>
-<aside>
-  <title>Note to Bob</title>
-  <p>
-    Bob, I haven<rsq/>t worked through this problem to make sure it
-    is workable yet. One of us should do that and make sure.
-  </p>
-</aside>
-
-<p>
-  Of course we would prefer to have a formula for <m>P(t)</m>. It
-  appears that we can obtain a formula if we can integrate the left
-  side of <xref ref="EQUATIONLogEqMinViable">equation</xref>.  As
-  the following problem shows, the PFD extends in the obvious way to
-  three or more factors.
-</p>
-<exercise xml:id="PROBLEMPFDSimplestForm">
-  <title>The PFD in its Simplest Form (Find the Pattern)</title>
-  <idx><h>Partial Fraction Decomposition</h><h> simplest form of the PFD </h></idx>
+<exercise xml:id="EXERCISEExtendedLogistic">
   <introduction>
     <p>
-      We<rsq/>ve arrived at a very clever algorithm for computing the PFD
-      of a rational function of the form <m>\frac{c}{(x-a)(x-b)}</m> but
-      we<rsq/>ll need to extend it considerably if it is going to be more
-      than minimally useful. This extension is straightforward.
+      As we<rsq/>ve mentioned before, all mathematical models make
+      simplifying assumptions. It is important to know what are
+      the simplifications are so we know the conditions under
+      which the model is unrealistic. For example, <xref
+      ref="EQUATIONFishery1">IVP</xref> works fine in the short
+      term but in the long term it predicts explosive growth which
+      is not sustainable. We addressed this when we generated the
+      <xref ref="EQUATIONLogEq">Logistic Equation</xref> by
+      including as a factor, <m>\left(
+      1-\frac{P}{100}\right)</m>. That modification put an upper
+      bound on the population size as we have seen.
     </p>
-  </introduction>
-  <task>
-    <statement>
-      <p>
-        Show that the PFD of <m>\frac{1}{(x-a)(x-b)(x-c)}</m> can be
-        computed in exactly the same manner as our most recent method
-        for <m>\frac{1}{(x-a)(x-b)}</m>.
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        Show the same for
-        <m>\frac{1}{(x-a)(x-b)(x-c)(x-d)}</m>.
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        Show the same for
-        <m>\frac{1}{(x-x_1)(x-x_2)(x-x_3)\cdots(x-x_n)}</m>.
-      </p>
-    </statement>
-  </task>
-</exercise>
 
-<exercise>
-  <p>
-    Try to find a formula for <m>P(t)</m> in <xref
-    ref="PROBLEMMinViablePop"></xref> by integrating both sides and
-    solving the result for <m>P</m>. Explain what goes wrong.
-  </p>
-</exercise>
+    <p>
+      However the Logistic Equation doesn<rsq/>t put any lower bound on
+      the population size. This is also unrealistic since we know that
+      if a population of critters is too small they tend to die
+      out. The following tweak to the logistic model: 
+      <men xml:id="EQUATIONLogEqMinViable">
+        \dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(1-\frac{10}{P}\right),
+      </men>
 
+      forces a population which is too small to die out.  In this
+      case, <m>10</m> is called the <term>minimum viability level</term> of
+      the population.
+    </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Find the PFD of 
+<me>\frac{1}{(P-100)(P-10)}</me> and verify that
+          your decomposition is correct. 
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Use the result of part (a) to show that 
+          <me>
+            \dfdx{P}{t} = 0.01P\left(1-\frac{P}{100}\right)\left(
+            1-\frac{10}{P}\right) = -0.0001(P-100)
+          </me>
+          is satisfied by 
+          <me>P(t)= \frac{100-10Ke^{0.009t}}{1-Ke^{-0.009t}}</me>
+          where <m>K</m> is an arbitrary constant.
+        </p>
+</statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+
+          Use the graphical techniques
+          of <xref ref="SECTIONExponentialGrowth"></xref> to sketch a qualitative graph of the solution of <xref
+          ref="EQUATIONLogEqMinViable">equation</xref>. 
+        </p>
+        <p>
+          Does the curve you get resemble the graph of <m>P(t)</m>?
+        </p>
 
 <p>
-  As you can see from <xref ref="PROBLEMPFDSimplestForm"></xref>
-  even in its simplest form the PFD can become a very large
-  problem. For example suppose <m>n=100</m>. In that case
-  we<rsq/>d need to find <m>100</m> coefficients. We <rsq/>d really
-  like to make the method as efficient as possible. To that end
-  there is one more refinement we<rsq/>ll need before moving on to
-  more general problems.
+  Explain
+  what happens if our population drops below the <term>minimum
+  viability level</term>
+
 </p>
+</statement>
+    </task>
+</exercise>
+
 <p>
-  When he was computing some PFDs related to his work solving
+  When he was computing some PFDs related to his work with 
   differential equations
   <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/">Oliver Heaviside</url>
   (1850<mdash/>1925) made the following observation. Look closely at
   the numerators of the fractions the right side of
-  <men>
+  <men xml:id="EQUATIONPFDFirst">
     \frac{1}{(x-a)(x-b)}=
     \frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}
   </men> 
   (this is <xref ref="EQUATIONPFD3">equation</xref>). Do you see that
   the numerator above <m>x-a</m> is what we would get if we simply
   replaced <m>x</m> with <m>a</m> on the left and 
-  <q>covered up</q> <m>x-a</m>?
+  <q>covered up,</q> (or ignored) the factor <m>x-a</m>?
 </p>
-<p>
-  That is, if <m>\frac{1}{(x-a)(x-b)}=
-  \frac{A}{x-a}+\frac{B}{x-b}</m> then 
-  
-  <me>A=\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}=\frac{1}{a-b}
-  </me>.
-  Similarly
-  <me>B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}
-  </me>.
-  <idx><h>Vocabulary</h><h>Heaviside<rsq/>s Cover<ndash/>up Method</h></idx>
-  <idx><h>Vocabulary</h><h>HCUM</h></idx>
-  This is known as <term>Heaviside<rsq/>s Cover<ndash/>up
-  Method (hcum)</term> and it is the simplest way we know to compute the
-  coefficients of the PFD of the rational functions we<rsq/>ve seen so
-  far.
-</p>
+ <p>
+   That is, if <m>\frac{1}{(x-a)(x-b)}=
+   \frac{A}{x-a}+\frac{B}{x-b}</m> then 
+   
+   <me>A=\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}=\frac{1}{a-b}
+   </me>.
+   Similarly
+   <me>B=\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}=\frac{1}{b-a}
+   </me>.
+   <idx><h>Vocabulary</h><h>Heaviside<rsq/>s Cover<ndash/>up Method</h></idx>
+   <idx><h>Vocabulary</h><h>HCUM</h></idx>
+   This is known as <term>Heaviside<rsq/>s Cover<ndash/>up
+   Method (HCUM)</term> and it is the simplest way we know to compute the
+   coefficients of the PFD of the rational functions we<rsq/>ve seen so
+   far.
+ </p>
 
-<problem>
-  <p>
-    Compute each integral by decomposing the integrand using using
-    <term>Heaviside<rsq/>s Cover<ndash/>up Method</term>.
+ <p>
+   The HCUM is a very convenient shortcut. But it is necessary to
+   understand why any  shortcut works. Otherwise all we have is the
+   shortcut. If we encounter a problem where the shortcut wont<rsq/>t
+   work but the underlying principle will, and all we know is the
+   shortcut we can<rsq/>t make any progress.
+ </p>
+ <p>
+   To see why the HCUM works take another look at the decomposition 
+   <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me>. If we multiply both sides by <m>x-a</m>, we get 
+   <me>\frac{1}{x-b}=A+\frac{B(x-a)}{x-b}</me> which holds as long as
+   <m>x\ne b</m>. Notice that <m>\frac{1}{x-b} =
+   \frac{1}{(\text{covered})(x-b)}</m>.
+   Next,      if we take <m>x=a</m> we get
+   <me>\frac{1}{(\text{covered})(a-b)}  =\frac{1}{a-b}=A+\frac{B(a-a)}{a-b}=A</me>.
+ </p>
 
-    <ol marker="(i)">
-      <li>
-        <p>
-          <m>\int \frac{1}{(x^2-4 )(x^2- 9)}\dx{x}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>\int \frac{1}{(x-1 )(x-2 )(x-3 )}\dx{x}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>\int \frac{1}{(x+1 )(x+2)(x+3 )}\dx{x}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>\int \frac{1}{x(x^2-1)(x-3 )(x+8 )}\dx{x}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>\int \frac{1}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
-        </p>
-      </li>
-      <!-- <li> -->
-      <!--   <p> -->
-      <!--     <m>\int \frac{1}{(x- )(x- )(x- )}\dx{x}</m> -->
-      <!--   </p> -->
-      <!-- </li> -->
-    </ol>
-  </p>
-</problem>
+ <exercise>
+   <p>
+     By a similar argument, show  that the HCUM will also compute the
+     correct value of <m>A</m>, <m>B</m>, and <m>C</m> in the
+     decomposition
+     <me>\frac{1}{(x-a)(x-b)(x-c)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}</me>.
+   </p>
+   <p>
+     It is straightforward to generalize this result to an arbitrary
+     number of linear factors.
+   </p>
+ </exercise>
+
+ <exercise>
+   <introduction>
+
+     <p>
+       Compute each integral by decomposing the integrand using using
+       <term>Heaviside<rsq/>s Cover<ndash/>up Method</term> and confirm
+       that your decomposition is correct.
+     </p>
+   </introduction>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{1}{(x^2-4 )(x^2- 9)}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{1}{(x-1 )(x-2 )(x-3 )}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{1}{(x+1 )(x+2)(x+3 )}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{1}{x(x^2-1)(x-3 )(x+8 )}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{1}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+ </exercise>
 
 
-<exercise>
-  <introduction>
+ <exercise>
+   <introduction>
 
-    <p>
-      To avoid obscuring our point, so far we<rsq/>ve kept the
-      numerators and the coefficients of <m>x</m> simple. The
-      numerators have always been some constant, usually <m>1</m>,
-      and the coefficients of <m>x</m> have always been
-      <m>1</m>. But this is not necessary. 
-    </p>
-    <p>
-      Use Heaviside<rsq/>s
-      method to compute each of the following integrals. Once you
-      have the decomposition confirm that it is correct by adding
-      your fractions together.
-    </p>
-  </introduction>
-  <task>
-    <statement>
-      <p>
-        <m>\displaystyle\int \frac{x}{(x^2-4 )(16x^2- 9)}\dx{x}</m>
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        <m>\displaystyle\int \frac{x^2-1}{(3x-1 )(x-2 )(x-3 )}\dx{x}</m>
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        <m>\displaystyle\int \frac{(x-1)(x-2)}{(2x+1 )(x+2)(3-x)}\dx{x}</m>
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        <m>\displaystyle\int \frac{x^3}{x(x^2-1)(x-3)(5x+8)}\dx{x}</m>
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        <m>\displaystyle\int \frac{x(x^3-1)}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
-      </p>
-    </statement>
-  </task>
-</exercise>
+     <p>
+       To avoid obscuring our point, so far we<rsq/>ve kept the
+       numerators and the coefficients of <m>x</m> simple. The
+       numerators have always been some constant, usually <m>1</m>,
+       and the coefficients of <m>x</m> have always been
+       <m>1</m>. But this is not necessary. 
+     </p>
+     <p>
+       Use Heaviside<rsq/>s
+       method to compute each of the following integrals. Once you
+       have the decomposition confirm that it is correct by adding
+       your fractions together.
+     </p>
+   </introduction>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{x}{(x^2-4 )(16x^2- 9)}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{x^2-1}{(3x-1 )(x-2 )(x-3 )}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{(x-1)(x-2)}{(2x+1 )(x+2)(3-x)}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{x^3}{x(x^2-1)(x-3)(5x+8)}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+   <task>
+     <statement>
+       <p>
+         <m>\displaystyle\int \frac{x(x^3-1)}{(x-2 )(x+7 )(x-5 )(x+8)(x-3)}\dx{x}</m>
+       </p>
+     </statement>
+   </task>
+ </exercise>
 
-      </subsubsection>
-    </subsection>
+
+ </subsubsection>
+</subsection>
 
     <subsection xml:id="SUBSECTIONPFDNonSimple">
       <title>Advanced Decompositions</title>
@@ -4995,46 +5059,133 @@
       <subsubsection>
         <title>Linear Factors</title>
 
-        <example>   
+
+        <example xml:id="EXAMPLEPFDUnreducedTwoMethods">   
 
           <p>
-            Heaviside<rsq/>s method will not work on the rational
-            functions <m>\frac{x^2}{(x-2)(x-3)}</m>.  If you try to
-            apply it  you<rsq/>ll get <me>
-            \frac{x^2}{(x-2)(x-3)} = \frac{-4}{x-2}+\frac{9}{x-3}</me>
-            which is wrong. Try it and see.
+            Heaviside<rsq/>s method, as we have seen it so far, will
+            not work on the rational function
+            <m>\frac{x^2}{(x-2)(x-3)}</m>.  If you try to apply it
+            you<rsq/>ll get <me> \frac{x^2}{(x-2)(x-3)} =
+            \frac{-4}{x-2}+\frac{9}{x-3}</me> which is wrong. Try it
+            and see.
           </p>
           <p>
-            The difficulty here is that the PFD requires that the
-            rational function to be decomposed must be in <q>lowest
-            terms.</q> In this context that means that the degree (the
-            value of the largest exponent) of the numerator must be
-            strictly less than the degree of the denominator. In this
+            The difficulty here is that, as a practical matter,  the
+            PFD requires that we want the degree of the numerator of our rational
+            function to be strictly less than the
+            degree of the denominator. (This is somewhat analogous to
+            putting a fraction in <q>lowest terms.</q>) 
+            In this
             example the degree of the numerator is
             <m>\deg\left((x-2)(x-3)\right)=\deg\left(x^2-5x+6\right)=2</m>
-            which is the same as  the degree of the denominator:
-            <m> \deg\left(x^2\right)=2</m>.
-            So the PFD doesn<rsq/>t apply.
-          </p>
-          <p>
-            At first this looks like it will be a major obstacle but it
-            really isn<rsq/>t too bad. We simply need to do the
-            polynomial division indicated. In this case that means
-            computing <men
-            xml:id="EQUATIONPFDUnreduced1">\frac{x^2}{x^2-5x+6} = 1+
-            \frac{5x-6}{(x-2)(x-3)}</men>.
-          </p>
-          <p>
-            From there we can compute the PFD of
-            <m>\frac{5x-6}{(x-2)(x-3)}</m> as before.
-          </p>
-        </example>
+            which is the same as the degree of the denominator: <m>
+            \deg\left(x^2\right)=2</m>.  So the PFD, as stated so far, doesn<rsq/>t
+            apply.
+            </p>
+            <!-- <aside> -->
+            <!--   <title>Comment</title> -->
+            <!--   <p> -->
+            <!--     To be clear this is a constraint we (the authors) are -->
+            <!--     imposing for our (yours and our) convenience. The PFD -->
+            <!--     can be computed without this constraint, but the method is more -->
+            <!--     complex and does nothing to help us integrate rational functions -->
+            <!--   </p> -->
+            <!-- </aside> -->
+            <p>
+              At first this looks like it will be a major obstacle but it
+              really isn<rsq/>t too bad. There are two ways we can
+              address the issue. 
+            </p>
+
+            <p>
+              <alert>Dividing First:</alert>
+              The first is simply to do the polynomial division
+              indicated. In practice that means 
+              multiplying out the denominator first: <m>(x-2)(x-3)=x^2-5x+6</m>
+              and then dividing: 
+              <mdn>
+                <mrow number="no">      
+                  \frac{x^2}{x^2-5x+6} \amp{}= 1+ \frac{5x-6}{(x-2)(x-3)}
+                </mrow>
+                <mrow  xml:id="EQUATIONDividingFirst">
+                  \amp{}=1+\frac{5x-6}{(x-2)(x-3)}
+                </mrow> 
+
+              </mdn>
+
+            </p>
+            <p>
+              From there we can compute the PFD of <m>
+              \frac{5x-6}{(x-2)(x-3)}</m>
+              as before, finally obtaining
+              <me>\frac{x^2}{x^2-5x+6} = 1+\frac{-4}{x-2}+\frac{9}{x-3}
+              </me>.
+            </p>
+
+            <p>
+              <alert>Dividing Last:</alert>
+              The second is to factor out the numerator: 
+              <me>\frac{x^2}{(x-2)(x-3)} = x^2
+              \left[
+              \frac{1}{(x-2)(x-3)}
+              \right]                     </me>,
+              compute the PFD of <m>\frac{1}{(x-2)(x-3)}</m>
+              as before. This gives
+              <mdn>
+                <mrow number="no">
+                  \frac{x^2}{(x-2)(x-3)} \amp{}= x^2
+                  \left[
+                  \frac{-1}{x-2}+\frac{1}{x-3}
+                  \right]
+                </mrow>
+                <mrow xml:id="EQUATIONDividingLast">
+                  \amp{}=\frac{-x^2}{x-2}+\frac{x^2}{x-3}
+                </mrow>
+                  <mrow number="no">
+                    \amp{}=  -x-2-\frac{4}{x-2} +x+3+\frac{9}{x-3}
+                  </mrow>
+                  <mrow number="no">
+                    \amp{}=1-\frac{4}{x-2}+\frac{9}{x-3}.
+            </mrow>
+              </mdn>
+
+            </p>
+            <p>
+              These two methods are equivalent so which to  use is
+              entirely up to you. We (the authors) prefer dividing
+              last because it doesn<rsq/>t require that we factor and
+              un<ndash/>factor the denominator, and because we only
+              ever have to divide by a linear expression, which we find less
+              burdensome. 
+            </p>
+            <p>
+              However, we do advise that you pick one method that you
+              like and use it consistently, at least until you have fully
+              mastered the Partial Fraction Decomposition.
+            </p>
+
+
+
+</example>
         <problem>
           <p>
-            Complete the decomposition of <xref
-            ref="EQUATIONPFDUnreduced1"></xref>.
+            Complete the decompositions in equations <xref
+            ref="EQUATIONDividingFirst "></xref> and <xref ref="EQUATIONDividingLast"></xref>.
           </p>
         </problem>
+
+        <exercise>
+          <p>
+            Show that the expression <m>\frac{x}{x-1}</m> cannot be decomposed
+            by the <q>dividing last</q> method described in <xref
+            ref="EXAMPLEPFDUnreducedTwoMethods"></xref>, but it can
+            be decomposed by the <q>dividing first</q> method.
+            Are we really <q>decomposing</q> the fraction in this
+            case. Explain.
+            </p>
+        </exercise>
+
 
         <aside>
           <title>Note to self</title>
@@ -5047,12 +5198,11 @@
 
         <example xml:id="EXAMPLEHeaviNonLinear1">
           <p>
-            Heaviside<rsq/>s method will also fail on this function:
-            <me>\frac{x^2+x-3}{x^2(x-1)}</me>. 
-            If you  apply it you<rsq/>ll get 
-            <me>\frac{x^2+x-3}{x^2(x-1)} = \frac{3}{x^2} +
-            \frac{-1}{x-1}</me> 
-            which is incorrect. Check it and see. 
+            Heaviside<rsq/>s Cover<ndash/>up Method will also fail on
+            this function: <me>\frac{x^2+x-3}{x^2(x-1)}</me>.  If you
+            apply it you<rsq/>ll get <me>\frac{x^2+x-3}{x^2(x-1)} =
+            \frac{3}{x^2} + \frac{-1}{x-1}</me> which is
+            incorrect. Check it and see.
           </p>
           
           <!--   <p> -->
@@ -5087,25 +5237,44 @@
             The problem here is the factor <m>x^2</m> in the
             denominator. If you look back at the problems and examples
             we<rsq/>ve looked at so far you<rsq/>ll see that in every
-            case every possible factor which appeared in the denominator
+            distinct  factor which appeared in the denominator
             of the fraction on the left side also appeared in one of the
-            denominators on the right side. In this case clearly both
-            <m>x^2</m> and <m>x-1</m> are factors of <m>x^2(x-1)</m>,
-            but <m>x</m> is also a factor so the correct decomposition
+            denominators on the right side. In this case the distinct
+            factors are <m>x^2</m> and <m>x-1</m> so the decomposition
+            will be 
 
-            <me>
-              \frac{x}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2}+
-              \frac{C}{x-1}
-              </me>, 
-
-              and we need to find the constants <m>A</m>, <m>B</m>, and
-              <m>C</m>.
+            <me> \frac{x^2+x-3}{x^2(x-1)} =
+            \frac{\text{something}}{x^2} + \frac{C}{x-1} </me>. But
+            now the question is, <q>What is the something?</q> Up
+            until now none of the distinct factors in the denominator
+            appeared with a power higher than one. So a factor of
+            <m>x^2</m> is altogether new and different.
+          </p>
+          <p>
+            Looking back at our earlier, and simpler, examples we see
+            that every case the terms on the left were rational
+            functions where the degree of the numerator (which was
+            always <m>0</m> in those examples) was one less
+            than the degree of the denominator (which was always
+            <m>1</m> in those examples). If we keep
+            that pattern here then it appears that the decomposition
+            must be
+            <me> \frac{x^2+x-3}{x^2(x-1)} =
+            \frac{Ax+B}{x^2} + \frac{C}{x-1} </me> 
+            because
+            <me>\deg (Ax+B)=1</me> and <me>\deg(x^2) =2</me>. We can break
+            this up a bit more by observing that
+            <me> \frac{Ax+B}{x^2}
+            =\frac{A}{x}+\frac{B}{x^2}</me> so we need to find
+            <m>A</m>, <m>B</m>, and <m>C</m> where 
+            <me> \frac{x^2+x-3}{x^2(x-1)} =
+            \frac{A}{x}+\frac{B}{x^2} + \frac{C}{x-1} </me>. 
           </p>
           <p>
             The values <m>B=3</m>, and <m>C=-1</m> can still be found
             using the HCUM, so we have
             <men xml:id="EQUATIONHeaviIdentity1">
-              \frac{x}{x^2(x-1)} = \frac{A}{x} +
+              \frac{x^2+x-3}{x^2(x-1)} = \frac{A}{x} +
               \frac{3}{x^2}- \frac{1}{x-1}
               </men>.
           </p>
@@ -5121,10 +5290,12 @@
               </m>, or <m>A=2</m>.
               So the full decomposition is 
               <me>
-                \frac{x}{x(x-1)} -
-                \frac{3}{x}+ \frac{x}{x-1} =  A
+                \frac{x^2+x-3}{x^2(x-1)} = 
+                \frac{2}{x}+ \frac{3}{x^2}-\frac{1}{x-1}
                 </me>.
           </p>
+
+
         </example>
         <exercise>
           <task>
@@ -5137,23 +5308,30 @@
             <hint>
               <p>
                 It<rsq/>s the same reason it worked in <xref
-                ref="EQUATIONLogisticPartFrac2">equation</xref>. 
+                ref="EQUATIONPFDFirst">equation</xref>.
               </p>
             </hint>
           </task>
           <task>
             <statement>
               <p>
-                Confirm that you can solve <xref
+                You can solve <xref
                 ref="EQUATIONHeaviIdentity1">equation</xref> for
-                <m>A</m> by setting <m>x=\pm2</m>, <m>x=\pm 3 </m>, and 
-                <m>x=\pm 10</m>. 
-              </p>
-              <p>
-                There are two values of <m>x</m> which will not allow
-                us to compute <m>A</m>. What are they? 
+                <m>A</m> by setting <m>x</m> equal to (almost) any
+                value we choose. Confirm this by showing  that we get
+                <m>A=2</m> when <m>x=3</m>, <m>x=5</m>, and 
+                <m>x= 10</m>. 
               </p>
             </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                There are two values of <m>x</m> which will not allow
+                us to compute <m>A</m>. What are they and why
+                can<rsq/>t we use them? 
+              </p>
+        </statement>
           </task>
 
         </exercise>
@@ -5173,14 +5351,11 @@
 
                 <md>
 
-                  <mrow> \frac{1}{x^2(x-1)(x-3)^3}=\amp{}\frac{A}{x} +
-                  \frac{B}{x^2} + \frac{C}{x-1}
+                  <mrow> \frac{1}{x^2(x-1)(x-3)^3}=\amp{} \frac{Ax+B}{x^2} + \frac{C}{x-1}
                   </mrow>
                   <mrow>
-                    \amp{}+ \frac{D}{x-3} +
-                    \frac{E}{(x-3)^2}
-                    +
-                    \frac{F}{(x-3)^3}
+                    \amp{}+ 
+                    \frac{D(x-2)^2+E(x-3)+F}{(x-3)^3}
                   </mrow>
                 </md>
               </p>
@@ -5190,8 +5365,8 @@
             <statement>
               <p>
                 Find <m>B</m> and <m>D</m>.
-                <me>\displaystyle \frac{x}{(x-1)^2(x+2)^2}= \frac{A}{x-1} +
-                \frac{B}{(x-1)^2} +\frac{C}{x+2} +\frac{D}{(x+2)^2} </me>
+                <me>\displaystyle \frac{x}{(x-1)^2(x+2)^2}=
+                \frac{A(x-1)+B}{(x-1)^2}  +\frac{C(x+2)+D}{(x+2)^2} </me>
               </p>
             </statement>
           </task>
@@ -5199,18 +5374,12 @@
             <statement>
               <p>
                 Find <m>C</m>.
-                <me>\frac{x-2}{x^3}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x^3}</me>
+                <me>\frac{x-2}{x^3}=\frac{Ax^2+Bx+C}{x^3}</me>
               </p>
             </statement>
           </task>
           <task>
             <statement>
-              <p>
-                In each of these problems we only asked you to find the
-                coefficients that are attainable using the HCUM. The others will have to be computed by the
-                method we<rsq/>ll describe in the <xref
-                ref="EXAMPLEPFDDistinctLin" text="custom">next example</xref>. 
-              </p>
               <p>
                 Explain as clearly as you can from the evidence above which
                 kinds of coefficients we can compute using the HCUM.
@@ -5221,9 +5390,16 @@
 
 
         </exercise>
+        <p>
+          In <xref ref="PROBLEMPFDDistinctLinearFactors"></xref> we
+          only asked you to find the coefficients that are attainable
+          using the HCUM. The others will have to be computed by the
+          method we<rsq/>ll describe in the next
+          example.
+        </p>
 
-        <example xml:id="EXAMPLEPFDDistinctLin">
-          <title>The PFD With Distinct Linear Factors</title>
+        <example xml:id="EXAMPLEPFDRepeatedLinearFactors">
+          <title>The PFD With Repeated Linear Factors</title>
 
           <p>
             Let<rsq/>s finish up the decomposition of 
@@ -5321,9 +5497,11 @@
             or
             <me>
               \frac{x}{(x-1)(x+2)} - \frac19 -\frac{\frac13}{x-1} +\frac29
-              -\frac{\frac23}{x+2} = P(x) </me>.  Since we must get a polynomial
-              it must be that the fractions in this last equation will sum to
-              zero. So we can ignore them and conclude that our polynomial is
+              -\frac{\frac23}{x+2} = P(x) </me>.  Since <m>P(x)</m>
+              must be a polynomial
+              it follows that <m>\frac{x}{(x-1)(x-2)}-\frac{\frac13
+              }{x-1}-\frac{\frac23 }{x+2}</m> (everything that
+              isn<rsq/>t a polynomial) must sum to zero. So we can ignore them and conclude that our polynomial is
               given by the other terms. So <me>P(x)=-\frac19 + \frac29 =\frac19
               </me>.
           </p>
@@ -5358,7 +5536,7 @@
             <statement>
               <p>
                 Use the results of <xref
-                ref="EXAMPLEPFDDistinctLin"></xref> to compute <me>\int
+                ref="EXAMPLEPFDRepeatedLinearFactors"></xref> to compute <me>\int
                 \frac{x}{(x-1)^2(x+2)^2}\dx{x}</me>.
               </p>
             </statement>
@@ -5368,9 +5546,9 @@
               <p>
                 Combine your results from part (a) of <xref
                 ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
-                learned from <xref ref="EXAMPLEPFDDistinctLin"></xref>  to compute
+                learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
                 <me> \int \frac{1}{x^2(x-1)(x-3)^3}\dx{x}</me>
-                </p>
+              </p>
             </statement>
           </task>
           <task>
@@ -5378,7 +5556,7 @@
               <p>
                 Combine your results from part (c) of <xref
                 ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
-                learned from <xref ref="EXAMPLEPFDDistinctLin"></xref>  to compute
+                learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
                 <me>\int\frac{x-2}{x^3}\dx{x}</me>.
               </p>
             </statement>
@@ -5395,7 +5573,7 @@
           whenever there was a quadratic factor in the denominator we
           were able to either factor it into two distinct linear
           factors (e.g. <m>(x^2-x+6) = (x+2)(x-3)</m> or into one such
-          factor, squared (e.g.  <m>(x^2+6x+9)=(x+3)^2</m>).
+          factor, squared, e.g.  <m>(x^2+6x+9)=(x+3)^2</m>.
           Unfortunately we cannot yet compute the integral <me>\int
           \frac{1}{(x-2)(x^2+1)}\dx{x}</me>, because the factor
           <m>x^2+1</m> cannot be factored (over the real numbers).
@@ -5412,360 +5590,329 @@
 
       
         <p>
-          The PFD  still guarantees that <m>\frac{A}{x+2}</m> will
-          appear as a term in the decomposition and the HCUM will
-          still allow us to find 
-          <me>
-            A= \frac{\eval{\frac{1}{(\text{covered})(x^2+1)}}{x}{2}}{x-2}= \frac{\frac15}{x-2}
-            </me>.
-            Thus we have 
-
-            <me>
-              \frac{1}{(x-2)(x^2+1)}=  \frac{\frac15}{x+2} 
-              + \ParamEqTwo
-              {\text{ other stuff we}}
-              {\text{ don't know yet}}
-              </me>.
-              The computation of the <q>other stuff</q> is the next
-              topic. 
-        </p>
-        <p>
-          Fortunately the setup for the <q>other stuff</q> is not
-          substantially different from what we have done
-          heretofore. First, since the factor <m>x+2</m> and
-          <m>x^2+1</m> cannot be factored there will be  a term in the
-          decompostion which corresponds to each:
-          To identify the <q>unknown</q> recall that in the paragraph
-          following <xref ref="EQUATIONPFDDegrees">equation</xref> 
-          we observed that in the PFD the degrees of the numerators
-          were always one less than the degrees of the
-          denominators. Following that pattern it is reasonable to
-          speculate that the decomposition is
+          From our previous work we know that 
           <me>\frac{1}{(x-2)(x^2+1)}=
-          \frac{A}{x+2}+ \frac{Bx+C}{x^2+1}</me> where <m>A</m>, <m>B</m>, and
-          <m>C</m> are constants to be determined.
-          And our speculation is correct. If we can find <m>A</m>,
-          <m>B</m>, and <m>C</m> the decomposition will be complete.
-        </p>
-        <p>
-          Reasoning by analogy it seems reasonable to speculate that
-          the PFD of <m>\frac{1}{x^2(x^2+1)^3(x^2+9)(x-5)}    </m> will be 
+          \frac{A}{x-2}+\frac{Bx+C}{x^2+1}</me> 
+          so by the HCUM <m>A=\frac15 </m>.
 
-          <mdn>
-            <mrow
-                xml:id="EQUATIONBigPFD">\frac{1}{x^2(x^2+1)^3(x^2+9(x-5))}
-            =\amp{}
-            \frac{A}{x}+\frac{B}{x^2}+\frac{Cx+D}{x^2+1}+\frac{Ex+F}{(x^2+1)^2}</mrow>
-            <mrow number="no">
-              \amp{}+\frac{Gx+H}{(x^2+1)^3}
-            + \frac{Ix+J}{x^2+9}+\frac{K}{x-5},</mrow>
-          </mdn>
-          and that is correct.
-        </p>
-        <p>
-          The good news is that we are done.  <xref
-          ref="EQUATIONBigPFD">Equation</xref> is an example of the
-          most general form that a Partial Fraction Decomposition can
-          have. Beyond that they just get bigger.
-        </p>
-        <p>
-          The HCUM can still be used to compute <m>B</m> and <m>K</m>.
-          It can even be extended to compute <m>I</m> and
-          <m>J</m>, but for the kinds of problems we will be
-          encountering extending the HCUM  is not worth the
-          effort. 
-        </p>
-        <p>
-          Let<rsq/>s finish  the decomposition of
-          <m>\frac{1}{(x-2)(x^2+1}</m> which we had interupted. We had
-          reached this point:
+          Therefore
           <me>\frac{1}{(x-2)(x^2+1)}=
-          \frac{\frac15}{x+2}+ \frac{Bx+C}{x^2+1}</me>
+          \frac{\frac15}{x-2}+ \frac{Bx+C}{x^2+1}</me>
         </p>
+<p>
+  which, as we keep repeating, is an identity.  If we
+  isolate the expression <m>Bx+C</m> on the right side of the
+  equation then the left side will reduce to a linear
+  expression in <m>x</m>. We can then simply compare the
+  coefficients.  
+</p>
+<p>
+  Multiplying both sides by <m>x^2+1</m> we have 
+  <me>\frac{1}{x-2}=\frac15 \left(\frac{x^2+1}{x-2}\right)+(Bx+C)
+  </me>
+  and isolating <m>Bx+C</m> gives
+  <me>\frac{1}{x-2}-\frac15\left( \frac{x^2+1}{x-2}\right)=Ax+B
+  </me>,
+  and if we simplify the expression on the left we will see
+  that 
+  <me>Bx+C=-\frac15x +\frac25 </me>, so 
+  <men xml:id="EQUATIONFirstPFDExample">\frac{1}{(x-2)(x^2+1)}=
+  \frac15\left(\frac{1}{x-2}\right)- \frac15\left(
+  \frac{x}{x^2+1}\right) -\frac25\left(\frac{1}{x^2+1}\right)</men>.
+</p>
+
+<exercise>
+  <task>
+    <statement>
+      <p>
+        Confirm that <xref
+        ref="EQUATIONFirstPFDExample">equation</xref> is
+        correct by getting a common denominator and adding the
+        terms on the right together.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Compute the integral <m>\displaystyle
+        \int\frac{1}{(x-2)(x^2+1)}\dx{x}</m>.
+      </p>
+    </statement>
+  </task>
+</exercise>
+<p>
+  Reasoning by analogy it seems reasonable to speculate that
+  the PFD of <m>\frac{1}{x^2(x^2+1)^3(x^2+9)(x-5)}    </m> will be 
+
+  <mdn>
+    <mrow
+        xml:id="EQUATIONBigPFD">\frac{1}{x^2(x^2+1)^3(x^2+9(x-5))}
+    =
+    \frac{A}{x}+\frac{B}{x^2}+\amp{}\frac{Cx+D}{x^2+1}+\frac{Ex+F}{(x^2+1)^2}</mrow>
+    <mrow number="no">
+      +\frac{Gx+H}{(x^2+1)^3}
+    \amp{}+ \frac{Ix+J}{x^2+9}+\frac{K}{x-5},</mrow>
+  </mdn>
+  and that is correct.
+</p>
+<p>
+  The good news is that we are done.  <xref
+  ref="EQUATIONBigPFD">Equation</xref> is an example of the
+  most general form that a Partial Fraction Decomposition can
+  have. Beyond that they just get bigger.
+</p>
+<p>
+  The HCUM can still be used to compute <m>B</m> and <m>K</m>.  It can
+  even be extended to compute <m>I</m> and <m>J</m>, but for the kinds
+  of problems we will be encountering that extension is not worth the
+  effort.
+</p>
+<p>
+  So, at long last here is the full statement of the Partial
+  Fraction Decomposition.
+</p>
+
+<theorem xml:id="THEOREMPartialFractionDecomp">
+  <title>The Partial Fraction Decomposition (PFD)</title>
+  <p>
+    If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
+    polynomials having no non<ndash/>trivial common factors with
+    <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
+    polynomials <m>A(x)</m> and <m>B(x)</m>, with 
+    <m>\deg(A)\lt\deg(Q)</m> and <m>\deg(B)\lt\deg(R)</m>, such
+    that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
+    \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
+  </p>
+</theorem>
+<p>
+  You can see why we did not begin this section by stating
+  this theorem. The language is so terse that it is actually
+  hard to recognize this theorem as describing everything we
+  have been through in this section. Nevertheless, <xref
+  ref="THEOREMPartialFractionDecomp"></xref> covers every kind
+  of decomposition we have looked at in this section.
+</p>
+
+<paragraphs xml:id="DIGRESSIONComplexPFD">
+  <title>DIGRESSION: Avoiding the Irreducible Case by Allowing Complex
+  Numbers</title>
+
+  <p>
+    In his PhD dissertation <url
+    href="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
+    visual="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/">
+    C. F. Gauss</url> (1777<ndash/>1855) proved that every polynomial can be completely
+    factored into (possibly repeated) linear factors. These days
+    this is known by the rather pompous name <term>The
+    Fundamental Theorem of Algebra</term>. 
+  </p>
+
+  <p>
+    In view of this theorem an obvious question presents
+    itself: <q>Why did we bother with the Irreducible
+    Quadratic case when discussing the Partial Fraction
+    Decomposition?</q> That is, why did we (the authors) tell
+    you that <m>x^2+1</m> can<rsq/>t be factored, when
+    Gauss<rsq/>s theorem clearly says that it can.
+  </p>
+  <p>
+    Recall that in the first paragraph of the subsection <xref
+    ref="SUBSUBSECTIONPFDIrreducQuadFac" text="custom">Irreducible
+    Quadratic Factors</xref> we were
+    careful to state that <q><m>x^2+1</m></q> cannot be
+    factored over the <term>real numbers</term>. But it can be
+    factored over the <term>complex numbers</term> (real
+    numbers plus imaginary numbers). 
+  </p>
+  <p>
+    While Gauss<rsq/>s proof didn<rsq/>t make explicit use
+    of  <term>complex
+    numbers</term> they were implicit in his approach and
+    his proof was valid. This was
+    quite a puzzle at the time because while his proof said that
+    <m>x^2+1</m> could be factored,  the nature of the
+    factors was not clear.  When Gauss proved the
+    Fundamental Theorem of Algebra the <term>complex
+    numbers</term> were not well understood at all and had
+    not been accepted.  The Fundamental Theorem of Algebra
+    is one of the results that forced mathematicians to
+    undertake the study of the  <term>complex
+    numbers</term> and eventually accept them as an extension of the
+    real numbers.
+  </p>
+  <!-- <p> -->
+  <!--   If it can be factored into say <m>x^2+1=(x-a)(x=b)</m> -->
+  <!--   then we didn<rsq/>t need the Irreducible Quadratic case at -->
+  <!--   all. The decomposition of <m>\frac{1}{x^2+1}</m> is just -->
+
+
+  <!--   <md> -->
+  <!--     <mrow> -->
+  <!--       \frac{1}{x^2+1}= -->
+  <!--       \frac{1}{(x-a)(x-b)}\amp{}=\frac{\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}}{x-a} -->
+  <!--       +\frac{\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}}{1-b}  -->
+  <!--     </mrow> -->
+  <!--     <mrow> -->
+  <!--       \amp{}=\frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}, -->
+  <!--     </mrow> -->
+  <!--   </md> -->
+  <!--   and we can compute the integral from there. Why is the -->
+  <!--   Irreducible Quadratic case needed. -->
+  <!-- </p> -->
+
+  <!-- <aside> -->
+  <!--   <title>Historical Context</title> -->
+  <!--   <p> -->
+  <!--     While Gauss<rsq/>s proof didn<rsq/>t make explicit use -->
+  <!--     of  <term>complex -->
+  <!--     numbers</term> they were implicit in his approach. Moreover, -->
+  <!--     his proof was generally recognized as valid. This was -->
+  <!--     quite a puzzle at the time because his proof said that -->
+  <!--     <m>x^2+1</m> could be factored, but the nature of the -->
+  <!--     factors was not clear because when Gauss proved the -->
+  <!--     Fundamental Theorem of Algebra the <term>complex -->
+  <!--     numbers</term> were not well understood at all and had -->
+  <!--     not been accepted.  The Fundamental Theorem of Algebra -->
+  <!--     is one of the results that forced mathematicians to -->
+  <!--     undertake the study of the  <term>complex -->
+  <!--     numbers</term>. -->
+  <!--   </p> -->
+  <!-- </aside> -->
+
+  <exercise>
+    <task>
+      <statement>
         <p>
-          which, as we keep repeating, is an identity. So if we
-          isolate the expression <m>Bx+C</m> on the right side of the
-          equation then the left side will reduce to a linear
-          expression in <m>x</m>. We can then simply compare the
-          coefficients.  
+          Let <m>i=\sqrt{-1}</m> as in <xref
+          ref="SECTIONEulerHarmonicOsc"></xref>  and show that 
+          <me>x^2+1 = (x-i)(x+i)</me>.
         </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
         <p>
-          Multiplying both sides by <m>x^2+1</m> we have 
-          <me>\frac{1}{x-2}=\frac15 \left(\frac{x^2+1}{x-2}\right)+(Ax+B)
+          Use the result of part (a) to show that 
+          <me>\int \frac{1}{x^2+1}\dx{x} = \frac{i}{2}\ln
+          \left(
+          \frac{x+i}{x-i} 
+          \right)   +C
           </me>
-          and isolating <m>Ax+B</m> gives
-          <me>\frac{1}{x-2}-\frac15\left( \frac{x^2+1}{x-2}\right)=Ax+B
-          </me>,
-          and if we simplify the expression on the left we will see
-          that 
-          <me>Ax+B=\frac15x +\frac25 </me>, so 
-          <men xml:id="EQUATIONFirstPFDExample">\frac{1}{(x-2)(x^2+1)}=
-          \frac15\left(\frac{1}{x+2}\right)+ \frac15\left(
-          \frac{x}{x^2+1}\right) +\frac25\left(\frac{1}{x^2+1}\right)</men>.
         </p>
-
-        <exercise>
-          <task>
-            <statement>
-              <p>
-                Confirm that <xref
-                ref="EQUATIONFirstPFDExample">equation</xref> is
-                correct by getting a common denominator and adding the
-                terms on the right together.
-              </p>
-            </statement>
-          </task>
-          <task>
-            <statement>
-              <p>
-                Compute the integral <m>\displaystyle
-                \int\frac{1}{(x-2)(x^2+1)}\dx{x}</m>.
-              </p>
-            </statement>
-          </task>
-        </exercise>
+      </statement>
+    </task>
+    <task>
+      <statement>
         <p>
-          So, at long last here is the full statement of the Partial
-          Fraction Decomposition.
+          Recall that we<rsq/>ve already seen that <m>\int
+          \frac{1}{x^2+1}\dx{x} = \inverse \tan(x) +C</m>. In
+          view of the result in part (b), do you believe
+          that
+          <men xml:id="EQUATIONLnArctan">\frac{i}{2}\ln
+          \left(
+          \frac{x+i}{x-i} 
+          \right)   +C = \inverse \tan(x) +C
+          </men>?
         </p>
-
-        <theorem xml:id="THEOREMPartialFractionDecomp">
-          <title>The Partial Fraction Decomposition (PFD)</title>
-          <p>
-            If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
-            polynomials having no non<ndash/>trivial common factors with
-            <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
-            polynomials <m>A(x)</m> and <m>B(x)</m>, with 
-            <m>\deg(A)\lt\deg(Q)</m> and <m>\deg(B)\lt\deg(R)</m>, such
-            that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
-            \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
-          </p>
-        </theorem>
         <p>
-          You can see why we did not begin this section by stating
-          this theorem. The language is so terse that it is actually
-          hard to recognize this theorem as describing everything we
-          have been through in this section. Nevertheless, <xref
-          ref="THEOREMPartialFractionDecomp"></xref> covers every kind
-          of decomposition we have looked at in this section.
+          Notice that we have not asked if this is true,
+          only if you believe it. Hence there is no right or
+          wrong answer to the following question: Explain
+          why you do or don<rsq/>t believe that <xref
+          ref="EQUATIONLnArctan">equation</xref>. Give mathematical
+          reasons to support your opinion either way.
         </p>
 
-        <paragraphs xml:id="DIGRESSIONComplexPFD">
-          <title>DIGRESSION: </title>
-
-          <p>
-            In his PhD dissertation <url
-            href="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
-            visual="https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/">
-            C. F. Gauss</url> (1777<ndash/>1855) proved that every polynomial can be completely
-            factored into (possibly repeated) linear factors. These days
-            this is known as the rather bombastic name <term>The
-            Fundamental Theorem of Algebra</term>. 
-          </p>
-
-          <p>
-            In view of this theorem an obvious question presents
-            itself: <q>Why did we bother with the Irreducible
-            Quadratic case when discussing the Partial Fraction
-            Decomposition?</q> That is, why did we (the authors) tell
-            you that <m>x^2+1</m> can<rsq/>t be factored, when
-            Gauss<rsq/>s theorem clearly says that it can.
-          </p>
-          <p>
-            Recall that in the first paragraph of <xref
-            ref="SUBSUBSECTIONPFDIrreducQuadFac"></xref> we were
-            careful to state that <q><m>x^2+1</m></q> cannot be
-            factored over the <term>real numbers</term>. But it can be
-            factored over the <term>complex numbers</term> (real
-            numbers plus imaginary numbers). 
-            </p>
-            <p>
-              While Gauss<rsq/>s proof didn<rsq/>t make explicit use
-              of  <term>complex
-              numbers</term> they were implicit in his approach. Moreover,
-              his proof was generally recognized as valid. This was
-              quite a puzzle at the time because his proof said that
-              <m>x^2+1</m> could be factored, but the nature of the
-              factors was not clear because when Gauss proved the
-              Fundamental Theorem of Algebra the <term>complex
-              numbers</term> were not well understood at all and had
-              not been accepted.  The Fundamental Theorem of Algebra
-              is one of the results that forced mathematicians to
-              undertake the study of the  <term>complex
-              numbers</term>.
-            </p>
-            <!-- <p> -->
-            <!--   If it can be factored into say <m>x^2+1=(x-a)(x=b)</m> -->
-            <!--   then we didn<rsq/>t need the Irreducible Quadratic case at -->
-            <!--   all. The decomposition of <m>\frac{1}{x^2+1}</m> is just -->
+      </statement>
+    </task>
 
 
-            <!--   <md> -->
-            <!--     <mrow> -->
-            <!--       \frac{1}{x^2+1}= -->
-            <!--       \frac{1}{(x-a)(x-b)}\amp{}=\frac{\eval{\frac{1}{(\text{covered})(x-b)}}{x}{a}}{x-a} -->
-            <!--       +\frac{\eval{\frac{1}{(x-a)(\text{covered})}}{x}{b}}{1-b}  -->
-            <!--     </mrow> -->
-            <!--     <mrow> -->
-            <!--       \amp{}=\frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}, -->
-            <!--     </mrow> -->
-            <!--   </md> -->
-            <!--   and we can compute the integral from there. Why is the -->
-            <!--   Irreducible Quadratic case needed. -->
-            <!-- </p> -->
+  </exercise>
 
-            <!-- <aside> -->
-            <!--   <title>Historical Context</title> -->
-            <!--   <p> -->
-            <!--     While Gauss<rsq/>s proof didn<rsq/>t make explicit use -->
-            <!--     of  <term>complex -->
-            <!--     numbers</term> they were implicit in his approach. Moreover, -->
-            <!--     his proof was generally recognized as valid. This was -->
-            <!--     quite a puzzle at the time because his proof said that -->
-            <!--     <m>x^2+1</m> could be factored, but the nature of the -->
-            <!--     factors was not clear because when Gauss proved the -->
-            <!--     Fundamental Theorem of Algebra the <term>complex -->
-            <!--     numbers</term> were not well understood at all and had -->
-            <!--     not been accepted.  The Fundamental Theorem of Algebra -->
-            <!--     is one of the results that forced mathematicians to -->
-            <!--     undertake the study of the  <term>complex -->
-            <!--     numbers</term>. -->
-            <!--   </p> -->
-            <!-- </aside> -->
+  <!-- <p> -->
+  
 
-            <exercise>
-              <task>
-                <statement>
-                  <p>
-                    Let <m>i=\sqrt{-1}</m> as in <xref
-                    ref="SECTIONEulerHarmonicOsc"></xref>  and show that 
-                    <me>x^2+1 = (x-i)(x_i)</me>.
-                  </p>
-                </statement>
-              </task>
-              <task>
-                <statement>
-                  <p>
-                    Use the result of part (a) to show that 
-                    <me>\int \frac{1}{x^2+1}\dx{x} = \frac{i}{2}\ln
-                    \left(
-                    \frac{x-i}{x+i} 
-                    \right)   +C
-                    </me>
-                  </p>
-                </statement>
-              </task>
-              <task>
-                <statement>
-                  <p>
-                    Recall that we<rsq/>ve already seen that <m>\int
-                    \frac{1}{x^2+1}\dx{x} = \inverse \tan(x) +C</m>. In
-                    view of the result in part (b), do you believe
-                    that
-                    <men xml:id="EQUATIONLnArctan">\frac{i}{2}\ln
-                    \left(
-                    \frac{x-i}{x+i} 
-                    \right)   +C = \inverse \tan(x) +C
-                    </men>?
-                  </p>
-                  <p>
-                    Notice that we have not asked if this is true,
-                    only if you believe it. Hence there is no right or
-                    wrong answer to the following question: Explain
-                    why you do or don<rsq/>t believe that <xref
-                    ref="EQUATIONLnArctan">equation</xref>. Give mathematical
-                    reasons to support your opinion either way.
-                  </p>
+  <!--   For suppose we want to decompose the rational function -->
+  <!--   <m>\frac{x-2}{x(x^2+1)}</m>. According to Gauss<rsq/>s -->
+  <!--   theorem There are no real numbers, <m>a</m> and <m>b</m>, -->
+  <!--   with the property that <m>x^2+1=(x-a)(x-b)</m> but -->
+  <!--   <m>a=i</m> and <m>b=-i</m> (where as before <m>i^2=-1</m>) -->
+  <!--   will work just fine since -->
+  <!--   <me>(x-i)(x+i)=x^2-i^2=x^2-(-1)=x^2+1</me> -->
+  <!-- </p> -->
+  <!-- <p> -->
+  <!--   Unfortunately, Gauss<rsq/>s theorem  not true. For the Fundamental -->
+  <!--   Theorem of Algebra to hold we need to allow the polynomial -->
+  <!--   to have <term>complex</term> as apposed to <term>real</term> -->
+  <!--   roots.  That is we need to expand our number system to -->
+  <!--   include the <term>complex numbers <m>\CC </m></term> (a -->
+  <!--   complex number is a real number plus an imaginary -->
+  <!--   number). We first encountered the complex numbers in <xref -->
+  <!--   ref="PROBLEMEulersFormula"></xref> in connection with -->
+  <!--   <term>Euler<rsq/>s Identity</term>.  -->
+  <!-- </p> -->
+  <example>
+    <p>
+      By allowing the use of <term>complex numbers</term> we
+      can use the HCUM to compute
 
-                </statement>
-              </task>
+      <md>
 
+        <mrow>\frac{x-2}{x(x^2+1)}=\frac{x-2}{x(x-i)(x+i)}
+        \amp{}=\frac{-2}{x}+\frac{\frac{i-2}{i(2i)}}{x-i}+\frac{\frac{i+2}{i(-2i)}}{x+i}</mrow>
+        <mrow>
+          \amp{}=
+          \frac{-2}{x}+\frac{\frac{i-2}{-2}}{x-i}+\frac{\frac{-i-2}{-2}}{x+i}
+        </mrow>
+        <mrow>
+          \amp{}=\frac{-2}{x}+\frac{1-\frac12i}{x-i}+\frac{1+\frac12i
+          }{x+i}.
+        </mrow>
 
-            </exercise>
+      </md>
 
-            <!-- <p> -->
-            
+    </p>
+    <p>
+      But unfortunately, in this course we confine our attention to the real
+      numbers and treat the complex numbers as if they are
+      somehow unsavory,
+      even when using them would make more sense. To get the
+      decomposition back into just the real number we compute
+      the sum <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12i
+      }{x+1}</m> as follows
+      <men xml:id="EQUATIONPFDComplex1">
+        \frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}=\frac{2x+1}{x^2+1}
+        </men>. 
+        Thus our decompostion over the real numbers (rather
+        than the complex numbers is
+        <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
+    </p>
 
-            <!--   For suppose we want to decompose the rational function -->
-            <!--   <m>\frac{x-2}{x(x^2+1)}</m>. According to Gauss<rsq/>s -->
-            <!--   theorem There are no real numbers, <m>a</m> and <m>b</m>, -->
-            <!--   with the property that <m>x^2+1=(x-a)(x-b)</m> but -->
-            <!--   <m>a=i</m> and <m>b=-i</m> (where as before <m>i^2=-1</m>) -->
-            <!--   will work just fine since -->
-            <!--   <me>(x-i)(x+i)=x^2-i^2=x^2-(-1)=x^2+1</me> -->
-            <!-- </p> -->
-            <!-- <p> -->
-            <!--   Unfortunately, Gauss<rsq/>s theorem  not true. For the Fundamental -->
-            <!--   Theorem of Algebra to hold we need to allow the polynomial -->
-            <!--   to have <term>complex</term> as apposed to <term>real</term> -->
-            <!--   roots.  That is we need to expand our number system to -->
-            <!--   include the <term>complex numbers <m>\CC </m></term> (a -->
-            <!--   complex number is a real number plus an imaginary -->
-            <!--   number). We first encountered the complex numbers in <xref -->
-            <!--   ref="PROBLEMEulersFormula"></xref> in connection with -->
-            <!--   <term>Euler<rsq/>s Identity</term>.  -->
-            <!-- </p> -->
-            <example>
-              <p>
-                By allowing the use of <term>complex numbers</term> we
-                can use the HCUM to compute
+  </example>
 
-                <md>
+  <exercise>
+    <task>
+      <statement>
+        <p>
+          Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
+          correct.
 
-                  <mrow>\frac{x-2}{x(x^2+1)}=\frac{x-2}{x(x-1)(x+1)}
-                  \amp{}=\frac{-2}{x}+\frac{\frac{i-2}{i(2i)}}{x-i}+\frac{\frac{i+2}{i(-2i)}}{x+i}</mrow>
-                  <mrow>
-                      \amp{}=
-                      \frac{-2}{x}+\frac{\frac{i-2}{-2}}{x-i}+\frac{\frac{-i-2}{-2}}{x+i}
-                  </mrow>
-<mrow>
-                  \amp{}=\frac{-2}{x}+\frac{1-\frac12i}{x-i}+\frac{1+\frac12
-                  }{x+1}.
-</mrow>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
+          correct.
+        </p>
+      </statement>
+    </task>
+  </exercise>
 
-                </md>
-
-              </p>
-              <p>
-                But unfortunately, in this course we confine our attention to the real
-                numbers and treat the complex numbers as if they are
-                somehow unsavory,
-                even when using them would make more sense. To get the
-                decomposition back into just the real number we compute
-                the sum <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12
-                }{x+1}</m> as follows
-                <men xml:id="EQUATIONPFDComplex1">
-                  \frac{1-\frac12i}{x-i}+\frac{1+\frac12 }{x+1}=2x+1
-                  </men>. 
-                  Thus our decompostion over the real numbers (rather
-                  than the complex numbers is
-                  <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
-              </p>
-
-            </example>
-
-            <exercise>
-              <task>
-                <statement>
-                  <p>
-                    Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
-                    correct.
-
-                  </p>
-                </statement>
-              </task>
-              <task>
-                <statement>
-                  <p>
-                    Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
-                    correct.
-                  </p>
-                </statement>
-              </task>
-            </exercise>
-
-            <p><alert>END OF DIGRESSION</alert></p>
-        </paragraphs>
+  <p><alert>END OF DIGRESSION</alert></p>
+</paragraphs>
 
       </subsubsection>
       <exercises>
