@@ -5063,7 +5063,7 @@
         <example xml:id="EXAMPLEPFDUnreducedTwoMethods">   
 
           <p>
-            Heaviside<rsq/>s method, as we have seen it so far, will
+            Heaviside<rsq/>s method, as we have used it so far, will
             not work on the rational function
             <m>\frac{x^2}{(x-2)(x-3)}</m>.  If you try to apply it
             you<rsq/>ll get <me> \frac{x^2}{(x-2)(x-3)} =
@@ -5078,9 +5078,12 @@
             putting a fraction in <q>lowest terms.</q>) 
             In this
             example the degree of the numerator is
-            <m>\deg\left((x-2)(x-3)\right)=\deg\left(x^2-5x+6\right)=2</m>
-            which is the same as the degree of the denominator: <m>
-            \deg\left(x^2\right)=2</m>.  So the PFD, as stated so far, doesn<rsq/>t
+            <me>
+            \deg\left((x-2)(x-3)\right)=\deg\left(x^2-5x+6\right)=2
+            </me>
+            which is the same as the degree of the numerator: <m>
+            \deg\left(x^2\right)=2</m>.  So the PFD, as we<rsq/>ve
+            used it so far, doesn<rsq/>t
             apply.
             </p>
             <!-- <aside> -->
@@ -5095,18 +5098,18 @@
             <p>
               At first this looks like it will be a major obstacle but it
               really isn<rsq/>t too bad. There are two ways we can
-              address the issue. 
+              proceed from here.
             </p>
 
             <p>
               <alert>Dividing First:</alert>
               The first is simply to do the polynomial division
               indicated. In practice that means 
-              multiplying out the denominator first: <m>(x-2)(x-3)=x^2-5x+6</m>
+              multiplying out the denominator first
               and then dividing: 
               <mdn>
                 <mrow number="no">      
-                  \frac{x^2}{x^2-5x+6} \amp{}= 1+ \frac{5x-6}{(x-2)(x-3)}
+                  \frac{x^2}{(x-2)(x-3)} =                  \frac{x^2}{x^2-5x+6} \amp{}= 1+ \frac{5x-6}{x^2-5x+6}
                 </mrow>
                 <mrow  xml:id="EQUATIONDividingFirst">
                   \amp{}=1+\frac{5x-6}{(x-2)(x-3)}
@@ -5152,10 +5155,10 @@
 
             </p>
             <p>
-              These two methods are equivalent so which to  use is
+              Whether you divide first or last is
               entirely up to you. We (the authors) prefer dividing
-              last because it doesn<rsq/>t require that we factor and
-              un<ndash/>factor the denominator, and because we only
+              last because it doesn<rsq/>t involve factoring and then
+              un<ndash/>factoring the denominator, and because we only
               ever have to divide by a linear expression, which we find less
               burdensome. 
             </p>
@@ -5170,14 +5173,17 @@
 </example>
         <problem>
           <p>
-            Complete the decompositions in equations <xref
-            ref="EQUATIONDividingFirst "></xref> and <xref ref="EQUATIONDividingLast"></xref>.
+            Confirm that the decompositions in equations <xref
+            ref="EQUATIONDividingFirst "></xref> and <xref
+            ref="EQUATIONDividingLast"></xref> are correct.
           </p>
         </problem>
 
         <exercise>
           <p>
-            Show that the expression <m>\frac{x}{x-1}</m> cannot be decomposed
+            Despite our personal preference for dividing last there
+            are legitimate reasons to divide first. For example 
+            show that the expression <m>\frac{x}{x-1}</m> cannot be decomposed
             by the <q>dividing last</q> method described in <xref
             ref="EXAMPLEPFDUnreducedTwoMethods"></xref>, but it can
             be decomposed by the <q>dividing first</q> method.
@@ -5236,7 +5242,7 @@
           <p>
             The problem here is the factor <m>x^2</m> in the
             denominator. If you look back at the problems and examples
-            we<rsq/>ve looked at so far you<rsq/>ll see that in every
+            we<rsq/>ve looked at so far you<rsq/>ll see that each
             distinct  factor which appeared in the denominator
             of the fraction on the left side also appeared in one of the
             denominators on the right side. In this case the distinct
@@ -5479,7 +5485,7 @@
             the left:
             <m>\frac{x+2}{x-1}</m>. If we perform this division we get
             <me>\frac{x+2}{x-1} = 1 +\frac{3}{x-1}</me>. Similarly if we
-            computing the division in the third term we get
+            perform the division in the third term we get
             <m>\frac{x-1}{x+2}= 1-\frac{3}{x+2}</m>. Putting these back
             into <xref ref="EQUATIONPFDDistinctLin2">equation</xref> we
             have 
@@ -5521,6 +5527,13 @@
           </p>
 
         </example> 
+        <problem>
+          <p>
+            Confirm that the decomposition in <xref
+            ref="EXAMPLEPFDRepeatedLinearFactors"></xref> is correct.
+          </p>
+        </problem>
+
         <exercise>
           
           <introduction>
@@ -5557,7 +5570,7 @@
                 Combine your results from part (c) of <xref
                 ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
                 learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
-                <me>\int\frac{x-2}{x^3}\dx{x}</me>.
+                <me>\int\frac{x-2}{x^3(x-1)}\dx{x}</me>.
               </p>
             </statement>
           </task>
@@ -5576,8 +5589,7 @@
           factor, squared, e.g.  <m>(x^2+6x+9)=(x+3)^2</m>.
           Unfortunately we cannot yet compute the integral <me>\int
           \frac{1}{(x-2)(x^2+1)}\dx{x}</me>, because the factor
-          <m>x^2+1</m> cannot be factored (over the real numbers).
-          So we<rsq/>ll need to extend our procedure to account for
+          <m>x^2+1</m> cannot be factored (over the real numbers). So we<rsq/>ll need to extend our procedure to account for
           this.
         </p>
         <aside>
@@ -5719,11 +5731,11 @@
   <p>
     Recall that in the first paragraph of the subsection <xref
     ref="SUBSUBSECTIONPFDIrreducQuadFac" text="custom">Irreducible
-    Quadratic Factors</xref> we were
-    careful to state that <q><m>x^2+1</m></q> cannot be
-    factored over the <term>real numbers</term>. But it can be
-    factored over the <term>complex numbers</term> (real
-    numbers plus imaginary numbers). 
+    Quadratic Factors</xref> we were careful to state that
+    <q><m>x^2+1</m></q> cannot be factored over the <term>real
+    numbers</term>. This is true but it can be factored over the
+    <term>complex numbers</term> (real numbers plus imaginary
+    numbers).
   </p>
   <p>
     While Gauss<rsq/>s proof didn<rsq/>t make explicit use
@@ -5874,19 +5886,20 @@
 
     </p>
     <p>
-      But unfortunately, in this course we confine our attention to the real
-      numbers and treat the complex numbers as if they are
-      somehow unsavory,
-      even when using them would make more sense. To get the
-      decomposition back into just the real number we compute
-      the sum <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12i
-      }{x+1}</m> as follows
+      But unfortunately, in this course we traditionally confine our
+      attention to the real numbers and treat the complex numbers as
+      if they are somehow unsavory, even when using them would make
+      more sense. To remove the complex numbers from our  decomposition we compute the sum
+      <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}</m> as follows
       <men xml:id="EQUATIONPFDComplex1">
         \frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}=\frac{2x+1}{x^2+1}
         </men>. 
-        Thus our decompostion over the real numbers (rather
-        than the complex numbers is
-        <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
+    </p>
+    <p>
+
+      Thus our decomposition over the real numbers (rather
+      than the complex numbers is
+      <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
     </p>
 
   </example>
@@ -5912,15 +5925,29 @@
   </exercise>
 
   <p><alert>END OF DIGRESSION</alert></p>
-</paragraphs>
+  </paragraphs>
 
-      </subsubsection>
+</subsubsection>
       <exercises>
         <exercisegroup  cols="2">
           <introduction>
             <p>
-              Use the Partial Fraction Decomposition to compute each
-              of the integrals.
+              Compute each of the integrals by any method.  Some of these can be
+              computed by more than one method.
+            </p>
+            <p>
+              If <m>a+bi</m> is a complex number then <m>a-bi</m> is
+              called its <term>conjugate</term>.  In general, the
+              complex factors of a polynomial with real coefficients,
+              if any exist, will always occur in conjugate pairs, so
+              if a PFD is obtained by using complex numbers you can
+              always hide the complex numbers by combining the terms
+              with conjugate roots.
+            </p>
+            <p>
+              If you use complex numbers to compute the a PFD,
+              recombine the appropriate root so that no complex
+              numbers appear in your decomposition. 
             </p>
           </introduction>
           <exercise>
@@ -5950,7 +5977,12 @@
           </exercise>
           <exercise>
             <p>
-              <m>\displaystyle \int \frac{x}{x^2-1}\dx{x}</m>
+              <m>\displaystyle \int \frac{x}{1-x^2}\dx{x}</m>
+            </p>
+          </exercise>
+          <exercise>
+            <p>
+              <m>\displaystyle \int \frac{x}{x^2+1}\dx{x}</m>
             </p>
           </exercise>
           <exercise>
@@ -5965,9 +5997,21 @@
           </exercise>
           <exercise>
             <p>
-              <m>\displaystyle \int \frac{}{}\dx{x}</m>
+              <m>\displaystyle \int \frac{e^{2x}}{e^{2x}+1}\dx{x}</m>
             </p>
-          </exercise>
+            </exercise>
+            <exercise>
+              <p>
+                <m>\displaystyle \int \frac{x+1}{x^3-x^2}\dx{x}</m>
+              </p>
+            </exercise>
+            <exercise>
+              <p>
+              <m>\displaystyle \int \frac{x^2+4}{(x^2+1)^2(x^2+2)}\dx{x}</m>
+              </p>
+            </exercise>
+
+
         </exercisegroup>
       </exercises>
     </subsection>
@@ -6603,31 +6647,34 @@
     <title>Integration By
     Parts <mdash/> The Opposite of the Product Rule  </title>
     <p>
-      Substitution is a powerful tool, but it is not a panacea. For
-      example, consider the integral <me> \int x\cos(x)\dx{x}{}.  </me>
+      Consider the integral <me> \int x\cos(x)\dx{x}{}.  </me>
+      Try as you might you will find that no substitution you can find
+    will work here. 
     </p>
-    <aside> <title>Comment</title>
+    <aside> 
+      <title>Comment</title>
     <p>
-      Actually, we should be more careful here.  There is <em> always
-      </em> a substitution that will work. The question is, can we find
-      it?
+      Actually, we should be more careful.  There is <em> always
+      </em> a substitution that will work. For example, the
+      substitution 
+      <me>u=x\sin(x) +\cos (x)</me> will work here.
+    </p>
+    <p>
+      The question is, can we find
+      it? How do you think we found this one?
     </p>
     </aside>
     <p>
-      Try as you might you will find that no substitution you might try
-      will work here. A common error that beginners make is to assume
-      that that they can just integrate the two factors
-      separately. But we know that
-      <men xml:id="IntProdneProdInt"> \int
-      x\cos(x){}\dx{x} \ne \int x\dx{x}{}\int\cos(x)\dx{x}{}  </men>
-      because
-      <me>(fg)^\prime\ne f^\prime g^\prime.</me>
+      In the beginning a common error is to assume that that they can
+      just integrate the two factors separately. But we know that the
+      integral of a product is not the product of the integrals
+      because the differential of a product is not the product of the
+      differentials. And we also know that integration can be thought
+      of as <q>differentiation run backwards.</q>
     </p>
     <p>
       <idx><h>Vocabulary</h><h>Integration by Parts</h></idx>
-      Since integration can be seen as the reversal of
-      differentiation, if we want to integrate the product of two
-      functions it seems reasonable to try to find a way to reverse the <xref
+      Since that is true it seems reasonable to try to find a way to reverse the <xref
       ref="THEOREMProdRule">Product Rule</xref>.
 
       then perhaps its analog would be of use here. If the product rule
