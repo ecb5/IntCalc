@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.3.0.1</span><span class="period">.</span><span class="space"> </span><span class="title">Population Dynamics: A Non–Separable Differential Equation.</span>
+</h3>
+<div class="para">Recall that in <a href="SECTIONTwoSimpleDiffeqs.html#EXAMPLEExpGrowthSepDiffeq" class="xref" data-knowl="./knowl/xref/EXAMPLEExpGrowthSepDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 18.1.0.9">Example 18.1.0.9</a> we solved the differential equation <span class="process-math">\(\dfdx{y}{t}=Ky \)</span> by separating the variables and integrating. This is the equation we used to model the exponential growth of an algal bloom which we first saw in <a href="SECTIONExponentialGrowth.html" class="internal" title="Section 8.6: Exponential Growth">Section 8.6</a>.</div>
+<div class="para logical">
+<div class="para">For reasons that will become clear shortly we re–write will this equation as</div>
+<div class="displaymath process-math">
+\begin{equation}
+\dfdx{y}{t}-Ky =0\text{.}\tag{19.54}
+\end{equation}
+</div>
+</div>
+<div class="para">The exponential growth model does not allow for the possibility that there is an outside source of new population. It assumes, implicitly, that the population grows only by it’s own reproductive activity.</div>
+<div class="para">But suppose there is an external source of population. Suppose for example, that we have a population of algae growing in an alpine pond, and that there are new algae entering the pond via the stream that feeds the pond. The rate at which the new population is added to the old will rise and fall with the rate at which the stream is flowing. For simplicity of demonstration we’ll suppose that the “rising and falling” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">This means that the rate of change of our algae population will be <span class="process-math">\(\dfdx{y}{t}=Ky+\cos (t)\)</span> because the rate of growth of our population is still proportional to the size of the population. To be consistent with <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> we’ll re–write this as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html">
+\begin{equation}
+\dfdx{y}{t}-Ky=\cos (t)\text{.}\tag{19.55}
+\end{equation}
+</div>
+</div>
+<div class="para logical">
+<div class="para">To complete our model we’ll assume that initally there are <span class="process-math">\(10^4\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=10^4.
+\end{align*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">This is not a separable equation but it is very similar to</div>
+<div class="displaymath process-math">
+\begin{equation}
+\dfdx{y}{t}-Ky=0 \text{,}\tag{19.56}
+\end{equation}
+</div>
+<div class="para">whose solution <span class="process-math">\(y(t)=Ae^{Kt}\)</span> is known.  Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.</div>
+</div>
+<div class="para">The difficulty of course, is that it is not at all obvious how we might tweak <span class="process-math">\(y(t)=Ae^{Kt}\)</span> so to obtain a solution of <a href="SECTIONIntParts.html#EQUATIONExpGrowthNonHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">equation (19.55)</a>
+</div>
+<div class="para logical">
+<div class="para">This is why we re–wrote our differential equations the way we did. On the left side of both we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMProdRule.html">
+\begin{equation*}
+\dfdx{y}{t}-Ky\text{.}
+\end{equation*}
+</div>
+<div class="para">If you look closely at that expression you can  almost see the result of a <a href="SECTIONsome-rules-diff.html#THEOREMProdRule" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.4.1: The Product Rule">Product Rule</a>. In fact if we multiply by <span class="process-math">\(e^{-Kt}\)</span> we will have exactly the Product Rule. Try it and see.</div>
+</div>
+<div class="para logical">
+<div class="para">Of course we can–t just multiply one side of an equation by something just because we like the outcome, so we’ll multiply both sides of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> instead, giving</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+\begin{equation*}
+\underbrace{e^{-Kt}\dfdx{y}{t}-e^{-Kt}Ky}_{=\dfdx{\left(e^{-Kt}\cdot
+y\right)}{t}}=0\cdot e^{-Kt}
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+\begin{equation*}
+\dfdx{\left(e^{-Kt}\cdot  y\right)}{t}=0\text{.}
+\end{equation*}
+</div>
+<div class="para">From there we can recover the solution of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">(19.56)</a> by integrating</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+\begin{align*}
+\int\dfdx{\left(e^{-Kt}\cdot  y\right)} {t}\dx{t}\amp{}=\int0\dx{t}\\
+e^{-Kt}\cdot  y \amp{}= A\\
+y(t)\amp{}=Ae^{Kt}.
+\end{align*}
+</div>
+</div></article><span class="incontext"><a class="internal" href="SECTIONIntParts.html#EXAMPLENonHomDiffeq">in-context</a></span>
+</body>
+</html>
