@@ -6685,17 +6685,17 @@
           This means that the rate of change of our algae population will be
           <m>\dfdx{y}{t}=Ky+\cos (t)</m> because the rate of growth of our
           population is still proportional to the size of the population. To
-          be consistent with <xref ref="EQUATIONExpGrowthHom">equation</xref>
+          be consistent with <xref ref="EQUATIONPopPerturb1">equation</xref>
           we<rsq/>ll re<ndash/>write this as <me>\dfdx{y}{t}-Ky=\cos (t)</me>.
         </p>
         <p>
 
 
-          To complete our model we<rsq/>ll assume that
-          initally there are <m>10^4</m> algae in the pond. Thus to find
+          To complete our model we<rsq/>ll measure the quantity of algae in kilograms and  assume that
+          initally there are <m>20</m> algae in the pond. Thus to find
           the population as a function of time we need to solve the IVP
           <mdn>
-            <mrow xml:id="IVPExpGrowthNonHom">\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=10^4.</mrow>
+            <mrow xml:id="IVPExpGrowthNonHom">\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=20.</mrow>
           </mdn>
         </p>
         <p>
@@ -7397,6 +7397,26 @@
   </conclusion>
 </exercise>
 
+<exercise xml:id="PROBLEMNonHomDiffeq">
+  <title>Population Dynamics: A Non-Separable Differential Equation, Solved</title>
+
+  <p>
+    We are finally in a position    to return to, and complete the
+    problem in <xref ref="EXAMPLENonHomDiffeq"></xref> that we started this section with. Show that the solution of <xref ref="IVPExpGrowthNonHom"></xref> 
+    is 
+    <me>y(t) = \frac{1}{1+K^2}\left(\sin(t)-K\cos(t)    </me>
+  </p>
+  <aside>
+    <title>Note to self</title>
+    <p>
+      This problem is not well formed. I<rsq/>m getting
+      non<ndash/>sensical results. Look at it again.
+    </p>
+  </aside>
+
+</exercise>
+
+
 <exercise>
   <introduction>
     <p>
@@ -7467,42 +7487,48 @@
       Suppose <m>n</m> is a positive integer. We want to compute the integral
       <me>\int \sin^n(x) \dx{x}</me>. 
     </p>
-</introduction>
-<task>
-  <statement>
-    <p>
-      First 
-      let <m>u=\sin^{n-1}</m> and <m>\dx{v}=\sin (x)\dx{x}</m> and show
-      that 
-      <me>\int \sin^n (x)\dx{x} =
-      -\frac1n \cos(x) \sin^{n-1} (x)+(n-1)\int \sin^{n-2}(x)\cos^2(x)
-      \dx{x}</me>.
-    </p>
-  </statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Observe that <m>\cos^2(x) =1-\sin^2(x) </m> and use this to show
-      that 
-<me>\int \sin^n (x)\dx{x} =
-      -\frac1n \cos(x) \sin^{n-1} (x)+(n-1)\int \sin^{n-2}(x)
-      \dx{x}-(n-1)\int \sin^n(x) \dx{x}</me>.
-    </p>
-  </statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Explain how the result in part (b) implies that 
-      <men xml:id="EQUATIONSineReduction1">
-        \int \sin^n (x)\dx{x} =
-        -\frac1n \cos(x) \sin^{n-1} (x)+ \frac{n-1}{n}\int \sin^{n-2}(x)
-        \dx{x}
-        </men>.
-    </p>
-</statement>
-</task>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        First 
+        let <m>u=\sin^{n-1}</m> and <m>\dx{v}=\sin (x)\dx{x}</m> and show
+        that 
+        <me>\int \sin^n (x)\dx{x} =
+        -\frac1n \cos(x) \sin^{n-1} (x)+(n-1)\int \sin^{n-2}(x)\cos^2(x)
+        \dx{x}</me>.
+      </p>
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Show
+        that 
+        <me>\int \sin^n (x)\dx{x} =
+        -\frac1n \cos(x) \sin^{n-1} (x)+(n-1)\int \sin^{n-2}(x)
+        \dx{x}-(n-1)\int \sin^n(x) \dx{x}</me>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Observe that <m>\cos^2(x) =1-\sin^2(x) </m>.
+      </p>
+    </hint>
+
+  </task>
+  <task>
+    <statement>
+      <p>
+        Explain how the result in part (b) implies that 
+        <men xml:id="EQUATIONSineReduction1">
+          \int \sin^n (x)\dx{x} =
+          -\frac1n \cos(x) \sin^{n-1} (x)+ \frac{n-1}{n}\int \sin^{n-2}(x)
+          \dx{x}
+          </men>.
+      </p>
+    </statement>
+  </task>
 
 
 </exercise>
