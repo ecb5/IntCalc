@@ -11,20 +11,61 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="exercise exercise-like"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.3</span><span class="period">.</span>
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.0.9</span><span class="period">.</span>
 </h3>
-<div class="introduction"><div class="para">Did you notice that in <a href="SECTIONIntParts.html#EXAMPLEIntParts1" class="xref" data-knowl="./knowl/xref/EXAMPLEIntParts1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.2">Example 19.3.0.2</a> we suppressed the arbitrary constant when we computed <span class="process-math">\(v\text{?}\)</span>  In this problem we will see that this will not alter the result.</div></div>
-<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para">Evaluate the integral <span class="process-math">\(\int
-x\cos(x)\dx{x}\)</span> letting <span class="process-math">\(u=x\)</span> again, letting <span class="process-math">\(\dx{v}=\cos(x)\dx{x}\)</span> as before. But this time  take <span class="process-math">\(y=\sin(x)+a\)</span> where <span class="process-math">\(a\)</span> is an arbitrary constant. Show that we will obtain the same answer as before.</div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para logical">
-<div class="para">Show that in general, if we let <span class="process-math">\(\int\dx{v}=v+a\)</span> in the integration by parts formula, then we still obtain the formula</div>
+<div class="para">Consider</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int u\dx{v}=uv-\int v\dx{u}.
+\int e^x\sin(x)\dx{x}\text{.}
 \end{equation*}
 </div>
-</div></article></article><span class="incontext"><a class="internal" href="SECTIONIntParts.html#SECTIONIntParts-19">in-context</a></span>
+<div class="para">If we let <span class="process-math">\(u=e^x\)</span> and <span class="process-math">\(\dx{v} =\sin(x)\dx{x}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{align*}
+u\amp{}=e^x \amp{}\dx{v}\amp{}=\sin(x)\dx{x}\\
+\dx{u}\amp{}=e^x\dx{x}\amp{} v\amp{}=-\cos(x)\dx{x}
+\end{align*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int e^x\sin(x)\dx{x} = -e^x\cos(x){}+\int e^x\cos(x)\dx{x}.
+\end{equation*}
+</div>
+<div class="para">We can apply integration by parts again, being careful not to switch the roles of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+u\amp{}=e^x \amp{} \dx{v}\amp{}=\cos(x)\dx{x}\\
+\dx{u}\amp{}=e^x\dx{x}\amp{} \sin(x){}
+\end{align*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int e^x\sin(x)\dx{x}=-e^x\cos(x)+\left[e^x\sin(x)-\int
+e^x\sin(x)\dx{x}\right]{}=-e^x\cos(x)+e^x\sin(x)-\int
+e^x\sin(x)\dx{x}
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">At first it looks like we went full circle and came back to where we started. But look again.  If we let <span class="process-math">\(I=\int
+e^x\sin(x)\dx{x}\text{,}\)</span> we see that this is now a simple algebra problem since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=-e^x\cos(x){+e^x\sin(x){-I}}
+\end{equation*}
+</div>
+<div class="para">Solving for <span class="process-math">\(I\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=\int e^x\sin(x)\dx{x}= \frac{e^x}{2}(\sin(x)-\cos(x))+c
+\end{equation*}
+</div>
+</div>
+<div class="para">Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .</div></article><span class="incontext"><a class="internal" href="SECTIONIntParts.html#SECTIONIntParts-19">in-context</a></span>
 </body>
 </html>

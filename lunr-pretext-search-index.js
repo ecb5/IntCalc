@@ -11401,7 +11401,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.3",
   "title": "Running the Product Rule Backwards: Integration By Parts",
-  "body": " Running the Product Rule Backwards: Integration By Parts   Population Dynamics: A Non Separable Differential Equation  Recall that in we solved the differential equation by separating the variables and integrating. This is the equation we used to model the exponential growth of an algal bloom which we first saw in .  For reasons that will become clear shortly we re write will this equation as .  The exponential growth model does not allow for the possibility that there is an outside source of new population. It assumes, implicitly, that the population grows only by it s own reproductive activity.  But suppose there is an external source of population. Suppose for example, that we have a population of algae growing in an alpine pond, and that there are new algae entering the pond via the stream that feeds the pond. The rate at which the new population is added to the old will rise and fall with the rate at which the stream is flowing. For simplicity of demonstration we ll suppose that the rising and falling takes the form of a cosine wave, .  This means that the rate of change of our algae population will be because the rate of growth of our population is still proportional to the size of the population. To be consistent with equation we ll re write this as .  To complete our model we ll assume that initally there are algae in the pond. Thus to find the population as a function of time we need to solve the IVP   This is not a separable equation but it is very similar to , whose solution is known. Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.  The difficulty of course, is that it is not at all obvious how we might tweak so to obtain a solution of equation   This is why we re wrote our differential equations the way we did. On the left side of both we have . If you look closely at that expression you can almost see the result of a Product Rule . In fact if we multiply by we will have exactly the Product Rule. Try it and see.  Of course we can t just multiply one side of an equation by something just because we like the outcome, so we ll multiply both sides of equation instead, giving or . From there we can recover the solution of by integrating    Consider the integral Try as you might you will find that no substitution you can find will work here. Nor will the Partial Fraction Decomposition help.   Comment  Actually, we should be more careful. There is always a substitution that will work. For example, the substitution will work here.  The question is, can we find it? How do you think we found this one?   In the beginning a common error is to assume that that we need only integrate the two factors separately. If we do that here we ll get . This is not correct as we can easily verify by differentiation. Moreover, we know that the differential of a product is not the product of the differentials, so on second thought that may seem like it was a silly idea. It was not. It is the most natural assumption we can make. But it is an assumption, not knowledge, and when it is examined closely it comes up short as we have just seen.  So we need a new idea.  In we listed the integration rules corresponding to the Constant Rule (#1), the Sum Rule (#2), the Constant Multiple Rule (#3), and Power Rule (#4), but not the Quotient Rule or the Product Rule ?  It is time to fill in that blank. We will try to run the Power Rule backward, if we can.   Vocabulary Integration by Parts We can do this simply by rearranging the Product Rule formula   Integration by Parts      Differential Form:       Functional Form:         Vocabulary Integration by Parts As we ve indicated when it is written in this form the Product Rule is called Integration by Parts and it is exactly what we need to compute the previous integral.   Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have .  At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get . Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.    Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula    Notice that in Integration Rule shows us how to integrate the natural exponential function but we have no analog for the integral of . Perform Integration By Parts on using and to compute the integral.   A Word of Advice  Rather than trying to memorize this integral, just remember to use integration by parts.   As with differentiation techniques and formulas, techniques such as integration by parts and substitution are performed in concert, utilizing whatever technique that is appropriate at the time. As an example of this consider the next problem.  Perform integration by parts and then substitution to compute and .  Just as integration by parts can be used with other techniques, it can be used with itself multiple times.   A Word of Advice  If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.   Compute using integration by parts.  Before we send you off to practice, we will look at one more trick one could do with integration by parts. We will also illustrate a way to keep track of , , , and d .   Consider . If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .   "
+  "body": " Running the Product Rule Backwards: Integration By Parts   Population Dynamics: A Non Separable Differential Equation  Recall that in we solved the differential equation by separating the variables and integrating. This is the equation we used to model the exponential growth of an algal bloom which we first saw in .  For reasons that will become clear shortly we re write will this equation as .  Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer. The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we ll suppose that the speeding up and slowing down takes the form of a cosine wave, .  This means that the rate of change of our algae population will be because the rate of growth of our population is still proportional to the size of the population. To be consistent with equation we ll re write this as .  To complete our model we ll assume that initally there are algae in the pond. Thus to find the population as a function of time we need to solve the IVP   This is not a separable equation but it is very similar to , whose solution is known. Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.  The difficulty of course, is that it is not at all obvious how we might tweak so to obtain a solution of IVP   This is why we re wrote our differential equations the way we did. On the left side of both we have . If you look closely at that expression you can almost see the result of a Product Rule . In fact if we multiply by we will have exactly the Product Rule. Try it and see.  Of course we can t just multiply one side of an equation by something just because we like the outcome, so we ll multiply both sides of equation instead, giving or . From there we can recover the solution of by integrating   If we apply the same technique to IVP we get . Clearly to solve this problem we will need to be able to compute . Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at slightly simple integrals.   Consider the integral Try as you might you will find that no substitution you can find will work here. Nor will the Partial Fraction Decomposition help.   Comment  Actually, we should be more careful. There is always a substitution that will work. For example, the substitution will work here.  The question is, can we find it? How do you think we found this one?   In the beginning a common error is to assume that that we need only integrate the two factors separately. If we do that here we ll get . This is not correct as we can easily verify by differentiation. Moreover, we know that the differential of a product is not the product of the differentials, so on second thought that may seem like it was a silly idea. It was not. It is the most natural assumption we can make. But it is an assumption, not knowledge, and when it is examined closely it comes up short as we have just seen.  So we need a new idea.  In we listed the integration rules corresponding to the Constant Rule (#1), the Sum Rule (#2), the Constant Multiple Rule (#3), and Power Rule (#4), but not the Quotient Rule or the Product Rule ?  It is time to fill in that blank. We will try to run the Power Rule backward, if we can. Vocabulary Integration by Parts Recall that in differential form Product Rule formula is . To run this backwards we integrate both sides giving , which is equivalent to . Observing that , yields the Integration by Parts formula (in differential form): .   Comment  Strictly speaking plus an arbitrary constant. We are ignoring the constant for reasons that will be clear soon.                                     To integrate by parts we set Making these substitutions gives and, finally    It is worth taking a moment to notice a few facts about Integration by Parts.   Integration by Parts is Not a Substitution.  After and are chosen we do not get an integral in terms of and which we then need to transform back into an integral in terms of , the way we did with Integration by Substitution. The variables and were introduced just to keep track of the Integration by Parts formula. The resulting integral will be in terms of the original variable.    In Choosing and We Used Up the Entire Integrand.  That is, in the expression is exactly equal to the the integrand, . Nothing was left out.  As a practical matter this means that once you have decided what to call then is everything else to the right of the symbol.        Integration By Parts Does Not Compute the Integral.  Rather, it replaces that integral with another, hopefully one that is easier to compute. In , for instance, we could have let and . This would give . Substituting these into we get . Everything we've done is valid, but the integral on the right is actually harder to evaluate than the one we started with.  What this means in practice is that as long as the integration by parts technique is applied correctly, it is not wrong in any absolute sense. But it might not be very helpful in computing the integral in front of us. So if your first attempt to compute an integral doesn t seem to be going anywhere step back and ask yourself if another choice of and , or even a different integration technique might work better.  This is actually true of all of the integration techniques. They do not compute the integral, they just seek to replace it with an integral that we already know.      Show that by differentiating the right side.    is the formal statement of Integration by Parts, in both differential and functional (modern) form.   Integration by Parts      Differential Form:  .     Functional Form:  .       Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.  Use Integration by Parts to compute each integral, then verify that your solution is correct by differentiation.                                                        Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula    You may find it helpful to use the functional form of Integration by Parts in .                          Integrals of Inverse Functions  So far we have found, by various means, the integrals of the sine, cosine, tangent, cotangent, secant, cosecant, and natural exponential functions. We have held off on finding the antiderivative of the inverses of those functions because that is most easily done using Integration by Parts.   Use Integration by Parts to compute each of the integrals. Confirm your results by differentiation.                          There are really only two choices for . If your first choice doesn t work try the other one.   Suppose that . Generalize the results in part (a) by showing that .                                          Use Integration by Parts to show that .   Notice that the formula in part (a) does not complete the integration. Explain what else we need to do to find the antiderivative of and then do that. Confirm your result by differentiation.   As with differentiation it is rare that a single integration technique is sufficient to compute a given antiderivative. Usually two or more diffent techniques are required because as we ve seen none of the methods actually compute the integral. They simply replace it with another. If we don t know the new integral, from memory or from , we will have to integrate again using whatever technique is appropriate to the new problem.   As we saw in sometimes we have to use the same integration technique more than once. If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.  To see what we mean integrate by parts twice. The first time let and and the second time let and to confirm that the second Integration by Parts simply undoes the first.    Consider . Use Integration by Parts to show that           Apply integration by parts again (being careful not to switch the roles of and ) to show that         It looks like we went full circle in part (b) and came back to where we started. But look again.      Explain how we can conclude from the result in part (b) that .   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .    Compute each integral. Confirm your result by differentiation.                                    Suppose is a positive integer. We want to compute the integral .   First let and and show that .   Observe that and use this to show that .   Explain how the result in part (b) implies that .   When the Integral of a Product is the Product of the Integrals  Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .   "
 },
 {
   "id": "EXAMPLENonHomDiffeq",
@@ -11410,79 +11410,115 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "19.3.0.1",
   "title": "Population Dynamics: A Non–Separable Differential Equation.",
-  "body": " Population Dynamics: A Non Separable Differential Equation  Recall that in we solved the differential equation by separating the variables and integrating. This is the equation we used to model the exponential growth of an algal bloom which we first saw in .  For reasons that will become clear shortly we re write will this equation as .  The exponential growth model does not allow for the possibility that there is an outside source of new population. It assumes, implicitly, that the population grows only by it s own reproductive activity.  But suppose there is an external source of population. Suppose for example, that we have a population of algae growing in an alpine pond, and that there are new algae entering the pond via the stream that feeds the pond. The rate at which the new population is added to the old will rise and fall with the rate at which the stream is flowing. For simplicity of demonstration we ll suppose that the rising and falling takes the form of a cosine wave, .  This means that the rate of change of our algae population will be because the rate of growth of our population is still proportional to the size of the population. To be consistent with equation we ll re write this as .  To complete our model we ll assume that initally there are algae in the pond. Thus to find the population as a function of time we need to solve the IVP   This is not a separable equation but it is very similar to , whose solution is known. Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.  The difficulty of course, is that it is not at all obvious how we might tweak so to obtain a solution of equation   This is why we re wrote our differential equations the way we did. On the left side of both we have . If you look closely at that expression you can almost see the result of a Product Rule . In fact if we multiply by we will have exactly the Product Rule. Try it and see.  Of course we can t just multiply one side of an equation by something just because we like the outcome, so we ll multiply both sides of equation instead, giving or . From there we can recover the solution of by integrating   "
+  "body": " Population Dynamics: A Non Separable Differential Equation  Recall that in we solved the differential equation by separating the variables and integrating. This is the equation we used to model the exponential growth of an algal bloom which we first saw in .  For reasons that will become clear shortly we re write will this equation as .  Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer. The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we ll suppose that the speeding up and slowing down takes the form of a cosine wave, .  This means that the rate of change of our algae population will be because the rate of growth of our population is still proportional to the size of the population. To be consistent with equation we ll re write this as .  To complete our model we ll assume that initally there are algae in the pond. Thus to find the population as a function of time we need to solve the IVP   This is not a separable equation but it is very similar to , whose solution is known. Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.  The difficulty of course, is that it is not at all obvious how we might tweak so to obtain a solution of IVP   This is why we re wrote our differential equations the way we did. On the left side of both we have . If you look closely at that expression you can almost see the result of a Product Rule . In fact if we multiply by we will have exactly the Product Rule. Try it and see.  Of course we can t just multiply one side of an equation by something just because we like the outcome, so we ll multiply both sides of equation instead, giving or . From there we can recover the solution of by integrating   If we apply the same technique to IVP we get . Clearly to solve this problem we will need to be able to compute . Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at slightly simple integrals.  "
 },
 {
-  "id": "IntegrationByParts",
+  "id": "EXAMPLEIntxcosx",
   "level": "2",
-  "url": "SECTIONIntParts.html#IntegrationByParts",
-  "type": "Theorem",
-  "number": "19.3.0.2",
-  "title": "Integration by Parts.",
-  "body": " Integration by Parts      Differential Form:       Functional Form:       "
-},
-{
-  "id": "SECTIONIntParts-11",
-  "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-11",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Integration by Parts "
-},
-{
-  "id": "EXAMPLEIntParts1",
-  "level": "2",
-  "url": "SECTIONIntParts.html#EXAMPLEIntParts1",
+  "url": "SECTIONIntParts.html#EXAMPLEIntxcosx",
   "type": "Example",
+  "number": "19.3.0.2",
+  "title": "",
+  "body": " To integrate by parts we set Making these substitutions gives and, finally   "
+},
+{
+  "id": "SECTIONIntParts-12",
+  "level": "2",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-12",
+  "type": "Drill",
   "number": "19.3.0.3",
   "title": "",
-  "body": " Specifically, if we let and , then and (don't worry about the arbitrary constant here for the moment. We'll look at it later.). Substituting these into our integration by parts formula, we have .  At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with 's or 's in it. These were introduced just to keep track of the integration by parts formula.  Second, notice that we needed to use the entire integrand. That is, the expression is exactly equal to the the integrand, . Nothing was left out.  Third, notice that like a substitution, the integration by parts technique does not compute the integral. Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.  For example, we could have let and . This would give . Substituting these into equation we get . Everything we've done is correct, but the integral on the right is actually harder to evaluate than the one we started with. Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.  "
+  "body": " Show that by differentiating the right side.  "
 },
 {
-  "id": "SECTIONIntParts-13",
+  "id": "THEOREMIntegrationByParts",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-13",
-  "type": "Problem",
+  "url": "SECTIONIntParts.html#THEOREMIntegrationByParts",
+  "type": "Theorem",
   "number": "19.3.0.4",
-  "title": "",
-  "body": " Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula   "
+  "title": "Integration by Parts.",
+  "body": " Integration by Parts      Differential Form:  .     Functional Form:  .     "
 },
 {
-  "id": "SECTIONIntParts-14",
+  "id": "SECTIONIntParts-15",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-14",
-  "type": "Problem",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-15",
+  "type": "Drill",
   "number": "19.3.0.5",
   "title": "",
-  "body": "Notice that in Integration Rule shows us how to integrate the natural exponential function but we have no analog for the integral of . Perform Integration By Parts on using and to compute the integral. "
+  "body": " Finding a choice for and that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.  In any case, practice is necessary. Lots of practice.  Use Integration by Parts to compute each integral, then verify that your solution is correct by differentiation.                                                      "
 },
 {
-  "id": "SECTIONIntParts-17",
+  "id": "SECTIONIntParts-16",
   "level": "2",
-  "url": "SECTIONIntParts.html#SECTIONIntParts-17",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-16",
   "type": "Problem",
   "number": "19.3.0.6",
   "title": "",
-  "body": "Perform integration by parts and then substitution to compute and . "
+  "body": " Did you notice that in we suppressed the arbitrary constant when we computed ? In this problem we will see that this will not alter the result.   Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.   Show that in general, if we let in the integration by parts formula, then we still obtain the formula    You may find it helpful to use the functional form of Integration by Parts in .  "
+},
+{
+  "id": "PROBLEMIntInvFunc",
+  "level": "2",
+  "url": "SECTIONIntParts.html#PROBLEMIntInvFunc",
+  "type": "Problem",
+  "number": "19.3.0.7",
+  "title": "Integrals of Inverse Functions.",
+  "body": "Integrals of Inverse Functions  So far we have found, by various means, the integrals of the sine, cosine, tangent, cotangent, secant, cosecant, and natural exponential functions. We have held off on finding the antiderivative of the inverses of those functions because that is most easily done using Integration by Parts.   Use Integration by Parts to compute each of the integrals. Confirm your results by differentiation.                          There are really only two choices for . If your first choice doesn t work try the other one.   Suppose that . Generalize the results in part (a) by showing that .  "
+},
+{
+  "id": "EXERCISEIntPartsMultiple",
+  "level": "2",
+  "url": "SECTIONIntParts.html#EXERCISEIntPartsMultiple",
+  "type": "Problem",
+  "number": "19.3.0.8",
+  "title": "",
+  "body": " Use Integration by Parts to show that .   Notice that the formula in part (a) does not complete the integration. Explain what else we need to do to find the antiderivative of and then do that. Confirm your result by differentiation.  "
 },
 {
   "id": "SECTIONIntParts-20",
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-20",
-  "type": "Problem",
-  "number": "19.3.0.7",
+  "type": "Drill",
+  "number": "19.3.0.9",
   "title": "",
-  "body": "Compute using integration by parts. "
+  "body": " As we saw in sometimes we have to use the same integration technique more than once. If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.  To see what we mean integrate by parts twice. The first time let and and the second time let and to confirm that the second Integration by Parts simply undoes the first.  "
+},
+{
+  "id": "SECTIONIntParts-21",
+  "level": "2",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-21",
+  "type": "Problem",
+  "number": "19.3.0.10",
+  "title": "",
+  "body": " Consider . Use Integration by Parts to show that           Apply integration by parts again (being careful not to switch the roles of and ) to show that         It looks like we went full circle in part (b) and came back to where we started. But look again.      Explain how we can conclude from the result in part (b) that .   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .  "
 },
 {
   "id": "SECTIONIntParts-22",
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-22",
-  "type": "Example",
-  "number": "19.3.0.8",
+  "type": "Problem",
+  "number": "19.3.0.11",
   "title": "",
-  "body": " Consider . If we let and , then so We can apply integration by parts again, being careful not to switch the roles of and . so   At first it looks like we went full circle and came back to where we started. But look again. If we let , we see that this is now a simple algebra problem since Solving for we have   Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .  "
+  "body": " Compute each integral. Confirm your result by differentiation.                                  "
+},
+{
+  "id": "SECTIONIntParts-23",
+  "level": "2",
+  "url": "SECTIONIntParts.html#SECTIONIntParts-23",
+  "type": "Problem",
+  "number": "19.3.0.12",
+  "title": "",
+  "body": " Suppose is a positive integer. We want to compute the integral .   First let and and show that .   Observe that and use this to show that .   Explain how the result in part (b) implies that .  "
+},
+{
+  "id": "PROBLEMIntProdProdInt",
+  "level": "2",
+  "url": "SECTIONIntParts.html#PROBLEMIntProdProdInt",
+  "type": "Problem",
+  "number": "19.3.0.13",
+  "title": "When the Integral of a Product is the Product of the Integrals.",
+  "body": "When the Integral of a Product is the Product of the Integrals  Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
 },
 {
   "id": "SECTIONStoneArch",
@@ -14263,7 +14299,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "26.3",
   "title": "Problem:     When the integral of a product is the product of the integrals.Random Stuff",
-  "body": " Problem: When the integral of a product is the product of the integrals.Random Stuff   Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .   "
+  "body": " Problem: When the integral of a product is the product of the integrals.Random Stuff  Problem: When the integral of a product is the product of the integrals  Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .   "
 },
 {
   "id": "ProblemMisplaced",
@@ -14271,8 +14307,8 @@ var ptx_lunr_docs = [
   "url": "SECTIONRandomStuff.html#ProblemMisplaced",
   "type": "Problem",
   "number": "26.3.0.1",
-  "title": "",
-  "body": " Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
+  "title": "Problem:     When the integral of a product is the product of the integrals.",
+  "body": "Problem: When the integral of a product is the product of the integrals  Suppose Show that if then   (Don't let this formula frighten you. Recall that .)   Apply equation to the function and compare this to the results in Problem # 60 above. or .  "
 },
 {
   "id": "CHAPTERPFDTheory",

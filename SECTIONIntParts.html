@@ -98,14 +98,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.10';
+eBookConfig.runestone_version = '7.5.11';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.c2d04816128ebb44.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.ee5a0b116b7d0991.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.e0c6d4592e23c667.css">
 </head>
 <body class="pretext book ignore-math">
@@ -783,26 +783,25 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation}
 </div>
 </div>
-<div class="para" id="EXAMPLENonHomDiffeq-4">The exponential growth model does not allow for the possibility that there is an outside source of new population. It assumes, implicitly, that the population grows only by it’s own reproductive activity.</div>
-<div class="para" id="EXAMPLENonHomDiffeq-5">But suppose there is an external source of population. Suppose for example, that we have a population of algae growing in an alpine pond, and that there are new algae entering the pond via the stream that feeds the pond. The rate at which the new population is added to the old will rise and fall with the rate at which the stream is flowing. For simplicity of demonstration we’ll suppose that the “rising and falling” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
+<div class="para" id="EXAMPLENonHomDiffeq-4">Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer.        The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we’ll suppose that the “speeding up and slowing down” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
+</div>
+<div class="para logical" id="EXAMPLENonHomDiffeq-5">
+<div class="para">This means that the rate of change of our algae population will be <span class="process-math">\(\dfdx{y}{t}=Ky+\cos (t)\)</span> because the rate of growth of our population is still proportional to the size of the population. To be consistent with <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> we’ll re–write this as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html">
+\begin{equation*}
+\dfdx{y}{t}-Ky=\cos (t)\text{.}
+\end{equation*}
+</div>
 </div>
 <div class="para logical" id="EXAMPLENonHomDiffeq-6">
-<div class="para">This means that the rate of change of our algae population will be <span class="process-math">\(\dfdx{y}{t}=Ky+\cos (t)\)</span> because the rate of growth of our population is still proportional to the size of the population. To be consistent with <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> we’ll re–write this as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html" id="EQUATIONExpGrowthNonHom">
-\begin{equation}
-\dfdx{y}{t}-Ky=\cos (t)\text{.}\tag{19.55}
-\end{equation}
+<div class="para">To complete our model we’ll assume that initally there are <span class="process-math">\(10^4\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
+<div class="displaymath process-math" id="EXAMPLENonHomDiffeq-6-3">
+\begin{align}
+\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=10^4.\tag{19.55}
+\end{align}
 </div>
 </div>
 <div class="para logical" id="EXAMPLENonHomDiffeq-7">
-<div class="para">To complete our model we’ll assume that initally there are <span class="process-math">\(10^4\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
-<div class="displaymath process-math" id="EXAMPLENonHomDiffeq-7-3">
-\begin{align*}
-\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=10^4.
-\end{align*}
-</div>
-</div>
-<div class="para logical" id="EXAMPLENonHomDiffeq-8">
 <div class="para">This is not a separable equation but it is very similar to</div>
 <div class="displaymath process-math" id="EQUATIONExpGrowthHom">
 \begin{equation}
@@ -811,9 +810,9 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">whose solution <span class="process-math">\(y(t)=Ae^{Kt}\)</span> is known.  Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.</div>
 </div>
-<div class="para" id="EXAMPLENonHomDiffeq-9">The difficulty of course, is that it is not at all obvious how we might tweak <span class="process-math">\(y(t)=Ae^{Kt}\)</span> so to obtain a solution of <a href="SECTIONIntParts.html#EQUATIONExpGrowthNonHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">equation (19.55)</a>
+<div class="para" id="EXAMPLENonHomDiffeq-8">The difficulty of course, is that it is not at all obvious how we might tweak <span class="process-math">\(y(t)=Ae^{Kt}\)</span> so to obtain a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a>
 </div>
-<div class="para logical" id="EXAMPLENonHomDiffeq-10">
+<div class="para logical" id="EXAMPLENonHomDiffeq-9">
 <div class="para">This is why we re–wrote our differential equations the way we did. On the left side of both we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMProdRule.html">
 \begin{equation*}
@@ -822,8 +821,8 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">If you look closely at that expression you can  almost see the result of a <a href="SECTIONsome-rules-diff.html#THEOREMProdRule" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.4.1: The Product Rule">Product Rule</a>. In fact if we multiply by <span class="process-math">\(e^{-Kt}\)</span> we will have exactly the Product Rule. Try it and see.</div>
 </div>
-<div class="para logical" id="EXAMPLENonHomDiffeq-11">
-<div class="para">Of course we can–t just multiply one side of an equation by something just because we like the outcome, so we’ll multiply both sides of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> instead, giving</div>
+<div class="para logical" id="EXAMPLENonHomDiffeq-10">
+<div class="para">Of course we can’t just multiply one side of an equation by something just because we like the outcome, so we’ll multiply both sides of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> instead, giving</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
 \begin{equation*}
 \underbrace{e^{-Kt}\dfdx{y}{t}-e^{-Kt}Ky}_{=\dfdx{\left(e^{-Kt}\cdot
@@ -837,13 +836,24 @@ y\right)}{t}}=0\cdot e^{-Kt}
 \end{equation*}
 </div>
 <div class="para">From there we can recover the solution of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">(19.56)</a> by integrating</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html" id="EXAMPLENonHomDiffeq-11-7">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html" id="EXAMPLENonHomDiffeq-10-7">
 \begin{align*}
 \int\dfdx{\left(e^{-Kt}\cdot  y\right)} {t}\dx{t}\amp{}=\int0\dx{t}\\
 e^{-Kt}\cdot  y \amp{}= A\\
 y(t)\amp{}=Ae^{Kt}.
 \end{align*}
 </div>
+</div>
+<div class="para logical" id="EXAMPLENonHomDiffeq-11">
+<div class="para">If we apply the same technique to      <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> we  get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html">
+\begin{equation*}
+\int\dfdx{\left(e^{-Kt}\cdot  y\right)}
+{t}\dx{t}=e^{-Kt}\cdot y =\int
+e^{-Kt}\cos(t)\dx{t}\text{.}
+\end{equation*}
+</div>
+<div class="para">Clearly to solve this problem we will need to be able to compute <span class="process-math">\(\int e^t\cos(t) \dx{t}\text{.}\)</span> Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at slightly simple integrals.</div>
 </div></article><div class="para logical" id="SECTIONIntParts-3">
 <div class="para">Consider the integral</div>
 <div class="displaymath process-math">
@@ -874,165 +884,322 @@ u=x\sin(x) +\cos (x)
 </div>
 <div class="para" id="SECTIONIntParts-6">So we need a new idea.</div>
 <div class="para" id="SECTIONIntParts-7">In <a href="SECTIONTwoSimpleDiffeqs.html#TABLEBasicIntegration" class="xref" data-knowl="./knowl/xref/TABLEBasicIntegration.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 18.1.0.4: Integration Rules Inherited from Differentiation Rules">Table 18.1.0.4</a> we listed the integration rules corresponding to the <a href="SECTIONsome-rules-diff.html#THEOREMConstRule" class="xref" data-knowl="./knowl/xref/THEOREMConstRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.1.1: The Constant Rule">Constant Rule 4.3.1.1</a> (#1), the <a href="SECTIONdiff-rules-via.html#THEOREMSumRule" class="xref" data-knowl="./knowl/xref/THEOREMSumRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 14.2.0.2: The Sum Rule for Differentiation">Sum Rule 14.2.0.2</a> (#2), the <a href="SECTIONsome-rules-diff.html#THEOREMConstMultRule" class="xref" data-knowl="./knowl/xref/THEOREMConstMultRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.2">Constant Multiple Rule (4.2)</a> (#3), and <a href="SECTIONsome-rules-diff.html#THEOREMGenPowRule" class="xref" data-knowl="./knowl/xref/THEOREMGenPowRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.5.25: The  Power  Rule">Power Rule 4.3.5.25</a> (#4), but not the <a href="SECTIONsome-rules-diff.html#THEOREMQuotientRule" class="xref" data-knowl="./knowl/xref/THEOREMQuotientRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.6.3: The Quotient Rule">Quotient Rule 4.3.6.3</a> or the <a href="SECTIONsome-rules-diff.html#THEOREMProdRule" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.4.1: The Product Rule">Product Rule 4.3.4.1</a>?</div>
-<div class="para" id="SECTIONIntParts-8">It is time to fill in that blank. We will try to “run the Power Rule backward,” if we can.</div>
-<div class="para" id="SECTIONIntParts-9"> We can do this simply by rearranging the  Product Rule formula</div>
-<article class="theorem theorem-like" id="IntegrationByParts"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">19.3.0.2</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by Parts.</span>
-</h3>
-<div class="para logical" id="IntegrationByParts-2"><ul class="disc" id="IntegrationByParts-2-1">
-<li id="IntegrationByParts-2-1-1"><div class="para logical" id="IntegrationByParts-2-1-1-1">
-<div class="para"><em class="alert">Differential Form:</em></div>
-<div class="displaymath process-math" id="EQUATIONIntPartsDiff">
-\begin{equation}
-\int{}u\dx{v} =uv-\int{}v\dx{u}. \tag{19.57}
-\end{equation}
-</div>
-</div></li>
-<li id="IntegrationByParts-2-1-2"><div class="para logical" id="IntegrationByParts-2-1-2-1">
-<div class="para"><em class="alert">Functional Form:</em></div>
-<div class="displaymath process-math" id="EQUATIONIntPartsFunc">
-\begin{equation}
-\int{}f(x)g^\prime(x)\dx{x} =
-f(x)\cdot g(x)-\int
-g(x)f^\prime(x) \dx{x}.\tag{19.58}
-\end{equation}
-</div>
-</div></li>
-</ul></div></article><div class="para" id="SECTIONIntParts-11"> As we’ve indicated when it is written in this  form the Product Rule  is called <dfn class="terminology">Integration by Parts</dfn> and it is exactly what we need to compute the previous integral.</div>
-<article class="example example-like" id="EXAMPLEIntParts1"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.3.0.3</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="EXAMPLEIntParts1-1">
-<div class="para">Specifically, if we let <span class="process-math">\(u=x\)</span> and <span class="process-math">\(\dx{v}=\cos(x)\dx{x}\text{,}\)</span> then <span class="process-math">\(\dx{u}=\dx{x}\)</span> and <span class="process-math">\(v=\int\cos(x)\dx{x}=\sin(x) \)</span> (don’t worry about the arbitrary constant here for the moment. We’ll look at it later.). Substituting these into our integration by parts formula,</div>
-<div class="displaymath process-math" id="IntByParts">
-\begin{equation}
-\int{}u\dx{v} =uv-\int v\dx{u}\tag{19.59}
-\end{equation}
-</div>
-<div class="para">we have</div>
+<div class="para logical" id="SECTIONIntParts-8">
+<div class="para">It is time to fill in that blank. We will try to “run the Power Rule backward,” if we can.  Recall that in differential form   Product Rule formula is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int x\cos(x)\dx{x} =
-x\sin(x)-\int\sin(x)\dx{x}=x\sin(x){}+\cos(x)+c \text{.}
+\dx(uv)=v\dx{u}+u\dx{v}\text{.}
+\end{equation*}
+</div>
+<div class="para">To run this backwards we integrate both sides giving</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \dx(uv)=\int v\dx{u}+\int u\dx{v}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is equivalent to</div>
+<div class="displaymath process-math" id="EQUATIONIntPartsForm">
+\begin{equation}
+\int u\dx{v}=\int
+\dx(uv)-\int v\dx{u}\text{.}\tag{19.57}
+\end{equation}
+</div>
+<div class="para">Observing that <span class="process-math">\(\int \dx(uv)=uv\text{,}\)</span> yields the Integration by Parts formula (in differential form):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int{}u\dx{v} =uv-\int{}v\dx{u}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="EXAMPLEIntParts1-2">At this point, we should take note of a few things. First, notice that this was not a substitution; we did not end up with an integral with <span class="process-math">\(u\)</span>’s or <span class="process-math">\(v\)</span>’s in it.  These were introduced just to keep track of the integration by parts formula.</div>
-<div class="para" id="EXAMPLEIntParts1-3">Second, notice that we needed to use the entire integrand. That is, the expression <span class="process-math">\(u\dx{v}\)</span> is exactly equal to the the integrand, <span class="process-math">\(x\cos(x)\dx{x}\text{.}\)</span> Nothing was left out.</div>
-<div class="para" id="EXAMPLEIntParts1-4">Third, notice that like a substitution, the integration by parts technique does not compute the integral.  Rather, it replaces that integral with, hopefully, an easier integral. This means that as long as the integration by parts technique is applied correctly, it is not wrong; it just might not be helpful.</div>
-<div class="para logical" id="EXAMPLEIntParts1-5">
-<div class="para">For example, we could have let <span class="process-math">\(u=\cos(x){}\)</span> and <span class="process-math">\(\dx{u}=x\dx{x}\text{.}\)</span> This would give <span class="process-math">\(v=x^2/2\text{.}\)</span> Substituting these into <a href="SECTIONIntParts.html#IntByParts" class="xref" data-knowl="./knowl/xref/IntByParts.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.59">equation (19.59)</a> we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IntByParts.html">
+<aside class="aside aside-like" id="SECTIONIntParts-9"><h3 class="heading"><span class="title">Comment.</span></h3>
+<div class="para" id="SECTIONIntParts-9-2">Strictly speaking <span class="process-math">\(\int \dx(uv)=uv\)</span> plus an arbitrary constant. We are ignoring the constant for reasons that will be clear soon.</div></aside><article class="example example-like" id="EXAMPLEIntxcosx"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.3.0.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="EXAMPLEIntxcosx-1">
+<div class="para">To integrate <span class="process-math">\(\int x\cos (x)\dx{x}\)</span>  by parts we set</div>
+<div class="displaymath process-math" id="EXAMPLEIntxcosx-1-2">
+\begin{align*}
+u=x\amp{}\amp{}\text{ and } \amp{}\amp{}
+\dx{v}=\cos(x)\dx{x}\\
+\end{align*}
+<div class="para intertext">so that</div>
+\begin{align*}
+\dx{u}=\dx{x} \amp{}\amp{}\text{ and } \amp{}\amp{}
+v=\int\cos(x)\dx{x} = \sin(x).
+\end{align*}
+</div>
+<div class="para">Making these substitutions gives</div>
+<div class="displaymath process-math" id="EXAMPLEIntxcosx-1-3">
+\begin{align*}
+\int x\cos(x)\dx{x} = \int u\dx{v}\amp{}=uv-\int v\dx{u}\\
+\amp{}=x\sin(x) -\int \sin (x)\dx{x}.\\
+\amp{}=x\sin(x) + \cos (x).
+\end{align*}
+</div>
+<div class="para">and, finally</div>
+<div class="displaymath process-math" id="EQUATIONIntxCosx">
+\begin{equation}
+\int x\cos(x)\dx{x} = x\sin(x) + \cos (x) +C\tag{19.58}
+\end{equation}
+</div>
+</div></article><div class="para logical" id="SECTIONIntParts-11">
+<div class="para">It is worth taking a moment to notice a few facts about Integration by Parts.</div>
+<dl class="description-list">
+<dt id="SECTIONIntParts-11-1-1">Integration by Parts is Not a Substitution.</dt>
+<dd><div class="para" id="SECTIONIntParts-11-1-1-2">After <span class="process-math">\(u\)</span> and <span class="process-math">\(\dx{v}\)</span> are chosen we do not get an integral in terms of <span class="process-math">\(u\)</span> and  <span class="process-math">\(v\)</span> which we then need to transform back into an integral in terms of <span class="process-math">\(x\text{,}\)</span> the way we did with Integration by Substitution.  The variables <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> were introduced just to keep track of the Integration by Parts formula. The resulting integral will be in terms of the original variable.</div></dd>
+<dt id="SECTIONIntParts-11-1-2">In Choosing <span class="process-math">\(u\)</span> and <span class="process-math">\(\dx{v}\)</span> We Used Up  the Entire Integrand.</dt>
+<dd>
+<div class="para" id="SECTIONIntParts-11-1-2-2">That is, in <a href="SECTIONIntParts.html#EXAMPLEIntxcosx" class="xref" data-knowl="./knowl/xref/EXAMPLEIntxcosx.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.2">Example 19.3.0.2</a> the expression <span class="process-math">\(u\dx{v}\)</span> is exactly equal to the the integrand, <span class="process-math">\(x\cos(x)\dx{x}\text{.}\)</span> Nothing was left out.</div>
+<div class="para" id="SECTIONIntParts-11-1-2-3">As a practical matter this means that once you have decided what to call <span class="process-math">\(u\)</span> then <span class="process-math">\(\dx{v}\)</span> is everything else to the right of the <span class="process-math">\(\int \)</span> symbol.</div>
+</dd>
+<dt id="SECTIONIntParts-11-1-3">Integration By Parts Does Not Compute the Integral.</dt>
+<dd>
+<div class="para logical" id="SECTIONIntParts-11-1-3-2">
+<div class="para">Rather, it replaces that integral with another, hopefully one that is easier to compute.  In <a href="SECTIONIntParts.html#EXAMPLEIntxcosx" class="xref" data-knowl="./knowl/xref/EXAMPLEIntxcosx.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.2">Example 19.3.0.2</a>, for instance, we could have let <span class="process-math">\(u=\cos(x){}\)</span> and <span class="process-math">\(\dx{u}=x\dx{x}\text{.}\)</span> This would give <span class="process-math">\(v=x^2/2\text{.}\)</span> Substituting these into <span class="process-math">\(\int x\cos(x)
+\dx{x}\)</span> we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLEIntxcosx.html">
 \begin{equation*}
 \int x\cos(x)\dx{x}=\frac{x^2}{2}\cos(x)+\frac{1}{2}\int
 x^2\sin(x)\dx{x}\text{.}
 \end{equation*}
 </div>
-<div class="para">Everything we’ve done is correct, but the integral on the right is actually harder to evaluate than the one we started with.  Finding a choice for <span class="process-math">\(u\)</span> and <span class="process-math">\(\dx{v} \)</span> that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won’t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.</div>
+<div class="para">Everything we’ve done is valid, but the integral on the right is actually harder to evaluate than the one we started with.</div>
 </div>
-<div class="para" id="EXAMPLEIntParts1-6">In any case, practice is necessary. Lots of practice.</div></article><article class="exercise exercise-like" id="SECTIONIntParts-13"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.4</span><span class="period">.</span>
+<div class="para" id="SECTIONIntParts-11-1-3-3">What this means in practice is that as long as the integration by parts technique is applied correctly, it is not wrong in any absolute sense. But it might not be very helpful in computing the integral in front of us. So if your first attempt to compute an integral doesn’t seem to be going anywhere step back and ask yourself if another choice of <span class="process-math">\(u\)</span> and <span class="process-math">\(\dx{v}\text{,}\)</span> or even a different integration technique might work better.</div>
+<div class="para" id="SECTIONIntParts-11-1-3-4">This is actually true of all of the integration techniques. They do not compute the integral, they just seek to replace it with an integral that we already know.</div>
+</dd>
+</dl>
+</div>
+<article class="problem example-like" id="SECTIONIntParts-12"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.3.0.3</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="SECTIONIntParts-13-1"><div class="para" id="SECTIONIntParts-13-1-1">Did you notice that in <a href="SECTIONIntParts.html#EXAMPLEIntParts1" class="xref" data-knowl="./knowl/xref/EXAMPLEIntParts1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.3">Example 19.3.0.3</a> we suppressed the arbitrary constant when we computed <span class="process-math">\(v\text{?}\)</span>  In this problem we will see that this will not alter the result.</div></div>
-<article class="task exercise-like" id="SECTIONIntParts-13-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="SECTIONIntParts-13-2-1-1">Evaluate the integral <span class="process-math">\(\int
-x\cos(x)\dx{x}\)</span> letting <span class="process-math">\(u=x\)</span> again, letting <span class="process-math">\(\dx{v}=\cos(x)\dx{x}\)</span> as before. But this time  take <span class="process-math">\(y=\sin(x)+a\)</span> where <span class="process-math">\(a\)</span> is an arbitrary constant. Show that we will obtain the same answer as before.</div></article><article class="task exercise-like" id="SECTIONIntParts-13-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para logical" id="SECTIONIntParts-13-3-1-1">
+<div class="para" id="SECTIONIntParts-12-1">Show that <span class="process-math">\(\int x\cos(x)\dx{x} = x\sin(x) + \cos (x)
++C\)</span> by differentiating the right side.</div></article><div class="para" id="SECTIONIntParts-13">
+<a href="SECTIONIntParts.html#THEOREMIntegrationByParts" class="xref" data-knowl="./knowl/xref/THEOREMIntegrationByParts.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 19.3.0.4: Integration by Parts">Theorem 19.3.0.4</a> is the formal statement of Integration by Parts, in both differential and functional (modern) form.</div>
+<article class="theorem theorem-like" id="THEOREMIntegrationByParts"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">19.3.0.4</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by Parts.</span>
+</h3>
+<div class="para logical" id="THEOREMIntegrationByParts-2"><ul class="disc" id="THEOREMIntegrationByParts-2-1">
+<li id="THEOREMIntegrationByParts-2-1-1"><div class="para logical" id="THEOREMIntegrationByParts-2-1-1-1">
+<div class="para"><em class="alert">Differential Form:</em></div>
+<div class="displaymath process-math" id="EQUATIONIntPartsDiff">
+\begin{equation}
+\int{}u\dx{v} =uv-\int{}v\dx{u}\tag{19.59}
+\end{equation}
+</div>
+<div class="para">.</div>
+</div></li>
+<li id="THEOREMIntegrationByParts-2-1-2"><div class="para logical" id="THEOREMIntegrationByParts-2-1-2-1">
+<div class="para"><em class="alert">Functional Form:</em></div>
+<div class="displaymath process-math" id="EQUATIONIntPartsFunc">
+\begin{equation}
+\int{}f(x)g^\prime(x)\dx{x} =
+f(x)\cdot g(x)-\int
+g(x)f^\prime(x) \dx{x}\tag{19.60}
+\end{equation}
+</div>
+<div class="para">.</div>
+</div></li>
+</ul></div></article><article class="problem example-like" id="SECTIONIntParts-15"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.3.0.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="SECTIONIntParts-15-1">Finding a choice for <span class="process-math">\(u\)</span> and <span class="process-math">\(\dx{v} \)</span> that will work is mostly a matter of using your intuition. But unfortunately, at first you have no such intuition. There is nothing to be done but take a stab at it. Make a choice and then do the computations that follow from it. At first your choices won’t work and this can be frustrating. But learn from your efforts. Try again. And keep trying. With practice intuition will develop. In time you might even find that you enjoy the process. Really. Many students do.</div>
+<div class="para" id="SECTIONIntParts-15-2">In any case, practice is necessary. Lots of practice.</div>
+<div class="para logical" id="SECTIONIntParts-15-3">
+<div class="para">Use Integration by Parts to compute each integral, then verify that your solution is correct by differentiation.</div>
+<ol class="lower-roman ol-marker-1 cols2" id="SECTIONIntParts-15-3-1">
+<li id="SECTIONIntParts-15-3-1-1"><div class="para" id="SECTIONIntParts-15-3-1-1-1"><span class="process-math">\(\displaystyle \displaystyle \int x\sin(x)\dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-2"><div class="para" id="SECTIONIntParts-15-3-1-2-1"><span class="process-math">\(\displaystyle \displaystyle \int x\cos(x/2) \dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-3"><div class="para" id="SECTIONIntParts-15-3-1-3-1"><span class="process-math">\(\displaystyle \displaystyle \int \frac{x}{3}\sin (5x)\dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-4"><div class="para" id="SECTIONIntParts-15-3-1-4-1"><span class="process-math">\(\displaystyle \displaystyle \int xe^{\frac{x}{2}}\dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-5"><div class="para" id="SECTIONIntParts-15-3-1-5-1"><span class="process-math">\(\displaystyle \displaystyle \int x\cosh(x) \dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-6"><div class="para" id="SECTIONIntParts-15-3-1-6-1"><span class="process-math">\(\displaystyle \displaystyle \int x\sinh(x) \dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-7"><div class="para" id="SECTIONIntParts-15-3-1-7-1"><span class="process-math">\(\displaystyle \displaystyle \int x\inverse \tan (x)\dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-8"><div class="para" id="SECTIONIntParts-15-3-1-8-1"><span class="process-math">\(\displaystyle \displaystyle \int x\inverse \sin (x)\dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-9"><div class="para" id="SECTIONIntParts-15-3-1-9-1"><span class="process-math">\(\displaystyle \displaystyle \int x\ln (x)\dx{x}\)</span></div></li>
+<li id="SECTIONIntParts-15-3-1-10"><div class="para" id="SECTIONIntParts-15-3-1-10-1"><span class="process-math">\(\displaystyle \displaystyle \int x^2\ln (x)\dx{x}\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="SECTIONIntParts-16"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.6</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SECTIONIntParts-16-1"><div class="para" id="SECTIONIntParts-16-1-1">Did you notice that in <a href="SECTIONIntParts.html#EXAMPLEIntxcosx" class="xref" data-knowl="./knowl/xref/EXAMPLEIntxcosx.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.2">Example 19.3.0.2</a> we suppressed the arbitrary constant when we computed <span class="process-math">\(v\text{?}\)</span>  In this problem we will see that this will not alter the result.</div></div>
+<article class="task exercise-like" id="SECTIONIntParts-16-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SECTIONIntParts-16-2-1-1">Evaluate the integral <span class="process-math">\(\int
+x\cos(x)\dx{x}\)</span> letting <span class="process-math">\(u=x\)</span> again, letting <span class="process-math">\(\dx{v}=\cos(x)\dx{x}\)</span> as before. But this time  take <span class="process-math">\(y=\sin(x)+a\)</span> where <span class="process-math">\(a\)</span> is an arbitrary constant. Show that we will obtain the same answer as before.</div></article><article class="task exercise-like" id="SECTIONIntParts-16-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONIntParts-16-3-1-1">
 <div class="para">Show that in general, if we let <span class="process-math">\(\int\dx{v}=v+a\)</span> in the integration by parts formula, then we still obtain the formula</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int u\dx{v}=uv-\int v\dx{u}.
 \end{equation*}
 </div>
-</div></article></article><article class="exercise exercise-like" id="SECTIONIntParts-14"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.5</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="SECTIONIntParts-14-1">
-<div class="para">Notice that in <a href="SECTIONIntegrationRules1.html#SECTIONIntegrationRules1-2-7" class="xref" data-knowl="./knowl/xref/IntRuleExp.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 20.10">Integration Rule (20.10)</a> shows us how to integrate the natural exponential function but we have no analog for the integral of <span class="process-math">\(\ln(x)\text{.}\)</span> Perform Integration By Parts on</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IntRuleExp.html">
-\begin{equation*}
-\int \ln(x) 
-\end{equation*}
 </div>
-<div class="para">using <span class="process-math">\(u=\ln(x){}\)</span> and <span class="process-math">\(\dx{v}=\dx{x}\)</span> to compute the integral.</div>
-</div></article><aside class="aside aside-like" id="SECTIONIntParts-15"><h3 class="heading"><span class="title">A Word of Advice.</span></h3>
-<div class="para" id="SECTIONIntParts-15-2">Rather than trying to memorize this integral, just remember to use integration by parts.</div></aside><div class="para" id="SECTIONIntParts-16">As with differentiation techniques and formulas, techniques such as integration by parts and substitution are performed in concert, utilizing whatever technique that is appropriate at the time.  As an example of this consider the next problem.</div>
-<article class="exercise exercise-like" id="SECTIONIntParts-17"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.6</span><span class="period">.</span>
+<div class="solutions"><details id="SECTIONIntParts-16-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="SECTIONIntParts-16-3-2-1">You may find it helpful to use the functional form of Integration by Parts in <a href="SECTIONIntParts.html#THEOREMIntegrationByParts" class="xref" data-knowl="./knowl/xref/THEOREMIntegrationByParts.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 19.3.0.4: Integration by Parts">Theorem 19.3.0.4</a>.</div></div></details></div></article></article><article class="exercise exercise-like" id="PROBLEMIntInvFunc"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.7</span><span class="period">.</span><span class="space"> </span><span class="title">Integrals of Inverse Functions.</span>
 </h3>
-<div class="para" id="SECTIONIntParts-17-1">Perform integration by parts and then substitution to compute <span class="process-math">\(\int \inverse\sin(x)\dx{x}\)</span> and <span class="process-math">\(\int
-\inverse\tan(x)\dx{x}\text{.}\)</span>
-</div></article><div class="para" id="SECTIONIntParts-18">Just as integration by parts can be used with other techniques, it can be used with itself multiple times.</div>
-<aside class="aside aside-like" id="SECTIONIntParts-19"><h3 class="heading"><span class="title">A Word of Advice.</span></h3>
-<div class="para" id="SECTIONIntParts-19-2">If you perform integration by parts twice, be sure not to switch the roles of “<span class="process-math">\(u\)</span>” and “<span class="process-math">\(v\text{.}\)</span>” This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.</div></aside><article class="exercise exercise-like" id="SECTIONIntParts-20"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.7</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="SECTIONIntParts-20-1">
-<div class="para">Compute</div>
+<div class="introduction" id="PROBLEMIntInvFunc-2"><div class="para" id="PROBLEMIntInvFunc-2-1">So far we  have found, by various means, the integrals of the sine, cosine, tangent, cotangent, secant, cosecant, and natural exponential functions. We have held off on finding the antiderivative of the inverses of those functions because that is most easily done using Integration by Parts.</div></div>
+<article class="task exercise-like" id="PROBLEMIntInvFunc-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="PROBLEMIntInvFunc-3-1-1">
+<div class="para">Use Integration by Parts to compute each of the integrals. Confirm your results by differentiation.</div>
+<ol class="lower-roman ol-marker-1 cols3" id="PROBLEMIntInvFunc-3-1-1-1">
+<li id="PROBLEMIntInvFunc-3-1-1-1-1"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-1"><span class="process-math">\(\displaystyle \int \inverse \sin (x)\dx{x}\)</span></div></li>
+<li id="PROBLEMIntInvFunc-3-1-1-1-2"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-2"><span class="process-math">\(\displaystyle \int \inverse \cos (x)\dx{x}\)</span></div></li>
+<li id="PROBLEMIntInvFunc-3-1-1-1-3"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-3"><span class="process-math">\(\displaystyle \int \inverse \tan (x)\dx{x}\)</span></div></li>
+<li id="PROBLEMIntInvFunc-3-1-1-1-4"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-4"><span class="process-math">\(\displaystyle \int \inverse \cot (x)\dx{x}\)</span></div></li>
+<li id="PROBLEMIntInvFunc-3-1-1-1-5"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-5"><span class="process-math">\(\displaystyle \int \inverse \sec (x)\dx{x}\)</span></div></li>
+<li id="PROBLEMIntInvFunc-3-1-1-1-6"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-6"><span class="process-math">\(\displaystyle \int \inverse \csc (x)\dx{x}\)</span></div></li>
+<li id="PROBLEMIntInvFunc-3-1-1-1-7"><div class="para" id="p-derived-PROBLEMIntInvFunc-3-1-1-1-7"><span class="process-math">\(\displaystyle \int  \ln (x)\dx{x}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="PROBLEMIntInvFunc-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMIntInvFunc-3-2-1">There are really only two choices for <span class="process-math">\(u\text{.}\)</span> If your  first choice doesn’t work try the other one.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMIntInvFunc-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="PROBLEMIntInvFunc-4-1-1">
+<div class="para">Suppose that <span class="process-math">\(F(x)=\int xf^\prime(x)\dx{x}\text{.}\)</span> Generalize the results in part (a) by showing that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int x^2e^x\dx{x} 
+\int \inverse{f}(x)\dx{x}= xf(x)-F(x)\text{.}
 \end{equation*}
 </div>
-<div class="para">using integration by parts.</div>
-</div></article><div class="para" id="SECTIONIntParts-21">Before we send you off to practice, we will look at one more “trick” one could do with integration by parts.  We will also illustrate a way to keep track of <span class="process-math">\(u\text{,}\)</span> <span class="process-math">\(\dx{v}\text{,}\)</span> <span class="process-math">\(\dx{u}\text{,}\)</span> and d <span class="process-math">\(v\text{.}\)</span>
-</div>
-<article class="example example-like" id="SECTIONIntParts-22"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">19.3.0.8</span><span class="period">.</span>
+</div></article></article><article class="exercise exercise-like" id="EXERCISEIntPartsMultiple"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.8</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="SECTIONIntParts-22-1">
+<article class="task exercise-like" id="EXERCISEIntPartsMultiple-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="EXERCISEIntPartsMultiple-1-1-1">
+<div class="para">Use Integration by Parts to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int x^2e^x\dx{x} = x^2e^x-2\int xe^x\dx{x}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="EXERCISEIntPartsMultiple-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="EXERCISEIntPartsMultiple-2-1-1">Notice that the formula in part (a) does not complete the integration. Explain what else we need to do to find the antiderivative of <span class="process-math">\(x^2e^x\)</span> and then do that. Confirm your result by differentiation.</div></article></article><div class="para" id="SECTIONIntParts-19">As with differentiation it is rare that a single integration technique is sufficient to compute a given antiderivative. Usually two or more diffent techniques are required because as we’ve seen none of the methods actually compute the integral. They simply replace it with another. If we don’t know the new integral, from memory or from <a href="SECTIONTwoSimpleDiffeqs.html#TABLEBasicIntegration" class="xref" data-knowl="./knowl/xref/TABLEBasicIntegration.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 18.1.0.4: Integration Rules Inherited from Differentiation Rules">Table 18.1.0.4</a>, we will have to integrate again using whatever technique is appropriate to the new problem.</div>
+<article class="problem example-like" id="SECTIONIntParts-20"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">19.3.0.9</span><span class="period">.</span>
+</h3>
+<div class="para" id="SECTIONIntParts-20-1">As we saw in <a href="SECTIONIntParts.html#EXERCISEIntPartsMultiple" class="xref" data-knowl="./knowl/xref/EXERCISEIntPartsMultiple.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 19.3.0.8">Problem 19.3.0.8</a> sometimes we have to use the same integration technique more than once.  If you perform integration by parts twice, be sure not to switch the roles of “<span class="process-math">\(u\)</span>” and “<span class="process-math">\(v\text{.}\)</span>” This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started. Try it and see.</div>
+<div class="para" id="SECTIONIntParts-20-2">To see what we mean integrate <span class="process-math">\(\int x^2\sin(x) \dx{x}\)</span> by parts twice. The first time let <span class="process-math">\(u=x^2\)</span> and <span class="process-math">\(\dx{v}=\sin(x)\dx{x}\)</span>  and the second time let <span class="process-math">\(u=\cos(x)\)</span> and <span class="process-math">\(\dx{v}=x\dx{x}\)</span> to confirm that the second Integration by Parts simply undoes the first.</div></article><article class="exercise exercise-like" id="SECTIONIntParts-21"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.10</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="SECTIONIntParts-21-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONIntParts-21-1-1-1">
 <div class="para">Consider</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int e^x\sin(x)\dx{x}\text{.}
 \end{equation*}
 </div>
-<div class="para">If we let <span class="process-math">\(u=e^x\)</span> and <span class="process-math">\(\dx{v} =\sin(x)\dx{x}\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="SECTIONIntParts-22-1-4">
-\begin{align*}
-u\amp{}=e^x \amp{}\dx{v}\amp{}=\sin(x)\dx{x}\\
-\dx{u}\amp{}=e^x\dx{x}\amp{} v\amp{}=-\cos(x)\dx{x}
-\end{align*}
-</div>
-<div class="para">so</div>
+<div class="para">Use Integration by Parts to show that       </div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int e^x\sin(x)\dx{x} = -e^x\cos(x){}+\int e^x\cos(x)\dx{x}.
 \end{equation*}
 </div>
-<div class="para">We can apply integration by parts again, being careful not to switch the roles of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span>
-</div>
-<div class="displaymath process-math" id="SECTIONIntParts-22-1-8">
-\begin{align*}
-u\amp{}=e^x \amp{} \dx{v}\amp{}=\cos(x)\dx{x}\\
-\dx{u}\amp{}=e^x\dx{x}\amp{} \sin(x){}
-\end{align*}
-</div>
-<div class="para">so</div>
+</div></article><article class="task exercise-like" id="SECTIONIntParts-21-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONIntParts-21-2-1-1">
+<div class="para">Apply integration by parts again (being careful not to switch the roles of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span>) to show that     </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int e^x\sin(x)\dx{x}=-e^x\cos(x)+\left[e^x\sin(x)-\int
-e^x\sin(x)\dx{x}\right]{}=-e^x\cos(x)+e^x\sin(x)-\int
+\int e^x\sin(x)\dx{x}=
+-e^x\cos(x)+e^x\sin(x)-\int
 e^x\sin(x)\dx{x}
 \end{equation*}
 </div>
-</div>
-<div class="para logical" id="SECTIONIntParts-22-2">
-<div class="para">At first it looks like we went full circle and came back to where we started. But look again.  If we let <span class="process-math">\(I=\int
-e^x\sin(x)\dx{x}\text{,}\)</span> we see that this is now a simple algebra problem since</div>
+</div></article><article class="task exercise-like" id="SECTIONIntParts-21-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="SECTIONIntParts-21-3-1-1">
+<div class="para">It looks like we went full circle in part (b) and came back to where we started. But look again.       Explain how we can conclude from the result in part (b) that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-I=-e^x\cos(x){+e^x\sin(x){-I}}
+\int e^x\sin(x)\dx{x}= \frac{e^x}{2}(\sin(x)-\cos(x))+C\text{.}
 \end{equation*}
 </div>
-<div class="para">Solving for <span class="process-math">\(I\)</span> we have</div>
+</div></article><div class="conclusion" id="SECTIONIntParts-21-4"><div class="para" id="SECTIONIntParts-21-4-1">Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .</div></div></article><article class="exercise exercise-like" id="SECTIONIntParts-22"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.11</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SECTIONIntParts-22-1"><div class="para" id="SECTIONIntParts-22-1-1">Compute each integral. Confirm your result by differentiation.</div></div>
+<article class="task exercise-like" id="SECTIONIntParts-22-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SECTIONIntParts-22-2-1-1"><span class="process-math">\(\int x\cos(x) \dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SECTIONIntParts-22-3-1-1"><span class="process-math">\(\int x^2\sin(x)\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SECTIONIntParts-22-4-1-1"><span class="process-math">\(\int \sqrt{x}\cos( \sqrt{x} )\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="SECTIONIntParts-22-5-1-1"><span class="process-math">\(\int x^{\frac32}\sin( \sqrt{x} )\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="SECTIONIntParts-22-6-1-1"><span class="process-math">\(\int\frac{xe^x}{(2+2x)^2}\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-7"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<div class="para" id="SECTIONIntParts-22-7-1-1"><span class="process-math">\(\int x^3e^{5x}\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-8"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<div class="para" id="SECTIONIntParts-22-8-1-1"><span class="process-math">\(\int (\ln(x))^2 \dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-22-9"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<div class="para" id="SECTIONIntParts-22-9-1-1"><span class="process-math">\(\int (\ln(x))^3 \dx{x}\)</span></div></article></article><article class="exercise exercise-like" id="SECTIONIntParts-23"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.12</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SECTIONIntParts-23-1"><div class="para logical" id="SECTIONIntParts-23-1-1">
+<div class="para">Suppose <span class="process-math">\(n\)</span> is a positive integer. We want to compute the integral</div>
 <div class="displaymath process-math">
 \begin{equation*}
-I=\int e^x\sin(x)\dx{x}= \frac{e^x}{2}(\sin(x)-\cos(x))+c
+\int \sin^n(x) \dx{x}\text{.}
 \end{equation*}
 </div>
+</div></div>
+<article class="task exercise-like" id="SECTIONIntParts-23-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONIntParts-23-2-1-1">
+<div class="para">First let <span class="process-math">\(u=\sin^{n-1}\)</span> and <span class="process-math">\(\dx{v}=\sin (x)\dx{x}\)</span> and show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \sin^n (x)\dx{x} =
+-\frac1n \cos(x) \sin^{n-1} (x)+(n-1)\int \sin^{n-2}(x)\cos^2(x)
+\dx{x}\text{.}
+\end{equation*}
 </div>
-<div class="para" id="SECTIONIntParts-22-3">Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .</div></article></section></div>
+</div></article><article class="task exercise-like" id="SECTIONIntParts-23-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONIntParts-23-3-1-1">
+<div class="para">Observe that <span class="process-math">\(\cos^2(x) =1-\sin^2(x) \)</span> and use this to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \sin^n (x)\dx{x} =
+-\frac1n \cos(x) \sin^{n-1} (x)+(n-1)\int \sin^{n-2}(x)
+\dx{x}-(n-1)\int \sin^n(x) \dx{x}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="SECTIONIntParts-23-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="SECTIONIntParts-23-4-1-1">
+<div class="para">Explain how the result in part (b) implies that</div>
+<div class="displaymath process-math" id="EQUATIONSineReduction1">
+\begin{equation}
+\int \sin^n (x)\dx{x} =
+-\frac1n \cos(x) \sin^{n-1} (x)+ \frac{n-1}{n}\int \sin^{n-2}(x)
+\dx{x}\text{.}\tag{19.61}
+\end{equation}
+</div>
+</div></article></article><article class="exercise exercise-like" id="PROBLEMIntProdProdInt"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.13</span><span class="period">.</span><span class="space"> </span><span class="title">When the Integral of a Product is the Product of the Integrals.</span>
+</h3>
+<article class="task exercise-like" id="PROBLEMIntProdProdInt-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="PROBLEMIntProdProdInt-2-1-1">
+<div class="para">Suppose <span class="process-math">\(f^\prime(x)\neq{}f(x)\)</span> Show that if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(f\cdot g\right)^\prime(x) = f^\prime(x)\cdot
+g^\prime(x) 
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math" id="EQUATIONProdDerivs">
+\begin{equation}
+g(x)=\exp\left({\int{\frac{1}{1-\frac{f(x)}{f^\prime(x)}}}\dx{x}{}}\right)\tag{19.62}
+\end{equation}
+</div>
+</div> <div class="para" id="PROBLEMIntProdProdInt-2-1-2">(Don’t let this <a href="SECTIONIntParts.html#EQUATIONProdDerivs" class="xref" data-knowl="./knowl/xref/EQUATIONProdDerivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.62">formula (19.62)</a> frighten you. Recall that <span class="process-math">\(\exp(x)=e^x\text{.}\)</span>)</div></article><article class="task exercise-like" id="PROBLEMIntProdProdInt-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="PROBLEMIntProdProdInt-3-1-1">
+<div class="para">Apply <a href="SECTIONIntParts.html#EQUATIONProdDerivs" class="xref" data-knowl="./knowl/xref/EQUATIONProdDerivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.62">equation (19.62)</a> to the function <span class="process-math">\(f(x)=x^n\)</span> and compare this to the results in Problem # 60 above.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONProdDerivs.html">
+\begin{equation*}
+\int{}u\dx{v}{}=\int{}
+\left(\dx(uv) -v\dx{u}{}\right) = \int\dx(uv) -\int
+v\dx{u}{=uv-\int v\dx{u} }.
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONProdDerivs.html" id="EQUATIONIntegrationByParts">
+\begin{equation}
+\int{}u\dx{v}{}=uv-\int
+v\dx{u}\text{.}\tag{19.63}
+\end{equation}
+</div>
+</div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="SECTIONPartFrac.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONStoneArch.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
