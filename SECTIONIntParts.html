@@ -783,7 +783,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation}
 </div>
 </div>
-<div class="para" id="EXAMPLENonHomDiffeq-4">Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer.        The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we’ll suppose that the “speeding up and slowing down” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
+<div class="para" id="EXAMPLENonHomDiffeq-4">Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer.  The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we’ll suppose that the “speeding up and slowing down” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
 </div>
 <div class="para logical" id="EXAMPLENonHomDiffeq-5">
 <div class="para">This means that the rate of change of our algae population will be <span class="process-math">\(\dfdx{y}{t}=Ky+\cos (t)\)</span> because the rate of growth of our population is still proportional to the size of the population. To be consistent with <a href="SECTIONIntParts.html#EQUATIONPopPerturb1" class="xref" data-knowl="./knowl/xref/EQUATIONPopPerturb1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.54">equation (19.54)</a> we’ll re–write this as</div>
@@ -794,7 +794,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <div class="para logical" id="EXAMPLENonHomDiffeq-6">
-<div class="para">To complete our model we’ll measure the quantity of algae in kilograms and  assume that initally there are <span class="process-math">\(20\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
+<div class="para">To complete our model we’ll measure the quantity of algae in kilograms and assume that initally there are <span class="process-math">\(20\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
 <div class="displaymath process-math" id="EXAMPLENonHomDiffeq-6-3">
 \begin{align}
 \dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=20.\tag{19.55}
@@ -802,59 +802,66 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <div class="para logical" id="EXAMPLENonHomDiffeq-7">
-<div class="para">This is not a separable equation but it is very similar to</div>
-<div class="displaymath process-math" id="EQUATIONExpGrowthHom">
+<div class="para">The differential equation part of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> is not separable but it is very similar to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynHomSol.html ./knowl/xref/IVPExpGrowthNonHom.html" id="EQUATIONExpGrowthHom">
 \begin{equation}
-\dfdx{y}{t}-Ky=0 \text{,}\tag{19.56}
+\dfdx{y}{t}-Ky=0 \tag{19.56}
 \end{equation}
 </div>
-<div class="para">whose solution <span class="process-math">\(y(t)=Ae^{Kt}\)</span> is known.  Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.</div>
+<div class="para">whose solution</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynHomSol.html ./knowl/xref/IVPExpGrowthNonHom.html" id="EQUATIONPopDynHomSol">
+\begin{equation}
+y(t)=Ae^{Kt}\tag{19.57}
+\end{equation}
 </div>
-<div class="para" id="EXAMPLENonHomDiffeq-8">The difficulty of course, is that it is not at all obvious how we might tweak <span class="process-math">\(y(t)=Ae^{Kt}\)</span> so to obtain a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a>
+<div class="para">is known.  Since the equations are similar it seems reasonable to suppose that their solutions will also be similar so the question is, “How do we tweak <a href="SECTIONIntParts.html#EQUATIONPopDynHomSol" class="xref" data-knowl="./knowl/xref/EQUATIONPopDynHomSol.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.57">solution (19.57)</a>) so as to obtain a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a>?”</div>
 </div>
-<div class="para logical" id="EXAMPLENonHomDiffeq-9">
-<div class="para">This is why we re–wrote our differential equations the way we did. On the left side of both we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMProdRule.html">
+<div class="para logical" id="EXAMPLENonHomDiffeq-8">
+<div class="para">Observe that <span class="process-math">\(y(t)=Ae^{-Kt}\)</span> is the product of the constant <span class="process-math">\(A\)</span> and the function <span class="process-math">\(e^{-Kt}\text{,}\)</span> One possible tweak is to suppose that the solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> is also a product. But since this is a slightly more complex problem than <a href="SECTIONInDefInt.html#EXAMPLEPopDynRedux-2-2" class="xref" data-knowl="./knowl/xref/EQUATIONPopDynRedux.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 21.16">equation (21.16)</a> we need a slightly more complex product. So let’s guess that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynRedux.html">
 \begin{equation*}
-\dfdx{y}{t}-Ky\text{.}
+\bar{y}(t)=A(t)e^{-Kt}
 \end{equation*}
 </div>
-<div class="para">If you look closely at that expression you can  almost see the result of a <a href="SECTIONsome-rules-diff.html#THEOREMProdRule" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.4.1: The Product Rule">Product Rule</a>. In fact if we multiply by <span class="process-math">\(e^{-Kt}\)</span> we will have exactly the Product Rule. Try it and see.</div>
-</div>
-<div class="para logical" id="EXAMPLENonHomDiffeq-10">
-<div class="para">Of course we can’t just multiply one side of an equation by something just because we like the outcome, so we’ll multiply both sides of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> instead, giving</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynRedux.html">
 \begin{equation*}
-\underbrace{e^{-Kt}\dfdx{y}{t}-e^{-Kt}Ky}_{=\dfdx{\left(e^{-Kt}\cdot
-y\right)}{t}}=0\cdot e^{-Kt}
+A(t)
 \end{equation*}
 </div>
-<div class="para">or</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+<div class="para">is a differentiable function rather than a constant.</div>
+</div>
+<aside class="aside aside-like" id="EXAMPLENonHomDiffeq-9"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para" id="EXAMPLENonHomDiffeq-9-2">We have called this a guess because ultimately, that’s all it really is. As such it is simply a trick. But we have also said that a “technique” is a “trick” that is used more than once.</div>
+<div class="para" id="EXAMPLENonHomDiffeq-9-3">The way we found <span class="process-math">\(A(t)\)</span>   is the technique called “Variation of Parameters” and it works like this. The solution of <a href="SECTIONIntParts.html#EQUATIONPopPerturb1" class="xref" data-knowl="./knowl/xref/EQUATIONPopPerturb1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.54">equation (19.54)</a> contains the parameter <span class="process-math">\(A\)</span> which is a constant. To solve <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> we “vary” the parameter <span class="process-math">\(A\)</span> by pretending that it is a function rather than a constant. Then we proceed to find out what function <span class="process-math">\(A(t)\)</span> has to be.</div></aside><div class="para" id="EXAMPLENonHomDiffeq-10">Having made our guess the only thing to do now is try it in <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> and see if it works.</div>
+<div class="para logical" id="EXAMPLENonHomDiffeq-11">
+<div class="para">That is we suppose that <span class="process-math">\(\bar{y}(t) = A(t)e^{Kt}\)</span> is a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> and try to find out what <span class="process-math">\(A(t)\)</span> must be. From the Product Rule we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html">
 \begin{equation*}
-\dfdx{\left(e^{-Kt}\cdot  y\right)}{t}=0\text{.}
+\dfdx{\bar{y}}{t}=A(t)Ke^{Kt}+\dfdx{A}{t}e^{Kt}\text{.}
 \end{equation*}
 </div>
-<div class="para">From there we can recover the solution of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">(19.56)</a> by integrating</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html" id="EXAMPLENonHomDiffeq-10-7">
+<div class="para">Putting this into our differential equation we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html" id="EXAMPLENonHomDiffeq-11-5">
 \begin{align*}
-\int\dfdx{\left(e^{-Kt}\cdot  y\right)} {t}\dx{t}\amp{}=\int0\dx{t}\\
-e^{-Kt}\cdot  y \amp{}= A\\
-y(t)\amp{}=Ae^{Kt}.
+\underbrace{\textcolor{red}{AKe^{Kt}}+\dfdx{A}{t}e^{Kt}}_{=\dfdx{\bar{y}}{t}}-\underbrace{\textcolor{red}{KA(t)e^{Kt}}}_{=K\bar{y}}\amp{}=\cos(t)\\
+\dfdx{A}{t}e^{Kt}\amp{}=\cos{t}.
 \end{align*}
 </div>
+<div class="para">So apparently          all we have left to do is compute the integral</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html" id="EQUATIONVarParamSimple">
+\begin{equation}
+A(t) = \int e^{Kt}\cos (t)\dx{t}\tag{19.58}
+\end{equation}
 </div>
-<div class="para logical" id="EXAMPLENonHomDiffeq-11">
-<div class="para">If we apply the same technique to      <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> we  get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html">
+<div class="para">to find <span class="process-math">\(A(t)\)</span> and the solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">(19.55)</a> will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html">
 \begin{equation*}
-\int\dfdx{\left(e^{-Kt}\cdot  y\right)}
-{t}\dx{t}=e^{-Kt}\cdot y =\int
-e^{-Kt}\cos(t)\dx{t}\text{.}
+\bar{y}=A(t)e^{Kt}\text{.}
 \end{equation*}
 </div>
-<div class="para">Clearly to solve this problem we will need to be able to compute <span class="process-math">\(\int e^t\cos(t) \dx{t}\text{.}\)</span> Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at slightly simple integrals.</div>
-</div></article><div class="para logical" id="SECTIONIntParts-3">
+</div>
+<div class="para" id="EXAMPLENonHomDiffeq-12">Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at some slightly simpler integrals first.</div></article><div class="para logical" id="SECTIONIntParts-3">
 <div class="para">Consider the integral</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -901,7 +908,7 @@ u=x\sin(x) +\cos (x)
 <div class="displaymath process-math" id="EQUATIONIntPartsForm">
 \begin{equation}
 \int u\dx{v}=\int
-\dx(uv)-\int v\dx{u}\text{.}\tag{19.57}
+\dx(uv)-\int v\dx{u}\text{.}\tag{19.59}
 \end{equation}
 </div>
 <div class="para">Observing that <span class="process-math">\(\int \dx(uv)=uv\text{,}\)</span> yields the Integration by Parts formula (in differential form):</div>
@@ -939,7 +946,7 @@ v=\int\cos(x)\dx{x} = \sin(x).
 <div class="para">and, finally</div>
 <div class="displaymath process-math" id="EQUATIONIntxCosx">
 \begin{equation}
-\int x\cos(x)\dx{x} = x\sin(x) + \cos (x) +C\tag{19.58}
+\int x\cos(x)\dx{x} = x\sin(x) + \cos (x) +C\tag{19.60}
 \end{equation}
 </div>
 </div></article><div class="para logical" id="SECTIONIntParts-11">
@@ -984,7 +991,7 @@ x^2\sin(x)\dx{x}\text{.}
 <div class="para"><em class="alert">Differential Form:</em></div>
 <div class="displaymath process-math" id="EQUATIONIntPartsDiff">
 \begin{equation}
-\int{}u\dx{v} =uv-\int{}v\dx{u}\tag{19.59}
+\int{}u\dx{v} =uv-\int{}v\dx{u}\tag{19.61}
 \end{equation}
 </div>
 <div class="para">.</div>
@@ -995,7 +1002,7 @@ x^2\sin(x)\dx{x}\text{.}
 \begin{equation}
 \int{}f(x)g^\prime(x)\dx{x} =
 f(x)\cdot g(x)-\int
-g(x)f^\prime(x) \dx{x}\tag{19.60}
+g(x)f^\prime(x) \dx{x}\tag{19.62}
 \end{equation}
 </div>
 <div class="para">.</div>
@@ -1112,29 +1119,40 @@ e^x\sin(x)\dx{x}
 \end{equation*}
 </div>
 </div></article><div class="conclusion" id="SECTIONIntParts-21-4"><div class="para" id="SECTIONIntParts-21-4-1">Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .</div></div></article><article class="exercise exercise-like" id="PROBLEMNonHomDiffeq"><h3 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.11</span><span class="period">.</span><span class="space"> </span><span class="title">Population Dynamics: A Non-Separable Differential Equation, Solved.</span>
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.11</span><span class="period">.</span><span class="space"> </span><span class="title">Example 19.3.0.1, Solved.</span>
 </h3>
-<div class="para logical" id="PROBLEMNonHomDiffeq-2">
-<div class="para">We are finally in a position    to return to, and complete the problem in <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq" class="xref" data-knowl="./knowl/xref/EXAMPLENonHomDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.1: Population Dynamics: A Non–Separable Differential Equation">Example 19.3.0.1</a> that we started this section with. Show that the solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">(19.55)</a> is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLENonHomDiffeq.html ./knowl/xref/IVPExpGrowthNonHom.html">
+<div class="introduction" id="PROBLEMNonHomDiffeq-2"><div class="para" id="PROBLEMNonHomDiffeq-2-1">We are finally in a position to complete <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq" class="xref" data-knowl="./knowl/xref/EXAMPLENonHomDiffeq.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 19.3.0.1: Population Dynamics: A Non–Separable Differential Equation">Example 19.3.0.1</a>.</div></div>
+<article class="task exercise-like" id="PROBLEMNonHomDiffeq-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="PROBLEMNonHomDiffeq-3-1-1">
+<div class="para">Integrate the right–hand side of <a href="SECTIONIntParts.html#EQUATIONVarParamSimple" class="xref" data-knowl="./knowl/xref/EQUATIONVarParamSimple.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.58">equation (19.58)</a> to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONVarParamSimple.html">
 \begin{equation*}
-y(t) = \frac{1}{1+K^2}\left(\sin(t)-K\cos(t)\right)    
+A(t) = \frac{1}{1+K^2}\left[\sin(t)-K\cos(t)\right]+C
 \end{equation*}
 </div>
+<div class="para">Where <span class="process-math">\(C\)</span> is an arbitrary constant.</div>
+</div></article><article class="task exercise-like" id="PROBLEMNonHomDiffeq-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="PROBLEMNonHomDiffeq-4-1-1">
+<div class="para">Show that the solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html">
+\begin{equation*}
+\bar{y}=\frac{1}{1+K^2}\left[ \sin(t) -K\cos (t)\right] + Ce^{Kt}
+\end{equation*}
 </div>
-<aside class="aside aside-like" id="PROBLEMNonHomDiffeq-3"><h4 class="heading"><span class="title">Note to self.</span></h4>
-<div class="para" id="PROBLEMNonHomDiffeq-3-2">This problem is not well formed. I’m getting non–sensical results. Look at it again.</div></aside></article><article class="exercise exercise-like" id="SECTIONIntParts-23"><h3 class="heading">
+</div></article><article class="task exercise-like" id="PROBLEMNonHomDiffeq-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="PROBLEMNonHomDiffeq-5-1-1">Use the initial condition <span class="process-math">\(\bar{y}(0)=20\)</span> to determine <span class="process-math">\(C\text{.}\)</span>
+</div></article></article><article class="exercise exercise-like" id="SECTIONIntParts-23"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.12</span><span class="period">.</span>
 </h3>
 <div class="introduction" id="SECTIONIntParts-23-1"><div class="para" id="SECTIONIntParts-23-1-1">Compute each integral. Confirm your result by differentiation.</div></div>
 <article class="task exercise-like" id="SECTIONIntParts-23-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="SECTIONIntParts-23-2-1-1"><span class="process-math">\(\int x\cos(x) \dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="SECTIONIntParts-23-3-1-1"><span class="process-math">\(\int x^2\sin(x)\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="SECTIONIntParts-23-4-1-1"><span class="process-math">\(\int \sqrt{x}\cos( \sqrt{x} )\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
-<div class="para" id="SECTIONIntParts-23-5-1-1"><span class="process-math">\(\int x^{\frac32}\sin( \sqrt{x} )\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
-<div class="para" id="SECTIONIntParts-23-6-1-1"><span class="process-math">\(\int\frac{xe^x}{(2+2x)^2}\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-7"><h4 class="heading"><span class="codenumber">(f)</span></h4>
-<div class="para" id="SECTIONIntParts-23-7-1-1"><span class="process-math">\(\int x^3e^{5x}\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-8"><h4 class="heading"><span class="codenumber">(g)</span></h4>
-<div class="para" id="SECTIONIntParts-23-8-1-1"><span class="process-math">\(\int (\ln(x))^2 \dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-9"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<div class="para" id="SECTIONIntParts-23-2-1-1"><span class="process-math">\(\displaystyle\int x\cos(x) \dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SECTIONIntParts-23-3-1-1"><span class="process-math">\(\displaystyle\int x^2\sin(x)\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SECTIONIntParts-23-4-1-1"><span class="process-math">\(\displaystyle\int \sqrt{x}\cos( \sqrt{x} )\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="SECTIONIntParts-23-5-1-1"><span class="process-math">\(\displaystyle\int x^{\frac32}\sin( \sqrt{x} )\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="SECTIONIntParts-23-6-1-1"><span class="process-math">\(\displaystyle\int\frac{xe^x}{(2+2x)^2}\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-7"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<div class="para" id="SECTIONIntParts-23-7-1-1"><span class="process-math">\(\displaystyle\int x^3e^{5x}\dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-8"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<div class="para" id="SECTIONIntParts-23-8-1-1"><span class="process-math">\(\displaystyle\int (\ln(x))^2 \dx{x}\)</span></div></article><article class="task exercise-like" id="SECTIONIntParts-23-9"><h4 class="heading"><span class="codenumber">(h)</span></h4>
 <div class="para" id="SECTIONIntParts-23-9-1-1"><span class="process-math">\(\int (\ln(x))^3 \dx{x}\)</span></div></article></article><article class="exercise exercise-like" id="SECTIONIntParts-24"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">19.3.0.13</span><span class="period">.</span>
 </h3>
@@ -1175,7 +1193,7 @@ y(t) = \frac{1}{1+K^2}\left(\sin(t)-K\cos(t)\right)
 \begin{equation}
 \int \sin^n (x)\dx{x} =
 -\frac1n \cos(x) \sin^{n-1} (x)+ \frac{n-1}{n}\int \sin^{n-2}(x)
-\dx{x}\text{.}\tag{19.61}
+\dx{x}\text{.}\tag{19.63}
 \end{equation}
 </div>
 </div></article></article><article class="exercise exercise-like" id="PROBLEMIntProdProdInt"><h3 class="heading">
@@ -1193,12 +1211,12 @@ g^\prime(x)
 <div class="para">then</div>
 <div class="displaymath process-math" id="EQUATIONProdDerivs">
 \begin{equation}
-g(x)=\exp\left({\int{\frac{1}{1-\frac{f(x)}{f^\prime(x)}}}\dx{x}{}}\right)\tag{19.62}
+g(x)=\exp\left({\int{\frac{1}{1-\frac{f(x)}{f^\prime(x)}}}\dx{x}{}}\right)\tag{19.64}
 \end{equation}
 </div>
-</div> <div class="para" id="PROBLEMIntProdProdInt-2-1-2">(Don’t let this <a href="SECTIONIntParts.html#EQUATIONProdDerivs" class="xref" data-knowl="./knowl/xref/EQUATIONProdDerivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.62">formula (19.62)</a> frighten you. Recall that <span class="process-math">\(\exp(x)=e^x\text{.}\)</span>)</div></article><article class="task exercise-like" id="PROBLEMIntProdProdInt-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+</div> <div class="para" id="PROBLEMIntProdProdInt-2-1-2">(Don’t let this <a href="SECTIONIntParts.html#EQUATIONProdDerivs" class="xref" data-knowl="./knowl/xref/EQUATIONProdDerivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.64">formula (19.64)</a> frighten you. Recall that <span class="process-math">\(\exp(x)=e^x\text{.}\)</span>)</div></article><article class="task exercise-like" id="PROBLEMIntProdProdInt-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para logical" id="PROBLEMIntProdProdInt-3-1-1">
-<div class="para">Apply <a href="SECTIONIntParts.html#EQUATIONProdDerivs" class="xref" data-knowl="./knowl/xref/EQUATIONProdDerivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.62">equation (19.62)</a> to the function <span class="process-math">\(f(x)=x^n\)</span> and compare this to the results in Problem # 60 above.</div>
+<div class="para">Apply <a href="SECTIONIntParts.html#EQUATIONProdDerivs" class="xref" data-knowl="./knowl/xref/EQUATIONProdDerivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.64">equation (19.64)</a> to the function <span class="process-math">\(f(x)=x^n\)</span> and compare this to the results in Problem # 60 above.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONProdDerivs.html">
 \begin{equation*}
 \int{}u\dx{v}{}=\int{}
@@ -1210,7 +1228,7 @@ v\dx{u}{=uv-\int v\dx{u} }.
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONProdDerivs.html" id="EQUATIONIntegrationByParts">
 \begin{equation}
 \int{}u\dx{v}{}=uv-\int
-v\dx{u}\text{.}\tag{19.63}
+v\dx{u}\text{.}\tag{19.65}
 \end{equation}
 </div>
 </div></article></article></section></div>

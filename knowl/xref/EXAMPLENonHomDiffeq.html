@@ -23,7 +23,7 @@
 \end{equation}
 </div>
 </div>
-<div class="para">Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer.        The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we’ll suppose that the “speeding up and slowing down” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
+<div class="para">Biological processes tend to slow when the ambient temperature is cooler and to speed up when it is warmer.  The exponential growth model does not allow for this reality. It assumes, implicitly, that the rate of population growth is constant. Suppose for example, that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. For simplicity of demonstration we’ll suppose that the “speeding up and slowing down” takes the form of a cosine wave, <span class="process-math">\(\cos(t) \text{.}\)</span>
 </div>
 <div class="para logical">
 <div class="para">This means that the rate of change of our algae population will be <span class="process-math">\(\dfdx{y}{t}=Ky+\cos (t)\)</span> because the rate of growth of our population is still proportional to the size of the population. To be consistent with <a href="SECTIONIntParts.html#EQUATIONPopPerturb1" class="xref" data-knowl="./knowl/xref/EQUATIONPopPerturb1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.54">equation (19.54)</a> we’ll re–write this as</div>
@@ -34,7 +34,7 @@
 </div>
 </div>
 <div class="para logical">
-<div class="para">To complete our model we’ll measure the quantity of algae in kilograms and  assume that initally there are <span class="process-math">\(20\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
+<div class="para">To complete our model we’ll measure the quantity of algae in kilograms and assume that initally there are <span class="process-math">\(20\)</span> algae in the pond. Thus to find the population as a function of time we need to solve the IVP</div>
 <div class="displaymath process-math">
 \begin{align}
 \dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=20.\tag{19.55}
@@ -42,58 +42,65 @@
 </div>
 </div>
 <div class="para logical">
-<div class="para">This is not a separable equation but it is very similar to</div>
-<div class="displaymath process-math">
+<div class="para">The differential equation part of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> is not separable but it is very similar to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynHomSol.html ./knowl/xref/IVPExpGrowthNonHom.html">
 \begin{equation}
-\dfdx{y}{t}-Ky=0 \text{,}\tag{19.56}
+\dfdx{y}{t}-Ky=0 \tag{19.56}
 \end{equation}
 </div>
-<div class="para">whose solution <span class="process-math">\(y(t)=Ae^{Kt}\)</span> is known.  Since the equations are the similar it seems reasonable to suppose that their solutions will also be similar.</div>
+<div class="para">whose solution</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynHomSol.html ./knowl/xref/IVPExpGrowthNonHom.html">
+\begin{equation}
+y(t)=Ae^{Kt}\tag{19.57}
+\end{equation}
 </div>
-<div class="para">The difficulty of course, is that it is not at all obvious how we might tweak <span class="process-math">\(y(t)=Ae^{Kt}\)</span> so to obtain a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a>
-</div>
-<div class="para logical">
-<div class="para">This is why we re–wrote our differential equations the way we did. On the left side of both we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMProdRule.html">
-\begin{equation*}
-\dfdx{y}{t}-Ky\text{.}
-\end{equation*}
-</div>
-<div class="para">If you look closely at that expression you can  almost see the result of a <a href="SECTIONsome-rules-diff.html#THEOREMProdRule" class="xref" data-knowl="./knowl/xref/THEOREMProdRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Rule 4.3.4.1: The Product Rule">Product Rule</a>. In fact if we multiply by <span class="process-math">\(e^{-Kt}\)</span> we will have exactly the Product Rule. Try it and see.</div>
+<div class="para">is known.  Since the equations are similar it seems reasonable to suppose that their solutions will also be similar so the question is, “How do we tweak <a href="SECTIONIntParts.html#EQUATIONPopDynHomSol" class="xref" data-knowl="./knowl/xref/EQUATIONPopDynHomSol.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.57">solution (19.57)</a>) so as to obtain a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a>?”</div>
 </div>
 <div class="para logical">
-<div class="para">Of course we can’t just multiply one side of an equation by something just because we like the outcome, so we’ll multiply both sides of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">equation (19.56)</a> instead, giving</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+<div class="para">Observe that <span class="process-math">\(y(t)=Ae^{-Kt}\)</span> is the product of the constant <span class="process-math">\(A\)</span> and the function <span class="process-math">\(e^{-Kt}\text{,}\)</span> One possible tweak is to suppose that the solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> is also a product. But since this is a slightly more complex problem than <a href="SECTIONInDefInt.html#EXAMPLEPopDynRedux-2-2" class="xref" data-knowl="./knowl/xref/EQUATIONPopDynRedux.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 21.16">equation (21.16)</a> we need a slightly more complex product. So let’s guess that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynRedux.html">
 \begin{equation*}
-\underbrace{e^{-Kt}\dfdx{y}{t}-e^{-Kt}Ky}_{=\dfdx{\left(e^{-Kt}\cdot
-y\right)}{t}}=0\cdot e^{-Kt}
+\bar{y}(t)=A(t)e^{-Kt}
 \end{equation*}
 </div>
-<div class="para">or</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/EQUATIONPopDynRedux.html">
 \begin{equation*}
-\dfdx{\left(e^{-Kt}\cdot  y\right)}{t}=0\text{.}
+A(t)
 \end{equation*}
 </div>
-<div class="para">From there we can recover the solution of <a href="SECTIONIntParts.html#EQUATIONExpGrowthHom" class="xref" data-knowl="./knowl/xref/EQUATIONExpGrowthHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.56">(19.56)</a> by integrating</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONExpGrowthHom.html ./knowl/xref/EQUATIONExpGrowthHom.html">
+<div class="para">is a differentiable function rather than a constant.</div>
+</div>
+<aside class="aside aside-like"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para">We have called this a guess because ultimately, that’s all it really is. As such it is simply a trick. But we have also said that a “technique” is a “trick” that is used more than once.</div>
+<div class="para">The way we found <span class="process-math">\(A(t)\)</span>   is the technique called “Variation of Parameters” and it works like this. The solution of <a href="SECTIONIntParts.html#EQUATIONPopPerturb1" class="xref" data-knowl="./knowl/xref/EQUATIONPopPerturb1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.54">equation (19.54)</a> contains the parameter <span class="process-math">\(A\)</span> which is a constant. To solve <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> we “vary” the parameter <span class="process-math">\(A\)</span> by pretending that it is a function rather than a constant. Then we proceed to find out what function <span class="process-math">\(A(t)\)</span> has to be.</div></aside><div class="para">Having made our guess the only thing to do now is try it in <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> and see if it works.</div>
+<div class="para logical">
+<div class="para">That is we suppose that <span class="process-math">\(\bar{y}(t) = A(t)e^{Kt}\)</span> is a solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> and try to find out what <span class="process-math">\(A(t)\)</span> must be. From the Product Rule we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html">
+\begin{equation*}
+\dfdx{\bar{y}}{t}=A(t)Ke^{Kt}+\dfdx{A}{t}e^{Kt}\text{.}
+\end{equation*}
+</div>
+<div class="para">Putting this into our differential equation we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html">
 \begin{align*}
-\int\dfdx{\left(e^{-Kt}\cdot  y\right)} {t}\dx{t}\amp{}=\int0\dx{t}\\
-e^{-Kt}\cdot  y \amp{}= A\\
-y(t)\amp{}=Ae^{Kt}.
+\underbrace{\textcolor{red}{AKe^{Kt}}+\dfdx{A}{t}e^{Kt}}_{=\dfdx{\bar{y}}{t}}-\underbrace{\textcolor{red}{KA(t)e^{Kt}}}_{=K\bar{y}}\amp{}=\cos(t)\\
+\dfdx{A}{t}e^{Kt}\amp{}=\cos{t}.
 \end{align*}
 </div>
+<div class="para">So apparently          all we have left to do is compute the integral</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html">
+\begin{equation}
+A(t) = \int e^{Kt}\cos (t)\dx{t}\tag{19.58}
+\end{equation}
 </div>
-<div class="para logical">
-<div class="para">If we apply the same technique to      <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">IVP (19.55)</a> we  get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html">
+<div class="para">to find <span class="process-math">\(A(t)\)</span> and the solution of <a href="SECTIONIntParts.html#EXAMPLENonHomDiffeq-6-3" class="xref" data-knowl="./knowl/xref/IVPExpGrowthNonHom.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 19.55">(19.55)</a> will be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/IVPExpGrowthNonHom.html ./knowl/xref/IVPExpGrowthNonHom.html">
 \begin{equation*}
-\int\dfdx{\left(e^{-Kt}\cdot  y\right)}
-{t}\dx{t}=e^{-Kt}\cdot y =\int
-e^{-Kt}\cos(t)\dx{t}\text{.}
+\bar{y}=A(t)e^{Kt}\text{.}
 \end{equation*}
 </div>
-<div class="para">Clearly to solve this problem we will need to be able to compute <span class="process-math">\(\int e^t\cos(t) \dx{t}\text{.}\)</span> Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at slightly simple integrals.</div>
-</div></article><span class="incontext"><a class="internal" href="SECTIONIntParts.html#EXAMPLENonHomDiffeq">in-context</a></span>
+</div>
+<div class="para">Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at some slightly simpler integrals first.</div></article><span class="incontext"><a class="internal" href="SECTIONIntParts.html#EXAMPLENonHomDiffeq">in-context</a></span>
 </body>
 </html>
