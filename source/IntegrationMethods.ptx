@@ -6659,175 +6659,176 @@
       <p>
         Recall that in <xref ref="EXAMPLEExpGrowthSepDiffeq"></xref>
         we solved the differential equation <m>\dfdx{y}{t}=Ky </m> by
-        separating the variables and integrating. This is the equation
-        we used to model the exponential growth of an algal bloom
-        which we first saw in <xref
+        separating the variables and then integrating. This is the
+        equation we used to model the exponential growth of an algal
+        bloom which we first saw in <xref
         ref="SECTIONExponentialGrowth"></xref>.
-      </p>
-      <p>
         For reasons that will become clear shortly we re<ndash/>write
         will this equation as <men
-        xml:id="EQUATIONPopPerturb1">\dfdx{y}{t}-Ky =0</men>.
-      </p>
+          xml:id="EQUATIONPopPerturb1">\dfdx{y}{t}-Ky =0</men>.
+        </p>
 
-      <p>
-        Biological processes tend to slow when the ambient temperature
-        is cooler and to speed up when it is warmer.  The exponential
-        growth model does not allow for this reality. It assumes,
-        implicitly, that the rate of population growth is constant.
-        Suppose for example, that we have a population of algae
-        growing in a pond. At night when the temperature is cooler the
-        rate of growth will slow and during the daytime it will speed
-        up. For simplicity of demonstration we<rsq/>ll suppose that
-        the <q>speeding up and slowing down</q> takes the form of a
-        cosine wave, <m>\cos(t) </m>.
-      </p>
-      <p>
-        This means that the rate of change of our algae population
-        will be <m>\dfdx{y}{t}=Ky+\cos (t)</m> because the rate of
-        growth of our population is still proportional to the size of
-        the population. To be consistent with <xref
-        ref="EQUATIONPopPerturb1">equation</xref> we<rsq/>ll
-        re<ndash/>write this as <me>\dfdx{y}{t}-Ky=\cos (t)</me>.
-      </p>
-      <p>
-        To complete our model we<rsq/>ll measure the quantity of algae
-        in kilograms and assume that initally there are <m>20</m>
-        algae in the pond. Thus to find the population as a function
-        of time we need to solve the IVP
-        <mdn>
-          <mrow xml:id="IVPExpGrowthNonHom">\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=20.</mrow>
-        </mdn>
-      </p>
-      <p>
-        The differential equation part of <xref
-        ref="IVPExpGrowthNonHom">IVP</xref> is not separable but it is
-        very similar to <men
-        xml:id="EQUATIONExpGrowthHom">\dfdx{y}{t}-Ky=0 </men> whose
-        solution <men xml:id="EQUATIONPopDynHomSol">y(t)=Ae^{Kt}</men>
-        is known.  Since the equations are similar it seems reasonable
-        to suppose that their solutions will also be similar so the
-        question is, <q>How do we tweak <xref
-        ref="EQUATIONPopDynHomSol">solution</xref>) so as to obtain a
-        solution of <xref ref="IVPExpGrowthNonHom">IVP</xref>?</q>
-      </p>
-      <p>
-        Observe that <m>y(t)=Ae^{-Kt}</m> is the product of the
-        constant <m>A</m> and the function <m>e^{-Kt}</m>, One
-        possible tweak is to suppose that the solution of <xref
-        ref="IVPExpGrowthNonHom">IVP</xref> is also a product. But
-        since this is a slightly more complex problem than <xref
-        ref="EQUATIONPopDynRedux">equation</xref> we need a slightly
-        more complex product. So let<rsq/>s guess that 
-        <me>\bar{y}(t)=A(t)e^{-Kt}</me>
-        where <me>A(t)</me> is a differentiable function rather than
-        a constant.
-      </p>
-      <aside>
-        <title>Comment</title>
         <p>
-          We have called this a guess because ultimately, that<rsq/>s
-          all it really is. As such it is simply a trick. But we have
-          also said that a <q>technique</q> is a <q>trick</q> that is
-          used more than once.
+          <xref ref="EQUATIONPopPerturb1">Equation</xref> assumes that
+          the relative growth rate, <m>K</m> in this case, is
+          constant. But that is almost never true.  All biological
+          processes including reproduction tend to slow down when the
+          ambient temperature is cooler and to speed up when it is
+          warmer. 
         </p>
         <p>
-          The way we found <m>A(t)</m>   is the 
-          technique called <q>Variation of Parameters</q> and it works
-          like this. The
-          solution of <xref ref="EQUATIONPopPerturb1">equation</xref> contains
-          the parameter <m>A</m> which is a constant. To solve <xref
-          ref="IVPExpGrowthNonHom">IVP</xref> we <q>vary</q> the
-          parameter <m>A</m> by pretending that it is a function
-          rather than a constant. Then we proceed to find out what
-          function <m>A(t)</m> has to be.
+          Suppose for example, that we have a population of algae
+          growing in a pond. At night when the temperature is cooler
+          the rate of growth will slow and during the daytime it will
+          speed up. For simplicity of demonstration we<rsq/>ll suppose
+          that the <q>speeding up and slowing down</q> takes the form
+          of a cosine wave, <m>\cos(t) </m>.  This means that the rate
+          of change of our algae population will be
+          <m>\dfdx{y}{t}=Ky+\cos (t)</m> because the rate of growth of
+          our population is still proportional to the size of the
+          population. To be consistent with <xref
+          ref="EQUATIONPopPerturb1">equation</xref> we<rsq/>ll
+          re<ndash/>write this as <me>\dfdx{y}{t}-Ky=\cos (t)</me>.
         </p>
-      </aside>
+          <p>
+            To complete our model we<rsq/>ll assume that initally
+            there are <m>20</m> kilograms of algae in the pond. Thus
+            to find the population as a function of time we need to
+            solve the IVP
+            <mdn>
+              <mrow xml:id="IVPExpGrowthNonHom">\dfdx{y}{t} - Ky \amp{}=\cos(t),\amp{} y(0)=20.</mrow>
+            </mdn>
+          </p>
+          <p>
+            The differential equation part of <xref
+            ref="IVPExpGrowthNonHom">IVP</xref> is not separable but it is
+            very similar to <men
+            xml:id="EQUATIONExpGrowthHom">\dfdx{y}{t}-Ky=0 </men> whose
+            solution <men xml:id="EQUATIONPopDynHomSol">y(t)=Ae^{Kt}</men>
+            is known.  Since the equations are similar it seems reasonable
+            to suppose that their solutions will also be similar so the
+            question is, <q>How do we tweak <xref
+            ref="EQUATIONPopDynHomSol">solution</xref>) so as to obtain a
+            solution of <xref ref="IVPExpGrowthNonHom">IVP</xref>?</q>
+          </p>
+          <p>
+            Observe that <m>y(t)=Ae^{Kt}</m> is the product of the
+            constant <m>A</m> and the function <m>e^{Kt}</m>, One
+            possible tweak is to suppose that the solution of <xref
+            ref="IVPExpGrowthNonHom">IVP</xref> is also a product. But
+            since this is a slightly more complex problem than <xref
+            ref="EQUATIONPopDynRedux">equation</xref> we need a slightly
+            more complex product. So let<rsq/>s guess that 
+            <me>\bar{y}(t)=A(t)\cdot e^{Kt}</me>
+            where <m>A(t)</m> is a differentiable function rather than
+            a constant.
+          </p>
+          <aside>
+            <title>Comment</title>
+            <p>
+              We have called this a guess because ultimately, that<rsq/>s
+              all it really is. As such it is simply a trick. But we have
+              also said that a <q>technique</q> is a <q>trick</q> that is
+              used more than once.
+            </p>
+            <p>
+              The way we found <m>A(t)</m>   is the 
+              technique called <q>Variation of Parameters</q> and it works
+              like this. The
+              solution of <xref ref="EQUATIONPopPerturb1">equation</xref> contains
+              the parameter <m>A</m> which is a constant. To solve <xref
+              ref="IVPExpGrowthNonHom">IVP</xref> we <q>vary</q> the
+              parameter <m>A</m> by pretending that it is a function
+              rather than a constant. Then we proceed to find out what
+              function <m>A(t)</m> has to be.
+            </p>
+          </aside>
 
-      <p>
-        Having made our guess the only thing to do now is try it in
-        <xref ref="IVPExpGrowthNonHom">IVP</xref> and see if it
-        works.
-      </p>
+          <p>
+            Having made our guess the only thing to do now is try it in
+            <xref ref="IVPExpGrowthNonHom">IVP</xref> and see if it
+            works.
+          </p>
 
-      <p>
-        That is we suppose that <m>\bar{y}(t) = A(t)e^{Kt}</m>
-        is a solution of <xref ref="IVPExpGrowthNonHom">IVP</xref> and
-        try to find out what <m>A(t)</m> must be. From the Product
-        Rule we see that
-        <me>\dfdx{\bar{y}}{t}=A(t)Ke^{Kt}+\dfdx{A}{t}e^{Kt}</me>. Putting
-        this into our differential equation we have 
-        <md>
-          <mrow>\underbrace{\textcolor{red}{AKe^{Kt}}+\dfdx{A}{t}e^{Kt}}_{=\dfdx{\bar{y}}{t}}-\underbrace{\textcolor{red}{KA(t)e^{Kt}}}_{=K\bar{y}}\amp{}=\cos(t)</mrow>
-          <mrow>
-            \dfdx{A}{t}e^{Kt}\amp{}=\cos{t}.
-          </mrow>
-        </md>
-        So apparently          all we have left to do is compute the integral
-        <men  xml:id="EQUATIONVarParamSimple">A(t) = \int e^{Kt}\cos (t)\dx{t}</men> to find <m>A(t)</m>
-        and the solution of <xref ref="IVPExpGrowthNonHom"></xref>
-        will be 
-        <me>\bar{y}=A(t)e^{Kt}</me>.
+          <p>
+            That is we suppose that <m>\bar{y}(t) = A(t)\cdot e^{Kt}</m>
+            is a solution of <xref ref="IVPExpGrowthNonHom">IVP</xref> and
+            try to find out what <m>A(t)</m> must be. From the Product
+            Rule we see that
+            <me>\dfdx{\bar{y}}{t}=A(t)Ke^{Kt}+\dfdx{A}{t}e^{Kt}</me>. Putting
+            this into our differential equation in <xref
+            ref="IVPExpGrowthNonHom">IVP</xref> we have 
+            <md>
+              <mrow>\underbrace{\textcolor{red}{AKe^{Kt}}+\dfdx{A}{t}e^{Kt}}_{=\dfdx{\bar{y}}{t}}-\underbrace{\textcolor{red}{KA(t)e^{Kt}}}_{=K\bar{y}}\amp{}=\cos(t)</mrow>
+              <mrow>
+                \dfdx{A}{t}e^{Kt}\amp{}=\cos{t}.
+              </mrow>
+            </md>
+            So apparently          all we have left to do is compute the integral
+            <men  xml:id="EQUATIONVarParamSimple">A(t) = \int e^{Kt}\cos (t)\dx{t}</men> to find <m>A(t)</m>
+            and the solution of <xref ref="IVPExpGrowthNonHom"></xref>
+            will be 
+            <me>\bar{y}=A(t)e^{Kt}</me>.
 
-      </p>
+          </p>
 
 
-      <p>
-        Unfortunately this is
-        well beyond our ability at the moment so we will back up a
-        bit and look at some slightly simpler integrals first.
-      </p>
+          <p>
+            Unfortunately this is
+            well beyond our ability at the moment so we will back up a
+            bit and look at some slightly simpler integrals first.
+          </p>
 
-      <!--   This is why we re<ndash/>wrote our differential equations the way we -->
-      <!--   did. On the left side of both we have  -->
-      <!--   <me>\dfdx{y}{t}-Ky</me>. If you look closely at that expression you -->
-      <!--   can  almost see -->
-      <!--   the result of a <xref ref="THEOREMProdRule" text="custom">Product -->
-      <!--   Rule</xref> which suggests that that our solution -->
-      <!--   <mdash/>let<rsq/>s call it <m>\bar{y}(t)</m> <mdash/> is -->
-      <!--   probably a product of two functions. -->
-      <!-- </p> -->
-      <!-- <p> -->
-      <!--   Look at <xref ref="EQUATIONPopDynHomSol">equation </xref> -->
-      <!--   again.  -->
-      <!-- </p> -->
+          <!--   This is why we re<ndash/>wrote our differential equations the way we -->
+          <!--   did. On the left side of both we have  -->
+          <!--   <me>\dfdx{y}{t}-Ky</me>. If you look closely at that expression you -->
+          <!--   can  almost see -->
+          <!--   the result of a <xref ref="THEOREMProdRule" text="custom">Product -->
+          <!--   Rule</xref> which suggests that that our solution -->
+          <!--   <mdash/>let<rsq/>s call it <m>\bar{y}(t)</m> <mdash/> is -->
+          <!--   probably a product of two functions. -->
+          <!-- </p> -->
+          <!-- <p> -->
+          <!--   Look at <xref ref="EQUATIONPopDynHomSol">equation </xref> -->
+          <!--   again.  -->
+          <!-- </p> -->
 
-      <!-- <p> -->
-      <!--   Of course we can<rsq/>t just multiply one side of an equation by -->
-      <!--   something just because we like the outcome, so we<rsq/>ll multiply -->
-      <!--   both sides of <xref ref="EQUATIONExpGrowthHom">equation</xref> -->
-      <!--   instead, giving -->
-      <!--   <me>\underbrace{e^{-Kt}\dfdx{y}{t}-e^{-Kt}Ky}_{=\dfdx{\left(e^{-Kt}\cdot -->
-      <!--   y\right)}{t}}=0\cdot e^{-Kt}</me> -->
-      <!--   or -->
-      <!--   <me>\dfdx{\left(e^{-Kt}\cdot  y\right)}{t}=0</me>. -->
-      <!--   From there we can recover the solution of <xref -->
-      <!--   ref="EQUATIONExpGrowthHom"></xref> by integrating -->
-      <!--   <md> -->
-      <!--     <mrow>\int\dfdx{\left(e^{-Kt}\cdot  y\right)} {t}\dx{t}\amp{}=\int0\dx{t}</mrow> -->
-      <!--     <mrow> -->
-      <!--       e^{-Kt}\cdot  y \amp{}= A -->
-      <!--     </mrow> -->
-      <!--     <mrow> -->
-      <!--       y(t)\amp{}=Ae^{Kt}. -->
-      <!--     </mrow> -->
-      <!--   </md>  -->
-      <!-- </p> -->
-      <!-- <p> -->
-      <!--   If we apply the same technique to      <xref -->
-      <!--   ref="IVPExpGrowthNonHom">IVP</xref> we  get -->
-      <!--   <me> -->
-      <!--     \int\dfdx{\left(e^{-Kt}\cdot  y\right)} -->
-      <!--     {t}\dx{t}=e^{-Kt}\cdot y =\int -->
-      <!--     e^{-Kt}\cos(t)\dx{t} -->
-      <!--     </me>. -->
-      <!--     Clearly to solve this problem we will need to be able to -->
-      <!--     compute <m>\int e^t\cos(t) \dx{t}</m>.  -->
+          <!-- <p> -->
+          <!--   Of course we can<rsq/>t just multiply one side of an equation by -->
+          <!--   something just because we like the outcome, so we<rsq/>ll multiply -->
+          <!--   both sides of <xref ref="EQUATIONExpGrowthHom">equation</xref> -->
+          <!--   instead, giving -->
+          <!--   <me>\underbrace{e^{-Kt}\dfdx{y}{t}-e^{-Kt}Ky}_{=\dfdx{\left(e^{-Kt}\cdot -->
+          <!--   y\right)}{t}}=0\cdot e^{-Kt}</me> -->
+          <!--   or -->
+          <!--   <me>\dfdx{\left(e^{-Kt}\cdot  y\right)}{t}=0</me>. -->
+          <!--   From there we can recover the solution of <xref -->
+          <!--   ref="EQUATIONExpGrowthHom"></xref> by integrating -->
+          <!--   <md> -->
+          <!--     <mrow>\int\dfdx{\left(e^{-Kt}\cdot  y\right)} {t}\dx{t}\amp{}=\int0\dx{t}</mrow> -->
+          <!--     <mrow> -->
+          <!--       e^{-Kt}\cdot  y \amp{}= A -->
+          <!--     </mrow> -->
+          <!--     <mrow> -->
+          <!--       y(t)\amp{}=Ae^{Kt}. -->
+          <!--     </mrow> -->
+          <!--   </md>  -->
+          <!-- </p> -->
+          <!-- <p> -->
+          <!--   If we apply the same technique to      <xref -->
+          <!--   ref="IVPExpGrowthNonHom">IVP</xref> we  get -->
+          <!--   <me> -->
+          <!--     \int\dfdx{\left(e^{-Kt}\cdot  y\right)} -->
+          <!--     {t}\dx{t}=e^{-Kt}\cdot y =\int -->
+          <!--     e^{-Kt}\cos(t)\dx{t} -->
+          <!--     </me>. -->
+          <!--     Clearly to solve this problem we will need to be able to -->
+          <!--     compute <m>\int e^t\cos(t) \dx{t}</m>.  -->
 
     </example>
 
     <p>
-      Consider the integral <me> \int x\cos(x)\dx{x}{}.  </me>
+      Consider the integral <men xml:id="EQUATIONPartsXCos"> \int x\cos(x)\dx{x} </men>.
       Try as you might you will find that no substitution you can find
       will work here. Nor will the Partial Fraction Decomposition  help.
     </p>
@@ -6844,39 +6845,54 @@
         it? How do you think we found this one?
       </p>
     </aside>
-    <p>
-      In the beginning a common error is to assume that that we need only integrate the two factors separately. If we do that here we<rsq/>ll get 
-      <me>\frac{x^2}{2}\sin(x) +C</me>.
-      This is not correct as we can easily verify by differentiation.
-      Moreover, we know that the differential of a product is not the product of the
-      differentials, so on second thought that may seem like it was a
-      silly idea. It was not. It is the most natural assumption we can
-      make. But it is an assumption, not knowledge, and when it is
-      examined closely it comes up short as we have just seen.
-    </p>
-    <p>
-      So we need a new idea. 
-    </p>
+    <paragraphs>
+      <title>DIGRESSION: How Not  to Integrate a Product</title>
+      <p>
+        In the beginning a common error is to assume that that we need
+        only integrate the two factors separately. If we do that with <xref ref="EQUATIONPartsXCos">formula</xref> 
+        we<rsq/>ll get <me>\frac{x^2}{2}\sin(x) +C</me>.  This is not
+        correct as we can easily verify by differentiation.  Moreover,
+        we know that the differential of a product is not the product
+        of the differentials, so on second thought that may seem like
+        it was a silly idea. It was not. It is the most natural
+        assumption we can make. But it is an assumption, not
+        knowledge, and when it is examined closely it comes up short
+        as we have just seen.
+      </p>
+      <p>
+        So we need a new idea. 
+      </p>
+      <p><alert>END OF DIGRESSION</alert></p>
+    </paragraphs>
+
     <p>
       In <xref ref="TABLEBasicIntegration"></xref>
       we listed the integration rules corresponding to the <xref
-      ref="THEOREMConstRule">Constant Rule</xref> (#1), the <xref
-      ref="THEOREMSumRule">Sum Rule</xref> (#2), the <xref
-      ref="THEOREMConstMultRule">Constant Multiple Rule</xref> (#3),
-      and <xref ref="THEOREMGenPowRule">Power Rule</xref> (#4), but
-      not the <xref ref="THEOREMQuotientRule">Quotient Rule</xref> or
-      the <xref ref="THEOREMProdRule">Product Rule</xref>?
+      ref="THEOREMConstRule" text="custom">Constant Rule</xref> (#1), the <xref
+      ref="THEOREMSumRule" text="custom">Sum Rule</xref> (#2), the <xref
+      ref="THEOREMConstMultRule" text="custom">Constant Multiple Rule</xref> (#3),
+      and <xref ref="THEOREMGenPowRule" text="custom">Power Rule</xref> (#4), but
+      not 
+      the <xref ref="THEOREMProdRule" text="custom">Product Rule</xref>?
     </p>
+    <aside>
+      <title>Comment</title>
+      <p>
+        We didn<rsq/>t give an integration rule corresponding to the
+        <xref ref="THEOREMQuotientRule" text="custom">Quotient Rule</xref>
+        either. But we don<rsq/>t need that one since the Quotient
+        Rule can be thought of as a rearrangement of the Product Rule.
+      </p>
+    </aside>
+
     <p>
-      It is time to fill in that blank. We will try to <q>run the
+      It is time to fill in that blank so we will try to <q>run the
       Power Rule backward,</q> if we can.
-      <idx><h>Vocabulary</h><h>Integration by Parts</h></idx>
-      Recall that in differential form   Product Rule formula is
-      <me>\dx(uv)=v\dx{u}+u\dx{v}</me>.
-      To run this backwards we integrate both sides giving 
-      <me>\int \dx(uv)=\int v\dx{u}+\int u\dx{v}</me>, 
-      which is
-      equivalent to 
+      <idx><h>Vocabulary</h><h>Integration by Parts</h></idx> In
+      differential form Product Rule formula is
+      <me>\dx(uv)=v\dx{u}+u\dx{v}</me>.  To run this backwards we
+      integrate both sides giving <me>\int \dx(uv)=\int v\dx{u}+\int
+      u\dx{v}</me>, which is equivalent to
 
       <men xml:id="EQUATIONIntPartsForm">\int u\dx{v}=\int
       \dx(uv)-\int v\dx{u}
@@ -6983,11 +6999,12 @@
 
         <li>
           <title>In Choosing <m>u</m> and <m>\dx{v}</m> We Used Up  the Entire
-          Integrand.</title>
+          Integrand and the Differential.</title>
           <p>
             That is, in <xref ref="EXAMPLEIntxcosx"></xref> the
-            expression <m>u\dx{v}</m> is exactly equal to the the
-            integrand, <m>x\cos(x)\dx{x}</m>. Nothing was left out.
+            expression <m>u\dx{v}</m> is exactly equal to 
+            <m>x\cos(x)\dx{x}</m>. Nothing was left out except the
+            integral sign, <m>\int{}</m>.
           </p>
           <p>
             As a practical matter this means that once you have
@@ -7007,8 +7024,15 @@
           Integral.</title>
           <p>
             Rather, it replaces that integral with another,
-            hopefully one that is easier to compute.  In <xref
-            ref="EXAMPLEIntxcosx"></xref>, for instance, we could
+            hopefully one that is easier to compute.
+            (This is actually true of all of the integration
+            techniques. They do not compute the integral, they
+            just seek to replace it with an integral that we
+            already know.)
+          </p>
+          <p>
+            In <xref
+          ref="EXAMPLEIntxcosx"></xref>, for instance, we could
             have let <m>u=\cos(x){}</m> and
             <m>\dx{u}=x\dx{x}</m>. This would give
             <m>v=x^2/2</m>. Substituting these into <m>\int x\cos(x)
@@ -7032,12 +7056,7 @@
             another choice of <m>u</m> and <m>\dx{v}</m>, or even
             a different integration technique might work better.
           </p>
-          <p>
-            This is actually true of all of the integration
-            techniques. They do not compute the integral, they
-            just seek to replace it with an integral that we
-            already know.
-          </p>
+
 
 
         </li>
@@ -7053,7 +7072,7 @@
     </problem>
 
     <p>
-      <xref ref="THEOREMIntegrationByParts"></xref> is the formal
+      The following  <xref ref="THEOREMIntegrationByParts" text="custom">theorem</xref> is the formal
       statement of Integration by Parts, in both differential and
       functional (modern) form.
     </p>
@@ -7085,27 +7104,27 @@
         </ul>
       </p>
     </theorem>
+
+    <p>
+      Finding a choice for <m>u</m> and <m>\dx{v} </m> that will work
+      is mostly a matter of using your intuition. But unfortunately,
+      at first you have no such intuition. There is nothing to be done
+      but take a stab at it. Make a choice and then do the
+      computations that follow from it. At first your choices
+      won<rsq/>t work and this can be frustrating. But learn from your
+      efforts. Try again. And keep trying. With practice intuition
+      will develop. In time you might even find that you enjoy the
+      process. Really. Many students do.
+    </p>
+
+    <p>
+      In any case, practice is necessary. Lots of practice.
+    </p>
+
     <problem>
-
       <p>
-        Finding a choice for <m>u</m> and <m>\dx{v} </m> that will
-        work is mostly a matter of using your intuition. But
-        unfortunately, at first you have no such intuition. There is
-        nothing to be done but take a stab at it. Make a choice and
-        then do the computations that follow from it. At first your
-        choices won<rsq/>t work and this can be frustrating. But
-        learn from your efforts. Try again. And keep trying. With
-        practice intuition will develop. In time you might even find
-        that you enjoy the process. Really. Many students do.
-      </p>
-
-      <p>
-        In any case, practice is necessary. Lots of practice.
-      </p>
-      <p>
-        Use
-        Integration by Parts to compute each integral, then
-        verify that your solution is correct by differentiation.
+        Use Integration by Parts to compute each integral, then verify
+        that your solution is correct by differentiation.
 
         <ol cols="2" marker="(i)">
           <li>
@@ -7171,8 +7190,9 @@
         <p>
           Did you notice that in <xref
           ref="EXAMPLEIntxcosx"></xref> we suppressed the arbitrary
-          constant when we computed <m>v</m>?  In this problem we
-          will see that this will not alter the result.
+          constant when we computed <m>v</m>? This is because once we
+          have chosen <m>\dx{v}</m>, any antiderivative will
+          work as  this problem shows.
         </p>
       </introduction>        
       <task>
@@ -7203,6 +7223,16 @@
         </hint>
 
       </task>
+      
+      <conclusion>
+        <p>
+          Since keeping  track of the arbitrary constant in subsequent
+          computations complicates thing for no purpose it is usually
+          ignored. But don<rsq/>t forget to tack on the
+          <q><m>+C</m></q> at the end of an Integration by Parts.
+        </p>
+</conclusion>
+
     </exercise>
 
 
@@ -7486,25 +7516,25 @@
             </me>
             Where <m>C</m> is an arbitrary constant.
           </p>
-</statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Show that the solution of <xref
-      ref="IVPExpGrowthNonHom">IVP</xref> is 
-      <me>\bar{y}=\frac{1}{1+K^2}\left[ \sin(t) -K\cos (t)\right] + Ce^{Kt}</me>
-    </p>
-</statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Use the initial condition <m>\bar{y}(0)=20</m> to determine
-      <m>C</m>.
-    </p>
-</statement>
-</task>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that the solution of <xref
+            ref="IVPExpGrowthNonHom">IVP</xref> is 
+            <me>\bar{y}=\frac{1}{1+K^2}\left[ \sin(t) -K\cos (t)\right] + Ce^{Kt}</me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the initial condition <m>\bar{y}(0)=20</m> to determine
+            <m>C</m>.
+          </p>
+        </statement>
+      </task>
 
 
 
@@ -7686,11 +7716,9 @@
   </p>
 
   <figure  xml:id="FIGUREStoneArch">
-    <caption>This image is from the website 
-    <url href="https://stonearchbridges.com"
-         visual="stonearchbridges.com">Stone Arch Bridges</url>.
+    <caption>
     </caption>
-    <image source="IC/StoneArch5.png" width="70%">
+    <image source="IC/DianasPool.png" width="70%">
       <shortdescription></shortdescription>
     </image>
   </figure>
