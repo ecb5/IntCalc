@@ -4388,7 +4388,7 @@
       the first step is to  separate the
       variables:
       <men xml:id="EQUATIONLogisticPartFrac1">
-        \frac{\dx{P}}{P(100-P)}=0.0001\dx{t}
+        \frac{\dx{P}}{P(100-P)}=0.001\dx{t}
         </men>. 
         If  we integrate both sides of this equation the result
         will be an equation in which  <m>P(t)</m> appears. If we can
@@ -4397,7 +4397,7 @@
     </p>
     <p>
       Integrating the right sides presents no difficulties: 
-      <men xml:id="EQUATIONLogisticLeftSide">\int 0.0001\dx{t} = 0.0001t+C</men>.
+      <men xml:id="EQUATIONLogisticLeftSide">\int 0.001\dx{t} = 0.001t+C</men>.
     </p>
     <p>
       But at our current level of skill with integration the only
@@ -4424,7 +4424,7 @@
             \left[
             \sqrt{\frac{100-P}{P}}
             \right]
-            = 0.0001t+C</men>.
+            = 0.001t+C</men>.
         </p>
       </statement>
     </exercise>
@@ -4445,10 +4445,10 @@
     <p>
 
       To be consistent with what follows we observe that we can
-      rewrite <xref ref="EQUATIONLogisticLeftSide">equation</xref> as
+      rewrite <xref ref="EQUATIONLogisticPartFrac1">equation</xref> as
 
       <men>
-        \frac{\dx{P}}{P\left(P-100\right)}=-0.0001 \dx{t}
+        \frac{\dx{P}}{P\left(P-100\right)}=-0.001 \dx{t}
       </men> 
       since <m>\frac{\dx{P}}{P\left(P-100\right)} =
       -\frac{\dx{P}}{P\left(100-P\right)}</m>.
@@ -4456,312 +4456,306 @@
     <p>
       Integrating the right<ndash/>hand side poses no problem as we
       would get
-    </p>
-    <p>
+        
+      <men xml:id="EQUATIONPFD6">\int{\frac{\dx{P}}{P\left(P-100\right)}}=-0.001\ t+C</men> 
 
-      
-      <men xml:id="EQUATIONPFD6">\int{\frac{\dx{P}}{P\left(P-100\right)}}=-0.0001\ t+C</men> 
-    </p>
-    <p>
       To compute the left<ndash/>hand side, notice that
-    </p>
-    <p>
       <men xml:id="EQUATIONPFD4">\frac{1}{P\left(P-100\right)}=\frac{-\frac{1}{100}}{P}+\frac{\frac{1}{100}}{P-100}</men> 
     </p>
 
 
 
-    <exercise>
+      <exercise>
 
-      <task>
-        <statement>
-          <p>
-            Confirm <xref ref="EQUATIONPFD4">equation</xref>.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Use <xref ref="EQUATIONPFD4">equation</xref> to show that
-          <me>\int{\frac{\dx{P}}{P\left(P-100\right)}}=\frac{1}{100}{\mathrm{ln} \left(\frac{P-100}{P}\right)\ }+C_2</me>       </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Use <xref ref="EQUATIONPFD6">equation</xref> and the  result in  part (b) to show that 
-            <me>P\left(t\right)=\frac{100}{1+Ke^{-0.01t}}</me> 
-            where <m>K</m> is an arbitrary constant.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Solve <xref ref="EQUATIONLogisticTrigSubst">equation</xref>
-            for <m>P</m> and show you obtain the same result.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            The original <xref ref="EQUATIONLogisticRedux">IVP</xref> had the initial
-            condition <m>P\left(0\right)=10</m>.  Use this to show that
-            <m>K=9</m> and plot this graph to confirm that it has the same
-            general shape that we discovered in Subsection 11.1.1
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    <p>
+        <task>
+          <statement>
+            <p>
+              Confirm <xref ref="EQUATIONPFD4">equation</xref>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Use <xref ref="EQUATIONPFD4">equation</xref> to show that
+            <me>\int{\frac{\dx{P}}{P\left(P-100\right)}}=\frac{1}{100}{\mathrm{ln} \left(\frac{P-100}{P}\right)\ }+C_2</me>       </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Use <xref ref="EQUATIONPFD6">equation</xref> and the  result in  part (b) to show that 
+              <me>P\left(t\right)=\frac{100}{1+Ke^{-0.1t}}</me> 
+              where <m>K</m> is an arbitrary constant.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Solve <xref ref="EQUATIONLogisticTrigSubst">equation</xref>
+              for <m>P</m> and show you obtain the same result.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              The original <xref ref="EQUATIONLogisticRedux">IVP</xref> had the initial
+              condition <m>P\left(0\right)=10</m>.  Use this to show that
+              <m>K=9</m> and plot this graph to confirm that it has the same
+              general shape that we discovered in Subsection 11.1.1
+            </p>
+          </statement>
+        </task>
+      </exercise>
+      <p>
 
-      This is certainly easier to deal with than a trigonometric
-      substitution, but it begs the question, <q>Where did <xref
-      ref="EQUATIONPFD4">equation</xref>
-      <m>\frac{1}{P\left(P-100\right)}=-\frac{\frac{1}{100}}{P}+\frac{\frac{1}{100}}{P-100}</m>
-      come from?</q> It is one thing to verify such an identity, but
-      it is quite another to actually formulate one.
-    </p>
+        This is certainly easier to deal with than a trigonometric
+        substitution, but it begs the question, <q>Where did <xref
+        ref="EQUATIONPFD4">equation</xref>
+        <m>\frac{1}{P\left(P-100\right)}=-\frac{\frac{1}{100}}{P}+\frac{\frac{1}{100}}{P-100}</m>
+        come from?</q> It is one thing to verify such an identity, but
+        it is quite another to actually formulate one.
+      </p>
 
-    <!-- <p> -->
-    <!--   Here<rsq/>s a simpler way. Observe that the fraction -->
-    <!--   <m>\frac{1}{P(100-P)}</m> can be decomposed as  -->
-    <!--   <men xml:id="EQUATIONLogisticPartFrac2"> -->
-    <!--     \frac{1}{P(100-P)}=\frac{\frac{-1}{100}}{P}+\frac{\frac{1}{100}}{100-P} -->
-    <!--     </men>.  -->
-    <!-- </p> -->
-    <!-- <!-\- <problem xml:id="DRILLLogisticPartFrac2"> -\-> -->
-    <!-- <!-\-   <p> -\-> -->
-    <!-- <!-\-     Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>. -\-> -->
-    <!-- <!-\-   </p> -\-> -->
-    <!-- <!-\- </problem> -\-> -->
+      <!-- <p> -->
+      <!--   Here<rsq/>s a simpler way. Observe that the fraction -->
+      <!--   <m>\frac{1}{P(100-P)}</m> can be decomposed as  -->
+      <!--   <men xml:id="EQUATIONLogisticPartFrac2"> -->
+      <!--     \frac{1}{P(100-P)}=\frac{\frac{-1}{100}}{P}+\frac{\frac{1}{100}}{100-P} -->
+      <!--     </men>.  -->
+      <!-- </p> -->
+      <!-- <!-\- <problem xml:id="DRILLLogisticPartFrac2"> -\-> -->
+      <!-- <!-\-   <p> -\-> -->
+      <!-- <!-\-     Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>. -\-> -->
+      <!-- <!-\-   </p> -\-> -->
+      <!-- <!-\- </problem> -\-> -->
 
-    <!-- <p> -->
-    <!--   With <xref ref="EQUATIONLogisticPartFrac2">the identity</xref> -->
-    <!--   in hand we can integrate the right side of <xref -->
-    <!--   ref="EQUATIONLogisticPartFrac1">equation</xref> as follows. -->
+      <!-- <p> -->
+      <!--   With <xref ref="EQUATIONLogisticPartFrac2">the identity</xref> -->
+      <!--   in hand we can integrate the right side of <xref -->
+      <!--   ref="EQUATIONLogisticPartFrac1">equation</xref> as follows. -->
 
-    <!--   <md> -->
-    <!--     <mrow>\int \frac{1}{P(100-P)}\dx{x} \amp{}= -->
-    <!--     \int\frac{\frac{1}{100}}{P}+\frac{\frac{1}{100}}{100-P}\dx{x} </mrow> -->
-    <!--     <mrow> -->
-    <!--       \amp{}= -->
-    <!--       \frac{1}{100} -->
-    <!--       \left[ -->
-    <!--       -\ln\left(\frac{1}{P}\right)+\ln\left(\frac{1}{100-P}\right) -->
-    <!--       \right] -->
-    <!--     </mrow> -->
-    <!--     <mrow> -->
-    <!--       \amp{}=  \frac{1}{100} -->
-    <!--       \ln  -->
-    <!--       \left( -->
-    <!--       \frac{P}{100-P} -->
-    <!--       \right) -->
-    <!--     </mrow> -->
+      <!--   <md> -->
+      <!--     <mrow>\int \frac{1}{P(100-P)}\dx{x} \amp{}= -->
+      <!--     \int\frac{\frac{1}{100}}{P}+\frac{\frac{1}{100}}{100-P}\dx{x} </mrow> -->
+      <!--     <mrow> -->
+      <!--       \amp{}= -->
+      <!--       \frac{1}{100} -->
+      <!--       \left[ -->
+      <!--       -\ln\left(\frac{1}{P}\right)+\ln\left(\frac{1}{100-P}\right) -->
+      <!--       \right] -->
+      <!--     </mrow> -->
+      <!--     <mrow> -->
+      <!--       \amp{}=  \frac{1}{100} -->
+      <!--       \ln  -->
+      <!--       \left( -->
+      <!--       \frac{P}{100-P} -->
+      <!--       \right) -->
+      <!--     </mrow> -->
 
-    <!--   </md> -->
-    <!--   Combining this with <xref -->
-    <!--   ref="EQUATIONLogisticLeftSide">equation</xref> we see that <men -->
-    <!--   xml:id="EQUATIONLogisticPartFrac3"> -\frac{1}{100} \ln \left( -->
-    <!--   \frac{100-P}{P} \right) = \int 0.0001\dx{t} = 0.0001t+C</men> -->
-    <!--   which is much easier to solve for <m>P(t)</m> than  <xref -->
-    <!--   ref="EQUATIONLogisticTrigSubst">equation</xref>.  -->
-    <!-- </p> -->
-    <!-- <exercise> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>. -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--   </task> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Use the result of part (a) to show -->
-    <!--         that  -->
-    <!--         <me>\int \frac{\dx{P}}{P(100-P)}=-\frac{1}{100}\ln  -->
-    <!--         \left( -->
-    <!--         \frac{100-P}{P} -->
-    <!--         \right)+C_2</me> -->
-    <!--         <!-\- <m>P(t) = \frac{100}{Ke^{-0.01t}+1}</m> where <m>K</m> is an -\-> -->
-    <!--         <!-\- arbitrary constant. -\-> -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--   </task> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Use the result of part (b) to show that <xref -->
-    <!--         ref="EQUATIONLogisticPartFrac1">equation</xref> -->
-    <!--         yields -->
-    <!--         <me>P(t)=\frac{100}{1+Ke^{-0.001t}}</me> where <m>K</m> -->
-    <!--         is an arbitrary constant.  -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--   </task> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Use the  -->
-    <!--         initial condition in <xref -->
-    <!--         ref="EQUATIONLogisticRedux">IVP</xref> to show -->
-    <!--         that in part (c) -->
-    <!--         <m>K=9</m>,  -->
-    <!--         and then confirm that you get the same solution when you -->
-    <!--         solve <xref -->
-    <!--         ref="EQUATIONLogisticTrigSubst">equation</xref> for -->
-    <!--         <m>P(t)</m>. -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--   </task> -->
-    <!--   <task> -->
-    <!--     <statement> -->
-    <!--       <p> -->
-    <!--         Graph <m>P(t)</m> from part (c) and confirm that it -->
-    <!--         has the same general shape that we discovered in <xref -->
-    <!--         ref="SUBSECTIONModelingTrout"></xref>. -->
-    <!--       </p> -->
-    <!--     </statement> -->
-    <!--   </task> -->
-    <!-- </exercise> -->
-    <!-- <p> -->
-    <!--   This is much simpler but the roadblock is this: where did <xref -->
-    <!--   ref="EQUATIONLogisticPartFrac2">equation</xref> come from? How did -->
-    <!--   we find this decomposition of the fraction -->
-    <!--   <m>\frac{1}{P(100-P)}</m>? -->
-    <!-- </p> -->
+      <!--   </md> -->
+      <!--   Combining this with <xref -->
+      <!--   ref="EQUATIONLogisticLeftSide">equation</xref> we see that <men -->
+      <!--   xml:id="EQUATIONLogisticPartFrac3"> -\frac{1}{100} \ln \left( -->
+      <!--   \frac{100-P}{P} \right) = \int 0.0001\dx{t} = 0.0001t+C</men> -->
+      <!--   which is much easier to solve for <m>P(t)</m> than  <xref -->
+      <!--   ref="EQUATIONLogisticTrigSubst">equation</xref>.  -->
+      <!-- </p> -->
+      <!-- <exercise> -->
+      <!--   <task> -->
+      <!--     <statement> -->
+      <!--       <p> -->
+      <!--         Confirm <xref ref="EQUATIONLogisticPartFrac2">equation</xref>. -->
+      <!--       </p> -->
+      <!--     </statement> -->
+      <!--   </task> -->
+      <!--   <task> -->
+      <!--     <statement> -->
+      <!--       <p> -->
+      <!--         Use the result of part (a) to show -->
+      <!--         that  -->
+      <!--         <me>\int \frac{\dx{P}}{P(100-P)}=-\frac{1}{100}\ln  -->
+      <!--         \left( -->
+      <!--         \frac{100-P}{P} -->
+      <!--         \right)+C_2</me> -->
+      <!--         <!-\- <m>P(t) = \frac{100}{Ke^{-0.01t}+1}</m> where <m>K</m> is an -\-> -->
+      <!--         <!-\- arbitrary constant. -\-> -->
+      <!--       </p> -->
+      <!--     </statement> -->
+      <!--   </task> -->
+      <!--   <task> -->
+      <!--     <statement> -->
+      <!--       <p> -->
+      <!--         Use the result of part (b) to show that <xref -->
+      <!--         ref="EQUATIONLogisticPartFrac1">equation</xref> -->
+      <!--         yields -->
+      <!--         <me>P(t)=\frac{100}{1+Ke^{-0.001t}}</me> where <m>K</m> -->
+      <!--         is an arbitrary constant.  -->
+      <!--       </p> -->
+      <!--     </statement> -->
+      <!--   </task> -->
+      <!--   <task> -->
+      <!--     <statement> -->
+      <!--       <p> -->
+      <!--         Use the  -->
+      <!--         initial condition in <xref -->
+      <!--         ref="EQUATIONLogisticRedux">IVP</xref> to show -->
+      <!--         that in part (c) -->
+      <!--         <m>K=9</m>,  -->
+      <!--         and then confirm that you get the same solution when you -->
+      <!--         solve <xref -->
+      <!--         ref="EQUATIONLogisticTrigSubst">equation</xref> for -->
+      <!--         <m>P(t)</m>. -->
+      <!--       </p> -->
+      <!--     </statement> -->
+      <!--   </task> -->
+      <!--   <task> -->
+      <!--     <statement> -->
+      <!--       <p> -->
+      <!--         Graph <m>P(t)</m> from part (c) and confirm that it -->
+      <!--         has the same general shape that we discovered in <xref -->
+      <!--         ref="SUBSECTIONModelingTrout"></xref>. -->
+      <!--       </p> -->
+      <!--     </statement> -->
+      <!--   </task> -->
+      <!-- </exercise> -->
+      <!-- <p> -->
+      <!--   This is much simpler but the roadblock is this: where did <xref -->
+      <!--   ref="EQUATIONLogisticPartFrac2">equation</xref> come from? How did -->
+      <!--   we find this decomposition of the fraction -->
+      <!--   <m>\frac{1}{P(100-P)}</m>? -->
+      <!-- </p> -->
 
 
-    <p>
-      We found <xref ref="EQUATIONPFD4">equation</xref> by
-      an algebraic technique called the <term>Partial Fraction
-      Decomposition </term> or <term>PFD</term>. There are several
-      places in mathematics where it is useful to break a single
-      rational expresstion into the sum of simpler rational
-      expressions. We will be using  it to simplify  the integration 
-      when the integrand is a rational function. 
-    </p>
-    <p>
-      A fully general statement of the PFD is given in <xref
-      ref="THEOREMPartialFractionDecomp"></xref> but as you can see
-      the general statement is quite comprehensive. Moreover the
-      statement of the theorem doesn<rsq/>t help us use it as a
-      practical tool. So we will work through a number of increasingly
-      complex examples to build things up slowly.
-    </p>
-    <p>
-      To begin, if we have an expression of the form
-      <m>\frac{1}{(x-a)(x-b)}</m> where <m>a</m>, and <m>b</m> are
-      known constants, and <m>a\neq b</m>, then the PFD says that there are constants
-      <m>A</m> and <m>B</m> such that as
-      <men xml:id="EQUATIONPFDDegrees">\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</men>. Our
-      task is to find values for <m>A</m> and <m>B</m>.
-    </p>
-    <p>
-      Take note of the following fact: The right side of <xref
-      ref="EQUATIONPFDDegrees">equation</xref> consists of rational
-      functions where the degree of the numerator is one less than
-      the degree of the denominator. Since the numerators are all
-      constants (polynomials of degree zero) and the denominators
-      are all linear (polynomials of degree one) this is, at the
-      moment, a rather bombastic way to state this fact. However in <xref
-      ref="SUBSECTIONPFDNonSimple"></xref> we will find it
-      very useful.
-    </p>
+      <p>
+        We found <xref ref="EQUATIONPFD4">equation</xref> by
+        an algebraic technique called the <term>Partial Fraction
+        Decomposition </term> or <term>PFD</term>. There are several
+        places in mathematics where it is useful to break a single
+        rational expresstion into the sum of simpler rational
+        expressions. We will be using  it to simplify  the integration 
+        when the integrand is a rational function. 
+      </p>
+      <p>
+        A fully general statement of the PFD is given in <xref
+        ref="THEOREMPartialFractionDecomp"></xref> but as you can see
+        the general statement is quite comprehensive. Moreover the
+        statement of the theorem doesn<rsq/>t help us use it as a
+        practical tool. So we will work through a number of increasingly
+        complex examples to build things up slowly.
+      </p>
+      <p>
+        To begin, if we have an expression of the form
+        <m>\frac{1}{(x-a)(x-b)}</m> where <m>a</m>, and <m>b</m> are
+        known constants, and <m>a\neq b</m>, then the PFD says that there are constants
+        <m>A</m> and <m>B</m> such that as
+        <men xml:id="EQUATIONPFDDegrees">\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</men>. Our
+        task is to find values for <m>A</m> and <m>B</m>.
+      </p>
+      <p>
+        Take note of the following fact: The right side of <xref
+        ref="EQUATIONPFDDegrees">equation</xref> consists of rational
+        functions where the degree of the numerator is one less than
+        the degree of the denominator. Since the numerators are all
+        constants (polynomials of degree zero) and the denominators
+        are all linear (polynomials of degree one) this is, at the
+        moment, a rather bombastic way to state this fact. However in <xref
+        ref="SUBSECTIONPFDNonSimple"></xref> we will find it
+        very useful.
+      </p>
 
-    <p>
-      There are a couple of ways we can find <m>A</m> and
-      <m>B</m>. What we<rsq/>d like to do is find the simplest, least
-      difficult to implement method we can. After all, we<rsq/>re not
-      here to do fraction decompositions. This is just one step toward
-      computing an integral and we<rsq/>d like for the decomposition
-      step to be as simple and painless as possible.
-    </p>
-    <!-- <p> -->
-    <!--   Conceptually the simplest method available is to simply to choose -->
-    <!--   values for <m>x</m>.  -->
-    <!--   This is a valid approach because the equation -->
-    <!--   <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me>  -->
-    <!--   is actually an identity <mdash/> it will be true no matter what -->
-    <!--   the value of <m>x</m> is.  -->
-    <!-- </p> -->
-    <!-- <p> -->
-    <!--   If we choose <m>x=0</m> we get <me> Ab+Ba =-1</me>, and if we -->
-    <!--   choose <m>x=1</m> we get <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a} -->
-    <!--   + \frac{B}{1-b}</me> and we have a system of two equations in -->
-    <!--   the unknowns <m>A</m> and <m>B</m> which we can solve. -->
-    <!-- </p> -->
-    <!-- <problem xml:id="DRILLPFD2x2-1"> -->
-    <!--   <p> -->
-    <!--     In this form the equations <me> Ab+Ba =-1</me> and, -->
-    <!--     <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a} + \frac{B}{1-b}</me> -->
-    <!--     are a little intimidating. But it<rsq/>s not really as bad as -->
-    <!--     it looks. Clear the fractions and then solve for <m>A</m> and -->
-    <!--     <m>B</m>. -->
-    <!--   </p> -->
-    <!-- </problem> -->
-    <!-- <p> -->
-    <!--   The method we<rsq/>ve just outlined will work, and it will always -->
-    <!--   work.  But this is only our first example of the PFD and you can -->
-    <!--   surely see that that if we have more than two constants the difficulty of -->
-    <!--   solving for the coefficients will increase rapidly. But again, this method -->
-    <!--   works and it will always work, so it is something we can always fall back -->
-    <!--   on if we can<rsq/>t find something simpler. -->
-    <!-- </p> -->
+      <p>
+        There are a couple of ways we can find <m>A</m> and
+        <m>B</m>. What we<rsq/>d like to do is find the simplest, least
+        difficult to implement method we can. After all, we<rsq/>re not
+        here to do fraction decompositions. This is just one step toward
+        computing an integral and we<rsq/>d like for the decomposition
+        step to be as simple and painless as possible.
+      </p>
+      <!-- <p> -->
+      <!--   Conceptually the simplest method available is to simply to choose -->
+      <!--   values for <m>x</m>.  -->
+      <!--   This is a valid approach because the equation -->
+      <!--   <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me>  -->
+      <!--   is actually an identity <mdash/> it will be true no matter what -->
+      <!--   the value of <m>x</m> is.  -->
+      <!-- </p> -->
+      <!-- <p> -->
+      <!--   If we choose <m>x=0</m> we get <me> Ab+Ba =-1</me>, and if we -->
+      <!--   choose <m>x=1</m> we get <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a} -->
+      <!--   + \frac{B}{1-b}</me> and we have a system of two equations in -->
+      <!--   the unknowns <m>A</m> and <m>B</m> which we can solve. -->
+      <!-- </p> -->
+      <!-- <problem xml:id="DRILLPFD2x2-1"> -->
+      <!--   <p> -->
+      <!--     In this form the equations <me> Ab+Ba =-1</me> and, -->
+      <!--     <me>\frac{1}{(1-a)(1-b)}=\frac{A}{1-a} + \frac{B}{1-b}</me> -->
+      <!--     are a little intimidating. But it<rsq/>s not really as bad as -->
+      <!--     it looks. Clear the fractions and then solve for <m>A</m> and -->
+      <!--     <m>B</m>. -->
+      <!--   </p> -->
+      <!-- </problem> -->
+      <!-- <p> -->
+      <!--   The method we<rsq/>ve just outlined will work, and it will always -->
+      <!--   work.  But this is only our first example of the PFD and you can -->
+      <!--   surely see that that if we have more than two constants the difficulty of -->
+      <!--   solving for the coefficients will increase rapidly. But again, this method -->
+      <!--   works and it will always work, so it is something we can always fall back -->
+      <!--   on if we can<rsq/>t find something simpler. -->
+      <!-- </p> -->
 
-    <!-- <p> -->
-    <!--   Since the method just outlined will always work one possible way -->
-    <!--   to lighten the load is to look for values of <m>x</m> that will -->
-    <!--   make the resulting equations simpler to solve.  Sadly, no -->
-    <!--   obvious choice presents itself, but hold that thought for a -->
-    <!--   bit. We<rsq/>ll return to it. -->
-    <!-- </p> -->
+      <!-- <p> -->
+      <!--   Since the method just outlined will always work one possible way -->
+      <!--   to lighten the load is to look for values of <m>x</m> that will -->
+      <!--   make the resulting equations simpler to solve.  Sadly, no -->
+      <!--   obvious choice presents itself, but hold that thought for a -->
+      <!--   bit. We<rsq/>ll return to it. -->
+      <!-- </p> -->
 
-    <!-- <p> -->
-    <!--   Another possible method is to simply clear the fractions and -->
-    <!--   compare like terms. (In fact, our previous method can be made -->
-    <!--   a little more palatable by clearing the fractions first.) Thus -->
-    <!--   <me> -->
-    <!--     (x-a)(x-b)\cdot\left[\frac{1}{(x-a)(x-b)}\right]=\left[ -->
-    <!--     \frac{A}{x-a}+\frac{B}{x-b}\right]\cdot(x-a)(x-b) -->
-    <!--     </me>. -->
-    <!--     Multiplying through and cancelling, we have -->
+      <!-- <p> -->
+      <!--   Another possible method is to simply clear the fractions and -->
+      <!--   compare like terms. (In fact, our previous method can be made -->
+      <!--   a little more palatable by clearing the fractions first.) Thus -->
+      <!--   <me> -->
+      <!--     (x-a)(x-b)\cdot\left[\frac{1}{(x-a)(x-b)}\right]=\left[ -->
+      <!--     \frac{A}{x-a}+\frac{B}{x-b}\right]\cdot(x-a)(x-b) -->
+      <!--     </me>. -->
+      <!--     Multiplying through and cancelling, we have -->
 
-    <!--     <men  xml:id="EQUATIONPFD1"> -->
-    <!--       1=A(x-b)+B(x-a) -->
-    <!--     </men> -->
-    <!--     so that -->
-    <!--     <me> -->
-    <!--       \textcolor{red}{0}x+ \textcolor{blue}{1}=(\textcolor{red}{A+B})x + \left(\textcolor{blue}{-Ab-aB}\right)   -->
-    <!--       </me>. -->
-    <!--       Comparing the coefficient of <m>x</m> -->
-    <!--       and the constant terms we see that we need to solve  the following system of -->
-    <!--       two equations in the two unknowns <m>A</m> and <m>B</m> -->
-    <!--       <mdn> -->
-    <!--         <mrow xml:id="EQUATIONPFD2">A+B\amp{}=0</mrow> -->
-    <!--         <mrow number="no"> -->
-    <!--           Ab+Ba \amp{}=-1. -->
-    <!--         </mrow> -->
-    <!--       </mdn> -->
-    <!-- </p> -->
-    <!-- <problem xml:id="DRILLDRILLPFD2x2-2" > -->
-    <!--   <p> -->
-    <!--     Solve the <xref ref="EQUATIONPFD2">system of equations</xref> -->
-    <!--     and show that you get the same solution that you got in <xref -->
-    <!--     ref="DRILLPFD2x2-1"></xref>. -->
-    <!--   </p> -->
-    <!-- </problem> -->
+      <!--     <men  xml:id="EQUATIONPFD1"> -->
+      <!--       1=A(x-b)+B(x-a) -->
+      <!--     </men> -->
+      <!--     so that -->
+      <!--     <me> -->
+      <!--       \textcolor{red}{0}x+ \textcolor{blue}{1}=(\textcolor{red}{A+B})x + \left(\textcolor{blue}{-Ab-aB}\right)   -->
+      <!--       </me>. -->
+      <!--       Comparing the coefficient of <m>x</m> -->
+      <!--       and the constant terms we see that we need to solve  the following system of -->
+      <!--       two equations in the two unknowns <m>A</m> and <m>B</m> -->
+      <!--       <mdn> -->
+      <!--         <mrow xml:id="EQUATIONPFD2">A+B\amp{}=0</mrow> -->
+      <!--         <mrow number="no"> -->
+      <!--           Ab+Ba \amp{}=-1. -->
+      <!--         </mrow> -->
+      <!--       </mdn> -->
+      <!-- </p> -->
+      <!-- <problem xml:id="DRILLDRILLPFD2x2-2" > -->
+      <!--   <p> -->
+      <!--     Solve the <xref ref="EQUATIONPFD2">system of equations</xref> -->
+      <!--     and show that you get the same solution that you got in <xref -->
+      <!--     ref="DRILLPFD2x2-1"></xref>. -->
+      <!--   </p> -->
+      <!-- </problem> -->
 
-    <!-- <p> -->
-    <!--   This is a little better. We<rsq/>ve still got a system of two -->
-    <!--   equations to solve, but it seems to be a little more -->
-    <!--   manageable. Still, as the problems get more complex the number -->
-    <!--   of equations in our system will grow. We<rsq/>d still like to -->
-    <!--   find something simpler than this if we can. -->
-    <!-- </p> -->
+      <!-- <p> -->
+      <!--   This is a little better. We<rsq/>ve still got a system of two -->
+      <!--   equations to solve, but it seems to be a little more -->
+      <!--   manageable. Still, as the problems get more complex the number -->
+      <!--   of equations in our system will grow. We<rsq/>d still like to -->
+      <!--   find something simpler than this if we can. -->
+      <!-- </p> -->
     <!-- <p> -->
     <!--   But wait! Take another look at <xref -->
     <!--   ref="EQUATIONPFD1">equation</xref>. With a judicious use of that -->
@@ -4900,7 +4894,7 @@
       <p>
         This is certainly doable, but it is also very tedious.  Could you imagine
         if we had four factors? Or five? This  method is simple to
-        understand and it will always work, but the level of difficulty
+        understand and it will always work, but the amount of computation
         escalates   quickly as the number of linear factors
         increases. For this reason we (the authors) think of this as
         the <term>brute force</term> method. We<rsq/>d really prefer
@@ -5137,12 +5131,16 @@
             if a population of critters is too small they tend to die
             out. The following tweak to the logistic model: 
             <men xml:id="EQUATIONLogEqMinViable">
-              \dfdx{P}{t}=0.01P\left(1-\frac{P}{100}\right)\left(1-\frac{10}{P}\right),
+              \dfdx{P}{t}=0.1P\left(1-\frac{P}{100}\right)\left(1-\frac{10}{P}\right),
             </men>
 
-            forces a population which is too small to die out.  In this
-            case, <m>10</m> is called the <term>minimum viability level</term> of
-            the population.
+            forces a population which is too small to die out.  In
+            this case, <m>10</m> is called the <term>minimum viability
+            level</term> of the population. Notice that the term <m>
+            \left( 1-\frac{10}{P} \right)</m> is negative when <m>P
+            \lt 10</m>, causing the population to shrink in size, but
+            is close to <m>1</m> when <m>P</m> is relatively large so
+            it is close to logistic growth for large populations.
           </p>
         </introduction>
         <task>
@@ -5158,19 +5156,18 @@
           <statement>
             <p>
               Use the result of part (a) to show that 
-
               <md>
                 <mrow>
 
-                  \dfdx{P}{t} \amp{}= 0.01P\left(1-\frac{P}{100}\right)\left(
+                  \dfdx{P}{t} \amp{}= 0.1P\left(1-\frac{P}{100}\right)\left(
                   1-\frac{10}{P}\right)
                 </mrow>
                 <mrow>
-                  = -0.0001(P-100)(P-10)
+                  \amp{}= -0.001(P-100)(P-10)
                 </mrow>
               </md>
               is satisfied by 
-              <me>P(t)= \frac{100-10Ke^{0.009t}}{1-Ke^{-0.009t}}</me>
+              <me>P(t)= \frac{100-10Ke^{0.09t}}{1-Ke^{-0.09t}}</me>
               where <m>K</m> is an arbitrary constant.
             </p>
           </statement>
@@ -5178,24 +5175,34 @@
         <task>
           <statement>
             <p>
-
+              Show that if <m>P(0)=5</m>, then <m>K=19</m> and plot this curve. Is this consistent with calling <m>10</m> the minimum
+              viability level?
               Use the graphical techniques
               of <xref ref="SECTIONExponentialGrowth"></xref> to sketch a qualitative graph of the solution of <xref
               ref="EQUATIONLogEqMinViable">equation</xref>. 
             </p>
-            <p>
-              Does the curve you get resemble the graph of <m>P(t)</m>?
-            </p>
+            <!-- <p> -->
+            <!--   Does the curve you get resemble the graph of <m>P(t)</m>? -->
+            <!-- </p> -->
 
-            <p>
-              Explain
-              what happens if our population drops below the <term>minimum
-              viability level</term>
+            <!-- <p> -->
+            <!--   Explain -->
+            <!--   what happens if our population drops below the <term>minimum -->
+            <!--   viability level</term> -->
 
-            </p>
+            <!-- </p> -->
           </statement>
         </task>
       </exercise>
+      <aside>
+        <title>Note to self</title>
+        <p>
+          Should we have a part (d) where we tell them to generate a
+          qualitative graph like in <xref
+          ref="SECTIONExponentialGrowth"></xref>?
+        </p>
+      </aside>
+
       <p>
         We<rsq/>ve simplified the  process quite a bit  so far but in fact it can be
         streamlined even further.
@@ -5208,11 +5215,11 @@
           \frac{1}{(x-a)(x-b)}=
           \frac{\frac{1}{a-b}}{x-a}+\frac{\frac{1}{b-a}}{x-b}
         </men> 
-        (this is <xref ref="EQUATIONPFD3">equation</xref>). Do you see that
-          the numerator above <m>x-a</m> is what we would get if we simply
-          replaced <m>x</m> with <m>a</m> on the left and 
-          <q>covered up,</q> (or ignored) the factor <m>x-a</m>?
-        </p>
+        Do you see that the numerator above <m>x-a</m> is what we
+        would get if we simply replaced <m>x</m> with <m>a</m> on the
+        left and <q>covered up,</q> (or ignored) the factor
+        <m>x-a</m>?
+      </p>
         <p>
           That is, if <m>\frac{1}{(x-a)(x-b)}=
           \frac{A}{x-a}+\frac{B}{x-b}</m> then 
@@ -5493,8 +5500,8 @@
           <p>
             Whether you divide first or divide last is entirely your
             choice, so choose whichever you are most comfortable with
-            and use it.  But be flexible enough to switch to the other
-            method if it is more convenient.
+            and use it.  But be flexible. Both 
+            methods work. Use the one that feels more natural to you.
           </p>
       </example>
         
@@ -5541,13 +5548,13 @@
         force</term> computation if necessary.
       </p>
       <p>
-        we always know that we can resort to brute
+        We always know that we can resort to brute
         force computations when necessary but         as the rational
         functions become more complicated,  a little cleverness will
         save us a lot of computational effort.
       </p>
 
-      <example>
+      <example xml:id="EXAMPLEFirstNonLinPartFrac">
         <p>
           Suppose we try our HCUM on <m>\frac{1}{x^2\left(x-1\right)}</m>.
           If we do this without thinking, we would get
@@ -5563,10 +5570,10 @@
         </p>
         <p>
           Can you see what the problem is?  According to our Theorem, all
-          we know is that the numerators in our decomposition must be less
+          we know is that the degrees of the numerators in our decomposition must be less
           than the degrees of the denominators.  This means our
           decompositions form should be
-          <me>\frac{1}{x^2(x-1)}=\frac{\left(Ax+B\right)}{x^2}+\frac{C}{x-1}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-1}</me>
+          <men xml:id="EQUATIONHeaviNonLinear1">\frac{1}{x^2(x-1)}=\frac{\left(Ax+B\right)}{x^2}+\frac{C}{x-1}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-1}</men>
         </p>
         <p>
           We can still use the HCUM to compute <m>B=-1,\ C=1.</m>
@@ -5574,162 +5581,12 @@
       </example>
 
 
-
-      <!--   <p> -->
-      <!--     Whether you divide first or last is -->
-      <!--     entirely up to you. We (the authors) prefer dividing -->
-      <!--     last because it doesn<rsq/>t involve factoring and then -->
-      <!--     un<ndash/>factoring the denominator, and because we only -->
-      <!--     ever have to divide by a linear expression, which we find less -->
-      <!--     burdensome.  -->
-      <!--   </p> -->
-      <!--   <p> -->
-      <!--     However, we do advise that you pick one method that you -->
-      <!--     like and use it consistently, at least until you have fully -->
-      <!--     mastered the Partial Fraction Decomposition. -->
-      <!--   </p> -->
-
-
-
-      <!-- </example> -->
-      <!-- <problem> -->
-      <!--   <p> -->
-      <!--     Confirm that the decompositions in equations <xref -->
-      <!--     ref="EQUATIONDividingFirst "></xref> and <xref -->
-      <!--     ref="EQUATIONDividingLast"></xref> are correct. -->
-      <!--   </p> -->
-      <!-- </problem> -->
-
-      <!-- <exercise> -->
-      <!--   <p> -->
-      <!--     Despite our personal preference for dividing last there -->
-      <!--     are legitimate reasons to divide first. For example  -->
-      <!--     show that the expression <m>\frac{x}{x-1}</m> cannot be decomposed -->
-      <!--     by the <q>dividing last</q> method described in <xref -->
-      <!--     ref="EXAMPLEPFDUnreducedTwoMethods"></xref>, but it can -->
-      <!--     be decomposed by the <q>dividing first</q> method. -->
-      <!--     Are we really <q>decomposing</q> the fraction in this -->
-      <!--     case. Explain. -->
-      <!--   </p> -->
-      <!-- </exercise> -->
-
-
-      <!-- <aside> -->
-      <!--   <title>Note to self</title> -->
-      <!--   <p> -->
-      <!--     We need a representative and instructive set of problems -->
-      <!--     here. -->
-      <!--   </p> -->
-      <!-- </aside> -->
-
-
-      <!-- <example xml:id="EXAMPLEHeaviNonLinear1"> -->
-      <!--   <p> -->
-      <!--     Heaviside<rsq/>s Cover<ndash/>up Method will also fail on -->
-      <!--     this function: <me>\frac{x^2+x-3}{x^2(x-1)}</me>.  If you -->
-      <!--     apply it you<rsq/>ll get <me>\frac{x^2+x-3}{x^2(x-1)} = -->
-      <!--     \frac{3}{x^2} + \frac{-1}{x-1}</me> which is -->
-      <!--     incorrect. Check it and see. -->
-      <!--   </p> -->
-
-      <!--   <!-\-   <p> -\-> -->
-      <!--   <!-\-     In our problems and examples so far we<rsq/>ve been careful to -\-> -->
-      <!--   <!-\-     make sure that the integrands in the problems and examples -\-> -->
-      <!--   <!-\-     have been in <q>lowest terms,</q>. In this context that means -\-> -->
-      <!--   <!-\-     that the degree of the numerator is strictly less than the -\-> -->
-      <!--   <!-\-     degree of the denominator. Look back up at the problems and -\-> -->
-      <!--   <!-\-     examples and confirm that this is true. -\-> -->
-      <!--   <!-\-   </p> -\-> -->
-      <!--   <!-\-   <p> -\-> -->
-      <!--   <!-\-     Conceptually, this is easy to address. We simply divide the -\-> -->
-      <!--   <!-\-     denominator into the numerator using long division just as you -\-> -->
-      <!--   <!-\-     learned it in gradeschool. To do that you need to the denominator in -\-> -->
-      <!--   <!-\-     its unfactored form. In this example we have -\-> -->
-      <!--   <!-\-     <me>\frac{x^2}{(x-2)(x-3)}=\frac{x^2}{x^2-5x+6}</me>, so -\-> -->
-      <!--   <!-\-     <men xml:id="EQUATIONPFDImproper1"> -\-> -->
-      <!--   <!-\-       \frac{x^2}{(x-2)(x-3)}=\frac{x^2}{x^2-5x+6} = 1+\frac{5x-6}{(x-2)(x-3)} -\-> -->
-      <!--   <!-\-       </men>. -\-> -->
-      <!--   <!-\-   </p> -\-> -->
-      <!--   <!-\- </example> -\-> -->
-
-      <!--   <!-\- <problem> -\-> -->
-      <!--   <!-\-   <p> -\-> -->
-      <!--   <!-\-     Complete the decomposition in <xref ref="EQUATIONPFDImproper1">equation</xref>. -\-> -->
-      <!--   <!-\-   </p> -\-> -->
-      <!--   <!-\- </problem> -\-> -->
-
-      <!--   <!-\- <p> -\-> -->
-      <!--   <!-\- </p> -\-> -->
-      <!--   <p> -->
-      <!--     The problem here is the factor <m>x^2</m> in the -->
-      <!--     denominator. If you look back at the problems and examples -->
-      <!--     we<rsq/>ve looked at so far you<rsq/>ll see that each -->
-      <!--     distinct  factor which appeared in the denominator -->
-      <!--     of the fraction on the left side also appeared in one of the -->
-      <!--     denominators on the right side. In this case the distinct -->
-      <!--     factors are <m>x^2</m> and <m>x-1</m> so the decomposition -->
-      <!--     will be  -->
-
-      <!--     <me> \frac{x^2+x-3}{x^2(x-1)} = -->
-      <!--     \frac{\text{something}}{x^2} + \frac{C}{x-1} </me>. But -->
-      <!--     now the question is, <q>What is the something?</q> Up -->
-      <!--     until now none of the distinct factors in the denominator -->
-      <!--     appeared with a power higher than one. So a factor of -->
-      <!--     <m>x^2</m> is altogether new and different. -->
-      <!--   </p> -->
-      <!--   <p> -->
-      <!--     Looking back at our earlier, and simpler, examples we see -->
-      <!--     that every case the terms on the left were rational -->
-      <!--     functions where the degree of the numerator (which was -->
-      <!--     always <m>0</m> in those examples) was one less -->
-      <!--     than the degree of the denominator (which was always -->
-      <!--     <m>1</m> in those examples). If we keep -->
-      <!--     that pattern here then it appears that the decomposition -->
-      <!--     must be -->
-      <!--     <me> \frac{x^2+x-3}{x^2(x-1)} = -->
-      <!--     \frac{Ax+B}{x^2} + \frac{C}{x-1} </me>  -->
-      <!--     because -->
-      <!--     <me>\deg (Ax+B)=1</me> and <me>\deg(x^2) =2</me>. We can break -->
-      <!--     this up a bit more by observing that -->
-      <!--     <me> \frac{Ax+B}{x^2} -->
-      <!--     =\frac{A}{x}+\frac{B}{x^2}</me> so we need to find -->
-      <!--     <m>A</m>, <m>B</m>, and <m>C</m> where  -->
-      <!--     <me> \frac{x^2+x-3}{x^2(x-1)} = -->
-      <!--     \frac{A}{x}+\frac{B}{x^2} + \frac{C}{x-1} </me>.  -->
-      <!--   </p> -->
-      <!--   <p> -->
-      <!--     The values <m>B=3</m>, and <m>C=-1</m> can still be found -->
-      <!--     using the HCUM, so we have -->
-      <!--     <men xml:id="EQUATIONHeaviIdentity1"> -->
-      <!--       \frac{x^2+x-3}{x^2(x-1)} = \frac{A}{x} + -->
-      <!--       \frac{3}{x^2}- \frac{1}{x-1} -->
-      <!--       </men>. -->
-      <!--   </p> -->
-      <!--   <p> -->
-      <!--     To find <m>A</m> recall that <xref -->
-      <!--     ref="EQUATIONHeaviIdentity1">equation</xref> is an identity -->
-      <!--     so it is true regardless of the value of <m>x</m>. Since -->
-      <!--     <m>A</m> is the only parameter left we can find it by -->
-      <!--     setting <m>x=2</m> (or anything else). This gives -->
-      <!--     <m> -->
-      <!--       \frac{2}{2^2(2-1)} = \frac{A}{2} + -->
-      <!--       \frac{3}{2^2}- \frac{1}{2-1} -->
-      <!--       </m>, or <m>A=2</m>. -->
-      <!--       So the full decomposition is  -->
-      <!--       <me> -->
-      <!--         \frac{x^2+x-3}{x^2(x-1)} =  -->
-      <!--         \frac{2}{x}+ \frac{3}{x^2}-\frac{1}{x-1} -->
-      <!--         </me>. -->
-      <!--   </p> -->
-
-
-      <!-- </example> -->
-      <exercise>
+      <exercise xml:id="PROBLEMFirstNonLinPartFrac">
         <task>
           <statement>
             <p>
               Explain why  the  HCUM can be used  to find  <m>B</m> and
-              <m>C</m> in <xref ref="EXAMPLEHeaviNonLinear1"></xref>.
+              <m>C</m> in <xref ref="EQUATIONHeaviNonLinear1">equation</xref>.
             </p>
           </statement>
           <hint>
@@ -5743,7 +5600,7 @@
           <statement>
             <p>
               You can solve <xref
-              ref="EQUATIONHeaviIdentity1">equation</xref> for
+              ref="EQUATIONHeaviNonLinear1">equation</xref> for
               <m>A</m> by setting <m>x</m> equal to (almost) any
               value we choose. Confirm this by showing  that we get
               <m>A=-1</m> when <m>x=3</m>, <m>x=5</m>, and 
@@ -5798,7 +5655,7 @@
       </exercise>
       <exercise>
         <p>
-          Let's re-examine the PFD for
+          Let's re<ndash/>examine the PFD for
           <m>\frac{x^2-x+3}{x^2\left(x-1\right)}</m> from part (b) in the
           last problem.  We could have directly noticed that the form of our
           PFD is
@@ -5806,8 +5663,8 @@
           <me>\frac{x^2-x+3}{x^2\left(x-1\right)}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-1}</me> 
         </p>
         <p>
-          Use the HCUM directly on this to compute <m>B=3,\ C=-1</m>.  Employ
-          any technique you wish to determine that <m>A=2</m> and compare
+          Use the HCUM directly on this to compute <m>B=-3</m>, and  <m>C=3</m>.  Employ
+          any technique you wish to determine that <m>A=-2</m> and compare
           this to the answer you obtained in part (b) of the last problem.
         </p>
       </exercise>
@@ -5910,7 +5767,6 @@
         Find <m>B</m>, <m>C</m>, and <m>F</m>.
 
         <md>
-
           <mrow> \frac{1}{x^2(x-1)(x-3)^3}=\amp{} \frac{Ax+B}{x^2} + \frac{C}{x-1}
           </mrow>
           <mrow>
@@ -5918,6 +5774,8 @@
             \frac{D(x-3)^2+E(x-3)+F}{(x-3)^3}
           </mrow>
         </md>
+        Explain why the HCUM can not be used to find <m>A</m>,
+        <m>D</m>, or <m>E</m>.
       </p>
     </statement>
   </task>
@@ -5927,6 +5785,8 @@
         Find <m>B</m> and <m>D</m>.
         <me>\displaystyle \frac{x}{(x-1)^2(x+2)^2}=
         \frac{A(x-1)+B}{(x-1)^2}  +\frac{C(x+2)+D}{(x+2)^2} </me>
+        Explain why the HCUM can not be used to find <m>A</m>,
+        or <m>C</m>.
       </p>
     </statement>
   </task>
@@ -5934,14 +5794,18 @@
     <statement>
       <p>
         Find <m>C</m>.
-        <me>\frac{x-2}{x^3}=\frac{Ax^2+Bx+C}{x^3}</me>
+        <me>\frac{x-2}{(x+1)^3}=\frac{A}{x+1} + \frac{B}{(x+1)^2} +
+        \frac{C}{(x+1)^3}</me>
+        Explain why the HCUM can not be used to find <m>A</m>, or
+        <m>B</m>.
       </p>
     </statement>
   </task>
   <task>
     <statement>
       <p>
-        Explain as clearly as you can from the evidence above which
+        Explain as clearly as you can from the evidence in parts (a),
+        (b), and (c) which
         kinds of coefficients we can compute using the HCUM.
       </p>
 
@@ -5972,11 +5836,13 @@
     \frac{\frac19}{(x-1)^2} +\frac{C}{x+2}
     -\frac{\frac29}{(x+2)^2} </me>
     When we reached this point in <xref
-    ref="EXAMPLEHeaviNonLinear1"></xref> our next step was to  simply choose a value
-    for <m>x</m>. We could do that here as well but we<rsq/>d
-    have to  choose two values for
-    <m>x</m> thereby  generating a pair of equations to solve
-    and  we<rsq/>ve already seen that there are more efficient
+    ref="EXAMPLEFirstNonLinPartFrac"></xref> (see part (b) of <xref
+    ref="PROBLEMFirstNonLinPartFrac"></xref>) our next step was to  simply choose a value
+    for <m>x</m>. We could do that here as well but because we now
+    have two unknowns we<rsq/>d
+    have to  choose two distinct values for
+    <m>x</m> and   generate a system of two  coupled equations to
+    solve.   We<rsq/>ve already seen that there are more efficient
     methods for computing the PFD than solving a system   of
     equations.
   </p>
@@ -6004,10 +5870,8 @@
     HCUM.
   </p>
   <p>
-    We can find <m>P(x)</m> by essentially the same method we
-    used to find the constant <m>A</m> in <xref
-    ref="EXAMPLEHeaviNonLinear1"></xref>. First we clear the
-    fraction on the right
+    To find  <m>P(x)</m>, we first clear the
+    fraction on the right leaving,
     <men xml:id="EQUATIONPFDDistinctLin2">
       \frac{x}{(x-1)(x+2)} -
       \frac19
@@ -6019,12 +5883,11 @@
       \frac{x-1}{x+2}
       \right) =  P(x)
     </men>
-    Since the left side is guaranteed to reduce to the
-    polynomial it is tempting to find a common denominator and add the three fractions on the
-    left together. Since we
-    have to end up with the polynomial <m>P(x)</m> it must be
-    that once the addition is done there will be a factor
-    in the top that will cancel with the common denominator.
+    It is tempting to find a common denominator and add
+    the three fractions on the left together. Since we have to end up
+    with the polynomial <m>P(x)</m> it must be that once the addition
+    is done there will be a factor in the top that will cancel with
+    the common denominator.
   </p>
   <p>
     That will work. Give it a try if you want. Good luck. 
@@ -6032,10 +5895,12 @@
   <p>
     But we<rsq/>re trying to find the most efficient method we
     can so instead we<rsq/>re going to make judicious use of the
-    knowledge that we must end up with a polynomial. 
+    knowledge that the sum of the rational functions on the left of
+    <xref ref="EQUATIONPFDDistinctLin2">equation</xref>  must be the
+    polynomial <m>P(t)</m>. 
   </p>
   <p>
-    First think about the expression in the second term on
+    We begin with  the second term on
     the left:
     <m>\frac{x+2}{x-1}</m>. If we perform this division we get
     <me>\frac{x+2}{x-1} = 1 +\frac{3}{x-1}</me>. Similarly if we
@@ -6058,91 +5923,92 @@
     <me>
       \frac{x}{(x-1)(x+2)} - \frac19 -\frac{\frac13}{x-1} +\frac29
       -\frac{\frac23}{x+2} = P(x) </me>.  Since <m>P(x)</m> must be a
-      polynomial it follows that the left side, 
+      polynomial it follows that the left side<!-- ,  -->
 
-      <men xml:id="EQUATIONPFDNumLessDen">
-        \frac{x}{(x-1)(x+2)} - \frac19 -\frac{\frac13}{x-1} +\frac29
-        -\frac{\frac23}{x+2}
-      </men> 
+      <!-- <men xml:id="EQUATIONPFDNumLessDen"> -->
+      <!--   \frac{x}{(x-1)(x+2)} - \frac19 -\frac{\frac13}{x-1} +\frac29 -->
+      <!--   -\frac{\frac23}{x+2} -->
+      <!-- </men>  -->
 
-        is also a polynomial. The constants
-        <m>-\frac19{}</m> and <m>\frac{2}{9}</m> are polynomials of
-      degree zero. Are there any others?
-When we
-perform the divisions <m>\frac{x}{(x-1)(x+2)}</m>,
-      <m>\frac{\frac13}{x-1}</m>, or 
-      <m>\frac{\frac23}{x+2}</m> is it
-      possible that a polynomial will result? Think about this
-      for a moment before reading on.
+      is also a polynomial. 
+  </p>
+  <p>
+    But the only polynomials on the left are the  constants
+    <m>-\frac19{}</m> and <m>\frac{2}{9}</m>. (They  are polynomials of
+    degree zero.) Are there any others?
+  </p>
+  <p>
+    No. There are not. Even if we perform the divisions
+    <m>\frac{x}{(x-1)(x+2)}</m>, <m>\frac{\frac13}{x-1}</m>, or
+    <m>\frac{\frac23}{x+2}</m> no polynomial will emerge. Think about
+    this for a moment before reading on.
   </p>
       <p>
-        Clearly we will not.  The result of polynomial division
-        is always get a polynomial with a remainder, where in the
-        remainder the degree of the numerator is always strictly less
+  The result of polynomial division
+  is always a polynomial with a remainder, where in the
+  remainder the degree of the numerator is always strictly less
         than the degree of the denominator. (This is analogous to
         integer division, where the remainder is always less than the
         denominator. For example <m>\frac{26}{3}=8</m> with remainder
         <m>2\lt 3</m>.)
-      </p>
-      <p>
         The numerators of <m>\frac{x}{(x-1)(x+2)}</m>,
         <m>\frac{\frac13}{x-1}</m>, and <m>\frac{\frac23}{x+2}</m>
-        already have a lower degree than their denominators. Thus if
-        we perform the divisions indicated we will, in each case, 
-        get zero as the polynomial and the original fraction as the
-        remainder. Try it and see. 
-      </p>
-      <p>
-        But what about when we add the remainders up? Is it possible
-        that we could get a polynomial that way?
-      </p>
-      <p>
-        No it isn<rsq/>t. It is straightforward to show that if
-        <m>A(x)</m>, <m>B(x)</m>, <m>C(x)</m>, and <m>D(x)</m> are
-        polynomials with 
-        <m>\deg(A(x))\lt \deg (B(x))</m> and <m>\deg (C(x))\lt \deg
-        (D(x))</m> then <m>\deg (A(x)\cdot D(x) + C(x)\cdot B(x)) \lt
-        \deg(B(x)\cdot D(x))      </m>. Thus performing the division
-        <me>\frac{A(x)}{B(x)}+\frac{C(x)}{D(x)}= \frac{A(x)\cdot
-        D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</me> also yields a zero
-        polynomial with <m>\frac{A(x)\cdot
-        D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</m> as the remainder.
-      </p>
+          already have a lower degree than their denominators. Thus if
+          we perform the divisions indicated we will, in each case, 
+          get zero as the polynomial and the original fraction as the
+          remainder. Try it and see. 
+        </p>
+        <p>
+          But what about when we add the remainders up? Is it possible
+          that we could get a polynomial that way?
+        </p>
+        <p>
+          No it isn<rsq/>t. It is straightforward to show that if
+          <m>A(x)</m>, <m>B(x)</m>, <m>C(x)</m>, and <m>D(x)</m> are
+          polynomials with 
+          <m>\deg(A(x))\lt \deg (B(x))</m> and <m>\deg (C(x))\lt \deg
+          (D(x))</m> then <m>\deg (A(x)\cdot D(x) + C(x)\cdot B(x)) \lt
+          \deg(B(x)\cdot D(x))      </m>. Thus performing the division
+          <me>\frac{A(x)}{B(x)}+\frac{C(x)}{D(x)}= \frac{A(x)\cdot
+          D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</me> also yields a zero
+          polynomial with <m>\frac{A(x)\cdot
+          D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</m> as the remainder.
+        </p>
 
 
 
 
 
-      <p>
-        The upshot, in this instance, is that
-        <m>\frac{x}{(x-1)(x-2)}-\frac{\frac13 }{x-1}-\frac{\frac23
-        }{x+2}</m> must sum to zero. So we can ignore them and conclude that
-        our polynomial is given by the other terms. So <me>P(x)=-\frac19 +
-        \frac29 =\frac19 </me>.
-      </p>
-      <p>
-        To finish the decomposition we observe that 
-        <me>\frac{\frac19 }{(x-1)(x+2)} =
-        \frac{A}{x-1}+\frac{C}{x+2}</me> 
-        and from the HCUM we see that <m>A=\frac{1}{27}        </m>
-        and <m>C=-\frac19</m>.
-      </p>
-      <p>
-        Having found all of the constants we conclude that
-        <me>\frac{x}{(x-1)^2(x+2)^2}= \frac{\frac{1}{27}}{x-1} +
-        \frac{\frac19 }{(x-1)^2} -\frac{\frac19}{x+2} -\frac{\frac29
-        }{(x+2)^2} 
-        </me>.
-      </p>
-      <p>
-        Naturally, it isn<rsq/>t always that simple. If any (or all)
-        of the numerators in <xref
-        ref="EQUATIONPFDNumLessDen">formula</xref> did not have a
-        lower degree than it<rsq/>s denominator then we<rsq/>d have
-        had to divide them in order to recover the
-        polynomials. But then the sum of the remainders would
-        necessarily be zero so they can be ignored just as we ignored them  here.
-      </p>
+        <p>
+          The upshot, in this instance, is that
+          <m>\frac{x}{(x-1)(x-2)}-\frac{\frac13 }{x-1}-\frac{\frac23
+          }{x+2}</m> must sum to zero. (Try adding them up and see.) So we can ignore those terms and conclude that
+          our polynomial is given by the other terms. So <me>P(x)=-\frac19 +
+          \frac29 =\frac19 </me>.
+        </p>
+        <p>
+          To finish the decomposition we observe that 
+          <me>\frac{\frac19 }{(x-1)(x+2)} =
+          \frac{A}{x-1}+\frac{C}{x+2}</me> 
+          and from the HCUM we see that <m>A=\frac{1}{27}        </m>
+          and <m>C=-\frac{1}{27}</m>.
+        </p>
+        <p>
+          Having found all of the constants we conclude that
+          <me>\frac{x}{(x-1)^2(x+2)^2}= \frac{\frac{1}{27}}{x-1} +
+          \frac{\frac19 }{(x-1)^2} -\frac{\frac{1}{27}}{x+2} -\frac{\frac29
+          }{(x+2)^2} 
+          </me>.
+        </p>
+        <p>
+          Naturally, it isn<rsq/>t always that simple. If any (or all)
+          of the numerators in <xref
+          ref="EQUATIONPFDNumLessDen">formula</xref> did not have a
+          lower degree than it<rsq/>s denominator then we<rsq/>d have
+          had to divide them in order to recover the
+          polynomials. But then the sum of the remainders would
+          necessarily be zero so they can be ignored just as we ignored them  here.
+        </p>
     </example> 
 <problem>
   <p>
