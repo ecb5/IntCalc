@@ -22,7 +22,7 @@ epub: *.ptx Makefile
 	/home/ecb5/.local/bin/pretext build epub
 
 view: Makefile *.ptx
-	/home/ecb5/.local/bin/pretext view
+	/home/ecb5/.local/bin/pretext view web
 
 viewpdf: 
 #	/home/ecb5/.local/bin/pretext view print

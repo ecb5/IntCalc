@@ -4883,10 +4883,10 @@
         <md>
           <mrow>A+B+C\amp{}=0</mrow>
           <mrow>
-            A\left(b+c\right)+B\left(a+c\right)+C\left(a+b\right)\amp{}=0
+            \left(b+c\right)A+\left(a+c\right)B+C\left(a+b\right)\amp{}=0
           </mrow>
           <mrow>
-            Abc+Bac+Cab\amp{}=1
+            (bc)A+(ac)B+(ab)C\amp{}=1
           </mrow>
         </md>
       </p>
@@ -5508,7 +5508,7 @@
       <exercise>
         <introduction>
           <p>
-            Determine the PFD of by dividing first and by dividing
+            Determine the PFD  by dividing first and by dividing
             last. When you divide last first use polynomial division,
             and then use the substitution to complete the
             decomposition. It should be the same in every case.
@@ -5537,27 +5537,27 @@
       <p>
         
         There are two parts to computing the PFD of a rational
-        function.  The first  is to determine the form of the decomposition.  The other is to compute
+        function.   First we must determine the form of the
+        decomposition and then we must  compute
         the unknown coefficients. From our discussion so far  we  know
         the form if the denominator is a product of distinct linear
         factors, 
         and we have a number of ways to compute the coefficients
         involved.  Being mathematicians, and therefore quite lazy,
         the authors<rsq/> inclination is to use the 
-        more clever, less tedious approach whenever possible.  We only resort to <term>brute
-        force</term> computation if necessary.
+        more clever, less tedious approach whenever possible. 
       </p>
       <p>
-        We always know that we can resort to brute
-        force computations when necessary but         as the rational
-        functions become more complicated,  a little cleverness will
-        save us a lot of computational effort.
+        We can always resort to <term>brute force</term> computations as a last
+        resort, but as the rational functions become more complicated,
+        a little cleverness will save us a lot of computational
+        effort.
       </p>
 
       <example xml:id="EXAMPLEFirstNonLinPartFrac">
         <p>
-          Suppose we try our HCUM on <m>\frac{1}{x^2\left(x-1\right)}</m>.
-          If we do this without thinking, we would get
+          Suppose we try the HCUM on <m>\frac{1}{x^2\left(x-1\right)}</m>.
+          If we do this without thinking, we will get
         </p>
         <p>
           <me>\frac{1}{x^2\left(x-1\right)}=-\frac{1}{x^2}+\frac{1}{x-1}</me> 
@@ -5602,9 +5602,9 @@
               You can solve <xref
               ref="EQUATIONHeaviNonLinear1">equation</xref> for
               <m>A</m> by setting <m>x</m> equal to (almost) any
-              value we choose. Confirm this by showing  that we get
-              <m>A=-1</m> when <m>x=3</m>, <m>x=5</m>, and 
-              <m>x= 10</m>. 
+              value we choose. Confirm this by showing  that if we set   <m>x=3</m>, <m>x=5</m>, or
+              <m>x= 10</m>, we always get
+              <m>A=-1</m>
             </p>
           </statement>
         </task>
@@ -5669,88 +5669,96 @@
         </p>
       </exercise>
       <p>
-        As you have seen there are many ways to attack a PFD of a
-        rational function.  The good news is that as long as you have
-        the correct form for the PFD, you can use any algebraic
+        As you have seen there are many ways to attack the PFD of a
+        rational function.  The good news is that  you can use any algebraic
         technique to determine the coefficients.  Unfortunately that
         is also the bad news.
       </p>
       <p>
-
-        Having so many options can make your head spin, especially if
-        you are using techniques without fully  understanding why they
-        work.  So think before you act and proceed deliberately.  With
-        experience you will begin to see patterns and there will be
-        fewer false starts.
+        In this section we (the authors) are building up a procedure
+        for the PFD which is simple, both to understand and to
+        implement, but it is not the only known procedure. And the PFD is not
+        Calculus, it is Algebra. So for us it is simply a way to
+        manipulate an integral into a form we can compute. So if you
+        know, or can find, a better method for computing the PFD go
+        ahead and use it.
       </p>
+<p>
 
+  Having so many options can make your head spin, especially if
+  you are using techniques without fully  understanding why they
+  work.  So think before you act and proceed deliberately.  With
+  experience you will begin to see patterns and there will be
+  fewer false starts.
+</p>
+
+<p>
+  The theorem underlying all of this is <xref
+  ref="THEOREMPartialFractionDecomp"></xref> which we now state
+  formally. 
+</p>
+
+
+<theorem xml:id="THEOREMPartialFractionDecomp">
+  <title>The Partial Fraction Decomposition (PFD)</title>
+  <p>
+    If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
+    polynomials having no non<ndash/>trivial common factors with
+    <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
+    polynomials <m>A(x)</m> and <m>B(x)</m>, with 
+    <m>\deg(A)\lt\deg(Q)</m> and <m>\deg(B)\lt\deg(R)</m>, such
+    that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
+    \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
+  </p>
+</theorem>
+<p>
+  
+  For example, suppose we had the rational function
+</p>
+<p>
+  
+  <me>\frac{x^2-x+2}{x{\left(x-1\right)}^2}</me> 
+</p>
+<p>
+
+
+  By theorem 19.2.2.11, we know we can write this as
+
+  
+  <me>\frac{x^2-x+2}{x{\left(x+1\right)}^2}=\frac{A}{x}+\frac{Bx+C}{{\left(x+1\right)}^2}</me> 
+
+
+  but it is more convenient to write it as
+
+  
+  <me>\frac{x^2-x+2}{x{\left(x+1\right)}^2}=\frac{A}{x}+\frac{B(x+1)+C}{{\left(x+1\right)}^2}=\frac{A}{x}+\frac{B}{x+1}+\frac{C}{{\left(x+1\right)}^2}</me> 
+</p>
+
+
+
+<exercise>
+  <task>
+    <statement>
       <p>
-        The theorem underlying all of this is <xref
-        ref="THEOREMPartialFractionDecomp"></xref> which we now state
-        formally. 
+        Explain how we can use the HCUM to compute <m>A</m>
+        and <m>C</m>
+        and then show that <m>A=2</m> and <m>C=-4</m>.
       </p>
 
-
-      <theorem xml:id="THEOREMPartialFractionDecomp">
-        <title>The Partial Fraction Decomposition (PFD)</title>
-        <p>
-          If <m>P(x)</m>, <m>Q(x)</m>, and <m>R(x)</m> are
-          polynomials having no non<ndash/>trivial common factors with
-          <m>\deg(P)\lt\deg(Q)+ \deg(R)</m> then there exist
-          polynomials <m>A(x)</m> and <m>B(x)</m>, with 
-          <m>\deg(A)\lt\deg(Q)</m> and <m>\deg(B)\lt\deg(R)</m>, such
-          that <me>\frac{P(x)}{Q(x)\cdot{}R(x)} =
-          \frac{A(x)}{Q(x)}+\frac{B(x)}{R(x)}</me>.
-        </p>
-      </theorem>
+    </statement>
+  </task>
+  <task>
+    <statement>
       <p>
-        
-        For example, suppose we had the rational function
-      </p>
-      <p>
-        
-        <me>\frac{x^2-x+2}{x{\left(x-1\right)}^2}</me> 
-      </p>
-      <p>
-
-
-        By theorem 19.2.2.11, we know we can write this as
-
-        
-        <me>\frac{x^2-x+2}{x{\left(x+1\right)}^2}=\frac{A}{x}+\frac{Bx+C}{{\left(x+1\right)}^2}</me> 
-
-
-        but it would be even more convenient to write this as
-
-        
-        <me>\frac{x^2-x+2}{x{\left(x+1\right)}^2}=\frac{A}{x}+\frac{B(x+1)+C}{{\left(x+1\right)}^2}=\frac{A}{x}+\frac{B}{x+1}+\frac{C}{{\left(x+1\right)}^2}</me> 
+        Substitute the values for <m>A</m>, and <m>C</m> into
+        the PFD and compute <m>B</m> by any means you wish.
       </p>
 
+    </statement>
+  </task>
 
 
-      <exercise>
-        <task>
-          <statement>
-            <p>
-              Explain how we can use the HCUM to compute <m>A</m>
-              and <m>C</m>
-              and then show that <m>A=2</m> and <m>C=-4</m>.
-            </p>
-
-          </statement>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Substitute the values for <m>A</m>, and <m>C</m> into
-              the PFD and compute <m>B</m> by any means you wish.
-            </p>
-
-          </statement>
-        </task>
-
-
-      </exercise>
+</exercise>
 
 
 <exercise xml:id="PROBLEMPFDDistinctLinearFactors">
@@ -5893,21 +5901,15 @@
     That will work. Give it a try if you want. Good luck. 
   </p>
   <p>
-    But we<rsq/>re trying to find the most efficient method we
-    can so instead we<rsq/>re going to make judicious use of the
-    knowledge that the sum of the rational functions on the left of
-    <xref ref="EQUATIONPFDDistinctLin2">equation</xref>  must be the
-    polynomial <m>P(t)</m>. 
+    But we know that <m>P(x)</m> is a polynomial and we can make very
+    effective use of that knowledge as follows.
   </p>
   <p>
-    We begin with  the second term on
-    the left:
-    <m>\frac{x+2}{x-1}</m>. If we perform this division we get
+    If we perform this division in the second term on the left we get
     <me>\frac{x+2}{x-1} = 1 +\frac{3}{x-1}</me>. Similarly if we
-    perform the division in the third term we get
-    <m>\frac{x-1}{x+2}= 1-\frac{3}{x+2}</m>. Putting these back
-    into <xref ref="EQUATIONPFDDistinctLin2">equation</xref> we
-    have 
+    perform the division in the third term we get <m>\frac{x-1}{x+2}=
+    1-\frac{3}{x+2}</m>. Putting these back into <xref
+    ref="EQUATIONPFDDistinctLin2">equation</xref> we have
     <me>
       \frac{x}{(x-1)(x+2)} -
       \frac19
@@ -5920,164 +5922,184 @@
       \right) =  P(x)
     </me>
     or
-    <me>
-      \frac{x}{(x-1)(x+2)} - \frac19 -\frac{\frac13}{x-1} +\frac29
-      -\frac{\frac23}{x+2} = P(x) </me>.  Since <m>P(x)</m> must be a
-      polynomial it follows that the left side<!-- ,  -->
-
-      <!-- <men xml:id="EQUATIONPFDNumLessDen"> -->
-      <!--   \frac{x}{(x-1)(x+2)} - \frac19 -\frac{\frac13}{x-1} +\frac29 -->
-      <!--   -\frac{\frac23}{x+2} -->
-      <!-- </men>  -->
-
-      is also a polynomial. 
+    <men xml:id="EQUATIONPFDNumLessDen">
+      \underbrace{\left(      \frac{x}{(x-1)(x+2)}  -\frac{\frac13}{x-1}
+      -\frac{\frac23}{x+2}\right)}_{=0} + \frac19 = P(x) 
+      </men>. 
+      Since <m>P(x)</m> must be a
+      polynomial it follows that the expression in the parentheses
+      <mdash/> everything that is not a polynomial <mdash/>
+      must be equal to zero, as we<rsq/>ve indicated above. 
   </p>
   <p>
-    But the only polynomials on the left are the  constants
-    <m>-\frac19{}</m> and <m>\frac{2}{9}</m>. (They  are polynomials of
-    degree zero.) Are there any others?
-  </p>
-  <p>
-    No. There are not. Even if we perform the divisions
-    <m>\frac{x}{(x-1)(x+2)}</m>, <m>\frac{\frac13}{x-1}</m>, or
-    <m>\frac{\frac23}{x+2}</m> no polynomial will emerge. Think about
-    this for a moment before reading on.
-  </p>
-      <p>
-  The result of polynomial division
-  is always a polynomial with a remainder, where in the
-  remainder the degree of the numerator is always strictly less
-        than the degree of the denominator. (This is analogous to
-        integer division, where the remainder is always less than the
-        denominator. For example <m>\frac{26}{3}=8</m> with remainder
-        <m>2\lt 3</m>.)
-        The numerators of <m>\frac{x}{(x-1)(x+2)}</m>,
-        <m>\frac{\frac13}{x-1}</m>, and <m>\frac{\frac23}{x+2}</m>
-          already have a lower degree than their denominators. Thus if
-          we perform the divisions indicated we will, in each case, 
-          get zero as the polynomial and the original fraction as the
-          remainder. Try it and see. 
-        </p>
-        <p>
-          But what about when we add the remainders up? Is it possible
-          that we could get a polynomial that way?
-        </p>
-        <p>
-          No it isn<rsq/>t. It is straightforward to show that if
-          <m>A(x)</m>, <m>B(x)</m>, <m>C(x)</m>, and <m>D(x)</m> are
-          polynomials with 
-          <m>\deg(A(x))\lt \deg (B(x))</m> and <m>\deg (C(x))\lt \deg
-          (D(x))</m> then <m>\deg (A(x)\cdot D(x) + C(x)\cdot B(x)) \lt
-          \deg(B(x)\cdot D(x))      </m>. Thus performing the division
-          <me>\frac{A(x)}{B(x)}+\frac{C(x)}{D(x)}= \frac{A(x)\cdot
-          D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</me> also yields a zero
-          polynomial with <m>\frac{A(x)\cdot
-          D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</m> as the remainder.
-        </p>
-
-
-
-
-
-        <p>
-          The upshot, in this instance, is that
-          <m>\frac{x}{(x-1)(x-2)}-\frac{\frac13 }{x-1}-\frac{\frac23
-          }{x+2}</m> must sum to zero. (Try adding them up and see.) So we can ignore those terms and conclude that
-          our polynomial is given by the other terms. So <me>P(x)=-\frac19 +
-          \frac29 =\frac19 </me>.
-        </p>
-        <p>
-          To finish the decomposition we observe that 
-          <me>\frac{\frac19 }{(x-1)(x+2)} =
-          \frac{A}{x-1}+\frac{C}{x+2}</me> 
-          and from the HCUM we see that <m>A=\frac{1}{27}        </m>
-          and <m>C=-\frac{1}{27}</m>.
-        </p>
-        <p>
-          Having found all of the constants we conclude that
-          <me>\frac{x}{(x-1)^2(x+2)^2}= \frac{\frac{1}{27}}{x-1} +
-          \frac{\frac19 }{(x-1)^2} -\frac{\frac{1}{27}}{x+2} -\frac{\frac29
-          }{(x+2)^2} 
-          </me>.
-        </p>
-        <p>
-          Naturally, it isn<rsq/>t always that simple. If any (or all)
-          of the numerators in <xref
-          ref="EQUATIONPFDNumLessDen">formula</xref> did not have a
-          lower degree than it<rsq/>s denominator then we<rsq/>d have
-          had to divide them in order to recover the
-          polynomials. But then the sum of the remainders would
-          necessarily be zero so they can be ignored just as we ignored them  here.
-        </p>
-    </example> 
-<problem>
-  <p>
-    Confirm that the decomposition in <xref
-    ref="EXAMPLEPFDRepeatedLinearFactors"></xref> is correct.
-  </p>
-
-
-  
-</problem>
-
-<exercise>
-  
-  <introduction>
-    <p>
-      Of course, we<rsq/>re not just computing the PFDs for
-      fun. For us the Partial Fraction Decomposition is a tool
-      which will enable us compute integrals we can<rsq/>t
-      compute by other means. Notice that we cannot compute any
-      of the integrals in this problem without using the PFD.
+    Thus
+    <m>P(x)=\frac19{}</m>. 
+        
+    To finish the decomposition we place this in to <xref
+    ref="EQUATIONPFDDistLin2">equation</xref> and observe that 
+    <me>\frac{\frac19 }{(x-1)(x+2)} =
+    \frac{A}{x-1}+\frac{C}{x+2}</me> 
+    and from the HCUM we see that <m>A=\frac{1}{27}        </m>
+      and <m>C=-\frac{1}{27}</m>.
     </p>
-  </introduction>
-  <task>
-    <statement>
-      <p>
-        Use the results of <xref
-        ref="EXAMPLEPFDRepeatedLinearFactors"></xref> to compute <me>\int
-        \frac{x}{(x-1)^2(x+2)^2}\dx{x}</me>.
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        Combine your results from part (a) of <xref
-        ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
-        learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
-        <me> \int \frac{1}{x^2(x-1)(x-3)^3}\dx{x}</me>
-      </p>
-    </statement>
-  </task>
-  <task>
-    <statement>
-      <p>
-        Combine your results from part (c) of <xref
-        ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
-        learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
-        <me>\int\frac{x-2}{x^3(x-1)}\dx{x}</me>.
-      </p>
-    </statement>
-  </task>
+    <p>
+      Having found all of the constants we conclude from <xref ref="EQUATIONPFDDistLin1">equation</xref> that
+      <me>\frac{x}{(x-1)^2(x+2)^2}= \frac{\frac{1}{27}}{x-1} +
+      \frac{\frac19 }{(x-1)^2} -\frac{\frac{1}{27}}{x+2} -\frac{\frac29
+      }{(x+2)^2} 
+      </me>.
+    </p>
+    <p>
+      Naturally, it isn<rsq/>t always that simple. If the degree of
+      any (or all) of the numerators in <xref
+      ref="EQUATIONPFDNumLessDen">eqution</xref> was not less than
+      it<rsq/>s denominator then we<rsq/>d have had to divide them in
+      order to recover the polynomials part of each. But then the sum
+      of the remainders would necessarily be zero so they can be
+      ignored just as we ignored them here.
+    </p>
+    </example> 
 
-</exercise>
+    <problem>
+      <p>
+        Confirm that the decomposition in <xref
+        ref="EXAMPLEPFDRepeatedLinearFactors"></xref> is correct.
+      </p>
 
-    </subsubsection>
+
+      
+    </problem>
+
+
+
+    <definition xml:id="DEFINITIONReducedRatFunc">
+      <title>Reduced Rational Functions </title>
+      <idx><h>Definition</h><h>reduced rational function</h></idx>
+
+      <statement>
+        <p>
+          We will call a rational function where the degree of the
+          numerator is less than the degree of the denominator a
+          <term>reduced rational function.</term>
+        </p>
+
+</statement>
+    </definition>
+
+    <exercise>
+      <p>
+
+        In <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref> we stated
+        without justification that the sum of the <term>reduced rational
+        functions</term> <m>\frac{x}{(x-1)(x+2)}  -\frac{\frac13}{x-1}
+        -\frac{\frac23}{x+2}</m> would be another <term>reduced rational
+        function</term> but is that really true? This problem
+        explores that question.
+      </p>
+
+
+
+      <p>
+        Suppose  that
+        <m>\frac{A(x)}{B(x)}</m> and  <m>\frac{C(x)}{D(x)}</m>, are
+        <term>reduced rational functions.</term>
+        Show that the sum
+        <me>\frac{A(x)}{B(x)}+\frac{C(x)}{D(x)}= \frac{A(x)\cdot
+        D(x)+C(x)\cdot B(x)}{B(x)\cdot D(x)}</me> 
+        is also a <term>reduced rational function</term>.
+      </p>
+
+
+      
+      
+    </exercise>
+
+    <exercise>
+      
+      <introduction>
+        <p>
+          Of course, we<rsq/>re not just computing the PFDs for
+          fun. For us the Partial Fraction Decomposition is a tool
+          which will enable us compute integrals we can<rsq/>t
+          compute by other means. Notice that we cannot compute any
+          of the integrals in this problem without first  using the
+          PFD to change the integrand into something more manageable.
+        </p>
+      </introduction>
+      <!-- <task> -->
+      <!--   <statement> -->
+      <!--     <p> -->
+      <!--       Use the results of <xref -->
+      <!--       ref="EXAMPLEPFDRepeatedLinearFactors"></xref> to compute <me>\int -->
+      <!--       \frac{x}{(x-1)^2(x+2)^2}\dx{x}</me>. -->
+      <!--     </p> -->
+      <!--   </statement> -->
+      <!-- </task> -->
+      <task>
+        <statement>
+          <p>
+            Combine your results from part (a) of <xref
+            ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
+            learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
+            <me> \int \frac{1}{x^2(x-1)(x-3)^3}\dx{x}</me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Combine your results from part (c) of <xref
+            ref="PROBLEMPFDDistinctLinearFactors"></xref> and what you
+            learned from <xref ref="EXAMPLEPFDRepeatedLinearFactors"></xref>  to compute
+            <me>\int\frac{x-2}{(x+1)^3}\dx{x}</me>.
+          </p>
+        </statement>
+      </task>
+
+    </exercise>
+    <exercise>
+      <task>
+        <statement>
+
+          <p>
+            Apply <xref ref="THEOREMPartialFractionDecomp"></xref>
+            three times to show that the following PFD is valid
+
+            
+            <me>\frac{1}{\left(x-a\right)\left(x-b\right)\left(x-c\right)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}</me> 
+
+
+            where <m>a,b,c\ </m>are distinct numbers
+
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use <xref ref="THEOREMPartialFractionDecomp"></xref> to show
+            that the following PFD is also valid
+
+            <me>\frac{1}{\left(x-a\right)\left(x-b\right)\left(x-c\right)\left(x-d\right)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}+\frac{D}{x-d}\ </me> 
+            where <m>a,b,c,d</m> are distinct numbers.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+  </subsubsection>
 
 
     <subsubsection xml:id="SUBSECTIONPFDIrreducQuadFac">
       <title>Irreducible Quadratic Factors</title>
       <p>
-        In the problems and examples we<rsq/>ve encountered so far
-        whenever there was a quadratic factor in the denominator we
-        were able to either factor it into two distinct linear
-        factors (e.g. <m>(x^2-x+6) = (x+2)(x-3)</m> or into one such
-        factor, squared, e.g.  <m>(x^2+6x+9)=(x+3)^2</m>.
+        So far whenever there was a quadratic factor in the
+        denominator we were able to either factor it into two distinct
+        linear factors (e.g. <m>(x^2-x+6) = (x+2)(x-3)</m> or into one
+        such factor, squared, e.g.  <m>(x^2+6x+9)=(x+3)^2</m>.
         Unfortunately we cannot yet compute the integral <me>\int
         \frac{1}{(x-2)(x^2+1)}\dx{x}</me>, because the factor
-        <m>x^2+1</m> cannot be factored (over the real numbers). So we<rsq/>ll need to extend our procedure to account for
-        this.
+        <m>x^2+1</m> cannot be factored (over the real numbers). So
+        we<rsq/>ll need to extend our procedure to account for this situation.
       </p>
       <aside>
         <title>Comment</title>
@@ -6096,10 +6118,11 @@
 
         Therefore
         <me>\frac{1}{(x-2)(x^2+1)}=
-        \frac{\frac15}{x-2}+ \frac{Bx+C}{x^2+1}</me>
+        \frac{\frac15}{x-2}+ \frac{Bx+C}{x^2+1}</me>.
       </p>
       <p>
-        which, as we keep repeating, is an identity.  If we
+        As we keep repeating this is an identity; it is true
+        regardless of the value of <m>x</m> .  If we
         isolate the expression <m>Bx+C</m> on the right side of the
         equation then the left side will reduce to a linear
         expression in <m>x</m>. We can then simply compare the
@@ -6112,15 +6135,15 @@
         and isolating <m>Bx+C</m> gives
         <me>\frac{1}{x-2}-\frac15\left( \frac{x^2+1}{x-2}\right)=Bx+C
         </me>,
-        and if we simplify the expression on the left we will see
+        and  simplifying the expression on the left we see
         that 
-        <me>Bx+C=-\frac15x +\frac25 </me>, so 
+        <me>Bx+C=-\frac15x -\frac25 </me>, so 
         <men xml:id="EQUATIONFirstPFDExample">\frac{1}{(x-2)(x^2+1)}=
-        \frac15\left(\frac{1}{x-2}\right)- \frac15\left(
-        \frac{x}{x^2+1}\right) -\frac25\left(\frac{1}{x^2+1}\right)</men>.
+        \frac{\frac15}{x-2}-
+        \frac{\frac15x}{x^2+1} -\frac{\frac25}{x^2+1}</men>.
       </p>
 
-      <exercise>
+      <exercise xml:id="PROBLEMIrredQuadPartFrac">
         <task>
           <statement>
             <p>
@@ -6135,10 +6158,27 @@
           <statement>
             <p>
               Compute the integral <m>\displaystyle
-              \int\frac{1}{(x-2)(x^2+1)}\dx{x}</m>.
+              \int\frac{1}{x(x^2+1)}\dx{x} </m>
+            </p>
+</statement>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Compute the integral <m>\displaystyle
+              \int\frac{1}{(x-2)^2(x^2+3)}\dx{x}</m>.
             </p>
           </statement>
         </task>
+        <task>
+          <statement>
+            <p>
+              Compute the integral <m>\displaystyle
+              \int\frac{1}{(x^2+5)^2(x^2+4)}\dx{x}</m>.
+            </p>
+          </statement>
+      </task> 
       </exercise>
       <p>
         Reasoning by analogy it seems reasonable to speculate that
@@ -6157,54 +6197,27 @@
         ref="EQUATIONBigPFD">Equation</xref> is an example of the
         most general form that a Partial Fraction Decomposition can
         have. Beyond that they just get bigger.
-        The good news is that we are done. We won<rsq/>t be asking you
-        to compute this decomposition.
-        </p>
+        The good news is that we are done. 
+      </p>
         <p>
-          On the other hand, if you would like to challenge your
-          understanding  try computing this decompostion using
-          the methods we<rsq/>ve discussed. Do it some time when you
-          have an afternoon and evening free. It will take a while.
+          The really good news is that we won<rsq/>t be asking you to
+          compute this decomposition.  On the other hand, if you would
+          like to challenge your understanding try computing this
+          decomposition  using the methods we<rsq/>ve discussed. Do it
+          some time when you have an afternoon and evening free. It
+          will take a while.
         </p>
-        <p>
-          The HCUM can still be used to compute <m>B</m> and <m>K</m>
-          immediately.  It can even be extended to compute <m>G</m>,
-          <m>H</m>, <m>I</m> and <m>J</m> fairly quickly.  But it
-          would take us more time and effort to develop and discuss
-          the extension than it is worth because we will not be
-          encountering any decompositions this complicated. So we will
-          stop here.
-        </p>
-
-        <exercise>
-          <task>
-            <statement>
-
-              <p>
-                Apply <xref ref="THEOREMPartialFractionDecomp"></xref> twice to show that the following PFD is valid
-
-                
-                <me>\frac{1}{\left(x-a\right)\left(x-b\right)\left(x-c\right)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}</me> 
+        <!-- <p> -->
+        <!--   The HCUM can still be used to compute <m>B</m> and <m>K</m> -->
+        <!--   immediately.  It can even be extended to compute <m>G</m>, -->
+        <!--   <m>H</m>, <m>I</m> and <m>J</m> fairly quickly.  But it -->
+        <!--   would take us more time and effort to develop and discuss -->
+        <!--   the extension than it is worth because we will not be -->
+        <!--   encountering any decompositions this complicated. So we will -->
+        <!--   stop here. -->
+        <!-- </p> -->
 
 
-                where <m>a,b,c\ </m>are distinct numbers
-
-              </p>
-            </statement>
-</task>
-<task>
-  <statement>
-    <p>
-      Use <xref ref="THEOREMPartialFractionDecomp"></xref> to show
-      that the following PFD is valid
-
-      
-      <me>\frac{1}{\left(x-a\right)\left(x-b\right)\left(x-c\right)\left(x-d\right)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}+\frac{D}{x-d}\ </me> 
-      where <m>a,b,c,d</m> are distinct numbers.
-    </p>
-  </statement>
-</task>
-</exercise>
 
         <!-- <p> -->
         <!--   You can see why we did not begin this section by stating -->
@@ -6229,11 +6242,11 @@
     <!--   Numbers</title> -->
     <p>
       Traditionally a course in Calculus studiously avoids using
-      complex and imaginary numbers because strictly speaking, they
-      are not necessary. However as we saw in <xref
-      ref="SECTIONEulerHarmonicOsc"></xref>  there are times when the
-      complex numbers simplify the problem. This is another such
-      situation.
+      complex and imaginary numbers for reasons that have always
+      eluded the authors. As we saw in <xref
+      ref="SECTIONEulerHarmonicOsc"></xref> there are times when using
+      the complex numbers can considerably simplify the problem. This
+      is another such situation.
     </p>
 
     <p>
@@ -6422,43 +6435,52 @@
 
       </p>
       <p>
-        But unfortunately, in this course we traditionally confine our
-        attention to the real numbers and treat the complex numbers as
-        if they are somehow unsavory, even when using them would make
-        more sense. To remove the complex numbers from our  decomposition we compute the sum
-        <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}</m> as follows
-        <men xml:id="EQUATIONPFDComplex1">
-          \frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}=\frac{2x+1}{x^2+1}
-          </men>.
-      </p>
-      <p>
-
-        Thus our decomposition over the real numbers (rather
-        than the complex numbers is
-        <men xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
-      </p>
+        If <m>a+bi</m> is a complex number then <m>a-bi</m> is
+        called its <term>conjugate</term>.  In general, the
+        complex factors of a polynomial with real coefficients,
+        if any exist, will always occur in conjugate pairs, so
+        if a PFD is obtained by using complex numbers you can
+        always hide the complex numbers by combining the terms
+        with conjugate roots.
+        </p>
+        <p>
+          Therefore, if for any reason  it is desired to remove the complex numbers
+          from our decomposition we compute the sum
+          <m>\frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}</m> as
+          follows
+          <men xml:id="EQUATIONPFDComplex1">
+            \frac{1-\frac12i}{x-i}+\frac{1+\frac12i }{x+i}=\frac{2x+1}{x^2+1}
+            </men>.
+        </p>
+        <p>
+          Thus our decomposition over the real numbers (rather than the
+          complex numbers is <men
+          xml:id="EQUATIONPFDComplex2">\frac{x-2}{x(x^2+1)}=\frac{-2}{x}+\frac{2x+1}{x^2+1}</men>.
+          Compare this with your solution to part (b) of <xref
+          ref="PROBLEMIrredQuadPartFrac"></xref>.
+        </p>
 
     </example>
 
-    <exercise>
-      <task>
-        <statement>
-          <p>
-            Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is
-            correct.
+    <!-- <exercise> -->
+    <!--   <task> -->
+    <!--     <statement> -->
+    <!--       <p> -->
+    <!--         Confirm that <xref ref="EQUATIONPFDComplex1">equation</xref> is -->
+    <!--         correct. -->
 
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is
-            correct.
-          </p>
-        </statement>
-      </task>
-    </exercise>
+    <!--       </p> -->
+    <!--     </statement> -->
+    <!--   </task> -->
+    <!--   <task> -->
+    <!--     <statement> -->
+    <!--       <p> -->
+    <!--         Confirm that <xref ref="EQUATIONPFDComplex2">equation</xref> is -->
+    <!--         correct. -->
+    <!--       </p> -->
+    <!--     </statement> -->
+    <!--   </task> -->
+    <!-- </exercise> -->
 
     <!--   <p><alert>END OF DIGRESSION</alert></p> -->
     <!-- </paragraphs> -->
@@ -7094,20 +7116,13 @@
 
       <exercises>
         <exercisegroup  cols="2">
+          <title>Random Integrals</title>
           <introduction>
             <p>
-              Compute each of the integrals by any method.  Some of these can be
-              computed by more than one method.
+              Compute each of the integrals by any method you know.
+              Some of these can be computed by more than one method.
             </p>
-            <p>
-              If <m>a+bi</m> is a complex number then <m>a-bi</m> is
-              called its <term>conjugate</term>.  In general, the
-              complex factors of a polynomial with real coefficients,
-              if any exist, will always occur in conjugate pairs, so
-              if a PFD is obtained by using complex numbers you can
-              always hide the complex numbers by combining the terms
-              with conjugate roots.
-            </p>
+
             <p>
               If you use complex numbers to compute the a PFD,
               recombine the appropriate root so that no complex
