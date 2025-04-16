@@ -5158,7 +5158,6 @@
               Use the result of part (a) to show that 
               <md>
                 <mrow>
-
                   \dfdx{P}{t} \amp{}= 0.1P\left(1-\frac{P}{100}\right)\left(
                   1-\frac{10}{P}\right)
                 </mrow>
@@ -5167,7 +5166,7 @@
                 </mrow>
               </md>
               is satisfied by 
-              <me>P(t)= \frac{100-10Ke^{0.09t}}{1-Ke^{-0.09t}}</me>
+              <me>P(t)= \frac{100-10Ke^{-0.01t}}{1-Ke^{-0.01t}}</me>
               where <m>K</m> is an arbitrary constant.
             </p>
           </statement>
@@ -5175,11 +5174,11 @@
         <task>
           <statement>
             <p>
-              Show that if <m>P(0)=5</m>, then <m>K=19</m> and plot this curve. Is this consistent with calling <m>10</m> the minimum
-              viability level?
-              Use the graphical techniques
-              of <xref ref="SECTIONExponentialGrowth"></xref> to sketch a qualitative graph of the solution of <xref
-              ref="EQUATIONLogEqMinViable">equation</xref>. 
+              Show that if <m>P(0)=5</m>, then <m>K=19</m> and plot this curve. Is this consistent with calling <m>10</m> the <term>minimum
+              viability level</term>?
+              <!-- Use the graphical techniques -->
+              <!-- of <xref ref="SECTIONExponentialGrowth"></xref> to sketch a qualitative graph of the solution of <xref -->
+              <!-- ref="EQUATIONLogEqMinViable">equation</xref>.  -->
             </p>
             <!-- <p> -->
             <!--   Does the curve you get resemble the graph of <m>P(t)</m>? -->
@@ -5194,18 +5193,13 @@
           </statement>
         </task>
       </exercise>
-      <aside>
-        <title>Note to self</title>
-        <p>
-          Should we have a part (d) where we tell them to generate a
-          qualitative graph like in <xref
-          ref="SECTIONExponentialGrowth"></xref>?
-        </p>
-      </aside>
 
       <p>
-        We<rsq/>ve simplified the  process quite a bit  so far but in fact it can be
+        We<rsq/>ve already simplified the PFD  process quite a bit,
+        but in fact it can be (and will need to be)
         streamlined even further.
+      </p>
+      <p>
         When he was computing some PFDs related to his work with 
         differential equations
         <url href="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/" visual="https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/">Oliver Heaviside</url>
@@ -5217,8 +5211,8 @@
         </men> 
         Do you see that the numerator above <m>x-a</m> is what we
         would get if we simply replaced <m>x</m> with <m>a</m> on the
-        left and <q>covered up,</q> (or ignored) the factor
-        <m>x-a</m>?
+        left and <q>covered up,</q> (or ignored, or set equal to one)
+        the factor <m>x-a</m>?
       </p>
         <p>
           That is, if <m>\frac{1}{(x-a)(x-b)}=
@@ -5246,7 +5240,10 @@
         </p>
         <p>
           To see why the HCUM works take another look at the decomposition 
-          <me>\frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}</me>. If we multiply both sides by <m>x-a</m>, we get 
+          <men xml:id="EQUATIONPFD2LinFactors">
+            \frac{1}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}
+            </men>. 
+            If we multiply both sides by <m>x-a</m>, we get 
           <me>\frac{1}{x-b}=A+\frac{B(x-a)}{x-b}</me> which holds as long as
           <m>x\ne b</m>. Notice that <m>\frac{1}{x-b} =
           \frac{1}{(\text{covered})(x-b)}</m>.
@@ -5255,16 +5252,43 @@
         </p>
 
         <exercise>
-          <p>
-            By a similar argument, show  that the HCUM will also compute the
-            correct value of <m>A</m>, <m>B</m>, and <m>C</m> in the
-            decomposition
-            <me>\frac{1}{(x-a)(x-b)(x-c)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}</me>.
-          </p>
-          <p>
-            It is straightforward to generalize this result to an arbitrary
-            number of linear factors.
-          </p>
+          <introduction>
+            <p>
+              Based on our experience so far if we wanted to decompose
+              the expression <m>\frac{1}{(x-a)(x-b)(x-c)}</m>
+              we<rsq/>d try to find <m>A</m>, <m>B</m>, and <m>C</m>
+              in
+              <men xml:id="EQUATIONPFD3Factors">
+                \frac{1}{(x-a)(x-b)(x-c)}=\frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}</men>.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                Multiply both sides of  <xref
+                ref="EQUATIONPFD3Factors">equation</xref> by
+                <m>(x-a)(x-b)(x-c)</m> and show that 
+                <me>A= \frac{1}{(a-b)(a-c)}</me>. 
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                By a similar argument, show  that <m>B=\frac{1}{(b-a)(b-c)}</m>
+                and <m>C=\frac{1}{(c-a)(c-b)}</m>.
+              </p>
+            </statement>
+          </task>
+          <conclusion>
+            <p>
+              This shows that the HCUM also works when there are three linear
+              factors in the denominator.
+              It is straightforward to generalize this result to an arbitrary
+              number of linear factors.
+            </p>
+          </conclusion>
+
         </exercise>
 
         <exercise>
@@ -5717,7 +5741,7 @@
 </p>
 <p>
   
-  <me>\frac{x^2-x+2}{x{\left(x-1\right)}^2}</me> 
+  <me>\frac{x^2-x+2}{x{\left(x+1\right)}^2}</me> 
 </p>
 <p>
 
@@ -5952,11 +5976,12 @@
     <p>
       Naturally, it isn<rsq/>t always that simple. If the degree of
       any (or all) of the numerators in <xref
-      ref="EQUATIONPFDNumLessDen">eqution</xref> was not less than
-      it<rsq/>s denominator then we<rsq/>d have had to divide them in
-      order to recover the polynomials part of each. But then the sum
-      of the remainders would necessarily be zero so they can be
-      ignored just as we ignored them here.
+      ref="EQUATIONPFDNumLessDen">equation</xref> was not less than
+      it<rsq/>s denominator then we<rsq/>d have had to compute the
+      division in order to recover the polynomial part of each. But
+      then the sum of the remainders would necessarily be zero so they
+      can be ignored just as we ignored <m> \frac{x}{(x-1)(x+2)}
+      -\frac{\frac13}{x-1} -\frac{\frac23}{x+2}</m> above.
     </p>
     </example> 
 
