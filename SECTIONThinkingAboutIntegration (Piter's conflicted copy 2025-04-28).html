@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Two "Ways of Thinking" About Integration: Summation vs. Antidifferentiation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c7804631fa963734.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="CHAPTERIntSimplest.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERIntSimplest.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SECTIONIntegrationRules1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\CC}{\mathbb {C}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">I</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">1</span> <span class="title">Differential Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Separation of Variables</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntegrationTechniques.html" class="internal"><span class="codenumber">2</span> <span class="title">Integration Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integration by Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONAirResistance" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Extending Galileo’s Results: Air Resistance</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Simple Substitutions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution-20" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises and Drills: Integration by Substitution</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONHangingChainSolDeriv" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Deriving the Solution of the Hanging Chain Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONTrigSubst" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Trigonometric (Inverse) Substitutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Simple Decompositions: The Logistic Equation, Redux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Heaviside’s Cover–up Method (HCUM)</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Advanced Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2" class="internal"><span class="title">Linear Factors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDIrreducQuadFac" class="internal"><span class="title">Irreducible Quadratic Factors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSUBSECTIONAvoidIrredCase" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Avoiding the Irreducible Case by Allowing Complex Numbers</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SECTIONPartFrac-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Running the Product Rule Backwards: Integration By Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONStoneArch.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Bridge Arches, the Catenary Curve, and Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="CHAPTERIntSimplest.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsAntiDerivative" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationRules1.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Rules for Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDefiniteIntegration.html" class="internal"><span class="codenumber">4</span> <span class="title">Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Precursors to Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavLeibNotation" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Cavalieri, Differentials, and Definite Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Accumulation: The Indefinite Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">4.5.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">4.5.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsub-WorkEnergy" class="internal"><span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">5</span> <span class="title">More Approximation Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-3" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Summation Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONGeoSeries" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Manipulating the Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONBinomialSeries" class="internal"><span class="codenumber">5.2.5</span> <span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerOtherPoints" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Power Series Expanded About Other Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONTaylorSeries" class="internal"><span class="codenumber">5.2.7</span> <span class="title">The Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerSol" class="internal"><span class="codenumber">5.2.8</span> <span class="title">Power Series Solutions of Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONApprIntViaRiemSums.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Approximating Integrals with Riemann Sums</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">6</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ajf.html" class="internal"><span class="codenumber">7</span> <span class="title">Place Holder</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTBobsClasroomProblems.html" class="internal"><span class="codenumber">III</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">8</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs9.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Homework #9: Applications of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs10.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Homework #10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs11.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Homework #11: Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">IV</span> <span class="title">Stuff  Without a Home</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">9</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Integration as a Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Problem:     When the integral of a product is the product of the integrals.Random Stuff</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">10</span> <span class="title">The  Theory Behind the  Partial Fraction Decomposition</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTEREulerId.html" class="internal"><span class="codenumber">11</span> <span class="title">Alternate Proof of Euler Identity</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ladfjk.html" class="internal"><span class="codenumber">12</span> <span class="title">Digression: Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">V</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">13</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-list-results.html" class="internal"><span class="codenumber">A</span> <span class="title">List of Theorems, Lemmas, Corollaries, Examples, Exercises, and Definitions</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONThinkingAboutIntegration"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span>
+</h2>
+<section class="introduction" id="SECTIONThinkingAboutIntegration-2"><div class="para" id="SECTIONThinkingAboutIntegration-2-1">Beginning in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONHist-intr" missing or not unique]</code> we observed that when we think about differentiation it is helpful to view differentiation through either the lens of geometry (Leibniz), or the lens of dynamics (Newton), depending on the particular context.  Similarly the next section describes two different, but equilvalent, ways to “think about” integration. As before these two viewpoints are, more or less, equivalent, but they provide different insights. Some concepts are easier to see through one lens, others through the other.</div></section><section class="subsection" id="SUBSECTIONIntegrationAsASum"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Integration as  Summation</span>
+</h3>
+<div class="para" id="SUBSECTIONIntegrationAsASum-2">Suppose a point <span class="process-math">\(P\)</span> traces out a line segment of some unknown length <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="external/IC/X0toX.png" class="contained"></div>
+<div class="para logical" id="SUBSECTIONIntegrationAsASum-4">
+<div class="para">Partition the line segment between <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x_n\)</span> by selecting points <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> <span class="process-math">\(\ldots \text{,}\)</span> <span class="process-math">\(x_{n-1}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_0\lt x_1 \lt x_2 \lt \cdots \lt x_{n-1} \lt x_n\text{.}
+\end{equation*}
+</div>
+</div>
+<figure class="figure figure-like" id="FIGUREPartitionedInterval"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/FTC1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.1.1<span class="period">.</span></span><span class="space"> </span>A partitioned interval.  </figcaption></figure><div class="para logical" id="SUBSECTIONIntegrationAsASum-6">
+<div class="para">The partition points subdivide the interval <span class="process-math">\([x_0, x_n]\)</span> into subintervals.  We represent the length of the first subinterval of <span class="process-math">\(x\)</span> with <span class="process-math">\(\Delta x_1\text{,}\)</span> of the second with <span class="process-math">\(\Delta x_2\text{,}\)</span> and so on.  In general <span class="process-math">\(\Delta{x_i}\)</span> represents the length of the <span class="process-math">\(i\)</span>th subinterval of <span class="process-math">\(x\text{.}\)</span> Clearly the length of the line segment <span class="process-math">\([x_0, x_n]\)</span> is</div>
+<div class="displaymath process-math" id="SUBSECTIONIntegrationAsASum-6-9">
+\begin{align*}
+\Delta{x_1}\amp{}+\Delta{x_2}+\Delta{x_3} +\cdots  +\Delta{x_{n-1}}+\Delta{x_n}\\
+\amp{} =  (x_1-x_0)+(x_2-x_1)+(x_3-x_2) +\cdots + (x_{n-1}-x_{n-2})+(x_n-x_{n-1})\\
+\amp{}=x_n-x_0\\
+\amp{}=x\text{.}
+\end{align*}
+</div>
+<div class="para">If the subintervals are all the same length, say <span class="process-math">\(\Delta{x}\text{,}\)</span> then we no longer need the subscripts to distinguish them so we could write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+copies}}=x_n-x_0=x
+\end{equation*}
+</div>
+<div class="para">instead.  But this is cumbersome and we are far too lazy to write all of that each time we want to indicate such a sum.  Leibniz proposed using the letter “S” (first letter of the word “sum”) to simplify the summation  notation. He would have written:</div>
+<div class="displaymath process-math" id="EQUATIONFinDiffSum">
+\begin{equation}
+\int{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+copies}} = x_n-x_0 =x\text{.}\tag{3.1}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="SUBSECTIONIntegrationAsASum-7">
+<div class="para"> We assume, with Leibniz, that <a href="SECTIONThinkingAboutIntegration.html#EQUATIONFinDiffSum" class="xref" data-knowl="./knowl/xref/EQUATIONFinDiffSum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1">equation (3.1)</a> remains true when the finite differences (<span class="process-math">\(\Delta{x}\)</span>) are replaced with infinitesimal differences (<span class="process-math">\(\dx{x}{}\)</span>):</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONFinDiffSum.html" id="EQUATIONDefInt2">
+\begin{equation}
+\int{\dx{x} }=x_n-x_0=x\text{.}\tag{3.2}
+\end{equation}
+</div>
+<div class="para">The symbol “<span class="process-math">\(\int \)</span>” is called an <dfn class="terminology">integral sign</dfn>, and any expression starting with “<span class="process-math">\(\int \)</span>” followed by a differential is called an <dfn class="terminology">integral</dfn>.</div>
+</div>
+<div class="para" id="SUBSECTIONIntegrationAsASum-8">For Leibniz the distinction between the summation of infinitesimals and of very small but finite real numbers, was somewhat blurred. Thus he used “<span class="process-math">\(\dx{x}\)</span>”  and “<span class="process-math">\(\Delta{x} \)</span>” more or less interchangebly.</div>
+<div class="para logical" id="SUBSECTIONIntegrationAsASum-9">
+<div class="para">But we will need to keep them distinct. In modern times it has become customary to distinguish finite and infinitesimal sums by using different alphabets. Since <span class="process-math">\(\Delta \)</span> comes from Greek and <span class="process-math">\(\int \)</span> comes from Latin,  we extend this convention to finite summation by writing <a href="SECTIONThinkingAboutIntegration.html#EQUATIONFinDiffSum" class="xref" data-knowl="./knowl/xref/EQUATIONFinDiffSum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1">equation (3.1)</a> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONFinDiffSum.html ./knowl/xref/SUBSECTIONSummationNotation.html">
+\begin{equation*}
+\sum{}\Delta{x}=\underbrace{\Delta{x}+\Delta{x} + \cdots{}+\Delta{x}}_{\text{n
+copies}} = x_n-x_0 =x
+\end{equation*}
+</div>
+<div class="para">because “<span class="process-math">\(\Sigma \)</span>” is the Greek version of the Latin capital letter “S”. We will examine this notation more closely in <a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal" title="Subsection 5.2.2: Summation Notation">Subsection 5.2.2</a>.</div>
+</div>
+<div class="para" id="SUBSECTIONIntegrationAsASum-10">
+<a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">Equation (3.2)</a> is the simplest possible integral. It says that if we add up the lengths of all of the differentials that make up the line segment from <span class="process-math">\(x_0\)</span> to <span class="process-math">\(x_n\)</span> we will get its length, <span class="process-math">\(x_n-x_0=x\text{.}\)</span>
+</div>
+<div class="para" id="SUBSECTIONIntegrationAsASum-11"> This is surely not surprising to you and you are probably wondering why we’ve taken the trouble to wrap such an obvious statement in this arcane notation. The reason is this: <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">equation (3.2)</a> is a very simple form of <dfn class="terminology">The Fundamental Theorem of Calculus</dfn>, or FTC, which we saw in <a href="SECTIONStoneArch.html" class="internal" title="Section 2.4: Bridge Arches, the Catenary Curve, and Integration">Section 2.4</a>. We will need to become very comfortable with the FTC. Later, when things get complex, it will be helpful to refer back to <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">equation (3.2)</a> and remind ourselves that integration can always be usefully thought of as adding up differentials.</div>
+<section class="paragraphs" id="PARAGRAPHCoordinatesAndVariables"><h4 class="heading"><span class="title">DIGRESSION:  Coordinates and  Variable Names.</span></h4>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-2">   In <a href="SECTIONThinkingAboutIntegration.html#FIGUREPartitionedInterval" class="xref" data-knowl="./knowl/xref/FIGUREPartitionedInterval.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.1.1.1">Figure 3.1.1.1</a> we were rather careless about the distinction between the label of a point, e.g.  <span class="process-math">\(P\)</span> or <span class="process-math">\(P_0\text{,}\)</span> and its coordinate, e.g. <span class="process-math">\(x_1\)</span> or <span class="process-math">\(x_2\text{.}\)</span> A natural question would be “Aren’t they the same thing?”</div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-3">No, actually they aren’t. The label of a point is the name we use to distinguish it from other points. The (horizontal) coordinate of a point is it’s (horizontal) distance from the origin.  Consider the following diagram.   </div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VarX2.png" class="contained"></div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-5">The labels (names) of the two points are <span class="process-math">\(P_0\)</span> and <span class="process-math">\(P\text{.}\)</span> Since <span class="process-math">\(x_0\)</span> measures the distance between zero and <span class="process-math">\(P_0\)</span> it is by definition the coordinate of the point labeled <span class="process-math">\(P_0\text{.}\)</span>  Similarly <span class="process-math">\(x_n\)</span> is the coordinate of <span class="process-math">\(P\text{.}\)</span>
+</div>
+<aside class="aside aside-like" id="PARAGRAPHCoordinatesAndVariables-6"><h5 class="heading"><span class="title">Comment.</span></h5>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-6-2">If a vertical axis were present zero would be the second coordinate of both points. Do you see why?</div></aside><div class="para" id="PARAGRAPHCoordinatesAndVariables-7">On the other hand since <span class="process-math">\(x\)</span> — the distance between <span class="process-math">\(P_0\)</span> and <span class="process-math">\(P\)</span> — is not measured from the origin it is neither a coordinate nor the label of a point.            It is the length of the line segment <span class="process-math">\(\overline{P_0P}\text{.}\)</span> If we partition this line segment and compute <span class="process-math">\(\int\dx{x} \)</span> we get <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">equation (3.2)</a>.</div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-8">Since their coordinates distinguish one point from another as well as their labels do, a (very) common practice is to dispense with the labels altogether and make the coordinates serve both purposes as in the diagram below.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VarX3.png" class="contained"></div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-10">Strictly speaking this is an abuse of our notation and it can cause confusion because it isn’t always clear whether <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x_n\)</span> refer to points on the line, or their distance from the origin (their coordinates). Always be sure it is clear to you which usage is intended.</div>
+<div class="para" id="PARAGRAPHCoordinatesAndVariables-11"><em class="alert">END OF DIGRESSION</em></div></section></section><section class="subsection" id="SUBSECTIONIntegrationAsAntiDerivative"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">Integration as Antidifferentiation</span>
+</h3>
+<div class="para" id="SUBSECTIONIntegrationAsAntiDerivative-2">All of  <a href="CHAPTERIntegrationTechniques.html" class="internal" title="Chapter 2: Integration Techniques">Chapter 2</a> was about interpreting integration as antidifferentiation so most of the discussion in this section will simply be a formalization of that idea. We begin with a formal definition of the antiderivative.</div>
+<article class="definition definition-like" id="DEFINITIONAntiderivative"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Antiderivative.</span>
+</h4>
+<div class="para logical" id="DEFINITIONAntiderivative-4-1">
+<div class="para">Suppose we have a function</div>
+<div class="displaymath process-math" id="EQUATIONDefAntideriv">
+\begin{equation}
+y=F(t)\tag{3.3}
+\end{equation}
+</div>
+<div class="para">with derivative <span class="process-math">\(\dfdx{y}{t}=F^\prime(t)=f(t)\text{.}\)</span> Then <span class="process-math">\(F(t)\)</span> is called an <dfn class="terminology">antiderivative</dfn> of <span class="process-math">\(f(t)\text{.}\)</span> Since there are infinitely many antiderivatives of a given function we call <span class="process-math">\(F(t)+C\text{,}\)</span> where <span class="process-math">\(C\)</span> is an arbitrary constant, the <dfn class="terminology">most general antidierivative</dfn> of <span class="process-math">\(f(t)\text{.}\)</span>
+</div>
+</div></article><div class="para logical" id="SUBSECTIONIntegrationAsAntiDerivative-4">
+<div class="para">From <a href="SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2.1: Antiderivative">Definition 3.1.2.1</a> , we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DEFINITIONAntiderivative.html" id="EQUATIONIntAsAntiDiff">
+\begin{equation}
+\dx{y}=F^\prime(t)\dx{t}=f(t)\dx{t}\text{.}\tag{3.4}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="SUBSECTIONIntegrationAsAntiDerivative-5">
+<div class="para">We know from our work in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal" title="Subsection 3.1.1: Integration as  Summation">Subsection 3.1.1</a> (specifically <a href="SECTIONThinkingAboutIntegration.html#EQUATIONDefInt2" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">equation (3.2)</a>) that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SUBSECTIONIntegrationAsASum.html ./knowl/xref/EQUATIONDefInt2.html ./knowl/xref/EQUATIONIntAsAntiDiff.html">
+\begin{equation*}
+y=\int\dx{y}\text{.}
+\end{equation*}
+</div>
+<div class="para">So if we sum all of the differentials on the left and right sides of <a href="SECTIONThinkingAboutIntegration.html#EQUATIONIntAsAntiDiff" class="xref" data-knowl="./knowl/xref/EQUATIONIntAsAntiDiff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.4">equation (3.4)</a>  we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SUBSECTIONIntegrationAsASum.html ./knowl/xref/EQUATIONDefInt2.html ./knowl/xref/EQUATIONIntAsAntiDiff.html">
+\begin{equation*}
+y=\int\dx{y}= \int f(t)\dx{t}\text{.}
+\end{equation*}
+</div>
+<div class="para">Observe that since <span class="process-math">\(\dx{y} \)</span> is a differential it follows that <span class="process-math">\(f(t)\dx{t}\)</span> is also a differential so the expression <span class="process-math">\(\int f(t)\dx{t}\)</span> is a valid integral.</div>
+</div>
+<div class="para" id="SUBSECTIONIntegrationAsAntiDerivative-6">Thus it appears that if <span class="process-math">\(\dx{y}=f(t)\dx{t} \)</span> is known then <span class="process-math">\(y=F(t)\)</span> will be the antiderivative of <span class="process-math">\(f(t)\text{.}\)</span> That is to say, integration appears to be “differentiation run backwards.” This seems reasonable since differentiation consists of subtracting (finding differentials) and integration consists of adding (summing differentials). Addition and subtraction can  both be thought of as “doing the the other backwards.”</div>
+<div class="para" id="SUBSECTIONIntegrationAsAntiDerivative-7">Integration theory has grown considerably beyond what we will be learning in this course. But the underlying notions of the integral as a sum and the integral as an antiderivative are still very helpful and we will rely on them rather heavily.</div>
+<article class="exercise exercise-like" id="EXERCISEAntiDerivPractice"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">3.1.2.2</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="EXERCISEAntiDerivPractice-2"><div class="para" id="EXERCISEAntiDerivPractice-2-1">Show that  the following statements are true. Assume <span class="process-math">\(C\)</span> is an arbitrary constant. (We have not shown you how to compute any of these integrals. But  you know how to differentiate. Read <a href="SECTIONThinkingAboutIntegration.html#DEFINITIONAntiderivative" class="xref" data-knowl="./knowl/xref/DEFINITIONAntiderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2.1: Antiderivative">Definition 3.1.2.1</a>  again carefully.)</div></div>
+<article class="task exercise-like" id="EXERCISEAntiDerivPractice-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="EXERCISEAntiDerivPractice-3-1-1"><span class="process-math">\(\displaystyle\int 2te^{t^2}\dx{t} = e^{t^2} +C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="EXERCISEAntiDerivPractice-4-1-1"><span class="process-math">\(\displaystyle\int te^t\dx{t} = (t-1)e^t+C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="EXERCISEAntiDerivPractice-5-1-1"><span class="process-math">\(\displaystyle\int \sin(x)\cos(x)\dx{x} =\frac12\sin^2(x)+C\)</span></div>
+<div class="solutions"><details id="EXERCISEAntiDerivPractice-5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="EXERCISEAntiDerivPractice-5-2-1">Notice that we’ve used <span class="process-math">\(x\)</span> instead of <span class="process-math">\(t\)</span> for our variable. Does that matter? Explain.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMSinsqcossqantider"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="PROBLEMSinsqcossqantider-1-1"><span class="process-math">\(\displaystyle\int \sin(\theta )\cos(\theta )\dx{\theta } =
+-\frac12\cos^2(\theta )+C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-7"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="EXERCISEAntiDerivPractice-7-1-1"><span class="process-math">\(\displaystyle\int u\cos(u) \dx{u} = u\sin(u)+\cos(u)+C\)</span></div></article><article class="task exercise-like" id="EXERCISEAntiDerivPractice-8"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="EXERCISEAntiDerivPractice-8-1-1"><span class="process-math">\(\displaystyle\int x\ln(x) \dx{x} = x(\ln{x}-1)+C\)</span></div></article></article><div class="para" id="SUBSECTIONIntegrationAsAntiDerivative-9">The exercises in <a href="SECTIONIntegrationRules1.html#PROBLEMAntiDiffPractice" class="xref" data-knowl="./knowl/xref/PROBLEMAntiDiffPractice.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 3.2.0.3">Drill 3.2.0.3</a> were all a bit contrived. Since we gave you the antiderivatives you don’t really need to know how tho integrate.</div>
+<div class="para" id="SUBSECTIONIntegrationAsAntiDerivative-10">The real question here is “How could you find these antiderivatives if we hadn’t given them to you?”</div></section><section class="conclusion" id="SECTIONThinkingAboutIntegration-5"><h3 class="heading">We Integrate Differentials, Not Functions.<span></span>
+</h3>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-2">Since it is valid to think of <span class="process-math">\(\int
+f(x)\dx{x}\)</span> as representing an antiderivative of the function <span class="process-math">\(f\)</span> it is customary to speak these symbols aloud as “the integral of <span class="process-math">\(f\)</span> of <span class="process-math">\(x\text{.}\)</span>” While this is not wrong, it is not quite right either. Properly speaking, we should say “the integral of the differential <span class="process-math">\(f(x)\)</span> times <span class="process-math">\(\dx{x}\text{.}\)</span>” But no one does that so we won’t either.</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-3">But if we (the authors or your instructor) consistently speak incorrectly (as we tend to do in this instance) it is easy for you (the student) to develop  unfortunate habits of mind. We will take a moment to try to  prevent that from happening.</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-4">As we’ve seen, the integral sign was designed (by Leibniz) to indicate summation, not antidifferentiation. As a result it is very easy to use it improperly. Sooner or later most people will fall into the habit of dropping the final “<span class="process-math">\(\dx{x}\text{,}\)</span>” of writing <span class="process-math">\(\int f(x)\)</span> instead of <span class="process-math">\(\int f(x)\dx{x}\text{,}\)</span> and  calling both of them the integral of the function <span class="process-math">\(f(x)\text{.}\)</span>
+</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-5">This is an unfortunate, but common, abuse of the notation.  You can not integrate a function, only a differential. We <em class="emphasis">strongly</em> suggest that you take care to avoid this bad habit for as long as you can because it can be very confusing. Especially when the concepts are new.</div>
+<div class="para logical" id="SECTIONThinkingAboutIntegration-5-6">
+<div class="para">Remember that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int f(x)
+\end{equation*}
+</div>
+<div class="para">is meaningless no matter how convenient it might be because it indicates that we are summing a function, not a differential.</div>
+</div>
+<aside class="aside aside-like" id="SECTIONThinkingAboutIntegration-5-7"><h4 class="heading"><span class="title">Notation.</span></h4>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-7-2">By calling <span class="process-math">\(\int f(x)\)</span> meaningless we have overstated the situation a bit. If you study mathematics long enough you will encounter situations where <span class="process-math">\(\int{f(x)}\)</span> is a perfectly reasonable notation to use. But we will not encounter them here, and it is best if you don’t fall into this habit while you are still learning the basics.</div></aside><div class="para logical" id="SECTIONThinkingAboutIntegration-5-8">
+<div class="para">But the meaning of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int
+f(x)\dx{x}
+\end{equation*}
+</div>
+<div class="para">is clear. We’re summing up all of the differentials of the form <span class="process-math">\(f(x)\dx{x} \text{.}\)</span>
+</div>
+</div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-9">Finally, there is a mysterypuzzle here. The twin notions of an integral as an infinite summation, and as antidifferentiation, do not appear, <i class="foreign">a priori</i>, to be related at all. How can they actually be two ways of thinking of the same thing?         </div>
+<div class="para" id="SECTIONThinkingAboutIntegration-5-10">Notwithstanding that puzzle it should be clear that the two ideas will complement each other well. Finding the sum <span class="process-math">\(\int 2x\dx{x}\)</span> by addition is a very daunting task. Where would you even begin? By reinterpreting it as an antidifferentiation problem we are able to find the sum, <span class="process-math">\(\int 2x\dx{x}+C\)</span> without the bother of adding up (infinitely many) differentials of the form <span class="process-math">\(2x\dx{x}\text{.}\)</span> Antidifferentiation gives us a way to compute the sum indirectly.</div>
+<div class="para logical" id="SECTIONThinkingAboutIntegration-5-11">
+<div class="para">On the other hand, some antiderivative can’t be given in elementary terms. For example there is no elementary formula for the integral</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CHAPTERApproximationIntegral.html">
+\begin{equation*}
+\int e^{-x^2}\dx{x}\text{,}
+\end{equation*}
+</div>
+<div class="para">but as we will see in <a href="CHAPTERApproximationIntegral.html" class="internal" title="Chapter 5: More Approximation Methods">Chapter 5</a> this is a very useful integral. Even if we can’t write down its antiderivative, it will frequently be useful to approximate it. And we  do that by thinking of <span class="process-math">\(\int
+e^{-x^2}\dx{x}\)</span> as a summation.</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="CHAPTERIntSimplest.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONIntegrationRules1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

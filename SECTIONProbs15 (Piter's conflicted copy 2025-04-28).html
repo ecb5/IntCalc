@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Homework #15: More on Power Series</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c7804631fa963734.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="SECTIONProbs14.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="problems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="PARTNoHome.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\CC}{\mathbb {C}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">I</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">1</span> <span class="title">Differential Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Separation of Variables</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntegrationTechniques.html" class="internal"><span class="codenumber">2</span> <span class="title">Integration Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integration by Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONAirResistance" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Extending Galileo’s Results: Air Resistance</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Simple Substitutions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution-20" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises and Drills: Integration by Substitution</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONHangingChainSolDeriv" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Deriving the Solution of the Hanging Chain Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONTrigSubst" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Trigonometric (Inverse) Substitutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Simple Decompositions: The Logistic Equation, Redux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Heaviside’s Cover–up Method (HCUM)</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Advanced Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2" class="internal"><span class="title">Linear Factors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDIrreducQuadFac" class="internal"><span class="title">Irreducible Quadratic Factors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSUBSECTIONAvoidIrredCase" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Avoiding the Irreducible Case by Allowing Complex Numbers</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SECTIONPartFrac-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Running the Product Rule Backwards: Integration By Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONStoneArch.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Bridge Arches, the Catenary Curve, and Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntSimplest.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsAntiDerivative" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationRules1.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Rules for Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDefiniteIntegration.html" class="internal"><span class="codenumber">4</span> <span class="title">Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Precursors to Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavLeibNotation" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Cavalieri, Differentials, and Definite Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Accumulation: The Indefinite Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">4.5.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">4.5.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsub-WorkEnergy" class="internal"><span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">5</span> <span class="title">More Approximation Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-3" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Summation Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONGeoSeries" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Manipulating the Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONBinomialSeries" class="internal"><span class="codenumber">5.2.5</span> <span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerOtherPoints" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Power Series Expanded About Other Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONTaylorSeries" class="internal"><span class="codenumber">5.2.7</span> <span class="title">The Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerSol" class="internal"><span class="codenumber">5.2.8</span> <span class="title">Power Series Solutions of Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONApprIntViaRiemSums.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Approximating Integrals with Riemann Sums</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">6</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ajf.html" class="internal"><span class="codenumber">7</span> <span class="title">Place Holder</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="PARTBobsClasroomProblems.html" class="internal"><span class="codenumber">III</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">8</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs9.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Homework #9: Applications of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs10.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Homework #10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs11.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Homework #11: Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">IV</span> <span class="title">Stuff  Without a Home</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">9</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Integration as a Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Problem:     When the integral of a product is the product of the integrals.Random Stuff</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">10</span> <span class="title">The  Theory Behind the  Partial Fraction Decomposition</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTEREulerId.html" class="internal"><span class="codenumber">11</span> <span class="title">Alternate Proof of Euler Identity</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ladfjk.html" class="internal"><span class="codenumber">12</span> <span class="title">Digression: Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">V</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">13</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-list-results.html" class="internal"><span class="codenumber">A</span> <span class="title">List of Theorems, Lemmas, Corollaries, Examples, Exercises, and Definitions</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONProbs15"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.10</span><span class="space"> </span><span class="title">Homework #15: More on Power Series</span>
+</h2>
+<div class="para logical" id="SECTIONProbs15-2">
+<div class="para">In HW # 14, we introduced power series as a way to represent functions and use them to approximate various integrals.  Alas, there are some functions for which we can’t do that.  For example, could we write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{x}=a_0+a_1x+a_2x^2+\dots
+\end{equation*}
+</div>
+<div class="para">for the appropriate choice of coefficients <span class="process-math">\(a_0,
+a_1,a_2,\dots \text{?}\)</span>
+</div>
+</div>
+<div class="para logical" id="SECTIONProbs15-3">
+<div class="para">A quick look says no, for if we substituted in <span class="process-math">\(x=0\text{,}\)</span> we would get <span class="process-math">\(\frac{1}{0}=a_0\)</span> which doesn’t work.  However, all is not lost as we can do the following.</div>
+<div class="displaymath process-math" id="SECTIONProbs15-3-4">
+\begin{align*}
+\frac{1}{x}\amp{}=\frac{1}{1+\left(x-1\right)}\\
+\amp{}=\frac{1}{1-\left(-\left(x-1\right)\right)}\\
+\amp{}=1+\left(-1\left(x-1\right)\right)+{\left(-\left(x-1\right)\right)}^2+{\left(-\left(x-1\right)\right)}^3+\dots\\
+\amp{}=1-\left(x-1\right)+{\left(x-1\right)}^2-{\left(x-1\right)}^3+\dots
+\end{align*}
+</div>
+<div class="para">which is valid for <span class="process-math">\(-1\lt x-1\lt 1\)</span> or <span class="process-math">\(0\lt x\lt
+2\text{.}\)</span>  This is called the power series expansion of <span class="process-math">\(\frac{1}{x}\)</span> expanded about 1.</div>
+</div>
+<article class="exercise exercise-like" id="PROBLEMPS1"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.10.0.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="PROBLEMPS1-1-1">
+<div class="para">For each of the following functions, find the power series expansion</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(x\right)=a_0+a_1\left(x-a\right)+a_2{\left(x-a\right)}^2+a_3{\left(x-a\right)}^3+\dots 
+\end{equation*}
+</div>
+<div class="para">for the indicated value of <span class="process-math">\(a\)</span> by manipulating a known series. [Make sure you write out enough terms so there is a discernible pattern.]</div>
+<ol class="lower-roman ol-marker-2" id="PROBLEMPS1-1-1-3">
+<li id="PROBLEMPS1-1-1-3-1"><div class="para" id="p-derived-PROBLEMPS1-1-1-3-1"><span class="process-math">\(\displaystyle f\left(x\right)={\ln (x)}, a=1\)</span></div></li>
+<li id="PROBLEMPS1-1-1-3-2"><div class="para" id="p-derived-PROBLEMPS1-1-1-3-2"><span class="process-math">\(\displaystyle f\left(x\right)=e^x ,  a=5\)</span></div></li>
+<li id="PROBLEMPS1-1-1-3-3"><div class="para" id="p-derived-PROBLEMPS1-1-1-3-3"><span class="process-math">\(\displaystyle f\left(x\right)=1+x+x^2 ,  a=-2\)</span></div></li>
+</ol>
+</div></article><div class="para" id="SECTIONProbs15-5">As you can see, we can represent a lot of functions by power series if we are “clever enough” to see how to manipulate existing series.  But what if we are not clever enough on a particular day.  Is there a systematic way to construct the power series for a given function?  As mathematicians in the 18<span class="process-math">\(^{th}\)</span> century saw how power series could be powerful tool for the then new calculus, they sought such a systematic way.  A number of them found such a way.  They were all basically the same, and finally a mathematician named Brook Taylor (1685-1731) wrote down this systematic method in a book in 1715.  Taylor wrote his result utilizing Newton’s dot notation (somewhat) and it is not easy to read.  Even using Leibniz’ differential notation becomes cumbersome when doing this.  As such we will state Taylor’s result using the prime notation <span class="process-math">\(\left(y^\prime\left(x\right)=\frac{dy}{\dx{x}}\right)\)</span> developed by Joseph Louis Lagrange (1736-1813) in 1797.  In fact, Lagrange developed this notation specifically with power series in mind.  Lagrange’s idea was to define functions by power series in an attempt to find a more rigorous foundation for calculus than infinitely small differentials.  Here is Taylor’s idea with Lagrange’s notation.</div>
+<div class="para logical" id="SECTIONProbs15-6">
+<div class="para">Suppose we could write a function <span class="process-math">\(f(x)\)</span> as a power series expanded about <span class="process-math">\(a\text{.}\)</span>  That is suppose</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(x\right)=a_0+a_1\left(x-a\right)+a_2{\left(x-a\right)}^2+a_3{\left(x-a\right)}^3+\dots 
+\end{equation*}
+</div>
+<div class="para">The goal is to find out what the coefficients <span class="process-math">\(a_0, a_1,
+a_2, a_3, \dots  \)</span>are in a systematic way.  First notice that</div>
+<div class="displaymath process-math" id="SECTIONProbs15-6-5">
+\begin{align*}
+f\left(a\right)\amp{}=a_0+a_1\left(a-a\right)+a_2{\left(a-a\right)}^2+a_3{\left(a-a\right)}^3+\dots\\
+\amp{}=a_0+0+0+0+\dots\\
+\amp{} =a_0
+\end{align*}
+</div>
+<div class="para">so <span class="process-math">\(a_0=f(a)\text{.}\)</span>  Computing the derivative, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^\prime\left(x\right)=1a_1+2a_2\left(x-a\right)+3a_3{\left(x-a\right)}^2+4a_4{\left(x-a\right)}^3+\dots 
+\end{equation*}
+</div>
+<div class="para">Substituting <span class="process-math">\(x=a\)</span> again, we get</div>
+<div class="displaymath process-math" id="SECTIONProbs15-6-9">
+\begin{align*}
+f^\prime\left(a\right)\amp{}=1a_1+2a_2\left(a-a\right)+3a_3{\left(a-a\right)}^2+4a_4{\left(a-a\right)}^3+\dots\\
+\amp{} =1a_1+0+0+\dots\\
+\amp{} =1a_1
+\end{align*}
+</div>
+<div class="para">so <span class="process-math">\(a_1=\frac{f^\prime\left(a\right)}{1}\text{.}\)</span>  Computing the next derivative and then substituting <span class="process-math">\(x=a\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^{\prime\prime}\left(x\right)=2\cdot 1a_2+3\cdot 2a^3\left(x-a\right)+4\cdot 3a_4{\left(x-a\right)}^2+5\cdot 4a_5{\left(x-a\right)}^3+\dots 
+\end{equation*}
+</div>
+<div class="para">Substituting <span class="process-math">\(x=a\)</span> again, we get</div>
+<div class="displaymath process-math" id="SECTIONProbs15-6-14">
+\begin{align*}
+f^{\prime\prime}\left(a\right)\amp{}=2\cdot 1a_2+3\cdot 2a^3\left(a-a\right)+4\cdot 3a_4{\left(a-a\right)}^2+5\cdot 4a_5{\left(a-a\right)}^3+\dots\\
+\amp{}=2\cdot 1a_2+0+0+0+\dots\\
+\amp{} =2\cdot 1a_2
+\end{align*}
+</div>
+<div class="para">So <span class="process-math">\(a_2=\frac{f^{\prime\prime}\left(a\right)}{2\cdot 1}\text{.}\)</span>
+</div>
+</div>
+<article class="exercise exercise-like" id="SECTIONProbs15-7"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.10.0.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="SECTIONProbs15-7-1-1">
+<div class="para">Continue this process to show</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_3=\frac{f^{\prime\prime\prime}\left(a\right)}{3\cdot 2\cdot 1}       \
+a_4=\frac{f^{\prime\prime\prime\prime}\left(a\right)}{4\cdot 3\cdot 2\cdot 1}
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="SECTIONProbs15-8">
+<div class="para">You will notice that we were careful to not multiply things out and were very careful about putting in 1’s etc.  This was not only because of laziness, but it was also to see the pattern developing.  The fact that <span class="process-math">\(4\cdot 3\cdot 2\cdot
+1=24 \)</span>is immaterial and in fact would hide the pattern, which goes against our goal of finding a systematic method. Following this pattern, we have that if <span class="process-math">\(f(x)\)</span> is going to be represented as a power series expanded about <span class="process-math">\(a\text{,}\)</span> then it must be</div>
+<div class="displaymath process-math" id="SECTIONProbs15-8-5">
+\begin{align*}
+f\left(x\right)=f\left(a\right)+\amp{}\frac{f\prime\left(a\right)}{1}\left(x-a\right)+\frac{f^{\prime\prime}\left(a\right)}{2\cdot
+1}{\left(x-a\right)}^2\\\\
+\amp{}+\frac{f^{\prime\prime\prime}\left(a\right)}{3\cdot
+2\cdot
+1}{\left(x-a\right)}^3+\frac{f^{\prime\prime\prime\prime}\left(a\right)}{4\cdot
+3\cdot 2\cdot 1}{\left(x-a\right)}^4+\dots
+\end{align*}
+</div>
+<div class="para">This is called the Taylor series expansion of <span class="process-math">\(f(x)\)</span> expanded about <span class="process-math">\(a\text{.}\)</span>  In the particular case when <span class="process-math">\(a=0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(x\right)=f\left(0\right)+\frac{f^\prime\left(0\right)}{1}x+\frac{f^{\prime\prime}\left(0\right)}{2\cdot
+1} x^2+\frac{f^{\prime\prime\prime}\left(0\right)}{3\cdot 2\cdot 1}
+x^3+\frac{f^{\prime\prime\prime\prime}\left(0\right)}{4\cdot 3\cdot 2\cdot 1} x^4+\dots  
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="SECTIONProbs15-9">
+<div class="para">This specific Taylor series expanded about <span class="process-math">\(a=0\)</span> is often called the Maclaurin series of <span class="process-math">\(f(x)\)</span> in honor of the mathematician Colin Maclaurin (1698-1746).  Both Taylor and Maclaurin were writing systematic expositions of Newton’s version of the calculus when they formulated these series expansions.  Again, the notation is Lagrange’s and comes later.  Before we go any further, let’s introduce some notation to make writing this a little less tedious.  For example, if we follow the pattern in Taylor’s formula, we would have the coefficient of the 100<span class="process-math">\(^{th}\)</span> term look like this.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{100}=\frac{f^{\prime\prime\prime\prime\prime\prime\dots \prime}\left(a\right)}{100\cdot 99\cdot 98\cdot \dots \cdot 2\cdot 1}
+\end{equation*}
+</div>
+<div class="para">where we have 100 slashes (primes) in the exponent.  We need something a little more compact.  With this in mind, we denote <span class="process-math">\(100\cdot 99\cdot 98\cdot \dots \cdot 2\cdot 1\)</span> by <span class="process-math">\(100!\text{.}\)</span>  This is read “one hundred factorial.”  In general, for a positive integer <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(n!=n\cdot
+\left(n-1\right)\cdot \left(n-2\right)\cdot \dots \cdot 2\cdot
+1\text{.}\)</span>  Thus, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1!=1,    2!=2\cdot 1=2,    3!=3\cdot 2\cdot 1=6,4!=4\cdot 3!=24,\dots 
+\end{equation*}
+</div>
+<div class="para">but again, I want to emphasize that the pattern is actually more important at this point than the product.  With this in mind, Taylor’s Formula looks like this.</div>
+<div class="displaymath process-math" id="SECTIONProbs15-9-16">
+\begin{align}
+f\left(x\right)=f\left(a\right)+\frac{f^\prime\left(a\right)}{1!}\left(x-a\right)+\amp{}\frac{f^{\prime\prime}\left(a\right)}{2!}{\left(x-a\right)}^2\tag{8.4}\\
+\amp{}+\frac{f^{\prime\prime\prime}\left(a\right)}{3!}{\left(x-a\right)}^3+\dots\tag{8.5}
+\end{align}
+</div>
+</div>
+<div class="para logical" id="SECTIONProbs15-10">
+<div class="para">This takes care of the denominators, but we still need to streamline something like <span class="process-math">\(f^{\prime\prime\prime\prime\prime\prime\prime\prime\prime\prime\prime\prime\prime}\left(a\right).\)</span>  The notation for the <span class="process-math">\(n^{th}\)</span> derivative is  <span class="process-math">\(f^{\left(n\right)}(a)\text{.}\)</span> For this one you need to be careful. <span class="process-math">\({\boldsymbol{f}}^{\left(\boldsymbol{2}\right)}\left(\boldsymbol{a}\right)\boldsymbol{\neq
+}{\boldsymbol{f}}^{\boldsymbol{\
+}\boldsymbol{2}}\left(\boldsymbol{a}\right).\)</span>  The first one is the second derivative.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^{\left(2\right)}\left(a\right)=f^{\prime\prime}(a)
+\end{equation*}
+</div>
+<div class="para">The second one is the function squared.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^2\left(a\right)={\left(f\left(a\right)\right)}^2
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="SECTIONProbs15-11">
+<div class="para">With these notations, Taylor’s formula looks like this.</div>
+<div class="displaymath process-math" id="SECTIONProbs15-11-2">
+\begin{align*}
+f\left(x\right)=f\left(a\right)+\frac{f^{\left(1\right)}\left(a\right)}{1!}\left(x-a\right)+\amp{}\frac{f^{\left(2\right)}\left(a\right)}{2!}{\left(x-a\right)}^2\\
+\amp{}+\frac{f^{\left(3\right)}\left(a\right)}{3!}{\left(x-a\right)}^3+\frac{f^{\left(4\right)}\left(a\right)}{4!}{\left(x-a\right)}^4+\dots
+\end{align*}
+</div>
+<div class="para">so the hundredth term in this series would look like this.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{f^{\left(100\right)}\left(a\right)}{100!}{\left(x-a\right)}^{100}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="SECTIONProbs15-12">
+<div class="para">Let’s test this systematic approach on something we already know. The geometric series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{1-x}=1+x+x^2+x^3+\dots 
+\end{equation*}
+</div>
+<div class="para">is valid for <span class="process-math">\(-1\lt x \lt 1\text{.}\)</span>  Suppose we use this Taylor “machine” to generate the power series of <span class="process-math">\(f\left(x\right)=\frac{1}{1-x}\)</span> expanded about <span class="process-math">\(a=0\text{.}\)</span>  We will do this systematically.</div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(f\left(x\right)={\left(1-x\right)}^{-1}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0)=1\)</span></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(f^\prime\left(x\right)=-1{\left(1-x\right)}^{-2}\left(-1\right)=1{\left(1-x\right)}^{-2}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^\prime\left(0\right)=1!\)</span></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(f^{\prime\prime}\left(x\right)=1\left(-2\right){\left(1-x\right)}^{-3}\left(-1\right)=2\cdot 1{\left(1-x\right)}^{-3}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{\prime\prime}\left(0\right)=2!\)</span></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(f^{\prime\prime\prime}\left(x\right)=3\cdot 2\cdot 1{\left(1-x\right)}^{-4}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{\prime\prime\prime}\left(0\right)=3!\)</span></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots \)</span></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(f^{\left(n\right)}\left(x\right)=n!{\left(1-x\right)}^{-\left(n+1\right)}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{\left(n\right)}\left(0\right)=n!\)</span></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots \)</span></td>
+</tr>
+</table></div>
+<div class="para logical" id="SECTIONProbs15-14">
+<div class="para">Applying <a href="SECTIONProbs15.html#SECTIONProbs15-9-16" class="xref" data-knowl="./knowl/xref/EQUATIONTaylorsFormulaLF.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">Taylor’s Formula (8.5)</a>   to this, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONTaylorsFormulaLF.html">
+\begin{equation*}
+\frac{1}{1-x}=1+\frac{1!}{1!}\left(x-0\right)+\frac{2!}{2!}{\left(x-0\right)}^2+\frac{3!}{3!}{\left(x-0\right)}^3+\dots +\frac{n!}{n!}{\left(x-0\right)}^n+\dots 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONTaylorsFormulaLF.html">
+\begin{equation*}
+=1+x+x^2+x^3+\dots +x^n+\dots 
+\end{equation*}
+</div>
+<div class="para">which is the geometric series we had before.  Using Taylor’s formula is more labor intensive, but it is systematic.  My own preference is to try to obtain a power series in some other “clever” fashion, and if I’m not clever enough, then rely on the Taylor formula as a back up.</div>
+</div>
+<article class="problem example-like" id="SECTIONProbs15-15"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">8.10.0.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="SECTIONProbs15-15-2"> Verify your answers in <a href="SECTIONProbs15.html#PROBLEMPS1" class="xref" data-knowl="./knowl/xref/PROBLEMPS1.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 8.10.0.1">Problem 8.10.0.1</a> by applying Taylor’s formula to each of the functions in that problem to verify that you obtain the same series.</div></article><article class="exercise exercise-like" id="SECTIONProbs15-16"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.10.0.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SECTIONProbs15-16-1"><div class="para" id="SECTIONProbs15-16-1-1"></div></div>
+<article class="task exercise-like" id="SECTIONProbs15-16-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONProbs15-16-2-1-1">
+<div class="para">Use Taylor’s formula to derive the following power series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\sin \left(x\right)\
+}=x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\frac{1}{7!}x^7+\frac{1}{9!}x^9-\dots
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="SECTIONProbs15-16-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONProbs15-16-3-1-1">
+<div class="para">We could use Taylor’s formula to obtain a power series for <span class="process-math">\({\cos (x)}\text{,}\)</span> but instead, differentiate the series you obtained in part a to get the series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\cos
+\left(x\right)=1-\frac{1}{2!}x^2+\frac{1}{4!}x^4-\frac{1}{6!}x^6+\frac{1}{8!}x^8-\dots
+}
+\end{equation*}
+</div>
+</div></article><article class="task exercise-like" id="SECTIONProbs15-16-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="SECTIONProbs15-16-4-1-1">
+<div class="para">You might have noticed the similarity between the power series for sine and cosine and the series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\dots 
+\end{equation*}
+</div>
+<div class="para">This was also noticed by Leonard Euler (1707–1783).  He substituted <span class="process-math">\(x=i\theta \)</span> into the series for <span class="process-math">\(e^x\text{,}\)</span> where <span class="process-math">\(i=\sqrt{-1}\text{.}\)</span>  Do the same to derive the important formula</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^{i\theta }={\cos \left(\theta \right)}+i{\sin \left(\theta \right)}
+\end{equation*}
+</div>
+<div class="para">[Note:  This formula is important in many fields such as electrical engineering, quantum physics, and mechanics and is the basis for all of complex analysis.]</div>
+</div></article></article><div class="para logical" id="SECTIONProbs15-17">
+<div class="para">At this point, we should introduce some more notation which makes things a bit more compact and admittedly more precise.  People will often write <a href="SECTIONProbs15.html#SECTIONProbs15-9-16" class="xref" data-knowl="./knowl/xref/EQUATIONTaylorsFormulaLF.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">Taylor’s Formula (8.5)</a>   as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONTaylorsFormulaLF.html" id="EQUATIONTaylorsFormulaSF">
+\begin{equation}
+f\left(x\right)=f(a)+\sum^{\infty
+}_{n=1}{\frac{f^{\left(n\right)}\left(a\right)}{n!}{\left(x-a\right)}^n}.\tag{8.6}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="SECTIONProbs15-18">
+<div class="para">The upper–case Greek letter sigma <span class="process-math">\(\left(\Sigma\right)\)</span> signifies a sum, and this is read as “the sum from <span class="process-math">\(n=1\)</span> to <span class="process-math">\(\infty \)</span> of <span class="process-math">\(\frac{f^{\left(n\right)}\left(a\right)}{n!}{\left(x-a\right)}^n\text{.}\)</span>” Again, this is just a notation.  More specifically, we could write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1+x+x^2+x^3+\dots =\sum^{\infty }_{n=0}{x^n}
+\end{equation*}
+</div>
+<div class="para">Notice that we started our summation at <span class="process-math">\(n=0\)</span> instead of <span class="process-math">\(n=1\text{,}\)</span> and in fact, people adopted the notations <span class="process-math">\(f^{\left(0\right)}\left(a\right)=f(a)\)</span> and <span class="process-math">\(0!=1\)</span> so that Taylor’s formula could be written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(x\right)=f\left(a\right)+\sum^{\infty }_{n=1}{\frac{f^{\left(n\right)}\left(a\right)}{n!}{\left(x-a\right)}^n}=\sum^{\infty }_{n=0}{\frac{f^{\left(n\right)}\left(a\right)}{n!}{\left(x-a\right)}^n}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SECTIONProbs15-19">This summation notation has an advantage that it leaves no doubt as to what the pattern is, but many people find it sophisticated.  To get you more comfortable, here is a problem to give you practice going back and forth between the notations.</div>
+<article class="exercise exercise-like" id="SECTIONProbs15-20"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.10.0.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="SECTIONProbs15-20-1"><div class="para" id="SECTIONProbs15-20-1-1"></div></div>
+<article class="task exercise-like" id="SECTIONProbs15-20-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SECTIONProbs15-20-2-1-1">
+<div class="para">Write the following summations in the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_0+a_1(x-a)+a_2({x-a)}^2+a_3{\left(x-a\right)}^3+\dots. 
+\end{equation*}
+</div>
+<div class="para">[Make sure you put in enough terms to establish a pattern.]</div>
+<ol class="lower-roman ol-marker-2 cols2" id="SECTIONProbs15-20-2-1-1-2">
+<li id="SECTIONProbs15-20-2-1-1-2-1"><div class="para" id="p-derived-SECTIONProbs15-20-2-1-1-2-1"><span class="process-math">\(\displaystyle \sum^{\infty }_{n=0}{n{\left(x-a\right)}^n}\)</span></div></li>
+<li id="SECTIONProbs15-20-2-1-1-2-2"><div class="para" id="p-derived-SECTIONProbs15-20-2-1-1-2-2"><span class="process-math">\(\displaystyle \sum^{\infty }_{n=0}{\frac{{\left(-1\right)}^n}{\left(2n+1\right)!}x^{2n+1}}\)</span></div></li>
+<li id="SECTIONProbs15-20-2-1-1-2-3"><div class="para" id="p-derived-SECTIONProbs15-20-2-1-1-2-3"><span class="process-math">\(\displaystyle \sum^{\infty }_{k=0}{\frac{{\left(-1\right)}^k}{\left(2k\right)!}x^{2k}}\)</span></div></li>
+</ol>
+</div></article><article class="task exercise-like" id="SECTIONProbs15-20-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SECTIONProbs15-20-3-1-1">
+<div class="para">Write the following using summation notation.</div>
+<ol class="lower-roman ol-marker-2 cols2" id="SECTIONProbs15-20-3-1-1-1">
+<li id="SECTIONProbs15-20-3-1-1-1-1"><div class="para" id="p-derived-SECTIONProbs15-20-3-1-1-1-1"><span class="process-math">\(\displaystyle 1-x+x^2-x^3+x^4-\dots \)</span></div></li>
+<li id="SECTIONProbs15-20-3-1-1-1-2"><div class="para" id="p-derived-SECTIONProbs15-20-3-1-1-1-2"><span class="process-math">\(\displaystyle 1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\dots \)</span></div></li>
+<li id="SECTIONProbs15-20-3-1-1-1-3"><div class="para" id="p-derived-SECTIONProbs15-20-3-1-1-1-3"><span class="process-math">\(\displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots \)</span></div></li>
+<li id="SECTIONProbs15-20-3-1-1-1-4"><div class="para" id="p-derived-SECTIONProbs15-20-3-1-1-1-4"><span class="process-math">\(\displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots \)</span></div></li>
+</ol>
+</div></article></article><div class="para logical" id="SECTIONProbs15-21">
+<div class="para">We have talked about representing functions by power series, but the theory of power series goes much deeper than that.  For example, the geometric series only works for <span class="process-math">\(-1\lt x\lt 1\text{,}\)</span> and the series for <span class="process-math">\({\ln (1+x)}\)</span> obtained by integrating the alternating geometric series works for <span class="process-math">\(-1\lt x\le 1\text{.}\)</span>  By contrast, the series for <span class="process-math">\({\sin (x)},{\cos (x)\
+},\)</span>and <span class="process-math">\(e^x\)</span> work for all real numbers <span class="process-math">\(x\text{.}\)</span>   In general, a power series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_0+a_1\left(x-a\right)+a_2{\left(x-a\right)}^2+a_3{\left(x-a\right)}^3+\dots 
+\end{equation*}
+</div>
+<div class="para">will either converge for all real numbers <span class="process-math">\(x\text{,}\)</span> or there will be a non-negative number <span class="process-math">\(R\)</span> such that it will converge for <span class="process-math">\(x\)</span> with <span class="process-math">\(-R\lt x-a\lt R\)</span> and diverge for<span class="process-math">\(x\)</span> with <span class="process-math">\(x-a\lt-R\)</span> or <span class="process-math">\(x-a&gt;R\text{.}\)</span>  This <span class="process-math">\(R\)</span> is called the radius of convergence of the power series.  What happens at <span class="process-math">\(x-a=\pm
+R\)</span> is an even harder question.  We ran out of time to do this, but you can read about it in Mendelson, Chapters 42 -- 46.</div>
+</div>
+<div class="para" id="SECTIONProbs15-22">While we are at it, I mentioned in HW # 14 (and in class) that there is another way to approximate a definite integral using finite sums rather than power series.  Instead of dividing the interval into infinitely small pieces <span class="process-math">\(\dx{x}\)</span> or <span class="process-math">\(\dx{y}\)</span> and integrating quantities together, we could divide the interval into a finite number of pieces and create a finite sum.  This could be used to approximate the integral itself and, in theory, if the lengths <span class="process-math">\(\Delta x\)</span> are made smaller (meaning more terms to sum together) then the approximation would be more accurate.  In fact, in a rigorous formulation of integrals, we could take the limit of these finite sums and it should converge to what we call the definite integral.</div>
+<div class="para logical" id="SECTIONProbs15-23">
+<div class="para">For example, suppose we wanted to approximate</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^1_{x=0}{e^{-x^2}}\dx{x}
+\end{equation*}
+</div>
+<div class="para">This would be the area under the curve <span class="process-math">\(y=e^{-x^2}\)</span> from <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=1\text{.}\)</span>  We could divide the interval <span class="process-math">\([0,1]\)</span> into a finite number of equal pieces, say 10.  The length of each subinterval would be <span class="process-math">\(\Delta x=\frac{1}{10}\text{.}\)</span> We could then choose a point <span class="process-math">\(x^*\)</span> in each subinterval and create the finite sum</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^{-{\left(x^*_1\right)}^2}\Delta
+x+e^{-{\left(x^*_2\right)}^2}\Delta x+\dots
++e^{{-\left(x^*_{10}\right)}^2}\Delta
+x=\sum^{10}_{n=1}{e^{{-\left(x^*_n\right)}^2}\Delta x}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SECTIONProbs15-24">It is hard to digest what is going on without a picture so here is the situation.</div>
+<figure class="figure figure-like" id="FIGUREMidPointRule"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/RiemannSum1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.10.0.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para logical" id="SECTIONProbs15-26">
+<div class="para">As you can see, the sum</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DRILLMidPointRule1.html" id="SECTIONProbs15-26-1">
+\begin{align*}
+e^{{-\left(x^*_1\right)}^2}\Delta
+x+e^{{-\left(x^*_2\right)}^2}\Delta x+\dots\amp{}
++e^{{-\left(x^*_{10}\right)}^2}\Delta x\\
+\amp{}=e^{{-\left(x^*_1\right)}^2}.1+e^{{-\left(x^*_2\right)}^2}.1+\dots
++e^{{-\left(x^*_{10}\right)}^2}.1\\
+\amp{}=.1\sum^{10}_{n=1}{e^{{-\left(x^*_n\right)}^2}}
+\end{align*}
+</div>
+<div class="para">represents the (finite) sum of the areas of boxes and we can use this to approximate the area under the curve given by <span class="process-math">\(\int^1_{x=0}{e^{-x^2}}\dx{x}\text{.}\)</span>  We are free to choose <span class="process-math">\(x^*_n\)</span> to be any value inside each subinterval.  For example, we can choose the midpoints in each interval as in <a href="SECTIONProbs15.html#DRILLMidPointRule1" class="xref" data-knowl="./knowl/xref/DRILLMidPointRule1.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 8.10.0.7">Drill 8.10.0.7</a> below.   This finite sum can be calculated on a computer.  Furthermore, if we have enough computing power, we could divide the interval <span class="process-math">\([0,1]\)</span> into as many subintervals as we wish and they don’t even need to be the same size.</div>
+</div>
+<article class="problem example-like" id="DRILLMidPointRule1"><h3 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">8.10.0.7</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="DRILLMidPointRule1-2">
+<div class="para">Approximate the value of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FIGUREMidPointRule.html">
+\begin{equation*}
+\int_0^1e^{-x^2}\dx{x}
+\end{equation*}
+</div>
+<div class="para">by summing the areas  of the rectangles shown in <a href="SECTIONProbs15.html#FIGUREMidPointRule" class="xref" data-knowl="./knowl/xref/FIGUREMidPointRule.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.10.0.6">Figure 8.10.0.6</a> where the height of each rectangle is the  function value at the midpoint of each interval:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FIGUREMidPointRule.html" id="DRILLMidPointRule1-2-3">
+\begin{align*}
+x^*_1=0.05 \amp{}\amp{} x^*_2=1.05 \amp{}\amp{}
+x^*_3=2.05\amp{}\amp{}x^*_4=3.05 \amp{}\amp{}x^*_5=4.05\\
+x^*_6=
+5.05\amp{}\amp{}x^*_7=6.05\amp{}\amp{}x^*_8=7.05\amp{}\amp{}x^*_9=8.05\amp{}\amp{}x^*_{10}=9.05.
+\end{align*}
+</div>
+</div></article><div class="para" id="SECTIONProbs15-28">A sum such as above is called a Riemann sum named after <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/" target="_blank">Berhard Riemann</a><details class="ptx-footnote" aria-live="polite" id="SECTIONProbs15-28-2"><summary class="ptx-footnote__number" title="Footnote 8.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="SECTIONProbs15-28-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/</code></div></details> (1826–1866) who took limits of these sums as <span class="process-math">\(\Delta x\to 0\)</span> to carefully define what a definite integral is without having to resort to differentials.  You should note that the integral symbol <span class="process-math">\(\int{}\)</span> was developed by Leibniz in 1696, some 130 years before the birth of Riemann.  Riemann developed his theory of integration to address the question of integrability, not necessarily for approximating integrals, though people were using finite sums to approximate integrals before Riemann.</div>
+<div class="para" id="SECTIONProbs15-29">We mentioned in HW # 8 that integrals could be used to determine the coefficients when trying to express a function as a sum of sine and cosine curves.  A major theoretical question in Riemann’s day was how strange a function could look and still have such a representation.  This led to a more careful approach to integration using finite sums and limits.  However, for applications as we have done throughout the semester, utilizing differentials as we have makes integration an easier tool to work with.  But you should be wary that the theory behind integration is much more nuanced than our introduction in this course.</div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="SECTIONProbs14.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="PARTNoHome.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

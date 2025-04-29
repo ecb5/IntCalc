@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Historical Precursors to Definite Integration</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c7804631fa963734.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus:</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="CHAPTERDefiniteIntegration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERDefiniteIntegration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SECTIONInDefInt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\CC}{\mathbb {C}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">I</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">1</span> <span class="title">Differential Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Separation of Variables</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntegrationTechniques.html" class="internal"><span class="codenumber">2</span> <span class="title">Integration Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integration by Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONAirResistance" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Extending Galileo’s Results: Air Resistance</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Simple Substitutions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution-20" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises and Drills: Integration by Substitution</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONHangingChainSolDeriv" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Deriving the Solution of the Hanging Chain Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONTrigSubst" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Trigonometric (Inverse) Substitutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDSimple" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Simple Decompositions: The Logistic Equation, Redux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONLogisticEquation" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Heaviside’s Cover–up Method (HCUM)</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Advanced Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDNonSimple-2" class="internal"><span class="title">Linear Factors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDIrreducQuadFac" class="internal"><span class="title">Irreducible Quadratic Factors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSUBSECTIONAvoidIrredCase" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Avoiding the Irreducible Case by Allowing Complex Numbers</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SECTIONPartFrac-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Running the Product Rule Backwards: Integration By Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONStoneArch.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Bridge Arches, the Catenary Curve, and Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntSimplest.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsAntiDerivative" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationRules1.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Rules for Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="CHAPTERDefiniteIntegration.html" class="internal"><span class="codenumber">4</span> <span class="title">Definite Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Precursors to Definite Integration</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavLeibNotation" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Cavalieri, Differentials, and Definite Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Accumulation: The Indefinite Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">4.5.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">4.5.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsub-WorkEnergy" class="internal"><span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">5</span> <span class="title">More Approximation Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-3" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Summation Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONGeoSeries" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Manipulating the Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONBinomialSeries" class="internal"><span class="codenumber">5.2.5</span> <span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerOtherPoints" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Power Series Expanded About Other Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONTaylorSeries" class="internal"><span class="codenumber">5.2.7</span> <span class="title">The Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerSol" class="internal"><span class="codenumber">5.2.8</span> <span class="title">Power Series Solutions of Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONApprIntViaRiemSums.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Approximating Integrals with Riemann Sums</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">6</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ajf.html" class="internal"><span class="codenumber">7</span> <span class="title">Place Holder</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTBobsClasroomProblems.html" class="internal"><span class="codenumber">III</span> <span class="title">Bob’s Classroom Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="problems.html" class="internal"><span class="codenumber">8</span> <span class="title">Bob’s Homework Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Homework #2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Homework #3:The Opposite of the Product Rule — Integration by Parts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs6.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Homework #6: Back to Logistic Growth: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs9.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Homework #9: Applications of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs10.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Homework #10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs11.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Homework #11: Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs12.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Homework #12: Volumes by Shells and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs13.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Homework #13: Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs14.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Homework #14: Power Series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONProbs15.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Homework #15: More on Power Series</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">IV</span> <span class="title">Stuff  Without a Home</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">9</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Integration as a Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Problem:     When the integral of a product is the product of the integrals.Random Stuff</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">10</span> <span class="title">The  Theory Behind the  Partial Fraction Decomposition</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTEREulerId.html" class="internal"><span class="codenumber">11</span> <span class="title">Alternate Proof of Euler Identity</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ladfjk.html" class="internal"><span class="codenumber">12</span> <span class="title">Digression: Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">V</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">13</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-list-results.html" class="internal"><span class="codenumber">A</span> <span class="title">List of Theorems, Lemmas, Corollaries, Examples, Exercises, and Definitions</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-3.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="SECTIONCavalierisMethod"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Historical Precursors to Definite Integration</span>
+</h2>
+<section class="introduction" id="SECTIONCavalierisMethod-2"><div class="para" id="SECTIONCavalierisMethod-2-1">Newton’s Second Law: <span class="process-math">\(F=ma = m\dfdx{v}{t}\)</span>
+</div>
+<div class="para" id="SECTIONCavalierisMethod-2-2">Possibly as a result of the rediscovery of many classical Greek works after the fall of <a class="external" href="https://en.wikipedia.org/wiki/Constantinople" target="_blank">Constantinople</a><details class="ptx-footnote" aria-live="polite" id="SECTIONCavalierisMethod-2-2-2"><summary class="ptx-footnote__number" title="Footnote 4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="SECTIONCavalierisMethod-2-2-2"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Constantinople</code></div></details> in 1453,  mathematicians of  the <a class="external" href="https://en.wikipedia.org/wiki/Italian_Renaissance" target="_blank">Italian Renaissance</a><details class="ptx-footnote" aria-live="polite" id="SECTIONCavalierisMethod-2-2-4"><summary class="ptx-footnote__number" title="Footnote 4.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="SECTIONCavalierisMethod-2-2-4"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Italian_Renaissance</code></div></details> began investigating the use of what they called “indivisibles” as a tool for mathematical investigations. Today the best known such mathematician was, of course, <a class="external" href="https://mathshistory.st-andrews.ac.uk/Galileo" target="_blank">Galileo</a><details class="ptx-footnote" aria-live="polite" id="SECTIONCavalierisMethod-2-2-7"><summary class="ptx-footnote__number" title="Footnote 4.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="SECTIONCavalierisMethod-2-2-7"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Galileo</code></div></details> whom we have seen before.</div>
+<div class="para" id="SECTIONCavalierisMethod-2-3">But the investigations of two others will be of interest to us. Both Bonaventura Cavalieri, and Evangelista Torricelli were deeply influenced by the work and ideas of Galileo.</div>
+<div class="para" id="SECTIONCavalierisMethod-2-4">Torricelli lived with and assisted Galileo during the final months of Galileo’s life. Cavalieri only met Galileo once but they exchanged a long correspondence over the years.  We will look closely at Cavalieri’s ideas here, and return to Torricelli’s in section <code class="code-inline tex2jax_ignore">[provisional cross-reference: Torricelli]</code>.</div>
+<aside class="aside aside-like" id="SECTIONCavalierisMethod-2-5"><h3 class="heading"><span class="title">Historical Context.</span></h3>
+<div class="para" id="SECTIONCavalierisMethod-2-5-2">The concept of an indivisible was vehemently opposed by the Catholic Church on religious grounds that are quite fascinating. Unfortunately, since our topic is mathematics, not religion  discussing them here would take us too far afield.</div>
+<div class="para" id="SECTIONCavalierisMethod-2-5-3">They are discussed in detail in the book, <span class="booktitle">Infinitesimal</span>, by Amir Alexander, (2014).</div></aside></section><section class="subsection" id="SUBSECTIONCavalieri"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="space"> </span><span class="title">Bonaventura Cavalieri and Indivisibles</span>
+</h3>
+<figure class="figure figure-like" id="FIGURECavalieri"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/IC/Cavalieri.png" class="contained" alt="Portrait of Bonaventura Cavalieri"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1.1<span class="period">.</span></span><span class="space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/" target="_blank">Bonaventura Cavalieri</a><details class="ptx-footnote" aria-live="polite" id="FIGURECavalieri-1-2"><summary class="ptx-footnote__number" title="Footnote 4.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="FIGURECavalieri-1-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/</code></div></details> (1598 — 1647)</figcaption></figure><div class="para" id="SUBSECTIONCavalieri-3">
+<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/" target="_blank">Bonaventura Cavalieri</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-3-2"><summary class="ptx-footnote__number" title="Footnote 4.5"><sup> 5 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-3-2"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri/</code></div></details> was a <a class="external" href="https://en.wikipedia.org/wiki/Jesuati" target="_blank">Jesuat</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-3-4"><summary class="ptx-footnote__number" title="Footnote 4.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-3-4"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Jesuati</code></div></details> monk who studied mathematics at the University of Pisa under the tutelage of <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/" target="_blank">Benedetto Antonio Castelli</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-3-6"><summary class="ptx-footnote__number" title="Footnote 4.7"><sup> 7 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-3-6"><code class="code-inline tex2jax_ignore">https://mathshistory.st-andrews.ac.uk/Biographies/Castelli/</code></div></details>. It was Castelli who  introduced Cavalieri to Galileo’s methods. Cavalieri’s ideas were deep, fundamental, and direct precursors to the notion of a differential so it is worthwhile to learn a bit about them before we go on.</div>
+<div class="para" id="SUBSECTIONCavalieri-4">In simple terms Cavalieri said that we can compute the area of a planar region by summing up “all of the lines” that make up the region. Similarly, we can compute the volume of a solid by summing up “all of the planes” that make it up. An example will be helpful.</div>
+<article class="example example-like" id="EXAMPLECavalierisPrinciple"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Cavalieri’s Principle.</span>
+</h4>
+<div class="para" id="EXAMPLECavalierisPrinciple-3">Cavalieri began with the simple observation, seen in <a href="SECTIONCavalierisMethod.html#FIGUREAllLines1" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.1.1.3">Figure 4.1.1.3</a>, that since a rectangle is composed of lines, the area of the rectangle is equal to the sum of “all the lines” that make it up.</div>
+<figure class="figure figure-like" id="FIGUREAllLines1"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/IC/CavalieriLines.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1.3<span class="period">.</span></span><span class="space"> </span>Cavalieri asserted that the area of the rectangle is composed of (infinitely many) horizontal lines. We have only drawn finitely many in this figure and we have separated the lines so they can be seen.</figcaption></figure><div class="para" id="EXAMPLECavalierisPrinciple-5">He was careful not to say that the area of the rectangle is equal to the sum of the <em class="emphasis">areas of the lines</em>. He knew, as we do, that this would be problematic since line segments do not have an area, and this would have led him into logical contradictions.  Instead, like Newton and Leibniz later, he simply acknowledged the contradictions and then ignored them, proceeding as if line segments do have area.</div>
+<div class="para" id="EXAMPLECavalierisPrinciple-6">If we accept this premise then clearly any other shape we can create using the same lines will have the same area. For example the sketch below shows the parallelogram constructed from the same lines that make up the rectangle in <a href="SECTIONCavalierisMethod.html#FIGUREAllLines1" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.1.1.3">Figure 4.1.1.3</a>. Clearly both have the same area.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/CavalieriLines2.png" class="contained"></div>
+<div class="para" id="EXAMPLECavalierisPrinciple-8">Nor is it necessary for the shape to be “regular” in any sense.  The following shapes will also have the same area  as long as “all the lines” are the same.</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/CavalieriLines3.png" class="contained"></div>
+<div class="para" id="EXAMPLECavalierisPrinciple-10">The same idea can be used to compare volumes. For example the image below shows two pictures of the same deck of cards. Obviously the volumes of the stacks are the same since they are made of the same of cards.</div>
+<figure class="figure figure-like" id="EXAMPLECavalierisPrinciple-11"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/IC/Set.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><div class="para" id="SUBSECTIONCavalieri-6">Generalizing the ideas in <a href="SECTIONCavalierisMethod.html#EXAMPLECavalierisPrinciple" class="xref" data-knowl="./knowl/xref/EXAMPLECavalierisPrinciple.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.1.2: Cavalieri’s Principle">Example 4.1.1.2</a> slightly gives us <dfn class="terminology">Cavalieri’s Principle</dfn>.</div>
+<article class="principle theorem-like" id="PRINCIPLECavalieri"><h4 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">4.1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Cavalieri’s Principle.</span>
+</h4>
+<div class="para" id="PRINCIPLECavalieri-2-1"> If the cross–sectional areas of the corresponding slices of two solid figures are all in the same proportion, say <span class="process-math">\(P\text{,}\)</span> then the proportion of the volumes of the two figures will also be <span class="process-math">\(P\)</span> provided both figures have the same height.</div></article><div class="para" id="SUBSECTIONCavalieri-8">For the deck of cards shown above the proportion, <span class="process-math">\(P\text{,}\)</span> is equal to one. If the cards had been cut in half before making the second stack then <span class="process-math">\(P=1/2\)</span> and the second stack would have half the volume of the first.</div>
+<div class="para" id="SUBSECTIONCavalieri-9">Cavalieri  would eventually publish his results in a book titled <span class="booktitle"><a class="external" href="https://old.maa.org/press/periodicals/convergence/mathematical-treasures-cavalieris-geometry-of-indivisibles" target="_blank">Geometria Indivisibilibus</a><details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-9-1-2"><summary class="ptx-footnote__number" title="Footnote 4.8"><sup> 8 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-9-1-2"><code class="code-inline tex2jax_ignore">https://old.maa.org/press/periodicals/convergence/mathematical-treasures-cavalieris-geometry-of-indivisibles</code></div></details></span>. Of this Howard Eves<details class="ptx-footnote" aria-live="polite" id="SUBSECTIONCavalieri-9-2"><summary class="ptx-footnote__number" title="Footnote 4.9"><sup> 9 </sup></summary><div class="ptx-footnote__contents" id="SUBSECTIONCavalieri-9-2">In <span class="booktitle">Great Moments in Mathematics Before 1650</span>
+</div></details> said,</div>
+<blockquote class="blockquote" id="SUBSECTIONCavalieri-10"><div class="para" id="SUBSECTIONCavalieri-10-1">Cavalieri’s treatise on the method of indivisibles is voluble and not clearly written, and it is not easy to learn from it precisely what Cavalieri meant by an ‘indivisible’.</div></blockquote>
+<div class="para" id="SUBSECTIONCavalieri-11">It is likely that this is because Cavalieri was himself unsure what an “indivisible” should be. Nevertheless the fundamental notion of an indivisible was picked up by Leibniz who transformed it into his <i class="foreign">Calculus Differentialis</i>.</div>
+<article class="problem example-like" id="DRILLCavPrinArea"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">4.1.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="DRILLCavPrinArea-2">
+<a href="SECTIONCavalierisMethod.html#PRINCIPLECavalieri" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 4.1.1.5: Cavalieri’s Principle">Cavalieri’s Principle 4.1.1.5</a> is normally stated in terms of volumes of solids, as we have here, but it is equally applicable to the areas of planar regions.</div>
+<div class="para" id="DRILLCavPrinArea-3">State Cavalieri’s Principle for the area of planar regions.</div></article><article class="example example-like" id="EXAMPLECavalieriCircleEllipse"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Circles and Ellipses.</span>
+</h4>
+<div class="para" id="EXAMPLECavalieriCircleEllipse-2">To see how Cavalieri used his principle we will find the area enclosed by an ellipse by comparing it to the known area of a related circle.</div>
+<div class="para logical" id="EXAMPLECavalieriCircleEllipse-3">
+<div class="para">We begin with the graph of</div>
+<div class="displaymath process-math" id="EQUATIONCavEllipse">
+\begin{equation}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\tag{4.1}
+\end{equation}
+</div>
+<div class="para">which is an ellipse. We then  form the circle</div>
+<div class="displaymath process-math" id="EQUATIONCavCircle">
+\begin{equation}
+x^2+y^2=a^2\tag{4.2}
+\end{equation}
+</div>
+<div class="para">as shown below.</div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/CircleAndEllipse.png" class="contained"></div>
+<div class="para logical" id="EXAMPLECavalieriCircleEllipse-5">
+<div class="para">Solving <a href="SECTIONCavalierisMethod.html#EQUATIONCavEllipse" class="xref" data-knowl="./knowl/xref/EQUATIONCavEllipse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">equation (4.1)</a> for <span class="process-math">\(y\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
+\begin{equation*}
+y=\frac{b}{a} \sqrt{a^2-x^2} \text{,}
+\end{equation*}
+</div>
+<div class="para">and solving <a href="SECTIONCavalierisMethod.html#EQUATIONCavCircle" class="xref" data-knowl="./knowl/xref/EQUATIONCavCircle.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.2">equation (4.2)</a> for <span class="process-math">\(y\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
+\begin{equation*}
+y=\sqrt{a^2-x^2} \text{.}
+\end{equation*}
+</div>
+<div class="para">Thus the proportion of a typical cross–section of both figures (see the red, vertical line in the figure) is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
+\begin{equation*}
+P= \frac{\frac{b}{a} \sqrt{a^2-x^2}}
+{\sqrt{a^2-x^2}}=\frac{b}{a}\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore by <a href="SECTIONCavalierisMethod.html#PRINCIPLECavalieri" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 4.1.1.5: Cavalieri’s Principle">Principle 4.1.1.5</a> the ratio of the areas enclosed by the ellipse and the circle is also <span class="process-math">\(P\text{.}\)</span>  That is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
+\begin{equation*}
+\frac{\text{Area of Ellipse}}{\text{Area of
+Circle}}=P=\frac{b}{a} \text{.}
+\end{equation*}
+</div>
+<div class="para">Thus, since the area of the circle is <span class="process-math">\(\pi a^2\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONCavEllipse.html ./knowl/xref/EQUATIONCavCircle.html ./knowl/xref/PRINCIPLECavalieri.html">
+\begin{equation*}
+\text{Area of Ellipse} = \frac{b}{a}(\text{Area of
+Circle}) = \frac{b}{a}(\pi a^2) =\pi ba \text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="EXAMPLECavalieriCircleEllipse-6">Notice that when <span class="process-math">\(a=b\)</span> the ellipse becomes a circle with radius equal to <span class="process-math">\(a\)</span> and our area formula  recovers the area of the circle.</div></article><article class="exercise exercise-like" id="PROBLEMVolSphereCavalieri"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.1.1.8</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="PROBLEMVolSphereCavalieri-1">
+<div class="para" id="PROBLEMVolSphereCavalieri-1-1">To display the power and usefulness of Cavalieri’s Principle we will use it to find the formula for the volume of a sphere with radius <span class="process-math">\(r\text{.}\)</span>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;">
+<div class="sbspanel middle" style="width:41.1764705882353%;"><figure class="figure figure-like" id="FIGUREHalfSphere"><img src="external/IC/HalfSphere.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1.9<span class="period">.</span></span><span class="space"> </span>Half of a sphere with radius <span class="process-math">\(r\text{.}\)</span></figcaption></figure></div>
+<div class="sbspanel middle" style="width:41.1764705882353%;"><figure class="figure figure-like" id="FIGURECylSansCone"><img src="external/IC/CylSansCone.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1.10<span class="period">.</span></span><span class="space"> </span>A cylinder with radius <span class="process-math">\(r\)</span> with a cone removed.</figcaption></figure></div>
+</div></div>
+</div>
+<article class="task exercise-like" id="PROBLEMVolSphereCavalieri-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="PROBLEMVolSphereCavalieri-2-1-1">Show that the red circle in <a href="SECTIONCavalierisMethod.html#FIGUREHalfSphere" class="xref" data-knowl="./knowl/xref/FIGUREHalfSphere.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.1.1.9">Figure 4.1.1.9</a> has the same area as the red annulus in <a href="SECTIONCavalierisMethod.html#FIGURECylSansCone" class="xref" data-knowl="./knowl/xref/FIGURECylSansCone.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.1.1.10">Figure 4.1.1.10</a>.</div></article><article class="task exercise-like" id="PROBLEMVolSphereCavalieri-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="PROBLEMVolSphereCavalieri-3-1-1">Show that the volume of the solid in <a href="SECTIONCavalierisMethod.html#FIGURECylSansCone" class="xref" data-knowl="./knowl/xref/FIGURECylSansCone.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.1.1.10">Figure 4.1.1.10</a> is <span class="process-math">\(\frac23 \pi r^3\text{.}\)</span>
+</div>
+<div class="solutions"><details id="PROBLEMVolSphereCavalieri-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="PROBLEMVolSphereCavalieri-3-2-1">You will need a formula for the volume of the cylinder and a formula for the volume of the cone deleted from it.</div></div></details></div></article><article class="task exercise-like" id="PROBLEMVolSphereCavalieri-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="PROBLEMVolSphereCavalieri-4-1-1">Use <a href="SECTIONCavalierisMethod.html#PRINCIPLECavalieri" class="xref" data-knowl="./knowl/xref/PRINCIPLECavalieri.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 4.1.1.5: Cavalieri’s Principle">Cavalieri’s Principle 4.1.1.5</a> to conclude that the volume of a sphere with radius <span class="process-math">\(r\)</span> is <span class="process-math">\(\frac43 \pi r^3\text{.}\)</span>
+</div></article></article></section><section class="subsection" id="SUBSECTIONCavLeibNotation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="space"> </span><span class="title">Cavalieri, Differentials, and Definite Integration</span>
+</h3>
+<div class="para" id="SUBSECTIONCavLeibNotation-2">In view of our discussion in <a href="SECTIONThinkingAboutIntegration.html" class="internal" title='Section 3.1: Two "Ways of Thinking" About Integration: Summation vs. Antidifferentiation'>Section 3.1</a> it should be clear that the “indivisibles” Cavalieri’s is “adding up” are the same things as Leibniz’ differentials so we will adjust our point of view accordingly. In <a href="SECTIONCavalierisMethod.html#FIGUREAllLines1" class="xref" data-knowl="./knowl/xref/FIGUREAllLines1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.1.1.3">Figure 4.1.1.3</a> for example, instead of thinking of the “lines” as line segments with zero width we think of them as having a differential width <span class="process-math">\(\dx{x}\neq 0\text{.}\)</span>
+</div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-3">
+<div class="para">In that case a rectangle consists of “all the lines” with differential area:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SECTIONThinkingAboutIntegration.html  ./knowl/xref/EQUATIONCavRect.html ./knowl/xref/SECTIONThinkingAboutIntegration.html">
+\begin{equation*}
+(\text{length})\times\dx{x}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the summation notation we saw in <a href="SECTIONThinkingAboutIntegration.html" class="internal" title='Section 3.1: Two "Ways of Thinking" About Integration: Summation vs. Antidifferentiation'>Section 3.1</a> the area of a rectangle is thus given by the integral</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SECTIONThinkingAboutIntegration.html  ./knowl/xref/EQUATIONCavRect.html ./knowl/xref/SECTIONThinkingAboutIntegration.html" id="EQUATIONCavRect">
+\begin{equation}
+\int(\text{length})\dx{x}\text{.}\tag{4.3}
+\end{equation}
+</div>
+<div class="para">Notice that since the quantity, <span class="process-math">\((\text{length}) \times \dx{x}\)</span> is a differential (as we observed in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "DIGRESSIONDifferentialNotation" missing or not unique]</code>) <a href="SECTIONCavalierisMethod.html#EQUATIONCavRect" class="xref" data-knowl="./knowl/xref/EQUATIONCavRect.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3">formula (4.3)</a> has exactly the same form as an integral, as defined in <a href="SECTIONThinkingAboutIntegration.html" class="internal" title='Section 3.1: Two "Ways of Thinking" About Integration: Summation vs. Antidifferentiation'>Section 3.1</a>, it appears that we can compute the area of this rectangle , if only we can find a way to compute the integral <span class="process-math">\(\int \text{(length)}\dx{x}\text{.}\)</span>
+</div>
+</div>
+<aside class="aside aside-like" id="SUBSECTIONCavLeibNotation-4"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para" id="SUBSECTIONCavLeibNotation-4-2">Yes we know this area can be found by simpler means. We don’t care about that. We want to find a way to <em class="emphasis">express</em> this simple area using the integral notation so that we can write down expressions for more complicated areas and, hopefully, find ways to compute them. Stick with us. We’re just getting started.</div></aside><div class="para" id="SUBSECTIONCavLeibNotation-5">But the notation we’ve used here isn’t quite as useful, or expressive as we’d like so we will pause for a moment to refine our notation. Suppose we want to compute the area of the rectangle in the sketch below using an integral.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/RectangleAreaDiff.png" class="contained"></div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-7">
+<div class="para">In our sketch the red line represents one of the Cavalieri lines to be summed.    Observe that if <span class="process-math">\(A\)</span> represents the area of the rectangle in black then <span class="process-math">\(\dx{A}=2\dx{x}\text{.}\)</span> That is, the quantity <span class="process-math">\(2\dx{x}\)</span> is the differential of the area <span class="process-math">\(A\text{.}\)</span> So to compute <span class="process-math">\(A\)</span> we need to find a way to compute the sum</div>
+<div class="displaymath process-math" id="EQUATIONIntCav">
+\begin{equation}
+A=\int\dx{A}=\int 2\dx{x}\tag{4.4}
+\end{equation}
+</div>
+<div class="para">starting at <span class="process-math">\(x=2\)</span> and ending at <span class="process-math">\(x=6\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-8">
+<div class="para">There are two problems with the notation we used in <a href="SECTIONCavalierisMethod.html#EQUATIONIntCav" class="xref" data-knowl="./knowl/xref/EQUATIONIntCav.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4">equation (4.4)</a>.</div>
+<dl class="description-list">
+<dt id="SUBSECTIONCavLeibNotation-8-2-1">First Problem:</dt>
+<dd><div class="para" id="SUBSECTIONCavLeibNotation-8-2-1-2">
+<a href="SECTIONCavalierisMethod.html#EQUATIONIntCav" class="xref" data-knowl="./knowl/xref/EQUATIONIntCav.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4">Equation (4.4)</a> does not reflect the fact that we begin summing our differentials at <span class="process-math">\(x=2\)</span> and end at <span class="process-math">\(x=6\text{.}\)</span> If we stick with this notation then another rectangle with other beginning and ending points would be written in exactly the same way. We will find it useful to reduce this ambiguity by specifying the interval <span class="process-math">\((2,6)\)</span> within our definite integral notation.</div></dd>
+<dt id="SUBSECTIONCavLeibNotation-8-2-2">Second Problem:</dt>
+<dd><div class="para" id="SUBSECTIONCavLeibNotation-8-2-2-2">The notation in <a href="SECTIONCavalierisMethod.html#EQUATIONIntCav" class="xref" data-knowl="./knowl/xref/EQUATIONIntCav.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4">equation (4.4)</a> is exactly the same notation we used in <a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsAntiDerivative" class="internal" title="Subsection 3.1.2: Integration as Antidifferentiation">Subsection 3.1.2</a> to designate the most general antiderivative (multifunction).</div></dd>
+</dl>
+</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-9">The purpose of notation is to clarify not to befuddle. A notation that can be read as either a number (the area of a rectangle in this case) or as an antiderivative, depending on the context of the discussion is not an ideal notation.</div>
+<aside class="aside aside-like" id="SUBSECTIONCavLeibNotation-10"><h4 class="heading"><span class="title">Comment.</span></h4>
+<div class="para" id="SUBSECTIONCavLeibNotation-10-2">To be sure, just as there are words in English with more than one meaning, there are also symbols in mathematics with more than one meaning.   This flexibility and redundancy is what gives English its beauty and expressive power. But in mathematics it just leads to unnecessary confusion, and is best avoided if possible.</div></aside><div class="para" id="SUBSECTIONCavLeibNotation-11">We’d like to have a notation that reflects the fact that the antiderivative and the area computation are related (both are built from the summation of differentials), but at the same time clearly distinguishes between them.   It will  take a while to build up all of the necessary ideas so  be patient.</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-12">We  can address the second problem by simply reserving the notation <span class="process-math">\(\int f(x)\dx{x}\)</span> for the most general antiderivative as we originally used it.  We make the following definition.</div>
+<article class="definition definition-like" id="DEFINITIONIndefInt"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Most General Antiderivative.</span>
+</h4>
+<div class="para logical" id="DEFINITIONIndefInt-3-1">
+<div class="para">Given the function <span class="process-math">\(f(x)\)</span> the formula</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int
+f(x)\dx{x}
+\end{equation*}
+</div>
+<div class="para">
+<em class="emphasis">always</em> represents the multifunction whose derivative is <span class="process-math">\(f(x)\)</span> — the <dfn class="terminology">most general antiderivative</dfn>.</div>
+</div> <div class="para logical" id="DEFINITIONIndefInt-3-2">
+<div class="para">In particular, if <span class="process-math">\(F(x)\)</span> is any antiderivative of <span class="process-math">\(f(x)\)</span> Then</div>
+<div class="displaymath process-math" id="EQUATIONIndefIntDef">
+\begin{equation}
+\int f(x)\dx{x} = F(x)
++C\text{,}\tag{4.5}
+\end{equation}
+</div>
+<div class="para">where, as before, <span class="process-math">\(C\)</span> represents all possible constants.</div>
+</div>            </article><div class="para" id="SUBSECTIONCavLeibNotation-14">
+<a href="SECTIONCavalierisMethod.html#DEFINITIONIndefInt" class="xref" data-knowl="./knowl/xref/DEFINITIONIndefInt.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.2.1: The Most General Antiderivative">Definition 4.1.2.1</a> formalizes the work we did in <a href="CHAPTERIntegrationTechniques.html" class="internal" title="Chapter 2: Integration Techniques">Chapter 2</a>, and establishes  the notation we used there as the standard notation for an antidifferentiaton. Our next definition is new. It will establish the standard notation we will use to distinguish the antiderivative problems in <a href="CHAPTERIntegrationTechniques.html" class="internal" title="Chapter 2: Integration Techniques">Chapter 2</a> and the area problem  in <a href="SECTIONCavalierisMethod.html#EQUATIONIntCav" class="xref" data-knowl="./knowl/xref/EQUATIONIntCav.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4">equation (4.4)</a>, as well as other kinds of problems that can be addressed using the same ideas. Since the underlying ideas are related the notations we use will also be related. You’ll need to read the notation carefully to be sure you understand which kind of problem you are looking at.</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-15">We learned in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "SECTIONGalileoDrops" missing or not unique]</code> that the velocity of an object moving in a straight line is the derivative of its position.  Recasting the previous sentence in the language of integrals we it says that the position of the object is the integral of its velocity. But when we view the the problem from this direction things are complicated by the presence of the “<span class="process-math">\(+C\)</span>” from <a href="SECTIONCavalierisMethod.html#EQUATIONIndefIntDef" class="xref" data-knowl="./knowl/xref/EQUATIONIndefIntDef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5">equation (4.5)</a>.</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-16"> To understand how to deal with this difficulty suppose that we are traveling in a straight line (say, from left to right along the <span class="process-math">\(x\)</span>—axis) with velocity <span class="process-math">\(v(t)
+\frac{\text{miles}}{\text{hour} }\)</span> and we’d like to find out how far we travel between the times <span class="process-math">\(t=t_1\)</span> and <span class="process-math">\(t=t_2\)</span> as shown in the following sketch.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/IC/IntPosVel.png" class="contained"></div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-18">
+<div class="para">If we suppose that our positions at <span class="process-math">\(t_1\)</span> and <span class="process-math">\(t_2\)</span> are <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> respectively , then the distance, <span class="process-math">\(D\text{,}\)</span> that we travel between those times is clearly</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D=p_2-p_1\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-19">
+<div class="para">So far, so good. Do you see how we find <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\text{?}\)</span> Recall that these are our positions, and we have know the   position function. It is <span class="process-math">\(\int
+v(t)\dx{t}\text{,}\)</span>  an antiderivative of velocity. So to find <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span>   all we have to do is evaluate</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\eval{\int v(t)\dx{t}}{t}{t_1}\text {and} \eval{\int
+v(t)\dx{t}}{t}{t_2} \text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-20">Well, sort of.</div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-21">
+<div class="para">Remember that <span class="process-math">\(\int v(t)\dx{t}\)</span> is a multifunction. That is, it is a lot of related functions gathered together in a single package. We need to find the one function in the package that reflects the problem at hand before we can evaluate it. So we take <span class="process-math">\(P(t)\)</span> to be the antiderivative of <span class="process-math">\(v(t)\)</span>     with the following values: <span class="process-math">\(P(t_1)=p_1\)</span> and <span class="process-math">\(P(t_2)=p_2
+\text{.}\)</span> Clearly then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D=p_2-p_1=P(t_2)-P(t_1)\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-22">
+<div class="para">There is something interesting here that may not be quite visible yet. To see it suppose that <span class="process-math">\(\hat{P}(t)\)</span> is some other antiderivative of <span class="process-math">\(v(t)\text{.}\)</span> From our work in <a href="CHAPTERIntSimplest.html" class="internal" title="Chapter 3: Integration in Its Simplest Forms">Chapter 3</a> that <span class="process-math">\(\hat{P}(t)=P(t)+C\)</span> where in this case <span class="process-math">\(C\)</span> is some fixed constant. Clearly then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CHAPTERIntSimplest.html" id="SUBSECTIONCavLeibNotation-22-6">
+\begin{align*}
+\hat{P}(t_2)-\hat{P}(t_1)\amp{}=\left( P(t_2)+C\right)-\left(
+P(t_1)+C\right)\\
+\amp{} = P(t_2)-P(t_1)+\underbrace{C-C}_{=0}\\
+\amp{} = p_2-p_1\\
+\amp{}=D.
+\end{align*}
+</div>
+</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-23">In other words it doesn’t matter which specific antiderivative we choose from the multifunction <span class="process-math">\(\int
+v(t)\dx{t}\text{.}\)</span> Because we are subtracting its value at two different values of <span class="process-math">\(t\)</span> the constant <span class="process-math">\(C\)</span> that is common to both evaluations will simply subtract away.  If this is hard to see right now don’t worry.  Our discussion has been fairly general and abstract which can often obscure the point. Once you have done <a href="SECTIONCavalierisMethod.html#DRILLVerifyAnyAntiDeriv" class="xref" data-knowl="./knowl/xref/DRILLVerifyAnyAntiDeriv.html" data-reveal-label="Reveal" data-close-label="Close" title="Drill 4.1.2.3">Drill 4.1.2.3</a> below you will see that it is actually a simple idea.</div>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-24">
+<div class="para">Summarizing our discussion so far we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONFTCBadNotation.html" id="EQUATIONFTCBadNotation">
+\begin{equation}
+D= \eval{\int v(t)\dx{t}}{t}{t_2} - \eval{\int v(t)\dx{t}}{t}{t_1}\tag{4.6}
+\end{equation}
+</div>
+<div class="para">Strictly speaking <a href="SECTIONCavalierisMethod.html#EQUATIONFTCBadNotation" class="xref" data-knowl="./knowl/xref/EQUATIONFTCBadNotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.6">equation (4.6)</a> is a slight abuse of our notation since we really mean that we are choosing one antiderivative from the most general antiderivative and evaluating it. Because the constant will subtract out it doesn’t matter which one we choose.</div>
+</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-25">The discussion above has been quite dense. It is laden with both new ideas and  new notation. Let’s use <a href="SECTIONCavalierisMethod.html#EQUATIONFTCBadNotation" class="xref" data-knowl="./knowl/xref/EQUATIONFTCBadNotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.6">equation (4.6)</a> to solve a very simple problem — one where we already know the answer — and verify that it all makes sense.</div>
+<article class="example example-like" id="EXAMPLEVelAndPos"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.2.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="EXAMPLEVelAndPos-1">Suppose we are traveling on a straight road at <span class="process-math">\(60
+\frac{miles}{hour}\text{.}\)</span> How far do we travel between the third hour and the eighth hour?</div>
+<div class="para" id="EXAMPLEVelAndPos-2">Of course you see that if we travel for five hours at <span class="process-math">\(60
+\frac{\text{miles}}{\text{hour}}\)</span> then we travel <span class="process-math">\(5\times 60 =
+300\)</span> miles.</div>
+<div class="para logical" id="EXAMPLEVelAndPos-3">
+<div class="para">In this problem our velocity is <span class="process-math">\(v(t)=60\text{,}\)</span> <span class="process-math">\(t_1=3\text{,}\)</span> and <span class="process-math">\(t_2=8\text{.}\)</span> So the distance traveled will be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D= \eval{\int v(t)\dx{t}}{t}{5} - \eval{\int
+v(t)\dx{t}}{t}{3}\text{.}
+\end{equation*}
+</div>
+<div class="para">One antiderivative of <span class="process-math">\(v(t)=60\)</span> is <span class="process-math">\(P(t)=60t\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D= \eval{60t}{t}{8} - \eval{60t}{t}{3} = 60\cdot8-60\cdot3=300\text{.}
+\end{equation*}
+</div>
+</div></article><article class="problem example-like" id="DRILLVerifyAnyAntiDeriv"><h4 class="heading">
+<span class="type">Drill</span><span class="space"> </span><span class="codenumber">4.1.2.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="DRILLVerifyAnyAntiDeriv-2">
+<div class="para">Find two different antiderivatives of <span class="process-math">\(v(t)=60\)</span> in <a href="SECTIONCavalierisMethod.html#EXAMPLEVelAndPos" class="xref" data-knowl="./knowl/xref/EXAMPLEVelAndPos.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.2.2">Example 4.1.2.2</a> and show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EXAMPLEVelAndPos.html">
+\begin{equation*}
+\eval{\int v(t)\dx{t}}{t}{5} - \eval{\int
+v(t)\dx{t}}{t}{3}=300
+\end{equation*}
+</div>
+<div class="para">using your antiderivatives.</div>
+</div></article><div class="para logical" id="SUBSECTIONCavLeibNotation-28">
+<div class="para">While expressive, the notation</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\eval{\int f(x)\dx{x}}{x}{a}-\eval{\int f(x)\dx{x}}{x}{b}
+\end{equation*}
+</div>
+<div class="para">is too redundant. The only difference between the first and second term is that <span class="process-math">\(x=a\)</span> changes to <span class="process-math">\(x=b\text{.}\)</span> So, because mathematicians won’t write two symbols when one will do, we extend the evaluation notation introduced in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "EvaluationNotation" missing or not unique]</code> as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\eval{\int f(x)\dx{x}}{x}{a}^b = \eval{\int
+f(x)\dx{x}}{x}{a}-\eval{\int f(x)\dx{x}}{x}{b} \text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="SUBSECTIONCavLeibNotation-29">Be sure you understand this notation. There is a lot here. The formula <span class="process-math">\(\int f(x)\dx{x}\)</span> represents the most general antiderivative of <span class="process-math">\(f(x)\text{.}\)</span> Think of it a all of the antiderivatives gathered together in a single package. We select one of the antiderivatives for evaluation  when we evaluate it at <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\text{.}\)</span> It doesn’t matter which one we select because they are all the same except for the arbitrary constant <span class="process-math">\(C\text{,}\)</span> and it will be subtracted off when we compute the difference. This suggests the following definition.</div>
+<article class="definition definition-like" id="DEFINITIONDefInt"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Definite Integral.</span>
+</h4>
+<div class="para logical" id="DEFINITIONDefInt-3-1">
+<div class="para">Given a function <span class="process-math">\(f(x)\text{,}\)</span> the formula</div>
+<div class="displaymath process-math" id="EQUATIONDefInt">
+\begin{equation}
+\int_{x=a}^{b} f(x)\dx{x}\tag{4.7}
+\end{equation}
+</div>
+<div class="para">represents the sum of all of the differentials of the form <span class="process-math">\(f(x)\dx{x} \)</span> beginning at <span class="process-math">\(x=a\)</span> and ending at <span class="process-math">\(x=b\text{.}\)</span> Such an expression is called a <dfn class="terminology">definite integral</dfn>.</div>
+</div></article><div class="para" id="SUBSECTIONCavLeibNotation-31">The following theorem summarizes our discussion above. It states how a definite integral can be evaluated.</div>
+<article class="theorem theorem-like" id="THEOREMEvaluateDefInt"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.2.5</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="THEOREMEvaluateDefInt-1">
+<div class="para">The definite integral can be evaluated by computing</div>
+<div class="displaymath process-math" id="THEOREMEvaluateDefInt-1-1">
+\begin{align}
+\int_{x=a}^{b} f(x)\dx{x}\amp{}= \eval{\int f(x)\dx{x}}{x}{a}^b\notag\\
+\amp{} = \eval{\int f(x)\dx{x}}{x}{a}-\eval{\int f(x)\dx{x}}{x}{b}.\tag{4.8}
+\end{align}
+</div>
+<div class="para">   </div>
+</div>
+<div class="para logical" id="THEOREMEvaluateDefInt-2">
+<div class="para">Often we will have a formula, say <span class="process-math">\(F(x)\text{,}\)</span> for one of the antiderivatives of <span class="process-math">\(f(x)\)</span> in the most general antiderivative <span class="process-math">\(\int
+f(x)\dx{x}\text{.}\)</span> In that case <a href="SECTIONCavalierisMethod.html#THEOREMEvaluateDefInt-1-1" class="xref" data-knowl="./knowl/xref/EQUATIONDefIntDefinition1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.8">equation (4.8)</a> reduces to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONDefIntDefinition1.html" id="EQUATIONDefIntDefinition2">
+\begin{equation}
+\int_{x=a}^b f(x)\dx{x} = F(b)-F(a)\tag{4.9}
+\end{equation}
+</div>
+</div></article><div class="para" id="SUBSECTIONCavLeibNotation-33">The subscripts and superscripts on the integral symbol  in <a href="SECTIONCavalierisMethod.html#EQUATIONDefInt" class="xref" data-knowl="./knowl/xref/EQUATIONDefInt.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.7">equation (4.7)</a> are called the upper and lower <dfn class="terminology">indices</dfn>.  Take careful note that we evaluate the antiderivative at the lower index and subtract from it the result of evaluating at the upper index. What happens if you do it backwards?</div>
+<aside class="aside aside-like" id="SUBSECTIONCavLeibNotation-34"><h4 class="heading"><span class="title">Note to self.</span></h4>
+<div class="para" id="SUBSECTIONCavLeibNotation-34-2">We need a bunch of definite integral drills here. These can be at varying levels of difficulty depending on what’s been covered in <a href="CHAPTERIntSimplest.html" class="internal" title="Chapter 3: Integration in Its Simplest Forms">Chapter 3</a> .</div></aside><article class="exercise exercise-like" id="SUBSECTIONCavLeibNotation-35"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Find the Pattern.</span>
+</h4>
+<article class="task exercise-like" id="SUBSECTIONCavLeibNotation-35-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-35-2-1">
+<div class="para">Show that each of the following statements is true.</div>
+<ol class="lower-roman ol-marker-2 cols2" id="SUBSECTIONCavLeibNotation-35-2-1-1">
+<li id="SUBSECTIONCavLeibNotation-35-2-1-1-1"><div class="para" id="p-derived-SUBSECTIONCavLeibNotation-35-2-1-1-1"><span class="process-math">\(\displaystyle \int_{x=0}^1x \dx{x}=\frac12 \)</span></div></li>
+<li id="SUBSECTIONCavLeibNotation-35-2-1-1-2"><div class="para" id="p-derived-SUBSECTIONCavLeibNotation-35-2-1-1-2"><span class="process-math">\(\displaystyle \int_{x=0}^1x^2 \dx{x}=\frac13 \)</span></div></li>
+<li id="SUBSECTIONCavLeibNotation-35-2-1-1-3"><div class="para" id="p-derived-SUBSECTIONCavLeibNotation-35-2-1-1-3"><span class="process-math">\(\displaystyle \int_{x=0}^1x^3 \dx{x}=\frac14 \)</span></div></li>
+<li id="SUBSECTIONCavLeibNotation-35-2-1-1-4"><div class="para" id="p-derived-SUBSECTIONCavLeibNotation-35-2-1-1-4"><span class="process-math">\(\displaystyle \int_{x=0}^1x^4 \dx{x}=\frac15 \)</span></div></li>
+</ol>
+</div></article><article class="task exercise-like" id="SUBSECTIONCavLeibNotation-35-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="SUBSECTIONCavLeibNotation-35-3-1">
+<div class="para">Use the pattern you observed in part (a) to predict the value of</div>
+<div class="displaymath process-math" id="SUBSECTIONCavLeibNotation-35-3-1-1">
+\begin{align*}
+\int_{x=0}^1x^\alpha  \dx{x}\amp{}\amp{} \text{ where } \alpha \gt 0 
+\end{align*}
+</div>
+<div class="para">then show that your prediction is true.</div>
+</div></article><article class="task exercise-like" id="SUBSECTIONCavLeibNotation-35-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="SUBSECTIONCavLeibNotation-35-4-1">What happens if <span class="process-math">\(\alpha \le 0\text{?}\)</span>
+</div></article></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="CHAPTERDefiniteIntegration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SECTIONInDefInt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
