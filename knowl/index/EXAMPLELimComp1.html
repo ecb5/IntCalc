@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.4.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Limit <span class="process-math">\(\limit{m}{\infty}{ \left( 1+\frac{1}{m}
+\right)^m}\)</span>.</span>
+</h4>
+<div class="para logical">
+<div class="para">We need to evaluate the limit:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SECTIONexponential.html">
+\begin{equation*}
+\limit{m}{\infty}{ \left( 1+\frac{1}{m} \right)^m}.
+\end{equation*}
+</div>
+<div class="para">It is tempting to reason as follows. We see that <span class="process-math">\(1+\frac{1}{m}\rightarrow1\)</span> as <span class="process-math">\(m\rightarrow\infty\text{.}\)</span> That is, we have the indeterminate form <span class="process-math">\(\approach{1}^{\approach{\infty}}\)</span> and since one raised to any power is equal to one this limit must equal <span class="process-math">\(1\text{,}\)</span> right? Surely you know better than to jump to that conclusion by now. Not only does all of the evidence of this chapter warn you that limits are more subtle than that, but in our investigations in <a href="SECTIONexponential.html" class="internal" title="Section 8.2: The Natural Exponential">Section 8.2</a> we saw overwhelming evidence that this limit is not equal to one.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLELimComp1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Also, notice that we wrote <span class="process-math">\(\approach{1}^{\approach{\infty}}\text{,}\)</span> not <span class="process-math">\(1^{\approach{\infty}}\text{.}\)</span> Why do you think we did that?<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLELimComp1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The source of our difficulty here is that the variable <span class="process-math">\(m\)</span> is in the exponent where we can’t get at it. We’d like to find a way to bring it out of the exponent. The natural logarithm seems perfect for this task since it has the property that <span class="process-math">\(\ln\left(a^b\right)=b\ln(a)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLELimComp1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Begin by setting <span class="process-math">\(y=\left(1+\frac{1}{m}\right)^m\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ln(y)=
+\ln\left(1+\frac{1}{m}\right)^m =
+m\ln\left(1+\frac{1}{m}\right).
+\end{equation*}
+</div>
+<div class="para">Rather than evaluating <span class="process-math">\(\limit{t}{\infty}{y}\)</span> directly we evaluate the limit of the logarithm of <span class="process-math">\(y\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{m}{\infty}{\ln(y)} =
+\limit{m}{\infty}{m\ln\left(1+\frac{1}{m}\right) }.
+\end{equation*}
+</div>
+<div class="para">The limit on the right is an indeterminate form but unfortunately it is not a L’Hôpital  Indeterminate.  So, as before, we’ll have to do some algebraic manipulations first.  Set <span class="process-math">\(\frac1m=z\)</span> so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\limit{t}{\infty}{\ln(y)}
+=\rlimit{z}{0}{\frac{\ln\left(1+z\right)}{z} }
+\lhopeq\rlimit{z}{0}{\frac{\frac{1}{1+z}}{1}}=1.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\limit{m}{\infty}{\ln(y)}=1\)</span> it seems intuitively clear that <span class="process-math">\(\limit{m}{\infty}{y}=\limit{m}{\infty}{\left(1+\frac1m\right)^m}=e^{1}\text{,}\)</span> doesn’t it? In fact, it is not true generally that</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\textcolor{blue}{\tlimit{x}{a}{\textcolor{red}{f(g(x))}}} \text{ is equal to }
+\textcolor{red}{f}\textcolor{blue}{\left(\tlimit{x}{a}{g(x)}\right)}.
+\end{gather*}
+</div>
+<div class="para">But it is true for this problem. so it is a detail that needn’t trouble us for now.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLELimComp1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We will ignore it for now and return to it in <a href="SECTIONLimitLaws.html" class="internal" title="Section 17.4: Limit Laws (Theorems)">Section 17.4</a> when we will have more powerful tools to bring to bear.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLELimComp1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 12.4.2.7: The Limit  \limit{m}{\infty}{ \left( 1+\frac{1}{m}
+      \right)^m}"><a href="#EXAMPLELimComp1" title="Copy heading and permalink for Example 12.4.2.7: The Limit  \limit{m}{\infty}{ \left( 1+\frac{1}{m}
+      \right)^m}" aria-label="Copy heading and permalink for Example 12.4.2.7: The Limit  \limit{m}{\infty}{ \left( 1+\frac{1}{m}
+      \right)^m}">🔗</a></div></article><span class="incontext"><a class="internal" href="SECTIONIndetFormsAndLhop.html#EXAMPLELimComp1">in-context</a></span>
+</body>
+</html>

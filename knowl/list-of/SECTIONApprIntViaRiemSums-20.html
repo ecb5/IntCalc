@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<section class="paragraphs"><h3 class="heading"><span class="title">DIGRESSION: Simpson’s Rule and Error Bounds.</span></h3>
+<div class="para">If you look at the midpoint rule geometrically, you will notice that we are replacing the curve <span class="process-math">\(y=f(x)\)</span> on each subinterval <span class="process-math">\(\left[x_{k-1},x_k\right]\)</span> with the horizontal line <span class="process-math">\(y=f(x^*_k)\)</span> where <span class="process-math">\(x^*_k\)</span> is the midpoint of the subinterval.  Said in a different way, on each subinterval, we are replacing the curve with the zero-degree polynomial <span class="process-math">\(y=f(x^*_k)\text{.}\)</span> In the trapezoidal rule, we are replacing the curve <span class="process-math">\(y=f(x)\)</span> on each subinterval <span class="process-math">\([x_{k-1},x_k]\)</span> with the first-degree polynomial (line) passing through the points <span class="process-math">\(\left(x_{k-1},f\left(x_{k-1}\right)\right)\)</span> and <span class="process-math">\(\left(x_k,f\left(x_k\right)\right)\text{.}\)</span>  What if we were to replace the curve <span class="process-math">\(y=f(x)\)</span> on each subinterval with an appropriate second-degree polynomial?  Since a zero-degree polynomial requires the single point <span class="process-math">\(\left(x^*_k,f\left(x^*_k\right)\right)\)</span> to determine and the trapezoidal rule requires two points <span class="process-math">\(\left(x_{k-1},f\left(x_{k-1}\right)\right)\)</span> and <span class="process-math">\(\left(x_k,f\left(x_k\right)\right)\)</span> to determine, it stands to reason that replacing the curve <span class="process-math">\(y=f(x)\)</span> with a parabola on each subinterval would require three points.  The natural choice would be the endpoints and midpoint of each subinterval.  With that in mind, let’s just consider a function <span class="process-math">\(y=f\left(x\right)\)</span> defined on <span class="process-math">\([a,b]\)</span> and replace it by the parabola <span class="process-math">\(y=P(x)\)</span> passing through the points <span class="process-math">\(\left(a,f\left(a\right)\right),
+\left(b,f\left(b\right)\right)\)</span> and <span class="process-math">\(\left(m,f\left(m\right)\right)\)</span> where <span class="process-math">\(m=\frac{a+b}{2}\)</span> is the midpoint of the interval <span class="process-math">\([a,b]\text{.}\)</span>  Here is a picture depicting this.<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IC/SimpsonApprox1.png" class="contained" alt="The graph of a function f(x) between the points a and b with a quadratic function, P(x), constructed so that it matches f(x) at a, b, and at the midpoint between a and b."></div>
+<div class="para">To make things a bit easier, let’s shift the graph over so that <span class="process-math">\(m=0.  \)</span>In this case we will denote <span class="process-math">\(h=b-m=\frac{b-a}{2}\)</span> so that <span class="process-math">\(a-m=\frac{a-b}{2}=-h.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Show that if <span class="process-math">\(P(x)=Ax^2+Bx+C\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^h_{x=-h}{P\left(x\right)}
+\dx{x}=\frac{h}{3}\left(2Ah^2+6C\right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 22.3.0.5"><a href="#SECTIONApprIntViaRiemSums-20-5" title="Copy heading and permalink for Problem 22.3.0.5" aria-label="Copy heading and permalink for Problem 22.3.0.5">🔗</a></div></article><div class="para logical">
+<div class="para">Notice that since our parabola <span class="process-math">\(P(x)\)</span> must pass through the points <span class="process-math">\(\left(-h,f\left(a\right)\right),\left(0,f\left(m\right)\right)\)</span> and <span class="process-math">\(\left(h,f\left(b\right)\right)\)</span> then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f\left(a\right)\amp{}=A{\left(-h\right)}^2+B\left(-h\right)+C\\
+f\left(m\right)\amp{}=A{\left(0\right)}^2+B\left(0\right)+C\\
+f\left(b\right)\amp{}=Ah^2+Bh+C
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Show that <span class="process-math">\(C=f(m)\)</span> and <span class="process-math">\(f\left(a\right)+f\left(b\right)=2Ah^2+2C\)</span> and deduce that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^h_{x=-h}{P\left(x\right)} \dx{x}=\frac{h}{3}\left[f\left(a\right)+4f\left(m\right)+f\left(b\right)\right]
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 22.3.0.6"><a href="#SECTIONApprIntViaRiemSums-20-7" title="Copy heading and permalink for Problem 22.3.0.6" aria-label="Copy heading and permalink for Problem 22.3.0.6">🔗</a></div></article><div class="para logical">
+<div class="para">The approximation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int^b_{x=a}{f\left(x\right)\dx{x}}\approx
+\int^h_{x=-h}{P\left(x\right)}
+dx=\frac{h}{3}\left[f\left(a\right)+4f\left(m\right)+f\left(b\right)\right]
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(h=\frac{b-a}{2}\)</span> and <span class="process-math">\(m=\frac{a+b}{2}\)</span> is called Simpson’s 1/3 rule named after <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Simpson/" target="_blank">Thomas Simpson</a> (1710-1761) who included a version of it in his book <span class="booktitle">Mathematical Dissertations</span> (1743).  Versions of it were known to <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Cavalieri" target="_blank">Cavalieri</a>, <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Gregory" target="_blank">Gregory</a>, and <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Kepler" target="_blank">Kepler</a> in the 17th century, but Simpson’s book popularized it.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We can use this special case where we divided the interval <span class="process-math">\([a,b]\)</span> into 2 equal subintervals to the case where we divide an even number <span class="process-math">\(n=2m\)</span> of subintervals each of length <span class="process-math">\(\Delta x=\frac{b-a}{2m}\text{.}\)</span>  We need an even number of subintervals so we can apply Simpson’s 1/3 rule to each pair of adjacent intervals.  It’s easy to get lost in the notation, so here is a picture of the case where <span class="process-math">\(m=3\)</span> and we are dividing the interval <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(6\)</span> subintervals of width <span class="process-math">\(\Delta x=\frac{b-a}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/SimpsonsRule1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Image from https://www.sciencedirect.com/topics/mathematics/simpsons-rule<div class="autopermalink" data-description="Figure 22.3.0.7"><a href="#SECTIONApprIntViaRiemSums-20-10" title="Copy heading and permalink for Figure 22.3.0.7" aria-label="Copy heading and permalink for Figure 22.3.0.7">🔗</a></div></figcaption></figure><div class="para">The black curve is <span class="process-math">\(y=f(x)\)</span> and notice that it is being approximated by three different parabolas.<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical">
+<div class="para">Apply Simpson’s 1/3 rule to each of the three parabolas in the above diagram to show that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int^b_{x=a}{f\left(x\right)\dx{x}}\approx
+\frac{\Delta
+x}{3}[f\left(x_0\right)+4f\left(x_1\right)\amp{}+2f\left(x_2\right)+4f\left(x_3\right)\\
+\amp{}+2f\left(x_4\right)+4f\left(x_5\right)+f\left(x_6)\right]
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\Delta x=\frac{b-a}{6}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-12-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 22.3.0.8.a"><a href="#SECTIONApprIntViaRiemSums-20-12-1" title="Copy heading and permalink for Task 22.3.0.8.a" aria-label="Copy heading and permalink for Task 22.3.0.8.a">🔗</a></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical">
+<div class="para">Show that if we divide the interval <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(n=2m\)</span> subintervals of length <span class="process-math">\(\Delta
+x=\frac{b-a}{2m}\text{,}\)</span> then Simpson’s Rule becomes</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int^b_{x=a}{f\left(x\right)\dx{x}}\approx
+\frac{\Delta
+x}{3}[f\left(x_0\right)+4f\left(x_1\right)+\amp{}2f\left(x_2\right)+4f\left(x_3\right)+2f\left(x_4\right)+\dots\\
++\amp{}2f(x_{2m-2})+4f\left(x_{2m-1}\right)+f\left(x_{2m})\right]
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-12-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 22.3.0.8.b"><a href="#SECTIONApprIntViaRiemSums-20-12-2" title="Copy heading and permalink for Task 22.3.0.8.b" aria-label="Copy heading and permalink for Task 22.3.0.8.b">🔗</a></div></article><div class="autopermalink" data-description="Problem 22.3.0.8"><a href="#SECTIONApprIntViaRiemSums-20-12" title="Copy heading and permalink for Problem 22.3.0.8" aria-label="Copy heading and permalink for Problem 22.3.0.8">🔗</a></div></article><article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(M_n\)</span> and <span class="process-math">\(T_n\)</span> represent the approximations using the midpoint rule and trapezoidal rule with<span class="process-math">\(n\)</span> equal subintervals, respectively and <span class="process-math">\(S_{2n}\)</span> represents Simpson’s rule with <span class="process-math">\(2n\)</span> equal subintervals, show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{3}T_n+\frac{2}{3}M_n=S_{2n}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 22.3.0.9"><a href="#SECTIONApprIntViaRiemSums-20-13" title="Copy heading and permalink for Problem 22.3.0.9" aria-label="Copy heading and permalink for Problem 22.3.0.9">🔗</a></div></article><article class="problem example-like"><h4 class="heading">
+<span class="type">Drill</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para">Simpson’s rule drills go here<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Drill 22.3.0.10"><a href="#SECTIONApprIntViaRiemSums-20-14" title="Copy heading and permalink for Drill 22.3.0.10" aria-label="Copy heading and permalink for Drill 22.3.0.10">🔗</a></div></article><div class="para">An obvious question regarding any approximation is how accurate it is.  This question is typically addressed in a numerical analysis course, but we can state a few things here. First of all, we can see geometrically that the midpoint rule and trapezoidal rule will provide an exact answer for a linear function <span class="process-math">\(f\left(x\right)=Mx+B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/IC/MidTrap.png" class="contained"></div>
+<div class="para">For more general curves, we have the following results (stated without proof).<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="alert">Error Bounds</em> Suppose <span class="process-math">\(\left|f^{\prime\prime}\left(x\right)\right|\le K\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> if <span class="process-math">\(E_M\)</span> and <span class="process-math">\(E_T\)</span> represent the errors in the midpoint and trapezoidal rules with <span class="process-math">\(n\)</span> equal subintervals, then<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\left|E_M\right|\le \frac{K{\left(b-a\right)}^3}{24n^2}\amp{}\amp{}
+\left|E_T\right|\le \frac{K{\left(b-a\right)}^3}{12n^2}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para">Use the error bounds above to show that the midpoint and trapezoidal rules provide the correct answer when integrating a linear function.<div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 22.3.0.11"><a href="#SECTIONApprIntViaRiemSums-20-20" title="Copy heading and permalink for Problem 22.3.0.11" aria-label="Copy heading and permalink for Problem 22.3.0.11">🔗</a></div></article><article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Error Bound for Simpson’s rule.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(\left|f^{\left(4\right)}\left(x\right)\right|\le K\)</span> on <span class="process-math">\([a,b]\text{.}\)</span>  Then the error <span class="process-math">\(E_S\)</span> when approximating using Simpson’s rule with <span class="process-math">\(n=2m\)</span> equal subintervals satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left|E_S\right|\le \frac{K{\left(b-a\right)}^5}{180n^4}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SimpRuleErr-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 22.3.0.12: An Error Bound for Simpson’s rule"><a href="#SimpRuleErr" title="Copy heading and permalink for Theorem 22.3.0.12: An Error Bound for Simpson’s rule" aria-label="Copy heading and permalink for Theorem 22.3.0.12: An Error Bound for Simpson’s rule">🔗</a></div></article><article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22.3.0.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para">Show that if <span class="process-math">\(f\left(x\right)=Ax^3+Bx^2+Cx+D\)</span> represents any cubic polynomial, then Simpson’s rule will provide the exact answer for <span class="process-math">\(\int^b_{x=a}{f(x)}
+\dx{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 22.3.0.13"><a href="#SECTIONApprIntViaRiemSums-20-22" title="Copy heading and permalink for Problem 22.3.0.13" aria-label="Copy heading and permalink for Problem 22.3.0.13">🔗</a></div></article><div class="para">
+<em class="alert">END OF DIGRESSION</em><div class="autopermalink" data-description="Paragraph"><a href="#SECTIONApprIntViaRiemSums-20-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Digression: DIGRESSION: Simpson’s Rule and Error Bounds"><a href="#SECTIONApprIntViaRiemSums-20" title="Copy heading and permalink for Digression: DIGRESSION: Simpson’s Rule and Error Bounds" aria-label="Copy heading and permalink for Digression: DIGRESSION: Simpson’s Rule and Error Bounds">🔗</a></div></section><span class="incontext"><a class="internal" href="SECTIONApprIntViaRiemSums.html#SECTIONApprIntViaRiemSums-20">in-context</a></span>
+</body>
+</html>
