@@ -1,0 +1,927 @@
+\section{Higher Order Derivatives \textcolor{red}{(to be deleted)}}
+\label{sec:high-order-deriv}
+\markright{Derivatives of Derivatives}
+
+We have seen that if, for example, $y=x^3,$ then $\dfdx{y}{x} = 3x^2.$
+There are at least three distinct  ways to interpret the formula $\dfdx{y}{x} =
+3x^2.$
+The first two of these are the ones we've been using all along:
+\begin{description}
+\item[Geometric Interpretation:] The derivative $\dfdx{y}{x} = 3x^2$ is the formula
+  that tells us the slope of the curve it was ``derived\footnote{Hence the
+  name.}'' from, $y=x^3.$
+\item[Dynamic Interpretation] If $y=x^3$ is some 
+  relationship between two quantities (like position and time, for
+  example) then $\dfdx{y}{x}$ tells us how fast $y$ is changing
+  with respect to $x.$ (Just as velocity is how fast position is changing
+  with respect to the elapsed time.)
+\item[Functional (Modern) Interpretation] A relation like $y=x^3$ gives $y$
+  \underline{as a function of} $x.$ What this means, really, is that if
+  a value for $x$ is given then the value of $y$ is forced. For
+  example if $x=2$ then $y=2^3 = 8.$ If we choose any other value for
+  $x$ then $y$ is forced to be the cube of $x.$ We usually encapsulate
+  this idea with the notation $y(x) = x^3,$ so that $y(2)=2^3=8;$
+  $y(3)=3^3=27;$ $y(4)=4^3=64,$ and so on.
+
+ It should be clear
+  that both of the formulas $y(x) = x^3$ and $\dfdx{y}{x} = 3x^2$
+  represent functions in the sense just given: If $x$
+  is given then the values of both $y$ and $\dfdx{y}{x}$ are
+  forced. For example, if $x=2$ then $y=2^3=8$ and
+  $\dfdx{y}{x}= 6(2^2) = 24.$ That is, if $x$ is chosen, then $y$ and
+  $\dfdx{y}{x}$ are both forced. 
+
+  This gives us a new way to think about the expression $\dfdx{y}{x}.$
+  We can think of it as a function of $x$ just as $y$ is a function of
+  $x.$ It is true that $\dfdx{y}{x}$ is \emph{derived}\footnote{Hence
+      the name.} from $y$ in the same way and for the same reasons we
+  have been considering all along. So the first two interpretations
+  are still valid and there is no reason not to use them as
+  appropriate. But we will also find this third interpretation to be
+  useful as well
+\end{description}
+
+\begin{mynotation}{Function}
+  Interpreting the symbol $\dfdx{y}{x}$ as the name of a function can
+  lead to some confusion so we will take a moment to address this
+  before we proceed.
+
+  Until now we have interpreted the symbol $\dfdx{y}{x}$ as the ratio
+  of the differentials $\dx{y}$ and $\dx{x}.$ This will remain a very
+  useful interpretation and we will continue to use it. But it will
+  also be useful to interpret the symbol $\dfdx{y}{x}$ as the name of
+  the function derived from $y,$ just as the symbols ``$\sin$'' and
+  ``$\cos$'' are the names of certain trigonometric functions. As such
+  ``$\dfdx{y}{x}$'' is \alert{one symbol} and cannot be separated into
+  the constituent parts $\dx{y}$ and $\dx{x}.$
+
+  It should be clear at this point that the derivative is by far the
+  more important concept. This is why we introduced the notion of
+  differentials as ``useful fictions'' back in
+  Section~\ref{sec:some-rules-diff}. We only really need differentials
+  as stepping stones on our way to building the derivative. To be
+  sure, we will continue to use them because they are very ``useful
+  fictions.'' But henceforth they will only appear as an intermediary
+  step in building the derivative.
+\end{mynotation}
+
+If the symbol $\dfdx{y}{x}$ is the name of the function we get by
+differentiating $y$ then a natural question is, ``What is the
+derivative of the function $\dfdx{y}{x}?$'' Before we start down that
+path though, let's first make sure we don't get sloppy. If we can take
+more than one derivative of $y$ we can't just use the word
+``derivative'' to refer all of them. We'll need a finer distinction
+than that.
+
+
+The first time  we differentiate $y(x) = x^3$  we get $\dfdx{y}{x}.$
+The second time we differentiate $y(x) = x^3$ we
+ get $6x.$ What should we call
+$6x?$ The obvious
+choice is to call $6x$ the \emph{second derivative} of $y=x^3.$
+Clearly $3x^2$  is the \emph{first derivative\footnote{But we will
+    continue to call it ``the derivative'' when there is no chance of
+    confusion.}} and $6$ is the
+\emph{third derivative} of $y=x^3.$
+
+All well and good, but what it will be cumbersome to write out ``the
+third derivative'' every time we need it. What \underline{notation}
+should we use to indicate higher order derivatives?
+
+
+For better or worse the extension of the differential\footnote{Several
+  notations have been invented. However, we've been using the
+  differential notation all along and we see no value in changing the
+  notation on you at this point. So we will continue to use the
+  differential notation for now.
+
+  % However, mathematical notation is a tool and, like all tools, you'll
+  % need to use the one that was designed for the task at hand. By
+  % limiting you to only the differential notation we are necessarily
+  % limiting the tool set available to you. Once you have fully mastered
+  % the \emph{concept} differentiation we will introduce the other
+  % notations.
+} notation to higher order derivatives that has been
+become standard is this:
+\begin{align*}
+  \text{ If } y &= x^3 \text{ then}\\
+  \dfdx{y}{x}&= 3x^2 \text{ as before, and}\\
+  \dfdxn{y}{x}{2} &= 6x.\\
+\intertext{Differentiating one more time we get}
+  \dfdxn{y}{x}{3} &= 6.
+\end{align*}
+
+Notice the odd placement of the exponents. This is an historical
+accident. Leibniz would have proceeded as follows:
+\begin{align}
+\nonumber  \text{Let } y&= x^3.\\
+  \intertext{Then}
+\nonumber  \dx{y}&= \dx{(x^3)}\\
+\nonumber               &= 3x^2\dx{x}.\\
+  \intertext{So far, so good. But in taking the second differential
+  Leibniz would have used the Product Rule, giving}
+\nonumber  \dx{(\dx{y})} &= 3x^2\underbrace{\dx{(\dx{x})}}_{=0} +
+                                       6x\dx{x}\dx{x}\\
+  \intertext{so}
+\label{eq:PRNotation} \dx{(\dx{y})} &=    6x\dx{x}\dx{x}.
+\end{align}
+To see why  $\dx{(\dx{x})}=0$ recall that, whatever else it might
+  be, the differential $\dx{x}$ is a constant. And the differential of
+  any constant is zero, by our first differentiation rule.
+
+  A natural way to abbreviate the left side of
+  equation~\ref{eq:PRNotation} is $\dx{(\dx{y})}=\dx^2y$ and the on the
+  right side the expression $\dx{x}\dx{x}$ is just a product so it is equal
+  to $\dx{x}^2.$ Thus when we divide through by $\dx{x}^2$ we get
+  $\dfdxn{y}{x}{2}=6x.$
+
+  Similarly we get $\dfdxn{y}{x}{4} = 0.$ Obviously we can continue
+  this process as many times as we would like, although for this
+  particular example every derivative after the fourth is zero so this
+  would be rather dull. The following example is more interesting.
+
+\begin{myexample}
+  Consider the expression $y=\sin(x).$ As we've seen $\dfdx{y}{x}=
+  \cos(x).$ Continuing we have $\dfdxn{y}{x}{2} = -\sin(x),$
+  $\dfdxn{y}{x}{3} = -\cos(x),$ and finally $\dfdxn{y}{x}{4} =
+  \sin(x).$ Thereafter the pattern of derivatives clearly repeats.
+\end{myexample}
+
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item   Suppose $y=\sin(x).$ Compute
+    \begin{enumerate}[label={\bf{}(\roman*)}]{}
+      \begin{multicols}{4}
+      \item $\displaystyle\dfdx{y}{x}$
+      \item $\displaystyle\dfdxn{y}{x}{2}$
+        \item $\displaystyle\dfdxn{y}{x}{3}$
+        \item     $\displaystyle\dfdxn{y}{x}{4}$
+        \item $\displaystyle\dfdxn{y}{x}{10}$
+        \item $\displaystyle\dfdxn{y}{x}{24}$
+        \item $\displaystyle\dfdxn{y}{x}{101}$
+        \end{multicols}
+      \end{enumerate}
+      \begin{multicols}{2}
+      \item Repeat part (a), using $y=\cos(x).$
+      \item Repeat part (a), using $y=e^x.$
+      \item Repeat part (a), using $y=xe^x.$
+      \item Repeat part (a), using $y=\sin(ax),$ where $a$ is a
+        constant.
+      \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem}
+
+\begin{mynotation}{Troubling Aspects of Differentials and Differential}
+  We would be remiss if we did not point out some very troubling
+  aspects of the  notation we've been using.
+  Consider, when we introduced the concept of a differential in
+  Chapter \ref{chapt:differentials} we appealed to your understanding
+  of \emph{finite} differences. That is, if $x_1\lt{}x_2$ then the finite
+  difference
+$$
+\Delta{}x=x_2-x_1
+$$
+is a measure of the actual separation between $x_2$ and $x_1.$
+Extending this to infinitesimals,  we imagined that $x_2$ and $x_1$ are
+\underline{infinitely} close together -- but still distinct -- and we
+represented the distance between them as
+$$
+\dx x = x_2-x_1.
+$$
+
+It is all well and good to \emph{write down} expressions like $\dx y$
+or $\dx^2 y$ but what do they represent, really?
+
+If $x_1$ and $x_2$ are infinitely close together doesn't that mean
+that they are \underline{not} separated at all? If they are not
+separated then $x_2=x_1.$ In that case isn't $\dx x =x_2-x_1$ just
+zero? And if $\dx x =0$ then doesn't the expression $\dfdx{y}{x}$ call
+for division by zero? Which we know is meaningless?
+
+Now consider the meaning of the \underline{second} derivative. If the
+first derivative is obtained by computing the ratio of quantities that
+are infinitely close together, what can it possibly mean to
+differentiate it again? If we've already taken numbers that are
+infinitesimally close together to compute the first derivative, what
+can we possibly be using to compute the second, or the third
+derivative?
+
+What is the infinitesimal difference of the infinitesimal difference of
+an infinitesimal difference?
+
+This is all very puzzling and it is tempting to toss it all away.
+Except that at this point we have a great deal of evidence that
+$\dfdx{\left(x^3\right)}{x}=3x^2,$ and
+$\dfdx{\left(3x^2\right)}{x}=6x$ are both quite meaningful. Among
+other things we've used them to find the equations of tangent lines to
+a variety of curves quite successfully. There must be something to
+this. But what?
+
+If we are honest with ourselves we must acknowledge the legitimacy of
+these questions. There is something here that we do not yet
+understand. We will proceed very cautiously.
+\end{mynotation}
+
+
+\begin{Digression}[Approximation with Polynomials]
+\begin{wrapfigure}[]{r}{2in}
+  \includegraphics*[height=1.5in,width=2in]{../Figures/CosApprox2}
+  \label{fig:CosApprox2}
+  \captionsetup{labelformat=empty}
+\end{wrapfigure}
+  When $-\frac{\pi}{2}\le x\le \frac{\pi}{2}$ a well known
+  approximation of $\cos(x)$ is
+  \[
+    \cos(x)\approx 1-\frac{x^2}{2}+\frac{1}{24}x^4.
+  \]
+  It is clearly a pretty good approximation; when you compare the
+  graphs of $\cos(x)$ and $1-\frac{x^2}{2}$ it is clear that they are
+  close together, at least for small values of $x.$ But how in the
+  world would anyone come up with this approximation in the first
+  place?
+
+  This is actually a straightforward generalization of the 
+  construction of tangent lines using the derivative.
+  We begin by constructing the tangent line of this graph at the point
+  \((0,1).\) This is not hard. If \(y=\cos(x)\) then
+  \(\left.\dfdx{y}{x}\right|_{x=0}=0. \) Therefore an equation of the
+  tangent line at \((0,1)\) is
+  \begin{equation}
+    y=\left[\eval{\dfdx{y}{x}}{x}{0}\right](x-0)
+    +1\label{eq:CosTanAtZero}
+  \end{equation}
+  or
+  \[y=1.\] Most likely you knew that already.
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1in,width=2in]{../Figures/CosApprox}}
+\label{fig:CosApprox}
+\end{wrapfigure}
+From the figure at the right we see that at the point of tangency,
+$(0,1)$, the graphs of $y=\cos(x)$ and $y=1$ are both
+horizontal. Indeed, this should be fairly obvious. That's what a
+tangent line is, a line with the same slope as the curve it is tangent
+to. But suppose we could find a function whose first \emph{and second}
+derivatives match $\cos(x)$ at $x=0?$ What would that look like?  That
+function is $y=1-\frac{x^2}{2}$ and it looks like the blue graph
+below:
+\centerline{\includegraphics*[height=2in,width=2in]{../Figures/CosApprox2}}
+
+\begin{myexample}
+  You can see where this is going, right? How could we find the polynomial
+  whose first four derivatives match the
+  $\cos(x)$ at $x=0$? % The curve
+  % $y= 1-\frac{x^2}{2}+\frac{x^4}{24}$ is the polynomial with the
+  % property that its first four derivatives at $x=0$ match the first
+  % four derivatives of $\cos(x),$ also at $x=0.$
+
+
+  % But we did not ask ``What is the function?'' We asked, ``How do we
+  % find it?''
+  This is actually pretty straightforward. A general
+  quartic\footnote{A quartic is a fourth degree polynomial.} has the
+  form:
+$$
+y(x) = A+Bx+Cx^2+Dx^3+Ex^4.
+$$
+So all we have to do is determine what the numbers $A,$ $B,$ $C,$ $D,$
+and $E$ have to be. We do this in five steps:
+\begin{enumerate}
+\item First we want $\cos(0)$ to be equal to $y(0).$ Evaluating each
+  we see that $\cos(0)=1$ and $y(0)=A.$ Therefore $A=1.$
+\item Second we want
+  $\left.\left.\dfdx{(\cos(x))}{x}\right|_{x=0}=\dfdx{y}{x}\right|_{x=0}.$
+  Evaluating each we have
+  $\left.\dfdx{(\cos(x))}{x}\right|_{x=0}=\sin(0)=0,$ and
+  $\left.\left.\dfdx{y}{x}\right|_{x=0}=B+2Cx+3Dx^2+4Ex^3\right|_{x=0}=B,$
+  so $B=0.$
+\item At this point we assume that you've noticed the pattern so we
+  will abbreviate our explanations. Setting
+  $\left.\left.\dfdxn{(\cos(x))}{x}{2}\right|_{x=0}=\dfdxn{y}{x}{2}\right|_{x=0}$
+  gives us
+  $\left.\left.-\cos(x)\right|_{x=0}=-1=2C+6Dx+12Ex^2\right|_{x=0}=2C.$
+  So, $C=-\frac12.$
+\item
+  $\left.\left.\dfdxn{(\cos(x))}{x}{3}\right|_{x=0}=\dfdxn{y}{x}{3}\right|_{x=0}$
+  gives us
+  $\left.\left.-\sin(x)\right|_{x=0}=0=2C+6Dx\right|_{x=0}=2C,$ so
+  $C=0.$
+\item In the next step we differentiate once more, set the fourth
+  derivatives equal, and find that $E=\frac{1}{24}.$
+\end{enumerate}
+Putting this all together we have
+$$
+\cos(x)\approx 1-\frac12x+\frac{1}{24}x^4
+$$
+for values of $x$ near zero.
+\end{myexample}
+
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that if we require the first six derivatives to match at
+    $x=0$ the polynomial we get is
+    $y(x) = 1-\frac12x^2+\frac{1}{24}x^4-\frac{1}{720}x^6.$
+  \item What happens if we require the first seven derivatives to
+    match?
+  \end{enumerate}
+\end{embeddedproblem}
+
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Find the cubic polynomial whose first two derivatives match
+    the first two derivatives of $\sin(x)$ at $x=0.$
+  \item Now find the quintic\footnote{Fifth degree polynomial.} whose
+    first four derivatives match.
+  \item  Repeat parts (a) and (b) but this time make the derivatives
+    match at $x=\frac{\pi}{2}.$
+  \end{enumerate}
+\end{embeddedproblem}
+
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Find the cubic polynomial whose first two derivatives match
+    the first two derivatives of $e^x$ at $x=0.$
+  \item Now find the quintic whose
+    first four derivatives match.
+  \item  Repeat parts (a) and (b) but this time make the derivatives
+    match at $x=\ln(2).$
+  \end{enumerate}
+\end{embeddedproblem}
+\end{Digression}
+
+\begin{mynotation}{Prime}
+  You surely noticed how awkward the notation was in
+  equation~(\ref{eq:CosTanAtZero}). The problem is here:
+  $\eval{\dfdx{y}{x}}{x}{0}.$ This expression means, ``the value
+  of the derivative of $y$ at the point $x=0.$'' To be clear, there is
+  nothing wrong with the notation itself. It's just that we will need
+  to refer to the value of a derivative at specific points a lot, and
+  this notation is just too bulky. We need something sleeker; not so
+  hard to write down, and not so hard to read.
+  
+  As we noted previously, if $y$ is a function of $x$ then
+  $\dfdx{y}{x}$ is also a function of $x.$ Specifically, it is the
+  function that tells us the slope of the graph of $y(x)$ (geometric
+  viewpoint), or the rate of change of $y$ with respect to $x$
+  (dynamic viewpoint). We usually indicate the functional nature of
+  $y$ by appending ``$(x)$'' to the right, as: $y(x).$ So
+  $\eval{\dfdx{y}{x}}{x}{0}$ can be expressed as $\dfdx{y}{x}(0).$
+  But this really isn't much of an improvement, is it?
+
+  We've been
+  using the differential ratio, $\dfdx{y}{x}$  to denote the
+  derivative of $y$ because we originally viewed
+  $\dfdx{y}{x}$ as the \emph{actual} ratio of the differentials
+  $\dx{y}$ and $\dx{x}.$ But we've moved on from that. We're now
+  thinking of the expression $\dfdx{y}{x}$ as just the name of a
+  particular function. But names don't have to be so complicated.
+
+  Joseph-Louis Lagrange $(1736-1813)$ introduced the notation,
+  $y^\prime(x) = \dfdx{y}{x}.$ (Pronounced ``$y$ prime of $x$.'')
+  This notation fills our need very handily. Since
+  $ \eval{\dfdx{y}{x}}{x}{0} = y^\prime(0)$ equation(~\ref{eq:CosTanAtZero}) can
+  be restated as
+  $$
+  y=y^\prime(0)(x-0)
+  $$
+  which is certainly more compact, though it is probably harder to
+  read at first. This will get better with practice.
+
+  Bringing the ``prime'' notation into play also begins to move us
+  into a more modern way of thinking about Calculus and, in
+  particular, the derivative. Previously we emphasized the roles of
+  the slope of a graph, and (equivalently) the rate of change of
+  relative quantities. The differential quotient $\dfdx{y}{x}$ was just
+  the expression that provided that slope (or rate of change).
+
+  To be sure, the derivative still does that and this is
+  precisely what makes it important. However it is very difficult to
+  understand what the  second, or third, or higher order derivatives
+  might be if we continue to think in terms of the differentials
+  $\dx{y}$ and $\dx{x}.$ If $\dx{y}$ is an infinitely small difference
+  in the quantity $y$ (think of $y$ as a position), then what in the
+  world is $\dx(\dx{y})=\dx^2{y}?$ An infinitely small difference
+  between infinitely small differences? That sounds a little crazy,
+  doesn't it?
+
+  Now ask yourself what $\dx^5y$ might be? Or $\dx^{100}y?$
+
+  On the other hand if $y(x) = x^3,$ then we can ``derive'' the
+  derivative $y^\prime(x)=3x^2$ and there are no troublesome
+  differentials in the way. We've simply started with one function:
+  $y(x) = x^3,$ and, via the rules we've already learned, derived
+  another: $y^\prime(x) = 3x^2.$ Since $y^\prime$ is just another
+  function there is no logical objection to applying the rules again
+  to get $y^{\prime\prime}(x) = 6x.$ Trying to justify this second
+  differentiation using differentials is very difficult.
+
+  Finally, it should be clear that Lagrange called $y^\prime$ ``the
+  derivative'' because he ``derived'' it from $y.$ So the
+  conventions of the English language would dictate that, starting
+  with $y(x)=x^3$ we should derive the derivative, $y^\prime(x)=3x^2.$
+
+  Unfortunately the history of our topic interferes with this.  For
+  the first $100$ years or so ``the derivative'' didn't exist. In
+  those years what came to be called the derivative was simply the
+  differential ratio, $\dfdx{y}{x}.$ So we did not ``derive'' to obtain
+  a derivative in those years, we ``differentiated'' to obtain
+  differentials. After Lagrange, the concept of the derivative as a function
+  began to replace the older differential ratio concept. But the
+  older way of expressing the computation remained in place. So the modern
+  formalism is this: We ``differentiate'' the function $y=x^3$ to
+  obtain the ``derivative'' $y^\prime(x)=3x^2.$
+
+  As English this doesn't really make sense, but your teacher will cringe and
+  give you the stinky-eye if you don't say it this way.
+
+  Really! Try it and see.
+
+  We will continue to use Leibniz' differential notation in most
+  cases. But when it becomes cumbersome (as it will in
+  section~\ref{sec:newtons-method-1}) we will switch to Lagrange's
+  notation.
+\end{mynotation}
+
+% \section{How to Make Things ``Easier on  the Eyes'' (Also Known as the Chain Rule)}
+% \label{sec:diff-with-subst}
+% \markright{Chain Rule}
+
+% Recall that Fermat was able to deduce Snell's Law of Refraction by
+% minimizing the amount of time it took for light to travel from Point
+% $A$ in air to point $B$ in water.  Fermat was able to do this before
+% the invention of of Calculus because he was a \emph{very} clever man.
+% Leibniz reduced it to a fairly routine computation by applying his
+% differential Calculus.  Recall Problem~\ref{PIC:FermatSnell} on
+% page~\pageref{PIC:FermatSnell} from
+% Chapter~\ref{chapter:ScienceBeforeCalc}.
+
+%   Consider the following labeling in the above diagram.
+  
+% \centerline{\includegraphics*[height=2in,width=4in]{../Figures/Refraction3}}
+
+% Find an expression for the time $T$ traveled along the path $A$ from
+% to $B$ in terms of the variable and the constants .
+
+% It turns out that the expression is given by
+% $$
+% T=T(x)=\frac{\sqrt{a^2+x^2}}{v_1} +\frac{\sqrt{b^2+(c-x)^2}}{v_2}.
+% $$
+% As with Fermat, Leibniz knew that if we graphed this curve, then at
+% the minimum, there would be a horizontal tangent line.  This says that to find this minimum
+% we should set $\dfdx{T}{x}=0.$  Applying our rules for
+% differentiation, we get
+% $$
+% \dx{T}=\frac{1}{v_1}  \dx((a^2+x^2 )^{\frac{1}{2}} )+\frac{1}{v_2}
+% \dx((b^2+(c-x)^2 )^{\frac{1}{2}})
+% $$
+
+% We seem to have run into an impasse. We don't have a rule for
+% differentiating $(a^2+x^2)^{\frac12}$.
+% Or do we?
+
+% Suppose we make the substitution $z=a^2+x^2$.  Then we have,
+% \begin{align*}
+% \dx\left((a^2+x^2)^{\frac12}\right)&=\dx(z^{\frac12})=\frac12\left(a^2+x^2\right)^{\frac12}\dx(a^2+x^2) \\
+%   &=\frac12\left(a^2+x^2\right)^{\frac12}(2x)\dx  x \\
+%   &=\frac{x\dx x}{\sqrt{a^2+x^2}}
+% \end{align*}
+
+% Applying the same idea we let $w=b^2+(c-x)^{2}$ and obtain
+% \begin{align*}
+%   \dx
+%   \left(
+%   (b^2+(c-x)^2)^{\frac12}
+%   \right) &= \dx\left(w^{\frac12}\right) \\
+%   &= \frac12w^{\frac12}\dx w \\
+%   &= \frac12  (b^2+(c-x)^2)^{\frac12}\dx(b^2+(x-x)^2).
+% \end{align*}
+% \begin{embeddedproblem}{}
+%   \begin{enumerate}[label={\bf{}(\alph*)}]{}
+%   \item Finish the  computation of
+%     $\dx\left(b^2+(c-x)^2\right)^{\frac12}.$
+%   \item Compute $\dfdx{T}{x}$ and set this equal to zero to derive
+%     Snell's Law:
+%     $$
+%     \frac{\sin\theta_1}{v_1}=\frac{\sin\theta_2}{v_2}
+%     $$
+%   \end{enumerate}
+% \end{embeddedproblem}
+
+% The substitution we used above is so useful that it has its own name,
+% the Chain Rule.  Many Calculus teachers and students associate this
+% name totally with a rule about differentiation.  Surprisingly, the
+% name is older than that, but does have relevance to our purposes in
+% calculus
+
+% Before the invention of Calculus arithmetic primers gave the following 
+% simple rule to be used to, among other things, convert money from one
+% currency to another: Suppose we have $x$ dollars  that we want to
+% convert to British pounds. If we know that 
+% \begin{equation}
+%  z \text{ dollars}  = y \text{ pounds}
+%  \label{eq:Dollar2PoundConversion}
+%  \end{equation}
+%  then if we divide both sides of equation(~\ref{eq:Dollar2PoundConversion}) by ($z$ dollar) we get 
+% $$
+% 1=\frac{y \text{ pounds}}{z \text{ dollars} }.
+% $$
+% Notice that the left side of this last formula is just the number one. So we start with $x$ dollars, multiply by one in the form $1=\frac{y \text{ pounds}}{ z \text{ dollars} }$ to get
+% \begin{align*}
+%   x \text{ dollars} &= x\text{ dollars}\cdot1 = x\text{ dollars}\cdot\frac{y \text{ pounds}}{ z \text{ dollars} }\\
+%     &= x\cdot y/z\cdot\frac{\text{\cancel{dollars}} \cdot\text{ pounds}}{\text{\cancel{dollars}}}
+% %   xy \text{ pounds} &= \left(x \text{ dollars}\right)\left(
+% %                     \frac{y \text{ pounds}}{\text{dollars}}\right)\\
+% %   &= xy\ (\text{dollars})\left(\frac{\text{pounds}}{\text{dollars}}\right)\\
+% \intertext{and since the dollars cancel (at least symbolically) we have}
+%   &= xy/z\text{ pounds.}
+% \end{align*}
+
+% Now  suppose that $1 \text{ dollar}=.85\text{ pounds},$ and that $1 \text{ pound} = 221 \text{ Chinese yuan}.$ Then\footnote{We're making these numbers up. Don't use them to convert
+% currency.} if we
+% need to convert $25$ American dollars to Chinese yuan we compute as follows:
+% \begin{align*}
+%   25\text{ dollars} &= 25\text{ dollars}\times \frac{.85\text{ 
+%                       pounds}}{1 \text{ dollar}}\times \frac{221
+%                       \text{ 
+%                       yuan}}{1 \text{ pound}}\\
+%                     &= 25\times.85\times221\left(\text{\cancel{dollars}}\right)
+%                       \left(\frac{\text{\bcancel{pounds}}}{\text{\cancel{dollars}}}\right)
+%                       \left(\frac{\text{yuan}}{\text{\bcancel{pounds}}}\right)  \\
+%                     &= 4696.25 \text{ yuan}  
+% \end{align*}
+
+% The\footnote{This table does not belong here. \index{Differentiation Rules!Inverse Trig Functions}
+% \begin{center}
+%   \begin{tabular}{ |c|c||c|c| }
+%     \hline
+%     \multicolumn{4}{|c|}{} \\
+%     \multicolumn{4}{|c|}{\Large\bf{}Differentiation of } \\
+%     \multicolumn{4}{|c|}{} \\
+%     \multicolumn{2}{|c||}{\Large\bf{}Trig Functions}  & \multicolumn{2}{|c|}{\Large\bf{} Inverse Trig Functions} \\
+%     \multicolumn{2}{|c||}{} &    \multicolumn{2}{|c|}{} \\
+%     \hline
+%     $y$   &$\dfdx{(y)}{x}$      &$y$&$\dfdx{(y)}{x}$\\
+%     \hline\hline
+%     $\sin x$ &$ \cos x $        &$\inverse\sin x$ &
+%                                                     $\frac{1}{\sqrt{1-x^2}} $\\\hline
+% $\cos x$&$ -\sin x $& $\inverse\cos x$ & $\frac{-1}{\sqrt{1-x^2}}$ \\\hline
+% $\tan x$  & $\sec^2 x$      &$\inverse\tan x$&$o\frac{1}{1+ x^2}$\\\hline
+% $\cot x$  &$-\csc^2 x$      &$\inverse\cot x$&$\frac{-1}{1+
+%                                                x^2}$\\\hline
+% $\sec x$ &$ \sec x\tan x $&$\inverse\sec x$&$\frac{1}{\abs{x}\sqrt{x^2-1}}$\\\hline
+% $\csc x$  &$-\csc x\cot x $ &$\inverse\csc x$&$\frac{-1}{\abs{x}\sqrt{x^2-1}}$\\\hline
+%   \end{tabular}
+% \end{center}
+% } crucial observation here is that in the expression
+% $\left(\text{dollars}\right)
+% \left(\frac{\text{pounds}}{\text{dollars}}\right)
+% \left(\frac{\text{yuan}}{\text{pounds}}\right) $ we have this symbolic
+% cancellation of both dollars and pounds so that when finished only
+% yuan are left.  This daisy chain of symbolic cancellation was called
+% the Chain Rule and it was very helpful in a time when currency
+% exchange was done by people. Nowadays of course,  these computations
+% are done by computers so a name is  no longer needed. Machines don't
+% care about names.
+
+% However, and especially when the differential notation is used to
+% express the derivative, the same sort of symbolic cancellation is seen
+% to occur.
+
+% We are accustomed to ``cancelling out'' $\dfdx{y}{x}\cdot\dfdx{x}{t}$
+% to get $\dfdx{y}{t}.$ Here we want to ``uncancel'' the $\dx{x}$ to get
+% $$
+% \dfdx{y}{t} = \dfdx{y}{x}\dfdx{x}{t}.
+% $$
+
+% More formally, if $y$ depends on $x$ which depends on
+% $t$ and we wish to compute $\dfdx{y}{t}$ we proceed as follows:
+% \begin{align*}
+%   \dfdx{y}{x}        &=   \dfdx{y}{x}\\
+%         \dx y  &= \dfdx{y}{x}\dx x\\
+% \intertext{and dividing by $\dx t$ on both sides gives,}
+%   \dfdx{y}{t} &= \dfdx{y}{x}\dfdx{x}{t}.\\
+% \end{align*}
+
+% Notice that \emph{symbollically} we don't seem to have accomplished
+% much. On the right side of this last
+% formula the $\dx x$ that appears in the numerator appears to cancel out
+% the one in the denominator and in the end we have the (apparently)
+% obvious statement that $\dfdx{y}{t}= \frac{\dx
+%   y}{\text{\cancel{$\dx x$}}}\frac{\text{\cancel{$\dx x$}}}{\dx t} =
+% \dfdx{y}{t}.$
+
+% However these symbols we're using are much like the pebbles used by
+% medieval merchants. At one level they are just empty symbols (pebbles)
+% lying on the page (counting board) and it is
+% profoundly obvious that $\dfdx{y}{t} = \dfdx{y}{x}\dfdx{x}{t}.$ Just
+% do the cancellation. Duh! 
+
+% But on a counting board a pebble lying here means ``one'' and the same
+% pebble lying over there means ``ten.'' To calculate on a counting
+% board we have to interpret the meaning of each pebble based on its
+% location on the board. 
+
+% We have to interpret the meaning of our Calculus symbols
+% similarly. Thus at one level the un-cancellation,
+% $\dfdx{y}{t} = \dfdx{y}{x}\dfdx{x}{t}$ is very simple to understand,
+% at another, more abstract, level it has a much deeper significance.
+
+% We understand the symbol $\dfdx{y}{t}$ to mean ``the rate of change of
+% $y$ with respect to $t$'' so this formula, when properly interpreted
+% says that the rate of change of $y$ with respect to $t$ is equal to
+% the rate of change of $y$ \underline{with respect to $x$} multiplied
+% by the rate of change of $x$ \underline{with respect to $t.$}
+
+
+% For example\footnote{Somewhere in the Chain Rule section there should
+%   be a discussion of ``Substitution'' along the following lines:
+
+%   It seems that we've reached an impasse.  We don't yet know how to
+% differentiate the complex expression involved.  In addressing this, we
+% will uncover a surprisingly simple, yet powerful tool in all of
+% mathematics: substitution.
+
+% The idea behind a substitution is so elementary that it is often taken
+% for granted, but we will demonstrate its power here.  Performing a
+% substitution does not ``solve'' a problem, but merely takes an
+% existing problem and makes it ``easier on the eyes.''  For example,
+% consider $\dx\left((a^2+x^2)^{\frac{1}{2}} \right).$ Our rules
+% can handle differentiating a fractional exponent.  The problem is that
+% what is in the base of that exponent is a complicated expression.
+
+% As we said before, substitution in a powerful tool in nearly every
+% branch of mathematics.  Utilizing it in differentiation as we have, it
+% has a special name: The Chain Rule.  As such, it is more than just
+% symbolic manipulation and provides us with a link between Leibniz'
+% static geometric view of Calculus and Newton's dynamic physical
+% approach.  We will explore what we mean by this, but for now,
+% recognize that the Chain Rule really is substitution as you work on
+% these practice problems. 
+
+% See footnote\footnote{We need a couple of simple examples of how to derive
+%   differential equations from a word problem. Consider the constant
+%   subtangent equal to one (exponential), and $x^2+y^2=1 \imp
+%   \dfdx{y}{x}=-\frac{x}{y}.$ Maybe one other?} }, suppose that $y=x^2.$ Then as we've seen $\dx y= 2x\dx x.$
+% Now suppose that $x=t^3+1.$ Then $\dx x = 3t^2\dx t.$ Putting this all
+% together gives:
+% \begin{align*}
+%   \dx y &= 2x\dx x\\
+%        &= 2x(3t^2\dx t).\\
+%   \intertext{At this point we have $\dx y$ in terms of both $x$ and $t.$
+%              There is nothing wrong with this, \emph{per se,} but in
+%              general we  prefer using only one variable. So we make
+%              the substitution $x=t^3+1,$ giving:}
+%   \dx y    &= 2(t^3+1)(3t^2\dx t).\\
+% \end{align*}
+% And finally, if we want $\dfdx{y}{t}$ we simply divide through by $\dx
+% t$ giving:
+% $$
+% \dfdx{y}{t} = \underbrace{2(t^3+1)}_{\dfdx{y}{x}}(\underbrace{3t^2}_{\dfdx{x}{t}}).
+% $$
+
+% Notice that since $\dfdx{y}{x} =  2(t^3+1)$ (since $x= t^3+1$) and that
+% $\dfdx{x}{t} = 3t^2$ this is just a particular example of the formula
+% $$
+% \dfdx{y}{t} =\dfdx{y}{x}\dfdx{x}{t}.
+% $$ 
+% Since this looks so much like the older ``Chain Rule'' for changing
+% money\footnote{In fact, it really is the same rule if you look at it
+%   in just the right way.} from one
+% currency to another it has inherited the name ``The Chain Rule,'' and
+% is usually stated as a separate theorem as follows.
+
+% \begin{mytheorem}{The Chain Rule}
+% \index{Differentiation Rules!Chain Rule}
+%   \label{thm:chain-rule}
+%   If $y$ depends on $x,$ and $x$ depends on $t$ then  
+%   $$
+%   \dfdx{y}{t} =  \dfdx{y}{x}\dfdx{x}{t}.
+%   $$
+% \end{mytheorem}
+% \enddigress{Chain Rule}
+
+
+
+
+% \section{The Chain Rule}
+% \label{sec:chain-rule}
+% Suppose for some reason we want to find the number of seconds in a
+% typical $365$ day year\index{seconds per year}.  For our purposes we are not so interested in
+% the actual number, which will turn out to be approximately
+% $\pi\times10^7,$ as we are in the computational process involved. We
+% start with the observation that the proportion 
+% \[
+% \left(60\
+%   \frac{\text{seconds}}{\text{minute}}\right)\times\left(60\
+%   \frac{\text{minutes}}{\text{hour}}\right)
+% \] 
+% yields \(3600\
+% \frac{\text{seconds}}{\text{hour}}.\) Notice that the ``seconds'' that
+% appear in the numerator of the first factor and the denominator of the
+% second factor divide out\footnote{Sometimes this is called
+%   ``cancelling'' but we will avoid this term as it is the source of
+%   many errors.}, leaving only the proportion, seconds per hour. In the next
+% step we multiply \(3600\ \frac{\text{seconds}}{\text{hour}}\) by \(24\
+% \frac{\text{hours}}{\text{day}}\) to get the number of seconds per
+% day. Continuing in this fashion and ``chaining'' the computations
+% together we get:
+% \[
+% \left(60
+%   \frac{\text{\small{}seconds}}{\text{\small{}minute}}\right)\times\left(60
+%   \frac{\text{\small{}minutes}}{\text{\small{}hour}}\right)\times\left(24
+%   \frac{\text{\small{}hours}}{\text{\small{}day}}\right)\times\left(365 \frac{\text{\small{}
+%       days}}{\text{\small{}year}}\right)=31,536,000
+% \frac{\text{\small{}seconds}}{\text{\small{}year}}.
+% \]
+% This kind of computation was called the Chain Rule for centuries
+% before Calculus came along and it is easy to see why. We can get from
+% one kind of proportion to another as long as we can find a  chain of
+% proportions where all of intermediate numerators and denominators will
+% divide out.
+% \begin{wrapfigure}[]{R}{2.5in}
+% %\vskip1.2cm{}
+%   \includegraphics*[height=1.2in,width=2.5in]{../Figures/ChainRule}
+% \caption{\textcolor{blue}{The Chain Rule: Notice that $y$ depends on $x$ which depends
+%   on $t.$}}
+% \label{fig:ChainRule}
+% %\vskip1mm{}
+% \end{wrapfigure}
+
+% Now consider the situation depicted in figure~\ref{fig:ChainRule}
+% where $y$ depends on $x$ and $x$ depends on $t.$ Suppose we know
+% $\dfdx{y}{x},$ the rate of change of $y$ with respect to $x,$ and we
+% know $\dfdx{x}{t},$ the rate of change of $x$ with respect to $t,$ but
+% we need $\dfdx{y}{t},$ the rate of change of $y$ with respect to $t.$
+% Clearly we need to compute
+% \begin{equation}
+% \dfdx{y}{x}\dfdx{x}{t}=\dfdx{y}{t}.
+% \label{eq:ChainRule}
+% \end{equation}\index{Chain Rule}
+% Since this is a Chain Rule type of conversion, when Calculus was invented
+% this particular computation was also called the Chain Rule. As time
+% went on the older meaning dropped away so that today this particular
+% operation with differentials is the only Chain Rule. 
+
+% We formalize this as a theorem.
+
+% \begin{mytheorem}{The Chain Rule}
+%   If $y$ depends on $x,$ and $x$ depends on $t$ then the rate of
+%   change of $y$ with respect to $t$ is given by the formula:
+% \[
+% \dfdx{y}{t} = \dfdx{y}{x}\cdot\dfdx{x}{t}.
+% \]
+% \end{mytheorem}
+
+% There is more in our symbolism than is at first
+% apparent. Consider the following very simple example.
+% \begin{myexample}{}
+%   \label{example$:cr1}
+%$   Suppose that $y=3x$ and that $x=5t.$ Compute $\dfdx{y}{t}.$
+
+% This is such a simple problem that we will have no problem computing
+% $\dfdx{y}{t}$ directly. Since
+% \begin{align*}
+%   y&=3x\\
+%    &=3(5t)\\
+%    &=15t\\
+% \intertext{we have}
+%  \dx y &=15\dx t \text{ or}\\
+% \dfdx{y}{t}&=15
+% \end{align*}
+% so the rate of change of $y$ with respect to $t$ is $15.$ 
+
+% But computing $\dfdx{y}{t}$ directly like this hides most of what is
+% interesting and all of what will ultimately be useful to us.  
+
+% So let's do it again by the following, admittedly more cumbersome
+% method.  Looking again at equation(~\ref{eq:ChainRule}) we see that we
+% need $\dfdx{y}{x},$ which for this problem is $\dfdx{y}{x}=3.$  We
+% will also need $\dfdx{x}{t}$ which for this problem is $\dfdx{x}{t}=5.$
+% Thus
+% \[
+% \dfdx{y}{t} = \dfdx{y}{x}\cdot \dfdx{x}{t} = 3\cdot5 = 15.
+% \]
+% Naturally we get the same answer as before. Only the method of
+% computation is different. 
+% \end{myexample}
+
+% Example~\ref{example:cr1} is a little too simple to display all of the
+% nuances of the Chain Rule. The next example is slightly more complex.
+
+% \begin{myexample}{}
+%   \label{example:cr2}
+% Now suppose $y=3x^2$ and again $x=5t.$ Let's compute $\dfdx{y}{t}.$
+
+% First we need $\dfdx{y}{x}.$ To find this we compute 
+% \[\dx y = d\left(3x^2\right).\] You may already see that 
+% \[\dx y = 6x\dx x.\] If so, good for you! However, let's walk through
+% the details of this calculation just to be sure. 
+
+% Clearly the expression $3x^2$ is the product of $3$ and $x^2$ so by
+% the Product Rule we have
+% \[
+% \dx y =3\dx (x^2)+x^2\dx (3).
+% \]
+% We saw on page~\ref{thm:ConstantDifferential}
+% that the differential of a constant is zero so $\dx (3)=0.$ This leaves 
+% \[\dx y = 3\dx (x^2). \]
+% If you did Problem~\#\ref{prob:2} you already know that $\dx (x^2)=2x\dx
+% x.$ If you haven't done Problem~\#\ref{prob:2},  the calculation is
+% simple enough. Simply observe that $x^2$ is the product of $x$ and $x$
+% and apply the Product Rule again. Either way we now have
+% \[
+% \dx y = 3(2x\dx x) = 6x\dx x
+% \]
+% or 
+% \begin{equation}
+%   \label{eq:CRExample2}
+%   \dfdx{y}{x} = 6x.
+% \end{equation}
+% We also need 
+% \begin{equation}
+%   \label{eq:CRExample2-1}
+%   \dfdx{x}{t} =5.
+% \end{equation}
+% Combining equations~\ref{eq:CRExample2} and~\ref{eq:CRExample2-1}
+% gives
+% \begin{align}
+% \nonumber  \dfdx{y}{t} &= \dfdx{y}{x}\cdot\dfdx{x}{t}\\
+% \nonumber  &= (6x)(5)\\
+% \intertext{so that}
+% \dfdx{y}{t} &= 30x.  \label{eq:CRExample2-3}
+% \end{align}
+
+% This seems like the solution to our problem until we think about it
+% for a moment. Then we realize that the symbol $\dfdx{y}{t}$ means
+% ``the rate of change of $y$\index{with respect to} \underline{with
+%   respect to $t.$''} 
+
+% It is this last phrase, ``with respect to $t$,'' which is
+% troubling. When we say that $y$ depends on $t$ we are thinking of $t$
+% as the independent and $y$ as the dependent variable so the right side
+% of equation(~\ref{eq:CRExample2-3}) should be in terms of $t$ not $x.$
+
+% This is easily handled. Since $x=5t$ we have 
+% \[
+% \dfdx{y}{t} = 30x = 30(5t) = 150t.
+% \]
+% \end{myexample}
+
+% Again, the next example is slightly more complex than those previous.
+
+% \begin{myexample}{}
+%   \label{example:CR3}
+% Suppose $y=4x^2$ and $x=3t^2.$ We wish to compute $\dfdx{y}{t}.$ As
+% before we need both $\dfdx{y}{x}$ and $\dfdx{x}{t},$ since 
+% \[
+% \dfdx{y}{t} = \dfdx{y}{x}\cdot\dfdx{x}{t}.
+% \]
+
+% Thus
+% \begin{align*}
+%   \dx y &= \dx(4x^2)\\
+%   &= 4\dx(x^2)\\
+%   &= 4(2x)\dx x\\
+%   &= 8x\dx x \\
+% \intertext{or}
+% \dfdx{y}{x} &= 8x.
+% \end{align*}
+
+% Similarly, 
+% \begin{align*}
+%   \dx x &= \dx(3t^3)\\
+%   &= 3\dx(t^3)\\
+%   % &= 3\dx(t^2\cdot t)\\
+%   % &= 3\left[t^2\dx t+t\dx(t^2)\right]\\
+%   % &= 3\left[t^2\dx t+t(2t)\dx t\right]\\
+%   % &= 3\left[t^2\dx t+2t^2\right]\dx t\\
+%   &= 3\left(3t^2\right)\dx t\\
+% \intertext{so that}
+% \dfdx{x}{t} &= 9t^2. \\
+% \intertext{Thus}
+% \dfdx{y}{t}&=\dfdx{y}{x}\cdot\dfdx{x}{t}\\
+%   &= (8x)(9t^2).\\
+% \intertext{As before the symbol $\dfdx{y}{t}$ indicates that we are
+%   thinking of $t$ as the independent variable so we substitute
+%   $x=3t^2$ to get}
+% \dfdx{y}{t} &= 8(3t^2)(9t^2)\\
+% \intertext{or}
+% \dfdx{y}{t}&=216t^4.
+% \end{align*}
+
+% \end{myexample}
+% \begin{ProblemSection}
+%   \begin{embeddedproblem}{}
+%     Verify the computations in Example~\ref{example:CR3} by direct
+%     substitution.
+%   \end{embeddedproblem}
+% \end{ProblemSection}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 

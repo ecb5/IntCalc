@@ -1,0 +1,614 @@
+%\usepackage{graphicx}
+% To avoid hard coding the names of individual parts of multi-part task and any later references to those individual parts, include the optional "shortlabels" argument as part of the enumitem package.
+% In case an author wants to include a very wide matrix.
+% The following commands will set up the page geometry according to the default TRIUMPHS style.  Please modify them wisely, if at all.  As needed for a specific PSP, please %address bad page and line breaks using commands such as \newpage and\or otherwise inserting/deleting space between lines.
+% The new command \sep defined here will produce the `extended infinity' symbol used to separate PSP narrative from primary source text within the `source' environment defined below.
+% This defines the environment for setting off primary source material with the `infinity' symbol before and after the source material. The source material itself will be set in a quote environment in sans serif font. For very short primary source excerpts, use your discretion concerning whether this environment makes sense, but please always use sans serif font (\sf) for primary source excerpts.
+% This defines a new environment for student tasks.  A double box will be placed around 'Task xx', where the  number xx is updated with each new task.
+
+\documentclass[11pt]{article}%
+\usepackage{xcolor}
+
+\usepackage[authoryear]{natbib}
+
+\usepackage{graphicx}
+%\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage[shortlabels]{enumitem}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+\usepackage{framed}
+\usepackage{url}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LastRevised=Sunday, January 26, 2020 15:11:14}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{Language=American English}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+
+
+%\addtolength{\skip\footins}{-10pt}
+
+\setlength{\topmargin}{-.9in}
+\setlength{\bibsep}{6pt}
+\setlength{\topmargin}{-.7in}
+\setlength{\oddsidemargin}{-.03in}
+\setlength{\evensidemargin}{-.1in}
+\setlength{\textwidth}{6.6in}
+\setlength{\textheight}{9.3in}
+
+\linespread{1.1}
+
+\newcommand{\sep}{
+\begin{center}
+{\mathversion{normal}
+$\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}$}
+\end{center}}
+
+% The following defines the environment for setting off primary source material with the `infinity' symbol before and after the source material. The source material itself will be set in a quote environment in sans serif font. For very short primary source excerpts, use your discretion concerning whether this environment makes sense, but please always use sans serif font (\sf) for primary source excerpts.
+
+\usepackage{quoting}
+\quotingsetup{indentfirst=false,begintext={\sep},endtext={\sep},noorphans=true}
+
+  \newenvironment{source}%
+ {  \nopagebreak[4]\begin{quoting}
+        \nopagebreak[4]  \begin{sf} \vspace*{0.1in}  }
+   {   \end{sf}  \nopagebreak[4]   \end{quoting} \nopagebreak[4] }%
+
+
+% The following defines a new environment for student tasks.  A double box will be placed around 'Task xx', where the  number xx is updated with each new task.
+
+\newcounter{tasknumb}
+\newcommand{\tasknumb}[1]{\refstepcounter{tasknumb}\textmd{\textbf{$\fbox{$\fbox{Task \thetasknumb}$}$}}#1}
+\newenvironment{task}[1][]%
+{\begin{itemize}
+\item[\tasknumb{#1}] }
+{
+\end{itemize} }%
+
+
+
+
+
+\usepackage{fancyhdr}
+
+
+%\pagestyle{fancy}
+
+%\fancyfoot[L]{\small{Dave Ruch, ``Investigations Into d'Alembert's Definition of Limit'' \\  MAA \emph{Convergence} (February 2020)}}
+%\renewcommand{\headrulewidth}{0pt}
+%\fancyhead{}
+%\fancyfoot[R]{\thepage}
+%\cfoot{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Investigations Into d'Alembert's Definition of Limit \\ \emph{(Calculus 2 Version)}}
+\author{David Ruch\thanks{Department of Mathematical and Computer Sciences,
+Metropolitan State University of Denver, Denver, CO;
+\texttt{ruch@msudenver.edu} }}
+\date{May 20, 2021}
+\maketitle
+
+
+
+
+\section{Introduction}
+
+The modern definition of a limit evolved over many decades. One of the
+earliest attempts at a precise definition is credited to Jean-Baptiste le Rond
+d'Alembert (1717--1783), a French mathematician, philosopher and physicist.\footnote{Early chapters of d'Alembert's biography read like something out of \emph{Masterpiece Theater}. He was born out of wedlock and left as an infant at the church Saint Jean le Rond in Paris. His mother, Claudine Gu\'{e}rin de Tencin, was a runaway nun who established  a well-known Paris \emph{salon}, a carefully orchestrated social gathering that brought together important writers, philosophers, scientists,  artists  and aristocrats for the purpose of intellectual and political discussions. Tencin never acknowledged d’Alembert as her son, and his father, Louis-Camus Destouches, found another woman to raise young Jean. Destouches died in 1726, but left funds for Jean's education. D'Alembert did well in school and became active as an adult in the philosophy, literature, science and mathematics of his day, standing \textquotedblleft at the very heart of the Enlightenment with interests and activities that touched on every one of its aspects\textquotedblright\ \citep{Hankins1990}.}
+Among his many accomplishments, d'Alembert was a co-editor of the
+\emph{Encyclop\'{e}die}, an important general encyclopedia published in France
+between 1751 and 1772. This work is regarded as a significant achievement of
+the Enlightenment movement in Europe.
+
+D'Alembert argued in two 1754 articles of the \emph{Encyclop\'{e}die} that the
+theory of limits should be put on a firm foundation.\footnote{The first of these articles was entitled ``Limite (Math\'{e}matiques),'' and the second ``Calcul diff\'{e}rentiel.''} As a philosopher,
+d'Alembert was disturbed by critics who pointed out logical problems with
+limits and the foundations of calculus. He recognized the significant
+challenges of these criticisms, writing in \citep{DAlembert1754b} that
+
+\begin{quotation}
+{\sf This metaphysics [of calculus], of which so much has been written, is even
+more important, and perhaps as difficult to develop as these same rules of the calculus.}
+\end{quotation}
+
+\noindent In this project we will investigate d'Alembert's limit definition and study
+the similarities and differences with our modern definition.
+
+
+
+
+\section{D'Alembert's Limit Definition}
+
+By 1754 mathematical techniques using calculus were quite advanced. D'Alembert
+won a 1747 prize for his work in partial differential equations, but became
+embroiled in arguments with Leonhard Euler (1707--1783) and others over methodology and foundational
+issues. These squabbles contributed to his interest in clearing up the
+foundations of limits and convergence.
+
+
+\newpage
+Here is d'Alembert's limit definition from the \emph{Encyclop\'{e}die} \citep{DAlembert1754a}:
+
+
+\begin{source}
+Limit. (Mathematics) One says that a magnitude is the \textit{limit} of
+another magnitude, when the second may approach the first more closely than by
+a given quantity, as small as one wishes, moreover without the magnitude
+approaching, being allowed ever to surpass the magnitude that it approaches;
+so that the difference between a quantity and its \textit{limit} is absolutely unassignable.
+
+For example, suppose we have two polygons, one inscribed and the other
+circumscribed about a circle; it is clear that one may increase the sides as
+much as one wishes, and in that case each polygon will approach ever more
+closely the circumference of the circle; the perimeter of the inscribed
+polygon will increase, and that of the circumscribed polygon will decrease;
+but the perimeter or edge of the first will never surpass the length of the
+circumference, and that of the second will never be smaller than that same
+circumference; the circumference of the circle is therefore the limit of the
+increase of the first polygon and the decrease of the second.
+
+%\ldots
+
+%Strictly speaking, the \textit{limit} never coincides, or is never equal to
+%the quantity of which it is the \textit{limit}; but the latter approaches it
+%ever more closely, and may differ from it by as little as one wishes. The
+%circle, for example, is the \textit{limit} of the inscribed and circumscribed
+%polygons; for strictly it never coincides with them, though they may approach
+%it indefinitely.
+\end{source}
+
+
+\noindent Let's examine some examples.
+
+\begin{task}
+Draw a diagram for a circle of radius $1$ and an inscribed regular polygon
+with $n=8$ sides. Use some basic trigonometry to find the exact length of the
+polygon's perimeter. How close is it to the circle's circumference?
+
+\medskip
+\end{task}
+
+
+\begin{task}[\label{Inscribed}]
+Consider d'Alembert's ``inscribed polygon $\rightarrow$ circle'' limit example and his
+definition.
+
+Assume for simplicity that the inscribed polygons are regular with $n$ sides centered at
+the circle's center. These polygons have perimeter formula%
+
+\[ perimeter=2n\cdot radius\cdot\sin\left(  \pi/n\right)  \]
+
+
+\begin{enumerate}[(a)]
+
+\item For `\textsf{given quantity}' $0.1$ and a circle of radius $1$,
+how many sides for the regular inscribed polygon are needed to guarantee the
+`\textsf{second may approach  the first more closely than}' given quantity $0.1$?
+Technology will be helpful!
+\item How many sides are needed for a circle of radius $1$ and `\textsf{given quantity}'
+$0.01$?
+\item \emph{(Optional)} As a bonus, derive the given perimeter formula.
+\end{enumerate}
+\end{task}
+
+
+
+
+Note that d'Alembert's definition is lacking in precise, modern mathematical notation.
+Also observe that the polygon/circle example is for the limit of a
+\textit{sequence}. Here is a standard first-year calculus book definition of
+limit for a sequence:
+
+\begin{quote}
+\textbf{First-Year Calculus Definition.} A sequence $\left\{
+a_{n}\right\}  $ has the \textbf{limit} $L$ and we write%
+\[
+\lim_{n\rightarrow\infty}a_{n}=L\quad\text{or}\quad a_{n}\rightarrow L\text{
+as }n\rightarrow\infty
+\]
+if we can make the terms $a_{n}$ as close to $L$ as we like by taking $n$
+sufficiently large.
+\end{quote}
+
+
+
+\noindent Rewriting the  example in Task \ref{Inscribed} in modern limit notation, we thus have
+\[ \lim_{n\rightarrow \infty} 2n\cdot r \cdot\sin\left(  \pi/n\right) = 2\pi \cdot r, \]
+
+\noindent  where $r$ represents the radius of the circle. Today's notation  for sequences also  uses modern subscript notation. For instance, setting    $p_n = 2n\cdot r\cdot\sin\left(  \pi/n\right)$ gives us the sequence $\left\{  p_{n}\right\}  $.  Since $\displaystyle{\lim_{n\rightarrow \infty} p_n = 2\pi r}$, we can also write  $ p_{n} \rightarrow 2\pi r$ as $n\rightarrow \infty$.
+
+
+\medskip
+\begin{task}
+Use calculus to verify that  $ p_{n} \rightarrow 2\pi r$ as $n\rightarrow \infty$, where   $p_n = 2n\cdot r\cdot\sin\left(  \pi/n\right)$.
+\end{task}
+
+\medskip
+
+\begin{task}
+Consider the sequence $\left\{  a_{n}\right\}  $ with $a_{n}=\dfrac{n}{2n+1}$.
+\begin{enumerate}[(a)]
+\item Find the limit of this sequence by any means.
+\item  For `\textsf{given quantity}' $0.01$, suppose we
+want $a_{n}$ and its limit to `\textsf{differ by as little as}' $0.01$. What
+is \textquotedblleft sufficiently large\textquotedblright \ for $n$ to guarantee that $a_{n}$ and its limit differ
+by  $0.01$ or less?
+\item Repeat part (b) for  `\textsf{given quantity}' $0.001$.
+\end{enumerate}
+\end{task}
+
+%We have seen that this `\textsf{given quantity}' is a measure of an allowable difference or tolerance between a sequence term $a_{n}$ and the limit itself. We next generalize this example a bit, replacing `\textsf{given quantity}' $0.01$ by a generic tolerance value $\epsilon$.
+
+
+%\begin{task}
+%[\label{ExerGenC}]For sequence $\left\{  \dfrac{n}{2n+1}\right\}  $, let
+%$\epsilon$ be an arbitrary small positive number. Suppose we want $a_{n}$ and
+%its limit to differ by less than\ $\epsilon$. In terms of $\epsilon$, what is
+%\textquotedblleft sufficiently large\textquotedblright \  for $n$?
+%\end{task}
+
+
+
+\medskip
+Later in his  \emph{Encyclop\'{e}die} article on limits \citep{DAlembert1754a}, d'Alembert wrote the following:
+
+\begin{source}
+
+Strictly speaking, the \textit{limit} never coincides, or is never equal to
+the quantity of which it is the \textit{limit}; but the latter approaches it
+ever more closely, and may differ from it by as little as one wishes. The
+circle, for example, is the \textit{limit} of the inscribed and circumscribed
+polygons; for strictly it never coincides with them, though they may approach
+it indefinitely.
+\end{source}
+
+
+\medskip
+\begin{task}
+Look closely at d'Alembert's phrase `\textsf{Strictly speaking, the
+\textit{limit} never coincides, or is never equal to the quantity of which it
+is the limit}' and notice that it does not appear in the First-Year Calculus
+definition.  Find a simple
+convergent sequence that violates this requirement of d'Alembert's limit definition.
+\end{task}
+
+
+
+\medskip
+\begin{task}
+Consider d'Alembert's phrase `\textsf{without the magnitude approaching, being
+allowed ever to surpass the magnitude that it approaches}' and notice that it
+does not appear in the First-Year Calculus definition. Find a simple
+convergent sequence that violates this requirement of d'Alembert's limit definition.
+\end{task}
+
+\newpage
+\vspace*{-40pt}
+
+\section{A More Precise Definition of Limit}
+
+ As we have seen, d'Alembert's 1754 limit definition doesn't fully
+apply to some types of sequences studied by today's mathematicians. It is
+interesting to note that during d'Alembert's era there was some debate
+regarding whether or not a quantity could ever reach or surpass its limit.\footnote{For more on these issues in the evolution of the limit concept, see
+J. Grabiner's fascinating book \citep{Grabiner2010}.}  Based on your work with d'Alembert's definition of limit, what do you think was
+d'Alembert's opinion on these questions?
+
+During the 1800s mathematicians reached a consensus that limits could be
+attained, and a convergent sequence could indeed oscillate about its limit. We
+see the First-Year Calculus definition allows for these possibilities;
+however, it is too vague for actually constructing complex proofs. We can
+remedy this problem by clarifying the logic and converting some verbal
+descriptions into algebraic inequalities.
+
+
+
+%\medskip
+
+\begin{task}[\label{ExerQuant}] Use  inequalities and the quantifier expressions  \textquotedblleft for
+all\textquotedblright\ and \textquotedblleft there exists\textquotedblright%
+\  to help rewrite d'Alembert's limit
+definition for sequences in a less verbal form. The First-Year Calculus Definition and a graph of the
+sequence $\left\{  a_{n}\right\}  $ should be helpful in getting started. You should introduce a
+variable $\epsilon$ to represent the allowable difference or tolerance between a sequence term $a_{n}$ and the limit itself, and another
+variable $M$ to measure $n$ being \textquotedblleft sufficiently large.\textquotedblright \ Be sure to include
+d'Alembert's requirements that sequence terms can neither surpass nor coincide with the limit in your answer.
+\end{task}
+
+
+
+%\medskip
+\begin{task}
+[\label{ExerModernDefn}]Now use  inequalities and the quantifier expressions  \textquotedblleft for
+all\textquotedblright\ and \textquotedblleft there exists\textquotedblright \ to rewrite the First-Year Calculus limit definition for
+sequences, without the extra requirements that d'Alembert imposed in his definition. Then comment on the differences between this definition and your
+definition from Task \ref{ExerQuant}.
+\end{task}
+
+
+%\medskip
+
+\begin{task}
+Use your definition from Task \ref{ExerModernDefn} to prove that sequence
+$\left\{  \dfrac{n}{2n+1}\right\}  $ converges.
+\end{task}
+
+
+%\medskip
+\begin{task}
+[\label{ExerLimExists}]Suppose that a sequence $\left\{  c_{n}\right\}  $
+converges to limit $1.$ Use your definition from Task \ref{ExerModernDefn} to
+prove that there exists a natural number $M$ for which $0.9<c_{n}<1.1$
+whenever $n\geq M$.
+\end{task}
+
+
+
+\section{Conclusion}
+
+Historians have noted that definitions of limit were given verbally by
+mathematicians of the 1600s and 1700s. However, to make these ideas useful in
+rigorous proofs, it is important to translate the verbal limit definition into
+one with clear logic and algebraic language, as you accomplished in Task
+\ref{ExerModernDefn}. The mathematician Augustin-Louis Cauchy (1789--1867) is
+usually credited with being the first to do this, using $\epsilon$ and precise
+inequalities in some of his proofs. Even so, his definition of limit was
+verbal and similar to d'Alembert's, except that for Cauchy limits could be attained
+and surpassed, as in the modern
+definition. The modern limit definition we see today finally matured in the
+work of Karl Weierstrass (1789--1867) and his students.
+
+How influential was d'Alembert's limit definition? This is hard to say, since
+d'Alembert only used his definition to carry out one proof. Certainly his
+advocacy for a precise limit definition may have influenced mathematicians such
+as Cauchy, and can thus be considered a worthy contribution to the evolution
+of the rigorous limit definition we use today.
+
+\medskip
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{DAlembertBib}
+{}
+
+%\begin{thebibliography}{9}                                                                                                %
+%\bibitem {DD}Alembert, Jean le Rond d' and La Chapelle, Jean-Baptiste de,
+%Limite\emph{.} In \emph{Encyclop\'{e}die ou Dictionnaire raisonn\'{e} des
+%sciences, des arts et des m\'{e}tiers}, vol. 9. Paris, 1765. Translated by
+%Jeff Suzuki. The Encyclopedia of Diderot \& d'Alembert Collaborative
+%Translation Project. Ann Arbor: Michigan Publishing, University of Michigan Library, 2003.
+
+
+%http://quod.lib.umich.edu/d/did/did2222.0000.123/--limit?rgn=main;view=fulltext;q1=Mathematics.
+
+
+%\bibitem {DD2}Alembert, Jean le Rond d' and La Chapelle, Jean-Baptiste de,
+%Calcul diff\'{e}rentiel\emph{.} In \emph{Encyclop\'{e}die ou Dictionnaire
+%raisonn\'{e} des sciences, des arts et des m\'{e}tiers}, vol. 9. Paris, 1765.
+%Translated by Gregory Bringman. The Encyclopedia of Diderot \& d'Alembert
+%Collaborative Translation Project. Ann Arbor: Michigan Publishing, University
+%of Michigan Library, 2012.
+
+
+%https://quod.lib.umich.edu/cgi/t/text/text-idx?c=did;cc=did;rgn=main;view=text;idno=did2222.0001.091.
+%\end{thebibliography}
+
+
+\newpage
+
+
+\section*{Notes to Instructors}
+
+\subsection*{PSP Content: Topics and Goals}
+
+\vspace*{-3pt}
+This mini-Primary Source Project (mini-PSP) is designed to investigate the
+definition of limit for sequences, beginning with d'Alembert's definition and
+a modern Introductory Calculus text definition. Similarities and differences
+are explored.
+
+Two versions of this project are available, for very different audiences.
+
+\vspace*{-6pt}
+
+\begin{quote}
+  
+\begin{itemize}
+\item One version is aimed at Calculus 2 students studying sequences for the first time. \textbf{This is the version you are currently reading.}
+ D'Alembert's definition is completely
+verbal, and Section 2 tasks lead students through some examples based on that definition.
+Other tasks in that section ask students to find examples illustrating the difference between the
+modern conception of limit and that of  d'Alembert. Section 3 examines these differences  in a more technical fashion by having students write definitions for each using  inequalities and quantifiers; this section is more appropriate for use in honors courses or as extra credit, and could be omitted by instructors who wished to pursue a more informal approach to sequences. Some
+historical remarks are given in a concluding section.
+
+\item A longer version is aimed at Real Analysis students. It includes several tasks based on D'Alembert's verbal definition that are more technical than those that appear in the Calculus 2 version, as well as an additional section that investigates two limit properties
+stated by d'Alembert (in an excerpt that is not included in the Calculus 2 version). That additional section includes tasks that prompt students to write modern proofs of those properties.
+\end{itemize}
+
+
+\end{quote}
+
+\noindent The specific content goals of this version of the project are as follows.
+
+
+
+\begin{enumerate}
+
+
+\item Develop familiarity with sequence convergence through examples based
+on d'Alembert's verbal definition.
+
+
+
+\item Analyze subtleties of the limit definition: whether sequence terms can
+`surpass' or coincide with the limit.
+
+
+\item Develop a modern limit definition with quantifiers for sequences based
+on d'Alembert's definition and an Introductory Calculus text definition.
+
+\end{enumerate}
+
+
+ \vspace*{-6pt}
+\subsection*{Student Prerequisites}
+\vspace*{-3pt}
+
+This version of the project is written for a course in Calculus 2 with the assumption that
+students have limited familiarity with either sequences or with quantifiers.
+
+
+ \vspace*{-6pt}
+\subsection*{PSP Design, and Task Commentary}
+\vspace*{-3pt}
+
+This mini-PSP is designed to take up to two days of classroom time where students
+work through tasks in small groups. Some reading and tasks are done before and
+after class. If time does not permit a full implementation with this
+methodology, instructors can use more class time for guided discussion and
+less group work for difficult parts of the project.
+
+The PSP is designed to be used largely in place of a textbook section
+introducing the definition of limit for sequences. The differences between the
+d'Alembert and modern definition can help students realize subtleties and the
+precision of the modern definition.
+
+Task \ref{ExerQuant} in Section 3 may be difficult for students, even those enrolled in honors courses or those completing it as extra credit.  Encouraging students to
+draw a plot and labels for $\epsilon$ and $M$ should help. Leading questions
+to help them realize that the definition needs to start with \textquotedblleft
+for all $\epsilon>0$\textquotedblright\ may also be helpful. Including
+d'Alembert's requirements that sequence terms can't \textquotedblleft
+surpass\textquotedblright\ or coincide with the limit is challenging but
+pedagogically useful.
+
+
+ \vspace*{-6pt}
+\subsection*{Suggestions for Classroom Implementation}
+\vspace*{-3pt}
+
+Advanced reading of the project and some task work before each class is ideal
+but not necessary. See the sample schedule below for ideas.
+
+\LaTeX\thinspace\ code of this entire mini-PSP is available from the author by
+request to facilitate preparation of advanced preparation / reading guides or
+`in-class worksheets' based on tasks included in the project. The mini-PSP
+itself can also be modified by instructors as desired to better suit their
+goals for the course.
+
+
+ \vspace*{-6pt}
+\subsection*{Sample Implementation Schedule (based on a 50-minute class
+period)}
+
+\vspace*{-3pt}
+
+This PSP is designed to take 1--2 class days.
+
+Students read through the first d'Alembert excerpt and do preparatory work on Task 1 before the
+first class. After a class discussion of this task, students work through
+Tasks 2--6 in groups. (Although Task 3 could instead be assigned as an individual homework task.) As needed, the remainder of these tasks could be assigned as homework for Day 2.
+
+For instructors who choose to complete the optional Section 3, students spend the majority of time during the second class day in group work on Task 7;  this task  is critical for the remainder of the section, so a class discussion
+ is advisable to make sure everyone understands it before continuing. Tasks 8--10
+could be assigned for homework.
+
+
+
+ \vspace*{-6pt}
+\subsection*{Connections to other Primary Source Projects}
+
+ \vspace*{-3pt}
+
+The following additional projects based on primary sources are also freely available for use in teaching
+standard topics in the calculus sequence. The PSP author name of each is given (together with the
+general content focus, if this is not explicitly given in the project title). With the exception of the
+final two projects in the list (which require 4 and 6 days respectively for full implementation), each
+of these can be completed in 1--2 class days. Classroom-ready versions of these projects can be
+downloaded from \url{https://digitalcommons.ursinus.edu/triumphs_calculus}.
+
+\begin{itemize}
+\setlength\itemsep{-3pt}
+\item Investigations Into d’Alembert’s Definition of Limit (calculus version), Dave Ruch
+\item L’H\^{o}pital’s Rule, Danny Otero
+\item The Derivatives of the Sine and Cosine Functions,16 Dominic Klyve
+\item Fermat’s Method for Finding Maxima and Minima, Kenneth M Monks
+\item Beyond Riemann Sums: Fermat’s Method of Integration, Dominic Klyve
+\item How to Calculate $\pi$: Buffon’s Needle (calculus version), Dominic Klyve (integration by parts)
+\item Gaussian Guesswork: Elliptic Integrals and Integration by Substitution, Janet Heine Barnett
+\item Gaussian Guesswork: Polar Coordinates, Arc Length and the Lemniscate Curve, Janet Heine
+Barnett
+\item Gaussian Guesswork: Infinite Sequences and the Arithmetic-Geometric Mean, Janet Heine
+Barnett
+\item How to Calculate $\pi$: Machin’s Inverse Tangents, Dominic Klyve (infinite series)
+\item Euler’s Calculation of the Sum of the Reciprocals of Squares, Kenneth M Monks (infinite series)
+\item Fourier’s Proof of the Irrationality of $e$, Kenneth M Monks (infinite series)
+\item Braess’ Paradox in City Planning: An Application of Multivariable Optimization, Kenneth M
+Monks
+\item Stained Glass, Windmills and the Edge of the Universe: An Exploration of Green’s Theorem,
+Abe Edwards
+\item The Radius of Curvature According to Christiaan Huygens, Jerry Lodder
+\end{itemize}
+
+\medskip
+
+\section*{Acknowledgments}
+
+The development of this student project has been partially supported by the
+TRansforming Instruction in Undergraduate Mathematics via Primary Historical
+Sources (TRIUMPHS) Program with funding from the National Science Foundation's
+Improving Undergraduate STEM Education Program under Grant Nos. 1523494,
+1523561, 1523747, 1523753, 1523898, 1524065, and 1524098. Any opinions,
+findings, and conclusions or recommendations expressed in this project are
+those of the author and do not necessarily represent the views of the National
+Science Foundation.
+
+
+
+The author gratefully acknowledges this support, with special thanks to TRIUMPHS PI Janet Heine Barnett, who helped with suggestions for producing the Calculus 2 version of the original project.
+
+\bigskip\bigskip
+
+\begin{minipage}{.25\textwidth}
+\noindent
+\includegraphics[scale=1.1]{by-sa.png}% Don't forget to capture this image file (by-sa.jpg) to compile with your tex file!!! There is also a .png version of the image you can use instead.
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License ({\tt https://creativecommons.org/licenses/by-sa/4.0/legalcode}). It allows re-distribution and re-use of a licensed work on the conditions that the creator is appropriately credited and that any derivative work is made available under ``the same, similar or a compatible license''.
+\end{minipage}
+
+
+\bigskip\bigskip
+
+\noindent For more information about TRIUMPHS, visit
+\texttt{https://blogs.ursinus.edu/triumphs/}.
+\end{document} 

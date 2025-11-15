@@ -1,0 +1,80 @@
+\documentclass{article}
+\input{../CalcHeaders.tex}
+\input{../Calcmacs.tex}
+
+\begin{document}
+
+\begin{embeddedproblem}
+  Consider the top view of an airplane $P$ starting at the point
+    $(1,0)$ and traveling up the line $x=1$ at a constant speed $v.$
+    When the plane is at $(1,0),$ a homing missile $M$ is fired from
+    the origin directly at the plane. Assuming that the missile
+    travels at a speed which is $k$ times the speed of the plane
+    $(k>1)$ and is always aimed directly at the plane, find the path
+    the missile takes.  [Such a path is called a pursuit curve.]  The
+    diagram below shows the situation at time $t.$\\
+    \centerline{\includegraphics*[height=3in,width=4in]{../Figures/PursuitCurve}}
+    \begin{description}
+    \item [(a)]  If we let $s$ denote the distance the missile has traveled
+      at time $t,$ show that the pursuit curve must satisfy the
+      differential equation
+      \[\dfdx{y}{x}=\frac{(\frac{s}{k}-y)}{1-x}\]
+      and use this to show that the pursuit curve must satisfy the
+      differential equation
+      \[(1-x) \dfdxn{y}{x}{2}=1/k \dfdx{s}{x}=1/k
+        \sqrt{1+(\dx{y}/\dx{x})^2}\]
+      with the initial conditions $y(0)=0,$ $\dfdx{y}{x}(0)=0.$
+    \item[(b)]  Solve the differential equation in part (a).  \hint{Let
+      $z=\dfdx{y}{x}$ and solve the resulting equations for $z.$}
+    \item[(c)]  How long does it take for the missile to catch the plane?
+    \end{description}
+  \end{embeddedproblem}
+
+
+                \begin{embeddedproblem}{}
+                  \label{prob:Tractrix}
+                  Consider the top view of a tractor-trailer.  Initially, the center
+                  of the rear axle of the tractor is at the origin and the center of
+                  the rear axle of the trailer is at the point $(1,0).$\\
+                  \centerline{
+                  \includegraphics*[height=1.5in,width=2.5in]{../Figures/Tractrix}}
+                  \begin{enumerate}[label={\bf{}(\alph*)}]
+                  \item Suppose the tractor pulls the front wheels up the $y$-axis and
+                    that the rear wheels don't slip.  Show that the path $y=y(x)$ that
+                    the center of the rear axle of the trailer follows must satisfy the
+                    Initial Value Problem
+                    $$
+                    \dfdx{y}{x}=-\frac{\sqrt{1-x^2 }}{x}\ \ y(1)=0.
+                    $$
+                    \hint{Since the rear axle is moving to the left we use the
+                    differential: $-\dx{x}.$}
+                    This path is called a tractrix from the Latin verb \foreign{trahere,}
+                    meaning  ``to drag
+                    or pull.''
+                  \item Apply Euler's Method to fill in the following table to
+                    approximate the tractrix.\\
+                    \leftline{\includegraphics*[height=1.25in,width=5in]{../Figures/EulerTable3}}
+          %%%%           Warning!!! Don't delete the commented tables below. They provide
+          %%%%           the images that we're using for these tables. -- ecb5  -- Thu Feb 28 18:20:04 2019 -- 
+          %           $$
+          %           \begin{array}{|c|c|c||c|c|c|}
+          %             \hline{}
+          %             \bf  n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\left.\dfdx{y}{x}\right|_{x_{n-1}}\cdot(x_n-x_{n-1})\amp{}\bf   n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\left.\dfdx{y}{x}\right|_{x_{n-1}}\cdot(x_n-x_{n-1})\\\hline
+          %             \bf 0\amp{}\bf 1  \amp{}\bf \amp{}\bf     5\amp{}\bf 0.5\amp{}\bf \\\hline
+          %             \bf 1\amp{}\bf 0.9\amp{}\bf \amp{}\bf     6\amp{}\bf 0.4\amp{}\bf \\\hline
+          %             \bf 2\amp{}\bf 0.8\amp{}\bf \amp{}\bf     7\amp{}\bf 0.3\amp{}\bf \\\hline
+          %             \bf 3\amp{}\bf 0.7\amp{}\bf \amp{}\bf     8\amp{}\bf 0.2\amp{}\bf \\\hline
+          %             \bf 4\amp{}\bf 0.6\amp{}\bf \amp{}\bf     9\amp{}\bf 0.1\amp{}\bf \\\hline
+          %           \end{array}
+          %           $$
+                  \item  Plot the points obtained in part b to see if this looks like
+                    the path the rear of the trailer would take.
+                  \end{enumerate}
+                \end{embeddedproblem}
+  
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

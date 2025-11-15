@@ -1,0 +1,553 @@
+\section{Euler's Method}
+\label{sec:eulers-method}
+
+\begin{wrapfigure}[]{r}{2in}
+  \captionsetup{labelformat=empty}
+  \includegraphics*[height=1.8in,width=2in]{../Figures/EulerFig1}
+  \label{fig:EulerFig1}
+\end{wrapfigure}
+Suppose $B$ is a point on the graph of an unknown function $y(x)$ (in
+green in the figure at the right). Suppose further that if the line
+tangent to the graph at $B$ (in red) crosses the $x$-axis at $(a, 0)$
+as shown.
+% $x$-axis and the vertical line through $B$ intersect. Find the point %
+% $C$ on the $x$-axis where $\overline{CB}$ is tangent to the curve at %
+% $B$. The line segment $\overline{CB}$ is the subtangent of the curve
+% at  $B$.
+% the  slope of the line segment $BC$ is the derivative of $y$ at $B.$
+% \centerline{\includegraphics*[height=1in,width=1.5in]{../Figures/subtan2}}
+% \begin{wrapfigure}[]{r}{2.3in}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.5in,width=2.3in]{../Figures/subtan1}}
+%   \label{fig:subtan1}
+% \end{wrapfigure}
+% Mathematics in the seventeenth century was still strongly tied to
+% Greek geometry. So some of the early, pre-Calculus efforts to find the
+% line tangent to a curve at a given point were focused on what was
+% called the subtangent problem. 
+% That is, 
+% 
+% is p the subtangent of
+% $y$ at $B$ is defined as follows.  Let $A$ be a point where the %
+% 
+% Note that finding length of $\overline{CA}$ is equivalent to finding
+% the derivative of $y$ at $B$ because if $B$ and $C$ are known then
+% 
+% % \begin{wrapfigure}[]{l}{2in} % % \captionsetup{labelformat=empty}
+% %   
+% %   \label{fig:subtan2} % % \end{wrapfigure}
+% %   \begin{wrapfigure}[]{l}{2in} % % \captionsetup{labelformat=empty}
+% %     \includegraphics*[height=1.8in,width=2in]{../Figures/EulerFig1}
+% %     \label{fig:EulerFig1} % % \end{wrapfigure} % With the invention of
+%     Calculus, the subtangent problem quickly fell % out of favor. However
+%     it can be instructive to think about the % construction of tangent
+%     lines from this point of view. To be clear, % the subtangent problem
+%     is no longer an important problem in % mathematics and we will not be
+%     discussing it much further. We only % bring it up because it gives us
+%     a nice starting point for the next % topic.  % For the sake of being
+%     definite consider the following question:
+%     the  length of the subtangent at every point on the
+%     curve is equal to $1$, as in the figure at
+%     the left?
+%     \centerline{\includegraphics*[height=1in,width=2in]{../Figures/subtan2}}
+
+We wish to address the following question\aside{The line segment $AC$
+  is called the subtangent of the graph. In the seventeenth mathematics century was still strongly tied to
+Greek geometry so some of the early, pre-Calculus efforts to find the
+tangent lines were aimed at finding the length of the subtangent of a
+curve.
+}:
+``Is
+there a curve which passes through the point $(0, 1)$ with the
+property that  the distance from $A$ to $C$ is equal to $1$ regardless
+of the location of $B$ on the graph.''
+
+At $B$ form the differential right triangle with the infinitesimal
+vertical displacement $\dx{y}$ and the infinitesimal horizontal
+displacement $\dx{x}$, as shown. Then the right triangle with sides of
+length $y$ and $1$ is proportional to the differential triangle. By
+the properties of proportional triangles this curve must satisfy the
+differential equation: $  \dfdx{y}{x} = y$.
+
+Since we specified that the curve must pass through the point $(0, 1)$
+we see that we need to solve the following IVP.
+\begin{equation}
+  \label{IVP:ExpDiffeq1}
+  \dfdx{y}{x} = y,\  y(0)=1.
+\end{equation}
+% \begin{wrapfigure}[]{l}{2in}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/exp-piecewise-linear}}
+%   \label{fig:exp-piecewise-linear}
+% \end{wrapfigure}
+
+% Suppose we have a curve with the following property: At every point
+% $(x,y)$ we project that tangent line down to the $x$-axis, just as if
+% we were implementing Newton's Method. Suppose the tangent line
+% intersects the $x$-axis at some point we'll call $\bar{x}$ and that
+% the distance between $x$ and $\bar{x}$ is always $1.$ What is the
+% shape of such a curve. This situation
+% is sketched in the figure to the right.
+
+% As we saw in Section~\ref{sec:witch-agnesi-inverse} knowing the slope
+% (derivative) of an unknown function at every point on its graph gives
+% us a great deal of information about the unknown function. For example
+% we concluded that if $\dfdx{y}{x}=\frac{1}{1+x^2}$ then $y(x)$ is the
+% multifunction $\arctan(x)$. By insisting that $y(0)=0$ we were able to
+% choose a single branch of the multifunction $\arctan(x)$ which we called $\inverse\tan(x)$.
+
+% The solution of equation~(\ref{eq:ExpDiffeq1}) is also a
+% multifunction and  we can  choose a  branch (thus giving us a
+% function) by insisting that\aside{You will see why we made this particular
+% choice in Section~(\ref{eq:x2diffeq}.)}
+% $(0,1)$.  
+
+% Thus we'd like to solve the \term{Initial Value Problem} (IVP)
+% \begin{equation}
+%   \label{eq:ExpIVP}
+%   \dfdx{y}{x} = y,\ y(0)=1.
+% \end{equation}
+% Notice that the IVP has two parts:
+% \begin{enumerate}
+% \item  The \term{differential equation}, $
+%   \dfdx{y}{x} = y$, and
+% \item the \term{initial value}, $y(0)=1$.
+% \end{enumerate}
+
+
+In Chapter~(\ref{cha:last-elem-funct}) we will solve
+IVP~(\ref{IVP:ExpDiffeq1}) exactly. For the moment we will be
+satisfied if we can find an approximate graph of the solution.  That
+will give us a general sense of its shape.
+
+
+The initial value in IVP~(\ref{IVP:ExpDiffeq1}) shows that  the curve
+passes through the point $(0,1)$.  From the differential equation in
+IVP~(\ref{IVP:ExpDiffeq1})  we see that
+$$
+\eval{\dfdx{y}{x}}{x}{0} = y(0) =1.
+$$
+which means that the curve passes through the point $(0,1)$ with a
+slope equal to $1$.  So the equation of the line
+tangent to our curve is
+$$
+y-1=\underbrace{\left[\eval{\dfdx{y}{x}}{x}{0}\right]}_{=y(0)=1}(x-0)
+$$
+or
+$$
+y=x+1.
+$$
+This is not a lot to work with, but let's not set our sights too high.
+
+% \begin{wrapfigure}[]{r}{1.5in}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/exp-envelope2}}
+%   \label{fig:exp-envelope2}
+% \end{wrapfigure}
+% \begin{wrapfigure}[12]{r}{3in}
+%   \vskip-4mm{}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.8in,width=3in]{../Figures/exp-piecewise-linear2}}
+%   \label{fig:exp-piecewise-linear2}
+% \end{wrapfigure}
+By the Principle of Local Linearity, the line tangent to the curve and
+the curve itself are going to be nearly indistinguishable near to the
+point $(0,1)$. Moreover, we can find any point on the tangent line
+since we have its equation.  If we increment the $x$-coordinate just a
+little bit while staying on the tangent line then the corresponding
+$y-$coordinate on the tangent line will be close to the $y-$coordinate
+on the curve. So we can use the $y$-coordinate on the tangent line
+(which we know) to approximate the $y$-coordinate on the curve (which
+we don't know).
+
+Let's say we increase $x$ by $0.1$ so that $x=0.1$.  The
+$y$-coordinate on the line tangent to the curve at $x=0.1$ is $1.1$
+(since the equation of our tangent line is $y=x+1$).
+
+We now have two points on our curve: $(0,1)$ and $(0.1, 1.1).$ The
+point 
+$(0.1, 1.1)$ isn't on the curve, but it's close. Remember  we're
+only trying to approximate the curve. Connecting these with a
+straight line we have the red segment on the graph below.  So far, so good.
+\\
+\centerline{\includegraphics*[height=1.8in,width=3in]{../Figures/exp-piecewise-linear2}}
+
+Next we increment $x$ by $0.1$ again, to $x=0.2$.
+% It won't
+% help to stay on line tangent at $x=0$. That only approximates our curve
+% near the point of tangency ($x=0$), and we've moved two steps away from
+% it already.
+At this point we would really like to have the equation of the line
+tangent to the curve at $(0.1, y(0.1))$ but we simply have no way to
+obtain it. All we have is the point $(0.1, 1.1)$. But we know that
+$y(0.1)\approx1.1$ so the differential equation from
+IVP~(\ref{IVP:ExpDiffeq1}) tells us that
+$\eval{\dfdx{y}{x}}{x}{0.1}\approx1.1$ also. So we see that the curve will pass
+(approximately) through the point $(0.1, 1.1)$ with slope
+(approximately) equal to $1.1$. Therefore the equation of the line
+tangent to the curve at (approximately) $(0.1, 1.1)$ will be
+$y-1.1=1.1(x-0.1)$ and as long as we don't move to far away the
+Principle of Local Linearity guarantees that this line and the curve
+we seek are close together. So we use the blue line segment from
+$(0.1, 1.1)$ to $(0.2, 1.21)$ in our figure above to approximate the
+curve on the interval $(0.1, 0.2)$.
+
+If we now simply repeat this process
+we compute the points:$(0.3,1.331)$, $(0.4,1.4641)$, $(0.5,1.61051)$, 
+and so on.
+Plotting  these points and  connecting them with straight line
+segments gives us the rest of the sketch above.
+
+
+% \begin{wrapfigure}[16]{l}{3in}
+%   \vskip-4mm{}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=2.5in,width=3in]{../Figures/exp-piecewise-linear3}}
+%   \label{fig:exp-piecewise-linear3}
+% \end{wrapfigure}
+At each step we use the previous approximation to compute the next, so
+it would be miraculous if we actually found exactly the points on the
+graph of our curve.  But it should be clear  that the curve we've drawn
+will at least resemble the desired curve, as long as we don't
+stray too far from our initial point $x=0$.
+The sketch below shows our approximation and the actual solution
+on the same set of axes\aside{In practice of course, we wouldn't know the
+  actual solution -- if we knew that there would be no reason to find an
+  approximation -- but in this case we (the authors) do know.}.\\
+   \centerline{\includegraphics*[height=2.5in,width=3in]{../Figures/exp-piecewise-linear3}}
+
+% The problem of recreating a curve given its derivative and its
+% $y$-coordinate at a single point is called an {\bf Initial Value
+% Problem}, or IVP for short.
+
+% An IVP comes in two parts. First there  is the differential equation,
+% in our problem:
+% $$
+% \dfdx{y}{x} =y
+% $$
+% and second there is the Initial  Condition, in our problem: $y(0)=1.$
+
+The solution of this particular IVP  turns out to be
+incredibly useful in mathematics, theoretical physics, engineering,
+and science and technology in general.  We will be revisiting it in
+the next chapter.
+
+The procedure we have just outlined is known as {\bf Euler's Method};
+named for the great eighteenth century mathematician Leonhard
+Euler. For now we'll focus on how to use Euler's Method to approximate the
+solution of an arbitrary IVP. We formally define and Initial Value
+Problem as follows.
+
+\begin{mydefinition}[Initial Value Problem]
+  \label{def:IVP}
+  An \term{Initial Value Problem} is a differential equation of the
+  form $$\dfdx{y}{x}=f(x,y),$$ along with an \term{Initial Value} $$y(x_0)=y_0.$$
+\end{mydefinition}
+
+Don't let the formalism of this definition scare you. All it says is
+that at every point $(x,y)$ the slope of $y(x)$,
+$\left(\dfdx{y}{x}\right)$, is given by some formula, $f(x,y)$,
+which may involve both $x$ and $y$\aside{In our problem above we had
+  $\dfdx{y}{x}=f(x,y)=y$.}, and that we know the value of $y(x)$ for a 
+single value of $x$. Specifically, at  $x=x_0$.
+
+To write down Euler's Method clearly we will need some
+notation.  % Assume that $y$ is the unknown function of $x$ that we
+% are trying to find and  denote it in the usual way: $y=y(x).$
+% We let $f(x,y)$ denote some particular (but
+% unspecified) formula\aside{In our example $f(x,y)$ was
+% particularly simple: $f(x,y)=y.$ } involving one or both of $x$ and $y.$ Since
+% $\dfdx{y}{x}=f(x,y)$ we see that the slope of the graph of $y$ can
+% by found if we know both $x$ and $y$ by simply evaluating $f(x,y).$
+
+% So  if we know that the graph of $y(x)$ passes through some
+% specific point, say $(x_0,y_0)$ then it will pass through with
+% slope: $\left.\dfdx{y}{x}\right|_{(x_0,y_0)}=f(x_0,y_0).$
+% The point $(x_0,y_0)$  the  \term{Initial Value} of
+% $y(x)$: $y(x_0)=y_0.$
+
+
+% Don't let all of this notation throw you off. We just need a way to
+% talk about a generic, rather than some specific, IVP.
+
+% In general an IVP takes the following form:
+% $$
+% \dfdx{y}{x} = f(x,y),\ \ \ y(x_0)=y_0.
+% $$
+% This says that we can find the slope of $y(x)$ at any point $(x,y)$ by
+% computing $f(x,y),$ and that the point $(x_0,y_0)$ is on the graph of
+% $y(x).$ In fact, $(x_0, y_0)$ is the only point we know for certain is on the graph of $y(x)$. That's why it's call the Initial Value.
+
+We know that the equation of the tangent line to the curve $y=y(x)$ at
+the point $(x_0,y_0)$ is given by 
+\begin{align*}
+  % y=y_0+\underbrace{\left[\left.\dfdx{y}{x}\right|_{(x_0,y_0)}\right]}_{=f(x_0,y_0)}(x-x_0)=y_0+f(x_0,y_0)(x-x_0
+  % ).
+  y\amp{}=y_0+\left(\eval{\dfdx{y}{x}}{(x,y)}{(x_0,y_0)}\right)(x-x_0)\\
+  \amp{}=y_0+f(x_0,y_0)(x-x_0 ).
+\end{align*}
+So if we choose $x_1$ very close to $x_0$ and compute
+$
+y_1=y_0+f(x_0,y_0 )(x_1-x_0 )
+$
+then $(x_1,y_1)$ would be approximately on the curve. In this way we can generate
+a sequence of points
+$(x_0,y_0 ), (x_1,y_1 ), (x_2,y_2 ), (x_3,y_3 ),\ldots$ which are
+approximately on the curve.  Connecting them with straight line
+segments should provide an
+approximate graph of the curve. 
+
+\noindent{}Formalizing all of this we have:\\
+\vskip2mm{}
+\hrule{}
+\vskip2mm{}
+\centerline{\bf \Large \underline{Euler's Method}}
+\vskip3mm{}
+\noindent{}Given an IVP:
+$$
+\dfdx{y}{x} = f(x,y),\ \ \ y(x_0)=y_0.
+$$
+approximate points $(x_1,y_1 ), (x_2,y_2 ), (x_3,y_3 ),\ldots$   on
+the graph  of $y(x)$ by computing:
+$$
+y_{n+1}=f(x_n,y_n )(x_{n+1}-x_n)+y_n
+\text{ for } n=1, 2, 3, \ldots.$$
+% \vskip2mm
+\hrule{}
+\vskip6mm
+
+At each iteration the value of $y$ has been approximated, so the next
+approximation is probably not as good. Thus, as we move further from
+our initial value $(x_0, y_0)$ our approximation probably deviates
+further away from the actual curve.  However,  near to the
+initial value, $(x_0,y_0)$ we should have reasonable approximation
+to the curve $y=y(x)$. The next two
+problems demonstrate this. 
+
+\begin{embeddedproblem}{}
+  \label{embed:EulerSine}
+  Observe that $y=\sin(x)$ satisfies the IVP
+  $$
+  \dfdx{y}{x}=\cos(x),\ \ \  y(0)=0.
+  $$
+
+  Use Euler's Method on this IVP to complete the table. Then plot the
+  points you generated and the graph of $y=\sin(x)$ on the same
+  set of axes so you can compare them.\\\\
+  \centerline{\includegraphics*[height=1.4in,width=5.1in]{../Figures/EulerTable1}}
+  % \vskip-3mm{}
+\end{embeddedproblem}
+%%%% Warning!!! Don't delete the commented tables below. They provide
+%%%% the images that we're using for these tables. -- ecb5  -- Thu Feb 28 18:20:04 2019 -- 
+% $$
+% \begin{array}{|c|c|c||c|c|c|}
+%   \hline{}
+%   \bf n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\cos(x_{n-1})\cdot(x_n-x_{n-1})\amp{}\bf n\amp{}\bf
+%   x_n\amp{}\bf
+%   y_n=y_{n-1}+\cos(x_{n-1})\cdot(x_n-x_{n-1})\\\hline
+    %     \bf  0\amp{}\bf 0  \amp{}\amp{}\bf    8\amp{}\bf 0.8\amp{}\\\hline
+%   \bf  1\amp{}\bf 0.1\amp{}\amp{}\bf    9\amp{}\bf 0.9\amp{}\\\hline
+%   \bf  2\amp{}\bf 0.2\amp{}\amp{}\bf  10\amp{}\bf 1.0\amp{}\\\hline
+%   \bf  3\amp{}\bf 0.3\amp{}\amp{}\bf 11\amp{}\bf 1.1 \amp{}\\\hline
+%   \bf  4\amp{}\bf 0.4\amp{}\amp{}\bf 12\amp{}\bf 1.2 \amp{}\\\hline
+%   \bf  5\amp{}\bf 0.5\amp{}\amp{}\bf 13\amp{}\bf 1.3 \amp{}\\\hline
+%   \bf  6\amp{}\bf 0.6\amp{}\amp{}\bf 14\amp{}\bf 1.4 \amp{}\\\hline
+%   \bf  7\amp{}\bf 0.7\amp{}\amp{}\bf 15\amp{}\bf 1.5 \amp{}\\\hline
+% \end{array}
+% $$
+% \vskip-6mm{}
+
+
+\begin{embeddedproblem}{}
+  \label{embed:EulerCosine}
+  Observe that $y=\cos(x)$ satisfies the IVP
+  $$
+  \dfdx{y}{x}=-\sin(x),\ \ \  y(0)=1.
+  $$
+
+  Use Euler's Method on this IVP to complete the following table.
+  Then plot the points you generated and the graph of $y=\cos(x)$ on
+  the same
+  set of axes so you can compare them.\\\\
+  \centerline{\includegraphics*[height=1.5in,width=5.1in]{../Figures/EulerTable2}}
+%  \vskip-3mm{}
+  %%%% Warning!!! Don't delete the commented tables below. They provide
+  %%%% the images that we're using for these tables. -- ecb5  -- Thu Feb 28 18:20:04 2019 -- 
+  % $$
+  % \begin{array}{|c|c|c||c|c|c|}
+  %   \hline{}
+  %   n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}-\sin(x_{n-1})\cdot(x_n-x_{n-1})\amp{}\bf   n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}-\sin(x_{n-1})\cdot(x_n-x_{n-1})\\\hline
+  %   \bf 0\amp{}\bf 0  \amp{}\bf \amp{}\bf     8\amp{}\bf 0.8\amp{}\bf \\\hline
+  %   \bf 1\amp{}\bf 0.1\amp{}\bf \amp{}\bf     9\amp{}\bf 0.9\amp{}\bf \\\hline
+  %   \bf 2\amp{}\bf 0.2\amp{}\bf \amp{}\bf   10\amp{}\bf 1.0\amp{}\bf \\\hline
+  %   \bf 3\amp{}\bf 0.3\amp{}\bf \amp{}\bf 11\amp{}\bf 1.1\amp{}\bf \\\hline
+  %   \bf 4\amp{}\bf 0.4\amp{}\bf \amp{}\bf 12\amp{}\bf 1.2\amp{}\bf \\\hline
+  %   \bf 5\amp{}\bf 0.5\amp{}\bf \amp{}\bf 13\amp{}\bf 1.3\amp{}\bf \\\hline
+  %   \bf 6\amp{}\bf 0.6\amp{}\bf \amp{}\bf 14\amp{}\bf 1.4\amp{}\bf \\\hline
+  %   \bf 7\amp{}\bf 0.7\amp{}\bf \amp{}\bf 15\amp{}\bf 1.5\amp{}\bf \\\hline
+  % \end{array}
+  % $$
+\end{embeddedproblem}
+
+%\pagebreak[4]
+  \begin{embeddedproblem}
+    Use Euler's Method to approximate the solutions of the given IVPs
+    by constructing a table like the ones in
+    Problems~(\ref{embed:EulerSine})
+    and~(\ref{embed:EulerCosine}). Then plot the points you found,
+    connecting them with straight line segments.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $\dfdx{y}{x}=y^2,\ \ \ y(0)=1$
+      \item $\dfdx{y}{x}=y^3,\ \ \ y(0)=1$
+      \item $\dfdx{y}{x}=y^4,\ \ \ y(0)=1$
+      \item $\dfdx{y}{x}=y^5,\ \ \ y(0)=1$
+     \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+%  \vskip-5mm{}
+  \begin{embeddedproblem}
+    Use Euler's Method to approximate the solutions of the given IVPs
+    by constructing a table like the ones in
+    Problems~(\ref{embed:EulerSine})
+    and~(\ref{embed:EulerCosine}). Then plot the points you found,
+    connecting them with straight line segments.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $\dfdx{y}{x}=\frac{1}{y},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{1}{y^2},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{1}{y^3},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{1}{y^4},\ \ \ y(1)=1$ 
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+%\pagebreak[4]
+  \begin{embeddedproblem}{}
+    Use Euler's Method to approximate the solutions of the given IVPs
+    by constructing a table like the ones in
+    Problems~(\ref{embed:EulerSine})
+    and~(\ref{embed:EulerCosine}). Then plot the points you found,
+    connecting them with straight line segments.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{3}
+      \item $\dfdx{y}{x}=xy,\ \ \ y(0)=1$
+      \item $\dfdx{y}{x}=x^2y,\ \ \ y(0)=1$
+      \item $\dfdx{y}{x}=xy^2,\ \ \ y(0)=1$
+      \item $\dfdx{y}{x}=x^2y^2,\ \ \ y(0)=1$ 
+      \item $\dfdx{y}{x}=\frac{x}{y},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{x^2}{y},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{x}{y^2},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{x^2}{y^2},\ \ \ y(1)=1$
+      \item $\dfdx{y}{x}=\frac{x^2}{y^2},\ \ \ y(1)=2$
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}    
+
+ %  For now, we will be content with approximations.   Later, we will
+ %  learn techniques that will allow us to solve some IVPs exactly.
+ % Let's apply
+ %  Euler's Method to a couple of physical problems.
+  
+%\pagebreak[4]
+\begin{embeddedproblem}{}
+  \label{prob:pursuit}
+  Suppose a rocket $P$ starts at the point $(1,0)$ and travels up
+  the line $x=1$ at a constant speed $v.$ When it is at $(1,0),$ a
+  homing missile $M$ is fired from the origin directly at the
+  rocket. We want to find the path the missile will follow, assuming
+  that it travels at a speed which is $k$ times the speed of the rocket
+  $(k\gt{}1)$ and is always aimed directly at the rocket.  The diagram
+  below shows the situation at time $t.$\\
+  \centerline{\includegraphics*[height=2in,width=3in]{../Figures/PursuitCurve}}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item If we let $s$ denote the distance the missile has traveled at
+    time $t,$ show that the missile's path must satisfy the IVP
+    $$
+    \dfdx{y}{x}=\frac{\frac{s}{k}-y}{1-x},\ \       y(0)=0.
+    $$
+    \hint{Find a triangle which is proportional to the differential
+      triangle shown.}
+  \item Setting $k=1.5,$ apply Euler's Method to fill in the following
+    table.\\
+    \comment{There is a little wrinkle here. You'll need to keep track
+    of  the length of $s$ which we have no way to compute. However, you can
+    approximate the length of $s$ with the length of the polygonal
+    path you've created up to that point.  This is why the extra column for values of
+    $s$ is included.}\\
+    \leftline{\includegraphics*[height=1.25in,width=5in]{../Figures/EulerTable4}}
+    
+    % Warning!!! Don't delete the commented tables below. They provide
+    % the images that we're using for these tables. -- ecb5  -- Thu Feb 28 18:20:04 2019 -- 
+    % $$
+    % \begin{array}{|c|c|c|c|c||c|c|c|}
+    %   \hline{}
+    %   \bf{}  n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\left(\left.\dfdx{y}{x}\right|_{x_{n-1}}\right)\cdot(x_n-x_{n-1})\amp{}\bf s\amp{}\bf   n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\left(\left.\dfdx{y}{x}\right|_{x_{n-1}}\right)\cdot(x_n-x_{n-1})\amp{}\bf s\\\hline
+    %   \bf{} 0\amp{}\bf 0  \amp{}\bf 0\amp{}\bf 0\amp{}\bf     5\amp{}\bf 0.5\amp{}\bf \amp{}\bf \\\hline
+    %   \bf{}  1\amp{}\bf 0.1\amp{}\bf  \amp{}\bf \amp{}\bf     6\amp{}\bf 0.6\amp{}\bf \amp{}\bf \\\hline
+    %   \bf{}  2\amp{}\bf 0.2\amp{}\bf \amp{}\bf \amp{}\bf     7\amp{}\bf 0.7\amp{}\bf \amp{}\bf \\\hline
+    %   \bf{}  3\amp{}\bf 0.3\amp{}\bf \amp{}\bf \amp{}\bf     8\amp{}\bf 0.8\amp{}\bf \amp{}\bf \\\hline
+    %   \bf{}  4\amp{}\bf 0.4\amp{}\bf \amp{}\bf \amp{}\bf     9\amp{}\bf 0.9\amp{}\bf \amp{}\bf \\\hline
+    % \end{array}
+    % $$
+  \item Plot the points obtained in part b to see if this resembles the
+    path you think the missile would follow.
+  \end{enumerate}
+\end{embeddedproblem}
+
+\begin{embeddedproblem}{}
+  \label{prob:Tractrix}
+  Consider the top view of a tractor-trailer as it turns, as shown
+  below.  Initially, the center of the rear axle of the tractor is at
+  the origin and the center of
+  the rear axle of the trailer is at the point $(1,0).$\\
+  \centerline{
+%    \includegraphics*[height=1.5in,width=2.5in]{../Figures/Tractrix}}
+    \includegraphics*[height=2.3in,width=3.5in]{../Figures/Tractrix}}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Suppose the tractor pulls the front wheels up the $y$-axis and
+    that the rear wheels don't slip.  Show that the path of 
+    the center of the rear axle of the trailer follows, $y=y(x)$  must satisfy the
+    Initial Value Problem
+    \begin{equation}
+      \label{eq:TractrixIVP}
+      \dfdx{y}{x}=-\frac{\sqrt{1-x^2 }}{x}\ \ y(1)=0.
+  \end{equation}
+    \hint{Find a differential triangle and an ordinary triangle which
+      are proportional like in Problem~\#\ref{prob:pursuit}.}
+  \item This path you found in part (b) is called a tractrix from the
+    Latin verb \foreign{trahere}, meaning ``to drag
+    or pull.'' 
+    Apply Euler's Method to complete the following table to
+    approximate the tractrix.\\
+    \leftline{\includegraphics*[height=1.25in,width=5in]{../Figures/EulerTable3}}
+    % Warning!!! Don't delete the commented tables below. They provide
+    % the images that we're using for these tables. -- ecb5  -- Thu Feb 28 18:20:04 2019 -- 
+    % $$
+    % \begin{array}{|c|c|c||c|c|c|}
+    %   \hline{}
+    %   \bf  n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\left(\left.\dfdx{y}{x}\right|_{x_{n-1}}\right)\cdot(x_n-x_{n-1})\amp{}\bf   n\amp{}\bf x_n\amp{}\bf y_n=y_{n-1}+\left(\left.\dfdx{y}{x}\right|_{x_{n-1}}\right)\cdot(x_n-x_{n-1})\\\hline
+    %   \bf 0\amp{}\bf 1  \amp{}\bf \amp{}\bf     5\amp{}\bf 0.5\amp{}\bf \\\hline
+    %   \bf 1\amp{}\bf 0.9\amp{}\bf \amp{}\bf     6\amp{}\bf 0.4\amp{}\bf \\\hline
+    %   \bf 2\amp{}\bf 0.8\amp{}\bf \amp{}\bf     7\amp{}\bf 0.3\amp{}\bf \\\hline
+    %   \bf 3\amp{}\bf 0.7\amp{}\bf \amp{}\bf     8\amp{}\bf 0.2\amp{}\bf \\\hline
+    %   \bf 4\amp{}\bf 0.6\amp{}\bf \amp{}\bf     9\amp{}\bf 0.1\amp{}\bf \\\hline
+    % \end{array}
+    % $$
+  \item  Plot the points obtained in part b to see if this looks like
+    the path the rear axle of the trailer would take.
+  \end{enumerate}
+
+  We will re-visit this problem in Section~\ref{subsec:tractrix}.
+\end{embeddedproblem}
+
+
+
+
+
+%%% Local Variables: 
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 

@@ -1,0 +1,300 @@
+\chapter{Differentials,  Differentiation, and the Derivative }
+\label{chapt:differentials}
+\mycenterquote{By relieving the brain of all unnecessary work, a good
+  notation sets it free to concentrate on more advanced problems, and,
+  in effect, increases the mental power of the
+  race.}{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Whitehead/}{Alfred
+    North Whitehead} (1861-1947)}{.75}
+
+
+\section{Historical Introduction}
+\label{sec:hist-intr}
+\markboth{\sc Differentials,  Differentiation, and the Derivative}{\sc Historical Introduction}
+
+% \begin{wraptable}{r}{3.6in}
+%   \begin{tabular}{ |c|c|c| }
+      %       \hline
+      %       %       \multicolumn{3}{|c|}{} \\
+      %       \multicolumn{3}{|c|}{\bf{}General} \\
+      %       \multicolumn{3}{|c|}{\bf{}Differentiation Rules} \\
+      %       %       \multicolumn{3}{|c|}{} \\
+      %       \hline
+      %       %       && \\
+      %       \small    Rule \#1&\small    The Constant Rule &\small If $a$ is a constant then \\
+      %                       &\small     &\small $\d a = 0.$\\\hline
+      %       %                       && \\
+      %       \small    Rule \#2&\small    The Constant        &\small If $a$ is a constant and\\
+      %                       &\small   Multiple Rule.       &\small $x$ is a variable then \\
+      %                       &\small                        &\small$\d(ax) = a\d{x}.$\\\hline
+      % %                       && \\
+      %       \small    Rule \#3&\small    The Sum             &\small If $x$ and $y$ are variables then \\
+      %                       &\small       rule.            &\small $\d(x+y) = \d x + \d y.$\\\hline{}
+      %       %                       && \\
+      %       \small    Rule \#4&\small    The Product         &\small If $x$ and $y$ are variables then\\
+      %                       &\small     Rule.              &\small $\d(xy) = x\d y + y\d x.$\\\hline
+      %       %                       && \\
+      %       \small    Rule \#5&\small    The Power           &\small
+                                                                 %                                                                  If $x$
+                                                                 %                                                                  is a variable and\\
+      %                       &\small      Rule.             &\small  $n$ is a rational number then\\
+      %                       &\small                        &\small  $\d(x^n) = nx^{n-1}\d x$\\
+      %       %                       && \\
+      %       \hline{}
+      %       %       && \\
+      %       \small    Rule \#6&\small    The Quotient        &\small If $x$ and $y$ are variables then\\
+      %                       &\small           Rule.        &\small  $\d\left(\frac{x}{y}\right) = \frac{y\d x
+                                                               %                                                                - x\d y}{x^2}$\\
+                                                               %                                                          %                                                                && \\
+      %       \hline
+      %       % %       && \\
+      %       %       \small    Rule \#7&\small    The Chain        &\small If $y$ depends on
+      %       %       c    $x,$ \\
+      %       %       &\small    Rule.            &\small and $x$ depends on $t$ then\\
+      %       %       &\small                     &\small  $\d y = \dfdx{y}{x}\dfdx{x}{t}\d t$\\[2mm]
+      %       % %       && \\
+      %       %       \hline
+      %     \end{tabular}
+      %       \end{wraptable}
+
+
+
+
+
+\begin{wrapfigure}[11]{r}{3in}
+  \vskip-5mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/WoolsthorpeManor}}
+  \caption{\textcolor{black}{\bf{}{Woolsthorpe Manor today}}}
+  %\href{https://mathshistory.st-andrews.ac.uk/Diagrams/Woolsthorpe.jpeg}
+  \label{fig:WoolsthorpeManor}
+\end{wrapfigure}
+During the Covid-19 pandemic of $2020$ the following story has become
+very popular. In $1665$ an outbreak of Bubonic Plague (also called the
+Black Death) closed Cambridge University.  One of the students, a
+young man named
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Newton/}{Isaac
+  Newton}, decided to continue his studies on his own at his country
+home in Woolsthorpe, Lincolnshire, UK. It was during this time that
+Newton worked out the basic principles of Optics, his Law of Universal
+Gravitation, and his version of the Calculus. He was under $25$ years
+old at the time.
+
+The basic facts of this story are essentially correct. The Plague did
+close Cambridge University in $1665$, Newton was under $25$, he did
+retire to Woolsthorpe to continue his studies, and he did investigate
+Optics, Gravity, and Calculus during this time.
+
+But telling Newton's story this way is misleading. It leaves the
+impression that he did all of these things during his two years at
+Woolsthorpe; sewed them up in a neat little package; bequeathed them
+to the rest of humanity and then ascended directly into heaven as a
+scientific demi-god.
+
+\begin{wrapfigure}[18]{l}{2.1in}
+  \captionsetup{labelformat=empty}
+  \centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Newton/}{\includegraphics*[height=2.5in,width=2.1in]{../Figures/Newton}}}
+  \caption{\centerline{Isaac Newton}\\\centerline{ 1642-1727}}
+  \label{fig:Newton}
+\end{wrapfigure}
+This is not true\aside{To be sure Newton did a \emph{lot} during his
+  retreat to Woolsthorpe, and he was a scientific demi-god. But if he
+  ascended into heaven he did it in the usual way in $1727$ at the age
+  of $84$.}. In fact,  he continued to work on optics after returning to
+Cambridge, but did not publish his first results until $1672$. He
+worked on his gravitational theory until at least $1687$ when he
+published it in the first edition of his book \pubtitle{Philosophiae
+  Naturalis Principia Mathematica} (Mathematical Principles of Natural
+Philosopy\aside{It is usually just called \pubtitle{The Principia}.}).
+The mathematics that he needed did not exist at the time
+so he invented it.
+
+When you're a genius you can do that.
+
+Newton's story is often treated as inspirational but the fact that he
+did so much, so young seems to us (the authors of this book) more
+intimidating than inspiring. We are considerably older than $25$ and
+taken together we haven't done anything as impressive as Newton did
+in his youth.
+
+But comparing ourselves to Newton is pointless. Newton was a true
+genius.  We are merely ordinary people just like you. We didn't invent
+Calculus, and you don't have to either. Newton did that for
+us. Everyone since has merely had to learn it; a much less imposing
+task.
+
+Well, almost everyone.
+
+
+\begin{wrapfigure}[17]{r}{2in}
+  \vskip-7mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Leibniz/}{\includegraphics*[height=2.5in,width=2in]{../Figures/Leibniz}}}
+  \caption{ \centerline{Gottfried Wilhelm Leibniz},\\
+      \centerline{1646-1716}}
+  \label{fig:Leibniz}
+\end{wrapfigure}
+About ten years after Newton entered Cambridge University, and quite
+independently,
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Leibniz}{Gottfried
+  Wilhelm Leibniz} developed his rules for Calculus while employed as a
+diplomat in Paris from $1672$ to $1674.$ He was $26$ years old at the
+time.
+
+Though their approaches are fundamentally different, the computational
+techniques they worked out were essentially equivalent.  Newton's
+approach was dynamic. He was thinking about objects in motion: the
+moon, the planets, and falling apples. Leibniz was thinking about
+geometric relationships, more like Fermat or Descartes.
+
+As a matter of pure logic it doesn't really matter which viewpoint is
+adopted. However, there are some situations where thinking dynamically
+(like Newton) is more helpful, and others where thinking geometrically
+(like Leibniz) is more helpful. Throughout this text we will switch
+back and forth, adopting whichever approach seems to us more
+advantageous for a given situation. You should too.
+
+Newton was a private, almost secretive man. At first he didn't tell
+anyone about his invention so it fell to Leibniz to publish the first
+paper on Calculus.  In $1684$ he published a paper with the rather
+imposing title
+\begin{center}
+  \begin{minipage}{.8\linewidth}
+    \pubtitle{A New Method for Maxima and Minima, as Well as Tangents,
+      Which is Impeded Neither by Fractional nor Irrational
+      Quantities, and a Remarkable Type of Calculus for This.}
+  \end{minipage}
+\end{center}
+
+  In this publication Leibniz displayed all of the General
+Differentiation Rules seen in the table at the beginning of the next
+section. He called his computational rules  ``\foreign{Calculus
+  Differentialis}'' which translates loosely as ``rules for
+differences.''  In English this is called \term{Differential
+  Calculus}.
+
+Each man created and used a notation that reflected his own viewpoint.
+Newton's notation has (mostly) fallen away over the years. Leibniz'
+notation is much more intuitive and has become standard in
+mathematics.
+
+Both men assumed that a varying quantity could be increased or
+decreased by an infinitely small amount. Leibniz called this an
+infinitesimal difference, or a \term{differential} and denoted it with
+the letter ``d'' -- presumably for ``differential''.  So if $x$ is
+some quantity, then its differential, $\dx{x}$, represents an
+infinitely small increase or decrease in $x.$
+
+To talk of infinitely small increments may sound strange to you. It
+does to most people, because it is in fact a truly weird
+idea. \href{https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Johann/}{Johann
+  Bernoulli}\aside{Johann and his brother Jacob both learned Calculus
+  from Leibniz, and both went on to mathematical greatness in their
+  own right} described differentials this way:
+``a quantity which is increased or decreased by an infinitely small
+quantity is neither increased nor decreased\aside{From ``Great Moments
+  in Mathematics After 1650'', Lecture 32}.''  You may judge for
+yourself how helpful this is.
+
+Before the invention of Calculus mathematicians had been using the
+notion of an infinitesimal both successfully, and informally, for many
+years. Galileo and his students used them. So did Archimedes.  The
+idea was ``in the air.''  Late in his life Newton repudiated the idea
+of differentials (at least, he appeared to) and replaced them with
+what he called \emph{prime and ultimate ratios.}  Leibniz simply
+continued the tradition of using differentials and invented a notation
+to formalize it which we still use today. So for now we will be following
+Leibniz' lead.
+
+Although neither of them could answer the question, ``What is a
+differential?''neither Leibniz nor Newton allowed this to hold them
+back. They developed their computational schemes, verified that they
+worked -- at least they worked on the problems they were interested in
+-- and proceeded to use
+them to attack other problems. That was enough for them. Both men
+followed the example of their forebears and treated the notion of an
+infinitely small increment as a ``convenient fiction;'' as something
+that doesn't exist in reality but is useful as way to think about
+certain problems.  We will adopt a similar attitude.
+
+
+At first.
+
+But this is mathematics, after all. We \emph{must} define our concepts
+clearly and precisely. \emph{All} of them, not just the convenient
+ones.
+
+
+The question, ``What is a differential?''  cannot simply be swept
+under the rug and ignored indefinitely. If we do not proceed
+carefully, logically, from clearly stated first principles we can
+never truly know if what we are doing is valid. Since everything we
+do will depend in a fundamental way on differentials we \emph{must} resolve
+this question or all of our work will rest on a foundation of shifting
+sands and we will never really know whether it is valid or not. Indeed,
+Newton, Leibniz, and generations of mathematicians since understood
+this very well and worked hard to either give rigorous meaning to the
+idea of a differential or to abandon it altogether in favor of some
+other concept. Newton's idea of prime and ultimate ratios was probably
+the first such attempt.
+
+But it took some of the greatest minds in history nearly two hundred
+years to resolve the question of differentials.
+
+\begin{wrapfigure}[19]{l}{2in}
+  \vskip-3mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Robinson/}{\includegraphics*[height=2.5in,width=2in]{../Figures/Robinson_4}}}
+  \caption{\centerline{Abraham Robinson,}\\\centerline{1918-1974}}
+  \label{fig:Robinson}
+\end{wrapfigure}
+Well, ``resolve'' might be too strong a word.  The theory of limits,
+adopted in the late $19$th century, doesn't resolve the matter as much
+as it simply avoids it altogether. You'll see what we mean when we
+come to Chapter~\ref{chapt:whats-wrong-with}.
+
+In the mid-twentieth century
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Robinson}{Abraham
+  Robinson} ($1918-1974$) took on the problem of differentials and was
+finally able to put a solid, rigorous foundation underneath the use of
+differentials in Calculus. Unfortunately, to do this Robinson required
+some high level techniques from the field of Mathematical Logic which
+are quite beyond the scope of this text so we will not be studying
+Robinson's work. 
+
+Besides, Calculus already had a rigorous foundation. The theory of limits
+had been established nearly a hundred years before and it
+provides an entirely adequate foundation for Calculus.  Unfortunately,
+the theory of limits does very little to help anyone actually
+\emph{use} Calculus. It simply provides rigor for the logical
+foundations. On the other hand the differentials of Leibniz and
+Robinson do provide aid in using Calculus. Newton, Leibniz and their
+contemporaries did truly amazing things by treating differentials as
+``convenient fictions.''  There is no reason we can't do the same.
+
+So \underline{for} \underline{now}, we will follow the example of our
+forbears and develop the ``Rules For Differences''
+(\alert{Differential Calculus}) using Leibniz' differentials.  In
+particular, we will not concern ourselves with the question, ``What is
+a differential?''
+
+There is precedent for this. The ancient Greek mathematician
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Euclid/}{Euclid},
+(325BC - 265BC)
+defined geometric points with the phrase ``A point is that which has
+no parts.'' But that is simply a clever way of admitting that he
+didn't know what points are, despite the fact that they are enormously
+useful.  What is a point, really, but a convenient fiction? And yet
+the notion of a point is foundational for all of Geometry. After all,
+what is a line but the relationship between two points? Moreover,
+mathematical points are highly intuitive and can be visualized in the
+mind's eye as long as we don't look too closely.
+
+Differentials will play a similar role in Calculus.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 

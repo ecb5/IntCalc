@@ -1,0 +1,868 @@
+\section{The Natural Logarithm-tmp}
+\label{sec:natural-logarithm-1}
+\markright{\sc{}The Natural Logarithm}
+\subsection*{\underline{Introduction: John Napier}}
+\begin{wrapfigure}[]{r}{2in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2.5in,width=2in]{../Figures/Napier.png}}
+  \label{fig:Napier}
+  \caption{\textcolor{blue}{John Napier, $1555-1617$}}
+\end{wrapfigure}
+
+
+In the $16$th and $17$th centuries the astronomical calculations
+needed for navigation were growing increasingly complex. These
+computations were done by hand, frequently on the deck of a
+wind-tossed sailing ship, and often by people who did not fully
+understand the underlying ideas. It was important that the
+computations be as easy as they could possibly be, and still be
+accurate.  The Scottish mathematician John Napier ($1550-1617$)
+invented logarithms specifically to address this problem. Logarithms
+have the remarkable property that by using them you can convert
+multiplication to addition, division to subtraction, exponentiation to
+multiplication and root-taking to division. In each instance
+decreasing the complexity of the operation.
+
+Napier described their properties in \foreign{Mirifici logarithmorum
+  canonis descriptio}, published in $1614$, well before Newton or
+Leibniz were born so logarithms actually predate the invention of
+Calculus by several decades.  He coined the term ``logarithm'' from
+the Greek words logos meaning ``reasoning,'' or `` reckoning'' and
+arithmos meaning ``number.''  So to Napier logarithms were
+``reckoning numbers'' which seems an apt description, given their
+original purpose. Nowadays they are much, much more.
+
+
+The ability to turn multiplication into addition and exponentiation to
+multiplication was a major innovation because using simpler operations
+meant fewer errors were made and the better chance a ship had of
+actually reaching its destination.
+
+We will discuss Napier and his work a little later. For now we focus
+on the basic properties of  the natural logarithm that you will need
+to solve problems in this course and after.
+\begin{center}
+  \begin{minipage}[h]{.6\linewidth}
+    \centerline{\bf{}\underline{Properties of the Natural Logarithm}}
+    \begin{enumerate}
+    \item $\ln(e)=1$,\\ where $e$ is the base of the natural exponential,
+      $e^x$.      
+    \item $\ln(ab)=\ln(a)+\ln(b)$
+    \item $\ln\left(\frac{a}{b}\right)=\ln(a)-\ln(b)$
+    \item $\ln\left(a^b\right)=b\ln(a)$
+    \end{enumerate}
+  \end{minipage}
+\end{center}
+Like the differentiation rules you'll need to be very comfortable
+using these properties.  The simplest use we can put a \term{natural
+  logarithm} to is to aid in  solving an equation like:
+$$
+3^x=17.
+$$
+The difficulty here is how do we get the variable $x$ out of the
+exponent. This is exactly what logarithms were invented to do. Notice
+that by Property 4, $\ln(3^x)=x\ln(3)$, so we can solve our equation
+like this:
+\begin{align*}
+  3^x&=17\\
+  \ln(3^x)&=\ln(17)\\
+  x\ln(3)&= \ln(17)\\
+  x&=\frac{\ln(17)}{\ln(3)}.
+\end{align*}
+At this point we can use technology to find that
+$\ln(17) \approx 2.8332$ and $\ln(3)\approx1.0986$ so that
+$\frac{\ln(17)}{\ln(3)}\approx2.5789$.
+
+Of course if that's all we need logarithms for we could just stop
+here. With practice anyone can go through the motions and solve
+equations without actually understanding what they are doing just like
+the differentiation rules. As we said, that was the whole point of
+inventing logarithms in the first place, but using them is just the
+first step in understanding them and our true goal is understanding.  
+
+\begin{ProficiencyDrillSection}
+  \begin{ProficiencyDrill}
+    Solve each of the following equations:
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $2^{x}=3^x$
+        \solution{$x=0$}
+      \item $e^{x-5}=e^5$
+        \solution{$x=10$}
+      \item $7^{x^2-x}=e$
+      \end{multicols}
+    \end{enumerate}
+  \end{ProficiencyDrill}
+\end{ProficiencyDrillSection}
+
+\subsection*{\underline{Inverting the Natural Exponential}}
+\label{sec:underl-logar-as}
+The natural logarithm is the final ``elementary'' function we will
+consider.  It is most simply defined as the inverse of the natural
+exponential, but that is not a very helpful definition.  We will need
+the natural logarithm for much the same reasons that we needed the
+inverse trig functions in Trigonometry so a quick refresher on those
+will be helpful.
+
+
+Recall that if we have a particular angle, $\theta,$ it is easy enough
+to understand what $\sin(\theta),$ $\cos(\theta),$ $\tan(\theta),$
+etc. mean and to compute each of these for a particular value of
+$\theta$. But sometimes this is not enough.
+
+Sometimes we have the value of sine (or cosine, or tangent, $\ldots$)
+of an angle $\sin(\theta),$ but we need to find $\theta$ itself. For
+example, if we were trying to solve the equation
+$$
+4\sin(2x+1)=3
+$$
+we'd first reduce this to
+$$
+\sin(2x+1)=3/4.
+$$
+But if we don't know how to ``undo'' the sine we're stuck. This is
+what  \term{inverse sine} function was invented for. It is
+the function that ``undoes'' the sine. To solve our equation we simply
+apply $\inverse\sin()$ to both sides. This gives:
+$$
+\inverse\sin(\sin(2x+1))=\inverse\sin(3/4).
+$$
+\emph{By definition} the \term{inverse sine} ``undoes\aside{You
+should read the symbol $\inverse\sin(x)$ as ``the angle whose sine is
+$x$.''
+Reading the formula $\sin\left(\inverse\sin(x)\right)=x,$ aloud in this way
+gives us ``the sine of the angle whose sine is $x.$''
+Similarly $\inverse\sin(\sin(x))=x$ is read as ``the angle whose sine
+is the sine of $x$ is $x$.''}'' the sine. 
+
+The basic idea of \alert{function inversion} is really as simple as
+that. If $f(x)$ is the name of a function, then $\inverse{f}(x)$ is
+the name of the \emph{different but related} function which ``undoes''
+$f.$ This is why, for example,
+\begin{align*}
+  \inverse\sin(\sin(x))&=x \\
+  \inverse\cos(\cos(x))&=x \\
+  \inverse\tan(\tan(x))&=x, \text{ etc. }
+\end{align*}
+
+Ok. Sure. We all know that using the inverse trigonometrc functions is
+a bit harder than this. But the complications you remember from
+Trigonometry didn't come from function inversion. The complications
+came from the formalities of the underlying, abstract notion of a
+\term{function.}  Fortunately, when we invert the natural exponential
+none of those formalities come into play, so we needn't bother with
+them. For now.
+
+The \term{natural logarithm} function is, by definition, the inverse
+of the \term{natural exponential} in precisely the same way that
+$\inverse\sin(x)$ is, by definition, the inverse of $\sin(x)$ .
+Unfortunately the notation that is used for the \term{natural
+  exponential} and the \term{natural logarithm} is not helpful.
+
+\begin{center}
+  \begin{minipage}[h]{.85\linewidth}
+    \begin{mynotation}{Problems with Inverse Function}
+      It has become standard practice to name functions using the
+      first three letters of the name of the function. That is why the
+      trigonometric functions are $\sin()$, $\cos()$, $\tan()$,
+      $\cot()$, $\sec()$, and $\csc()$. By that standard we should
+      \emph{properly} denote the \term{natural exponential} with
+      $\exp(x)$. We actually will use this notation when we want to
+      emphasize the functional nature of the \term{natural
+        exponential}, but most of the time it is more helpful to think
+      of the \term{natural exponential} as ``$e$ raised to a power''
+      and to denote it as $e^x$ which, unfortunately, doesn't
+      \emph{look} like a function at all.      
+
+      It is also fairly standard practice to denote the inverse of a
+      given function with the exponent $-1$. This is how the inverse
+      trig functions are often denoted: $\inverse\sin()$,
+      $\inverse\cos()$, $\inverse\tan()$, $\inverse\cot()$,
+      $\inverse\sec()$, and $\inverse\csc()$.  By that standard we
+      should \emph{properly} denote the the \term{natural logarithm}
+      by $\inverse\exp()$, but this is almost never done.
+
+      Since the logarithm has its own name (unlike the inverse trig
+      functions) it would be reasonable to denote it with the first
+      three letters of the word ``logarithm'': $\log(x)$. Most
+      mathematicians actually will use this symbol when we talk
+      amongst ourselves, because for us the \term{natural logarithm }
+      is the only logarithm function that really matters.
+
+      However, since the time of Napier the symbol $\log(x)$ has
+      always denoted what are called \term{common logarithms} (we'll
+      have more to say about these shortly). As a result the symbol
+      that is most frequently used by scientists and engineers (and by
+      mathematicians when we are talking to scientists and engineers.)
+      to denote the \term{natural logarithm} is $$\ln(x).$$
+
+      None of this affects what the \term{natural logarithm} is, how
+      we use it, or how we think about it. It only affects how we
+      write it. The \term{natural logarithm} ($\ln(x)$) is the inverse of the \term{natural
+        exponential} ($e^x$) and you should think of it as such.
+
+      However, rather than writing
+      $$
+      \inverse\exp(\exp(x))=x, \text{  or  } \exp(\inverse\exp(x))=x
+      $$
+      as we would with almost any other function/inverse pair for the
+      \term{natural exponential}/\term{natural logarithm} pair we
+      write instead
+      $$
+      \ln(e^x)=x, \text{  and  } e^{\ln(x)}=x
+      $$
+      because that is the notation that everyone uses and
+      understands. When using this notation it is often helpful to
+      think of $\ln(x)$ as the function that peels the exponent off of
+      $e^x$. This is actually what gives us Property 1:
+      $\ln(e)=\ln(e^1)=1$.
+
+\end{mynotation}
+\end{minipage}
+\end{center}
+
+\begin{ProficiencyDrill}
+  Evaluate each of the following:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $\ln(e^2)$ \solution{$2$}{}
+    \item $\ln(e^{\sin(t)}$ \solution{$\sin(t)$}{}
+    \item $e^{\ln(2)}$ \solution{$2$}
+    \item $e^{\ln(x+y)}$ \solution{$x+y$}
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+
+\subsection*{The Derivative of the Natural Logarithm}
+We don't normally  think of it this way but  the natural exponential
+changes addition to multiplication and multiplication to
+exponentiation in the following manner:
+\begin{equation}
+e^{\overbrace{a+b}^{\text{addition}}}=\underbrace{e^ae^b}_{\text{multiplication}},\text{ and } \underbrace{e^{ab}}_{\text{multiplication}}=\underbrace{(e^a)^b}_{\text{exponentiation}}\label{eq:ExpDefProp}
+\end{equation}
+or in function notation
+$$
+\exp(\underbrace{a+b}_{\text{addition}})=\underbrace{\exp(a)\exp(b)}_{\text{multiplication}},\text{
+  and
+} \exp(\hskip-.25in\underbrace{ab}_{multiplication}\hskip-.25in)\hskip.25in=\underbrace{(\exp(a))^b}_{\text{exponentiation}}.
+$$
+
+Since the natural logarithm is the inverse function of the natural
+exponential it ``undoes'' everything that the natural exponential
+``does.'' That is, it will change multiplication to addition and
+exponentiation to multiplication as follows:
+\begin{equation}
+  \underbrace{\ln(ab)}_{\text{multiplication}}=\underbrace{\ln(a)+\ln(b)}_{\text{addition}} \text{\hskip5mm{}and }
+  \underbrace{\ln(a^b)}_{\text{exponentiation}}=\underbrace{b\ln(a)}_{\text{multiplication}}.
+  \label{eq:LogProps}
+\end{equation}
+
+\begin{embeddedproblem}
+The properties in equation~\ref{eq:LogProps} are two of the properties
+listed in the table of properties at the beginning of this section.
+Property 3 in that table is given just for convenience. It is really
+an immediate consequence of Property 2 and Property 4.
+
+Derive Property 3 from the others. \hint{Find a way to express
+  $\frac{a}{b}$ as a product.}
+\end{embeddedproblem}
+
+
+Since the \term{natural logarithm} is the inverse of the \term{natural
+  exponential} we can find its derivative by using the same trick that
+we used to find the derivatives of the inverse trig functions. We
+start with the identity
+\begin{align*}
+  e^{\ln(x)}&=x\\
+   \intertext{and  make this easier on our eyes with the substitution
+   $y=\ln(x).$ Differentiating this, we have}
+   e^y\dx{y} &= \dx{x}\\
+   \dx{y}&=\frac{1}{e^y}\dx{x}.\\
+   \intertext{Making the  substitution $y=\ln(x)$ once more we have}
+   \dx{y}&=\frac{1}{e^{\ln(x)}}\dx{x},\\
+   \intertext{ and since $e^{\ln(x)}=x$ we have}
+   \dx{y}&=\frac{1}{x}\dx{x},\\
+\end{align*}
+and this is the last of the differentiation rules you need to
+memorize. That was so easy it's kind of a letdown\footnote{}, isn't it?  This is the last
+differentiation rule you need to
+memorize:
+$$
+\dx{(\ln(x))}=\frac{1}{x}
+\dx{x}=x^{-1} \dx{x}.
+$$
+
+
+ Like all differentiation rules we need to use this one in tandem with
+ all of the others so practice is required.
+
+\subsubsection*{\underline{Two  Curious Facts}}
+This differentiation rule is actually quite remarkable
+for a couple of reasons.
+\begin{description}
+\item[Fact 1:] Recall that in
+  section~\ref{sec:inverse-trig-funct} we pointed out that
+  differentiating a function often results in another function of the
+  same type.  The inverse trig functions do not have this property and
+  now we see that the \term{natural logarithm} also breaks this
+  pattern.
+
+  Do you suppose there is any significance to this?
+\item[Fact 2:] 
+  Somewhat more remarkable is what happens when we try to run the
+  differentiation process backwards.
+
+  Observe that if $y=x^\alpha,$ then
+  $\dfdx{y}{x}=\alpha x^{\alpha-1}.$ This is, of course, just the
+  Power Rule. In words, it says that the derivative of any monomial
+  $(x^\alpha)$ is another monomial. But what happens if we try to go
+  the other direction?
+
+  Consider: If $\dfdx{y}{x}=x^2$ the clearly $y=\frac{x^3}{3},$ and in
+  general if $\dfdx{y}{x}=x^\alpha$ then
+  $y= \frac{x^{\alpha+1}}{\alpha+1}.$ This is true as long as
+  $\alpha\ne -1.$ In that case running the Power Rule backwards would
+  give us $y= \frac{x^{-1+1}}{-1+1}$ which won't work because in the
+  denominator we have $-1+1=0.$
+
+  To put all of this in words, if we start out with a monomial
+  derivative and ask for the original function we find that it will
+  also be a monomial for every possible value of the exponent
+  \emph{except} $-1.$ In that case the original function would be
+  $y=\ln(x).$ It seems very strange that there would be this one,
+  single exception doesn't it?
+
+  Or, to come at this in a different way maybe this says that the
+  logarithm function is somehow related to monomials? What do you
+  think?
+\end{description}
+
+ \begin{ProblemSection}
+
+\begin{myproblem}
+  Compute each of the following:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $\dx{\left(\sqrt{x^2+1}\cdot\ln\sqrt{x^2+1}\right)}$
+    \item $\dx{\left(\dfrac{\ln(x)}{e^x}\right)}$
+    \item $\dx{\left(\tan(ln(x))\right)}$
+    \item $\dx{\left(\ln(\tan(x))\right)}$
+    \item $\dx{\left(\inverse\tan(\ln(x))\right)}$
+    \item $\dx{\left(x\ln(x)-x\right)}$
+    \item $\dx{\left(\ln(\ln(\sec(x)))\right)}$
+    \item $\dx{\left(\ln(\sin(x^2+1))\right)}$
+    \item $\dx{\left(\sec(x)\tan(x)\right)}$
+    \item $\dx{\left(\frac{e^{x^2}\sin(x)}{\sqrt{x^3-7x+4}}\right)}$
+    \item
+      $\dx{\left(\left(\frac{(2x+3)(4x+5)^{20}}{x^{\frac12}-\ln(x)}\right)^{\frac43}\right)}$
+    \end{multicols}
+  \end{enumerate}
+\end{myproblem}
+
+
+\begin{myproblem}{}
+  Solve the following equations for $x.$
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \begin{multicols}{3}
+    \item $e^x=\frac{1}{\sqrt{e}}$
+    \item $e^x=5$
+    \item $7e^{x+3}=2$
+    \item $\ln(2x-4)=0$
+    \item $\ln(2x)-\ln(x+1)=4$
+    \item $2\ln(x)=\ln(3x-2)$
+    \end{multicols}
+  \end{enumerate}
+\end{myproblem}
+
+\begin{myproblem}
+  Solve each of the following for $c:$
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $-\ln(2c)=8$
+    \item $-\ln\left(\frac{1}{2c}\right)=8$
+    \item $\ln(2c)+\ln(2)=8$
+    \item $\ln(2x)\ln(x)=\ln(c)$
+    \item $\ln(5x)=\ln(x)+c$
+    \end{multicols}
+  \end{enumerate}
+\end{myproblem}
+
+\begin{myproblem}
+  Solve for $x$:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $e^{2x}-3e^x+2=0$
+    \item $(\ln(x))^2+3\ln(x)+2=0$
+    \item $\sin(e^x)=0$
+    \item $\cos(e^x)=0$
+    \item $e^{2x}- e^x-2=0$
+    \item $(\ln(2x)^2- \ln(x)-2=0$
+    \item $(\ln(x))(\ln(2x))=1$
+    \end{multicols}
+  \end{enumerate}
+\end{myproblem}
+
+\begin{myproblem}{}
+  For each of the following find $\d{y},$  and $\dfdx{y}{x}$.
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item $y=\ln(2x+2)$
+  \item $y=\ln
+    \left(
+      \frac{(2x+1)^2(3x-2)}{x^2+1}
+    \right)$ \hint{Think about properties of logarithms before you
+      do this.} 
+  \item $\ln(y)=\sin(e^x)$
+  \item $\ln(x+y)=\inverse\tan(z)$
+  \end{enumerate}
+\end{myproblem}
+
+\begin{myproblem}
+  Show that if $y=(x+1)(x+2)(x+3)\ldots(x+n),$ then for $x\neq1, 2,
+  3, \ldots, n$
+  $$
+  \dx{y}=(x+1)(x+2)(x+3)\ldots(x+n)\left[\frac{1}{x+1}+\frac{1}{x+1}+\cdots+\frac{1}{x+1}\right]\dx{x}$$
+  Can you find a way to extend this so that it is also true for $x=1, 2,
+  3, \ldots, n$
+  
+  \noindent{}\hint{This should look familiar. Did you do problem \# in Section \#}
+\end{myproblem}
+\end{ProblemSection}
+
+ 
+   
+\section{General Logarithms and Exponentials-tmp}
+\label{sec:gener-logar-expon}
+So far we've focused on the \emph{natural} exponential and logarithm
+functions. But if the natural exponential is just this screwy number
+$e$ raised to $x$ then isn't say, $2^x$ also an exponential?
+
+Of course it is. It is the ``exponential with base $2$.''
+
+So is $3^x$, It is the ``exponential with base $3$.'' Just as $5^x$ is
+the ``exponential with base $5$'' and $32543^x$ is the ``exponential
+with base $32543$.'' In fact for any $a>0$ then $a^x$ is \emph{an}
+exponential.
+\begin{ProficiencyDrill}
+  Why do we impose the condition, $a>0?$
+\end{ProficiencyDrill}
+And  for every function of the form $a^x$ there is a corresponding 
+inverse function called the ``log base $a$,'' and denoted $\log_a(x)$.
+
+The following problem establishes that all logarithm functions change
+multiplication into addition and exponentiation into multiplication as
+we stated (but didn't prove) earlier.
+\begin{embeddedproblem}{}
+  Let $a>0,$ $x>0,$ $y>0$ and  let $c$ be any real number.
+  \comment{Calculus is not needed for this problem.}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that $\log_a  xy=\log_a x+\log_a y.$
+    \hint{Consider
+      $a^{\log_a x+\log_a y}$  and use the properties of exponents to show that
+      this equals $xy.$}
+  \item Show that $\log_a x^c =c \log_a x.$
+    \hint{Use the properties of exponents to show that both
+      $a^{c\log_a(x)}$ and $a^{\log_a(x^c)}$ are equal to $x^c.$}
+  \end{enumerate}
+\end{embeddedproblem}
+
+What makes the \term{natural exponential}, ``natural'' is that the choice
+of $e$ as the base makes it is the only exponential which is its own
+derivative: $\dfdx{(e^x)}{x}=e^x$.
+
+But if there are so many different exponential and logarithm functions
+don't we need differentiation rules for all of them? And what are the
+derivatives of the other exponentials and logarithms?
+
+\subsubsection*{\underline{General Exponentials}}
+It is not as hard to differentiate $y=a^x$ as you might think. Since
+we already know how to differentiate the \term{natural exponential}
+all we have to do is re-express $y=a^x$ in terms of $e^x$. This is
+usually called "Here's how.
+
+We know that $a=e^{\ln(a)}$ so we make that substitution to get
+$$
+y=a^x=\left(e^{\ln(a)}\right)^x=e^{x\ln(a)}
+$$
+You can think of this step as making $a^x$ ``harder on the eyes'' if
+you like. We're just making a substitution.
+
+Now we differentiate:
+\begin{align*}
+  a^x&=e^{x\ln(a)}\\
+  \dx(a^x) &= e^{x\ln(a)}\dx(x\ln(a)).\\
+  \intertext{Since $a$ is a constant, $\ln(a)$ is also a constant so}
+  \dx(a^x) &= e^{x\ln(a)}\ln(a)\dx{x}\\
+  \intertext{and since $a^x=e^{x\ln(a)}$ we have}
+    \dx(a^x) &= a^x\ln(a)\dx{x}\\
+\end{align*}
+
+\begin{ProficiencyDrill}
+  Find $\dx{y}$ and $\dfdx{y}{x}$ for each of the following:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $y=2^x$
+    \item $y=3^x\cdot3^x$
+    \item $y=x3^x$
+    \item $y=3\cdot7^x+7\cdot3^x$
+    \item $y=e^{5^x}$
+    \item $y=\ln\left(2^x\right)$
+    \item $y=2^x\cdot4^x\cdot8^{x^2}$
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+\subsubsection*{\underline{General Logarithms}}
+Just as we did for the general exponential $a^x$ we compute the
+derivative of the logarithm by changing it to a natural logarithm
+($\ln(e)$).
+
+To do this we start with the exponential. If $y=\log_a(x)$ then
+\begin{align*}
+  a^y&=x,\  a>0.\\
+  \intertext{Taking the \term{\underline{natural} logarithm} and using
+  Property 4 from out list of properties  we have,}
+  y\ln(a)&=\ln(x), \text{ or}\\
+  y&=\frac{\ln(x)}{\ln(a)}\\
+  \intertext{Since $y=\log_a(x)$ we have successfully converted the general
+  logarithm to a base-$a$ logarithm:}
+  \log_a(x)&=\frac{\ln(x)}{\ln(a)}.\\
+\intertext{
+An easy mnemonic for remembering this formula is to simply notice that
+  on both sides of the equation the $a$ appears lower than the $x$.}
+  \intertext{
+ Since $\ln(a)$ is a
+ constant (why?) we have}
+  \dx{(\log_a(x))}&=\frac{1}{\ln(a)}\cdot\dx\left(\ln(x)\right)\\
+     &=\frac{1}{\ln(a)}\cdot\frac1x\dx{x}.\\
+  \intertext{So we have the differentiation formula:}
+  \dfdx{(\log_a(x))}{x}&=\frac{1}{x\ln(a)}.
+\end{align*}
+
+\subsubsection*{\underline{Common Logarithms}}
+It is a well known phenomenon in mathematics that the first solution
+of a problem is often the most difficult, convoluted, and hard to
+understand solution possible. This is what happened to Napier. His
+original scheme, although it did allow him to convert multiplication
+to addition, was more complicated than necessary.  Shortly after
+Napier published his work in $1614$, Henry Briggs ($1561 - 1630$),
+professor of geometry at Gresham College in London, visited Napier and
+suggested that a few simple changes to his logarithm table would make
+it more practical. One change Briggs suggested was to use a table of
+base-$10$ logarithms, since our number system is in base-$10$. Napier
+had had the same idea himself, but had been unable to pursue it ``on
+account of ill-health.'' As a result Briggs took on the task of
+computing tables of base-$10$ logarithms, collaborating with Napier
+until the latter's death two years later. The result of their
+collaboration known as the Briggsian or \term{Common
+  Logarithms}. Common Logarithms were an important computational aid for
+slightly over $300$ years until the invention of modern computational
+technologies. 
+
+As the mathematical historian Howard Eves put it, the invention of
+logarithms literally ``doubled the life of the astronomer,'' because
+they so drastically reduced the time spent doing arithmetic.
+
+Using Briggs's tables if a scientist  needed to
+multiply, for example, $21.0234\times107.889766$ (s)he would first look up the
+logarithm of $21.0234$ and $107.889766$ in his table, add the two
+logarithms together, and then turn to his table again to see what the
+sum was the logarithm of (this was called the 'anti'-logarithm). That
+would be the product. 
+
+Using his tables taking roots is also straight forward because
+logarithms not only turned multiplication into addition they turn
+exponentiation into multiplication. For example, to find compute
+$\sqrt[2]{4}$ we would look up its logarithm, divide that by
+three, and then look up the 'anti'-logarithm of the result.  Think
+about it, would you rather find the cube root of $31$ by hand (do you
+even know how to do that?) or divide its logarithm by $3$, and then
+look up the root in a table?
+
+Most modern scientific calculuators have both the natural common
+logarithms built in. Naturally the ``\term{ln}'' button on a calulator
+compute natural logarithms while the ``\term{log}'' computes common
+logarithms.
+\begin{ProficiencyDrill}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Use whatever technology you prefer to compute the natural
+    logarithms of the numbers $21.2343$ and $5689.121343$ and their
+    product. Confirm that
+    $\ln(21.2343) \ln(5689.121343) =
+    \ln(21.2343\times5689.121343)$. \comment{If you don't like these
+      numbers use others. We just picked these at random.}
+  \item Do the same using common logarithms.
+  \item Do the same using $\log_5(x)$. \comment{Or any other
+      base. Again we  just picked $5$ at random.}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+
+\begin{embeddedproblem}
+  How many base-$10$ digits long do you suppose the number
+  $2^{1234567890}$ is? You cannot solve this by punching
+  $2^{1234567890}$ into a calculator and counting the digits. As
+  powerful and convenient as our modern technology is there are still
+  problems, like this one, that require a deeper understanding. A
+  calculator is a useful tool, but the human operating the
+  calculator needs to understand what to calculate. Blind
+  calculation won't work is pointless.
+
+  Suppose we let $n = 2^{1234567890}$ and take the base $10$ logarithm
+  (common logarithm) of both sides. This gives:
+  $$
+  \log_{10}(n)= \log_{10}(2^{1234567890})=1234567890\cdot
+  \log_{10}(2)\approx371641966.574.
+  $$
+  Thus
+  $$
+  2^{1234567890}=n=10^{371641966.574}=10^{0.574}\times10^{371641966}
+  $$
+  So our number is $371641966$ base-$10$ digits long. Do you see why?
+
+  This feels like a problem made up by math professors just to torment
+  our students, but it is not. Computer programmers routinely have to
+  allocate space in memory to hold information. If the information
+  being held happens to be the number  $2^{1234567890}$ they would
+  need to know how much space to allocate. That computation is
+  essentially the one we just did.
+
+  Of course, since computer arithmetic is binary (base-$2$) they would
+  need to know how many binary digits (bits) to allocate. Obviously that
+  would be $1234567890$ bits. Do you see why?
+
+  But what about $10^{1234567890}?$ How many bits are needed to store
+  this number?
+\end{embeddedproblem}
+  
+\begin{embeddedproblem}
+  For each of the following numbers:
+  \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{3}
+      \item $3^{1234567890}$
+      \item $9^{1234567890}$
+      \item $\left(\frac13\right)^{1234567890}$
+      \item $\left(\frac19\right)^{1234567890}$
+      \end{multicols}
+    \end{enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Find the number of binary digits needed to store the number.
+    \item Find the number of base-$8 $ digits needed to store the number.
+    \item Find the number of base-$10$ digits needed to store the number.
+    \item Find the number of base-$100$ digits needed to store the number.
+    \item Find the number of base-$9  $ digits needed to store the number.
+  \end{enumerate}
+\end{embeddedproblem}
+
+% \begin{enumerate}[label={\bf{}(\alph*)}]
+%     \item in base-$10$
+%     \item in base-$3$
+%     \item in base-$2$
+%     \item in base-$7$
+%     \end{enumerate}
+%   \end{embeddedproblem}
+
+\subsubsection*{\underline{Napierian Logarithms}}
+The discussion above begs the question: What base did Napier use when
+he invented logarithms?
+
+Napier defined his original logarithms as follows.  Consider a point
+$C$ moving along line segment $AB$ and a point $F$ moving along an
+infinite ray
+$DE$ as seen below.\\
+\centerline{\includegraphics*[height=1in,width=3in]{../Figures/NapierLog1}}
+Assume that they start at the same speed and that $F$ moves at a
+constant speed, but that $C$ moves with a speed equal to the distance
+from $C$ to $B$.  If we let $CB=x$ and $DF=y$, then we define the
+\term{Naperian Logarithm} as
+$$
+y = \text{Nap log}(x).
+$$
+
+Since Calculus had't been invented yet Napier used Trigonometry to
+develop his \pubtitle{Table of Logarithms}. He took the length of
+$AB$ to be $10^7$, since the best sine tables of the day were to
+accurate to 
+seven decimal places.
+
+
+
+\begin{embeddedproblem}
+  It is not altogether clear from the description above that  the
+  Napierian logarithm actually is a logarithm, let alone what its  base
+  is. This question explores both of these questions.
+
+  \label{pic:NapierianLog}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item  Show that $\dfdx{y}{t}=10^7$, $y(0)=0$.
+  \item Solve the IVP: $\dfdx{x}{t}=-x$,  $x(0)=10^7$,
+  \item Use the information in parts (a) and (b) to show that
+    $$
+    \text{Nap log}(x)=y(x)=10^7\log_{\frac{1}{e}}\left(\frac{x}{10^7}\right).
+    $$
+    \comment{In the formula above we have suppressed the variable $t$.}
+  \end{enumerate}
+
+\end{embeddedproblem}
+
+
+
+
+\subsubsection*{\underline{Logarithmic Differentiation}}
+The ability to turn multiplication into addition and exponentiation into
+multiplication can make some differentiations much easier to do.
+
+\begin{myexample}
+  For example, suppose we need to differentiate
+$$
+y=\frac{\sqrt{x^3+2x}\cdot{}\tan(x)}{(x^5-7)^4}.
+$$
+
+Certainly we can do this using  our rules, but it will clearly be
+tedious.  But nice things happen if we take the natural logarithm of both sides before we
+differentiate.
+\begin{align*}
+  \ln(y)&=\ln\left(\frac{\sqrt{x^3+2x}\cdot{}\tan(x)}{(x^5-7)^4} \right)\\
+%        &=\ln\left(\frac{x^3+2x)^{1/2}\cdot{}\tan(x)}{(x^5-7)^4}\right).
+\intertext{Since the natural  logarithm changes division   into subtraction we
+          can rewrite the right side as.}
+         &=\ln\left[\sqrt{x^3+2x}\cdot\tan(x)\right] -
+             \ln\left(\left(x^5-7\right)^4\right).
+           \intertext{And since the  natural  logarithm changes
+             multiplication    into addition we           can
+           re-express  the right side again. This time as:}
+         &=\ln\left(\sqrt{x^3+2x}\right)+ \ln\left(\tan(x)\right) -
+           \ln\left(\left(x^5-7\right)^4\right).
+           \intertext{Re-expressing the square root as an exponent
+           gives}
+                   &=\ln\left(x^3+2x\right)^{1/2}+ \ln\left(\tan(x)\right) -
+                     \ln\left(\left(x^5-7\right)^4\right).
+                     \intertext{and we can now bring the exponent down
+                     in front. We're not using the Power Rule
+                     here. We're using the fourth property of
+                     logarithms in our table.} 
+     \ln(y)    &=\frac{1}{2}  \ln(x^3+2x)+\ln(\tan(x)) -4 \ln(x^5-7)).
+ \end{align*}
+Notice that all we've done so far is re-express our function using the
+properties of logarithms. We have not yet started differentiating.
+
+But now differentiating this is relatively easy.
+\begin{align*}
+  \dx{(\ln(y))}&=
+                 \frac{1}{2(x^3+2x)}\dx{(x^3+2x)}+\frac{1}{\tan(x)}\dx{(\tan{x})}-\frac{4}{x^5-7}\dx{(x^5-7)}\\
+  \frac{\dx{y}}{y}&=
+                    \frac{1}{2(x^3+2x)}(3x^2+2)\dx{x}+\frac{1}{\tan(x)}\sec^2(x)\dx{x}-\frac{4}{x^5-7}(5x^4)\dx{x}\\
+\end{align*}
+If we multiply by $y$ we get
+\begin{align*}
+  \dx{y}&=
+          y\left[\frac{(3x^2+2)}{2(x^3+2x)}\dx{x}+\frac{\sec^2(x)}{\tan(x)}\dx{x}-4\left(\frac{5x^4}{x^5-7}\right)\dx{x}\right]\\
+        &=        \left[\frac{\sqrt{x^3+2x}\cdot{}\tan(x)}{(x^5-7)^4}\right]\cdot\left[\frac{(3x^2+2)}{2(x^3+2x)}\dx{x}+\frac{\sec^2(x)}{\tan(x)}\dx{x}-4\left(\frac{5x^4}{x^5-7}\right)\dx{x}\right]\\
+\end{align*}
+\end{myexample}
+
+\begin{ProficiencyDrill}
+  This looks like a lot of work when it's laid out on the page like this
+but it really isn't. With practice you can differentiate an expression
+like 
+$
+\frac{\sqrt{x^3+2x}\cdot{}\tan(x)}{(x^5-7)^4}.
+$ in your head  as fast as you can write it down. Really.
+
+Even if this is not true,   would
+you rather compute this derivative using the quotient rule and
+product rule?
+
+  Try it and see.
+\end{ProficiencyDrill}
+
+This technique of taking a natural logarithm before you
+differentiate is called logarithmic differentiation, and sometimes it
+is an alternative, especially if you have a lot of product rules
+and/or quotient rules to deal with.  You could actually do it all the
+time, but sometimes, it is just not worth it.  For example, you could
+use it for differentiating $y=x^2+1.$ 
+\begin{align*}
+  y&=x^2+1\\
+  \ln(y)&=\ln(x^2+1)\\
+  \frac{1}{y} \dx{y}&=\frac{1}{x^2+1} 2x\dx{x}\\
+  \dx{y}&=y\left(\frac{2x}{x^2+1}\right)\dx{x}\\
+   &=(x^2+1)\left(\frac{2x}{x^2+1}\right)\dx{x}\\
+   &=2x \dx{x}.
+\end{align*}
+It gets you the right answer, but wouldn't it have been easier to just
+the Constant Multiple Rule, and then the Power Rule?  So use your
+judgement.  Use a logarithm if it makes your job easier.
+
+But there are some situations where logarithmic
+differentiation is your only option.  Consider something like $y=x^x.$ 
+Unfortunately, this is not the power rule like $\dx{x}{x^2}$ nor is it an
+exponential like $\dx{x}{2^x }$.  It is some sort of strange
+combination of both, so our existing rules don't directly apply.
+However, this does not say that it can't be differentiated.  This is
+the sort of situation where logarithmic differentiation is just the
+technique we need. 
+
+\begin{embeddedproblem}
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item Apply logarithmic differentiation to $y=x^x$ to obtain
+    $$
+    \dx{(x^x) }=x^x (1+\ln(x) )\dx{x}.
+    $$
+  \item  Given $y=(x^2+1)^{\sin(x)},$ compute $\dx{y}.$
+  \end{enumerate}
+\end{embeddedproblem}
+
+% Since we defined the exponential as the solution of the differential
+% equation
+% $$
+% \dfdx{y}{x}=y
+% $$
+% it follows that the exponential is its own derivative. Similarly since
+% the logarithm is a solution of the differential equation
+% $$
+% \dfdx{y}{x}=\frac1x
+% $$
+% it follows that $\dfdx{\ln(x)}{x} = \frac1x.$
+
+
+% \subsection*{\underline{General Logarithms}}
+% The function which ``undoes'' the base-$2$ exponential is called the
+% base-$2$ logarithm and is denoted: $\log_2(x)$. In general the inverse
+% of $a^x$, $a>0$ is $\log_a(x)$. The next question for us is: What is
+% the derivative of $\log_a(x)?$
+
+% As before this just a matter of changing the base to $e$, but it is
+% slightly more complicated to change the base of a logarithm so we
+% address that first.
+
+% Suppose we want to re-express $\log_5(x)$ as a \term{natural
+%   logarithm} (logarithm base $e$). Let $y=\log_5(x).$ Then clearly
+% \begin{align*}
+%   5^y&=x \text{ This is clear since $\log_5(5^y)=y$.}\\
+%   \intertext{Taking the \term{natural logarithm} of both sides we
+%   have}
+%   \ln(5^y)&=\ln(x)\\
+%   y\ln(5)&=\ln(x) \text{ so that}\\
+%   y&=\frac{\ln(x)}{\ln(5)}.
+% \end{align*}
+
+% Since $y=\log_5(x)$ we have 
+% $$
+% y=\log_5(x) =\frac{\ln(x)}{\ln(5)}, 
+% $$ 
+% and we have expressed $\log_5(x)$ as a natural logarithm.
+
+% Since we know how to differentiat the natural logarithm the rest is
+% straightforward:
+% $$
+% \dx\left(\log_5(x)\right) =\frac{1}{x\ln(5)}\dx{x}.
+% $$
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 

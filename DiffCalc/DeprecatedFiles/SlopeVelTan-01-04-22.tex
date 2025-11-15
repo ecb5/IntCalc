@@ -1,0 +1,4197 @@
+\chapter{Slopes, Tangents, and Rates of Change}
+\label{sec:veloc-slop-tang}
+% \baselineskip=1.5cm
+% \section*{The Principle of Local Linearity}
+% \label{sec:LocalLinearity}
+% \begin{wrapfigure}[10]{r}{2.2in}
+%   \vskip-4mm{}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.6in,width=2.2in]{../Figures/DifferentialTriangle1}}
+%   \label{fig:DiffTri}
+% \end{wrapfigure}
+% So far we have used our differentiation rules to turn an ordinary
+% equation like $y=x^2,$ into the differential equation
+% $\dx{y}=2x\dx{x}.$ All well and good but of what use is this? What, if
+% anything, does the differential equation tell us about the formula $y=x^2?$
+
+% As you are surely aware when you look at a very small section of any
+% curve it is almost indistinguishable from a straight line. Moreover,
+% the smaller the section the more it resembles a straight line segment.
+% This fact is known as the \underline{\term{Principle of Local
+%     Linearity}} and is illustrated by the sketch at the right. The red
+% curve is the graph of $y=x^2$ ``blown up'' near the point $(a,a^2)$ so
+% that we only see a very small part of it. As you can plainly see the
+% hypotenuse of the blue triangle is
+% \begin{enumerate}
+% \item A straight line and, 
+% \item Practically coincident with the
+%   curve.
+% \end{enumerate}
+
+\section{Slopes and Tangents}
+\label{sec:slopes-tangents}
+\markright{\sc Slopes and  Tangents}
+
+
+As we observed in Chapter~\ref{sec:some-rules-diff} Newton, Leibniz,
+and their contemporaries extended the Principle of Local Linearity to
+its logical limit. They said if you cut out an infinitely small
+section of a curve then the section actually is an infinitely short
+straight line segment. Of course we are quite familiar with infinitely
+short line segments. We call them differentials.
+
+\begin{wrapfigure}[12]{r}{3in}
+  \vskip-6mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2.2in,width=3in]{../Figures/DifferentialTriangle1}}
+  \label{fig:DiffTri}
+\end{wrapfigure}
+Leibniz called a triangle whose sides are differentials, like the blue
+triangle in the figure at the right, a \term{differential triangle}\aside{Because,
+  what else would you call it?}.  In the figure $\dx{y}$ and
+$\dx{x}$ are differentials in the vertical and horizontal directions,
+respectively. But $\dx{s}$ is a differential at the point $(a, a^2)$ in the direction of the
+curve  or, what comes to  the same thing, in the
+direction tangent to the curve. Thus $\dx{s}$ is a differential
+along the curve, and simultaneously  along the line
+tangent to the curve\aside{The idea that $\dx{s}$ is a
+  straight line segment on the curve and also on its tangent
+    line is a bit  troubling. It is one of many bizarre consequences
+  of  the notion of differentials.}.
+
+% To generate a formula for this tangent line is straightforward. We
+% already have a point on the tangent line: $(a,a^2)$. All we need is
+% the slope of $\dx{s}$ at $(a,a^2)$ and we can use the Point-Slope
+% Formula.
+
+
+The differentials $\dx{x}$, and $\dx{y}$, don't really tell us much
+about the graph of $y=x^2$, but the \term{differential ratio},
+$\dfdx{y}{x}$, does. At each point, $(a, a^2)$, $\dfdx{y}{x}$ gives us
+the slope of $\d{s}$ and the line tangent to the curve at that point.
+Loosely speaking, the differential ratio $\dfdx{y}{x}$ gives the slope
+of the curve at each point.
+
+% slope of $\d{s}$ at a given point will be the same
+% as the slope of the curve at the same point.  It should be clear that the slope of the
+% line tangent to a curve will change from point to point, unless the
+% curve is itself a straight line.  Thus thee \term{differential ratio}
+% $\dfdx{y}{x}$, tells us the slope of the graph at each point of the
+% graph.
+
+If we want to find the slope of the curve $y=x^2$ at the point
+$(a,a^2)$ we simply find $\d{y}$  as usual:$ \dx{y}=2x\dx{x}$.  Then
+we take the extra step of dividing through by $\dx{x}$ to get
+$\dfdx{y}{x}=2x$.  Evaluating this at the point $x=a$, $y=a^2$ will give us
+the slope of the line tangent to the graph of $y=x^2$ at the point
+$(a,a^2)$.
+
+\begin{ProficiencyDrill}
+  Find an equation of the line tangent to the graph of $y=x^2$ at
+  each of the following points.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{5}
+    \item $(-2,4)$
+    \item $(-1,1)$
+    \item $(0,0)$
+    \item $(1,1)$
+    \item $(2,4)$
+    \end{multicols}
+  \end{enumerate}
+    Compare these results to those obtained using Fermat's Method in
+  Problem~\#\ref{prob:ferm-meth-x2}
+\end{ProficiencyDrill}
+
+\begin{mynotation}{Evaluation}
+  We will frequently need to evaluate the expression $\dfdx{y}{x}$ at
+  different points. This can  quickly become  very confusing
+  unless we have some way of indicating which point is under
+  consideration. To avoid  confusion, we  use the notation \\
+\centerline{
+$\eval{\dfdx{y}{x}}{(x,y)}{(a,b)}$ or $\geneval{\dfdx{y}{x}}{(a,b)}$.
+}
+This notation is very flexible. Frequently the $y$ coordinate will not
+be in play. In that case we write \\
+\centerline{$\eval{\dfdx{y}{x}}{x}{a}$}  
+  to indicate that we are evaluating $\dfdx{y}{x}$ at the
+  point $(x,y)=(a,b)$.
+\end{mynotation}
+\begin{myexample}
+    For example to compute the slope of the graph of $y=3x^2-5x$ at
+    $(3,12)$ we use the following three-step process.
+    \begin{enumerate}
+    \item First  differentiate $y=3x^2-5x$ to obtain the
+      differential equation $\dx{y}=(6x-5)\dx{x}$. This 
+      relates $\dx{y}$ and $\dx{x}$.
+    \item Second, from this differential equation we 
+      find the ratio  $\dfdx{y}{x}=6x-5.$ This
+      differential ratio tells us the slope of the curve at
+      every point on the curve.
+    \item Third, if we need the value of $\dfdx{y}{x}$ at a single
+      point like $(3,12)$, for example\aside{Obviously this makes no
+        sense if the point $(3,12)$ is not a point on the curve. You
+        should always make sure the problem makes sense before you
+        try to solve it.}, we compute
+      $$\eval{\dfdx{y}{x}}{(x,y)}{(3,12)}=\bigeval{6
+        x-5}{(x,y)}{(3,12)}=6\cdot3-5=13.$$
+
+   In this case we
+      could just write: $\eval{\dfdx{y}{x}}{x}{3}=13$, since the $y$
+      coordinate never comes into play.
+    \end{enumerate}
+    Finally, we emphasize that Leibniz' notation is
+    \emph{deliberately} evocative of the notion of slope because when
+    we evaluate the differential ratio at a point it tells us the
+    slope of the curve at that point.  In view of the \alert{Principle
+      of Local Linearity}, this is equivalent to finding the slope of
+    the line tangent to the curve at that point.
+  \end{myexample}
+
+  This notation probably seems unnecessarily cumbersome and honestly, in
+  some ways it is. But be assured we have not made this choice
+  lightly, and this notation has certain advantages that will become
+  apparent later.
+
+  It can be easy to get careless or simply confused and write $\dfdx{y}{x}$
+  when you mean $\eval{\dfdx{y}{x}}{x}{a}$, and \foreign{vice versa},
+  so it is important that you have the distinction between them clear
+  in your mind.
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Explain the difference between $\dfdx{y}{x}$ and
+      $\eval{\dfdx{y}{x}}{x}{a}$ carefully and clearly.
+    \item We (the authors) have sometimes had students assert that
+      since $\dfdx{y}{x}=2x$, the equation of the line tangent to the
+      graph of $y=x^2$ at the point $(a, a^2)$ is
+      \begin{equation}
+      y-a^2=2x(x-a).\label{eq:TanLineNoLine}
+    \end{equation}
+    Set $a=3$. Is this the equation of a line?
+  \item Find the correct formula for line tangent to the graph of
+    $y=x^2$ at the point $(a, a^2)$.  
+  \end{enumerate}
+%  \vskip-5mm{}
+\end{embeddedproblem-enumerate}
+%\end{mynotation}
+
+\begin{ProficiencyDrill}
+  Find $\eval{\dfdx{y}{x}}{(x,y)}{(2,2)}$ if $y=\sqrt{2x}$ and compare this with the slope
+  we obtained in problem~\#\ref{prob:DescartesNormals2} using
+  Descartes' Method of Normals.
+\end{ProficiencyDrill}
+
+
+  \begin{embeddedproblem}
+    \label{embedded:Deri}
+    Evaluate $\eval{\dfdx{y}{x}}{x}{a}$ for each of the following
+    functions at each of the given values of $x$.
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \item $y=x^3$, $a=0,\pm1,\pm2$ (Compare with
+      Problem~\#\ref{prob:ferm-meth-x2}.)
+    \item $y=x^3+2x$, $a=0,\pm1,\pm2$ (Compare with
+      Problem~\#\ref{prob:ferm-meth-aedeq-1}.)
+    \item $y=\sqrt{x}$, $a=4$ (Compare with
+      Problem~\#\ref{prob:DescartesNormals1}.)
+    \end{enumerate}
+    % This is why the title for Leibniz' paper was \foreign{``{\bf A
+    % New
+    % Method for} .\ .\ . {\bf{}Tangents} Which is Impeded
+    % Neither by Fractional nor by Irrational Quantities, and a
+    % Remarkable Type of Calculus for This.''}
+  \end{embeddedproblem}
+
+%\pagebreak[4]
+
+There is real temptation at this point to cut corners and compute the
+differential ratio
+$\dfdx{y}{x}$ all in one step. On purely practical grounds, we urge you to
+differentiate first and then divide by $\dx{x}$ in two separate
+steps. Our reasons are two-fold.  First, the rules we've learned are
+\emph{differentiation} rules. They were designed to compute
+differentials, not differential ratios.  Second, in applications
+to come we will see that dividing by $\dx{x}$ will not always move the
+solution process forward. It can sometimes even get in the way,
+depending on the problem.
+
+Nonetheless, as you gain more experience and a deeper understanding
+you will find yourself gravitating toward the differential ratio more
+and more. This is a normal progression. As we have said before
+differentials are an intermediate step, a convenient fiction. You
+don't want to become tied to them for life.
+
+% \subsection{Defining the Tangent Line}
+\section{Defining the Tangent Line}
+\label{sec:defin-tang-line}
+\begin{wrapfigure}[9]{l}{1in}
+  \vskip-6mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.5in,width=1in]{../Figures/TangentLineDef6}}
+  \label{fig:TangentLineDef6}
+\end{wrapfigure}
+The word tangent comes from the Latin word \foreign{tangere} (to
+touch).  So you'd think it would be easy to define what we mean by
+``tangent line.'' When asked, most people will come up with something
+like, ``The line tangent to a curve is the line that touches the curve
+at exactly one point.'' Does this seem like a reasonable definition to
+you? Stop and think about it for a few minutes. We're obviously
+offering a plausible sounding definition that we know won't work. Do
+you see the problem?
+
+It certainly \emph{seems} OK, and if we check it with a few simple
+examples everything looks reasonable. 
+But consider a small segment of the graph of $y=x^3$
+at the point $(1,1)$ and its corresponding tangent line as seen at
+the left.
+
+\begin{wrapfigure}[]{r}{1in}
+  \vskip-3mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.7in,width=1in]{../Figures/TangentLineDef7}}
+  \label{fig:TangentLineDef7}
+\end{wrapfigure}
+While this certainly fits our notion of a tangent line touching a
+curve only once, look what happens if we zoom out (see the sketch at
+the right).  This supposed tangent line will cross (touch) the
+graph of the curve a second time.  In fact, there is only one point on
+the graph of $y=x^3$ where the tangent line touches the graph only
+once. Do you see which point that is?  Give this a few minutes
+thought.
+
+In view of what we've just seen, what do you think the definition of a
+tangent line
+\emph{ought} to be?
+
+In the figure at the right it is clear that the ``touching'' is
+different at the two points. At $(1,1)$ the blue tangent line
+``grazes'' the graph of $y=x^3$ at $(1,1)$ exactly as we would
+expect. But at the other point it actually cuts through the graph.
+
+ The difficulty seems to be that we said ``touch'' when we meant
+``graze''.  How about this definition instead: ``The line tangent to a
+curve is the line that \emph{grazes} the curve at exactly one point.''
+
+If it is not possible for a line to ``graze'' a curve at more than one
+point this could be a workable definition. Unfortunately the next
+drill shows that this is not true.
+
+%\pagebreak[4]
+\begin{ProficiencyDrill}
+  \begin{wrapfigure}[]{r}{2.5in}
+  \vskip-8mm{}
+    \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=1in,width=2in]{../Figures/TangentLineDef4}}
+    \label{fig:TangentLineDef5}
+  \end{wrapfigure}
+  Show that $ y=\frac12x+\frac14$ is the equation of the
+  line tangent to the graph of
+  $$
+  y=\frac12x+\frac14 + (x-1)^2(x-2)^2(x-3)^2(x-4)^2.
+  $$
+  at   $x=1, 2, 3, $ and $x=4$  as seen in the
+  sketch at the right.% \\
+  % \centerline{\includegraphics*[height=2in,width=3in]{../Figures/TangentLineDef4}}
+\end{ProficiencyDrill}
+
+
+It appears that clearly defining what we mean by ``tangent line'' is
+not as simple as it seemed to be at first. This is frustrating because
+we all have a pretty clear intuitive idea of what we mean. The difficulty seems to be capturing in
+words the mental image we all share.
+
+\begin{wrapfigure}[5]{left}{1.in}
+  \vskip-4mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=.8in,width=1.2in]{../Figures/DifferentialTriangle3}}
+  \label{fig:DiffTri3}
+\end{wrapfigure}
+Recall that we have informally stated   the \term{Principle of Local
+  Linearity} as: ``Locally any curve is indistinguishable from a straight line.''
+
+But which straight line?
+
+The answer to that question is visible in the differential triangle at
+the left. It is clear that, \emph{locally} (near a given point $(x,y)$
+on the curve) a curve will look like the hypotenuse of the
+differential triangle $\d{s}$ at the point $(x,y)$.  So we make the
+following definition.
+
+\begin{mydefinition}[The Line Tangent to a Curve, at a Point]
+  \label{def:TangentLine}
+  The \term{line tangent to the graph of a function} $y(x)$, at the point
+  $(a,y(a))$ is the line which passes through the point $(a,y(a))$
+  with slope $m=\eval{\dfdx{y}{x}}{x}{a}$.
+\end{mydefinition}
+
+Do you  see what we did here? Intuitively we know what properties we want a
+tangent line to have. We want it to ``touch'' or ``graze'' our
+curve at a particular point but we've seen that neither of those words
+quite captures everything we need. And what we need is for the tangent
+line to pass through the tangent point and have the same slope as the
+function at that point. So we've removed the words ``touch'' and
+``graze'' in favor of the more precise, quantifiable language of Calculus. 
+
+% aren't precise enough. So we simply
+% defined the phrase ``tangent line'' in terms of the properties we
+% wanted. But ``touch'' and ``graze'' aren't precise enough so we
+% removed them. The language we chose tied the tangent idea to a
+% particular point; we made it local.
+% By our definition the blue line
+% above is tangent to the graph of $f(x)=x\sin(x)$ \emph{at the point}
+% $(7.96,f(7.96))$ (approximately) because it passes through
+% $(7.96,f(7.96))$ and it's slope is equal to
+% $\eval{\dfdx{(x\sin(x))}{x}}{x}{7.96}$.
+
+Since we \emph{defined} the tangent line to be the extension of
+$\dx{s}$ to the finite scale we have essentially defined it to have
+exactly that property we will need to make Calculus useful.  Moreover
+with this definition in place the \term{Principle of Local Linearity}
+can be formalized.
+
+\begin{mydefinition}[The Principle of Local Linearity]
+  \label{def:LocalLinearity}
+  Sufficiently close to a given point every smooth curve is
+  indistinguishable from the line tangent at that point.
+\end{mydefinition}
+
+The history of mathematics is riddled with this sort of ``backward
+looking'' definition and we will see it again. For example Newton and
+Leibniz both knew what they wanted their \foreign{Calculus
+  Differentialus} (Leibniz) and \emph{Method of Fluxions} (Newton) to
+do. They worked out their computational procedures intuitively -- just
+as we started with an intuitive understanding of ``tangent line.'' But
+coming up with precise definitions and a solid logical foundation was
+harder. It took about $200$ years for the mathematical community to
+devise definitions that gave back what intuition had led us to. This
+is part of why we are not yet overly concerned about our inability to
+precisely define a differential. When we finally address this issue in
+Chapter~\ref{chapt:whats-wrong-with} we will not be devising any new
+differentiation techniques. We will be providing logical underpinnings
+for the techniques our intuition has led us to and that our experience
+has shown to be useful.
+
+\pagebreak[4]
+\begin{ProficiencyDrill}
+  Find an equation of the line tangent to the given curve at the
+  indicated values of $x$.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $ y =\frac{2x}{x+1}$\\ when $ x =1.$
+    \item $y=\dfrac{1}{1+x^2}$\\ when $ x=-1$
+    \item $y=x+\sqrt{x}$\\ when $x=1$
+    \item $y^2=x^3$\\ when $x=1$
+    \item $y^3=x^2$\\ when $x=1$
+    \item $y=\dfrac{\sqrt{x}}{x+1}$\\ when $x=4$
+    \item $y = 3x$\\ when $x=10$
+    \item $y = -7x$\\ when $x=-100$
+    \item $y = -\dfrac{x^2}{\pi}$\\ when $x=\sqrt{\pi}$
+    \item $y=(3x-1)^{-6}$\\ when $x=0$
+    \item
+      $y = x^3-\dfrac1x$\\ when $x=1$
+    \item $y=\sqrt{1+x^2}$\\ when $x=2$
+    \item $y = \dfrac{x}{x-2}$\\ when $x=0$
+    \item $y = \dfrac{x}{x-2}$\\ when $x=\frac14$
+    \item $y = \dfrac{1}{1+x^2}$\\ when $x=\frac12$
+    \item $y = \dfrac{1}{1-x^2}$\\ when $x=1$
+    \item $y = \dfrac{1}{\sqrt{x}}$\\ when $x=9$
+    \item $y = \dfrac{1}{\sqrt[3]{x^2}}$\\ when $x=4$
+    \item $y=\sqrt{2x+\sqrt[3]{64-x}}$\\ when $x=0$
+    \item $y = \pi x^2$\\ when $x=\dfrac{1}{\sqrt{\pi}}$
+    \end{multicols}
+  \end{enumerate}
+%  \vskip-4mm{}
+\end{ProficiencyDrill}
+
+  \begin{embeddedproblem}
+    \label{problem:tanlinedef}
+    Show that the only point on the graph of $y=x^3$ where the tangent
+    line touches the curve \emph{only} at the point of tangency is the
+    point $(0, 0)$ and that the tangent is horizontal.
+
+    Now graph the curve and the line tangent at $(0,0)$ on the same
+    set of axes. Does this \emph{look} like a tangent line to you?
+  \end{embeddedproblem}
+  
+Does the graph help you see the significance of Problem~\#\ref{problem:tanlinedef}? The
+line tangent to the graph of $y=x^3$ at the point $(0,0)$
+actually crosses the graph at that point.
+This is weird. And it is exactly counter to our original understanding
+of what it means for a line to be tangent to a curve isn't it?
+
+The next problem will probably strike you as equally weird. But in
+both problems the weirdness is a logical consequence of our definition
+of tangent line, so we will accept it as long as it doesn't lead to
+inconsistencies.
+
+Weirdness is acceptable. It is inconsistency that we need to avoid.
+
+%\pagebreak[4]
+\begin{embeddedproblem}
+%  \vskip-8mm{}
+  Use Definition~\ref{def:TangentLine} to find the equation of the
+  line tangent to the graph of the straight line $y=mx+b$ at the point
+  $(a, y(a))$. Show that this is in fact, the original line.
+    % Suppose that the graph of the equation $y=mx+b$ passes through the
+    % point $(x_0, y_0)$.
+    % \begin{enumerate}[label={\bf{}(\alph*)}]
+    %   % \begin{multicols}{2}
+    % \item Re-express $y=mx+b$ in Point-Slope form using the point  $(x_0, y_0)$.
+    % \item Find the equation of the line tangent to the graph of
+    %   $y=mx+b$ at $(x_0, y_0)$ in Point-Slope form.
+    % \item What does this tell you about the relationship between the
+    %   graph of $y=mx+b$ and its tangent lines?
+    %   % \end{multicols}
+    % \end{enumerate}
+  \vskip-6mm{}
+\end{embeddedproblem}
+%\vskip-4mm{}
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Find the equations of all lines tangent to the graph of
+    $4x^2+4y^2=25$ that are also parallel to the line $2x-3y=7$.\\
+    \hint{There are two such lines, but you should find four possible
+      candidates. You'll need to eliminate two of them.}
+  \item   Find the equations of all lines tangent to the graph of
+    $16x^2+9y^2=144$ that are also parallel to the line $8x+6y=8.$
+  \item   Find the equations of all lines tangent to the graph of
+    $16x^2-9y^2=144$ that are also parallel to the line $8x+6y=8.$
+  \end{enumerate}
+%  \vskip-3mm{}
+\end{embeddedproblem-enumerate}
+
+
+\begin{embeddedproblem}
+  Find those points on the graph of the curve $y=x^3+5$  where the
+  tangent line is
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    % \begin{multicols}{2}
+  \item Parallel to the line: $12x-y=17$.
+  \item Perpendicular to the line: $x+3y=2$.
+    % \end{multicols}
+  \end{enumerate}
+  \vskip-6mm{}
+\end{embeddedproblem}
+
+\vskip1mm{}
+\begin{embeddedproblem}[Find the Pattern]
+  Find all points where the
+  line tangent to the curve passes through the indicated points. If no
+  such points exist, explain how you know.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item    $y=x^2+2$  through the points
+    \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{4}
+      \item $(0,0)$
+      \item $(-5,0)$
+      \item $(2,6)$
+      \item $(1,6)$
+      \end{multicols}
+    \end{enumerate}
+  \item    $y=\frac{x+1}{x-1}$  through the points
+    \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{4}
+      \item $(0,0)$
+      \item $(0,-5)$
+      \item $(5,5)$
+      \item $(-1,0)$
+      \end{multicols}
+    \end{enumerate}
+  \item $y=\frac{x^2-1}{x+2}$  through the points
+    \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{4}
+      \item $(0,0)$
+      \item $(0, -1/2)$
+      \item $(-5,-10)$
+      \item $(-5,10)$
+      \end{multicols}
+    \end{enumerate}
+  \end{enumerate}
+  \vskip-4mm{}
+\end{embeddedproblem}
+
+
+\pagebreak[4]
+\begin{embeddedproblem}
+%\vskip-8mm{}
+  \label{problem:ClassicalCurves1}
+  Find an equation of the line(s) tangent to and normal to each of the
+  given curves at the specified points.
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \begin{multicols}{2}
+    \item{\bf{}\href{https://mathshistory.st-andrews.ac.uk/Curves/Astroid/}{Astroid}:}\\ $x^\frac23+y^\frac23 = 4$ \\at
+      $\left(1,3\sqrt{3}\right)$ and
+      $\left(-1,-3\sqrt{3}\right).$\\
+      \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/Astroid}}
+    \item{\bf{}An Elliptic Curve:}\\
+      $y^2=x^3-x+1$ \\at $(0,1)$ and $(0,-1)$.\\
+      \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/EllipticCurve1}}
+      % Note: This and more general elliptic curves (over finite fields)
+      % form the basis of Elliptic Curve Cryptography and are useful in
+      % many areas of number theory.
+    \item{\bf{}\href{https://mathshistory.st-andrews.ac.uk/Curves/Cardioid/}{Cardioid}:}\\ $\left(x^2+y^2\right)^2+4x(x^2+y^2)=4y^2$ \\at
+      $(0,2)$ and $(0,-2)$.\\
+      \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/Cardioid}}
+    \item{\bf{}\href{https://mathshistory.st-andrews.ac.uk/Curves/Conchoid/}{Conchoid}% \aside{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Nicomedes/}{Nicomedes} (circa 280 BC - 210 BC) used
+          % this curve to trisect an angle, a construction which is
+          % impossible to accomplish with a straight edge and compass
+          % alone.}
+        of
+        \href{https://mathshistory.st-andrews.ac.uk/Biographies/Nicomedes/}{Nicomedes}:}\
+      \\ $(y-2)^2(x^2+y^2)=2y^2$ \\at $(1,1)$
+      and $(3,3).$\\
+      \leftline{\includegraphics*[height=1.5in,width=2in]{../Figures/ConchoidOfNicomedes}}
+\item{\bf{}\href{https://mathshistory.st-andrews.ac.uk/Biographies/Cassini/}{Cassini}% \aside{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Cassini/}{Giovanni Cassini} (1625-1712) studied Cassini Ovals
+          % in astronomy.  Whereas ellipses are points the sum of whose
+          % distances from two fixed foci is constant, Cassini ovals
+          % are where the product of the distances is constant.  In
+          % honor of his accomplishments in astronomy, the Cassini
+          % space probe was launched in 1997 and became the first probe
+          % to orbit Saturn. }
+        \href{https://mathshistory.st-andrews.ac.uk/Curves/Cassinian/}{oval}:}\\
+      $(x^2+y^2+1)^2-4x^2=\frac32$\\
+      at
+      $\left(\frac{\sqrt[4]{2}}{2},\frac{\sqrt[4]{2}}{2}\right)$\\
+      \leftline{\includegraphics*[height=1.2in,width=2in]{../Figures/CassiniOval}}
+    \item{\bf{}The \href{https://mathshistory.st-andrews.ac.uk/Curves/Bicorn/}{Bicorn}:}\\ $y^2\left(1-x^2\right)=\left(x^2+2y-1\right)^2$\\
+      at
+      $\left(\frac12, \frac{12\pm3\sqrt[]{3}}{26}\right)$\\
+      \leftline{\includegraphics*[height=1.5in,width=1.in]{../Figures/Bicorn}}
+    \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem}
+
+%\pagebreak[4]
+\addtocounter{problem}{-1}
+\begin{embeddedproblem-enumerate}[(continued)]
+  \label{problem:ClassicalCurves2}
+  % Find an equation of the line(s) tangent to and normal to each of the
+  % given curves at the given points. (This is a continuation of the
+  % previous problem.)
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \setcounter{enumi}{6}
+    \begin{multicols}{2}
+% \item{\bf{}\href{https://mathshistory.st-andrews.ac.uk/Biographies/Cassini/}{Cassini}% \aside{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Cassini/}{Giovanni Cassini} (1625-1712) studied Cassini Ovals
+%           % in astronomy.  Whereas ellipses are points the sum of whose
+%           % distances from two fixed foci is constant, Cassini ovals
+%           % are where the product of the distances is constant.  In
+%           % honor of his accomplishments in astronomy, the Cassini
+%           % space probe was launched in 1997 and became the first probe
+%           % to orbit Saturn. }
+%         \href{https://mathshistory.st-andrews.ac.uk/Curves/Cassinian/}{oval}:}\\
+%       $(x^2+y^2+1)^2-4x^2=\frac32$\\
+%       at
+%       $\left(\frac{\sqrt[4]{2}}{2},\frac{\sqrt[4]{2}}{2}\right)$\\
+%       \leftline{\includegraphics*[height=1.2in,width=2in]{../Figures/CassiniOval}}
+%     \item{\bf{}The \href{https://mathshistory.st-andrews.ac.uk/Curves/Bicorn/}{Bicorn}:}\\ $y^2\left(1-x^2\right)=\left(x^2+2y-1\right)^2$\\
+%       at
+%       $\left(\frac12, \frac{12\pm3\sqrt[]{3}}{26}\right)$\\
+%       \leftline{\includegraphics*[height=1.5in,width=1.in]{../Figures/Bicorn}}
+    \item{\bf{}\href{https://mathshistory.st-andrews.ac.uk/Curves/Kampyle/}{The
+          Kampyle} of \href{https://mathshistory.st-andrews.ac.uk/Biographies/Eudoxus/}{Eudoxus}:}\\ $x^4=x^2+y^2$\\
+      at
+      $\left(\pm 2, \pm 2\sqrt{3}\right)$\\
+      \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/KampyleEudoxus}}
+    \item{\bf{}The
+        \href{https://mathshistory.st-andrews.ac.uk/Curves/Folium/}{Folium}:}\\
+      $(x^2+y^2)(y^2+x(x+4))=4xy^2$\\
+      at
+      $\left(-1, -1\right)$ and $(-1, 1)$\\
+      \leftline{\includegraphics*[height=1.5in,width=2in]{../Figures/Folium}}
+    \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+
+\begin{Digression}[Dividing by Zero]
+% In general curves are very complex and we need to be careful with
+% them.
+\begin{ProficiencyDrill-1line}
+  \label{drill:ZeroDenominator1}
+  Show that if  $y^2=x^3-3x+1$ then $\dfdx{y}{x}=\frac{3x^2-3}{2y}$.
+\end{ProficiencyDrill-1line}
+
+%\pagebreak[4]
+\begin{wrapfigure}[12]{r}{2in}
+  \vskip-4mm{}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2in,width=2in]{../Figures/EllipticCurve2}}
+\label{fig:EllipticCurve2}
+\end{wrapfigure}
+In Drill~\#\ref{drill:ZeroDenominator1} it is tempting to to say that
+$\dfdx{y}{x}=\frac{3x^2-3}{2y}$ will give us the slope of the tangent
+line tangent to the curve at \emph{any} point $(x,y).$ Typically this would
+be correct.  But not always.
+
+For example  the tangent line of this curve  is horizontal
+(has slope equal to zero) when
+$$
+0=\dfdx{y}{x}=\frac{3x^2-3}{2y}.
+$$
+Solving this gives $x=\pm1$. It is plainly
+visible on the graph at the right that there is  a horizontal tangent line
+when $x=-1$.
+But notice that there is no point on the graph where $x=1$! 
+Obviously it is meaningless to ask for the slope of a curve at a point that
+isn't on the curve.
+
+Even if we didn't have the graph to look at we could still tell that
+at $x=1$ there is no tangent line.  Setting $x=1$ and trying to solve for
+the corresponding $y$ values we get $y^2=1-3+1=-1$. Since there is no
+real number that satisfies the equation $y^2=-1$ we conclude that
+there is no point on the graph with $x$-coordinate equal to $1$.
+
+On the other hand, there are three values of $x$ that correspond to
+$y=0$.  These would be difficult to compute but from the graph we can
+see that the tangent line is most likely vertical at all three points.
+To compute $\dfdx{y}{x}=\frac{3x^2-3}{2y}$ at each of these points
+we would have to divide by $y=0$.
+
+Obviously when we divide a number by
+zero we get infinity, and just as obviously the slope of a vertical
+line is also infinity so everything fits. Right?
+No, of course not. This is just a very deceptive coincidence.
+
+Many
+students come into a Calculus with the impression that
+dividing by zero results in either zero or infinity.
+  It does not. Division by zero is not meaningful.
+
+  Mathematicians say that division by zero is an \term{undefined
+    operation} or simply that it is \term{undefined}. At first it is
+  not at all clear why this is, so let's take look at this
+  question.
+
+  What does it mean to divide by any number? To take a very concrete
+  example, what does it mean to divide a length of five
+  units\aside{The units could be inches, picometers, or
+    light-years. We don't care.} by seventeen? It means we want to
+  divide the length into seventeen equally sized pieces, right?  But
+  if we want to divided $5$ units by zero, obviously we can't divide
+  five into zero pieces. So in this very concrete example the phrase
+  ``five divided by zero'' is simply and utterly without meaning.
+
+  From a slightly more abstract viewpoint we could ask for the length
+  of each piece when we divide a length of five into seventeen pieces.
+  We get $\frac{5}{17}$ of course. That's what the fraction notation
+  means\aside{Just as  $\frac12$ is the number we get when we
+  divide one into two pieces.}. But what number do we get when we divide
+  five into zero pieces. Once again the idea has no meaning.
+
+  Taking an even more abstract point of view,  observe that multiplication and division are inverse
+  operations (they undo each other). Twelve divided by three is four
+  $\left(\frac{12}{3}=4\right)$ \emph{precisely because} when we
+  multiply three times four we get twelve ($3\times 4 =12$).
+
+  Now don't think of five as a length to be divided, think of it
+  instead as simply a number. So what number can we multiply
+  by zero to get five? Obviously there isn't any such number so this
+  is a meaningless question.
+
+  No matter what we try or how we look at it we cannot find any
+  way to make  division by zero meaningful.
+  
+
+  \centerline{\alert{Division by zero is meaningless.}}
+  \centerline{\alert{Don't ever try to divide by zero.}}
+  \centerline{\alert{You will only irritate your
+      teacher.}}
+\end{Digression}
+
+Since we can't divide by zero we will need to be a bit more careful
+about how we interpret the symbol $\dfdx{y}{x}$. It will give us the
+slope of the curve (equivalently, the slope of the tangent line) as
+long as $\dfdx{y}{x}$ has meaning. But when $y$ is zero
+$\dfdx{y}{x}=\frac{3x^2-3}{2y}$ is meaningless.  Thus it appears that
+for this particular curve we can draw no conclusions whatsoever from
+our formula about the tangent line when $y=0$. In this case we say
+that the differential quotient is \term{undefined}. In general, the
+differential quotient is \term{undefined} at any point where
+evaluating $\dfdx{y}{x}$ requires a division by zero.
+
+Does this mean we can draw no conclusions at all? Certainly not. In
+fact those values of $x$ or $y$ where $\dfdx{y}{x}$ is undefined will
+often turn out to be the most useful. But we are not yet quite prepared to
+see how to deal with them properly so we will defer this discussion
+until a later point.
+
+At the very least this warns us that there are subtleties that must be
+dealt with when using a powerful tool like Calculus. We will avoid
+these subtleties for a bit longer, but you need to know that they
+exist. Don't try to force matters by, for example, blindly dividing by
+zero as if it is meaningful. We will return to these matters when we
+have a better understanding of the underlying principles.
+
+\begin{embeddedproblem}
+% \begin{wrapfigure}[]{r}{.75in}
+%   \captionsetup{labelformat=empty}
+%   \vskip-13mm{}
+%   \centerline{\includegraphics*[height=1in,width=.75in]{../Figures/ParabSecTan}}
+%   \label{fig:ParabSecTan}
+% \end{wrapfigure}
+  Suppose that the two blue line segments in the figure at the right
+  are parallel. Show that $c$ is exactly halfway between $a$ and
+  $b$. \\
+  \comment{That is, show that $c=\frac{a+b}{2}$.}\\
+  \centerline{\includegraphics*[height=2in,width=1.5in]{../Figures/ParabSecTan}}  
+  % \begin{wrapfigure}[]{r}{.75in}
+  %   \vskip-8mm{}
+  %     \captionsetup{labelformat=empty}
+  %     \centerline{\includegraphics*[height=.5in,width=.75in]{../Figures/ParabSecTan}}
+  %     \label{fig:ParabSecTan}
+  %   \end{wrapfigure}
+    % show that if the tangent line at $C$ is parallel to
+    % $\overline{AB}$ then the $x$ coordinate of $C$ is the midpoint of
+    % the interval between the $x$ coordinates of $A$ and $B$.
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}[Find the Pattern]
+    \label{problem:HyperbolaTriangles}
+    Suppose that  $a$ and $n$ are positive numbers. In the following
+    sketch the line $AB$ is tangent to the curve $x^ny=1$ at the point
+    $\left(a, \frac{1}{a^n}\right)$.\\
+      \centerline{\includegraphics*[height=1.4in,width=2.9in]{../Figures/ConstantTriangle12}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \item For $n=1$ first show that the  coordinates of points  $A$ and $B$ are
+        $(0, 2/a)$ and $(2a, 0)$, respectively, and then confirm that:
+      \begin{enumerate}[label={\bf{}(\roman*)}]{}
+        \begin{multicols}{2}
+        \item area$(\triangle AOB)=2$
+        \item area$(\triangle OPQ)=1/2$
+        \item area$(\triangle BPQ)=1/2$
+        \item area$(\triangle PAR)=1/2$ 
+        \end{multicols}
+      \end{enumerate}
+    \item For $n=2$ first show that the  coordinates of points  $A$ and $B$ are
+        $\left(0, \frac{3}{a^2}\right)$ and $\left(\frac32a,
+          0\right)$, respectively, and then confirm that:
+      \begin{enumerate}[label={\bf{}(\roman*)}]{}
+        \begin{multicols}{2}
+        \item area$(\triangle AOB)=\frac{9}{4a}$.
+        \item area$(\triangle OPQ)=\frac{1}{2a}$.
+        \item area$(\triangle BPQ)=\frac{1}{4a}$.
+        \item area$(\triangle PAR)=\frac{1}{2a}$.
+        \end{multicols}
+      \end{enumerate}
+    \item For $n=3$ first show that the  coordinates of points  $A$ and $B$ are
+        $\left(0, \frac{4}{a^3}\right)$ and $\left(\frac43a,
+          0\right)$, respectively and then confirm that:
+      \begin{enumerate}[label={\bf{}(\roman*)}]{}
+        \begin{multicols}{2}
+        \item area$(\triangle AOB)-\frac{8}{3a^2}$.
+        \item area$(\triangle OPQ)=\frac{1}{2a^2}$.
+        \item area$(\triangle BPQ)=\frac{1}{6a^2}$.
+        \item area$(\triangle PAR)=\frac{1}{2a^2}$.
+        \end{multicols}
+      \end{enumerate}
+    \item Find a  formula for  the  coordinates of points  $A$ and
+      $B$ for any value of $n$ and then:
+      \begin{enumerate}[label={\bf{}(\roman*)}]{}
+        \begin{multicols}{2}
+        \item Find the the area of $\triangle AOB$\\ for any value of $n$.
+        \item Find the the area of $\triangle OPQ$\\ for any value of $n$.
+        \item Find the the area of $\triangle BPQ$\\ for any value of $n$.
+        \item Find the the area of $\triangle PAR$\\ for any value of $n$.
+        \end{multicols}
+      \end{enumerate}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+     
+\begin{embeddedproblem}
+  \label{problem:underl-tang-line}
+  Consider the graph of the equation
+  $$
+  y=x\sqrt[3]{x-8}\\
+  $$
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Find the equation of the line tangent to the graph of
+      when $x=0$.  
+    \item Explain what goes wrong when you try to find the equation of
+      the tangent line when $x=8$.\\
+      \hint{Have you looked at the graph yet?}
+    \item Now find the equation of the line tangent to the graph of
+      when $x=0$.  
+    \end{enumerate}
+  \end{embeddedproblem}
+  % While it is true that by using Calculus many problems can be solved
+  % ``as if by magic'' (to quote Leibniz),
+  % Problem~\ref{problem:underl-tang-line} shows that there are also
+  % many subtleties involved. We will return to address some of these
+  % subtleties later. For now, just remember that things are not always
+  % as simple as they might appear.
+  
+
+
+%\pagebreak[4]
+These last three problems illustrate that while many otherwise
+difficult computations can be done ``in these lines, as if by magic'' (to
+quote Leibniz) there are still a great many subtleties to be
+accounted for. There is still plenty of room for creative, analytical
+problem solving.
+
+We will come back to some of these subtleties later. For now keep in
+mind that while Calculus is a very powerful tool it does not allow us
+to solve all problems blindly, by simply moving the pebbles.
+
+%\noindent{}\underline{\bf \large The Vomit Comet}\\
+%\pagebreak[4]
+\section*{The Vomit Comet}
+To acclimate astronaut train\-ees to the effects of weightlessness,
+NASA uses the following training regimen: It has an airplane perform a
+series of steep climbs and sharp dives.  At the top of
+\begin{wrapfigure}[10]{r}{2.4in}
+%  \vskip-2mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\href{https://historycollection.jsc.nasa.gov/JSCHistoryPortal/history/oral_histories/SlezakTR/gallery/pages/S85-44833.htm}{\includegraphics*[height=1.6in,width=2.4in]{../Figures/VomitComet1}}}
+  \label{fig:VomitComet}
+\end{wrapfigure}
+each climb
+passengers will experience weightlessness for about $25$ seconds.
+During a training flight the pilot will repeat this maneuver about
+$40$ times. % NASA can simulate the gravitational force on other bodies,
+% such as the moon or Mars as well, by simply adjusting the parameters
+% of the flight path.
+
+Because this ``roller coast\-er'' ride sometimes causes nausea for the
+passengers the planes used for the maneuver have been christened
+``Vomit Comets.''  One of these airplanes was used to film the weightless
+scenes in the $1995$ film
+\href{https://www.imdb.com/title/tt0112384/}{Apollo 13}.
+
+It is well known that the path of an object moving only under the
+influence of the Earth's gravity\aside{That is, we're ignoring air
+  resistance.} at the surface of the earth is
+parabolic. To simulate weightlessness\aside{More precisely, to create
+  neutral buoyancy.} inside the plane the Vomit Comet is flown so that
+its flight path matches the parabolic flight path that a thrown object
+would follow.
+
+Since the flight path of the Vomit Comet is parabolic we know that its
+shape will be the graph of a curve having the form
+$$
+y=Ax^2+Bx+C,
+$$
+We'd like to find the values of the unknown parameters $A$, $B$, and
+$C$ that match the path of an object moving under the influence of
+Earth's gravity.  Once these are known we will also be able to
+determine the peak altitude of the flight and how far (horizontally)
+it will go before coming back to the altitude where it started the
+maneuver. Finally we'd like to confirm the claim that this maneuver takes
+about $25$ seconds.
+
+Can we find $A$, $B$, and $C$? No. Unfortunately we don't
+yet have enough information to determine $A$, but we can find $B$ and
+$C$.
+
+% \pagebreak[4]
+\begin{embeddedproblem}
+  \label{problem:FlightPath2}
+  Suppose the following graph depicts the parabolic flight path
+  followed by the Vomit Comet as it starts its maneuver at an altitude
+  of $7000$ meters and an initial angle of elevation of $45^\circ$.\\
+  \centerline{\includegraphics*[height=2.1in,width=2.1in]{../Figures/VomitComet2}}
+  If the equation of this parabola is $ y=Ax^2+Bx+C,$ then  determine the values of $B$ and $C$.
+\end{embeddedproblem}
+
+To find $A$ we'll need to have a better model of the motion.
+Fortunately, Calculus is exactly the right tool for building such a
+model but we don't quite have all of the tools we need yet.  We will
+return to the Vomit Comet problem once we have them.
+
+
+The pilot of a Vomit Comet seeks to simulate weightlessness, but the
+pilot of a commercial airliner works hard to \emph{avoid} subjecting
+its passengers to extreme effects like weightlessness or, at the other
+end, of extreme gravity so it must descend more gradually.  This
+situation is a little easier to understand so we will explore it in
+the next couple of problems and examples before returning to the Vomit
+Comet.
+
+%\pagebreak[4]
+\begin{myexample}[Modeling the flight path of an airliner ]
+  \label{example:FlightPath}
+  We want to model the flight path of a plane as it lands and
+  determine the distance from the runway the plane should be when it
+  starts its descent. 
+
+  A fundamental tenet of mathematically modeling real world phenomena
+  is to keep things as simple as possible. So, the first thing we'd be
+  likely to try for is a parabolic descent path:
+  $$y=Ax^2+Bx+C.$$
+  But it is pretty clear that this won't work because the
+  plane should be traveling horizontally at the beginning and at the end
+  of its descent. At the end, because at that point it should be on
+  the ground, and at the beginning because we don't want to terrify
+  the passengers.
+  
+%\pagebreak[4]
+    \begin{ProficiencyDrill}
+      Show that there is only one point on any parabola where the line
+      tangent to the curve is horizontal. Explain why this proves that the
+      flight path cannot be parabolic. \\
+      \hint{Wherever the flight path
+        is horizontal its slope will be zero.}
+    \end{ProficiencyDrill}
+
+  
+  The next simplest curve we could use would be a cubic polynomial
+  \begin{equation}
+    y=Ax^3+Bx^2+Cx+D.\label{eq:FlightPath}
+  \end{equation}
+  
+  \begin{embeddedproblem}
+    \label{problem:FlightPath1}
+    Below is a section of a cubic polynomial depicting a flight path with the plane
+    starting initially at the point $P(l,h)$ and ending at the airport
+    $Q$ which we will
+    arbitrarily designate as  the origin.\\
+    % \centerline{\includegraphics*[height=2.2in,width=4.5in]{../Figures/Descent1}}
+    \centerline{\includegraphics*[height=1.5in,width=3.1in]{../Figures/Descent1}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Assuming that the flight path is the graph of
+      Equation~\ref{eq:FlightPath}, compute $\dx{y}$. Then divide by
+      $\dx{x}$ to obtain $\dfdx{y}{x}$.
+    \item Show that $D=0$. \\
+      \hint{The point $(0,0)$ is on the graph
+        of equation~\ref{eq:FlightPath}.}
+    \item Show that $C=0.$ \\
+      \hint{The flight path is horizontal at
+        $(0,0)$.}
+    \item Determine the values of $A$ and $B$ in terms of $l$ and
+      $h$. \\
+      \hint{The point $P$ is on the flight path and the flight
+        path is horizontal at $P$.}
+    \end{enumerate}
+  \end{embeddedproblem}
+\end{myexample}
+
+%\pagebreak[4]
+
+We've taken our analysis of the flight paths of both the Vomit Comet
+and our airliner as far as we can using slopes alone. The problem is
+that a flight path is like a road. A road doesn't go anywhere. It just
+sits there. But an object traveling along a road (or a flight path) is
+moving. It has a velocity and an acceleration.
+
+Analyzing a static path does not allow us to model either the velocity
+or the acceleration of an object moving along that path. Fortunately
+for us, Newton's formulation of Calculus is just what we need to do
+attack these problems.
+
+But since the Vomit Comet aims to replicate the path of a body falling
+freely under the influence of gravity  we will also 
+need to consider the influence of  gravity. 
+
+%\pagebreak[4]
+\section{Galileo Drops the Ball}
+\label{sec:rates-change}
+\markright{\sc Galileo Drops the Ball}{} 
+
+\begin{wrapfigure}[13]{r}{1.8in}
+  \vskip-15mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/}{\includegraphics*[height=2.in,width=1.8in]{../Figures/Galileo}}}
+  \label{fig:GalileoPortrait}
+  \caption{\centerline{Galileo Galilei}\\ \centerline{1564-1642}}
+\end{wrapfigure}
+In the previous section we asserted -- with no justification
+whatsoever -- that the flight path of the Vomit Comet would be
+parabolic. Then, in Problem~\ref{problem:FlightPath2}, we gave you the
+task of finding the constants $B$, and $C$ for which the graph of
+the curve $$y=Ax^2+Bx+C$$ is the flight path of the Vomit Comet with
+an initial angle of elevation of $45^\circ$. You
+should have obtained
+$$
+y=Ax^2+x+7000.
+$$
+
+
+Inside the airplane, we want what is called \term{neutral buoyancy}.
+This means that we don't want any forces pushing us up or down, side
+to side, or back and forth \emph{relative} to the
+airplane\aside{Naturally, if the plane and everything in it are
+  falling towards the earth then the force of gravity is in play. But
+  if everything falls together there is no force \emph{inside}
+  (relative to) the plane.}. The way to assure this is to force the
+airplane to fly along the same path it would take if it were unpowered
+and falling freely.  At first it might seem like all we have to do is
+shut down the engine, but that won't work because air resistance will
+prevent the plane from falling \emph{freely}.  The engines must be
+engaged to force the plane along the path it would follow naturally if
+there were no atmosphere\aside{Also, it is incredibly dangerous to
+  turn off the engines of an airplane while it is flying.}, and thus, no
+resistive forces.  In this section we'll see why this path must be
+in the shape of a parabola.
+
+
+
+Newton very famously said, ``If I have been able to see further, it is
+by standing on the shoulders of giants,''
+and, in his $1684$ paper on Calculus, Leibniz remarked that ``Other
+very learned men have sought in many devious ways what someone versed
+in this calculus can accomplish in these lines as by magic.''
+
+As we've seen Fermat, Descartes, and Roberval were three of the
+learned giants Newton and Leibniz were indebted to.  Another was
+Professor Galilei (1564-1642) of the University of Pisa, who is
+universally known and referred to by his first name,
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/}{Galileo}. As
+a professor of mathematics at Pisa, Galileo studied, among other
+things, how objects moved under the influence of gravity.
+
+We will be following Galileo's lead to address such questions as:
+\begin{itemize}{}{}
+\item Suppose you throw a ball straight up into the air. How high will
+  the ball go?
+\item How long will it take for it to hit the ground and  what will its velocity be at impact?
+\item If you throw the ball up  twice as hard. Will it go twice as high?
+\end{itemize}
+
+Since Galileo had neither the technology nor the mathematics to
+account for air resistance he ignored it.  For the moment we will ignore
+it too.
+
+  \begin{embeddedproblem}
+    \label{prob:TossedBall1}
+    We all know from experience that if you throw a ball straight up
+    in the air, it will reach some maximum height. But suppose you
+    throw the ball up twice as hard, would it go twice as high?\\
+    \comment{We're asking you to guess. Don't worry about being
+      wrong. Just take your best guess.}
+  \end{embeddedproblem}
+
+
+  \begin{wrapfigure}[15]{r}{2in}
+    \vskip-4mm{}
+    \captionsetup{labelformat=empty}
+    % \centerline{\href{https://www.youtube.com/watch?v=KDp1tiUsZw8}{\includegraphics*[height=2.6in,width=2.3in]{../Figures/HammerFeather}}}
+    \centerline{\href{https://www.youtube.com/watch?v=KDp1tiUsZw8}{\includegraphics*[height=2.3in,width=2in]{../Figures/HammerFeather}}}
+    \label{fig:HammerFeather}
+  \end{wrapfigure}
+  The accepted theory of motion in Galileo's time was
+  \href{https://en.wikipedia.org/wiki/Aristotle}{Aristotle}'s
+  assertion that a heavier object would fall faster than a lighter
+  object. This was an entirely reasonable thing to believe at 
+the
+  time. Our common experience is that a hammer falls faster than a
+  feather. But we now know that this is because the resistance of the
+  air slows the feather more than it does the hammer.
+
+  In $1971$, Apollo Astronaut David Scott performed this experiment on
+  the moon (see the video at the right). Because there is no air on the
+  surface of the moon there is no air resistance. Of course, the
+  hammer and feather hit the surface of the moon at the same time.
+  Since he didn't have access to the moon Galileo had to be clever
+  instead.
+
+  But Galileo was one of the group of new scientists who gathered
+  experimental data and applied mathematical principles to
+  theories. As a result of his experimental investigations Galileo
+  proposed that in the absence of air all objects would fall at the
+  same rate\aside{Galileo could be quite argumentative and this
+    eventually got him into hot water with the Vatican. In the last
+    years of his long life he was threatened with excommunication and
+    and risked execution for espousing
+    \href{https://mathshistory.st-andrews.ac.uk/Biographies/Copernicus/}{Copernicus'}
+    heliocentric theory of planetary motion. It was only because he
+    was well known and respected as a scientist that he was only
+    confined to his home instead.}.
+  
+How did he surmise that all objects would fall at the same rate?
+
+\begin{wrapfigure}[10]{r}{2.8in}
+  \vskip-3mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.4in,width=2.8in]{../Figures/GalileoRamp}}
+  \label{fig:GalileoRamp}
+\end{wrapfigure}
+Well actually, he didn't.  We need to be very careful in our use of
+language here. To say that ``all objects fall at the same rate'' is a
+bit sloppy. Since velocity is the rate of change of position it seems
+to say that all objects fall at the same velocity.
+
+But we know that's not true because the velocity of a falling object
+depends on how long it has been falling. At the moment  you drop a ball its
+velocity is zero. Thereafter it gains
+velocity -- it \emph{accelerates.} Thus an object that has just been
+dropped is moving slowly while an object that has been falling for a
+while is moving at a faster rate.
+
+
+What Galileo \emph{actually} proposed was that the rate of change of
+the velocity -- the \term{acceleration} -- of all falling bodies is
+constant.
+
+
+
+
+But an object falling freely under the influence of Earth's gravity
+gets moving pretty quickly and in Galileo's day the tools available
+for measurement were very limited. So he slowed things down by letting
+small balls roll down a ramp assuming (correctly) that friction with
+the ramp would not significantly influence his measurements. When he
+did this he noticed that the balls always seemed to accelerate at a
+constant rate which depended only on the steepness of the ramp. More
+precisely, the acceleration of the rolling ball varied with the angle
+of descent. In modern terms we would say that the acceleration is a
+function of the angle of descent.
+
+\begin{wraptable}[13]{l}{1.9in}
+  \vskip-2mm{}
+  \captionsetup{labelformat=empty}
+  \begin{tabular}{c|c}
+    \hline
+    $\theta$ \amp{}Acceleration\\
+    (in radians)      \amp{} in $(m/s^2)$\\[2mm]
+    \hline{}
+    $\pi/3\approx1.05$\amp{}4.9\\
+    $\pi/4\approx0.79$\amp{}6.93\\
+    $\pi/6\approx0.52$\amp{}8.49\\
+    $\pi/12\approx0.26$\amp{}9.47\\
+    $\pi/24\approx0.13$\amp{}9.72\\
+    $\pi/48\approx0.07$\amp{}9.78\\
+    $\pi/100\approx0.03$\amp{}9.795\\
+    $\pi/200\approx0.02$\amp{}9.799\\
+    $\pi/300\approx0.01$\amp{}9.799\\\hline
+  \end{tabular}
+\end{wraptable}
+Referring to the diagram above, it is clear that when\aside{Notice
+  that we are using radians to measure the angle. We will do this
+  fairly consistently throughout this text because it is usually best
+  for scientific computation, But degree measure is common so it will
+  occasionally make an appearance, like it did in
+  Problem~\#\ref{problem:FlightPath2}. } $\theta=\pi/2$ the ball won't
+move at all. So its acceleration is zero. When $\theta=0$ the ball
+accelerates downward freely under the influence of gravity with no
+resistance\aside{Or at least, very little.}.  Galileo measured the
+acceleration associated with steeper and steeper ramps (that is for
+$\theta$ closer and closer to zero) obtaining a table of values
+similar to the one at the left.
+
+From the table it is clear that as $\theta$ gets closer and closer to
+zero the acceleration is getting closer and closer to $9.8.$ Thus
+Galileo  deduced that when there is no ramp (when
+$\theta =0$) the \emph{velocity} will increase each second by $9.8\,
+m/s.$ 
+
+That is, the \emph{velocity} of an object falling under the influence
+of the earth's gravity increases by $9.8$ meters per second, each
+second. This is usually abbreviated as $9.8\,m/s^2$, is commonly
+denoted by $g$, and is called the \term{constant of acceleration due
+  to gravity}
+
+\pagebreak[4]
+\begin{ProficiencyDrill}
+  With a little trigonometry you can deduce that $g=9.8\,m/s^2$
+  with only one measurement.  Use the diagram and the first line of the
+  table above to deduce that $g=9.8.$\\
+  \hint{$\cos\left(\pi/3\right)=1/2$.}
+\end{ProficiencyDrill}
+
+All of this means that as an object falls, its \emph{velocity} increases at
+the constant rate of \(9.8\, \sfrac{m}{s}\) every second: $v=9.8t.$ If
+we drop the object from some height, then its initial velocity is
+zero.  After one second it will be falling at a rate of
+\(9.8\,\sfrac{m}{s},\) after two seconds, its velocity will be
+$9.8\times2=19.6\,\sfrac{m}{s}$, etc.
+
+The specific number that Galileo found, $9.8\,m/s$, is an artifact of
+the units we use to measure distance (meters) and time (seconds) and
+the fact that we are on the surface of a particular planet.  If we
+change our units and measure distance in feet instead then at the
+surface of the earth a falling object will accelerate at $32 ft/s^2.$
+If we go to  the surface of the moon, it will accelerate at
+$1.6\, m/s.$
+
+
+%\pagebreak[4]
+%\begin{samepage}
+  \begin{ProficiencyDrill-1line}{}
+    Show that if we measure distance in feet, the acceleration constant
+    on the moon is approximately $5.2 \frac{\text{feet}}{\text{second}^2}.$
+  \end{ProficiencyDrill-1line}
+%\end{samepage}
+  
+The general situation is this: If a falling object's velocity, in meters per second
+($m/s$), is changing at a constant rate of $r$ meters per second per
+second ($m/s^2$), and $t$ is the number of elapsed seconds then
+$ v=rt.$ From Galileo's work we know that at the surface of the Earth
+$r=g=9.8$ so
+\begin{equation}
+  v=9.8t
+ \label{eq:Velocity}
+\end{equation}
+
+By looking at the units of measurement we can check that this is
+reasonable. Since the acceleration, $r,$ is measured in $m/s^2$ and
+$t$ is measured in seconds, when they are multiplied a symbolic
+cancellation gives
+$$
+\frac{m}{s^2}\cdot s = \frac{m}{s\cdot \cancel{s}}\cdot \cancel{s} = \frac{m}{s}
+$$
+or meters per second; the units used to measure
+velocity. Notice that Equation~\ref{eq:Velocity} is independent of the weight of the
+falling object. Under the influence of gravity alone all objects
+accelerate downward at the
+same rate.
+
+
+
+
+Galileo's hypothesis that all objects falling solely under the
+influence of Earth's gravity accelerate at the same rate came from
+both his experimental evidence and a famous thought experiment he
+described in his book \pubtitle{On Motion}~(1590).  The experiment
+runs as follows: Imagine that two objects, one light and one heavy,
+are connected to each other by a string and we drop them from  a great
+height, say the top
+of the Tower of Pisa. If we assume heavier objects do indeed fall
+faster than lighter ones the string will soon pull taut as the lighter
+object retards the fall of the heavier object.
+
+So the system  taken as a whole will fall more slowly than the
+    heavier object alone.
+  But the system as a whole is heavier than either individual object.
+ So the system taken as a whole
+  will fall faster than the heavier object.
+This contradiction leads inexorably to the conclusion that our initial
+assumption -- that heavier objects accelerate faster -- must be false.
+
+According to legend Galileo tested his hypothesis by dropping balls of
+different weights from the top of the Tower of Pisa, but that is
+almost certainly pure legend. He never actually did this.  Probably.
+
+\begin{wrapfigure}[15]{r}{1.8in}
+  \vskip-6mm{}
+\captionsetup{labelformat=empty}
+\centerline{\href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-galileo-s-two-new-sciences}{\includegraphics*[height=2.4in,width=1.8in]{../Figures/GalileoTwoNewSciences}}}
+\label{fig:GalileoTwoNewSciences}
+\end{wrapfigure}
+Galileo set out his ideas about falling objects in his book
+\foreign{Discorsi e Dimostrazioni Matematiche intorno à due nuoue
+  Scienze} (Discourses and Mathematical Demonstrations Concerning Two
+New Sciences) (1638). This was the last of Galileo's many scientific
+works. He wrote it toward the end of his life while he was under house
+arrest for heresy and forbidden by the Church to discuss the
+heliocentric theory of planetary motion. Rather than remain idle
+during this time Galileo revisited his unpublished research from when
+he was younger and used that as a foundation for his final opus.  The
+two sciences referred to in the title were the science of motion,
+which became the foundation of modern physics, and the science of
+materials and construction, an important contribution to engineering.
+
+Suppose an object falls $56$ meters from the top of the Tower of Pisa to the
+ground. Can we determine how fast it is moving when it strikes the ground?
+
+Recall that the formula $v=gt$  tells us the ball's velocity at any
+time $t$. So if $t_g$ is the amount of time it takes for the ball to reach the
+ground then  the velocity at the
+end would be $v=gt_g$. But how do we find out \emph{exactly} when the ball strikes the ground?
+
+To see the difficulty, suppose we dropped the ball from
+a height of $9.8$ meters.  Would it take $1$ second for the ball to
+hit the ground?
+
+Clearly not.
+
+To reach the ground after $1$ second the ball would have to
+\emph{average} $9.8\,m/s$ during the entirety of that first second.
+But at first it is not moving at all (velocity $=0$). After one second
+its velocity has increased to $9.8 m/s$. So for the entire duration of
+that first second the ball's velocity is \emph{less than} $9.8
+m/s$. Thus after $1$ second it has not yet hit the ground because it
+was never going fast enough to do so.  Exactly how far it \emph{has} fallen
+isn't clear.
+
+Reasoning similarly, at the beginning of the next second the ball is
+already falling at $9.8\,m/s$ and thereafter it's velocity increases,
+so it falls at least $9.8$ meters during the next second, in addition
+to the distance it fell during the first. So, while we cannot yet tell
+\emph{exactly} how far it falls during either second, we can say that,
+(1) it will not hit the ground during the first  second, and (2)  it
+definitely  will hit the ground sometime during 
+the next second.
+
+
+If we had an expression for the ball's \emph{position}, $p$, similar
+to equation~(\ref{eq:Velocity}), we would be in much better shape.
+Galileo was able to determine the distance the ball fell without the
+tools of Calculus, but since learning to use those tools is why we're
+here, we will use them.
+
+
+\section*{\underline{Bringing in Calculus}}
+
+Let $p(t)$ represent the ball's position at time $t.$ That is, $p(t)$
+tells us how far the ball has moved from its starting position,
+$p(0)$, after $t$ seconds.  Our goal is to find a formula for $p(t)$.
+
+During an (infinitesimal) instant of time $\dx{t}$, the velocity is
+virtually constant so during that instant the formula
+$$
+\text{ position=velocity$\times$time  or }  p=vt 
+$$
+holds. Differentiating, we see that
+$
+\dx{p}=v\dx{t}$.
+But from equation~(\ref{eq:Velocity}) we also know that $v=9.8t$, so
+$ \dx{p}=9.8t\dx{t}$.
+
+\begin{embeddedproblem}
+%  \vskip-8mm{}
+Thus finding the position of the ball at any
+time reduces to finding an expression for $p(t)$ that satisfies the
+differential equation
+\begin{equation}
+\dx{p}=9.8t\dx{t}.
+\label{eq:GalileoDiffeq}
+\end{equation}
+
+
+\begin{wrapfigure}[]{r}{1.5in}
+%  \vskip-5mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2.4in,width=1.5in]{../Figures/Pisa1}}
+  \label{fig:Pisa1}
+\end{wrapfigure}
+We begin with an educated guess.  From the Power Rule that
+    the differential of a quadratic expression like $k t^2$ will be
+    the linear term $2k t\dx{t}$. So $p(t)=k t^2$ seems like a
+    reasonable guess.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+\vskip-5mm{}
+    \item Show that $p(t)=kt^2$ satisfies 
+      equation~(\ref{eq:GalileoDiffeq}) when $k=4.9$.
+    \item Earlier we reasoned that a ball dropped from a height of
+      $9.8$ meters would strike the ground  between one and two
+      seconds after being dropped. Use $p(t)$ to find out exactly how long it takes.
+    \item How long would it take the ball to hit the ground if dropped
+      from the top of the Tower of Pisa?
+    \item Evaluate $\eval{\dfdx{p}{t}}{p}{56}$. What does this represent
+      physically? \\\hint{Remember that $\dx{p}$ is a change in position
+        and $\dx{t}$ is a change in time.}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+
+
+  To summarize, we see that if $p = p(t)=kt^2$ denotes the position of
+  a dropped ball at time $t$, then $v =\dfdx{p}{t}=gt$ is its velocity
+  and $a =\dfdx{v}{t}=\dfdx{\left(\dfdx{p}{t}\right)}{t}=g$ is its
+  acceleration\aside{The notation,
+    $\dfdx{\left(\dfdx{p}{t}\right)}{t}$, is clearly very
+    awkward. We'll define a better notation in the next section.}, as
+  measured by Galileo.  Notice that in our diagram we also introduced
+  the variable $h$ which represents the height of the ball from the
+  ground. The way we choose to define our variables can have a
+  considerable impact on the way we understand a given problem. Here,
+  for example, both $p$ and $h$ give us the position of the ball but
+  if $p(t)=4.9t^2$, then $p=0$ represents the top of the tower and the
+  positive direction is down. Conversely, if  $h(t)=56-4.9t^2$, then $h=0$
+  represents ground level and the positive direction is up.
+
+  \begin{embeddedproblem-enumerate}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item     Consider a ball moving vertically so that its height at time $t$
+      seconds is given by\\
+      \centerline{$
+      h(t) = 56+49t-4.9t^2$ meters}.
+      \begin{enumerate}[label={\bf{}(\roman*)}]
+      \item Determine the starting position, starting velocity, and
+        acceleration of this ball.  (Remember to go through the two step
+        process of differentiating and then dividing by $\dx{t}.$ We
+        insist.)
+      \item Is ``up'' the positive or the negative direction?
+      \item How high will the ball go?
+      \item When will the ball hit the ground?
+      \item What is the impact velocity?
+      \item Describe in words the physical situation being modeled by the
+        formula $ h(t) = 56+49t-4.9t^2 \text{ meters}$?
+      \end{enumerate}
+    \item
+      In  general the height of an object falling near the surface of
+      the earth is given by \\
+      \centerline{$
+      h(t)=h_0+v_0t-4.9t^2$ meters}.
+      \begin{enumerate}[label={\bf{}(\roman*)}]
+      \item Show that the initial height is $h_0$, the initial velocity
+        is $v_0$, and the acceleration is $=-9.8$.
+      \item For simplicity, assume $h_0=0$.  How high will the ball go?
+      \item Suppose we double our initial velocity.  Would the ball go
+        twice as high?  Compare this to your guess in
+        Problem~\#\ref{prob:TossedBall1}?
+      \end{enumerate}
+      \vskip-6mm{}
+    \end{enumerate}
+  \end{embeddedproblem-enumerate}
+    
+Since the graph of $h(t)=h_0+v_0t-4.9t^2$ is a parabola it is tempting to
+conclude that we have shown that an object falling under the influence
+of gravity alone must be a parabola. But this not correct. We have
+consistently assumed that the ball is falling vertically so its flight
+path is a straight vertical line, not a parabola. The graph of $h(t)$
+is not the flight path of the ball.
+
+Before we proceed we will need to introduce some terminology and
+notation. This will help us streamline our discussions.
+
+%\pagebreak[4]
+\section{The Derivative}
+\label{subsec:Derivative}
+\markright{\sc{}The Derivative}
+  \begin{wrapfigure}[18]{r}{2in}
+    \captionsetup{labelformat=empty}
+    \vskip-2mm{}
+  \centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Lagrange/}{\includegraphics*[height=2.4in,width=2in]{../Figures/LagrangePortrait}}}
+  \label{fig:LagrangePortrait}
+  \caption{\centerline{Joseph Louis Lagrange}\\ \centerline{1736-1813}}
+\end{wrapfigure}
+Differentials are helpful for learning and using the differentiation
+rules, but otherwise they are not very useful. Moreover as we have
+frequently pointed out, using differentials brings up certain logical
+and philosophical questions (Like, ``What are they?'') that are
+very difficult to address. When we come
+back to these matters in
+Chapter~\ref{chapt:whats-wrong-with} you'll see what we mean. For all
+of these reasons and more the concept of differentials should be
+regarded as a ``convenient fiction'' and nothing more.
+
+
+On the other hand as we've just seen the \emph{ratio} of
+differentials, $\dfdx{y}{x}$, is extremely useful as it can represent
+either the slope of a graph or a velocity, depending on the
+context. Moreover this ``differential ratio'' is an ordinary real
+number so once we get past the underlying idea of differentials, there
+are no philosophical problems inherent in its use.
+
+Because of their concerns regarding the validity of using
+differentials mathematicians in the $18$th and $19$th centuries, had a
+strong motivation to skip over the differential concept entirely and
+jump immediately to the (finite) differential ratio in order to make
+Calculus more rigorous.
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Lagrange/}{Joseph
+  Louis Lagrange} ($1736-1813$) was one of the mathematicians who
+tried to do this.  In his $1797$ work
+\href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-lagrange-on-calculus}{\foreign{Th\'{e}orie
+    des Fonctions Analytiques}} (\pubtitle{The Theory of Analytic
+  Functions}) he even coined a new term and a new notation for
+$\dfdx{y}{x}$. He called it the \foreign{fonction d\'{e}riv\'{e}e}
+(meaning a function \emph{derived} from another function) and he
+replaced the differential quotient $\dfdx{y}{x}$ with the more modern
+\term{function} notation $y^\prime(x)$ (pronounced ``$y$ prime of
+$x$'').
+
+His attempt to make Calculus rigorous was very clever, but ultimately
+unsuccessful so we will not say much about it here. But we will adopt
+his terminology and eventually, his notation. The 
+\foreign{fonction d\'{e}riv\'{e}e} has come into English as ``derived
+function,'' or \term{derivative} for short.  The following are all
+\term{derivatives}:
+\begin{align*}
+  y^\prime(x) \amp{}=\dfdx{y}{x} \text{ (the derivative of $y$ with respect
+                to horizontal position $x$)},\\
+  z^\prime(t)\amp{}=\dfdx{z}{t} \text{ (the derivative of $z$ with
+               respect to time, $t$) }
+               \intertext{and in general,}
+               \sigma^\prime(\eta)\amp{}= \dfdx{\sigma}{\eta} \text{ (the derivative of $\sigma$ with
+                                    respect to $\eta$)}.
+\end{align*}
+
+\begin{Digression}[Function Notation, and Prime Notation]
+  What we have been denoting as $\dfdx{y}{x}$, Lagrange called a
+  ``derived function'' (\foreign{fonction d\'{e}riv\'{e}e}), and he
+  denoted it with his prime notation: $y^\prime(x)$.
+
+  OK, but what does that mean?
+
+The ``derived'' part seems clear enough. If
+  we have $y=x^2$ then use our differentiation rules to derive
+  $y^\prime(x)=\dfdx{y}{x}=2x$. But Lagrange called this a derived
+  \emph{function}.
+
+  The function concept is deeply abstract. But it underlies
+  Lagrange's ideas, the notation he used and most of modern
+  mathematics so it is worth taking a moment to examine the idea
+  closely.
+
+  In our experience Calculus students frequently have only a very
+  fuzzy notion of the function concept. And this is OK.  It took us
+  (mathematicians) many tries over the course of centuries to pin down
+  exactly what we mean by ``function.'' It seems only fair that we
+  should give our students at least a few weeks to internalize the
+  concept.
+
+  Loosely speaking, a function is a rule that connects things. We (the
+  authors) know that you don't believe us but it's true. Fundamentally
+  that's all a function is. The reason you don't believe us is that
+  you probably have many years of frustrating experience with
+  functions and this has convinced you that they are very complex and
+  abstruse entities. This is also true. Individual functions can be
+  extraordinarily complex. But the function \emph{concept} is
+  reasonably straightforward: A function is a rule that connects two
+  things.
+
+  When Lagrange called $y^\prime(x)=2x$ a \emph{derived function} he
+  was saying that $y^\prime$ is the name of a function.  It is
+  reasonable then to ask, ``What are the things that $y^\prime$
+  connects?''
+
+  But this is easy. $y^\prime$ connects
+  \begin{align*}
+    1 \amp\text{ with }2, \\
+    2 \amp\text{ with } 4,\\
+    1.5 \amp\text{ with }2.25,\\
+    -3  \amp\text{ with } -6,
+  \end{align*}
+  and so on. In general, if $x$ is any real number then $y^\prime$
+  connects $x$ with two times $x$. Of course we are far too lazy to
+  write all of this out explicitly (also it is impossible) so
+  we have invented some notation to capture the idea. The symbol
+  $y^\prime(x)$, means ``the thing that $y^\prime$ connects $x$ to''
+  and the equation
+  $$
+  y^\prime(x) = 2x
+  $$
+  says that ``the thing that $y^\prime$ connects $x$ to''
+  is\aside{``Is'' means ``equals.''} $2x$.
+
+  So $y^\prime$ truly is a function. An often used metaphor is that of
+  the  buttons, or keys\aside{Often called ``function'' keys.}, on a
+  calculator. The ``$x^2$'' button implements the function $y(x)=x^2$
+  ($y$ connects $x$ with $x^2$.) In this metaphor $x$ is called the
+  input and $y(x)$ is called the output.
+
+  But Lagrange called $y^\prime$ a \emph{derived} function. Derived from
+  what? Clearly it is derived from the formula $y=x^2$.
+
+  But hold on.  The formula $y=x^2$ says that there is a connection (a
+  functional relation) between $x$ and $y(=x^2)$ doesn't it?  If we
+  need to choose a name for this function the easiest choice to make
+  is $y$.  If we think of $y$ as the function $y(x)=x^2$ then clearly
+  \emph{the function} $y^\prime$ is derived from \emph{the function}
+  $y$ so we call $y^\prime$ ``the derivative'' of $y$.
+
+  The only thing that \emph{really} changes in all of this is how we
+  think about the symbol ``$y$''. Both $y=x^2$ and $y(x)=x^2$ say that
+  if $x$ is known we get $y$ by squaring $x$. In the former case
+  we think of $y$ as a variable like $x$ and the relation between $x$
+  and $y$ is given by the formula $y=x^2$. In the latter we think of
+  $y$ as the name of that relation: $y(x)=x^2$.
+
+  Sometimes it is helpful to think one way, and sometimes the
+  other. When we  think of $y$ as a variable we will suppress
+  the ``$(x)$'' symbolism and write $y=x^2$. When we think of it as a
+  function we will write ``$y(x)$.'' In fact, if you look back through
+  the earlier chapters of this text you'll see that we've been doing
+  that all along.
+\end{Digression}
+
+In some contexts Lagrange's prime notation has several advantages over
+the differential notation we've been using. Over time it has become
+the most common notation for the derivative in mathematics. But the
+fact that it took over $100$ years to develop suggests that something
+more than just notation is in play here. Since our current task is to
+master the differentiation rules we will stick (primarily) to
+Leibniz's differential notation as much as possible because using
+multiple equivalent notations can be very confusing, especially in the
+beginning and we don't want make this harder than it needs to be.
+
+
+But there will come a time when Lagrange's prime notation will be much
+more convenient.  At that point we will casually identify the two
+expression $\dfdx{y}{x}$ and $y^\prime(x)$ and we will think of them
+both as a function \emph{derived from} the function $y(x)$.
+
+When we do that the differential notation we're currently emphasizing
+will take on a slightly schizophrenic aspect. On the one hand
+$\dfdx{y}{x}$ represents a ratio of differentials. As such $\dx{y}$
+and $\dx{x}$ are distinct (infinitesimal) quantities. On the other
+hand $\dfdx{y}{x}$ is the name of a function. As such it is all one
+symbol and you cannot detach the pieces any more than you can delete
+the letter ``n'' from the name of the sine function; si$(x)$ has no
+meaning.
+
+Eventually the differentials we've been using so casually all along
+will become a guilty secret. Given $y=y(x)$ we'll use them as a
+helpful computational aid (a ``convenient fiction'') while we
+\emph{compute}. But as soon as we have
+$\dfdx{y}{x}$ in hand we will view it as a single, complete symbol
+representing the derivative function, often simply replacing it with
+$f^\prime(x)$ as if we are ashamed of having used differentials at all.
+
+As we said, this more advanced viewpoint will come later, but to give
+you a preview, consider the following.
+
+Recall that in Descartes' Method of Normals, we had to find a double
+root of a polynomial.  To deal with this problem,
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Hudde/}{Johann
+  van Waveren Hudde} ($1628$-$1704$) developed an algebraic tool for
+determining such double roots. Because this was before the invention
+of Calculus it was difficult to see why Hudde's Rule worked. Calculus
+allows an alternate derivation of his technique which is much easier
+to follow\aside{Actually Hudde did considerably more than this. His
+  method for finding double roots was a part of what has been called
+  the ``Lost Calculus'' of algebraic functions. If you are interested
+  you can read more about this in Jeff Suzuki's award winning article
+  \pubtitle{\href{https://www.maa.org/sites/default/files/pdf/upload_library/22/Allendoerfer/suzuki339.pdf}{The
+      Lost Calculus (1637-1670): Tangency and Optimization without
+      Limits}}}.
+
+  \begin{embeddedproblem}[Hudde's Rule:] Consider any polynomial
+    $p(x)=a_0+a_1 x+\cdots+a_n x^n$. Let $a$ and $b$ be any real
+    numbers and form the following ``Hudde Polynomial.''
+    $$
+    {p} ^ {*} \left (x \right ) =a {a} _ {0} + \left (a+b \right ) {a} _
+    {1} x+ \left (a+2b \right ) {a} _ {2} {x} ^ {2} + \left (a+3b \right
+    ) {a} _ {3} {x} ^ {3} +\ldots+ \left (a+nb \right ) {a} _ {n} {x} ^
+    {n}
+    $$
+    Hudde showed that if $r$ is a double root of $p(x)$, then $r$ is a root of the Hudde
+    polynomial $p^*(x).$
+    % If you go back and look, the special case in
+    % Section~\ref{sec:descartes-normals} was when $a=0$ and $b=1$.
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \item Show that if $r$ is a double root of the polynomial $p(x)$
+      then it is a root of $p^\prime(x)=\dfdx{p}{x}$.  \hint{If $r$ is a
+        double root of $p(x)$, then $p(x) = (x-r)^2q(x)$ for some
+        polynomial $q(x)$.}
+    \item Show that $p^*(x) = ap(x)+bxp^\prime(x)$ and use this to prove
+      Hudde's Rule.
+    \end{enumerate}
+    \vskip-4mm{}
+  \end{embeddedproblem}
+
+
+  Again, we will (mostly) refrain from using Lagrange's prime notation
+  until the differential notation we've been using becomes
+  inconvenient. But we will begin to refer to a differential ratio
+  like $\dfdx{y}{x}$ as the derivative of $y$ with respect to $x$.
+  For now then, a derivative is the result of a two-step process:
+  \begin{center}
+    \begin{minipage}{.85\linewidth}
+      \begin{description}
+      \item[First:] \alert{Differentiate to produce differentials.}
+      \item[Second:] \alert{Divide through by one differential to
+          produce a (finite) derivative.}
+      \end{description}
+    \end{minipage}
+  \end{center}
+As you become more proficient you will naturally start to combine
+these into a single process. But whenever a differentiation is
+particularly complex you will find it helpful to break it down into
+simple steps using the differentiation rules you're learning.
+
+
+It should be clear that the derivative \emph{function} is by far the
+more important concept,
+% This is one reason we keep referring to
+% differentials as ``convenient fictions.'' We only really need
+% differentials as stepping stones on our way to building the
+% derivative. To be sure, we will continue to use them because as a
+% computational aid differentials are indeed very convenient
+% fictions.
+so more and more we'll need to \emph{think} of the expression
+$\dfdx{y}{x}$ as the name of a function. This can be very confusing
+because the differential notation was never designed, or intended,
+to represent functions.
+
+We will take a moment to address this before we proceed.
+
+If the symbol $\dfdx{y}{x}$ is the name of the function we get by
+differentiating $y$ then a natural question is, ``What is the
+derivative of the function $\dfdx{y}{x}?$'' In the previous section we
+wrote this as $\dfdx{\left(\dfdx{y}{x}\right)}{x}$ but that is clearly
+a very clumsy formulation. We'll need something simpler.
+
+The first time we differentiate $y = x^3$ we get its derivative,
+$3x^2$ The second time we differentiate $y = x^3$ we get the
+derivative of $3x^2$, or $6x.$ What should we call $6x?$ The obvious
+choice is to call $6x$ the \emph{second derivative} of $y=x^3.$
+Clearly then, $3x^2$ is the \emph{first derivative\aside{But we will
+    continue to call it ``the derivative'' when there is no chance
+    of confusion.}} and $6$ is the \emph{third derivative} of
+$y=x^3.$
+
+All well and good, but it will be cumbersome -- and we are far too
+lazy -- to write out ``the third
+derivative'' every time we need it. What notation should we use to
+indicate higher order derivatives?
+
+For better or worse the extension of the differential notation to
+higher order derivatives that has  become standard is this:
+If $y = x^3$  then the (first) derivative of $y$ is \\
+\centerline{  $\dfdx{y}{x}= 3x^2$}
+as before, and the second derivative is\\
+\centerline{ $ \dfdxn{y}{x}{2} = 6x.$}
+Differentiating one more time we get the third derivative,
+$  \dfdxn{y}{x}{3} = 6$.
+
+Notice the inconsistent placement of the exponents.  This is due to
+Leibniz. He would have proceeded as follows. Let $y= x^3$. Then\\
+\centerline{$\dx{y}= \dx{(x^3)}= 3x^2\dx{x}$.}
+So far, so good. Next apply the
+Product Rule and we get
+\begin{equation}
+  \dx{(\dx{y})}= \dx(3x^2\dx{x}) = 3x^2\underbrace{\dx{(\dx{x})}}_{=0} +
+  6x\dx{x}\dx{x}\label{eq:SecDiffProblems}
+\end{equation}
+so
+\begin{equation}
+  \dx{(\dx{y})} =    6x\dx{x}\dx{x}.    \label{eq:PRNotation} 
+\end{equation}
+
+To see why $\dx{(\dx{x})}=0$ we need to know that Leibniz always
+considered the differential $\dx{x}$ to be a constant. And the
+differential of any constant is zero, by the Constant Rule.
+
+
+To see why the exponents are placed as they are we note that a
+natural way to abbreviate the left side of
+equation~(\ref{eq:PRNotation}) is $\dx{(\dx{y})}=\dx^2y$.  On the right
+side the expression $\dx{x}\dx{x}$ is the product of $\dx{x}$ with
+itself so it is equal to $\dx{x}^2$. Thus when we divide both sides of
+equation~(\ref{eq:PRNotation})  by
+$\dx{x}^2$ we get $\dfdxn{y}{x}{2}=6x.$  Similarly we get 
+$\dfdxn{y}{x}{3} = 6$ and  $\dfdxn{y}{x}{4} = 0$.
+
+The advantage of Lagrange's prime notation should be clear. For higher
+order derivatives we simply use more primes. If $y=f(x)$ then
+\begin{align*}
+  \dfdx{y}{x} \amp{}= f^{\prime}(x),\\
+  \dfdxn{y}{x}{2} \amp{}= f^{\prime\prime}(x),\\
+  \dfdxn{y}{x}{3} \amp{}= f^{\prime\prime\prime}(x)
+\end{align*}
+and so on. Above the third derivative Lagrange's primes become
+troublesome as well, but that is a discussion for another time.
+
+Obviously we can continue differentiating as many times as we would
+like, but this would be rather dull for this particular example since
+every derivative after the fourth is zero. The following example is
+more interesting.
+
+\begin{myexample}
+  \label{example:HighOrderDerivs}{}
+  Consider the expression $y=\frac1x =x^{-1}$. As we've seen
+  $\dfdx{y}{x}= -1x^{-2}
+  =\frac{1}{x^2}.$ Continuing we have
+  \begin{align*}
+  \dfdxn{y}{x}{2} \amp{}= (-1)(-2)x^{-3},\\
+    \dfdxn{y}{x}{3} \amp{}= (-1)(-2)(-3)x^{-4},\\
+    \intertext{and finally}
+    \dfdxn{y}{x}{4} \amp{}= (-1)(-2)(-3)(-4)x^{-5}
+  \end{align*}
+  It is an unfortunate fact that you've probably been taught all of
+  your life to ``simplify'' complex looking expressions like
+  $(-1)(-2)(-3)(-4)$. So much so that you probably do it reflexively,
+  without thinking, and are wondering why we left the coefficients
+  above in the form we did.  
+
+The reason is simple. We were looking for patterns not numbers.
+Writing the above formulas as $\dfdxn{y}{x}{2} = 2x^{-3},$
+$\dfdxn{y}{x}{3} = -6x^{-4}$, and $\dfdxn{y}{x}{4} = 24x^{-5}$ would
+have obscured the pattern.
+Keep this in mind as you proceed.  Algebraic or arithmetical
+``simplifications'' often simply get in the way. Don't do them until
+there is a compelling reason to do so.
+
+% \pagebreak[4]
+
+\begin{ProficiencyDrill-1line}
+    Find the pattern in example~\#\ref{example:HighOrderDerivs} and
+    compute $\dfdxn{y}{x}{50}$ directly, without computing all fifty
+    derivatives.
+  \end{ProficiencyDrill-1line}
+\end{myexample}
+
+
+\begin{myexample}
+  Consider the circle $x^2+y^2=1$. Differentiating, we have
+  $
+  2x\dx{x}+2y\dx{y}=0$, or
+  $\dfdx{y}{x}=-\frac{x}{y}$.
+  Differentiating again we have
+  $$
+  \dx{\left(\dfdx{y}{x}\right)}=-\frac{y\dx{x}-x\dx{y}}{y^2}.
+  $$
+\end{myexample}
+
+  \begin{embeddedproblem}
+    Continue this example by showing that
+    $  \dfdxn{y}{x}{2}=-\frac{1}{y^3}$.
+    Now solve for $y=\pm\sqrt{1-x^2}$ and use this to compute
+    $\dfdxn{y}{x}{2}$. Do you get the same answer? Which method do you
+    prefer?
+  \end{embeddedproblem}
+
+%\pagebreak[4]
+\begin{ProficiencyDrill}
+  For each of the following find $\dfdxn{y}{x}{2}$ in terms of $x$
+  and $y$:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $y=3x^4-x^3+2x-7$
+    \item $x=y^2$
+    \item $y=\sqrt{x}$ Compare this with part (b).
+    \item $xy=1$ Compare this with
+      Example~\#\ref{example:HighOrderDerivs}. Which method do you
+      prefer?
+    \item $\frac{x^2+y}{3x+y^2}=x-y$ 
+   \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+
+  We know that it is not generally true that $a^b=a\cdot b$ even
+  though there are certain exceptions, like $a=b=1$, $a=4$ and
+ $b=1/2$, or $a=b=2$. In the same way, even though the Product Rule
+  makes it very clear that
+  \begin{equation}
+    \dfdx{(y\cdot z)}{x}\neq  \dfdx{y}{x}\cdot\dfdx{z}{x}.\label{eq:NewbyError1}
+  \end{equation}
+  there are certain pairs of functions which are exceptions; for which
+  equation~(\ref{eq:NewbyError1}) \emph{is} true.
+
+\pagebreak[4]
+\begin{embeddedproblem}[Find the pattern]
+  \label{problem:NewbyError1}
+  For example, show that for each of the following it \emph{is} true
+  that $
+  \dfdx{(y\cdot z)}{x}=  \dfdx{y}{x}\cdot\dfdx{z}{x}$.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item 
+    \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{3}
+      \item
+        $y=x$\\
+        $z=\frac{1}{1-x}$
+      \item
+        $y=x^2$\\
+        $z=\frac{1}{(2-x)^{2}}$
+      \item
+        $y=x^3$\\
+        $z=(3-x)^{-3}$
+      \end{multicols}
+    \end{enumerate}
+  \item Find the general pattern in part (a).
+  \item Those pairs of functions which fit the pattern you found in
+    part (b) are not the only exceptional pairs. Can you find others?
+  \end{enumerate}
+\end{embeddedproblem}
+
+
+\begin{mynotation}{Some Troubling Aspects of Differentials and Differential}
+  % \begin{mynotation}{Function}
+  We would be remiss if we did not point out  some very troubling
+  aspects of the differential notation, especially when we extend it
+  to  higher order derivatives. 
+
+  One very problematic and glaring question is, ``If $\dx(\dx{x}) = 0$
+  why isn't $\dx(\dx{y})$ also equal to zero?'' That is a much deeper
+  question than it appears to be. We will address this in
+  Section~\ref{sec:curvature}.
+
+  But there are other problems as well.  When we introduced the
+  concept of a differential in Chapter \ref{chapt:differentials} we
+  appealed to your understanding of \emph{finite} differences.
+  That is, if $x_1\lt{}x_2$ then the finite difference
+  $$
+  \Delta{}x=x_2-x_1
+  $$
+  is a measure of the actual separation between $x_2$ and $x_1.$
+  Extending this to infinitesimals,  we imagined that $x_2$ and $x_1$ are
+  \emph{infinitely} close together -- but still distinct -- and we
+  represented the distance between them as
+  $$
+  \dx x = x_2-x_1.
+  $$
+  % It is all well and good to \emph{write down} expressions like $\dx y$
+  % or $\dx^2 y$ but what do they represent in reality?
+  
+  If $x_1$ and $x_2$ are infinitely close together doesn't that mean
+  that they are not separated at all? If they are not separated then
+  $x_2=x_1.$ In that case isn't $\dx x =x_2-x_1$ just zero? And if
+  $\dx x =0$ then doesn't the expression $\dfdx{y}{x}$ call for
+  division by zero? Which we know is meaningless?
+
+  This is all very troubling, which is why we have encouraged you to
+  not think about it very much so far. But as higher order derivatives
+  come into play things begin to get truly weird and it is time to
+  \emph{begin} thinking about it. A little.
+
+  Consider the actual meaning the second derivative must have in terms
+  of differentials. If the first derivative is obtained by computing
+  the ratio of quantities that are infinitely close together, what can
+  it possibly mean to differentiate it again? If we are using numbers
+  that are infinitely close together to compute the first derivative,
+  what can we possibly be using to compute the second, or the third
+  derivative?
+
+  What is the infinitesimal difference of the infinitesimal difference
+  of an infinitesimal difference?
+
+  Reacting to criticism of religious
+  mysteries from the scientific community one early critic\aside{This
+    is Bishop George Berkeley, from whom we will hear a great deal
+    more in chapter~\ref{chapt:whats-wrong-with}. } of Calculus put it
+  like this,
+\begin{center}
+  \begin{minipage}{.75\linewidth}
+    \it{}
+    ``But he who can digest .\ .\ .\  a second or third
+  Difference, need not, methinks, be squeamish about any Point in
+  Divinity.''
+\end{minipage}
+\end{center}
+
+This is all very puzzling and it is tempting to toss it all away.
+Except that at this point we have a great deal of evidence that if
+$y=x^3$ then the formula
+$$
+\dfdxn{y}{x}{2}=6x
+$$
+is both quite meaningful and quite useful. There must be something to
+this. But what?
+
+  If we are being honest with ourselves we must acknowledge the
+  legitimacy of these concerns. There is something here that we do not
+  yet understand. We will proceed very cautiously.
+
+  In particular we will avoid entirely the very delicate issue of
+  trying to take a the differential of a differential. That is, we
+  will only differentiate finite expressions. For example if $y=x^3$,
+  then $\dx{y}=3x^2\dx{x}$ so $\dfdx{y}{x}=3x^2$ which is clearly
+  finite. Differentiating again gives
+  $\dx{\left(\dfdx{y}{x}\right)}=6x\dx{x}$, so
+  $$
+  \dfdxn{y}{x}{2}=\dfdx{\left(\dfdx{y}{x}\right)}{x}=6x.
+$$
+Any attempt to differentiate a differential cuts very close to the
+foundational issues we've alluded to, and have been very careful to
+avoid so far. It is not yet time for us to consider these questions so
+we will leave them for now. But that time is coming.
+\end{mynotation}
+
+Adopting Lagrange's terminology, but not his notation, we see that if
+the position of a point moving in a straight line (like the $x$ axis)
+is given by $x=x(t)$, then the first derivative, $\dfdx{x}{t}$, will
+give its velocity, and its second derivative, $\dfdxn{x}{t}{2}$, will
+give its acceleration.
+
+\begin{ProficiencyDrill}
+  Each of the following represents the position of a point on
+  the $x$-axis at time $t$.  Find the velocity and acceleration.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $x(t)=12t^3$
+    \item $x(t)=-4t^4+3t^2+1$
+    \item $ x(t)=5-2\sqrt{t}+t^3$
+    \item $\displaystyle x(t)=\frac12t^{1/2}+t^{-1/2}$
+    \item $\displaystyle x(t)=\frac{1}{\sqrt{t^2+t+1}}$
+    \item $x(t)= t^{2/3}$
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+\pagebreak[4]
+\begin{embeddedproblem}
+  For each of the following, determine if a point moving along the
+  $x$-axis is slowing down or speeding up at the instant
+  $t_0$.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $\left.\dfdx{x}{t}\right|_{t=t_0}\gt{}0, \left.\dfdxn{x}{t}{2}\right|_{t=t_0}\gt{}0$ 
+    \item $\left.\dfdx{x}{t}\right|_{t=t_0}\gt{}0, \left.\dfdxn{x}{t}{2}\right|_{t=t_0}\lt{}0$ 
+    \item $\left.\dfdx{x}{t}\right|_{t=t_0}\lt{}0, \left.\dfdxn{x}{t}{2}\right|_{t=t_0}\gt{}0$ 
+    \item $\left.\dfdx{x}{t}\right|_{t=t_0}\lt{}0,
+      \left.\dfdxn{x}{t}{2}\right|_{t=t_0}\lt{}0$ 
+    \end{multicols}
+  \end{enumerate}
+%  \vskip-6mm{}
+\end{embeddedproblem}
+
+\section{Thinking Dynamically}
+\label{sec:newt-flux-dynam}
+\markright{\sc{}The Dynamic Approach}
+
+\begin{wrapfigure}[12]{r}{1.5in}
+  \vskip-5mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2in,width=1.5in]{../Figures/Helicopter1}}
+  \label{fig:Helicopter1}
+\end{wrapfigure}
+If $p(t)$ represents the position of an object moving in a straight
+line we have seen that its velocity is given by $\dfdx{p}{t}$. When
+the object is falling vertically we will use $y(t)$ to represent its
+vertical position, so that $\dfdx{y}{t}$ is its vertical
+velocity. Similarly if it is moving horizontally we will use $x(t)$
+and $\dfdx{x}{t}$.
+
+
+% In we imagined a point moving
+%  with a constant horizontal  velocity of $1$ and a  vertical velocity equal
+%  to $-9.8$. If the velocities are measured in meters per second this
+%  actually models the motion of
+
+ Suppose an  object is 
+released  from,  a helicopter  flying horizontally with a
+speed of $\dfdx{x}{t}=1\sfrac{\text{m}}{\text{s}}$.  From Galileo's
+work we now know that its vertical velocity will be
+$\dfdx{y}{t}=9.8 t\, \sfrac{\text{meters}}{\text{second}}$. You may
+recall that we posed this more abstractly in
+Problem~\ref{problem:HelicopterFall}.
+
+After its release the ball will fall neither horizontally, nor
+vertically. It won't even fall along a straight line. The combination
+of its horizontal and vertical velocities will cause the flight path
+to curve into an arc be similar to that shown in the
+figure at the right. We've already stated that this curve will be a
+parabola. We are finally in a position to show that this is true.
+
+As the ball falls there are three distinct quantities we are
+interested in: the horizontal velocity of the ball, the vertical
+velocity of the ball, and its speed in the direction of travel.
+
+The first two we already understand from our work in the previous
+section. The horizontal velocity will be $\dfdx{x}{t}$, and the
+vertical velocity will be $\dfdx{y}{t}$.
+
+\begin{ProficiencyDrill}
+  Since $\dfdx{x}{t}=1$ we have $x=t$. Since  $\dfdx{y}{t}=-9.8t$ we know from our work
+  in the previous section that $y=-4.9t^2.$ Use this to find a formula
+  for $y=y(x)$ and confirm that the graph is a parabola.
+\end{ProficiencyDrill}
+% \begin{wrapfigure}[]{l}{.67in}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1in,width=.67in]{../Figures/Helicopter2}}
+%   \label{fig:Helicopter2}
+% \end{wrapfigure}
+We'd like to find the \emph{speed} of the object in the direction it
+is moving.  Referring to the differential triangle in our sketch it is
+clear that this will be\aside{The absolute value bars here are correct
+  but don't fret about it too much for now. The reason for this has
+  more to do with our vocabulary (speed vs. velocity) than with the
+  physical problem. We will discuss this in more depth in
+  Digression~\#\ref{digress:SpeedVelocityAbsVal}{} in
+  chapter~\ref{cha:calc-trig}} $\abs{\dfdx{s}{t}}$.  But how do we
+find $\dfdx{s}{t}$?
+
+Since $\dx{x}$ and $\dx{y}$ are perpendicular (they are displacements
+in the horizontal and vertical directions, respectively)  by
+the Pythagorean Theorem  we have
+$$
+(\dx{s})^2=(\dx{x})^2+(\dx{y})^2.
+$$
+Thus the displacement, $s$, in the direction of travel is
+$$
+\abs{\dx{s}}=\sqrt{(\dx{x})^2+(\dx{y})^2}.
+$$
+Dividing by $\abs{\dx{t}}$ we see that the speed in the direction of travel
+at any time $t$ is
+$$
+\abs{\dfdx{s}{t}}=\frac{\sqrt{(\dx{x})^2+(\dx{y})^2}}{\dx{t}} =
+\sqrt{\left(\dfdx{x}{t}\right)^2+\left(\dfdx{y}{t}\right)^2}
+= \sqrt{1+(9.8t)^2}.
+$$
+
+\begin{wrapfigure}[]{r}{2.4in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1.2in,width=2.4in]{../Figures/Descent1}}
+\label{fig:Descent2}
+\end{wrapfigure}
+We now hava all of the tools we need to analyze the flight path of our
+commercial airliner, seen at the right.
+
+Recall that in Problem~\ref{problem:FlightPath1} we had you find the
+equation of this flight path.  The answer turns out to be
+$$
+y=\frac{-2H}{L^3}x^3+\frac{3H}{L^2}x^2.
+$$
+But the picture above is static. It is a picture of the path the
+airliner has flown after the flight is finished. This tells us very
+little about the characteristics of the flight as it occurs.
+
+  \begin{embeddedproblem-enumerate}
+    \label{problem:AirlinerSpeed}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Assume that horizontal (ground) speed is maintained at a
+      constant $v$ meters/second.  What is the airspeed (speed in the
+      direction of travel) of the plane?  In particular, is the
+      airspeed also constant?
+    \item Show that in general, speed and slope are related by the
+      formula:\\
+      \centerline{$\displaystyle
+        \abs{\dfdx{s}{t}}=\abs{\dfdx{x}{t}}\sqrt{1+\left(\dfdx{y}{x}\right)^2}$.}
+    \item Assume that the ground speed is constant and use the
+      formula in part (b) to determine where along the flight path the
+      plane is traveling the fastest and the slowest.\\      
+      \hint{Look at the graph of the flight
+        path.}
+    \end{enumerate}
+  \end{embeddedproblem-enumerate}
+
+\pagebreak[4]
+\begin{ProficiencyDrill}
+  Suppose  $(x,y)$ are  the coordinates of a ball moving
+  along each of the following curves.
+    \begin{enumerate}[label={\bf{}(\Roman*)}]
+    \begin{multicols}{4}
+    \item $y=x^2,$\\ at $(-1,1)$\\ and $(1,1)$
+    \item $y=x^3,$\\ at $(-1,-1)$\\ and $(1,1)$
+    \item $x^2-y^2=3^2$\\ at $(-5,4)$\\ and $(-5,-4)$
+    \item $x^2+y^2=5^2$\\ at $(3,4)$\\ and $(3,-4)$
+    \end{multicols}
+  \end{enumerate}
+If the ball is moving with a constant
+  horizontal velocity of
+  $\dfdx{x}{t}=2\sfrac{\text{ units}}{\text{second}}$ find each of
+  the following.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item The vertical velocity of the ball at the points indicated.
+  \item The horizontal and vertical acceleration of the ball at  the points
+    indicated.
+  \item The velocity in the direction of travel of the ball at
+    the point indicated.
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+ The next problem will complete our analysis of the flight path
+ of our commercial airline.
+
+%\pagebreak[4]
+\begin{embeddedproblem}
+  The flight path you obtained in Problem~\#\ref{problem:FlightPath1}
+  was $ y=\frac{-2H}{L^3}x^3+\frac{3H}{L^2}x^2 $.
+  We need to put some limitations on the vertical acceleration,
+  $\dfdxn{y}{t}{2}$, experienced by the passengers in a commercial
+  airliner. For simplicity we'll assume that the pilot must maintain a
+  constant horizontal speed of $v\sfrac{\text{
+      meters}}{\text{second}}$. That is we set  $\dfdx{x}{t}=-v$.)
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Use the above equation to show that the vertical acceleration
+    is given by
+    $$ \dfdxn{y}{t}{2}=\frac{6Hv^2}{L^2}\left(1-\frac{2x}{L}\right).$$
+  \item On the interval $0\le x\le L$, what is the largest vertical
+    acceleration and what is the smallest vertical acceleration and
+    where do they occur?  Does this make sense physically?
+  \item Suppose we put a restriction on the vertical acceleration,
+    namely
+    $$
+    -k\sfrac{\text{ meters}}{\text{second}^2}\le\dfdxn{y}{t}{2}\le k\sfrac{\text{ meters}}{\text{second}^2}
+    $$
+    for some constant $k$.  Show that with this restriction,
+    $
+    L\ge\sqrt{\frac{6Hv^2}{k}}
+    $.
+  \item Suppose that initially $H=10000$ meters, $v=100\sfrac{\text{
+        meters}}{\text{second}}$,
+    $k=.1\sfrac{\text{ meters}}{\text{sec}^2}$ (which is approximately $1\%$ of
+    the acceleration due to gravity).  Find what $L$ must be (in
+    kilometers).% \\
+    % \comment{This represents the minimum distance from
+    %   the airport where the plane must begin its descent.}
+  \end{enumerate}
+\end{embeddedproblem}
+
+ \pagebreak[4]
+
+
+Earlier we mentioned that NASA claims that the Vomit Comet can
+make passengers experience weightlessness for about $25$ seconds.
+Let's check on that claim.
+
+
+To simulate weightlessness (neutral buoyancy) the pilot must
+execute a parabolic flight path $y=Ax^2+Bx+C$. In
+Problem~\#\ref{problem:FlightPath2} you should have found that $B$
+and $C$ were $1$ and $7000$, respectively, so the flight path is
+$$
+y=Ax^2+x+7000
+$$
+with $A$ yet to be determined.
+
+
+The pilot will climb at an angle of $45^\circ$ to an altitude of about
+$7000$ meters and then follow this parabolic path to produce a
+vertical acceleration of $\dfdxn{y}{t}{2}=-9.8\,\sfrac{m}{s^2}$
+(matching the acceleration due to gravity) and horizontal acceleration
+of $\dfdxn{x}{t}{2}=0$. This will provide neutral buoyancy inside the
+plane.  On the way back down the pilot pulls out of this dive when the
+altitude returns to $7000$ meters.
+
+For training purposes this is repeated $40$ times.
+
+%\pagebreak[4]
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    % \item What are $y(0)$ and $\eval{\dfdx{y}{x}}{x}{0}$? Use these
+    %   to compute $B$ and $C$.
+  \item To determine $A$ we need one more fact.  At the beginning of
+    the maneuver, the initial airspeed is about $180\sfrac{\text{ meters}}{\text{second}}$
+    (approximately $400$ mph).  Use this to determine $\dfdx{x}{t}$
+    and in turn use this and the fact that $\dfdxn{y}{t}{2}=-9.8$ to
+    determine $A$.
+  \item Now that we've determined the flight path, use this to
+    determine the value of $x$ is when the pilot pulls out of the dive
+    at $7000$ meters. 
+  \item Next find the value of is $t$ when the pilot pulls out of the
+    dive. How does this compare with the $25$ second claim.
+  \item What would the airspeed of the plane be in terms of $t$ ($t=0$
+    representing the start of the maneuver) if the pilot wants to
+    maintain a constant horizontal speed throughout the maneuver?
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+
+\section{Newton's Method of Fluxions}
+\label{sec:newt-meth-flux}
+\begin{wrapfigure}[10]{r}{1.5in}
+  \vskip-20mm{}
+\captionsetup{labelformat=empty}
+\centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Kepler/}{\includegraphics*[height=2in,width=1.5in]{../Figures/Kepler}}}
+\caption{\centerline{Johannes Kepler}\\\centerline{1571-1630}}
+\label{fig:Kepler}
+\end{wrapfigure}
+Through experimentation Galileo had accurately described the motion of
+falling objects near the surface of the earth. At about the same time
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Kepler/}{Johannes
+  Kepler} ($1571-1630$) had accurately described the motion of the
+planets by analyzing the vast catalog of astronomical observation made
+by
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Brahe/}{Tycho
+  Brahe} ($1546-1601$).  But these two descriptions of motion did not
+appear to be related.
+
+It was left to Newton to unify them with a single theory but the
+mathematics for this did not exist at the time. So he invented it. He
+called his invention
+\pubtitle{\href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-newtons-method-of-fluxions}{The
+    Method of Fluxions}}.  
+Galileo studied motion on the surface of the Earth.  Kepler studied
+the motion of the planets, but the underlying theme for both was
+motion.
+
+For Newton everything was in motion.  When he used the variable $x$ he
+thought of it as representing something ``flowing in time''
+(moving). Such quantities he called \term{fluents}, from
+\foreign{fluere}, the Latin word which means ``to flow.''  As he put
+it himself in his book
+\href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-newton-on-quadrature-of-curves}{\foreign{Quadratura
+    Curvarum}} (On the Quadrature of Curves),
+\begin{center}
+  \begin{minipage}{.75\linewidth}\it
+    I sought a method of determining quantities from the velocities
+    of the motions or [of the] increments, with which they are
+    generated; and calling these velocities of the motions, or [of
+    the] increments, \emph{fluxions}, and generated quantities
+    \emph{fluents}, I fell by degrees, in the years $1665$ and
+    $1666$, upon the method of fluxions, which I have made use of
+    here in the quadrature of curves.
+  \end{minipage}
+\end{center}
+
+
+\begin{wrapfigure}[16]{l}{1.5in}
+  \vskip-5mm{}
+\captionsetup{labelformat=empty}
+\centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Brahe/}{\includegraphics*[height=2in,width=1.5in]{../Figures/Brahe}}}
+\caption{\centerline{Tycho Brahe}\\\centerline{1546-1601}}
+\label{fig:Brahe}
+\end{wrapfigure}
+For a given fluent $x$, Newton used $\dot{x}$ to refer to its
+\emph{instantaneous velocity} or \term{fluxion}. Whereas for Leibniz
+the static differential was the fundamental concept, for Newton the
+dynamic fluxion (velocity) was fundamental.  On the surface Newton’s
+fluxions seem quite different from Leibniz's differentials.
+
+In Newton's view the only independent variable is time. So \emph{all}
+fluxions were rates of change with respect to time, or velocities. To
+see how they are connected to the differential ratios we've been using
+until now we need only ask ourselves how Leibniz would express the
+fluxion, $\dot{x}$, of the fluent, $x$. In Leibniz' notation the rate
+of change of $x$ \emph{with respect to} $t$ is the differential ratio
+$\dfdx{x}{t}$.  Since Newton \emph{defines} $\dot{x}$ to be the rate
+of change of $x$ with respect to (t)ime (velocity), clearly
+$$
+\dot{x} = \dfdx{x}{t}.
+$$
+
+
+From Newton's point of view differentiating the spatial coordinate $y$
+with respect to the spatial coordinate $x$ to get $\dfdx{y}{x}$ is
+simply not meaningful, and his dot notation reflects this.  On the
+other hand, if $P=(x,y)$ is a point moving along some curve in the
+plane then both $x$ and $y$ are fluents with corresponding fluxions
+$\dot{y}$ and $\dot{x}$. What Leibniz's notation expresses as
+$\dfdx{y}{x}$ Newton's notation expresses as $\frac{\dot{y}}{\dot{x}}$
+since
+$$
+\frac{\dot{y}}{\dot{x}} = \frac{\dfdx{y}{t}}{\dfdx{x}{t}}=
+\frac{\dx{y}}{\cancel{\dx{t}}}\frac{\cancel{\dx{t}}}{\dx{x}}=\dfdx{y}{x},
+$$
+but they are the same thing.
+                            
+Although the two formulations are equivalent Leibniz' notation has
+become dominant in mathematics, but  in fields where velocity is a
+fundamental concept, like physics and engineering, Newton's dot
+notation is often still used. 
+
+For example, suppose we were considering the curve $y=x^2$ and wanted
+the slope of the curve at a point $P$ on the curve.  Using our
+differentiation rules, we have
+$$
+\dx{y}=2x\dx{x}.
+$$
+To get the slope we divide by $d{x}$ to get
+$$
+\dfdx{y}{x}=2x.
+$$
+
+Using his Method of Fluxions, Newton would have considered $P=(x,y)$
+to be a point moving along a curve. This makes both $x$ and $y$
+fluents.  His version of  Calculus would have started with the same
+governing equation $y=x^2$ and determined that their fluxions were
+related by the equation
+$$
+\dot{y}=2x\dot{x}.
+$$
+
+To get the slope of the curve $y=x^2$, we simply  need to recognize
+that this is the same as
+$$\frac{\dot{y}}{\dot{x}}=2x=\frac{\dfdx{y}{t}}{\dfdx{x}{t}}=\dfdx{y}{x}.$$
+
+% We've been using  Leibniz's notation almost exclusively so far and we
+% will continue to do so for a while longer. However when a problem is
+% dynamical in nature Newton's viewpoint 
+% However, when we are looking at objects in motion
+% Newton's more dynamical viewpoint is often more natural. We will
+% continue using Leibniz' notation going forward because it is used
+% exclusively in mathematics.
+As we've mentioned Newton's dot notation has fallen out of favor in
+mathematics but it is still used in physics and engineering, so you
+will likely see it being used in your physics or engineering courses
+(if you take any). We would be remiss if we failed to recognize this
+so when it is appropriate we will sometimes couch our problems in the 
+dynamical language and dot notation of Newton. We will even
+sometimes refer to an expression like $\dfdx{y}{t}$ (where $t$
+represents time) as a fluxion, because that's what it is. It's just
+given in differential notation.
+
+If you prefer the Leibnizian terms and notation it is easy to
+translate between Newton and Leibniz. If $x$ is changing in time then
+$\dot{x}=\dfdx{x}{t}$ is the fluxion of $x$.
+
+
+\begin{ProficiencyDrill}{}
+  For each of the following equations, find an equation relating their
+  differentials and use this to relate their fluxions (instantaneous
+  rates of change with respect to time).
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \begin{multicols}{2}
+    \item $\displaystyle xy^2-7x+\frac{y}{x}=1$
+    \item $\displaystyle x^{\frac12}+y^{\frac12}=1$
+    \item $\displaystyle \frac{x^2+y}{\sqrt{y}+3x}=x+7$
+    \item $\displaystyle \frac{y}{x}=z^2$
+    \item $\displaystyle \sqrt{z^3}=x^2+y^2$
+    \item $\displaystyle xyz=1$
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Suppose the length of a rectangle is increasing at a rate of
+    $1 \sfrac{\text{ unit}}{\text{second}}$ and the width is decreasing
+      at a rate of $1$ unit/second.  Make a guess: Will the area
+      remain constant?
+  \item Let the length be denoted by $L$ and the width denoted by
+    $W$. The fluxions of $L$ and $W$ are $\dfdx{L}{t}=1$ and
+    $\dfdx{W}{t}=-1$, respectively.  If $A$ denotes the area of the
+    rectangle, then compute the fluxion $\dfdx{A}{t}$.  How does
+    this compare to your guess in part (a)?
+  \item Can you translate your solution into Newton's dot notation?
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+\pagebreak[4]
+
+\begin{embeddedproblem}
+  \vskip-6mm{}
+  \begin{wrapfigure}[]{r}{1.5in}
+    \vskip-6mm{}
+\captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/SlidingLadder}}
+\label{fig:SlidingLadder}
+\end{wrapfigure}
+The sketch at the right represents a $15$ foot long ladder is leaning
+against a vertical wall.  Suppose that the bottom is sliding to the
+right at a constant rate.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Make a guess: Is the top sliding down at a constant rate?
+  \item  Find $\dfdx{a}{t}$ in terms of $\dfdx{b}{t}$, and use this to
+    check your guess in part (a).
+  \item Can you translate your solution into Newton's dot notation?
+  \end{enumerate}
+  \vskip-6mm{}
+\end{embeddedproblem}
+
+\vskip-5mm{}
+
+\begin{embeddedproblem}{}
+  Suppose that the price of a certain commodity is increasing at a
+  rate of 5\% and the quantity sold is decreasing at a rate of
+  3\%. Would the revenue increase at a rate of 2\%?  Explain.
+\end{embeddedproblem}
+
+\vskip-5mm{}
+
+  \begin{embeddedproblem}{}
+    The strength of a signal from a cell tower, measured in
+    decibels\aside{The icon on your cell phone probably uses bars,
+      but there is no universally agreed upon standard for what ``one
+      bar'' means. There is a standard for decibels. } is inversely
+    proportional to the square of the distance between the tower and
+    the cell phone.  Suppose you have a $200$ foot tall cell tower and
+    a car driving away from the tower at a rate of $100 \sfrac{\text{
+        ft}}{\text{second}}$
+    (approximately $68$ mph).
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+      \item Find a formula for the rate at which the signal is
+        decreasing in terms of the distance $x$ from the car to the base
+        of the tower.  (Use $k$ to denote the constant of
+        proportionality.) 
+      \item Plot a graph of the formula in part (a) with $x \ge 0$ and
+        use this to approximate the distance from the base of the
+        tower where the signal decreases fastest. (Use $k = 1000000$.
+        You’ll see why we chose this scale once you’ve plotted it.)
+      \item Based on the graph, what is happening to the rate at which
+        the signal is decreasing as the car moves farther away from
+        the tower?
+      \end{enumerate}
+        \vskip-5mm{}
+  \end{embeddedproblem}
+
+  \vskip-3mm{}
+  \begin{embeddedproblem}{}
+    It is reasonable to assume that the rate at which the volume of a
+    spherical raindrop is increasing as it forms is proportional to
+    the surface area of the raindrop.  Show that under this
+    assumption, the radius (surprisingly?) grows at a constant rate.
+  \end{embeddedproblem}
+
+  \pagebreak[4]
+  
+    \begin{myexample}
+  \begin{wrapfigure}[]{r}{4in}
+    \vskip-15mm{}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1.4in,width=4in]{../Figures/PulleyProblem}}
+\label{fig:PulleyProblem}
+\end{wrapfigure}
+\vskip-5mm{}
+Consider two carts joined by a $100$ foot length of rope passing
+through a pulley $P$, which is held at a fixed height of $10$ feet
+above where the rope attaches to the carts.  Suppose cart $A$ is being
+pulled toward the left at a constant speed of
+$1 \sfrac{\text{ foot}}{\text{second}}.$
+
+
+  \begin{ProficiencyDrill-1line}
+    Make a guess: Is cart $B$ moving at a constant speed?
+  \end{ProficiencyDrill-1line}
+
+  \begin{wrapfigure}[8]{l}{3.5in}
+    \vskip-6mm{}
+\captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.3in,width=3.5in]{../Figures/TetheredCarts}}
+\label{fig:TetheredCarts}
+\end{wrapfigure}
+Let's check your guess.  The general approach is to find the
+relationships between all of the fluents involved and differentiate
+and divide by $\dx{t}$ to see how their fluxions are related.  At the
+left we have redrawn the essential features of the problem
+schematically and labeled all of the fluents.
+
+  We have the following relationships between the fluents:
+  $$
+  x^2+10^2=z^2,\hskip3 mm y^2+10^2=w^2,\text{ and } z+w=100.
+  $$
+  \begin{embeddedproblem-enumerate}
+    \label{problem:TwoCarts}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Differentiate the above equations to obtain relationships
+      between the differentials $\dx{x}$, $\dx{y}$, $\dx{z}$, and
+      $\dx{w}$.
+    \item Determine the relationship between the fluxions
+      $\dfdx{x}{t}$ and $\dfdx{y}{t}$. Suppose that
+      $\dfdx{x}{t}=1\sfrac{\text{ foot}}{\text{second}}$. Is
+      $\dfdx{y}{t}$ constant? How does this compare with your guess
+      earlier?
+    \item  Translate your solution into Newton's dot notation.
+    \end{enumerate}
+  \end{embeddedproblem-enumerate}
+\end{myexample}
+
+\pagebreak[4]
+\begin{embeddedproblem-enumerate}{}
+  \label{problem:snell1}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item   In the following diagram suppose the point $P$ is moving on the
+  $x$-axis from left to right with horizontal velocity
+  $\dfdx{x}{t} = 1 \sfrac{\text{ unit}}{\text{second}}$.\\
+  \centerline{\includegraphics*[height=1.3in,width=2in]{../Figures/PulleyProblem2}}
+
+  Find the distance, $D$ from  $A$ to $P$ to $B$ as a
+    single function of $x$ and use this to compute
+    $$\eval{\dfdx{D}{t}}{\dfdx{x}{t}}{1}.$$
+  \item 
+  \begin{enumerate}[label={\bf{}(\roman*)}]
+   As an alternative approach, we re-label the diagram as follows:\\
+    \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/PulleyProblem3}}
+   \item Define $ D=z+w.$ From  this diagram we have
+    \begin{align*}
+      w^2\amp{}=9+y^2,\\
+      5\amp{}=x+y, \text{ and}\\
+      z^2\amp{}= 1+x^2.
+    \end{align*}
+  \item 
+    Differentiate each of these equations and use the results to
+    show  that
+    $$
+    \dx{D}=\left(\frac{x}{z}-\frac{y}{w}\right)\dx{x},
+    $$
+    then use this to compute $\eval{\dfdx{D}{t}}{x}{1}.$
+  \end{enumerate}
+\end{enumerate}
+\end{embeddedproblem-enumerate}
+The purpose of Problems\#\ref{problem:TwoCarts} and~\#\ref{problem:snell1} is to demonstrate that
+you have alternatives when solve any problem. You should consciously
+try to avoid getting locked in to a single solution scheme.  In this
+case one alternative was to try to determine a single function of a
+single variable before differentiating.  At the other extreme we can
+just assign variable names to all of the important quantities in our
+problem and differentiate the equations relating these variables.
+
+Neither approach is necessarily better; that depends upon the
+problem. In fact most of the time you'll find yourself using a
+mixture of the two. It is always good to have alternatives. Keep this
+in mind.
+
+
+  \begin{embeddedproblem}{}
+    Suppose we have a rectangular box whose length is increasing by
+    $3$ cm/sec, width is increasing by $2$ cm/sec and height is
+    decreasing by $3$ cm/sec.  How fast are the volume and surface
+    area of the box changing when the length is $25$ cm, width is $20$
+    cm, and height is $10$ cm?  Are they increasing or decreasing?
+  \end{embeddedproblem}
+
+%  \pagebreak[4]
+\vskip-4mm{}
+
+\begin{embeddedproblem}{}
+  Suppose a point $P$ is moving along the curve $y=x^2$ so that its
+  horizontal velocity is
+  $\dfdx{x}{t}=1\sfrac{\text{ unit}}{\text{second}}$.  For which
+  values of $x$ is the distance from $P$ to the point $(0,1)$
+  increasing and for what values is it decreasing?  What can you say
+  about the points where the distance transitions from increasing to
+  decreasing or decreasing to increasing?
+\end{embeddedproblem}
+
+% \vskip-2mm{}
+% \begin{embeddedproblem}{}
+%   The illumination of an object by a light source is inversely
+%   proportion to the square of the distance between the source and the
+%   object.  Consider the following diagram of two street lamps
+%   of equal strength and an object at point P between them. \\
+%   \centerline{\includegraphics*[height=1.4in,width=5.5in]{../Figures/StreetlampProblem}}
+%   If $P$ is moving away from the left street lamp at a rate of $5
+%   \sfrac{\text{ ft}}{\text{second}}$, then how fast is the illumination decreasing when $P$ is
+%   $20$ ft from the left street lamp?  When it is $50$ ft from the left
+%   street lamp?  Where is the illumination decreasing faster?  Does
+%   this \emph{feel} right\aside{That is, does your answer match your
+%     intuition?} to you?  Why?  \comment{Use $k$ for the constant of
+%     proportionality.}
+% \end{embeddedproblem}
+
+
+\begin{embeddedproblem}{}
+    \label{problem:IdealGas}
+    The ideal gas law (\href{https://mathshistory.st-andrews.ac.uk/Biographies/Boyle/}{Boyle}'s Law) states that the pressure $P$ (in pascals),
+    volume $V$ (in cubic meters), and temperature $T$ (in degrees
+    \href{https://mathshistory.st-andrews.ac.uk/Biographies/Thomson/}{Kelvin}) of an ideal gas are related by the formula $PV=kNT$ where
+    $N$ is the number of gas molecules and $k$ is the \href{https://mathshistory.st-andrews.ac.uk/Biographies/Boltzmann/}{Boltzmann}
+    constant. What this says is that for a fixed amount of gas, if the
+    volume is held fixed, then the pressure is proportional to the
+    temperature and if the temperature is held fixed, then the
+    pressure is inversely proportional to the volume.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      % \begin{multicols}{2}
+    \item Assuming that we have an enclosed gas, and that $N$ is held
+      constant. Find an equation that relates $\dx{P}$, $\dx{V}$, and
+      $\dx{T}$, and use this to find $\dfdx{T}{t}$ in terms of
+      $\dfdx{P}{t}$ and $\dfdx{V}{t}$.
+    \item
+      Suppose we have a piston compressing the gas in a
+      cylinder as in the following sketch.\\
+      \centerline{\includegraphics*[height=1in,width=1.5in]{../Figures/PistonProblem2}}
+      Show that for the pressure to be held fixed $\dfdx{T}{t}$ must
+      satisfy
+      $$
+      \dfdx{T}{t} = \frac{T}{h}\dfdx{h}{t}.
+      $$
+      \comment{Notice that this is independent of the radius of the
+        cylinder.}
+    \item Suppose that when $h=.2$ meters the temperature is
+      $300^\circ K$.  If the piston is moving to the right at a rate
+      of $0.001 \sfrac{\text{meters}}{\text{second}}$, how fast should
+      the temperature be decreasing at that instant to maintain
+      aconstant pressure? 
+      % \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+\vskip-4mm{}
+    \begin{embeddedproblem}{}
+      A streetlamp is mounted at the top of a $20$ foot pole.  A $6$
+      foot tall person is walking away from the base of the pole at a
+      constant speed.
+      \begin{enumerate}[label={\bf{}(\alph*)}]
+      \item Make a guess: Is the length of this person's shadow
+        increasing at a constant rate?
+      \item Now solve the problem in part (a).
+      \end{enumerate}
+    \end{embeddedproblem}
+
+\vskip-4mm{}
+
+
+
+%\pagebreak[4]
+\begin{embeddedproblem}[Find the Patterns]
+%   \begin{wrapfigure}[5]{r}{2in}
+% \captionsetup{labelformat=empty}
+%     \centerline{\includegraphics*[height=2in,width=2in]{../Figures/RelatedRates-RightTri}}
+% \label{fig:RelatedRates-RightTri}
+% \end{wrapfigure}
+    Suppose the position of a point, $P_x$, on the $x$-axis is given
+    by $(x(t),0)$ and the position of another point, $P_y$, on the
+    $y$-axis is given by $(0,y(t))$. Let $S(t)$ represent the distance
+    between $P_x$ and $P_y$.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item
+      \begin{enumerate}[label={\bf{}\roman*.}]
+        % \begin{multicols}{2}
+      \item If $x(t)=t$, and $y(t)=t$ show that
+        $\dfdx{S}{t}=\sqrt{2}$.
+      \item If $x(t)=2t$, and $y(t)=2t$ show that
+        $\dfdx{S}{t}=\sqrt{8}$.
+      \item If $x(t)=t$, and $y(t)=3t$ show that
+        $\dfdx{S}{t}=\sqrt{10}$.
+      \item If $x(t)=5t$, and $y(t)=3t$ show that
+        $\dfdx{S}{t}=\sqrt{34}$.
+      \item Do you see a pattern yet? If you do write it down and try
+        to show that it always holds. If you don't make up some more
+        simple examples, solve them to gather more evidence, and
+        conjecture a pattern when you believe you have see it. Then show
+        that the pattern always holds.
+        % \end{multicols}
+      \end{enumerate}
+    \item
+      \begin{enumerate}[label={\bf{}\roman*.}]
+      \item Show that if $x(t)=t^{\frac12}$, and $y(t)=t^{\frac12}$
+        then $\displaystyle\dfdx{S}{t}=\frac{1}{\sqrt{2t}}$. Does this
+        make intuitive sense to you?
+      \item Show that if $x(t)=t^{\frac13}$, and $y(t)=t^{\frac13}$,
+        then
+        $\displaystyle\dfdx{S}{t}=\frac{\sqrt{2}}{3\sqrt[3]{t^2}}$.
+      \item Show that if $x(t)=t^{\frac14}$, and $y(t)=t^{\frac14}$,
+        then
+        $\displaystyle\dfdx{S}{t}=\frac{\sqrt{2}}{4\sqrt[4]{t^3}}$.
+      \item Do you see a pattern yet? If you do write it down and try
+        to show that it always holds. If you don't make up some more
+        simple examples, solve them to gather more evidence, and
+        conjecture a pattern when you believe you have one. Then show
+        that the pattern always holds.
+      \end{enumerate}
+    \item Finally, given \emph{any} $x(t)$ and \emph{any} $y(t)$, find
+      a completely general formula for $\dfdx{S}{t}$,
+    \end{enumerate}
+    \vskip-6mm{}
+  \end{embeddedproblem}
+
+
+
+
+\section{Self-intersecting Curves and Parametric Equations}
+\label{sec:self-inters-curv}
+In Problem~\#\ref{problem:ClassicalCurves1} we had you find the line
+tangent to several interesting curves.  We were careful however to ask
+only about relatively simple curves. In particular none of the curves
+in Problem~\#\ref{problem:ClassicalCurves1} intersected themselves. We
+avoided self-intersecting curves earlier because we didn't have the
+techniques necessary to address the problem of tangent lines at points
+of intersection. We do now.
+
+It turns out that we already have all of the computational tools we
+need. But we need to broaden the way we think about them.
+
+%\pagebreak[4]
+\begin{ProficiencyDrill}
+  \label{problem:ClassicalCurves3}
+  For the following curves, compute $\dfdx{y}{x}.$
+  \begin{enumerate}[label={\bf{}[\Roman*]}]
+    \begin{multicols}{2}
+    \item Folium of Descartes:\\
+      $x^3+y^3=3xy$\\
+      \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/FoliumOfDescartes}}
+    \item The Tschirnhausen cubic:\\
+      $27{y}^{2}=\left(1-x\right){\left(8+x\right)}^{2}$\\
+      \leftline{\includegraphics*[height=1.5in,width=3in]{../Figures/TschirnhausenCubic3}}
+    \end{multicols}
+  \end{enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    % \begin{multicols}{2}
+  \item Show that for the Folium of Descartes
+    $\dfdx{y}{x}=\frac{y-x^2}{y^2-x}$. 
+  \item    Locate all of the points $(x,y)\neq (0,0)$ where the line tangent to the
+    Folium of Descartes is horizontal, and where it is vertical.
+  \item Show that for the Tschirnhausen cubic $\dfdx{y}{x} =
+    \frac{-(8+x)(3x+6)}{54y}.$
+  \item Locate all of the points $(x,y)\neq (-8,0)$ where the line
+    tangent to the Tschirnhausen cubic is horizontal, and where it
+    is vertical.
+    % \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+
+
+If we try to compute $\eval{\dfdx{y}{x}}{(x,y)}{(0,0)}$ for the Folium
+of Descartes we get $$\eval{\dfdx{y}{x}}{(x,y)}{(0,0)}=\frac{0}{0}$$
+which is very strange, but seems to make \emph{some} sort of sense
+because we can see in the graph that at $(0,0)$ there is both a
+horizontal AND a vertical tangent line.
+
+You might be thinking that we have this situation solved; that if we
+ever  obtain $\dfdx{y}{x}=\frac{0}{0}$, at some point then the
+curve has both a vertical and horizontal tangent at that point.
+It would be nice if things were that simple. But they are not.
+
+Next consider at the self-intersection point $(-8,0)$ for the
+Tschirnhausen Cubic. Again, as long as we stay away from the
+self-intersection point there are no difficulties. You can see from
+the graph that any sort of tangent line at the point of
+self-intersection would be neither vertical nor horizontal but once
+again we have $\eval{\dfdx{y}{x}}{(x,y)}{(-8,0)}=\frac{0}{0}$.
+
+If nothing else, these examples illustrate that using Calculus is much
+more subtle than simply computing a derivative. A cavalier attitude
+can lead to some very strange anomalies.  As is true of any powerful
+tool, to avoid disaster we must be careful.
+
+The safest approach is to avoid points of self-intersection and
+fractions such as $\frac00$ but we won't be able to avoid them forever
+so we might as well address the issue now.  Adopting Newton's dynamic
+approach will give us the crucial insight. We'll need to
+think of the horizontal and vertical coordinates as Newton's
+fluents; things changing in time.
+
+
+%\pagebreak[4]
+  \begin{embeddedproblem-enumerate}
+    \label{problem:TschirnhausenCubic}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      % \begin{multicols}{2}
+    \item Show that if $x(t)$ and $y(t)$ satisfy
+      \begin{align*}
+        x(t)\amp=1-3t^2\\
+        y(t)\amp=t(3-t^2)
+      \end{align*}
+      then $x$ and $y$ satisfy the equation of the Tschirnhausen
+      Cubic: $27{y}^{2}=\left(1-x\right){\left(8+x\right)}^{2}$.
+    \item Compute the fluxions of $x$ and $y$.
+      \item If we think of $t$ as time, with $t\lt 0$, representing
+        time in the past, is the point traversing the curve clockwise
+        or counterclockwise?
+        \\
+        \hint{ Consider the values of $t$ for which $x$ and
+          $y$ are moving in the positive and negative directions.}
+      \item Find the values of $t$ when $(x(t), y(t)) = (-8,0)$ and
+        use the result of part (b) to compute
+        $\dfdx{y}{x} =\frac{\dot{y}}{\dot{x}}$ at these times.
+        Are
+        your answers consistent with what you obtained in part (c)?
+        Explain.
+      \item Show that the equations of the two lines which are tangent
+        to the Tschirnhausen cubic at $(-8, 0)$ are
+        $
+        y=\pm\frac{1}{\sqrt{3}}(x+8).
+        $
+      % \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem-enumerate}
+
+
+%\pagebreak[4]
+
+\begin{embeddedproblem}
+  \label{problem:FoliumOfDescartes1}
+  Recall that the Folium of Descartes, $x^3+y^3=3xy$,  crosses itself at the origin.
+  % \centerline{\includegraphics*[height=2in,width=2in]{../Figures/FoliumOfDescartes}}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that if $ x(t)=\frac{3t}{1+t^3}$ and
+    $ y(t)=\frac{3t^2}{1+t^3}$ then $x$ and $y$ satisfy the equation
+    of the Folium.
+  \item Compute the fluxions of $y$ and $x$.
+  \item For what values of $t$ is $y\ge0$?
+  \item For what value of $t$ is $(x(t), y(t)) = (0,0)$? Compute
+    $\dfdx{y}{x}=\frac{\dot{y}}{\dot{x}}$ at this value of $t$. Is
+    this consistent with the graph?
+  \item Can you explain why we only found one tangent line when it
+    is quite clear from the graph that there must be two? 
+  \end{enumerate}
+\end{embeddedproblem}
+
+Using the static approach to find a tangent line at a
+self-intersection point is very much like standing in the center of
+the  intersection of two roads and trying to decide if the road goes
+north-south or east-west. Obviously the road doesn't \emph{go}
+anywhere. It just sits there. It is the travelers on the road who are
+moving.
+
+If instead we ask, ``Which way are we going as we
+  \emph{pass through the intersection}?'' there is only one answer. We're
+going in the direction we were traveling when we entered the
+intersection.  If we think about the situation dynamically rather than
+statically then we always have both a position on the curve and a
+direction we are traveling.
+% Do you see how changing our interpretation of $x$ and $y$ allowed us
+% to work with self-intersecting curves?  If we think of $x$ and $y$ as
+% coordinates of an unmoving road then it is impossible to interpret
+% tangency in any meaningful way. It is like standing in the middle of
+% the intersection of two roads and asking, ``Which way does the road
+% go?'' Obviously it can be ``going'' (if that is the right word) in any
+% of four directions.
+
+A curve is not dynamic. It does not move, it just sits there. Like a
+road. But if we think of the curve as being generated by the motion of
+a point (Newton's viewpoint) things change.
+
+If we are traveling along a curve it is clear that our direction of
+travel is always tangent to the curve. By changing our question from
+``What is the tangent line at this \emph{point}?'' to ``What is the
+tangent line at this \emph{time}?'' the concept of two (or more)
+tangent lines at a \emph{single point in space} becomes
+meaningful. Each tangent is obtained by passing through the point of
+tangency at \emph{distinct moments in time.}
+
+What comes along with this change in interpretation is this: We no
+longer want to think of a differential ratio \emph{only} as a
+slope. The ratio $\dfdx{y}{x}$ is simply the rate of change of $y$
+with respect to $x$. If $y$ and $x$ happen to represent the vertical
+and horizontal coordinates of a graph, then the change of $y$ with
+respect to $x$ will be the slope of the curve, $y=y(x)$. If $y$
+represents the vertical position of an object and $t$ represents the
+time when the object is at position $y(t)$, then the change of $y$ with
+respect to $t$, $\dfdx{y}{t}=\dot{y}$, is the vertical velocity of the object
+as it passes through $y$.
+
+In general if $\alpha$ and $\beta$ are two related quantities  then
+$\dfdx{\alpha}{\beta}$ is the \term{rate of change of $\alpha$ with respect to
+  $\beta$.} The physical (or geometric) interpretation of
+$\dfdx{\alpha}{\beta}$ will necessarily depend on what $\alpha$ and
+$\beta$ represent physically (or geometrically).
+
+Notice that when we switched to the dynamical viewpoint we changed the
+nature of our representations of the curves. For example the Folium of
+Descartes can be represented by the formula as
+$$x^3+y^3=3xy.$$
+This formula is complex and can be hard to work with, mainly because
+the relationship between $x$ and $y$ is difficult to see and understand.
+
+In the representation
+$$
+  x(t)=\frac{3t}{1+t^3}, \ \  \  
+  y(t)=\frac{3t^2}{1+t^3}
+  $$
+  the relationship between $x$ and $y$ is still difficult but the
+relationship between $x$ and $t$ and between $y$ and $t$ is a bit
+simpler because $x$ and $y$ are now both functions of $t$, and we know
+how to work with functions.
+    
+This second representation is usually called the \term{parametric
+  functions} or \term{parametric equation} representation, because the
+$x$ and $y$ coordinates are given in terms of a parameter. In this
+case the parameter $t$ represents time. This is common but by no means
+required. The parameter might represent anything, just as $x$ and $y$
+might.
+
+In fact, you might be wondering where we got the parameterization for
+the Folium.  It may not seem obvious, but as long as $(x,y)\neq(0,0)$, the
+parameter $t$ actually represents the slope of the line joining the
+origin to $(x,y)$.
+
+\begin{embeddedproblem}
+  Let $(x,y)$ represent any point on the Folium $x^3+y^3=3xy$ which is
+  not the origin.  Let $t$ represent the slope of the line joining the
+  origin to $(x,y)$; that is, $\frac{y}{x}=t$ or $y=tx$.  Use this to
+  show that
+  $$
+  x=\frac{3t}{1+t^3},\text{ and } y=\frac{3t^2}{1+t^3}.
+  $$
+  \end{embeddedproblem}
+  Of course, it is not wrong to also think of this parameter as time.
+  We are just stipulating that the point is moving so that its
+  position at time $t$ is such that the slope of the line joining the
+  origin to the point matches $t$.  Mathematically, what the parameter
+  represents is usually not at issue. It is just a parameter.
+
+
+  \begin{mynotation}{Parametric Functions}
+    Recall that when we looked a Roberval's treatment of the conic
+    sections in Section~\ref{sec:roberv-conic-sect} we found it handy
+    to think of our curves as being traced out by the motion of a
+    point and we created the notation
+    $
+    \begin{ParamEq}
+      {x(t)}{y(t)}{}
+    \end{ParamEq}
+    $ to reflect that point of view. This notation suits our current
+    needs almost perfectly, but  we will need to  modify it slightly.
+
+    First, since the coordinates of our point are, individually,
+    functions of $t$ it follows that the position of the point $P$
+    itself depends on (is a function of) $t$ as well: $P(t)= 
+    \begin{ParamEq}
+      {x(t)}{y(t)}{}.
+    \end{ParamEq}
+    $ 
+
+    Second, it is useful for us to have a convenient way to specify
+    the domain of this function so we will add a third component to do
+    that. For example if the domain of our function is all
+    values of $t$ strictly between zero and one we would write.
+    $$
+    P(t)=
+    \begin{ParamEq}
+      {x(t)}{y(t)}{0\lt t\lt1}.
+    \end{ParamEq}
+    $$
+  \end{mynotation}
+
+% \pagebreak[4]
+% \begin{myexample}\vskip-7mm{}
+%   \label{example:CircleParam1}
+%   \begin{wrapfigure}[5]{r}{1.5in}
+%     \vskip-12mm{}
+% \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/CircleParamr}}
+% \label{fig:CircleParamr}
+% \end{wrapfigure}
+%   Suppose $r$ is a constant. Then $
+%   P(t)=\begin{ParamEq}
+%     {x=r\cos(t)}
+%     {y=r\sin(t)}
+%     {0\le t \lt 2\pi}
+%   \end{ParamEq}
+%   $ parameterizes the circle $x^2+y^2=r^2$.  In this
+%   example it can be helpful to think of the parameter $t$ as the
+%   central angle of the circle as seen below.
+%   Since it is customary to represent angles with the Greek letter
+%   $\theta$  this parameterization is often rendered as
+%   $
+%   P(t)=\begin{ParamEq}
+%     {x=r\cos(\theta)}
+%     {y=r\sin(\theta)}
+%     {0\le t \lt 2\pi}
+%   \end{ParamEq}
+%   $ 
+%   but it should be clear the what we call the parameter
+%   is unimportant. It is what the parameter represents that matters
+%   since this is what guides how we think about it.
+% \end{myexample}
+
+``Dynamic'' and
+``static'' are only words we use to describe the way we're thinking
+about a problem. There is nothing inherently dynamic or static in either representation
+so there is no \foreign{a priori} reason to prefer one over the
+other. They describe the same set of points in the plane. 
+
+For example if $y=x^2$ then $\dx{y}=2x\dx{x}$. Time ($t$) does not
+appear in these formulas so we tend to think of them
+statically. However if we want to think of them dynamically we divide
+by $\dx{t}$ to get $\dfdx{y}{t}=2x\dfdx{x}{t}$ and interpret this to
+say that at any given time $t$, the position of a point is
+$
+\begin{ParamEq}
+  {x(t)}
+{y(t)}
+{}
+\end{ParamEq}
+$ and the vertical velocity, $\dfdx{y}{t}$ is twice the
+value of the $x$ coordinate times the horizontal velocity,
+$\dfdx{x}{t}$.
+% It comes down to changing the question from ``What is the tangent line 
+% the same way question  then there is only curv in the previous problem, it is hard
+% to account for the fact that the Folium crosses itself at the origin.
+% We will come back to that later\notetoself{I’m thinking to revisit this in the
+% section of limits as  approaches $\pm\infty.$}, but before we go too far afield,
+% let’s come back to the problem that prompted us to take Newton’s
+% dynamic approach to begin with: the flight path of the Vomit Comet.
+% We’ll start by looking at motion in a single direction and then apply
+% what we learn to a two dimensional flight path.  To help with the
+% jargon, we will introduce some terminology. 
+
+
+\begin{myexample}
+  Moving between the equation and parametric forms can be very hard to
+  do depending on the complexity of the equation.  The simplest
+  situation is when you have $y$ as a function of $x$; for example
+  $y(x)=x^2$. To find a parametric representation we observe that we
+  need to specify both $x$ and $y$ as functions of a third parameter,
+  $t$. This can be puzzling until we realize that $x$ is completely
+  free. All we need to do is ensure that $y=x^2$.  So if we take
+  $x(t)=t$ and $y=x^2=t^2$ we \emph{almost} have our
+  parameterization.
+  
+  When faced with a formula like $y=x^2$ you have learned to always
+  assume that $x$ could be any real number\aside{At least any real
+    number that makes sense.}, but with parametric equations this
+  assumption can lead to problems. We'll need to specify the range of
+  the parameter $t$ explicitly. This is why we said we \emph{almost}
+  have our parameterization. A complete parameterization needs to
+  specify the values of $t$ that are available\aside{Otherwise known
+    as the domain.} to us, so
+  $
+P(t)=  \begin{ParamEq}
+{    x(t)=  t}
+{    y(t)=  t^2}
+{    -\infty\lt{}t\lt{}\infty}
+  \end{ParamEq}
+  $.
+
+  We can \emph{always} parameterize the graph of a function the same
+  way we just parameterized $y=x^2$. A parameterization of $y=y(x)$,
+  with domain $a\le x\le b$ is
+$
+P(t)=
+\begin{ParamEq}
+{  x(t)=t}
+{  y(t)=y(t)}
+{  t\in [a,b]}
+\end{ParamEq}.
+$
+
+This parameterization may or may not be particularly useful, but
+it can \emph{always} be done. 
+\end{myexample}
+
+
+
+\begin{embeddedproblem-enumerate}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Show that the parameterization
+      $P(t)=
+      \begin{ParamEq}
+        {t^2+1}
+        {t^4+2t^2+1}
+        {-\infty\lt{}t\lt{}\infty}
+      \end{ParamEq}
+      $
+      traces out part of the parabola $y=x^2$. Which part?
+    \item The parameterization
+      $P(t)=
+      \begin{ParamEq}
+        {t^2+1}
+        {t^4+2t^2+1}
+        {0\lt{}t\lt{}\infty}
+      \end{ParamEq}
+      $
+      traces out  different part of the same parabola. How else is this
+      parameterization different from the one in part (a)?
+    \end{enumerate}
+  \end{embeddedproblem-enumerate}
+
+  \vskip-3mm{}
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item   Show that each of the following is a parameterization of part of the graph
+    of $y=x^2$.
+    \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{3}
+      \item $P(t)=
+        \begin{ParamEq}
+          {3t}
+          {9t^2}
+          {t\in\RR}
+        \end{ParamEq}
+        $
+      \item $P(t)=
+\begin{ParamEq}
+  {-t}
+  {t^2}
+  {t\in\RR}
+\end{ParamEq}
+$
+      \item $P(t)=
+\begin{ParamEq}
+  {\sqrt{t}}
+  {t}
+  {t\ge0}
+\end{ParamEq}
+$
+      \item $P(t)=
+\begin{ParamEq}
+  {-\sqrt{t}}
+  {t}
+  {t\ge{}0}
+\end{ParamEq}
+        $
+      \item $P(t)=
+\begin{ParamEq}
+{1/t}
+{1/t^2}
+{\abs{t}\gt{}0}
+\end{ParamEq}
+        $
+      \item $P(t)=
+\begin{ParamEq}
+{t^{1/3}}
+{t^{2/3}}
+{t\gt 0}
+\end{ParamEq}
+        $
+      \item $P(t)=
+\begin{ParamEq}
+{t^3-1}
+{t^6-2t^3+1}
+{-\infty\lt{}t\lt{}\infty}
+\end{ParamEq}
+        $
+      \item $P(t)=
+\begin{ParamEq}
+  {t+1}
+  {t^2+2t+1}
+  {-20\lt{}t\lt{}20}
+\end{ParamEq}
+        $
+        % \item $
+        %   \begin{Bmatrix}
+        %     x(t)=\sin(t)\\
+        %     y(t)=\sin^2(t)\\
+        %     -\infty\lt{}t\lt{}\infty
+        %   \end{Bmatrix} $
+        % \item $
+        %   \begin{Bmatrix}
+        %     x(t)=\cos(t)\\
+        %     y(t)=1-\sin^2(t)\\
+        %     -\infty\lt{}t\lt{}\infty
+        %   \end{Bmatrix} $
+      \end{multicols}
+    \end{enumerate}
+  \item Sketch \emph{only} the part of the curve included in each
+    parameterization in part (a).  Be sure to indicate the direction
+    of travel in each case, assuming $t$ is increasing.
+  \item Compute $\frac{\dot{y}}{\dot{x}}$ and show that this yields
+    $\dfdx{y}{x}=2x$ for each of the parameterizations in part (a).
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+  \vskip-3mm{}
+\begin{embeddedproblem-enumerate}
+  \label{problem:UnitCircleParameterization1}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that each of the following is a parameterization of
+    part of the unit circle.
+    \begin{enumerate}[label={\bf{}(\roman*)}]
+      \begin{multicols}{3}
+      \item $P(t)=
+        \begin{ParamEq}
+{          t}
+{          \sqrt{1-t^2}}
+{          -1\le t\lt{} 1}
+        \end{ParamEq}
+        $
+      \item $P(t)=
+        \begin{ParamEq}
+{          t}
+{          -\sqrt{1-t^2}}
+{          0\le t\lt{} 1}
+        \end{ParamEq}
+        $
+      \item $P(t)=
+        \begin{ParamEq}
+{          \sqrt{1-t^2}}
+{          t}
+{          -1\le t\lt{} 1}
+        \end{ParamEq}
+        $
+      \item $P(t)=
+        \begin{ParamEq}
+{          \sqrt{1-t^2}}
+{          t}
+{          0\le t\lt{} 1}
+        \end{ParamEq}
+        $
+      \item $P(t)=
+        \begin{ParamEq}
+{          t^2}
+{          \sqrt{1-t^4}}
+{          -1\le t\lt{} 1}
+        \end{ParamEq}
+        $
+      \item $P(t)=
+        \begin{ParamEq}
+{          t-2}
+{          \sqrt{4t-(3+t^2)}}
+{          1\le t\lt{} 2}
+        \end{ParamEq}
+        $
+      \end{multicols}
+    \end{enumerate}
+  \item Sketch \emph{only} the part of the curve included in each
+    parameterization in part (a).  Be sure to indicate the direction
+    of travel in each case.
+  \item Compute $\frac{\dot{y}}{\dot{x}}$ and show that this yields
+    $\dfdx{y}{x}=-\frac{x}{y}$ for each of the
+    parameterizations in part (a).
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+As we've seen we can always parameterize the graph of a function, but
+the reverse is not true.  A parameterized curve will not always be the
+graph of some function.  For example none of the curves in
+problem~\#\ref{problem:ClassicalCurves1} is the graph of a function,
+but all can be parameterized.
+
+Since it can't always be accomplished there is no general strategy for
+expressing a parameterized curve as the graph of a function. One way
+to do it\aside{Not necessarily the best.  In general there is no best
+  way.} is to find $\dfdx{y}{x}$ and ``undifferentiate''  as in the
+following example.
+
+%\pagebreak[4]
+\begin{embeddedproblem}
+  \label{problem:ParametricIVP}
+  \vskip-4mm{}
+  \begin{wrapfigure}[]{r}{2in}
+  \vskip-1mm{}
+    \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=2in,width=2in]{../Figures/Parametric4}}
+    \label{fig:Parametric4}
+  \end{wrapfigure}
+  The red curve  in the sketch at the right 
+  is  parameterized by
+  $$P(t)=
+  \begin{Bmatrix}
+    \frac{1}{\sqrt{t^2-1}}\\[6pt]
+    \frac{t^2-2\sqrt{t^2-1}}{\sqrt{t^2-1}}\\[6pt]
+    1\lt{} t\lt{}\infty
+  \end{Bmatrix}
+  .
+  $$
+  We wish to find
+  $y(x)$.
+  Differentiating $x$ and $y$ gives
+  $$\dfdx{x}{t}= \frac{-t}{(t^2-1)^{\frac32}}$$
+  and
+$$
+    \dfdx{y}{t}= \frac{t^3-2t}{(t^2-1)^{\frac32}}
+$$
+so that
+$
+\dfdx{y}{x}
+% \frac{\dfdx{y}{t}}{\dfdx{x}{t}}\frac{\frac{t^3-2t}{(t^2-1)^{\frac32}}}{\frac{t}{(t^2-1)^{\frac32}}}=
+% -t^2+2
+= 1-(t^2-1)$.
+  % and since $x(t)=\frac{1}{\sqrt{t^2-1}}$ we have
+  % $\dfdx{y}{x} =1-\frac{1}{x^2},$ right?
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+%    \begin{multicols}{2}
+    \item    Fill in the details of the computation of $\dfdx{x}{t}$,
+      $\dfdx{y}{t}$,
+    and show that  $\dfdx{y}{x} = 1-\frac{1}{x^2}$.
+  \item Show that  $\dfdx{y}{x} = 1-\frac{1}{x^2}$ is the derivative
+    of $y=x+\frac{1}{x}$.
+  \item Sketch the graph of $y= x+\frac1x$ to see that this is \alert{not} the
+    same as the parameterized curve above.  Can you tell what went
+    wrong?
+    \item Show that the point $\left(1,0\right)$ is on our
+      parameterized  curve, and use this to find
+      the correct function, $y(x)$.
+  % \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem}  
+
+% \begin{embeddedproblem-enumerate}
+%     \begin{enumerate}[label={\bf{}(\alph*)}]
+%     \end{enumerate}
+%   \end{embeddedproblem-enumerate}
+
+\pagebreak[4]
+
+\begin{embeddedproblem}
+  For each of the given parameterizations find $\dfdx{y}{x}$ two
+  different ways:
+  \begin{enumerate}[label={\bf{}(\roman*)}]{}
+  \item First by computing $\dx{x}$ and $\dx{y}$ and finding
+    their ratio. 
+  \item and second by solving for $t$ in terms of $x$ (or $y$),
+    substituting this into $y$ (or $x$) and computing $\dfdx{y}{x}$
+    directly.
+  \end{enumerate}
+
+  Then use this to determine the corresponding equation in $x$ and
+  $y$.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $P(t)=
+      \begin{ParamEq}
+        {t-1}
+        {t+1}
+        {t\in\RR}
+      \end{ParamEq}
+      $
+    \item $P(t)=
+      \begin{ParamEq}
+{        3t-2}
+{        -5t+7}
+{        t\in\RR}
+      \end{ParamEq}
+      $
+    \item $ P(t)=
+      \begin{ParamEq}
+{        1/\sqrt{t}}
+{        \sqrt{t}}
+{        0\lt{}t}
+      \end{ParamEq}
+      $
+    \end{multicols}
+  \end{enumerate}
+\vskip-10mm{}
+\end{embeddedproblem}
+
+% \begin{embeddedproblem}
+%   Suppose that $
+%   \begin{Bmatrix}
+%     x(t)=z(t)\\
+%     y(t)=w(t)\\
+%     a\le t\lt{} b
+%   \end{Bmatrix} $ is a parameterization of some curve. Show that
+%   $ \dfdx{y}{x}=\frac{\dfdx{w}{t}}{\dfdx{z}{t}}.  $
+% \end{embeddedproblem}
+
+
+
+% \begin{embeddedproblem}{}
+%   \label{problem:cycloid1}
+%   Suppose we trace the path of a point $P$ on a unit circle as the circle
+%   rolls along a straight line.  Such a curve is called a \href{https://mathshistory.st-andrews.ac.uk/Curves/Cycloid/}{\term{cycloid}}.\\
+%   \centerline{\includegraphics*[height=2in,width=5in]{../Figures/Cycloid1}}
+%   For reasons we will examine later this curve has fascinated
+%   mathematicians for a long time. For now we just want to find a
+%   parameterization for it.
+%   Use the above diagram to show that the coordinates of $P$
+%   are given by $
+%   \begin{Bmatrix}
+%     x=\theta-\sin(\theta) \\
+%     y=1-\cos(\theta)\\
+%     -\infty\lt{}\theta\lt{}\infty
+%   \end{Bmatrix}.
+%   $
+%   \\    % \begin{enumerate}[label={\bf{}(\alph*)}]{}
+%     % \item Use the above diagram to show that the coordinates of $P$
+%     %   are given by
+%     %   \begin{align*}
+%           %     x\amp{}=a(\theta-\sin(\theta)) \\
+%           %     y\amp{}=a(1-\cos(\theta))
+%                          %   \end{align*}
+%                          % \item Compute $\dx{x}$ and $\dx{y}$ in terms of $\dx{\theta}.$
+%                          % \item Find the slope of the tangent line to the cycloid at $P$ in
+%                          %   terms of $\theta$ and use this to confirm that the tangent line is
+%                          %   horizontal at the apex of the cycloid.
+%                          % \item Suppose the ball is rolling at a speed of
+%                          %   $2\frac{\text{units}}{\text{second}}.$ Compute the speed,
+%                          %   $\dfdx{s}{t}= \frac{\sqrt{(\dx{x})^2+(\dx{y})^2}}{\dx{t}}$ of
+%                          %   the point $P.$ What do you notice about the speed of $P$ in
+%                          %   relation to the ball's radius? Do you find this surprising? When
+%                          %   is $P$ moving the fastest and when is it moving the slowest?
+%                          %   Does this make sense physically?
+%                          % \end{enumerate}
+% \end{embeddedproblem}
+
+
+
+
+
+
+% \vskip1in{}
+\section{Bridges, Chains, Domes, and Telescopes}
+\label{sec:bridg-chains-telesc}
+\markright{\sc{}Bridges, Chains, Domes, and Telescopes}
+
+\subsection*{\underline{Bridges}}
+In the previous section all of the quantities we were looking at were
+time dependent -- they were in motion -- so it was useful to think of
+the derivative, $\dfdx{y}{t}$, as a velocity (fluxion). In other
+applications, where the quantities involved are not time dependent,
+the derivative is still a useful tool but thinking of it as a velocity
+may not be as useful.
+\vskip1mm{}
+\centerline{\includegraphics*[height=2.3in,width=4in]{../Figures/GoldenGatebyModestosUrbanos1.png}}
+\vskip1mm{}
+
+
+For example, consider the shape of the support cable on a stable
+suspension bridge as seen in the picture above. A \emph{stable} bridge
+is one that does not move in any significant way\aside{The whole point of
+  a bridge is that it does \emph{not} move. A moving bridge is called a
+  disaster.}.
+
+% \centerline{\includegraphics*[height=2in,width=4in]{../Figures/MackinacBridge1}}
+The shape of the suspension cable appears to be parabolic, but how can
+we be sure of this?
+
+At any given moment there are a lot of forces acting on a bridge, but
+most of them are insignificant most of the time. The mantra of
+mathematical modeling is to keep things as simple as possible (at
+least in the beginning) by focusing on the dominant parameter
+first\aside{Or, equivalently, we set the secondary parameters equal to
+  zero.} In this case the dominant force involved is clearly
+the weight of the bridge itself.
+
+We assume that the weight density of the deck of the bridge is $W$
+newtons/meter\aside{A \emph{newton} is a unit of force obviously named
+  after Isaac Newton.}. The cable adds to the weight of the bridge as
+well, but since it is relatively small compared to the weight of the
+deck we will ignore it (to keep the model simple).  Assuming the deck
+is horizontal we can take it to be the $x$ axis Now suppose we graph
+of $y=y(x)$ represents the cable between two upright towers located at
+$x=-U$ and $x=U.$ Remember, we don't yet know if this
+is a parabola.\\\\
+\centerline{\includegraphics*[height=1in,width=5in]{../Figures/Bridge1}}
+Let's choose an arbitrary point $(x,y)$ on the curve with $0\lt{}x\lt{}U$ and
+focus on the portion of the bridge between $(-x,y)$ and $(x,y)$.\\\\
+\centerline{\includegraphics*[height=1in,width=5in]{../Figures/Bridge2}}
+% \begin{wrapfigure}[]{r}{1in}
+%   % \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=2in,width=1in]{../Figures/VerticalCable1}}
+%   \label{fig:VerticalCable1}
+% \end{wrapfigure}
+These are the two points that are holding up the section of the bridge
+on the interval from $-x$ to $x$.  The arrows represent the tangential
+forces felt on the cable at those two points.  We assume that the
+curve is symmetric so we can restrict our attention to the right half
+of the bridge.
+
+Let’s draw that half and examine the tangential force at various
+points on the bridge and the horizontal and vertical components of
+these.\\
+\centerline{\includegraphics*[height=1.7in,width=6in]{../Figures/Bridge6}}
+Notice that at $x=0$, the tangential force, which we labeled $-T$ is
+horizontal. You’ll see why we used negatives momentarily. This
+reflects the fact that at that point there is no vertical force as it
+would be the weight for the deck from $x=0$ to $x=0$ which is
+zero. (If you think about it, this is why it’s the lowest point, there
+is no vertical pull.) Its horizontal component, $-H$, represents the
+horizontal tension. Basically, this represents the force opposing us
+as we pull the cable tighter. The tighter we winch the cable, the
+larger $H$ would be. Notice that this horizontal tension is the same at
+every single point since tightening the cable produces the same
+horizontal tension throughout the cable. What varies is the vertical
+component of the force. As we move out further along the cable, there
+is more of the deck to support and since we are ignoring the weight of
+the cable, this vertical force is just the weight of the deck from
+$x=0$
+to that point.
+
+This cumulative effect can also be thought of this way. The point on
+the cable at $x = 20$ not only must support the weight of the deck
+from $x = 10$ to $x = 20$, but must bear the brunt of the load at the
+point $x = 10$ as well. This leads to the vertical force at $x = 20$
+being $-10W - 10W = -20W$. The point at $x = 30$ must support whatever
+weight there is at $x = 20$ along with the extra weight from $x = 20$
+to $x = 30$ which totals $-20W - 10W = -30W$. If you were hoisting a
+person carrying a bucket of sand, then you would be bearing the weight
+of both the person and the sand whereas that person is only bearing
+the weight of the sand. This is the same idea.
+
+The conclusion of this analysis is that at any point
+$(x, y)$ on the curve, the tangential force pulling against us has a
+horizontal component of $-H$ and a vertical component of $-Wx$. To
+stabilize the bridge, we need to be pulling with the same force in
+exactly the opposite direction. This leads to the following
+drawing. (Now you see why we used negatives before.)\\
+\centerline{\includegraphics*[height=1.7in,width=5.8in]{../Figures/Bridge7}}
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Use the above analysis and schematic drawing of the forces
+    involved to show that the curve which represents the cable must
+    satisfy the differential equation
+    $$\dfdx{y}{x}=\frac{Wx}{H}.$$
+    \hint{Notice that $T$ is pulling in the direction tangent to the
+      cable.}
+  \item Show that the parabola $y=\frac{W}{2H} x^2+b,$ where $b$ is an
+    (unknown) constant, satisfies this differential equation
+  \item Let $W = 1$, $b = 0$ and plot the parabola for $H = 1, 2,
+    3$. Does this agree with the idea that $H$ indicates how tight we
+    are winching the cable?
+  \end{enumerate}
+  \vskip-4mm{}
+\end{embeddedproblem-enumerate}
+
+With our simplifying assumptions in place it appears that  the cable on a
+suspension bridge does indeed  hang in the shape of a parabola. But the
+suspension bridge has to hold up the roadway beneath it. After all,
+that is its purpose.
+
+What about a hanging chain that only has to hold  its own weight?
+
+\subsection*{\underline{Chains}}
+
+What shape  do you think a chain takes on if it is pinned at both
+ends, and allowed to hang freely in between? Take
+  your best guess and don’t worry about guessing correctly. We'll
+  solve this problem shortly.
+
+
+If you guessed that the curve is a parabola, then you are in good
+company.  Even Galileo  believed that a hanging chain assumed
+a parabolic shape as we see in  the following passage from his
+\href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-galileos-two-new-sciences}{Dialogue Concerning Two New Sciences} ($1638$).
+
+  \begin{minipage}[c]{.85\linewidth}
+    \begin{wrapfigure}[]{r}[.5in]{2in}
+      \captionsetup{labelformat=empty}
+      \vskip-4mm{}
+      \centerline{\includegraphics*[height=1.85in,width=2.1in]{../Figures/ChainWithoutBob}}
+      \label{fig:ChainWithoutBob}
+    \end{wrapfigure}
+    \it{} ``Drive two nails into a wall at a convenient height and at
+    the same level; make the distance between these nails twice the
+    width of the rectangle upon which it is desired to trace the
+    semiparabola. Over these two nails hang a light chain of such
+    length that the depth of its sag (curve or \foreign{sacca}) is
+    equal to the length of the prism. This chain will assume the form
+    of a parabola, so that if this form be marked by points on the
+    wall we shall have described a complete parabola which can be
+    divided into two equal parts by drawing a vertical line through a
+    point midway between the two nails .\ .\ .\ Any ordinary mechanic
+    will know how to do it.''
+  \end{minipage}
+
+\vskip2mm{}
+  \begin{embeddedproblem}[The Hanging Chain]
+    \vskip-4mm{}
+    \begin{wrapfigure}[10]{r}{2.2in}
+      \captionsetup{labelformat=empty}
+      \centerline{\includegraphics*[height=1.4in,width=2.2in]{../Figures/HangingChainSchematic}}
+      \label{fig:HangingChainSchematic}
+    \end{wrapfigure}
+    This problem is very similar to finding the shape of the
+    suspension bridge cable.  The difference here is that since there
+    is no deck, the only vertical force will be the weight of the
+    chain itself, so this time the weight of the chain can't be
+    ignored.
+
+    Let $w$ represent the weight density of the chain in newtons per
+    meter and $s$ represent the length of the chain from the lowest
+    point to $P$ and show that the curve represented by the chain must
+    satisfy the differential equation
+    \begin{equation}
+      \dfdx{y}{x}=\frac{ws}{H}\label{eq:Catenary1}
+    \end{equation}
+    \vskip-.2in{}
+  \end{embeddedproblem}
+  
+  OK, but so what? All equation~(\ref{eq:Catenary1}) says is that the
+  proportion $\dfdx{y}{x}$ is equal to the proportion $\frac{ws}{H}$.
+  
+  If we could \emph{solve} this equation for $y(x)$ then the graph of
+  $y$ would be the shape of the chain, but sadly we can't do that
+  (yet).
+
+  So why did we bother writing down
+  equation~(\ref{eq:Catenary1}) at all? Does this tell us anything
+  about the shape of the hanging chain?
+  
+  Yes. Actually it does.
+
+  The fact is that in our attempts to describe the world around us
+  using mathematics we can't actually solve \emph{most} of the
+  equations we write down. Real world phenomena are just too
+  complex. But just writing them down is a step forward.  For example,
+  although we can't (yet) solve equation~(\ref{eq:Catenary1}), and
+  thereby find the shape of a hanging chain, we can use it to
+  eliminate some shapes.  In particular we can now show that Galileo
+  was wrong about the shape of a hanging chain.
+
+
+\begin{embeddedproblem}[Galileo was wrong!]
+  \label{PIC:catenary} 
+  \vskip-.3in{}
+  The difficulty is that we have the wrong variable on the right side
+  of equation~\ref{eq:Catenary1}. Since $y$ depends on $x$ we'd like
+  to have only the variables $x$ and $y$, appearing in our
+  equation. Instead we have $x$, $y$, and $s$. And we really don't
+  know anything about $s$.
+
+  However, recall that we do know something about $\dx{s}$.
+
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item Use a differential triangle to show that the hanging chain
+    curve must satisfy the differential equation
+    \begin{equation}
+    \dfdxn{y}{x}{2}=\frac{w}{H}  \dfdx{s}{x}=\frac{w}{H}
+    \sqrt{1+\left(\dfdx{y}{x}\right)^2 }.\label{eq:CatenaryDiffeq}
+  \end{equation}
+  \hint{Notice that $\dx{s}$ does not appear in this problem, only
+    $s$. Find a way to bring $\dx{s}$ into play starting with
+    equation~\ref{eq:Catenary1}.}
+  \item Show that the general parabola $y=ax^2+bx+c$ does \underline{not} satisfy this
+    differential equation (and so Galileo was mistaken!)  .
+  \item Show that, in fact no nonzero polynomial
+    $y=a_0+a_1x+a_2x^2+\ldots+a_nx^n$ satisfies the equation of the
+    catenary. \\
+    \hint{Suppose it did satisfy the equation.  If we were
+      to square both sides of the equation, what would be the degree of
+      each side?}
+  \end{enumerate}
+  \vskip-.3in{}
+\end{embeddedproblem}
+
+
+
+Galileo was a brilliant man and his brilliance is not at all
+diminished by this error.  As we said in
+Chapter~\ref{cha:problem-solving}, \alert{Smart people make mistakes!
+  This is how they get to be smart.} You should follow the example of
+Galileo (and Newton, and Leibniz) by making and embracing lots of
+mistakes. But don't forget to learn from them as well.
+
+Also, in fairness to Galileo, he did not have access to  the Calculus tools that
+make this problem tractable. We do.
+
+
+\subsection*{\underline{Domes}}
+The previous problem shows that the shape of a hanging chain is not a
+parabola as Galileo believed. But it actually shows much more than
+that. It shows that the shape of a hanging chain is not the graph of
+\alert{any} polynomial regardless of its degree. (A parabola is the
+graph of a polynomial of degree $2$.) This says that the set of
+polynomials is too small to model all of the phenomena we observe in
+the world. To solve this problem we'll need a larger class of
+functions.
+
+The curve which \emph{does} satisfy
+equation(~\ref{eq:Catenary1}), and thus is the shape of a hanging
+chain is called the catenary. This is
+not especially illuminating since
+the word ``catenary'' is derived from the Latin word {\it{}catena}
+which simply means chain.
+
+
+
+\begin{wrapfigure}[14]{r}{2.7in}
+%  \vskip-6mm{}
+  \captionsetup{labelformat=empty}
+  % \href{https://uh.edu/engines/epi1169.htm}
+  % {
+  % \href{https://uh.edu/engines/epi1169.htm}{\includegraphics*[height=2.1in,width=3.3in]{../Figures/Pantheon}}
+  \href{https://uh.edu/engines/epi1169.htm}{\includegraphics*[height=1.7in,width=2.7in]{../Figures/Pantheon}}
+  % }
+  \caption{\textcolor{black}{{Drawings of the Pantheon and a cross section of the dome with an inverted catenary superimposed on the arch.} }}
+  \label{fig:Pantheon}
+\end{wrapfigure}
+The last line in Galileo's quote (above) is interesting. The structural
+properties of the catenary have been known and used since
+ancient times
+
+The Pantheon in Rome was completed during the reign of Hadrian and
+dedicated around $126$~AD. It is not known who designed it, but there
+is evidence\aside{For example, its shape.} which suggests that a
+catenary design was employed.
+
+The
+architect
+\href{https://www.britannica.com/biography/Filippo-Brunelleschi}{Filippo
+  Brunelleschi} ($1377-1446$) used a hanging chain to develop the
+shape of the dome of the
+\href{http://www.museumsinflorence.com/musei/cathedral_of_florence.html}{Cathedral
+  of Santa Maria del Fiore}{} in Florence, Italy in the Middle Ages.
+
+A number of modern architects and masons have used the catenary to design
+arches and domes (a rotated
+arch) as well.
+
+
+ For example, the mathematician and architect
+ \href{https://mathshistory.st-andrews.ac.uk/Biographies/Wren/}{Sir
+   Christopher Wren} ($1632-1723$) used the shape of the catenary arch
+ in the  design
+ and construction of the structural part of the dome on
+ \href{https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral}{St Paul's
+   Cathedral in London.}
+
+ While designing St. Paul's Wren was advised by his good friend
+ \href{https://mathshistory.st-andrews.ac.uk/Biographies/Hooke/}{Robert
+   Hooke} ($1635-1703$), who once made the following  observation about the
+ catenary\aside{Hooke is also famous for showing that the contracting
+   force of a stretched spring is proportional to the amount of
+   stretching. This is known as ``Hooke's Law.'' We will examine this
+   in more depth in Section~\ref{sec:simple-harm-oscill}. }
+ \begin{center}
+   \begin{minipage}[]{.7\linewidth}
+     ``As hangs a flexible cable so, inverted, stand the touching
+     pieces of an arch.''
+   \end{minipage}
+ \end{center}
+  
+% \\\\
+  % \centerline{
+  %   \includegraphics*[height=2.8in,width=5.2in]{../Figures/StPauls}}
+  % \textcolor{blue}{\centerline{ {\it{}St. Paul's Cathedral, London,
+  %       UK}}}
+ 
+  \begin{wrapfigure}[10]{l}{2.8in}
+    \vskip-3mm{}
+    \captionsetup{labelformat=empty}
+%    \href{https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral}{\includegraphics*[height=1.5in,width=3.5in]{../Figures/StPauls}}
+    \href{https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral}{\includegraphics*[height=1.2in,width=2.8in]{../Figures/StPauls}}
+    \label{fig:StPauls}
+    \textcolor{blue}{\centerline{ {\it{}St. Paul's Cathedral,}}}
+          \textcolor{blue}{\centerline{ {\it{}London, UK}}}
+ \end{wrapfigure}
+ The previous problems actually indicate why this structure is so
+ stable.   The idea to use catenaries in building design was most likely
+  originally motivated by experimentation and intuition. But after
+  Calculus was invented it became possible to explain why they are so
+  stable.
+ When the forces involved in causing a hanging chain to fall
+ into the shape of a catenary are inverted (turned upside down) then
+ the weight of the catenary arch is directed tangentially along the
+ arch toward the base.  Catenary arches are still in use today in part
+ because they have this property.
+
+  % A contemporary of Newton and Leibniz, The mathematician and
+  % architect
+  % \href{https://mathshistory.st-andrews.ac.uk/Biographies/Wren/}{Sir
+  %   Christopher Wren} ($1632-1723$) used this property in the design
+  % and construction of
+  %  the structural part of the dome on St Paul's
+  % Cathedral in London.
+
+
+
+% \begin{wrapfigure}[6]{r}{1.4in}
+%   \vskip-8mm{}
+%   \captionsetup{labelformat=empty}
+%   % \href{http://www.museumsinflorence.com/musei/cathedral_of_florence.html}{\includegraphics*[height=1.7in,width=3in]{../Figures/SantaMariaDelFiore}}
+%   \href{http://www.museumsinflorence.com/musei/cathedral_of_florence.html}{\includegraphics*[height=.75in,width=1.5in]{../Figures/SantaMariaDelFiore}}
+%   \label{fig:SantaMariaDelFiore}
+%    \textcolor{blue}{\centerline{ {\it{}Cathedral
+%          of}}}
+%    \textcolor{blue}{\centerline{ {\it{}Santa Maria del Fiore}}}
+% %     \textcolor{blue}{\centerline{\it{}Florence, Italy}}
+% \end{wrapfigure}
+
+  \begin{wrapfigure}[5]{r}{1.1in}
+    \vskip-8mm{}
+    \captionsetup{labelformat=empty}
+    \centerline{\href{https://commons.wikimedia.org/wiki/File:Budapest\_Keleti\_teto\_1.jpg}{
+        % \includegraphics*[height=1.75in,width=2in]{../Figures/EastRailStation}}}
+        \includegraphics*[height=1in,width=1.1in]{../Figures/EastRailStation}}}
+    \label{fig:EastRailStation}
+    \caption{\centerline{\textcolor{black}{East Rail
+          Station}}\\\centerline{\textcolor{blue}{Budapest, Hungary}}}
+        \end{wrapfigure}
+        Because of its inherent strength and stability the catenary
+        arch is still a common choice for arches and domes today. For
+        example, the roof of the East Rail Station in Budapest, Hungary
+        is clearly also a catenary.
+
+
+  We've
+  seen that a catenary is not a parabola, but we still don't have a
+  formula for the catenary curve.
+
+  So far.
+
+We will return to, and answer, this  question in
+Problem~\#\ref{problem:HangingChain}.
+
+  \subsection*{\underline{Telescopes}}
+  All telescopes follow one of two basic designs, refractive
+  and reflective. Both kinds magnify images by focusing light but they
+  do it in two entirely different ways. Refractive telescopes use the
+  refractive properties of light\aside{Hence the name.} described by
+  Snell's Law (see Section~\ref{sec:snells-law-refr}) to focus the
+  light rays of an image. Reflective scopes use the reflective
+  properties\aside{Hence the name.} of the
+  conic sections we studied in Chapter~\ref{chapter:ScienceBeforeCalc}
+  to focus the light rays of an image.
+
+    \begin{wrapfigure}[12]{l}{2.5in}
+    \vskip-4mm{}
+    \captionsetup{labelformat=empty}
+    \href{https://www.lbto.org/}{\includegraphics*[height=1.5in,width=2.5in]{../Figures/MountGraham}}
+    % \centerline{\it{}The Large Binocular Telescope at Mt. Graham, Arizona}
+    \caption{\textcolor{black}{{\centerline{The Large Binocular Telescope}}\\ \centerline{Mt. Graham, Arizona}}}
+    \label{fig:MountGraham}
+  \end{wrapfigure}
+  Galileo was the first person to point his (refractive) telescope at
+  the sky and write about what he saw.  A refractive telescope uses
+  two lenses to magnify
+an image by refracting light toward the
+  observer's eyepiece. But refraction separates the  frequencies
+  (colors) of light so refractive telescopes tend to cause chromatic
+  aberrations in the image\aside{Little rainbows appear at the edges
+    of the objects in view.}
+
+  Because of his work in optics, Newton realized that he could use the
+  reflective properties of the parabola to achieve greater
+  magnification with a smaller physical device while simultaneously
+  avoiding the chromatic aberrations.  All modern telescopes are built
+  on Newton's original design which uses a reflective, parabolic
+  (primary) mirrors to reflect light toward the focus of the
+  par\-a\-bo\-la (remember Roberval) where the flat (secondary) mirror
+  reflects it to the eyepiece.  Large telescopes tend to be reflective
+  telescopes as they really don't need the tube (which actually only
+  holds the two lenses in the refractive telescope in place).  As an
+  example, consider the Large Binocular Telescope at Mt. Graham,
+  Arizona, seen below.
+
+  % \begin{wrapfigure}[12]{r}{4.2in}
+  %   \vskip-3mm{}
+  %   \captionsetup{labelformat=empty}
+  %   \centerline{\includegraphics*[height=1.8in,width=4.2in]{../Figures/SpinCasting7}}
+  %   \label{fig:SpinCasting7}
+  % \end{wrapfigure}
+
+  \begin{wrapfigure}[11]{r}{3.8in}
+    \vskip-7mm{}
+    % \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=1.8in,width=3.8in]{../Figures/SpinCasting1}}
+    \label{fig:SpinCasting1}
+  \end{wrapfigure}
+  The Richard F. Caris Mirror Laboratory uses a process called spin
+  casting to manufacture these large mirrors. Each mirror is $8.4$
+  meters in diameter.  The image at the right gives you an idea of the
+  size of one of these mirrors.% \\
+  % \centerline{\includegraphics*[height=1.8in,width=3.8in]{../Figures/SpinCasting1}}
+
+  How does one make such a large,
+  perfectly parabolic mirror?  To spin cast such a large mirror, the
+  people at the Caris Laboratory place high quality borosilicate glass
+  into a revolving furnace.  The furnace spins as the glass
+  liquefies.
+  
+  Obviously, when the molten glass spins the middle goes down and the
+  sides go up.  What is not obvious is that the surface generated must
+  be a parabola.  Clearly, the shape of the mirror, and hence its focal
+  length, will be affected by the rotational speed of the glass. The
+  question is, how fast must we spin the furnace to produce a
+  particular focal length?
+
+  To begin to answer this we will need to think about a typical point
+  mass at a point on the surface of the molten glass as shown below and
+  suppose the glass is spinning at an angular
+    \begin{wrapfigure}[11]{l}{3in}
+%    \vskip-4mm{}
+\captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.7in,width=3in]{../Figures/Spincasting8}}
+\label{fig:Spincasting8}
+\end{wrapfigure}
+velocity of
+  $\omega$~$\sfrac{\text{radians}}{\text{second}}$.  Our task is to find
+  the function $y=y(x)$ whose graph gives the shape of the surface of
+  the liquid glass.
+  
+
+The upward pointing arrow at the left depicts the force which keeps
+the point mass elevated and spinning in a circle. It will be
+perpendicular to the surface of the liquid. (Think about a hose with a
+hole in it.  The water sprays out in a stream perpendicular to the
+hose.)
+
+\begin{wrapfigure}[]{r}{1in}
+\captionsetup{labelformat=empty}
+      \centerline{\includegraphics*[height=.9in,width=1in]{../Figures/SpinCasting4}}
+\label{fig:SpinCasting4}
+\end{wrapfigure}
+If we separate that force into its vertical and horizontal components,
+  then we get the diagram at the right.  The magnitude of vertical
+  component of the force is $mg$, where $g$ is the acceleration due to
+  gravity.  This is the force needed to counter the weight of the
+  particle.  The only horizontal force is the centripetal force which is
+  keeping the particle moving in a circle around the central axis. In
+  the next section we will see that the magnitude of the centripetal
+  force is $mx\omega^2$, so for now we will assume this is correct and
+  proceed.
+
+  \begin{embeddedproblem-enumerate}
+    \label{PIC:SpinCast1}{}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Use the diagram above to show that the curve must satisfy the
+      differential equation
+      $$
+      \dfdx{y}{x}=\frac{\omega^2}{g} x
+      $$
+      and that the curve satisfying this must be a parabola.
+    \item Using the value
+      $g=9.8\sfrac{\text{meters}}{\text{second}^2}$, plot the parabola
+      for $\omega{}=1, 2, 3$.  Do these plots coincide with your
+      intuition about what should happen as the liquid rotates faster?
+% What will happen to the parabola as $\omega$ increases? Do
+%       you have any physical intuition about this problem? If so, is
+%       your intuition consistent with the results of your analysis
+%       above?
+    \end{enumerate}
+  \end{embeddedproblem-enumerate}
+
+  Notice that for Problem~\#\ref{PIC:SpinCast1}, we simply gave you a
+  formula for the centripetal force. We will derive this formula
+  analytically later when we have extended the scope of our
+  differentiation rules.
+
+  Recall that by using a dynamical approach to constructing tangents
+  Gilles Personne de Roberval was able to demonstrate that any light
+  ray coming in parallel to the axis of a parabola will reflect to a
+  single point (the focus of the parabola).  This is why the primary
+  mirror in a telescope must be parabolic.
+
+  In his derivation, Roberval used the focus-directrix definition of a
+  parabola, rather than the equation we obtained in
+  Problem~\#\ref{PIC:SpinCast1}.  That these two formulations are
+  equivalent is not obvious.
+
+  The next problem explores this fact.
+
+    \pagebreak[4]
+  \begin{embeddedproblem}{}
+  \vskip-7mm{}
+  \begin{wrapfigure}[7]{r}{2.5in}
+    \vskip-4mm{}
+    \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=1.6in,width=2.5in]{../Figures/RobervalProb1}}
+    \label{fig:RobervalProb1}
+  \end{wrapfigure}
+  Suppose that
+  the point $X=(x,y)$ lies on the parabola with focus $F=(0,p)$ and
+  directrix $y=-p$ as in the diagram above at the right.
+    % \\
+    % \centerline{\includegraphics*[height=2in,width=4in]{../Figures/RobervalProb1}}
+    
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \item Show that $X$ must satisfy the equation: $x^2=4py.$
+    \item In Problem~\#\ref{PIC:SpinCast1} what should the angular
+      velocity $\omega$ be to produce a focal length\aside{Having
+        the correct focal length is of paramount importance in the
+        performance of the telescope.  To give you a notion of how precise
+        this must be, it took $3$ months to polish the surface of one of
+        the primary mirrors in the Large Binocular Telescope to within an
+        accuracy of $30$ nanometers ($3,000$ times thinner than a human
+        hair).} of $p$?  
+    \end{enumerate}
+  \end{embeddedproblem}
+
+
+  \begin{wrapfigure}[5]{r}{1.6in}
+    \vskip-9mm{}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1in,width=1.6in]{../Figures/TanSlope}}
+\label{fig:}
+ \end{wrapfigure}
+  In antiquity the reflective properties of the conic sections
+  (parabola, ellipse and hyperbola) were worked out via \emph{static}
+  geometric arguments which are too laborious to give here. Following
+  Roberval's lead we used \emph{dynamic}, but still geometric,
+  arguments to accomplish the same task in
+  Section~\ref{sec:roberv-conic-sect}.
+
+  We now have everything we need to work them out again using
+  Calculus. You can decide for yourself which method you find easier
+  to work with\aside{This is not to suggest that you must, or even
+    should, prefer the Calculus based method. Calculus, like Algebra
+    or Geometry, is merely a tool. You should be proficient with all
+    of your tools so that  you can use the tool
+    that best fits the task at hand.}.
+
+To apply calculus to the general problem, we will first need to find
+  a formula for the angle between two lines in terms of their slopes.
+  Have you noticed that the slope of a line is related to the tangent
+  of the angle of elevation of the line?  This is readily seen in the
+  diagram at the right.
+  
+  \begin{embeddedproblem}
+      \label{problem:DiffOfTangents}
+     \begin{wrapfigure}[]{r}{1.7in}
+       \vskip-8mm{}
+\captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.3in,width=1.7in]{../Figures/AngleBetweenLines}}
+\label{fig:AngleBetweenLines}
+\end{wrapfigure}
+\vskip-8mm{}
+Use the trigonometric identity\aside{We will see where this formula
+  comes from in Problem~\#\ref{problem:DiffFormTan}.},
+$$\tan(A-B)=\frac{\tan(A)-\tan(B)}{1+\tan(A)\tan(B)}$$ and the diagram
+  at the right to show that
+  $$  \tan(\theta) = \frac{m_2-m_1}{1+m_1m_2}.$$
+\end{embeddedproblem}
+\pagebreak[4]
+
+   \begin{embeddedproblem}
+     Consider the line tangent to the parabola $y=\frac{1}{4p}x^2$ at the point $(x_0,y_0)$.\\
+     \centerline{\includegraphics*[height=1.4in,width=2.1in]{../Figures/ParabolaReflect}}
+     Show that $\tan(\alpha)=\frac{2p}{x_0}=\tan(\beta)$ and use this
+     to deduce the reflective property of a parabola.
+   \end{embeddedproblem}
+
+   The reflective property of the ellipse can be shown in a similar
+   manner. Recall that an ellipse is the set of points in the plane,
+   the sum of whose distances to two fixed points (foci) is a
+   constant. Consider an ellipse with foci at the points $(-c,0)$ and
+   $(c,0)$, and with constant sum $2a$ as seen in the next problem. Assume also that
+   $a\gt c\gt 0$. (It is probably not clear why  this condition is
+   necessary. See if you can figure it out as you work through this
+   problem.)
+
+
+   \begin{embeddedproblem}
+     Use the diagram in the next problem and the fact that if $P$ lies
+     on the ellipse, then $F_1P+PF_2=2a$ to show that $P$ must satisfy
+     the equation\\
+     \centerline{$\displaystyle
+     \frac{x^2}{a^2}+\frac{y^2}{a^2-c^2}=1.
+     $}
+   \vskip-4mm{}
+   \end{embeddedproblem}
+   \vskip-4mm{}
+   \begin{embeddedproblem}
+        \vskip-10mm{}
+     \centerline{\includegraphics*[height=1.5in,width=3.6in]{../Figures/EllipseReflect}}
+     Given the tangent line to the ellipse
+     $\frac{x^2}{a^2}+\frac{y^2}{a^2-c^2}=1$, an arbitrary point
+     $(x_0, y_0)$ on the ellipse and the angles $\alpha$ and $\beta$
+     as in the diagram above show that
+     $$
+     \tan(\alpha)=\frac{a^2-c^2}{cy_0}=\tan(\beta),
+     $$
+and use this to deduce the reflective property of an ellipse.
+\end{embeddedproblem}
+
+ The same calculations will work for the  hyperbola, but we'll take a
+slightly different tack. It turns out that if one has a hyperbola and
+an ellipse which have the same foci\aside{They are said to be  term
+  \term{ confocal}.},
+then wherever they intersect, they must be perpendicular. This is in
+fact true for any set of confocal conic sections.
+
+But before we get to that, we will need to derive the equation of a
+hyperbola. This is similar to the derivation of the equation
+for the ellipse.
+
+\begin{embeddedproblem}
+  \centerline{\includegraphics*[height=1in,width=2.7in]{../Figures/HyperbolaReflect}}
+  Consider the point $P$ lying on the hyperbola with foci $F_1$ and
+  $F_2$ and constant difference $2b$. This time we assume that $b\le
+  c$. (Think about it.)
+
+  Use the fact that $\abs{F_1P-PF_2}=2b$ to show that the point $P$ on
+  the hyperbola must satisfy
+  $$
+  \frac{x^2}{b^2}-\frac{y^2}{c^2-b^2}=1.
+  $$
+\end{embeddedproblem}
+
+\begin{embeddedproblem}
+  Consider the point of intersection $P(x_0,y_0)$ of the following
+  confocal ellipse and hyperbola seen in the diagram below.\\
+  % \centerline{\includegraphics*[height=2in,width=3.2in]{../Figures/HypEllipConfocal}}
+  \centerline{\includegraphics*[height=1.7in,width=2.7in]{../Figures/HypEllipConfocal}}
+  Their equations, respectively, are
+  $$
+  \frac{x^2}{a^2}+\frac{y^2}{a^2-c^2}=1 \text{ and }
+  \frac{x^2}{b^2}+\frac{y^2}{c^2-a^2}=1,
+  $$
+where this time $b\lt{}c\lt{} c$. (Why?)
+       \begin{enumerate}[label={\bf{}(\alph*)}]{}
+       \item Show that the tangent lines to these two curves at
+         $P$ are perpendicular.
+       \item Use this and the reflective property of an ellipse to
+         show that any light ray directed toward one focus of the
+         hyperbola will reflect off a branch of the hyperbola toward
+         the other focus. 
+            \end{enumerate}
+\end{embeddedproblem}
+
+
+
+%   To apply Calculus to this problem it is only necessary to observe
+%   that when a light ray reflects from a point on a curve it reflects
+%   in exactly the same fashion as if it were reflecting from the line
+%   tangent to the curve at the same point. And, as we observed in
+%   Section~\ref{sec:laziness-nature} when light reflects from a flat
+%   mirror the angle of incidence will be equal to the angle of
+%   reflection.
+
+%   Before we address the conic sections it will be helpful to review
+%   how to find the angle between two straight lines. 
+  
+%   \begin{ProficiencyDrill}
+%     \label{drill:angle-between-lines}
+%     This problem does not require Calculus.
+%     \begin{enumerate}[label={\bf{}(\alph*)}]{}
+%     \item Suppose that $m_1\ge m_2$. Show that the angle, $\theta$, between the
+%       lines $y=m_1x$ and $y=m_2x$ is
+%       $$\theta=\inverse\tan(m_1)-\inverse\tan(m_2).$$
+
+%       What happens if
+%       $m_2\ge m_1$?
+%     \item Now show that the save formula works if $y=m_1x+b_1$ and
+%       $y=m_2x+b_2$. That is, if the lines do not cross at the origin.
+%     \end{enumerate}
+%   \end{ProficiencyDrill}
+
+    
+%      The next problem asks you to verify the reflective properties of
+%      the conic sections that we stated in
+%      Section~\ref{sec:roberv-conic-sect}.
+     
+%     \begin{embeddedproblem-enumerate}[The Reflective Properties of the
+%       Conic Sections]
+%        \begin{enumerate}[label={\bf{}(\alph*)}]{}
+%        \item {\bf[The Parabola]}
+%          The graph of   $x^2-4py=0$ is a
+%          parabola with its focus at $(0,p)$. In the diagram below the
+%          point $(\alpha,\beta)$ is an arbitrary point on the
+%          graph. Show that the angles $\phi$ and $\theta$ are equal.\\
+%          \centerline{\includegraphics*[height=1.1in,width=2in]{../Figures/ParabolaReflect}}
+%        \item {\bf{}[The Ellipse]} The graph of  $\frac{x^2}{a^2} +
+%          \frac{y^2}{a^2-c^2}=1$ is an ellipse with its two foci at
+%          $(-a,0)$ and $(a,0)$. In the diagram below the
+%          point $(\alpha,\beta)$ is an arbitrary point on the
+%          graph. Show that the angles $\phi$ and $\theta$ are equal.\\
+%          \centerline{\includegraphics*[height=1.1in,width=2.5in]{../Figures/EllipseReflect}}
+%      \item {\bf{}[The Hyperbola]} The graph of
+%        $\frac{x^2}{a^2} - \frac{y^2}{c^2-a^2}=1$ is an hyperbola with
+%        its two foci at $(-c,0)$ and $(c,0)$. In the diagram below the
+%        point $(\alpha,\beta)$ is an arbitrary point on the
+%        graph. Show that the angles $\phi$ and $\theta$ are equal.\\
+%          \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/HyperbolaReflect}}
+%        \end{enumerate}
+% \end{embeddedproblem-enumerate}
+
+
+
+  %%% Local Variables: 
+  %%% outline-minor-mode: t
+  %%% eval:(flyspell-mode)
+  %%% TeX-master: "DiffCalc"
+  %%% End: 
+
+
+

@@ -1,0 +1,3976 @@
+\chapter{Optimization, or Going to Extremes}
+% \baselineskip=1.5cm
+\label{cha:what-deriv-tells}
+\section*{Introduction}
+\label{sec:introduction}
+\markboth{\sc Optimization}{Introduction}
+
+While it would not be entirely correct to say that Calculus was
+invented to solve optimization problems, it would not be entirely
+wrong either.  Recall that the opening phrase of the title of
+Leibniz's $1684$ paper on Differential Calculus was \pubtitle{``A
+  New Method for Maxima and Minima .\ .\ .}.'' Also recall that a
+fundamental tenet of modern science is that {\sc{}Nature Is
+  Lazy}. That is, nature optimizes. Light follows the \alert{fastest}
+(minimal) path between two points. Soap bubbles are spherical because
+that is the shape that encloses the \alert{most} (maximal) volume with
+the a given surface area. Alternatively, it uses the \alert{least}
+(minimal) surface area to enclose a particular volume.
+
+Mathematically it all comes to the same point: We have some quantity
+(revenue, tax liability, temperature, resource consumption, travel
+time, potential energy, volume, surface area, whatever), which is
+(usually) constrained in some way, and we need to find the conditions
+that make it as large, or as small as possible within those
+constraints.
+
+Usually the ``thing to be optimized'' is called the \term{Objective
+  Function} and the constraints on the variables are called, well,
+they're called the \term{Constraints}.
+
+In chapter~\ref{cha:newt-metaph-motion} we observed that the optimal\aside{To
+  ``optimize'' is to find the optimum value, whether that be a maximum
+  or a minimum.} points on a given curve will occur where the curve is
+horizontal (equivalently, where the derivative is zero). So it
+seems that a likely strategy for attacking these kinds of problems
+would be to express the objective function, $f(x)$,  in terms of the  variables
+and then solving the equation $\dfdx{f}{x} = 0$. At their most
+fundamental level optimization problems really are just that
+straightforward.
+
+But ``straightforward'' does not mean easy.
+
+Recall that when we examined  Fermat's  ``Method of Aedequality'' in
+section~\ref{sec:ferm-meth-aedeq} we said that, ``.\ .\ . it is a general
+property of the graphs of functions that near a maximum or minimum:
+$f(x+h)\approx f(x)$ as long as $h$ is not too big.'' A moment's
+thought should convince you that this really says that at a maximum or
+a minimum the graph of a function is practically horizontal. That is
+why the following is called Fermat's Theorem:
+
+\begin{mytheorem}[Fermat's Theorem]
+  \label{thm:FermatsTheorem}
+  If a function, $f(x)$ is differentiable at $x=a$ and
+  $f(a)$ is either a maximum or a minimum then
+  $\eval{\dfdx{f}{x}}{x}{a}=0.$
+\end{mytheorem}
+
+Take careful notice of what Fermat's Theorem says and, just as
+important, what it does \emph{not} say: It says that if a point on
+the graph of $y=f(x)$, say $(a, b)$ is \emph{known} to be either a maximum or a
+minimum it must be that $\eval{\dfdx{y}{x}}{x}{a}=0$. It does
+\alert{not} say that if $\eval{\dfdx{y}{x}}{x}{a}=0$ then $f(a)$ is
+either a maximum or a minimum. In fact, that is not necessarily true.
+
+Fermat's Theorem is given in terms of the derivative, $\dfdx{f}{x}$,
+rather than differentials, as modern Calculus statements should.
+However, if we think in terms of differentials it is clear that
+setting $\dfdx{f}{x}=0$ is equivalent to setting $\dx{f}=0$, since a
+fraction is zero precisely when its numerator is zero. We will use
+whichever version is appropriate to the situation.  Either way, we
+have a systematic way to approach optimization problems compared to
+ad-hoc methods developed before of Newton and Leibniz.
+
+\section{Some Simple Optimizations: Optimal Squares}\label{sec:five-simil-probl}
+\markboth{\sc Optimization}{\sc Optimization Examples}
+\label{example:LineDist}
+
+In this section we will work carefully through several very similar
+examples. All of these problems can be solved by methods other than
+the optimization methods we will be using. We are just starting with
+elementary problems to get a feel for optimization.
+
+
+\begin{myexample}[Constructing A Square on a Line]
+  \label{example:SqOnLine}
+
+  Find the area of the smallest square that can be constructed with
+  one corner at the point $(2,3)$ and one corner on the line
+  $5x+3y=2$.
+
+  Before we start, note that this problem is easy to visualize and,
+  once visualized, it is intuitively clear that there is a square of
+  minimim area. That is, the problem has a solution. It is worth
+  noticing this explicitly. Not all of them
+  do.
+
+  In any optimization problem the first question we need to ask is,
+  ``What do we need to optimize?'' In other words, ``What is our
+  objective function?''
+
+  \begin{wrapfigure}[]{r}{1.7in}
+    \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=1.6in,width=1.7in]{../Figures/LineDist1}}
+    \label{fig:LineDist1}
+  \end{wrapfigure}
+  For this problem we want to find the area of the smallest square
+  constructed in the manner shown in the sketch at the right. The
+  length of the line segment between the point $(2,3)$ and \emph{any
+    point on the line} $(x,y)$ is given by:$\sqrt{(x-2)^2+(y-3)^2}$.
+  Therefore the area of the square constructed from this line segment
+  is given by the function:
+  $$
+  A(x)=(x-2)^2+(y-3)^2,
+  $$
+  This is our objective function.
+
+  Notice that we've abused our notation a bit. The notation $A(x)$
+  clearly indicates that $A$ depends on $x$ alone but we've given $A$
+  in terms of both $x$ and $y$. It should be clear that $A$ really
+  depends only on $x$, since we can substitute $\frac13(2-5x)$ for $y$
+  at any point.  Using two variables makes this objective function a
+  bit ``easier on the eyes.''
+  
+  We need to find the smallest possible value of $A$, but the only
+  tool we have so far is our observation in
+  Section~\ref{sec:newtons-view:-motion} that a function has a
+  horizontal tangent line -- and therefore attains an optimum value
+  (either a maximum or a minimum) when its derivative is zero.
+
+  Differentiating both sides of
+  \begin{align*}
+    A&=(x-2)^2+(y-3)^2\\
+    \intertext{gives}
+    \dx{A}&=2(x-2)\dx{x} + 2(y-3)\dx{y}.
+            \intertext{Setting $\dx{A}=0$ we have}
+            \dx{A}=2(x-2)\dx{x} + 2(y-3)\dx{y}=0.
+  \end{align*} 
+  But recall that $x$ and $y$ are
+  \term{constrained} by the equation $5x+3y=2$. If we
+  differentiate this we have $\dx{y}= -\frac{5}{3}\dx{x}$.
+  Therefore
+  \begin{align*}
+    \dx{A}&= 2(x-2)\dx{x} + 2(y-3)\left(-\frac{5}{3}\dx{x}\right)\\
+    \dx{A}&= \left[2(x-2) +
+            2(y-3)\left(-\frac{5}{3}\right)\right]\dx{x}\\
+    \intertext{or}
+    \dfdx{A}{x} &= 2(x-2) +
+                  2(y-3)\left(-\frac{5}{3}\right).\\
+    \intertext{Setting $\dfdx{A}{x}$ equal to zero we have}\\
+    2(x-2) + 2(y-3)\left(-\frac{5}{3}\right) &= 0.\\
+    (x-2) + (y-3)\left(-\frac{5}{3}\right) &= 0.\\
+    x-2-\frac53y+5&=0.\\
+    x+3-\frac53y&=0.\\
+    \intertext{From our \alert{constraint}, $5x+3y=2$, we have $y=\frac13(2-5x)$. Substituting gives}
+    x+3-\frac53\left(\frac13(2-5x)\right)&=0,\\
+    x+3-\frac53\left(\frac23-\frac{5}{3}x)\right)&=0,\\
+    x+3-\frac{10}{9}+\frac{25}{9}x&=0,\\
+    \frac{9x+27-10+25x}{9}&=0,\\
+    \frac{34x+17}{9}&=0,\\
+    \intertext{and solving for $x$ gives}
+    34x&=-17\\
+    x&=-\frac12.
+  \end{align*}
+  
+  To find $y$ we again use our \alert{constraint}:
+  \begin{align*}
+    5x+3y&=2\\
+    3y&=2-5x\\
+    y&=\frac13(2-5x)\\
+    \bigeval{y}{x}{-1/2} &= \eval{\frac13(2-5x)}{x}{-1/2}\\
+    \bigeval{y}{x}{-1/2} &=\frac32.
+  \end{align*}
+
+  So we have found that the minimal square occurs when $x=-\frac12$,
+  and $y=\frac32$. We're done, right?
+
+  No, of course not. The problem asked us to find the \emph{area} of
+  the minimal square. We've only found the \emph{location} of the
+  minimal square.
+
+  To find the area we need to put these numbers into our area formula:
+  \begin{align*}
+    \bigeval{A(x)}{\left(x,y\right)}{\left(-\frac12,\frac32\right)}&=\bigeval{(x-2)^2+(y-3)^2}{(x,y)}{\left(\frac{1}{2},\frac32\right)}\\
+        &=\left(-\frac12-2\right)^2+\left(\frac12-3\right)^2=\frac{17}{2}\text{ square units.}
+  \end{align*}
+
+  This highlights an important aspect of optimization problems.  To
+  solve them you need to first abstract a mathematical model from the
+  physical problem by finding an appropriate objective function. But
+  solving the model problem is not the same as solving the original
+  problem. Once the model problem is solved you need to translate that
+  into the context from which it came. In this case that means finding
+  the area, not just $x$ and $y$.
+
+A few more general comments are in order:
+
+  \centerline{\bf{}\underline{Comments on  Example~\ref{example:LineDist}}}
+  \begin{enumerate}
+  \item Notice that without an objective function we can't even get
+    started. The first step in any optimization problem is \emph{always}
+    to identify the objective function.
+    \begin{embeddedproblem}
+      The objective function used in example~\ref{example:SqOnLine}
+      assumed that $(2,3)$ and $(x,y)$ were adjacent corners of the
+      square.  This was never stated in the problem. What would the
+      objective function look like if the points were diagonally
+      opposite each other.  How would this change the problem?
+    \end{embeddedproblem}
+  \item We need to identify our constraint(s) as well, if they
+    exist. (Not all optimization problems will have constraints.)  We
+    don't need these immediately, but we will need them sooner or later.
+  \item It is intuitively clear that there actually \emph{is} a
+    minimal square; that a solution exists. All you have to do is draw
+    a picture to see it.  This is so clear that you can probably get
+    close to the solution by simply sketching the problem. This will
+    be true often enough that it will be easy to start believing that
+    you can rely on your intuition alone to solve optimization
+    problems.
+
+    \centerline{\bf{} This is a mistake.}
+
+    Don't misunderstand us. Intuition is important. Very
+    important. It is especially so when you first start thinking about
+    a new problem. Use your intuition.
+
+    But intuition is based on past experience. It is a way of saying
+    that you expect today to go pretty much the same way yesterday
+    did. Most of the time this is true, but you can't always count on
+    it. Sometimes things don't go the way you expect and you never
+    know when things will go awry so you \alert{must} verify that your
+    intuition by some other means. (Calculus, in this case.)
+
+    \begin{embeddedproblem}
+      For example, it seems fairly intuitively clear that the minimal
+      square occurs when the line through $(2,3)$ is orthogonal
+      (perpendicular) to the graph of the line $5x+3y=2$.
+      \begin{enumerate}[label={\bf{}(\alph*)}]
+        \item Verify that our intuition is correct.
+        \item Is it also true if the point on the line is not adjacent
+          to $(2,3)$?
+      \end{enumerate}
+    \end{embeddedproblem}
+    
+  \item  There is a strong tendency to think of the algebraic
+    manipulations in an optimization problem as ``just algebra'' and to
+    be careless with them.
+
+    \centerline{\alert{This is also a mistake.}}
+
+    As you can see, most of the heavy lifting in this problem was in
+    the Algebra, not the Calculus. This will be true of many (not all)
+    of the mathematics problems you encounter from now on, and
+    \emph{every step} in a given problem is just as important as every
+    other step, whether you call it Algebra, Calculus, or Arithmetic.
+    Most of the mathematics problems you encounter from now on will
+    require skillfull use of at least two or three of these essential
+    tools.
+
+
+  \item     We were very careful to write out every single algebraic and
+    arithmetic step in this problem in detail. We will not do this in
+    the future. Frequently we will do several computations at once. We
+    will do this for two reasons:
+    \begin{enumerate}
+    \item You can see how much space it took for us to fill in all of
+      the details in this problem. If we do this for every elementary
+      computation this text would be too long to be useful. We don't
+      want that to happen.
+    \item You need to be able to follow these kinds of computations and
+      you will not learn to do so unless we give you the chance to
+      practice the skill. So we will regularly do several elementary
+      algebraic steps at once.
+      
+      But ``elementary'' does not mean ``easy.'' You will not always be
+      able to follow them in your head, especially at first. So keep a
+      writing tablet handy at all times. If you do not see how to get
+      from one line of computation it is very natural to  just skip
+      it.
+
+\centerline{      \alert{Don't.} \alert{Do.} \alert{That.}}
+
+Take out that pad and do the computation yourself.  If you do this you
+will find that following the computations gets easier over time. If
+you do not it will remain difficult
+forever.\\
+\centerline{\alert{We're serious.}}  \centerline{\alert{Do all
+    elementary computations yourself!}}  It is
+\alert{\underline{your}} responsibility to make sure you understand
+the computations we show you.
+    \end{enumerate}
+  \end{enumerate}
+
+\end{myexample}
+
+\begin{myexample}[Constructing A Square on a Circle]
+  \label{example:CircleDist}
+  Find the area of the largest square that can be constructed with
+  one corner at the point $(2,3)$ and one corner on the unit circle:
+  $$
+  x^2+y^2=1.
+  $$
+  We have the same objective function as
+  before: $A(x)=(x-2)^2+(y-3)^2$. 
+  So, also as before,
+  \begin{equation}
+  \dx{A} = 2(x-2)\dx{x} + 2(y-3)\dx{y}.\label{eq:ConstObj1}
+  \end{equation}
+
+  
+  But this time our constraint is $x^2+y^2=1$ so
+  $\dx{y}=-\frac{x}{y}\dx{x}$.  Plugging this into
+  equation~\ref{eq:ConstObj1} we have
+  \begin{align*}
+    \dx{A} &= 2(x-2)\dx{x} + 2(y-3)\left(-\frac{x}{y}\right)\dx{x}\\
+    \dfdx{A}{x}&= 2\left(-2+\frac{3x}{y}\right)\\
+  \end{align*}
+  Setting $\dfdx{A}{x}=0$ and solving we see that
+  \begin{align}
+    \nonumber    3x&=2y.\\
+    \intertext{and since $y=\pm\sqrt{1-x^2}$ we have}
+    \label{eq:Sqrt}3x&=\pm2\sqrt{1-x^2}.\\
+    \intertext{The square root symbol, and the $\pm$, will make solving
+    equation~\ref{eq:Sqrt} problematic, so
+    let's get rid of them by squaring both sides of
+    equation~\ref{eq:Sqrt}. this gives}
+    \nonumber 9x^2&=4(1-x^2)\\
+    \intertext{or}
+    \label{eq:LostSolution}   13x^2&=4.
+  \end{align}
+  
+  \begin{wrapfigure}[]{l}{2.5in}
+    \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=2in,width=2.5in]{../Figures/CircleDist3}}
+    \label{fig:CircleDist3}
+  \end{wrapfigure}
+
+  So $x=\frac{2}{\sqrt{13}}$ and
+  $y=\sqrt{1-\frac{4}{13}}=\frac{3}{\sqrt{13}}$.  Thus the area of
+  our square is
+  is
+  $$A=\left(\frac{2}{\sqrt{13}}-2\right)^2+ \left(\frac{3}{\sqrt{13}}-3\right)^2
+  \approx 6.789.$$
+
+
+  But wait a second! Our intuition is complaining. Something is not right here. Do you see the
+  difficulty?
+
+  A sketch of this problem is given at the left.  The black square is
+  the one that solves the problem and it is the one we found, but it
+  clearly isn't the \emph{largest} square. The red square is clearly
+  larger.
+
+  We made a mistake when we solved equation~\ref{eq:LostSolution}. See
+  if you can find it before reading on.
+
+  \begin{Digression}[Absolute Value]
+
+    Let's fill in the missing steps to see what happened. We said that
+    the solution of $13x^2= 4$ is $x=\frac{2}{\sqrt{13}}$ but that is
+    not true.  Do you see the problem?  You've encountered it before
+    but in our experience most students are still puzzled by this. It
+    is worth digressing a bit to clear this up once and for all.
+
+    When asked to think of a ``number'' most people tend to think of
+    \emph{positive} numbers. But there are just as many negative
+    numbers as positive. Our preference for positive numbers is a bias
+    borne of early childhood experience with arithmetic, where only
+    the positive numbers are used.  Going forward you will need to
+    overcome this bias by making a deliberate effort not to assume
+    that the expressions you encounter are positive. You must
+    consciously, and deliberately consider the possibility of negative
+    numbers.
+
+    For example, the steps to solving equation~\ref{eq:LostSolution}
+    are as follows:
+    \begin{align}
+      \nonumber    13x^2&=4\\
+      \nonumber    x^2&=\frac{4}{13}\\
+      \label{eq:LostSolution2}    \sqrt{x^2}&=\frac{2}{\sqrt{13}}
+    \end{align}
+
+    If, in the next step, we write $x=\frac{2}{\sqrt{13}}$ then
+    we have
+    implicitly assumed that $x$ is a positive number.  Here's why.
+
+    The square root symbol, $\sqrt{\ }$, \alert{always} means the
+    \alert{positive} square root so both sides of
+    equation~\ref{eq:LostSolution2} are positive. So far, so good. But
+    if $\sqrt{x^2}$ is positive does that mean that $x$ has to be
+    positive?
+
+    Of course not.
+
+    It \emph{can} be positive, but it doesn't \emph{have} to be
+    positive. For example, if $x=2$ then $\sqrt{2^2}=\sqrt{4}$ and
+    since the radical \emph{always} means the positive root we
+    have $$\sqrt{2^2}=\sqrt{4}=2.$$
+
+    But now suppose $x=-2$. In this case we get
+    $ \sqrt{(-2)^2}=\sqrt{4}=2$ again, since the radical always gives
+    a positive value. Notice that there is nothing special about
+    $2$. If $x$ is any positive number then $\sqrt{x^2} = x$ but if
+    $x$ is any negative number then $\sqrt{x^2}=-x$.
+
+    \alert{Huh?!} How did we get a negative?
+
+    \alert{We didn't!} Because we all have a strong bias toward
+    positive numbers we automatically assumed that $x$ is positive,
+    making $-x$ negative. But remember that $x$ was a negative number so $-x$
+    must be a positive number. 
+    
+    We can tie all of this up notationally as follows:
+    \begin{equation}
+      \sqrt{x^2}=
+      \begin{cases}
+        x& \text{if } x\ge 0\\
+        -x& \text{if } x< 0
+      \end{cases}\label{eq:SqrtSqr}  
+    \end{equation}
+    So it appears that the function $f(x)=\sqrt{x^2}$ will always return
+    the ``positive version'' of $x$, right?
+
+    Wait a moment. Don't we already have a name
+    for the function that does that?
+
+    Sure we do. We call that the Absolute Value function.
+
+    So it appears that $\sqrt{x^2}=\abs{x}.$ Remember this and you will
+    never make the mistake we made in this example. Solving $13x^2=4$  we get
+    \begin{align*}
+      \sqrt{x^2}&=\frac{2}{\sqrt{13}}\\
+      \abs{x}&=\frac{2}{\sqrt{13}}
+    \end{align*}
+    and the two numbers whose absolute values are equal to
+    $\frac{2}{\sqrt{13}}$ are $x=\frac{2}{\sqrt{13}}$ and
+    $x=-\frac{2}{\sqrt{13}}.$
+  \end{Digression}
+
+  % We even saw this when  we solved our constraint, $x^2+y^2=1$
+  % to get $y=\pm\sqrt{1-x^2},$ but when we squared both sides of
+  % equation~\ref{eq:LostSolution2} that problem went away.
+
+  \begin{ProficiencyDrill}
+    \label{problem:CircleDist2}
+    Fill in the details of the solution of
+    equation~\ref{eq:LostSolution} to show that there are two
+    solutions to the problem in this example. You can easily see from
+    the digram above which is minimal, and which is maximal, but can
+    you tell \emph{from your solution procedure} which one is which?
+  \end{ProficiencyDrill}
+  
+  \centerline{\underline{\bf{}Comments on Example~\ref{example:CircleDist}}}
+  \begin{enumerate}
+  \item Remember that you will usually have some physical, or
+    geometric intuition about the optimization problems that you'll
+    encounter. Use it. After all, It was our intuition that led us to
+    the difficulty with, and better understanding of, the expression
+    $\sqrt{x^2}$.But you want to be able to verify your intuition. If
+    you can, make a guess based on your intuition before you start.
+    Even if your intuition isn't very strong, you'll usually be able
+    to tell whether you are expecting a positive or a negative
+    solution, or whether the solution will be large or small. Think
+    about what you expect to find \emph{before} you start working on
+    the problem.
+
+    When you've finished, compare your intuitive answer with the one you
+    actually get. If they don't align then something is
+    wrong. It might be that you've made a mistake, but it also might be
+    that your intuition was wrong. Find out which it is. \alert{Don't}
+    just give up and move on. Resolve the discrepancy. This will
+    improve either your intuition or your problem solving skills.
+  \item Notice how easy it was to miss the maximal square before we
+    drew our sketch.  Drawing a sketch is an aid to your intuition and
+    is a \emph{very} good habit. Cultivate it. Make this part of how
+    you begin any problem.
+
+  \end{enumerate}
+\end{myexample}
+
+\begin{ProficiencyDrill}
+  \label{problem:CircleDist3}
+  Show that the intersection of the line joining the point $(2,3)$ to
+  the center of the circle and the circle itself are the two optimal
+  points obtained before.  How does this relate to the previous
+  problem~\ref{problem:CircleDist2}? Do you see, intuitively, that
+  once again the line joining the point to the curve is orthogonal
+  (perpendicular) to  (line tangent to) the curve?
+\end{ProficiencyDrill}
+
+Let's return to finding extremal squares on curves. So far we've placed
+one corner at the point $(2,3)$. Suppose we try to
+construct an optimal square on an ellipse this time. Since a circle is
+a special form of an ellips this turns out to be, essentially, the same
+problem as Problem~\ref{problem:CircleDist2}, with trickier algebra.
+
+\begin{embeddedproblem}[Extremal Squares on an Ellipse]
+  \label{problem:EllipseDist}
+  There are two
+  extremal squares with one corner at $(2,3)$ an the other on the ellipse:
+  \begin{equation}
+    x^2+\frac14y^2=2.\label{eq:EllipseConstraint}
+  \end{equation}
+  The problem is to find the area of
+  both of them.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Draw a sketch of this problem.\\\comment{Human beings are visual creatures. We move through the
+      world relying primarily on our sense of sight. It is thus through
+      vision that we have our strongest intuitive understanding of the
+      world. Allowing yourself to ``see'' a problem is a big step toward
+      intuitive understanding. You should \emph{always} sketch a problem out
+      as best you can to allow yourself to ``see'' it. This is an excellent way
+      to engage your intuition.}
+  \item 
+      The objective function for this problem is again:
+$$
+      A(x) = (x-2)^2+(y-3)^2.
+$$
+
+    What is the constraint?
+  \item Use the constraint to show
+    that $$\dx{y} = -\frac{4x}{y}\dx{x}$$
+    and that
+    $$
+    y=\pm2\sqrt{2-x^2}
+    $$
+    Apparently we get to choose whether we want the positive or the
+    negative value of $y$. Does this make sense to you?
+  \item Use the results in parts (b), and (c) to show that if we
+    choose $y=2\sqrt{2-x^2}$ then
+    $$\dfdx{A}{x}=-6x-4+\frac{12x}{\sqrt{2-x^2}}.$$
+    What is $\dfdx{A}{x}$ if we choose $y=-2\sqrt{2-x^2}.$
+  \item Use Newton's Method to show that if we choose $
+    y=2\sqrt{2-x^2}$ then the coordinates of the only
+    root of $\dfdx{A}{x}=0$ are $x\approx -0.273$ and
+    and $y\approx -2.7755$.
+  \item Use Newton's Method to show that if we choose $
+    y=-2\sqrt{2-x^2}$ the the coordinates of the only
+    root of $\dfdx{A}{x}=0$ are $x\approx 0.857$ and
+    and $y\approx 2.25$.
+  \item Approximate the  area of the  square associated with both of
+    these points? Which one is the maximal square? 
+  \end{enumerate}
+\end{embeddedproblem}
+Do you see that, just like in Problem~\ref{problem:CircleDist2} we
+will always get both a maximal and a minimal square as in the
+following sketch:\\
+\centerline{\centerline{\includegraphics*[height=2in,width=3.1in]{../Figures/EllipseWithSquares}}}
+
+Notice that for both squares one of the two sides that meet at the corner that actually lies on the
+ ellipse appears to be tangent to the ellipse. Do you suppose it
+ actually is tangent, or is this just an artifact of this particular
+ problem?
+
+ \begin{ProficiencyDrill}
+   Find an equation of the line tangent to the ellipse at each of the
+   points you found in Problem~\ref{problem:EllipseDist} and show that
+   the apparent tangency is not an artifact. In fact those sides
+   actually are tangent.
+ \end{ProficiencyDrill}
+
+ Since we've constructed squares, it follows immediately that the
+ lines from $(2,3)$ to the ellipse are orthogonal (perpendicular) to
+ the ellipse. A look back shows that this was also true of the square
+ constructed on a line (Example~\ref{example:SqOnLine}) and a square
+ constructed on a circle (Example~\ref{example:CircleDist}).
+
+ Do you suppose this is a general phenomenon? Watch for it in the next
+example.
+
+\begin{embeddedproblem}
+  From problem~\ref{problem:CircleDist2} to problem~\ref{problem:EllipseDist} we
+  changed our constraints. For this problem we will change the
+  objective function.
+
+  Consider the following picture of the unit circle $x^2+y^2=1$ and
+  the point\notetoself{Perhaps we should change this point to $(2,3)$
+    just to not change too much at once?} $(-4,-3)$.\\
+  \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/Lagrange1}}
+  Notice that if we draw a line connecting $(-4,-3)$ to an arbitrary
+  point $(x,y)$, on the circle, then there is a point where the slope
+  of the line is maximum and a point where the slope is minimum. These
+  are the outermost lines depicted in the figure.
+
+  We wish to find an equation for each of these lines.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+   \item Find an appropriate  objective function for this problem.
+   \item What is the constraint for this problem?
+   \item Differentiate both your objective function and your
+     constraint to show that the points where the maximum and minimum
+     slope occur must satisfy
+     \begin{equation}
+     x^2+y^2=-4x-3y.\label{eq:MaxMinSlope}
+        \end{equation}
+     \comment{It is possible that you didn't come up with the same
+       objective function we did. In that case you may have a
+       different equation to solve. That's ok. Don't let it stop
+       you. There is usually more than one way to solve a given
+       problem. Different people will find different methods. Find the
+       one that makes sense to you. }
+   \item Solve equation~\ref{eq:MaxMinSlope} simultaneously with the
+     constraint to find the equations of the lines with maximal and
+     minimal slope.  To verify your answer graph both lines and the
+     unit circle.
+   \end{enumerate}
+ \end{embeddedproblem}
+
+ % There is more to learn from finding extremal squares. We will return
+ % to it, but first let's look at the general technique of optimizing an
+ % objective function with a constraint. To illustrate we'll look at a
+ % familiar example.
+ \begin{myexample}[Derivatives vs. Differentials]
+   In chapter~\ref{chapter:ScienceBeforeCalc} we used Fermat's Method of
+   Aedequality to show that out of all rectangles with a fixed
+   perimeter, the square encloses the largest area. To use Calculus we
+   need to identify an objective function and the  constraints for
+   this problem.
+
+   The objective function is easy. The area, $A$, of any rectangle is
+   its length, $l$, times its width, $w$, so
+   \begin{equation}
+     L=lw\label{eq:SquareObjFun}
+  \end{equation}
+  is the objective function.
+
+  The perimeter, $P$ is
+  \begin{equation}
+    P=2l +2w\label{eq:SquareConst}
+  \end{equation}
+  and is constrained to be a constant (fixed) value so
+  equation~\ref{eq:SquareConst} is the constraint. 
+
+  At this point we can follow either of  two equivalent procedures.
+  \begin{description}
+  \item[Leibniz's Approach:] 
+    \begin{enumerate}
+    \item Compute $\dx{A} = l\dx{w}+w\dx{l}$, from the objective
+      function.
+    \item Differentiate the constraint, giving the differential form of
+      the constraint: $2\dx{l}+2\dx{w}=0$ 
+    \item Set $\dx{A}=0$ and solve using the constraint itself and its
+      differential form as needed.
+    \end{enumerate}
+    In our opinion this is how Leibniz intended for his Calculus to be
+    used so we tend to favor it.
+  \item[The Modern Approach:] 
+    \begin{enumerate}
+    \item Solve the constraint for either $w$ or $l$ in terms of the
+      other. For example, $l=\frac12(P-2w).$
+    \item Substitute this value into the objective function:
+      $A=\frac12(P-2w)\cdot w$. This gives the area as a function of
+      the width ($w$) alone, so we can now think of $A(w)$ as an
+      abstract function and find its maximum by setting
+      $\dfdx{A}{w}=0$ and solving.
+    \end{enumerate}
+    The modern approach emphasizes the use of functions and
+    derivatives rather than curves and differentials.
+  \end{description}
+  These two approaches are completely equivalent so you can use
+  whichever feels most comfortable to you. We tend to
+  favor the first approach.
+  
+  \begin{embeddedproblem}
+    Solve this problem using both methods to see that they are
+    equivalent.
+  \end{embeddedproblem}
+\end{myexample}
+
+\begin{ProficiencyDrill-1line}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Find the approximate coordinates of the point on the curve
+    $y=e^x$ closest to the origin.
+  \item Verify that this is also where the line connecting this point
+    to the origin is perpendicular to the curve.
+  \end{enumerate}
+\end{ProficiencyDrill-1line}
+
+\begin{ProficiencyDrill}
+  Suppose a point is moving so that its $x-y$ coordinates are given
+  by: $
+  \begin{pmatrix}
+      x(t)=t-1\\
+      y(t)=e^t
+    \end{pmatrix}$.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \item Find the value of $t$ where the point is closest to the
+        origin.
+      \item Find the $x-y$ coordinate so of the point's location when
+        it is closest to the origin.
+    \end{enumerate}
+  \end{ProficiencyDrill}
+  
+
+\begin{ProficiencyDrill-1line}
+  \label{problem:RectInscEll}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item     Of all the rectangles that can be inscribed in the unit circle:\\
+      \centerline{\includegraphics*[height=1in,width=1in]{../Figures/InscribedSquare1}}
+      show that the square has the largest possible area. (Warning: Do
+      not assume that we have drawn the best diagram possible for
+      you.)
+    \item     Of all the rectangles that can be inscribed in the
+      ellipse $x^2+\frac{y^2}{9}=1$ show that the one with the maximum
+      area has length three times longer than its width.
+    \item     Of all the rectangles that can be inscribed in the
+      ellipse $\frac{x^2}{16}+y^2=1$ show that the one with the maximum
+      area has length four times longer than its width.
+    \item Of all the rectangles that can be inscribed in the ellipse
+      $\frac{x^2}{a}+\frac{y^2}{b}=1$ show that for the one with the
+      maximum area the ratio of length to width is
+      $\sqrt{\frac{b}{a}}$.
+    \end{enumerate}
+\end{ProficiencyDrill-1line}
+
+
+We have seen (in several different ways) that out of all rectangles
+with fixed perimeter, the square (an equilateral rectangle) has the
+largest area. Is this also true of triangles? More precisely, does an
+equilateral triangle have the largest area out of all triangles with a
+fixed perimeter?  This may sound like a simpler problem but it is
+actually quite a bit harder.
+
+  With a rectangle the parallel sides varied together so we only had
+  two parameters to deal with. For the triangle all three sides vary
+  independently which gives us three independent parameters.
+
+  Rather than addressing the equilateral triangle problem directly
+let's try a related, but simpler, problem. This is a standard
+problem-solving ploy. We replace a hard problem with an ``adjacent''
+problem that is (we hope) more tractable. The hope is that the simpler
+problem will give us insight into the harder problem.
+
+For example, suppose we hold one of the sides of our triangle
+fixed. Now we only have two variables again.
+
+\begin{wrapfigure}[]{r}{2in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1in,width=2in]{../Figures/Optimization3}}
+\label{fig:}
+\end{wrapfigure}
+So the problem reduces to this one: given all triangles with a fixed
+base and a fixed perimeter, does an isosceles triangle have the
+largest area?  The sketch at the right has all of  the pertinent
+information labeled.
+
+Since the area $A=\frac12bh$ and $b$ is being held fixed, then
+maximizing $A$ amounts to maximizing $h$, so $h$ is the natural
+objective function for this problem.  For reasons that should be clear
+we will replace our objective function $h$ by $H=h^2$ and work on
+maximizing this.  The twist in this problem is that we actually have
+two different formulas for $H$.
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Express $H$ as a function of $x$ and
+      $z$.  Differentiate this and set $\dx{H}=0$ to obtain an
+      equation relating $\dx{y}$ and $\dx{z}$. 
+    \item Express $H$ as a function of $y$ and
+      $w$. Differentiate this and set $\dx{H}=0$ to obtain an equation
+      relating $\dx{y}$ and $\dx{w}$.
+    \item Use the fact that $b$ is constant to find an equation
+      relating $\dx{z}$ and $\dx{w}$.   Use the fact that the
+      perimeter $P$ is constant to find an equation relating $\dx{x}$
+      and $\dx{y}$.
+    \item Use the results from parts (a), (b), (c) to show that $H$ is
+      maximized when
+      $$
+      \frac{-x}{z}=\dfdx{z}{x}=\frac{-y}{w}
+      $$
+      and use this to conclude that the base angles of the triangle
+      must be congruent and the triangle with the largest area must be
+      isosceles.
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+That was the ``adjacent'' problem. How can we use this to show that
+the maximal area of a triangle with a fixed perimeter must be
+equilaterl.  We now have all of the pieces of an argument. But it
+probably isn't yet clear how to put them together.
+
+We will require some indirect reasoning as described by Sherlock
+Holmes in the novel \pubtitle{The Sign of the Four}: ``How often have
+I said to you that when we have eliminated the impossible, whatever
+remains, \emph{however improbable}, must be the truth?''
+
+For our problem we will determine that if a triangle is not
+equilateral, then a triangle with the same perimeter can be made with
+a larger area.  Assuming there is a largest triangle, then the only
+possibility left is that it must be equilateral.
+
+\begin{embeddedproblem}
+  \label{problem:MaximalTriangle}
+  Suppose we have a triangle with sides $a$, $b$, and $c$ where at
+  least two sides, say $a$ and $c$, are not equal. We want to show
+  \foreign{\'{a} la} Holmes that it is impossible for such a triangle
+  to have maximal area.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item If we hold $b$ fixed explain how the previous problem implies
+    that there must be another triangle with the same perimeter and a
+    larger area. 
+  \item Explain how this implies that the maximal triangle must be
+    equilateral.
+  \end{enumerate}
+\end{embeddedproblem}
+
+
+% \begin{enumerate}[label={\bf{}(\alph*)}]
+%     \item Try attacking the largest triangle problem directly, in the
+%       same way we attacked the largest rectangle problem. The
+%       following diagram might help:\\
+%       \centerline{\includegraphics*[height=2in,width=4in]{../Figures/Optimization3}}
+%       From the diagram we see that the area of the triangle is
+%       $$
+%       A=\frac12ca\sin(\alpha)=\frac12cb\sin(\beta).
+%       $$
+%       So that is the objective function. What constraints do we have?
+%       Can you solve this problem?
+%       If you can't, don't worry about it. This was hard. There are
+%       five diffent variables involved ($a, b, c, \alpha,$ and $\beta$)
+%       in play here. Clearly it will help to reduce the number of
+%       variables.
+%     \item Try this instead. An ancient Greek mathematician named Heron
+%       (or Hero) of Alexandria ($10-75$ AD) showed that the area of a triangle can
+%       be determined from the lengths of the sides of the triangle via
+%       the formula:
+%       $$
+%       A=\sqrt{\frac{P}{2}\left(\frac{P}{2}-a\right)\left(\frac{P}{2}-b\right)\left(\frac{P}{2}-c\right)},$$
+%       where $P=a+b+c.$
+
+%       If you use Heron's Formula then we only have three variables in
+%       play but now there is the square root involved. Does that
+%       complicate things?
+
+%       No, not really. We say in examples~\ref{example:LineDist}
+%       and~\ref{example:CircleDist} that optimizing a quantity, and
+%       optimizing its square are essentially the same problem so we
+%       could simply let
+%       $$
+%       O(x) = A^2 =
+%       \frac{P}{2}\left(\frac{P}{2}-a\right)\left(\frac{P}{2}-b\right)\left(\frac{P}{2}-c\right)
+%       $$
+%       be the objective function.
+
+%       What are the constraints in this case? Can you solve the problem
+%       now?
+%     \item Even with Heron's Formula this is still a formidable
+%       problem. Is there something we can do to simplify things
+%       further? We've had some success with problems with two
+%       variables. Is there some way to reduce the number of variables
+%       by one more.
+%     \item When faced with a hard problem (which this seems to be) a
+%       good strategy is to look for a similar, related problem to solve
+%       to see if that sheds any light. In practice finding a good
+%       ``adjacent'' problem can be difficult and time-consuming all by
+%       itself.
+
+%       Since we can't spend time chasing down bad ideas we'll simply
+%       tell you that the adjacent problem you want to look at is the
+%       one where only two sides are free to change. Think about
+%       it. We've had success with two variable problems and we've
+%       managed to whittle this one down to three variables when we use
+%       Heron's Formula. We can reduce it to two variables by simply
+%       holding one side of the triangle fixed.
+
+%       Of course this isn't the same problem but maybe, if we can solve
+%       it, we'll see how to extend it to our problem.
+
+%       So the problem is: Of all triangles with sides $a$, $b$, and
+%       $c$, where $a$ is constant, and the perimeter $P=a+b+c$ is also
+%       constant, show that the one with the largest area is
+%       isoceles. (That is, $b=c$.) \hint{Use the square of Heron's
+%         Formula for the objective function.}
+%     \item Ok. Can you see how to address our problem now?
+
+%       No?
+
+%       Let's try this: Suppose the triangle with maximum area is
+%       \alert{not} equilateral. That means the two of the sides, say
+%       $a$ and $b$ are unequal in length. Whatever the length of $c$
+%       is, consider it fixed. Now we have a maximum area triangle with a fixed base
+%       ($c$) but it is not isoceles because $a$ and $b$ are unequal.
+
+%       What do you conclude from this?
+%     \end{enumerate}
+% \end{embeddedproblem}
+
+\section{Reflections, Refraction, and Rainbows}
+\label{sec:refl-refr-rainb}
+Because they are called ``Optimization Problems'' it is natural to
+assume that such problems are always about finding the maximum
+or minimum value of something. To be sure, many are. But not all.
+
+For instance, consider Problem~\ref{problem:MaximalTriangle} above. It
+did not ask you to find the the maximum possible area of the triangle
+(although that would be easy to compute once you've solve the
+problem). Instead it asked you to describe a property of the the
+maximal triangle.  This illustrates that optimization problems come in
+two flavors:
+\begin{enumerate}
+\item Optimize some objective function, or
+\item Show that some property holds when some objective function is
+  optimized.
+\end{enumerate}
+
+Another example of the second type is the problem of reflecting light
+we looked at in chapter~\ref{chapter:ScienceBeforeCalc}. Recall that we
+showed that light bounces off a mirror so that the angle of incidence
+equals the angle of reflection.  We did this by reasoning  geometrically
+from the figure below:
+  \centerline{\includegraphics*[height=1.4in,width=3.5in]{../Figures/ReflectingMirror4}}
+  to show that the minimal path must satisfy the condition $\angle\,
+  1=\angle\, 2$.
+  
+  The geometric argument was actually pretty easy to understand once
+  we found the right trick. But that's the difficulty. The geometric
+  argument required the very counterintuitive ``trick'' off pretending
+  that the light passed through the mirror instead of reflecting off
+  of it!
+
+Calculus provides a more systematic approach, one that does not
+require a ``stroke of genius'' level insight to solve each new 
+problem. We'll redo this problem, this time using the Calculus tools
+we've learned.
+
+% Calculus gives us our systematic way to look at this.  Let's solve
+% this problem again using the techniques from the last section.
+\subsection{Reflection}\label{subsec:reflection}
+
+First, we need an objective function.  Drawing a labeled picture is a
+good start, so we modify the sketch above to suit the needs of
+Calculus. In particular, the relevant quantities need names.
+  \begin{figure}[h]
+    \centering
+    \includegraphics*[height=2in,width=5in]{../Figures/ReflectingMirror5}  
+    \caption{\textcolor{blue}{Reflecting Light}}
+    \label{fig:RefMir}
+  \end{figure}
+
+    We assume that $a, b$, and $c$ are constants while $x, y, z$, and
+    $w$ are variables.
+
+    We need to argue that when the path of the light from $A$ to $R$
+    to $B$ is shortest, then $\alpha=\beta$. Since the length of that
+    path is (from our sketch) $z+w$ the most natural objective
+    function is: 
+
+% Our argument consisted essentially of assuming that a ray of light
+% will take the shortest possible path and using this to show that on
+% this path the angles are equal. This is an optimization problem
+% but notice that in this problem we are not actually interested in the
+% minimum length traveled by the lightbeam. (This would be the sum $z+w$
+% in our diagram.)
+
+% of a different kind. The quantity being optimized
+% here is clearly the length of the path followed by the light beam. But
+% we weren't actually interested in the value of that length. We wanted
+% to show that \emph{if} the light followed the shortest possible path
+% then the angles of incidence and reflection had to be the same.
+
+% The geometric reasoning we used is simple enough to understand when it is explained but a good deal
+% of ingenuity would have been required to think of it in the first place. This is the sort of thing
+% that prompted Leibniz to remark, ``.\ .\ . very learned [people] have sought in many devious
+% ways what someone versed in this calculus can accomplish in these
+% lines as by magic.''
+
+
+
+% Thus the obvious place to look for extrema are those points where
+% $\eval{\dfdx{y}{x}}{x}{a}=0$.  We'll call such a value a
+% \term{possible transitional value} for reasons that will become apparent later.
+
+% But Fermat's Theorem does \emph{not} say that if
+% $\eval{\dfdx{y}{x}}{x}{a}=0$ then the point $(a,b)$ must be an
+% extremum. In fact, this is not true. We will have more to say
+% about this later. For now we know what the first step in the
+% search for extrema must be: Find the derivative and set it equal
+% to zero.  Let's apply this approach to the reflection problem.
+
+% Strictly speaking, Fermat's Theorem also imposes the condition
+% that $f$ be differentiable at $x=a$. This is a real condition
+% and we will have more to say about it later. For now we simply
+% observe, via this problem, that extrema can also occur where the
+% function cannot be differentiated.
+
+  \begin{equation}
+    \label{eq:RefMir1} L=z+w
+  \end{equation}
+  and we know from Fermat's Theorem that $L$ will be minimum when
+  $\dx{L}=0$.
+
+   We have the following  constraints
+   \begin{align}
+    \label{eq:RefMir2}  a^2+x^2&=z^2, \text{ and}\\
+    \label{eq:RefMir3} b^2+y^2&=w^2.\\
+    \label{eq:RefMir4} x+y&=c,\\
+  \end{align}
+
+
+  Differentiating equation~\ref{eq:RefMir1} gives $\dx{L} = \dx{z}+\dx{w}$.
+
+  Differentiating equation~\ref{eq:RefMir2} gives
+  $\dx{z}=\frac{x}{z}\dx{x}$, so
+  $$
+  \dx{L} = \frac{x}{z}\dx{x}+\dx{w}.
+  $$
+
+  Differentiating equation~\ref{eq:RefMir3}
+  gives$\dx{w}=\frac{y}{w}\dx{y}$, so
+  $$
+  \dx{L} = \frac{x}{z}\dx{x}+\frac{y}{w}\dx{y}.
+  $$
+
+  And finally differentiating equation~\ref{eq:RefMir4} gives $\dx{y} =
+  -\dx{x}$, so that
+  $$
+  \dx{L} = \frac{x}{z}\dx{x}-\frac{y}{w}\dx{x},
+  $$
+  or
+  $$
+  \dfdx{L}{x} = \frac{x}{z}-\frac{y}{w}.
+  $$
+
+
+  Now suppose that the path from $A$ to $B$ shown in the sketch is the
+  shortest possible path, i.e., that $L$ is minimal. Then by Fermat's
+  Theorem it must be that $\dfdx{L}{x}=0$, and therefore that
+  $$
+  \frac{x}{z}=\frac{y}{w}.
+  $$
+
+  \begin{ProficiencyDrill}
+    Use the fact that the shortest path occurs when
+    $\frac{x}{z}=\frac{y}{w}$ to conclude that $\alpha=\beta$.
+  \end{ProficiencyDrill}
+
+
+  We will readily agree that this Calculus based argument is not as
+  nice as the geometric argument we used in
+  chapter~\ref{chapter:ScienceBeforeCalc}. In particular the geometric
+  argument required a new sketch at every step so we could easily
+  visualize what was happening.
+
+  Our Calculus based argument wasn't at all visual and it involved a
+  lot of computation. But, believe it or not, this is a strength not a
+  weakness.  It is a strength because none of the computations were
+  particularly hard. They were just tedious and detailed. But -- and
+  this is the point -- it also gave us a clear map of what
+  computations needed to be done.  We needed to
+  \begin{enumerate}
+  \item Compute  $\dfdx{L}{x}$, and
+  \item  Set $\dfdx{L}{x}$ equal to zero.
+  \end{enumerate}
+  The rest was
+  algebra which is straightforward (though not necessarily easy). This
+  is why you need to be skilled at differentiation. If any of the
+  differentials we obtained above had been wrong it wouldn't matter
+  how good our algebra skills are.
+
+  In this problem the ultimate goal, showing that $\alpha=\beta$,
+  emerged almost immediately so we stopped there. This will not always
+  be the case.  Suppose for a moment that we hadn't noticed that
+  $\frac{x}{z}=\cos(\alpha)$ and $\frac{y}{w}=\cos(\beta)$. We could
+  still solve this problem by finding the lengths $x$ and $y=c-x$ and
+  from there the equivalence of $\alpha$ and $\beta$ follows.
+
+\begin{embeddedproblem}
+  In figure~\ref{fig:RefMir} suppose that $a=5$, $b=3$, and $c=10$.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that
+    $\dfdx{L}{x}=\frac{x}{\sqrt{25+x^2}}-\frac{10-x}{\sqrt{9-(10-x)^2}}$.
+  \item Use Newton's Method to show that
+    $L\left(\frac{25}{4}\right)\approx0$.
+  \item Use the result of part (b) to show that $\alpha=\beta$.
+  \end{enumerate}
+  This solution is not pretty or elegant, but it is
+  effective. Moreover no cleverness is needed, just computational
+  competence. 
+\end{embeddedproblem}
+
+
+\subsection{Refraction: Snell's Law}\label{subsec:refraction}
+  We first addressed Snell's Law in Section~\ref{sec:snells-law-refr}
+  of Chapter~\ref{chapter:ScienceBeforeCalc}. Recall that in
+  PIC~\ref{PIC:FermatSnell} we had the following sketch \\
+  \centerline{\includegraphics*[height=2.2in,width=3.7in]{../Figures/Refraction4}}
+  which represents the passage of light from $A$ to $C$ to $B$. We
+  assumed that velocity of light from $A$ to $C$ is $v_1$ and from $C$
+  to $B$ is $v_2$. In that case Snell's Law says that:
+  $$
+  \frac{\sin(\alpha)}{v_1}=  \frac{\sin(\beta)}{v_2}.
+  $$
+
+  We did not derive Snell's Law geometrically in
+  Chapter~\ref{chapter:ScienceBeforeCalc} because, like reflection in
+  the previous section, as small stroke of genius is needed to set up
+  the argument.
+
+  Willebrord Snell  first  demonstrated Snell's Law (that's why
+  it's named after him) in $1621$ well before the invention of Calculus but his
+  demonstration wasn't  published until $1703$ by  Leibniz's
+  teacher, Christiaan Huygens. We did not show you a pre-Calculus 
+  proof of Snell's Law in
+  section~\ref{sec:snells-law-refr} for the simple reason that it is \emph{hard}.
+  Instead we asked you in problem~\ref{PIC:FermatSnell}
+  to get started on the problem by finding an expression for the time,
+  $T$ needed for light to travel along the path from $A$ to $C$ to $B$
+  in terms of the constants $a, b, c, v_1, v_2$ and the variable $x$.
+
+  \begin{ProficiencyDrill}
+    \label{PD:SnellMinFunc}
+    Show that the solution of  problem~\ref{PIC:FermatSnell} is:
+    $$
+    T(x)=\frac{\sqrt{a^2+x^2}}{v_1}+\frac{\sqrt{b^2+(c-x)^2}}{v_2}.
+    $$
+  \end{ProficiencyDrill}
+
+Having obtained $T(x)$ we would seem to be all set to derive Snell's
+Law by solving $\dfdx{T}{x}=0$ for $x$.
+
+ % and it is not clear how you get
+  % $\frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}$ out of that.
+  % Instead, let's look at our objective function and constraints and go
+  % from there
+
+  \begin{embeddedproblem}
+   Try it. That is, compute the derivative of $T$ from Proficiency
+   Drill\ref{PD:SnellMinFunc}. 
+
+   The differentiations necessary to compute $\dfdx{T}{x}$ are
+   somewhat challenging but if you proceed carefully they are not
+   insurmountable. The real issue is solving $\dfdx{T}{x}=0$ for
+   $x$. Show that when you set $\dfdx{T}{x}=0$ you get the following
+   equation to solve:
+   $$
+   (v_2^2-v_1^2)x^4-2(v_2^2-v_1^2c)x^3+\left(v_2^2(b^2+c^2)+v_1^2(a^2+c^2)\right)x^2+v_1^2a^2c(2-c)
+   =0.
+   $$
+
+   The next step would be to solve this equation for $x$ (it's as bad as
+   it looks) and then show that at this optimal value for $x$ Snell's
+   Law holds.
+
+   We won't ask you do do that.  
+ \end{embeddedproblem}
+ 
+    However, recall that in this section and in this problem, we
+    weren't trying to actually find a minimum value of $T(x)$. That
+    was just a step along the way to our real goal: Finding a
+    condition 
+    that holds when we have a optimum.   The
+    condition of course, is Snell's Law.
+
+    With this in mind, let's go back to
+    our diagram and not worry about trying to get everything in terms
+    of one variable.  Instead, we will use as many variables as we
+    need and write down constraints on them.
+
+    \begin{embeddedproblem-enumerate}
+    \begin{enumerate}
+    \item We already know that the total time traveled from point $A$  to $C$ to $B$ is given by
+      $$
+      T(x)=\frac{z}{v_1}+\frac{w}{v_2}.
+      $$
+      Write down all of the constraints involving  the variables $x$,
+      $y$, $z$, and $w$, and the constants $a$, $b$, and $c$.  (As before, we'll ignore $\alpha$ and $\beta$ for now.)
+    \item Show that $T$ is minimized when
+      $\frac{1}{v_1}\frac{x}{z}=\frac{1}{v_2}\frac{y}{w}$ and use this
+      to derive Snell's Law of refraction:
+      $$
+      \frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}.
+      $$
+ (This should look a lot like what we
+      did in example~\ref{example:ReflectingMirror}.)
+    \end{enumerate}
+    \end{embeddedproblem-enumerate}
+
+  % \input{Rainbows}
+    \subsection{Rainbows}\label{subsec:rainbows}
+
+    Did you ever notice a double rainbow? \\
+
+    \begin{figure}[h]
+    \captionsetup{labelformat=empty}
+    \label{fig:DoubleRainbow9}
+    \centerline{\includegraphics*[height=3in,width=5.6in]{../Figures/SavageEnariRainbow}}
+    \caption{\textcolor{blue}{The image  of a double rainbow
+        over Niagra Falls (left) is courtesy of Mary
+        Savage. The image over Tsfat/Safed (right), Israel is courtesy of
+        Elizabeth Eschel.}}
+  \end{figure}
+
+
+  Look carefully at the double rainbow in the pictures above\footnote{https://mrspa.files.wordpress.com/2010/10/i-walk-17.jpg}.
+  Do you notice the the order of the colors is reversed from the
+  primary (brighter) to the secondary bow?  Why do you think this
+  happens?  Other questions come readily to mind.  Why is the
+  primary rainbow below the secondary one? Why is the primary rainbow
+  brighter and why isn't there always a secondary rainbow? 
+
+  To tackle these questions, the first thing we need to do is to
+  transform these non-mathematical questions into a mathematical
+  problem.  That is, we need to build a mathematical model of the
+  problem. As you will see, developing the model is probably the most
+  challenging part.  Once we’ve done this, you will see that the
+  Calculus part makes up a relatively small, but crucial part, of the
+  solution.  But first we need to apply some geometry and use what we
+  already know about refraction and reflection.
+
+  When a ray of light enters a raindrop (which is spherical), it gets
+  both refracted and reflected.\\
+  \begin{figure}[h]
+\centerline{\includegraphics*[height=2.4in,width=4.2in]{../Figures/Refraction7}}
+  \caption{\textcolor{blue}{}}
+  \label{fig:DoublePath}
+\end{figure}
+
+As you can see in the diagram, the ray of light entering the raindrop
+at an angle of radian measure $\alpha$ is refracted to an angle of radian
+measure $\beta$.  This is governed by Snell's Law
+$\frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}$, where $v_1$  and $v_2$ are the
+velocities of light in air and water, respectively.  Actually, only a
+portion is refracted as the other portion is reflected off the
+exterior of the raindrop.  Once inside the raindrop, it reflects off
+of the back of the raindrop (again only a portion) so that the angle
+of incidence equals the angle of reflection.  A portion of the light
+then exits the raindrop governed by Snell’s Law again.  The total
+amount of (clockwise) rotation in this process is called the deviation
+angle $D(\alpha)$.  Notice that this total rotation is a sum of three separate
+rotations.
+
+\begin{figure}[h]
+\centerline{\includegraphics*[height=2.4in,width=4in]{../Figures/Droplet1}}
+    \caption{\textcolor{blue}{}}
+    \label{fig:Droplet1}
+  \end{figure}
+  
+% As you can see in the diagram in figure~\ref{fig:DoublePath}, when a  ray
+% of light enters raindrop at point $A$ at an angle of radian measure $\alpha$ two
+% things happen. Some of the light passes into the interior of the
+% raindrop and 
+% is refracted to an angle of radian measure $\beta$.  This is governed
+% by Snell's Law. The rest of the light is reflected off of the raindrop
+% at the same angle, $\alpha$. The reflected portion plays no part in
+% our analysis.
+
+% Once inside the raindrop, the refracted portion then strikes the back
+% of the drop at point $B$ where it is split again.  The reflected
+% portion then proceeds forward to point $C$ where it splits once
+% more. The refracted portion then combines with light from millions of
+% other droplets to form the rainbow.
+
+% The total amount of (clockwise) rotation in this process is called the
+% \term{deviation angle} $D(\alpha),$ and depends only on the angle of entry,
+% $\alpha$.  Notice that this total rotation is a sum of the three separate
+% rotations shown in figure~\ref{fig:Droplet1} at $A$, $B$, and $C$ as
+% showin in Figure~\ref{fig:Droplet1}.
+
+\begin{embeddedproblem}
+  Show that $D(\alpha)=\pi-4\beta+2\alpha$.
+\end{embeddedproblem}
+
+Remember that $\alpha$ and $\beta$ are not independent. They are
+related by Snell's Law which we will rewrite as
+$$
+\sin(\alpha)=\frac{v_1}{v_2}\sin(\beta)=k\sin(\beta),
+$$
+where $k=\frac{v_1}{v_2}$ is called \term{index of refraction} (for
+water). In the case of white light, this index of refraction is about 
+$\frac43$. Graphing $D(\alpha)$ for this value of $k$ and
+$0\le\alpha\le\frac{\pi}{2}$ we have 
+%\begin{wrapfigure}[]{l}{2in}
+%  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2in,width=5in]{../Figures/DoubleRainbow3}}
+
+%   \caption{\textcolor{blue}{}}
+%   \label{fig:DoubleRainbow3}
+% \end{wrapfigure}
+Notice from the first graph that the minimum of this curve appears to
+be around the point $(1.03,2.41)$.  This says that the minimum value
+of $D(\alpha)$ is about $2.41 \text{ radians }\approx138^\circ$
+and it occurs when $\alpha\approx1.03 \text{ radians }\approx59.4^\circ$.  Notice from the enlargement the graph near that
+minimum that for values of $\alpha$ near $1.03$ the amount of deviation is roughly
+the same.  Mathematically, this was straightforward from the graph.
+The real question is, ``Why is this pertinent?''  The answer is that
+light rays entering the raindrop at approximately $59^\circ$ have the highest
+concentration when exiting the raindrop.  At other values of $\alpha$ the
+dispersion of light is greater.  It is in these concentrated light rays
+that we see in the rainbow. This provides the angle that the
+rainbow makes with an observer.  This supplementary angle to
+$D(\alpha)$ is
+called the rainbow angle,  
+$$
+R(\alpha)=\pi-D(\alpha)=\pi-(\pi-4\beta+2\alpha\text{ radians.}
+$$
+For white light we have a rainbow angle of
+$$
+R(1.03)=\pi-2.41\approx0.732 \text{ radians }\approx42^\circ.
+$$
+\centerline{\includegraphics*[height=2.5in,width=5in]{../Figures/Rainbow4}}
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1in,width=2in]{../Figures/DoubleRainbow6}}
+\label{fig:}
+\end{wrapfigure}
+To obtain the spread of colors, note that the index of refraction
+changes with the color of light.  This can be seen when light shines
+through a prism.
+
+This leads to the transformation of the problem of understanding
+rainbows to the mathematical problem of minimizing the objective
+function subject to the constraint
+
+\begin{embeddedproblem}
+  Differentiate the objective function and the constraint to show that
+  $D$ is minimized when $\cos(\alpha)=\frac{k}{2}\cos(\beta).$
+\end{embeddedproblem}
+
+
+When we combine this equation with our constraint, we find that we
+need to solve the following system of two equations in two unknowns,
+\begin{align*}
+  \cos(\alpha)&=\frac{k}{2}\cos(\beta)\\
+  \sin(\alpha)&=k\sin(\beta).
+\end{align*}
+
+Normally to solve such a system, we would use one of the equations to
+eliminate one of the variables in the other equation.  This could be
+done here there is a trick that will be cleaner.  Suppose we square
+the quantities in each equation and add them together. This gives
+
+$$
+1=\cos^2(\alpha)+\sin^2(\beta)=\frac{k^2}{4}\cos^2(\beta)+k^2\sin^2(\beta).
+$$
+You might want to file this trick in your memory.  It comes in handy
+when dealing with trig to look for sums of the squares of sines and
+cosines.
+
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Use the above equation to show that for an index of
+      refraction $k$ that $D(\alpha)$  is minimized when
+      $\sin(\beta)=\sqrt{\frac{4-k^2}{3k^2}}$ and
+      $\sin(\alpha)=\sqrt{\frac{4-k^2}{3}}$.
+  \item Use this to fill in the following table:
+        \begin{table}[h]
+          \begin{center}
+            \begin{tabular}{|c|c|c|c|c|c|c|} \hline Color& k& $\beta$
+              in degrees&$\alpha$ in degrees&$D(\alpha)$ in
+              degrees&$R(\alpha)$ in degrees\\\hline Red & 1.331 &
+              &&&\\\hline Orange & 1.332 & &&&\\\hline Yellow & 1.333
+              & &&&\\\hline Green & 1.335 & &&&\\\hline Blue & 1.337 &
+              &&&\\\hline Indigo & 1.340 & &&&\\\hline Violet & 1.344
+              & &&&\\\hline
+            \end{tabular}
+          \end{center}
+    \item  How does  this  explain the order of the colors in the
+      primary rainbow?
+    \end{table}
+
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+% \begin{wrapfigure}[]{r}{2in}
+% \captionsetup{labelformat=empty}
+
+% \label{fig:}
+% \evalues of $R(\alpha)$ you obtained in the table accounts for the various
+color bands that appear in the rainbow as sunlight hits droplets at
+various angles.\\
+\centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/Rainbow10}}
+
+The primary rainbow is created by light entering the upper portion of
+the raindrop.  If light is bright enough then a secondary rainbow is
+created from light entering the lower portion of the raindrop as in
+the diagram below.\\
+\centerline{\includegraphics*[height=2in,width=2.6in]{../Figures/Droplet2}}
+This time the deviation angle $D(\alpha)$ is the total amount of counterclockwise
+rotation and the rainbow angle would be $R(\alpha)=D(\alpha)-\pi$.  Note that the extra
+reflection explains why the secondary rainbow is not as bright.
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Show that in the case of the secondary rainbow,
+      $D(\alpha)=2\pi+2\alpha-6\beta$.
+    \item Show that $D(\alpha)$ is minimized when
+      $\sin(\beta)=\sqrt{\frac{9-k^2}{8k^2}}$ and
+      $\sin(\alpha)=\sqrt{\frac{9-k^2}{8}}$.
+    \item Use this to fill in the following table:
+      \begin{table}[h]
+        \begin{center}
+          \begin{tabular}{|c|c|c|c|c|c|c|} \hline Color& k& $\beta$ in
+            degrees&$\alpha$ in degrees&$D(\alpha)$ in
+            degrees&$R(\alpha)$ in degrees\\\hline Red & 1.331 &
+            &&&\\\hline Orange & 1.332 & &&&\\\hline Yellow & 1.333 &
+            &&&\\\hline Green & 1.335 & &&&\\\hline Blue & 1.337 &
+            &&&\\\hline Indigo & 1.340 & &&&\\\hline Violet & 1.344 &
+            &&&\\\hline
+          \end{tabular}
+        \end{center}
+      \end{table}
+    \item Use this table and the table in the previous problem to
+      explain why the secondary rainbow is above the primary rainbow
+      and its colors are reversed.  
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{ProficiencyDrill}
+%   Use Newton's Method to show that, to two decimals, the coordinates
+%   of the minimum point on the graph of $D(\alpha)$ 
+%   are $(1.03, 2.41)$.
+
+%   \hint{First you'll have to get the deviation angle in terms of
+%     $\alpha$ alone.}
+% \end{ProficiencyDrill}
+
+
+% % \begin{wrapfigure}[]{r}{2in}
+% % \centerline{\includegraphics*[height=1in,width=2in]{../Figures/Rainbow4}}
+% % \caption{\textcolor{blue}{}}
+% % \label{fig:Rainbow4}
+% % \end{wrapfigure}
+% This says that the minimum value of $D(\alpha)$ is about $2.41$
+% radians $\approx 138^\circ$ and it occurs when
+% $\alpha\approx1.03$ radians $\approx59.4^\circ$.  Notice from
+% an enlargement the graph near that minimum that for values of $\alpha$
+% near $1.03$ radians the amount of deviation is roughly the
+% same.
+
+% This says that light rays entering the raindrop at approximately
+% $59^\circ$ have the highest concentration when exiting the raindrop.
+% At other values of $\alpha$ the dispersion of light is greater.  This
+% provides the angle that the rainbow makes with an observer.  This
+% supplementary angle to $D(\alpha)$ is called the rainbow angle,
+% $$
+% R(\alpha)=\pi-D(\alpha)=\pi-(\pi-4\beta+2\alpha)=4\beta-2\alpha\text{
+%   radians}.
+% $$
+% For white light, we have a rainbow angle of
+% $$
+% R(1.03=\pi-2.41\approx.732\text{ radians}\approx42^\circ.
+% $$
+% % This says that the minimum value of $D(\alpha)$ is about $2.41$
+% % radians or approximately $138^\circ$  and it occurs when
+% % $\alpha\approx1.03$ radians, or about $59.4^\circ$. 
+
+% % Now notice the rectangle drawn around the minimum point in
+% % Figure~\ref{fig:DoubleRainbow3}. Because it is wider than it is tall
+% % we see that the broad range of incoming angles in the domain will all
+% % emerge from the droplet at about the the same deviation angle,
+% % approximately $138^\circ$ as seen in Figure~\ref{fig:Rainbow4}.
+% Thus, where the angle between the incoming light rays and line from
+% the rainbow to the observer is approximately $42^\circ$ there will be
+% a bright, circular ring in the sky. This bright ring is the rainbow.
+
+% To obtain the spread of colors, note that we said earlier that
+% $k=\frac43$ was an average over all the colors in white sunlight. The
+% fact that each color has its own index of refraction was a young Isaac
+% Newton's for major scientific publication, \pubtitle{Optics}. This
+% is the work that brought him to prominence in scientific circles.
+
+% Newton determined experimentally that white light was a mixture of
+% other colors. It was well known that the time that a beam of light
+% passing through a prism would emerge with the colors separated. A prevailing
+% theory of the time was that the prism had altered the light in some
+% way that had added the colors. Thus it was believed that the color
+% bands that emerged from the prism were a property of the prism, not of
+% the light.
+
+% Newton debunked that theory by passing \emph{only} the red band
+% through a second prism. He reasoned that if the first prism had
+% somehow altered the light then the second would alter it again. But
+% when only red light emerged from the second prism, refracted but
+% otherwise unchanged, he concluded that the color was an inherent
+% property of the light, not the prism. Moreover it is because each  color
+% has its own index of refraction that the colors spread out upon being
+% refracted.
+
+% To find the rainbow angle for each color we first need to solve for
+% $\alpha$ and $\beta$ in terms of the refraction index, $k$.
+
+
+% Normally to solve such a system, we would use one of the equations to
+% eliminate one of the variables in the other equation.  This could be
+% done here, but it gets very messy very fast. Fortunately there is a
+% trick that will be cleaner.  Suppose we square the quantities in each
+% equation and add them together. This gives
+% $$
+% 1=\cos^2(\alpha)+\sin^2(\beta)=\frac{k^2}{4}\cos^2(\beta)+k^2\sin^2(\beta).
+% $$
+% This is a very handy trick to keep in mind when dealing with
+% trigonometric functions. You should file it away in your memory.
+
+% The primary rainbow is created by light entering the upper portion of
+% the raindrop.  If light is bright enough then a secondary rainbow is
+% created from light entering the lower portion of the raindrop as in
+% the diagram below at the right.
+
+
+
+
+% % where  is the index of refraction (for water).  In the case of white light, this index of refraction is about .  Graphing  for this value of  and , we have.
+
+
+% %   We will use what we
+% %   know about the refraction and reflection of light to examine some of
+% %   these questions.
+  
+% %   When light strikes the surface of water some of it reflects -- that is
+% %   why you can see yourself in smooth surface of a puddle -- and some
+% %   of it passes into the water, refracting as it does. It is the
+% %   combination of the reflection and refraction of sunlight striking
+% %   the water droplets left in the atmosphere after a rainstorm that
+% %   causes rainbows.
+
+% %   Since the surface of a water droplet is curved\aside{We will assume
+% %     all water droplets are spherical.} rather than flat it
+% %   would appear that the first question to address is,
+% %   ``Does light  reflect or refract differently when it strikes a
+% %   curved surface than when it strikes a flat one.'' The Principle of
+% %   Local Linearity resolves this for us completely. Since a given beam
+% %   of the light strikes the surface of the water droplet at a single
+% %   point (essentially) it will reflect or refract exactly as if it had
+% %   struck a plane tangent to the droplet at that point.
+
+% %   or issue we need to  However we will find it useful to discuss the
+% % reflection and refraction of light when it strikes a curved mirror.
+
+% % \begin{wrapfigure}[]{r}{2in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=1in,width=2in]{../Figures/Refraction10}}
+% %   \label{fig:Refraction10}
+% % \end{wrapfigure}
+% % Happily nothing changes much. We need only observe that light only
+% % interacts with the mirror locally, where it actually strikes  the
+% % mirror. And since we know that at very small scales any curve is
+% % indistinguishable from it's tangent line it should be clear that when
+% % a light beam strikes a curved mirror it reflects or refracts exactly
+% % as if it were striking a flat mirror tangent to the curve at the point
+% % of interaction as seen at the right. This is again the principle of Local
+% % Linearity\notetoself{We should state this as a principle at the very
+% %   beginning of chapter~\ref{chapt:differentials} (or possibly before)
+% %   and refer to it formally whenever possible.  -- Sep  6, 2020}  
+
+% % \begin{wrapfigure}[]{l}{2.1in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=.75in,width=2.1in]{../Figures/DoubleRainbow6}}
+% %   \label{fig:DoubleRainbow6}
+% % \end{wrapfigure}
+% % The ordering of the colors of a rainbow, the shape of a
+% % rainbow, its position relative to the viewer, and the simple fact that
+% % rainbows exist to be seen are a result of the reflective and
+% % refractive properties of light. Even better for our purposes
+% % optimization is needed to answer them.
+
+
+% % % wrote a seminal work on optics and .  This can be seen as light passes
+% % % through a prism or in a rainbow.  Surely you heard the mnemonic
+% % % \alert{ROY G BIV} for the colors of a rainbow.  Which color is on top,
+% % % red or violet?  Before you go further, take a guess.  % \\
+% % Look closely at the three rainbows in the images at the right above. They
+% % share certain properties that we would like to understand. These are:
+% % \begin{enumerate}
+% % \item They are bright. At least they are brighter than the surrounding
+% %   viewscape. Indeed it is only the brightness of the light coming from
+% %   the apparent location of the rainbow that makes it visible since a
+% %   rainbow is not a physical object.
+% % \item They have a particular shape, but what is it? Are they
+% %   circuluar? Parabolic? Elliptical? Some other, possibly unnamed
+% %   shape?
+% % \item Two of the rainbows shown are double rainbows. Notice that the
+% %   secondary rainbow is dimmer\footnote{That's actually what makes it
+% %     the secondary.}. Also the colors are reversed from the primary to
+% %   the secondary. We'd like to understand that.
+% % \end{enumerate}
+% % Each of the properties listed above can be couched as an optimization
+% % problem. We will address them one at a time.
+
+% % To keep things as simple as possible we will assume that water
+% % droplets suspended in the atmosphere assume a perfectly spherical
+% % shape. This is close enough to reality that the errors in our
+% % computations will not be significant.
+
+
+% % \begin{wrapfigure}[]{l}{1.2in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=1.2in,width=1.2in]{../Figures/Refraction6}}
+% %   \label{fig:Refraction6}
+% % \end{wrapfigure}
+% % Also, we will analyze this as if everything were two-dimensional. That
+% % is we will draw the light beam crossing into a circular raindrop
+% % rather than a spherical raindrop. Again this is just to keep things
+% % simple. The analysis of the three dimensional problem  yields
+% % similar results but is much harder algebraically.
+
+% % As we've seen when light refracts across the plane dividing air and
+% % water it bends toward the normal (perpendicular). The physical reason
+% % for this is that the velocity of light in air is faster than its
+% % velocity in water. If it transitions from a slower medium (like water)
+% % to a faster medium (like air) then it bends away from the normal. Thus
+% % in the diagram at the right we can deduce that the velocity is lower
+% % in the region below the boundary (in black) whichever direction the
+% % light ray (in red) is moving.
+
+
+
+% % % Of course the sketch above doesn't capture the curvature of the rain
+% % % droplet.  Our sketch should look more like the figure at the left,
+% % % where the light beam is crossing the black, circular boundary of the
+% % % droplet. Does Snell's Law still apply when the boundary is curved?
+
+% % % Of course it does. The light beam doesn't care what shape the boundary
+% % % has away from the point of entry. It only interacts with the boundary
+% % % locally, and locally any curve is indistiquishable from it's tangent
+% % % line so the light beam will refract as it crosses into the droplet
+% % % just as if it were crossing the line tangent to the circle at the
+% % % point of intersection. As we saw in\notetoself{We need to add this
+% % % problem somewhere before this, if we don't already have it: Show that the line tangent to a
+% % % circle is orthogonal to the radius of the circle.  -- Sep 3, 2020}
+% % % problem~\ref{} the line tangent to a circle at a point is orthogonal
+% % % to the radius that passes through the same point. The radius and
+% % % tangent are the blue, dotted lines in the diagram at the left.
+% % But the physics involved is not our concern. All we need is  the
+% % knowledge that Snell's Law is in play in the diagram at the left.
+% % $\frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}.$
+% % The green line in the diagram is the path the light beam would have
+% % followed had it \emph{not} refracted at the boundary. 
+% % \begin{ProficiencyDrill}
+% %   For later
+% %   reference notice that the angle between the red and green lines is
+% %   $\alpha-\beta$ as indicated. \hint{This is an elementary  result
+% %     from geometry. Don't  to make hard.}
+% % \end{ProficiencyDrill}
+% % We now have everything we need to trace the path of a beam of light
+% % into and back out of a water droplet.
+% % In the sketch below the red arrows indicate  the path the light
+% % beam actually follows. The green arrows indicate the path that the
+% % light beam would follow if it were not refracted or reflected, $O$ is
+% % the center of the droplet, and the line segments $\overline{OA},
+% % \overline{OB},$ and $\overline{OC}$ are all radii of the droplet.
+
+% % % \begin{figure}[h]\centering
+  
+% % %   \centerline{\includegraphics*[height=2.8in,width=5in]{../Figures/Refraction7}}
+  
+% % %   \caption{The path of a typical light beam as it moves through a
+% % %     spherial droplet.}
+% % %   \label{fig:DoublePath}
+% % % \end{figure}
+
+% % In order to address the question of the rainbow's brightness -- why it
+% % is even visible in the first place -- we want to find the total
+% % clockwise rotation of the direction of the beam from the time it
+% % enters the raindrop to the time it exits. That is, if we place the
+% % starting and ending beams head-to-tail as indicated in the sketch at the right we
+% % want to find the angle $D(\alpha)$.
+
+% % \begin{wrapfigure}[]{r}{1.5in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=.6in,width=1.5in]{../Figures/Refraction8}}
+% %   \label{fig:Refraction8}
+% % \end{wrapfigure}
+% % This is called the
+% % \term{deviation angle} and for a given entry angle $\alpha$ it tells
+% % us what the exit angle will be. We are interested in finding the value
+% % of $\alpha$ that \emph{minimizes} $D(\alpha)$.
+
+% % Here's why. Suppose $D(\alpha)$ is mimimum for some angle, say
+% % $\alpha=\phi$, and that $D(\phi)=\psi$ is the minimum. Then all of the
+% % light beams entering the droplet at an angle \emph{near} $\phi$ will
+% % exit \emph{near} $\psi$.
+
+% % This is always true of course. Things that start out together
+% % generally end up together. But the nature of the function
+% % $D(\alpha)$ guarantees that there is a large interval of entry
+% % angles which will all have approximately the same exit angle.  The
+% % easiest way to see this is to look at the the shape of the graph of
+% % $D(\alpha)$ below. Notice that the
+% % black box we drew around then minimum point (denoted\footnote{For now you
+% %   will have to trust that we have represented $D(\alpha)$
+% %   accurately. We will shortly be deriving a formula for $D(\alpha)$
+% %   and you can verify the accuracy of this graph yourself.}
+% % $(\gamma,\psi)$ in the sketch.). is much wider than it is
+% % tall.
+% % % This says that all of the the light beams entering at an angle
+% % % between about $0.8$ radians and $1.2$ radians will exit at about $2.4$
+% % % radians. That is the light will be concentrated (brighter) at a
+% % % deviation angle of about $2.4$ radians (about $138^\circ$. 
+
+% % % We will soon see that the deviation angle
+% % % depends \emph{only} on the angle $\alpha$ as we've
+% % % indicated. 
+% % In fact from the dotted lines and the scales on the axes we can easily
+% % see that for entry angles betweeen a little more than $0.8\approx45.8^\circ$ radians and
+% % a little more than $1.2\approx68.8^\circ$ radians the exit angles will all be very
+% % close to $2.4\approx138^\circ$ radians. Outside of the interval $(.8, 1.2)$ the
+% % exit angles grow very quickly.
+
+% % This says that the light beams coming out of a droplet at an angle of
+% % $\psi\approx2.4$ radians are a concentration of the beams that entered
+% % between about $.8$ and $1.2$ radians. So light
+% % exiting at about $2.4$ radians will be brighter than the surrounding
+% % light. This is what makes a rainbow visible in the first place.
+
+% % Now of course, we need to do the calculations to confirm all of
+% % this. First we need a formula for the deviation angle, $D(\alpha)$
+% % so we will follow the path of a typical light beam as it refracts and
+% % reflects its way into and then back out of  a typical droplet.  
+
+% % In Figure~\ref{fig:DoublePath} we see that the beam (in red) makes a
+% % turn of $\alpha-\beta$ at the point $A$ and another turn of the
+% % same magnitude at point $C$ so
+% % $$
+% % D(\alpha) =
+% % 2(\alpha-\beta) + \{\text{the magnitude of the rotation at point
+% %   $B$}\}.
+% % $$
+
+% % \begin{wrapfigure}[]{r}{2in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=1.8in,width=2in]{../Figures/Refraction9}}
+% %   \label{fig:Refraction9}
+% % \end{wrapfigure}
+% % To find the magnitude of the rotation at point $B$ consider the sketch at
+% % the right. Clearly at point $B$ the beam turns by the angle labeled
+% % $\theta$.
+
+% % \begin{ProficiencyDrill}
+% %   \begin{enumerate}[label={\bf{}(\alph*)}]
+% %   \item   Use Geometry to show that $\alpha=\angle AOB$.
+% %   \item Show that $\alpha=\pi-2\beta$. \hint{The interior angles
+% %       of triangle $OAB$ must sum to $\pi$. What is $\beta+\theta$
+% %       equal to?}
+% %   \end{enumerate}
+% % \end{ProficiencyDrill}
+% % Therefore
+% % \begin{align*}
+% %   D(\alpha) &= 2(\alpha-\beta) + \{\text{the magnitude of the
+% %               rotation at point  $B$}\}\\
+% %             &= 2(\alpha-\beta) + \alpha\\
+% %             &= 2(\alpha-\beta) + \pi-2\beta, \text{ or}\\
+% %             &= \pi+2\alpha-4\beta.
+% % \end{align*}
+
+% % Notice that $\alpha$ and $\beta$ are not independent, they are governed by Snell's
+% % Law which we will rewrite as
+% % \begin{equation}
+% %   \sin(\alpha)=\frac{v_{\alpha}}{v_{\beta}}\sin(\beta)=k\sin(\beta).\label{eq:IndRef}
+% % \end{equation}
+% % The constant $k=\frac{v_{\alpha}}{v_{\beta}}$ is called  the ``index of refraction'' (for
+% % water).
+% % \begin{ProficiencyDrill}
+% %   Show that $\beta=\inverse\sin\left(\frac{\sin(\alpha)}{k}\right)$.
+% % \end{ProficiencyDrill}
+% % Knowing $\beta$ we can now express the deviation angle,
+% % $D(\alpha)$ as a function of $\alpha$ alone:
+% % \begin{align*}
+% %   D(\alpha) &= \pi+2\alpha-4\beta \\
+% %   D(\alpha) &= \pi+2\alpha-4\inverse\sin\left(\frac{\sin(\alpha)}{k}\right).
+% % \end{align*}
+
+% % \begin{embeddedproblem}
+% %   For visible light  the index of refraction
+% %   is $k\approx\frac43$. Mathematically, the problem becomes minimizing
+% %   $D(\alpha)=\pi+2\alpha-4\beta$ subject to the constraint
+% %   $\sin(\alpha)=k\sin(\beta)$, $ 0\le\alpha<\frac{\pi}{2} $.
+
+% %   \begin{enumerate}[label={\bf{}(\alph*)}]
+% %   \item Graph $D(\alpha)$ with $k=\frac43$ and confirm that the graph
+% %     we showed you earlier is correct.
+% %   \item Use Newton's Method to show that the coordinates,
+% %     $(\gamma,\psi),$
+% %     of the minimum point on the graph are $\gamma\approx1.04\approx59.59^\circ$ and
+% %     $\psi\approx2.41\approx138.1^\circ$ respectively.
+% %   \end{enumerate}
+% % \end{embeddedproblem}
+% % % ****************** Pick up here *************************************
+
+% % % Graphing $D(\alpha)$ for this value of  $k$ and
+% % % $0\le{}\alpha{}<\frac{\pi{}}{2}$, we have.
+% % % Notice from the graph that the minimum of this curve appears to be
+% % % around the point $(1.03, 2.41)$.  This says that the minimum value of
+% % % $D(\alpha)$  is about $2.41\text{ radians }\approx 138^\circ$  and it
+% % % occurs when $\alpha\approx1.03\text{ radians }\approx59.4^\circ$.
+% % % As we can see from our sketch the  minimum 
+% % % value of $\alpha$ near  $1.03$  the amount of deviation is roughly
+% % % the same.
+
+% % % \vskip.5in{}
+% % % ***************************************************************\\
+% % % As you can see in the diagram below, the ray of light entering the
+% % % raindrop at an angle of radian measure $\alpha$ is refracted to an
+% % % angle of radian measure $\beta$.  This is governed by Snell's Law.\\
+% % % % \begin{wrapfigure}[]{l}{3in}
+% % % %   \captionsetup{labelformat=empty}
+% % % %   \centerline{\includegraphics*[height=1.75in,width=3.25in]{../Figures/DoubleRainbow2}}
+% % % %   \label{fig:DoubleRainbow2}
+% % % % \end{wrapfigure}
+% % % $\frac{\sin(\alpha)}{v_\alpha}=\frac{\sin(\beta)}{v_\beta}$, where
+% % % $v_\alpha$ and $v_\beta$ are the velocities of light in air and water,
+% % % respectively.  Actually, only a portion is refracted as the other
+% % % portion is reflected off the exterior of the raindrop.  Once inside
+% % % the raindrop, it reflects off of the back of the raindrop (again only
+% % % a portion) so that the angle of incidence equals the angle of
+% % % reflection.  A portion of the light then exits the raindrop governed
+% % % by Snell's Law again.  The total amount of (clockwise) rotation in
+% % % this process is called the deviation angle, $D(\alpha)$.%
+
+% % % \begin{embeddedproblem}
+% % %   Show that $D(\alpha)=\pi-4\beta+2\alpha.$
+% % % \end{embeddedproblem}
+
+
+% % \begin{wrapfigure}[]{r}{2.5in}
+% %   \captionsetup{labelformat=empty}
+% %   \includegraphics*[height=.8in,width=2.5in]{../Figures/DoubleRainbow5}
+% %   \label{fig:DoubleRainbow5}
+% % \end{wrapfigure}
+% % This says that light rays entering the raindrop at approximately
+% % $59^\circ$ have the highest concentration when exiting the raindrop.
+% % At other values of $\alpha$ the dispersion of light is greater.  This
+% % provides the angle that the rainbow makes with an observer.  This
+% % supplementary angle to $D(\alpha)$ is called the rainbow angle,
+% % $$
+% % R(\alpha) =\pi-D(\alpha)=\pi-(\pi+2\alpha-4\beta)=4\beta-2\alpha\text{
+% %   radians.}
+% % $$
+% % For white light, we have a rainbow angle of
+% % $$
+% % R(1.03)\approx\pi-2.41\approx0.734\text{ radians}\approx42^\circ.
+% % $$
+
+% % To obtain the spread of colors, note that the index of refraction
+% % changes with the color of light.  We said earlier that the index of
+% % refraction for visible light is approximately $\frac43$. This is true,
+% % but it actually varies with the frequency (color) of the light. The
+% % red light refracts at one angle and the orange at a slightly different
+% % angle so they appear in the rainbow adjacent to each other. This
+% % variation is continuous throughout the spectrum which is what gives us
+% % the rainbow.
+
+
+% % \begin{embeddedproblem}
+% %   We could use Newton's Method like we did earlier to find the
+% %   minimum of $D(\alpha)$ for various values of $k$ but it is a
+% %   little easier to do it this way:
+% %      \begin{enumerate}[label={\bf{}(\alph*)}]
+% %   \item Show that $D(\alpha)$ is minimized when % $\cos(\alpha)=\frac{k}{2}\cos(\beta)$.
+% %   \item Use the equation obtained in part (a) along with the
+% %     constraint $\sin(\alpha)=k\sin(\beta)$ to show that $D(\alpha)$
+% %     is minimized when $\sin(\beta)=\sqrt{\frac{4-k^2}{3k^2}}$ and
+% %     $\sin(\alpha)=\sqrt{\frac{4-k^2}{3}}$.  \hint{Solving for one
+% %       variable in one equation and substituting into the other is
+% %       very difficult. Instead try squaring both equations and add
+% %       them together? From there solving for $\sin(\beta)$ is
+% %       straightforward\footnote{Remember that ``straightforward''
+% %         does not mean easy.}.}
+% %   \item Use the results from part (b) to fill in the following
+% %     table.
+% %     \begin{table}[h]
+% %       \centering
+% %       \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+% %         Color& k& $\beta$ in degrees&$\alpha$ in degrees&$D(\alpha)$ in degrees&$R(\alpha)$ in degrees\\\hline
+% %         Red & 1.331 & &&&\\\hline
+% %         Orange & 1.332 & &&&\\\hline
+% %         Yellow & 1.333 & &&&\\\hline
+% %         Green & 1.335 & &&&\\\hline
+% %         Blue & 1.337 & &&&\\\hline
+% %         Indigo & 1.340 & &&&\\\hline
+% %         Violet & 1.344 & &&&\\\hline
+% %       \end{tabular}
+% %     \end{table}
+% %   \end{enumerate}
+% % \end{embeddedproblem}
+
+% % % \begin{wrapfigure}[]{r}{1.25in}
+% % %   \captionsetup{labelformat=empty}
+% % %   \centerline{\includegraphics*[height=.in,width=1.25in]{../Figures/DoubleRainbow7}}
+% % %   \label{fig:DoubleRainbow7}
+% % % \end{wrapfigure}
+% % The values of $R(\alpha)$ you obtained in the table
+% % accounts for the various color bands that appear in the rainbow as
+% % sunlight hits droplets at various angles.% \\
+% % % \centerline{\includegraphics*[height=1.in,width=3in]{../Figures/DoubleRainbow7}}
+
+% % The primary rainbow is created by light entering the upper portion of
+% % the raindrop.  If light is bright enough then a secondary rainbow is
+% % created from light entering the lower portion of the raindrop as in
+% % the diagram below.\\
+% % \centerline{\includegraphics*[height=2in,width=3.3in]{../Figures/DoubleRainbow8}}
+% % This time the deviation angle $D(\alpha)$ is the total amount of counterclockwise
+% % rotation and the rainbow angle would be $R(\alpha)=D(\alpha)-\pi$.  Note that the extra
+% % reflection accounts for the rainbow being not as bright.
+
+% % \begin{embeddedproblem}
+% %   Show that in the case of the secondary rainbow
+% %   $$
+% %   D(\alpha)=2\pi+2\alpha-6\beta
+% %   $$
+% %   and show that this is minimized when
+% %   $\sin(\beta)=\sqrt{\frac{9-k^2}{8k^2}}$ and
+% %   $\sin(\alpha)=\sqrt{\frac{9-k^2}{8}}$.
+% %   Use this to fill in the following table:
+% %   \begin{table}[h]
+% %     \centering
+% %     \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+% %       Color& k& $\beta$ in degrees&$\alpha$ in degrees&$D(\alpha)$ in degrees&$R(\alpha)$ in degrees\\\hline
+% %       Red & 1.331 & &&&\\\hline
+% %       Orange & 1.332 & &&&\\\hline
+% %       Yellow & 1.333 & &&&\\\hline
+% %       Green & 1.335 & &&&\\\hline
+% %       Blue & 1.337 & &&&\\\hline
+% %       Indigo & 1.340 & &&&\\\hline
+% %       Violet & 1.344 & &&&\\\hline
+% %     \end{tabular}
+% %   \end{table}
+% % \end{embeddedproblem}
+
+% % A couple of comments about the rainbow problem are in order.
+
+% % First, notice that although Calculus was crucial to the solution it wasn't
+% % the \emph{whole} solution. Indeed, when we look back it seems that we
+% % hardly used Calculus at all. We found the derivatives of $D(\alpha)$
+% % and  $R(\alpha)$ and we used Newton's Method to find the roots of those
+% % derivatives. And that's it. That's all of the Calculus we used.
+
+% % Calculus was crucial, to be sure, but it is only one tool in our
+% % toolbox. This will generally be true of the problems you encounter in
+% % the future. There is a tendency to want to do ``Calculus'' because
+% % this is a ``Calculus'' course. But this is a \underline{Mathematics}
+% % course, first and foremost. You will need all of the mathematical
+% % tools you have. 
+
+% % % Second, in our comments on Proficiency~Drill~\ref{PD:DerivUnd} we
+% % % observed that  Fermat's Theorem specifically requires that a function
+% % % be differentiable at the point in question. This may seem like a
+% % % pointless formality. Obviously, if the derivative doesn't exist at
+% % % $x=a$ then we can't conclude that it is equal to zero at $x=a$. It
+% % % hardly seems worth the effort of writing it down.
+
+% % % However, this question of differentiability is more important than it
+% % % appears to be right now. The fact is that not all functions have
+% % % derivatives, and some functions have tangent lines but are not
+% % % differentiable. We have glossed over this truth so far because we were
+% % % learning the basics, but we are about to move beyond the basics so it is
+% % % time to begin taking explicit notice of when a derivative exists, and
+% % % when it does not. As a first approximation we will use this
+% % % definition:
+
+% % % \begin{mydefinition}{Non-Differentiability, First Approximation}
+% % %   The derivative of $y=f(x)$ does not exist for any value of $x$ for
+% % %   which $\dfdx{y}{x}$ is undefined.
+% % %   \comment{As a practical matter this means
+% % %   any value of $x$ that would result in dividing by zero.}
+% % % \end{mydefinition}
+
+% % % As we said this is a first approximation. This is a more subtle
+% % % problem than it appears to be at first. We will refine this definition
+% % % later.
+% % \begin{embeddedproblem}
+% %   Solve the following optimization problems. (That is find the maximum
+% %   and minimum of the objective function, subject to the constraint.)
+% %   Without context, you need to be mindful of where $\dfdx{f}{x}$ does
+% %   and does not exist as a location for a possible extremum.
+% %   \begin{enumerate}[label={\bf{}(\alph*)}]
+% %     \begin{multicols}{2}
+% %     \item Objective function: $f=2x+y $\\
+% %       Constraint: $x^2+2y^2=2 $
+% %     \item Objective function: $f=xe^y $\\
+% %       Constraint: $x^2+y^2=2 $
+% %     \item Objective function: $f=x+y $\\
+% %       Constraint: $xy=4 $
+% %     \item Objective function: $f=xy $\\
+% %       Constraint: $x^2+9y^2=18 $
+% %     \end{multicols}
+% %   \end{enumerate}
+% % \end{embeddedproblem}
+
+% % % Ultimately, we will need conditions under which we can
+% % % guarantee that the derivative exists, but for now we will simply take
+% % % explicit notice  that sometimes it doesn't by stating differentiabilty
+% % % as a requirement, when it is needed.
+
+
+
+% % \begin{wrapfigure}[]{r}{2in}
+% % \captionsetup{labelformat=empty}
+% % \centerline{\includegraphics*[height=.9in,width=2in]{../Figures/Refraction11}}
+% % \label{fig:Refraction11}
+% % \end{wrapfigure}
+% % Finally, when we graphed $F(\alpha)$ above we only graphed the part
+% % where $0\le\alpha\le\frac{\pi}{2}$ because those are the only angles
+% % that make sense in this problem. However if we were to graph it for a
+% % wider range of values of $\alpha$ we would have a graph like the one
+% % at the right. Notice that this graph has a maximum as well as a
+% % minimum, but our procedure only tells us if we have a horizontal
+% % tangent line. It does not distiguish between a horizontal tangent at a
+% % minimum from a horizontal tangent at a maximum. If we had not known,
+% % \emph{a priori}, that the minimum was between $0$ and $\frac{\pi}{2}$
+% % how would we have known if we'd somehow found the maximum rather than
+% % the minimum.
+
+% % This seems like a minor problem at first, but it can become quite
+% % problematic in more complex, or more abstract problems where we do not
+% % have as much physical or geometric intuition to guide us as we had in
+% % the rainbow problem. We will need some way to distinquish between a
+% % maximum and a minimum analytically, without relying on pictures or our
+% % intuition.
+
+
+% % % \includegraphics*[height=3in,width=5in]{../Figures/DoubleRainbow1}
+
+% % % \includegraphics*[height=3in,width=5in]{../Figures/DoubleRainbow0}
+
+
+\section{More Optimal Squares}
+\label{sec:more-optimal-squares}
+Let's get back to our original problem of finding maximum and minimum
+areas of squares with one fixed corner and a second corner on a
+constraint curve.  We already did this when the constraint curve was a
+line, circle, or ellipse.  Things get very interesting when we look at
+some other constraint curves.
+
+\begin{myexample}[Constructing a Square on an Hyperbola]
+  \label{example:HyperbolaDist1}
+  Find the area of the maximal square that can be constructed with one
+  corner at the point $(2,3)$ and one corner on the hyperbola:
+  $$x^2-y^2=1.$$
+  % \centerline{\includegraphics*[height=2in,width=3in]{../Figures/HyperbolaDist1}}
+
+  Earlier (Problem~\ref{problem:EllipseDist}) we were careful to point
+  out the value of visualizing a problem with a sketch. To emphasize
+  the importance of this we will solve this problem without
+  visualization. Naturally, something will go wrong. See if you can
+  spot it as we proceed.
+
+  As before the area of an arbitrary square constructed as described is
+  given by
+  $$
+  A=(x-2)^2+(y-3)^2.
+  $$
+  so
+  $$
+  \dx{A} = 2(x-2)\dx{x} + 2(y-3)\dx{y}.
+  $$
+  but this time the constraint is $x^2-y^2=1$ so we have
+  $\dx{y}=\frac{x}{y}\dx{y}.$ 
+  Thus
+  \begin{equation}
+    \dfdx{A}{x} =
+    2\left(2x-2-\frac{3x}{\sqrt{x^2-1}}\right)\label{eq:HypDeriv}
+  \end{equation}
+  
+  \begin{ProficiencyDrill}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Use Newton's Method with an initial guess of $r_0=3$ to show
+      that we have a minimal square when $x\approx 2.623.$
+    \item Find the corresponding $y$ value, and show that the area of
+      the corresponding optimal square is  $A(x)\approx0.719$.
+    \item Show that this square is \alert{not} maximal by computing
+      the area of \emph{any} other square with one corner on the
+      hyperbola.
+    \end{enumerate}
+  \end{ProficiencyDrill}
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2in,width=2in]{../Figures/HyperbolaDist6}}
+\label{fig:}
+\end{wrapfigure}  
+We warned you that something would go
+wrong. Do you see what it was?
+
+The problem asks us to find the maximal square, but we found the
+minimal.  How did that happen?
+
+It was entirely because we failed to visualize the problem with a
+sketch, so take a look at the visualization at the right.  Can you see
+that there must two optimal squares? Can you also
+see that corner of the minimal square on the hyperbola will have an
+$x$ coordinate somewhere between $2$ and $3$. The $x$ coordinate we
+found was approximately $2.623$, so clearly we found the minimal
+square, not the maximal as required. The other optimal square has a corner
+on the left branch of the graph not the right, so the $x$ coordinate
+will be negative.
+
+
+
+  \begin{wrapfigure}[]{l}{1.2in}
+    \captionsetup{labelformat=empty}
+    \vskip-5mm{}
+    \centerline{\includegraphics*[height=1in,width=1.2in]{../Figures/HyperbolaDist4}}
+    \label{fig:HyperbolaDist1}
+  \end{wrapfigure}
+We used Newton's Method to find the roots of $\dfdx{A}{x}$ because we
+know that when $\dfdx{A}{x}=0$ $A(x)$ will be optimal. But recall that in
+Chapter~\ref{chapt:Approximation} we saw that it can fail in a couple
+of ways if we aren't careful. In the worst case if we pick an initial 
+guess that is not sufficiently close to the root we seek nothing goes wrong
+with our calculations, it just returns the wrong answer. That's what
+happened here. We chose to start with $r_0=3$. Had we also  drawn the
+graph of $\dfdx{A}{x}$ (seen at the left) we'd have known that
+starting with a positive guess would fail.
+
+Perhaps you saw these errors as we went through the problem. If so,
+good for you! But ask yourself this: If we hadn't warned you that
+things were going to go wrong would you have noticed the errors?
+\emph{Always} sketch the problem if you possibly can. It works.  Had
+we draw this sketch \emph{before} beginning to work on the problem
+we'd have know that we had the wrong answer as soon as Newton's Method
+gave us back a positive value of $x$.
+
+  \begin{ProficiencyDrill}
+    Now that we see that $\dfdx{A}{x}$ has a second root it is easy to
+    resolve some of these questions.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item     Take $r_0=\frac32$, and use
+      Newton's Method to show that the second root is at
+      $x\approx -1.313$ 
+    \item Show that $y\approx 0.851$.
+    \item Show that  the area of the resulting square is
+      $A(x)\approx15.59$.
+    \item Is this the maximal square the problem asks for?
+    \end{enumerate}
+  \end{ProficiencyDrill}
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/HyperbolaDist1}}
+\label{fig:}
+\end{wrapfigure}
+In the  sketch at the right we see the hyperbola and both of the squares
+we have found:
+
+Does it appear to you that one of the sides of each square is
+orthogonal (perpendicular) to the hyperbola?
+
+We'd be willing to bet that you're expecting that the next  problem
+will be  to show that the lines joining the point, $(2,3)$ to the optimal
+points on the hyperbola are perpendicular (orthogonal) to it,
+as we did with the line and the circle.  Well, you're right. That is
+the next problem.
+
+
+But before we start let's pause, step back and observe that it seems
+intuitively clear that this \emph{always} true.
+
+Optimizing the area of a square is equivalent to optimizing the length
+of one side of a square, and it should be intuitively clear that the
+shortest or longest line from a point to a smooth curve -- regardless
+of the shape of the curve -- is the one that is perpendicular
+(orthogonal) to the curve.
+
+  If this is true then it might be worth biting the bullet and working through
+  the problem in full generality -- essentially do all such problems
+  at once -- so that we never need to do it for a specific curve, with
+  all of the computational complications that come with that.
+
+  [This is surprisingly straightforward.  There is a little bit of a
+  difficulty where the tangent line is horizontal or vertical, but
+  you'll figure it out.]
+
+\begin{embeddedproblem}
+\begin{wrapfigure}[]{l}{1in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=.7in,width=1in]{../Figures/MaxOrth1}}
+\label{fig:}
+\end{wrapfigure}
+  Consider a curve $C$ and a point $(a,b)$  not on the curve.  Show
+  that if the area of a square with corners $(a,b)$ and $(x,y)$  on
+  the curve is minimized or maximized at $(x_0, y_0)$, then the line
+  joining $(a,b)$  and $(x_0,y_0)$  is perpendicular (orthogonal) to
+  the tangent line of $C$ at $(x_0,y_0)$ .
+
+  Try to solve this problem completely on your own, but if you get
+  stuck here is an outline you can follow:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Find the objective function. This will be the area of the
+      square on the line from $(a,b)$ to $(x,y)$.
+    \item Find the slope of $C$ at the optimum point, $(x_0,y_0)$.
+    \item Find the  slope of the line from $(a,b)$ to $(x_0,y_0)$.
+    \item Compare the two slopes.
+    \item What happens if the tangent line is horizontal? If it is
+      vertical?
+  \end{enumerate}
+\end{embeddedproblem}
+
+  
+Returning to our problem, the square at $x\approx -1.313$ is larger than the one at
+  $x\approx 2.623$, so it must be a square with maximal area, right?
+
+  No, unfortunately that isn't true either. This is actually a second
+  \emph{minimal} square. It is clear that the
+  ``wings'' of the hyperbola get arbitrarily far from the point
+  $(2,3)$ as we allow $x$ to move to the right or left so there
+  clearly is not maximal square.
+
+  But how can there be two \emph{minimal} squares. That seems
+  impossible.
+
+  Look closely that the following closeup of the
+  region around the point $(-1.313, 0.851)$.\\
+  \centerline{\includegraphics*[height=1.6in,width=2in]{../Figures/HyperbolaDist2}}
+  Clearly the blue line (one edge of the blue square above) is shorter
+  than either of the green lines, so the area of the square generated
+  from the blue line will be smaller than the area of a square
+  generated from either of the green squares.
+
+  So there are two distinct squares to be found, but both of them are
+  minimal. The black one is clearly the smallest possible square we
+  can build this way.  But if the blue square is larger than the
+  black  in what
+  sense can the blue square be considered  minimal?
+\end{myexample}
+
+
+\subsection*{\underline{Global vs. Local Extrema} }
+In example~\ref{example:HyperbolaDist1}{} the minimal square (the
+black one) has the smallest area of \emph{all possible} squares. We'll
+call it the \term{global minimum}.  The area of the blue square is
+larger than the area of the black one so it is not a global minimum
+but its area is smaller than the area of all of the squares
+ we can construct \emph{nearby}. We'll call it
+a \term{local minimum}.
+
+It is not too difficult to think about the areas of squares. That's
+why we chose these problems for our first examples. But for more
+real world problems (e.g. explaining the colors of a rainbow) it can
+be difficult to envision what is happening physically. We would like a
+visual representation of the problem that we can visualize easily,
+regardless of the actual problem.
+
+This is what the graph of a function is for.
+
+When we plot the
+graph of the objective function in Problem~\ref{example:HyperbolaDist1},
+$ A(x) = (x-2)^2+(y-3)^2$ and account for the constraint:
+$y=2\sqrt{x^2-1}$ the two extremal squares appear as the two low
+points on the graph: $(-1.31, 15.59)$ and $(2.62, 0.72)$. The first
+coordinate gives the $x$-coordinate of the constructed corner of the
+square and the second coordinate gives the area. As you can see the
+square at $x=2.62$ is the global minimum; it is the lowest point on
+the square.
+
+You can also see that the square at $x=-1.31$ is a \emph{local}
+minimum; it is the lowest point on the graph \emph{locally} (nearby).
+
+
+
+
+% \begin{wrapfigure}[]{r}{2.2in}
+% \captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2.5in,width=3.5in]{../Figures/HypObjFun1}}
+% \label{fig:}
+% \end{wrapfigure}
+
+\begin{ProficiencyDrill-1line}
+  Explain why the graph has two parts.
+\end{ProficiencyDrill-1line}
+
+Because they are simpler, and easier to think about the graphs of
+objective functions sometimes shine a light on aspects of the problem
+that aren't clear otherwise. For example, do you see that this graph
+also seems to have a local maximum at the point $(-1,18)$? This implies
+that there is a third square with one corner at $x=-1$ and area equal
+to $18$ which is larger than all of the nearby squares.
+
+\begin{ProficiencyDrill}
+  Sketch this problem again and include this third square.
+\end{ProficiencyDrill}
+
+
+The existence of local extrema really complicates things
+for us because it means we  have to find all of the \term{local}
+ extrema and figure out which of them is  global, if any.
+We're going to have a lot of trouble keeping this all straight if we
+don't get organized.
+
+Let's do that, starting with a formal definition of (local and global)
+extrema.
+
+In the sketch below $y(a)$ is the \term{global} minimum of $y$ since it is the
+lowest point on the graph.\\
+\centerline{\includegraphics*[height=2.5in,width=3.7in]{../Figures/LocalGlobalDef}}
+
+How can we distinguish it from the \term{local} maximum, $y(c)?$ If we
+restrict our attention to the interval between the dotted lines, then
+$y(c)$ is maximum on the interval $[c-\eps, c+\eps]$.  This suggests
+the following definitions.
+
+\begin{mydefinition}[Global Minimum]
+  Suppose that $g$ is a number in the domain of $y$ such
+  that\aside{The phrase ``such that'' is a term of art in
+    mathematics. It means, ``with the following property.''}
+  $y(g)\le y(x)$ for every $x$ in the domain of $y$.  Then $y(g)$ is a
+  \term{global minimum} of $y$.
+\end{mydefinition}
+
+\begin{mydefinition}[Local Minimum]
+  Suppose $l$ is a number in the domain of $y$.  Then $y(l)$ is a
+  \term{local minimum} if there is an open interval $I$,  containing $l$, such that
+  $y(l)\le y(x)$ for every $x\in I.$ 
+\end{mydefinition}
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Global and local maxima can be defined similarly. Provide two
+    such definitions.
+  \item Suppose that in the graph depicted above, the interval $I$ is an
+    open interval, that is, it does not contain its endpoints.
+    \begin{enumerate}
+      \item     Would there be a global minimum?  Explain. 
+      \item     Would there be a global maximum?  Explain.
+    \end{enumerate}
+  \item Suppose that in the graph depicted above, the interval $I$ is
+      a closed interval, that is, it contains its endpoints.  Would
+      there be a global maximum?  Explain.
+    \begin{enumerate}
+      \item     Would there be a global minimum?  Explain. 
+      \item     Would there be a global maximum?  Explain.
+    \end{enumerate}
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+The contrast between parts (b) and (c) of the previous problem illustrate
+that there is another kind of extremum we will need to consider.  If
+our interval contains an endpoint, then we could have an extemum
+there.  We will come back to this possibility later, but for now,
+let’s focus on optimization without consideration of endpoints in our
+domain.
+
+In the diagram above $y(c)$ is a local minimum, $y(a)$ is the global
+minimum and $y(b)$  is a local maximum.
+
+\begin{ProficiencyDrill}
+  Convince yourself that if a  \term{global} maximum (minimum) exists
+  we can find it by 
+  by finding all of the \term{local} maxima (minima) and selecting the
+  largest (smallest) of these.
+\end{ProficiencyDrill}
+
+In example~\ref{example:HyperbolaDist1} we had a situation with two
+local minima, one of which was also the global minimum. When we
+graphed our objective function we saw that we also have a local
+maximum at $x=-1$.
+
+
+\begin{embeddedproblem}[Constructing a Square on a Parabola]
+  \label{problem:Parab1}
+  Find the area of the minimal square that can be constructed with
+  one corner at the point $(2,3)$ and one corner on the parabola
+  \begin{equation}
+    (x+4)^2-y=3
+    \label{eq:ParabolaConstraint}.
+  \end{equation}
+  It is evident
+  from the diagram below that there is no maximal square.\\
+  \centerline{\includegraphics*[height=2in,width=3in]{../Figures/ParabDist1}}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item
+    Show that  the objective function for this problem is:
+    \begin{align*}
+      A(x) &= (x-2)^2+(y-3)^2\\
+      \intertext{so that}
+      \dx{A}&=2(x-2)\dx{x}  +2(y-3)\dx{y}.
+    \end{align*}
+    % Our goal is to set $\dfdx{A}{x}=0$ and solve but first we will
+    % need to get everything in terms of one variable or the other.
+  \item Differentiate  Equation~\ref{eq:ParabolaConstraint} to show that
+    $$\dx{y} = 2(x+4)\dx{x}.$$
+  \item Show that $ \dfdx{A}{x}=2\left(2(x+4)^3-11x-50\right)$.  and
+    use
+    % \footnote{Solving this equation presents a puzzle since it is a
+      % cubic equation. You learned in Algebra to solve Quadratic
+      % Equations:~$ax^2+bx+c=0$, using the Quadratic
+      % Formula:~$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$, but almost
+      % certainly you were never shown the analogous ``Cubic Formula''
+      % for solving Cubic Equations of the form $ax^3+bx^2+cx+d=0$:
+      % \begin{align*}
+      %   x&=\sqrt[3]{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)+\sqrt{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)^2+\left(\frac{c}{3a}-\frac{b^2}{9a^2}\right)^3}}\\
+      %    &\quad\quad+\sqrt[3]{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)-\sqrt{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)^2+\left(\frac{c}{3a}-\frac{b^2}{9a^2}\right)^3}}\\
+      %    &\quad\quad\quad-\frac{b}{3a}
+      % \end{align*}
+      % You can see why you were not asked to memorize this formula  in
+      % Algebra class.}
+    Newton's Method
+    to show that $x\approx-1.419$ is an approximate solution of
+    $\dfdx{A}{x}=0$.
+  \item Show that $A(-1.419)\approx 12.13$ is the approximate area
+    of the minimal square.
+  \end{enumerate}
+\end{embeddedproblem}
+
+
+\section{The Abstracted Problem}
+\label{subsec:optim-abstr-probl}
+\markboth{\sc Optimization}{\sc Abstracted Problem}
+
+The examples we looked at in the previous three sections illustrated several
+important points. Among them,
+\begin{enumerate}
+\item Finding the objective function, $O(x)$, is crucial. Without it we can't even
+  get started.
+\item Once we've found the objective function optimizing it becomes
+  the more abstract problem of finding the extreme points of the graph of
+  $O(x)$. Whether we  employ Newton's dynamic view
+  (derivative as velocity) or Leibniz's geometric view (derivative as
+  slope) of the derivative to attack this ``abstracted'' version of
+  the original optimization,  it all comes down  to finding all of
+  the places where the derivative is zero. These are the locations
+  where an extremum \emph{might} occur. We must then determine where it really \emph{does} occur.
+\item There are two kinds of extrema: local and global. Any global
+  extrema, if they exist, will be the maximum and minimum of all of
+  the local extrema. Thus our first task is to identify the local
+  extrema. 
+\end{enumerate}
+
+But finding the local extreme points of the graph of an arbitrary function
+is more complicated than we've made it appear so far. In this section
+we will address this. By the end of the section we will have two
+theorems that provide a roadmap for attacking this kind of problem.
+
+\subsection{Distinguishing Maxima from Minima}
+Graph the function
+$$
+O(x)=x^3-3x
+$$
+and confirm visually that it has a local maximum at $(-1, 2)$, and a
+local minimum at $(1,-2)$.
+
+This is easy when we have the graph in front of us
+but in the absence of a graph to look at how could we tell which is
+the maximum and which is the minimum? We'll need an \alert{analytic}
+method; one that doesn't rely on pictures.
+
+
+To that end, consider the following theorem from elementary Algebra.
+
+\begin{mytheorem-enumerate-noname}
+  \label{thm:FDT-lines}
+  \begin{enumerate}
+  \item If the slope of a line is positive then the $y$ coordinate is
+    increasing.
+  \item If the slope is negative then the $y$ coordinate is
+    decreasing.
+  \item If the slope is zero then the $y$ coordinate is not changing.
+  \end{enumerate}
+\end{mytheorem-enumerate-noname}
+
+The obvious similarity between Theorem~\ref{thm:FDT-lines} and
+Theorem~\ref{thm:FDT-Newton} is not a coincidence.
+
+Lines are easy of course, because the slope of a line is constant: If
+the slope of a line is $5$ here then it is the $5$ over
+there, and way back there too. But we're interested in curves, and the slope of a curve
+changes from point to point. Nevertheless, since $\dfdxat{O}{x}{a}$
+is the slope of a curve at the point $x=a$ it is clear that if
+$\dfdxat{O}{x}{a}>0$ then the curve is increasing \emph{at the point
+  $x=a.$} Similarly if $\dfdxat{O}{x}{a}<0$ then the curve is
+decreasing \emph{at the point $x=a.$} The above theorem thus
+generalizes as follows:
+
+\begin{mytheorem}[The First Derivative Test (Leibnizian version)]\ \\
+  \label{thm:FDT-Leibniz}
+  Consider the graph of $y(x)$.
+  \begin{enumerate}
+  \item If $\dfdxat{y}{x}{a}>0$ for every point $x=a$ in some interval
+    then the graph is increasing on that interval.
+  \item If $\dfdxat{y}{x}{a}<0$ for every point $x=a$ in some interval
+    then the graph is decreasing on that interval.
+  \item If $\dfdxat{y}{x}{a}=0$ for every point $x=a$ in some interval
+    then the graph is horizontal on that interval.
+  \end{enumerate}
+\end{mytheorem}
+Compare Theorem~\ref{thm:FDT-Leibniz} to
+Theorem~\ref{thm:FDT-Newton}. Do you see that these are equivalent;
+that they are really the same theorem? We just came at the idea from two
+different points of view.
+
+
+ The Newtonian and the Leibnizian viewpoints are equivalent and we
+don't want to be tied to either,  so we will now restate this theorem
+independent of the influence of Newton or Leibniz.  However we are not
+abandoning either viewpoint. Both are still valid and both are still useful, and
+if one or the other seems like the natural way to think about a given
+problem you should do that.
+
+What is common to both of them is the abstract concept of the increase
+or decrease of $y$ (or whatever we want to name the dependent
+variable) as a function of $x$ (or whatever we want to name the
+independent variable). In the Newtonian version the function gives the
+position of a moving point. In the Leibnizian version a graph gives a
+visual representation of how the dependent variable depends on the
+independent variable.
+
+The following  more modern version \emph{of the same theorem} is
+stated in terms of functions and thus subsumes both the Newtonian and
+Leibnizian versions.
+
+\begin{mytheorem}[The First Derivative Test (Function Version)]
+  \label{thm:FDT}
+  Suppose 
+  $$
+  y=f(x).
+  $$
+  where $f$ is some function  of $x.$
+  The following statements are true:
+  \begin{enumerate}
+  \item If $\dfdxat{y}{x}{a}>0,$ then $f(x)$ is increasing at
+    $x=a$. 
+  \item If $\dfdxat{y}{x}{a}<0$, then $f(x)$ 
+    is decreasing at $x=a$.
+  \item If $\dfdxat{y}{x}{a}=0$ then $f(x)$ is neither increasing
+    nor decreasing at $x=a$.
+  \end{enumerate}
+\end{mytheorem}
+
+As we have just seen the derivative gives us information about curves
+in much the same way that the slope of a straight line gives us
+information about the line. The only difference is that since the
+numerical value of the derivative changes at each point it only gives
+us \emph{local} information about the curve at that point. 
+Moreover, since we reached the same conclusions regardless of whether
+we used Newton's or Leibniz's viewpoint, we can be reasonably
+confident that our conclusions are independent of which point of view we
+use.
+
+We seem to have gone pretty far afield though. We said we were going
+to find an analytic way to distinguish between a maximum and a
+minimum. Do you see how the First Derivative Test does that? Take a
+moment to think about it before reading further.
+
+\subsection{Transition Points}
+The First Derivative Test is the only tool we need to distinguish a
+minimum from a maximum. In the simplest case all we have to do is
+identify each point where the tangent line is horizontal
+($\dfdx{O}{x}=0$) and then determine if the slope of the tangent (the
+derivative) is positive
+($\dfdx{O}{x}>0$) or negative ($\dfdx{O}{x}<0$) on either side of that
+point.
+
+
+
+Clearly a local maximum occurs on the graph of $O(x)$ when the graph stops
+increasing and starts decreasing. From Theorem~\ref{thm:FDT} we see
+that if the derivative of $O(x)$ is positive then the function is
+increasing, and when its derivative is negative then the function is
+decreasing. Put this all together and it should be clear that to find
+a maximum we need only find a place where the derivative \emph{transitions} from
+positive to negative.
+
+Similarly, to find a minimum we need to find a place where
+the derivative \emph{transitions} from negative to positive. The most
+obvious way for $\dfdx{y}{x}$ to make such a transition is for it to
+pass through zero. We'll consider these first.
+
+\begin{ProficiencyDrill}
+  Can you think of another way to make that transition?
+\end{ProficiencyDrill}
+
+Let's check that proposition.
+\begin{myexample}
+  \label{problem:PPT}
+  Let $y= O(x)=x^3-3x$ as above.
+
+   The derivative of $O(x)$ is:
+  $\dfdx{O}{x}=3x^2-3$, so the solutions of $\dfdx{O}{x}=0$ are
+  $x=-1$, and $x=1$. We need to determine whether the derivative
+  transitions from positive to negative, or from negative to positive at
+  those two points.
+  \begin{description}
+  \item[At $x=-1$:] Pick a number less than $-1$, say $x=-2.$ Since
+    $\dfdxat{O}{x}{-2}>0$ we see that $O(x)$ is increasing to the left
+    of $x=-1.$ 
+  \item[At $x=1$:] Similarly since $\dfdxat{O}{x}{2}<0$ we conclude that
+    $O(x)$ is decreasing to the right of $x=1$.
+  \end{description}
+  Hold on though. We only tested one number on each side of our
+  suspected extremum. Is that enough? Give this some thought. We will
+  come back to it.
+\end{myexample}
+
+
+\begin{myexample}
+  \label{example:x^5}
+  Suppose $O(x)=x^5$. Find all extrema.
+
+  Solving $\dfdxat{O}{x}{0}=5x^4=0$ we see that $x=0$ is the only
+  possible extremum. But $5x^4>0$ for all $x$ so $\dfdx{O}{x}$ is
+  positive on the left
+  \emph{and on the right} of zero. So $O(x)=x^5$ does not have an
+  extremum at $x=0$, despite the fact that $\dfdxat{O}{x}{0}=0.$
+  this seems very curious until you graph the function.
+  
+  \begin{ProficiencyDrill}
+    Sketch the graph of $O(x)$.       
+  \end{ProficiencyDrill}
+\end{myexample}
+
+It should be clear that the solutions of $\dfdx{O}{x}=0$ are crucial
+to solving optimization problems. This is because these are the only
+places where
+$O(x)$ can
+transition from increasing-to-decreasing or from
+decreasing-to-increasing. For that reason we will call these \term{possible
+  transition points}. We solve optimization problems by locating
+all possible transition points and identifying the extrema among
+those. 
+
+All solutions of $\dfdx{O}{x}=0$ are possible transition points but,
+as we suggested earlier, there are others. We will hold off on a
+formal definition until we have identified all types.
+
+Returning to the question we asked at the end of
+problem~\ref{problem:PPT} above, what do you think? Is it
+enough to check only one point to determine the sign of the
+derivative?
+
+Of course it is. But \alert{only if we have identified all of the
+  possible transition points.} Since the possible transition points
+are precisely those places where $O(x)$ might change signs $O(x)$
+\emph{must} either
+be always positive or always negative between its between. We state
+this formally as a lemma.
+
+\begin{mylemma}
+  \label{lemma:AdjRoots}
+  Suppose $r_1$ and $r_2$ are two adjacent possible transition points of $f(x)$ (meaning
+  that there is not another one between them). If $f(x)>0$ for some  $x$
+  between $r_1$ and $r_2$, then $f(x)>0$ for every   $x$   between
+  $r_1$ and $r_2$. Similarly, if $f(x)<0$ for some  $x$
+  between $r_1$ and $r_2$, then $f(x)<0$ for every   $x$   between
+  $r_1$ and $r_2$.
+\end{mylemma}
+
+\begin{ProficiencyDrill}
+  Theorems and Lemmas in mathematics are always stated very formally
+  and with as much generality as possible. There are good reasons for
+  this but it does make it hard to read them sometimes.
+  
+  Read Lemma~\ref{lemma:AdjRoots} carefully and convince yourself that
+  it really does say the same thing as the paragraph before it. 
+\end{ProficiencyDrill}
+
+\begin{embeddedproblem}
+  \begin{wrapfigure}[]{r}{2in}
+    \captionsetup{labelformat=empty}
+    \centerline{\includegraphics*[height=1.4in,width=2in]{../Figures/ParabDist1}}
+    \label{fig:ParabDist1}
+  \end{wrapfigure}  In PIC \#\ref{problem:Parab1} we made the offhand remark, ``It is evident
+  from the diagram below that there is no maximal square.''
+
+  This is a misleading statement. 
+
+  That is, it \emph{is} quite evident from the figure that there is no
+  \emph{global} maximal square. But the sketch does not illuminate all
+  of the subtleties of the problem. In fact this problem has three
+  \emph{local} extrema: A global minimum (this is the one you were led to in
+  PIC \#\ref{problem:Parab1}), a second local minimum, \emph{and} a local maximum.
+
+  Find the other two extrema for this problem.
+
+  The point here is this: diagrams and intuition are useful
+  tools and you should use them whenever you can. But they have their
+  limits and need to be supplemented. Diagrams can be badly drawn, and
+  intuition can be misled.  They can't always be
+  trusted. This is why you need to become proficient with the
+  computational tools of Calculus.
+\end{embeddedproblem}
+
+\subsection{Undefined Derivatives}
+\label{subsec:underl-deriv}
+We said we would hold off on a formal definition of possible
+transition points until we had identified the other kinds. But it hard
+to see how there can be other kinds transition points isn't it? After
+all, to be a
+transition point is to have the derivative of the objective function
+change signs; to \emph{transition}. Obviously, the only number that has negative numbers to
+its left and positive numbers to its right (or \foreign{vice
+  versa}) is zero, so don't the solutions of $\dfdx{O}{x}=0$ give us
+\emph{all} of the possible transition points?
+
+No, they  don't.
+
+It is easy to jump to the conclusion that transition points \emph{only} occur
+when $\dfdx{O}{x}=0$ but this is \emph{not} true. It is not even true
+that  $\dfdx{O}{x}=0$ \emph{guarantees} a transition point  as we
+saw in example~\ref{example:x^5}.
+
+
+
+  It is the \emph{changing of the sign} of the derivative at a point
+  that makes it a transition point, not having $\dfdx{O}{x}=0$.
+
+
+
+\begin{myexample}
+  Since it is the changing of the sign of the derivative that matters it
+  is even possible for $x=a$ to be a transition point when
+  $\dfdxat{O}{x}{a}$ is meaningless. (That is, when
+  $\eval{\dfdx{O}{x}}{x}{0}$ is \underline{undefined}.
+
+  \begin{ProficiencyDrill-1line}
+  For example suppose
+  $$
+  O(x) = \sqrt{(1-x^{2/3})^{3}}.
+  $$
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that $\dfdx{O}{x}=-\frac{\sqrt{1-x^{2/3}}}{x^{1/3}}$, so
+    that   $\eval{\dfdx{O}{x}}{x}{0}$ is undefined.
+  \item     Verify that $\dfdx{O}{x}>0$ when $x<0$ and
+    $\dfdx{O}{x}<0$ when $x>0$.
+  \end{enumerate}
+  \end{ProficiencyDrill-1line}
+    From this example we can see that $\dfdx{O}{x}>0$ when $x<0$ and
+    $\dfdx{O}{x}<0$ when $x>0$. Therefore $x=0$ is a transition point.
+\end{myexample}
+
+
+So we see that those points where $\dfdx{O}{x}=0$ and $\dfdx{O}{x}$ is
+undefined are possible transition points.  There is one more kind.
+
+\subsection{Optimization on a Closed Interval}
+\label{sec:optim-clos-interv}
+\markboth{\sc Optimization}{\sc Closed Interval} Real world
+optimization problems will have a natural domain on which the
+objective function is defined and it makes no sense to consider values
+of $x$ outside of that domain. We actually saw this in
+both Example~\ref{example:CircleDist} and
+Example~\ref{example:HyperbolaDist1}. Recall that in  Example~\ref{example:CircleDist} we
+needed to optimize the area of a square with one of its corners on the
+unit circle: $x^2+y^2=1.$ Obviously it makes no sense to consider any
+value of $x$ greater than $1$ or less than $-1$, so the natural domain
+of this problem is $-1\le x\le 1$.
+In Example~\ref{example:HyperbolaDist1} the natural domain was
+everything outside the interval $(-1,1)$.
+When that happens there is one more
+kind of transition point to consider as we've seen.
+
+\begin{myexample}
+  \label{example:SqrClosed}
+  \begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1in,width=2in]{../Figures/ObjSqr}}
+\label{fig:}
+\end{wrapfigure}
+  Suppose that $O(x) = x^2$ and that the domain of the problem
+  is $-1\le x\le 1$. 
+
+
+  From the graph at the right we can see that this function has a (global)
+  minimum at $(0,0)$ and  we can find this minimum by the methods we are
+  already familiar with.
+
+  We can also see that we have two (global) maxima. One at $(-1,1)$
+  and the other at $(1,1)$.
+
+  It should be clear what is going on here. If the domain were not
+  restricted then the graph would continue to rise on both sides and
+  there would be no maximum. But the restriction on the domain forces
+  the graph to stop rising at the endpoints of the domain interval,
+  making both of these endpoints local maxima. When the domain is thus
+  restricted there is the possibility that a maximum (or minimum)
+  might occur at the endpoints of the domain interval as well. As a
+  result we must always check the endpoints of the domain interval (if
+  there are any) when searching for extrema.
+
+  We have located all of
+  the places where extrema can occur so we will define them
+  formally.
+
+\end{myexample}
+\begin{mydefinition}[Possible Transition Points]
+  \label{def:TransitionPoints}
+  The \term{possible transition points} of an objective function, $O(x)$, come in three
+  categories:
+  \begin{enumerate}
+  \item Any point, $x=a$, where $\dfdxat{O}{x}{a}=0$ is a possible transition
+    point.
+  \item Any point, $x=a$, where $\dfdxat{O}{x}{a}$ is not defined is
+    a possible transition point.
+  \item If the domain of $O(x)$ is \alert{closed}, then the endpoints
+    of any intervals in the domain are possible transition
+    points\aside{Since no ``transition'' occurs at an endpoint we
+      could object that it is incorrect to call the endpoints
+      ``transition points.'' But since the domain is the whole univers
+      for the problem we could say that the graph transitions from
+      non-existence to existence at an endpoint. In any case our
+      interest is in finding all possible extrema, not in adhering to
+      the strictures of the English language.}.
+  \end{enumerate}
+\end{mydefinition}
+
+Does it seem odd to you that only two of the three conditions above
+involve the derivative? Strictly speaking, there are really only two
+conditions because, as we will see, the derivative is also undefined
+at the endpoints of closed intervals. However this is a technicality
+which doesn't affect anything we are doing now so we won't fuss about
+it. We will return to this in Section~\ref{sec:one-sided-deriv}.
+
+As we said, real world problems usually come with a natural
+domain. But we're not looking at real world problems in this section.
+The upshot of this is that to explore the issues we're interested in
+we will have to artificially impose constraints on the the domain of a
+given problem.
+
+For example, in Example~\ref{example:SqrClosed} we artificially
+specified a domain of $[-1,1]$. When a domain is imposed artificially
+like this it is easy to think of it as ``not really there.'' This is a
+mistake. The specification of the domain is a part of the problem,
+just like the specification of the function. Think of the domain
+specification at the ``universe'' for that particular problem. For
+Example~\ref{example:SqrClosed} nothing outside of the interval
+$[-1,1]$ exists.
+
+
+So to optimize a function all we need to do is find the possible
+transition points, evaluate our objective function at these points,
+and determine which is largest and which is smallest, right?
+
+Well, yes and no.
+
+If the domain of our problem consists of one or more closed intervals, then
+yes. That's all there is to it. Really. It is that
+straightforward\aside{Remember that ``straightforward'' does not
+  mean ``easy.''}. The following theorem summarizes the
+optimization procedure when the domain is a closed interval.
+
+\begin{mytheorem} [Max/Min Theorem]
+  \label{thm:max-min}
+  If $f(x)$ is a continuous function defined on a closed interval
+  $[a,b]$ then there is at least one point in $[a,b]$, say
+  $c$, such that $f(c)$ is the
+  maximum value of the function on the interval. Also there is also at least
+  one point, say $d,$ in $[a,b]$ such that $f(d)$ is the
+  minimum. Moreover $c$ and $d$ will either be endpoints of the interval,
+  places where   $\left.\dfdx{f}{x}\right|_{x=c} = 0 =
+  \left.\dfdx{f}{x}\right|_{x=d},$ or where the derivative does not exist.
+\end{mytheorem}
+If the domain is all real numbers then things get a little more
+complicated. We will address this situation in the next section.
+
+\begin{ProficiencyDrill}
+  Read the Max/Min Theorem carefully and convince yourself that it
+  says what we said it says.
+\end{ProficiencyDrill}
+
+  \begin{embeddedproblem}{}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Notice that $y=x^2$ has no extrema on $(0,\infty).$ Explain
+      why this does not violate the Max/Min Theorem?
+    \item Notice that $y=\frac{1}{x}$ has no extrema on $[-1,1].$
+      Explain why this does not violate the Max/Min Theorem?
+    \end{enumerate}
+  \end{embeddedproblem}
+
+We've actually been using Theorem~\ref{thm:max-min} in an informal way
+all along.  In Example~\ref{example:CircleDist} and Proficiency
+Drill~\ref{problem:CircleDist2} we followed essentially the procedure
+indicated by Theorem~\ref{thm:max-min}.
+
+
+
+\begin{ProblemSection}
+
+  \begin{embeddedproblem}{}
+    Find the absolute maximum and absolute minimum of the function
+    $$
+    f(x) = x^3-3x,
+    $$
+    on each of the following intervals.
+    Verify your solution with   graphing software.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $[2 , 5]$ \solution{Minimum:  $(2,2)$,  Maximum:
+          $(5,110)$}
+      \item $[1,2]$ \solution{Minimum:  $(1,-2)$,  Maximum:
+          $(2,2)$}
+      \item $[0,1]$ \solution{Minimum:  $(1,-2)$,  Maximum:
+          $(0,0)$}
+      \item $[-1,0]$ \solution{Minimum:  $(0,0)$,  Maximum:
+          $(-1,2)$}
+      \item $[-2,-1]$ \solution{Minimum:  $(-2,-2)$,  Maximum:
+          $(-1,2)$}
+      \item $[-\infty,-2] $ \solution{Minimum:  $(-1,2)$,  Maximum:
+          $\displaystyle  y=$}
+      \end{multicols}
+    \end{enumerate}
+
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Find the absolute maximum and absolute minimum of each of the
+    following functions on the given intervals.  on each of the
+    following intervals.  Verify your solution with graphing software.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $  y= x^2$ \\ on the interval $[-5 ,5 ]$ \solution{          Minimum:
+          $(0,0) $           Maximum:  $(-5,25) $ and
+          $(5,25) $}
+      \item $  y= x^3$ \\ on the interval $[-5 ,5 ]$ \solution{          Minimum:
+          $(-5, -125) $           Maximum:  $(5, 125) $}
+      \item $   y= (x-1)(x+2)$ \\ on the interval $[0 ,2 ]$ \solution{
+          Minimum:  $(0,-2) $               Maximum:
+          $(2,4) $}
+      \item $   y= x(x-1)(x+2)$ \\ on the interval $[2, 5]$ \solution{
+          Minimum:  $(2, 8) $               Maximum:  $(5,
+          140) $}
+      \item $   y= x(x-1)(x+2)$ \\ on the interval $[0 ,2 ]$ \solution{
+          Minimum:  $\left(\frac{-1+\sqrt{7}}{3}\right)$
+          Maximum:  $(2,8) $}
+      \item $ y = e^{-x^2}$ \\ on the interval $[2 ,10 ]$ \solution{
+          Minimum:  $(10,e^{-100}) $
+          Maximum:  $(2, e^{-4}) $}
+      \item $ y = e^{-x^2}$ \\ on the interval $[-1 ,2 ]$ \solution{
+          Minimum:  $(-1,e) $                 Maximum:
+          $(2, e^{-4}) $}
+      \item $ y = e^{-\frac{1}{x^2}}$ \\ on the interval $[2 ,10 ]$ \solution{
+          Minimum:  $(2, e^{-1/4}) $
+          Maximum:  $(10, w^{-1/100}) $}
+      \item $ y =(x^3-27)^{\frac13}$ \\ on the interval $[-5 , 5]$ \solution{
+          Minimum:  $(-5,\sqrt[3]{-152}) $
+          Maximum:  $(-5,\sqrt[3]{98}) $}
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Find the absolute maximum\notetoself{Add domains that consist of
+      multiple closed intervals.  -- Jan 10, 2021} and absolute minimum of each of the
+    following functions on the given intervals.  on each of the
+    following intervals.  Verify your solution with graphing software.
+    % <figure>
+    % 
+    % <interactive desmos="xlit0cc7vm"
+    % width="150%" aspect="2:1" />
+    % 
+    % </figure>
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $\displaystyle y=\frac{x(x^2-1)e^x}{x^3-1}$,\\ on the interval $[-2, 0]$
+      \item $\displaystyle y =x^2\sin(x^2)$, \\ on the interval$[0 ,2 ]$
+      \item $\displaystyle y =\frac{\ln(x)}{x}$, \\ on the interval $[2 ,10 ]$
+      \item $\displaystyle y = \frac1x$, \\ on the interval $[1/2 ,4 ]$
+      \item $\displaystyle y =\abs{x}$, \\ on the interval $[-1 ,1 ]$
+      \item $\displaystyle y =\abs{x-2}$, \\ on the interval $[-4,4 ]$
+      \item $\displaystyle y=\frac{7}{x^2+5}$, \\ on the interval $[-2,2]$
+      \item $\displaystyle y=4-x^3$, \\ on the interval $[-2,1]$
+      \item $\displaystyle y=-\frac1x$, \\ on the interval $[1/2,3]$
+      \item $\displaystyle y=\sqrt[3]{x}$, \\ on the interval $[-1,8]$
+      \item $\displaystyle y=-3x^{2/3}$, \\ on the interval $[-1,1]$
+      \item $\displaystyle y=\sec\theta$, \\ on the interval $[-\pi/3,\pi/6]$
+      \item $\displaystyle y=\frac1x+\ln(x)$, \\ on the interval $[1/2, 4]$
+      \item $\displaystyle y=e^{-x^2}$, \\ on the interval $[-2, 1]$
+      \item $\displaystyle y=\frac{x}{x^2-x+1}$, \\ on the interval $[0,3]$
+      \item $\displaystyle y=2\cos x+\sin 2x$, \\ on the interval $[0,\pi/2]$
+      \item $\displaystyle y= 2x+\frac{1}{2x} $ \\ on the interval $ [1,4]$
+      \item $\displaystyle y=\frac{1-x}{x^2+3}$ \\ on the interval $[-2,5]$
+      \item $\displaystyle y=x\sqrt{1-x^2} $ \\  on the interval $[-1,1]$
+      \item $\displaystyle y=x\sqrt{4-x^2} $ \\ on the interval $[0,2]$
+      \item $\displaystyle y=x(2-x)^{1/3}$ \\ on the interval $[1,3]$
+      \item $\displaystyle x^{1/2}-x^{3/2}$ \\ on the interval $[0,4]$
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+  
+  \begin{embeddedproblem}{}
+    Find the maximum and minimum of the function
+    $$
+    f(x) = x^3-12x
+    $$
+    on each of the following intervals.
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+      \begin{multicols}{3}
+      \item $[0,4]$
+      \item $[-4,0]$
+      \item $[-2,2]$
+      \item $[-1,3]$        
+      \item $[-2, 1]$
+      \item $[-\infty,\infty]$
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    For each of the following functions defined on specific closed,
+    bounded intervals, find the maximum and minimum of the function on
+    that interval.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $f(x)=2x^3+3x^2-12x+1  \text{ on } [-3,2]$
+      \item $f(t)=2t^3+3t^2-12t+1   \text{ on } [-3,3]$
+      \item $g(x)=4x^{\frac{3}{2}}-3x^2-2  \text{ on }[0,2]$
+      \item $h(z)=3z^(2/3)+2z-4  \text{ on }[-2,1]$
+      \item $L(x)=\ln((x-2)^6) -x^2  \text{ on }[-1.5,4]$
+      \item $f(\theta)=1/2 \theta-\sin\theta \text{  on }[0,2\pi]$
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{ProficiencyDrill}
+    Consider the function  $ f(x) = x^3-12x$.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Show that on the interval $[-4, 4]$ $f(x)$
+      attains a maximum at both $x=-2$ and $x=4$ and
+      a minimum at both $x=2$ and $x=-4$.
+    \item Find the extrema of $f(x)$ on the interval
+      $[-3,3]$.
+    \end{enumerate}
+  \end{ProficiencyDrill}
+    
+  \begin{embeddedproblem}{}
+    Two positive numbers sum to $10.$  Find the maximum product of these two numbers.
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    The product of two positive numbers is $10.$  Find the minimum sum
+    of these two numbers.  Would there be a maximum sum?  Explain.
+  \end{embeddedproblem}
+
+
+  \begin{embeddedproblem}{}
+    Suppose we want to build a rectangular corral using $2000$ feet of
+    fencing.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Find the dimensions of the corral with the maximum possible
+      area, if there is one.
+    \item Find the dimensions of the corral with the minimum possible
+      area, if there is one.
+    \end{enumerate}
+    Does this problem seem familiar to you?
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}[(Variations on a theme)]
+    You\notetoself{I made these problems up on the fly. I have not
+      yet checked to see if there are good problems, or even if they
+      are solveable.} have a piece of wire $100$ inches long.
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item You cut the wire into two pieces.  Find the length of each
+      piece of the wire that yields the largest area bounded by the
+      two pieces, given the following constraints.
+      \begin{enumerate}[label={\bf{}(\roman*)}]
+      \item Each piece is to be bent into a square.
+      \item Each piece is to be bent into a circle.
+      \item The first piece is to be bent into a square and the second
+        into a circle. 
+      \item The first piece is to be bent into a rectangle with one
+        side three times as long as the other.  the second piece is to
+        be bent into a square.
+      \end{enumerate}
+    \item You cut the wire into three pieces.  Find the length of each
+      piece of the wire\notetoself{Need to add more variations to this
+        problem.} that yields the largest area bounded by the three
+      pieces, given the following constraints.
+      \begin{enumerate}[label={\bf{}(\roman*)}]
+      \item Each piece is to be bent into a square. The length of the sides of
+        second square are twice the length of the sides of the
+        first. The length of the sides of the third are three times
+        the length of the second.
+      \item Each piece is to be bent into a circle. The radius of the
+        second circle is twice the radius of the first. The radius of
+        the third is three times the radius of the second.
+      \item Two pieces are to be bent into a square and the third into
+        a circle.
+      \end{enumerate}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  % \begin{embeddedproblem}{}
+  %   Let $(x,y)$ be a generic point on the unit circle $x^2+y^2=1.$  Find the
+  %   maximum and minimum values of the slope of the line joining $(x,y)$ with
+  %   $(4,-3).$\\
+  %   \centerline{\includegraphics*[height=1.6in,width=2.2in]{../Figures/Lagrange1}}
+  %   From the sketch above it should be clear that Of all
+  %   lines through the point $(4, -3)$ that also intersect the circle the
+  %   ones  we seek are have the maximum and minimum possible slopes.
+  % \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Consider the side view of a person at point $P$ looking at a
+    billboard sign in the diagram below\\
+    \centerline{\includegraphics*[height=2in,width=2in]{../Figures/BillBoardProblem}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Find a formula for the viewing angle $A$ in terms of $x.$ 
+      Don't forget to put in the range for possible values for $x.$
+    \item Find the value of $x$ that will maximize the viewing angle $A.$ 
+    \end{enumerate}
+  \end{embeddedproblem}
+
+
+  \begin{embeddedproblem}
+    Find the value of $r$ that maximizes $A(r)$ in the following
+    diagram:\\
+    \centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/ArchimedPump1}}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem-enumerate}[(Variations on a theme)]
+  %   \begin{enumerate}[label={\bf{}(\Roman*)}]
+  %     \item\  \\
+  %   \begin{enumerate}[label={\bf{}(\alph*)}]
+  %   \item The strength of a rectangular beam is proportional to the
+  %     product of width $w$ of the beam and the square of the height $h$
+  %     of the beam.  Find the dimensions of the strongest rectangular
+  %     beam which can
+  %     cut from the following circular log.\\
+  %     \centerline{\includegraphics*[height=2in,width=2in]{../Figures/BeamProblem}}
+  %   \item The stiffness of a rectangular beam is proportional to the
+  %     product of width $w$ of the beam and the cube of the height $h$ of
+  %     the beam. Find the dimensions of the stiffest possible beam.
+  %   \end{enumerate}
+  % \item 
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item The \term{strength} of a rectangular wooden
+      beam is proportional to its width times the square of its
+      height.  What is the ratio of the height to width of the
+      strongest beam that can be cut from a cylindrical log?
+    \item The \term{stiffness} of a rectangular wooden beam is proportional
+      to its width times the cube of its height.  What is the ratio of
+      the height to width of the stiffest beam that can be cut from a
+      cylindrical log?  Compare this to the answer in the previous
+      problem.
+    \item Suppose we have an  objective function -- let's call it
+      the \emph{generalized stiffness} -- which is proportional
+      to the width times the $n$th power of the height? What would the
+      optimal ratio be now?
+    \end{enumerate}
+%   \end{enumerate}
+  \end{embeddedproblem-enumerate}
+
+  As we’ve said before, Calculus is merely one tool in your problem
+  solving toolbox.  You will need all of your mathematical experience
+  to transform a problem into a form which allows you to bring your
+  Calculus to bear on it. Moreover there is typically a lot of algebra
+  to perform after Calculus is used.  Quite often it is a ``zero sum
+  game''; simplifying as much as possible with algebra, etc. leads to
+  easier calculus computations. Conversely less non-Calculus work
+  leads to more challenging differentiation.  With experience comes
+  the ability to balance the workload across your skills. When you
+  realize that one approach will lead to a complication, it can be 
+  beneficial to look for another approach.  The following example shows
+  that different approaches to the same problem can lead to different
+  challenges.
+  \begin{myexample}
+    \label{example:RodAroundACorner}
+    Consider the following top view of a pole of length $P$ being
+    rotated horizontally around the $90$ degree corner of two hallways
+    of widths $a$, and $b$.  The problem is to find the longest pole
+    which can be turned around the corner.\\
+    \centerline{\includegraphics*[height=2in,width=5in]{../Figures/RodRoundCorner1}}
+    \begin{description}
+    \item [First Approach:] Let’s take the most direct approach by
+      labeling a number of quantities and writing down our objective
+      function and constraints.  With this in mind, consider the
+      following labeling.\\
+      \centerline{\includegraphics*[height=2in,width=5in]{../Figures/RodRoundCorner2}}
+      \begin{embeddedproblem-enumerate}
+        \begin{enumerate}[label={\bf{}(\alph*)}]
+        \item Show that with the above labelling we have the
+          objective: function $L^2=x^2+y^2$ and the constraint:
+          $\frac{x-a}{b}=\frac{a}{y-b}$.
+        \item Show that differentiating the objective function and
+          constraint leads to having to solve the following quartic
+          equation
+          $$
+          b^2(b+ab(x-a))=a^2x(x-a)^3.
+          $$
+        \end{enumerate}
+      \end{embeddedproblem-enumerate}
+        There is a quartic formula, but it is pretty unwieldy.  So, let’s try another approach.  
+    \item [Second Approach:] Consider the same problem formulated in a
+    different way.  We can put in a set of axes and plot the point
+    $(a,b)$.  The problem now is to look at all the family of all
+    lines with negative slope, $m$, passing through point $(a,b)$ and
+    find the value of $m$ which minimizes the distance $L$ between the
+    $x$ and $y$ intercepts.\\
+    \centerline{\includegraphics*[height=1in,width=2in]{../Figures/RodRoundCorner3}}
+    \begin{embeddedproblem-enumerate}
+      \begin{enumerate}[label={\bf{}(\alph*)}]
+        \item With this approach, what would our objective function
+          $L$ be?
+        \item As to constraints, find $z$ and $w$ in terms of the
+          slope $m$  and show
+          that using this approach leads to solving the quartic
+          equation
+          $$
+          0=-b^2+abm-abm^3+a^2m^4.
+          $$
+        \end{enumerate}
+    \end{embeddedproblem-enumerate}
+        Again, this is doable, but not very appealing.  Let’s look at
+        another approach.
+  \item [Third Approach:]  Consider the following labeling.\\
+    \centerline{\includegraphics*[height=1in,width=2in]{../Figures/RodRoundCorner4}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \item Show that $L$ is minimized when
+        $\tan(\alpha)=\sqrt[3]{\frac{b}{a}}$.
+      \item Use the value obtained in part a to show that the minimum
+        value of $L$ is $\left(a^\frac23+b^\frac23\right)^\frac32$.
+      \item What would the minimum of $L$  be in the special case
+        where $a=b$?  Does this answer make sense geometrically? 
+      \end{enumerate}
+    \end{description}
+    Notice that in the third approach, the constraints required a bit
+    more difficult differentiation, but led to a equation that we
+    could more readily solve.
+  \end{myexample}
+  
+  \begin{embeddedproblem}
+    The illumination of an object by a light source is proportional to
+    the strength of the light source and inversely proportion to the
+    square of the distance between the source and the object.
+    Consider the following diagram of two light bulbs of equal
+    strength a distance of $D$ apart and an object at point $P$ on a line
+    segment parallel to and distance $E$ from the line segment joining
+    the two bulbs. \\
+    \centerline{\includegraphics*[height=1.5in,width=4.5in]{../Figures/LightBulbProblem}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Find a formula for the total illumination of the two light
+      bulbs on the point $P$ in terms of $x,$ $D,$ and $E.$  (Don't forget that
+      $0\le x\le D.$)
+    \item Show that $I$ has a local minimum for $x=D/2.$  (This
+      should not come as a surprise.)
+    \item Show that for $E>\frac{D}{\sqrt{2}},$ $x=D/2$
+      (surprisingly?) does not yield the absolute minimum. (This shows
+      the importance of checking endpoints.)
+    \end{enumerate}
+  \end{embeddedproblem}
+
+
+
+  \begin{embeddedproblem}{}
+    For each of the IVPs below, answer these questions:
+    \begin{enumerate}
+    \item On what intervals is $y(t)$ increasing and on what
+      intervals is it decreasing?  Identify all local extrema.
+    \item On what intervals is the function concave up and on what
+      intervals is it concave down?  Identify all inflection points.
+    \item Plot a reasonable graph for $y.$ 
+    \end{enumerate}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item $\dfdx{y}{t}=\sqrt{t},\ \         y(0)=1$
+    \item $\dfdx{y}{t}=x^3-x,\ \      y(1)=3$
+    \item $\dfdx{y}{t}=x-x^3,\ \       y(1)=3$   \hint{Compare this to
+        the previous problem?}
+    \end{enumerate}
+  \end{embeddedproblem}
+\end{ProblemSection}
+
+\subsection{Optimization on a Non-Closed Interval}
+\label{sec:optim-non-clos}
+
+Theorem~\ref{thm:max-min} explicitly assumed that we are on a
+\underline{closed} interval. This assumption was crucial. Without it
+even simple functions that you would expect to have extrema do not. 
+\begin{myexample}
+\label{example:OpenNoExtrema}
+  For example, suppose our objective function is $O(x)=x$, and that
+  the domain is the interval $(0,1)$ so the interval is not
+  closed. (Recall that the notation $(0,1)$ means that the endpoints
+  are \emph{not} included.)
+
+  Before we go on give this some thought. Do you see why the graph of
+  this function has neither a minimum nor a maximum?
+  If not here is one way to prove it.
+
+  \begin{myproof}
+    If $x$ is any number between $-1$ and $1$ then $f(x)$ can't be a
+    maximum (minimum) because any number just to the right (left) of $x$
+    will give us a $y$-coordinate that is higher (lower) than $f(x)$.
+
+    How do we know this? Because the derivative of $O(x)$ is $1$, which
+    says that $O(x)$ is always increasing.
+
+    Can we always find a number ``just to the right'' of $x$ without
+    leaving the interval $(-1,1)?$ Sure. Just take the number halfway
+    between $x$ and $1.$
+  \end{myproof}
+\end{myexample}
+
+This leaves us with a dilemma: If the domain is not closed we can't
+rely on the Min/Max Theorem to guarantee the existence of extrema. In
+fact, in this situation Example~\ref{example:OpenNoExtrema} shows that
+there might not even be any extrema. But if there are we'd still like
+to find them. 
+
+This is a problem but it is not insurmountable. In fact we already
+have all of the tools we need. We just need to use them more
+carefully. It is still true that local extrema can only occur at
+transition points, so we still have to find all of the possible
+transition points.
+
+An example will make this clearer.
+\begin{myexample}
+  Before we start we admonish you to \alert{not} graph this
+  example until after you have understood the analysis of the
+  problem. The goal of this section is for you to learn to analyze a
+  problem using your Calculus tools. This works best if you use
+  Calculus to visualize an unknown graph, rather than to confirm a
+  known graph.
+
+    Suppose $O(x)=3x^3-9x$ is our objective
+    function and the domain is all real numbers ($\RR$). Locate all
+    possible points of transition and determine any global extrema, if
+    such exist.
+
+    We leave it to you to show that the possible points of transition
+    are $x=-1$ and $x=1$. Thus the intervals between them are
+    $(-\infty,-1)$, $(-1,1)$, and
+    $( 1,\infty)$.
+    \begin{center}
+      \begin{minipage}{.75\linewidth}
+        \begin{mynotation}{``Infinity'' ($\infty$)} For convenience,
+          and to be consistent with the interval notation, we adopt
+          the convention that $(1,\infty)$ denotes the positive real
+          numbers greater than $1$.
+
+          Don't let this make you crazy.  Clearly there is not a
+          number at the right endpoint of the number line called
+          ``infinity.''  There can't be because the number line
+          doesn't have a right endpoint. Nor does it have a left
+          endpoint. The notation $(1,\infty),$ is just a mnemonic
+          convention that means ``the interval which includes all
+          numbers to the right of one.'' In similar fashion the
+          notation $(-\infty,-1)$ means the interval to the left of
+          one. Obviously, then $(-\infty,\infty)$ means the entire
+          real number line: $(-\infty, \infty)= \RR$.
+        \end{mynotation}
+      \end{minipage}
+    \end{center}
+    It is easy to show that\\
+    \centerline{\hfill{}$\dfdxlt{O}{x}{-1}>0$,\hfill{}
+      $\dfdxlgt{O}{x}{-1}{1}<0$, \hfill{}and
+      \hfill{}$\dfdxgt{O}{x}{1}>0$.\hfill}
+
+    We conclude that $O(x)$ is increasing on $(-\infty,-1)$,
+    decreasing on $(-1,1)$, and increasing again on $(1,\infty)$.  Can
+    we conclude that we have a global maximum at $x=-1$ and a global
+    minimum at $x=1$?
+
+    No we can't because this problem has no global extrema.
+
+    Now plot a graph of the function. Clearly we have no global
+    extrema at all because on the left as $x$ gets larger \emph{in the
+      negative direction} so does $O(x)$ and on the right as $x$ gets
+    larger \emph{in the positive direction} so does $O(x)$.
+
+
+    This is awkward to say, so we usually say something like\aside{Do
+      not try to find too much meaning in these phrases. They clearly
+      can not possibly mean what they pretend to mean. $x$ is a number
+      but infinity is not, so it is meaningless to say that $x$ ``goes
+      to'' infinity.} ``as $x$ goes infinite, $O(x)$ also goes
+    infinite'' and ``as $x$ goes negatively infinite, $O(x)$ also goes
+    negatively infinite.''
+  \end{myexample}
+  \begin{myexample}
+    Now suppose that the objective function is
+    $O(x)=\frac{-x}{x^2+1}$, and suppose we want to find any global
+    extrema. We proceed as before.
+
+    Differentiating we have
+    $\dfdx{O}{x}=\frac{x^2-1}{(1+x^2)^2}$. Setting $\dfdx{O}{x}=0$ and
+    solving we see that we have the same possible transition points as
+    before: $x=-1$, and $x=1$.
+
+    Also, just like the previous example our objective function
+    increases from $-\infty$ to $-1$, decreases from $-1$ to $1$ and
+    then increases again from $1$ to $\infty$.  This time we actually
+    do have a global maxmimum at $x=-1$ and a global minimum at
+    $x=1$. Plot the graph to see. 
+\end{myexample}
+
+  
+  In neither of the two previous examples can we conclude that we have
+  global extrema \emph{based only on our analysis of the derivative}
+  because the derivative gave us the same information in both
+  examples. In order to tell the two situations apart we needed more
+  information. For these examples we took that information from our
+  graphs. This is ok for now but eventually we'll need some analytical
+  method. We'll come back to this is Chapter~\ref{chapt:shape-things}.
+
+  \begin{Digression}[What Does ``Increasing'' Mean?]
+
+In\notetoself{I'm beginning to think this whole section needs to
+  disappear.  -- Dec 30, 2020} the previous sections we saw that the derivative gives us
+information about curves in much the same way that the slope of a
+straight line gives us information about the line. The difference
+is that since the numerical value of the derivative changes at
+each point it only gives us \emph{local} information about the
+curve at that point. Whereas slope gives us global information
+about the whole line.
+
+As simple and intuitive as this seems to be there are two
+problems.
+
+The first is, what do we mean by increasing and decreasing?
+
+No, really. What do we mean? Try to give a single all-encompassing
+definition of ``increasing'' that includes all of the following:
+\begin{enumerate}
+\item A variable, say $x$, is increasing as it moves from left to
+  right on the horizontal axis.
+\item A variable, say $y$, is increasing as it moves from lower to
+  higher  on the vertical axis. 
+\item In the northern hemisphere the average daily temperature tends
+  to increase from January to July.
+\item The pitch of a whistle becomes more shrill as its frequency
+  increases.
+\item As the color of a light becomes bluer as its frequency increases.
+\item When you eat ice cream your pleasure increases.
+\end{enumerate}
+
+\begin{wrapfigure}[]{r}{1.5in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/Abstract1}}
+  % \label{fig:Abstract1}
+\end{wrapfigure}
+In the context of mathematics -- specifically when looking at the graph
+of a function -- you've been taught all of your life that increasing
+means ``rising to the right'' and that decreasing means ``dropping to
+the right.'' Thus the graph at the right is usually said to be is
+increasing from the far left to a point somewhere between zero and
+one, decreasing from that point to a point somewhere between three and
+four, and then increasing again thereafter.  That interpretation is
+deeply tied to the convention of saying that as we go farther to the
+right on the $x$-axis the values of $x$ get bigger. But this is only a
+convention.
+
+Conventions are handy, they are even necessary, but they are not
+reality. If for some reason we had adopted the convention that
+moving farther to the \emph{left} causess the value of $x$ to increase
+then we would say (reading right-to-left) that this graph decreases
+first, then increases for a while, and then decreases again.
+
+The good news here is that  we will continue to adopt the usual
+convention. The value of that convention is that when
+we say a graph is increasing or decreasing we will be understood
+without having to first identify which direction is which.
+
+\alert{But} keep in mind that what this really means is that the
+$y$ coordinate of the graph of our function, $f(x),$ becomes
+numerically larger  as $x$ becomes numerically larger. Like we said, conventions are handy, but we can't let them
+rule us. Which direction means ``bigger'' depends entirely on the
+coordinate system we choose for a given problem, and we 
+get to choose the coordinate system that we like. We are not slaves to
+our own conventions.
+
+Resolving the meaning of ``increasing'' was simply a matter of recognizing our own
+convention.  Difficulties arising from too much reliance on a
+convention are usually easy to resolve once we realize that's what
+they are.  However, distinguishing between a convention (especially
+one as old and comfortable as this one) and reality can be very
+difficult because conventions, once we've gotten comfortable with
+them, begin to feel fundamental; as if they \alert{are} reality. They are not.
+
+But we have another problem and this one cannot be resolved by
+noticing that we've mistaken a convention for reality. We stated above
+that if the derivative of some function $f(x),$ is positive at some
+point $x=a,$ then $f(x)$ is increasing \emph{at that point.}
+
+The problem is this: What does it mean to be increasing at a single point?
+
+In order to know that $f(x)$ has increased we need to move away from
+$x=a$ to some point (to the right of $a$ in our standard convention),
+say $x=a+h$, where $h$ is positive, and see if $f(a+h)$ is bigger than
+$f(a).$ But even if $f(a+h)$ \emph{is} bigger the only information we
+have is that $f(a+h)>f(a).$ This does not guarantee that $f(x)$ was
+increasing at every point between $a$ and $a+h$. There might
+be some point between $a$ and $a+h$ -- let's call it $\alpha,$ --
+where $f(\alpha)<f(a).$ Even worse there might be some point, $\beta$
+between $a$ and $\alpha$ where $f(\beta)>f(a).$ Yet again there might
+\emph{another} point $\gamma$ between $a$ and $\beta$ where
+$f(\gamma) < f(a),$ again. And so on $\ldots$
+
+If the distance between $a$ and $a+h$ is very small (that is, if $h$
+is very small) and if $f(a+h)>f(a),$ it is very easy to \emph{believe}
+that $f(x)$ increased through all of the points from $a$ to $a+h.$ But
+belief is not knowledge. In fact, we have no information whatsoever
+about the behavior of $f(x)$ between $a$ and $a+h.$ We simply know
+that when $x=a+h$ the function was greater than it was at $x=a.$
+
+This is getting very hard to think about isn't it? That's because what
+we are getting caught on is one of Zeno's Paradoxes. Specifically, the
+arrow paradox. Briefly, Zeno\aside{If you have never heard of the
+  Greek philosopher Zeno, you really should \google{} him. He's an
+  interesting guy.  But wait until you are done with your Calculus for
+  today.} said that an arrow in flight can't really move. This is
+because to get from where it is now, to any other point in space it
+has to traverse all of the (infinitely many) points in between. But
+this is also true of all of those points. Thus before the arrow can
+move once it has to move infinitely many times. That's just crazy, so
+Zeno concluded that the arrow must not move at all.
+
+Here's how we'll get around this difficulty. We all know what we mean
+when we say that a curve is increasing at a point. The mental image
+that is generated is very clear. The problem is that any attempt to
+put this into words runs headlong into Zeno and his paradox. We cannot
+resolve the paradox, so we will simply go around it for now. That is,
+we first recognize that the usual intuitive meaning of the word
+increasing does not apply at a single point, since we need at least
+two points to say we've increased from one to the other. Thus the
+phrase ``increasing at a point'' is without meaning.
+
+
+
+If the phrase has no meaning then we can \emph{assign} meaning to it
+in any manner we choose. That's what a definition is, an assignment of
+meaning. We choose
+the following definition. It will be very familiar:\\
+\begin{mydefinition}[Increasing and Decreasinging at a Point]
+  \label{def:first-deriv-test}
+  Consider the graph of the function $y(x),$ at some point
+  $(a, y(a)).$
+  \begin{enumerate}
+  \item The graph is said to be \emph{increasing} at $x=a$ if
+    $\dfdxat{y}{x}{x=a} > 0$
+  \item The graph is said to be \emph{decreasing}\footnote{Notice that
+      our definition does \underline{\bf{}not} address the situation
+      $\dfdxat{y}{x}{a}=0.$ Since the definition does not address
+      this we say that the function is neither increasing nor
+      decreasing when $\dfdxat{y}{x}{a}=0.$ } at $x=a$ if
+    $\dfdxat{y}{x}{a} < 0$
+  \end{enumerate}
+\end{mydefinition}
+
+There are two difficulties with this definition. The first is that it
+probably feels like we've taken something simple and made it
+complicated for no good reason. After all, what have we really
+accomplished? We took the highly intuitive observation that we called
+the First Derivative Test and we turned it around to make it a
+definition. It probably seems like we're blathering on about nothing
+at all, making easy things seem difficult and getting lost in a jungle
+of logical pecadillos and notations. This is the usual criticism
+brought against mathematicians and mathematics by people who haven't
+studied much mathematics.
+
+But stop and think about this just a little more deeply. Is that
+really all that we've done?
+
+Suppose we would like to know when a function is increasing and when
+it is decreasing (we would). In the absence of any other tools, our
+only option is to look at the value of the function at each point
+individually and decide whether or not it is increasing at each
+point. But if we are considering them one at a time the statement
+``increasing at a point'' needs to be meaningful. That's what
+Definition~\ref{def:first-deriv-test} does for us. Moreover it gives us exactly the meaning we need for the First
+Derivative Test. 
+
+If $\dfdxat{f}{x}{a}>0$ then \alert{by definition} $f$ is increasing
+at $a$ and this definition matches our intuitive understanding of
+``increasing'' precisely. It must.
+The other difficulty is that this definition highlights an apparent
+discrepancy between the dynamic and static views of Calculus.
+
+When we take the dynamic (Newtonian) viewpoint there seems to be no
+problem with using Definition~\ref{def:first-deriv-test}. If $p(t)$
+represents the position of an object in motion,
+$\dfdxat{p}{t}{\tau}>0$  means that at time $\tau$ the point is
+moving forward. All of the intuition built over a lifetime of living
+in this world tells us that if an object is moving forward at time
+$\tau$ then it will keep moving forward, at least for a little while
+(that is, on some interval), after time $\tau$.  We call this
+``inertia''.
+
+But when we take the static (Leibnizian) viewpoint there is a
+problem. In this case $\dfdxat{p}{t}{\tau}>0$ means only that the
+slope of the graph of $p(t)$ is positive. Absolutely nothing about the
+geometry of the graph or its tangent line forces $p(t)$ to continue
+increasing (have a positive derivative) to the right of $\tau$.
+
+This discrepancy shines a light on the limitations of
+Definition~\ref{def:first-deriv-test}. If we use it to show that
+$p(t)$ is increasing \emph{at} $\tau$ all we really know is that:
+\begin{enumerate}
+\item Its velocity at $\tau$ is positive (dynamical viewpoint)
+  \alert{at $\tau$}, or that,
+\item Its slope is positive (static viewpoint) \alert{at $\tau$}.
+\end{enumerate}
+Neither of these actually tells
+us anything about what happens  \alert{after} $\tau$.
+
+To be sure, we have very strong intuition about the behavior of $p(t)$
+based on our experience with objects moving in time. But we know that our intuition
+can be wrong. For example suppose $p(t)$ gives the position of a
+vertically thrown ball and that $\dfdxat{p}{t}{\tau}=10
+\frac{\text{feet}}{\text{second}}$. The ball is thus moving upward
+very quickly so we would expect that it will continue moving
+upward. But if the ball is thrown indoors and $\tau$ is the instant
+when the ball strikes the ceiling then of course it does not continue
+rising. Counter to our intuition it bounces and immediately moves
+downward.
+
+Throughout\notetoself{This would be a good place to foreshadow
+  continuity.} this discussion the word ``interval'' kept popping up
+because it is more useful to know the behaviour of a function on an
+interval than at a single point.  We would rather have a version of
+Definition~\ref{def:first-deriv-test} that guarantees our function is
+increasing \emph{on an interval} rather than at a single point. The
+problem with that is that we already know what we mean by ``increasing
+on an interval.'' It means that if $f(x)$ is increasing on some
+interval $I$ this means that if $x, y\in I$ and $x\ge y$ then
+$f(x)\ge f(y).$ So a test that does that will have to be a theorem
+that gives conditions to be met and a proof that if those conditions
+are met then $f(x)$ is increasing on the interval.
+
+When we return to this topic in Section~\ref{sec:first-deriv-test} we
+will prove exactly such a theorem.
+\end{Digression}
+
+\begin{ProblemSection}
+  \begin{embeddedproblem}{}
+    Show that at $x\approx-3.45$ the graph of the function
+    $y(x)=\frac{x(x-1)}{x^3-27}$ has:
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Both a global and a local minimum on the interval
+      $(-5,0)$.
+    \item Only a local minimum on the interval $\left(-5,
+        \frac53\right)$. 
+    \item Does the graph of this function have a global maximum on
+      either interval? Explain.
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Does $f(x)=\sin(x)$ have a global extremum (minimum or maximum) on
+    the interval $\left(0,\frac{\pi}{2}\right)$? How about on $(0,
+    \pi)$? On $(0, 2\pi)$? Explain.
+  \end{embeddedproblem}
+
+
+  \begin{embeddedproblem}{}
+    Suppose that $O(x) = \frac{x^2}{1+x^2}$ and that the domain of the
+    problem is all real numbers ($\RR$).
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Find all local extrema.
+    \item Find all global extrema. 
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    \label{problem:WitchTri}
+    We draw the right triangle whose hypotenuse starts at the origin,
+    $(0,0)$ and ends on the Witch of Agnesi.  The other legs are as
+    shown in the figure
+    below:\\
+    \centerline{\includegraphics*[height=1.9in,width=3.5in]{../Figures/MaxTri}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Of all possible such triangles in the interval $[0,\infty)$ which
+      one has the largest  area?\\
+    \item Of all possible such triangles in the interval $(-\infty,0]$ which
+      one has the largest  area?\\
+    \end{enumerate}
+
+    
+    The fact is that there is no minimum area. As $x$ grows larger the
+    area of our triangle, $A(x) = \frac{x}{2(x^2+1)}$ grows smaller. In
+    fact we can make the area as small as we like by taking $x$ large
+    enough
+
+    How large does $x$ need to be to guarantee that:
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $A(x)<\frac14$
+      \item $A(x)<\frac{1}{5}$
+      \item $A(x)<\frac{1}{10}$
+      \item $A(x)<\frac{1}{100}$
+      \item Now suppose $\eps$ is a very small number. How large does $x$
+        need to be to guarantee that $A(x)<\eps$?
+      \end{multicols}
+    \end{enumerate}
+
+
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    These problems are slight variations on
+    example~\ref{problem:WitchTri} in that the graph of the function
+    has essentially the same shape.  Proceed as in the example above
+    to find the area of the triangle with maximum area for each of the
+    functions given.
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    \item $f(x) = \frac{k}{x^2+1}$, where $k$ is any {\bf{}k}onstant.
+    \item $f(x) = \frac{1}{x^2+3}$
+    \item $f(x) = \frac{1}{5x^2+1}$
+    \item $f(x) = \frac{a}{bx^2+c}$, where $a$, $b$, and $c$ are
+      arbitrary constants.
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    This problem is a more substantial variation on the same theme:
+    Build a triangle in the same manner as in
+    example~\ref{problem:WitchTri} but using the function
+    $f(x)=\frac{x}{x^2+1}$ in place of the Witch. Find the coordinates
+    of the triangle with maximum area, and find the maximum area.
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}
+    Construct a triangle in the same way we did in
+    problem~\ref{problem:WitchTri}, but in place of the Witch use the
+    function $f(x)=\frac{1}{\sqrt{x}}$. Does the area of the triangle
+    get smaller as $\alpha$ moves farther to the right\notetoself{We
+      should refer back to this section when we get to L'H\^o{}pital's
+      Rule-- ecb -- Aug 1, 2020}?
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Suppose we construct a triangle in the
+    same way as before, but this time we use the function
+    $$
+    f(x)=5x^4+3x^3-7x^2-5x+6
+    $$
+    instead of the Witch. In this case our sketch looks like this:\\
+    \centerline{\includegraphics*[height=2in,width=3.5in]{../Figures/MaxTri3}}
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item Of all possible such triangles in the interval $[0,\infty)$ which
+      one has the largest  area?\\
+    \item Of all possible such triangles in the interval $(-\infty,0]$ which
+      one has the largest  area?\\
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Consider the polynomial
+    $$
+    y = (x+1)^3(x-1)(x+3).
+    $$
+    \begin{description}
+    \item[(a)] Show that $\dfdxat{y}{x}{x=-1}=0.$ \hint{You can save
+        yourself a lot of work on this problem by keeping you eye on the
+        goal. You are not asked to compute $\dfdx{y}{x}.$ The problem is to
+        show that $\left.\dfdx{y}{x}\right|_{x=-1}=0.$ You don't need to
+        fully expand $\dfdx{y}{x}$ to do that.}
+    \item[(b)]  Graph $y$ near $x=1$ to convince yourself that $y$ is
+      neither a maximum nor a minimum at $x=-1$.
+    \item[(c)] We don't really need a polynomial as complicated as the one
+      given in part (a) to make the point we're getting at. Repeat parts
+      (a) and (b) with the polynomial $y=x^3$ at $x=0.$
+    \end{description}
+  \end{embeddedproblem}
+\end{ProblemSection}
+
+\subsection{Optimization and Concavity}
+\label{sec:second-deriv-test}
+Calling definition~\ref{def:first-deriv-test} \emph{First} Derivative
+Test suggests that there might be something called a \emph{Second}
+Derivative Test, and indeed there is. Just as the First Derivative
+Test tells us whether the graph of a function is \term{increasing} or
+\term{decreasing}, the Second Derivative Test tells us whether the
+graph is \term{concave upward} or \term{concave downward}.
+
+
+\subsection*{\underline{Concavity}}
+Clearly this will not make sense until we've understood what ``concave
+upward'' and ``concave downward'' mean. The following examples are
+illuminative.
+Each of the following graphs is  ``concave upward,''\\
+\centerline{\includegraphics*[height=1in,width=2in]{../Figures/ConcaveUp}}
+whereas the following graphs are ``concave downward.''\\
+\centerline{\includegraphics*[height=1in,width=2in]{../Figures/ConcaveDown}}
+Obviously concave upward means ``like a bowl that opens up,'' and concave downward
+means ``like a bowl that opens down. However it is easy to get the wrong
+impression from simple examples so let's look at some more.
+The graph of the natural exponential and the natural logarithm\\
+\centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/LogAndExp}}
+are  concave upward and concave downward, respectively despite the facts that
+the exponential never turns up on the right, and the logarithm never
+turns down on the right.
+
+Do you think this graph is concave upward or concave downward?\\
+\centerline{\includegraphics*[height=1.2in,width=2in]{../Figures/ConcaveUpDown}}
+
+
+Clearly it is both. On the interval $(0,\pi)$ it is concave downward and
+on the interval $(\pi,2\pi)$ it is concave upward. Concavity is like
+increasing/decreasing in that we will always need to specify the
+interval on which a given function is either concave upward or concave downward.
+
+Now what about these two?\\
+\centerline{\includegraphics*[height=2in,width=4in]{../Figures/ConcaveUpDownUnclear}}
+
+The graph on the right is clearly\footnote{Never mind that we can't
+  actually see \emph{all} of the graph.}  concave upward when $x<0,$ but
+what about when $x>0?$ Is it concave upward there? Concave downward?  Neither?
+Both? It is very hard to tell from the graph.  The one on the left is
+similarly vague in the region around $x=0.$
+
+If it is important for us to distinguish concave upward from concave
+downward\footnote{It is.}, clearly we will need a more precise method than
+simply looking at graphs. We'll proceed slowly.  Since we're studying
+Calculus it seems likely that the derivative will play an instrumental
+role, so let's see what we can say about the derivative of a function
+whose graph is concave upward.
+
+Consider our first example $y(x) = x^2+1.$ This is concave upward
+everywhere so we will consider how its derivative changes as $x$ 
+increases. The following sketches show the graph and
+its tangent at $x=0,$ $x=2,$ and $x=3.$\\
+\centerline{\includegraphics*[height=3in,width=5.5in]{../Figures/ConcaveUpWithTangent}}
+Notice that as $x$ increases the tangent line gets steeper and
+steeper. That is to say its slope gets larger.  More formally,
+the derivative increases.
+
+\begin{ProficiencyDrill}
+  Look back upward to the graph of the other ``concave up'' examples and
+  convince yourself that this is true of all of them: As $x$ increases
+  the derivative of each function also increases.
+\end{ProficiencyDrill}
+
+Does that mean that the derivative of a concave downward function will
+decrease as $x$ increases? Yes, of course it does.
+
+\begin{ProficiencyDrill}
+  Look back up to the graph of the  ``concave down'' examples and
+  convince yourself that this is true of all of them: As $x$ increases
+  the derivative of each function decreases.
+\end{ProficiencyDrill}
+
+So, apparently in order to distinguish where a function is concave
+upward from where it is concave downward we need to locate the
+intervals where the derivative is increasing and where it is
+decreasing.  So we need a tool to tell us when a function is
+increasing and when it is decreasing.
+
+But we already have that tool! It's called the  First Derivative Test!
+
+To find out
+where the graph of $y(x)$ is concave upward or concave downward, we ask where
+its derivative, $\dfdx{y}{x}$, is increasing and where it is
+decreasing. To find out where $\dfdx{y}{x}$ is increasing and
+decreasing we ask where \emph{its} derivative, $\dfdxn{y}{x}{2}$, is
+positive and negative
+
+By the First Derivative Test\footnote{Because we are applying the
+  First Derivative Test to the first derivative the language gets a
+  little complex here. Read it carefully.} the derivative
+$\dfdx{y}{x}$ will be increasing (so $y(x)$ is concave
+upward) wherever \alert{its} derivative is positive
+$\left(\dfdxn{y}{x}{2}>0\right)$ and will be decreasing (so $y(x)$ is
+concave downward) wherever its derivative is negative
+$\left(\dfdxn{y}{x}{2}<0\right)$.
+
+So, to determine where the graph of $y(x)$ is concave upward or concave
+down we need to look at the \emph{second derivative,}
+$\dfdxn{y}{x}{2},$ and ask where it is positive and where it is
+negative.
+
+More formally:
+
+\begin{mytheorem}[Concavity]
+  \label{thm:what-second-deriv}
+  Suppose $$y=f(x)$$ where $f$ is some function  of $x.$
+  The following statements are true:
+  \begin{enumerate}
+  \item If $\eval{\dfdxn{y}{x}{2}}{x}{a}>0,$ then $\dfdx{y}{x}$ is
+    increasing, and therefore $f$ is concave upward, at
+    $x=a$. 
+  \item If $\eval{\dfdxn{y}{x}{2}}{x}{a}<0,$ then $\dfdx{y}{x}$ is
+    decreasing, and therefore $f$ is concave downward at
+    $x=a$. 
+  \item If $\eval{\dfdxn{y}{x}{2}}{x}{a}=0$ then $\dfdx{y}{x}$ is
+    neither increasing nor decreasing, and therefore $f(x)$ is neither
+    concave upward nor concave downward at $x=a$.
+  \end{enumerate}
+\end{mytheorem}
+
+Do you see why Theorem~\ref{thm:what-second-deriv} is so similar to
+Theorem~\ref{thm:FDT}? Theorem~\ref{thm:what-second-deriv} uses the
+conclusions of Theorem~\ref{thm:FDT}, applied to the \emph{first
+  derivative $f$} to draw logical conclusions about the concavity of
+the graph of $f.$ So naturally the conclusion have the same form.
+
+A couple of simple examples will illustrate this theorem.
+\begin{myexample}
+  Let $y=x^2.$ Then $\dfdx{y}{x}=2x,$ and $\dfdxn{y}{x}{2}=2.$ Since
+  the second derivative of $y$ is \emph{always} positive the graph
+  must always be concave upward.
+
+  \begin{ProficiencyDrill}
+    Is it? If you don't know graph it and see.
+  \end{ProficiencyDrill}
+\end{myexample}
+
+\begin{myexample}
+  Let $y=x^3.$ Then $\dfdx{y}{x}=3x^2,$ and $\dfdxn{y}{x}{2}=3x.$ Since
+  the second derivative of $y$ is negative on the interval
+  $(-\infty,0)$ the graph
+  must be concave downward on $(-\infty, 0)$. Since the second derivative of $y$ is
+  positive on the interval $(0,\infty)$ the graph must be concave upward
+  on $(0,\infty)$.
+
+  \begin{ProficiencyDrill}
+    Is it? If you don't know, graph it and see.
+  \end{ProficiencyDrill}
+\end{myexample}
+
+As we saw when we were discussing the First Derivative Test, 
+the intervals where a function is increasing or decreasing  are
+precisesly the intervals between the possible transition points.
+
+Thus it follows that to find the intervals where $y(x)$ is
+always concave upward or concave downward we will need to find the possible
+transition points of the derivative; those points where the second
+derivative of $y$, is zero or undefined. 
+
+\begin{embeddedproblem}
+  Suppose $y=x^4-x^2.$
+  % Then $\dfdx{y}{x}=4x^3-2x$, and
+  % $\dfdxn{y}{x}{2} =  12x^2-2$. To find the possible transition points
+  % for \emph{concavity} we set   $\dfdxn{y}{x}{2} =  12x^2-2 =0$ and
+  % solve. This yields, $x=\frac{1}{\sqrt{6}}$ and
+  % $x=-\frac{1}{\sqrt{6}}$
+
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that the graph of $y$ is concave upward  on the intervals
+    $(-\infty,-1/\sqrt{6})$ and $(1/\sqrt{6},\infty)$.
+  \item Show that the graph of $y$ is concave downward on  the interval
+    $(-1/\sqrt{6},1/\sqrt{6})$.
+  \end{enumerate}
+  % \begin{enumerate}{}
+  % \item Show that $\left.\dfdxn{y}{x}{2}\right|_{x=0}< 0.$
+  % \item Sketch the graph of $f$ and confirm visually that it is
+  %   concave downward at $x=0.$
+  % \end{enumerate}
+\end{embeddedproblem}
+
+
+This last problem also displays a most useful fact about the second
+derivative. Notice that at $ x=0$ the \emph{first} derivative of
+$y=x^4-x^2$ is zero, so the tangent line is horizontal and the second
+derivative is negative, so the graph is concave downward.  Taking
+these two facts together we conclude that $y(x)$ must have a (local)
+maximum at $x=0.$
+
+Similarly, given any curve $y,$ if $\left.\dfdx{y}{x}\right|_{x=a}=0$
+and $\left.\dfdxn{y}{x}{2}\right|_{x=a}> 0$
+then $y$ must have a (local) minimum at $x=a.$
+
+We will formalize this into a theorem called the
+Second Derivative Test:
+
+\begin{mytheorem}[The Second Derivative Test]
+  Suppose the graph of $y$ is some curve and that at some point $x=a$
+  $$\left.\dfdx{y}{x}\right|_{x=a}=0.$$
+  then the following statements are true:
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item If $\left.\dfdxn{y}{x}{2}\right|_{x=a}>0$ then $y$ has a local
+    minimum at $x=a.$
+  \item If $\left.\dfdxn{y}{x}{2}\right|_{x=a}<0$ then $y$ has a local
+    maximum at $x=a.$
+  \item If $\left.\dfdxn{y}{x}{2}\right|_{x=a}=0$ then we get
+    \emph{no} information about $y.$
+  \end{enumerate}
+\end{mytheorem}
+
+\begin{ProficiencyDrill}
+  Do you see why we get no information in part (c)? Analyze the
+  concavity of the graphs of each of the
+  following functions to see how part (c) can be true.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $f(x)=x^4$
+    \item $f(x)=-x^4$
+    \item $f(x)= x^3$
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "DiffCalc"
+%%% eval:(load-file "../macros.el")
+%%% End: 
+
+
+

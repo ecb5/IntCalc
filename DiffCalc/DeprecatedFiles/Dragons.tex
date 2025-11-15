@@ -1,0 +1,149 @@
+
+To continue we need to compute $\dx\left(\dfdx{y}{x}\right)$ which
+seems straightforward enough since the Quotient Rule applies. This
+results in
+$$
+\dx\left(\dfdx{y}{x}\right) =
+\frac{\dx{x}\textcolor{red}{\dx{(\dx{y})}}-\dx{y}\textcolor{red}{\dx{(\dx{x})}}}{(\dx{x})^2}.
+$$ 
+Next simplify the notation a bit.  Let\aside{Note this very carefully,
+  $\d{(\dx{y})}\neq (\dx{y})^2$, because the latter is
+  $(\dx{y})\times(\dx{y})$ whereas the former is the \emph{second
+    difference} of $y$.} $\textcolor{red}{\d{(\dx{y})}}=\dx^2{y}$ and
+$\textcolor{red}{\d{(\dx{x})}}=\dx^2{x}$ so that,
+$$
+\dx\left(\dfdx{y}{x}\right) =
+\frac{\dx{x}\d^2{y}-\dx{y}\dx^2{x}}{(\dx{x})^2}.  $$
+
+But $\dx(\dx{x}) =\dx^2x$ and $\dx(\dx{y}) =\dx^2y$ present a problem
+for us.  We have observed regularly beginning in
+Chapter~\ref{chapt:differentials} that differentials are
+questionable. If differentials are problematic, a second differential
+-- the differential of a differential -- is even moreso. The time has
+come to begin investigating this issue.
+
+      %       \pagebreak[4]
+\begin{Digression}[\foreign{Hic Sunt Dracones} (Here Be Dragons)]
+  \label{digression:curvature-1}
+  \begin{wrapfigure}[11]{r}{1.5in}
+    \vskip-4mm{} \captionsetup{labelformat=empty}
+    \centerline{\href{https://en.wikipedia.org/wiki/Hunt-Lenox_Globe}{\includegraphics*[height=1.5in,width=1.5in]{../Figures/LennoxGlobe2}}}
+    \caption{The Lennox Globe}
+    \label{fig:LennoxGlobe}
+  \end{wrapfigure}
+  To indicate that uncharted waters were the most dangerous medieval
+  mapmakers would fill in the unexplored regions of their maps with
+  illustrations of dragons and other mythological beasts. The Lennox
+  Globe, in the Rare Book Division of the The New York Public Library
+  (1510 CE, seen at the right), even has the inscription
+  ``\foreign{Hic Sunt Dracones}'' (Here Be Dragons) along the eastern
+  Asian coast.
+  
+  The concept of the differential of a differential, like $\dx^2x$,-
+  is a mathematical dragon of sorts.  We will proceed carefully.
+
+  The problem here is conceptual, not computational. That is, there is
+  no computation we can do to see what the value of $\dx^2x$ should
+  be. Rather, we need to think carefully about the meanings of our
+  symbols.
+
+  \subsubsection*{Leibniz' Conception}
+  When we use Leibniz' differential notation we think of $\dx{y}$ and
+  $\dx{x}$ as tiny increments in the $x$ and $y$
+  coordinates. Specifically, $\dx{x}=x_2-x_1$ where $x_2$ and $x_1$
+  are \emph{infinitely} close together. As we've seen the concept of a
+  differential is already a difficult thing to accept.
+
+  But if we stick with Leibniz then it must be that
+  $ \dx(\dx{x}) = \dx{x_2}-\dx{x_1}, $ right? We can write this down
+  and we can read these symbols easily enough. But what they seem to
+  \emph{mean} is that $\dx(\dx{x})$ is the infinitely small difference
+  of two infinitely small differences.
+
+  \vskip2mm{}
+  \centerline{\bf{} Down that path there are more dragons. We won't go
+    there.}
+
+  \subsubsection*{Newton's Conception}
+  Instead we'll adopt Newton's viewpoint and hope that it gives us a
+  meaningful interpretation of our symbols.
+  
+  For Newton, time was the only variable, and time always flows
+  forward at a constant rate. He thought of a variable, $x$ for
+  example, as moving, or flowing (\foreign{fluent}) in time and
+  $\dot{x}$ was the rate of flow (\foreign{fluxion}) of the
+  \foreign{fluent} $x$. In the simplest example, if $x$ is the
+  position of a point then $\dot{x}$ is its velocity.
+
+  Newton only applied his dot notation to something that was changing
+  in time; something that has a \emph{rate of change with respect to
+    time.} Can we apply it to time itself?
+
+  Sure we can. Time itself is ``changing in time'', isn't it? Time
+  flows at a rate of $1$ second per second, or one day per day, or one
+  century per century. The units don't really matter. Loosely speaking
+  (and mixing the Newtonian and Leibnizian viewpoints a bit), an
+  increment of time now has the same magnitude as an increment of time
+  later, has the same magnitude as an increment of time in the
+  past. That is, every increment of $t$ is the same size.  If we let
+  $t$ represent elapsed time then this means that the infinitesimal
+  increment $\dx{t}$ is \emph{constant}, so the fluxion of $\dx{t}$ is
+  zero: $\dx(\dx{t})=\dx^2{t}=\dot{\dx{t}}=0$.  However, keep in mind
+  that this is not true of a quantity that is flowing at a variable
+  rate. For example, if $y=t^2$ then $\eval{\dx{y}}{t}{1}=2\dx{t}$
+  whereas $\eval{\dx{y}}{t}{2}=4\dx{t}$.
+
+  This solves our problem. If $\dx{t}$ is \emph{constant} then by the
+  Constant Rule $\dx^2{t}=\dx(\dx{t})=0$.
+
+  Moreover we always have the option of adopting Newton's convention
+  that the \emph{only} independent variable is time so that when we
+  write $\dfdx{y}{x}$ we are thinking of the independent variable $x$
+  as time (although we rarely say so out loud), and we are thinking of
+  $y$ as functionally dependent on time (represented by $x$ in this
+  case).  Therefore
+  $$\dx^2x=\dx(\dx{x})=0 \text{ and } \dx^2y=\dx(\dx{y})\neq0.$$
+
+  As a practical matter we will rarely be interested in second order
+  differentials like $\dx^2x$ or $\dx^2y$. As we indicated in
+  Section~\ref{sec:hist-intr} differentials are really just an aid to
+  computation; a convenient fiction. They are a helpful aid but the
+  more important and useful concept is the derivative.  Differentials
+  only serve as a step along the way to finding derivatives.
+
+  But we will be very interested in second order derivatives:
+  $ \dfdx{}{x}\left(\dfdx{y}{x}\right) = \dfdxn{y}{x}{2} $ because
+  these often represent real, physical quantities like velocity or
+  acceleration.
+  
+  But now there is another difficulty that can't be ignored.  In order
+  to make sense of the expression $\dx^2{x}$ we had to abandon
+  Leibniz' conception altogether. It is nice that Newton's viewpoint
+  gives us a way to make sense of the notation but what this tells us
+  is that taking either viewpoint (Newton's or Leibniz') does not get
+  us to the logical heart of the matter. A viewpoint is just a manner
+  of thinking. We adopt a viewpoint in order to build intuition.
+
+  When two viewpoints are at odds it means that we need something more
+  general. In this case we need a theory that subsumes, and can
+  replace, the views of both Leibniz and Newton.
+  This issue must be addressed but for now we will continue to work
+  intuitively.
+
+  Eventually, when we stand at the top of the Calculus mountain we
+  will be able to see the paths that Newton and Leibniz each took.  We
+  will wait to begin our own trek to the summit in
+  Chapter~\ref{chapt:whats-wrong-with}.
+\end{Digression}
+
+Returning to our computation in progress we have
+$$
+\dx\left(\dfdx{y}{x}\right) =\frac{\dx{x}\cdot
+  \d^2{y}-\dx{y}\cdot\CancelToRed{=0}{\d^2{x}}}{(\dx{x})^2} =
+\left(\dfdxn{y}{x}{2}\right)\dx{x}% \frac{\dx{x}\cdot\d^2{y}}{(\dx{x})^2}
+$$
+
+Returning to equation~(\ref{eq:DiffTheta}) we have
+$$
+\dx{\theta}=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\dx\hskip-2pt\left(\dfdx{y}{x}\right)=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\left(\dfdxn{y}{x}{2}\right)\dx{x}
+$$

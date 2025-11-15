@@ -1,0 +1,465 @@
+\documentclass[11pt]{article}
+
+\usepackage{caption}
+
+
+\usepackage{geometry}
+
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+%\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage{url}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+%\fancyfoot[L]{\small{Dominic W. Klyve, ``How to Calculate $\pi$; Machin's inverse tangents,''\\  MAA Convergence (August 2018)}}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot[R]{\thepage}
+\cfoot{}
+
+
+\linespread{1.1}
+
+
+\setcounter{MaxMatrixCols}{30}
+
+%\addtolength{\skip\footins}{-10pt}
+
+\setlength{\topmargin}{-.9in}
+
+\setlength{\oddsidemargin}{-.1in}
+% \setlength{\evensidemargin}{-.3in}
+\setlength{\textwidth}{6.8in}
+ \setlength{\textheight}{9.1in}
+
+\addtolength{\skip\footins}{50pt}
+\setlength{\footskip}{50pt}
+
+\newcommand{\sep}{\vspace{-3pt}
+\begin{center}
+{\mathversion{normal}
+$\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}$}
+\end{center} \vspace*{-5pt}}
+
+
+
+%{\vspace*{10pt}\begin{tabular}{|p{0.9\textwidth}|}
+ %   \hline \\  \begin{sf} }
+  % { \end{sf}  \\  \hline
+   % \end{tabular}  \vspace*{10pt}  }%
+
+    \usepackage{framed}
+
+    \newenvironment{source}%
+ {\bigskip \sep \vspace*{-6pt} \begin{quote}
+          \begin{sf}   }
+   {   \end{sf}     \end{quote} \vspace*{-6pt} \sep \bigskip}%
+
+\newcounter{tasknumb}
+\newcommand{\tasknumb}{\stepcounter{tasknumb}\textmd{\textbf{$\fbox{$\fbox{Task \thetasknumb}$}$}}}
+
+
+\newenvironment{task}%
+ {\begin{itemize}
+ \item[\tasknumb]  }
+{
+    \end{itemize}    }%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+
+\title{How to Calculate $\pi$: Machin's inverse tangents}
+\author{Dominic Klyve\thanks{Department of Mathematics, Central Washington University, Ellensburg, WA  98926; \texttt{dominic.klyve@cwu.edu}.  The author is grateful to Frederick Rickey, whose article ``Machin's Formula for Computing Pi'' \cite{Rickey} formed the basis for much of this project.  Rickey's paper, ``Machin’s Formula for Computing Pi'' has not been published, but can be found via a web search for its title, or by contacting this PSP's author directly. }}
+\date{August 18, 2018}
+\bigskip
+
+\maketitle
+\thispagestyle{fancy}
+
+\vspace*{-12pt}
+
+\section*{Introduction}
+
+The challenge of estimating the value of $\pi$ is one which has engaged mathematicians for thousands of years. Calculating its value to more than a few digits, however, is a difficult challenge which can't be easily overcome simply by working harder on the problem.  Instead, progress in digit calculation almost always requires a new idea.  In this project, we shall explore an idea of John Machin (1686--1751), an eighteenth-century English astronomer.
+
+While Machin's primary job was as a professor of astronomy, he was also interested in mathematics. His astronomical work, in fact, wasn't particularly successful -- he was best known for an attempt to use Newton's law of gravity to precisely explain the motion of the moon. His attempt failed, though we should perhaps not be too harsh on him, as it would be twenty more years before anyone found a solution. Machin was more successful in other areas; he served as the secretary of England's Royal Society for 30 years, was one of the people asked to serve on a committee to investigate who should receive credit for developing calculus,\footnote{At the time, most English mathematicians thought that Isaac Newton should get credit for inventing/discovering calculus, while most mathematicians from continental Europe thought that credit should go to Gottfried Leibniz. Although this may seem unimportant now, it was a big enough deal at the time to merit an official committee investigation by the Royal Society of London.} and once broke a world record.
+
+It is the last of these that interests us in this project, as Machin became in 1706 the first person to compute $\pi$ to 100 digits. Not only did he compute the most precise value then known, but the methods he used were the basis of several $\pi$ calculation records set in the succeeding centuries.  Interestingly, none of Machin's ideas required mathematics beyond a first-year Calculus class.  In this project, you will work through his methods, and will have a chance to recreate some of his calculations yourself.
+
+
+\section*{Part 1: It all started with arctangent}
+
+The first big idea that Machin needed was that the arctangent function (also called the inverse tangent function, and either denoted as $\arctan$ or $\tan^{-1}$) could be written as an infinite series.  Today we learn this as one example of a ``Taylor series'', a subject that is usually taught in a second calculus class. In fact, the series predated calculus. Gottfried Leibniz (1646--1716) had discovered the series in 1673, and his formula was only one case of a more general formula discovered by Indian mathematicians several hundred years earlier \cite{R1990}. Following longstanding tradition, we will refer to the following as \emph{Leibniz's formula}:
+$$
+\arctan(x) = x - \frac{x^3}{3} + \frac{x^5}{5} -  \frac{x^7}{7} + \frac{x^9}{9} - \frac{x^{11}}{11} \pm \cdots = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{2n+1},
+$$
+where $|x| \le 1$.
+
+Leibniz wanted to consider how he could use this series to calculate $\pi$.  The easiest method, of course, might be simply to find a value of $x$ for which $\arctan(x) = \pi$.
+
+\begin{task}
+\begin{enumerate}
+\item[a.] Explain why there is no value of $x$ for which $\arctan(x) = \pi$.
+\item[b.] Is there a value of $x$ for which $\arctan(x) = \frac{\pi}{2}$?  If yes, what is it?  If not, why not?
+\item[c.] Is there a value of $x$ for which $\arctan(x) = \frac{\pi}{3}$? If yes, how could you use that value of $x$ and the series above to estimate $\pi$?
+\end{enumerate}
+\end{task}
+
+If $\arctan(x)$ is a convenient fraction of $\pi$, then equivalently we could look for a convenient fraction of $\pi$ the tangent of which is an easy-to-use value.  The next task asks you to explore this possibility.
+\begin{task}
+Consider the values $\frac{\pi}{3}$, $\frac{\pi}{4}$, $\frac{\pi}{5}$, and $\frac{\pi}{6}$.  Find the tangent of each.  Which gives the value which is simplest and easiest to compute with?
+\end{task}
+
+You may have found, as Leibniz did, the rather lovely fact that $\tan(\frac{\pi}{4}) = 1$, and thus $\arctan(1) = \frac{\pi}{4}$.
+
+\begin{task}
+Substitute $1$ for $x$ in Leibniz's formula.  Does it allow you to calculate the value of $\pi$?  Why or why not?
+\end{task}
+
+
+\begin{task}
+Using a calculator, compute the value of the sum after the first $10$ terms. How closely does the value approximate $\pi/4$?
+\end{task}
+
+\begin{task}
+If you can program a computer or calculator (or if you are feeling particularly patient), compute the value of the sum after the first $100$ terms. How closely does the sum approximate $\pi/4$ now? What can you say about how useful Leibniz's formula is for calculating $\pi$?
+\end{task}
+
+Leibniz's series, using $1$ for $x$, is a marvelous example of a formula that is beautiful but not useful. It looks quite elegant on the page even to someone not trained in mathematics:
+$$
+\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11} \pm \cdots,
+$$
+and it represents the surprising fact the digits of $\pi$, which seem to be random in almost every sense, can be calculated by something that is not random at all.  Although this could work in theory, it would take a heroic amount of calculation to use this equality to get an accurate value for $\pi$.
+
+Leibniz himself would have known this, as did his contemporary Isaac Newton.   In fact, in a letter Isaac Newton wrote to Leibniz about a similar series (this one to represent the value of $\frac{\pi}{2 \sqrt{2}}$), he mentioned this fact:
+
+\begin{source}
+\vspace*{-6pt}
+\ldots to find the length of the quadrant[al arc of which the chord is unity] to twenty decimal places, it would require about
+5 000 000 000 terms of the series, for the calculation of which 1000 years would be required.\footnote{
+Newton wrote this letter on 24 October 1676.  This the first letter in the Newton-Leibniz correspondence, is known to historians as the {\em epistola posterior}. Text from \em{ The Correspondence of Isaac Newton}, vol.\ 2 (1960), edited by H.\ W.\ Turnbull, p.\ 138--139 \cite{CorrNewton}. For more on this, see
+Nick Mackinnon's article Newton's Teaser." \cite{M92}}
+\vspace*{-8pt}
+\end{source}
+
+(Note that the series Newton referred to here is $\frac{\pi}{2\sqrt{2}} = 1 + \frac{1}{3} - \frac{1}{5} + \frac{1}{7} - \frac{1}{9} + \frac{1}{11}$. Can you see the difference between this and the Leibniz series?)
+\begin{task}
+How reasonable is Newton's time estimate for how long this would take to calculate by hand?  Let's explore it a bit:
+\begin{enumerate}
+\item[a.] How many terms would you need to calculate each year to calculate 5 000 000 000 terms in 1000 years?
+\item[b.] Assuming you never take a vacation, how many terms is this each day?
+\item[c.] If we further assume that you work on this 12 hours each day, how many terms is this each hour?  Each minute?
+\item[d.] Do you think 1000 years is reasonable estimate?
+\end{enumerate}
+\end{task}
+
+However long it would take to get a value of $\pi$ accurate to $20$ decimal places, it's clear that in the computer era, the formula of Leibniz was not the best way to go.  Clearly a new idea would be needed.  In the following, we will follow Machin's idea to begin with $\arctan(1)$ and look for ways to rewrite it to make it easier to compute.
+
+\section*{Part 2: Addition and Subtraction formulas for tangent}
+
+In a previous class, you may have seen the addition and subtraction formulas for tangent.  In case you don't remember them, these are:
+$$
+\tan(\alpha  + \beta) = \frac{\tan \alpha + \tan \beta}{1- \tan \alpha \tan \beta}
+$$
+and
+$$
+\tan(\alpha - \beta) = \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}.
+$$
+
+\begin{task}
+Use one or both of these formulas to derive a \emph{double-angle formula} for tangent.  That is, find the value of $\tan(2\theta)$ in terms of $\tan \theta$.
+\end{task}
+
+\begin{task}
+Now go one step farther, and derive a quadruple-angle formula for tangent.  This time you will find the value of $\tan(4\theta)$ in terms of $\tan \theta$.
+\end{task}
+
+An English lawyer named Francis Maseres (who we will meet below) would call these formulas Lemma 1 and Lemma 2.
+
+\section*{Part 3: Choosing a better angle}
+
+The inspired work of Machin takes the double-angle formula as the starting point for his calculation of $\pi$.  The following text comes from  {\em Scriptores logarithmici; or a Collection of Several Curious Tracts on the Nature and Construction of Logarithms \ldots} \cite{maseres}, compiled by Francis Maseres\footnote{Maseres was a wealthy English lawyer and judge, and a Fellow of the Royal Society. He had a deep passion for mathematics and both wrote mathematical texts and used some of his fortune to help publish the mathematical works of others.  It is also notable that he lived for more than 93 years.}  (1731--1824)  over a sixteen-year period starting in 1791.  Maseres' description seems to be the earliest surviving account of Machin's method, and we will explore it in the next section of this project.
+
+Machin's first task was to find an angle with two important properties:
+\begin{enumerate}
+\item The tangent of the angle is a simple, easy-to-use small fraction; and
+\item Using the double-angle formula, one can use this angle to find  the tangent of an angle very close to $\pi/4$.
+\end{enumerate}
+
+(As a bonus, it would be nice if plugging the fraction into Leibniz's series led to an easy-to-calculate value.)
+
+Before we see what Machin chose, let's try to find such an angle ourselves.
+
+\begin{task}
+The most obvious starting point is to take half of the angle in which we are interested.  Half of $\pi/4$ is, of course,  $\pi/8$.  Is the tangent of $\pi/8$ close to any simple fraction?
+\end{task}
+
+\begin{task}
+Try finding (with a calculator) $\tan(\pi/16), \tan(\pi/32)$, and $\tan(\pi/64)$.  Which of these (if any) are close to simple fractions?
+\end{task}
+
+Let's now see how Machin began:
+
+\begin{source}
+As the famous quadrature of the late Mr.\ John Machin, Professor of Astronomy in Gresham College,
+is extremely expeditious, and but little known, I shall take this opportunity of explaining it as follows.
+
+Since the chief advantage consists in taking small arcs whose tangents shall
+be numbers easy to manage, Mr.\ Machin very properly considered that, since
+the tangent of 45$^\circ$ is 1, and that, the tangent of any arc being given, the tangent
+of double that arc can easily be had; if there be assumed some small
+simple number as the tangent of an arc, and then the tangent of the double
+arc be continually taken, until a tangent be found nearly equal to 1, which is
+the tangent of 45$^\circ$; by taking the tangent answering to the small difference
+of 45$^\circ$ and this multiple, there would be had two very small tangents, viz.\
+the tangent first assumed, and the tangent of the difference between 45$^\circ$ and
+the multiple arc; and that, therefore, the lengths of the arcs corresponding
+to these two tangents being calculated, and the arc belonging to the tangent
+first assumed being so often doubled as the multiple directs, the result,
+increased or decreased by that other arc, according as the multiple should
+be below or above it, would be the arc of 45$^\circ$.
+
+
+Having thus thought of his method, by a few trials he was lucky enough
+to find a number (and perhaps the only one) proper for this purpose; viz.\
+knowing that the tangent of 1/4 of 45$^\circ$ is nearly = 1/5, he assumed 1/5
+as the tangent of an arc.
+\end{source}
+
+\begin{task}
+In order to understand this, we will first make sure that we know how to find the tangent of an angle by looking at a unit circle diagram:
+\begin{enumerate}
+\item Draw a unit circle
+\item Draw a line from the origin at $45^\circ$ to the $x$-axis.
+\item Add a line tangent to the circle at the point $(0,1)$.
+\item Find the length of that tangent line between the $x$-axis and the $45^\circ$ line you drew.
+\item Try the same steps, but with an arbitrary angle $\theta$. What is the length of the tangent line to $(0,1)$ and the line you drew at angle $\theta$ now?
+\end{enumerate}
+\end{task}
+
+\begin{task}
+
+We should now be able to draw a diagram showing Machin's setup.
+
+\begin{enumerate}
+\item Draw a unit circle
+\item Draw a line from the origin at $45^\circ$ to the $x$-axis.
+\item Add a line tangent to the circle at the point $(0,1)$.
+\item Draw a line from the origin at angle $\theta$ whose tangent is $1/5$.
+\item Draw similar lines for angles $2\theta$ and $4\theta$. If your diagram is accurate, you should see that the lines for $4\theta$ and $45^\circ$ are quite close. How does this relate to Task 11?
+\end{enumerate}
+\end{task}
+
+\begin{task}
+Explain why it was not just a matter of luck that Machin found this value.
+\end{task}
+
+\begin{task}
+Do you think $\frac{1}{5}$ is indeed the only such tangent value that would work?  Why or why not?
+\end{task}
+
+\begin{task}
+Use your work in Task 12 to write an expression using arctangent to find an approximation to $\frac{\pi}{4}$.
+\end{task}
+
+Let us follow Machin's work further.  Let $\theta$ be the inverse tangent of $1/5$ (so $\theta = \tan^{-1} \frac{1}{5}$).  Based on our picture, it seems our next task is to find the tangent of $4\theta$.  We expect it will be close to $1$; we now need to discover just how close.
+
+Maseres continued his description of Machin's work as follows:
+
+\begin{source}
+These things being premised, the method itself may be explained as follows.
+
+3. Let $AE$ be an arc whose tangent $AB$ is $1/5$ of the radius $MA$ [see Figure 1 below];
+and let $AF$ be double, and $AG$ quadruple, of $AE$, and $AK$ an arc of $45^\circ$; and
+let $AC$, $AD$, $AL$, be the tangents of the arcs $AF$, $AG$, and $AK$, respectively.
+Put $AM = 1$, $AB = b$, $AC =c$, and $AD = d$. Then by
+the first of the foregoing Lemmas, we shall have
+$c = \frac{2b}{1 -bb}
+= \frac{\frac{2}{5}}{1-\frac{1}{25}}
+= \frac{\frac{2}{5}}{\frac{24}{25}}
+= \frac{2}{5}\times\frac{25}{24}=\frac{5}{12}$;
+and $d = \frac{2c}{1-cc}=
+\frac{\frac{10}{12}}{1-\frac{25}{144}}
+= \frac{\frac{10}{12}}{\frac{119}{144}}
+=\frac{10}{12}\times\frac{144}{119}
+=\frac{10\times12}{119}
+=\frac{120}{119}.$
+
+\begin{figure}[h]
+\begin{center}
+{\includegraphics[keepaspectratio, height=3in]{Machin-graph.jpg}}
+\caption{Machin's setup to estimate  $\tan^{-1} (1/5)$}
+\end{center}
+\end{figure}
+\end{source}
+
+\begin{task}
+Redraw the picture, and label the lengths of all the line segments with the labels given by Maseres ($AB=b$, etc.).
+\end{task}
+
+\begin{task}
+Recalling that  $\theta = \tan^{-1} \left(\frac{1}{5} \right)$, use the double-angle formula for tangent you calculated above to calculate $\tan(2\theta)$.  Does your answer match the one given by Maseres?
+\end{task}
+
+\begin{task}
+Now use your quadruple-angle formula to calculate $\tan(4\theta)$.  Does your answer match that of Maseres this time?
+\end{task}
+
+\begin{task}
+We conjectured above that $\tan (4\theta)$ would be close to 1.  Is it?
+\end{task}
+
+At this point, Machin was very close to deducing his famous formula that allowed him to calculate $\pi$.  He simply needed to calculate the difference bewteen the angles $\frac{\pi}{4}$ and $4 \arctan(\frac{1}{5})$.
+
+\begin{source}
+Therefore $d$ or $AD$, is greater than $1$, or $AM$, and consequently
+than $AL$; and consequently $AG$ is greater than $AK$, or $45^\circ$.
+Draw $KO$ [tangent to $GK$ at $K$], and tangent $GK$, the difference of the arcs $AG$, $AK$,
+(or rather, because it is so extremely small, conceive it to be drawn) and
+call it $e$; then (by Lemma 2) we shall have
+$
+e = \frac{d-1}{1+d}
+=\frac{\frac{120}{119}-1}{1+\frac{120}{119}}
+=\frac{\frac{1}{119}}{\frac{239}{119}}
+=\frac{1}{239}.
+$
+Find now the lengths of the arcs $AE$, and $GK$, from their tangents
+$b$ and $e$, or $\frac{1}{5}$ and $\frac{1}{239}$, by the last of the foregoing lemmas; and
+from quadruple the former arc subtract the latter arc, and the remainder will
+be the length of an arc of $45^\circ$, which multiplied by $4$ gives the length of the
+circumference. [p.\ 290--291]
+\end{source}
+
+\begin{task}
+In the equation $e = \frac{d-1}{1+d}$, the values $e, d$, and $1$ are each the tangent of something.  Rewrite this equation using tangent(\emph{some angle}) in place of each of them.
+\end{task}
+
+\begin{task}
+Convert the last sentence of the text above to an equation for $\frac{\pi}{4}$ using arctangents. Then explain how your equation relates to the geometry in the picture.
+\end{task}
+
+Now that we've recovered Machin's formula, it's time to see whether it will allow us to efficiently calculate a value for $\pi$.  Using the formula (hopefully you've just found this)
+$$
+\frac{\pi}{4} = 4 \arctan\Big(\frac{1}{5}\Big) - \arctan\Big(\frac{1}{239}\Big),
+$$
+let's use the infinite series for arctangent again, and see whether we can get a better value than we did before.
+
+\begin{task}
+Use the first ten terms of the infinite series for arctangent to estimate $\arctan (\frac{1}{5})$.
+\begin{enumerate}
+\item[a.] How large is the last term you found?
+\item[b.] Using a calculator, determine how closely the sum of the first ten terms approximates the true value.
+\end{enumerate}
+\end{task}
+
+\begin{task}
+Use the first ten terms infinite series for arctangent to estimate $\arctan (\frac{1}{239})$.
+\begin{enumerate}
+\item[a.] How large is the last term you found?
+\item[b.] Using a calculator, determine how closely the sum of the first ten terms approximates the true value.
+\end{enumerate}
+\end{task}
+
+\begin{task}
+Combine the values you have found in your formula to estimate $\frac{\pi}{4}$, and therefore to estimate $\pi$.  How accurate is your approximation?  How does this compare to the first ten terms of the series you used in Task 4 with $\arctan(1)$?
+\end{task}
+
+\subsection*{Conclusion}
+
+In the end, John Machin used his formula, and a lot of hard work, to calculate $\pi$ to 100 decimal places, a record for his time. More importantly, every more precise calculation of $\pi$ over the next century was based on his methods (with some clever modifications from Leonhard Euler).  It turns out that the tools of calculus can go a long way toward solving some of the longest-standing mathematics challenges of the world.
+
+\bibliographystyle{plainnat}
+\bibliography{Machinrefs}{}
+
+
+\newpage
+
+
+\section*{Notes to Instructors}
+
+
+This is one of a proposed series of Primary Source Projects which explore ways that mathematicians have used material now in the undergraduate curriculum to estimate the value $\pi$. Other projects\footnote{Not all of these projects are completed at the time of this writing} examine the methods of Archimedes and Georges LeClerc, Compte de Buffon.
+
+
+\subsubsection*{PSP Content: Topics and Goals}
+This Primary Source Project (PSP) has two primary goals: to give students an interesting and concrete example of the use of Taylor series, and to use systematic deduction to motivate the seemingly ``out-of-nowhere'' formula of Machin that $\frac{\pi}{4} = 4 \arctan \frac{1}{5} = \arctan \frac{1}{239}$.  The PSP is designed to be used in a Calculus II course, but might also profitably used in a course in Applied Analysis or the History of Mathematics. If the instructor is comfortable with their students not understanding the motivation for Taylor series, it could even be used in a trigonometry class as a chance to practice and use double-angle formulas.
+
+
+
+\subsubsection*{Student Prerequisites}
+
+While the project expects that students have seen Taylor series and will not be intimidated by Leibniz's formula, this is not a prerequisite -- most students could use the formula simply by plugging in values. It is also expected, though not required, that students know the tangent double-angle formula. Since the project presents the formula, an ability to see a new identity and to possess the algebraic skills to put it to use suffices.
+
+\subsubsection*{Suggestions for PSP Implementation}
+
+The following suggestions assume use in a Calculus 2 class with class lengths of approximately 50 minutes. The outline below uses a few minutes at the end of Day 0, all of Day 1, and the first day of Day 2 for the mini-PSP.
+
+\begin{itemize}
+\item \textbf{Day 0.}  The instructor spends about $10$ minutes at the end of class discussing the fact that some mathematicians have wanted to calculate $\pi$ with increasing accuracy for over $2000$ years -- and that in fact some people still pursue this problem today. The instructor then mentions that one of the best methods involves a topic from calculus: Taylor Series (if used in a trigonometry course, one might instead point out that the method involves tangent formulas).
+
+\textbf{Day 0 Homework:}  Parts 1 and 2 can reasonably be assigned as homework before the first day of class work.
+
+\item \textbf{Day 1.} After a brief (less than 10-minute) discussion of questions on the homework, students should work in groups on Part 3. Many groups will complete most of Tasks 10--18 together.
+
+\textbf{Day 1 Homework:} Assign Tasks 19--21 (together with unfinished work from Day 1).
+
+\item \textbf{Day 2.} Students should be able to compare their answers from the homework in groups, and to complete Tasks 22--25 in half of a 50-minute class period.  The instructor can then choose either to have a class discussion on the project (the author would make this choice) or to move on to new material.
+
+\textbf{Day 2 homework:} Students should write up their solutions to all tasks to be turned in and evaluated.  It's best to give them a few days to do this.
+
+\end{itemize}
+
+ \LaTeX code of the entire PSP is available from the author by request to facilitate preparation of reading guides or other assignments related to the project. The PSP itself can also be modified by instructors as desired to better suit their goals for the course.
+
+\subsubsection*{Commentary on Selected Student Tasks}
+
+Task 5 is needlessly laborious for someone who cannot program, and I would never assign it as a computational exercise to students who can't.
+
+%\noindent For Task 7: note that the a fourth of an arc whose chord is unity, assuming that the arc what we would call the part of the unit circle above the $x$-axis, is $\pi/4$. Many students will come up with this, but I would not remove points from students who had a different (though thoughtful) answer.
+
+\noindent In Task 14, especially strong students could be asked to find a better angle than $1/5$, or at least a different angle, and to construct a Machin-like formula using it.
+
+\subsection*{Recommendations for Further Reading}
+
+Those interested in a more careful discussion of the calculation above, together with thoughts on alternate ways to teach it and on the symbol $\pi$ itself, are encouraged to read V.~Frederick Rickey's ``Machin’s Formula for Computing Pi'', a work to which this PSP is indebted. Rickey's paper has not been published, but can be found via a web search for its title, or by contacting this PSP's author directly.
+
+
+
+ \subsection*{Acknowledgments}
+The development of this project has been partially supported by the TRansforming Instruction in Undergraduate Mathematics via Primary Historical Sources (TRIUMPHS) project with funding from the National Science Foundation's Improving Undergraduate STEM Education Program under grant numbers 1523494, 1523561, 1523747, 1523753, 1523898, 1524065, and 1524098. Any opinions, findings, and conclusions or recommendations expressed in this project are those of the author and do not necessarily represent the views of the National Science Foundation. For more information about TRIUMPHS, visit:
+
+\centerline{\tt http://webpages.ursinus.edu/nscoville/TRIUMPHS.html}.
+
+\bigskip
+
+\noindent\begin{minipage}{.25\textwidth}
+        \noindent
+       \includegraphics{by-sa.png}% Don't forget to capture this image file (by-sa.png) to compile with your tex file!!!
+ \end{minipage}%
+ \begin{minipage}{0.75\textwidth}
+        This work is licensed under a {\tt https://creativecommons.org/licenses/by-sa/4.0/legalcode}{Creative Commons Attribution-ShareAlike 4.0 International License}. It allows re-distribution and re-use of a licensed work on the conditions that the creator is appropriately credited and that any derivative work is made available under ``the same, similar or a compatible license''.
+\end{minipage}
+
+
+
+
+\end{document} 

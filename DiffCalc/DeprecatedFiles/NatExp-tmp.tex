@@ -1,0 +1,1697 @@
+\section{The Natural Exponential -- tmp}
+\label{sec:exponential}
+\markright{\sc{}The Natural Exponential}
+
+At the most superficial level we use Calculus to create new functions
+by defining the new function to be the solution(s) of a specified
+\term{Initial Value Problem (IVP)}.
+
+Let's step back for a moment.
+
+We've seen that when we differentiate
+the formula $y=x^2$ we get the \term{differential equation} $\d{y} =
+2x\d{x}.$ Of course we've abandoned differentials (except as a
+``useful fiction'', of course) so we would write this differential
+equation as
+\begin{equation}
+\dfdx{y}{x}=2x.\label{eq:x2diffeq}
+\end{equation}
+If we did not already know that the function $y(x)=x^2$ satisfies this equation we
+could give a name to the solution -- sqr$(x)$, perhaps? --
+and by fiat, \alert{define} sqr$(x)$ to be the solution of this
+equation.
+
+Oh! But wait! There is a problem. There is more than one solution to
+equation~\ref{eq:x2diffeq}, remember?
+\begin{ProficiencyDrill}
+  Find two more solutions of equation~\ref{eq:x2diffeq}.
+\end{ProficiencyDrill}
+We can't define sqr$(x)$ to  be
+\alert{the} solution if there is more than one solution. This seems
+like a big problem until you think about it for a moment. Out of all of
+the solutions  of equation~\ref{eq:x2diffeq} only one passes through
+the point $(0,0)$ so we will choose to define sqr$(x)$ to be that one.
+\begin{ProficiencyDrill}
+  Find a formula for sqr$(x)$ that solves each of the following
+  IVPs. Graph your solutions:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $\dfdx{y}{x}=2x,\ \ \ y(0)=0$
+    \item $\dfdx{y}{x}=2x,\ \ \ y(0)=1$
+    \item $\dfdx{y}{x}=2x,\ \ \ y(0)=10$
+    \item $\dfdx{y}{x}=2x,\ \ \ y(1)=2$
+    \item $\dfdx{y}{x}=2x,\ \ \ y(-1)=1$
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+There are many solutions of the differential
+equation~\ref{eq:x2diffeq}, but the IVP (Initial Value Problem)
+has only one. If we weren't already familiar with the function
+$f(x)=x^2$ we could define $\text{sqr}(x)$ to be the solution of
+\begin{equation}
+\dfdx{y}{x}=2x, \ \ y(0)=0,\label{eq:ExpDiffeq2}
+\end{equation}
+We can learn a lot about the solution of this IVP just
+by examining what the problem itself tells us.
+
+For example since $2x<0$ when $x<0$, the slope of the graph of $y(x)$
+is clearly also negative when $x<0$, Similarly, the slope of the graph
+of $y(x)$ is positive when $x>0$.
+
+In exactly the same way we can declare, by fiat, the following:\\
+\begin{mydefinition}[The Natural Exponential Function]
+  \label{def:natural-exponential}
+  The function which satisfies the IVP
+  \begin{equation}
+    \label{eq:ExpDiffeq}
+    \dfdx{y}{x}=y, \ \ y(0)=1.
+  \end{equation}
+  is called the natural exponential  function: $\exp(x)$.
+\end{mydefinition}
+Traditionally this is called the ``natural''
+exponential function.  Of course, simply giving it a name does not
+tell us anything about it.
+
+Let's see what we can learn about $\exp(x)$ from
+IVP~\ref{eq:ExpDiffeq}.
+% Think about the formula $\dfdx{y}{x}=y$ for a moment. It says that if
+% $(x,y)$ is a point on the graph of the equation then the slope at that
+% point \aside{equivalently, the slope of its tangent line} will be the
+% same as the $y$ coordinate.
+% % \begin{wrapfigure}[]{l}{1in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=1in,width=1in]{../Figures/exp-envelope1}}
+% %   \label{fig:exp-envelope1}
+% % \end{wrapfigure}
+% From the initial value we also know that $y(0)=1$ so at the point
+% $(0,1)$ the slope of our curve is $1,$ the same as the $y$
+% coordinate. Thus near the point $(0,1)$ our curve looks like the line:
+% $y=x+1$.
+
+% Think about this for a moment. 
+Do you see that the equation
+$\dfdx{y}{x}=y$ implies that the curve is always increasing?
+
+\begin{mylemma}
+  \label{lemma:ExpInc}
+  The $y$ coordinate of every point on the graph of $y=\exp(x)$ is
+  always positive and its derivative is also positive. 
+\end{mylemma}
+\begin{myproof}
+  Since $\dfdx{y}{x}=y$ we really only need to show that one of
+  $\dfdx{y}{x}$ or $y$ is positive. Think of $x$ as moving along the
+  horizontal axis.
+  
+Since at the point $(0,1)$ the slope is positive, the $y$
+  coordinate is rising as the curve passes through it. Thus, once
+  the curve has passed $x=0$ the $y$ coordinate must be greater than
+  one. Thereafter it continues to increase so $y>1>0$ for every
+  positive value of $x.$ Since $\dfdx{y}{x}=y$ the derivative of
+  $\exp(x)$ is also positive.
+
+  To show that the $y$ coordinate is positive to the left of $x=0$ as
+  well\aside{Careful. We do not mean that moving $x$ to the left
+    causes the curve to increase. We mean that the slope of the curve
+    is always positive.} is only a little harder.  Supppose that at
+  some point, say $x_0$, to the left of $x=0$ the $y$ coordinate is
+  negative. Then an argument very similar to the one in the previous
+  paragraph would prove that the slope would remain negative to the
+  right of $x_0$. But this is impossible since $0$ is to the right of
+  $x_0$ and we know that the $y$ coordinate is positive there.
+
+   So $y=\exp(x)$ cannot be negative at $x_0.$ And since we did not
+   specify a value for $x_0$ the same argument will work for every
+   point to the left of $x=0.$
+
+   Therefore $y=\exp(x)$ is positive and increasing at every $x.$
+    \end{myproof}
+
+    We now pause to take explicit notice that something unexpected
+    just happened. In Lemma~\ref{lemma:ExpInc} we set out to prove
+    that the graph of $y=\exp(x)$ was positive and increasing. We did
+    that, but our proof actually tells us a bit more than that. Since
+    $y$ is increasing and $\dfdx{y}{x}=y$ we see that the slope of
+    $y=\dfdx{y}{x}$ is also increasing. That is, as we move $x$ to the
+    right the graph must get steeper and this is always true.
+    \begin{ProficiencyDrill}
+      What would such a graph look like?
+    \end{ProficiencyDrill}
+    
+
+
+It is now time to solve this IVP by finding an explicit  formula for
+$\exp(x)$ if we can.
+
+But how? Nothing really presents itself as a potential solution so
+what should we do?
+Since we don't seem to have any better options, let's see if we can 
+guess a solution.
+\vskip1mm{}
+\begin{Digression}[How to guess effectively]
+  No, really. Let's try guessing. It can be surprisingly effective.
+
+  You know this of course. You've been doing it all of your life, but
+  in the past -- especially in math class -- you've probably been
+  discouraged from guessing so you tend to deny doing it, probably
+  even to yourself.
+
+  It's ok. Guess anyway. We won't tell anyone.
+
+  The fact is that guessing is a tried and true solution technique and
+  we encourage you to use it regularly. It is especially effective in
+  mathematics because mathematics reflects the behavior of the world
+  we live in. Just by virtue of being a human being living in the
+  world you have a great deal of intuition into that behavior. You
+  really do. And you know this. You rely on your intuition almost
+  daily to navigate through your life. Guessing is nothing more, or
+  less, than relying on your native intuition.
+
+  However, effective guessing is a skill. You need practice to do it
+  well and, unfortunately, you have probably not had much
+  chance to practice that skill in the context of mathematics.  So we
+  encourage you to guess often from now on. But be aware that making a
+  guess is a process, not an event. If you
+  guess wrong, \underline{\bf{}which is most likely}, then you have a
+  new, related problem to think about: All of your intuition said this
+  was a good guess.  Why didn't it work?  The answer to that question
+  almost always gives some insight into the original problem.  Even a
+  bad guess can be useful.
+
+  And bad guesses are easy. If you don't know what else to do, make a
+  bad guess. But all by itself a bad guess is a waste of
+  time\aside{Indeed, any guess, all by itself, is a waste of
+    time.}. You must also take the time to figure out why your bad
+  guess doesn't work.
+
+  \underline{\large\bf But} the real danger in guessing -- the reason
+  it is usually discouraged -- is that when you do guess correctly, or
+  nearly so, it is {\bf very} tempting to just move on from
+  there.
+
+  \centerline{\underline{\bf{}Don't do that.}}
+
+  Guessing correctly means that your intuition was very good. But
+  intuition is unconcious. If you don't stop and ask yourself why this
+  seemed like a good idea your thought process will remain unconscious
+  and thus nearly useless. It is at least as important to understand
+  where a good guess came from, and why it worked as it is to
+  understand why a bad guess didn't work. But when you guess well it
+  is extremely tempting to just take your good guess and run with
+  it. This will invariably lead to confusion later. So, when you guess
+  correctly it is crucial that you take a few moments to ask yourself
+  what was the intuition that led you to that guess. You need to bring
+  that intuition out of your unconscious mind and into your conscious
+  mind.
+
+  When you don't do that you are wasting your time. When you guess
+  well always remember to:
+  \begin{center}
+    \vskip3mm{} {\sc{}\underline{Stop.}\vskip3mm{} Take a breath.  \vskip3mm{}
+      \underline{Think.} \vskip3mm{}Make sure you \underline{understand.}
+      \vskip3mm{} \underline{Then} move on.}  \vskip3mm{}
+  \end{center}
+\end{Digression}
+
+So let's take a guess. There is no need to get really, really crazy
+though. Let's make a bad guess.
+How about this: $y = 1?$
+
+Obviously that won't work because $\dfdx{y}{x}$ is equal to zero, not
+one. But wait! It ``kinda'' works doesn't it? After all $y=1,$ and
+$\dfdx{y}{x}=0$ are both constant functions. We just have the wrong
+constant for $\dfdx{y}{x}.$ We need $\dfdx{y}{x}=1$, but we have
+$\dfdx{y}{x}=0.$
+
+Our guess has \emph{something} going for it. Let's try to tweek it a bit and
+see if we can get $\dfdx{y}{x}=1.$
+
+Actually that's easy. The derivative of $x$ is $1$ so if we we let
+$y=1+x$ we get $\dfdx{y}{x} = 1.$ Again, this almost works.  We've
+managed to get $\dfdx{y}{x}=1$ as desired but of course we have collateral
+damage: $y$ has changed. So when we differentiate $y$ we
+recover the first, constant term: $1$; but lose the second, linear
+term: $x.$
+
+Can we adjust this last guess so as to recover the second term?
+Sure. Let's try $y=1+x+\frac{x^2}{2}.$ In that case
+$\dfdx{y}{x} = 1+x$ and again, upon differentiating we get everything
+back but the last term: $\frac{x^2}{2}.$
+
+A few moments thought will convince you that we can pick up that term
+by appending $\frac{x^3}{3\cdot2}$ to our last guess. That is, if we take
+$y=1+x+\frac{x^2}{2}+\frac{x^3}{3\cdot2}$ then
+$\dfdx{y}{x} = 1+x+\frac{x^2}{2}.$ But again, the last term goes
+missing when we differentiate. Continuing to append
+terms won't help as the following problem shows.
+
+\begin{embeddedproblem}{}
+  Compute $\dfdx{y}{x}$ and $y-\dfdx{y}{x}$ for each of the
+  following\footnote{The notation $3!$ is pronounced ``three factorial''
+    and means $3\cdot2\cdot1.$ Similarly
+    $4!=4\cdot3\cdot2\cdot1$ and in general $n!=n(n-1)(n-2)\ldots3\cdot2\cdot1$}.
+  \begin{multicols}{2}
+    \begin{description}
+    \item[(a)] $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}$
+    \item[(b)] $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}$
+    \item[(c)]
+      $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\frac{x^5}{5!}$
+    \item[(d)]
+      $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+      \frac{x^{n-1}}{(n-1)!} + \frac{x^n}{n!}$
+    \end{description}
+  \end{multicols}
+\end{embeddedproblem}
+
+Clearly, we've almost got something here. If we take
+\begin{align*}
+  y&= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+     \frac{x^{999999}}{999999!} +   \frac{x^{1000000}}{1000000!} \\
+  \intertext{  then}
+  \dfdx{y}{x} &= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+                \frac{x^{999999}}{999999!}, \\
+  \intertext{and}
+  y-\dfdx{y}{x} &= \frac{x^{1000000}}{1000000!}.
+\end{align*}
+So the  difference between $y$ and $\dfdx{y}{x}$ is that stupid
+one-millionth term! Surely we can handle that somehow!
+
+Sadly no, we can't. As we observed at the beginning of this chapter no
+elementary function, or combination of functions, will solve the
+IVP~\ref{eq:ExpDiffeq}. Since polynomials are elementary functions
+there is no polynomial that solves the differential equation
+$\dfdx{y}{x}=y.$
+
+\begin{embeddedproblem}{}
+  Show that the statement of the previous paragraph is true. That
+  is, show that there is no polynomial that solves the differential
+  equation: $\dfdx{y}{x}=y.$ \hint{Consider the degree of the
+  polynomial and the degree of its derivative. Notice that the
+  reasoning here is similar to the reasoning we used to solve
+  PIC~\ref{PIC:catenary}.}
+\end{embeddedproblem}
+
+Since no polynomial will work and we already knew this, a fair
+question is: Why have we taken you on this wild goose chase?
+
+It is not completely obvious, but in fact, we \emph{almost}
+have a solution here. One million is a very large number, so one
+million factorial ($1000000!$) is inconceivably large. Thus for any
+reasonable value of $x$ that one millionth term,
+$\frac{x^{1000000}}{1000000!},$ is so incredibly close to zero that it
+almost isn't really there. And if it isn't really there then
+$$
+y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+\frac{x^{999999}}{999999!} 
+\textcolor{red}{\underbrace{+
+    \frac{x^{1000000}}{1000000!}}_{\text{\tiny Not really
+      here. Shhh!}}}
+$$
+and it's derivative
+$$
+\dfdx{y}{x}= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+\frac{x^{999999}}{999999!} 
+$$
+really are the same thing. So we're .\ .\ . done. Right?
+
+No, sadly we're not. Although that last term really is
+\underline{practically} zero it is not \underline{actually} zero, no matter
+how small it is. As Newton\aside{Newton wrote his scientific
+  works in Latin. This is a very loose
+  translation of the phrase ``\foreign{In rebus mathematicis erores quam minimi non
+    sunt contemnendi.}'' from his book \pubtitle{ Quadraturam Curvarum} (On
+  the Quadrature of Curves). We will have more to say about this in
+  chapter~\ref{chapt:whats-wrong-with}} said, ``In mathematics the smallest of
+errors must be dealt with.'' So we haven't solved our
+problem in the sense of having an explicit formula for $\exp(x)$, but
+we do know a great deal about it at this point. We know that $\exp(x)$
+is always positive, always increasing, that it gets ever steeper, and
+that near $x=0$ its graph will look very much like the graph of $
+\dfdx{y}{x}= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+\frac{x^{999999}}{999999!} + \frac{x^{1000000}}{1000000!}.
+$
+And often in real
+applications an approximate solution is nearly as good as an actual
+solution. This is what we have here. For any value of $x$ that is
+likely to come up in any real world application
+$ y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+\frac{x^{999999}}{999999!} + \frac{x^{1000000}}{1000000!}$ is an
+incredibly good approximation to the solution of the \term{IVP},
+$y=\dfdx{y}{x}, y(0)=1$.
+So good, in fact, that we don't really have to take anywhere near
+that many terms. Depending on the application involved
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}$ might be entirely adequate as
+an approximate solution. Indeed, for some applications the
+approximation $y=1+x$ is all that is really needed.
+
+% In section~\ref{sec:eulers-method} we used Euler's Method to
+% approximate the graph of the curve which solves this
+% IVP. The sketch\\
+% \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/exp-piecewise-linear3}}
+% showed our approximation and the actual solution on the same axes.
+% The sketch\\
+% \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/exp-piecewise-linear4}}
+% also includes the graph of $y=1+x+\frac{x^2}{2}$ in red. As you can
+% plainly see  $y=1+x+\frac{x^2}{2}$ is a better approximation, at least
+% on the interval $(0,1/2).$
+
+% Still, our goal was not to approximate the solution of the
+% differential equation $\dfdx{y}{x} =y,$ but to actually
+% solve it. So we must keep trying.
+
+If there is no \emph{polynomial} that solves
+equation~\ref{eq:ExpDiffeq} does that mean there is no solution at
+all? Certainly not. In fact, since that last term of the polynomial
+was always the stumbling block it should be clear that all we need
+to do is \underline{not have a last term}. This is a startling idea
+but that's ok. We'll trust our intuition, but we also need to
+examine it closely. What we're saying is that the solution of
+equation~\ref{eq:ExpDiffeq} is:
+\begin{equation}
+  y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \cdots\label{eq:ExpSeries1}
+\end{equation}
+where the dots at the end mean that the summation goes on
+forever so there is no last term. 
+
+You would expect a polynomial that doesn't end to be called and
+infinite polynomial but it is not. Such an expression is called an
+\term{infinite series.} Usually we will just call it a series. An
+infinite series is not a polynomial by fiat. That is, we \emph{define}
+polynomials to have finitely many terms. We do this preciesly so that
+a series is not a polynomial.
+
+An obvious question to ask is, "Does this infinite series even mean
+anything?" Or, equivalently, "What does it mean to add up infinitely
+many numbers?"  These are excellent questions which will have to be
+addressed eventually. For now we won't let them trouble us. We'll just
+assume that $y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots$ makes sense,
+just as we assumed that differentials make sense, and we'll come back
+to this later.
+
+\begin{embeddedproblem}{}
+  Having put those deeper questions aside (for now) we can now show
+  that we have found the solution of our IVP.
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+\item 
+  Differentiate the series
+  $$
+  y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+  $$ 
+  term-by-term to show that 
+  $$
+  \dfdx{y}{x}= y.
+  $$ 
+\item Show that $y(0)=1.$ (Yes, it really is as easy as it looks.)
+\end{enumerate}
+\end{embeddedproblem}
+
+% \digress{Power Series}
+% But this ``solution'' doesn't really help us understand anything at
+% all. It is (for now) just empty symbol manipulation. 
+
+% As soon as we ask ourselves what it means it is clear that we don't
+% really know. For example, and most profoundly, what does it mean to
+% add up infinitely many monomial terms? That is, what is an ``infinite
+% polynomial.'' Does such an expression actually mean anything?
+
+% These kinds of questions have probably never come up in your
+% mathematics education before, but they will become more common from
+% this point on and we will have to watch for them. Writing down an expression like 
+% $$
+% y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+% $$ 
+% is rather like asking, ``Which is bigger or a giraffe?'' It looks like
+% standard English. All the parts are there: subject, verb, etc.. But
+% when you put it all together it is simply meaningless. 
+
+
+% If $ y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots $ it is to have any
+% meaning we will have to decide, and agree on, what meaning we want it
+% to have.
+% \enddigress{}
+
+% This approach to solving equation~\ref{eq:ExpDiffeq} will turn out to
+% be very fruitful. In fact, there \underline{is} a solution and it
+% \underline{can} be express as the ``infinite polynomial''
+% $$
+% y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \cdots
+% $$
+% but before we can use this ``solution'' we will have to find a way to
+% give meaning to the idea of ``adding up'' infinitely many terms. As
+% you might imagine this will be rather tricky, so we will let it be for
+% now. 
+
+% On the other hand, the solution of equation~\ref{eq:ExpDiffeq} is of
+% profound importance in all of mathematics and all of science. We will
+% need to understand it as thoroughly as possible so let's try to come
+% at this problem in a new way. 
+
+% The formula 
+% $$
+% \dfdx{y}{x} =y
+% $$ 
+% says that the slope of the tangent line of our curve
+% $\left(\dfdx{y}{x}\right)$ at every point is exactly equal to the $y$
+% coordinate at the same point. What could such a curve look like?
+
+% For example suppose our curve passes through the point $(0,0).$ Then
+% the tangent line at $(0,0)$ will be horizontal (slope $=0.$) It is
+% easiest to think of the curve as being traced out by the motion of a
+% point for this example.
+
+% We are now in a
+% position to work out the essential properties of the solution of
+% equation~\ref{eq:ExpDiffeq} using only the concept of the derivative
+% so we we will do that now. When we are done we will have another, much
+% simpler, expression for
+% $ y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots. $
+
+
+% \underline{\sc{}Fair Warning:} The development of the solution of
+% equation~\ref{eq:ExpDiffeq} that you are about to read will be
+% difficult to follow. You'll need to slow down and be sure you follow
+% each step to fully understand what we're doing.
+
+% Now consider the following table which gives the population of
+% snaggle-toothed hornpops over a period of $10$ hours.
+% $$
+% \begin{array}{|ccc||ccc|}
+    %     \hline
+    %     \text{hours}&\text{population}&\text{rate of
+                                          %                                           growth}&\text{hours}&\text{population}&\text{rate
+                                                                                                                              %                                                                                                                               of
+                                                                                                                              %                                                                                                                               growth}\\\hline{}
+    %     0&1&&6&64&32\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    %     1&2&1\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&7&128&64\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    %     2&4&2\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&8&256&128\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    %     3&8&4\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&9&512&256\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    %     4&16&8\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&10&1024&512\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    %     5&32&16\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&11&2048&1024\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]\hline
+    %   \end{array}
+    %     $$
+
+    %     Clearly there is a pattern to these numbers and the pattern is easy to
+    %     see. If $t$ is the number of hours elapsed then the population,
+    %     $P = 2^t,$ and the rate of change of the population
+    %     $\dfdx{P}{t}=2^{t-1}.$ So it appears that $\dfdx{P}{t}=2P.$ It is
+    %     interesting that $P$ and $\dfdx{P}{t}$ seem to be so closely
+    %     related. Let's examine that relation.
+
+    % %     $$
+    % %     \begin{array}{|ccc||ccc|}
+    % %       \hline
+    % %       \text{hours}&\text{population}&\text{rate of
+    % %       growth}&\text{hours}&\text{population}&\text{rate
+    % %       of
+    % %       growth}\\\hline{}
+    % %       1&2.5&1.5\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&6&244.140625&97.1533224297\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    % %       2&6.25&2.4871250542\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&7&610.3515625&242.883306074\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    % %       3&15.625&6.2178126355\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&8&1525.87890625&607.208265186\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    % %       4&39.0625&15.5445315888\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&9&3814.697265631&1518.02066296\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+    % %       5&97.65625&38.8613289719\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&10&9536.74316406&3795.05165741\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]\hline
+    % %     \end{array}
+    % %     $$
+
+    % %     The first thing we notice about this table is the utter futility of 
+    % %     displaying so many decimals. The table is so overrun with digits
+    % %     that it is nearly impossible to see any pattern to the numbers. Here
+    % %     is the same chart with each number rounded to the nearest tenth.
+
+
+    % %     That's better, but only slightly. 
+
+    % %     There seems to be a relationship
+    % %     between $\dfdx{P}{t}$ and $P$ similar to the relationship we noticed
+    % %     in the bacteria problem earlier. However in this case it is clearly
+    % %     not true that  $\dfdx{P}{t}=2P.$ 
+
+    %     Clearly the coefficient of proportiality, $2,$ is special to this
+    %     particular problem. Let's generalize things a bit by supposing instead
+    %     that $\dfdx{P}{t}=kP$ for some unknown constant, $k.$
+
+    %     Ok. Now what? It seems that we've made the problem even harder by
+    %     introducing $k.$ At least we know something about the number $2,$ but
+    %     $k$ is an arbitrary constant. It could be anything.
+
+    %     Remembering that we're ultimately interested in the more general
+    %     problem let's make this as simple as we can, for now, by assuming that
+    %     $k=1.$ If we can solve this simpler problem maybe it will give us some
+    %     insight into the general situation.
+
+
+    %     \digress{}
+    %     Moreover, once we have
+    %     decided what is meant by an expression like 
+    %     $ y=
+    %     1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots $ we will have 
+    %     $$
+    %     e^x=
+    %     1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+    %     $$
+    %     as well.
+    %     \enddigress{}
+
+
+So we have the exact solution in the form of the infinite series,
+\begin{equation}
+  y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\ldots\label{eq:ExpSeries2}
+\end{equation}
+Unfortunately, we don't have the tools that allow us to work with
+infinite series yet so we can only use this to approximate $\exp(x)$
+by using only a finite number of terms.
+    %     \begin{wrapfigure}[]{r}{3in}
+    %     \captionsetup{labelformat=empty}
+    %     \centerline{\includegraphics*[height=1in,width=3in]{../Figures/ExpEulerCubic}}
+    %     \label{fig:ExpEulerCubic}
+    %     \end{wrapfigure}
+% Since we found the series solution on the curve and by
+% trying to guess a polynomial solution it should be clear that 
+% $$
+% y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^n}{n!}
+% $$
+% is also probably a good approximation. 
+    %     \begin{wrapfigure}[]{l}{2in}
+    %     \captionsetup{labelformat=empty}
+    %     \includegraphics*[height=1in,width=2in]{../Figures/CubicExpApprox}
+    %     \label{fig:CubicExpApprox}
+    %     \end{wrapfigure}
+
+% A disadvantage of Euler's Method is that a great deal of effort is
+% needed to find just a few (approximate) points on our curve. But now
+% that we have convincing evidence that the polynomials
+% $y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^n}{n!}$ also
+% make good approximations we can use those to see what our function
+% looks like farther from $(0,1).$
+% Above (on the left) we've seen the
+% graph of the polynomial $y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}.$ 
+
+% Does this graph make sense to you? Stop and think about it for a
+% moment.
+
+% Our differential equation is $\dfdx{y}{x}=y.$ As we observed earlier
+% this says that the slope of the curve at any point is equal to its
+% $y-$coordinate. Put another way, as the graph rises it will get
+% steeper.
+
+Here is the graph of
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^{50}}{50!}$
+near the point $(0,1).$ You can see for yourself that this appears to
+have all of the properties we've identified. The $y$ coordinate is
+always positive and increasing, the graph becomes
+steeper, and $y(0)=1.$\\
+\centerline{\includegraphics*[height=2.5in,width=4in]{../Figures/FiftiethExp}}
+But wait a minute! Have you ever seen a graph that looked like this
+before?  Of course you have! When you were learning Algebra you would
+have studied, for example, the exponential functions $y=2^x,$ and
+$y=3^x,$ and this is exactly what they look like. The functions
+$\textcolor{red}{y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots +
+  \frac{x^{50}}{50!}}$, $\textcolor{blue}{y=2^x}$, and
+$\textcolor{green}{y=3^x}$ are
+all given on the same axes here:\\
+\centerline{\includegraphics*[height=2.5in,width=4in]{../Figures/Exp2and3}}
+As you can plainly see they are very similar.
+
+That is, as these graphs rise, they also get steeper. So either of
+$y=2^x$ or $y=3^x$ would seem to be a viable candidate for the
+solution of our differential equation.  Is it possible we've had the
+solution in our hands all along? Let's differentiate $y=2^x$ to see if
+that's true.
+
+  It is probably tempting to assume that we can use the Power Rule,
+  giving $\dfdx{(2^x)}{x} = x2^{x-1},$ but this is \alert{wrong.}  It
+  is actually pretty easy to see that this can't possibly be correct
+  because when $x$ is negative then $x2^{x-1}$ is also negative. But
+  the slope of $y=2^x$ is positive everywhere as you can see from its graph. In fact, none of our differentiation rules
+  will give us the derivative of $y=2^x.$
+
+So we immediately have a problem. We will have to go back to basics
+and compute $\dfdx{y}{x}$ from first principles, without any of our
+rules.
+
+
+% \begin{wrapfigure}[]{r}{1.5in}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/DiffExp}}
+%   \label{fig:DiffExp}
+% \end{wrapfigure}
+% Recall that we have interpreted $\d{x}$ and $\d{y}$ to be ``the
+% (infinitesimal) change in $x$'' and ``the (infinitesimal) change in
+% $x$,'' respectively.
+Let $y(x)=2^x$ and observe that 
+\begin{align*}
+  y+\d{y}&=y(x+\dx{x})\\
+  \intertext{Warning: $y(x+\dx{x})$ means $y$ evaluated at
+  $x+\dx{x}$. This is \alert{not} multiplication. Continuing, we have}
+  \d{y}&=y(x+\d{x})-y. \\
+\intertext{and since $y(x+\d{x})$ is equal to $2^{x+\d{x}}$ we
+  have,}
+      \dx{y} &=2^{x+\d{x}}-2^x\\
+       &=2^x(2^{\d{x}}-1)
+\end{align*}
+Thus
+\begin{equation}
+  \d y =2^x(2^{\d{x}}-1).  \label{eq:2^x}
+\end{equation}
+
+Similarly, if $y=3^x$ then
+\begin{equation}
+  \d{y} = 3^x(3^{\d{x}}-1),\label{eq:3^x}
+\end{equation}
+
+Equations~\ref{eq:2^x} and~\ref{eq:3^x} are a little scary to look
+at because we're interested in computing $\dfdx{y}{x}$ but
+with $\dx{x}$ in the exponent we can't do that in any obvious
+fashion. We will have to be clever here.
+
+When we originally developed the differentiation rules we thought of
+$\d{x}$ as infinitely small\aside{As an infinitesimal.} so that we
+could work out the procedures for finding the slope of a curve. But it
+should be clear that if we take $\d{x}$ to be a {\bf{}very} small, but
+\emph{finite} number, say $\d{x}\approx 0.0000001,$ we can use
+equation~\ref{eq:2^x} to approximate the derivative as accurately as
+we wish.
+
+We first divide equation~\ref{eq:2^x} by $\d{x}${} to
+get $ \dfdx{y}{x} =\dfdx{(2^x(2^{\d{x}}-1))}{x},$ then on the right
+side of the equation set
+$\d{x}\approx 0.0000001.$ This would give us
+\begin{equation}
+  \dfdx{y}{x}=\dfdx{(2^x)}{x}\approx 2^x\left[\frac{(2^{\d{x}}-1)}{\d
+      x}\right]_{\d{x}\approx0.0000001} \approx
+  2^x(0.7).\label{eq:Exp2}
+\end{equation}
+
+This isn't bad for a first try! We certainly have
+$y(0)=2^0=1$, and now we see that since $y=2^x$,
+$\dfdx{(2^x)}{x}\approx (0.7)2^x$. If the constant
+factor was a $1$ instead of $0.7$ we'd have our formula.
+
+Maybe $y=3^x$ will work? Actually, no. We can tell that it won't by
+looking at the graphs above, but let's differentiate this
+approximately just as we did with $y=2^x$.
+
+Proceeding similarly $a=3$ we have
+\begin{equation}
+  \dfdx{y}{x}=\dfdx{(3^x)}{x}\approx 3^x\left[\frac{(3^{\d{x}}-1)}{\d
+      x}\right]_{\d{x}\approx0.0000001} \approx
+  (1.1)3^x.
+  \label{eq:Exp3}
+\end{equation}
+That is, $\dfdx{(3^x)}{x}\approx (1.1)3^x$.
+Once again the initial condition is satisfied. We have $y(0)=3^0=1$.
+And once again the differential equation is {\it almost} satisified:
+$\dfdx{y}{x}=3^x(1.1)$. But this time the constant, $1.1$, is too
+big. This, of course, is why the green graph ($y=3^x$) is above the
+red one ($y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots +
+\frac{x^{50}}{50!}$) in our sketch above.
+
+But there is nothing special about either ``$2$'' or ``$3$'' in the
+computations above.
+In general if $y=a^x$  then\aside{We restrict $a$ to positive
+  values, $a>0,$ mainly because it is too hard to think about what
+  this formula means if, for example, $a=-2$ and $x=\frac12.$}
+\begin{equation}
+  \d{y} = a^x(a^{\d{x}}-1),\label{eq:a^x}
+\end{equation}
+
+So, we have $\dfdx{(2^x)}{x}<2^x$ and $\dfdx{(3^x)}{x}>3^x$.  It
+stands to reason that there must be some number between $2$ and $3$
+with $\dfdx{(\text{number})^x}{x}=\text{(number)}^x$.  This number,
+whatever it is, has been named $e$, mostly for historical reasons. The
+function $y=e^x$ is called the \term{natural exponential}
+function\aside{You can decide for yourself how ``natural'' this really
+  is. Opinions vary. But whether you decide you like this name or not
+  it is the name everyone uses so we're stuck with it.} and $e$ is its
+base just as $2$ is the base of the exponential function\footnote{This
+is \emph{an} exponential, it's just not the \emph{natural}
+exponential.} $y=2^x$. Thus $y=\exp(x)=e^x$ is the
+formula we've been seaching for.
+
+
+
+We can check this by calculating
+$$
+\dfdx{y}{x}= e^x\left[\frac{(e^{\d{x}}-1)}{\d
+    x}\right]_{\d{x}\approx0.0000001}.
+$$
+No doubt your calculator has an $e$ button on it. If you press that
+button your calculator will respond with the numerical value of
+$e$. To five decimals this is: $2.71828$. If you substitute
+this calculator's value of $e$ into the formula above, you'll get
+$$
+\dfdx{y}{x}= e^x\left[\frac{(e^{\d{x}}-1)}{\d
+    x}\right]_{\d{x}\approx0.0000001}\approx e^x(1.00000004943).
+$$
+
+We did not get $\dfdx{y}{x}$ exactly equal to $e^x$ because (1) we used
+an approximation of $e$, not $e$ itself, and (2) $0.0000001$ is a very
+small \alert{finite} number, not a differential.
+
+Henceforth then, we reserve the letter $e$ to designate the base of
+the natural exponential function. You might ask, ``Why not just figure
+out what $e$ actually is, and use the number? Why use $e$?''  The
+answer is that, much like $\pi,$  $e$ is an irrational number. This means, among
+other things, that its decimal expansion never ends, so we use $e$ for
+the same reason we use $\pi$.
+
+It appears that this number $e$ between $2$ and $3$ fits the bill.
+That is, $y=e^x$ satisfies the
+IVP
+$$
+\dfdx{y}{x}=y,\ y(0)=1.
+$$
+\begin{mynotation}{Exponential}
+  We originally named this function $\exp(x)$, and this is still a
+  valid name for it, just as sqr($x$) is a valid name for the function
+  $y(x)=x^2$. However, just as $y=x^2$ better represents the way we
+  usually think about the squaring function (``square the input
+  variable''), the notation $y=e^x$ better represents the way we
+  usually think about the natural exponential function.
+
+  For now you should think of the natural exponential as ``this funny
+  number $e$, raised to the power of the input variable.''
+
+  However, it is a curious fact that the modern definition of the
+  natural exponential is \alert{not} $e^x.$ The modern definition is
+  actually the infinite series we derived earlier:
+  $$\exp(x)=e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots.$$
+
+  To see why this is, ask your self what the expression $e^{1/2}$
+  means.
+
+  That's easy enough. Since $x^{1/2}=\sqrt{x}$ clearly
+  $e^{1/2}=\sqrt{e}.$ It would not necessarily be easy to compute the
+  square root of $e$ but we're only asking about the meaning of our
+  symbols here. Since $e$ is a positive number we can take its square
+  root and that is what $\sqrt{e}$ {\it{}means}, even if we can't
+  compute it. In precisely the same way $e^{5/7}=\sqrt[5]{e^7}$,
+  $e^{2/3}=\sqrt[3]{e^2}$ and in general if $a$ and $b$ are integers,
+  $e^{a/b}=\sqrt[b]{e^a}$.
+
+  However, suppose $q$ is an \term{irrational} number, like $\pi$.  What could the expression $e^\pi$ possibly even mean in
+  that case? Since $\pi$ is not an integer it doesn't mean ``$\pi$ copies
+  of $e$ multiplied together'' like say, $e^5.$ Since $q$ can't be
+  represented as ratio of integers (because it is \emph{irrational}
+  after all) it doesn't mean some root of $e$ raised to a power the
+  way that say, $e^{a/b}$ means $\sqrt[b]{e^a}.$
+
+  And this difficulty is not just a matter of not knowing the value of
+  $e$.  It is built into the real numbers. The same issue occurs when
+  we try to interpret $2^\pi$ or $3^\pi$ meaningfully because $\pi$ is
+  \emph{irrational}.
+
+  This is weird.
+
+  Not only do we not know the value of the number $e$ we don't
+   know what an expression like $e^q$ might mean\footnote{Aside: Many
+    people are repelled when they encounter this sort of
+    situation. Especially in mathematics. After all, mathematics is
+    about having the answers to mathematical problems isn't it?
+
+  Well, no. Actually it isn't. You're thinking of engineering.
+
+  Mathematics is about \emph{finding} the answers to mathematical
+  problems, not having them.
+
+  As one of the greatest mathematicians
+  of all time, Carl Friederick Gauss once said:\\
+  \begin{center}
+    \begin{minipage}[c]{0.85\linewidth}
+      ``It is not the knowledge, but the act of learning, not
+      possession but the act of getting there, which grants the
+      greatest enjoyment. When I have clarified and exhausted a
+      subject, then I turn away from it, in order to go into
+      darkness again; the never-satisfied man is so strange if he
+      has completed a structure, then it is not in order to dwell in
+      it peacefully, but in order to begin another.''
+    \end{minipage}
+  \end{center}
+} either, if $q$ is irratinal.
+
+This is why the natural exponential is defined as an infinite
+series. Using the series we can actually compute the numbers we need
+in applications. Well, we can compute approximations to them at least.
+
+Recall that in our first attempt to solve
+equation~\ref{eq:ExpDiffeq} we concluded that the \term{infinite
+  series} in equation~\ref{eq:ExpSeries2} was also a solution. Thus we
+have found two solutions to the same problem: $y=e^x$ and
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\ldots.$
+
+If there is only one solution to the IVP (there is) then these are
+both \emph{ the same solution.}  Therefore, defining $\exp(x)$ as
+\begin{equation}
+  \exp(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\ldots,\label{eq:ExpSeries3}
+\end{equation}
+rather than $\exp(x)=e^x$  addresses all of these issues. For example
+$e^\pi$ means
+$$
+e^\pi=
+1+\pi+\frac{\pi^2}{2!}+\frac{\pi^3}{3!}+\frac{\pi^4}{4!}+\ldots.
+$$
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}\alph*)}]
+  \item Use equation~\ref{eq:ExpSeries3} to show that $e\approx
+    2.7128.$ \hint{In equation~\ref{eq:ExpSeries3} take $x=1$ and
+    add up enough terms to reach $2.7128.$}
+  \item Use equation~\ref{eq:ExpSeries3} to show that
+    $\inverse{e}=1+(-1)+\frac{(-1)^2}{2!}+\frac{(-1)^3}{3!}+\frac{(-1)^4}{4!}+\ldots
+    \approx 0.368$ \hint{In equation~\ref{eq:ExpSeries3} take
+    $x=-1.$}
+  \item Compute each of the following:
+    \begin{enumerate}[label={\bf{}\roman*.}]
+    \item $1$ (This one is easy.)
+    \item $1+\frac{1}{2}$ (So is this one.)
+    \item $1+(\frac12)+\frac{(\frac12)^2}{2!}$
+    \item
+      $1+(\frac12)+\frac{(\frac12)^2}{2!}+\frac{(\frac12)^3}{3!}$
+    \item $1+(\frac12)+\frac{(\frac12)^2}{2!}+\frac{(\frac12)^3}{3!}+\frac{(\frac12)^4}{4!}$
+    \end{enumerate}
+    and compare them with $\sqrt{e}$ from your calculator.
+  \item Find an approximation to $\sqrt[3]{e}$ that is accurate to
+    $3$ decimal places.
+  \end{enumerate}
+\end{embeddedproblem}
+
+\end{mynotation}
+
+Ok, so now we have a new differentiation rule to remember:
+$\dfdx{e^x}{x}=e^x$. That is, the natural exponential function
+\emph{is its own derivative.}
+This one is particularly easy to use but remember that just because we
+have a new rule, does not mean that our old differentiation rules
+are ignored.  As always all the rules work together.
+
+\begin{myexample}
+  Find the derivative of $y=e^{x}\sin(3x).$
+
+  Using the product rule, we have
+  \begin{align*}
+    \dx{\left(e^{x}\sin(3x)\right)}&=e^{x}\dx{(\sin(3x))}
+                                       +\sin(3x)\dx{(e^{x})}\\
+                                     &=e^{x}\cos(3x)\d{(3x)} +
+                                       \sin(3x)e^{x}\dx{x}\\
+                                     &=e^{x}\cos(3x)3\dx{x} +
+                                       \sin(3x)e^{x}\dx{x}\\
+    \intertext{so that}
+    \dfdx{\left(e^{x}\sin(3x)\right)}{x}&=e^{x}\left[3\cos(3x) +
+                                            \sin(3x)\right]\\ 
+  \end{align*}
+
+\end{myexample}
+
+\begin{ProficiencyDrill}
+  Compute $\dfdx{y}{t}$ for each of the following. \hint{Make them
+    easier on your eyes.}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{2}
+      \item $y=e^{2t}$
+      \item $y=e^{3t}$
+      \item $y=e^{\pi t}$
+      \item $y=e^{et}$
+      \end{multicols}
+    \item Find the pattern in parts (a) through (d) and use it to
+      compute $\dfdx{y}{t}$ if $y=e^{\alpha{}t}.$ Assume $\alpha{}$ is
+      a constant.
+        \begin{multicols}{2}
+        \item $y=te^t$
+        \item $y=(t+1)e^t$
+        \item $y=(t^2+t+1)e^t$
+        \item $y=(t^3+t^2+t+1)e^t$
+        \end{multicols}
+      \item Find the pattern in parts (f) through (i) and use it to
+        compute $\dfdx{y}{t}$ if $$y=(t^4+t^3+t^2+t+1)e^t.$$
+      \item Can you extend this pattern to find $\dfdx{y}{t}$ if
+        $y=P(t)e^t$ where $P(t)$ is \underline{any} polynomial? 
+      \item Can you extend this pattern to find $\dfdx{y}{t}$ if
+        $y=f(t)e^t$ where $f(t)$ is {any} function? 
+    \end{enumerate}
+  \end{ProficiencyDrill}
+
+  
+% This seems to suggest that there is some number between $2$ and $3$  which provides a
+% ``natural'' exponential function which satisfies the differential
+% equation $\dfdx{y}{x}=y.$  How could we figure out what that number
+% is?
+
+% First let's give our hypothetical number a name. The traditional
+% name is $e.$ If everything we've done so far is valid then
+% the solution of $\dfdx{y}{x}=y$ is 
+% $$
+% y=e^x
+% $$
+% where $e$ is some, currently unknown, number.
+
+    %     Once again, we've \emph{almost} found the solution to our differential
+    %     equation: $\dfdx{y}{x}=y.$
+
+    %     This is clear because when  $y=2^x,$ then its derivative $\dfdx{y}{x}$ is a little \emph{less} than $2^x$
+    %     (since $0.7\ldots$ is a little less than $1$). That is, when $a=2,$
+    %     $\dfdx{y}{x}<y.$
+
+    %     Similarly when $y=3^x,$ $\dfdx{y}{x}$ is a little \emph{more} than $3^x$
+    %     (since $1.1\ldots$ is a little more than $1$). That is, when $a=3,$
+    %     $\dfdx{y}{x}>y.$
+
+    %     This seems to suggest that there is some number between $2$ and $3,$
+    %     -- let's call\footnote{Cuz that is what everyone else in the world
+    %     calls it.} it $e$ -- where $\dfdx{y}{x}=y.$ That is $y=e^x$ is
+    %     actually a \emph{solution} of our differential
+    %     equation~\ref{eq::ExpDiffeq2}.
+
+% The exponential function $y=e^x$ is Icalled the ``natural'' exponential
+% function. It is natural in the sense that it is its own
+% derivative. That
+% is, it satisfies the differential equation $\dfdx{y}{x}=y.$ Notice that we do not know the value of $e,$ only that it is between $2$ and $3.$ How could
+% we figure out what the value of the number $e$ is?
+
+
+% Did you notice that we've slipped something past you here?
+
+  % Recall that we saw in equation~\ref{eq:Exp2} that the derivative of
+  % the  function
+  % $y=2^x$ is (approximately)
+  % $$
+  % \dfdx{y}{x}=  2^x(0.7).
+  % $$
+  % It should be clear that it also (approximately) solves the IVP:
+  % $$
+  % \dfdx{y}{x}=a2^x,\text{  }y(0)=0.7
+  % $$
+  % IVP~(\ref{eq:ExpDiffeq2} consist of two parts, a
+  % differential equation and an initial condition. What happens if the
+  % initial condition is different?
+  
+  % Can we solve the IVP 
+
+
+% No, we don't. In fact, it is clear that $y(0)=e^0=1,$ since \emph{any}
+% number raised to the zeroth power is equal to\aside{Is that really true? What about zero to the zeroth power. Hmm\ .\ .\ .} $1.$
+
+% But don't miss this important point: We were just lucky that this worked
+% out. Had our initial value been anything else then $y=e^x$ would have
+% solved the differential equation, but not the initial condition, and
+% hence it would not have solved the IVP.
+
+\begin{embeddedproblem}{}
+  Use\notetoself{This doesn't belong here -- ecb -- May 29, 2020} equations~\ref{eq:Exp2} and~\ref{eq:Exp3} to find an IVP for
+  which each of the following is the solution:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+  \item $y=2^x$
+  \item $y=3^x$
+  \item $y=a^x$
+    (We need to  assume that $a>0.$ Why?)
+    \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem}
+
+% Because  $e$ is a number, just like $2$ or $3,$ we
+% can think of the expression $e^x$ in exactly the same way we
+% think about the expression $2^x.$ That is, if
+% $2^3=2\cdot2\cdot2$ then clearly $e^3=e\cdot e\cdot e$
+% Similarly, just as $3^{1/2}=\sqrt{3}$ it is also true that
+% $e^{1/2}=\sqrt{e},$ and in general if $m$ is any
+% \term{rational} number (by which we mean that $m=a/b$ where
+% $a$ and $b$ are both integers.) then
+% $e^m=e^{a/b} = \sqrt[b]{e^a},$ just as
+% $2^{a/b} = \sqrt[b]{2^a}.$
+
+
+
+
+%     %     but which number?
+%     %     What is its value? 
+
+%     %     First let's give our hypothetical number a name. The traditional
+%     %     name is $e.$ If everything we've done so far is valid the
+%     %     the solution of $\dfdx{y}{x}=y$ is 
+%     %     $$
+%     %     y=e^x
+%     %     $$
+%     %     where $e$ is some, currently unknown, number.
+
+%     %     But before we dismiss these as trivial let's look at the
+%     %     \emph{meaning} of the symbols, not just their relationships.
+
+%     %     If $x$ is moving and has some value, the $x+\d x$ is its value ``just
+%     %     a little farther along.'' Thus equation~\ref{infx} says that the
+%     %     differential of $x,$  $\d x,$ is the difference between the value of
+%     %     $x$ a little farther along and its value now. Again, this is pretty
+%     %     obvious.
+
+%     %     Equation~\ref{infy} says the same thing about $y,$ but this time it is
+%     %     not so easy to find the value of $y,$ $y+\d y,$ ``a little farther
+%     %     along.'' This is because $y$ \alert{depends} on $x$ in a
+%     %     non-elementary way.
+
+
+%     %     what it 
+%     %     if $y_2$ has some value then $x+\d{x}$ is it's
+%     %     value \emph{after} it has been incremented by $\d{x}.$ And so,
+%     %     $$
+%     %     \d{x} = (x+\d{x}) - x.
+%     %     $$
+
+
+
+%     %     If we increment $x$  by the infinitesimal amount $\d{x},$ we get
+%     %     \begin{align*}
+%     %     \d{2^x} &= 2^{x+\d{x}}-2^x \\
+%     %                       &= 2^x\left(2^{\d{x}}-1\right)\\
+%     %     \intertext{and dividing both sides by $\d{x}$ gives the derivative}
+%     %     \dfdx{(2^x)}{x} &= 2^x\left(\frac{2^{\d{x}}-1}{\d{x}}\right).
+%                             %                             \intertext{In an exactly analogous fashion we get}
+%                             %                             \dfdx{(3^x)}{x} &= 3^x\left(\frac{3^{\d{x}}-1}{\d{x}}\right).
+%                                                                             %   \end{align*}
+
+%                                                                             %                                                                             Of course we ordinarily think of $\d{x}$ as infinitely small, but we
+%                                                                             %                                                                             can approximate the derivative by taking it to be a very small
+%                                                                             %                                                                             \underline{finite} number, say $\d{x}\approx 0.0000001.$ This would
+%                                                                             %                                                                             give us
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             \dfdx{(2^x)}{x} \approx
+%                                                                             %                                                                             2^x\left(\frac{2^{0.0000001}-1}{0.0000001}\right) = 2^x(0.693\ldots)
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             and
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             \dfdx{(3^x)}{x} \approx
+%                                                                             %                                                                             3^x\left(\frac{3^{0.0000001}-1}{0.0000001}\right) = 3^x(1.098\ldots).
+%                                                                             %                                                                             $$
+
+%                                                                             %                                                                             Observe that when $y=2^x,$ $\dfdx{y}{x}$ is a little \emph{less} than $2^x$
+%                                                                             %                                                                             (since $0.693\ldots$ is a little less than $1$).
+%                                                                             %                                                                             and when $y=3^x,$ $\dfdx{y}{x}$ is a little \emph{more} than $3^x$
+%                                                                             %                                                                             (since $1.098\ldots$ is a little more than $1$).
+%                                                                             %                                                                             This seems to suggest that there is some number between $2$ and $3$  which provides a
+%                                                                             %                                                                             ``natural'' exponential function which satisfies the differential
+%                                                                             %                                                                             equation $\dfdx{y}{x}=y.$  How could we figure out what that number
+%                                                                             %                                                                             is?
+
+%                                                                             %                                                                             First let's give our hypothetical number a name. The traditional
+%                                                                             %                                                                             name is $e.$ If everything we've done so far is valid the
+%                                                                             %                                                                             the solution of $\dfdx{y}{x}=y$ is 
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             y=e^x
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             where $e$ is some, currently unknown, number.
+
+% \begin{myexample}
+%   Of course, as usual our reasoning here is a bit flaky. We argued,
+%   just from the shape of the graphs, that the curves $y=2^x$ and
+%   $y=3^x$ must be related to the solution of the differential
+%   equation~\ref{eq:ExpDiffeq}. At best this is very vague
+%   reasoning. The graph of the curve $y=e^{\frac{x^2}{2}}$ also looks
+%   superficially like the graphs of $y=2^x$ and
+%   $y=3^x$ so we could just as easily (and just as non-rigorously) have
+%   argued  that this must be the solution of our differential
+%   equation.
+
+%   Except that it isn't.
+
+%   It is instead the solution of the differential equation
+%   $$
+%   \dfdx{y}{x} = xy.
+%   $$
+%   \begin{embeddedproblem}{}
+%     Verify that statement. That is, multiply $x$ times $y,$ and take
+%     the derivative of $y=e^\frac{x^2}{2}$ and verify that they are
+%     equal.
+%   \end{embeddedproblem}
+% \end{myexample}
+
+%                                                                             %                                                                             We've also seen that $e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots.$
+
+%                                                                             %                                                                             Notice that we can obtain the base of $2^x$ or $3^x$ (or \emph{any}
+%                                                                             %                                                                             exponential function, $a^x$) simply by taking
+%                                                                             %                                                                             $x=1.$ That is, $2^1=2,$ $3^1=3,$ and $a^1=a.$ Of course this is not
+%                                                                             %                                                                             very interesting for those functions but in the case of $e^x$ we can
+%                                                                             %                                                                             find the numerical value of $e$ in the same way, by setting $x$ equal
+%                                                                             %                                                                             to one: $e^1 = 1+1+\frac{1^2}{2!}+\frac{1^3}{3!} + \ldots.$ Of course
+%                                                                             %                                                                             since there are infinitely many terms we can't add them \emph{all} up,
+%                                                                             %                                                                             but if we take enough of them we can approximate $e$ to any degree of
+%                                                                             %                                                                             accuracy. It turns out that\footnote{We're really just
+%                                                                             %                                                                             showing off by giving this many decimals. For any practical application $e\approx 2.718$ is more
+%                                                                             %                                                                             than enough.} 
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             e=2.718281828459045\ldots.
+%                                                                             %                                                                             $$
+
+%                                                                             %                                                                             Notice that $2<e<3$ as we expected.
+
+%                                                                             %                                                                             Let's proceed on that assumption\footnote{Obviously this is actually
+%                                                                             %                                                                             true or we wouldn't have spent this much time on it.} for now,
+%                                                                             %                                                                             recognizing that this is only a conjecture for now. That is, we make
+%                                                                             %                                                                             the following conjecture.
+
+%                                                                             %                                                                             \begin{myconjecture}
+%                                                                             %                                                                             There is a real number we'll denote by $e,$ with the property that
+%                                                                             %                                                                             $e^x$ satisfies equation~\ref{eq:ExpDiffeq}. That is
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             \dfdx{(e^x)}{x} = e^x.
+%                                                                             %                                                                             $$
+%                                                                             %                                                                             \end{myconjecture}
+
+%                                                                             %                                                                             Depending on your mathematical background you may have seen this
+%                                                                             %                                                                             number, $e,$ before and you may already know that it is approximately
+%                                                                             %                                                                             $2.7128.$ This is true but it isn't especially useful information for
+%                                                                             %                                                                             our purposes right now.
+
+%                                                                             %                                                                             What is useful is that we now have strong evidence that the solution
+%                                                                             %                                                                             of equation~\ref{eq:ExpDiffeq} is $y=e^x,$  and that this can be
+%                                                                             %                                                                             interpreted as an exponential function just like $10^x$ or $2^x.$
+%                                                                             %                                                                             Because of this the expression $e^x$ has been named the ``natural
+%                                                                             %                                                                             exponential.''
+
+% As we observed earlier the function $e^x$ is called the
+% \underline{natural exponential function} even though at first glance
+% hardly anything about it seems natural.  One could say that satisfying
+% $dy/dx=y$ makes it natural, but there is more to it than that, as we
+% will see later\footnote{\textcolor{red}{We need to come back to this
+%     and show that all exponential can be expressed in terms of the
+%     natural. Also when the logarithm is seen as the antiderivative of
+%     1/t.}}.
+
+% First, consider that by the Chain Rule, if $x=kt$ for some constant
+% $k,$ then
+% $\dfdx{y}{t}=\dfdx{e^{kt}}{t}=\dfdx{(e^x)}{x}\dfdx{x}{t}=e^x\cdot{}k=ky.$
+
+
+\begin{embeddedproblem}{}
+  In this problem we will (finally!) build the solution of the Hanging
+  Chain problem. 
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+
+  \item Show that
+    $1+\left(\frac{e^x+e^{-x}}{2}\right)^2=\left(\frac{e^x-e^{-x}}{2}\right)^2.$\\
+    \hint{It might help to make the substitution $e^x=a$ just to
+      make things ``easier on the eyes.'' That makes
+      $e^{-x}=\frac1a.$}
+  \item Show that $
+    \dfdx{
+      \left(\frac{1}{2}(e^x+ e^{-x})\right)}{x}=
+    \frac{1}{2}(e^x- e^{-x}) $ and that  $\dfdx{
+      \left(\frac{1}{2}(e^x- e^{-x})\right)}{x}=
+    \frac{1}{2}(e^x+ e^{-x})$
+  \item Show that the curve $y=\frac12\left(e^x+e^{-x}\right)$ satisfies the
+    differential equation:
+    $$
+    \dfdxn{y}{x}{2}=\sqrt{1+\left(\dfdx{y}{x}\right)^2}
+    $$ 
+  \item Now show (at last!) that the curve
+    \begin{equation}
+      y=\frac{H}{w}
+      \left(\frac{e^{\frac{wx}{H}}+e^{-\frac{wx}{H}}}{2}\right)\label{eq:CatSol}
+    \end{equation}
+
+    really does satisfies the equation of the catenary
+    $$
+    \dfdxn{y}{x}{2}=\frac{w}{H} \sqrt{1+\left(\dfdx{y}{x}\right)^2}
+    $$
+    where $w$ is the weight density of the chain, and $H$ is the
+    constant (magnitude of the) horizontal tension.
+  \item   Assume $w=1,$ and  $H=1$ and graph the curve given by
+    equation~\ref{eq:CatSol}.  Does it look like a hanging chain?
+    What happens to the graph if we use $w=1, H=2$ or $w=2, H=1.$  Does this
+    make sense physically?  Why or why not?
+  \end{enumerate}
+
+\end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Compute each of the following:
+    \begin{enumerate}[label={\bf{}(\alph*)}]
+      \begin{multicols}{4}
+      \item $\dx(e^{x^2+\sin(x)})$
+      \item $\dx(e^{x}\cos(3x)$
+      \item $\dx
+        \left(
+          \frac{3\sqrt{x}+1}{e^x}
+        \right)$
+      \item $\dx(\tan(e^x))$
+
+      \end{multicols}
+    \end{enumerate}{}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    For each of the    following, find an equation relating $\dx{x},$
+    $\dx{y},$  $\dx{z}.$ Use this to compute $\dfdx{y}{x}$  and
+    $\dfdx{y}{t}.$
+    \begin{enumerate}[label={\bf{}(\alph*)}]{}
+      \begin{multicols}{2}
+      \item $e^y=x^2+3x-2$
+      \item $\sin(xy)=(e^x)^y$
+      \item $\tan(x+z)=e^ye^x$
+      \item $e^{x^2+y^2+z^2}=2$
+      \end{multicols}
+    \end{enumerate}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Use Newton's Method to approximate the coordinates of the
+    intersection point of the curves $y = -x$ and $y = e^x$.\\
+    \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/xex-Intersect}}
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Show that $y(t)=y_0e^{.05t}$ grows continually at a rate of
+    $5\%$. What can you say about $y_0e^{rt}$ in general? We will
+    explore this in more depth later.) 
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Notice that $y=e^{t+a}$ satisfies $\dfdx{y}{t}=y$ for any constant
+    $a$ as well. How do you make peace with this?
+  \end{embeddedproblem}
+
+  \begin{embeddedproblem}{}
+    Show that the graph of $y=e^{ax}$ is increasing when $a>0$ and
+    decreasing when $a<0$. Does this make sense to you?
+  \end{embeddedproblem}
+
+
+Recall in Problem~\ref{prob:HarmonicOscillator} we saw that the
+differential equation that models the motion of a mass $m$   on a
+spring oscillating without any resistance is:
+$$
+m\dfdxn{y}{t}{2}= -ky,
+$$
+where the constant $k$ is the spring constant.  This was an example of
+a simple harmonic oscillator. It is ``simple'' because without
+resistance, the mass would oscillate forever which we know won't
+happen. 
+This is illustrated by the fact that its solution is given by
+$$
+y=A\sin\sqrt{\frac{k}{m}}t+B\cos\sqrt{\frac{k}{m}}t
+$$
+for any constants $A$ and $B.$
+
+But in the real world the spring's oscillations will get shorter and
+shorter, eventually stopping altogether. How could we modify this
+model in order to capture the effects of some sort of resistance, say
+air resistance or resistance from some fluid as in a car's shock
+absorber?
+
+A relatively simple way to model this resistance is to say that the
+resistance force is proportional to the speed of the object.  This
+sounds imposing when we say it like that, but you have probably
+experienced this yourself in a moving vehicle.  If you stick your hand
+out the window, you notice that as the car moves faster, there is more
+wind (force) pushing on your hand.  This simple model breaks down at
+high speeds where factors such as turbulence affect the resistance,
+but experimentally, this assumption works well for our spring model.
+Recall that the term $-ky$ was the force due to the spring (Hooke's
+Law) and has the opposite sign of $y.$ The explanation is that if
+$y>0$ then the mass is above the equilibrium point and the spring
+pushes down and if $y<0$ then the mass is below the equilibrium point
+and the spring pulls upward.
+
+By Newton's Second Law, Force equals Mass ($m$) times Acceleration
+($\dfdxn{y}{t}{2}$), so the force acting on the spring is
+$m\dfdxn{y}{t}{2}$. Adding the resistance simply means that we need to
+add in a (negative) force which is proportional to (a constant
+multiple of) the velocity, $\dfdx{y}{t}$. So we add the term
+$-b\dfdx{y}{t}$ to the right hand side of the equation, where $b>0$ is
+a constant.  This represents the resistance force which is
+proportional to velocity of the object.
+
+Thus our model for an oscillation with resistance becomes
+$$
+m\dfdxn{y}{t}{2}=-b\dfdx{y}{t}-ky
+$$
+or
+\begin{equation}
+\dfdxn{y}{t}{2}+\frac{b}{m}\dfdx{y}{t}+\frac{k}{m}y = 0.\label{eq:DampedOscillator}
+\end{equation}
+
+% \begin{embeddedproblem}{}
+%   Explain why the constant of proportionality is negative in the
+%   resistance.
+% \end{embeddedproblem}
+
+
+\begin{embeddedproblem}{}
+  To simplfy the computations a bit, for this problem we'l take
+  $b=k=m$ so that the  equation~\ref{eq:DampedOscillator} becomes:
+  \begin{equation}
+    \dfdxn{y}{t}{2}+\dfdx{y}{t}+y=0.\label{eq:DampedProblem1}
+  \end{equation}
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item Show that: $\displaystyle y=e^{\frac{-t}{2}}
+    \left[
+      A\sin\left(\frac{\sqrt{3}}{2}t\right)+B\cos\left(\frac{\sqrt{3}}{2}t\right)
+    \right]$ satisfies the differential equation
+    $$
+    \dfdxn{y}{t}{2}+\dfdx{y}{t}+y=0
+    $$
+    for any constants $A$ and $B$.
+  \item Let $A=1, B=0$ and plot this solution for $0\le t\le 15$
+    and $-0.5\le y \le 0.5.$ Does this seem to model a damped
+    oscillation?
+  \end{enumerate}
+\end{embeddedproblem}
+
+While it is an easy matter to verify  a solution as in the previous
+problem,  it is quite another to find such a solution in the first place.
+That is much harder to do.
+
+Leonhard Euler $(1707-1783)$ solved the differential
+equation\ref{eq:DampedProblem1} by guessing. Here's how he did
+it. Undoubtedly Euler made several guesses that didn't help, but
+eventually he hit on the guess:
+$$
+y=e^{ct}.
+$$
+Now, we already know that
+$y=e^{\frac{-t}{2}} \left[
+  A\sin\left(\frac{\sqrt{3}}{2}t\right)+B\cos\left(\frac{\sqrt{3}}{2}t\right)
+\right]$ is a solution of our IVP so this looks like a crazy guess
+because there doesn't seem to be any way to get from an exponential
+function to a trigonometric function. But Euler was a genius so he
+didn't let that bother him. He gave himself a little ``wiggle room''
+by leaving the constant $c$ unspecified.
+
+Sure enough, when he put his guess into
+equation~\ref{eq:DampedOscillator} he found that to compute $c$ he had
+to take the square root of a negative number, which doesn't seem to
+make any sense. At this point most people would
+assume that they'd made some mistake and would give up, or start
+again. But Euler was one of the all-time great mathematicians.  In any
+list of stellar mathematicians, he would stand out among the best.
+Indeed, Pierre-Simon Laplace $(1749-1827)$, an outstanding
+mathematician in his own right, was once asked by a novice how best to
+learn Calculus. Laplace told him ``Read Euler, read Euler, he is the
+master of us all.''
+
+When Euler encountered the expression $\sqrt{-1}$ he just wrote it
+down, assumed that it represented some constant, just like $1,$ or $\pi$,
+but otherwise he didn't concern himself about it. He just proceeded on
+with his calculation.
+
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+      \item   Show that
+        \begin{align}
+\label{eq:DampedProblem2}          y_1&=e^{(\frac{-1}{2}+\frac{\sqrt{-1}\sqrt{3}}{2})t}\text{ and}\\
+\nonumber          y_2&=e^{(\frac{-1}{2}-\frac{\sqrt{-1}\sqrt{3}}{2})t}
+        \end{align}
+        both satisfy  the differential
+        equation~\ref{eq:DampedProblem1}. (Note the presence of and
+        location of $\sqrt{-1}.$
+        \item Now show every combination of $y_1$ and $y_2$ of the
+          form, $y=Ay_1+By_2$ where  $A$ and $B$  constants also
+          satisfies equation~\ref{eq:DampedProblem1}.
+  \end{enumerate}
+\end{embeddedproblem} 
+
+Since
+$$
+y=Ae^{\left(\frac{-1}{2}+\frac{\sqrt{-1}\sqrt{3}}{2}\right)t}+Be^{\left(\frac{-1}{2}-\frac{\sqrt{-1}\sqrt{3}}{2}\right)t}
+= e^{\left(\frac{-1}{2}\right)t}\left[Ae^{\left(\frac{\sqrt{-1}\sqrt{3}}{2}\right)t}+Be^{\left(\frac{-\sqrt{-1}\sqrt{3}}{2}\right)t}\right]
+$$
+we  can see where the exponential part of  $e^{\frac{-1}{2}t}$ part
+equation~\ref{eq:DampedProblem2} comes from, but what about the sine
+and cosine? And those imaginary numbers? How do they fit in? This is
+very strange.
+
+Suppose we go back to the simplest such differential equation
+$$ \dfdxn{y}{t}{2}=-y.
+$$
+Euler knew, as we know, that the solution of this looks like
+$$
+y=A\cos(t)+B\sin(t)
+$$
+for any choice of constants $A$ $B.$ But instead of going with that
+known solution, Euler tried the same kind of guess as before.  Suppose
+the solution looked like $y=e^{ct}$ for some constant $c.$ What must
+that constant be?
+
+\begin{embeddedproblem}{}
+  Substitute $y=e^{ct}$ into $\dfdxn{y}{t}{2}=-y$ show that this
+  function satisfies the differential equation when $c=\sqrt{-1}$
+  or when $c=-\sqrt{-1}.$
+\end{embeddedproblem}
+
+You should have obtained that either one of $e^{\sqrt{-1}t}$ or $e^{-\sqrt{-1}t}$
+should satisfy the above differential equation.  Let's focus on the
+first.  According to what we know
+$$
+e^{\sqrt{-1}t}=A\cos(t)+B\sin(t)
+$$
+for some judicious choice of $A$ and $B.$
+
+\begin{embeddedproblem}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+  \item Show that if $e^{\sqrt{-1}t}=A\cos(t)+B\sin(t),$ then $A=1$ and $B=\sqrt{-1}.$
+    \hint{To get $A,$ substitute $t=0.$ To get $B,$ differentiate
+      first.}
+  \item Do the same to obtain $e^{-\sqrt{-1}t}=\cos(t)-\sqrt{-1}\sin(t).$
+  \item Show that
+    \begin{align*}
+      \frac{e^{\sqrt{-1}t}+e^{-\sqrt{-1}t}}{2} &= \cos(t) \text{ and} \\
+      \frac{e^{\sqrt{-1}t}-e^{-\sqrt{-1}t}}{2\sqrt{-1}}&= \sin(t).
+    \end{align*}
+  \end{enumerate}
+\end{embeddedproblem}
+
+This formula, $e^{\sqrt{-1}t}=\cos(t)+ \sqrt{-1}\sin(t),$ is known as Euler's formula
+(for complex numbers) and is central to understanding the geometry of
+complex numbers.  It is also of great importance in applied
+mathematics and physics.  For Euler, it was a way to translate
+trigonometric functions to exponential functions and back.  For us, it
+is the key to our dampened oscillation problem.
+
+\begin{embeddedproblem}{}
+  Let's go back to our solution
+  $y=
+  e^{\left(\frac{-1}{2}\right)t}\left[Ae^{\left(\frac{\sqrt{-1}\sqrt{3}}{2}\right)t}+Be^{\left(\frac{-\sqrt{-1}\sqrt{3}}{2}\right)t}\right]$
+  of the equation $\dfdxn{y}{t}{2}+\dfdx{y}{t}+y=0.$ Use Euler's
+  formula to transform this solution into one of the form
+  $$y=e^{\frac{-t}{2}} \left[
+    A\sin\left(\frac{\sqrt{3}}{2}t\right)+B\cos\left(\frac{\sqrt{3}}{2}t\right)
+  \right].$$ Your constants $A$ and $B$ will involve $\sqrt{-1}$, but don't let
+  that bother you.  If you are dubious on this, then consider the
+  initial conditions $y(0)=0$ and
+  $\left.\dfdx{y}{t}\right|_{t=0}=\frac{\sqrt{3}}{2}$ and use these to
+  determine $A$ and $B$.
+  $$
+  y=ae^{
+    \left(
+      \frac{-1}{2}+\frac{\sqrt{-1}\sqrt{3}}{2}
+    \right)t
+  }+be^{
+    \left(
+      \frac{-1}{2}-\frac{\sqrt{-1}\sqrt{3}}{2}
+    \right)t
+  }.
+  $$
+  Use these values of $a$ and $b$ to determine $A$ and $B.$ Does this
+  answer satisfy the initial conditions?
+\end{embeddedproblem}
+
+\begin{myexample}[Compound Interest and Exponential Functions]
+\label{example:CompoundInterest}
+  The natural exponential function also arises naturally in financial
+  mathematics. 
+  Suppose we invest money in a bond which nominally pays 5\% annually,
+  compounded quarterly.  The effective yield would be 5.09\%.  What
+  does any of this mean?
+  
+\begin{wraptable}[]{r}{4.5in}
+  \begin{tabular}[h]{|c|c|}
+    \multicolumn{2}{c}{\textcolor{blue}{compounding $\$1$ semiannually}}\\\hline{}
+        Time $t$ in years &Amount investment is worth in
+                            dollars\bigstrut{}\\\hline
+        $0$&\$1\bigstrut{}\\
+        $1/2$&$ \$1+\$1\left(\frac{0.05}{2}\right)=\$1\left(1+\frac{0.05}{2}\right)$\bigstrut{}\\
+        $1$&$  \$1(1+0.05/2)+\$1(1+0.05/2)(0.05/2)=\$1\left(1+\frac{0.05}{2}\right)^2$\bigstrut{}\\\hline
+      \end{tabular}
+      \caption{}
+\label{tab:CompInt6mo}
+\end{wraptable}
+To start, the effective yield represents the actual amount of money
+  earned at the end of one year.  For example, if the investment was
+  not compounded at all, then at the end on one year, every dollar
+  invested would yield $\$1.05$ in return, so the yield really is 5\%
+  annually.  If the investment is compounded semiannually, then this
+  means that half of interested earned in paid out halfway through the
+  year.  This money is then re-invested for the next half year.  This
+  is summarized  table~\ref{tab:CompInt6mo}.
+%   \begin{table}[h]
+%           \label{tab:CompInt6mo}
+% \centering
+%       \begin{tabular}[h]{|c|c|}\hline
+%         Time $t$ in years &Amount investment is worth in
+%                             dollars\bigstrut{}\\\hline
+%         $0$&\$1\bigstrut{}\\\hline
+%         $1/2$&$ \$1+\$1\left(\frac{0.05}{2}\right)=\$1\left(1+\frac{0.05}{2}\right)$\bigstrut{}\\\hline
+%         $1$&$  \$1(1+0.05/2)+\$1(1+0.05/2)(0.05/2)=\$1\left(1+\frac{0.05}{2}\right)^2$\bigstrut{}\\\hline
+%       \end{tabular}
+%       \caption{\textcolor{blue}{compounding $\$1$ semiannually}}
+%     \end{table}
+
+          
+%    $$
+    % \$1(1+0.05/2)+\$1(1+0.05/2)(0.05/2)
+    % $$
+\begin{wraptable}[]{l}{3.5in}
+  \begin{tabular}[h]{|c|c|}
+    \multicolumn{2}{c}{\textcolor{blue}{Compounding $\$1$ three times annually}}\\\hline
+      Time in years & Amount investment is worth in dollars\bigstrut{}\\\hline{}
+      $0$ & $\$1$\bigstrut{}\\
+      $1/3$ & $\$1\left(1+\frac{0.05}{3}\right)^1\approx1.0167$\bigstrut\\
+      $2/3$ & $\$1\left(1+\frac{0.05}{3}\right)^2\approx1.0336$\bigstrut\\
+      $1$   & $\$1\left(1+\frac{0.05}{3}\right)^3\approx1.0508$\bigstrut\\\hline
+    \end{tabular}
+  \caption{}
+\label{tab:CompInt4mo}
+\end{wraptable}
+
+Tables~\ref{tab:CompInt4mo} and~\ref{tab:CompInt3mo} show, in abbreviated form, the
+computations needed if the investment is compounded three times in a
+year. Notice how these three tables differ from and are  similar to each
+other.
+% \begin{table}[h]\centering
+%     \begin{tabular}[h!]{|c|c|}\hline
+%       Time in years & Amount investment is worth in dollars\bigstrut{}\\\hline{}
+%       $0$ & $\$1$\bigstrut{}\\\hline
+%       $1/3$ & $\$1\left(1+\frac{0.05}{3}\right)^1\approx1.0167$\bigstrut\\\hline
+%       $2/3$ & $\$1\left(1+\frac{0.05}{3}\right)^2\approx1.0336$\bigstrut\\\hline
+%       $1$   & $\$1\left(1+\frac{0.05}{3}\right)^3\approx1.0508$\bigstrut\\\hline
+%     \end{tabular}
+%   \caption{\textcolor{blue}{Compounding $\$1$ three times annually}}
+% \end{table}
+
+
+Compounded quarterly means that the interest is re-invested four
+times.  Our table looks like this.
+
+% \begin{table}[h]\centering
+%     \begin{tabular}[h]{|c|c|}\hline
+%       Time in years & Amount investment is worth in dollars\bigstrut{}\\\hline{}
+%       $0$   & $\$1$\bigstrut{}\\\hline
+%       $1/4$ & $\$1\left(1+\frac{0.05}{4}\right)^1\approx1.0125$\bigstrut\\\hline
+%       $1/2$ & $\$1\left(1+\frac{0.05}{4}\right)^2\approx1.02552$\bigstrut\\\hline
+%       $3/4$ & $\$1\left(1+\frac{0.05}{4}\right)^3\approx1.038$\bigstrut\\\hline
+%       $1$   & $\$1\left(1+\frac{0.05}{4}\right)^4\approx1.0509$\bigstrut\\\hline
+%     \end{tabular}
+%   \caption{\textcolor{blue}{Compounding $\$1$ quarterly}}
+% \end{table}
+
+The effective yield comes from the last entry in each table.  So if we
+compound quarterly it is the difference between the amount the
+investment is worth at the end of the year and what it is worth at the
+beginning of the year: $1.0509-1=0.0509=5.09\%. $
+
+\begin{wraptable}[]{r}{3.5in}
+  \begin{tabular}[h]{|c|c|}
+    \multicolumn{2}{c}{\textcolor{blue}{Compounding $\$1$ quarterly}}\\\hline
+      Time in years & Amount investment is worth in dollars\bigstrut{}\\\hline{}
+      $0$   & $\$1$\bigstrut{}\\
+      $1/4$ & $\$1\left(1+\frac{0.05}{4}\right)^1\approx1.0125$\bigstrut\\
+      $1/2$ & $\$1\left(1+\frac{0.05}{4}\right)^2\approx1.02552$\bigstrut\\
+      $3/4$ & $\$1\left(1+\frac{0.05}{4}\right)^3\approx1.038$\bigstrut\\
+      $1$   & $\$1\left(1+\frac{0.05}{4}\right)^4\approx1.0509$\bigstrut\\\hline
+    \end{tabular}
+  \caption{}
+\label{tab:CompInt3mo}
+\end{wraptable}
+Following the same reasoning, if the investment was compounded daily,
+then the effective yield would be
+$\left(1+\frac{0.05}{365}\right)^{365}-1\approx0.0513 = 5.13\%$.  In
+general, if we compound $n$ times in a year, then the return on an
+investment of one dollar at the end of one year would be
+$\left(1+\frac{0.05}{n}\right)^{n}$ dollars, after $2$ years
+$\left(1+\frac{0.05}{n}\right)^{n\cdot2}$ dollars, after $t$ years $\left(1+\frac{0.05}{n}\right)^{nt}$ dollars.
+
+Going one step further, if we let $A(t)$ denote the value of the investment
+of one dollar earning $5\%$ annually, compounded $n$ times per year,
+after $t$
+years,  we have
+$$
+A(t)=\left(1+\frac{0.05}{n}\right)^{nt},\ t=0,1,2,\ldots
+$$
+
+What if the investment was compounded continuously?  What does this
+mean, and what would the value $A(t)$ be?  To examine this, it will be
+convenient to write $A(t)$ as
+\begin{align*}
+  A(t)&=\left(1+\frac{0.05}{n}\right)^{nt}\\
+      &=\left(\left(1+\frac{0.05}{n}\right)^{\frac{n}{0.05}}\right)^{0.05t}\\
+      &=\left(\left(1+\frac{1}{\frac{n}{0.05}}\right)^{\frac{n}{0.05}}\right)^{0.05t}
+\end{align*}
+Let’s rewrite $m=\frac{n}{0.05}$, and consider what would happen if we compounded a very
+large number of times (let $n$ be very large).  Table 4 looks at some
+values of $\left(1+\frac{1}{m}\right)^m$, where $m$ is large.
+\begin{table}[h]
+  \centering
+  \begin{center}
+    \begin{tabular}[h]{|c|c|}\hline
+      m & $\left(1+\frac{1}{m}\right)^m$\bigstrut{}\\\hline
+     100  & 2.70481382942\bigstrut{}\\
+     1000  & 2.71692393224\bigstrut{}\\
+     10000  & 2.71814592683\bigstrut{}\\
+     100000  & 2.71826823717\bigstrut{}\\
+     1000000  & 2.71828046932\bigstrut{}\\
+     10000000  & 2.71828169255\bigstrut{}\\\hline
+    \end{tabular}
+  \end{center}
+\end{table}
+Does this look familiar to you.  It would appear from Table 4, that
+$\left(1+\frac{1}{m}\right)^m$ approaches the number $e$.  We will show that this is the case later\notefrombob{This would make a
+  nice problem in l”Hopital’s Rule section to re-examine. }.
+
+All of this suggests that if the investment is being continually
+compounded, then $A(t)=e^{0.05t}$. This fits in with the notion that
+the investment grows continuously at a (nominal) rate of $5$\%. $A(t)$
+must satisfy the IVP:
+$$
+\dfdx{A}{t}=0.05A,\ A(0)=1.
+$$
+
+\begin{embeddedproblem-enumerate}
+  \label{problem:ContCompound1}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item What would the effective yield be for a bond nominally rated
+    at 5\% annually compounded continuously?  How does this compare to
+    the effective yield of an investment compounded daily?
+  \item Suppose we had two investments growing continually with
+    nominal rates of 5\% and 10\% annually?  Would the effective yield
+    of the second investment be twice that of the first?  Justify your
+    answer.
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+\begin{embeddedproblem}
+  \label{PIC:DoubleInvestment}
+  Of course, a natural question to ask is, how long will it take for
+  my money to double?  Would an investment growing at 10\% double in
+  half the time?
+
+  Before we go any further, take a guess. Would an investment
+  compounding continuously at a nominal rate of 10\% double in half
+  the time as that of one growing at $5$\%.
+\end{embeddedproblem}
+To answer this question we will need to solve
+$$
+e^{0.05t}=2,
+$$
+for $t$ and compare this to the solution of
+$$
+e^{0.1t}=2.
+$$
+
+Loosely speaking, we need to find a way to ``undo'' the natural
+exponential function.  This leads us to a discussion of the natural
+logarithm function in the next section.
+\end{myexample}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 

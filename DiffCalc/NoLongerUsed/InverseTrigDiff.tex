@@ -1,0 +1,1954 @@
+\section{The Inverse Tangent and Cotangent Functions }
+\label{sec:inverse-tan-and-cot}
+\markright{\sc{}Inverse Tangent and Cotangent Functions }
+% \baselineskip=1.5cm
+% \vskip-.35in
+
+If $x$ is the tangent of $y$, $x=\tan(y)$, then we say that $y$ is the
+\term{arctangent} of $x$, $y=\arctan{x}$. Speaking loosely, we'd like
+for the arctangent to be a  function which ``undoes'' the
+tangent.
+
+% But you have surely noticed that the information given in the
+% table above presents some difficulties to
+% computation. The presence of the ``$\pm$'' symbol suggests that when
+% we compute the derivative of the arcsine, arccosine, arcsecant, and
+% arccosecant functions we get to choose whether to choose positive or
+% negative value.
+
+% But this seems nonsensical, doesn't it? After all the slopes of each
+% of these curves at a given value of $x$ will be positive or negative
+% independent of any choices we might make. It is equally odd that
+% this plus-or-minus conundrum doesn't seem to be a problem with the
+% arctangent or the arccotangent functions. Why would that be?
+
+% The problem here -- or at least part of the problem -- is that we
+% haven't actually \emph{clearly defined} what we mean by
+% ``$\arctan$,'' or any of the other ``arc'' functions. We will
+% address this next.
+
+\centerline{\includegraphics*[height=2.2in,width=5.5in]{../Figures/arctan3}}
+%\centerline{\includegraphics*[height=2in,width=5in]{../Figures/arctan3}}
+%\centerline{\includegraphics*[height=1.5in,width=4in]{../Figures/arctan3}}
+The sketch above shows the graph of $y=\tan(x)$ (in red) and the same
+graph (in blue) reflected about the graph of the line $y=x$ (dashed,
+in black). Reflecting in this manner swaps the coordinates of each
+point. For example, the point $(\pi, 0)$ is on the graph of
+$y=\tan(x)$, because $\tan\left(\pi\right)=0$. Similarly, the point
+$\left(0,\pi\right)$ is on the graph of $y=\arctan(x)$.
+
+But is it true that $\arctan(0)=\pi$? If we are to believe our graph,
+it could be true. But couldn't it also be true that
+$\arctan(0)=2\pi$, or even $\arctan(0)=-\pi$?  The blue graph above is
+clearly the graph of the arctangent as we have defined it but we seem
+to have a choice for the output of $\arctan(x)$. Many choices, in fact.
+
+
+Having more than one output for a given input clearly violates what we
+mean when we use the word ``function.''  A mathematical function
+returns \emph{exactly one} output for a given input. There is no
+choice. The sketch of the arctangent (in blue) is not the graph of a
+\term{function}. It is the graph of the \term{multifunction}
+$\arctan(x)$. Each of the blue curves on the right is one
+\term{branch} of the multifunction\aside{Note that by itself, any
+  single branch of the arctangent \emph{is} a function.},
+$\arctan(x)$. In fact all of the ``arc'' functions from trigonometry
+are multifunctions.  Mult-functions are interesting objects and are
+well worth studying.  But this is not the time for that study. Right
+now we are only interested in the properties of the \term{inverse
+  function} of $\tan(x)$. Since $\arctan(x)$ is not a function, it
+can't be the inverse function of $\tan(x)$ so we will stop thinking
+about it as soon as we can.
+
+But if $\arctan(x)$ is not the inverse of $\tan(x)$ what is? Since we
+only allow one output for a given input, could it
+be as simple as choosing just one of the branches of the
+$\arctan(x)$, say the one that lies between $y=-\frac{\pi}{2}$ and
+$y=\frac{\pi}{2}$ and calling it the the inverse of  $\tan(x)$?\\
+\centerline{\includegraphics*[height=2.7in,width=4.5in]{../Figures/arctan5}}
+Actually, yes. It is just that simple. And the usual choice is the one
+we've indicated.  In this text we will designate this branch of
+$\arctan(x)$ with $\inverse\tan(x)$. Thus the symbol $\inverse\tan(x)$
+denotes the \term{inverse tangent} function. Because the multifunction
+arctangent is not a function we will henceforth ignore
+it as much as possible.
+
+
+
+\begin{Digression}[Inverse Function Notation]
+\label{digression:inverse-function-notation}
+      %       It is easy to understand what the inverse of a function is: If the
+      %       function $\tan$ takes $x$ to $y$, then the function $\inverse\tan$
+      %       ``undoes'' the function $\tan$ (If $y=\tan(x)$ then
+      %       $x=\inverse\tan(y)$).
+
+      %       The \emph{concept} really is that simple.
+
+
+      %       But\notefrombob{I have also seen the notation y=Arctan x to denote the
+      %       principal branch instead of y=x .  Do we want to utilize this at all
+      %       in the discussion about inverse functions or is this complicating
+      %       things unnecessarily? -- Jul 19, 2021} function inversion can be
+      %       \emph{very} difficult to work with. This is partly because it is so
+      %       abstract, but also because the notation we use can be very
+      %       confusing. Probably the clearest notation we have is the ``arc''
+      %       designation. The symbol ``$\arctan,$'' for example, clearly signals
+      %       that the function\aside{In the computer age this has been shortened to
+      %       ${\rm atan}$ for reasons that are no longer apparent.}, $\arctan(x)$
+      %       returns an angle (the ``arc'' of a circle).
+
+
+      %       We (the authors) have consistently used the ``arc'' prefix to
+      %       designate the multifunctions which gave us the inverse trigonometric
+      %       functions. Thus by our convention $\arctan(x)$ and $\inverse\tan(x)$ refer
+      %       to different concepts altogether. We will continue this practice throughout this
+      %       text. That is, we  will always, and only, refer to inverse functions by placing
+      %       ``$-1$'' as an exponent on the name of the original function. Thus if
+      %       $f(x)$ is an invertible function then $\inverse f(x)$ is it's inverse.
+
+      %       We do this partly to avoid confusion in what can be a very confusing
+      %       topic. But this is by no means a standard usage. 
+      %       In fact for most scientists, engineers, and mathematicians
+      %       ``$\arctan(x)$'' and $\inverse\tan(x)$, are synonymous.  In the
+      %       computer age it has also become common to use $\text{atan}(x)$, and
+      %       there are other variants as well.
+
+
+The use of $-1$ as an exponent is probably the most common notation
+used to indicate function inversion. Unfortunately, from the
+standpoint of a student it is also probably the worst possible
+notation we could have invented because It is so very easily confused
+with reciprocation. While it is true that
+  \begin{equation}
+    \label{eq:NegOneRecip}
+    2^{-1} = \frac12,
+\end{equation}
+it is important to remember that
+\begin{equation}
+  \label{eq:NegOneInv}
+  \inverse{\tan}(x) \text{ is \emph{not} equal to } \frac{1}{\tan(x)}.
+\end{equation}
+
+%   \begin{wrapfigure}[21]{r}{3.2in}
+%     \vskip-6mm{}
+%     \captionsetup{labelformat=empty}
+% %    \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=1.5in,width=2.2in]{../Figures/BadDrawing-InvSine}}}
+% %    \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=2.5in,width=3.2in]{../Figures/BadDrawing-InvSine}}}
+%     \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=2in,width=3.2in]{../Figures/BadDrawing-InvSine}}}
+%     \label{fig:BadDrawing-InvSine}
+%     \caption{\textcolor{black}{\centerline{The World's Most Evil Mathematician}
+%         \centerline{from {Math
+%             With Bad Drawings}}
+%           \centerline{by Ben Orlin}}}
+%   \end{wrapfigure}
+  That the ``$-1$'' notation is
+  used for both comes from the fact that both $2^{-1}$ and
+  $\inverse\sin(x)$ really are inverses. But they are different kinds
+  of inverses: $\inverse2$ is the \emph{multiplicative} inverse of
+  $2$, which means simply that
+  $$\frac12\cdot2=1 \text{ and that } 2\cdot\frac12 =1.$$ 
+  On the other hand $\inverse\tan(x)$ is the \emph{functional} inverse of
+  $x=\tan(y)$, which means that if
+  $-\frac{\pi}{2}\lt{}x\lt{}\frac{\pi}{2}$ then
+  $$
+  \inverse\tan(\tan(x)) = x, 
+  $$
+  and that
+  $$
+  \tan(\inverse\tan(x))=x.
+  $$
+
+  In equation~\ref{eq:NegOneRecip} you can think of the $-1$ in the
+  exponent as an operator. It operates on $2$ by taking its
+  reciprocal: $\inverse{2}=\frac12$. In equation~\ref{eq:NegOneInv}
+  the $-1$ is not an operator. It is part of the symbol,
+  $\inverse\tan$, that we use to denote the inverse tangent.
+  
+  With practice this all gets easier, but in the beginning it is very
+  troublesome. Be careful.
+
+  \begin{ProficiencyDrill}
+    Evaluate each of the following:
+           \begin{enumerate}[label={\bf{}(\alph*)}]{}
+        \begin{multicols}{4}
+         \item $\inverse{\left(\frac{2}{\inverse{3}}\right)}$
+         \item $\inverse\tan\left(\frac{\sqrt{3}}{2}\right)$
+         \item $\inverse{\left(\cot\left(\frac{\pi}{3}\right)\right)}$
+         \item $\inverse{\left(\inverse\tan\left(1\right)\right)}$
+        \end{multicols}
+       \end{enumerate}
+%    \vskip-4mm{}
+     \end{ProficiencyDrill}
+
+\end{Digression}
+
+But what, exactly, is $\inverse\tan(x)$ the inverse of? From the sketch above it
+should be clear that restricting the \alert{range} of
+$\inverse\tan(x)$ to values in the interval $(-\pi/2, \pi/2)$ forced
+us to restrict the \alert{domain} of $\tan(x)$. So
+$$
+\inverse\tan(x) \text{ with domain all real numbers,} \RR
+$$
+is the inverse of
+$$
+\tan(x) \text{ with domain, } (-\pi/2, \pi/2),
+$$
+and it is \emph{not} the inverse of
+$$
+\tan(x) \text{ with domain, } \RR
+$$
+because that function  has no inverse.
+
+
+An easy way to remember what $\inverse{\tan}(x)$ means is to read the
+symbol $\inverse{\tan}(x)$ as\\
+\centerline{``the angle whose tangent is $x$.''}
+The
+advantage of this phrasing is that it emphasizes that $x$ is the
+tangent of some angle, and $\inverse{\tan}(x)$ is that
+angle. Similarly the inverse functions of the other trigonometric
+functions should be
+read as\\
+\centerline{``the angle whose \{sine, cosine, secant, whatever\} is
+  $x$''.}  Each of these will also come with suitable restrictions on
+its range.
+
+We should point out that reserving the ``arc'' notation for the
+trigonometric multifunctions is actually a conceit of the authors of
+this text. Most of the world uses $\arctan(x)$ and $\inverse\tan(x)$
+interchangeably, and eventually you will too. But for now it will be
+helpful for you to keep in mind that the difference between them is
+that restricting the range  of   $\inverse\tan(x)$  to
+$-\frac{\pi}{2}\lt x\lt\frac{\pi}{2}$ guarantees that it is a
+function. But since the range of   $\arctan(x)$ is not similarly
+restricted it is not
+a function.
+
+
+\begin{ProficiencyDrill}
+  Suppose we had chosen
+  $\frac{\pi}{2}\lt{}\inverse\tan(x)\lt{}\frac{3\pi}{2}$. What function (with
+  domain) is that the inverse of?
+\end{ProficiencyDrill}
+
+      %       The figure above shows the graph of $\tan(x)$ and its inverse,
+      %       $\inverse\tan(x)$. But notice that we've explicitly constrained
+      %       the domain of
+      %       $\tan(x)$. Do you see why we had to do that?  We can only include one
+      %       branch of $\tan(x)$ because $\inverse\tan(x)$ has only one branch of
+      %       $\arctan(x)$ and they have to match up if they are going to be
+      %       mutually inverse.
+
+
+      %       Each of the curves in this graph is called a branch of the arctangent.
+      %       The graph in red above is called the \term{principle
+      %       branch} because, by convention, it is the one chosen by default --
+      %       unless there is a compelling reason to choose another.  This is the one where
+      %       $-\frac{\pi}{2}\lt{}y\lt{}\frac{\pi}{2}$.one.
+
+All of this fussiness is really just about making our abstract
+definitions useful  and
+consistent. It would be nice if these details only impinged on us in an
+abstract setting but unfortunately some  practical difficulties do
+come up, as the following drill shows.
+
+%\pagebreak[4]
+% \begin{ProficiencyDrill}
+%   Compare the graphs  of each of the following:
+%   \begin{enumerate}[label={\bf{}(\alph*)}]
+%     \begin{multicols}{4}
+%     \item $y=\inverse\tan\left(\frac1x\right)$
+%     \item $y=\inverse\tan\left(\frac{1}{x-1}\right)$
+%     \item $y=\inverse\tan\left(\frac{1}{x-1}\right)$
+%     \item $y=\inverse\tan\left(\frac{x+1}{1-x}\right)$
+%     \end{multicols}
+%   \end{enumerate}
+%   % $y=\inverse\tan\left(\frac{1+x}{1-x}\right)$ to the graph of
+%   % $y=\inverse\tan(x)+\inverse\tan(1)=\inverse\tan(x)+\frac{\pi}{4}$.\\
+%   % \centerline{\includegraphics*[height=1in,width=4in]{../Figures/arctanabs1}}
+%   Can you explain why they are discontinuous even though $y=\inverse\tan(x)$
+%   is continuous?
+% \end{ProficiencyDrill}
+
+\begin{embeddedproblem}
+  \vskip-2mm{}
+  Find \emph{all} solutions of  $\tan(x)=1$ and
+  $x=\inverse\tan\left(1\right)$. Do they have the same set of
+  solutions?\\
+  \hint{Obviously, they do not. Otherwise we wouldn't have asked the
+    question. What is the difference between the two sets of
+    solutions?}
+\end{embeddedproblem}
+
+\begin{Digression}[\boldmath{}$\tan(x)$ Has No Inverse]
+  The function $\tan(x)$ is not invertible. This is because, by
+  custom, its domain is all real numbers, $\RR$. Thus it is
+  \alert{not} the same function as
+  $$\tan(x) \text{ with domain } -\frac{\pi}{2}\lt{}x\lt{}\frac{\pi}{2}.$$  A
+  function has two parts: (1) The set of inputs (domain) and (2) the
+  rule associating input with output. Most of the time the domain is
+  the set of all real numbers ($\RR$), so we don't bother to
+  explicitly state that the domain of, say $f(x)=x^2$ is
+  $\RR${}. Unless otherwise specified we simply assume that it is.
+  Properly speaking, we should \emph{always} specify the domain of our
+  functions, but typically we don't. The custom is to assume that the
+  domain of a function is $\RR$ unless otherwise stated.
+  % That is confusing enough, but we (mathematicians) add to the confusion when dealing with
+  % inverse functions because we habitually violate this custom as well.
+  Thus the  function, $\tan(x)$ cannot be inverted because on its
+  domain ($\RR$) it has more than
+  one branch.
+
+  Because we both want and need an inverse tangent function we
+  restrict the range of $\inverse\tan(x)$. But this is the inverse of
+  $\tan(x)$, with domain $-\frac{\pi}{2}\lt{}x\lt{}\frac{\pi}{2}$,
+  which has only one branch. It is \alert{not} the inverse of
+  $\tan(x)$, because it has too many branches.
+
+  To use our notation as it was intended to be used we \emph{should}
+  say that $\inverse\tan(x)$ is the inverse of $\tan(x)$, with domain
+  $-\frac{\pi}{2}\lt{}x\lt{}\frac{\pi}{2}$, which is true. But instead, we
+  typically just say that it is the inverse of $\tan(x)$, which
+  strictly speaking, is not true. 
+
+
+  When we (mathematicians) talk amongst ourselves this is not a
+  problem. We all understand what we mean. But it can be very
+  confusing for students who usually have a more tenuous grasp of
+  these distinctions.  It is a bit unfair of us (mathematicians) to
+  speak to students in what amount to incomplete sentences, but we
+  tend to do it anyway, mostly out of habit.
+
+  We (the authors) apologize.
+\end{Digression}
+
+The definition of the arccotangent is similar to the definition of the
+arctangent: If $x$ is the cotangent of $y$, $x=\cot(y)$, then we say
+that $y$ is the \term{arccotangent} of $x$, $y=\arccot(x)$. The
+arccotangent is also a multifunction with multiple branches so, just
+as before, we will have to decide which branch to use to define the
+inverse cotangent: $\inverse\cot{x}$.
+
+
+We obtained our branch for the single-valued function $y=\inverse\tan(x)$
+from the multifunction $y=\arctan(x)$ by restricting its  range to
+$-\frac{\pi}{2}\lt y\lt\frac{\pi}{2}$. A similar restriction would
+allow us to obtain the single-valued
+function $\inverse\cot(x)$ from the multifunction $\arccot(x)$, but it
+is a bit simpler to once again use a trigonometric  identity.
+
+\begin{ProficiencyDrill}
+  Use the identity $$\inverse\cot(x) = \frac{\pi}{2}-\inverse\tan(x)$$
+  to choose an appropriate (define) domain of $y=\inverse\cot(x)$.
+\end{ProficiencyDrill}
+
+
+\section{The Witch of Agnesi and Inverse Tangent Function }
+\label{sec:witch-agnesi-inverse}
+\begin{wrapfigure}[]{l}{1.7in}
+  \captionsetup{labelformat=empty}
+  \centerline{\href{https://mathshistory.st-andrews.ac.uk/Biographies/Agnesi/}{\includegraphics*[height=2in,width=1.7in]{../Figures/AgnesiPortrait}}}
+  \caption{\centerline{Maria Ga\"{e}tana Agnesi}\\ \centerline{(1718-1799)}}
+  \label{fig:AgnesiPortrait}
+\end{wrapfigure}
+In a time when women had very few options in life
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Agnesi/}{Maria
+  Ga\"{e}tana Agnesi} (1718-1799) was both exceptional and very
+lucky. Her brilliance and talent were recognized early and nurtured by
+her wealthy father, who encouraged her studies and provided her with
+the best possible tutors to develop her talents. She mastered the
+Calculus of Newton and Leibniz and in $1748$ wrote a series of
+textbooks on the topic titled \emph{\href{https://www.maa.org/press/periodicals/convergence/mathematical-treasures-maria-agnesis-analytical-institutions}{Instituzioni Analitiche ad Uso
+  Della Giovent\`u{} Italiana}\aside{This is usually translated as
+    \pubtitle{Analytical Methods for the use of Italian Youth}}.} It
+was immediately recognized as a masterpiece of mathematical
+exposition and  was used throughout Europe during eighteenth century. It
+was by far the most popular Calculus textbook in use at the time.  An
+Englishman,
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Colson/}{John
+  Colson}, was so impressed with Agnesi's work that in $1760$ he took it
+upon himself to learn Italian specifically so that he could translate
+her text into English.
+
+In her text Agnesi\aside{Her name is pronounced ``Awn-yes-ee,'' not
+  ``Ag-nes-ee.'' } collected many of the known results of the time and
+organized them for the instruction of students. The Latin name of one
+of the curves that she used for instruction is \emph{versoria} (``rope
+that turns a sail'') because of its shape. Agnesi correctly translated
+this into Italian as ``la versiera.''  Unfortunately Colson mistook
+this for ``l'aversiera'' which means ``witch.'' As a result this
+particular curve has been known ever since as the Witch of Agnesi.
+
+
+\begin{wrapfigure}[13]{r}{4.4in}
+  \vskip-6mm{}
+  \captionsetup{labelformat=empty}
+  \includegraphics*[height=2.2in,width=4.4in]{../Figures/Witch1}
+\label{fig:Witch1}
+\end{wrapfigure}
+As modern function notation was yet to be invented Agnesi
+understood this curve geometrically as a particular set of
+points. In the  diagram at the right think of $P$ as moving from left
+to right. For each value of $x_0$, draw the line
+from the origin to $P$ and locate the vertical
+coordinate $y_0$ where this line intersects the circle
+$$x^2+ \left( y-\frac12 \right)^2=\left(\frac12\right)^2,$$
+ centered at
+ $\left(0, \frac12\right)$, with radius $r=\frac12$.
+ Every
+point $(x_0,y_0)$ is a point on the Witch of Agnesi. The Witch itself  is the
+curve shown in red.
+
+%\pagebreak[4]
+\begin{embeddedproblem-1line}{}
+  In the diagram above show that the coordinates $x_0$ and $y_0$
+  satisfy the equation, $y_0=\dfrac{1}{1+x_0^2}$. Thus the Witch is
+  the graph of
+  $$
+  y(x)=\frac{1}{1+x^2}.
+  $$
+% \hint{Notice that $(x_0, y_0)$  is not the point of intersection of the circle and the line, but they do have the
+% same $y$ coordinate. It might be  helpful to label this intersection
+% point $(x_1, y_0)$ and notice  that you are
+% trying to find $y_0$.}
+%  \vskip-6mm{}
+\end{embeddedproblem-1line}
+
+%%% \centerline{  \includegraphics*[height=2.5in,width=4in]{../Figures/Witch2}}
+
+Whenever you encounter a new curve an important question to ask is,
+``What is its derivative?'' In this case you already have everything you
+need to find the answer.
+
+\begin{embeddedproblem-1line}
+  Show that if $y=\frac{1}{1+x^2},$ then
+  $\dfdx{y}{x}=\frac{-2x}{(1+x^2)^2}.$
+\end{embeddedproblem-1line}
+
+\begin{wrapfigure}[10]{r}{3in}
+  \vskip-2mm{}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/Witch3}}
+\label{fig:Witch3}
+\end{wrapfigure}
+Computing the derivative of a function as a formula is very
+useful. This has in fact been our primary focus so far in this
+text. However to truly understand the relationship between a function
+and its derivative nothing can replace seeing both of them graphed
+together.  Look closely at the relationship between the Witch and its
+derivative in the sketch at the right. Is it clear how these graphs
+are related?
+
+Notice in particular that when $x=0$ the $y$ coordinate of the Witch
+is at its highest point (maximum value), whereas the $y$ coordinate of
+$\dfdx{(\text{Witch})}{x}$ is zero.
+
+
+
+% \begin{wraptable}{r}{2.4in}
+%   \captionsetup{labelformat=empty}
+%   \begin{tabular}{ |c|c| }
+      %       \hline
+      %       \multicolumn{2}{|c|}{} \\
+      %       \multicolumn{2}{|c|}{\Large\bf{}Differentiation of } \\
+      %       \multicolumn{2}{|c|}{} \\
+      %       \multicolumn{2}{|c|}{\Large\bf{} Inverse Trig Functions} \\
+      %       \multicolumn{2}{|c|}{} \\
+      %       \hline
+      %       $y$   \amp{}$\dx{y}$\\\hline\hline
+      %       $\inverse\sin (x)$ \amp{}    $\dfrac{1}{\sqrt{1-x^2}}\dx{x} $\bigstrut{}\\
+      %       $\inverse\cos (x)$ \amp{} $\dfrac{-1}{\sqrt{1-x^2}}\dx{x}$ \bigstrut{}\\
+      %       $\inverse\tan (x)$\amp{}$\dfrac{1}{1+ x^2}\dx{x}$\bigstrut{}\\
+      %       $\inverse\cot (x)$\amp{}$\dfrac{-1}{1+x^2}\dx{x}$\bigstrut{}\\
+      %       $\inverse\sec (x)$\amp{}$\dfrac{1}{\abs{x}\sqrt{x^2-1}}$\bigstrut{}  \\
+      %       $\inverse\csc x$\amp{}$\dfrac{-1}{\abs{x}\sqrt{x^2-1}}\dx{x}$\bigstrut\\\hline
+      %     \end{tabular}
+      %       \caption{\textcolor{blue}{\bf{} Memorize these!}}
+      %       \label{tab:InvTrigDiffRules}
+      %       \end{wraptable}
+      % %     \end{center}
+We know that the derivative of a curve at a given point gives us the
+slope of the line tangent at that point. Thus at its highest point the
+line tangent to the Witch will be horizontal.  That is, its derivative
+will be zero. This is exactly what these two graphs are showing us.
+
+When $x$ is just to the right of zero, the slope of the Witch is close
+to zero and negative. Similarly just to the left of zero the slope of
+the Witch is close to zero and positive. At the extreme right end of
+the graph above the slope of the Witch is close to zero and negative
+and at the extreme left it is close to zero and positive. And all of
+this is reflected in the shape of the blue (derivative) curve.
+
+It is a little more interesting to reverse this process. That is,
+suppose we could see only the derivative of the Witch (blue
+curve). Could we figure out the shape of the Witch from this?
+
+Sure we can. Well, almost.
+
+Consider: From the extreme left of the graph to $x=0$ the
+$y-$coordinate of the (blue) derivative curve is above the $x-$axis. Therefore
+the slope of the Witch is positive. Clearly wherever the slope of a
+function is positive the function is increasing, so we can deduce that
+the Witch increases from left to right until we reach $x=0$ where the
+blue derivative function crosses the $x$-axis.
+
+Thereafter the $y-$coordinate of the blue derivative curve is below the
+$x-$axis. That is, the slope of the Witch is negative, so the Witch is
+decreasing.
+
+Just by looking at the derivative curve we can see that the Witch of
+Agnesi increases from left to right until we reach $x=0,$ and after
+that it decreases. Although this shows us the shape of the Witch it is
+not enough to completely describe the Witch of Agnesi. We can tell a
+lot about a curve by looking at the graph of its derivative but we
+can't tell everything.
+
+\begin{ProficiencyDrill}{}
+  \label{drill:NonUniqueAntiderivative}
+  In the sketch below the red curve is the graph of the Witch and the
+  blue curve is the graph of its derivative. Convince yourself that
+  the blue curve could also be the graph of the derivative of any of
+  the other curves shown as well. As clearly as you can, explain what this
+  suggests about the relationship between a
+  function and its derivative.\\
+  \centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/Witch11}}
+  
+\end{ProficiencyDrill}
+
+
+Next we'd like to apply this same sort of reasoning to the Witch
+itself.  We'd like to answer the question, ``What curve is the Witch
+of Agnesi the derivative of?''  Whatever that curve is, we'll call it
+the \term{antiderivative} of the Witch for obvious reasons.
+
+%\centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/Witch6}}
+\centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/Witch6}}
+As before, by simply looking at the graph of the Witch we can see
+that: (1) At the extreme ends of its graph the antiderivative will
+have a \emph{positive} slope which gets closer and closer to zero as
+we go farther from the origin, but (2) since the Witch never crosses
+the $x$-axis the antiderivative will never have a horizontal slope,
+and (3) at $x=0$ the slope of the antiderivative will be equal to one. A sketch
+of the antiderivative of the Witch begins to emerge when we put
+these three observations into our graph:\\
+\centerline{\includegraphics*[height=1.5in,width=3in]{../Figures/Witch7}}
+
+Continuing to fill between the black segments in the same  fashion
+the sketch becomes even clearer:\\ 
+\centerline{\includegraphics*[height=1.8in,width=3in]{../Figures/Witch8}}
+Finally, connecting the dots with a smooth curve we see the the
+graph of the antiderivative of the Witch of Agnesi must look like this:\\
+\centerline{\includegraphics*[height=1.75in,width=3.6in]{../Figures/Witch9}}
+
+We've been a little lazy with our use of language.  As we saw in
+Drill~\ref{drill:NonUniqueAntiderivative}, the antiderivative is not
+unique, so it is improper to speak of \emph{the} antiderivative. Any
+one of the curves shown below could be \emph{an} antiderivative of the
+Witch of Agnesi. (Except the black one, of course. That's the Witch.)\\
+\centerline{\includegraphics*[height=1.8in,width=3in]{../Figures/arctan1}}
+
+This graph should look very  familiar to you. It looks very much
+like the  graph of the arctangent function we discussed
+in Section~\ref{sec:inverse-tan-and-cot}, doesn't it? Do you suppose
+it is possible that the derivative of the
+arctangent function is the Witch of Agnesi?
+
+Of course it is. Why
+  else would we have led you down this path? But there are some
+  subtleties here that we shouldn't ignore. For example we will want
+  to find a function that is the antiderivative of the Witch. We will proceed
+  cautiously.
+
+  \begin{embeddedproblem}
+    Sketch the graph of the derivative and the antiderivative of each
+    of the following curves on the same set if axes,
+           \begin{enumerate}[label={\bf{}(\alph*)}]{}
+        \begin{multicols}{2}
+         \item\ \\ \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/DiffSketch1}}
+         \item\ \\ \leftline{\includegraphics*[height=1in,width=1.5in]{../Figures/DiffSketch2}}
+         \item\ \\ \leftline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/DiffSketch3}}
+         \item\ \\ \leftline{\includegraphics*[height=.8in,width=1.5in]{../Figures/DiffSketch4}}
+        \end{multicols}
+      \end{enumerate}
+%      \vskip-10mm{}
+  \end{embeddedproblem}
+
+\section{The Differentials of the Inverse Tangent and Inverse
+  Cotangent Functions}
+\label{sec:diff-inverse-tancot}
+\markright{Tangent and Cotangent Differentials}
+
+
+
+\begin{wrapfigure}[9]{r}{3.5in}
+  \vskip-3mm{}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1.3in,width=3.5in]{../Figures/arctan6}}
+\label{fig:arctan6}
+\end{wrapfigure}
+% When you learned
+% Trigonometry you would have encountered the inverse  functions
+% % ,
+% % $\inverse\sin(x)$, $\inverse\cos(x)$, $\inverse\tan(x)$,
+% % $\inverse\cot(x)$, \\$\inverse\sec(x)$, $\inverse\csc(x)$,
+% of all six of
+% the trigonometric functions. In particular
+% the graph of $y=\inverse\tan(x)$ at the right  looks so much
+% like the derivative of the Witch of Agnesi that it is tempting to
+% simply assume that this is true.
+Since we want to find a function whose derivative is the Witch of
+Agnesi and we are pretty sure that each of the branches of
+the arctangent multifunction takes the shape of the Witch's derivative it
+is tempting to assume that the branch of the arctangent shown at the
+right is the function we are looking for.
+
+But we must be careful.  Reasoning from pictures, as we've just done,
+can be very useful.  but the most we can hope for when reasoning from
+pictures is an intuitive feel for the problem. We always need to
+confirm our intuition analytically. Always.
+
+So we will verify, analytically, our conjecture that the derivative of
+the inverse tangent function is the Witch of Agnesi.
+
+From our definition of $\inverse\tan(x)$ we know that
+$
+y=\inverse\tan(x)$ precisely when\aside{Notice how cavalierly we've
+  ignored the \emph{necessary} constraints on the domain of the
+  tangent. The function $\inverse\tan(x)$ is not the inverse of
+  $\tan(x)$ because the domain of $\tan(x)$ is $\RR$. It is the
+inverse of $\tan(x)$, with domain, $\frac{-\pi}{2}\lt x
+\lt\frac{\pi}{2}$. The domain is part of the definition of the
+function.} $\tan(y)=x$.
+Differentiating $\tan(y)=x$ gives:
+\begin{align*}
+  \dx(\tan(y)) \amp{}= \dx{x}\\
+  \sec^2(y)\dx{y} \amp{}= \dx{x}\\
+  \dx{y}\amp{}= \frac{1}{\sec^2(y)}\dx{x}.
+\end{align*}
+This is a correct formula for the differential of the arctangent
+function. However, there are two problems: (1) it does not seem to
+match our conjecture, and (2) even if it is correct this formula will
+not be very useful to us in this form since we have $\dx{y}$
+in terms of $y$ itself. We can address both of these problems by
+finding $\dx{y}$ in terms of $x$ and $\dx{x}$.
+
+\begin{wrapfigure}[]{r}{2.3in}
+  \vskip-6mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2.3in,width=2.3in]{../Figures/arctanMnemonic2}}
+  \label{fig:arctanMnemonic2}
+\end{wrapfigure}
+Referring to the diagram at the right, recall from
+Section~\ref{subsec:trig-interl} that $\tan(y)=\frac{x}{1}=x$ so
+$y=\inverse\tan(x)$. The hypotenuse in the diagram at the right is
+$\sec(y)$ so from the Pythagorean Theorem we see that
+$\sec^2(y)=1+x^2$.
+Thus
+$$
+\dx{y}=\frac{1}{\sec^2(y)}\dx{x}=\frac{1}{1+x^2}\dx{x},
+$$
+or
+$$
+\dfdx{y}{x}=\frac{1}{1+x^2}
+$$
+So our intuition was correct. The Witch is indeed the derivative of
+the arctangent function.  A similar derivation can be used for the
+arccotangent.
+
+%\pagebreak[4]
+
+\begin{embeddedproblem-enumerate}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item The inverse cotangent function is defined as
+    $y=\inverse\cot(x)$ if and only if $\cot(y)=x$.  Proceed as we did
+    above to show that
+    $$
+    \dx{\left(\inverse\cot(x)\right)} = \frac{-1}{1+x^2}\dx{x}.
+    $$
+  \item Derive the same result from  the identity
+    $\inverse\cot(x)=\pi/2-\inverse\tan(x)$.
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+%\pagebreak[4]
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that if $y=\inverse\tan(x)$ then $y$ satisfies the
+    differential equation
+    $$
+    (1+x^2)\dfdxn{y}{x}{2}+2x\dfdx{y}{x}=0.
+    $$
+  \item The function   $y=\inverse\cot(x)$ satisfies the same differential
+    equation. Show this in two different ways.
+    \begin{enumerate}[label={\bf{}(\roman*)}]{}
+    \item By direct computation, just as you did part (a).
+    \item By direct computation, after first observing that $\inverse\cot(x)=\frac\pi2-\inverse\tan(x)$.
+    \end{enumerate}
+  \end{enumerate}{}
+\end{embeddedproblem-enumerate}
+
+
+\begin{embeddedproblem}
+  Show that each of the following statements is true.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item $\dx{\left(\inverse\tan\left(\dfrac{1+x}{1-x}\right)\right)} = \dfrac{1}{1+x^2}\dx{x}$
+    \item $\dx{\left(\inverse\tan\left(\dfrac{2+x}{1-2x}\right)\right)} = \dfrac{1}{1+x^2}\dx{x}$
+    \item $\dx{\left(\inverse\tan\left(\dfrac{10+x}{1-10x}\right)\right)} = \dfrac{1}{1+x^2}\dx{x}$
+    \item $\dx{\left(\inverse\tan\left(\dfrac{2543+x}{1-2543x}\right)\right)}
+      = \dfrac{1}{1+x^2}\dx{x}$
+    \end{multicols}
+  \item Now show that
+    $$\dx{\left(\inverse\tan\left(\dfrac{\kappa+x}{1-\kappa x}\right)\right)}
+    = \dfrac{1}{1+x^2}\dx{x}$$ where $\kappa$ is any constant.
+  \item This is weird isn't it? None of the functions on the left is
+    $\inverse\tan(x)$  but they all have the same derivative as $\inverse\tan(x)$. Can you
+    explain this?\\
+    \hint{Let $y_1=\inverse\tan(x)$ and $y_2=\inverse\tan(\kappa)$. What is
+      $\tan(y_1+y_2)$?}
+  \end{enumerate}
+%  \vskip-6mm{}
+\end{embeddedproblem}
+
+
+
+% We now have the differentials of all of the inverse trigonometric
+% functions as seen in the table below.  The need for the domain
+% restrictions in the center column should be clear if you think about
+% the nature of the trig\-on\-o\-met\-ric functions. For example, since
+% the sine (and cosine) function only return numbers between $-1$ and
+% $1$ it makes no sense to write, for example, $\arcsin(2)$ because this
+% asks for ``the arc (angle) whose sine is $2$,'' and there is no such
+% arc\aside{At least not among the real numbers. It is possible to find
+%   a complex ``angle'' whose sine is $2$. But this is well beyond the
+%   scope of this text.}.  Similarly the inverse secant and inverse
+% cosecant functions are only defined for values of $x\le -1$ and
+% $x\ge1$ because the secant and cosecant functions only return values
+% in that range.
+
+% % \begin{wraptable}[21]{r}{4.3in}
+% %   \vskip-1mm{}
+% %   \captionsetup{labelformat=empty}
+% \begin{center}
+%     \begin{tabular}{|ccc|} \hline Function\amp{}
+%       Domain\amp{}Derivative\\\hline\hline $y=\arctan(x)$ \amp{} Any
+%       real
+%       number\amp{}$\displaystyle\dfdx{y}{x}=\frac{1}{\sec^2(y)}=\frac{1}{1+x^2}$\\
+%       \amp{}\amp{}\\
+%       $y=\arccot(x)$ \amp{} Any real number\amp{}$\displaystyle\dfdx{y}{x}=\frac{-1}{\csc^2(y)}=\frac{-1}{1+x^2}$\\
+%       \amp{}\amp{}\\
+%       $y=\arcsin(x)$ \amp{} $-1\le x\le 1$\amp{}$\displaystyle\dfdx{y}{x}=\frac{1}{\cos(y)}=\frac{\pm1}{\sqrt{1-x^2}}$\\
+%       \amp{}\amp{}\\
+%       $y=\arccos(x)$ \amp{} $-1\le x\le 1$\amp{}$\displaystyle\dfdx{y}{x}=\frac{-1}{\sin(y)}=\frac{\mp1}{\sqrt{1-x^2}}$\\
+%       \amp{}\amp{}\\
+%       \multirow{2}{*}{$y=\arcsec(x)$} \amp{} $x\le-1$\amp{}\multirow{2}{*}{$\displaystyle\dfdx{y}{x}=\frac{1}{\sec(y)\tan(y)}=\frac{\pm1}{x\sqrt{x^2-1}}$}\\
+%       \amp{}or $x\ge1$\amp{}\\
+%       \amp{}\amp{}\\
+%       \multirow{2}{*}{$y=\arccsc(x)$} \amp{} $x\le-1$\amp{}\multirow{2}{*}{$\displaystyle\dfdx{y}{x}=\frac{-1}{\csc(y)\cot(y)}=\frac{\mp1}{x\sqrt{x^2-1}}$}\\
+%       \amp{}or $x\ge1$\amp{}\\
+%       \amp{}\amp{}\\\hline
+%     \end{tabular}
+%   \end{center}
+
+% \caption{\textcolor{blue}{Differentials of Inverse Trigonometric functions}}
+%    \label{tab:InvTrigDiff1}
+% \end{wraptable}
+
+
+
+\section{The Other Inverse Trigonometric Functions}
+\label{sec:other-inverse-trig}
+Despite how much time we spent talking about them, the single valued
+branches for $y=\inverse\tan(x)$ and $y=\inverse\cot(x)$, were
+actually fairly apparent from the graphs of $x=\tan(y)$ and
+$x=\cot(y)$. All we had to do was choose one continuous branch from
+either graph. We described the process carefully because for the
+other inverse trigonometric functions things are a little more
+problematic. For those we will have to use the derivatives of our
+``arc'' multifunctions as a guide, rather than the multifunctions
+themselves.
+
+In general, we define an arc[function] as $\text{arcfunction}(x)=y$
+precisely when $\text{function}(y)=x$. So, $\arcsin(x)=y$ when
+$\sin(y)=x$ and $\arccos(x)=y$ when $\cos(x)=y$.
+
+\subsection*{The Inverse Sine Function: \boldmath{}$\inverse\sin(x)$}
+\begin{wrapfigure}[12]{r}{1.5in}
+  \vskip-5mm{}
+  \captionsetup{labelformat=empty}
+  % \centerline{\includegraphics*[height=1.9in,width=1.3in]{../Figures/arcsin5}}
+  \centerline{\includegraphics*[height=2.2in,width=1.5in]{../Figures/arcsin5}}
+\label{fig:arcsin5}
+\end{wrapfigure}
+When we graph $\arcsin(x)$ by flipping the graph of $\sin(x)$ across
+the graph of the line $y=x$ we get the sketch at the right. For the
+value of $x$ shown in the sketch the arrows point to a few of the
+possible values of $\arcsin(x)$. There are infinitely many, so
+obviously $\arcsin(x)$ is also a multifunction, not a function.
+
+
+To find the  differentials of $y=\arcsin(x)$ and $y=\arccos(x)$ we
+proceed just as we did with the $\arctan(x)$ and $\arccot(x)$. If
+$y=\arcsin(x)$ then $x=\sin(y)$ so:
+\begin{align*}
+  \dx{(\sin(y))}\amp{}= \dx{x}\\
+  \cos(y)\amp{}=\dx{x}\\
+  \dx{y}\amp{}=\frac{1}{\cos(y)}\dx{x}
+\end{align*}
+
+\begin{ProficiencyDrill}
+  \label{drill:InvSin1}
+  Use the  diagram  below,
+  \\
+  \centerline{\includegraphics*[height=1in,width=1.6in]{../Figures/CosInvSin1}}
+   to show that
+   \begin{equation}
+     \label{eq:InvSin11}
+     \dx(\arcsin(x))=\frac{\pm 1}{\sqrt{1-x^2}}.
+\end{equation}
+\end{ProficiencyDrill}
+
+%   \begin{wrapfigure}[21]{r}{3.2in}
+%     \vskip-6mm{}
+%     \captionsetup{labelformat=empty}
+% %    \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=1.5in,width=2.2in]{../Figures/BadDrawing-InvSine}}}
+% %    \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=2.5in,width=3.2in]{../Figures/BadDrawing-InvSine}}}
+    % \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=2in,width=3.2in]{../Figures/BadDrawing-InvSine}}}
+    % \centerline{The World's Most Evil Mathematician}
+    %     \centerline{from {Math
+    %         With Bad Drawings}}
+    %       \centerline{by Ben Orlin}
+  %   \label{fig:BadDrawing-InvSine}
+  %   \caption{\textcolor{black}{\centerline{The World's Most Evil Mathematician}
+  %       \centerline{from {Math
+  %           With Bad Drawings}}
+  %         \centerline{by Ben Orlin}}}
+  % \end{wrapfigure}
+
+\begin{embeddedproblem-enumerate}{}
+  \label{drill:InvCos1}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Use the fact that $y=\arccos(x)$ if and only if $\cos(y)=x$
+    and proceed as we did in Drill~\#\ref{drill:InvSin1} to show that
+    \begin{equation}
+      \label{eq:InvCos1}
+      \dx\left(\arccos(x)\right)= \frac{\mp 1}{\sqrt{1-x^2}}\dx{x}.
+  \end{equation}
+    \comment{Notice how this formula differs from the one you found
+      in Drill~\ref{drill:InvSin1}.}
+  \item Derive the same result from the identity:  $\arccos(x)=
+    \frac{\pi}{2}-\arcsin(x)$.
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+The plus/minus and minus/plus that appear in
+equations~\ref{eq:InvSin11} and~\ref{eq:InvCos1}, respectively,
+are present because, $\arcsin(x)$ and $\arccos(x)$ are both
+multifunctions like $\arctan(x)$.
+
+Since $\arcsin(x)$ is not a function at all it can't be the inverse
+\emph{function} of $\sin(x)$.  Once again, to \emph{create} an inverse
+sine function (which we will call $\inverse\sin(x)$) we will have to
+restrict the range of $\inverse\sin(x)$ just like we restricted the
+range of $\inverse\tan(x)$.  The question is, what restriction should
+we impose?
+
+    \centerline{\href{https://mathwithbaddrawings.com/}{\includegraphics*[height=2.6in,width=3.2in]{../Figures/BadDrawing-InvSine}}}
+    \centerline{The World's Most Evil Mathematician}
+        \centerline{from {Math
+            With Bad Drawings}}
+          \centerline{by Ben Orlin}
+
+When we were looking to restrict the range of the $\inverse\tan(x)$
+there was a natural choice that was clearly visible in the
+graph. Notice that the derivative of $\arctan(x)$ (and thus the
+derivative of $\inverse\tan(x)$) is always positive while the
+derivative of the $\arccot(x)$ (and thus the derivative of
+$\inverse\cot(x)$) is always negative. This happens naturally for 
+the tangent and cotangent, but not for the arcsine, the
+arccosine or the other trigonometric functions.
+
+%\pagebreak[4]
+\begin{wrapfigure}[13]{r}{2in}
+  \vskip-4mm{}
+  \captionsetup{labelformat=empty}
+  % \centerline{\includegraphics*[height=1.9in,width=1.3in]{../Figures/arcsin6}}
+  \centerline{\includegraphics*[height=2.3in,width=2in]{../Figures/arcsin6}}
+\label{fig:arcsin6}
+\end{wrapfigure}
+But this does suggest how we might proceed. As you can see in the
+sketch at the right the slope of $\arcsin(x)$ is sometimes positive
+and sometimes negative. Since we must restrict the range of
+$\inverse\sin(x)$, we may as well make a convenient choice.  We'd like
+to constrain the range of the inverse sine in such a way that its
+derivative is always positive, and we'd like to constrain the range of
+the inverse cosine in such a way that its derivative is always
+negative.
+
+
+From the sketch we see that if we restrict
+the range of $\inverse\sin(x)$ to the interval $[-\pi/2, \pi/2]$ the
+graph of $\inverse\sin(x)$ (in blue) will \emph{always}\aside{Except
+  at the endpoints of course. What do you think the slope of
+  $\inverse\sin(x)$ is
+  at $x=\frac{\pi}{2}$?} have a
+positive slope, and therefore a positive derivative.
+
+With this restriction in place we \emph{define} the derivative of the
+inverse sine as follows.
+
+%\pagebreak[4]
+\begin{mydefinition}[The Derivative of the Inverse Sine]
+  \label{def:InvSin}
+ The derivative of the inverse sine function is defined to be,\\
+ \centerline{$\displaystyle\dfdx{(\inverse\sin(x))}{x}=\frac{1}{\sqrt{1-x^2}}$,}
+ where $-\frac{\pi}{2}\lt \inverse\sin(x)\lt \frac{\pi}{2}$.
+ % \vskip-4mm{}
+\end{mydefinition}
+
+\begin{embeddedproblem}
+  What function is $\inverse\sin(x)$, as defined in
+  Definition~\ref{def:InvSin} the inverse off?\\
+  \hint{Naturally, $\inverse\sin(x)$ is the inverse of $\sin(x)$, but
+    with which domain?}
+\end{embeddedproblem}
+
+Similarly, if we restrict the range of $\inverse\cos(x)$ to $0\lt x
+\lt\pi$ its derivative will always be negative.
+
+\begin{mydefinition}[The Derivative of the Inverse Cosine]
+  \label{def:InvCos}
+ The derivative of the inverse sine function is defined to be,\\
+ \centerline{$\displaystyle\dfdx{(\inverse\cos(x))}{x}=\frac{-1}{\sqrt{1-x^2}}$,} where $0\lt x\lt \pi$.
+%  \vskip-4mm{}
+\end{mydefinition}
+%\pagebreak[4]
+% In Definition~\ref{def:InvSin} we had to choose a domain in order to
+% ensure that $\inverse\sin(x)$ is a function. Many choices were
+% possible so we made the convenient choice.  We will choose the domain
+% of  $\inverse\cos(x)$ similarly.
+
+% \begin{Digression}[Undefined Derivatives -- \textcolor{red}{Needs editing}]
+%   % Notice that restricting the \emph{\underline{range}} of the inverse
+%   % sine forces us to restrict the \emph{\underline{domain}} of the sine
+%   % itself. Because they are mutually inverse the domain of one is the
+%   % range of the other. So $\inverse\sin(x)$ is the inverse of $\sin(x)$
+%   % with domain $[-\pi/2, \pi/2]$, but \alert{not} the inverse of
+%   % $\sin(x)$ with domain $\RR$, because that function does not have an
+%   % inverse.
+
+%   % It is the nature of our topic which forces us to be so very careful
+%   % in making our definitions, not any perverse desire for complexity
+%   % for its own sake. Sometimes things are just complex and we have to
+%   % deal with that.  But since we are having to pay such close attention
+%   % to the details here we may as well point out one other small
+%   % difficulty.
+  
+%   % If we don't think about it very hard it seems like the derivative of
+%   % a function should be defined on the same domain as the function
+%   % itself. Every point where a function is defined it should have a
+%   % slope, right?
+
+%   % But notice that this is not true of $\inverse\sin(x)$. The domain of
+%   % $\inverse\sin(x)$, is $[-1,1]$ but the derivative of the inverse
+%   % sine is clearly not defined at the endpoints. (Do you see why not?)
+%   % So the domain of the inverse sine is slightly larger than the domain
+%   % of its derivative.  Indeed, it is often the case that the domain of
+%   % a function is (usually slightly) larger than the domain of its
+%   % derivative.
+
+  
+%   We spend a good deal of time at the beginning of a Calculus course
+%   talking about and drawing tangent lines simply because it is
+%   helpful, and intuitively appealing, to do so. As a result of this
+%   repetition it is easy to begin to identify the tangent line of the
+%   graph of a function with the derivative of the function. But the
+%   tangent line is not the derivative. They are two different entities.
+  
+  
+%   They must be. Recall that in Definition~\ref{def:TangentLine} we
+%   used the derivative to define the tangent line in
+%   definition in the first place.
+
+%   On the other hand when you look at the graph of $y=\inverse\sin(x)$
+%   it seems intuitively clear that (vertical) tangent lines exist at
+%   $x=-1$ and $x=1$.
+
+%   But according to  Definition~\ref{def:TangentLine} they do not. The
+%   problem is that since these lines are vertical they have no
+%   slope. As a result neither
+%   $\eval{\dfdx{\left(\inverse\sin(x)\right)}{x}}{x}{-1}$ nor
+%   $\eval{\dfdx{\left(\inverse\sin(x)\right)}{x}}{x}{1}$ exists.
+
+%   Since the derivative does not exist at $x=-1$, and $x=1$ it is
+%   impossible for the tangent line, as we have defined it, to exist
+%   because our definitions says that the slope of the tangent line at a
+%   point is
+%   equal to the derivative at that point.
+
+%   This all probably seems like a lot of fussy, nit-picking on our
+%   part. After all, we can \emph{see} in our graph that  \emph{tangent line} of $\inverse\sin(x)$ is
+%   perfectly well defined at the endpoints. In both cases it is a
+%   vertical line, so what's all the fuss about?
+% has the same
+%   slope a
+%   So the
+%   existence of the line tangent to the graph of $y=\inverse\sin(x)$ at
+%   $x=\pm1$ doesn't necessarily mean that the derivative is defined
+%   there. And in fact, in this case it is not.
+
+%   Under what conditions a derivative is, and is not, defined is not a
+%   matter we have taken up yet because we do not yet have all of the
+%   tools we'll need. We will return to this question in
+%   Section~\ref{subsec:underl-deriv}.
+% \end{Digression}
+
+% Inverting the cosine function has all of the same issues.  By flipping
+% the graph of the cosine across the line $y=x$ we can see the graph of
+% the multifunction, $\arccos(x)$. The cosine with domain $\RR$ is not
+% invertible so inverting the cosine consists of selecting an
+% appropriate branch of $\arccos(x)$ by constraining the the range of
+% $\arccos(x)$ (equivalently, constraining the domain of $\cos(x)$).
+
+% \begin{ProficiencyDrill}
+%   \begin{wrapfigure}[]{r}{2in}
+%     \vskip-5mm{}
+% \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=1.4in,width=1.6in]{../Figures/arccos2}}
+% \label{fig:arccos2}
+% \end{wrapfigure}
+
+% We used our freedom to constrain the range of $\inverse\sin(x)$ to
+%   guarantee that $\dfdx{(\inverse\sin(x))}{x}$ is always
+%   positive. Similarly we choose to constrain the range of $\inverse\cos(x)$ to
+%   guarantee that $\dfdx{(\inverse\cos(x))}{x}$ is always negative.
+%   Use the sketch at the right to show that if the
+%   range is constrained to the interval $[0,\pi]$ then
+%   $$
+%   \dfdx{(\inverse\cos(x))}{x} = \frac{-1}{\sqrt{1-x^2}}.
+%   $$
+% \end{ProficiencyDrill}
+
+%       %       \pagebreak[4]
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that if $y=\arcsin(x)$ then $y$ satisfies the
+    differential equation
+    $$
+    \dfdxn{y}{x}{2}+x\dfdx{y}{x}=0.
+    $$
+  \item The function   $y=\arccos(x)$ satisfies the same differential
+    equation. Show this in two different ways.
+    \begin{enumerate}[label={\bf{}(\roman*)}]{}
+    \item By direct computation, just as you did part (a).
+    \item By direct computation, after first observing that $\arccos(x)=\frac\pi2-\arcsin(x)$.
+    \end{enumerate}
+  \end{enumerate}{}
+\end{embeddedproblem-enumerate}
+
+
+      %       The derivative of inverse \emph{tangent} is always positive no matter which
+      %       branch we choose. Similarly The derivative of
+      %       inverse \alert{co}\emph{tangent} is always negative. There is no
+      %       choice where the inverses of the tangent and cotangent are involved.
+
+      %       But when we were choosing branches for $\inverse\sin(x)$ and
+      %       $\inverse\cos(x)$ we found that we did have a choice. By choosing our
+      %       branch carefully we can guarantee that either one has a positive or a
+      %       negative derivative.  To be consistent with the inverse tangent we
+      %       deliberately contrived to chose branches that made the derivative of
+      %       the \emph{sine} positive and made the derivative of the
+      %       \alert{co}\emph{sine} negative.
+
+\subsection*{The Inverse Secant and Inverse Cosecant}
+\begin{wrapfigure}[]{r}{2.5in}
+  \vskip-6mm{}
+  \captionsetup{labelformat=empty}
+  % \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/InvSecTriangle}}
+    \centerline{\includegraphics*[height=2in,width=2.5in]{../Figures/InvSecTriangle}}
+  \label{fig:InvSecTriangle}
+\end{wrapfigure}
+To find the differential of $\arcsec(x)$ we refer to the sketch at the
+right and we proceed exactly as before. If $y=\arcsec(x)$, then
+$x=\sec(y)$ so
+\begin{align*}
+  \dx{(\sec(y))}      \amp{}=\dx{x}\\
+  \sec(y)\tan(y)\dx{y}\amp{}= \dx{x}
+                        \intertext{so that}
+                        \dx{y}              \amp{}=\frac{{1}}{\sec(y)\tan(y)}\dx{x}.
+\end{align*} 
+
+\begin{ProficiencyDrill-1line}
+  Show that: $ \dx\left(\arcsec(x)\right)=\frac{\pm1}{x\sqrt{x^2-1}}.  $
+\end{ProficiencyDrill-1line}
+
+%\pagebreak[4]
+\begin{embeddedproblem-enumerate}{}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Use the fact that $y=\arccsc(x)$ if and only if $\csc(y)=x$
+    and proceeding as we did above, show that
+    $$
+    \dx\left(\arccsc(x)\right)= \frac{\mp 1}{\sqrt{1-x^2}}\dx{x}.
+    $$
+  \item Derive the same result from the identity:  $\arccsc(x)=
+    \frac{\pi}{2}-\arcsec(x)$.
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that if $y=\arcsec(x)$ then $y$ satisfies the
+    differential equation
+    $$
+    x(x^2-1)\dfdxn{y}{x}{2}+(2x^2-1)\dfdx{y}{x}=0.
+    $$
+  \item The function   $y=\arccsc(x)$ satisfies the same differential
+    equation. Show this in two different ways.
+    \begin{enumerate}[label={\bf{}(\roman*)}]{}
+    \item By direct computation, just as you did part (a).
+    \item By direct computation, after first observing that $\arccsc(x)=\frac\pi2-\arcsec(x)$.
+    \end{enumerate}
+  \end{enumerate}{}
+\end{embeddedproblem-enumerate}
+
+
+Again we will want to define the inverse secant, $y=\inverse\sec(x)$
+by restricting the range of the multifunction
+$y=\arcsec(x)$ in such a way that the derivative of $\inverse\sec(x)$
+will always be positive. Similarly for the inverse cosecant function.
+
+But forcing the derivative of the inverse secant to always be positive
+is a bit harder for a couple of reasons. The first is just that these
+functions are used less and thus we are not as familiar with them.
+The other is the nature of the derivative formula itself. Recall that
+$$
+\dfdx{(\arcsec(x))}{x}=\frac{\pm1}{x\sqrt{x^2-1}}.
+$$
+This time it is the presence of the $x$ in the denominator \emph{along
+  with} the $\pm1$ in the numerator that is troublesome. By choosing
+the range constraint judiciously we can control whether the plus or
+the minus is chosen in the numerator but any reasonable constraint on
+the \emph{range} of $\inverse\sec(x)$ will always include both
+positive and negative numbers in its \emph{domain}. So the $x$ in the
+denominator will make the derivative of $\inverse\sec(x)$ positive for
+some values and negative for others. We don't want that. We want it to
+be positive.
+
+Usually when we want things in the world to be simple, Nature just
+laughs at us. But not this time. This time the problem is simply that
+we have too many choices.  Both the $\pm1$ in the numerator and
+the $x$ in the denominator will influence the sign (positive or
+negative) of the expression $\frac{\pm1}{x\sqrt{x^2-1}}$. If they are
+both in play it is hard to control the sign. So to simplify things we
+just declare, by fiat, that the $x$ in the denominator will be
+positive.  Specifically, we'll replace the $x$ in the denominator
+with $\abs{x}$. Now we can control the sign of the derivative of the
+$\inverse\sec(x)$ by simply constraining its range.
+
+\begin{embeddedproblem}
+%   \begin{wrapfigure}[]{r}{2in}
+%     \vskip-10mm{}
+%     \captionsetup{labelformat=empty}
+%     \centerline{\includegraphics*[height=1.6in,width=2in]{../Figures/arcsec5}}
+%     \label{fig:arcsec5}
+%   \end{wrapfigure}
+   The sketch below \\
+        \centerline{\includegraphics*[height=1.6in,width=2in]{../Figures/arcsec5}}
+         shows that if we constrain the range of the
+    $\inverse\sec(x)$ to be the interval $(0, \pi/2)\cup(\pi/2,\pi)$ then 
+    $$
+    \dfdx{(\inverse\sec(x))}{x}=\frac{1}{\abs{x}\sqrt{x^2-1}}.
+    $$
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item  Use the identity $\inverse\csc(x)=\frac\pi2-\inverse\sec(x)$ to
+    show that
+    $
+    \dfdx{(\inverse\csc(x))}{x}=\frac{-1}{\abs{x}\sqrt{x^2-1}}.
+    $
+%  \item What is the range of $\inverse\sec(x)$?
+  \end{enumerate}
+%  \vskip-3mm{}
+\end{embeddedproblem}
+
+
+% \begin{embeddedproblem-enumerate}
+%   \begin{enumerate}[label={\bf{}(\alph*)}]
+%   \item Sketch the graph of the multifunction $\arcsec(x)$ and use
+%     it to identify the range constraint that guarantees that
+%     $\dfdx{(\inverse\csc(x))}{x}$ is always negative.
+%   \item What is the domain of $\inverse\sec(x)$?
+%   \end{enumerate}
+% \end{embeddedproblem-enumerate}
+
+Until now there has been a pattern to differentiation that we have not
+remarked on. But you may have noticed that when we differentiate a
+function we usually get back another function of the same type.
+That is,
+\begin{enumerate}
+\item The derivative of a polynomial is another polynomial,
+\item The derivative of a quotient of polynomials is another quotient
+  of  polynomials,
+\item The derivative of a trigonometric function is another trigonometric
+  function.
+\end{enumerate}
+
+The inverse trigonometric functions break this pattern. The derivative
+of an inverse trigonometric function is not another inverse
+trigonometric function. Nor is it a trigonometric function, a
+polynomial, or a quotient of polynomials\aside{Well, actually that's
+  not quite true the derivative of the inverse tangent \emph{is} a
+  quotient of polynomials, and a particularly simple one at that. But
+  it is not an inverse trigonometric function}.
+
+Do you suppose there is any significance to this?
+
+
+
+
+
+      %       when package did not graph
+      %       $y=\arctan\left(\frac{1+x}{1-x}\right)$, but actually graphed
+      %       $y=\inverse\tan\left(\frac{1+x}{1-x}\right)$.  So, what is the
+      %       difference?  This brings up what we actually mean by a function.  In
+      %       truth, $y=y(x)=\arctan(x)$ is not really a function.  To be a
+      %       function, then for every $y$ value, there must be a single value that
+      %       we can call $y(x)$. 
+
+      %       Notice that this is \emph{not} the graph of a function.  This is
+      %       because for any integer, $n$, $x=\tan(y)=\tan(x+n\pi)$.  
+      %       Because of this restriction on the \emph{range} of $\tan(x)$ (and thus
+      %       one the \emph{domain} of $\inverse\tan(x)$), when    $x\lt{}1$
+      %       $\arctan\left(\frac{1+x}{1-x}\right)=\arctan(x)+\frac{\pi}{4}$.
+      %       However, for $x\gt{}1$, $\arctan\left(\frac{1+x}{1-x}\right)=\arctan(x)-\frac{3\pi}{4}$.
+
+      %       This can be clearly seen when we superimpose the graphs of
+      %       $\arctan(x)+\frac{\pi}{4}$ (in orange) and
+      %       $\arctan(x)-\frac{3\pi}{4}$ (in red)  on the two branches of
+      %       $\arctan\left(\frac{1+x}{1-x}\right)$ (in black) as in the following sketch. \\
+      %       \centerline{\includegraphics*[height=1.5in,width=4in]{../Figures/arctan4}}
+
+
+      %       An easy way to remember what $\inverse{\tan}(x)$ means is to read
+      %       the symbol $\inverse{\tan}(x)$ as ``the angle whose tangent is
+      %       $x.$'' This emphasizes that $x$ is the tangent of some angle, and
+      %       $\inverse{\tan}(x)$ is that angle.
+
+      %       There similar issues with the ranges of the other five inverse
+      %       trigonometric functions, $\inverse\sin,$ $\inverse\cos,$
+      %       $\inverse\cot,$ $\inverse\sec,$ and $\inverse\csc$, but it is harder
+      %       to see how to resolve them than it was for the inverse
+      %       tangent. Because these problems consist mostly of defining
+      %       consistent conventions for these functions we will just tell you
+      %       what conventions are rather than discussing the conventions
+      %       themselves at length as we have here.
+
+      %       \begin{ProficiencyDrill}
+      %       Because $\sec(x)=\frac{1}{\cos(x)}$ the
+      %       restriction on the \emph{range} of the inverse secant function (and on
+      %       the \emph{domain} of the secant) is the same as the restriction on the
+      %       cosine and its inverse.
+
+      %       Use this to show that
+      %       $$
+      %       \dx\left(\arcsec(x)\right)=\frac{1}{\abs{x}\sqrt{x^2-1}}.
+      %       $$
+      %       \hint{Don't let this problem frighten you. The absolute value
+      %       follows directly from the \emph{domain} restriction. Use a triangle in
+      %       the unit circle as before to get the formula.}
+      %       \end{ProficiencyDrill}
+
+%\pagebreak[4]
+
+The inverse trigonometric functions will not have a significant role
+in our story for a while. However they will be very useful in some
+topics that will come up next semester. We've introduced them here
+simply because it makes sense to develop all of the differentiation
+rules at more or less the same time.
+
+We now have  differentiation formulas for all of the inverse
+trigonometric functions. These, along with the constraints on their
+ranges are given in the table below.
+\alert{Memorize them!} You will need them.
+
+      %       \begin{table}[h]
+      %       \caption{Differentials of Inverse Trigonometric functions}
+      %       \label{tab:InvTrigDiff2}
+\begin{center}
+  \begin{tabular}{|cccc|} \hline Function\amp{}
+                                           Domain\amp{}Range\amp{}Derivative\\\hline\hline $y=\inverse\tan(x)$ \amp{} Any
+                                                                                                       real number \amp{} $-\frac{\pi}{2}\lt{}y\lt{}\frac{\pi}{2}$
+                                                       \amp{}$\displaystyle\dfdx{y}{x}=\frac{1}{1+x^2}$\\
+                                         \amp{}\amp{}\amp{}\\
+    $y=\inverse\cot(x)$ \amp{} Any real number \amp{} $0\lt{}y\lt{}\pi$
+                                                       \amp{}$\displaystyle\dfdx{y}{x}=\frac{-1}{1+x^2}$\\
+                                         \amp{}\amp{}\amp{}\\
+    $y=\inverse\sin(x)$ \amp{} $-1\le x\le 1$ \amp{}
+                                           $-\frac{\pi}{2}\le
+                                           y\le\frac{\pi}{2}$
+                                                       \amp{}$\displaystyle\dfdx{y}{x}=\frac{1}{\sqrt{1-x^2}}$\\
+                                         \amp{}\amp{}\amp{}\\
+    $y=\inverse\cos(x)$ \amp{} $-1\le x\le 1$ \amp{} $0\le y\le\pi$
+                                                       \amp{}$\displaystyle\dfdx{y}{x}=\frac{-1}{\sqrt{1-x^2}}$\\
+                                         \amp{}\amp{}\amp{}\\
+    \multirow{2}{*} {$y=\inverse\sec(x)$} \amp{}$x\le-1$
+                                                 \amp{}$0\le y\lt{}\frac{\pi}{2}$ \amp{}\multirow{2}{*}
+                                                                           {$\displaystyle\dfdx{y}{x}=\frac{1}{\abs{x}\sqrt{x^2-1}}$}\\
+                                         \amp{} or $ x\ge 1$
+                                                 \amp{}or $\frac{\pi}{2}\lt{}y\le\pi$\amp{}\\
+                                         \amp{}\amp{}\amp{}\\
+    \multirow{2}{*}{$y=\inverse\csc(x)$} \amp{}$x\le-1$
+                                                 \amp{}$0\le y\lt{}\frac{\pi}{2}$
+                                                       \amp{}\multirow{2}{*}{$\displaystyle\dfdx{y}{x}=\frac{-1}{\abs{x}\sqrt{x^2-1}}$}\\
+                                         \amp{} or $ x\ge 1$
+                                                 \amp{}or $-\frac{\pi}{2}\lt{}y\le0$\amp{}\\
+                                         \amp{}\amp{}\amp{}\\\hline
+  \end{tabular}
+\end{center}
+      %       \end{table}
+
+%\pagebreak[4]
+\begin{ProficiencyDrill}
+  Compute each of the following:
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{3}
+    \item $\dx\left(\inverse\sin(x^{1/2})\right)$
+    \item $\dx\left(\inverse\tan(x^{1/2})\right)$
+    \item $\dx\left(\inverse\sec(x^{1/2})\right)$
+    \item $\dx\left( \left( \inverse\sin(x) \right)^{-1}\right)$
+    \item $\dx\left( \left( \inverse\tan(x) \right)^{-1}\right)$
+    \item $\dx\left( \left( \inverse\sec(x) \right)^{-1}\right)$
+    % \item
+    %   $\dx \left[ (3x^2+2x-1) \inverse\sec(\inverse{x}+x^2) \right]$
+    % \item $\dx \left(\inverse\csc(x^2) \right)$
+    \end{multicols}
+  \end{enumerate}
+\end{ProficiencyDrill}
+
+%\pagebreak[4]
+\begin{embeddedproblem}[Find the Pattern]
+  Show that for any constant $a\gt{}0$,
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item
+      $\dx{\left(\dfrac1a\inverse\tan\left(\dfrac{x}{a}\right)\right)}=\dfrac{1}{x^2+a^2}\dx{x}$
+    \item
+      $\dx{\left(\dfrac1a\inverse\sin\left(\dfrac{x}{a}\right)\right)}=\dfrac{1}{a\sqrt{a^2-x^2}}\dx{x}$
+    \item
+      $\dx{\left(\dfrac1a\inverse\sec\left(\dfrac{x}{a}\right)\right)}=\dfrac{1}{\abs{x}\sqrt{x^2-a^2}}\dx{x}$
+    \item
+      $\dx{\left(\dfrac1a\inverse\cot\left(\dfrac{a}{x}\right)\right)}=\dfrac{1}{x^2+a^2}\dx{x}$
+    \item
+      $\dx{\left(\dfrac1a\inverse\cos\left(\dfrac{a}{x}\right)\right)}=\dfrac{1}{\abs{x}\sqrt{x^2-a^2}}\dx{x}$
+    \item
+      $\dx{\left(\dfrac1a\inverse\csc\left(\dfrac{a}{x}\right)\right)}=\dfrac{1}{a\sqrt{a^2-x^2}}\dx{x}$
+   \end{multicols}
+ \end{enumerate}
+ Identify and describe any patterns you see in the forms of these derivatives.
+\end{embeddedproblem}
+
+\begin{embeddedproblem}
+  Show that
+  $\displaystyle\dx{\left(\dfrac{\inverse\sin(x)+x\sqrt{1-x^2}}{2}\right)}=\sqrt{1-x^2}\dx{x}$.
+\end{embeddedproblem}
+%\vskip-2mm{}
+\begin{embeddedproblem-enumerate}[Find the Pattern]
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \item   Show that each of the following statements is true.
+  \begin{enumerate}[label={\bf{}(\roman*)}]
+    \begin{multicols}{2}
+    \item
+      $\dx\left(\inverse\sin\left(\frac{x}{\sqrt{x^2+1}}\right)\right)=\frac{1}{x^2+1}\dx{x}$
+    \item
+      $\dx\left(\inverse\sin\left(\frac{x}{\sqrt{x^2+4}}\right)\right)=\frac{2}{x^2+4}\dx{x}$
+    \item
+      $\dx\left(\inverse\sin\left(\frac{x}{\sqrt{x^2+9}}\right)\right)=\frac{3}{x^2+9}\dx{x}$
+    \item
+      $\dx\left(\inverse\sin\left(\frac{x}{\sqrt{x^2+5}}\right)\right)=\frac{\sqrt{5}}{x^2+5}\dx{x}$
+    \end{multicols}
+  \end{enumerate}
+  \item Now compute
+    $\dx\left(\inverse\sin\left(\frac{x}{\sqrt{x^2+a^2}}\right)\right),$
+    where $a\gt0.$
+  \item  Does this problem change if $a$ is negative? How?
+  \end{enumerate}
+%  \vskip-4mm{}
+\end{embeddedproblem-enumerate}
+
+%\vskip-2mm{}
+%\pagebreak[4]
+\begin{embeddedproblem}
+  Show that each of the following statements is true.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+%    \begin{multicols}{2}
+    \item
+      $\dx\left(x\inverse\sin(x)+\sqrt{1-x^2}\right) =
+      \inverse\sin(x)\dx{x}.$
+    \item
+      $\dx\left(x\inverse\cos(x)-\sqrt{1-x^2}\right) =
+      \inverse\cos(x)\dx{x}.$
+ %   \end{multicols}
+    \end{enumerate}
+%    \vskip-6mm{}
+\end{embeddedproblem}
+%\vskip-2mm{}
+%\pagebreak[4]
+\begin{embeddedproblem-enumerate}
+  % Consider $y_1(x)=\inverse\cot\left(\frac{1-x}{1+x}\right),$
+  % and $y_2(x)=\inverse\tan(x).$
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that
+    $\dx\left(\inverse\cot\left(\frac{1-x}{1+x}\right)\right)=
+    \dx\left(\inverse\tan(x)\right)$.
+  \item Part (a) says that the graphs of
+    $y=\inverse\cot\left(\frac{1-x}{1+x}\right)$ and
+    $y=\inverse\tan(x)$ have the same slope when $x\neq-1$  and that
+    their graphs  should differ by a constant. Substitute $x=0$
+    into both to see what this constant should be.
+  \item Now plot the graphs of both. Do they differ by a constant?
+    Explain why or why not.
+    % \begin{multicols}{2}
+  % \item Graph $y_1(x)$ and $y_2(x)$ on the same set of axes. You
+  %   should see that when $x$ is positive they have \emph{nearly} the
+  %   same graph.
+  % \item Show that $\dx{y_1}$ and $\dx{y_2}$ are also \emph{nearly}
+  %   the same, at least when $x\ge0.$
+  % \item Modify $y_2$ so that it is identical to $y_1.$
+    % \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+\section{Curvature}
+\label{sec:curvature}
+\TLogo{appendix:radi-curv-accord}
+
+Intuitively speaking, the \term{curvature} of a plane curve is how
+quickly a curve turns. It is an important property to understand when
+designing, for example, a road or a roller-coaster where the sharpness
+of a curve determines the safe speed limit for that curve. Also, the
+stresses imposed on the physical structure of a moving object during
+any high speed maneuver are directly related to the curvature of their
+paths.
+
+One of the first people to study the notion of curvature
+was
+\href{https://mathshistory.st-andrews.ac.uk/Biographies/Oresme/}{Nicole
+  Oresme\aside{Pronouced ``Or-em,'' not ``Or-es-me.''}}
+($1323-1382$). Oresme defined the curvature of a straight line to be
+zero (no surprise), and he defined the curvature of a circle to be the
+reciprocal of its radius. For example, a circle with radius $2$ is
+$\frac12$ whereas the curvature of a circle with radius $1$ is
+$1$. This makes intuitive sense. A circle with a
+smaller radius is
+``more curved'' that one with a larger radius.  The radius of the
+earth is so large that the curvature of say, the equator, is so close
+to zero as to be completely imperceptible, at least for someone
+standing on the surface.
+
+\begin{wrapfigure}[14]{r}{2.7in}
+    \vskip-9mm{}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=2.5in,width=2.7in]{../Figures/Curvature6}}
+  \label{fig:Curvature6}
+\end{wrapfigure}
+Oresme's definition of curvature works just fine for circles and
+straight lines but we'd like to extend it to more general
+curves. Specifically, given a curve, we'd like to associate a number
+with each point on the curve which tells us the curvature at that
+point. Ideally, this should also generalize Oresme's results for
+straight lines and circles.
+% should have a
+% curvature of zero at every point and that the curvature of a circle
+% should be be constantly equal to the reciprocal of the radius. The
+% arctangent (multi)function is exactly the tool we need to begin.
+
+The sketch at the right shows three circles in the first quadrant with
+radii, $\frac13$, $1$, and $2$, respectively.  Notice that on the unit
+circle, the point of tangency travels $\frac{\pi}{2}$ units along the
+circumference while the the red tangent line rotates through an angle
+of $\frac{\pi}{2}$ radians. On the circle of radius $2$, the point of
+tangency travels $2 \times \frac{\pi}{2}$ units to turn the tangent
+line the same $\frac{\pi}{2}$ radians, whereas on the circle of radius
+$1/3$, the point of tangency travels $\frac13\times\frac{\pi}{2}$
+units to turn the tangent line the same $\frac\pi2$ radians.  This
+suggests that a possible definition for \term{curvature} might be the
+number of radians the tangent line rotates through as it travels along
+the curve divided by the distance traveled along the curve while
+making the turn. In other words, the curvature for a circle of radius
+$r$ would be
+$$
+\frac{\theta \text{ radians }}{r\theta \text{ units}}=\frac{1}{r}
+\text{ radians per unit. }
+$$
+This seems to make intuitive sense too. A circle with a radius of $0.0000001$
+meters certainly seems to be ``more curved'' than a circle with radius
+$1,000,000,000$ meters.
+
+By the same reasoning, the curvature of a straight line would be
+zero. (Why?) 
+
+This definition works fine for circles and straight lines which have
+constant curvature, but what about a more general curve. What if the
+curvature changes from point to point along the curve such as a long
+and winding road.
+
+Clearly we'll need a definition of curvature that also changes from point
+to point on the curve. So it seems reasonable to consider infinitely
+small changes in both the angle $\theta$ and in arclength $s$.  More
+precisely, we make the following definition.
+
+
+\begin{mydefinition}
+  \label{def:curvature-1}
+\begin{wrapfigure}[20]{l}{2in}
+  \vskip-11mm{}
+  \captionsetup{labelformat=empty}
+  % \centerline{\includegraphics*[height=1.3in,width=1.3in]{../Figures/Curvature5}}
+  \centerline{\includegraphics*[height=2in,width=2in]{../Figures/Curvature5}}
+\label{fig:Curvature5}
+\end{wrapfigure}
+%\vskip-8mm{}
+Suppose the  point $P=(x,y)$ lies 
+on a curve $C$ as in the sketch at the left. Let $\theta$ 
+represent
+the angle formed in the figure at the
+left by the line tangent to  curve $C$ at point $P$, with some
+fixed line.
+
+Then the curvature is defined to be
+\begin{equation}
+\kappa=\abs{\dfdx{\theta}{s}}.\label{eq:CurvatureDef}
+\end{equation}
+\end{mydefinition}
+
+To keep things simple we will always designate $\theta$ to be the
+angle the tangent line forms with a horizontal line.
+
+
+It can be difficult at first to see how formula~\ref{eq:CurvatureDef}
+measures curvature but think carefully for a moment about the meaning
+of the expression $\dfdx{\theta}{s}$. Loosely put ``the rate of change
+of $\theta$ (the angle of our curve with the horizontal) with respect
+to the change of $s$ (the arclength of our curve)'' is the ratio of
+how much a point moving on the curve has changed direction to how far
+it has moved. The more our curve changes direction in a given distance
+the more it is curved and so the more curvature it has.
+
+
+Don't let the absolute value bars in this formula disturb you. They
+are there simply because we don’t want to consider whether a curve
+bends to the right or to the left (whether $\theta$ is increasing or
+decreasing), but just how fast it bends.
+
+Also note, for later reference, that
+\begin{equation}
+  \tan(\theta)=\dfdx{y}{x}.\label{eq:TanEqDeriv}
+\end{equation}
+
+% \begin{ProficiencyDrill}
+%   Do you see that this definition captures the idea that curvature is
+%   a measure of how quickly, or slowly, our direction changes as we
+%   travel along the curve?  Explain.
+% \end{ProficiencyDrill}
+
+A good test of the value of a new definition is whether or not it
+produces the same results that the earlier, more
+intuitive musings that led you to it. It should be clear that with this definition,
+the curvature of a straight line would still be zero. (Why?)
+
+%\pagebreak[4]
+\begin{embeddedproblem}
+  \label{prob:CircleCurvature}
+  Use the following sketch of a quarter-circle with radius $r$ to
+  show that Definition~\ref{def:curvature-1} yields a curvature of $\kappa =\frac{1}{r}$.\\
+  \centerline{\includegraphics*[height=2.1in,width=2.1in]{../Figures/Curvature3}}
+\end{embeddedproblem}
+
+In problem (\ref{prob:CircleCurvature}) it was helpful to know that the
+line tangent to a circle is always perpendicular to its radius. But
+for an arbitrary curve this is not necessarily true. Let's look at the
+general situation.
+
+
+First recall from equation~(\ref{eq:TanEqDeriv}) that
+$ \tan(\theta) = \dfdx{y}{x}$.  Rewrite this as
+$\theta=\arctan\left(\dfdx{y}{x}\right)$ and differentiate so that  
+\begin{equation}
+  \dx{\theta}=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\dx\hskip-2pt\left(\hskip-1mm\dfdx{y}{x}\right).\label{eq:DiffTheta}
+\end{equation}
+
+To continue we need to compute $\dx\left(\dfdx{y}{x}\right)$ which
+seems straightforward enough since the Quotient Rule applies. This
+results in
+$$
+\dx\left(\dfdx{y}{x}\right) =
+\frac{\dx{x}\textcolor{red}{\dx{(\dx{y})}}-\dx{y}\textcolor{red}{\dx{(\dx{x})}}}{(\dx{x})^2}.
+$$ 
+Next simplify the notation a bit.  Let\aside{Note this very
+  carefully, $\d{(\dx{y})}\neq (\dx{y})^2$,  because  the latter is
+  $(\dx{y})\times(\dx{y})$ whereas the former is the \emph{second
+    difference} of $y$.} $\textcolor{red}{\d{(\dx{y})}}=\dx^2{y}$ and
+$\textcolor{red}{\d{(\dx{x})}}=\dx^2{x}$ so that,
+$$
+\dx\left(\dfdx{y}{x}\right) =
+\frac{\dx{x}\d^2{y}-\dx{y}\dx^2{x}}{(\dx{x})^2}.
+$$
+% which seems OK at first glance. But there is a problem because
+% $\dx^2x$ is equal to zero, but $\dx^2y$ is \emph{not necessarily}
+% equal to zero and it is not at all clear why this should be true. We
+% will take a moment to investigate this.
+
+But $\dx(\dx{x}) =\dx^2x$ and $\dx(\dx{y}) =\dx^2y$ present a
+problem for us.  We have observed regularly beginning  in
+Chapter~\ref{chapt:differentials} that differentials are
+questionable. If differentials are problematic, a
+second differential -- the differential of a differential -- is even
+moreso. The time has come to begin investigating this issue.
+
+%\pagebreak[4]
+\begin{Digression}[\foreign{Hic Sunt Dracones} (Here Be Dragons)]
+  \label{digression:curvature-1}
+\begin{wrapfigure}[13]{r}{1.5in}
+  \vskip-4mm{}
+\captionsetup{labelformat=empty}
+\centerline{\href{https://en.wikipedia.org/wiki/Hunt-Lenox_Globe}{\includegraphics*[height=1.5in,width=1.5in]{../Figures/LennoxGlobe2}}}
+\caption{From the  Rare Book Division of the The New York Public Library}
+\label{fig:LennoxGlobe}
+\end{wrapfigure}
+To indicate that uncharted waters were the most dangerous medieval
+mapmakers would fill in the unexplored regions of their maps with
+illustrations of dragons and other mythological beasts. The Lennox
+Globe (1510 CE, seen at the right) even has the inscription
+``\foreign{Hic Sunt Dracones}'' (Here Be Dragons) along the eastern
+Asian coast. 
+  
+The concept of the differential of a differential, like $\dx^2x$,- is a
+mathematical dragon of sorts. % If we follow it too far we risk bringing
+% all of  Calculus crashing to the ground in a fiery storm of logical
+% contradictions.
+  We will proceed carefully.
+
+  The problem here is conceptual, not computational. That is, there is
+  no computation we can do to see what the value of $\dx^2x$ should
+  be. Rather, we need to think carefully about the meanings of our
+  symbols.
+
+  \subsubsection*{Leibniz' Conception}
+  When we use Leibniz' differential notation we think of $\dx{y}$
+  and $\dx{x}$ as tiny increments in the $x$ and $y$
+  coordinates. Specifically, $\dx{x}=x_2-x_1$ where $x_2$ and $x_1$
+  are \emph{infinitely} close together. As we've seen the concept of
+  a differential is already a difficult thing to accept.
+
+  But if we stick with Leibniz then it must be that
+  $ \dx(\dx{x}) = \dx{x_2}-\dx{x_1}, $ right? We can write this down
+  and we can read these symbols easily enough. But what they seem to
+  \emph{mean} is that $\dx(\dx{x})$ is the infinitely small difference
+  of two infinitely small differences.
+
+   \vskip2mm{}
+  \centerline{\bf{} Down that path there are dragons. We won't
+    go there.} % \vskip2mm{}
+
+
+  \subsubsection*{Newton's Conception}
+  Instead we'll adopt Newton's viewpoint and hope that it gives us a
+  meaningful interpretation of our symbols.
+  
+  For Newton, time was the only variable, and time always flows forward
+  at a constant rate\aside{Of course, with Einstein's work on
+    Relativity Theory we now know that this assumption is not true. No
+    matter. Newton assumed it was true and he based his Method of
+    Fluxions on that assumption.}. He thought of a variable, $x$ for
+  example, as moving, or flowing (\foreign{fluent}) in time and
+  $\dot{x}$ was the rate of flow (\foreign{fluxion}) of the
+  \foreign{fluent} $x$. In the simplest example, if $x$ is the position
+  of a point then $\dot{x}$ is its velocity.
+
+  Newton only applied his dot notation to something that was changing
+  in time; something that has a \emph{rate of change with respect to
+    time.} Can we apply it to time itself?
+
+  Sure we can. Time itself is ``changing in time'', isn't it? Time
+  flows at a rate of $1$ second per second, or one day per day, or one
+  century per century. The units don't really matter. Loosely speaking
+  (and mixing the Newtonian and Leibnizian viewpoints a bit), an
+  increment of time now has the same magnitude as an increment of time
+  later, has the same magnitude as an increment of time in the
+  past. That is, every increment of $t$ is the same size.  If we let
+  $t$ represent elapsed time then this means that the infinitesimal
+  increment $\dx{t}$ is \emph{constant}, so the fluxion of $\dx{t}$ is
+  zero: $\dx(\dx{t})=\dx^2{t}=\dot{\dx{t}}=0$.  However, keep in mind
+  that this is not true of a quantity that is
+  flowing at a variable rate. For example, if $y=t^2$ then
+  $\eval{\dx{y}}{t}{1}=2\dx{t}$ whereas $\eval{\dx{y}}{t}{2}=4\dx{t}$.
+
+  This solves our problem. If $\dx{t}$ is \emph{constant} then by the
+  Constant Rule $\dx^2{t}=\dx(\dx{t})=0$.
+
+  Moreover we always have the option of adopting Newton's convention
+  that the \emph{only} independent variable is time so that when we
+  write $\dfdx{y}{x}$ we are thinking of  the independent
+  variable $x$ as time (although we rarely say so out loud), and we are
+  thinking of $y$ as functionally dependent on time (represented by
+  $x$ in this case).  Therefore
+  $$\dx^2x=\dx(\dx{x})=0 \text{ and } \dx^2y=\dx(\dx{y})\neq0.$$
+
+  % Recall that the differential notation was Leibniz' invention and it
+  % reflects a static viewpoint. But Newton's approach was dynamic. For
+  % Newton the only \alert{independent} variable was time. Everything
+  % else depends on how much time has elapse since we started our
+  % clock. That is, everything else is a dependent variable (a
+  % \term{function} of time).
+
+  % Moreover Newton assumed that time flows forward into the future at a
+  % \alert{constant} rate\aside{Of course, with Einstein's work on
+  % Relativity Theory we now know that this assumption is not true.}
+  % Since the differential of a
+  % constant is zero we have, by the Constant Rule $\dx{(\dx{t})}=0$.
+
+
+  As a practical matter we will rarely be interested in second order
+  differentials like $\dx^2x$ or $\dx^2y$. As we indicated in
+  Section~\ref{sec:hist-intr} differentials are really just an aid to
+  computation; a convenient fiction. They are a helpful aid but the
+  more important and useful concept is the derivative.  Differentials
+  only serve as a step along the way to finding derivatives.
+
+  But we will be very interested in second order derivatives:
+  $
+  \dfdx{}{x}\left(\dfdx{y}{x}\right) = \dfdxn{y}{x}{2}
+  $
+  because these often represent real, physical quantities like
+  velocity or acceleration.
+  
+
+  But now there is another difficulty that can't be ignored.
+
+  In order to make sense of the expression $\dx^2{x}$ we had to
+  abandon Leibniz' conception altogether. It is nice that Newton's
+  viewpoint gives us a way to make sense of the notation but what this
+  tells us is that taking either viewpoint (Newton's or Leibniz') does
+  not get us to the logical heart of the matter. A viewpoint is just a
+  manner of thinking. We adopt a viewpoint in order to build
+  intuition.
+
+  When two viewpoints are at odds it means that we need something more
+  general. In this case we need a theory that subsumes, and can
+  replace, the views of both Leibniz and Newton.
+
+  Eventually we will stand at the top of the Calculus mountain
+  so we can see it all at once. From that vantage point we'll be able
+  to see the path that Newton took, and the path that Leibniz took.
+  This issue must be addressed but for now we will continue to work
+  intuitively.  We will wait to begin our trek to the summit in
+  chapter~\ref{chapt:whats-wrong-with}. 
+\end{Digression}
+
+
+
+Returning to our computation in progress we have
+$$
+dx\left(\dfdx{y}{x}\right) =\frac{\dx{x}\cdot
+   \d^2{y}-\dx{y}\cdot\CancelToRed{=0}{\d^2{x}}}{(\dx{x})^2} = \left(\dfdxn{y}{x}{2}\right)\dx{x}% \frac{\dx{x}\cdot\d^2{y}}{(\dx{x})^2}
+ $$
+
+% \begin{align*}
+%   \dx\left(\dfdx{y}{x}\right) \amp{}=
+%                                 \frac{\dx{x}\cdot
+%                                 \d^2{y}-\dx{y}\cdot\CancelToRed{=0}{\d^2{x}}}{(\dx{x})^2} \\
+%   \dx\left(\dfdx{y}{x}\right) \amp{}= \left(\dfdxn{y}{x}{2}\right)\dx{x}% \frac{\dx{x}\cdot\d^2{y}}{(\dx{x})^2}
+    %   \end{align*}
+  
+  Returning to equation~(\ref{eq:DiffTheta}) we have
+  $$
+  \dx{\theta}=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\dx\hskip-2pt\left(\dfdx{y}{x}\right)=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\left(\dfdxn{y}{x}{2}\right)\dx{x}
+  $$
+% \begin{align*}
+%   \dx{\theta}\amp{}=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\dx\hskip-2pt\left(\dfdx{y}{x}\right)\\
+%              \amp{}=\left(\frac{1}{1+\left(\dfdx{y}{x}\right)^2}\right)\left(\dfdxn{y}{x}{2}\right)\dx{x}% \frac{\dx{x}\cdot\d^2{y}}{(\dx{x})^2}\\
+% \end{align*}
+
+%\pagebreak[4]
+\begin{embeddedproblem}
+Show that
+  \begin{equation}
+    \kappa=\frac{\abs{\dfdxn{y}{x}{2}}}{\left[1+\left(\dfdx{y}{x}\right)^2\right]^{\frac32}}.\label{eq:CurvatureDef2}
+  \end{equation}
+  \hint{$\dx{s}=\sqrt{(\dx{x})^2+(\dx{y})^2}$.}
+%  \vskip-6mm{}
+\end{embeddedproblem}
+
+Since the equation of a straight line is $y=mx+b$ it is clear that
+formula~(\ref{eq:CurvatureDef2}) recovers Oresme's assertion that the
+curvature of a straight line must be zero. (Why?)
+
+\begin{myexample}
+  Let's apply formula~(\ref{eq:CurvatureDef2}) to a circle to see if
+  this agrees with Oresme's definition of the curvature of a circle.
+  Consider the circle of radius $r$ given by the graph of
+  $x^2+y^2=r^2$.
+  Differentiate to obtain $  2x\dx{x}+2y\dx{y}=0$ so that \\
+  \centerline{$\displaystyle \dfdx{y}{x}=-\frac{x}{y}.  $}
+  Differentiate both sides again to see that\\
+\centerline{$\displaystyle\dx\left(\hskip-2pt\dfdx{y}{x}\right)=\frac{-y\dx{x}+x\dx{y}}{y^2}$}
+or, after dividing both sides by $\dx{x}$\\
+\centerline{$\displaystyle  \dfdxn{y}{x}{2}=\frac{-y+x\dfdx{y}{x}}{y^2}$.}
+
+
+
+% \begin{ProficiencyDrill-enumerate}
+%     \begin{enumerate}[label={\bf{}(\alph*)}]
+%     \item   Use the  values for $\dfdx{y}{x}$ and $\dfdxn{y}{x}{2}$
+%       just computed to show that for a circle of radius $r$, the
+%       curvature $\kappa=1/r$.
+%     \item Does this agree with the idea that as the radius of a circle
+%       gets larger, the curvature gets smaller?
+% \end{enumerate}
+% \end{ProficiencyDrill-enumerate}
+
+\begin{ProficiencyDrill}
+  Use the  values for $\dfdx{y}{x}$ and $\dfdxn{y}{x}{2}$ we
+  just computed to show that for a circle of radius $r$, the
+  curvature $\kappa=1/r$.
+  Does this agree with the idea that as the radius of a circle
+  gets larger, the curvature gets smaller?
+\end{ProficiencyDrill}
+\end{myexample}
+
+As we said earlier, the curvature of a general curve need not be
+constant, but we can still apply formula~(\ref{eq:CurvatureDef2}).
+
+\begin{embeddedproblem-enumerate}
+  \begin{enumerate}[label={\bf{}(\alph*)}]{}
+    % \begin{multicols}{4}
+  \item Show that the curvature of the parabola $y=x^2$ is given by
+    $ \displaystyle\kappa=\frac{2}{(1+4x^2)^{\frac32}}$.
+  \item Where does the greatest curvature occur? Does this agree with
+    what you can see on the graph of $y=x^2$?
+    % \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem-enumerate}
+
+\begin{embeddedproblem}
+Consider the ellipse given by $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$,
+  $a\gt{}b\gt{}0$.\\
+%   \begin{wrapfigure}[5]{r}{2.3in}
+%   \vskip-21mm{}
+% \captionsetup{labelformat=empty}
+  \centerline{\centerline{\includegraphics*[height=1.4in,width=2.3in]{../Figures/Curvature7}}}
+% \label{fig:Curvature7}
+% \end{wrapfigure}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that the curvature is given by
+    $ \kappa=\frac{a^4b^4}{(a^4y^2+b^4x^2)^{\frac32}}$.\\
+    \hint{Rewrite
+      $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ as
+      $b^2x^2+a^2y^2=a^2b^2$.
+    }
+  \item Looking at this graph it appears that the curvature at $(a,0)$ should be
+    greater than at $(0,b)$. Use the formula you just derived to
+    verify this.
+  \item A circle is the special case of an ellipse when $a=b$. Use the
+    formula from part (a) to compute the curvature of a circle.
+  \end{enumerate}
+%  \vskip-6mm{}
+\end{embeddedproblem}
+%\vskip-3mm{}
+
+\begin{embeddedproblem}[Descartes' Method of Normals and Curvature]
+  Recall that in exercise~\#\ref{prob:DescartesNormals2} of
+  section~\ref{sec:descartes-normals} we used Descartes's Method of
+  Normals to find the
+    \begin{wrapfigure}[7]{r}{2.4in}
+%    \vskip-4mm{}
+    \captionsetup{labelformat=empty}
+    % \centerline{\includegraphics*[height=1.5in,width=2in]{../Figures/DescartesCircle5}}
+    \centerline{\includegraphics*[height=1.8in,width=2.4in]{../Figures/DescartesCircle5}}
+    \label{fig:DescartesCircle3}
+  \end{wrapfigure}
+line tangent to the graph of $y=\sqrt{2x}$ at
+  the point $(2,2)$ by finding a circle with its center on the
+  $x$-axis which touches the graph exactly once, as seen in the 
+  sketch at the right.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  % \item Take a guess, do you think the circle and the parabola in this
+  %   sketch have the same curvature at $(2,2)$?
+  \item Compute the curvatures of the parabola and the circle seen in
+    the diagram at the right at their point of intersection to show
+    that they are not the same.
+  \item Find the equation of the circle which passes through the point
+    $(2,2)$, and also has  the same slope
+    and curvature as $y=\sqrt{2x}$ at the point $(2,2)$. This is known as the \term{osculating circle},
+      or ``kissing circle''.
+  \item Show that the center of the osculating circle is on the line
+    which passes through $(2,2)$ and $(3,0)$.
+  \end{enumerate}
+%  \vskip-6mm{}
+\end{embeddedproblem}
+
+We observed earlier that if we  define curvature using
+equation~(\ref{eq:CurvatureDef}) then the curvature of a straight line
+will be zero as Oresme said it should be. The converse is also
+true. Specifically, if $\abs{\dfdx{\theta}{s}}=\kappa=0$ then $\theta$
+must be a constant and so $\dfdx{y}{x}=\tan(\theta)$ must also be a
+constant. (For simplicity we'll ignore the case where
+$\theta=\pm\frac{\pi}{2}$.)
+
+\begin{ProficiencyDrill}
+  Assume that  $-\frac{\pi}{2}\lt \theta \lt
+  \frac{\pi}{2}$ and that $\theta$ is constant. Complete the line of
+  reasoning we began in the previous paragraph to show that
+  $$
+  y=  \left(\tan(\theta)\right)x+b
+  $$
+  for some number $b$. Explain how you know that this is this the
+  equation of a line.
+\end{ProficiencyDrill}
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1.5in,width=1.5in]{../Figures/Curvature5}}
+\label{fig:Curvature5Redux}
+\end{wrapfigure}We've also shown that the curvature of a circle is
+also constant (specifically, it is the reciprocal of the circle's
+radius). The converse of this is also true\aside{But only if we
+  confine our attention to curves in the plane. It turns out that
+  there are many curves in three-dimensional space, (that is, curves
+  that are not constrained to a two-dimensional plane) with constant
+  curvature which are neither circles nor lines.}. This is shown in
+much the same manner as the straight line but, naturally, the
+computations are more complex.
+
+To see this recall the diagram that we used to define curvature, shown
+at the right. If we  suppose that $\abs{\dfdx{\theta}{s}}=\kappa$ then
+we see that $\dfdx{\theta}{s}=\pm\kappa$. From our diagram
+we also see that
+$$
+\sin(\theta)=\dfdx{y}{s}\text{,  and }\cos(\theta)=\dfdx{x}{s}.
+$$
+\begin{embeddedproblem-enumerate}
+         \begin{enumerate}[label={\bf{}(\alph*)}]{}
+         \item Complete the line of reasoning we began in the
+           previous paragraph to show that
+           $\dx{y}=\pm\frac1\kappa\sin(\theta)\dx{\theta}$ and
+           $\dx{x}=\pm\frac1\kappa\cos(\theta)\dx{\theta}$.
+         \item Next show that
+           \begin{align*}
+             x\amp=\pm\frac1\kappa\sin(\theta) +x_0\\
+             y\amp=\mp\frac1\kappa\cos(\theta) +y_0
+           \end{align*}
+           for some constants $x_0$ and $y_0$.
+         \item And finally, show that the point $(x,y)$ lies on a
+           circle of radius $\frac1\kappa$. What is the equation of the circle?
+       \end{enumerate}
+
+\end{embeddedproblem-enumerate}
+
+
+%%% Local Variables: 
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 

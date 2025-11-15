@@ -1,0 +1,489 @@
+\documentclass[11pt]{article}
+
+\usepackage{caption}
+
+
+\usepackage{geometry}
+
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\linespread{1.1}
+
+\usepackage[authoryear]{natbib}
+
+\setcounter{MaxMatrixCols}{30}
+
+%\addtolength{\skip\footins}{-10pt}
+
+\setlength{\topmargin}{-.9in}
+
+\setlength{\oddsidemargin}{-.1in}
+% \setlength{\evensidemargin}{-.3in}
+\setlength{\textwidth}{6.8in}
+ \setlength{\textheight}{9.1in}
+
+\addtolength{\skip\footins}{50pt}
+\setlength{\footskip}{50pt}
+
+\newcommand{\sep}{\vspace{-3pt}
+\begin{center}
+{\mathversion{normal}
+$\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}$}
+\end{center} \vspace*{-5pt}}
+
+
+
+%{\vspace*{10pt}\begin{tabular}{|p{0.9\textwidth}|}
+ %   \hline \\  \begin{sf} }
+  % { \end{sf}  \\  \hline
+   % \end{tabular}  \vspace*{10pt}  }%
+
+    \usepackage{framed}
+
+    \newenvironment{source}%
+ {\bigskip \sep \vspace*{-6pt} \begin{quote}
+          \begin{sf}   }
+   {   \end{sf}     \end{quote} \vspace*{-6pt} \sep \bigskip}%
+
+\newcounter{tasknumb}
+\newcommand{\tasknumb}{\stepcounter{tasknumb}\textmd{\textbf{$\fbox{$\fbox{Task \thetasknumb}$}$}}}
+
+
+\newenvironment{task}%
+ {\begin{itemize}
+ \item[\tasknumb]  }
+{
+    \end{itemize}    }%
+
+
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot[R]{\thepage}
+\cfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+
+\title{The derivatives of the sine and cosine functions}
+\author{Dominic Klyve\thanks{Department of Mathematics, Central Washington University, Ellensburg, WA  98926; \texttt{dominic.klyve@cwu.edu}.}}
+\date{June 6, 2017}
+\bigskip
+
+\maketitle
+\thispagestyle{fancy}
+
+\vspace*{-12pt}
+
+\section*{Introduction}
+
+All students of calculus  learn the ``definition of the derivative.''  It's possible you have even been asked to memorize it for a test or quiz.  Most calculus books published today use the ``limit'' definition, which states that for a given function $f(x)$, the value of the derivative $f’(x)$ is equal to
+$$
+\lim_{h \to 0} \frac{f(x+h) - f(x)}{h},
+$$
+provided the limit exists.
+
+With this definition, it's not too hard to calculate some simple derivatives, such as  the derivative of $f(x) = x^2$.  For other functions this is quite a bit harder.  For example, the calculation of the derivative of $f(x) = \sin(x)$ is quite complicated, and involves knowing the value of other limits.
+
+However, the limit definition is not the only way derivatives have been described or defined historically.  In fact, this definition didn't appear in the mathematical literature until the 1800's -- more than 150 years after the discovery of calculus.  Before the limit definition became standard, several others were used.  There are good reasons that these have been dropped from common use (later mathematicians came to view them as less rigorous, and were concerned about potential errors), but in some cases other definitions can make understanding derivatives quite a bit easier.
+
+This project concerns one of these other definitions, and uses it to calculate the derivative of some trigonometric functions in a way which you may find quite a bit more straightforward than what appears in your calculus book.  All of the text below comes from Leonhard Euler's \emph{Institutiones Calculi Differentialis} (Foundations of Differential Calculus) \citep{E212}. Written almost 100 years after calculus was invented by Isaac Newton and Gottfried Leibniz, the book represents Euler's attempt to take all of the ideas from differential calculus which had been developed up to that time (including multivariable calculus and differential equations) and put them together in one self-contained book.
+
+In the preface to his book, Euler started by explaining what functions are.  This may seem odd, but the idea of a function was quite new at the time -- we can think of functions as high-tech tools which were developed to make calculus easier.  In fact, some historians give Euler credit for inventing the function \citep{Edwards}.  In part 1, you will read Euler's explanation and answer some questions.  In part 2 (to be done in class the next day), you will dive into more details of Euler's work.
+
+
+
+\section*{Part 1: Introducing the derivative}
+
+Let's start by reading some of Euler's writing:
+
+
+
+\begin{source}
+\vspace*{-6pt}
+
+Those quantities that depend on others in this way, namely, those that undergo a change when others change, are called \emph{functions} of these quantities.  This definition applies rather widely and includes all ways in which one quantity can be determined by others.  Hence, if $x$ designates the variable quantity, all other quantities that in any way depend on $x$ or are determined by it are called its functions.  Examples are $x^2$, the square of $x$, or any other powers of $x$, and indeed, even quantities that are composed with these powers in any way, even transcendentals, in general, whatever depends on $x$ in such a way that when $x$ increases or decreases, the function changes.
+\vspace*{-8pt}
+
+\end{source}
+
+
+
+
+\begin{task}
+\begin{enumerate}
+\item[(a)]  Locate  the definition of a function in your calculus book.  How is Euler's explanation similar to (or different than) yours?
+\item[(b)] What do you think Euler meant by ``transcendentals''?  Give a few examples of functions that we would consider to be transcendental functions today.
+\end{enumerate}
+\end{task}
+
+As soon as he explained functions, Euler immediately moved on to the core idea of his entire book -- an understanding of derivatives.  Read through what he wrote about this in the following excerpt, and then answer Task 2.  Following that task, we will consider this excerpt one paragraph at a time in order to examine it in more detail.
+
+
+
+\begin{source}
+\vspace*{-6pt}
+
+From this fact there arises a question; namely, if the quantity $x$ is increased or decreased, by how much is the function changed, whether it increases or decreases?  For the more simple cases, this question is easily answered.  If the quantity $x$ is increased by the quantity $\omega$, its square $x^2$ receives an increase of $2x\omega + \omega^2$.
+
+Hence, the increase in $x$ is to the increase of $x^2$ as $\omega$ is to $2x\omega + \omega^2$, that is, as $1$ is to $2x + \omega$.  In a similar way, we consider the ratio of the increase of $x$ to the increase or decrease that any function of $x$ receives.
+
+Indeed, the investigation of this kind of ratio of increments is not
+only very important, but it is in fact the foundation of the whole of analysis
+of the infinite. In order that this may become even clearer, let us take up
+again the example of the square $x^2$ with its increment of $2x\omega +\omega^2$, which
+it receives when $x$ itself is increased by $\omega$. We have seen that the ratio here
+is $2x + \omega$ to 1. From this it should be perfectly clear that the smaller the
+increment is taken to be, the closer this ratio comes to the ratio of $2x$ to
+1.
+
+However, it does not arrive at this ratio before the increment itself, $\omega$,
+completely vanishes. From this we understand that if the increment of the
+variable $x$ goes to zero, then the increment of $x^2$ also vanishes. However,
+the ratio holds as $2x$ to 1. What we have said here about the square is to
+be understood of all other functions of $x$; that is, when their increments
+vanish as the increment of $x$ vanishes, they have a certain and determinable
+ratio. In this way, we are led to a definition of differential calculus: It is
+\emph{a method for determining the ratio of the vanishing increments that any
+functions take on when the variable, of which they are functions, is given a
+vanishing increment.}
+
+
+\vspace*{-8pt}
+\end{source}
+
+
+\begin{task}
+\begin{enumerate}
+\item[(a)] What do you think Euler's goal was in  this excerpt?
+\item[(b)] Write at least one comment and one question that you have about what Euler was doing here.
+\end{enumerate}
+\end{task}
+
+
+
+\bigskip
+
+\section*{Part 2: Exploring the derivative}
+
+Let's go back and look more closely at Euler's work.
+
+
+\begin{source}
+\vspace*{-6pt}
+From this fact there arises a question; namely, if the quantity $x$ is increased or decreased, by how much is the function changed, whether it increases or decreases?  For the more simple cases, this question is easily answered.  If the quantity $x$ is increased by the quantity $\omega$, its square $x^2$ receives an increase of $2x\omega + \omega^2$.
+\vspace*{-8pt}
+\end{source}
+
+
+Euler here meant that given a function (we would write it as $f(x) = x^2$), changing the argument from $x$ to $x + \omega$ increases the value of the function by  $2x\omega + \omega^2$.
+
+\bigskip
+
+\begin{task} \label{increment} Try this for yourself.  Given $f(x) = x^2$, calculate the difference between $f(x + \omega)$ and  $ f(x)$.
+\end{task}
+
+
+However, Euler was quick to point out that he was not primarily interested in the amount that $f(x)$ changes, but in the ratio of the change in $f(x)$ to the change in $x$:
+
+
+
+
+\begin{source}
+\vspace*{-6pt}
+Hence, the increase in $x$ is to the increase of $x^2$ as $\omega$ is to $2x\omega + \omega^2$, that is, as $1$ is to $2x + \omega$.  In a similar way, we consider the ratio of the increase of $x$ to the increase or decrease that any function of $x$ receives.
+\vspace*{-8pt}
+\end{source}
+
+\begin{task}
+Compare Euler's claim about ratios to the definition of the derivative given at the beginning of this project.   How are they similar?  How are they different?
+\end{task}
+
+Euler only needed to introduce one more important idea, namely that he will often think of $\omega$ as a very (very!) small value, and will still be interested in the ratio he described above.
+
+
+
+
+\begin{source}
+
+%\vspace*{-6pt}
+Indeed, the investigation of this kind of ratio of increments is not
+only very important, but it is in fact the foundation of the whole of analysis
+of the infinite. In order that this may become even clearer, let us take up
+again the example of the square $x^2$ with its increment of $2x\omega +\omega^2$, which
+it receives when $x$ itself is increased by $\omega$. We have seen that the ratio here
+is $2x + \omega$ to 1. From this it should be perfectly clear that the smaller the
+increment is taken to be, the closer this ratio comes to the ratio of $2x$ to
+1.
+\vspace*{-8pt}
+\end{source}
+
+\begin{task}
+\begin{enumerate}
+\item[(a)]  Look at your calculations in Task 3. Is it true that the ratio of  $f(x + \omega) - f(x)$ to $\omega$ gets closer to $2x$ when $\omega$ gets smaller?
+\item[(b)] Again, how does this idea compare with the definition of the derivative at the beginning of this project?
+    \end{enumerate}
+\end{task}
+
+Historically, there had been a lot of arguments about what it means to have a number (like $\omega$) be almost equal to $0$, but not be $0$.  Euler was very familiar with these arguments, and he was eager to convince the reader that there were no philosophical problems with his method for differential calculus.  He concluded his argument, and explained the nature of calculus itself, in the next section.
+
+
+
+\begin{source}
+
+%\vspace*{-6pt}
+However, it does not arrive at this ratio before the increment itself, $\omega$,
+completely vanishes. From this we understand that if the increment of the
+variable $x$ goes to zero, then the increment of $x^2$ also vanishes. However,
+the ratio holds as $2x$ to 1. What we have said here about the square is to
+be understood of all other functions of $x$; that is, when their increments
+vanish as the increment of $x$ vanishes, they have a certain and determinable
+ratio. In this way, we are led to a definition of differential calculus: It is
+\emph{a method for determining the ratio of the vanishing increments that any
+functions take on when the variable, of which they are functions, is given a
+vanishing increment.}
+\vspace*{-8pt}
+\end{source}
+
+\newpage
+\begin{task}
+\begin{enumerate}
+\item[(a)] What do you think of Euler's claim  that ``{\sf \ldots if the increment of the
+variable $x$ goes to zero, then the increment of $x^2$ also vanishes. However,
+the ratio holds as $2x$ to 1.}''? Are you convinced?
+\vspace*{-3pt}
+\item[(b)] How does this claim compare with the limit definition of the derivative?
+\vspace*{-3pt}
+\item[(c)] Which of these methods of finding the derivative of $x^2$ do you prefer, and why?	
+\end{enumerate}
+\end{task}
+
+Although Euler initially used the symbol $\omega$ to represent an increment, he  soon changed notation -- since the increment he was considering represented a very small change in $x$, he would call it $dx$ for the remainder of his book (the ``d'', for him, suggested ``difference'').
+
+
+
+\section*{Part 3: Trigonometric functions}
+
+Euler used some parts of his \emph{Foundations of Differential Calculus} to give an explanation for why calculus works, and devoted much of the rest to solving lots of derivative problems.  By the 201st paragraph (all paragraphs are numbered), Euler was ready to tackle $\sin(x)$.  Read through this paragraph at least once in its entirety to get an overall view of how he did this.  In the tasks that follow this excerpt, we will break his argument down piece by piece in order to examine it in  detail.
+
+\vspace*{-6pt}
+
+
+
+\begin{source}
+
+\vspace*{-6pt}
+
+\textbf{201.} There remain some quantities \ldots~namely the sines and tangents of given arcs, and we ought to show how these are differentiated. Let $x$ be a circular arc and let $\sin x$ denote its sine, whose differential we are to investigate.  We let $y= \sin x$ and replace $x$ by $x + dx$ so that $y$ becomes $y + dy$.  Then $y + dy = \sin(x + dx)$ and
+
+
+\vspace*{-6pt}
+
+$$
+dy = \sin(x + dx) - \sin x.
+$$
+
+\vspace*{-6pt}
+
+But
+\vspace*{-6pt}
+$$
+\sin(x + dx) = \sin x \cdot \cos dx + \cos x \cdot \sin dx,
+$$
+and since, as we have shown in the \emph{Introductio},
+$$
+\sin x = \frac{x}{1} - \frac{x^3}{1 \cdot 2 \cdot 3} + \frac{x^5}{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5} - \cdots ,
+$$
+
+
+\vspace*{-6pt}
+
+$$
+\cos x = 1 -  \frac{x^2}{1 \cdot 2} + \frac{x^4}{1 \cdot 2 \cdot 3 \cdot 4} - \cdots ,
+$$
+
+when we exclude the vanishing terms, we have $\cos dx = 1$ and $\sin dx = dx$, so that
+
+\vspace*{-6pt}
+
+$$
+\sin(x + dx) = \sin x + dx \cos x.
+$$
+Hence, when we let $y = \sin x$, we have
+
+\vspace*{-6pt}
+
+$$
+dy = dx \cos x.
+$$
+
+\textit{Therefore, the differential of the sine of any arc is equal to the product of the differential of the arc and the cosine of the arc.}
+
+\vspace*{-6pt}
+\end{source}
+
+
+\begin{task}\begin{enumerate}
+\item[(a)] What do you think Euler's goal was in  this excerpt?
+\item[(b)] Write at least one comment and one question that you have about what Euler was doing here.
+\end{enumerate}
+\end{task}
+
+
+\bigskip
+
+There was a lot to understand in the passage above.  Let's break it down to look at it more closely.
+
+
+
+\begin{source}
+\vspace*{-6pt}
+\textbf{201.} There remain some quantities \ldots~namely the sines and tangents of given arcs, and we ought to show how these are differentiated. Let $x$ be a circular arc and let $\sin x$ denote its sine, whose differential we are to investigate.  We let $y= \sin x$ and replace $x$ by $x + dx$ so that $y$ becomes $y + dy$.  Then $y + dy = \sin(x + dx)$ and
+$$
+dy = \sin(x + dx) - \sin x.
+$$
+
+\vspace*{-18pt}
+\end{source}
+
+
+\begin{task}
+Note here that Euler is thinking of $dy$ as the amount that the sine function changes between $x$ and $x + dx$.  Sketch and label a graph in a way that demonstrates his claim that $dy = \sin(x + dx) - \sin x$. 
+\end{task}
+
+In the next part of his work, Euler needed two new ideas.  One, the addition formula for $\sin(x)$, you probably learned in precalculus.  It says that
+$$\sin(a + b) = \sin(a) \cdot \cos(b) + \cos(a) \cdot \sin(b).$$
+
+\begin{task} Let's make sure we believe this addition formula.
+\item[(a)]  Let $a = \pi/6$ and $b = \pi/3$, and check to see whether the equation above holds.  (You should be able to do this without a calculator.)
+\item[(b)] Test this again with $a= \pi/6$ and $b= \pi/6000$ (or some other very small angle).  What do you notice about the two terms on the right side of the equation for the addition formula?
+\end{task}
+
+The second idea that Euler needed in order to find the derivative of sine involves representing transcendental functions (like sine) as the sum of infinitely many powers of $x$.  To Euler, this was also part of precalculus, and he included details in his precalculus book called the \emph{Introductio in Analysin Infinitorum} (or  \emph{Introduction to the Analysis of the Infinite} for short),  but these days we usually teach this idea (called ``Taylor Series'')  in our calculus classes.  Look ahead in your book's Table of Contents, and you may find that you will study Taylor Series in a few weeks.
+
+Happily, we don't need to know much about these fascinating function representations to follow what Euler did next.  All we need to know is that $x -\frac{x^3}{6} + \frac{x^5}{120}$ is really close to $\sin x$ -- especially for small values of $x$!    Similarly, $\cos x$ is very close to the value of $1 - \frac{x^2}{2} + \frac{x^4}{24}$.
+\begin{task}\begin{enumerate}
+\item[(a)] Try this for yourself.  Pick a smallish value of $x$ (anything less than $0.25$ in absolute value, say), and use your calculator to find $\sin x$ and $x -\frac{x^3}{6} + \frac{x^5}{120}$.  How close are the two values?  Try the same thing for the approximation to $\cos x$ given above.
+\item[(b)] If you have a graphing calculator, try graphing both $\sin x$ and $x -\frac{x^3}{6} + \frac{x^5}{120}$.  Do they seem to be equal near $0$?  Where do they seem to start to diverge?
+    \end{enumerate}
+\end{task}
+
+\bigskip
+We are now ready to read Euler's calculation of the derivative of $\sin x$.
+
+\begin{source}
+\vspace*{-6pt}
+But
+$$
+\sin(x + dx) = \sin x \cdot \cos dx + \cos x \cdot \sin dx,
+$$
+and since, as we have shown in the \emph{Introductio},
+$$
+\sin x = \frac{x}{1} - \frac{x^3}{1 \cdot 2 \cdot 3} + \frac{x^5}{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5} - \cdots ,
+$$
+$$
+\cos x = 1 -  \frac{x^2}{1 \cdot 2} + \frac{x^4}{1 \cdot 2 \cdot 3 \cdot 4} - \cdots ,
+$$
+when we exclude the vanishing terms, we have $\cos dx = 1$ and $\sin dx = dx$, so that
+$$
+\sin(x + dx) = \sin x + dx \cos x.
+$$
+Hence, when we let $y = \sin x$, we have
+$$
+dy = dx \cos x.
+$$
+
+\textit{Therefore, the differential of the sine of any arc is equal to the product of the differential of the arc and the cosine of the arc.}
+\vspace*{-8pt}
+\end{source}
+
+%%%
+
+\begin{task}
+\begin{enumerate}
+\item[(a)] What did Euler mean by the ``vanishing terms''?  (Consider what happens to the representations of $\sin x$ and $\cos x$ when $x$ is very close to $0$.)
+\item[(b)] Check Euler's algebra to see if you agree with his conclusions.
+\end{enumerate}
+\end{task}
+Euler next calculated the derivative of $\cos x$ in a similar way. You may recall (do you?) the addition formula for cosine, namely that $\cos(a+b) = \cos(a) \cdot \cos(b) - \sin(a) \cdot \sin(b)$.
+
+\begin{task}
+Use this law and the method Euler followed for sine to work out the derivative of $\cos(x)$.  Does this match what is given in your book?
+\end{task}
+
+\bibliographystyle{plainnat}
+\bibliography{trigrefs}{}
+
+
+\vfill
+
+\medskip
+
+\newpage
+
+\section*{Instructor Notes}
+
+\subsubsection*{Goals}
+This Primary Source Project (PSP) has two primary goals: to help students develop a deeper and more intuitive understanding of the limit definition of the derivative, and to understand why the derivative of sine is cosine, using a proof which may seem more straightforward than the version which usually appears in modern Calculus books. A secondary goal is to calculate derivatives using nothing more than trigonometric identities and algebra -- possibly rendering some of calculus less mysterious.
+
+\subsubsection*{Background}
+The PSP has only one primary source: Leonhard Euler's \emph{Foundations of Differential Calculus}, published in 1755.  It was the first calculus book to use functions; indeed, Euler himself had been the first mathematician to regularly use an approach which looks like functions to us today about seven years earlier, in his great ``pre-calculus'' book, the \emph{Introductio in analysin infinitorum} (\emph{Introduction to the Analysis of the Infinite}).  While the use of functions makes the material more accessible to our students today, Euler's approach is different enough from that of modern calculus books to force students to think carefully about the material.
+
+The major difference in Euler's approach is the lack of limits in his work.  The limit concept would not be formally defined and made a part of mathematics for almost a century; Euler based his calculus (following Leibniz) on the differential $dx$, which was an infinitely small increment of the variable $x$.  While the logical issues in this approach would force 19th-century mathematicians to abandon the approach (in favor of limits), Euler saw no such issues.  (I have found that my students, likewise, are unbothered by the notion of an infinitely small increment in $x$, or by considering the corresponding increment $f(x + dx) - f(x)$.)
+
+Perhaps the most surprising aspect of Euler's approach is his use of Taylor series. In fact, he introduced these in the \emph{Introductio}, and thought of them as a pre-calculus idea.  This project may be the first time that students see these series, but they do not need any of the theory of Taylor series in the project.  The approximations of sine and cosine via a three-term Taylor series are presented as a \emph{fait accompli}, and students are given an opportunity to convince themselves that the approximations seem valid, even if they can't explain why.  It is hoped that this exposure will make Taylor series slightly more approachable when they encounter them in the future, but this is not a major goal of the project.
+
+\subsubsection*{Prerequisite knowledge}
+
+Students need very little prerequisite knowledge to complete this PSP.  It will help if they have seen the trigonometric identities used in the project, but the identities are re-introduced here in case they have not.  It would be useful for students to have been introduced to the limit definition of the derivative, as this project would then provide them with a second lens through which to view the concept, though this is not strictly necessary either.  No other background outside of algebra is required.
+
+\subsubsection*{Preparing to teach this PSP}
+
+This PSP is designed with a certain implementation in mind (although many other approaches are, of course, possible). Part 1 is intended to be assigned as pre-reading homework.  Students should read the primary source material and answer Tasks 1 and 2 before coming to class.  Time in class can be spent with a combination of students working in small groups or with guided lecture. (I prefer the former, but if students are not used to working in groups in class, more instructor guidance will likely be needed.)
+
+Note that Part 2 contains two distinct kinds of questions -- mathematical questions, in which students do calculations, and more abstract questions, in which students are asked to reflect on Euler's approach to derivatives, and to compare it to the one they have been taught.  Students will often be able to complete this entire section in a 50-minute class period, and will begin working on Part 3.  If Part 3 is not completed during class, one good option is to ask students to complete Task 7 as homework, with the plan of finishing the rest of the task during class the second day.
+
+When groups have finished their work, I suggest wrapping up the project with a guided discussion in which students (and the instructor) reflect on the two ways they have now seen to find derivatives.  Students may at this point ask if they can try using Euler's differentials to find derivatives of other functions, as well.  One fun example to demonstrate or give them to try as an optional and/or bonus problem (and a hard one to Google!) is $\ln(x)$.  I would give students the hint that $\ln(1+x)$ can be approximated via Taylor Series as $\ln(x+1) \approx x - \frac{x^2}{2} + \frac{x^3}{3}$, and turn them loose!
+
+The \LaTeX~source file for this mini-PSP is available from the author by request at \texttt{dominic.klyve@cwu.edu}.
+
+
+
+ \subsection*{Acknowledgments}
+The development of this student project has been partially supported by the  Transforming Instruction in Undergraduate Mathematics via Primary Historical Sources (TRIUMPHS) Program with funding from the National Science Foundation's Improving Undergraduate STEM Education Program under grant number 1523494. Any opinions, findings, and conclusions or recommendations expressed in this project are those of the author and do not necessarily represent the views of the National Science Foundation.  For more information about TRIUMPHS, visit \url{http://webpages.ursinus.edu/nscoville/TRIUMPHS.html}.
+
+\bigskip
+
+\noindent\begin{minipage}{.25\textwidth}
+        \noindent
+       \includegraphics{by-sa.png}% Don't forget to capture this image file (by-sa.png) to compile with your tex file!!!
+ \end{minipage}%
+ \begin{minipage}{0.75\textwidth}
+        This work is licensed under a \href{https://creativecommons.org/licenses/by-sa/4.0/legalcode}{Creative Commons Attribution-ShareAlike 4.0 International License}. It allows re-distribution and re-use of a licensed work on the conditions that the creator is appropriately credited and that any derivative work is made available under ``the same, similar or a compatible license''.
+\end{minipage}
+
+
+
+
+\end{document} 

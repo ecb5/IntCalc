@@ -1,0 +1,1069 @@
+\documentclass[12pt]{article}
+%\usepackage{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{epstopdf}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+\usepackage{amsthm} %needed for \theoremstyle below
+\theoremstyle{definition} 
+\newtheorem{exercise}{Exercise}[section]
+
+\setcounter{MaxMatrixCols}{30}
+
+\setlength{\topmargin}{-0.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.8in}
+
+
+
+\newcommand{\bu}{\bullet}
+%\newcommand{\sbu}{\ssize{\bullet}}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\p} {\partial}
+\newcommand{\br}{\mathbf {R}}
+\newcommand{\bq}{\mathbf {Q}}
+\newcommand{\bz}{\mathbf {Z}}
+\newcommand{\bn}{\mathbf {N}}
+%\newcounter{numb}
+%\newcommand{\numb}{\stepcounter{numb}\textmd{\thenumb.}}
+
+\newcommand{\sep}{\vspace{-3pt} \begin{center}
+{\mathversion{normal}
+$\infty \mspace{-5.5mu} \infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu} \infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu} \infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu} \infty$}
+\end{center} \vspace{-3pt}}
+
+
+\begin{document}
+
+\title{The Radius of Curvature According to \\
+Christiaan Huygens}
+\author{Jerry Lodder\thanks{Mathematical Sciences; 
+Dept. 3MB, Box 30001; New Mexico State University; 
+Las Cruces, NM 88003; \texttt{jlodder@nmsu.edu}.}}
+%\date{}
+\maketitle 
+
+\section{The Longitude Problem}
+
+An outstanding problem of navigation during the sixteenth,
+seventeenth and eighteenth centuries was determining longitude at sea.
+Countless lives were lost and ships were wrecked simply because the
+ship's captain did not know how far east or west the ship was with
+respect to an imaginary line (semi-circle) called the Prime Meridian, or with
+respect to any given meridian for that matter.  This problem
+is chillingly described in {\em The Illustrated Longitude}
+\cite{Sobel}, from which we relate one incident.
+In September, 1740, Captain George Anson (1697--1762) of the British
+Royal Navy set sail for the South Pacific aboard the {\em Centurion},
+under orders to disrupt the Spanish trading monopoly in the Pacific.
+On March 7, 1741, the {\em Centurion} entered the Pacific Ocean from
+the Atlantic by passing through the Straits Le Maire at the southern
+end of South America.  Then a violent storm blew in from the west,
+lasting some 58 days, unduly delaying the voyage and disorienting 
+the {\em Centurion}.  Many of the
+captain's men began to die of scurvy.  Having rounded Cape Horn and
+now off the western coast of South America, the captain set sail for
+Juan Fern\'andez Island for fresh food and water.  Sailing north,
+Anson reached the proper latitude of the island (about $35^{\circ}$S)
+on May 24, 1741, but he could only guess whether the island lay east
+or west of his current position.  The captain guessed west and sailed
+in that direction for four days only to find nothing.  Changing course
+by $180^{\circ}$, he then sailed east for about two days only to sight 
+the steep cliffs of Spanish controlled Chile.  Anson turned around again,
+sailed west and reached Juan Fern\'andez Island on June 9, 1741, with
+only about half of his men remaining \cite[pp. 21--25]{Sobel}.  
+What was the root cause of
+Captain Anson not being able to find the island?  Anson knew his
+latitude, but he was unable to determine his longitude, namely how far
+east or west he was. 
+
+The determination of latitude can be reduced to a simple
+trigonometrical calculation given the length of a shadow of an object
+(of known height) at high noon, when the sun is at its highest
+elevation for the day.  
+\begin{exercise}  \label{E:simple-lat}
+ Suppose that on the day of Spring Equinox (or Autumn Equinox), a 1'
+ pole casts a shadow of 0.4' at high noon.  Determine the latitude of
+ the observer at this location (in the Northern Hemisphere).  Be sure to explain your answer.  
+(For days other than an equinox, the
+ tilt of the Earth could be looked up in a table and would be used to
+ adjust the above calculation.)
+\end{exercise}      
+
+Hint:  Since the sun is at such a great distance from the Earth, the rays of sun light
+are essentially parallel to each other when they reach the Earth.  At high noon 
+during an equinox, these rays are directly over head at the Equator.  See Figure 
+\ref{F:noon-equinox}.  
+\bigskip
+
+\begin{figure}[htb] 
+\begin{center}
+\begin{tikzpicture}
+\draw[thick, variable=\t, domain=0:2*pi] plot({-2+1.5*cos(\t r)}, {1.5*sin(\t r)});
+
+\draw[variable=\t, domain=1.26*pi:1.75*pi] plot({-2 + 2.2*cos(\t r)}, {(1.6 + 2.2*sin(\t r)});
+
+\draw[<-](-0.48, 0)--(5, 0);
+\draw[<-](-0.58, 0.5)--(5, 0.5);
+\draw[<-](-0.85, 1)--(5, 1);
+\draw[<-](-1.72, 1.5)--(5, 1.5);
+\draw[<-](-0.58, -0.5)--(5, -0.5);
+\draw[<-](-0.85, -1)--(5, -1);
+\draw[<-](-1.72, -1.5)--(5, -1.5);
+
+\node[left] at (-3.5, 1) {Earth};
+\node[right] at (5.5, 1){Rays of Sun};
+\node[left] at (-4, 0){Equator};
+\draw[->](-4.1, 0)--(-3.6, 0);
+
+
+\end{tikzpicture}
+\end{center}
+\caption{High Noon During an Equinox.}  \label{F:noon-equinox}
+\end{figure}
+
+Consider now the 1' pole perpendicular to the Earth, and imagine a line connecting 
+the pole to the center of the Earth, $O$.  The length of the pole is exaggerated 
+in Figure \ref{F:pole}, where angle $\alpha$ denotes the latitude of the observer in the
+Northern Hemisphere.  Now
+draw a separate right triangle with legs being the pole and its shadow, and the 
+hypotenuse formed by a ray of sun light.  Finish Exercise \eqref{E:simple-lat}.
+\bigskip
+
+\begin{figure}[htb] 
+\begin{center}
+\begin{tikzpicture}
+\draw[thick, variable=\t, domain=0:2*pi] plot({-2+1.5*cos(\t r)}, {1.5*sin(\t r)});
+
+\draw[<-](-0.48, 0)--(5, 0);
+\node[right] at (5, 0) {Ray upon the Equator};
+\draw[-](-2, 0)--(-0.4, 1.07);
+\draw[<-](-0.9, 1.07)--(5, 1.07);
+\node[right] at (5,1.07) {Ray upon the Top of the Pole};
+\draw[-](-2, 0)--(0.49, 0);
+
+\node[left] at (-2, 0) {$O$};
+\node at (-1.3, 0.19) {$\alpha$};
+
+\end{tikzpicture}
+\end{center}
+\caption{Determining Latitdue.}  \label{F:pole}
+\end{figure}
+
+
+
+Could the determination of longitude be reduced to a simple
+calculation as in Exercise \eqref{E:simple-lat}?  Certainly the sun
+(in its apparent motion) travels from east to west across the sky.  
+Could the position of the
+sun be used to determine longitude?  How?  When the sun reaches its
+highest elevation on a given day, shadows are at their shortest,
+marking high noon.  If a sailor knew when high noon occurred (or will
+occur) at the port of embarkment, then the difference between when
+noon occurs aboard ship and at the port of embarkment could be
+converted into a longitude reading, indicating how far west (or east)
+the ship is from its port.  
+\begin{exercise}  \label{E:simple-long}
+Suppose that a ship sets sail from England with a clock set to give
+time in Greenwich, England, through which the Prime Meridian passes.
+After sailing for several days on the open sea, suppose further that noon
+occurs on ship when the clock giving time in Greenwich reads 1:00
+{\sc{p.m}}.
+\begin{itemize}
+\item[(a)]  Is the ship sailing west or east of Greenwich?  Justify
+  your answer.
+\item[(b)]  How many degrees is the ship west of Greenwich?  Explain
+  your answer.  Hint:  There are $360^{\circ}$ in a circle and the sun
+  circles the Earth once every 24 hours (in its apparent motion).
+\end{itemize}
+\end{exercise}
+
+The reader should now verify that one minute discrepancy between the
+time aboard ship and the time at the port of embarkment (or any given, fixed
+location) corresponds to $0.25^{\circ}$ of longitude.  Using $R =
+3960$ miles as the radius of the Earth, then  $0.25^{\circ}$ of
+longitude at the Equator (a great circle on the Earth)
+corresponds to $(0.25)(\pi /180)R \approx 17$ miles, a non-trivial
+distance.  However, a clock that is one minute off, even
+during a lengthy voyage, could result in a navigational error as large
+as 17 miles.      
+
+One solution to the longitude problem would be to construct a very
+accurate clock, set the clock to give time at Greenwich, England, and
+then send the clock to sea aboard ship.  This project discusses
+Christiaan Huygens's (1629--1695) work on constructing a pendulum
+clock that theoretically keeps perfect time.  Huygens described the
+path of the pendulum bob as one ``whose curvature is marvelously and
+quite rationally suited to give the required equality to the
+pendulum'' \cite[p.11]{Blackwell}.  With these words, Huygens has
+identified a key concept, {\em curvature}, used to this day in physics
+and calculus to describe motion along a curved path.  Alas, a pendulum
+clock behaved erratically on the high seas, and did not solve the
+longitude problem for naval navigation, although it remained the
+standard for terrestrial time keeping until the development of spring balance
+timepieces.  So acute was the need to
+determine longitude that the British government had already issued the
+Longitude Act in 1714 that offered a first prize of \pounds 20,000
+for a method to determine longitude to an accuracy of half a degree of
+a great circle \cite[p.66]{Sobel}.  There were also second and third
+prizes.  Using the idea of a spring
+balance, John Harrison (1693--1776) perfected a sea clock that did
+solve the longitude problem.  Due to prejudice against a clock method
+and in favor of a lunar method to solve the longitude problem,
+Harrison received marginal credit for his work during his lifetime, 
+much of it spent perfecting his various timekeepers \cite{Sobel}.  
+
+In the next section we turn to a detailed study of Huygens's work on
+the isochronous pendulum, a pendulum clock that theoretically
+keeps perfect time.  To describe the path of a pendulum bob in terms
+of its curvature, Huygens first offers a geometric construction for
+what is known as the {\em radius of curvature} (see below).  Since his
+work predates the development of calculus by Issac Newton
+(1642--1727) and Gottfried Wilhelm Leibniz (1646--1716), Huygens
+relies on known techniques from Euclidean geometry, such as similar triangles, to
+capture the ratios of certain side lengths that play the role of
+certain derivatives.  The geometric idea of a tangent line had been known
+well before Huygens, which he uses adroitly.   
+The goal of this project is to follow Huygens's
+clever geometric arguments and then, through guided exercises,
+rewrite the expression for the radius of curvature in terms of
+derivatives, and finally to reconcile this with the modern equation
+for curvature found in many calculus textbooks.  For further details
+on the construction of an isochronous pendulum, see Huygens's {\em
+  Horologium oscillatorium} (The Pendulum Clock) 
+\cite[pp. 86--365]{Huygens} originally published in 1673, translated
+into English \cite{Blackwell}, and presented as part of a book chapter
+on curvature \cite[pp. 174--178]{Knoebel}.
+
+
+\section{Huygens and The Radius of Curvature}
+
+Holland during the seventeenth century was a center of culture, art,
+trade and religious tolerance, nurturing the likes of Harmenszoon van
+Rijn Rembrandt (1606--1669), Johannes Vermeer (1632--1675), Benedict 
+de Spinoza (1632--1677) and Ren\'e Descartes (1596--1650).  Moreover,
+the country was the premier center of book publishing in Europe during
+this time with printing presses in Amsterdam, Rotterdam, Leiden, The Hague and
+Utrecht, all publishing in various languages, classical and
+contemporary \cite[p.\ 88]{Hazard}.  Into this environment was born
+Christiaan Huygens, son of a prominent statesman and diplomat.  
+
+The young Huygens showed an interest in astronomy, developed improved
+methods of grinding and polishing lenses for telescopes, and made
+notable discoveries about the rings of Saturn and the length of the Martian day
+\cite[p.\ 801]{Simmons}.  During a visit to Paris in 1655, the
+Dutchman began to study probability, and authored the book {\em De
+Ratiociniis in Aleae Ludo} (On the Calculations in Games of
+Chance), published in 1657 \cite[p.\ 456]{Katz1998}.  At the invitation of
+Jean-Baptiste Colbert (1619--1683), minister of King Louis XIV
+(1638--1715), Huygens moved to Paris in 1666 as a member of the newly
+established {\em Acad\'emie des Sciences}, where he resided for the
+next 15 years.  Aside from his work on pendulum clocks, 
+he formulated a principle for the conservation of energy for
+an elastic collision of two bodies, and correctly identified the
+centripetal force of an object moving in circular motion, closely
+related to the radius of curvature.  Newton held
+the work of Huygens in high regard, and used the Dutch scholar's
+results in some of his own investigations \cite[p.\ 802]{Simmons}.
+Unfortunately, growing religious intolerance for Protestants in
+Paris prompted Huygens to return to The Hague in 1681.  
+Later in life, he launched a study of microscopy in loose connection
+with Anton van Leeuwenhoek (1632--1723), and developed highly original
+ideas in protozoology.  In 1690 Huygens published his {\em Trait\'e de
+la Lumi\`ere} (Treatise on Light), in which he proposed a wave theory
+of light.  His final publication, {\em Cosmotheoros}, appeared
+posthumously, and contains a summary of what was known about the
+universe at the time.  We turn now to the master's work on horology
+(the study of clocks and clock making).    
+
+In a burst of creativity during 1659 Christiaan Huygens developed 
+a pendulum clock that theoretically keeps perfect time
+\cite{Blackwell,Yoder}.  In the years prior to his landmark
+discovery, Huygens had studied the simple pendulum, which consisted of
+a bob attached by a thread to a fixed point.  The bob then oscillated
+in a circular arc.  As a timekeeper, the simple pendulum is not
+entirely accurate, since the time required to complete one oscillation
+depends on the amplitude of the swing.  The greater the swing, the
+more time is needed for an oscillation.  Huygens's genius was to
+discover a curve for which the time of an oscillation is independent
+of the swing amplitude, an idea which at first glance seems a virtual
+impossibility.  
+
+\begin{figure}[htb] 
+\begin{center}
+\begin{tikzpicture}
+
+\draw[<->] (0,3)--(0,0)--(9,0);
+
+\draw[thick,  variable=\t, domain=0:2.7*pi] 
+plot({\t-sin(\t r)}, {1-cos(\t r)});
+
+\draw[thick, variable=\t, domain=0:2*pi] 
+plot({1.2+cos(\t r)}, {1+sin(\t r)});
+
+\node at (0.268, 0.638) {$\bu$};
+\node at (0.6, 0.63) {$P$};
+\node [above] at (1, 2.2) {Wheel};
+\node [above] at (3.6, 2.1) {Cycloid};
+\draw [->] (1, 2.3)--(1, 2.0);
+\draw [->] (3.6, 2.3)--(3.6, 2.0); 
+ 
+\node at (0, 1) {-};
+\node [left] at (0, 1) {1};
+\node at (0, 2) {-};
+\node [left] at (0, 2) {2};
+\node at (1, 0 ) {${}_{|}$};
+\node [below] at (1, -0.1) {1}; 
+\node at (2, 0) {${}_{|}$};
+\node [below] at (2, -0.1) {2};
+\node at (3, 0) {${}_{|}$};
+\node [below] at (3, -0.1) {3};
+\node at (4, 0) {${}_{|}$};
+\node [below] at (4, -0.1) {4};
+\node at (5, 0) {${}_{|}$};
+\node [below] at (5, -0.1) {5};
+\node at (6, 0) {${}_{|}$};
+\node [below] at (6, -0.1) {6};
+\node at (7, 0) {${}_{|}$};
+\node [below] at (7, -0.1) {7};
+\node at (8,0)  {${}_{|}$};
+\node [below] at (8, -0.1) {8};
+
+\end{tikzpicture}
+\end{center}
+\caption{A Cycloid.}  \label{F:cycloid}
+\end{figure}
+
+\begin{figure}[htb] 
+\begin{center}
+\includegraphics[scale=1.5]{Huygens-clock.jpg}
+\end{center}
+\caption{Huygens's Pendulum.}  \label{F:Huygens-pendulum}
+\end{figure}
+
+\begin{figure}[htb] 
+\begin{center}
+\begin{tikzpicture}
+
+\draw [<-] (0,3)--(0, -3);
+\draw [<->] (-4.5,0)--(4.5,0);
+\draw [thick, variable=\t, domain=-1*pi:pi]
+plot({\t -sin(\t r)}, {cos(\t r) +1});
+
+\draw (0.16, 1.54)--(1.86, -1.57);
+\node at (0.16, 1.54) {$\bu$};
+\node at (1.855, -1.56) {$\bu$};
+\node [right] at (0.17, 1.54) {$A$};
+\node [below right] at (1.855, -1.56) {$B$};
+\node at (0, 1) {-};
+\node at (0, 2) {-};
+\node at (0, -1) {-};
+\node at (0, -2) {-};
+\node [left] at (0,1) {1};
+\node [left] at (0,2) {2};
+\node [left] at (0,-1) {$-1$};
+\node [below left] at (0,-2) {$-2$};
+\node at (1,0) {${}_{|}$};
+\node at (2,0) {${}_{|}$};
+\node at (3,0) {${}_{|}$};
+\node at (4,0) {${}_{|}$};
+\node [below] at (1, -0.1) {1};
+\node [below] at (2, -0.1) {2};
+\node [below] at (3, -0.1) {3};
+\node [below] at (4, -0.1) {4};
+\node at (-1,0) {${}_{|}$};
+\node at (-2,0) {${}_{|}$};
+\node at (-3,0) {${}_{|}$};
+\node at (-4,0) {${}_{|}$};
+\node [below] at (-1, -0.1) {$ -1 \ \ $};
+\node [below] at (-2, -0.1) {$ -2 \ \ $};
+\node [below] at (-3, -0.1) {$-3 \ \ $};
+\node [below] at (-4, -0.1) {$-4 \ \ $};
+
+\draw [thick, variable=\t, domain=0:2*pi]
+plot({\t -pi -sin(\t r)}, {-1 + cos(\t r)});
+
+\end{tikzpicture}
+\end{center}
+\caption{The Isochronous Pendulum.} \label{F:iso-pendulum}
+\end{figure}
+
+Such a curve is described either as isochronous or as 
+tautochronous, both terms referring to the ``same-time'' property at
+which the bob reaches its lowest point, regardless of the amplitude.
+Astonishingly Huygens showed that the shape of the isochrone is
+given by a curve that had been studied intensely and independently
+during the seventeenth century, namely a cycloid.  Consider a point
+$P$ on the circumference of a wheel and suppose that the wheel begins
+to roll along a flat surface.  The curve traced by the point $P$
+is called a cycloid (Figure \ref{F:cycloid}).  
+For use in the pendulum, this curve could simply be turned
+upside down (inverted), which would then serve as the path of the bob.
+The cycloid had already occupied the minds of influential scholars 
+such as Galileo, Torricelli, Mersenne, Roberval, Fermat, Descartes, 
+Pascal, and others \cite{Boyer}, yet none of them discovered its 
+isochronous property.
+
+
+
+\begin{figure}[htb] 
+\begin{center}
+\begin{tikzpicture}[xscale=1.2, yscale=1.2]
+
+\draw[thick, domain=-3.6:-0] plot (\x, {4 - 0.25*(\x)^2});
+\node at (-2, 3) {$\bu$};
+
+\node at (-2.4, 2.56) {$\bu$};
+\node [above left] at (-2, 3) {$B$};
+
+\node [above left] at (-2.4, 2.56) {$F$};
+\draw[-] (-2,3)--(4, -3); 
+
+\draw[-] (-2.4,2.56)--(4.1, -2.903);
+\draw[-] (-2,3)--(0, 5);
+\draw[-] (0, 5.5 )--(0, -3);
+
+\node at (1.96, -0.96) {$\bu$};
+\node [above right] at (1.96, -0.96) {$D$};
+\node at (2.94, -1.94) {$\bu$};
+\node [below left] at (2.94, -1.94) {$G$};
+\node at (3.8, -2.64) {$\bu$};
+\node [above right] at (3.8, -2.64) {$E$};
+\node at (1.4, 0) {$\bu$};
+\node [above right] at (1.4, 0) {$C$};
+
+\draw [dashed] (1.4, 0) to [out=-70, in=135] (1.96, -0.96);
+\draw [dashed] (1.96, -0.96) to [out=-50, in=145] (3.8, -2.64);
+
+\draw[-] (-2,3)--(0, 3);
+\draw[-] (-2.4, 2.56)--(0, 2.56);
+\draw[-] (-2,3)--(-2, 2.21);
+
+\node at (-2, 2.21) {$\bu$};
+\node [below] at (-2, 2.21) {$O$};
+
+\node at (-2, 2.56) {$\bu$};
+\node [below right] at (-2.05, 2.65) {$P$};
+
+\node at (0, 5) {$\bu$};
+\node [right] at (0, 5) {$H$};
+
+\node at (0, 4) {$\bu$};
+\node [right] at (0, 4) {$A$};
+
+\node at (0, 3) {$\bu$};
+\node [right] at (0, 3) {$K$};
+
+\node at (0, 2.56) {$\bu$};
+\node [right] at (0, 2.56) {$L$};
+
+\node at (0, 1.0) {$\bu$};
+\node [right] at (0, 1.0) {$M$};
+
+\node at (0, 0.55) {$\bu$};
+\node [below left] at (0, 0.55) {$N$};
+
+
+\end{tikzpicture}
+
+
+%\includegraphics[scale=0.2]{radius-curvature.JPG}
+
+\end{center}
+\caption{The Radius of Curvature.} \label{F:radius-curvature}
+\end{figure}
+
+Of course, once the shape of the isochrone had been determined, the
+problem of forcing a pendulum bob to oscillate along such a curve
+remained.  This the Dutch scholar solved by placing two curved metal or
+wooden plates
+at the fulcrum of the pendulum (Figure \ref{F:Huygens-pendulum}, II).  As the
+bob swings upward, the thread winds along the plates, forcing the bob
+away from the path of a perfect circle, and as the bob swings
+downward, the thread unwinds.  This leads then to another problem in
+what today would be called mathematical physics---what should be the
+shape of the metal plates?  Huygens called the curve for the plates an
+evolute of the cycloid or {\em evolutus} (unrolled) in the original
+Latin, and went on to discuss the mathematical theory of evolutes for
+general curves, not just cycloids.  The key idea for the construction
+of the evolute is this.  Suppose (Figure \ref{F:iso-pendulum}) 
+that the thread leaves the plate at
+point $A$, the bob is at $B$, and segment $AB$ is taut.  Although $B$
+is no longer traversing a circle, the bob is instantaneously being
+forced around a circle whose center is $A$ and radius is $AB$.  
+To find $A$ and $AB$, simply determine the circle which
+best matches the (lower) cycloid at point $B$.  The length of $AB$ became
+known as the radius of curvature of the cycloid at point $B$, while $A$
+became known as the center of curvature.  Surprisingly, the evolute of a
+cycloid is another congruent cycloid, shifted in position.  
+
+Huygens made ready avail of the
+geometric idea of a tangent line, which was part of the mathematical
+culture at the time.  Specifically Huygens wishes to study the
+curvature of arc $ABF$ (see Figure \ref{F:radius-curvature}) at the point $B$.
+To do so, he considers the circle, say ${\cal{C}}_1$, that best matches
+the curve at the point $B$.  Suppose this circle has center $D$ and
+radius $BD$.  Huygens then considers another point $F$ very close to
+$B$.  Let ${\cal{C}}_2$ be the circle that best matches the curve
+at point $F$ with its own radius of curvature given by $FE$.  Extend lines $BD$
+and $FE$ to meet at point $G$, assuming that arc $ABF$ is concave
+down.  Then $BG$ plays the role of the radius
+of curvature at either points $B$ or $F$, and as $F$ approaches $B$,
+$BG$ approaches the exact value of the radius of curvature at $B$ (or $F$).
+Since the tangent to a circle is perpendicular to its
+radius, and the circle ${\cal{C}}_1$ approximates the curve very well at
+the point $B$, the tangent to the curve, $BH$, is perpendicular to
+$BG$, ($BH \perp BG$), a fact that Huygens uses liberally.
+
+\begin{exercise}  \label{E:circle}
+Given a circle of radius 1 and a circle of radius 10, which would
+you describe as more sharply curved?  Today, a circle of radius
+$r$ is said to have a value of curvature given by $k = 1/r$ at all of
+its points.  What is the curvature of the circle ${\cal{C}}_1$?
+\end{exercise}
+
+Huygens wishes to find an expression for $BG$, except he does so
+entirely in terms of geometric quantities.   Let's
+read and verify a few of Huygens's original statements as translated
+from his 1673 treatise {\em Horologium oscillatorium} (The Pendulum
+Clock) \cite{Blackwell, Huygens}. In proposition XI from this treatise 
+Huygens demonstrates how an evolute of a given curve (curve $ABF$ in
+Figure \ref{F:radius-curvature}) can be constructed from its radii of curvature.
+
+\bigskip
+\sep
+
+\begin{center}
+Huygens, from
+
+\smallskip
+{\em{The Pendulum Clock}}
+
+\bigskip
+{\sf{PROPOSITION XI}}
+\end{center}
+\smallskip
+{\sf Given a curved line, find another curve whose evolution describes it.
+ $\ldots$
+
+Let $ABF$ (see Figure \ref{F:radius-curvature}) be any curved line, 
+or part thereof, which is
+curved in one direction.   And let $KL$ be a straight line to which
+all points are referred.  We are required to find another curve, for
+example $DE$, whose evolution will describe $ABF$. $\ldots$
+
+Next select the points $B$ and $F$, which are close to each
+other. $\ldots$ 
+$BD$ and $FE$ must intersect since they are perpendicular to the curve
+$BF$ on its concave side.  $\ldots$}
+
+\begin{exercise} \label{E:perpendicular}
+ Why are $BD$ and $FE$ perpendicular to the curve $BF$?
+\end{exercise}
+
+{\sf And if the interval $BF$ is taken to be infinitely small, these three
+points [$D, \, G, \, E$] can be treated as one.  
+As a result the line $BH$, after having
+been drawn, is tangent to the curve at $B$ and also can be thought of
+as tangent at $F$.  Let $BO$ be parallel to $KL$, and let $BK$ and
+$FL$ be perpendiculars to $KL$.  $FL$ cuts the line $BO$ at $P$, and
+let $M$ and $N$ be the points where the lines $BD$ and $FE$ meet $KL$.
+Since the ratio of $BG$ to $GM$ is the same as that of $BO$ to $MN$,
+then when the latter is given, so is the former.}
+
+\begin{exercise}  \label{E:similar-1}
+ Verify that $BG/GM = BO/MN$.  Hint:  Use similar triangles.
+\end{exercise}
+
+{\sf And when the line
+$BM$ is given in length and in position, so is the point $G$ on the
+extension of $BM$, and also $D$ on the curve $CDE$, since we have
+taken $G$ and $D$ to be one. $\ldots$  
+
+Now since the ratio of $BO$ to $MN$ is composed of the ratio of $BO$
+to $BP$ $\ldots$ and the ratio of $BP$ to $MN$ $\ldots$ .}
+
+\begin{exercise}  \label{E:composed-ratios}
+Write an equation for the above statement about ratios.  How is
+Huygens using the word ``and'' (translated from the Latin)? What
+would be the modern phrasing of the above statement?  Be sure
+that you have the correct answer to this before proceeding.
+\end{exercise}
+
+{\sf  $\ldots$ the ratio of $BO$ to $BP$ or of $NH$ to $LH$ $\ldots$ }
+
+
+\begin{exercise}  \label{E:four-triangles}
+ Verify that $BO/BP = NH/LH$.  Carefully justify your answer and identify
+ all similar triangles used.  Consider using two pairs of similar triangles for
+ a total of four triangles.  
+\end{exercise}
+
+{\sf $\ldots$ the ratio of $BP$ or $KL$ to $MN$ $\ldots$ }
+
+
+\medskip
+\sep
+\bigskip
+
+\begin{exercise}
+Verify that $BP/MN = KL/MN$.  Briefly justify your answer. 
+\end{exercise}
+
+
+\begin{exercise} \label{E:BG}
+Finally, verify that $BO/MN = (NH/LH)(KL/MN)$, and state why
+$$  \frac{BG}{GM} = \frac{HN}{HL} \frac{KL}{MN} \, . $$
+\end{exercise}
+
+Huygens ends his derivation of $BG$ with what amounts to a verbal
+description of the above equality about ratios.  In a specific 
+example knowledge of the point $M$ and the ratios $HN/HL$, $KL/MN$ 
+would determine the position
+of $G$ and the distance $BG$, which is the radius of curvature.
+
+\section{The Modern Equation for Curvature}
+
+We wish to compare the modern equation for curvature with Huygens's 
+expression of ratios.  Since his work occurs just before the dawn
+of calculus, infinitesimals will be used in the sequel.  
+Notice how the vertical line $KL$ in Figure \ref{F:radius-curvature}
+serves as a reference line for forming the ratios needed for $BG$.
+Today, such a vertical line would be called the $y$-axis.  Treating
+this as the axis for the independent variable, we could write curve
+$ABF$ as $x = f(y)$, i.e., $x$ is a function of $y$.
+Suppose that $B(x_1, \, y_1)$ and $F(x_2, \, y_2)$ 
+are two points on the graph of $f(y)$ which are infinitesimally
+close.  With this interpretation, increasing values of $y$ point
+downward and increasing values of $x$ point to the left, so that
+point $B$ is reached before point $F$, when traversing arc $ABF$,
+starting at $A$ and moving toward $F$.   
+Let  $$  d y = y_2 - y_1, \ \ \ d  x = x_2 - x_1 .  $$
+Then the derivative of $f(y)$ at $(x_1, \, y_1)$ or at $(x_2, \, y_2)$
+(with respect to $y$) is given by $\frac{d  x}{d  y}$.  
+Moreover, the length of the line
+segment joining $(x_1, \, y_1)$ and $(x_2, \, y_2)$ is
+$$  d s = \sqrt{(d x)^2 + (d y)^2},  $$
+and this segment may be considered tangent to $x = f(y)$ at either of
+the two points.  Line $FL$ can be considered as the $x$-axis and point
+$L$ taken as the origin, although any horizontal line could be
+considered as the $x$-axis.
+
+\begin{exercise}  \label{E:dy/ds}
+From the equation
+$$  \frac{HN}{HL} = \frac{HN}{FH} \, \frac{FH}{HL},  $$
+conclude that
+$$  \frac{HN}{HL} = {\Big( \frac{d s}{d y}\Big)}^2  $$
+by arguing that
+$$  \frac{FH}{HL} = \frac{d s}{d y} \ \ \ {\rm{and}} \ \ \
+\frac{HN}{FH} = \frac{d s}{d y}.  $$
+Hint:  Try similar triangles.
+\end{exercise}
+
+\begin{exercise}  \label{E:1-plus}
+Next show that
+$$  \frac{MN}{KL} = 1 + \Big( \frac{LN - KM}{KL} \Big).  $$
+\end{exercise}
+
+\begin{exercise}  \label{E:conceptual}
+Use geometry to conclude that $LN = x_2 \, \frac{d x}{d y}$.
+Explain conceptually why
+$$  \frac{LN - KM}{KL} = \frac{d \! }{d y}
+\Big(x \, \frac{\, d x}{d y}\Big ). $$
+Hint:  Interpret $LN -KM$ as the first difference of a certain
+function and interpret $KL$ as a small change along the $y$-axis,
+i.e., $dy$.  Here $x$ denotes the first coordinate of a generic point 
+$(x, \, y)$ on the curve $ABF$, i.e., on the graph $x = f(y)$.
+\end{exercise}
+
+\begin{exercise}  \label{E:product-rule}
+Use the product rule to compute
+$$  \frac{d \! }{d y} \Big(x \, \frac{\, d x}{d y}\Big ). $$
+\end{exercise}
+
+\begin{exercise}  \label{E:segment-BM}
+Using the geometry of $\triangle BKM$ and $\triangle BPF$, show that
+$BM = x \frac{ds}{dy}$ and substitute this into the equation 
+$$  MG = BG - BM \, . $$
+\end{exercise}
+
+\begin{exercise}   \label{E:derivative-BG}
+From Exercise \eqref{E:BG} compute $BG$ in terms of infinitesimals.  Note that
+$\displaystyle \frac{d^2 x}{dy^2}$ may be treated as $\displaystyle
+\frac{d(dx)}{(dy)(dy)}$, where $d(dx)$ is the second difference of the
+quantity $x$.  
+\end{exercise}
+
+\begin{exercise}  \label{E:k=1/BG}
+Find an expression for $k = 1/BG$, the curvature of curve
+$ABF$ at the point $B$ in terms of infinitesimals, 
+and compare this with the derivative
+equation for the curvature of a plane curve given in a calculus text. 
+Why might you now wish to switch $dx$ and $dy$?  Does a minus sign
+occur in front of your equation for $1/BG$?  Do you know why?
+\end{exercise}
+
+
+\begin{exercise}  \label{E:derivative-parabola}
+Graph $y = 4 - x^2$ in the $xy$-plane ($x$ is the independent
+variable, as usual).  Using the derivative equation for curvature, 
+compute the curvature of this function at the values:
+\begin{itemize}
+\item[(a)] $x = -1$,  
+\item[(b)] $x = 0$,
+\item[(c)] $x = 1$.
+\end{itemize}
+\end{exercise}
+
+\medskip
+\noindent
+{\bf{Extra Credit A.}}  Build an actual isochronous pendulum with a
+bob attached to a thread that is constrained by a cycloid.  The fulcrum
+of the pendulum should be at the cusp of the cycloid.  One method to
+do this would be to print a graph of a cycloid on paper, transfer the
+paper to a cork board and use push pins to outline the cycloid.
+Another method would be to use a 3-D printer.  Build
+a second (identical) isochronous pendulum.  Release the two pendulum
+bobs at different points and see whether they reach the vertical
+position at the same time.
+
+
+\bigskip
+\noindent
+{\bf{Extra Credit B.}}  Report on the brachistochrone problem, to
+which the cycloid is also a solution.  Given two points $A$ and $B$ in
+the $xy$-plane, not on the same vertical line (but $A$ with a larger
+$y$-component than $B$) construct a physical
+brachistochrone from $A$ to $B$ along which a marble could be rolled.
+Physically demonstrate that a marble released from point $A$ reaches
+$B$ along the brachistochrone sooner than it would if rolled along a
+flat line segment from $A$ to $B$.
+  
+
+\vfill
+\eject
+\section*{Notes to the Instructor}
+
+This Primary Source Project is written for a calculus course covering the curvature
+of plane curves, usually taught in conjunction with understanding
+motion (velocity and acceleration) of vector-valued functions.  Many
+calculus textbooks define curvature as the magnitude of the rate of
+change of the unit tangent vector with respect to arc length, although
+such an opaque definition offers little insight into what curvature
+was designed to capture \cite{Lodder}, not to mention its rich historical origins.
+The project offers Christiaan Huygens's (1629--1695) geometric
+construction of the radius of curvature and discusses its use in
+Huygens's design of an isochronous pendulum clock.  A perfect
+timekeeper, if one could be constructed to operate at sea, would
+solve the longitude problem for naval navigation during The Age of
+Exploration \cite{Sobel}.   John Harrison (1693--1776) did construct a
+sea clock that solved the longitude problem, although he used springs
+instead of a pendulum.  He received only marginal credit for his work
+during his lifetime \cite{Sobel}.  
+
+The project is divided into three sections.  The first is an
+introduction describing the longitude problem and a potential solution
+with an accurate clock.  The first two exercises, \eqref{E:simple-lat}
+and \eqref{E:simple-long} are elementary and could be assigned as
+warm-up homework for in-class discussion.  Depending on the students'
+background, the instructor should probably review the meaning of
+latitude, longitude, the Prime Meridian, a great circle, and arc
+length along a great circle of the Earth.    
+The second section contains
+excerpts from Huygens's original work {\em Horologium oscillatorium}
+(The Pendulum Clock) \cite{Blackwell, Huygens}.  Understanding
+Huygens's geometric construction requires a careful study of Figure  
+\ref{F:radius-curvature}, particularly curve $ABF$ and points $H$,
+$K$, $L$, $M$, and $N$, all lying on the same vertical line.  The
+exercises involve verifying Huygens's statements about the various
+segments in this figure, which comprise the radius of curvature.
+Huygens relies on similar triangles, substitution and the geometric
+idea of a tangent line.  The solution to some exercises simply involves
+writing Huygens's verbal description of ratios as algebraic equations,
+such as Exercise \eqref{E:composed-ratios}, where $BO/MN = (BO/BP)(BP/MN)$.  
+Other exercises require the identification of several pairs of
+similar triangles, particularly Exercise
+\eqref{E:four-triangles}.  For ease of reference, Figure
+\ref{F:radius-curvature} is reproduced on a separate page following these
+notes, which could be photocopied and distributed to the class.
+
+Allow about one week to cover sections one
+and two.  From Huygens's final description of the radius of curvature,
+segment $BG$ in Figure \ref{F:radius-curvature}, a numerical
+calculation for its value, in a specific example,  could be covered 
+in class.  For the curve $y = 4 - x^2$, given point $B$ as
+$(-1, \, 3)$ and $F$ as $(-1.1, \, 2.79)$, segment lengths $HN$, $HL$, $KL$,
+$MN$ and $BM$ could be computed numerically by placing the $y$-axis
+along line $HL$.  This appears as an exercise in {\em Mathematical Masterpieces}
+\cite[p.\ 176]{Knoebel}, reproduced below for the reader's convenience.  
+
+\begin{exercise}  \label{E:cur.parabola} [{\bf{Optional}}] $\ $
+In this exercise the radius of curvature of $y= 4-x^2$ is estimated at
+the point $B(-1, \, 3)$ using the geometric ideas of Huygens.  In modern
+terminology, let the $y$-axis be placed along the line $HL$ (Figure \ref{F:radius-curvature}), 
+and suppose that the $x$-axis is parallel to
+the line $FL$ so that $B$ has coordinates $(-1, \, 3)$.  
+What is the $y$-coordinate of the point $K$?  
+Using a modern equation for the slope of the tangent line to $y=4-x^2$ at $B$, find
+the $y$-coordinate of $H$.  Find the $y$-coordinate of $M$ from the
+equation of the line perpendicular to $y=4-x^2$ at $B$.  Let 
+$F(-1.1,\, 2.79)$ be another point on the parabola $y=4-x^2$, close to $B$.
+From $F$, determine the $y$-coordinates of $L$ and $N$.  From the
+equations
+$$ BG = BM + MG \, , \ \ \ \ \ 
+ \frac{BG}{MG} = \frac{HN}{HL} \, \frac{KL}{MN} $$
+estimate $BG$, the radius of curvature of the parabola at $B$.  Repeat
+the construction using the same point $B$, now considering $F$ as
+$(-1.01, \, 2.9799)$.   $\ \square$
+\end{exercise}
+  
+
+Section three contains a construction for the modern equation of
+curvature by assigning infinitesimals ($dx$, $dy$, $ds$) to Huygens's
+work.  This culminates in Exercise \eqref{E:k=1/BG}, which requires
+the use of nearly all the previous exercises for this section.  
+Allow one week also to cover this section in its entirety.
+Once the derivative formula for curvature has been completed, this
+could be used to compute the curvature of $y = 4 - x^2$ at $x = -1$
+and compared to the geometric (numerical) example above.  For further
+details about curvature and in particular Newton's derivation for the
+radius of curvature in terms of his fluxion notation (not given in
+this project), see the text {\em
+  Mathematical Masterpieces} \cite{Knoebel}.  In fact, the chapter
+``Curvature and the Notion of Space'' from this text \cite{Knoebel} could serve as a
+semester-long undergraduate course in differential geometry or the history of
+mathematics. 
+
+% Add a sample syllabus for the project here.  
+The following is a sample timeline for covering the project over a two-week implementation,
+three 50-minute class sessions per week.
+
+\begin{itemize}
+\item[{\bf{Day 1.}}]  As advance reading, ask students to study pp. 1--3 of the project before class, 
+and prepare questions.  
+During class the instructor may wish to review the meaning of latitude and longitude, and explain
+the longitude problem for navigation at sea (during the sixteenth, seventeenth, and eighteenth centuries).  
+Field questions about determining latitude and longitude.  Assign Exercises \eqref{E:simple-lat},
+\eqref{E:simple-long}.  
+
+\item[{\bf{Day 2.}}]  As advance reading, ask students to study pp. 4--7 of the project before class,
+and prepare questions.  During class, the instructor may wish to review the construction of a
+cycloid, and develop a parametric equation for a cycloid, particularly if such an equation is present 
+in the calculus text being used for the course.   As an enrichment activity, the instructor could use graphic
+software to plot the parametric equation of a cycloid and project this on screen.  Field questions about
+the reading.  Review similar triangles,
+and the equality of ratios of corresponding sides in similar triangles.  Discuss Exercises \eqref{E:circle},
+\eqref{E:perpendicular} in class, and perhaps assign Exerciese \eqref{E:similar-1}, \eqref{E:composed-ratios}.
+
+\item[{\bf{Day 3.}}]  As advance reading, ask students to study p. 8 of the project before class,
+and prepare questions.  This is the heart of Huygens's geometric construction for capturing the radius of
+curvature as a limiting process via certain ratios.  As in-class activities, group work, group presentations,
+or assigned homework, cover Exercises \eqref{E:four-triangles} through \eqref{E:BG}.  After Exercise \eqref{E:BG}
+is complete, the instructor may wish to demonstrate how Huygens's work determines the radius of curvature
+by covering optional Exercise \eqref{E:cur.parabola} above.  Time permitting, an extra day could be devoted to
+a discussion of Exercise \eqref{E:cur.parabola}.  
+
+\item[{\bf{Day 4.}}]  As advance reading, ask students to study p. 9, particularly Exercises \eqref{E:dy/ds},
+\eqref{E:1-plus} before class, and prepare questions.  Begin a discussion of differentials, and how a ratio of 
+sides in a triangle can be used to capture the quotient of two differentials.  Field questions about the Exercises
+\eqref{E:dy/ds}, \eqref{E:1-plus}, and assign these as homework.  If time permits, begin a discuss of
+Exercise \eqref{E:conceptual}, which requires a conceptual understanding of what a derivative is as well as an 
+identification of what function is being differentiated.    
+
+\item[{\bf{Day 5.}}]  As advance reading, ask students to study Exercises \eqref{E:conceptual} through \eqref{E:segment-BM}
+before class, and prepare questions about these exercises.  Also, ask students what type of information segment 
+$MN$ may contain in terms of derivatives.  Discuss the conceptual underpinnings of Exercise \eqref{E:conceptual} 
+during class.  Notice that segment $MN$ measures how quickly the radial lines $BG$ and $FG$ are approaching each other.
+Since a radial line is perpendicular to the tangent line, a radial line contains first derivative information about the original
+function (or graph).  How two radial lines differ would then contain second derivative information about the function.  
+Exactly what expression in terms of second derivatives $MN/KL$ represents follows from Exercises \eqref{E:1-plus} through
+\eqref{E:product-rule}.  Cover Exercises \eqref{E:conceptual} through \eqref{E:segment-BM} as in-class activities, group 
+activities, group presentations, or assigned homework.  
+
+\item[{\bf{Day 6.}}]  As advance reading, ask students to study Exercises \eqref{E:derivative-BG}, \eqref{E:k=1/BG}, 
+and prepare questions about these exercises before class.  Begin a discussion about the needed steps to complete
+Exercise \eqref{E:derivative-BG}, which is rather lengthy.  Note that the final derivative formula for $BG$, the radius of curvature, 
+is preceded by a negative sign, since $BG$ represents a length, and curve $ABF$ is concave down 
+with $\overset{\longrightarrow}{HL}$ being  the axis of the independent variable and $\overset{\longrightarrow}{LF}$ 
+the axis of the dependent variable.  An engaging in-class activity is to ask students to determine the concavity 
+of curve $ABF$ with respect to the axes of the independent and dependent variables.
+As a final step for Exercise \eqref{E:k=1/BG}, the roles of $x$
+and $y$ may be switched to reconcile Huygens's construction with the modern convention of letting $x$ denote the
+independent variable when differentiating functions $y = f(x)$ today.  Assign Exercises
+\eqref{E:derivative-BG}, \eqref{E:k=1/BG}.  If time permits, begin Exercise
+\eqref{E:derivative-parabola}, and compare this to Exercise \eqref{E:cur.parabola} above, or discuss
+a comparison of these exercises during the next class session.  
+   
+\end{itemize}
+   
+The above syllabus for the project is ambitious, and exercises can be assigned at the
+instructor's discretion.  
+
+\bigskip
+
+The LaTeX code of this entire Primary Source Project (PSP)
+is available from the author by request ({\tt{jlodder@nmsu.edu}}).   
+The PSP itself can also be modified by  instructors as desired 
+to better suit their  goals for the  course.
+
+The development of this project has been partially supported by the 
+National Science Foundation's Improving Undergraduate STEM Education 
+Program under Grant Number DUE-1523747. Any opinions, findings, 
+and conclusions or recommendations expressed in this project 
+are those of the author and do not necessarily reflect the views 
+of the National Science Foundation.
+ 
+\bigskip
+\bigskip
+\begin{minipage}{.25\textwidth}
+       \noindent
+\includegraphics[scale=1.0]{by-sa.jpg}
+%\includegraphics[natwidth=4in,natheight=.3in]{by-sa.jpg}
+\end{minipage}
+ \begin{minipage}{0.7\textwidth}
+This work is licensed under a 
+Creative Commons Attribution-ShareAlike 4.0 International License
+(\url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}).
+It allows re-distribution and re-use of a licensed work on the 
+conditions that the creator is appropriately credited and that 
+any derivative work is made available under 
+``the same, similar or a compatible license''.
+\end{minipage}
+
+\bigskip
+
+\noindent For more information about TRIUMPHS, visit
+
+\noindent 
+\url{https://blogs.ursinus.edu/triumphs/}
+
+\vfill
+\eject
+
+\begin{center}
+\begin{tikzpicture}[xscale=1.2, yscale=1.2]
+
+\draw[thick, domain=-3.6:-0] plot (\x, {4 - 0.25*(\x)^2});
+\node at (-2, 3) {$\bu$};
+
+\node at (-2.4, 2.56) {$\bu$};
+\node [above left] at (-2, 3) {$B$};
+
+\node [above left] at (-2.4, 2.56) {$F$};
+\draw[-] (-2,3)--(4, -3); 
+
+\draw[-] (-2.4,2.56)--(4.1, -2.903);
+\draw[-] (-2,3)--(0, 5);
+\draw[-] (0, 5.5 )--(0, -3);
+
+\node at (1.96, -0.96) {$\bu$};
+\node [above right] at (1.96, -0.96) {$D$};
+\node at (2.94, -1.94) {$\bu$};
+\node [below left] at (2.94, -1.94) {$G$};
+\node at (3.8, -2.64) {$\bu$};
+\node [above right] at (3.8, -2.64) {$E$};
+\node at (1.4, 0) {$\bu$};
+\node [above right] at (1.4, 0) {$C$};
+
+\draw [dashed] (1.4, 0) to [out=-70, in=135] (1.96, -0.96);
+\draw [dashed] (1.96, -0.96) to [out=-50, in=145] (3.8, -2.64);
+
+\draw[-] (-2,3)--(0, 3);
+\draw[-] (-2.4, 2.56)--(0, 2.56);
+\draw[-] (-2,3)--(-2, 2.21);
+
+\node at (-2, 2.21) {$\bu$};
+\node [below] at (-2, 2.21) {$O$};
+
+\node at (-2, 2.56) {$\bu$};
+\node [below right] at (-2.05, 2.65) {$P$};
+
+\node at (0, 5) {$\bu$};
+\node [right] at (0, 5) {$H$};
+
+\node at (0, 4) {$\bu$};
+\node [right] at (0, 4) {$A$};
+
+\node at (0, 3) {$\bu$};
+\node [right] at (0, 3) {$K$};
+
+\node at (0, 2.56) {$\bu$};
+\node [right] at (0, 2.56) {$L$};
+
+\node at (0, 1.0) {$\bu$};
+\node [right] at (0, 1.0) {$M$};
+
+\node at (0, 0.55) {$\bu$};
+\node [below left] at (0, 0.55) {$N$};
+
+
+\end{tikzpicture}
+
+\medskip
+\bigskip
+The Radius of Curvature.
+\end{center}
+
+
+
+
+\vfill
+\eject
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Boyer} Boyer, C.B., Merzbach, U.C., {\em A History of
+    Mathematics}, second edition, John Wiley \& Sons, New York, 1989.  
+
+\bibitem{Hazard} Hazard, P., {\em The European Mind, 1680--1715}, May,
+  J.L., translator, World Publishing Co., Cleveland, Ohio, 1963.
+
+\bibitem{Blackwell} Huygens, C., {\em The Pendulum Clock or
+    Geometrical Demonstrations Concerning the Motion of Pendula as
+    Applied to Clocks}, Blackwell, R.J., translator, The Iowa State
+    University Press, Ames Iowa, 1986.  
+
+\bibitem{Huygens} Huygens, C., {\em Oeuvres compl\`etes de Christiaan
+    Huygens}, tome 18, Soci\'et\'e Hollandaise des Sciences, Amsterdam, 1967.
+
+\bibitem{Katz1998} Katz, V.J., {\em A History of Mathematics:  An
+    Introduction}, second edition, Addison-Wesley, New York, 1998.  
+
+\bibitem{Knoebel} Knoebel, A., Laubenbacher, R., Lodder, J.,
+  Pengelley, D. {\em Mathematical Masterpieces:  Further Chronicles by
+    the Explorers}, Springer Verlag, New York, 2007.  
+
+\bibitem{Lodder} Lodder, J., ``Curvature in the Calculus Curriculum,''
+  {\em The American Mathematical Monthly}, {\bf{110}} (2003), 593--605.
+
+\bibitem{Simmons} Simmons, G.F., {\em Calculus with Analytic
+    Geometry}, McGraw Hill, Inc., New York, 1985.
+
+\bibitem{Sobel} Sobel, D., Andrewes, J.H., {\em The Illustrated
+    Longitude:  The True Story of a Lone Genius Who Solved the
+    Greatest Scientific Problem of His Time}, Walker and Company, New
+  York, 1995.
+
+\bibitem{Yoder} Yoder, J.G., {\em Unrolling Time:  Christiaan Huygens
+    and the Mathematization of Nature}, Cambridge University Press,
+  Cambridge, 1988.  
+
+
+\end{thebibliography}
+
+\end{document}

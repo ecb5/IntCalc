@@ -1,0 +1,497 @@
+\documentclass[11pt]{article}
+
+\usepackage[authoryear]{natbib}
+\setlength{\bibsep}{6pt}
+\usepackage[shortlabels]{enumitem} 
+%\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+\usepackage{framed}
+\usepackage{asymptote}
+\newtheorem{theorem}{Theorem}
+
+% In case an author wants to include a very wide matrix.
+\setcounter{MaxMatrixCols}{30}
+
+% The following commands will set up the page geometry according to the default TRIUMPHS style.  Please modify them wisely, if at all.  As needed for a specific PSP, please address bad page and line breaks using commands such as \newpage and\or otherwise inserting/deleting space between lines.
+
+\setlength{\topmargin}{-.7in}
+\setlength{\oddsidemargin}{-.1in}
+\setlength{\evensidemargin}{-.1in}
+\setlength{\textwidth}{6.6in}
+\setlength{\textheight}{9.3in}
+
+\addtolength{\skip\footins}{10pt}
+\linespread{1.1}
+
+% The new command \sep defined here will produce the `extended infinity' symbol used to separate PSP narrative from primary source text within the `source' environment defined below.
+\newcommand{\sep}{\vspace{-3pt}
+\begin{center}
+{\mathversion{normal}
+$\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}
+\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}\infty \mspace{-5.5mu}$}
+\end{center} \vspace*{-5pt}}
+
+% This defines the environment for setting off primary source material with the `infinity' symbol before and after the source material. The source material itself will be set in a quote environment in sans serif font. For very short primary source excerpts, use your discretion concerning whether this environment makes sense, but please always use sans serif font (\sf) for primary source excerpts.
+
+  \newenvironment{source}%
+ {\bigskip \sep \vspace*{-6pt} \begin{quote}
+          \begin{sf}   }
+   {   \end{sf}     \end{quote} \vspace*{-6pt} \sep \bigskip}%
+
+\newcounter{tasknumb}
+\newcommand{\tasknumb}[1]{\refstepcounter{tasknumb}\textmd{\textbf{$\fbox{$\fbox{Task \thetasknumb}$}$}}#1}
+\newcommand{\etc}{\text{etc.}}
+
+%\setlist[1]{itemsep=50pt}
+
+% This defines a new environment for student tasks.  A double box will be placed around 'Task xx', where the  number xx is updated with each new task.
+\newenvironment{task}[1][]%
+ {\begin{itemize}
+ \item[\tasknumb{#1}]  }
+{
+    \end{itemize}    }%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\title{Fermat's Method for Finding Maxima and Minima}
+\author{Kenneth M Monks \thanks{Department of Mathematics, Front Range Community College -- Boulder County Campus, Longmont, CO 80537; \texttt{kenneth.monks@frontrange.edu}.
+}}
+\bigskip
+
+
+\maketitle
+
+\vspace*{-10pt}
+
+A central theme of most introductory calculus courses is that of \emph{optimization}.  Given a real-valued function $f(x)$, one wishes to find its maxima and minima on some specified interval of real numbers.  Typically the backbone of this method is a theorem called \emph{Fermat's Theorem} or \emph{Fermat's Stationary Point Theorem} which is stated and illustrated below.
+
+
+\vspace{0.1in}
+
+\noindent\hrulefill
+
+\begin{center}  {\bf Fermat's Theorem} \\
+
+\end{center}
+
+\vspace{0.1in}
+{\it 
+
+If a real-valued function $f(x)$ is differentiable on an interval $(a,b)$ and $f(x)$ has a maximum or minimum at $c\in(a,b),$ then $f'(c)=0$.}  
+
+    \begin{center}
+\begin{asy}
+	size(300,150,keepAspect=false);  
+    import graph;
+
+    real f(real x)
+    {
+        return (x-1.2)^3-0.4x^2+1.5;
+    }
+    
+    
+    draw(graph(f,0.03,2,n=400),linewidth(0.6bp));
+    
+    draw((0.2,-0.03)--(0.2,0.03));
+    label("$a$",(0.2,-0.03),S,fontsize(12pt));
+    dot((0.2,f(0.2)),linewidth(4pt));
+    
+    draw((0.752,-0.03)--(0.752,0.03));
+    label("$c$",(0.752,-0.03),S,fontsize(12pt));
+    dot((0.752,f(0.752)),linewidth(4pt));
+    
+    draw((1.75,-0.03)--(1.75,0.03));
+    label("$b$",(1.75,-0.03),S,fontsize(11pt));
+    dot((1.75,f(1.75)),linewidth(4pt));
+    
+    draw((0.2,1.184)--(1.75,1.184),dashed);
+    draw((0.752,0.06)--(0.752,f(0.752)),dashed);
+    
+    yaxis("$y$",-0.1, 1.3,fontsize(12pt),above=true);
+	xaxis("$x$",-0.1, 2,fontsize(12pt),above=true);
+	\end{asy}
+
+\end{center}
+
+\noindent\hrulefill
+
+\vspace{0.1in}
+
+Most modern calculus courses use this theorem as the rationale behind locating the maximum and minimum values of a continuous function $f(x)$ on an interval $[a,b]$, whose existence is guaranteed by the Extreme Value Theorem.  The standard algorithm is to make a list of the following $x$-values:
+\begin{itemize}
+    \item the endpoints $x=a$ and $x=b$,
+    \item any points $x\in(a,b)$ such that $f(x)$ is not differentiable, 
+    \item and any points $x\in(a,b)$ such that $f'(x)=0$ (often called \emph{stationary points} or \emph{critical points}).
+\end{itemize}  Then, one calculates $f(x)$ for each $x$-value, which produces a list of $y$-values.  Among this list, the biggest value of $f(x)$ is the absolute maximum and the smallest is the absolute minimum. 
+
+\begin{task}
+Briefly explain how Fermat's Theorem serves as the basis for the optimization algorithm described above.
+\end{task}
+
+For the rest of this project, the method above will be referred to as the \emph{modern method}, in contrast to \emph{Fermat's method}, which we will now explore!
+
+\section{Fermat's Method\ldots and Descartes' Doubts!}\label{Adequality}
+
+Fermat's Theorem is so-called because it is traceable back to the ideas of Pierre de Fermat\footnote{Born in Beaumont-de-Lomagne in the south of France, Pierre de Fermat spent most of his life in Toulouse and Orl\'{e}ans, where he was educated as, and then worked as, a lawyer/jurist.  He found respite from his demanding career by pursuing his true love: mathematics!  Fermat championed the idea of \emph{pure} mathematics; he was rarely motivated by problems pertaining to the physical world but rather loved mathematics for its own inherent beauty and challenge.} (1601--1665).  Nonetheless, it is fascinating to consider how different his method looks from the modern method!\footnote{Part of this difference, of course, has to do with the passage of time and the evolution of how we are expected to write mathematics.  However, part of it is also due to Fermat's unique personal style; he had a reputation for coming up with results in secret and then sending the result out into the mathematical community with no indication of how one might have come upon that, almost as a puzzle for the world to solve!  Mathematics historian Victor Katz writes ``In many cases it is not known what, if any, proofs Fermat constructed nor is there always a systematic account of certain parts of his work.  Fermat often tantalized his correspondents with hints of his new methods for solving certain problems.  He would sometimes provide outlines of these methods, but his promises to fill in gaps `{\sf when leisure permits}' frequently remained unfulfilled.'' \citep[page 433]{Katz}}  His original writing, displayed below, is found in his 1636 treatise \emph{Method for the Study of Maxima and Minima} \citep{FermatMaxMin}.  It should be noted the original was in Latin. Fermat's work in this document was translated into English by Jason Ross, working from the French translation by Tannery and Henry \citep{Tannery} (who modified some of Fermat's original notation).
+
+\begin{source}
+
+Let $a$ be an arbitrarily chosen unknown of the question (whether it has one, two, or three dimensions, as follows from the statement).  We will express the maximum or minimum quantity in terms of $a$, by means of terms of any degree.  We will then substitute $a+e$ for the primitive unknown $a$, and express the maximum or minimum quantity in terms containing $a$ and $e$ to any degree.  We will \emph{ad-equate}, to speak like Diophantus,\footnote{Diophantus (c.~200{\sc ce}--c.~284{\sc ce}) was a mathematician in the city of Alexandria who wrote in Greek.  His word $\pi\alpha\rho\iota\sigma\acute{o}\tau\eta\zeta$ (parisotes), meaning \emph{approximately equal}, was translated into Latin as \emph{adaequo} by the French mathematician Claude Gaspard Bachet de M\'{e}ziriac (1581--1638).  Fermat read Bachet's version of Diophantus' work \citep{KatzAndFriends}.} the two expressions of the maximum and minimum quantity, and we will remove from them the terms common to both sides.  Having done this, it will be found that on both sides, all the terms will involve $e$ or a power of $e$.  We will divide all the terms by $e$, or by a higher power of $e$, such that on at least one of the sides, $e$ will disappear entirely.  We will then eliminate all the terms where $e$ (or one of its powers) still exists, and we will consider the others equal, or if nothing remains on one of the sides, we will equate the added terms with the subtracted terms, which comes to be the same.  Solving this last equation will give the value of $a$, which will lead to the maximum or the minimum, in the original expression.
+
+\end{source}
+
+\begin{task}
+ Compare and contrast the modern method with Fermat's method.  Can you find three similarities between them?  Can you find three differences between them?
+ \end{task}
+
+Fermat himself was very pleased with this method, as he later made the following claim. 
+
+\begin{source} It is impossible to give a more general method.
+\end{source}
+
+Before we begin to analyze the algorithm described above to see exactly what is happening, read it a second time.  Are you filled with a bit of doubt as to whether or not this method is valid?  Are you filled with a bit of curiosity as to where on earth this method might have come from?  If so, you are in the best of company.  Rene Descartes\footnote{Rene Descartes was born near Tours, France.  He is perhaps most famous today for his philosophical works, specifically as the writer of the phrase {``\sf je pense, donc je suis''} (in English, ``I think, therefore I am'') from his \emph{Discourse on the Method} \citep{Descartes}.  However, he also left mathematics with incredibly important and lasting advances.  He showed the power of symbolic algebra with regards to solving difficult geometric problems: he marked points in the plane using distances $x$ and $y$ measured along lines, much as we do today \citep{Grabiner}.} (1596--1650) read Fermat's treatise in 1638 after it was passed on to him by Mersenne.\footnote{Marin Mersenne (1588--1648) was the central communications clearinghouse of a group of mathematicians and physicists. He would receive, copy, record, and distribute materials as they worked.  Fermat and Mersenne began a correspondence in 1636.}  Descartes' response to Mersenne was somewhat dismissive; as quoted in \citep[p. 177]{FermatBio},  it included the remark ``{\sf \ldots if \ldots he speaks of wanting to send you still more papers, I beg of you to ask him to think them out more carefully than those preceding.}''  
+
+In this project, we aim to determine if Descartes was right, that Fermat's method was not so carefully thought out.  Or, on the other hand, was it a perfectly well-thought out method, but Fermat simply chose to withhold the details of how he arrived at this method?
+
+\section{Examples of Fermat's Method}
+
+As one should begin any mathematical investigation, we first work out a few examples.  In this section, we work through three problems that Fermat himself used to demonstrate his method, to see if our modern method reproduces the same results.  
+
+
+
+\subsection{First Example}\label{First}
+
+
+
+\begin{source}
+Let us take an example: 
+
+\begin{quote}
+    \emph{Divide the line $AC$ at $E$, such that $AE\times EC$ be a maximum.}
+\end{quote}
+
+\begin{center}
+\begin{asy}
+    size(300,30,keepAspect=false);
+    
+   draw((0.2,-0.03)--(0.2,0.03));
+    label("$A$",(0.2,-0.03),S,fontsize(12pt));
+
+    draw((0.752,-0.03)--(0.752,0.03));
+    label("$E$",(0.752,-0.03),S,fontsize(12pt));
+    
+    draw((1.75,-0.03)--(1.75,0.03));
+    label("$C$",(1.75,-0.03),S,fontsize(11pt));
+
+    draw((0.2,0)--(1.75,0));
+   
+\end{asy}
+\end{center}
+
+Let us take $AC=b;$ let $a$ be one of the segments, and let the other be $b-a$, and the product whose maximum we have to find is: $ba-a^2.$ Now let $a+e$ be the first segment of $b$, the second $b-a-e$, and the product of the two segments will be: $ba-a^2+be-2ae-e^2.$
+
+It must be \emph{co-equal to the preceding:} $ba-a^2;$
+
+Removing the common terms: $be\sim 2ae+e^2;$
+
+Dividing all the terms: $b\sim 2a+e;$
+
+Remove $e$: $b=2a$.
+
+To solve the problem, therefore, the half of $b$ must be taken.
+\end{source}
+
+\begin{task}\label{Tomato}
+First, we solve the same problem using the modern method.  Denote by $b$ the fixed total length of $AC$ (just as Fermat did).  Then denote by $x$ the length of $AE$, which implies $b-x$ is the length of $EC$.
+
+\begin{enumerate}[(a)]
+    \item With the above notation, what is the function $f(x)$ that we are trying to maximize?  What interval of $x$ values are we considering? 
+    \item Apply the modern method to find the absolute maximum of this function $f(x)$.  Does it confirm the result Fermat presents?
+\end{enumerate}
+    
+\end{task}
+
+In practice, we tend to calculate the derivative of a function using all of the standard slick and convenient formulas with which we have become familiar: power rule, product rule, quotient rule, and chain rule.  However, sometimes the limit definition of the derivative lends a bit more insight into a problem than those other formulas lend.  Here our ``problem'' is trying to make sense of Fermat's method!
+
+Specifically, for the next task we apply the limit definition of the derivative, written as $$f'(x)=\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}.$$
+
+\begin{task}
+\begin{enumerate}[(a)]\label{comparison}
+    \item Take your function $f(x)$ from the previous task, and again find the zeros of the derivative.  However, this time, don't worry about taking that limit so early in the process.  Instead, just write down the equation $$\frac{f(x+\Delta x)-f(x)}{\Delta x}=0.$$ Simplify it as much as possible, and then, right at the very end, take the limit as $\Delta x$ goes to zero. 
+    
+    \item Explain why the manipulation you performed above is equivalent to starting with $$f(x+\Delta x)=f(x),$$ simplifying, dividing both sides by $\Delta x$, and then setting all the remaining occurrences of $\Delta x$ to zero.
+    
+    \item Now revisit Fermat's method.  When you compare your work to Fermat's, can you find similar steps?  Which symbol in the modern method corresponds to Fermat's $a$?  Which symbol in the modern method corresponds to Fermat's $e$?   
+\end{enumerate}
+\end{task}
+
+\subsection{Second Example}\label{Second}
+The result of the previous example is a slight rephrasing of what is today known as the \emph{vertex formula}: the fact that a quadratic polynomial in $x$ will achieve its absolute maximum or minimum when $x$ is the negative of the linear coefficient divided by twice the leading coefficient.  Fermat's method worked out perfectly reasonably in this case.  But perhaps it was only because the example was so clean!  Let us examine a more complicated application of Fermat's method.  This example was a followup note that Fermat wrote to his original treatise, titled \emph{On the Same Method} \citep[page 126]{Tannery}.
+
+\begin{source}
+By the means of my method, I would like \emph{divide a given line $AC$ at a point $B$, such that $AB^2\times BC$ be the maximum} of all solids which could be formed in the same fashion by dividing the line $AC$. 
+
+\begin{center}
+\begin{asy}
+    size(300,30,keepAspect=false);
+    
+   draw((0.2,-0.03)--(0.2,0.03));
+    label("$A$",(0.2,-0.03),S,fontsize(12pt));
+
+    draw((0.752,-0.03)--(0.752,0.03));
+    label("$B$",(0.752,-0.03),S,fontsize(12pt));
+    
+    draw((1.75,-0.03)--(1.75,0.03));
+    label("$C$",(1.75,-0.03),S,fontsize(11pt));
+
+    draw((0.2,0)--(1.75,0));
+   
+\end{asy}
+\end{center}
+Let us suppose, in algebraic notation, that $AC=b$, the unknown $AB=a$; we will have $BC=b-a$, and the solid $a^2b-a^3$ must satisfy the proposed condition.
+
+Now taking $a+e$ in place of $a$, we have for the solid $$(a+e)^2(b-e-a)=ba^2+be^2+2bae-a^3-3ae^2-3a^2e-e^3.$$
+I compare this to the first solid: $a^2b-a^3$, as if they were equal, when in fact they are not.
+
+
+\begin{center} \ldots \end{center}
+
+Then, I subtract the common terms from both sides, 
+
+\begin{center} \ldots \end{center}
+
+this done, one side of the equation has nothing, while the other is $$be^2+2bae-3ae^2-3a^2e-e^3.$$  
+
+\begin{center} \ldots \end{center}
+
+Dividing all terms by $e$, the \emph{adequality} will hold between $be+2ba$ and $3ae+3a^2+e^2$.  After this division, if all terms may again be divided by $e$, the division must be repeated, until there is a term that can no longer be divided by $e$, or, to employ the terminology of Vi\`{e}te\footnote{Fran\c{c}ois Vi\`{e}te (1540--1603) was a mathematician who worked as a codebreaker for several of the kings of France.  He introduced a system of symbolic algebra, which Fermat used and referenced here.  Vi\`{e}te used vowels for unknowns and consonants for knowns.  To our modern eyes, using $a$ as an unknown instead of $x$ might look a bit odd; this is because eventually Descartes' convention (using the letters $x,y,z$ to represent unknowns) caught on rather than Vi\`{e}te's!}, a term which is no longer affected by $e$.  But, in the proposed example, we find that the division cannot be repeated; so, we have to stop there.
+
+Now, I remove all the terms affected by $e$; on one side there remains $2ba,$ while the other has $3a^2,$ terms between which it is necessary to establish not a feigned comparison or an \emph{adequality}, but rather a true equation.  I divide both sides by $a$; giving me $2b=3a$, or $b/a=3/2.$
+
+Let us return to our original question, and divide $AC$ at $B$ such that $AC/AB=3/2.$  I say that the solid $AB^2\times BC$ is the maximum of all those which can be formed by dividing the line $AC$.
+\end{source}
+
+\begin{task}
+\begin{enumerate}[(a)]
+    \item Check Fermat's work in the example above, filling in the details of the algebra that he glossed over.  Can you confirm each of his steps?  
+
+\item Verify that Fermat's result matches what is produced by the modern method.  Specifically, maximize the function $$f(x)=(b-x)x^2$$ on the interval $[0,b]$.
+
+\item To see the equivalence of the two methods, let us once again compare with the limit definition of the derivative.  Take the function $f(x)=(b-x)x^2$, and instead of first calculating $f'(x)$ and then setting that equal to zero, recall that $$f'(x)=\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x},$$ so we should get the same result as if we had set $$f(x+\Delta x)=f(x),$$ divided both sides by $\Delta x$, and then set all remaining $\Delta x$ to zero.  Work this out to see if it matches what is produced by Fermat's method.  
+\end{enumerate}
+\end{task}
+
+
+\newpage
+\begin{task} Let us observe Fermat's results regarding ``{\sf all solids}'' by actually looking at a few solids!
+\begin{enumerate}[(a)]
+    \item First, notice that when he said ``{\sf all solids}'', he was not talking about solids like balls, tetrahedra, etc.  What kinds of solids was he restricting his attention to?  How can you tell?
+    \item Fermat claimed that to produce the biggest possible volume, one should ``{\sf divide $AC$ at $B$ such that $AC/AB=3/2.$}''  Let us test this claim by working out some specific examples.  In particular, choose the length $AC$ to be equal to $12$.  Then, try dividing the line $AC$ four different ways, such that $AC/AB$ has ratio $3/1$, $2/1$, $3/2$, and $1/1$.  Each time, draw a sketch of the resulting solid whose volume is $AB^2 \times BC$.  Label the edges and calculate the volumes.  Which of those four solids has the biggest volume, and does that outcome agree with Fermat's claim?
+\end{enumerate}
+\end{task}
+
+\subsection{Third Example}\label{Third}
+
+It appears that Fermat's method works fine, but both of the examples we considered so far involved polynomial functions.  Maybe if we try a function that is not a simple polynomial, then the method will fail!  Fermat wrote this example, titled \emph{Appendix to the Method of Maxima and Minima}, in 1644 \citep[page 136]{Tannery}.
+
+\begin{source}
+Radicals are often encountered in the course of working problems.
+
+\begin{quote}
+    \ldots
+\it Given a semicircle of diameter $AB$, with perpendicular $DC$ drawn upon its diameter, find the maximum of the sum $AC+CD.$
+\end{quote}
+
+\begin{center}
+\vspace{.2in}
+
+\begin{asy}
+    size(300,150,keepAspect=true);
+
+    import graph; 
+    
+    real f(real x) { return sqrt(1-(x-1)^2);}
+    
+    path g = graph(f,0,2);
+    
+    draw(g);
+    
+    label("$A$",(0,-0.03),S,fontsize(12pt));
+
+    label("$B$",(2,-0.03),S,fontsize(12pt));
+    
+    label("$C$",(1.75,-0.03),S,fontsize(11pt));
+    
+    label("$D$",(1.75,sqrt(1-0.75^2)+0.2),S,fontsize(11pt));
+
+    draw((1.75,0)--(1.75,sqrt(1-0.75^2)));
+
+    draw((0,0)--(2,0));
+   
+\end{asy}
+
+\end{center}
+
+Let the diameter be taken as $b$, and let $AC=a$. We will thus have $CD=\sqrt{ba-a^2}.$ The question becomes the maximization of the quantity $a+\sqrt{ba-a^2}$.
+
+
+% By applying the rules of the method, we will come to \emph{ad-equating} expressions of excessive degree; let us then designate the maximum quantity by $o$; for why should we abandon the custom established by Vi\`{e}te of using vowels to represent unknown quantities?
+
+% Thus, we will have $a+\sqrt{ba-a^2}=o;$ therefore $o-a=\sqrt{ba-a^2},$ and by squaring, we will have: $$o^2+a^2-2oa=ba-a^2$$
+\end{source}
+
+\begin{task}
+    In trying to maximize the sum $AC+CD$, Fermat simply set $AC=a$.  His formula for $CD$, however, takes some work to verify.  
+    \begin{enumerate}[(a)]
+        \item Label the center of the circle as $E$.  Explain why the measure of $DE$ is $b/2$.
+        \item Explain why the measure of $CE$ is $a-b/2.$
+        \item Use the Pythagorean Theorem on $\triangle CDE$ to calculate the length of $CD$ in terms of $b$ and $a$.  Verify Fermat's formula for $CD$.
+    \end{enumerate}
+\end{task}
+
+Pretty clearly, answering this question for a circle of a specific size answers it for all circles, since the maximum length path would scale with the radius of the circle.  Thus, for simplicity, we choose to solve the problem in the case $b=1.$
+
+\begin{task}
+\begin{enumerate}[(a)]
+\item Use Fermat's method to find the maximum of the quantity $a+\sqrt{a-a^2}.$  That is, set up the adequality between $a+\sqrt{a-a^2}$ and the same expression with $a+e$ substituted for $a$.  Then continue to follow the steps in Fermat's method!
+
+\item Use the modern method to confirm the answer that Fermat's method gives.  That is, use the chain rule to find the derivative of $f(x)=x+\sqrt{x-x^2}$. Then find the maximum by solving for the zeros of the derivative.  Also, identify the domain of $x$-values that are being considered.
+
+\end{enumerate}
+\end{task}
+
+Let us call attention to one particularly nice aspect of Fermat's method; it requires far less knowledge of derivatives than the modern method.  For example, in the previous problem involving the expression with the square root, we were able to eliminate the root by performing the basic algebraic step of squaring both sides rather than needing to evaluate the derivative of a square root function!
+
+\section{Resolution}
+
+The preceding examples have illustrated that Fermat's method is actually very similar to the modern method, just written in different notation.  
+
+\begin{task}\begin{enumerate}[(a)]
+    \item  Explain why Fermat's method and the modern method are essentially equivalent.  Where do they differ?
+\item Why does it make sense that Fermat's method would have had to rely more on algebra and less on analysis than the modern method? (For a hint, consider the year in which he was working! Do a bit of research and see if you can find who came up with our modern definitions of limits and derivatives, and when that happened!)
+\end{enumerate}
+\end{task}
+
+Thus, Fermat's method was not laid out hastily, but rather was a lovely and valid mathematical method.  Descartes himself eventually agreed!  Descartes later said ``{\sf ...seeing the last method that you use for finding tangents to curved lines, I can reply to it in no other way than to say that it is very good and that, if you had explained it in this manner at the outset, I would have not contradicted it at all.}'' \citep[page 192]{FermatBio}
+
+
+%\nocite{*}% This command is needed to ensure all bib items are listed in references, and not just those directly cited in the project.
+ \bibliographystyle{plainnat}
+      \bibliography{FermatMethod}{}                              
+      \pagebreak 
+      
+      
+\section*{Notes to Instructors}
+
+\subsection*{PSP Content: Topics and Goals}
+
+This Primary Source Project (PSP) is intended to enrich an introductory Calculus student's grasp on the definition of the derivative and how it relates to finding maxima and minima of functions.  The key competencies that come up in this project are as follows:
+\begin{itemize}
+    \item Definition of the derivative
+    \item Rules for calculating derivatives
+    \item Tangents
+    \item Optimization
+\end{itemize}
+
+
+\subsection*{Student Prerequisites}
+
+In this project, we assume the student has already been exposed to the limit definition of the derivative as well as the usual rules for calculating derivatives (in particular, chain rule and power rule).  We also assume the student has been exposed to the Extreme Value Theorem.
+
+\subsection*{PSP Design, and Task Commentary}
+
+This PSP will expose the student to the original, more algebraic framework for finding extrema of functions.  Hopefully, seeing some of the standard textbook exercises on maxima and minima (like Fermat's example in Section \ref{First}) approached with a different method and with different notation will break students out of recipe-thinking with regards to optimization.  
+
+Fermat provided many more examples of his method of adequality throughout his life, but many of these use rather sophisticated constructions from geometry.  While beautiful in and of themselves, the author feared that these would be too much of a departure from the standard calculus curriculum.  The three examples chosen for this PSP were purposefully selected because of their similarity to the types of textbook optimization problems that are typically assigned in a first-semester calculus course.
+
+Section \ref{Third} is the one section where Fermat's original solution via adequality is intentionally not shown.  The hope is that by that point, the student can not only confirm Fermat's results using the modern method, but can carry out Fermat's method as well!
+
+Note that the final task does not ask for a rigorous proof of the equivalence of the modern method to Fermat's method, but rather an intuitive justification.  See the section below on Recommendations for Further Reading for what such a proof would entail!
+
+\subsection*{Suggestions for Classroom Implementation}
+
+The author strongly suggests the instructor work through the entire project before using it in class. In particular, it is easy to make a simple error in the mess of Section \ref{Third}. 
+
+
+The reading and tasks of Section \ref{Adequality} make an ideal class preparation assignment, while completion of the remainder of the PSP might be more well-suited for a mix of in-class work and homework.
+
+
+If the instructor desires an interesting wrap-up discussion for this project, a peculiar phrase in the first primary source passage provokes an interesting question.  While laying out his method, Fermat said ``{\sf We will divide all the terms by $e$, {\bf or by a higher power of $e$}, such that on at least one of the sides, $e$ will disappear entirely.}''  This prompts a question: can it ever happen that we divide by a higher power of $e$ rather than just $e$ itself?  Fermat's three examples included here only required division by a single power of $e$, and even after further reading of Fermat's work, the author was unable to find an example where Fermat divided by any higher power of $e$.
+
+The absence of such an example in Fermat's work is perhaps with good reason!  Under mild assumptions (like the function in question having a convergent power series on an interval containing the max/min one seeks) one can show that only a constant function $f(a)$ could result in the quantity $f(a+e)-f(a)$ being divisible by $e^2$.  For if it were possible to write $f(a+e)-f(a)= e^2\cdot g(a,e)$ for some polynomial $g(a,e)$ (possibly of infinite degree), then dividing both sides by $e$ would produce $$\frac{f(a+e)-f(a)}{e}=e\cdot g(a,e).$$  Taking the limit of both sides as $e$ approaches zero implies $$f'(a)=0$$ since $\lim_{e\to 0}g(a,e)$ converges to $g(a,0)$.  Since the derivative of $f$ is identically zero, $f$ must be a constant function.
+
+That analysis raises a further  interesting question: why did Fermat include that phrase regarding dividing by a higher power of $e$?  Was Fermat simply unsure that it couldn't happen, and mentioned it in passing just in case it ever did?  This seems plausible. Though our proof above is not particularly difficult, it uses a heavy tool from a toolbox that was unavailable to Fermat, namely the idea of a power series expansion of a function.  
+
+Though it is unlikely we will be able to definitively resolve the question of what Fermat's intents were with that phrase, having a discussion like the one above could be a nice way to wrap up the project with a class.  If nothing else, it can show the students the fascinating thought exercises prompted by looking at primary sources!  It is hard to imagine such a question coming up in the context of reading a polished modern textbook.
+
+ Copies of these PSPs are available at the TRIUMPHS website (see URL in Acknowledgements).  
+The author is happy to provide \LaTeX\ code for this project.  It was created using Overleaf which makes it convenient to copy and share projects and can allow instructors to adapt this project in whole or in part as they like for their course.
+
+
+\subsection*{Sample Implementation Schedule (based on a 50 minute class period)}
+
+This miniPSP can easily be implemented in one class period.  The author has used this in the following manner, with good results:
+
+\begin{itemize}
+    \item Assign students to read and complete tasks through the end of Section \ref{Adequality} as a class preparation assignment.
+    \item Begin class with 10 minutes to have students share a few of the observations they came up with when comparing/contrasting the methods. and hold a discussion based on those questions, ideally with the primary source on the projector in front of you. 
+    \item Allow them to work through the PSP for the next 35 minutes in small groups as you and/or learning assistants walk through the classroom and help.
+    \item In the last 5 minutes, it is sometimes nice to call the students together to regroup for a brief discussion.  See if anyone has thoughts on why Fermat's method and the modern method are equivalent!  It may be helpful to call their attention to the idea that $f(x+\Delta x)$ and $f(x)$ are very close to being equal for very small $\Delta x$ if $f(x)$ has a maximum or minimum at $x$ (and perhaps draw a picture to this effect on the board).  It can also be a nice followup to mention that the method does not seem to have a way to distinguish saddle points!
+    \item The students can complete all remaining unfinished tasks for homework.  Note that it is likely they will still have most of Sections \ref{Second} and \ref{Third} to complete, but this should be doable for homework if they successfully made it through Section \ref{First}.
+\end{itemize}
+
+ 
+
+\subsection*{Recommendations for Further Reading}
+
+A fun and enriching comparison with Descartes' \emph{method of normals} for optimization would be a great follow-up to this project.  (Some suspect that Descartes' initial distaste for Fermat's method was because it aimed to solve the same problem as his method of normals, and was created at about the same time \citep[pages 472 and 473]{Katz}.)   However, proper attention to Descartes' method is likely to move well beyond the standard topics of a first-semester calculus classroom.  To do this in detail might be better suited for a multivariable calculus class, where one can appropriately discuss the ideas of the normal vector and the radius of curvature.  To this end, the author recommends Jerry Lodder's PSP \emph{The Radius of Curvature According to Christiaan Hyugens} (available at {\tt https://digitalcommons.ursinus.edu/triumphs\_calculus/4}) in addition to the description of Descartes' method given in \emph{A History of Mathematics: An Introduction} \citep{Katz} cited above.
+
+For students that are pursuing a degree in mathematics, this topic is a perfect warmup to the eventual study of Abraham Robinson's theory of nonstandard analysis (laid out beautifully in his 1966 work \emph{Non-standard Analysis} from Princeton University Press (1996), ISBN 978-0-691-04490-3).  It could be worth mentioning that it is possible to more formally prove the correctness of Fermat's method using the hyperreal numbers, where Fermat's $e$ represents an infinitesimal.  However, to formally construct the aforementioned number system requires a substantial amount of set theory and logic, and it is probably an appropriate journey for junior or senior level undergraduate studies at the earliest.    
+
+
+ \section*{Acknowledgments}
+The development of this project has been partially supported by the Transforming Instruction in
+Undergraduate Mathematics via Primary Historical Sources (TRIUMPHS) Project with funding
+from the National Science Foundation's Improving Undergraduate STEM Education Program under Grants No. 1523494, 1523561, 1523747, 1523753, 1523898, 1524065, and 1524098. Any opinions, findings, and conclusions or recommendations expressed in this project are those of the author and do not necessarily reflect the views of the National Science Foundation.  The author would like to thank the TRIUMPHS PIs and Advisory Board for the very helpful feedback throughout the writing of this project, in particular David Pengelley for bringing the author's attention to the bonus question suggested under Suggestions for Classroom Implementation.
+
+\bigskip
+\bigskip
+\begin{minipage}{.25\textwidth}
+       \noindent
+      \includegraphics[scale=1]{by-sa.png}
+ \end{minipage}%
+ \begin{minipage}{0.7\textwidth}
+       This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License ({\tt https://creativecommons.org/licenses/by-sa/4.0/legalcode}). It allows re-distribution and re-use of a licensed work on the conditions that the creator is appropriately credited and that any derivative work is made available under ``the same, similar or a compatible license''.
+\end{minipage}
+
+
+\bigskip
+\bigskip
+
+\noindent For more information about the NSF-funded project TRansforming Instruction in Undergraduate Mathematics via Primary Historical Sources (TRIUMPHS), visit \\
+{\tt http://blogs.ursinus.edu/triumphs/}.
+
+\end{document}

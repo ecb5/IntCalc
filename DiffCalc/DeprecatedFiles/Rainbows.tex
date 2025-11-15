@@ -1,0 +1,531 @@
+\subsection{Rainbows}\label{subsec:rainbows}
+
+Of course light reflects off of everything, not just flat mirrors.  A
+general discussion of that phenomenon is more properly done in a
+course on classical physics.  We will limit ourselves to the geometry
+involved when a light beam strikes a spherical mirror, like the
+surface of a raindrop. Since a raindrop  is not a perfect mirror some
+of the beam passes through the mirror and refracts, while some of it
+reflects back off of the surface.
+
+\begin{wrapfigure}[]{r}{2in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1in,width=2in]{../Figures/Refraction10}}
+  \label{fig:Refraction10}
+\end{wrapfigure}
+Happily nothing changes much. We need only observe that light only
+interacts with the mirror locally, where it actually strikes  the
+mirror. And since we know that at very small scales any curve is
+indistinguishable from it's tangent line it should be clear that when
+a light beam strikes a curved mirror it reflects or refracts exactly
+as if it were striking a flat mirror tangent to the curve at the point
+of interaction as seen at the right. This is again the Principle of Local
+Linearity  
+
+\begin{wrapfigure}[]{l}{2.1in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=.75in,width=2.1in]{../Figures/DoubleRainbow6}}
+  \label{fig:DoubleRainbow6}
+\end{wrapfigure}
+The ordering of the colors of a rainbow, the shape of a
+rainbow, its position relative to the viewer, and the simple fact that
+rainbows exist to be seen are a result of the reflective and
+refractive properties of light. Even better for our purposes
+optimization is needed to answer them.
+
+Newton determined experimentally that white light was a mixture of
+other colors. It was well known that the time that a beam of light
+passing through a prism would emerge with different colors bent
+(refracted) at different angles as seen above on the left. A prevailing
+theory of the time was that the prism had altered the light in some
+way that had added the colors. Thus it was believed that the color
+bands that emerged from the prism were a property of the prism, not of
+the light.
+
+\begin{wrapfigure}[]{r}{4in}
+  \captionsetup{labelformat=empty}
+  \label{fig:DoubleRainbow9}
+  \centerline{\includegraphics*[height=1.9in,width=4in]{../Figures/DoubleRainbow9}}
+  \caption{The double rainbow on the left was captured by Elizabeth
+    Eschel (a friend of one of the authors) of Tsfat/Safed, Israel in
+    2018 while on her way to
+    work.}\end{wrapfigure}
+Newton debunked that theory by passing \emph{only} the red band
+through a second prism. He reasoned that if the first prism had
+somehow altered the light then the second would alter it again. But
+when only red light emerged from the second prism, refracted but
+otherwise unchanged, he concluded that the color was an inherent
+property of the light, not the prism.
+
+% wrote a seminal work on optics and .  This can be seen as light passes
+% through a prism or in a rainbow.  Surely you heard the mnemonic
+% \alert{ROY G BIV} for the colors of a rainbow.  Which color is on top,
+% red or violet?  Before you go further, take a guess.  % \\
+Look closely at the three rainbows in the images at the right above. They
+share certain properties that we would like to understand. These are:
+\begin{enumerate}
+\item They are bright. At least they are brighter than the surrounding
+  viewscape. Indeed it is only the brightness of the light coming from
+  the apparent location of the rainbow that makes it visible since a
+  rainbow is not a physical object.
+\item They have a particular shape, but what is it? Are they
+  circular? Parabolic? Elliptical? Some other, possibly unnamed
+  shape?
+\item Two of the rainbows shown are double rainbows. Notice that the
+  secondary rainbow is dimmer\footnote{That's actually what makes it
+    the secondary.}. Also the colors are reversed from the primary to
+  the secondary. We'd like to understand that.
+\end{enumerate}
+Each of the properties listed above can be couched as an optimization
+problem. We will address them one at a time.
+
+To keep things as simple as possible we will assume that water
+droplets suspended in the atmosphere assume a perfectly spherical
+shape. This is close enough to reality that the errors in our
+computations will not be significant.
+
+
+Also, we will analyze this as if everything were two-dimensional. That
+is we will draw the light beam crossing into a circular raindrop
+rather than a spherical raindrop. Again this is just to keep things
+simple. The analysis of the three dimensional problem  yields
+similar results but is much harder algebraically.
+
+\begin{wrapfigure}[]{r}{1.7in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.7in,width=1.7in]{../Figures/Refraction6}}
+  \label{fig:Refraction6}
+\end{wrapfigure}
+As we've seen when light refracts across the plane dividing air and
+water it bends toward the normal (perpendicular). The physical reason
+for this is that the velocity of light in air is faster than its
+velocity in water. If it transitions from a slower medium (like water)
+to a faster medium (like air) then it bends away from the normal. Thus
+in the diagram at the right we can deduce that the velocity is lower
+in the region below the boundary (in black) whichever direction the
+light ray (in red) is moving.
+
+
+
+% Of course the sketch above doesn't capture the curvature of the rain
+% droplet.  Our sketch should look more like the figure at the left,
+% where the light beam is crossing the black, circular boundary of the
+% droplet. Does Snell's Law still apply when the boundary is curved?
+
+% Of course it does. The light beam doesn't care what shape the boundary
+% has away from the point of entry. It only interacts with the boundary
+% locally, and locally any curve is indistiquishable from it's tangent
+% line so the light beam will refract as it crosses into the droplet
+% just as if it were crossing the line tangent to the circle at the
+% point of intersection. As we saw in\notetoself{We need to add this
+% problem somewhere before this, if we don't already have it: Show that the line tangent to a
+% circle is orthogonal to the radius of the circle.  -- Sep 3, 2020}
+% Problem~\#\ref{} the line tangent to a circle at a point is orthogonal
+% to the radius that passes through the same point. The radius and
+% tangent are the blue, dotted lines in the diagram at the left.
+But the physics involved is not our concern. All we need is  the
+knowledge that Snell's Law is in play in the diagram at the left.
+$\frac{\sin(\alpha)}{v_1}=\frac{\sin(\beta)}{v_2}.$
+The green line in the diagram is the path the light beam would have
+followed had it \emph{not} refracted at the boundary.
+
+\begin{ProficiencyDrill}
+  For later reference notice that the angle between the red and green
+  lines is $\alpha-\beta$ as indicated. \hint{This is an elementary
+    result from geometry. Don't make it hard.}
+\end{ProficiencyDrill}
+We now have everything we need to trace the path of a beam of light
+into and back out of a water droplet.
+In the sketch below the red arrows indicate  the path the light
+beam actually follows, $O$ is
+the center of the droplet, and the line segments $OA,
+OB,$ and $OC$ are all radii of the droplet.
+
+% \begin{figure}[h]
+  
+  \centerline{\includegraphics*[height=2.5in,width=4in]{../Figures/Refraction7}}
+  
+%   \caption{The path of a typical light beam as it moves through a
+%     spherical droplet.}
+%   \label{fig:DoublePath}
+% \end{figure}
+ 
+In order to address the question of the rainbow's brightness -- why it
+is even visible in the first place -- we want to find the total
+clockwise rotation of the direction of the beam from the time it
+enters the raindrop to the time it exits. 
+
+\begin{wrapfigure}[]{r}{1.5in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=.6in,width=1.5in]{../Figures/Refraction8}}
+  \label{fig:Refraction8}
+\end{wrapfigure}
+That is, if we place the
+starting and ending beams head-to-tail as indicated in the sketch at the right we
+want to find the angle $D(\alpha)$. This is called the
+\term{deviation angle} and for a given entry angle $\alpha$ it tells
+us what the exit angle will be. We are interested in finding the value
+of $\alpha$ that \emph{minimizes} $D(\alpha)$.
+
+Here's why. Suppose $D(\alpha)$ is minimum for some angle, say
+$\alpha=\phi$, and that $D(\phi)=\psi$ is the minimum. Then all of the
+light beams entering the droplet at an angle \emph{near} $\phi$ will
+exit \emph{near} $\psi$. It is generally true that things which start
+out close together usually end up close together. Functions with this
+property are called \term{continuous functions}.
+
+\begin{wrapfigure}[]{l}{3.5in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.5in,width=3.5in]{../Figures/DoubleRainbow3}}
+  \label{fig:DoubleRainbow3}
+\end{wrapfigure}
+But the nature of the function
+$D(\alpha)$ guarantees that there is a large interval of entry
+angles which will all have approximately the same exit angle.  The
+easiest way to see this is to look at the the shape of the graph of
+$D(\alpha)$ below. Notice that the
+black box we drew around then minimum point (denoted\aside{For now you
+  will have to trust that we have represented $D(\alpha)$
+  accurately. We will shortly be deriving a formula for $D(\alpha)$
+  and you can verify the accuracy of this graph yourself.}
+$(\gamma,\psi)$ in the sketch.). is much wider than it is
+tall.
+% This says that all of the the light beams entering at an angle
+% between about $0.8$ radians and $1.2$ radians will exit at about $2.4$
+% radians. That is the light will be concentrated (brighter) at a
+% deviation angle of about $2.4$ radians (about $138^\circ$. 
+
+% We will soon see that the deviation angle
+% depends \emph{only} on the angle $\alpha$ as we've
+% indicated. 
+From the diagram it is clear that for entry angles between a little
+more than $0.8$ radians ($\approx45.8^\circ$) and a little more than
+$1.2$ radians ($\approx68.8^\circ$) the exit angles will all be very
+close to $2.4\approx138^\circ$ radians. Outside of the interval
+$(.8, 1.2)$ the exit angles grow very quickly.
+
+This says that the light beams coming out of a droplet at an angle of
+$\psi\approx2.4$ radians are a concentration of the beams that entered
+between about $.8$ and $1.2$ radians. So light
+exiting at about $2.4$ radians will be brighter than the surrounding
+light. This is what makes a rainbow visible in the first place.
+
+Now of course, we need to do the calculations to confirm all of
+this. To find a formula for the deviation angle, $D(\alpha)$ we
+follow the path of a typical light beam as it refracts and reflects
+its way into and then back out of a typical droplet.
+
+In Figure~\ref{fig:DoublePath} we see that the beam (in red) makes a
+turn of $\alpha-\beta$ at the point $A$ and another turn of the
+same magnitude at point $C$ so
+$$
+D(\alpha) =
+2(\alpha-\beta) + \{\text{the magnitude of the rotation at point
+  $B$}\}.
+$$
+
+\begin{wrapfigure}[]{r}{2in}
+  \captionsetup{labelformat=empty}
+  \centerline{\includegraphics*[height=1.8in,width=2in]{../Figures/Refraction9}}
+  \label{fig:Refraction9}
+\end{wrapfigure}
+To find the magnitude of the rotation at point $B$ consider the sketch at
+the right. Clearly at point $B$ the beam turns by the angle labeled
+$\theta$.
+
+\begin{ProficiencyDrill}
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item   Use Geometry to show that $\alpha=\angle AOB$.
+  \item Show that $\alpha=\pi-2\beta$. \hint{The interior angles
+      of triangle $OAB$ must sum to $\pi$. What is $\beta+\theta$
+      equal to?}
+  \end{enumerate}
+\end{ProficiencyDrill}
+Therefore
+\begin{align*}
+  D(\alpha) &= 2(\alpha-\beta) + \{\text{the magnitude of the
+              rotation at point  $B$}\}\\
+            &= 2(\alpha-\beta) + \alpha\\
+            &= 2(\alpha-\beta) + \pi-2\beta, \text{ or}\\
+            &= \pi+2\alpha-4\beta.
+\end{align*}
+
+Notice that $\alpha$ and $\beta$ are not independent, they are governed by Snell's
+Law which we will rewrite as
+\begin{equation}
+  \sin(\alpha)=\frac{v_{\alpha}}{v_{\beta}}\sin(\beta)=k\sin(\beta).\label{eq:IndRef}
+\end{equation}
+The constant $k=\frac{v_{\alpha}}{v_{\beta}}$ is called  the ``index of refraction'' (for
+water).
+
+\begin{ProficiencyDrill}
+  Show that $\beta=\inverse\ \lt{}sin\left(\frac{\sin(\alpha)}{k}\right)$.
+\end{ProficiencyDrill}
+Knowing $\beta$ we can now express the deviation angle,
+$D(\alpha)$ as a function of $\alpha$ alone:
+\begin{align*}
+  D(\alpha) &= \pi+2\alpha-4\beta \\
+  D(\alpha) &= \pi+2\alpha-4\inverse\sin\left(\frac{\sin(\alpha)}{k}\right).
+\end{align*}
+
+\begin{embeddedproblem}
+  For visible light  the index of refraction
+  is $k\approx\frac43$. Mathematically, the problem becomes minimizing
+  $D(\alpha)=\pi+2\alpha-4\beta$ subject to the constraint
+  $\sin(\alpha)=k\sin(\beta)$, $ 0\le\alpha\lt{}\frac{\pi}{2} $.
+
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Graph $D(\alpha)$ with $k=\frac43$ and confirm that the graph
+    we showed you earlier is correct.
+  \item Use Newton's Method to show that the coordinates,
+    $(\gamma,\psi),$
+    of the minimum point on the graph are $\gamma\approx1.04\approx59.59^\circ$ and
+    $\psi\approx2.41\approx138.1^\circ$ respectively.
+  \end{enumerate}
+\end{embeddedproblem}
+% ****************** Pick up here *************************************
+
+% Graphing $D(\alpha)$ for this value of  $k$ and
+% $0\le{}\alpha{}\lt{}\frac{\pi{}}{2}$, we have.
+% Notice from the graph that the minimum of this curve appears to be
+% around the point $(1.03, 2.41)$.  This says that the minimum value of
+% $D(\alpha)$  is about $2.41\text{ radians }\approx 138^\circ$  and it
+% occurs when $\alpha\approx1.03\text{ radians }\approx59.4^\circ$.
+% As we can see from our sketch the  minimum 
+% value of $\alpha$ near  $1.03$  the amount of deviation is roughly
+% the same.
+
+% \vskip.5in{}
+% ***************************************************************\\
+% As you can see in the diagram below, the ray of light entering the
+% raindrop at an angle of radian measure $\alpha$ is refracted to an
+% angle of radian measure $\beta$.  This is governed by Snell's Law.\\
+% % \begin{wrapfigure}[]{l}{3in}
+% %   \captionsetup{labelformat=empty}
+% %   \centerline{\includegraphics*[height=1.75in,width=3.25in]{../Figures/DoubleRainbow2}}
+% %   \label{fig:DoubleRainbow2}
+% % \end{wrapfigure}
+% $\frac{\sin(\alpha)}{v_\alpha}=\frac{\sin(\beta)}{v_\beta}$, where
+% $v_\alpha$ and $v_\beta$ are the velocities of light in air and water,
+% respectively.  Actually, only a portion is refracted as the other
+% portion is reflected off the exterior of the raindrop.  Once inside
+% the raindrop, it reflects off of the back of the raindrop (again only
+% a portion) so that the angle of incidence equals the angle of
+% reflection.  A portion of the light then exits the raindrop governed
+% by Snell's Law again.  The total amount of (clockwise) rotation in
+% this process is called the deviation angle, $D(\alpha)$.%
+
+% \begin{embeddedproblem}
+%   Show that $D(\alpha)=\pi-4\beta+2\alpha.$
+% \end{embeddedproblem}
+
+
+\begin{wrapfigure}[]{r}{2.5in}
+  \captionsetup{labelformat=empty}
+  \includegraphics*[height=.8in,width=2.5in]{../Figures/DoubleRainbow5}
+  \label{fig:DoubleRainbow5}
+\end{wrapfigure}
+This says that light rays entering the raindrop at approximately
+$59^\circ$ have the highest concentration when exiting the raindrop.
+At other values of $\alpha$ the dispersion of light is greater.  This
+provides the angle that the rainbow makes with an observer.  This
+supplementary angle to $D(\alpha)$ is called the rainbow angle,
+$$
+R(\alpha) =\pi-D(\alpha)=\pi-(\pi+2\alpha-4\beta)=4\beta-2\alpha\text{
+  radians.}
+$$
+For white light, we have a rainbow angle of
+$$
+R(1.03)\approx\pi-2.41\approx0.734\text{ radians}\approx42^\circ.
+$$
+
+To obtain the spread of colors, note that the index of refraction
+changes with the color of light.  We said earlier that the index of
+refraction for visible light is approximately $\frac43$. This is true,
+but it actually varies with the frequency (color) of the light. The
+red light refracts at one angle and the orange at a slightly different
+angle so they appear in the rainbow adjacent to each other. This
+variation is continuous throughout the spectrum which is what gives us
+the rainbow.
+
+
+\begin{embeddedproblem}
+  We could use Newton's Method like we did earlier to find the
+  minimum of $D(\alpha)$ for various values of $k$ but it is a
+  little easier to do it this way:
+     \begin{enumerate}[label={\bf{}(\alph*)}]
+  \item Show that $D(\alpha)$ is minimized when % $\cos(\alpha)=\frac{k}{2}\cos(\beta)$.
+  \item Use the equation obtained in part (a) along with the
+    constraint $\sin(\alpha)=k\sin(\beta)$ to show that $D(\alpha)$
+    is minimized when $\sin(\beta)=\sqrt{\frac{4-k^2}{3k^2}}$ and
+    $\sin(\alpha)=\sqrt{\frac{4-k^2}{3}}$.  \hint{Solving for one
+      variable in one equation and substituting into the other is
+      very difficult. Instead try squaring both equations and add
+      them together? From there solving for $\sin(\beta)$ is
+      straightforward\footnote{Remember that ``straightforward''
+        does not mean easy.}.}
+  \item Use the results from part (b) to fill in the following
+    table.
+    \begin{table}[h]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+        Color& k& $\beta$ in degrees&$\alpha$ in degrees&$D(\alpha)$ in degrees&$R(\alpha)$ in degrees\\\hline
+        Red & 1.331 & &&&\\\hline
+        Orange & 1.332 & &&&\\\hline
+        Yellow & 1.333 & &&&\\\hline
+        Green & 1.335 & &&&\\\hline
+        Blue & 1.337 & &&&\\\hline
+        Indigo & 1.340 & &&&\\\hline
+        Violet & 1.344 & &&&\\\hline
+      \end{tabular}
+    \end{table}
+  \end{enumerate}
+\end{embeddedproblem}
+
+% \begin{wrapfigure}[]{r}{1.25in}
+%   \captionsetup{labelformat=empty}
+%   \centerline{\includegraphics*[height=.in,width=1.25in]{../Figures/DoubleRainbow7}}
+%   \label{fig:DoubleRainbow7}
+% \end{wrapfigure}
+The values of $R(\alpha)$ you obtained in the table
+accounts for the various color bands that appear in the rainbow as
+sunlight hits droplets at various angles.% \\
+% \centerline{\includegraphics*[height=1.in,width=3in]{../Figures/DoubleRainbow7}}
+
+The primary rainbow is created by light entering the upper portion of
+the raindrop.  If light is bright enough then a secondary rainbow is
+created from light entering the lower portion of the raindrop as in
+the diagram below.\\
+\centerline{\includegraphics*[height=2in,width=3.3in]{../Figures/DoubleRainbow8}}
+This time the deviation angle $D(\alpha)$ is the total amount of counterclockwise
+rotation and the rainbow angle would be $R(\alpha)=D(\alpha)-\pi$.  Note that the extra
+reflection accounts for the rainbow being not as bright.
+
+\begin{embeddedproblem}
+  Show that in the case of the secondary rainbow
+  $$
+  D(\alpha)=2\pi+2\alpha-6\beta
+  $$
+  and show that this is minimized when
+  $\sin(\beta)=\sqrt{\frac{9-k^2}{8k^2}}$ and
+  $\sin(\alpha)=\sqrt{\frac{9-k^2}{8}}$.
+  Use this to fill in the following table:
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+      Color& k& $\beta$ in degrees&$\alpha$ in degrees&$D(\alpha)$ in degrees&$R(\alpha)$ in degrees\\\hline
+      Red & 1.331 & &&&\\\hline
+      Orange & 1.332 & &&&\\\hline
+      Yellow & 1.333 & &&&\\\hline
+      Green & 1.335 & &&&\\\hline
+      Blue & 1.337 & &&&\\\hline
+      Indigo & 1.340 & &&&\\\hline
+      Violet & 1.344 & &&&\\\hline
+    \end{tabular}
+  \end{table}
+\end{embeddedproblem}
+
+A couple of comments about the rainbow problem are in order.
+
+First, notice that although Calculus was crucial to the solution it wasn't
+the \emph{whole} solution. Indeed, when we look back it seems that we
+hardly used Calculus at all. We found the derivatives of $D(\alpha)$
+and  $R(\alpha)$ and we used Newton's Method to find the roots of those
+derivatives. And that's it. That's all of the Calculus we used.
+
+Calculus was crucial, to be sure, but it is only one tool in our
+toolbox. This will generally be true of the problems you encounter in
+the future. There is a tendency to want to do ``Calculus'' because
+this is a ``Calculus'' course. But this is a \underline{Mathematics}
+course, first and foremost. You will need all of the mathematical
+tools you have. 
+
+% Second, in our comments on Proficiency~Drill~\ref{PD:DerivUnd} we
+% observed that  Fermat's Theorem specifically requires that a function
+% be differentiable at the point in question. This may seem like a
+% pointless formality. Obviously, if the derivative doesn't exist at
+% $x=a$ then we can't conclude that it is equal to zero at $x=a$. It
+% hardly seems worth the effort of writing it down.
+
+% However, this question of differentiability is more important than it
+% appears to be right now. The fact is that not all functions have
+% derivatives, and some functions have tangent lines but are not
+% differentiable. We have glossed over this truth so far because we were
+% learning the basics, but we are about to move beyond the basics so it is
+% time to begin taking explicit notice of when a derivative exists, and
+% when it does not. As a first approximation we will use this
+% definition:
+
+% \begin{mydefinition}{Non-Differentiability, First Approximation}
+%   The derivative of $y=f(x)$ does not exist for any value of $x$ for
+%   which $\dfdx{y}{x}$ is undefined.
+%   \comment{As a practical matter this means
+%   any value of $x$ that would result in dividing by zero.}
+% \end{mydefinition}
+
+% As we said this is a first approximation. This is a more subtle
+% problem than it appears to be at first. We will refine this definition
+% later.
+\begin{embeddedproblem}
+  Solve the following optimization problems. (That is find the maximum
+  and minimum of the objective function, subject to the constraint.)
+  Without context, you need to be mindful of where $\dfdx{f}{x}$ does
+  and does not exist as a location for a possible extremum.
+  \begin{enumerate}[label={\bf{}(\alph*)}]
+    \begin{multicols}{2}
+    \item Objective function: $f=2x+y $\\
+      Constraint: $x^2+2y^2=2 $
+    \item Objective function: $f=xe^y $\\
+      Constraint: $x^2+y^2=2 $
+    \item Objective function: $f=x+y $\\
+      Constraint: $xy=4 $
+    \item Objective function: $f=xy $\\
+      Constraint: $x^2+9y^2=18 $
+    \end{multicols}
+  \end{enumerate}
+\end{embeddedproblem}
+
+% Ultimately, we will need conditions under which we can
+% guarantee that the derivative exists, but for now we will simply take
+% explicit notice  that sometimes it doesn't by stating differentiabilty
+% as a requirement, when it is needed.
+
+
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=.9in,width=2in]{../Figures/Refraction11}}
+\label{fig:Refraction11}
+\end{wrapfigure}
+Finally, when we graphed $F(\alpha)$ above we only graphed the part
+where $0\le\alpha\le\frac{\pi}{2}$ because those are the only angles
+that make sense in this problem. However if we were to graph it for a
+wider range of values of $\alpha$ we would have a graph like the one
+at the right. Notice that this graph has a maximum as well as a
+minimum, but our procedure only tells us if we have a horizontal
+tangent line. It does not distinguish between a horizontal tangent at a
+minimum from a horizontal tangent at a maximum. If we had not known,
+\emph{a priori}, that the minimum was between $0$ and $\frac{\pi}{2}$
+how would we have known if we'd somehow found the maximum rather than
+the minimum.
+
+This seems like a minor problem at first, but it can become quite
+problematic in more complex, or more abstract problems where we do not
+have as much physical or geometric intuition to guide us as we had in
+the rainbow problem. We will need some way to distinguish between a
+maximum and a minimum analytically, without relying on pictures or our
+intuition.
+
+
+% \includegraphics*[height=3in,width=5in]{../Figures/DoubleRainbow1}
+
+% \includegraphics*[height=3in,width=5in]{../Figures/DoubleRainbow0}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% eval:(flyspell-mode)
+%%% TeX-master: "DiffCalc"
+%%% End: 
