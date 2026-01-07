@@ -51,6 +51,9 @@ body.standalone {
   font-size: 16px;
   background: var(--page-color, white);
 }
+.ptx-content .print-preview-header {
+  display: none;
+}
 body.pretext > a.assistive {
   padding: 6px;
   position: absolute;
@@ -3034,6 +3037,14 @@ ul[data-component=timedAssessment] {
 :root.dark-mode .ptx-runestone-container pre[class*=language-] {
   color: white;
   background: hsl(0, 0%, 8%);
+}
+@layer spacing {
+  .runestone :is(.exercise-statement, .exercise-content) > *:not(:first-child) {
+    margin-top: 1em;
+  }
+  .ptx-runestone-container + .solutions {
+    margin-top: 0.5em;
+  }
 }
 .ptx-content .wwprob table.attemptResults {
   margin-left: 2em;

@@ -2172,6 +2172,14 @@ ul[data-component=timedAssessment] {
   color: white;
   background: hsl(0, 0%, 8%);
 }
+@layer spacing {
+  .runestone :is(.exercise-statement, .exercise-content) > *:not(:first-child) {
+    margin-top: 1em;
+  }
+  .ptx-runestone-container + .solutions {
+    margin-top: 0.5em;
+  }
+}
 .ptx-content .wwprob table.attemptResults {
   margin-left: 2em;
   background: #efefef;
@@ -2612,22 +2620,32 @@ section.handout {
 .onepage .instructions {
   display: none;
 }
-summary::marker {
-  content: "";
+.solutions {
+  margin-top: 1em;
 }
-summary {
+.solutions .solution-like.born-hidden-knowl {
+  margin-top: 1em;
+  padding: unset;
+}
+.solutions .solution-like.born-hidden-knowl h5 {
   font-weight: bolder;
   display: inline;
+  font-size: 1em;
 }
-.knowl__content {
+.solutions .solution-like.born-hidden-knowl > div {
   display: inline;
-  margin: unset;
-  border: none;
-  padding: 3px 0;
-  background-color: unset;
 }
-.knowl__link {
-  all: unset;
+.solutions .solution-like.born-hidden-knowl .knowl__content {
+  display: inline;
+  border: none;
+  background-color: unset;
+  padding: 0;
+}
+.solutions .solution-like.born-hidden-knowl .knowl__content > :first-child {
+  display: inline;
+}
+.solutions .solution-like.born-hidden-knowl .knowl__content .para {
+  margin-top: 0.5em;
 }
 .code-inline {
   border: unset;
@@ -2764,6 +2782,18 @@ form.papersize-select {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1em;
+  }
+  label,
+  input {
+    cursor: pointer;
+  }
+  .print-options summary {
+    cursor: pointer;
+    display: list-item inline;
+  }
+  .print-options .hide-option {
+    display: inline-block;
+    padding-right: 1em;
   }
 }
 @media print {
