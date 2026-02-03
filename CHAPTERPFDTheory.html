@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="meta_backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="meta_backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="appendix-list-results.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+\def\CancelTo#1#2{{{\cancelto{#1}{#2}}}}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\CC}{\mathbb {C}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+\def\norm#1{\left\|#1\right\|}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">I</span> <span class="title">Integral Calculus: From Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">1</span> <span class="title">Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSummationAndAntidifferentiation.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Summation and Antidifferentiation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Separation of Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntegrationTechniques.html" class="internal"><span class="codenumber">2</span> <span class="title">Integration Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integration by Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SECTIONSubstMethed-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Temporary section so I don’t lose track of this problem.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONAirResistance" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Extending Galileo’s Results: Air Resistance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Simple Substitutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONHangingChainSolDeriv" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Deriving the Solution of the Hanging Chain Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONTrigSubst" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Trigonometric (Inverse) Substitutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONHeavisideMethod" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Simple Decompositions: Heaviside’s Cover–up Method (HCUM)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSUBSECTIONPFDUnreduced" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Unreduced Rational Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONRepeatLinFactPFD" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Repeated Linear Factors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDIrreducQuadFac" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Irreducible Quadratic Factors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SECTIONPartFrac-7" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntParts.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Running the Product Rule Backwards: Integration By Parts</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERIntSimplest.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration in Its Simplest Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Two “Ways of Thinking” About Integration: Summation vs. Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsASum" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integration as  Summation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONThinkingAboutIntegration.html#SUBSECTIONIntegrationAsAntiDerivative" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Integration as Antidifferentiation</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERDefiniteIntegration.html" class="internal"><span class="codenumber">4</span> <span class="title">Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Precursors to Definite Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavLeibNotation" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Cavalieri, Differentials, and Definite Integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Accumulation: The Indefinite Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="DefIntProp.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Applications of Definite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#AreasByIntegration" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#VolumesByIntegration" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Volumes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-VolByShells" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Volumes by Shells</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsec-SurfAreaAndArcLength" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Surface Area and Arc Length</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-CenterMass" class="internal"><span class="codenumber">4.5.5</span> <span class="title">Center of Mass</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications" class="internal"><span class="codenumber">4.5.6</span> <span class="title">Other Applications of Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsection-OtherIntApplications-2" class="internal"><span class="title">The Tautochrone</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#subsub-WorkEnergy" class="internal"><span class="title">Work and Kinetic Energy</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONEscapeVel" class="internal"><span class="title">Escape Velocity and Improper Integrals</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONAppDefInt.html#SUBSUBSECTIONMoreImproperIntegrals" class="internal"><span class="title">More Improper Integrals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">5</span> <span class="title">More Approximation Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-3" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Summation Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONGeoSeries" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-6" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Manipulating the Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONBinomialSeries" class="internal"><span class="codenumber">5.2.5</span> <span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerOtherPoints" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Power Series Expanded About Other Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONTaylorSeries" class="internal"><span class="codenumber">5.2.7</span> <span class="title">The Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONPowSerSol" class="internal"><span class="codenumber">5.2.8</span> <span class="title">Power Series Solutions of Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONApprIntViaRiemSums.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Approximating Integrals with Riemann Sums</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">6</span> <span class="title">Taylor Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="RiemannIntegral.html" class="internal"><span class="codenumber">7</span> <span class="title">Defining the Riemann Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRiemanIntDef.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Defining the Riemann Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFTC.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="PowerSeries.html" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONPowerSeriesVSNumericalSeries.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Power Series vs. Numerical Series</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">III</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">9</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter contains-active">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-appendix active"><div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">A</span> <span class="title">The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-list-results.html" class="internal"><span class="codenumber">B</span> <span class="title">List of Theorems, Lemmas, Corollaries, Examples, Exercises, and Definitions</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="appendix" id="CHAPTERPFDTheory"><h2 class="heading">
+<span class="type">Appendix</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation</span>
+</h2>
+<div class="para" id="CHAPTERPFDTheory-2">Previously, we provided a number of ways to compute the coefficients in the partial fractions decomposition of a rational function.  In all those instances, we assumed that a rational function had such a decomposition.  The fact that there is a partial fractions decomposition is actually an algebraic result not a calculus one, but we will provide some rationale as to why this is true.  Let’s start with something relatively easy to see where the ideas come from.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-3">
+<div class="para">Suppose <span class="process-math">\(a,b\)</span> are two distinct numbers.  Then</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-3-2">
+\begin{equation*}
+\left(x-b\right)-\left(x-a\right)=a-b
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="EQUATIONPFD5">
+\begin{equation}
+\left(\frac{1}{a-b}\right)\left(x-b\right)+\left(\frac{1}{b-a}\right)\left(x-a\right)=1\tag{A.1}
+\end{equation}
+</div>
+<div class="para">and finally</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-3-4">
+\begin{equation*}
+\frac{1}{\left(x-a\right)\left(x-b\right)}=\frac{\left(\frac{1}{a-b}\right)\left(x-b\right)+\left(\frac{1}{b-a}\right)\left(x-a\right)}{\left(x-a\right)\left(x-b\right)}=\frac{\left(\frac{1}{a-b}\right)}{x-a}+\frac{\left(\frac{1}{b-a}\right)}{x-b}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-4">
+<a href="CHAPTERPFDTheory.html#EQUATIONPFD5" class="xref" data-knowl="./knowl/xref/EQUATIONPFD5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation A.1">Equation (A.1)</a> is a special case of a more general fact stated below:<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-5">Given two polynomials <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> with no common factors (except trivial ones such as constants), then there are polynomials <span class="process-math">\(r(x)\)</span> and <span class="process-math">\(s(x)\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-6">
+<div class="displaymath process-math" id="CHAPTERPFDTheory-6-1">
+\begin{equation*}
+r\left(x\right)p\left(x\right)+s\left(x\right)q\left(x\right)=1
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-7">It should be noted that having no common non–trivial factors is the equivalent to having no common roots (real or complex).  We will not prove this result here, but we will note that its derivation is exactly the same as the following number theory result (which we will not prove either).<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-8">
+<div class="para">Let <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> be two positive integers with <span class="process-math">\({\mathrm{gcd} (p,q) }=1\)</span> [i.e.: <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> have no common factors, except for the trivial factor 1].  Then there exist integers <span class="process-math">\(r, s\)</span> with</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-8-7">
+\begin{equation*}
+r\cdot p+s\cdot
+q=1
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-9">
+<div class="para">As an example, notice that <span class="process-math">\({\mathrm{gcd} \left(9, \
+7\right)=1 }\text{,}\)</span> and so <span class="process-math">\(-3\cdot 9+4\cdot 7=1\text{.}\)</span>  There is a systematic way to find the integers <span class="process-math">\(r, s\)</span> (and analogously, the polynomials <span class="process-math">\(r\left(x\right), s(x)\)</span>) in general, but we will just use the fact that these exist for our purposes.  With the above polynomial result in place, we can manipulate as we did above</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-9-5">
+\begin{equation*}
+1=r\left(x\right)p\left(x\right)+s\left(x\right)q\left(x\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-9-6">
+\begin{equation*}
+\frac{1}{p\left(x\right)q\left(x\right)}=\frac{r\left(x\right)p\left(x\right)+s\left(x\right)q\left(x\right)}{p\left(x\right)q\left(x\right)}=\frac{s\left(x\right)}{p\left(x\right)}+\frac{r\left(x\right)}{q\left(x\right)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-10">
+<div class="para">Thus if <span class="process-math">\(f(x)\)</span> is any polynomial, then we have</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-10-2">
+\begin{equation*}
+\frac{f(x)}{p\left(x\right)q\left(x\right)}=\frac{f(x)s\left(x\right)}{p\left(x\right)}+\frac{f(x)r\left(x\right)}{q\left(x\right)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-11">This says that our goal of finding a partial fractions decomposition is theoretically possible.  Before we make our “educated guess” as to what the numerators will look like, we will make an observation that might make our guess even more educated and narrow our search.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-12">Observation: Notice that if the degree of <span class="process-math">\(f(x)\)</span> is less than the degree of <span class="process-math">\(p\left(x\right)q(x)\text{,}\)</span> then we can assume that the degree of the numerators in the partial fractions will be less than the degrees of the denominators.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-13">
+<div class="para">If you think about this, it makes sense.  First, we should point out that the numerators in the partial fractions are not unique, but there is no sense introducing higher degree terms in the numerators that would just cancel out anyway when these fractions are combined.  For example, if we had</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-13-1">
+\begin{equation*}
+\frac{3x-4}{\left(x-1\right)\left(x+2\right)}=\frac{ax+b}{x-1}+\frac{cx+d}{x+2}
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-13-2">
+\begin{equation*}
+\frac{3x-4}{\left(x-1\right)\left(x+2\right)}=\frac{\left(ax+b\right)\left(x+2\right)+(cx+d)(x-1)}{\left(x-1\right)\left(x+2\right)}=\frac{\left(a+c\right)x^2+\left(2a+b-c+d\right)x+(2b-d)}{\left(x-1\right)\left(x+2\right)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-14">
+<div class="para">We might as well assume that <span class="process-math">\(a=c=0\)</span> and try to find <span class="process-math">\(b, d\)</span> such that</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-14-3">
+\begin{equation*}
+3x-4=\left(b+d\right)x+(2b-d)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-15">Again, we want to point out that this is not necessary, but it makes for a more “educated” guess and cuts out some unnecessary work.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-16">The same ideas can be extended if we have three or more polynomials in the denominator which pairwise have no non–trivial factors.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="THEOREMPFDThreeFactor"><h1 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.0.0.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The PFD with Three Factors.</span>
+</h1>
+<div class="para logical" id="THEOREMPFDThreeFactor-2">
+<div class="para">Suppose we have three polynomials <span class="process-math">\(n\left(x\right),p\left(x\right), q\left(x\right)\)</span> which pairwise have no non-trivial common factors.  Then there exist polynomials <span class="process-math">\(r\left(x\right),s\left(x\right),t(x)\)</span> with</div>
+<div class="displaymath process-math" id="THEOREMPFDThreeFactor-2-3">
+\begin{equation*}
+\frac{1}{n\left(x\right)\cdot p\left(x\right)\cdot
+q(x)}=\frac{r\left(x\right)}{n\left(x\right)}+\frac{s\left(x\right)}{p\left(x\right)}+\frac{t\left(x\right)}{q\left(x\right)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#THEOREMPFDThreeFactor-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem A.0.0.1: The PFD with Three Factors"><a href="#THEOREMPFDThreeFactor" title="Copy heading and permalink for Theorem A.0.0.1: The PFD with Three Factors" aria-label="Copy heading and permalink for Theorem A.0.0.1: The PFD with Three Factors">🔗</a></div></article><article class="exercise exercise-like" id="PROBLEMPFDThreeFactor">
+
+            
+              
+
+            
+            <span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+          <div class="autopermalink" data-description="Problem [STRUCT].1"><a href="#PROBLEMPFDThreeFactor" title="Copy heading and permalink for Problem [STRUCT].1" aria-label="Copy heading and permalink for Problem [STRUCT].1">🔗</a></div></article><div class="para" id="CHAPTERPFDTheory-19">Since the goal in a partial fractions decomposition is to split a rational function into as many “simpler” pieces as possible, we will explore what can happen. We will use specific examples to illustrate these situations, but the ideas involved apply in general.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-20">
+<div class="para">We already took care of the case where we have distinct linear factors.  What if we have a factor which is repeated.  For example, suppose we have</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-20-1">
+\begin{equation*}
+\frac{1}{x^3\left(x-1\right)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-21">
+<div class="para">Since <span class="process-math">\(x^3\)</span> and <span class="process-math">\(3x-1\)</span> have no non trivial common factors, then we already know we can write</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-21-3">
+\begin{equation*}
+\frac{1}{x^3\left(x-1\right)}=\frac{Ax^2+Bx+C}{x^3}+\frac{D}{x-1}
+\end{equation*}
+</div>
+<div class="para">where the constants <span class="process-math">\(A,B,C,D\)</span> need to be determined by one of the methods we employed before.  Of course, this can be rewritten as</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-21-5">
+\begin{equation*}
+\frac{1}{x^3\left(x-1\right)}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x^3}+\frac{D}{x-1}
+\end{equation*}
+</div>
+<div class="para">which represents our partial fractions decomposition.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-22">We can employ a similar idea if we have something like <span class="process-math">\(\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-23">
+<div class="para">In this case we have</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-23-1">
+\begin{equation*}
+\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}=\frac{Ax^2+Bx+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-24">
+<div class="para">If we rewrite this as</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-24-1">
+\begin{equation*}
+\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}=\frac{A{[\left(x+1)-1\right]}^2+B[\left(x+1\right)-1]+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-24-2">
+\begin{equation*}
+=\frac{{A\left(x+1\right)}^2-2A\left(x+1\right)+A+B\left(x+1\right)-B+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-24-3">
+\begin{equation*}
+=\frac{A}{x+1}+\frac{-2A+B}{{\left(x+1\right)}^2}+\frac{-2A-B+C}{{\left(x+1\right)}^3}+\frac{D}{x-1}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-25">
+<div class="para">If we relabel things, we get our partial fractions decomposition</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-25-1">
+\begin{equation*}
+\frac{1}{{\left(x+1\right)}^3\left(x-1\right)}=\frac{A}{x+1}+\frac{B}{{\left(x+1\right)}^2}+\frac{C}{{\left(x+1\right)}^3}+\frac{D}{x-1}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A,B,C,D\)</span> are constants that need to be determined using methods we learned before.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-26">
+<div class="para">Suppose our repeated factor is not linear, say we had <span class="process-math">\(\frac{1}{{\left(x^2+1\right)}^2x}\text{.}\)</span>  By our general result above, we have</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-26-2">
+\begin{equation*}
+\frac{1}{{\left(x^2+1\right)}^2x}=\frac{Ax^3+Bx^2+Cx+D}{{\left(x^2+1\right)}^2}+\frac{E}{x}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-27">
+<div class="para">Employing a similar trick to what we did with a repeated linear factor, we have</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-27-1">
+\begin{equation*}
+\frac{1}{{\left(x^2+1\right)}^2x}=\frac{A\left(x^3+x\right)+B\left(x^2+1\right)+Cx-Ax-B+D}{{\left(x^2+1\right)}^2}+\frac{E}{x}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-27-2">
+\begin{equation*}
+=\frac{Ax\left(x^2+1\right)+B\left(x^2+1\right)+\left(C-A\right)x+D-B}{{\left(x^2+1\right)}^2}+\frac{E}{x}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-27-3">
+\begin{equation*}
+=\frac{Ax+B}{x^2+1}+\frac{\left(C-A\right)x+D-B}{{\left(x^2+1\right)}^2}+\frac{E}{x}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-28">Relabeling, we have our partial fractions decomposition<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-29">
+<div class="displaymath process-math" id="CHAPTERPFDTheory-29-1">
+\begin{equation*}
+\frac{1}{{\left(x^2+1\right)}^2x}=\frac{Ax+B}{x^2+1}+\frac{Cx+D}{{\left(x^2+1\right)}^2}+\frac{E}{x}
+\end{equation*}
+</div>
+<div class="para">where the coefficients <span class="process-math">\(A,B,C,D,E\)</span> can be determined by one of our previous methods.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-30">We will stop at linear and quadratic factors even though the ideas we just illustrated would work for them as well.  The fact is that any polynomial of degree three or higher can be factored into two or more other polynomials of lesser degree.  This says that linear and quadratic factors are the only possible irreducible factors.  The reason that this is true follows by extending our roots to complex numbers as well.  There are a couple of reasons for doing this.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-31">First: The Fundamental Theorem of Algebra, says that any polynomial <span class="process-math">\(q(x)\)</span> with real coefficients can factored into the form <span class="process-math">\(q\left(x\right)=a_n\left(x-r_1\right)\left(x-r_2\right)\cdots
+\left(x-r_n\right)\)</span> where <span class="process-math">\(r_1,r_2,\dots ,r_n\)</span> are the (possibly complex) roots of <span class="process-math">\(q(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-32">Second: If <span class="process-math">\(r=a+bi\)</span> is a root of <span class="process-math">\(q(x)\)</span> then its complex conjugate <span class="process-math">\(\overline{r}=a-bi\)</span> is also a root.<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="CHAPTERPFDTheory-33">
+<div class="para">When we multiply two such linear factors together, we have</div>
+<div class="displaymath process-math" id="CHAPTERPFDTheory-33-1">
+\begin{equation*}
+\left(x-\left(a+bi\right)\right)\left(x-\left(a-bi\right)\right)=x^2-2ax+(a^2+b^2)
+\end{equation*}
+</div>
+<div class="para">which is a quadratic factor with real coefficients.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="CHAPTERPFDTheory-34">The upshot of all this is that if we want to find the partial fractions decomposition of a rational function <span class="process-math">\(\frac{p\left(x\right)}{q\left(x\right)}\text{,}\)</span> we do the following:<div class="autopermalink" data-description="Paragraph"><a href="#CHAPTERPFDTheory-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="algorithm theorem-like" id="ALGORITHMPFD"><h1 class="heading">
+<span class="type">Algorithm</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.0.0.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Partial Fraction Decomposition.</span>
+</h1>
+<div class="para logical" id="ALGORITHMPFD-2">
+<ol class="decimal ol-marker-1" id="ALGORITHMPFD-2-1">
+<li id="ALGORITHMPFD-2-1-1">
+<div class="para" id="p-derived-ALGORITHMPFD-2-1-1">Use long division to ensure that the degree of the numerator is less than the degree of the denominator.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ALGORITHMPFD-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ALGORITHMPFD-2-1-2">
+<div class="para" id="p-derived-ALGORITHMPFD-2-1-2">Factor the denominator completely (over the real numbers).  These irreducible factors will either be linear or quadratic.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ALGORITHMPFD-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ALGORITHMPFD-2-1-3">
+<div class="para" id="p-derived-ALGORITHMPFD-2-1-3">For any linear factor of the form <span class="process-math">\({\left(ax+b\right)}^n\text{,}\)</span> form the sum<div class="displaymath process-math" id="ALGORITHMPFD-2-1-3-2">
+\begin{equation*}
+\frac{A_1}{ax+b}+\frac{A_2}{{\left(ax+b\right)}^2}+\dots
++\frac{A_n}{{\left(ax+b\right)}^n}
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ALGORITHMPFD-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ALGORITHMPFD-2-1-4">
+<div class="para" id="p-derived-ALGORITHMPFD-2-1-4">For any quadratic factor of the form <span class="process-math">\({\left(ax^2+bx+c\right)}^m\text{,}\)</span> form the sum<div class="displaymath process-math" id="ALGORITHMPFD-2-1-4-2">
+\begin{equation*}
+\frac{B_1x+C_1}{ax^2+bx+c}+\frac{B_2x+C_2}{{\left(ax^2+bx+c\right)}^2}+\dots
++\frac{B_mx+C_m}{{\left(ax^2+bx+c\right)}^m}
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#ALGORITHMPFD-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="ALGORITHMPFD-2-1-5">
+<div class="para" id="p-derived-ALGORITHMPFD-2-1-5">Find all the coefficients using one of the methods we employed before.</div>
+<div class="autopermalink" data-description="Item 5"><a href="#ALGORITHMPFD-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ALGORITHMPFD-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Algorithm A.0.0.2: The Partial Fraction Decomposition"><a href="#ALGORITHMPFD" title="Copy heading and permalink for Algorithm A.0.0.2: The Partial Fraction Decomposition" aria-label="Copy heading and permalink for Algorithm A.0.0.2: The Partial Fraction Decomposition">🔗</a></div></article><article class="exercise exercise-like" id="PROBLEMPFDBig">
+                          
+                            
+                          
+                          <h2 class="heading"><span class="codenumber">(a)</span></h2>
+                          <h2 class="heading"><span class="codenumber">(b)</span></h2>
+                          <h2 class="heading"><span class="codenumber">(c)</span></h2>
+                        <div class="introduction" id="PROBLEMPFDBig-1"><div class="para" id="PROBLEMPFDBig-1-1">Write down the form of the partial fractions decomposition for each of the following rational functions.  DO NOT TRY TO DETERMINE THE COEFFICIENTS (unless you have nothing better to do)!<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMPFDBig-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="PROBLEMPFDBig-2"><h2 class="heading"><span class="codenumber">(a)</span></h2>
+<div class="para" id="PROBLEMPFDBig-2-1-1">
+<span class="process-math">\(\displaystyle\frac{1}{\left(3x+1\right)\left(x-2\right)}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMPFDBig-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task [STRUCT].2.a"><a href="#PROBLEMPFDBig-2" title="Copy heading and permalink for Task [STRUCT].2.a" aria-label="Copy heading and permalink for Task [STRUCT].2.a">🔗</a></div></article><article class="task exercise-like" id="PROBLEMPFDBig-3"><h2 class="heading"><span class="codenumber">(b)</span></h2>
+<div class="para" id="PROBLEMPFDBig-3-1-1">
+<span class="process-math">\(\displaystyle\frac{2x-1}{{\left(x^2+x+1\right)}^3{\left(5x-4\right)}^2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMPFDBig-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task [STRUCT].2.b"><a href="#PROBLEMPFDBig-3" title="Copy heading and permalink for Task [STRUCT].2.b" aria-label="Copy heading and permalink for Task [STRUCT].2.b">🔗</a></div></article><article class="task exercise-like" id="PROBLEMPFDBig-4"><h2 class="heading"><span class="codenumber">(c)</span></h2>
+<div class="para" id="PROBLEMPFDBig-4-1-1">
+<span class="process-math">\(\displaystyle\frac{x^4}{\left(x^2+1\right){\left(x-1\right)}^2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMPFDBig-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task [STRUCT].2.c"><a href="#PROBLEMPFDBig-4" title="Copy heading and permalink for Task [STRUCT].2.c" aria-label="Copy heading and permalink for Task [STRUCT].2.c">🔗</a></div></article><div class="autopermalink" data-description="Problem [STRUCT].2"><a href="#PROBLEMPFDBig" title="Copy heading and permalink for Problem [STRUCT].2" aria-label="Copy heading and permalink for Problem [STRUCT].2">🔗</a></div></article><div class="autopermalink" data-description="Appendix A: The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation"><a href="#CHAPTERPFDTheory" title="Copy heading and permalink for Appendix A: The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation" aria-label="Copy heading and permalink for Appendix A: The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="meta_backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-list-results.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
