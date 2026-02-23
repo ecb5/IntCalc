@@ -315,6 +315,7 @@ body.pretext > a.assistive:focus {
   border: 1px solid var(--page-border-color);
   border-radius: 3px;
   box-shadow: 0 0 5px var(--primary-color-gray-80);
+  color: var(--button-text-color);
 }
 .ptx-navbar .embed-popup .embed-code-container {
   width: "100%";
@@ -1469,10 +1470,12 @@ dl.description-list dl dd {
   margin-left: 12ex;
 }
 @media screen and (max-width: 480px) {
-  dl.description-list dt {
+  dl.description-list dt,
+  dl.description-list.narrow dt {
     float: none;
     margin-left: 0;
     text-align: left;
+    width: 25ex;
   }
   dl.description-list dd,
   dl.description-list.narrow dd,
@@ -2146,6 +2149,10 @@ iframe.asymptote,
 img.contained {
   width: 100%;
 }
+.asymptote-fullsize-link {
+  text-align: center;
+  font-size: 0.9em;
+}
 .ptx-content img,
 .ptx-content svg {
   background: var(--ptx-image-bg);
@@ -2510,7 +2517,7 @@ pre[class*=language-] .line-highlight {
 }
 .displaymath mjx-container[jax=CHTML][display=true] {
   margin: 0 0 0 0;
-  padding-top: 2px;
+  padding-top: 0.3em;
 }
 .process-math mjx-container svg {
   background: none;
@@ -3045,6 +3052,36 @@ ul[data-component=timedAssessment] {
   .ptx-runestone-container + .solutions {
     margin-top: 0.5em;
   }
+}
+.interactive-iframe-container {
+  max-width: 100%;
+  overflow: auto;
+}
+.interactive-iframe-container > iframe {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.interactive-iframe-container__opener {
+  display: block;
+  margin-right: 5px;
+  margin-top: 11px;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+.interactive-iframe-container__opener .icon {
+  font-size: 18px;
+}
+.interactive-iframe-container__opener:has(+ figcaption, + .instructions) {
+  float: left;
+  z-index: 1;
+  position: relative;
+}
+.interactive-iframe-container__opener + .instructions + figcaption {
+  clear: left;
+}
+.interactive-iframe-container__opener + .instructions {
+  margin-top: 0.5em;
 }
 .ptx-content .wwprob table.attemptResults {
   margin-left: 2em;
