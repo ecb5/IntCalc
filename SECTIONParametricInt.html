@@ -725,8 +725,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="PowerSeries.html" class="internal"><span class="codenumber">25</span> <span class="title">Power Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONPowerSeriesVSNumericalSeries.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Power Series vs. Numerical Series</span></a></div></li></ul>
+<div class="toc-title-box"><a href="PowerSeries.html" class="internal"><span class="codenumber">25</span> <span class="title">Understanding Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSeriesQuestions.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Some Questions We’ve Raised</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNumSerAndSeq.html" class="internal"><span class="codenumber">25.2</span> <span class="title">Numerical Series and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONBddIncImpConv.html" class="internal"><span class="codenumber">25.3</span> <span class="title">Any Increasing Sequence Which is Bounded Above Must Converge</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonNegSeries.html" class="internal"><span class="codenumber">25.4</span> <span class="title">Series With Nonnegative Terms</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -745,13 +750,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">27.3</span> <span class="title">Problem:     When the integral of a product is the product of the integrals.Random Stuff</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTEREulerId.html" class="internal"><span class="codenumber">28</span> <span class="title">Alternate Proof of Euler Identity</span></a></div></li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ladfjk.html" class="internal"><span class="codenumber">29</span> <span class="title">Digression: Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="PowerSeriesChangeOfBase.html" class="internal"><span class="codenumber">28</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONPowerSeriesVSNumericalSeries.html" class="internal"><span class="codenumber">28.1</span> <span class="title">Power Series vs. Numerical Series</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTEREulerId.html" class="internal"><span class="codenumber">29</span> <span class="title">Alternate Proof of Euler Identity</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ladfjk.html" class="internal"><span class="codenumber">30</span> <span class="title">Digression: Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">VI</span> <span class="title">Quotations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">30</span> <span class="title">Quotes</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">31</span> <span class="title">Quotes</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
@@ -882,32 +891,48 @@ P(\theta)=
 = a^2\int{}\sin^2(\theta{})\dx{\theta{}},
 \end{gather*}
 </div>
-<div class="para">once we find appropriate indices but unfortunately things will go badly if we try to use the mental image of summing rectangles.</div>
+<div class="para">once we find appropriate indices. Unfortunately this will not always be a simple matter. Indeed, you will find that the hardest part of the integration of parametric functions is often just finding the right indices.  Let’s see why.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="EXAMPLEAreaCircParam-4">At first its seems as if that would be relatively simple: Simply integrate from right to left as usual. This is the essential idea but the computation is not as straight–forward as that. Before we are done we will have to re–think our understanding of what an integral actually is. We’ll come to that in due time. For now we will proceed slowly to see what goes wrong.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="EXAMPLEAreaCircParam-5">
-<div class="para">Naively integrating from right–to–left gives</div>
-<div class="displaymath process-math" id="EXAMPLEAreaCircParam-5-3">
+<div class="para logical" id="EXAMPLEAreaCircParam-4">
+<div class="para">At first its seems that this integral is relatively simple: Simply integrate from right to left as usual. This  gives</div>
+<div class="displaymath process-math" id="EXAMPLEAreaCircParam-4-1">
 \begin{gather*}
 a^2\int_{x=-a}^a\sin^2(\theta)\dx{\theta }
 \end{gather*}
 </div>
-<div class="para">which has several problems. First, the integration variable is <span class="process-math">\(\theta\)</span> not <span class="process-math">\(x\text{,}\)</span> so it is not entirely clear what summing <span class="process-math">\(\sin^2(\theta{})\dx{\theta{}}\)</span> from <span class="process-math">\(x=-a\)</span> to <span class="process-math">\(x=a\)</span> would actually compute. To be sure we’ve seen integrals where the indices did not refer directly to the integration variable before, mostly when we were doing an integration by substitution. But in that situation we had forced this unhappy state of affairs with our substitution and we always arranged for the indices and the integration variable to match before computing the integral. In this situation inconsistency of the variables came from the problem itself, not from anything we introduced. But it is the same difficulty and we can should be able to resolve it in the same fashion. We need to either re–express <span class="process-math">\(x\)</span> in terms of <span class="process-math">\(\theta{}\)</span> or <i class="foreign">vice versa</i>. Finding <span class="process-math">\(\theta\)</span> in terms of <span class="process-math">\(x\)</span> will actually work (sort of), but since we want to illustrate what can go wrong we will go with the other choice.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">which has several problems.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="EXAMPLEAreaCircParam-6">
-<div class="para">We need to find <span class="process-math">\(\theta{}\)</span> such that <span class="process-math">\(x(\theta{}) =
-a\cos(\theta{}) = -a\text{,}\)</span> which says that <span class="process-math">\(\cos(\theta{})=-1\)</span> or <span class="process-math">\(\theta{}=\pi{}\text{.}\)</span> Similarly when <span class="process-math">\(x(\theta{})=a\text{,}\)</span> <span class="process-math">\(\theta{}=0\)</span> and it appears that we need to compute</div>
-<div class="displaymath process-math" id="EXAMPLEAreaCircParam-6-7">
+<div class="para" id="EXAMPLEAreaCircParam-5">Notice that the integration variable is <span class="process-math">\(\theta\)</span> not <span class="process-math">\(x\text{.}\)</span> To be sure we’ve seen integrals where the indices did not match the integration variable before, but we always arranged for the indices and the integration variable to match before proceeding to compute the integral. We will need for them to match here too.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="EXAMPLEAreaCircParam-6">One option is to re–express <span class="process-math">\(\theta{}\)</span> in terms of <span class="process-math">\(x\text{.}\)</span> That will work but it is an unattractive choice since it requires that invert the function <span class="process-math">\(x(\theta{})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="EXAMPLEAreaCircParam-7">
+<div class="para">A much more attractive choice is to find <span class="process-math">\(\theta{}\)</span> such that</div>
+<div class="displaymath process-math" id="EXAMPLEAreaCircParam-7-2">
 \begin{gather*}
-a^2\int_{\theta =\pi{}}^0\sin^2(\theta )\dx{\theta }. 
+x(\theta{}) = a\cos(\theta{}) = -a. 
 \end{gather*}
 </div>
-<div class="para">But if we compute this integral we’ll get zero, which is obviously wrong. Try it and see.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Solving for <span class="process-math">\(\theta{}\)</span> we find that <span class="process-math">\(\theta{}=\pi{}\text{.}\)</span> Similarly when <span class="process-math">\(x(\theta{})=a\text{,}\)</span> <span class="process-math">\(\theta{}=0\)</span> so it appears that we need to compute</div>
+<div class="displaymath process-math" id="EXAMPLEAreaCircParam-7-7">
+\begin{gather}
+a^2\int_{\theta =\pi{}}^0\sin^2(\theta )\dx{\theta }\tag{26.2}
+\end{gather}
 </div>
+<div class="para">but this is still inadequate since the value of this integral is  zero, which is obviously wrong. Try it and see.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="EXAMPLEAreaCircParam-8">So what went wrong?<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="EXAMPLEAreaCircParam-9">We began by thinking of integration as “summing up the areas of rectangles” because it is an intuitive and attractive starting point. But in much the same way that not every derivative is a slope not every integral is the sum of the areas of rectangles.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="EXAMPLEAreaCircParam-10">Look closely at <a href="SECTIONParametricInt.html#EXAMPLEAreaCircParam-7-7" class="internal" title="Equation 26.2">equation (26.2)</a>. We can certainly interpret the differentials <span class="process-math">\(\sin^2(\theta{})\dx{\theta{}}\)</span> as “rectangles with infinitesimal width” but will summing their areas give us the area of the circle. Are they even inside the the circle? Do you see anything that you can interpret as “differential rectangles filling the circle?” Clearly not.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="EXAMPLEAreaCircParam-11">This is puzzling but the problem lies in our “way of thinking” about integration. It is too narrow, too closely tied to the idea of summing the areas of rectangles. We need to expand it a bit.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="EXAMPLEAreaCircParam-12"><div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEAreaCircParam-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
 <div class="autopermalink" data-description="Example 26.1.0.1: The Area of a Circle With Radius \boldsymbol{= a}"><a href="#EXAMPLEAreaCircParam" title="Copy heading and permalink for Example 26.1.0.1: The Area of a Circle With Radius \boldsymbol{= a}" aria-label="Copy heading and permalink for Example 26.1.0.1: The Area of a Circle With Radius \boldsymbol{= a}">🔗</a></div></article><div class="para" id="SECTIONParametricInt-13">                               <div class="autopermalink" data-description="Paragraph"><a href="#SECTIONParametricInt-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Section 26.1: Parametric Functions and Integration"><a href="#SECTIONParametricInt" title="Copy heading and permalink for Section 26.1: Parametric Functions and Integration" aria-label="Copy heading and permalink for Section 26.1: Parametric Functions and Integration">🔗</a></div></section></div>
