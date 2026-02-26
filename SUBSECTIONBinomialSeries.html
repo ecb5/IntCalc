@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Binomial Series</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Eugene Boman">
+<meta property="book:author" content="Robert Rogers">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.15';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Calculus.html"><span class="title">Calculus</span> <span class="subtitle">From Practice to Theory</span></a></h1>
+<p class="byline">Eugene Boman, Robert Rogers</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="SECTIONPowerSeries-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="SECTIONPowerSeries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SUBSECTIONPowSerOtherPoints.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+
+
+
+
+
+
+
+
+
+\def\abs#1{\left|#1\right|}
+\def\tallstrut{\rule{0mm}{1.1\baselineskip}}
+\def\approach#1{{\left(\rightarrow{}#1\right)}}
+\def\RedApproach#1{\textcolor{red}{\left\{\rightarrow{}#1\right\}}}
+
+\def\CancelToRed#1#2{\textcolor{red}{{\cancelto{#1}{#2}}}}
+\def\CancelTo#1#2{{{\cancelto{#1}{#2}}}}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\CC}{\mathbb {C}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+\def\DD{{\bf{}D}}
+
+\def\arccot{{\rm{}arccot}{}}
+\def\Arctan{{\rm{}Arctan}{}}
+\def\Arcsin{{\rm{}Arcsin}{}}
+\def\arcsec{{\rm{}arcsec}{}}
+\def\arccsc{{\rm{}arccsc}{}}
+
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+
+
+
+
+\def\eval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+\def\geneval#1#2#3{\left.\strut{}#1\right|_{#2#3}}
+\def\mineval#1#2{\left.\strut{}#1\right|_{#2}}
+
+\def\bigeval#1#2#3{\left.\strut{}#1\right|_{#2=#3}}
+
+\def\ftceval#1#2#3#4{\eval{#1}{#2}{#3}^{#4}}
+
+
+
+
+
+
+
+
+
+\def\inverse#1{#1^{-1}}
+
+
+
+
+\def\dx#1{\thinspace{\mathrm d}#1}
+\def\dfdx#1#2{\frac{\dx{#1}}{\dx{#2}}} 
+
+\def\dfdxat#1#2#3{\eval{\dfdx{#1}{#2}}{#2}{#3}}
+
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\tlimit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}}#3}
+\def\tlimitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}}#3}
+\def\rtlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\ltlimit#1#2#3{{\tlimitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+
+\def\limitX#1#2#3#4{{\displaystyle\lim_{\underset{#4}{#1\rightarrow #2}}#3}}
+\def\rlimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\gt{}#2}{}}}
+\def\llimit#1#2#3{{\limitX{#1}{#2}{#3}{#1\lt{}#2}{}}}
+\def\limitatinf#1#2{\limit{#1}{\infty}{#2}}
+\def\limitatninf#1#2{\limit{#1}{-\infty}{#2}}
+\def\norm#1{\left\|#1\right\|}
+
+
+\def\lprime#1{{#1^{\prime}_{\scriptscriptstyle L}}}
+\def\rprime#1{{#1^{\prime}_{\scriptscriptstyle R}}}
+
+
+\def\lhopeq{\stackrel{L'H}{=}}
+
+\newcommand{\ParamEqTwo}[2]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}
+    \end{array}
+  \right\}
+}
+\newcommand{\ParamEqThree}[3]
+{
+  \left\{
+    \begin{array}{c}
+    {#1}\\
+    {#2}\\
+    {#3}
+    \end{array}
+  \right\}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="SECinstructor.html" class="internal"><span class="title">To the Instructor: Read This First</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">1</span> <span class="title">More Approximation Methods</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries-3.html" class="internal"><span class="codenumber">1.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONSummationNotation.html" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Summation Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONGeoSeries.html" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries-6.html" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Manipulating the Geometric Series</span></a></div></li>
+<li class="toc-item toc-subsection active"><div class="toc-title-box"><a href="SUBSECTIONBinomialSeries.html" class="internal"><span class="codenumber">1.2.5</span> <span class="title">The Binomial Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONPowSerOtherPoints.html" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Power Series Expanded About Other Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONTaylorSeries.html" class="internal"><span class="codenumber">1.2.7</span> <span class="title">The Taylor Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONPowSerSol.html" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Power Series Solutions of Differential Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONApprIntViaRiemSums.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Approximating Integrals with Riemann Sums</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">I</span> <span class="title">Integral Calculus: To Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="RiemannIntegral.html" class="internal"><span class="codenumber">2</span> <span class="title">Defining the Riemann Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRiemanIntDef.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Defining the Riemann Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFTC.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="PowerSeries.html" class="internal"><span class="codenumber">3</span> <span class="title">Understanding Power Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSeriesQuestions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Some Questions We’ve Raised</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNumSerAndSeq.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Numerical Series and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONBddIncImpConv.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Any Increasing Sequence Which is Bounded Above Must Converge</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonNegSeries.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Series With Nonnegative Terms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAbsConv.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Absolute Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONContDiffIntPwrSer.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Continuity, Differentiation, and Integration of Power Series</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">II</span> <span class="title">Stuff  Without a Home</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ParmetricInt.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration With Parametric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONParametricInt.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Parametric Functions and Integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="TemporaryHolding.html" class="internal"><span class="codenumber">5</span> <span class="title">Temporary Holding Area</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="PARAGRAPHSIntegrationLimits.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Limits of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONIntegrationAsFunction.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Integration as a Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRandomStuff.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Problem:     When the integral of a product is the product of the integrals.Random Stuff</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="PowerSeriesChangeOfBase.html" class="internal"><span class="codenumber">6</span> <span class="title">Power Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONPowerSeriesVSNumericalSeries.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Power Series vs. Numerical Series</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CHAPTEREulerId.html" class="internal"><span class="codenumber">7</span> <span class="title">Alternate Proof of Euler Identity</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ladfjk.html" class="internal"><span class="codenumber">8</span> <span class="title">Digression: Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">III</span> <span class="title">Quotations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">9</span> <span class="title">Quotes</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">A</span> <span class="title">The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection1.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Section 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection2.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Section 2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection3.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Section 3</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection4.html" class="internal"><span class="codenumber">A.4</span> <span class="title">Section 4</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection5.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Section 5</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection6.html" class="internal"><span class="codenumber">A.6</span> <span class="title">Section 6</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection7.html" class="internal"><span class="codenumber">A.7</span> <span class="title">Section 7</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection8.html" class="internal"><span class="codenumber">A.8</span> <span class="title">Section 8</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection10.html" class="internal"><span class="codenumber">A.9</span> <span class="title">Section10</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection11.html" class="internal"><span class="codenumber">A.10</span> <span class="title">Section 11</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection12.html" class="internal"><span class="codenumber">A.11</span> <span class="title">Section 12</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection13.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Section 13</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SECTIONSection14.html" class="internal"><span class="codenumber">A.13</span> <span class="title">Section 14</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSection14.html#SUBSUBSECTIONAvoidIrredCase" class="internal"><span class="codenumber">A.13.1</span> <span class="title">Avoiding the Irreducible Case by Allowing Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSection14.html#SECTIONSection14-4" class="internal"><span class="codenumber">A.13.2</span> <span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsection15.html" class="internal"><span class="codenumber">A.14</span> <span class="title">Section 15</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-list-results.html" class="internal"><span class="codenumber">B</span> <span class="title">List of Theorems, Lemmas, Corollaries, Examples, Exercises, and Definitions</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="meta_backmatter-4.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="meta_backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="subsection" id="SUBSECTIONBinomialSeries"><h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Binomial Series</span>
+</h2>
+<div class="para" id="SUBSECTIONBinomialSeries-2">The series we obtained for the inverse tangent function in the previous problem is actually also valid for <span class="process-math">\(x=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-3"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-3-1">
+<div class="para">Use this to obtain</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-3-1-1">
+\begin{equation*}
+\pi =4\left(\sum^{\infty }_{n=0}{\frac{{\left(-1\right)}^n}{2n+1}}\right)=\frac{4}{1}-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\dots 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.20"><a href="#SUBSECTIONBinomialSeries-3" title="Copy heading and permalink for Problem 1.2.5.0.20" aria-label="Copy heading and permalink for Problem 1.2.5.0.20">🔗</a></div></article><div class="para" id="SUBSECTIONBinomialSeries-4">Now be honest, would you have ever thought that the right-hand side would converge to <span class="process-math">\(\pi \text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-5">The above series for the arctangent was known to James Gregory (1638-1675) before the invention of calculus.  Leibniz independently discovered the series by examining the area of a circle and communicated his ideas for determining areas via series to Newton through an intermediary, John Collins, who also was in contact with Gregory and communicated his ideas to Newton.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-6">
+<div class="para">It is true that the value of <span class="process-math">\(\pi \)</span> can be approximated to any degree of accuracy by summing a finite number of terms of the series</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-6-2">
+\begin{equation*}
+4\left(\sum^{\infty }_{n=0}{\frac{{\left(-1\right)}^n}{2n+1}}\right)=\frac{4}{1}-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\dots 
+\end{equation*}
+</div>
+<div class="para">but, unfortunately, this converges very slowly and it takes adding an enormous amount of terms to get any accuracy.  For example, we have the approximation</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-7">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-7-1">
+\begin{equation*}
+4\left(\sum^{1000}_{n=0}{\frac{{\left(-1\right)}^n}{2n+1}}\right)=\frac{4}{1}-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\dots +\frac{1}{2001}\approx 3.142591654
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-8">
+<div class="para">which is only accurate to two decimal places.  While Newton praised the elegance of Leibniz in his methods, he set about to find a series approximation for <span class="process-math">\(\pi \)</span> which would converge faster.  We will use modern terminology to streamline Newton’s ideas.  First notice that</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-8-3">
+\begin{equation*}
+\frac{\pi }{4}=\int^1_{x=0}{\sqrt{1-x^2}} \dx{x}
+\end{equation*}
+</div>
+<div class="para">as this integral gives the area of one quarter of the unit circle.  The trick now is to find a power series which represents <span class="process-math">\(\sqrt{1-x^2}\text{.}\)</span>  We will start with something you may or may not have seen in precalculus: the Binomial Theorem.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-9">
+<div class="para">It is pretty straightforward to expand <span class="process-math">\({\left(1+x\right)}^2=1+2x+x^2\)</span> but let’s do it carefully to recognize the pattern.</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-9-3">
+\begin{equation*}
+{\left(1+x\right)}^2=\left(1+x\right)\left(1+x\right)=1\left(1+x\right)+x\left(1+x\right)=\left(1+x\right)+\left(x+x^2\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-9-4">
+\begin{equation*}
+=1+\left(x+x\right)+x^2=1+2x+x^2
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-10">Proceeding in a similar manner, we get<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-11">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-11-1">
+\begin{equation*}
+{\left(1+x\right)}^3=\left(1+x\right){\left(1+x\right)}^2=\left(1+x\right)\left(1+2x+x^2\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-11-2">
+\begin{equation*}
+=1\left(1+2x+x^2\right)+x\left(1+2x+x^2\right)=\left(1+2x+x^2\right)+\left(x+2x^2+x^3\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-11-3">
+\begin{equation*}
+=1+\left(2+1\right)x+\left(1+2\right)x^2+x^3=1+3x+3x^2+x^3
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-12">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-12-1">
+\begin{equation*}
+{\left(1+x\right)}^4=\left(1+x\right)\left(1+3x+3x^2+x^3\right)=1\left(1+3x+3x^2+x^3\right)+x\left(1+3x+3x^2+x^3\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-12-2">
+\begin{equation*}
+=\left(1+3x+3x^2+x^3\right)+\left(x+3x^2+3x^3+x^4\right)=1+\left(3+1\right)x+\left(3+3\right)x^2+\left(1+3\right)x^3+x^4
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-12-3">
+\begin{equation*}
+=1+4x+6x^2+4x^3+{1x}^4
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-13">At this point could you recognize that<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-14">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-14-1">
+\begin{equation*}
+{\left(1+x\right)}^5=1+\left(4+1\right)x+\left(6+4\right)x^2+\left(4+6\right)x^3+\left(1+4\right)x^4+x^5
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-15">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-15-1">
+\begin{equation*}
+=1+5x+10x^2+10x^3+5x^4+{1x}^5
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-16">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-16-1">
+\begin{equation*}
+{\left(1+x\right)}^6=1+\left(5+1\right)x+\left(10+5\right)x^2+\left(10+10\right)x^3+\left(5+10\right)x^4+\left(1+5\right)x^5+x^6
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-16-2">
+\begin{equation*}
+=1+6x+15x^2+20x^3+15x^4+6x^5+x^6
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-17">Keeping track of the exponents is straightforward enough.  To keep track of the coefficients, mathematicians devised the following<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="FIGUREPascalsTriangle"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/PascalTri.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pascal’s Triangle<div class="autopermalink" data-description="Figure 1.2.5.0.21"><a href="#FIGUREPascalsTriangle" title="Copy heading and permalink for Figure 1.2.5.0.21" aria-label="Copy heading and permalink for Figure 1.2.5.0.21">🔗</a></div></figcaption></figure><div class="para" id="SUBSECTIONBinomialSeries-19">This is known as Pascal’s Triangle in honor of Blaise Pascal (1623-1662) though it was known to Persian, Hindu, and Chinese mathematicians some 500-600 years before Pascal. Pascal called this triangle an Arithmetical Triangle and utilized it to solve problems dealing with probability.  The name fits: notice that each entry is obtained by adding the two entries directly above it as we did in our expansions.  As such, this provides the coefficients in our expansion.  For example,<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-20">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-20-1">
+\begin{equation*}
+{\left(1+x\right)}^7=1+7x+21x^2+35x^3+35x^4+21x^5+7x^6+x^7
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-21">If one had patience, they could use the triangle to determine the expansion of <span class="process-math">\({\left(1+x\right)}^{20}\text{.}\)</span>  Fortunately, there is a quicker way to do this.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-22">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-22-1">
+\begin{align*}
+{\left(1+x\right)}^{20}=1\amp{}+\frac{20}{1}x
++\frac{20\cdot 19}{2\cdot 1}x^2+\frac{20\cdot 19\cdot 18}{3\cdot
+2\cdot 1}x^3\\
+\amp{}     +\frac{20\cdot 19\cdot 18\cdot 17}{4\cdot 3\cdot 2\cdot
+1}x^4+\dots \\
+\amp{}      +\frac{20\cdot 19\cdot 18\cdot \dots \cdot 1}{20\cdot \dots \cdot 3\cdot 2\cdot 1}x^{20}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-23"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-23-1">
+<div class="para">Based on the formula we stated above, we should have</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-23-1-1">
+\begin{align*}
+\left(1+x\right)^7=1+\frac{7}{1}x+\amp{}\frac{7\cdot
+6}{2\cdot 1}x^2\\
+\amp{} +\frac{7\cdot 6\cdot 5}{3\cdot 2\cdot
+1}x^3\\
+\amp{} +\frac{7\cdot 6\cdot 5\cdot 4}{4\cdot 3\cdot
+2\cdot 1}x^4\\
+\amp{}          +\frac{7\cdot 6\cdot 5\cdot 4\cdot 3}{5\cdot 4\cdot
+3\cdot 2\cdot 1}x^5\\
+\amp{} +\frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot
+2}{6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}x^6\\
+\amp{}            +\frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot
+1}{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}x^7
+\end{align*}
+</div>
+<div class="para">Compute these coefficients to verify that we get the same result as we did using Pascal’s Triangle.  If you cancel out terms before you multiply, you can do these without a calculator.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.22"><a href="#SUBSECTIONBinomialSeries-23" title="Copy heading and permalink for Problem 1.2.5.0.22" aria-label="Copy heading and permalink for Problem 1.2.5.0.22">🔗</a></div></article><div class="para logical" id="SUBSECTIONBinomialSeries-24">
+<div class="para">The general form of this expansion is</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-24-1">
+\begin{align*}
+{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}\amp{}x^2\\
++\amp{}\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3\\
+\amp{} + \dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N
+\end{align*}
+</div>
+<div class="para">and this result is known as the Binomial Theorem which holds for any nonnegative integer <span class="process-math">\(N\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-25"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-25-1">
+<div class="para">In most books, you will see the binomial theorem written as</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-25-1-1">
+\begin{equation*}
+{\left(a+b\right)}^N=a^Nb^0+\frac{N}{1!}a^{N-1}b^1+\frac{N\left(N-1\right)}{2!}a^{N-2}b^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}{a^{N-3}b}^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}{a^0b}^N
+\end{equation*}
+</div>
+<div class="para">You can see that our formulation is a special case of this where <span class="process-math">\(a=1\)</span> and <span class="process-math">\(b=x\text{.}\)</span>  It turns out that our formulation can be used to obtain the general formula as well, so they are logically equivalent.  To see this, rewrite <span class="process-math">\({\left(a+b\right)}^N=a^N{\left(1+\frac{b}{a}\right)}^N\text{.}\)</span> Let <span class="process-math">\(x=\frac{b}{a}\)</span> in</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-25-1-6">
+\begin{equation*}
+{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N
+\end{equation*}
+</div>
+<div class="para">to obtain the general formula</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-25-2">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-25-2-1">
+\begin{equation*}
+{\left(a+b\right)}^N=a^Nb^0+\frac{N}{1!}a^{N-1}b^1+\frac{N\left(N-1\right)}{2!}a^{N-2}b^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}{a^{N-3}b}^3+\dots
++\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot
+\dots \cdot 2\cdot 1}{N!}{a^0b}^N
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.23"><a href="#SUBSECTIONBinomialSeries-25" title="Copy heading and permalink for Problem 1.2.5.0.23" aria-label="Copy heading and permalink for Problem 1.2.5.0.23">🔗</a></div></article><div class="para" id="SUBSECTIONBinomialSeries-26">In summation notation, our version of the binomial theorem looks like this.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-27">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-27-1">
+\begin{equation*}
+{\left(1+x\right)}^N=1+\sum^N_{n=1}{\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\dots \left(N-\left(n-1\right)\right)}{n!}x^n}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-28"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="SUBSECTIONBinomialSeries-28-1">Write out some of the terms in the above summation to verify that it agrees with what we wrote as the Binomial Theorem.  Of special note is what the terms look like when <span class="process-math">\(n=1\)</span> and when <span class="process-math">\(n=N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.24"><a href="#SUBSECTIONBinomialSeries-28" title="Copy heading and permalink for Problem 1.2.5.0.24" aria-label="Copy heading and permalink for Problem 1.2.5.0.24">🔗</a></div></article><div class="para logical" id="SUBSECTIONBinomialSeries-29">
+<div class="para">Our formulation of the Binomial Theorem is a finite sum, but if we followed the pattern, we could have written this as a power series.</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-29-1">
+\begin{equation*}
+{\left(1+x\right)}^N=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots +\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1}{N!}x^N+\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1\cdot 0}{\left(N+1\right)!}x^{N+1}+\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\cdot \dots \cdot 2\cdot 1\cdot 0\cdot \left(-1\right)}{\left(N+2\right)!}x^{N+2}+\dots 
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-29-2">
+\begin{equation*}
+=1+\sum^{\infty }_{n=1}{\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\dots \left(N-\left(n-1\right)\right)}{n!}x^n}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-30">Notice that after the <span class="process-math">\(x^N\)</span> term, all of the coefficients would be zero.  The reason we did this is to be as audacious as Newton and try this for values of <span class="process-math">\(N\)</span> that are not nonnegative integers.  For example, suppose we try this for <span class="process-math">\(N=-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-31"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-31-1">
+<div class="para">Substitute <span class="process-math">\(N=-1\)</span> into the formula</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-31-1-2">
+\begin{equation*}
+{\left(1+x\right)}^N=1+\sum^{\infty }_{n=1}{\frac{N\left(N-1\right)\left(N-2\right)\left(N-3\right)\dots \left(N-\left(n-1\right)\right)}{n!}x^n}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-31-1-3">
+\begin{equation*}
+=1+\frac{N}{1!}x+\frac{N\left(N-1\right)}{2!}x^2+\frac{N\left(N-1\right)\left(N-2\right)}{3!}x^3+\dots 
+\end{equation*}
+</div>
+<div class="para">to obtain a series representation for <span class="process-math">\({\left(1+x\right)}^{-1}\text{.}\)</span>  How does this compare to the result you got from substituting <span class="process-math">\(-x\)</span> into the geometric series?</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-31-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.25"><a href="#SUBSECTIONBinomialSeries-31" title="Copy heading and permalink for Problem 1.2.5.0.25" aria-label="Copy heading and permalink for Problem 1.2.5.0.25">🔗</a></div></article><article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-32"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="SUBSECTIONBinomialSeries-32-1">In the last section, you differentiated the geometric series to obtain a series for <span class="process-math">\({\left(1-x\right)}^{-k}\text{.}\)</span>  Show that you get the same result by substituting <span class="process-math">\(-x\)</span> into the binomial series with <span class="process-math">\(N=-k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-32-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.26"><a href="#SUBSECTIONBinomialSeries-32" title="Copy heading and permalink for Problem 1.2.5.0.26" aria-label="Copy heading and permalink for Problem 1.2.5.0.26">🔗</a></div></article><div class="para" id="SUBSECTIONBinomialSeries-33">Notice that unlike the case where <span class="process-math">\(N\)</span> was a nonnegative integer, these series do not end.  Also notice that this says that there is a limitation to this binomial series as this only works for <span class="process-math">\(-1\lt x\lt 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-34">
+<div class="para">Newton was so audacious that he proposed that this binomial series representation works for non-integer values of <span class="process-math">\(N\)</span> as well.  For example, if <span class="process-math">\(N\)</span> is the rational number <span class="process-math">\(p/q\)</span> where <span class="process-math">\(p,q\)</span> are integers with <span class="process-math">\(q\neq 0\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-34-6">
+\begin{equation*}
+{\left(1+x\right)}^{\frac{p}{q}}=1+\sum^{\infty }_{n=1}{\frac{\frac{p}{q}\left(\frac{p}{q}-1\right)\left(\frac{p}{q}-2\right)\left(\frac{p}{q}-3\right)\dots \left(\frac{p}{q}-\left(n-1\right)\right)}{n!}x^n}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-34-7">
+\begin{equation*}
+=1+\frac{\frac{p}{q}}{1!}x+\frac{\frac{p}{q}\left(\frac{p}{q}-1\right)}{2!}x^2+\frac{\frac{p}{q}\left(\frac{p}{q}-1\right)\left(\frac{p}{q}-2\right)}{3!}x^3+\dots 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-35">Again, notice that unless <span class="process-math">\(\frac{p}{q}\)</span> is a nonnegative integer, the coefficients in this sum will never be zero and it truly will be an infinite series.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-36"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-36-1">
+<div class="para">In a letter to Henry Oldenburg dated June 13, 1676, Newton described his binomial series and included the example</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-36-1-1">
+\begin{equation*}
+\sqrt{c^2+x^2}=c+\frac{x^2}{2c}-\frac{x^4}{8c^3}+\frac{x^6}{16c^5}-\frac{5x^8}{128c^7}+\frac{7x^{10}}{256c^9}+\dots 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-36-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-36-2">Rewrite <span class="process-math">\(\sqrt{c^2+x^2}=c{\left(1+{\left(\frac{x}{c}\right)}^2\right)}^{\frac{1}{2}}\)</span> and substitute <span class="process-math">\(\frac{x}{c}\)</span> into the binomial series with <span class="process-math">\(N=\frac{1}{2}\)</span> to obtain Newton’s result.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-36-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.27"><a href="#SUBSECTIONBinomialSeries-36" title="Copy heading and permalink for Problem 1.2.5.0.27" aria-label="Copy heading and permalink for Problem 1.2.5.0.27">🔗</a></div></article><div class="para" id="SUBSECTIONBinomialSeries-37">It should be noted that Newton did not prove that his general binomial series was correct but convinced himself that the pattern worked for rational powers beyond nonnegative integers.  We did not prove that this is correct either, though we have some evidence that it is as we saw with negative integer powers.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-37" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-38"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-38-1">
+<div class="para">If the series</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-38-1-1">
+\begin{equation*}
+{\left(1+x\right)}^2=1+\frac{1}{2}x+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)}{2!}x^2+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}x^3+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}x^4+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)\left(\frac{1}{2}-4\right)}{5!}x^5+\dots =1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots 
+\end{equation*}
+</div>
+<div class="para">is correct, then multiplying the series by itself should result in <span class="process-math">\(1-x\text{.}\)</span>  We can apply the “box method” of multiplying polynomials below to see if this how this starts to play out.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-38-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\times\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{1}{2}x\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(-\frac{1}{8}x^2\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{1}{16}x^3\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(-\frac{5}{128}x^4\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\dots \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\frac{1}{2}x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(\frac{1}{2}x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\frac{1}{2}x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\frac{1}{4}x^2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(\frac{-1}{8}x^2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(\frac{1}{16}x^3\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(\frac{-5}{128}x^4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(\vdots \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-38-3">
+<div class="para">Fill in the rest of this multiplication table and use it to show that if you multiply the series</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-38-3-1">
+\begin{equation*}
+1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots
+\end{equation*}
+</div>
+<div class="para">by itself, then you get</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-38-3-2">
+\begin{equation*}
+1+x+0x^2+0x^3+0x^4+\dots 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-38-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.28"><a href="#SUBSECTIONBinomialSeries-38" title="Copy heading and permalink for Problem 1.2.5.0.28" aria-label="Copy heading and permalink for Problem 1.2.5.0.28">🔗</a></div></article><div class="para logical" id="SUBSECTIONBinomialSeries-39">
+<div class="para">Of course, this is still not proof that the series is correct (unless we compute all of the coefficients), but we are getting a good amount of evidence that Newton’s binomial series is correct.  We also know from our work with the geometric series that it seems to converge for <span class="process-math">\(-1\lt
+x\lt 1\text{.}\)</span>  In fact, the series</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-39-3">
+\begin{align*}
+\left(1+x\right)^{\frac{1}{2}}=1+\frac{1}{2}x+\amp{}\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)}{2!}x^2\\
+\amp{}+\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}x^3\\
+\amp{}
++\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}x^4\\
+\amp{}
++\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)\left(\frac{1}{2}-4\right)}{5!}x^5+\dots
+\end{align*}
+</div>
+<div class="para">so that</div>
+<div class="displaymath process-math" id="EQUATIONBinomSer1">
+\begin{equation}
+\left(1+x\right)^{\frac{1}{2}}      =1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\frac{7}{256}x^5+\dots\tag{1.2.2}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-40">Also converges for <span class="process-math">\(x=\pm 1\text{,}\)</span> but this is beyond this course.  [For a proof of this, you can refer to the open-source textbook <span class="booktitle">How We Got From There to Here: A Story of Real Analysis,</span> by <em class="emphasis">Boman and Rogers</em>.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-40" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-41">Recall that Newton intended to provide a series representation for <span class="process-math">\(\frac{\pi
+}{4}=\int^1_{x=0}{\sqrt{1-x^2}} \dx{x}\)</span> to find a series which converges to <span class="process-math">\(\pi \)</span> faster than Gregory’s series.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-41" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-42"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="SUBSECTIONBinomialSeries-42-1">
+<div class="para">Use the <a href="SUBSECTIONBinomialSeries.html#EQUATIONBinomSer1" class="internal" title="Equation 1.2.2">power series (1.2.2)</a>  to obtain the series</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQUATIONBinomSer1.html" id="SUBSECTIONBinomialSeries-42-1-2">
+\begin{align*}
+\frac{\pi }{4}\amp{}=\int^1_{x=0}{\sqrt{1-x^2}} \dx{x}\\
+\amp{}=1+\sum^{\infty
+}_{n=1}{\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\dots
+\left(\frac{1}{2}-\left(n-1\right)\right)}{n!}}\left(\frac{{\left(-1\right)}^n}{2n+1}\right)\\
+\amp{}=1-\frac{1}{6}-\frac{1}{40}-\frac{1}{112}-\frac{5}{1152}-\dots
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-42-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Problem 1.2.5.0.29"><a href="#SUBSECTIONBinomialSeries-42" title="Copy heading and permalink for Problem 1.2.5.0.29" aria-label="Copy heading and permalink for Problem 1.2.5.0.29">🔗</a></div></article><div class="para logical" id="SUBSECTIONBinomialSeries-43">
+<div class="para">Adding the first 50 terms of this gives us the approximation</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-43-1">
+\begin{equation*}
+\pi \approx 1+\sum^{49}_{n=1}{\frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}-1\right)\dots \left(\frac{1}{2}-\left(n-1\right)\right)}{n!}}\left(\frac{{\left(-1\right)}^n}{2n+1}\right)\approx 3.14267
+\end{equation*}
+</div>
+<div class="para">which provides the same sort of accuracy that Gregory’s series took 1000 terms to get.  Utilizing the binomial series, Newton was able to obtain series that converge even faster.  We can also use this series to obtain some more power series representations and faster converging approximations for <span class="process-math">\(\pi \text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-43" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-44"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<article class="task exercise-like" id="SUBSECTIONBinomialSeries-44-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="SUBSECTIONBinomialSeries-44-1-1-1">
+<div class="para">Use the fact that <span class="process-math">\(\int{\frac{\dx{x}}{\sqrt{1-x^2}}}=\inverse{\sin}
+\left(x\right) +C\)</span> to show that</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-44-1-1-1-2">
+\begin{align*}
+{\inverse{\sin} \left(x\right) }\amp{}=x+\sum^{\infty }_{n=1}{\frac{\frac{1}{2}\left(\frac{1}{2}+1\right)\left(\frac{1}{2}+2\right)\dots \left(\frac{1}{2}+\left(n-1\right)\right)}{n!}\frac{{ x}^{2n+1}}{2n+1}}\\
+\amp{}              =x+\sum^{\infty }_{n=1}{\frac{1\cdot 3\cdot 5\cdot \dots \cdot \left(2n-1\right)}{2\cdot 4\cdot 6\cdot \dots \cdot 2n}}\frac{x^{2n+1}}{2n+1}\\
+\amp{}              =x+\frac{1}{2} \frac{x^3}{3}+\frac{1\cdot 3}{2\cdot 4} \frac{x^5}{5}+\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6} \frac{x^7}{7}+\frac{1\cdot 3\cdot 5\cdot 7}{2\cdot 4\cdot 6\cdot 8} \frac{x^9}{9}+\dots 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-44-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.5.0.30.a"><a href="#SUBSECTIONBinomialSeries-44-1" title="Copy heading and permalink for Task 1.2.5.0.30.a" aria-label="Copy heading and permalink for Task 1.2.5.0.30.a">🔗</a></div></article><article class="task exercise-like" id="SUBSECTIONBinomialSeries-44-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="SUBSECTIONBinomialSeries-44-2-1-1">
+<div class="para">Substitute <span class="process-math">\(x=\frac{1}{2}\)</span> into the result from Part a to show that</div>
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-44-2-1-1-2">
+\begin{equation*}
+\pi =6\left(\frac{1}{2}+\frac{1}{2} \frac{{\left(\frac{1}{2}\right)}^3}{3}+\frac{1\cdot 3}{2\cdot 4} \frac{{\left(\frac{1}{2}\right)}^5}{5}+\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6} \frac{{\left(\frac{1}{2}\right)}^7}{7}+\frac{1\cdot 3\cdot 5\cdot 7}{2\cdot 4\cdot 6\cdot 8} \frac{{\left(\frac{1}{2}\right)}^9}{9}+\dots \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-44-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.5.0.30.b"><a href="#SUBSECTIONBinomialSeries-44-2" title="Copy heading and permalink for Task 1.2.5.0.30.b" aria-label="Copy heading and permalink for Task 1.2.5.0.30.b">🔗</a></div></article><article class="task exercise-like" id="SUBSECTIONBinomialSeries-44-3"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="SUBSECTIONBinomialSeries-44-3-1-1">Sum up the first five terms in the above series to find an approximation for <span class="process-math">\(\pi \text{.}\)</span>  How does this compare to the other two approximations we obtained?<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-44-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.5.0.30.c"><a href="#SUBSECTIONBinomialSeries-44-3" title="Copy heading and permalink for Task 1.2.5.0.30.c" aria-label="Copy heading and permalink for Task 1.2.5.0.30.c">🔗</a></div></article><div class="autopermalink" data-description="Problem 1.2.5.0.30"><a href="#SUBSECTIONBinomialSeries-44" title="Copy heading and permalink for Problem 1.2.5.0.30" aria-label="Copy heading and permalink for Problem 1.2.5.0.30">🔗</a></div></article><article class="exercise exercise-like" id="SUBSECTIONBinomialSeries-45"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5.0.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="introduction" id="SUBSECTIONBinomialSeries-45-1"><div class="para" id="SUBSECTIONBinomialSeries-45-1-1">Evaluate the following integrals as series.<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-45-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="SUBSECTIONBinomialSeries-45-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="SUBSECTIONBinomialSeries-45-2-1-1">
+<span class="process-math">\(\displaystyle\int^1_{x=0}{\sqrt[3]{\left(1-x^3\right)}} \dx{x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-45-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.5.0.31.a"><a href="#SUBSECTIONBinomialSeries-45-2" title="Copy heading and permalink for Task 1.2.5.0.31.a" aria-label="Copy heading and permalink for Task 1.2.5.0.31.a">🔗</a></div></article><article class="task exercise-like" id="SUBSECTIONBinomialSeries-45-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="SUBSECTIONBinomialSeries-45-3-1-1">
+<span class="process-math">\(\displaystyle\int^1_{x=0}{{\left(1-x^2\right)}^{\frac{3}{2}}}\dx{x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-45-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.5.0.31.b"><a href="#SUBSECTIONBinomialSeries-45-3" title="Copy heading and permalink for Task 1.2.5.0.31.b" aria-label="Copy heading and permalink for Task 1.2.5.0.31.b">🔗</a></div></article><div class="autopermalink" data-description="Problem 1.2.5.0.31"><a href="#SUBSECTIONBinomialSeries-45" title="Copy heading and permalink for Problem 1.2.5.0.31" aria-label="Copy heading and permalink for Problem 1.2.5.0.31">🔗</a></div></article><div class="para" id="SUBSECTIONBinomialSeries-46">We do want to warn you that we have been very flippant in our use of power series so far.  Everything we have done is correct, but it is much more nuanced than we may have led you to believe.  For example, consider the general binomial series<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-46" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="SUBSECTIONBinomialSeries-47">
+<div class="displaymath process-math" id="SUBSECTIONBinomialSeries-47-1">
+\begin{equation*}
+{\left(1+x\right)}^{\alpha }=1+\sum^{\infty }_{n=1}{(\alpha \left(\alpha -1\right)\left(\alpha -2\right)\dots \frac{\alpha -\left(n-1\right)}{n!}} x^n
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-47" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="SUBSECTIONBinomialSeries-48">The values of <span class="process-math">\(x\)</span> for which this is valid depend on the value of <span class="process-math">\(\alpha \text{.}\)</span>  For example, if <span class="process-math">\(\alpha \)</span> is a nonnegative integer then this works for <span class="process-math">\(x\)</span> as the sum is finite, and it is really the binomial theorem.  For other <span class="process-math">\(\alpha \text{,}\)</span> we have that this holds for <span class="process-math">\(x\in
+[-1,1]\)</span> when <span class="process-math">\(\alpha &gt;0\text{,}\)</span> for <span class="process-math">\(x\in (-1,1]\)</span> when <span class="process-math">\(-1 \lt \alpha \lt 0\text{,}\)</span> and for <span class="process-math">\(x\in (-1,1)\)</span> when <span class="process-math">\(\alpha \le -1\text{.}\)</span>  We will be getting into some of these nuances later in the theory part, but for now let’s just start with the following question: Which functions can be represented by a power series at all?<div class="autopermalink" data-description="Paragraph"><a href="#SUBSECTIONBinomialSeries-48" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.2.5: The Binomial Series"><a href="#SUBSECTIONBinomialSeries" title="Copy heading and permalink for Subsection 1.2.5: The Binomial Series" aria-label="Copy heading and permalink for Subsection 1.2.5: The Binomial Series">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="SECTIONPowerSeries-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="SUBSECTIONPowSerOtherPoints.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
