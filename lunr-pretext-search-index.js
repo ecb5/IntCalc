@@ -13357,182 +13357,11 @@ var ptx_lunr_docs = [
   "body": " Some Questions We ve Raised  As we saw in , it was fruitful to utilize power series. Our cavalier treatment of them rendered them as infinite polynomials which we differentiated and integrated term by term as we would with finite sums. We did point out that these were far more nuanced than you were led to believe and that we would revisit these issues. This is where we will embark on this endeavor, addressing one issue at a time.  In we made note of the fact that the power series representation was valid for all values of whereas the geometric series was only valid for .  To make things even more complicated, as we pointed out in the series is not valid for , but integrating it term by term produces the representation seems to be valid for yielding What is the difference?  The first question we are going to address is that of convergence of a series. And to develop the tools to address this, we will take a step back from power series and look at numerical series.  "
 },
 {
-  "id": "SECTIONNumSerAndSeq",
-  "level": "1",
-  "url": "SECTIONNumSerAndSeq.html",
-  "type": "Section",
-  "number": "25.2",
-  "title": "Numerical Series and Sequences",
-  "body": " Numerical Series and Sequences  When we examined the geometric series, we substituted various values of and obtained a numerical series. In point of fact, you were aware of numerical series before you even took a calculus class. You were probably well aware of the decimal representation from either middle school or high school. We applied the geometric series to see this as well   Even more complicated repeating decimals can be handled this way.   Basically, any eventually repeating decimal can be handled this way. The fact is that a geometric series is rather an oddity in that we have a closed form for the finite sums that approximate this series. Indeed, utilizing this in Problem 22.2.3, we wrote To surmise that and that this sequence converged to as long as . But we didn't even define what a sequence is or talk anything at all about what convergence of a sequence is. We were relying on your understanding of what means from Section 17.2.2.  But not every decimal representation can be handled this way. Consider   You may or may not recognize this as the decimal representation which really means that the sequence should somehow converge to the number . But what about the decimal representation What number would this converge to? The problem is that it may not be recognizable from any other context. We need to start looking at this more carefully and the key is to consider a series as a sequence of finite approximations converging to something. It is time to be more precise about this.   A Sequence of Real Numbers   A sequence of real numbers, is a function from the positive integers to the real numbers. In this case for the positive integer we denote by and typically denote the entire sequence by or for short.    Some notes about the definition:   Notice that we use parentheses instead of set brackets to denote a sequence. This is because in a sequence, terms may be repeated and the order of them does matter. For example, we can have the distinct sequences and the underlying set . You can think of this analogy. You have the set of clothes you are wearing versus the sequence in which you put them on (except we are talking about infinite sequences here).    Sometimes we will have the subscripts in our sequence start with something other than . An often-occurring choice is to start with .    You can write the sequence as or whichever is convenient, but if you choose the latter, you must make sure you supply enough terms to establish the pattern.    Examples:       Notice that the second and third sequences are not the same, as the third sequence is .   Write the first, second, and fourth sequences in the form . There are multiple correct answers for these.   In an infinite series , we really cannot add the infinite number of terms involved, so to make things precise, we will regard an infinite series as a sequence of partial sums This way, anything we prove about sequences will carry over to series as well. The beauty of proving things about sequences is that we will not be burdened with extra summation notation. Of particular importance to us at this stage is the notion of a sequence converging to a real number.  We already introduced the idea of a function converging to a real number as increased without bound back in Section 17.2.3. Our definition of a sequence converging mimics this except that the variable is now the subscript and it takes on integer values.   Convergence to the Real Number   We say that the sequence converges to the real number provided that for every , there is a real number with the property that whenever . In this case, we write or when we are being lazy, we write .      We will use our definition to prove that .     Let and let . If , then and so by definition, .   You probably had a suspicion that this sequence did converge to zero before we did this and, as with limits in Chapter 17, this definition does not compute the limit for you. You must use your intuition to guess what this limit might be. The definition just verifies if your intuition is correct. Given your experience with limits from Chapter 17, it was pretty clear what should be in this example. Also as in Chapter 17, some scrap work might be needed to determine what should be in more complicated examples. Remember, that determining what should be is not part of the proof, you are only required to show that it works. Here is an example that we will use later.    Suppose is a fixed real number with . Use the definition to show that .     We will be starting with and we wish to find a real number so that whenever . As is often the case, we will work backwards to determine what will work. With that in mind, we want    If then we can take the natural logarithm of both sides to obtain.        The case where will need to be handled separately. Show that in this case, any choice of will work.  Continuing with our scrap work we have       Why did the inequality switch?    This suggests that for the case , should work.     Show that for this choice of does work in the case .      Why doesn t this argument work for ?     Of course, there is no reason to expect that a sequence converges to anything at all. Consider, for example,   You probably intuitively expect that this sequence should not converge to anything. Let s use our definition to verify this. Suppose, for contradiction, that this sequence did converge to some number . Then by definition, there should be a real number such that whenever .  With this in mind, suppose is a positive integer with . Then    This obvious contradiction that means that our original assumption that must be incorrect, so our sequence cannot converge to anything.  Again, you may have intuitively guessed this, but this proof verifies your intuition and is beyond refutation.  As you can see, using this definition (though rigorous) is cumbersome. As in Section 17.4, we can use this definition to prove general theorems that you intuitively used before, but are now on solid footing. Here was a summary of those rules from Section 14.1.1  Of course, to prove these, the theorems needed to be more carefully stated in Section 17.4. Here are the corresponding rules for sequences.   The Limit of a Constant Sequence is Constant   Suppose we have the constant sequence then      \\textbf{Theorem. The Limit of a Sum of Two Convergent Sequences is the Sum of their Limits.}   Suppose we have two convergent sequences with and . Then the sequence converges and      The Limit of a Product of Two Convergent Sequences is the Product of their Limits   Suppose we have two convergent sequences with and . Then the sequence converges and      \\textbf{Theorem. The Limit of a Continuous Function Evaluated on a Convergent Sequence.}   Suppose we have a convergent sequence with . Suppose is continuous at Then the sequence converges and      The Squeeze Theorem for Sequences   Suppose we have three sequences with for all larger than some fixed number . If , then the sequence converges and     Given that we showed in Section 17.4.5 that the function is continuous for , we can mimic what we did in Theorem 17.4.5.3 and show that the limit of a quotient is the quotient of the limits (provided the denominator is not zero. More precisely stated, we have   The Limit of a Quotient of Two Convergent Sequences is the Quotient of their Limits   Suppose we have two convergent sequences with and . Suppose further that for all . Then the sequence converges and       To prove Theorem 17.4.5.3, we were able to avoid going back to the definition by utilizing previous results that were proven using the definition. Do the same thing here to produce a proof of the above theorem.    As for proving the other theorems about sequences, the definition for a sequence converging is so similar to the definition of that the arguments are just about the same as what they were in Section 17.4. If you go back to those proofs and replace by and by , you will have these proofs. We'll let you do that.  As before, these theorems allow us to rigorously examine sequences without having to go back to the definition each time. However, remember that the definition was crucial for proving these theorems. Here is an example of how they are used    Back in we had you show that the geometric series converges to for . To do this we utilized the fact that for  and had you show that for  State all of the theorems about sequences that we were utilizing here.    As we mentioned before, the definition of convergence of a sequence does not indicate what the limit would be and only verifies your intuition after you make a guess about what the limit should be. Unfortunately, it is often the case that what the limit should be is not obvious or even has a clean answer. Consider our decimal expansion from before.     It is not at all clear what, if anything, the sequence should even converge to.  The fact that the above sequence converges at all is a property of the real numbers that cannot be proven but must be taken as an axiom. Such an axiom is given the fancy name ``the Completeness Axiom of the Real Number System'' and it takes on many equivalent forms. Any one of these forms can be taken as an axiom and be used to prove the other forms as theorems. Basically, any one of these forms tries to convey the idea that the real number line is a continuum. That is, the real number system has no holes in it. Here is the form of the completeness axiom that will be most convenient for our purposes here.  "
-},
-{
-  "id": "DEFINITIONSeqReal",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#DEFINITIONSeqReal",
-  "type": "Definition",
-  "number": "25.2.0.1",
-  "title": "A Sequence of Real Numbers.",
-  "body": " A Sequence of Real Numbers   A sequence of real numbers, is a function from the positive integers to the real numbers. In this case for the positive integer we denote by and typically denote the entire sequence by or for short.   "
-},
-{
-  "id": "SECTIONNumSerAndSeq-10",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-10",
-  "type": "Problem",
-  "number": "25.2.0.2",
-  "title": "",
-  "body": " Write the first, second, and fourth sequences in the form . There are multiple correct answers for these.  "
-},
-{
-  "id": "SECTIONNumSerAndSeq-13",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-13",
-  "type": "Definition",
-  "number": "25.2.0.3",
-  "title": "Convergence to the Real Number.",
-  "body": " Convergence to the Real Number   We say that the sequence converges to the real number provided that for every , there is a real number with the property that whenever . In this case, we write or when we are being lazy, we write .   "
-},
-{
-  "id": "SECTIONNumSerAndSeq-14",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-14",
-  "type": "Example",
-  "number": "25.2.0.4",
-  "title": "",
-  "body": "  We will use our definition to prove that .   "
-},
-{
-  "id": "SECTIONNumSerAndSeq-15",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-15",
-  "type": "Proof",
-  "number": "25.2.1",
-  "title": "",
-  "body": " Let and let . If , then and so by definition, .  "
-},
-{
-  "id": "SECTIONNumSerAndSeq-17",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-17",
-  "type": "Example",
-  "number": "25.2.0.5",
-  "title": "",
-  "body": "  Suppose is a fixed real number with . Use the definition to show that .   "
-},
-{
-  "id": "SECTIONNumSerAndSeq-18",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-18",
-  "type": "Scrapwork",
-  "number": "25.2.0.1",
-  "title": "",
-  "body": " We will be starting with and we wish to find a real number so that whenever . As is often the case, we will work backwards to determine what will work. With that in mind, we want  "
-},
-{
-  "id": "SECTIONNumSerAndSeq-21",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-21",
-  "type": "Problem",
-  "number": "25.2.0.6",
-  "title": "",
-  "body": "  The case where will need to be handled separately. Show that in this case, any choice of will work.  Continuing with our scrap work we have    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-22",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-22",
-  "type": "Problem",
-  "number": "25.2.0.7",
-  "title": "",
-  "body": "  Why did the inequality switch?   "
-},
-{
-  "id": "SECTIONNumSerAndSeq-24",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-24",
-  "type": "Problem",
-  "number": "25.2.0.8",
-  "title": "",
-  "body": "   Show that for this choice of does work in the case .      Why doesn t this argument work for ?    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-32",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-32",
-  "type": "Theorem",
-  "number": "25.2.0.9",
-  "title": "The Limit of a Constant Sequence is Constant.",
-  "body": " The Limit of a Constant Sequence is Constant   Suppose we have the constant sequence then    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-33",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-33",
-  "type": "Theorem",
-  "number": "25.2.0.10",
-  "title": "\\textbf{Theorem.  The Limit of a Sum of Two Convergent Sequences is the Sum of their Limits.}.",
-  "body": " \\textbf{Theorem. The Limit of a Sum of Two Convergent Sequences is the Sum of their Limits.}   Suppose we have two convergent sequences with and . Then the sequence converges and    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-34",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-34",
-  "type": "Theorem",
-  "number": "25.2.0.11",
-  "title": "The Limit of a Product of Two Convergent Sequences is the Product of their Limits.",
-  "body": " The Limit of a Product of Two Convergent Sequences is the Product of their Limits   Suppose we have two convergent sequences with and . Then the sequence converges and    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-35",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-35",
-  "type": "Theorem",
-  "number": "25.2.0.12",
-  "title": "\\textbf{Theorem.  The Limit of a Continuous Function Evaluated on a Convergent Sequence.}.",
-  "body": " \\textbf{Theorem. The Limit of a Continuous Function Evaluated on a Convergent Sequence.}   Suppose we have a convergent sequence with . Suppose is continuous at Then the sequence converges and    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-36",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-36",
-  "type": "Theorem",
-  "number": "25.2.0.13",
-  "title": "The Squeeze Theorem for Sequences.",
-  "body": " The Squeeze Theorem for Sequences   Suppose we have three sequences with for all larger than some fixed number . If , then the sequence converges and    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-38",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-38",
-  "type": "Theorem",
-  "number": "25.2.0.14",
-  "title": "The Limit of a Quotient of Two Convergent Sequences is the Quotient of their Limits.",
-  "body": " The Limit of a Quotient of Two Convergent Sequences is the Quotient of their Limits   Suppose we have two convergent sequences with and . Suppose further that for all . Then the sequence converges and    "
-},
-{
-  "id": "SECTIONNumSerAndSeq-39",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-39",
-  "type": "Problem",
-  "number": "25.2.0.15",
-  "title": "",
-  "body": "  To prove Theorem 17.4.5.3, we were able to avoid going back to the definition by utilizing previous results that were proven using the definition. Do the same thing here to produce a proof of the above theorem.   "
-},
-{
-  "id": "SECTIONNumSerAndSeq-42",
-  "level": "2",
-  "url": "SECTIONNumSerAndSeq.html#SECTIONNumSerAndSeq-42",
-  "type": "Problem",
-  "number": "25.2.0.16",
-  "title": "",
-  "body": "  Back in we had you show that the geometric series converges to for . To do this we utilized the fact that for  and had you show that for  State all of the theorems about sequences that we were utilizing here.   "
-},
-{
   "id": "SECTIONBddIncImpConv",
   "level": "1",
   "url": "SECTIONBddIncImpConv.html",
   "type": "Section",
-  "number": "25.3",
+  "number": "25.2",
   "title": "Any Increasing Sequence Which is Bounded Above Must Converge",
   "body": " Any Increasing Sequence Which is Bounded Above Must Converge  Suppose is a sequence of real numbers with and suppose there is a real number such that for all . Then must converge to some number . The above may sound a bit dramatic but note that the rational number system does not satisfy this. To see this consider the decimal representation of    The sequence is an increasing sequence of rational numbers which is bounded above by 4, but it does not converge to a rational number as is irrational. In the rational number system, there is hole where should be. In fact, this completeness axiom is what ensures that any decimal representation represents a real number.  \\textbf{Problem. }Use our completeness axiom to show that the decimal representation where must converge to some real number .  It turns out that this axiom will be instrumental in determining for which values of a power series converges.  Before we get to that, we should say a word about an increasing (technically nondecreasing, but we will say increasing) sequence which is unbounded. In this case we will write   But as we pointed out in Section 12.1, a limit cannot ``equal'' infinity as it can equal a number. This abuse of notation really means that the sequence increases without bound. Our axiom thus says that for any increasing sequence , we have where is a real number or is infinity. This is not the case for all sequences as we saw is neither unbounded nor converges to a real number. With this in mind, we will start our discussion of series where the terms . This ensures that our sequence of partial sums is an increasing sequence.  "
 },
@@ -13541,16 +13370,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONNonNegSeries.html",
   "type": "Section",
-  "number": "25.4",
+  "number": "25.3",
   "title": "Series With Nonnegative Terms",
-  "body": " Series With Nonnegative Terms  The reason we are starting with series with nonnegative terms is that determining whether a series converges or not is typically a difficult question; determining what it converges to is typically a really difficult question. For example, we will eventually show that converges. This was known in the early 1700's. It took a genius like Leonard Euler to show that in 1735.  In the case of something like This may not even make much sense without some other context.  Thus, we will focus on the question of whether or not a series converges and only talk about what it converges to when it is clear what that value would be (like with a geometric series). This is where our version of the completeness axiom of the real number system will come into play.  Specifically, given a series with , then by what we said in the previous section, we have where is either a real number or is infinity. In the first case, we write In the second case, we write   In theory, having only these two choices (bounded or unbounded) makes it sound easy, but in practice, it is much more difficult than that and we will develop some techniques for determining this. The first such test is provided by the following which actually applies to all series, not just those with nonnegative terms   If converges, then .  To see this, suppose the series converges to the real number . Then we have But we also have Thus    The real power of this theorem is in its contrapositive: If , then diverges. So, for example, we know right away that diverges since .   Use the above theorem to show that the geometric series diverges for .   Unfortunately, things are not as simple as just determining whether the terms converge to zero or not. Consider, for example, the two series   On the surface, there doesn t appear to be much difference between these two series. After all, if we just sum the first 1000 terms in each, we get the following approximations.   Based upon this it would seem that these two series should converge to values which are close to each other. However, the first series, called the harmonic series, is infinite and the second series, known as a series, converges to a finite number (approximately 100,000.5772). In fact, the harmonic series diverges so slowly that one would need to add approximately terms to get it to surpass 100. This is beyond the computing power of even the fastest computers. In fact, since it diverges to infinity, it will eventually pass that number as well. What is the difference to make these behave so differently? It turns out that a test involving integrals works well here.  Before we get into the statement of the integral test, we should mention something about subscripts, or more specifically the starting value for our subscripts. Since we are only concerned with convergence and not necessarily the value the series converges to, then where we start our summation doesn t affect convergence (only the value of the series). For example, if we have a convergent series Then so the starting subscript does not affect convergence, only the actual value. Since often the question about a particular series comes down to convergence and not the value it converges to, mathematicians sometimes become lazy and write a series as with the understanding that the limits of summation will be included if questions go beyond just convergence. With this in mind, let s state the integral test.   The Integral Test  Suppose is nonnegative decreasing (actually nonincreasing) integrable function defined on . If then   If then    Before we prove that this is true, let s apply it to the harmonic series we mentioned earlier. If we consider the function on , then it satisfies all the hypotheses of the integral test, namely, it is nonnegative, decreasing, and integrable. Furthermore   Thus, the harmonic series .    Suppose is a fixed positive number. Use the integral test to show that if , then diverges and if , then converges.    The series is called a series and given what we have above it converges when and diverges when , though typically, we do not know what it converges to when it does.  Now that we've seen the integral test in action, let's see why it is true. The proof is actually geometric in nature, and you can see where the conditions on come in. With that in mind, let's provide a graph of for   Suppose that . Consider the following Riemann Sum superimposed on this graph.  Geometrically, the series represents the sum of the areas of the superimposed rectangles and is bounded above by which is finite. Thus, we have a series with nonnegative terms whose partial sums are bounded. Thus, it must converge (but not to the value of the integral). Adding on does not affect convergence. For the other part of the theorem, suppose and consider this similar graph.    Use the above graph to show that the Riemann Sum  must be unbounded, so that the series diverges.    As we mentioned, the integral test is tailor made for something such as a series. It is the authors opinion that the Integral Test is somewhat limited in its usefulness given all of the conditions imposed on the function . If we relax the conditions on , then all bets are off. For example, consider the following function graphed below.  The graph itself is composed of triangles which extend forever and are connected by horizontal line segments. The green dotted line is the curve and is only there for reference. The apex of the triangle is the point and the base is of length    Show that which is finite, but   diverges. Which condition in the integral test does fail to satisfy?   On the other hand, consider this function whose graph is also composed of triangles.  Here the apex of the triangle is the point and its base is of length one.    Show that but is finite.    In the integral test, we compared our series to an improper integral, but what about comparing two series? It turns out that this relatively straightforward test is a linchpin for a number of other tests.  \\textbf{Theorem. The Comparison Test.} Suppose that for all .  If converges, then converges.  If diverges then diverges.  To see the first part of this, notice that the sequence of partial sums is an increasing sequence which is bounded above by whatever the series converges to. Thus, it must converge by our completeness axiom of the real number system. The second part of the Comparison Test is the contrapositive of the first part, so it is automatically true.  To see this in action, consider the series , since and the series converges, then must converge by the comparison test. The hard part of utilizing the comparison test is trying to find a series to compare it to. For example, we also know . However, the fact that the larger series diverges tells us nothing about the smaller series. Typically, it takes experience and exposure to a wide variety of series to decide what is a candidate for making a comparison.  One thing that might help is to notice that a finite number of terms does not affect the convergence or divergence of a series, then we only need our inequalities to occur for sufficiently large . More precisely we have a stronger statement of the comparison test.  \\textbf{Theorem. The Comparison Test.} Suppose there is a real number such that that for all .  If converges, then converges.  If diverges then diverges.  To see this in action, consider the series . Notice that if , then Since the slope of the curve exceeds the slope of the curve for , then for , . Thus     Since diverges, then by the comparison test, diverges.  Since this seemed to come out of nowhere, let's try and get into the author's head as to what went on. By experience, the author knew that eventually, would dominate the , so this lead the author to try to ignore . This would lead to something that looked like the harmonic series (or at least a constant multiple times it) which diverges. So, the author expected the series to diverge. To make things more precise, the author knew that eventually we would have . To see where this happened, he set to obtain . Given that he knew the nature of the parabola , he knew that he only needed to choose a number larger than to get . The number was a convenient choice. Notice again that the hard part was not the comparison test per se but finding an appropriate comparison series. This took experience and a feel for what series converged and diverged. Here are some exercises for you to practice to get such experience.  \\textbf{Insert drill on comparison test.}  \\textbf{}  To make this notion of ignoring the terms in the pervious example a bit more precise, notice that     This says that for large, . This is what led the author to consider the harmonic series. This idea leads to a variation of the comparison test which involves limits. The proof of this still uses the comparison test.  \\textbf{Theorem. The Limit Comparison Test. }Suppose and     Then and either both converge or both diverge. That is if one of them converges, the other does and if one of them diverges, the other one does.  To see that this follows from the comparison test we will show that if converges, then converges. To see this, notice that since then for large enough , so that . Since converges, then by the comparison test converges. To show that converging implies converges, notice that .  \\textbf{Problem.} Use the above observation and the fact that to show that if converges, then converges.  Since we showed that converges if and only if converges, then it follows that if one of these diverges then the other does as well.  Notice that the limit comparison test streamlines the process by eliminating the algebraic inequalities that we needed in our example of the comparison test. However, given a series to test for convergence, it still takes experience to determine a series to compare it to.  \\textbf{Insert Exercises using limit comparison test.}  "
+  "body": " Series With Nonnegative Terms  The reason we are starting with series with nonnegative terms is that determining whether a series converges or not is typically a difficult question; determining what it converges to is typically a really difficult question. For example, we will eventually show that converges. This was known in the early 1700 s. It took a genius like Leonard Euler to show that in 1735.  In the case of something like This may not even make much sense without some other context.  Thus, we will focus on the question of whether or not a series converges and only talk about what it converges to when it is clear what that value would be (like with a geometric series). This is where our version of the completeness axiom of the real number system will come into play.  Specifically, given a series with , then by what we said in the previous section, we have where is either a real number or is infinity. In the first case, we write In the second case, we write   In theory, having only these two choices (bounded or unbounded) makes it sound easy, but in practice, it is much more difficult than that and we will develop some techniques for determining this. The first such test is provided by the following which actually applies to all series, not just those with nonnegative terms   If converges, then .  To see this, suppose the series converges to the real number . Then we have But we also have Thus    The real power of this theorem is in its contrapositive: If , then diverges. So, for example, we know right away that diverges since .   Use the above theorem to show that the geometric series diverges for .   Unfortunately, things are not as simple as just determining whether the terms converge to zero or not. Consider, for example, the two series   On the surface, there doesn t appear to be much difference between these two series. After all, if we just sum the first 1000 terms in each, we get the following approximations.   Based upon this it would seem that these two series should converge to values which are close to each other. However, the first series, called the harmonic series, is infinite and the second series, known as a series, converges to a finite number (approximately 100,000.5772). In fact, the harmonic series diverges so slowly that one would need to add approximately terms to get it to surpass 100. This is beyond the computing power of even the fastest computers. In fact, since it diverges to infinity, it will eventually pass that number as well. What is the difference to make these behave so differently? It turns out that a test involving integrals works well here.  Before we get into the statement of the integral test, we should mention something about subscripts, or more specifically the starting value for our subscripts. Since we are only concerned with convergence and not necessarily the value the series converges to, then where we start our summation doesn t affect convergence (only the value of the series). For example, if we have a convergent series Then so the starting subscript does not affect convergence, only the actual value. Since often the question about a particular series comes down to convergence and not the value it converges to, mathematicians sometimes become lazy and write a series as with the understanding that the limits of summation will be included if questions go beyond just convergence. With this in mind, let s state the integral test.   The Integral Test  Suppose is nonnegative decreasing (actually nonincreasing) integrable function defined on . If then   If then    Before we prove that this is true, let s apply it to the harmonic series we mentioned earlier. If we consider the function on , then it satisfies all the hypotheses of the integral test, namely, it is nonnegative, decreasing, and integrable. Furthermore   Thus, the harmonic series .    Suppose is a fixed positive number. Use the integral test to show that if , then diverges and if , then converges.    The series is called a series and given what we have above it converges when and diverges when , though typically, we do not know what it converges to when it does.  Now that we ve seen the integral test in action, let s see why it is true. The proof is actually geometric in nature, and you can see where the conditions on come in. With that in mind, let s provide a graph of for   Suppose that . Consider the following Riemann Sum superimposed on this graph.  Geometrically, the series represents the sum of the areas of the superimposed rectangles and is bounded above by which is finite. Thus, we have a series with nonnegative terms whose partial sums are bounded. Thus, it must converge (but not to the value of the integral). Adding on does not affect convergence. For the other part of the theorem, suppose and consider this similar graph.    Use the above graph to show that the Riemann Sum  must be unbounded, so that the series diverges.    As we mentioned, the integral test is tailor made for something such as a series. It is the authors opinion that the Integral Test is somewhat limited in its usefulness given all of the conditions imposed on the function . If we relax the conditions on , then all bets are off. For example, consider the following function graphed below.  The graph itself is composed of triangles which extend forever and are connected by horizontal line segments. The green dotted line is the curve and is only there for reference. The apex of the triangle is the point and the base is of length    Show that which is finite, but   diverges. Which condition in the integral test does fail to satisfy?   On the other hand, consider this function whose graph is also composed of triangles.  Here the apex of the triangle is the point and its base is of length one.    Show that but is finite.    In the integral test, we compared our series to an improper integral, but what about comparing two series? It turns out that this relatively straightforward test is a linchpin for a number of other tests.   The Comparison Test   Suppose that for all .  If converges, then converges.  If diverges then diverges.    To see the first part of this, notice that the sequence of partial sums is an increasing sequence which is bounded above by whatever the series converges to. Thus, it must converge by our completeness axiom of the real number system. The second part of the Comparison Test is the contrapositive of the first part, so it is automatically true.  To see this in action, consider the series , since and the series converges, then must converge by the comparison test. The hard part of utilizing the comparison test is trying to find a series to compare it to. For example, we also know . However, the fact that the larger series diverges tells us nothing about the smaller series. Typically, it takes experience and exposure to a wide variety of series to decide what is a candidate for making a comparison.  One thing that might help is to notice that a finite number of terms does not affect the convergence or divergence of a series, then we only need our inequalities to occur for sufficiently large . More precisely we have a stronger statement of the comparison test.   The Limit Comparison Test   Suppose there is a real number such that that for all . If converges, then converges.    If diverges then diverges.  To see this in action, consider the series . Notice that if , then Since the slope of the curve exceeds the slope of the curve for , then for , . Thus     Since diverges, then by the comparison test, diverges.  Since this seemed to come out of nowhere, let s try and get into the author s head as to what went on. By experience, the author knew that eventually, would dominate the , so this lead the author to try to ignore . This would lead to something that looked like the harmonic series (or at least a constant multiple times it) which diverges. So, the author expected the series to diverge. To make things more precise, the author knew that eventually we would have . To see where this happened, he set to obtain . Given that he knew the nature of the parabola , he knew that he only needed to choose a number larger than to get . The number was a convenient choice. Notice again that the hard part was not the comparison test per se but finding an appropriate comparison series. This took experience and a feel for what series converged and diverged. Here are some exercises for you to practice to get such experience.  \\textbf{Insert drill on comparison test.}  \\textbf{}  To make this notion of ignoring the terms in the pervious example a bit more precise, notice that     This says that for large, . This is what led the author to consider the harmonic series. This idea leads to a variation of the comparison test which involves limits. The proof of this still uses the comparison test.   The Limit Comparison Test   Suppose and Then and either both converge or both diverge. That is if one of them converges, the other does and if one of them diverges, the other one does.    To see that this follows from the comparison test we will show that if converges, then converges. To see this, notice that since then for large enough , so that . Since converges, then by the comparison test converges. To show that converging implies converges, notice that .  \\textbf{Problem.} Use the above observation and the fact that to show that if converges, then converges.  Since we showed that converges if and only if converges, then it follows that if one of these diverges then the other does as well.  Notice that the limit comparison test streamlines the process by eliminating the algebraic inequalities that we needed in our example of the comparison test. However, given a series to test for convergence, it still takes experience to determine a series to compare it to.  \\textbf{Insert Exercises using limit comparison test.}  "
 },
 {
   "id": "SECTIONNonNegSeries-7",
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-7",
   "type": "Theorem",
-  "number": "25.4.0.1",
+  "number": "25.3.0.1",
   "title": "",
   "body": " If converges, then .  To see this, suppose the series converges to the real number . Then we have But we also have Thus   "
 },
@@ -13559,7 +13388,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-9",
   "type": "Problem",
-  "number": "25.4.0.2",
+  "number": "25.3.0.2",
   "title": "",
   "body": " Use the above theorem to show that the geometric series diverges for .  "
 },
@@ -13568,7 +13397,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-14",
   "type": "Theorem",
-  "number": "25.4.0.3",
+  "number": "25.3.0.3",
   "title": "The Integral Test.",
   "body": " The Integral Test  Suppose is nonnegative decreasing (actually nonincreasing) integrable function defined on . If then   If then   "
 },
@@ -13577,7 +13406,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-17",
   "type": "Problem",
-  "number": "25.4.0.4",
+  "number": "25.3.0.4",
   "title": "",
   "body": "  Suppose is a fixed positive number. Use the integral test to show that if , then diverges and if , then converges.   "
 },
@@ -13586,7 +13415,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-22",
   "type": "Problem",
-  "number": "25.4.0.5",
+  "number": "25.3.0.5",
   "title": "",
   "body": "  Use the above graph to show that the Riemann Sum  must be unbounded, so that the series diverges.   "
 },
@@ -13595,7 +13424,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-25",
   "type": "Problem",
-  "number": "25.4.0.6",
+  "number": "25.3.0.6",
   "title": "",
   "body": " Show that which is finite, but   diverges. Which condition in the integral test does fail to satisfy?  "
 },
@@ -13604,25 +13433,52 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-28",
   "type": "Problem",
-  "number": "25.4.0.7",
+  "number": "25.3.0.7",
   "title": "",
   "body": "  Show that but is finite.   "
+},
+{
+  "id": "SECTIONNonNegSeries-30",
+  "level": "2",
+  "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-30",
+  "type": "Theorem",
+  "number": "25.3.0.8",
+  "title": "The Comparison Test.",
+  "body": " The Comparison Test   Suppose that for all .  If converges, then converges.  If diverges then diverges.   "
+},
+{
+  "id": "SECTIONNonNegSeries-34",
+  "level": "2",
+  "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-34",
+  "type": "Theorem",
+  "number": "25.3.0.9",
+  "title": "The Limit Comparison Test.",
+  "body": " The Limit Comparison Test   Suppose there is a real number such that that for all . If converges, then converges.   "
+},
+{
+  "id": "SECTIONNonNegSeries-44",
+  "level": "2",
+  "url": "SECTIONNonNegSeries.html#SECTIONNonNegSeries-44",
+  "type": "Theorem",
+  "number": "25.3.0.10",
+  "title": "The Limit Comparison Test.",
+  "body": " The Limit Comparison Test   Suppose and Then and either both converge or both diverge. That is if one of them converges, the other does and if one of them diverges, the other one does.   "
 },
 {
   "id": "SECTIONAbsConv",
   "level": "1",
   "url": "SECTIONAbsConv.html",
   "type": "Section",
-  "number": "25.5",
+  "number": "25.4",
   "title": "Absolute Convergence",
-  "body": " Absolute Convergence  As we said, the comparison test will be the key to determining where a power series converges and diverges. Before we get to that, we need to start addressing series whose terms may not be positive. To address this, we will try to utilize what we already know about series with positive terms. This leads to a concept called absolute convergence.      Given a series , the series is called the absolute series of . If the absolute series converges, then we say that the original series converges absolutely.    The first thing to note is that if a series converges absolutely, then it converges.    If converges, then converges.    To see this, notice that so that is a series with nonnegative terms. Also, since and converges, then by the comparison test converges. Thus converges.  The converse of the previous theorem is not necessarily true. Just because a series is convergent, it does not guarantee that the absolute series converges. An example of this is the series We stated in Section 22.2.4 that this series converges to . This is true but requires a bit of work. To show that it converges at all is a bit easier to see with our current tools. With this in mind, let's denote the partial sum by . At this point, it will be illuminating to see this sequence of partial sums plotted on a number line.  The diagram seems to indicate that the sequence of partial sums is an increasing sequence bounded above by 1. To see this more precisely, notice      and    Thus, the sequence ) must converge to some number (Don't even worry about it being ).  Also, we have   Thus, the entire sequence must converge to and the series converges. However, the absolute series is which is the divergent harmonic series. Such a series whose terms alternate between positive and negative is called an alternating series.    Suppose and . Use an argument similar to the one above to show that the alternating series converges. As you saw, the alternating harmonic series does not converge absolutely. Give an example of an alternating series which does converge absolutely.    A series which converges, but not absolutely, is called a conditionally convergent series. The alternating harmonic series above is just one example.  There is a curious (somewhat remarkable) fact about conditionally convergent series. To illustrate this, note that for a finite sum, the commutative and associative properties of the real numbers say that we can rearrange the terms in a finite sum without affecting the value of the sum. For example, we have     One might think that this would hold for a series as well, but consider that   If we multiply this by , we get If we insert 0's, we get   If we add equations and we get          Ignoring the 0's, this tells us that the rearrangement converges to instead of as the original series did, so an infinite sum need not satisfy the commutative property as a finite sum. This is even more spectacular given the following result     Let be any real number. There is a rearrangement of which converges to .    To get an idea why this remarkable result is true, let s look once again at the graph of some of the partial sums of the alternating harmonic series and how they converge to .  As you can see from the diagram above, the partial sums ``jump over'' the value the series converges to while getting closer to it. We will use this idea to get a rearrangement of the alternating harmonic series to converge to . To start notice that if we add only the negative terms we get something that diverges to .     By the comparison test, we see that if we add all of the positive terms, we get a series that diverges to infinity.   This says that if we add enough positive terms, we can make a partial sum in our rearrangement larger than any given number. If we add up enough negative terms, we can make our partial sum less than any given number. With this in mind, we will add just enough positive terms to surpass and then add on just enough negative terms to get our partial sum just below . If we keep doing this making sure we use all of the terms in the original series exactly once, then given the fact that the terms themselves converge to zero, we should have a rearrangement which converges to just as the original series converged to . With this in mind, let be the\\textit{ first} odd number with   Now let be the \\textit{first }even number with   Now we start adding on just enough of the positive terms left to get above again. Let be the \\textit{first }odd integer with   Now let be the \\textit{first} even integer with   If we keep doing this, we will use all of the terms in the original series exactly once and create a rearrangement whose partial sums keep jumping over . We were also careful to make sure that these partial sums did not jump too far over . Since the individual terms converge to zero, these partial sums will converge to .  This argument can also be modified to find a rearrangement of the alternating harmonic series which diverges to and one which diverges to . In fact, this argument can be generalized to \\textit{any }conditionally convergent series. By contrast, if a series converges absolutely, then any rearrangement of it must converge to the same number. This can be seen in the following problems. We start by considering a series whose terms are nonnegative.     Show that if and converges, then any rearrangement converges and     The sequence of partial sums for is an increasing sequence bounded above by .]      Show that in fact .    By part a, we know that converges. Notice that is a rearrangement of this.       Suppose converges absolutely. Show that any rearrangement converges to the same value.    We know that and that these series have nonnegative terms. By the previous problem any rearrangement of these must converge to the same values.]    All curiosities about absolute and conditional convergence aside, let's apply what we have to convergence of a power series.  "
+  "body": " Absolute Convergence  As we said, the comparison test will be the key to determining where a power series converges and diverges. Before we get to that, we need to start addressing series whose terms may not be positive. To address this, we will try to utilize what we already know about series with positive terms. This leads to a concept called absolute convergence.      Given a series , the series is called the absolute series of . If the absolute series converges, then we say that the original series converges absolutely.    The first thing to note is that if a series converges absolutely, then it converges.    If converges, then converges.    To see this, notice that so that is a series with nonnegative terms. Also, since and converges, then by the comparison test converges. Thus converges.  The converse of the previous theorem is not necessarily true. Just because a series is convergent, it does not guarantee that the absolute series converges. An example of this is the series We stated in Section 22.2.4 that this series converges to . This is true but requires a bit of work. To show that it converges at all is a bit easier to see with our current tools. With this in mind, let s denote the partial sum by . At this point, it will be illuminating to see this sequence of partial sums plotted on a number line.  The diagram seems to indicate that the sequence of partial sums is an increasing sequence bounded above by 1. To see this more precisely, notice      and    Thus, the sequence ) must converge to some number (Don t even worry about it being ).  Also, we have   Thus, the entire sequence must converge to and the series converges. However, the absolute series is which is the divergent harmonic series. Such a series whose terms alternate between positive and negative is called an alternating series.    Suppose and . Use an argument similar to the one above to show that the alternating series converges. As you saw, the alternating harmonic series does not converge absolutely. Give an example of an alternating series which does converge absolutely.    A series which converges, but not absolutely, is called a conditionally convergent series. The alternating harmonic series above is just one example.  There is a curious (somewhat remarkable) fact about conditionally convergent series. To illustrate this, note that for a finite sum, the commutative and associative properties of the real numbers say that we can rearrange the terms in a finite sum without affecting the value of the sum. For example, we have     One might think that this would hold for a series as well, but consider that   If we multiply this by , we get If we insert 0 s, we get   If we add equations and we get          Ignoring the 0 s, this tells us that the rearrangement converges to instead of as the original series did, so an infinite sum need not satisfy the commutative property as a finite sum. This is even more spectacular given the following result     Let be any real number. There is a rearrangement of which converges to .    To get an idea why this remarkable result is true, let s look once again at the graph of some of the partial sums of the alternating harmonic series and how they converge to .  As you can see from the diagram above, the partial sums jump over the value the series converges to while getting closer to it. We will use this idea to get a rearrangement of the alternating harmonic series to converge to . To start notice that if we add only the negative terms we get something that diverges to .     By the comparison test, we see that if we add all of the positive terms, we get a series that diverges to infinity.   This says that if we add enough positive terms, we can make a partial sum in our rearrangement larger than any given number. If we add up enough negative terms, we can make our partial sum less than any given number. With this in mind, we will add just enough positive terms to surpass and then add on just enough negative terms to get our partial sum just below . If we keep doing this making sure we use all of the terms in the original series exactly once, then given the fact that the terms themselves converge to zero, we should have a rearrangement which converges to just as the original series converged to . With this in mind, let be the\\textit{ first} odd number with   Now let be the \\textit{first }even number with   Now we start adding on just enough of the positive terms left to get above again. Let be the \\textit{first }odd integer with   Now let be the \\textit{first} even integer with   If we keep doing this, we will use all of the terms in the original series exactly once and create a rearrangement whose partial sums keep jumping over . We were also careful to make sure that these partial sums did not jump too far over . Since the individual terms converge to zero, these partial sums will converge to .  This argument can also be modified to find a rearrangement of the alternating harmonic series which diverges to and one which diverges to . In fact, this argument can be generalized to \\textit{any }conditionally convergent series. By contrast, if a series converges absolutely, then any rearrangement of it must converge to the same number. This can be seen in the following problems. We start by considering a series whose terms are nonnegative.     Show that if and converges, then any rearrangement converges and     The sequence of partial sums for is an increasing sequence bounded above by .]      Show that in fact .    By part a, we know that converges. Notice that is a rearrangement of this.       Suppose converges absolutely. Show that any rearrangement converges to the same value.    We know that and that these series have nonnegative terms. By the previous problem any rearrangement of these must converge to the same values.]    All curiosities about absolute and conditional convergence aside, let s apply what we have to convergence of a power series.  "
 },
 {
   "id": "SECTIONAbsConv-4",
   "level": "2",
   "url": "SECTIONAbsConv.html#SECTIONAbsConv-4",
   "type": "Definition",
-  "number": "25.5.0.1",
+  "number": "25.4.0.1",
   "title": "",
   "body": "  Given a series , the series is called the absolute series of . If the absolute series converges, then we say that the original series converges absolutely.   "
 },
@@ -13631,7 +13487,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAbsConv.html#SECTIONAbsConv-6",
   "type": "Theorem",
-  "number": "25.5.0.2",
+  "number": "25.4.0.2",
   "title": "",
   "body": "  If converges, then converges.   "
 },
@@ -13640,7 +13496,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAbsConv.html#SECTIONAbsConv-13",
   "type": "Problem",
-  "number": "25.5.0.3",
+  "number": "25.4.0.3",
   "title": "",
   "body": "  Suppose and . Use an argument similar to the one above to show that the alternating series converges. As you saw, the alternating harmonic series does not converge absolutely. Give an example of an alternating series which does converge absolutely.   "
 },
@@ -13649,7 +13505,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAbsConv.html#SECTIONAbsConv-21",
   "type": "Theorem",
-  "number": "25.5.0.4",
+  "number": "25.4.0.4",
   "title": "",
   "body": "  Let be any real number. There is a rearrangement of which converges to .   "
 },
@@ -13658,7 +13514,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAbsConv.html#SECTIONAbsConv-32",
   "type": "Problem",
-  "number": "25.5.0.5",
+  "number": "25.4.0.5",
   "title": "",
   "body": "   Show that if and converges, then any rearrangement converges and     The sequence of partial sums for is an increasing sequence bounded above by .]      Show that in fact .    By part a, we know that converges. Notice that is a rearrangement of this.    "
 },
@@ -13667,7 +13523,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONAbsConv.html#SECTIONAbsConv-33",
   "type": "Problem",
-  "number": "25.5.0.6",
+  "number": "25.4.0.6",
   "title": "",
   "body": "  Suppose converges absolutely. Show that any rearrangement converges to the same value.    We know that and that these series have nonnegative terms. By the previous problem any rearrangement of these must converge to the same values.]   "
 },
@@ -13676,16 +13532,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONRadiusConv.html",
   "type": "Section",
-  "number": "25.6",
+  "number": "25.5",
   "title": "Radius of Convergence of a Power Series",
-  "body": " Radius of Convergence of a Power Series  Here is the main theorem concerning the convergence of a power series.    If is a nonzero real number such that converges, the converges absolutely for all with     To see this, first notice that if converges, then . In a situation similar to  there exists an and such that when . Since there are only a finite number of terms for , then this says that the sequence is bounded. So, there is a number with for all . Thus, we have   Since , then and is a convergent geometric series. Thus, by the comparison test converges.    Show that if there is a with diverging, then diverges for all with .    What would happen if there was an with where the series converges?]    In light of the previous results, for a given power series , we have the following possibilities:   There is a positive real number such that the series converges absolutely for and diverges for .   the series only converges for ,  the series converges absolutely for all ,    In the first case, we say that the radius of convergence of the series is . In the second case, we say that the radius of convergence is 0. In the third case, we say that the radius of convergence is . In any case, the convergence of a power series is on an interval whose center is at 0.  A power series expanded about . Has a radius of convergence also. This can be seen by utilizing the substitution . This power series will converge absolutely for and diverge for . In this case, the interval of convergence is centered at .  So, in theory, every power series has a radius of convergence with . However, we have not really indicated how one actually computes this. For that, we will go back to general numerical series and introduce a new test for convergence.   The Ratio Test   Suppose we have a series whose terms are not zero. Suppose If then converges absolutely.  If then diverges.    If then the test is inconclusive: the series could converge or diverge.  Before we see why this is true, let's see how this can be applied to finding the radius of convergence of a power series . Consider . IF exists and is equal to (which must be ), then the power series converges absolutely if   with the understanding that when , then . It also diverges when     This says that the radius of convergence is .  As an example, consider the geometric series , which we already know has a radius of convergence 1. If we applied the ratio test as above, the radius of convergence is     One of the variations we had of the geometric series was . If we were to let , then this would be a geometric series (in ) converging absolutely for . Manipulating this we get that the series converges for   So, the radius of convergence is and the center of the interval of convergence is also . We can obtain both of these bits of information by applying the ratio test to the original series     So, by the ratio test, this converges absolutely when and diverges when   We can rewrite this as and so we obtain the same radius of convergence and center of convergence as before.  The beauty of this is that it can be applied to series which are not related to a geometric series. Consider the series . Consider     This says that this series converges absolutely for all and the radius of convergence is . Of course, we defined the limit of this series to be the function and intimated that it is equal to (or at least mentioned why it is for rational values of ). We never actually proved the series converged for all until now.    Use the ratio test to show that   converge absolutely for all . Note that these are the Taylor series expansions of and , respectively. This problem does not say that these series converge to those particular functions. We will come back to this in Section XX along with issues about .      We introduced the binomial series for the function back in Section 22.2.6 and claimed that its radius of convergence is 1 (not in so many words) when is not a nonnegative integer. Use the ratio test to back up this claim. Why doesn't the ratio test work when is a nonnegative integer?      Use the ratio test to show that the radius of convergence of is .      Use the ratio test to find the radius of\\textbf{ }convergence of the following power series.                  Others?       Now that we've seen the ratio test in use, let's see why it is true. Suppose we have a series with nonzero terms (at least for large values of ). Suppose further that   Choose any number with . Since then there is some positive integer with for all . Thus, we have   Since , then is a convergent geometric series. So by the comparison test converges and the original series converges absolutely.    Use a similar argument to show that if , then diverges. -->      Show that the ratio test is inconclusive when , by considering the series and . -->    There is another test for convergence which can be applied to find the radius of convergence of a power series.   The Root Test   Consider the series and suppose If then converges absolutely  If then diverges.  If then the test is inconclusive: the series could converge or diverge.    An advantage of this test over the ratio test is that we need not assume the terms are nonzero at any point. There is another advantage of the root test over the ratio test which deals with the fact that may not exist whereas does exist. We won't prove this here, but it is a theorem that if the limit of the ratios exists, then limit of the roots exists and these limits are equal. To see an example where the root test gives a definitive answer and the ratio test will not, consider the series -->   If we look at the sequence of ratios of the absolute values, we get   and the limit of these ratios does not exist. However, if we look at the sequence of the roots, we get     Show that so the radius of convergence of the series is .    Furthermore, even if the limit of the roots does not exist, there is still a formula for the radius of convergence of a power series in terms of the sequence of roots. We won't get into that here.  This being said, when the limit of the ratios exists, it is often easier to work with. For example, we know by the ratio test that converges absolutely for all . If we try to apply the root test to this, we would consider   Determining this limit is not an easy task given the . The way this is typically done is using something called Stirling's approximation (which we will sate but not prove). Basically, this says that for large , can be approximated by . Utilizing this, we have To get this to be zero, we need to know that exists. To see that, let's make the substitution and consider   Fortunately, we examined this limit in Example 12.4.2.9 and determined it to be 1. Thus for all and so by the root test, the series converges absolutely for all . As you can see, this took a lot more work than the ratio test took. The root test does have an advantage when dealing with coefficients with exponents in them.    Use the root test to show that converges absolutely for all .      Use the root test to determine the radius of convergence of     To see why the root test is true, we will use an argument similar to the one we used for the ratio test. If , choose a number with . For large enough   Since , then is a convergent geometric series. Thus, by the comparison test converges.    Suppose . Show that for large enough, , so must diverge.      Show that the root test is inconclusive when , by considering the series and . -->    So for a power series with radius of convergence , we know that the series converges absolutely for and diverges for . Notice we haven't said anything about . This is because depending on the particular series, anything can happen at the endpoints of the interval of convergence. Each series needs to be considered independently using the tests we mentioned or a myriad of other tests for series convergence that we didn't mention. We will not touch upon this any more than with the next problem which illustrates that anything can happen at the endpoints.    Each of the series has a radius of convergence 1.     Show that diverges for both .      Show that diverges for and converges for .      Show that converges for and diverges for .      Show that converges for both .     "
+  "body": " Radius of Convergence of a Power Series  Here is the main theorem concerning the convergence of a power series.    If is a nonzero real number such that converges, the converges absolutely for all with     To see this, first notice that if converges, then . In a situation similar to  there exists an and such that when . Since there are only a finite number of terms for , then this says that the sequence is bounded. So, there is a number with for all . Thus, we have   Since , then and is a convergent geometric series. Thus, by the comparison test converges.    Show that if there is a with diverging, then diverges for all with .    What would happen if there was an with where the series converges?]    In light of the previous results, for a given power series , we have the following possibilities:   There is a positive real number such that the series converges absolutely for and diverges for .   the series only converges for ,  the series converges absolutely for all ,    In the first case, we say that the radius of convergence of the series is . In the second case, we say that the radius of convergence is 0. In the third case, we say that the radius of convergence is . In any case, the convergence of a power series is on an interval whose center is at 0.  A power series expanded about . Has a radius of convergence also. This can be seen by utilizing the substitution . This power series will converge absolutely for and diverge for . In this case, the interval of convergence is centered at .  So, in theory, every power series has a radius of convergence with . However, we have not really indicated how one actually computes this. For that, we will go back to general numerical series and introduce a new test for convergence.   The Ratio Test   Suppose we have a series whose terms are not zero. Suppose If then converges absolutely.  If then diverges.    If then the test is inconclusive: the series could converge or diverge.  Before we see why this is true, let s see how this can be applied to finding the radius of convergence of a power series . Consider . IF exists and is equal to (which must be ), then the power series converges absolutely if   with the understanding that when , then . It also diverges when     This says that the radius of convergence is .  As an example, consider the geometric series , which we already know has a radius of convergence 1. If we applied the ratio test as above, the radius of convergence is     One of the variations we had of the geometric series was . If we were to let , then this would be a geometric series (in ) converging absolutely for . Manipulating this we get that the series converges for   So, the radius of convergence is and the center of the interval of convergence is also . We can obtain both of these bits of information by applying the ratio test to the original series     So, by the ratio test, this converges absolutely when and diverges when   We can rewrite this as and so we obtain the same radius of convergence and center of convergence as before.  The beauty of this is that it can be applied to series which are not related to a geometric series. Consider the series . Consider     This says that this series converges absolutely for all and the radius of convergence is . Of course, we defined the limit of this series to be the function and intimated that it is equal to (or at least mentioned why it is for rational values of ). We never actually proved the series converged for all until now.    Use the ratio test to show that   converge absolutely for all . Note that these are the Taylor series expansions of and , respectively. This problem does not say that these series converge to those particular functions. We will come back to this in Section XX along with issues about .      We introduced the binomial series for the function back in Section 22.2.6 and claimed that its radius of convergence is 1 (not in so many words) when is not a nonnegative integer. Use the ratio test to back up this claim. Why doesn t the ratio test work when is a nonnegative integer?      Use the ratio test to show that the radius of convergence of is .      Use the ratio test to find the radius of\\textbf{ }convergence of the following power series.                  Others?       Now that we ve seen the ratio test in use, let s see why it is true. Suppose we have a series with nonzero terms (at least for large values of ). Suppose further that   Choose any number with . Since then there is some positive integer with for all . Thus, we have   Since , then is a convergent geometric series. So by the comparison test converges and the original series converges absolutely.    Use a similar argument to show that if , then diverges. -->      Show that the ratio test is inconclusive when , by considering the series and . -->    There is another test for convergence which can be applied to find the radius of convergence of a power series.   The Root Test   Consider the series and suppose If then converges absolutely  If then diverges.  If then the test is inconclusive: the series could converge or diverge.    An advantage of this test over the ratio test is that we need not assume the terms are nonzero at any point. There is another advantage of the root test over the ratio test which deals with the fact that may not exist whereas does exist. We won t prove this here, but it is a theorem that if the limit of the ratios exists, then limit of the roots exists and these limits are equal. To see an example where the root test gives a definitive answer and the ratio test will not, consider the series -->   If we look at the sequence of ratios of the absolute values, we get   and the limit of these ratios does not exist. However, if we look at the sequence of the roots, we get     Show that so the radius of convergence of the series is .    Furthermore, even if the limit of the roots does not exist, there is still a formula for the radius of convergence of a power series in terms of the sequence of roots. We won t get into that here.  This being said, when the limit of the ratios exists, it is often easier to work with. For example, we know by the ratio test that converges absolutely for all . If we try to apply the root test to this, we would consider   Determining this limit is not an easy task given the . The way this is typically done is using something called Stirling s approximation (which we will sate but not prove). Basically, this says that for large , can be approximated by . Utilizing this, we have To get this to be zero, we need to know that exists. To see that, let s make the substitution and consider   Fortunately, we examined this limit in Example 12.4.2.9 and determined it to be 1. Thus for all and so by the root test, the series converges absolutely for all . As you can see, this took a lot more work than the ratio test took. The root test does have an advantage when dealing with coefficients with exponents in them.    Use the root test to show that converges absolutely for all .      Use the root test to determine the radius of convergence of     To see why the root test is true, we will use an argument similar to the one we used for the ratio test. If , choose a number with . For large enough   Since , then is a convergent geometric series. Thus, by the comparison test converges.    Suppose . Show that for large enough, , so must diverge.      Show that the root test is inconclusive when , by considering the series and . -->    So for a power series with radius of convergence , we know that the series converges absolutely for and diverges for . Notice we haven t said anything about . This is because depending on the particular series, anything can happen at the endpoints of the interval of convergence. Each series needs to be considered independently using the tests we mentioned or a myriad of other tests for series convergence that we didn t mention. We will not touch upon this any more than with the next problem which illustrates that anything can happen at the endpoints.    Each of the series has a radius of convergence 1.     Show that diverges for both .      Show that diverges for and converges for .      Show that converges for and diverges for .      Show that converges for both .     "
 },
 {
   "id": "SECTIONRadiusConv-3",
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-3",
   "type": "Theorem",
-  "number": "25.6.0.1",
+  "number": "25.5.0.1",
   "title": "",
   "body": "  If is a nonzero real number such that converges, the converges absolutely for all with    "
 },
@@ -13694,7 +13550,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-7",
   "type": "Problem",
-  "number": "25.6.0.2",
+  "number": "25.5.0.2",
   "title": "",
   "body": "  Show that if there is a with diverging, then diverges for all with .    What would happen if there was an with where the series converges?]   "
 },
@@ -13703,7 +13559,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-12",
   "type": "Theorem",
-  "number": "25.6.0.3",
+  "number": "25.5.0.3",
   "title": "The Ratio Test.",
   "body": " The Ratio Test   Suppose we have a series whose terms are not zero. Suppose If then converges absolutely.  If then diverges.   "
 },
@@ -13712,7 +13568,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-28",
   "type": "Problem",
-  "number": "25.6.0.4",
+  "number": "25.5.0.4",
   "title": "",
   "body": "  Use the ratio test to show that   converge absolutely for all . Note that these are the Taylor series expansions of and , respectively. This problem does not say that these series converge to those particular functions. We will come back to this in Section XX along with issues about .   "
 },
@@ -13721,16 +13577,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-29",
   "type": "Problem",
-  "number": "25.6.0.5",
+  "number": "25.5.0.5",
   "title": "",
-  "body": "  We introduced the binomial series for the function back in Section 22.2.6 and claimed that its radius of convergence is 1 (not in so many words) when is not a nonnegative integer. Use the ratio test to back up this claim. Why doesn't the ratio test work when is a nonnegative integer?   "
+  "body": "  We introduced the binomial series for the function back in Section 22.2.6 and claimed that its radius of convergence is 1 (not in so many words) when is not a nonnegative integer. Use the ratio test to back up this claim. Why doesn t the ratio test work when is a nonnegative integer?   "
 },
 {
   "id": "SECTIONRadiusConv-30",
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-30",
   "type": "Problem",
-  "number": "25.6.0.6",
+  "number": "25.5.0.6",
   "title": "",
   "body": "  Use the ratio test to show that the radius of convergence of is .   "
 },
@@ -13739,7 +13595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-31",
   "type": "Drill",
-  "number": "25.6.0.7",
+  "number": "25.5.0.7",
   "title": "",
   "body": "  Use the ratio test to find the radius of\\textbf{ }convergence of the following power series.                  Others?      "
 },
@@ -13748,7 +13604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-35",
   "type": "Problem",
-  "number": "25.6.0.8",
+  "number": "25.5.0.8",
   "title": "",
   "body": "  Use a similar argument to show that if , then diverges. -->   "
 },
@@ -13757,7 +13613,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-36",
   "type": "Problem",
-  "number": "25.6.0.9",
+  "number": "25.5.0.9",
   "title": "",
   "body": "  Show that the ratio test is inconclusive when , by considering the series and . -->   "
 },
@@ -13766,7 +13622,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-38",
   "type": "Theorem",
-  "number": "25.6.0.10",
+  "number": "25.5.0.10",
   "title": "The Root Test.",
   "body": " The Root Test   Consider the series and suppose If then converges absolutely  If then diverges.  If then the test is inconclusive: the series could converge or diverge.   "
 },
@@ -13775,7 +13631,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-42",
   "type": "Problem",
-  "number": "25.6.0.11",
+  "number": "25.5.0.11",
   "title": "",
   "body": "  Show that so the radius of convergence of the series is .   "
 },
@@ -13784,7 +13640,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-47",
   "type": "Problem",
-  "number": "25.6.0.12",
+  "number": "25.5.0.12",
   "title": "",
   "body": "  Use the root test to show that converges absolutely for all .   "
 },
@@ -13793,7 +13649,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-48",
   "type": "Problem",
-  "number": "25.6.0.13",
+  "number": "25.5.0.13",
   "title": "",
   "body": "  Use the root test to determine the radius of convergence of    "
 },
@@ -13802,7 +13658,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-51",
   "type": "Problem",
-  "number": "25.6.0.14",
+  "number": "25.5.0.14",
   "title": "",
   "body": "  Suppose . Show that for large enough, , so must diverge.   "
 },
@@ -13811,7 +13667,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-52",
   "type": "Problem",
-  "number": "25.6.0.15",
+  "number": "25.5.0.15",
   "title": "",
   "body": "  Show that the root test is inconclusive when , by considering the series and . -->   "
 },
@@ -13820,7 +13676,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONRadiusConv.html#SECTIONRadiusConv-54",
   "type": "Problem",
-  "number": "25.6.0.16",
+  "number": "25.5.0.16",
   "title": "",
   "body": "  Each of the series has a radius of convergence 1.     Show that diverges for both .      Show that diverges for and converges for .      Show that converges for and diverges for .      Show that converges for both .    "
 },
@@ -13829,25 +13685,25 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONContDiffIntPwrSer.html",
   "type": "Section",
-  "number": "25.7",
+  "number": "25.6",
   "title": "Continuity, Differentiation, and Integration of Power Series",
-  "body": " Continuity, Differentiation, and Integration of Power Series  The second issue with power series we want to handle is that of differentiating and integrating a power series term by term. Since the derivative and integral of a finite sum is the sum of derivatives and integrals, it is natural to think that power series behave the same way. This was the viewpoint of mathematicians in the 18 century who utilized power series to exploit calculus. It was recognized that power series had nuances, but differentiating and integrating them term by term was a standard technique and always produced correct results.  Even if you are too pragmatic to concern yourself with delving into the theory of power series, the questions concerning series are pervasive in practical problems. Consider the problem of modeling how heat flows through an object (or related to this, modeling magnetic flow through an object in an MRI). In studying the heat flow problem, Jean Baptiste Joseph Fourier (1768-1839) needed a way to represent a function as an infinite series of sines and cosines rather than as a power series. For example, consider the series     On the interval , this converges to the function Here is a graph of that function.  Notice that we have an (infinite) sum of continuous cosine functions converging to a discontinuous function. This doesn't happen with finite sums and hadn't (as yet) happened to power series. Furthermore, we differentiated power series term-by-term as though they were polynomials. If we differentiate this Fourier series term-by-term, we get   Here is a graph of the sum of the first forty terms of that series (truncated to fit on the page).    Differentiate          What does this tell you about trying to differentiate a Fourier series term by term?  It turns out that some Fourier series can be differentiated or integrated term-by-term and obtain correct results, but others as the one above cannot. This poses the following dilemma. We differentiated and integrated powers series term-by-term as though they were finite sums. Is there some power series lurking for which this doesn't work? Were we too cavalier in our approach in Chapter 22?  It turns out that the answer is luckily no. Power series are very well behaved. Given the radius of convergence for whatever function the power series converges to will be continuous and can be differentiated and integrated term-by-term and obtain the correct results. It took mathematicians ??? years to determine what it was that made power series behave so well as opposed to Fourier series. Delving deeply into this goes beyond the scope of a normal calculus class, but we can provide an introduction. If you are interested in reading further, you can look at the free text book \\textit{A Contextual Introduction to Real Analysis: How We Got From There to Here }(URL).  We will deal with continuity first. It will simplify things a bit to initially consider a sequence of functions converging to a function on an interval . To say that the sequence of functions converges means that for each the numerical sequence converges to . That is for each and for each there is a real number such that if then . This is called pointwise convergence.  By contrast, consider the following definition.    We say the sequence converges \\textit{uniformly} to on if for each , there is a real number such that if then , for all .    The difference is so subtle that it is no wonder that it took mathematicians so long to see it. In pointwise convergence, an and are given and an must be determined that works for that particular and . In uniform convergence, the is given and an must be found which works uniformly for all It turns out that this subtlety makes all the difference in the world.  With regard to continuity, we have the following theorem    Suppose is a sequence of continuous functions which converges uniformly to on Then is continuous on . -->    Before we demonstrate why this is true, notice that in our example of a Fourier series   converges pointwise to      on but not uniformly as the limit function is not continuous.  To see that the theorem is true, we choose and we need to show is continuous at . The idea is to replace with one of the functions which we know to be continuous at . With this in mind, we can write    If we let , then we can make if we can make each of the individual absolute value quantities less than . Uniform convergence allows us to do this. With this in mind, choose such that if then for all . With this in mind, choose any fixed . This will take care of the first and third summands above. To take care of the middle summand, we will use the continuity of at . With this in mind, there is a such that whenever . Thus if , then   Thus, by definition is continuous at .  Applying this to power series, the following result follows immediately.    If converges uniformly to on some interval , then is continuous on . -->      Explain why this corollary follows directly from the theorem.    Uniform convergence is also the key to integrating a power series. With this in mind, we have the following theorem.    Suppose is a sequence of continuous functions converging uniformly to on . Then     In order to prove this, we need an extension of the triangle inequality for integrals   Triangle Inequality for Integrals   Suppose is continuous on . Then     To see why this lemma is true, notice that So that This can be rewritten as   To see how this helps in proving the theorem, let . Since converges uniformly to on , there is an such that if , then . Thus when ,     So by definition   It turns out that this result is not guaranteed if the convergence is only pointwise.    Consider the sequence of functions on whose graphs are given by Show that converges to 0 pointwise on , but     To apply the theorem to a power series, we have the following corollary.    Suppose we have a power series converging uniformly to on some interval containing and .  Then     To see this, suppose . Since the power series converges uniformly on , then        Take care of the case where . You can handle this by noticing that .    Differentiation is a bit strange in that it depends on the uniform convergence of the differentiated series instead of the original. In general, we have the following theorem.    Suppose that for each , is differentiable, is continuous, converges pointwise to and converges uniformly to on an interval . Then is differentiable on and .      Prove this theorem. -->    Let be an arbitrary fixed point in and let . By the Fundamental Theorem of Calculus, we have Take the limit of both sides and then differentiate with respect to .]    Applying this to power series, we have the following.    If converges pointwise to on an interval and converges uniformly on , then .      Show that this corollary follows directly from the theorem.    So, you see that uniform convergence is crucial for ensuring that power series with radius of convergence is ``well behaved'' on : that is, whatever it converges to is continuous and it can be differentiated and integrated term by term. Unfortunately, it is not necessarily true that the power series converges uniformly on . However, we have the following result that will serve our purposes.    Suppose we have a power series with radius of convergence . Let . Then the sequence of partial sums converges uniformly to on . -->    In order to prove this, we need the following lemma which is an extension of the triangle inequality (Theorem 17.4.1) for infinite series.    Suppose converges, then -->       Prove this lemma.    [Hint. We know that . Take the limit as .]    Armed with this, we can prove the theorem. Since then converges absolutely. Let Let . Then there exists such that if , then If , then   Since this works uniformly for all then the convergence is uniform.  The final piece of the puzzle in showing that we can differentiate and integrate a power series term by term for is to show that all three series: the original, the differentiated, and the integrated have the same radius of convergence. With this in mind, let denote the radii of convergence of the original, differentiated, and integrated series. If , then we know that the original power series converges uniformly on an interval containing and . Thus, the integrated series must converge (to the integral of the original series). This says that . Using the same logic with the differentiated series and the original series (which is the integrated series of the differentiated series), we would have . To finish up this piece of the puzzle, we will show that . This will say that . Since the original series is the differentiated series of the integrated series, this says that so all three series will have the same radius of convergence. It turns out that we can go back to the geometric series again, or in this case its differentiated series.    Use the ratio test to show that has a radius of convergence 1.      Suppose , then converges.    To see this, choose any with . Notice that since converges, then and so the sequence of terms is bounded, say by . Thus, for all , . Thus we have   Since , then by the previous problem, converges, so by the comparison test converges.  The above theorem says that for any with , the differentiated series converges. This says that the radius of convergence of the differentiated series must be at least as large as . Thus we have .  "
+  "body": " Continuity, Differentiation, and Integration of Power Series  The second issue with power series we want to handle is that of differentiating and integrating a power series term by term. Since the derivative and integral of a finite sum is the sum of derivatives and integrals, it is natural to think that power series behave the same way. This was the viewpoint of mathematicians in the 18 century who utilized power series to exploit calculus. It was recognized that power series had nuances, but differentiating and integrating them term by term was a standard technique and always produced correct results.  Even if you are too pragmatic to concern yourself with delving into the theory of power series, the questions concerning series are pervasive in practical problems. Consider the problem of modeling how heat flows through an object (or related to this, modeling magnetic flow through an object in an MRI). In studying the heat flow problem, Jean Baptiste Joseph Fourier (1768-1839) needed a way to represent a function as an infinite series of sines and cosines rather than as a power series. For example, consider the series     On the interval , this converges to the function Here is a graph of that function.  Notice that we have an (infinite) sum of continuous cosine functions converging to a discontinuous function. This doesn t happen with finite sums and hadn t (as yet) happened to power series. Furthermore, we differentiated power series term-by-term as though they were polynomials. If we differentiate this Fourier series term-by-term, we get   Here is a graph of the sum of the first forty terms of that series (truncated to fit on the page).    Differentiate     What does this tell you about trying to differentiate a Fourier series term by term?  It turns out that some Fourier series can be differentiated or integrated term-by-term and obtain correct results, but others as the one above cannot. This poses the following dilemma. We differentiated and integrated powers series term-by-term as though they were finite sums. Is there some power series lurking for which this doesn t work? Were we too cavalier in our approach in Chapter 22?  It turns out that the answer is luckily no. Power series are very well behaved. Given the radius of convergence for whatever function the power series converges to will be continuous and can be differentiated and integrated term-by-term and obtain the correct results. It took mathematicians ??? years to determine what it was that made power series behave so well as opposed to Fourier series. Delving deeply into this goes beyond the scope of a normal calculus class, but we can provide an introduction. If you are interested in reading further, you can look at the free text book \\textit{A Contextual Introduction to Real Analysis: How We Got From There to Here }(URL).  We will deal with continuity first. It will simplify things a bit to initially consider a sequence of functions converging to a function on an interval . To say that the sequence of functions converges means that for each the numerical sequence converges to . That is for each and for each there is a real number such that if then . This is called pointwise convergence.  By contrast, consider the following definition.    We say the sequence converges \\textit{uniformly} to on if for each , there is a real number such that if then , for all .    The difference is so subtle that it is no wonder that it took mathematicians so long to see it. In pointwise convergence, an and are given and an must be determined that works for that particular and . In uniform convergence, the is given and an must be found which works uniformly for all It turns out that this subtlety makes all the difference in the world.  With regard to continuity, we have the following theorem    Suppose is a sequence of continuous functions which converges uniformly to on Then is continuous on . -->    Before we demonstrate why this is true, notice that in our example of a Fourier series   converges pointwise to on but not uniformly as the limit function is not continuous.  To see that the theorem is true, we choose and we need to show is continuous at . The idea is to replace with one of the functions which we know to be continuous at . With this in mind, we can write    If we let , then we can make if we can make each of the individual absolute value quantities less than . Uniform convergence allows us to do this. With this in mind, choose such that if then for all . With this in mind, choose any fixed . This will take care of the first and third summands above. To take care of the middle summand, we will use the continuity of at . With this in mind, there is a such that whenever . Thus if , then   Thus, by definition is continuous at .  Applying this to power series, the following result follows immediately.    If converges uniformly to on some interval , then is continuous on . -->      Explain why this corollary follows directly from the theorem.    Uniform convergence is also the key to integrating a power series. With this in mind, we have the following theorem.    Suppose is a sequence of continuous functions converging uniformly to on . Then     In order to prove this, we need an extension of the triangle inequality for integrals   Triangle Inequality for Integrals   Suppose is continuous on . Then     To see why this lemma is true, notice that So that This can be rewritten as   To see how this helps in proving the theorem, let . Since converges uniformly to on , there is an such that if , then . Thus when ,     So by definition   It turns out that this result is not guaranteed if the convergence is only pointwise.    Consider the sequence of functions on whose graphs are given by Show that converges to 0 pointwise on , but     To apply the theorem to a power series, we have the following corollary.    Suppose we have a power series converging uniformly to on some interval containing and .  Then     To see this, suppose . Since the power series converges uniformly on , then        Take care of the case where . You can handle this by noticing that .    Differentiation is a bit strange in that it depends on the uniform convergence of the differentiated series instead of the original. In general, we have the following theorem.    Suppose that for each , is differentiable, is continuous, converges pointwise to and converges uniformly to on an interval . Then is differentiable on and .      Prove this theorem. -->    Let be an arbitrary fixed point in and let . By the Fundamental Theorem of Calculus, we have Take the limit of both sides and then differentiate with respect to .]    Applying this to power series, we have the following.    If converges pointwise to on an interval and converges uniformly on , then .      Show that this corollary follows directly from the theorem.    So, you see that uniform convergence is crucial for ensuring that power series with radius of convergence is ``well behaved ' on : that is, whatever it converges to is continuous and it can be differentiated and integrated term by term. Unfortunately, it is not necessarily true that the power series converges uniformly on . However, we have the following result that will serve our purposes.    Suppose we have a power series with radius of convergence . Let . Then the sequence of partial sums converges uniformly to on . -->    In order to prove this, we need the following lemma which is an extension of the triangle inequality (Theorem 17.4.1) for infinite series.    Suppose converges, then -->       Prove this lemma.    [Hint. We know that . Take the limit as .]    Armed with this, we can prove the theorem. Since then converges absolutely. Let Let . Then there exists such that if , then If , then   Since this works uniformly for all then the convergence is uniform.  The final piece of the puzzle in showing that we can differentiate and integrate a power series term by term for is to show that all three series: the original, the differentiated, and the integrated have the same radius of convergence. With this in mind, let denote the radii of convergence of the original, differentiated, and integrated series. If , then we know that the original power series converges uniformly on an interval containing and . Thus, the integrated series must converge (to the integral of the original series). This says that . Using the same logic with the differentiated series and the original series (which is the integrated series of the differentiated series), we would have . To finish up this piece of the puzzle, we will show that . This will say that . Since the original series is the differentiated series of the integrated series, this says that so all three series will have the same radius of convergence. It turns out that we can go back to the geometric series again, or in this case its differentiated series.    Use the ratio test to show that has a radius of convergence 1.      Suppose , then converges.    To see this, choose any with . Notice that since converges, then and so the sequence of terms is bounded, say by . Thus, for all , . Thus we have   Since , then by the previous problem, converges, so by the comparison test converges.  The above theorem says that for any with , the differentiated series converges. This says that the radius of convergence of the differentiated series must be at least as large as . Thus we have .  "
 },
 {
   "id": "SECTIONContDiffIntPwrSer-8",
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-8",
   "type": "Problem",
-  "number": "25.7.0.1",
+  "number": "25.6.0.1",
   "title": "",
-  "body": "  Differentiate         "
+  "body": "  Differentiate    "
 },
 {
   "id": "SECTIONContDiffIntPwrSer-14",
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-14",
   "type": "Definition",
-  "number": "25.7.0.2",
+  "number": "25.6.0.2",
   "title": "",
   "body": "  We say the sequence converges \\textit{uniformly} to on if for each , there is a real number such that if then , for all .   "
 },
@@ -13856,7 +13712,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-17",
   "type": "Theorem",
-  "number": "25.7.0.3",
+  "number": "25.6.0.3",
   "title": "",
   "body": "  Suppose is a sequence of continuous functions which converges uniformly to on Then is continuous on . -->   "
 },
@@ -13865,7 +13721,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-23",
   "type": "Corollary",
-  "number": "25.7.0.4",
+  "number": "25.6.0.4",
   "title": "",
   "body": "  If converges uniformly to on some interval , then is continuous on . -->   "
 },
@@ -13874,7 +13730,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-24",
   "type": "Problem",
-  "number": "25.7.0.5",
+  "number": "25.6.0.5",
   "title": "",
   "body": "  Explain why this corollary follows directly from the theorem.   "
 },
@@ -13883,7 +13739,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-26",
   "type": "Theorem",
-  "number": "25.7.0.6",
+  "number": "25.6.0.6",
   "title": "",
   "body": "  Suppose is a sequence of continuous functions converging uniformly to on . Then    "
 },
@@ -13892,7 +13748,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-28",
   "type": "Lemma",
-  "number": "25.7.0.7",
+  "number": "25.6.0.7",
   "title": "Triangle Inequality for Integrals.",
   "body": " Triangle Inequality for Integrals   Suppose is continuous on . Then    "
 },
@@ -13901,7 +13757,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-34",
   "type": "Problem",
-  "number": "25.7.0.8",
+  "number": "25.6.0.8",
   "title": "",
   "body": "  Consider the sequence of functions on whose graphs are given by Show that converges to 0 pointwise on , but    "
 },
@@ -13910,7 +13766,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-36",
   "type": "Corollary",
-  "number": "25.7.0.9",
+  "number": "25.6.0.9",
   "title": "",
   "body": "  Suppose we have a power series converging uniformly to on some interval containing and .  Then    "
 },
@@ -13919,7 +13775,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-39",
   "type": "Problem",
-  "number": "25.7.0.10",
+  "number": "25.6.0.10",
   "title": "",
   "body": "  Take care of the case where . You can handle this by noticing that .   "
 },
@@ -13928,7 +13784,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-41",
   "type": "Theorem",
-  "number": "25.7.0.11",
+  "number": "25.6.0.11",
   "title": "",
   "body": "  Suppose that for each , is differentiable, is continuous, converges pointwise to and converges uniformly to on an interval . Then is differentiable on and .   "
 },
@@ -13937,7 +13793,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-42",
   "type": "Problem",
-  "number": "25.7.0.12",
+  "number": "25.6.0.12",
   "title": "",
   "body": "  Prove this theorem. -->    Let be an arbitrary fixed point in and let . By the Fundamental Theorem of Calculus, we have Take the limit of both sides and then differentiate with respect to .]   "
 },
@@ -13946,7 +13802,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-44",
   "type": "Corollary",
-  "number": "25.7.0.13",
+  "number": "25.6.0.13",
   "title": "",
   "body": "  If converges pointwise to on an interval and converges uniformly on , then .   "
 },
@@ -13955,7 +13811,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-45",
   "type": "Problem",
-  "number": "25.7.0.14",
+  "number": "25.6.0.14",
   "title": "",
   "body": "  Show that this corollary follows directly from the theorem.   "
 },
@@ -13964,7 +13820,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-47",
   "type": "Theorem",
-  "number": "25.7.0.15",
+  "number": "25.6.0.15",
   "title": "",
   "body": "  Suppose we have a power series with radius of convergence . Let . Then the sequence of partial sums converges uniformly to on . -->   "
 },
@@ -13973,7 +13829,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-49",
   "type": "Lemma",
-  "number": "25.7.0.16",
+  "number": "25.6.0.16",
   "title": "",
   "body": "  Suppose converges, then -->    "
 },
@@ -13982,7 +13838,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-50",
   "type": "Problem",
-  "number": "25.7.0.17",
+  "number": "25.6.0.17",
   "title": "",
   "body": "  Prove this lemma.    [Hint. We know that . Take the limit as .]   "
 },
@@ -13991,7 +13847,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-54",
   "type": "Problem",
-  "number": "25.7.0.18",
+  "number": "25.6.0.18",
   "title": "",
   "body": "  Use the ratio test to show that has a radius of convergence 1.   "
 },
@@ -14000,7 +13856,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONContDiffIntPwrSer.html#SECTIONContDiffIntPwrSer-55",
   "type": "Theorem",
-  "number": "25.7.0.19",
+  "number": "25.6.0.19",
   "title": "",
   "body": "  Suppose , then converges.   "
 },
@@ -14009,16 +13865,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "SECTIONLooseEndsSeries.html",
   "type": "Section",
-  "number": "25.8",
+  "number": "25.7",
   "title": "Tying Up Some Loose Ends",
-  "body": " Tying Up Some Loose Ends  So, we have that any power series has a radius of convergence where the series converges absolutely for and diverges for . However, as we said before, determining what a series converges to is typically a much harder question than just determining that it converges. For example, the Taylor series representation of a function , will have a radius of convergence, but how do we know that it will actually converge to the function ? We know that the geometric series converges to for , and by virtue of what we did in the last section we know that any series obtained by manipulating this via algebra, differentiation, or integration will converge to the appropriate function. This takes care of representations such as      which we now know are all valid for .  But what about other series? For example, we know that the Taylor Series representations   for converge for all , but how do we know that they converge to these functions? Let s go back to how we knew so much about the geometric series. What we know stems from the fact that we had the closed form which converged to for . Written another way, we have   so that for a given  converged to exactly when converged to 0. Can we do this for a general Taylor series? The answer is yes, and the key comes from an unlikely candidate -- integration by parts. Specifically, suppose are all continuous on an interval containing and . By the Fundamental Theorem of Calculus, we have   which we will write as   You will see why we wrote this is such a strange way, when we perform integration by parts on the integral. We will make sure not to hide any patterns that will emerge. Let so that   Let's apply integration by parts on this integral. so that        Perform integration by parts on the above integral to obtain -->     If we continue this, we obtain the following   Integral Form of the Remainder for Taylor Series   Suppose is continuous on an interval containing and (which will imply that all the previous derivatives are continuous). Then     To explain the name of the theorem, we mentioned in Section 7.4 that is called the degree Taylor polynomial (of expanded about ) and provides an approximation to the function . The quantity is called the integral form of the remainder, and measures how far off our approximation is. It is clear that the Taylor series will converge to exactly when     To see this in action, we have the following theorem.    If there exists a number such that for all nonnegative integers and for all on an interval containing and , then and so     Before we show why this is true, recall that we showed that the series converges absolutely for all . This says that for any . We will make use of this fact.  To prove our theorem, we will break up our argument into two cases: and . The case where is trivial. For the case where , we have      Since , then by the squeeze theorem,     Show the theorem is true in the case where .    Notice that . You need this for the triangle inequality and the absolute value.]      Use the above theorem to show that for all .      Use the above theorem to show for all .    You will probably want to split this into two cases: and . Use the fact that is increasing to find in each case.]    One might think that this theorem solves everything and we are done with the issue of convergence of a Taylor series. While it is true that the integral form of the remainder is true for any function which has all of its derivatives, there may not be a single bound for all of them. Consider the Taylor series for which is the binomial series   If we look at the derivatives of , we have         You can see why we didn't ``simplify'' things as it would have hidden the pattern. Anyway, we have the following problem.    Show that -->   and use this to explain why our theorem cannot be applied to show that for .    Fortunately, there are other forms for the remainder of a Taylor series that will work better here. An important alternative was given by Joseph-Louis Lagrange in his 1797 work \\textit{Th\\'{e}orie des fonctions analytiques (Theory of Analytic Functions). }Lagrange's idea was to make power series the foundation for calculus instead of infinitesimals. To do so, he needed to represent functions as power series (namely as their Taylor series). In this work, he had ``{\\dots} this new theorem, remarkable for its simplicity and generality {\\dots} ``.  Before we prove this new theorem, we need to mention a couple of properties of continuous functions that we took as being intuitively obvious before (which in fairness, the entire mathematical community did as well in the 18 century). We will state them here formally for reference.   Extreme Value Theorem   If is continuous on a closed bounded interval , then it has a global minimum and maximum. That is, there are with for all .     Intermediate Value Theorem   If is continuous on and is any value between and , then there is at least one with .    The EVT was stated and utilized without proof in Section 9.5.5 in our discussion of optimization. The IVT was never stated, but we utilized it in Chapter 10 when graphing. Specifically, if we knew that on an interval , then either for all or for all . We were assuming that was continuous (though this holds true for derivatives even if they are not continuous). If changed signs on then somewhere in between it would need to be 0.  As we said, like the mathematical community in the 18 century, we took these to be intuitively obvious and looking a graphs of continuous curves, you could convince yourself that they must be true. It wasn't until mathematicians began looking into the foundations of calculus that it became evident that more rigorous proofs of these were needed. Even then, the proofs of these required more than just a rigorous definition of continuity. As with many such existence proofs (which establish existence without actually finding the values) these rely on the completeness of the real number system. This is the same axiom that we mentioned about bounded, increasing sequences converging. We mentioned then that there are equivalent formulations of this completeness axiom and there are two versions which are particularly useful in these situations. We will not provide these axioms or proofs of the EVT or IVT, but if you are interested you can find them in \\textit{A Contextual Introduction to Real Analysis: How We Got From There to Here }https:\/\/ecb5.github.io\/SecondEd2\/ASORA-2.html or better yet, become a math major and take any standard course in real analysis. They will undoubtedly be proven there.  Armed with the EVT and IVT, here is the new theorem Lagrange referred to.   Lagrange's Form for the Remainder for Taylor Series   Suppose is a function such that is continuous on an interval containing and . Then   where is some number (which depends on ) between and .    You might recognize a special case of this when .   where is between and .    Where have you seen this special case before?    To derive Lagrange's form of the remainder, we will first look at the case where .  We will utilize the integral form of the remainder. With this in mind, we have   To obtain Lagrange's form of the remainder, we need to show that for some . With this in mind, since is continuous on then by the extreme value theorem, it has a minimum and a maximum . This says that for all ,         Since is a value between the minimum and maximum of on , then by the intermediate value theorem there is a with   Multiplying by gives us what we need.  If we apply the same idea for the case where , we need to keep track of inequalities as we multiply and divide by negative numbers. We also need to be cognizant of the fact that we are still integrating from to . Instead of doing this, there is a way around it.    Use an argument similar to the one above to show that if , then there is a with     Multiplying through by will get us   Now that we have Lagrange's form of the remainder, let's use it to show that   for   We already know that this series is the Taylor series for so we can apply Lagrange's form of the remainder. We also know that so that Lagrange's form of the remainder looks like.     where is some number with . Thus, we have and so that . This says that . Utilizing this, we have           Since , then by the squeeze theorem   and the binomial series converges to for .  Unfortunately, this argument will not work for as in this case and so and . For this case, we will employ even another form of the remainder for Taylor series.  But before we do that, let's utilize the Lagrange form of the remainer to settle a matter we haven't addressed yet. We have noted that the alternating harmonic series converges. We have also stated a few times that it appears to converge to though we've never proven this. Our theorem about integrating the Taylor series to obtain doesn't apply here as it only can be used for . Nonetheless, is true and we can use the Lagrange form of the remainder to show this.     Show that the Lagrange form of the remainder for the Maclaurin series the is given by --> where is some number between and .      Show that when , the remainder converges to 0 and so is valid.     Back to the issue of the binomial series for . To show that this series converges to for , we will utilize a third form for the remainder for a Taylor series given by Augustin Cauchy in his 1823 work \\textit{R\\'{e}sum\\'{e} des le\\c{c}ons donn\\'{e}es \\`{a} l'ecole royale Polytechnique sur le calcul infinitesimal.}   Cauchy's Form of the Remainder for Taylor Series   Suppose is a function which is continuous on an interval containing and . Then  where is some number between and .    The proof of this is very similar to the derivation of Lagrange's form of the remainder, but instead of starting with the minimum and maximum of on the interval, we look at the minimum and maximum of on that interval. With this in mind, we have    Prove Cauchy's form of the remainder using the suggestion in the previous paragraph. Don't forget there are two cases to consider.    Armed with Cauchy's form of the remainder, we can show that   for With this in mind, we still have   so the Cauchy form of the remainder is     where is some number with .  Keep in mind that we want to show that this converges to 0. As before we will try to use the squeeze theorem. Thus, we have The problem at this point is that is not fixed as it depends on . However, we do have , so that . Thus and . Thus, we have     At this point, is fixed so isn't a problem. However, still has in it so it is not fixed. We need the following result to close the deal on this.    Show that if , then the function is increasing on and use this to conclude that for , --> Use this fact to finish off the proof that the binomial series converges to for .    We've covered a lot of ground in our exploration of the nuances underlying infinite series, but there is much more that we won't cover. One thing we will end with is to address a claim that we made before. As we know, . This says that the harmonic series increases without bound. The question is how slowly it increases. Earlier, we made the claim that one would need to add approximately terms to get it to surpass 100. To show you just how much this is beyond our computing capability, as of this writing, the fastest computers can do about quadrillion calculations per second. Not even worrying about the division involved, suppose such a computer tried to add up enough terms to surpass 100. How long would it take?     Assuming the number of terms to surpass 100 is approximately and assuming a computer could add terms per second, how many seconds would it take for this computer to add this many terms? -->      Assuming the earth is approximately seconds old (about billion years), how many earth lifetimes would it take this computer to reach 100?     Given the answer in the previous problem, it is clear that such a brute force calculation is beyond our capability. However, we know that eventually the harmonic series will surpass 100. Eventually it will even surpass . So how does one actually solve given that it is beyond modern computing capability? Surprisingly, this answer was addressed by Leonard Euler in 1734. Euler showed that exists. This limit by and is referred to as Euler's constant. Euler described this number as ``worthy of serious consideration'' and computed its value to six decimal places. Later he computed it to 16 decimal places. For our purposes we will use the approximation . To be sure, it is not obvious that this limit even exists and to this day it is not even known if it is irrational. The irrationality of it is one of the major unsolved problems of mathematics today. Before we see why this limit should exist, let's apply it to our problem of determining approximately how many terms to add to get   Since \\textit{} we have that for large value of , So instead of trying to solve we will solve So that   One could use an online calculator to determine that this is approximately , but in the spirit of Euler, let's see how we can do this without such advanced computing power. Here is where logarithms shine (and is probably how the calculator was programmed to do it). If we let , then we have   Euler would have had access to a table of common logarithms (base 10), and would have known . Using this we get      Perform the same calculation to approximate . This would be the approximate number of terms it would take for the harmonic series to surpass 1000.    Now let's show that actually exists. To do this, we will show that is an increasing sequence which is bounded above by 1. By our version of the completeness axiom of the real number system, it must converge. To see this, consider the following diagram.     Show that the sum of the triangular areas lying above the curve is given by --> and use this to show that is an increasing sequence.      Show geometrically that all of the triangular pieces will fit without overlapping inside the first rectangle and use this to show that -->       By our completeness axiom, this sequence must converge to some number. Show that converges to the same number (which Euler denoted by      Euler's constant can also be used to give another proof that . To see this, notice that for .             Utilize Euler's constant to show that       Show that   Together, these say that      As you can see, the theory behind infinite series is much more complex and nuanced than what we started with in our practice section. It also contains some wonderous results of which we only scratched the surface. Again, if you are intrigued by this, you might want to become a math major and explore these in more depth in higher level courses.  "
+  "body": " Tying Up Some Loose Ends  So, we have that any power series has a radius of convergence where the series converges absolutely for and diverges for . However, as we said before, determining what a series converges to is typically a much harder question than just determining that it converges. For example, the Taylor series representation of a function , will have a radius of convergence, but how do we know that it will actually converge to the function ? We know that the geometric series converges to for , and by virtue of what we did in the last section we know that any series obtained by manipulating this via algebra, differentiation, or integration will converge to the appropriate function. This takes care of representations such as      which we now know are all valid for .  But what about other series? For example, we know that the Taylor Series representations   for converge for all , but how do we know that they converge to these functions? Let s go back to how we knew so much about the geometric series. What we know stems from the fact that we had the closed form which converged to for . Written another way, we have   so that for a given  converged to exactly when converged to 0. Can we do this for a general Taylor series? The answer is yes, and the key comes from an unlikely candidate -- integration by parts. Specifically, suppose are all continuous on an interval containing and . By the Fundamental Theorem of Calculus, we have   which we will write as   You will see why we wrote this is such a strange way, when we perform integration by parts on the integral. We will make sure not to hide any patterns that will emerge. Let so that   Let's apply integration by parts on this integral. so that        Perform integration by parts on the above integral to obtain -->     If we continue this, we obtain the following   Integral Form of the Remainder for Taylor Series   Suppose is continuous on an interval containing and (which will imply that all the previous derivatives are continuous). Then     To explain the name of the theorem, we mentioned in Section 7.4 that is called the degree Taylor polynomial (of expanded about ) and provides an approximation to the function . The quantity is called the integral form of the remainder, and measures how far off our approximation is. It is clear that the Taylor series will converge to exactly when     To see this in action, we have the following theorem.    If there exists a number such that for all nonnegative integers and for all on an interval containing and , then and so     Before we show why this is true, recall that we showed that the series converges absolutely for all . This says that for any . We will make use of this fact.  To prove our theorem, we will break up our argument into two cases: and . The case where is trivial. For the case where , we have      Since , then by the squeeze theorem,     Show the theorem is true in the case where .    Notice that . You need this for the triangle inequality and the absolute value.]      Use the above theorem to show that for all .      Use the above theorem to show for all .    You will probably want to split this into two cases: and . Use the fact that is increasing to find in each case.]    One might think that this theorem solves everything and we are done with the issue of convergence of a Taylor series. While it is true that the integral form of the remainder is true for any function which has all of its derivatives, there may not be a single bound for all of them. Consider the Taylor series for which is the binomial series   If we look at the derivatives of , we have         You can see why we didn't ``simplify'' things as it would have hidden the pattern. Anyway, we have the following problem.    Show that -->   and use this to explain why our theorem cannot be applied to show that for .    Fortunately, there are other forms for the remainder of a Taylor series that will work better here. An important alternative was given by Joseph-Louis Lagrange in his 1797 work \\textit{Th\\'{e}orie des fonctions analytiques (Theory of Analytic Functions). }Lagrange's idea was to make power series the foundation for calculus instead of infinitesimals. To do so, he needed to represent functions as power series (namely as their Taylor series). In this work, he had ``{\\dots} this new theorem, remarkable for its simplicity and generality {\\dots} ``.  Before we prove this new theorem, we need to mention a couple of properties of continuous functions that we took as being intuitively obvious before (which in fairness, the entire mathematical community did as well in the 18 century). We will state them here formally for reference.   Extreme Value Theorem   If is continuous on a closed bounded interval , then it has a global minimum and maximum. That is, there are with for all .     Intermediate Value Theorem   If is continuous on and is any value between and , then there is at least one with .    The EVT was stated and utilized without proof in Section 9.5.5 in our discussion of optimization. The IVT was never stated, but we utilized it in Chapter 10 when graphing. Specifically, if we knew that on an interval , then either for all or for all . We were assuming that was continuous (though this holds true for derivatives even if they are not continuous). If changed signs on then somewhere in between it would need to be 0.  As we said, like the mathematical community in the 18 century, we took these to be intuitively obvious and looking a graphs of continuous curves, you could convince yourself that they must be true. It wasn't until mathematicians began looking into the foundations of calculus that it became evident that more rigorous proofs of these were needed. Even then, the proofs of these required more than just a rigorous definition of continuity. As with many such existence proofs (which establish existence without actually finding the values) these rely on the completeness of the real number system. This is the same axiom that we mentioned about bounded, increasing sequences converging. We mentioned then that there are equivalent formulations of this completeness axiom and there are two versions which are particularly useful in these situations. We will not provide these axioms or proofs of the EVT or IVT, but if you are interested you can find them in \\textit{A Contextual Introduction to Real Analysis: How We Got From There to Here }https:\/\/ecb5.github.io\/SecondEd2\/ASORA-2.html or better yet, become a math major and take any standard course in real analysis. They will undoubtedly be proven there.  Armed with the EVT and IVT, here is the new theorem Lagrange referred to.   Lagrange's Form for the Remainder for Taylor Series   Suppose is a function such that is continuous on an interval containing and . Then   where is some number (which depends on ) between and .    You might recognize a special case of this when .   where is between and .    Where have you seen this special case before?    To derive Lagrange's form of the remainder, we will first look at the case where .  We will utilize the integral form of the remainder. With this in mind, we have   To obtain Lagrange's form of the remainder, we need to show that for some . With this in mind, since is continuous on then by the extreme value theorem, it has a minimum and a maximum . This says that for all ,         Since is a value between the minimum and maximum of on , then by the intermediate value theorem there is a with   Multiplying by gives us what we need.  If we apply the same idea for the case where , we need to keep track of inequalities as we multiply and divide by negative numbers. We also need to be cognizant of the fact that we are still integrating from to . Instead of doing this, there is a way around it.    Use an argument similar to the one above to show that if , then there is a with     Multiplying through by will get us   Now that we have Lagrange's form of the remainder, let's use it to show that   for   We already know that this series is the Taylor series for so we can apply Lagrange's form of the remainder. We also know that so that Lagrange's form of the remainder looks like.     where is some number with . Thus, we have and so that . This says that . Utilizing this, we have           Since , then by the squeeze theorem   and the binomial series converges to for .  Unfortunately, this argument will not work for as in this case and so and . For this case, we will employ even another form of the remainder for Taylor series.  But before we do that, let's utilize the Lagrange form of the remainer to settle a matter we haven't addressed yet. We have noted that the alternating harmonic series converges. We have also stated a few times that it appears to converge to though we've never proven this. Our theorem about integrating the Taylor series to obtain doesn't apply here as it only can be used for . Nonetheless, is true and we can use the Lagrange form of the remainder to show this.     Show that the Lagrange form of the remainder for the Maclaurin series the is given by where is some number between and .      Show that when , the remainder converges to 0 and so is valid.     Back to the issue of the binomial series for . To show that this series converges to for , we will utilize a third form for the remainder for a Taylor series given by Augustin Cauchy in his 1823 work \\textit{R\\'{e}sum\\'{e} des le\\c{c}ons donn\\'{e}es \\`{a} l'ecole royale Polytechnique sur le calcul infinitesimal.}   Cauchy's Form of the Remainder for Taylor Series   Suppose is a function which is continuous on an interval containing and . Then where is some number between and .    The proof of this is very similar to the derivation of Lagrange's form of the remainder, but instead of starting with the minimum and maximum of on the interval, we look at the minimum and maximum of on that interval. With this in mind, we have    Prove Cauchy's form of the remainder using the suggestion in the previous paragraph. Don't forget there are two cases to consider.    Armed with Cauchy's form of the remainder, we can show that   for With this in mind, we still have   so the Cauchy form of the remainder is where is some number with .  Keep in mind that we want to show that this converges to 0. As before we will try to use the squeeze theorem. Thus, we have The problem at this point is that is not fixed as it depends on . However, we do have , so that . Thus and . Thus, we have     At this point, is fixed so isn't a problem. However, still has in it so it is not fixed. We need the following result to close the deal on this.    Show that if , then the function is increasing on and use this to conclude that for , --> Use this fact to finish off the proof that the binomial series converges to for .    We've covered a lot of ground in our exploration of the nuances underlying infinite series, but there is much more that we won't cover. One thing we will end with is to address a claim that we made before. As we know, . This says that the harmonic series increases without bound. The question is how slowly it increases. Earlier, we made the claim that one would need to add approximately terms to get it to surpass 100. To show you just how much this is beyond our computing capability, as of this writing, the fastest computers can do about quadrillion calculations per second. Not even worrying about the division involved, suppose such a computer tried to add up enough terms to surpass 100. How long would it take?     Assuming the number of terms to surpass 100 is approximately and assuming a computer could add terms per second, how many seconds would it take for this computer to add this many terms? -->      Assuming the earth is approximately seconds old (about billion years), how many earth lifetimes would it take this computer to reach 100?     Given the answer in the previous problem, it is clear that such a brute force calculation is beyond our capability. However, we know that eventually the harmonic series will surpass 100. Eventually it will even surpass . So how does one actually solve given that it is beyond modern computing capability? Surprisingly, this answer was addressed by Leonard Euler in 1734. Euler showed that exists. This limit by and is referred to as Euler s constant. Euler described this number as ``worthy of serious consideration'' and computed its value to six decimal places. Later he computed it to 16 decimal places. For our purposes we will use the approximation . To be sure, it is not obvious that this limit even exists and to this day it is not even known if it is irrational. The irrationality of it is one of the major unsolved problems of mathematics today. Before we see why this limit should exist, let's apply it to our problem of determining approximately how many terms to add to get   Since \\textit{} we have that for large value of , So instead of trying to solve we will solve So that   One could use an online calculator to determine that this is approximately , but in the spirit of Euler, let's see how we can do this without such advanced computing power. Here is where logarithms shine (and is probably how the calculator was programmed to do it). If we let , then we have   Euler would have had access to a table of common logarithms (base 10), and would have known . Using this we get      Perform the same calculation to approximate . This would be the approximate number of terms it would take for the harmonic series to surpass .    Now let's show that actually exists. To do this, we will show that is an increasing sequence which is bounded above by 1. By our version of the completeness axiom of the real number system, it must converge. To see this, consider the following diagram.     Show that the sum of the triangular areas lying above the curve is given by --> and use this to show that is an increasing sequence.      Show geometrically that all of the triangular pieces will fit without overlapping inside the first rectangle and use this to show that -->       By our completeness axiom, this sequence must converge to some number. Show that converges to the same number (which Euler denoted by      Euler s constant can also be used to give another proof that To see this, notice that for .      Utilize Euler s constant to show that       Show that   Together, these say that      As you can see, the theory behind infinite series is much more complex and nuanced than what we started with in our practice section. It also contains some wonderous results of which we only scratched the surface. Again, if you are intrigued by this, you might want to become a math major and explore these in more depth in higher level courses.  "
 },
 {
   "id": "SECTIONLooseEndsSeries-10",
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-10",
   "type": "Problem",
-  "number": "25.8.0.1",
+  "number": "25.7.0.1",
   "title": "",
   "body": "  Perform integration by parts on the above integral to obtain -->    "
 },
@@ -14027,7 +13883,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-12",
   "type": "Theorem",
-  "number": "25.8.0.2",
+  "number": "25.7.0.2",
   "title": "Integral Form of the Remainder for Taylor Series.",
   "body": " Integral Form of the Remainder for Taylor Series   Suppose is continuous on an interval containing and (which will imply that all the previous derivatives are continuous). Then    "
 },
@@ -14036,7 +13892,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-16",
   "type": "Theorem",
-  "number": "25.8.0.3",
+  "number": "25.7.0.3",
   "title": "",
   "body": "  If there exists a number such that for all nonnegative integers and for all on an interval containing and , then and so    "
 },
@@ -14045,7 +13901,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-21",
   "type": "Problem",
-  "number": "25.8.0.4",
+  "number": "25.7.0.4",
   "title": "",
   "body": "  Show the theorem is true in the case where .    Notice that . You need this for the triangle inequality and the absolute value.]   "
 },
@@ -14054,7 +13910,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-22",
   "type": "Problem",
-  "number": "25.8.0.5",
+  "number": "25.7.0.5",
   "title": "",
   "body": "  Use the above theorem to show that for all .   "
 },
@@ -14063,7 +13919,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-23",
   "type": "Problem",
-  "number": "25.8.0.6",
+  "number": "25.7.0.6",
   "title": "",
   "body": "  Use the above theorem to show for all .    You will probably want to split this into two cases: and . Use the fact that is increasing to find in each case.]   "
 },
@@ -14072,7 +13928,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-28",
   "type": "Problem",
-  "number": "25.8.0.7",
+  "number": "25.7.0.7",
   "title": "",
   "body": "  Show that -->   and use this to explain why our theorem cannot be applied to show that for .   "
 },
@@ -14081,7 +13937,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-31",
   "type": "Theorem",
-  "number": "25.8.0.8",
+  "number": "25.7.0.8",
   "title": "Extreme Value Theorem.",
   "body": " Extreme Value Theorem   If is continuous on a closed bounded interval , then it has a global minimum and maximum. That is, there are with for all .   "
 },
@@ -14090,7 +13946,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-32",
   "type": "Theorem",
-  "number": "25.8.0.9",
+  "number": "25.7.0.9",
   "title": "Intermediate Value Theorem.",
   "body": " Intermediate Value Theorem   If is continuous on and is any value between and , then there is at least one with .   "
 },
@@ -14099,7 +13955,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-36",
   "type": "Theorem",
-  "number": "25.8.0.10",
+  "number": "25.7.0.10",
   "title": "Lagrange’s Form for the Remainder for Taylor Series.",
   "body": " Lagrange's Form for the Remainder for Taylor Series   Suppose is a function such that is continuous on an interval containing and . Then   where is some number (which depends on ) between and .   "
 },
@@ -14108,7 +13964,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-39",
   "type": "Problem",
-  "number": "25.8.0.11",
+  "number": "25.7.0.11",
   "title": "",
   "body": "  Where have you seen this special case before?   "
 },
@@ -14117,7 +13973,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-47",
   "type": "Problem",
-  "number": "25.8.0.12",
+  "number": "25.7.0.12",
   "title": "",
   "body": "  Use an argument similar to the one above to show that if , then there is a with    "
 },
@@ -14126,72 +13982,72 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-58",
   "type": "Problem",
-  "number": "25.8.0.13",
+  "number": "25.7.0.13",
   "title": "",
-  "body": "   Show that the Lagrange form of the remainder for the Maclaurin series the is given by --> where is some number between and .      Show that when , the remainder converges to 0 and so is valid.    "
+  "body": "   Show that the Lagrange form of the remainder for the Maclaurin series the is given by where is some number between and .      Show that when , the remainder converges to 0 and so is valid.    "
 },
 {
   "id": "SECTIONLooseEndsSeries-60",
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-60",
   "type": "Theorem",
-  "number": "25.8.0.14",
+  "number": "25.7.0.14",
   "title": "Cauchy’s Form of the Remainder for Taylor Series.",
-  "body": " Cauchy's Form of the Remainder for Taylor Series   Suppose is a function which is continuous on an interval containing and . Then  where is some number between and .   "
+  "body": " Cauchy's Form of the Remainder for Taylor Series   Suppose is a function which is continuous on an interval containing and . Then where is some number between and .   "
 },
 {
   "id": "SECTIONLooseEndsSeries-62",
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-62",
   "type": "Problem",
-  "number": "25.8.0.15",
+  "number": "25.7.0.15",
   "title": "",
   "body": "  Prove Cauchy's form of the remainder using the suggestion in the previous paragraph. Don't forget there are two cases to consider.   "
+},
+{
+  "id": "SECTIONLooseEndsSeries-69",
+  "level": "2",
+  "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-69",
+  "type": "Problem",
+  "number": "25.7.0.16",
+  "title": "",
+  "body": "  Show that if , then the function is increasing on and use this to conclude that for , --> Use this fact to finish off the proof that the binomial series converges to for .   "
 },
 {
   "id": "SECTIONLooseEndsSeries-71",
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-71",
   "type": "Problem",
-  "number": "25.8.0.16",
-  "title": "",
-  "body": "  Show that if , then the function is increasing on and use this to conclude that for , --> Use this fact to finish off the proof that the binomial series converges to for .   "
-},
-{
-  "id": "SECTIONLooseEndsSeries-73",
-  "level": "2",
-  "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-73",
-  "type": "Problem",
-  "number": "25.8.0.17",
+  "number": "25.7.0.17",
   "title": "",
   "body": "   Assuming the number of terms to surpass 100 is approximately and assuming a computer could add terms per second, how many seconds would it take for this computer to add this many terms? -->      Assuming the earth is approximately seconds old (about billion years), how many earth lifetimes would it take this computer to reach 100?    "
+},
+{
+  "id": "SECTIONLooseEndsSeries-76",
+  "level": "2",
+  "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-76",
+  "type": "Problem",
+  "number": "25.7.0.18",
+  "title": "",
+  "body": "  Perform the same calculation to approximate . This would be the approximate number of terms it would take for the harmonic series to surpass .   "
 },
 {
   "id": "SECTIONLooseEndsSeries-78",
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-78",
   "type": "Problem",
-  "number": "25.8.0.18",
+  "number": "25.7.0.19",
   "title": "",
-  "body": "  Perform the same calculation to approximate . This would be the approximate number of terms it would take for the harmonic series to surpass 1000.   "
+  "body": "   Show that the sum of the triangular areas lying above the curve is given by --> and use this to show that is an increasing sequence.      Show geometrically that all of the triangular pieces will fit without overlapping inside the first rectangle and use this to show that -->       By our completeness axiom, this sequence must converge to some number. Show that converges to the same number (which Euler denoted by     "
 },
 {
   "id": "SECTIONLooseEndsSeries-80",
   "level": "2",
   "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-80",
   "type": "Problem",
-  "number": "25.8.0.19",
+  "number": "25.7.0.20",
   "title": "",
-  "body": "   Show that the sum of the triangular areas lying above the curve is given by --> and use this to show that is an increasing sequence.      Show geometrically that all of the triangular pieces will fit without overlapping inside the first rectangle and use this to show that -->       By our completeness axiom, this sequence must converge to some number. Show that converges to the same number (which Euler denoted by     "
-},
-{
-  "id": "SECTIONLooseEndsSeries-83",
-  "level": "2",
-  "url": "SECTIONLooseEndsSeries.html#SECTIONLooseEndsSeries-83",
-  "type": "Problem",
-  "number": "25.8.0.20",
-  "title": "",
-  "body": "   Utilize Euler's constant to show that       Show that   Together, these say that     "
+  "body": "   Utilize Euler s constant to show that       Show that   Together, these say that     "
 },
 {
   "id": "SECTIONParametricInt",
@@ -14200,12 +14056,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "26.1",
   "title": "Parametric Functions and Integration",
-  "body": " Parametric Functions and Integration  We first encountered parametric functions in . Because we had more fundamental matters to investigate at the time. We didn t examine parametric functions at the time.  A little later in we investigated some simple parametric functions in a little more depth but not much. It would be easy to have the impression that parametric functions are an unimportant, or secondary tool. That is very untrue. In many ways it is far more commonplace to describe most natural phenomena parametrically. To see why consider , reproduced below:   One natural way to describe the position of the ball at time, , is to use the horizontal position: , and the vertical position: , as Cartesian coordinates as usual: .   Parametrization by Arc length  The length of the path at time : is called parametrization by arc length . Since only gives the distance traveled along the path parametrization by arc length is not useful for describing the shape of the balls flight path. It can be useful in other contexts though.   As we saw in a parameterization for our falling ball is so the slope of the curve is .   Cancelling Differentials  As we ve seen the cancellation is not strictly rigorous. In particular higher order differentials it can be very problematic as we saw in the Digression Hic Sunt Dracones . But it is a powerful way of thinking that is still used by engineers, physicists, and other scientists so it would be silly not to use it. Be aware however that it lacks rigor. Always check your computations.  Newton s fluxions and the accompanying notation avoids this problem entirely since .   Notice that when we parametrize with respect to a third variable ( in this case) is given as a function of that third variable, not as a function of as we ve grown accustomed to. This can make things a little harder to think about but the third variable also gives us more flexibilty. This can be very helpful in the context of integration.  Recall that fluxion must be thought of as a rate of change. For instance when represents time  is a vertical velocity and  is a horizontal velocity. In parametric form the slope of the line tangent to our curve is still the differential ratio of and . Similarly the area under our curve is still given by . In our example of the falling ball this is . So if we wanted to compute the area of the region beneath the curve we would compute where and are the times at the beginning and end of the ball s flight, respectively.  But that example is too simple because of the nature of the parameterization in particular the fact that . To get a feel for integration in a parametric setting we will begin with two slightly more substantial problems: The area of a circle with radius , and the Area Under a Cycloid Generated From a Circle With Radius .   The Area of a Circle With Radius    A circle with radius equal to a centered at the origin.   A circle with radius can be parametrized by: where so the area of the circle is given by once we find appropriate indices. Unfortunately this will not always be a simple matter. Indeed, you will find that the hardest part of the integration of parametric functions is often just finding the right indices. Let s see why.  At first its seems that this integral is relatively simple: Simply integrate from right to left as usual. This gives which has several problems.  Notice that the integration variable is not . To be sure we ve seen integrals where the indices did not match the integration variable before, but we always arranged for the indices and the integration variable to match before proceeding to compute the integral. We will need for them to match here too.  One option is to re express in terms of . That will work but it is an unattractive choice since it requires that invert the function .  A much more attractive choice is to find such that Solving for we find that . Similarly when , so it appears that we need to compute but this is still inadequate since the value of this integral is zero, which is obviously wrong. Try it and see.  So what went wrong?  We began by thinking of integration as summing up the areas of rectangles because it is an intuitive and attractive starting point. But in much the same way that not every derivative is a slope not every integral is the sum of the areas of rectangles.  Look closely at equation . We can certainly interpret the differentials as rectangles with infinitesimal width but will summing their areas give us the area of the circle. Are they even inside the the circle? Do you see anything that you can interpret as differential rectangles filling the circle? Clearly not.  This is puzzling but the problem lies in our way of thinking about integration. It is too narrow, too closely tied to the idea of summing the areas of rectangles. We need to expand it a bit.                                       "
+  "body": " Parametric Functions and Integration  We first encountered parametric functions in and . We didn t examine them in depth at the time because we had more fundamental matters to investigate. As a result it would be easy to have the impression that parametric functions are an unimportant, or a secondary tool. That is not true. Parametric representations of natural phenomenon are commonplace, and can be extremely useful. To see why consider , reproduced below:   One natural way to describe the position of the ball at time, , is to use the horizontal position: , and the vertical position: , parametrically as the Cartesian coordinates: .   Parametrization by Arc length  The length of the path at time : is called parametrization by arc length . Since only gives the distance traveled along the path parametrization by arc length is not useful for describing the shape of the balls flight path. It can be useful in other contexts though.   As we saw in one parameterization for our falling ball is so the slope of the curve is .   Cancelling Differentials  As we ve seen the cancellation is not strictly rigorous. In particular when higher order differentials are in play it can be very problematic indeed. We saw this in the Digression Hic Sunt Dracones . But it is a powerful way of thinking that is still used by engineers, physicists, and other scientists so it would be silly for us not to use it as a computational short cut. Be aware however that it lacks rigor. Always check your computations.  Newton s fluxions and the accompanying notation avoids this problem entirely since .   Notice that when we parametrize and with respect to a third variable ( in this case) appears as a function of that third variable, not, as we ve grown accustomed to, as a function of . This can make things a little harder to think about but the third variable also gives us more flexibilty. This can be very helpful in the context of integration.  Recall that the Newtonian fluxion is, by design, a rate of change. For instance when represents time  is a vertical velocity and  is a horizontal velocity. But even in parametric form the slope of the line tangent to our curve is still the differential ratio of and .  Similarly the area under our curve is still given by . In our example of the falling ball this is . So if we wanted to compute the area of the region beneath the curve we would compute where and are the times at the beginning and end of the ball s flight, respectively.  But that example is too simple because of the nature of the parameterization in particular the fact that  is elementary. To get a feel for integration in a parametric setting we will begin with two slightly more substantial problems: The area of a circle, and the area under a cycloid generated from a circle.   The Area of a Circle With Radius    A circle with radius equal to r centered at the origin.   A circle with radius can be parametrized by:  . where . So the area of the circle is given by once we find appropriate indices.  At first this integral appears to be relatively simple. After all, we ve seen it before. But notice that we haven t indicated where to start or stop summing our differentials. That s because in the context of parametric functions finding the correct integration bounds is not as simple as it has been so far. Indeed, it will often be the case that finding the right integration bounds is the hardest part of the integration of parametric functions. We ll see why that is next but before we begin make your best guess: What do you think the integration bounds should be for this problem.  Speaking naively, it appears that we need only integrate from to  from left to right just like always: But notice that the integrand is in terms of while the bounds are in terms of . We know from our work in that we can not mix the variables like this. Clearly we need to find in terms of .  Since we see that when . Similarly when . So it would appear that the definite integral wee need to evaluate is   But this still doesn t work. When we evaluate this integral we will get but it has been known since ancient times that the area of circle with radius is . As we proceed through the computation see if you can identify what goes wrong.  By the Half-Angle formula we have   Did you spot the error. Take a moment before you continue reading to consider. It is quite subtle.  To make sense of this we will need to refine our understanding of the use of integration to compute areas a bit. When we first introduced it we used a diagram like the following from    but thinking in sweeping out the area like this there is a clear sense of directionality. There is a place to start and a place to end the sweep.  Using this diagram we explicitly encouraged you to think of an integral especially an integral which represents an area as the sum of infinitely small rectangles. We have always drawn our sketches so that we start summing at the left and end on the right, but there was no compelling reason to emphasize that fact since we can sum rectangles in any order whatsoever. There is no directionality.        Rather than thinking of the integral as the (infinite) sum of a set of rectangles with no imposed order, think of the area of a circle as being swept out by the motion of a line that grows and shrinks as needed as in the below:   Why did we only use the upper half circle in this figure?   A circle with a vertical line from the x axis to the circle, sweeping from left to right.    With that simple, and apparently minor, change in perspective we ask, Where do we start and stop sweeping out the area of the circle when is the variable? Since is the central angle clearly we can start at and end at as in the following figure.     A circle with the radial line moving from 0 to two pi.    With that change in perspective all of the variables now match and our integral is:       Compute the integral in equation and confirm that it is equal to as we expected.      It should be clear that it doesn t matter where we start and stop sweeping out our circle as long as we complete one revolution. Compute the integral and confirm that it also gives the correct area.      Suppose is any real number. Show that What does this prove?        Suppose we integrate in the other direction. What do you expect the result to be? Compute to confirm your conjecture.      Suppose we sweep the central angle around the circle twice. What would you conjecture the result would be? Compute to confirm your conjecture.      Compute the area of a circular sector with central angle by computing the integral to confirm your conjecture.     As we mentioned above using parametric functions in integration problems can be tricky but the added complexity is offset by the gain in flexibility. For example. There is no way to compute the area of a circle using Cartesion coordinates directly. To see why not recall that the equation of a circle with radius is: In order to compute the area we will need to solve for in terms of , but that simply can t be done. If we try we get the multifunction To be sure we could simply choose the positive version of the multifunction, and compute the integral But if we do that we will only get the area of the upper half circle. Obviously we can double this but our point is that there is no way to compute the area of the full circle using Cartesion coordinates directly . Using the parametrization imposes no such restriction.   Show that     The Area Under a Cycloid Generated From a Circle With Radius    Recall from that a parametric representation of the cycloid curve on the entire real number line is In this problem we want to compute the area between the axis and a single bump of the cycloid. You might find it amusing to try to find a way to express the cycloid in Cartesion coordinates by solving for in terms of and then integrating. If you do that be sure to give yourself lots of time.     Recall that the cycloid can be generated by rolling a circle with radius along a straight line and tracing the path of a point on the circle:   Find the beginning and ending values of for which the generating circle sweeps out the cycloid.    Don t be fooled by the labels and that appear on the axis. You are integrating with respect to . Think about how changes as the area is swept out.      Show that an integrand will be:       Use the results of parts (a) and (b) to construct the integral you need to evaluate. Then evaluate it to show that the area under the cycloid is three times the area of the generating circle.                                      "
 },
 {
-  "id": "SECTIONParametricInt-6-2",
+  "id": "SECTIONParametricInt-5-2",
   "level": "2",
-  "url": "SECTIONParametricInt.html#SECTIONParametricInt-6-2",
+  "url": "SECTIONParametricInt.html#SECTIONParametricInt-5-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -14215,10 +14071,46 @@ var ptx_lunr_docs = [
   "id": "EXAMPLEAreaCircParam",
   "level": "2",
   "url": "SECTIONParametricInt.html#EXAMPLEAreaCircParam",
-  "type": "Example",
+  "type": "Motivating Example",
   "number": "26.1.0.1",
-  "title": "The Area of a Circle With Radius <span class=\"process-math\">\\(\\boldsymbol{= a}\\)<\/span>.",
-  "body": " The Area of a Circle With Radius    A circle with radius equal to a centered at the origin.   A circle with radius can be parametrized by: where so the area of the circle is given by once we find appropriate indices. Unfortunately this will not always be a simple matter. Indeed, you will find that the hardest part of the integration of parametric functions is often just finding the right indices. Let s see why.  At first its seems that this integral is relatively simple: Simply integrate from right to left as usual. This gives which has several problems.  Notice that the integration variable is not . To be sure we ve seen integrals where the indices did not match the integration variable before, but we always arranged for the indices and the integration variable to match before proceeding to compute the integral. We will need for them to match here too.  One option is to re express in terms of . That will work but it is an unattractive choice since it requires that invert the function .  A much more attractive choice is to find such that Solving for we find that . Similarly when , so it appears that we need to compute but this is still inadequate since the value of this integral is zero, which is obviously wrong. Try it and see.  So what went wrong?  We began by thinking of integration as summing up the areas of rectangles because it is an intuitive and attractive starting point. But in much the same way that not every derivative is a slope not every integral is the sum of the areas of rectangles.  Look closely at equation . We can certainly interpret the differentials as rectangles with infinitesimal width but will summing their areas give us the area of the circle. Are they even inside the the circle? Do you see anything that you can interpret as differential rectangles filling the circle? Clearly not.  This is puzzling but the problem lies in our way of thinking about integration. It is too narrow, too closely tied to the idea of summing the areas of rectangles. We need to expand it a bit.    "
+  "title": "The Area of a Circle With Radius <span class=\"process-math\">\\(\\boldsymbol{=r}\\)<\/span>.",
+  "body": " The Area of a Circle With Radius    A circle with radius equal to r centered at the origin.   A circle with radius can be parametrized by:  . where . So the area of the circle is given by once we find appropriate indices.  At first this integral appears to be relatively simple. After all, we ve seen it before. But notice that we haven t indicated where to start or stop summing our differentials. That s because in the context of parametric functions finding the correct integration bounds is not as simple as it has been so far. Indeed, it will often be the case that finding the right integration bounds is the hardest part of the integration of parametric functions. We ll see why that is next but before we begin make your best guess: What do you think the integration bounds should be for this problem.  Speaking naively, it appears that we need only integrate from to  from left to right just like always: But notice that the integrand is in terms of while the bounds are in terms of . We know from our work in that we can not mix the variables like this. Clearly we need to find in terms of .  Since we see that when . Similarly when . So it would appear that the definite integral wee need to evaluate is   But this still doesn t work. When we evaluate this integral we will get but it has been known since ancient times that the area of circle with radius is . As we proceed through the computation see if you can identify what goes wrong.  By the Half-Angle formula we have   Did you spot the error. Take a moment before you continue reading to consider. It is quite subtle.  To make sense of this we will need to refine our understanding of the use of integration to compute areas a bit. When we first introduced it we used a diagram like the following from    but thinking in sweeping out the area like this there is a clear sense of directionality. There is a place to start and a place to end the sweep.  Using this diagram we explicitly encouraged you to think of an integral especially an integral which represents an area as the sum of infinitely small rectangles. We have always drawn our sketches so that we start summing at the left and end on the right, but there was no compelling reason to emphasize that fact since we can sum rectangles in any order whatsoever. There is no directionality.        Rather than thinking of the integral as the (infinite) sum of a set of rectangles with no imposed order, think of the area of a circle as being swept out by the motion of a line that grows and shrinks as needed as in the below:   Why did we only use the upper half circle in this figure?   A circle with a vertical line from the x axis to the circle, sweeping from left to right.    With that simple, and apparently minor, change in perspective we ask, Where do we start and stop sweeping out the area of the circle when is the variable? Since is the central angle clearly we can start at and end at as in the following figure.     A circle with the radial line moving from 0 to two pi.    With that change in perspective all of the variables now match and our integral is:   "
+},
+{
+  "id": "SECTIONParametricInt-13",
+  "level": "2",
+  "url": "SECTIONParametricInt.html#SECTIONParametricInt-13",
+  "type": "Problem",
+  "number": "26.1.0.3",
+  "title": "",
+  "body": "   Compute the integral in equation and confirm that it is equal to as we expected.      It should be clear that it doesn t matter where we start and stop sweeping out our circle as long as we complete one revolution. Compute the integral and confirm that it also gives the correct area.      Suppose is any real number. Show that What does this prove?    "
+},
+{
+  "id": "SECTIONParametricInt-14",
+  "level": "2",
+  "url": "SECTIONParametricInt.html#SECTIONParametricInt-14",
+  "type": "Problem",
+  "number": "26.1.0.4",
+  "title": "",
+  "body": "   Suppose we integrate in the other direction. What do you expect the result to be? Compute to confirm your conjecture.      Suppose we sweep the central angle around the circle twice. What would you conjecture the result would be? Compute to confirm your conjecture.      Compute the area of a circular sector with central angle by computing the integral to confirm your conjecture.    "
+},
+{
+  "id": "SECTIONParametricInt-16",
+  "level": "2",
+  "url": "SECTIONParametricInt.html#SECTIONParametricInt-16",
+  "type": "Drill",
+  "number": "26.1.0.5",
+  "title": "",
+  "body": " Show that   "
+},
+{
+  "id": "EXAMPLEAreaCycloid",
+  "level": "2",
+  "url": "SECTIONParametricInt.html#EXAMPLEAreaCycloid",
+  "type": "Problem",
+  "number": "26.1.0.6",
+  "title": "The Area Under a Cycloid Generated From a Circle With Radius <span class=\"process-math\">\\(\\boldsymbol{= a}\\)<\/span>.",
+  "body": " The Area Under a Cycloid Generated From a Circle With Radius    Recall from that a parametric representation of the cycloid curve on the entire real number line is In this problem we want to compute the area between the axis and a single bump of the cycloid. You might find it amusing to try to find a way to express the cycloid in Cartesion coordinates by solving for in terms of and then integrating. If you do that be sure to give yourself lots of time.     Recall that the cycloid can be generated by rolling a circle with radius along a straight line and tracing the path of a point on the circle:   Find the beginning and ending values of for which the generating circle sweeps out the cycloid.    Don t be fooled by the labels and that appear on the axis. You are integrating with respect to . Think about how changes as the area is swept out.      Show that an integrand will be:       Use the results of parts (a) and (b) to construct the integral you need to evaluate. Then evaluate it to show that the area under the cycloid is three times the area of the generating circle.    "
 },
 {
   "id": "Quotes",
