@@ -11545,14 +11545,50 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "21.2",
   "title": "Volumes",
-  "body": " Volumes  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let s restate the volume in this way The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids. For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    Let s verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that. With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get   What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .   Volume of a Cone   Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.     Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.      Volume of a Square Based Pyramid     Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.       The Generalized Cone   Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .    The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.     Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn t determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.   Volume of a Sphere (rotation about the horizontal axis).    Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .     Revolving a Cycloid     Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.      Of course, this technique can be applied to find the volume of a more general solid of revolution.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by      To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.         Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by       To do  We need to add a bunch of volume of revolution problems here.  "
+  "body": " Volumes  The following is a photograph of Problem 14 from the \\textit{Moscow Mathematical Papyrus}, an Egyptian mathematical papyrus from around 1850 BC which currently resides in the Pushkin Museum of Fine Arts.      The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is , whose base is a square of side and whose top is a square with side . The solution translates as follows.     You are to square , result .  You are to double , result .  You are to square , result .  You are to add the , the , and the , result .  You are to take a third of , result .  You are to take twice, result .  See it (the volume) is . You will find it right.     In modern terms, the volume is given by which is the correct answer.  Mathematics historians believe that Egyptians, among other early civilizations, knew the general formula for the volume of a truncated pyramid of height and square bases whose sides are and , though it would not have been written in such a modern, general form.   Mathematics historians are led to believe that Egyptians and other early civilizations also knew the related formula for the volume of a pyramid with height and a square base with side , . That being said, historians do not know exactly how either of these formulas were obtained.   How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?   Also, one can use the formula for the volume of a pyramid to obtain the formula for the volume of a truncated pyramid as suggested by the Moscow Papyrus. With that in mind, consider the side view of a truncated pyramid with height and base sides and .   A truncated triangle with height=h, base=b, and top=a.   If one were to fill in the top of the pyramid that was chopped off     If the formula for the volume of a pyramid is correct, then the volume of the truncated pyramid would be     Use similar triangles to determine in terms of and and use this to obtain the formula for the volume of the truncated pyramid     At some point you will need to utilize the identity . Verify that this is correct and keep it in mind. You will be using this later.    There are questions which remain:  Is the formula for the volume of a pyramid correct?  Do the same ideas work for other shapes such as a cone or a pyramid with a more general base?  What would these formulas look like?    Ancient civilizations knew answers to these questions but did not necessarily explain how they were obtained. We can only speculate what they did.  For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    This would lead one to guess that the volume of a cone is the height times the area of the base. This coincides with our formula for the volume of a square based pyramid. Could it be that the volume of a cone with an arbitrary shape for the base be the height times the area of the base as well?  Fortunately, we have integral calculus at our disposal to address these questions. Keeping in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities, we will need to look at volumes in a more simplistic and general way. Take for example the volume of a rectangular box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let s restate the volume in this way . The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Let's illustrate this by addressing the volume of cone. Recall that we believe that the volume of a cone is 1\/3 the volume of the corresponding cylinder, that is, it is . With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get .  What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .   Volume of a Cone   Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.     Volume of a Square Based Pyramid     Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.       The Generalized Cone   Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .    The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.    Having determined the volume of various cones, let's return to the problem of their frusta. We saw that the volume of the frustum of a square based pyramid with height and base sides and is .   Consider the following frustum of a circular cone.     Use an argument similar to that of the truncated pyramid to show that the volume of the frustum of the cone is given by    To see how we can obtain the volume of the frustum of a generalized cone, notice that we can write the formulas we've already obtained as  . This seems to suggest that the volume of the frustum of a generalized cone is given by where is the height and and are the areas of the two bases.    Verify that this formula for the volume of the frustum of a generalized cone is correct.    Consider the following diagram of the cone and the frustum cut from it.       When we use an argument similar to that of the truncated pyramid, notice that .]  ###############################################################  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.  Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids.  Let s verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that.   Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.      Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn t determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.   Volume of a Sphere (rotation about the horizontal axis).    Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .     Revolving a Cycloid     Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.      Of course, this technique can be applied to find the volume of a more general solid of revolution.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by .     To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.         Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.   Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by .      To do  We need to add a bunch of volume of revolution problems here.  "
+},
+{
+  "id": "RhindPapyrus",
+  "level": "2",
+  "url": "VolumesByIntegration.html#RhindPapyrus",
+  "type": "Motivating Example",
+  "number": "21.2.0.1",
+  "title": "",
+  "body": "    The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is , whose base is a square of side and whose top is a square with side . The solution translates as follows.     You are to square , result .  You are to double , result .  You are to square , result .  You are to add the , the , and the , result .  You are to take a third of , result .  You are to take twice, result .  See it (the volume) is . You will find it right.     In modern terms, the volume is given by which is the correct answer.  Mathematics historians believe that Egyptians, among other early civilizations, knew the general formula for the volume of a truncated pyramid of height and square bases whose sides are and , though it would not have been written in such a modern, general form.  "
+},
+{
+  "id": "VolumesByIntegration-5",
+  "level": "2",
+  "url": "VolumesByIntegration.html#VolumesByIntegration-5",
+  "type": "Problem",
+  "number": "21.2.0.1",
+  "title": "",
+  "body": " How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?  "
+},
+{
+  "id": "VolumesByIntegration-11",
+  "level": "2",
+  "url": "VolumesByIntegration.html#VolumesByIntegration-11",
+  "type": "Problem",
+  "number": "21.2.0.2",
+  "title": "",
+  "body": "  Use similar triangles to determine in terms of and and use this to obtain the formula for the volume of the truncated pyramid     At some point you will need to utilize the identity . Verify that this is correct and keep it in mind. You will be using this later.   "
+},
+{
+  "id": "ConeAndCyl",
+  "level": "2",
+  "url": "VolumesByIntegration.html#ConeAndCyl",
+  "type": "Figure",
+  "number": "21.2.0.3",
+  "title": "",
+  "body": "   A cone and cylinder of the same height.   "
 },
 {
   "id": "GenericRectangle",
   "level": "2",
   "url": "VolumesByIntegration.html#GenericRectangle",
   "type": "Figure",
-  "number": "21.2.0.1",
+  "number": "21.2.0.4",
   "title": "",
   "body": "   A generic rectangle   "
 },
@@ -11561,7 +11597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolEqualsFaceXThick",
   "type": "Figure",
-  "number": "21.2.0.2",
+  "number": "21.2.0.5",
   "title": "",
   "body": "   Pictures and formulas for the volume of a cylinder and a triangular wedge   "
 },
@@ -11570,25 +11606,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolEqualsFaceXThick2",
   "type": "Figure",
-  "number": "21.2.0.3",
+  "number": "21.2.0.6",
   "title": "",
   "body": "   Picture and formula for the volume of an irregular slab.   "
-},
-{
-  "id": "ConeAndCyl",
-  "level": "2",
-  "url": "VolumesByIntegration.html#ConeAndCyl",
-  "type": "Figure",
-  "number": "21.2.0.4",
-  "title": "",
-  "body": "   A cone and cylinder of the same height.   "
 },
 {
   "id": "VolCone",
   "level": "2",
   "url": "VolumesByIntegration.html#VolCone",
   "type": "Figure",
-  "number": "21.2.0.5",
+  "number": "21.2.0.7",
   "title": "",
   "body": "   Cone with generic horizontal rectangle.   "
 },
@@ -11597,7 +11624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeSlice",
   "type": "Figure",
-  "number": "21.2.0.6",
+  "number": "21.2.0.8",
   "title": "",
   "body": "   A generic slice from a cone and a formula for its volume.   "
 },
@@ -11606,7 +11633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeSimTri",
   "type": "Figure",
-  "number": "21.2.0.7",
+  "number": "21.2.0.9",
   "title": "",
   "body": "   A right triangle with a similar right triangle inside.   "
 },
@@ -11615,18 +11642,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeVol",
   "type": "Problem",
-  "number": "21.2.0.8",
+  "number": "21.2.0.10",
   "title": "Volume of a Cone.",
   "body": " Volume of a Cone   Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.   "
-},
-{
-  "id": "FrustomVol",
-  "level": "2",
-  "url": "VolumesByIntegration.html#FrustomVol",
-  "type": "Problem",
-  "number": "21.2.0.9",
-  "title": "Volume of a Frustum.",
-  "body": " Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.    "
 },
 {
   "id": "VolSqPyr",
@@ -11647,11 +11665,38 @@ var ptx_lunr_docs = [
   "body": " The Generalized Cone   Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .    The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.   "
 },
 {
+  "id": "VolumesByIntegration-35",
+  "level": "2",
+  "url": "VolumesByIntegration.html#VolumesByIntegration-35",
+  "type": "Problem",
+  "number": "21.2.0.15",
+  "title": "",
+  "body": " Consider the following frustum of a circular cone.     Use an argument similar to that of the truncated pyramid to show that the volume of the frustum of the cone is given by   "
+},
+{
+  "id": "VolumesByIntegration-37",
+  "level": "2",
+  "url": "VolumesByIntegration.html#VolumesByIntegration-37",
+  "type": "Problem",
+  "number": "21.2.0.16",
+  "title": "",
+  "body": "  Verify that this formula for the volume of the frustum of a generalized cone is correct.    Consider the following diagram of the cone and the frustum cut from it.      "
+},
+{
+  "id": "FrustomVol",
+  "level": "2",
+  "url": "VolumesByIntegration.html#FrustomVol",
+  "type": "Problem",
+  "number": "21.2.0.17",
+  "title": "Volume of a Frustum.",
+  "body": " Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.    "
+},
+{
   "id": "SphereCyl",
   "level": "2",
   "url": "VolumesByIntegration.html#SphereCyl",
   "type": "Figure",
-  "number": "21.2.0.15",
+  "number": "21.2.0.19",
   "title": "",
   "body": "   Cylinder with enclosed sphere with the same radius.   "
 },
@@ -11660,7 +11705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#SphereByRevAboutX",
   "type": "Figure",
-  "number": "21.2.0.16",
+  "number": "21.2.0.20",
   "title": "",
   "body": "   A sphere generated by revolving about the x axis.   "
 },
@@ -11669,7 +11714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolSphereWithDiffDisc",
   "type": "Figure",
-  "number": "21.2.0.17",
+  "number": "21.2.0.21",
   "title": "",
   "body": "   The same sphere with a generic disk and area and volume formulas.   "
 },
@@ -11678,7 +11723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#SphereVolXRev",
   "type": "Problem",
-  "number": "21.2.0.18",
+  "number": "21.2.0.22",
   "title": "Volume of a Sphere (rotation about the horizontal axis)..",
   "body": " Volume of a Sphere (rotation about the horizontal axis).    Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .   "
 },
@@ -11687,7 +11732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#CyclRevX",
   "type": "Problem",
-  "number": "21.2.0.19",
+  "number": "21.2.0.23",
   "title": "Revolving a Cycloid.",
   "body": " Revolving a Cycloid     Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.     "
 },
@@ -11696,18 +11741,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#exer-GenSolidRevX",
   "type": "Problem",
-  "number": "21.2.0.21",
+  "number": "21.2.0.25",
   "title": "",
-  "body": "   Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by      To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.    "
+  "body": "   Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by .     To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.    "
 },
 {
   "id": "GenVolRevY",
   "level": "2",
   "url": "VolumesByIntegration.html#GenVolRevY",
   "type": "Problem",
-  "number": "21.2.0.23",
+  "number": "21.2.0.27",
   "title": "",
-  "body": "    Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.  Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by     "
+  "body": "    Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.   Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by .    "
 },
 {
   "id": "sec-VolByShells",
