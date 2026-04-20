@@ -11476,38 +11476,83 @@ var ptx_lunr_docs = [
   "body": " Fourier Series     Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves     Vocabulary Fourier Series It can be shown (though we won t do it here), that if a function defined on the interval can be written as the Fourier Series:  then      With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.      With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.      Given the symmetries of the graphs above, is this surprising? Explain.    "
 },
 {
+  "id": "SECTIONWhyAreas",
+  "level": "1",
+  "url": "SECTIONWhyAreas.html",
+  "type": "Section",
+  "number": "21.1",
+  "title": "Why We Compute Areas and Volumes",
+  "body": " Why We Compute Areas and Volumes  Students are often at a loss to understand why in mathematics courses they are asked to compute such arcane quantities as slopes, curvatures, areas, volumes, and arc-lengths. After all, it is very rare that the computation of such things is common or useful in the real world. Such computations can feel completely irrelevant, especially when the student is frustrated.  We (the authors) are sympathetic. But it is not that mathematics (or mathematicians) are unusually obsessed with areas, volumes, and slopes. Rather, if a real world problem can be modeled as a differential or algebraic equations in one variable then the area under the graph of the equation represents a real physical property of the model being analyzed. While doing the computations it is often easier to think about the area under the curve than the actual physical quantity.             Some Simple Examples   Distance=Rate Time   As a simple example consider the following. Suppose you are traveling from your home to another town at a rate. If you drive at , for hours, then the distance , that you travel will be You should be familiar with this from your previous studies.  This problem can be recast as an area problem by letting and be represented by horizontal and vertical axes and graphing equation in that coordinate system. In that case the distance traveled, , is given by the area of the shaded region in the following sketch.     You can confirm that the shaded region represents distance traveled by checking the units involved. Since represents time it is measured in units of time, say hours. Since represents a velocity it is measured in say, . Thus we see that is measured in .      Of course the model in part (a) is hopelessly unrealistic for a couple of reasons. For one, if we were to instanteously accelerate from to at the beginning or decelerate instanteously back to zero at the end we would die if is any reasonable rate of speed. Moreover it is not possible to move at a constant rate of speed. Velocity will always vary. We can create a (very slightly) more realistic to take model by taking the velocity to be This will ensure that our velocity is zero at the beginnning and end of the trip so we don t die before we get started.  The distance traveled during a moment will be: . Adding all of these together we see that the total distance traveled is given by   Just as in part (a) you can verify that the result of the integration yields the correct physical value (distance in this case) by checking the units: is measured as and measures time to their product yields distance.      An amusement park tracks of the number of guests entering the park each day by measuring the rate at which guests enter through the gates. If we let represent the rate of entry (measured in guests per minute) the graph in is typical.        Clearly the area beneath the curve between 8AM and 8PM represents the total number of guests who entered the park that day. That area is given by the integral:       The previous examples indicate that, although they are not the same thing, definite integrals and areas are closely related. So closely related in fact that your intuitive understanding of area can help with understanding integrals. This is true and we encourage you to use your intuitive understanding of area to help you understand integrals.  But be careful. Always confirm your intuition. Here is a problem where thinking of an integral as an area will fail.  Suppose we want to compute the area under a sine curve between and . Seems simple enough. The area will be given by the integral: Computing the integral we see that the area is So the area under a sine curve is zero? That makes no sense. Do you see what went wrong? Think about this for a few minutes before reading on.       Recall that a definite integral is the difference between two values of an accumulation function. In this case the accumulation function is because we are accummulating the products starting at . Betweeen and the typical differential can be viewed as the area of the rectangle in the following sketch.     However when is between and  . In that case is it still safe to think of the product as an area? Consider the following sketch.     It certainly looks like we have an area when . But notice that in that case . So that the product is also less than zero. But by definition an area is always a positive number. Thus no matter how suggestive our picture might be, when the product does not represent an area.  This also explains why the value of our integral is zero. For each product between and there is one between and with the same magnitude but opposite sign. Thus accumulating of all of them results in a total sum of zero.  It is tempting to call the area above the graph of and between and a negative area , and many people do, but this is not a good habit to fall into and we would discourage you from adopting it. The bottom line is that a definite integral corresponds to an area if and only if the differentials being accumulated are all positive.      The Buffon Needle Problem  Buffon Needle Problem  In Examples it was relatively simple to see how to interpret an area as some other physical quantity. Just check the units.  But there are other more abstract ways the area computations can arise. For example, in this example we will convert the abstract problem of computating a probability into the computation of the ratio of two areas. Such a conversion is helpful because, as we ve noted before, it allows us to bring our visual intuition into play.  In 1777 Georges Louis Leclerc , Le Comte de Buffon (the Count of Buffon), presented to the Royal Academy of Science in Paris what has since become known as the Buffon Needle Problem .   Georges Buffon (1707 1788)   Portrait of Georges Buffon    Suppose that a needle is dropped randomly onto the floor where a series of parallel grid lines are drawn at a distance of one needle apart, as in the sketch below.         Leclerc had determined that the probability that a needle will land crossing on of the grid lines is exactly which may seem a little counter-intuitive. How does show up in a problem without a circle in it?  To keep things simple we will assume that the length of a needle is (so we are measuring in needle lengths rather than inches, or centimeters, or light-years) and we ll focus our attention on a single throw of the needle as depicted in .   We have not drawn the eye of our needle because it is unimportant.      A few facts are clear from :   Fact 1:  A throw is specified by the angle and the distance from the lower end of the needle to the next grid line. That is, each ordered pair represents one thrown needle.    Fact 2:  A needle will cross a grid line only when .    Fact 3:   (This should be clear.)    Fact 4:   (Why do we not need all of the angles from to ?)     Thus each point in the rectangle (as seen in below) represents a single throw of the needle.   The white region represents all of the throws the do not cross a horizontal line, and the shaded region represents all of the throws that do cross a horizontal line. The probability of a hit will be .   The graph of sin(x) enclosed in a 1 by pi box.     Geometric Probability To see why the probability of a hit will be suppose we randomly choose a large number of points in our rectangle by, for example, throwing darts at it. The probability of hitting the right half of the rectangle is , of hitting the left one-third is , of hitting the center two-fifths is , and so on. This idea called geometric probability . In general, if you have a planar region , whose area is and a sub-region , whose area is the probabilty that a randomly chosen point in will also be in the sub-region is the ratio: .  The area of the entire rectangle in is clearly (why?), so we can solve Buffon s problem if we can determine the area under the graph of between and .  But this is straightforward. The area under will be the value of the definite integral   But why guess when we can compute? We see that Thus the probability of a Buffon needle landing on a gridline is just as Leclerc claimed.     One of the authors once performed this experiment with a group of students (we substituted coffee stirrers for needles) and found that that out of  needles landed crossing a grid line. This would suggest that the probability of a hit is approximately .     Use toothpicks, or coffee stirrers to run Buffon s experiment one thousand times and use the result to estimate the value of . ( Get some friends to help.)      Does your experimental result in part (a) support Leclerc s claim? Explain.      Use your experimental result from part (a) to compute an approximation of . Compare your approximation with the actual value. How many decimals did you get?      Monte Carlo Method Of course, this experiment only provides an approximation of the probability. Moreover it is not a very accurate approximation because we only did throws. but generally speaking the more simulations you run the better the approximation will be so in theory, if we could do a lot of throws, say , we could get a more accurate approximation. Performing this experiment times is not practical, but simulating it on a computer is entirely reasonable. This is the essence of an approximation technique known as the Monte Carlo Method  simulate an experiment on a computer a large number of times and use it to approximate some unknown parameter. This technique is often used in industry and finance especially when there are no known formulas to work with. The trick is creating such a simulation in the first place.    The point of the examples in this section is that, although definite integrals and areas (also volumes) are closely related they are not the same thing. So closely related in fact that in many cases it can be helpful to your intuitive understanding of area can help you to understanding integrals. In the next few sections are devoted to helping you develop and hone your skills by computing lots of areas and volumes of various shapes, more or less in the absence of any compelling need. Understand that this is simply practice. When you encounter problems which reduce to computing an area or volume these you ll want to be able to do this last step with a minimum of effort so you can concentrate on the problem you are interested in.  "
+},
+{
+  "id": "EXAMPLEDistRateTime",
+  "level": "2",
+  "url": "SECTIONWhyAreas.html#EXAMPLEDistRateTime",
+  "type": "Example",
+  "number": "21.1.0.1",
+  "title": "Some Simple Examples.",
+  "body": " Some Simple Examples   Distance=Rate Time   As a simple example consider the following. Suppose you are traveling from your home to another town at a rate. If you drive at , for hours, then the distance , that you travel will be You should be familiar with this from your previous studies.  This problem can be recast as an area problem by letting and be represented by horizontal and vertical axes and graphing equation in that coordinate system. In that case the distance traveled, , is given by the area of the shaded region in the following sketch.     You can confirm that the shaded region represents distance traveled by checking the units involved. Since represents time it is measured in units of time, say hours. Since represents a velocity it is measured in say, . Thus we see that is measured in .      Of course the model in part (a) is hopelessly unrealistic for a couple of reasons. For one, if we were to instanteously accelerate from to at the beginning or decelerate instanteously back to zero at the end we would die if is any reasonable rate of speed. Moreover it is not possible to move at a constant rate of speed. Velocity will always vary. We can create a (very slightly) more realistic to take model by taking the velocity to be This will ensure that our velocity is zero at the beginnning and end of the trip so we don t die before we get started.  The distance traveled during a moment will be: . Adding all of these together we see that the total distance traveled is given by   Just as in part (a) you can verify that the result of the integration yields the correct physical value (distance in this case) by checking the units: is measured as and measures time to their product yields distance.      An amusement park tracks of the number of guests entering the park each day by measuring the rate at which guests enter through the gates. If we let represent the rate of entry (measured in guests per minute) the graph in is typical.        Clearly the area beneath the curve between 8AM and 8PM represents the total number of guests who entered the park that day. That area is given by the integral:       The previous examples indicate that, although they are not the same thing, definite integrals and areas are closely related. So closely related in fact that your intuitive understanding of area can help with understanding integrals. This is true and we encourage you to use your intuitive understanding of area to help you understand integrals.  But be careful. Always confirm your intuition. Here is a problem where thinking of an integral as an area will fail.  Suppose we want to compute the area under a sine curve between and . Seems simple enough. The area will be given by the integral: Computing the integral we see that the area is So the area under a sine curve is zero? That makes no sense. Do you see what went wrong? Think about this for a few minutes before reading on.       Recall that a definite integral is the difference between two values of an accumulation function. In this case the accumulation function is because we are accummulating the products starting at . Betweeen and the typical differential can be viewed as the area of the rectangle in the following sketch.     However when is between and  . In that case is it still safe to think of the product as an area? Consider the following sketch.     It certainly looks like we have an area when . But notice that in that case . So that the product is also less than zero. But by definition an area is always a positive number. Thus no matter how suggestive our picture might be, when the product does not represent an area.  This also explains why the value of our integral is zero. For each product between and there is one between and with the same magnitude but opposite sign. Thus accumulating of all of them results in a total sum of zero.  It is tempting to call the area above the graph of and between and a negative area , and many people do, but this is not a good habit to fall into and we would discourage you from adopting it. The bottom line is that a definite integral corresponds to an area if and only if the differentials being accumulated are all positive.    "
+},
+{
+  "id": "EXAMPLEBuffonNeedle",
+  "level": "2",
+  "url": "SECTIONWhyAreas.html#EXAMPLEBuffonNeedle",
+  "type": "Example",
+  "number": "21.1.0.3",
+  "title": "The Buffon Needle Problem.",
+  "body": " The Buffon Needle Problem  Buffon Needle Problem  In Examples it was relatively simple to see how to interpret an area as some other physical quantity. Just check the units.  But there are other more abstract ways the area computations can arise. For example, in this example we will convert the abstract problem of computating a probability into the computation of the ratio of two areas. Such a conversion is helpful because, as we ve noted before, it allows us to bring our visual intuition into play.  In 1777 Georges Louis Leclerc , Le Comte de Buffon (the Count of Buffon), presented to the Royal Academy of Science in Paris what has since become known as the Buffon Needle Problem .   Georges Buffon (1707 1788)   Portrait of Georges Buffon    Suppose that a needle is dropped randomly onto the floor where a series of parallel grid lines are drawn at a distance of one needle apart, as in the sketch below.         Leclerc had determined that the probability that a needle will land crossing on of the grid lines is exactly which may seem a little counter-intuitive. How does show up in a problem without a circle in it?  To keep things simple we will assume that the length of a needle is (so we are measuring in needle lengths rather than inches, or centimeters, or light-years) and we ll focus our attention on a single throw of the needle as depicted in .   We have not drawn the eye of our needle because it is unimportant.      A few facts are clear from :   Fact 1:  A throw is specified by the angle and the distance from the lower end of the needle to the next grid line. That is, each ordered pair represents one thrown needle.    Fact 2:  A needle will cross a grid line only when .    Fact 3:   (This should be clear.)    Fact 4:   (Why do we not need all of the angles from to ?)     Thus each point in the rectangle (as seen in below) represents a single throw of the needle.   The white region represents all of the throws the do not cross a horizontal line, and the shaded region represents all of the throws that do cross a horizontal line. The probability of a hit will be .   The graph of sin(x) enclosed in a 1 by pi box.     Geometric Probability To see why the probability of a hit will be suppose we randomly choose a large number of points in our rectangle by, for example, throwing darts at it. The probability of hitting the right half of the rectangle is , of hitting the left one-third is , of hitting the center two-fifths is , and so on. This idea called geometric probability . In general, if you have a planar region , whose area is and a sub-region , whose area is the probabilty that a randomly chosen point in will also be in the sub-region is the ratio: .  The area of the entire rectangle in is clearly (why?), so we can solve Buffon s problem if we can determine the area under the graph of between and .  But this is straightforward. The area under will be the value of the definite integral   But why guess when we can compute? We see that Thus the probability of a Buffon needle landing on a gridline is just as Leclerc claimed.  "
+},
+{
+  "id": "SECTIONWhyAreas-6",
+  "level": "2",
+  "url": "SECTIONWhyAreas.html#SECTIONWhyAreas-6",
+  "type": "Problem",
+  "number": "21.1.0.8",
+  "title": "",
+  "body": "  One of the authors once performed this experiment with a group of students (we substituted coffee stirrers for needles) and found that that out of  needles landed crossing a grid line. This would suggest that the probability of a hit is approximately .     Use toothpicks, or coffee stirrers to run Buffon s experiment one thousand times and use the result to estimate the value of . ( Get some friends to help.)      Does your experimental result in part (a) support Leclerc s claim? Explain.      Use your experimental result from part (a) to compute an approximation of . Compare your approximation with the actual value. How many decimals did you get?      Monte Carlo Method Of course, this experiment only provides an approximation of the probability. Moreover it is not a very accurate approximation because we only did throws. but generally speaking the more simulations you run the better the approximation will be so in theory, if we could do a lot of throws, say , we could get a more accurate approximation. Performing this experiment times is not practical, but simulating it on a computer is entirely reasonable. This is the essence of an approximation technique known as the Monte Carlo Method  simulate an experiment on a computer a large number of times and use it to approximate some unknown parameter. This technique is often used in industry and finance especially when there are no known formulas to work with. The trick is creating such a simulation in the first place.   "
+},
+{
   "id": "AreasByIntegration",
   "level": "1",
   "url": "AreasByIntegration.html",
   "type": "Section",
-  "number": "21.1",
+  "number": "21.2",
   "title": "Areas in the Plane",
-  "body": " Areas in the Plane  Like the derivative, the definite integral is a powerful tool but the ability to compute an integral is only the beginning. Just as with differentiation the key is not to focus on the integration but to use all of your tools: Algebra, Geometry, Trigonometry, a well labeled diagram, and even occasionally a little differentiation to establish and understant what is happening at the infinitely small scale.  The integration step combines all of these infinitely small quantities to find the related quantity for the entire object. With a well labeled diagram, the quantity we want to integrate can often be literally read from the picture. Here is a relatively easy example continuing with area.   Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.    Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we ve included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          Drills  Compute the three integrals in the previous example and verify that you get the same total area done either way.    In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let s put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle      Drills  Compute the area indicated in the previous example.    Archimedes Quadrature of the Parabola   In his treatise, Quadrature of the Parabola, Archimedes (287 212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn t even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.       Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]      Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .    Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).     "
+  "body": " Areas in the Plane   A Parabolic Section   A parabolic section is the region which a straight line cuts from a parabola. Computing the area of a parabolic section is an ancient problem, first solved by Archimedes of Syracuse (ca. 250 BC). In this section we will use Calculus to solve a representative example of this problem two different ways. Archimedes is considered by some to be the original inventor of Calculus predating Newton and Leibniz by nearly two thousand years but there is some debate about this. We will also look at Archimedes solution of the general problem for comparison and you can decide for yourself whether or not he was the original inventor of Calculus.     We want to find the area of the region bounded by the graphs of   The first step is always to sketch the problem. In this case we only need to graph our two curves.   A Parabolic Section is the planar region which a straight line cuts from a parabola   The area between y equals x and y equals x squared    Locally we draw a single generic rectangle (in red in the figure) of width . Since the upper and lower endpoints of our rectangle lie on the upper and lower bounding curves respectully we see that the area of the rectangle is   This is the set up. Notice that by labeling the sketch clearly, we were able to easily read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts.  We highly recommend that you follow this example closely whenever you have an definite integral to compute. First understand the local problem, then sum the differential areas. If we could we (the authors) would insist that you follow this routine on every application, no matter how easy it may seem. This will help you to develop a habit of careful analysis. That habit will serve you well as the applications get more complicated. We would insist but obviously we have no way to enforce such an injunction. Nevertheless, we know what we are talking about. Listen to us.  To compute the area of the shaded region we need to add these differential rectangles together using the FTC .                                  In part (a) we divided the axis into differentials which gave our red differential rectangles a vertical orientation. But of course there is nothing special about that choice. We could also have divided the axis into differentials which would have resulted in rectangles with a horizontal orientation. Either way we should obtain the same area. What is important is that we divide the region consistently into parallel rectangles. (Recall Cavalieri s all the lines. Our differential rectangles are essentially taking on the role of Cavalieri s parallel lines.)         Parabolic Segment in terms of y    The appropriate sketch reflecting that choice is shown in . Notice that this time the (horizontally oriented) rectangles will be stacked vertically like a pile of books on a table, rather than horizontally like books on a shelf. This means that our summation will be oriented vertically this time. Put more simple the summation variable is when the differentials are , and when the differentials are . You cannot use to compute an integral if the variable in the integrand matches the variable in the differential. This knowledge can serve as a check to make sure you have set up the definite integral correctly.  Continuing, we need an expression for the area of our red rectangle. Do you see what it is? Give it some thought before reading on.  The left end of the rectangle is on the curve and the right end is on the curve . The length of our rectangle will be the difference between the coordinates of these points. That is the area of our rectangle is Since we are summing from bottom-to-top this time (rather than left-to-right) we need to use the coordinates in the indices. Thus our definite integral is: Since the area of the section has not changed we expect to get the same number however we compute it.                               Archimedes Quadrature of the Parabola   In his treatise The Quadrature of the Parabola  Archimedes of Syracuse (ca. 250 BC) computed the area of the segment of a parabola. We will present his ideas here (using modern notation). With that in mind, consider the following diagram. Note that the 𝑥 coordinate of 𝐶 is halfway between the 𝑥 coordinates of 𝐴 and 𝐵.        Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.   Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we ve included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?          Drills  Compute the three integrals in the previous example and verify that you get the same total area done either way.    In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let s put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle      Drills  Compute the area indicated in the previous example.    Archimedes Quadrature of the Parabola   In his treatise, Quadrature of the Parabola, Archimedes (287 212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn t even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.       Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]      Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .    Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).     "
 },
 {
   "id": "ParabolicSection",
   "level": "2",
   "url": "AreasByIntegration.html#ParabolicSection",
   "type": "Example",
-  "number": "21.1.0.1",
+  "number": "21.2.0.1",
+  "title": "A Parabolic Section.",
+  "body": " A Parabolic Section   A parabolic section is the region which a straight line cuts from a parabola. Computing the area of a parabolic section is an ancient problem, first solved by Archimedes of Syracuse (ca. 250 BC). In this section we will use Calculus to solve a representative example of this problem two different ways. Archimedes is considered by some to be the original inventor of Calculus predating Newton and Leibniz by nearly two thousand years but there is some debate about this. We will also look at Archimedes solution of the general problem for comparison and you can decide for yourself whether or not he was the original inventor of Calculus.     We want to find the area of the region bounded by the graphs of   The first step is always to sketch the problem. In this case we only need to graph our two curves.   A Parabolic Section is the planar region which a straight line cuts from a parabola   The area between y equals x and y equals x squared    Locally we draw a single generic rectangle (in red in the figure) of width . Since the upper and lower endpoints of our rectangle lie on the upper and lower bounding curves respectully we see that the area of the rectangle is   This is the set up. Notice that by labeling the sketch clearly, we were able to easily read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts.  We highly recommend that you follow this example closely whenever you have an definite integral to compute. First understand the local problem, then sum the differential areas. If we could we (the authors) would insist that you follow this routine on every application, no matter how easy it may seem. This will help you to develop a habit of careful analysis. That habit will serve you well as the applications get more complicated. We would insist but obviously we have no way to enforce such an injunction. Nevertheless, we know what we are talking about. Listen to us.  To compute the area of the shaded region we need to add these differential rectangles together using the FTC .                                  In part (a) we divided the axis into differentials which gave our red differential rectangles a vertical orientation. But of course there is nothing special about that choice. We could also have divided the axis into differentials which would have resulted in rectangles with a horizontal orientation. Either way we should obtain the same area. What is important is that we divide the region consistently into parallel rectangles. (Recall Cavalieri s all the lines. Our differential rectangles are essentially taking on the role of Cavalieri s parallel lines.)         Parabolic Segment in terms of y    The appropriate sketch reflecting that choice is shown in . Notice that this time the (horizontally oriented) rectangles will be stacked vertically like a pile of books on a table, rather than horizontally like books on a shelf. This means that our summation will be oriented vertically this time. Put more simple the summation variable is when the differentials are , and when the differentials are . You cannot use to compute an integral if the variable in the integrand matches the variable in the differential. This knowledge can serve as a check to make sure you have set up the definite integral correctly.  Continuing, we need an expression for the area of our red rectangle. Do you see what it is? Give it some thought before reading on.  The left end of the rectangle is on the curve and the right end is on the curve . The length of our rectangle will be the difference between the coordinates of these points. That is the area of our rectangle is Since we are summing from bottom-to-top this time (rather than left-to-right) we need to use the coordinates in the indices. Thus our definite integral is: Since the area of the section has not changed we expect to get the same number however we compute it.                               Archimedes Quadrature of the Parabola   In his treatise The Quadrature of the Parabola  Archimedes of Syracuse (ca. 250 BC) computed the area of the segment of a parabola. We will present his ideas here (using modern notation). With that in mind, consider the following diagram. Note that the 𝑥 coordinate of 𝐶 is halfway between the 𝑥 coordinates of 𝐴 and 𝐵.    "
+},
+{
+  "id": "AreasByIntegration-3",
+  "level": "2",
+  "url": "AreasByIntegration.html#AreasByIntegration-3",
+  "type": "Example",
+  "number": "21.2.0.4",
   "title": "",
-  "body": " Find the area of the following region bounded by the curves and . A graph of this region is below.   Parabolic Section   The area between y equals x and y equals x squared    Utilizing our strategy, we will draw a single generic rectangle of width whose endpoints lie on the bounding curves. We will label the endpoints of this infinitely thin rectangle on the diagram and draw this rectangle on the side with its length and width labeled. You will see that this will make the computation of areas easier (which is the point). We insist that you follow this routine on every application, no matter how easy it may seem. This will serve you well as the applications get more complicated.   Parabolic Section with differential rectangle   The area between y equals x and y equals x squared with differential rectangle    This is the set up. Notice that by labeling properly, we could read the area of the rectangle right off the picture. This was the point to divide the problem into easily computable parts. The integral just added them together. To compute this integral, we need to put everything in terms of one variable. This can done by noticing that and . Thus, we have   Of course, there is nothing special about getting everything in terms of . We could divide the region into horizontal rectangles and put everything in terms of . We should obtain the same area. Notice that in the previous set up out two points had the same coordinate. In this one, they will have the same coordinate.   Parabolic Section in the vertical coordinate   Parabolic Segment in terms of y    Using the fact that lies on the curve and that lies on the curve , we get which is the same answer as before. You can choose whichever way you want; it depends on whether you ultimately want things in terms of or in terms of . In this example, one was not much harder than the other. Sometimes the difference in difficulty will help you make the decision. In the next example, we willset up the problem in both ways and then determine which will be the easiest route to follow. After you have developed some experience, you will often be able to determine this before actually writing anything down.  "
+  "body": "   Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.   Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.   "
 },
 {
   "id": "ParabSectionHoriz",
   "level": "2",
   "url": "AreasByIntegration.html#ParabSectionHoriz",
   "type": "Example",
-  "number": "21.1.0.5",
+  "number": "21.2.0.7",
   "title": "",
   "body": " Compute the area of the following region bounded by , , and . If we want everything in terms of then we need to draw a generic vertical rectangle of width , which we ve included in the diagram along with all of the appropriate labeling.        Everything is just as before. The real challenge comes from trying to put everything in terms of on the entire interval. We have but the formula for changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from and . On , , while on , .  We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of ?        "
 },
 {
-  "id": "AreasByIntegration-6",
+  "id": "AreasByIntegration-5",
   "level": "2",
-  "url": "AreasByIntegration.html#AreasByIntegration-6",
+  "url": "AreasByIntegration.html#AreasByIntegration-5",
   "type": "Drill",
-  "number": "21.1.0.8",
+  "number": "21.2.0.10",
   "title": "",
   "body": " Drills  Compute the three integrals in the previous example and verify that you get the same total area done either way.  "
 },
@@ -11516,16 +11561,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AreasByIntegration.html#AreaExam3",
   "type": "Example",
-  "number": "21.1.0.9",
+  "number": "21.2.0.11",
   "title": "",
   "body": " In the previous example, we had an alternative to dividing the interval into subintervals, but this is not always the case.  Compute the following area bounded by the curves , , , .   Computing the area between and   Graphs of the sine of x and cosine of x    You should be able to see that drawing a horizontal rectangle and getting things in terms of is going to be a mess. So, let s put in a vertical rectangle and see what happens. Remember that we are only drawing a single generic rectangle, but it could be positioned anywhere on the interval .   Computing the area between and   Graphs of the sine of x and cosine of x with vertical differential rectangle    "
 },
 {
-  "id": "AreasByIntegration-8",
+  "id": "AreasByIntegration-7",
   "level": "2",
-  "url": "AreasByIntegration.html#AreasByIntegration-8",
+  "url": "AreasByIntegration.html#AreasByIntegration-7",
   "type": "Drill",
-  "number": "21.1.0.12",
+  "number": "21.2.0.14",
   "title": "",
   "body": " Drills  Compute the area indicated in the previous example.  "
 },
@@ -11534,7 +11579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AreasByIntegration.html#ArchimedesParab",
   "type": "Problem",
-  "number": "21.1.0.13",
+  "number": "21.2.0.15",
   "title": "Archimedes Quadrature of the Parabola.",
   "body": " Archimedes Quadrature of the Parabola   In his treatise, Quadrature of the Parabola, Archimedes (287 212 BC) shows that the area of a parabolic 4 segment is the area of its inscribed triangle.     A parabolic section with inscribed triangle    The inscribed triangle is the one where the distance from point to segment is a maximum. That The inscribed triangle is the one where the distance from point to segment . Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn t even have formulas at his disposal; this is why he stated the area as he did. We will use calculus to confirm Archimedes result. With this in mind, consider the parabola , and let , , and .     The parabolic section with vertex at the origin.       Find the area of in terms of , , . [Hint: You can do this in many ways, but the easiest way might be to draw a vertical line through and use this to divide the triangle into two triangles (only a suggestion).]      Find the coordinates of which maximizes the distance from to segment and verify Archimedes  result that the area of the parabolic segment is the area of .    Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to ) occurs when the vertical distance is maximized (again, only a suggestion).    "
 },
@@ -11543,16 +11588,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "VolumesByIntegration.html",
   "type": "Section",
-  "number": "21.2",
+  "number": "21.3",
   "title": "Volumes",
-  "body": " Volumes  The following is a photograph of Problem 14 from the \\textit{Moscow Mathematical Papyrus}, an Egyptian mathematical papyrus from around 1850 BC which currently resides in the Pushkin Museum of Fine Arts.      The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is , whose base is a square of side and whose top is a square with side . The solution translates as follows.     You are to square , result .  You are to double , result .  You are to square , result .  You are to add the , the , and the , result .  You are to take a third of , result .  You are to take twice, result .  See it (the volume) is . You will find it right.     In modern terms, the volume is given by which is the correct answer.  Mathematics historians believe that Egyptians, among other early civilizations, knew the general formula for the volume of a truncated pyramid of height and square bases whose sides are and , though it would not have been written in such a modern, general form.   Mathematics historians are led to believe that Egyptians and other early civilizations also knew the related formula for the volume of a pyramid with height and a square base with side , . That being said, historians do not know exactly how either of these formulas were obtained.   How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?   Also, one can use the formula for the volume of a pyramid to obtain the formula for the volume of a truncated pyramid as suggested by the Moscow Papyrus. With that in mind, consider the side view of a truncated pyramid with height and base sides and .   A truncated triangle with height=h, base=b, and top=a.   If one were to fill in the top of the pyramid that was chopped off     If the formula for the volume of a pyramid is correct, then the volume of the truncated pyramid would be     Use similar triangles to determine in terms of and and use this to obtain the formula for the volume of the truncated pyramid     At some point you will need to utilize the identity . Verify that this is correct and keep it in mind. You will be using this later.    There are questions which remain:  Is the formula for the volume of a pyramid correct?  Do the same ideas work for other shapes such as a cone or a pyramid with a more general base?  What would these formulas look like?    Ancient civilizations knew answers to these questions but did not necessarily explain how they were obtained. We can only speculate what they did.  For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    This would lead one to guess that the volume of a cone is the height times the area of the base. This coincides with our formula for the volume of a square based pyramid. Could it be that the volume of a cone with an arbitrary shape for the base be the height times the area of the base as well?  Fortunately, we have integral calculus at our disposal to address these questions. Keeping in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities, we will need to look at volumes in a more simplistic and general way. Take for example the volume of a rectangular box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let s restate the volume in this way . The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Let's illustrate this by addressing the volume of cone. Recall that we believe that the volume of a cone is 1\/3 the volume of the corresponding cylinder, that is, it is . With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get .  What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .   Volume of a Cone   Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.     Volume of a Square Based Pyramid     Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.       The Generalized Cone   Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .    The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.    Having determined the volume of various cones, let's return to the problem of their frusta. We saw that the volume of the frustum of a square based pyramid with height and base sides and is .   Consider the following frustum of a circular cone.     Use an argument similar to that of the truncated pyramid to show that the volume of the frustum of the cone is given by    To see how we can obtain the volume of the frustum of a generalized cone, notice that we can write the formulas we've already obtained as  . This seems to suggest that the volume of the frustum of a generalized cone is given by where is the height and and are the areas of the two bases.    Verify that this formula for the volume of the frustum of a generalized cone is correct.    Consider the following diagram of the cone and the frustum cut from it.       When we use an argument similar to that of the truncated pyramid, notice that .]  ###############################################################  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.  Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids.  Let s verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that.   Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.      Marcus Tullius Cicero (106 43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of Archimedes .     Cylinder with enclosed sphere with the same radius.    How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise On the Sphere and the Cylinder . In it, Archimedes proves that the volume and surface area of a sphere is that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius :     The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won t go into Archimedes exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius can be generated by revolving the curve about the -axis.     A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn t determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.   Volume of a Sphere (rotation about the horizontal axis).    Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .     Revolving a Cycloid     Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.      Of course, this technique can be applied to find the volume of a more general solid of revolution.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by .     To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.         Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.   Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by .      To do  We need to add a bunch of volume of revolution problems here.  "
+  "body": " Volumes  The following is a photograph of Problem 14 from the \\textit{Moscow Mathematical Papyrus}, an Egyptian mathematical papyrus from around 1850 BC which currently resides in the Pushkin Museum of Fine Arts.      The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is , whose base is a square of side and whose top is a square with side . The solution translates as follows.     You are to square , result .  You are to double , result .  You are to square , result .  You are to add the , the , and the , result .  You are to take a third of , result .  You are to take twice, result .  See it (the volume) is . You will find it right.     In modern terms, the volume is given by which is the correct answer.  Mathematics historians believe that Egyptians, among other early civilizations, knew the general formula for the volume of a truncated pyramid of height and square bases whose sides are and , though it would not have been written in such a modern, general form.   Mathematics historians are led to believe that Egyptians and other early civilizations also knew the related formula for the volume of a pyramid with height and a square base with side , . That being said, historians do not know exactly how either of these formulas were obtained.   How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?   Also, one can use the formula for the volume of a pyramid to obtain the formula for the volume of a truncated pyramid as suggested by the Moscow Papyrus. With that in mind, consider the side view of a truncated pyramid with height and base sides and .   A truncated triangle with height=h, base=b, and top=a.   If one were to fill in the top of the pyramid that was chopped off     If the formula for the volume of a pyramid is correct, then the volume of the truncated pyramid would be     Use similar triangles to determine in terms of and and use this to obtain the formula for the volume of the truncated pyramid     At some point you will need to utilize the identity . Verify that this is correct and keep it in mind. You will be using this later.    There are questions which remain:  Is the formula for the volume of a pyramid correct?  Do the same ideas work for other shapes such as a cone or a pyramid with a more general base?  What would these formulas look like?    Ancient civilizations knew answers to these questions but did not necessarily explain how they were obtained. We can only speculate what they did.  For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.     A cone and cylinder of the same height.    This would lead one to guess that the volume of a cone is the height times the area of the base. This coincides with our formula for the volume of a square based pyramid. Could it be that the volume of a cone with an arbitrary shape for the base be the height times the area of the base as well?  Fortunately, we have integral calculus at our disposal to address these questions. Keeping in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities, we will need to look at volumes in a more simplistic and general way. Take for example the volume of a rectangular box.     A generic rectangle    You probably remember the volume of this box as length times width times height. Let s restate the volume in this way . The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.     Pictures and formulas for the volume of a cylinder and a triangular wedge    This idea even applies to slabs that have an irregular face.     Picture and formula for the volume of an irregular slab.    Let's illustrate this by addressing the volume of cone. Recall that we believe that the volume of a cone is 1\/3 the volume of the corresponding cylinder, that is, it is . With this in mind, we will put in a vertical axis, label it , and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.     Cone with generic horizontal rectangle.    Drawing this generic slice separately we can compute its volume.     A generic slice from a cone and a formula for its volume.    Integrating these volumes, we get .  What is left now is to put in terms of so the integral can be computed. This can be done by noticing that we have similar triangles.     A right triangle with a similar right triangle inside.    This gives us the proportion , so .   Volume of a Cone   Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.     Volume of a Square Based Pyramid     Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.       The Generalized Cone   Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .    The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.    Having determined the volume of various cones, let's return to the problem of their frusta. We saw that the volume of the frustum of a square based pyramid with height and base sides and is .   Consider the following frustum of a circular cone.     Use an argument similar to that of the truncated pyramid to show that the volume of the frustum of the cone is given by    To see how we can obtain the volume of the frustum of a generalized cone, notice that we can write the formulas we've already obtained as  . This seems to suggest that the volume of the frustum of a generalized cone is given by where is the height and and are the areas of the two bases.    Verify that this formula for the volume of the frustum of a generalized cone is correct.    Consider the following diagram of the cone and the frustum cut from it.       When we use an argument similar to that of the truncated pyramid, notice that .]  ###############################################################  As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.  Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids.  Let s verify this. We know that the volume of the cylinder is given by . We need to show that the volume of the cone is of that.   Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.        A sphere generated by revolving about the x axis.    We will draw and label a generic rectangle of width and height and compute the volume of the disk generated by revolving this rectangle about the -axis. As before, we will draw and label the disk on the .     The same sphere with a generic disk and area and volume formulas.    Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn t determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.   Volume of a Sphere (rotation about the horizontal axis).    Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .     Revolving a Cycloid     Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.      Of course, this technique can be applied to find the volume of a more general solid of revolution.      Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by .     To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.         Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.   Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by .      To do  We need to add a bunch of volume of revolution problems here.  "
 },
 {
   "id": "RhindPapyrus",
   "level": "2",
   "url": "VolumesByIntegration.html#RhindPapyrus",
   "type": "Motivating Example",
-  "number": "21.2.0.1",
+  "number": "21.3.0.1",
   "title": "",
   "body": "    The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is , whose base is a square of side and whose top is a square with side . The solution translates as follows.     You are to square , result .  You are to double , result .  You are to square , result .  You are to add the , the , and the , result .  You are to take a third of , result .  You are to take twice, result .  See it (the volume) is . You will find it right.     In modern terms, the volume is given by which is the correct answer.  Mathematics historians believe that Egyptians, among other early civilizations, knew the general formula for the volume of a truncated pyramid of height and square bases whose sides are and , though it would not have been written in such a modern, general form.  "
 },
@@ -11561,7 +11606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolumesByIntegration-5",
   "type": "Problem",
-  "number": "21.2.0.1",
+  "number": "21.3.0.1",
   "title": "",
   "body": " How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?  "
 },
@@ -11570,7 +11615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolumesByIntegration-11",
   "type": "Problem",
-  "number": "21.2.0.2",
+  "number": "21.3.0.2",
   "title": "",
   "body": "  Use similar triangles to determine in terms of and and use this to obtain the formula for the volume of the truncated pyramid     At some point you will need to utilize the identity . Verify that this is correct and keep it in mind. You will be using this later.   "
 },
@@ -11579,7 +11624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeAndCyl",
   "type": "Figure",
-  "number": "21.2.0.3",
+  "number": "21.3.0.3",
   "title": "",
   "body": "   A cone and cylinder of the same height.   "
 },
@@ -11588,7 +11633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#GenericRectangle",
   "type": "Figure",
-  "number": "21.2.0.4",
+  "number": "21.3.0.4",
   "title": "",
   "body": "   A generic rectangle   "
 },
@@ -11597,7 +11642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolEqualsFaceXThick",
   "type": "Figure",
-  "number": "21.2.0.5",
+  "number": "21.3.0.5",
   "title": "",
   "body": "   Pictures and formulas for the volume of a cylinder and a triangular wedge   "
 },
@@ -11606,7 +11651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolEqualsFaceXThick2",
   "type": "Figure",
-  "number": "21.2.0.6",
+  "number": "21.3.0.6",
   "title": "",
   "body": "   Picture and formula for the volume of an irregular slab.   "
 },
@@ -11615,7 +11660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolCone",
   "type": "Figure",
-  "number": "21.2.0.7",
+  "number": "21.3.0.7",
   "title": "",
   "body": "   Cone with generic horizontal rectangle.   "
 },
@@ -11624,7 +11669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeSlice",
   "type": "Figure",
-  "number": "21.2.0.8",
+  "number": "21.3.0.8",
   "title": "",
   "body": "   A generic slice from a cone and a formula for its volume.   "
 },
@@ -11633,7 +11678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeSimTri",
   "type": "Figure",
-  "number": "21.2.0.9",
+  "number": "21.3.0.9",
   "title": "",
   "body": "   A right triangle with a similar right triangle inside.   "
 },
@@ -11642,7 +11687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#ConeVol",
   "type": "Problem",
-  "number": "21.2.0.10",
+  "number": "21.3.0.10",
   "title": "Volume of a Cone.",
   "body": " Volume of a Cone   Substitute this value for into the integral and show that the volume of the cone is, in fact, the volume of the cylinder.   "
 },
@@ -11651,7 +11696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolSqPyr",
   "type": "Problem",
-  "number": "21.2.0.11",
+  "number": "21.3.0.11",
   "title": "Volume of a Square Based Pyramid.",
   "body": " Volume of a Square Based Pyramid     Volume of a square based pyramid Use the same idea as above to show that the volume of a square based pyramid is the volume of the box with the same base and height     A square based pyramid.     "
 },
@@ -11660,7 +11705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#GeneralCone",
   "type": "Problem",
-  "number": "21.2.0.13",
+  "number": "21.3.0.13",
   "title": "The Generalized Cone.",
   "body": " The Generalized Cone   Consider the following generalized cone.      A cone an irregular base.    Show that the volume of this cone is the volume of the generalized cylinder with the same height and same base. That is, show that the volume of this cone is .    The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.   "
 },
@@ -11669,7 +11714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolumesByIntegration-35",
   "type": "Problem",
-  "number": "21.2.0.15",
+  "number": "21.3.0.15",
   "title": "",
   "body": " Consider the following frustum of a circular cone.     Use an argument similar to that of the truncated pyramid to show that the volume of the frustum of the cone is given by   "
 },
@@ -11678,7 +11723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolumesByIntegration-37",
   "type": "Problem",
-  "number": "21.2.0.16",
+  "number": "21.3.0.16",
   "title": "",
   "body": "  Verify that this formula for the volume of the frustum of a generalized cone is correct.    Consider the following diagram of the cone and the frustum cut from it.      "
 },
@@ -11687,25 +11732,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#FrustomVol",
   "type": "Problem",
-  "number": "21.2.0.17",
+  "number": "21.3.0.17",
   "title": "Volume of a Frustum.",
   "body": " Volume of a Frustum   A frustum of a cone is basically a cone with the top chopped off.     A frustum       Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!      Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.    "
-},
-{
-  "id": "SphereCyl",
-  "level": "2",
-  "url": "VolumesByIntegration.html#SphereCyl",
-  "type": "Figure",
-  "number": "21.2.0.19",
-  "title": "",
-  "body": "   Cylinder with enclosed sphere with the same radius.   "
 },
 {
   "id": "SphereByRevAboutX",
   "level": "2",
   "url": "VolumesByIntegration.html#SphereByRevAboutX",
   "type": "Figure",
-  "number": "21.2.0.20",
+  "number": "21.3.0.19",
   "title": "",
   "body": "   A sphere generated by revolving about the x axis.   "
 },
@@ -11714,7 +11750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#VolSphereWithDiffDisc",
   "type": "Figure",
-  "number": "21.2.0.21",
+  "number": "21.3.0.20",
   "title": "",
   "body": "   The same sphere with a generic disk and area and volume formulas.   "
 },
@@ -11723,7 +11759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#SphereVolXRev",
   "type": "Problem",
-  "number": "21.2.0.22",
+  "number": "21.3.0.21",
   "title": "Volume of a Sphere (rotation about the horizontal axis)..",
   "body": " Volume of a Sphere (rotation about the horizontal axis).    Volume of revolution sphere, by revolving about axis Compute the integral above to determine that the volume of the sphere is, in fact, .   "
 },
@@ -11732,7 +11768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#CyclRevX",
   "type": "Problem",
-  "number": "21.2.0.23",
+  "number": "21.3.0.22",
   "title": "Revolving a Cycloid.",
   "body": " Revolving a Cycloid     Volume of revolution  the cycloid Find the volume of the solid generated by revolving one arch of the following cycloid about the axis.     Cycloid generated by rolling a circle.     "
 },
@@ -11741,7 +11777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#exer-GenSolidRevX",
   "type": "Problem",
-  "number": "21.2.0.25",
+  "number": "21.3.0.24",
   "title": "",
   "body": "   Volume of revolution  about the -axis Consider the following region bounded by the curves and and a generic rectangle of width inside it.           Draw and label the thickness and inside and outside radii of the washer created by revolving this generic rectangle about the -axis.      Use the result to show that the volume of the solid generated by revolving this region about the -axis is given by .     To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line not passing through the region. You can assume for the sake of argument that the line lies below the region.    "
 },
@@ -11750,7 +11786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VolumesByIntegration.html#GenVolRevY",
   "type": "Problem",
-  "number": "21.2.0.27",
+  "number": "21.3.0.26",
   "title": "",
   "body": "    Volume of revolution  about the -axis Consider the following region bounded by the curves and and the vertical line to the left of this region.           Draw and label the washer created by revolving the horizontal rectangle around the line and use this to find a formula for the volume of this washer.      To do  h and k are messed up in this problem.   Integrate your answer from part (a) to show that the volume of the solid formed by revolving the region about the line is given by .    "
 },
@@ -11759,7 +11795,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-VolByShells.html",
   "type": "Section",
-  "number": "21.3",
+  "number": "21.4",
   "title": "Volumes by Shells",
   "body": " Volumes by Shells  As you no doubt noticed, when we had to compute the volume of a solid generated by revolving a region about the -axis (or any horizontal line), we obtained an integral with in it, which meant that we would put everything in terms of . Likewise, when we revolved about the -axis, we had to put everything in terms of . Sometimes this is not practical or leads to an undesirable integral. Consider the following example of the region bounded by and revolved about the -axis. Going through our set up (Yes, we must do it too!), we have the following generic rectangle revolved around to create a washer.        This set up (with the picture) was really the easy part. The harder part is putting everything in terms of and integrating. For instance, we would need to solve for in terms of . Furthermore, we would need to figure out the maximum value of on the interval . All of this is doable, but inconvenient. What would be preferable would be to leave everything in terms of , but this would entail drawing a vertical box instead.        If we were to treat the right hand object as a very tall washer with inside radius , outside radius , and height , we would get its volume to be Recalling our reasoning with the product rule, we can ignore as it is infinitely small compared to , so that the volume of this tall washer is which we could then integrate to obtain   If you feel as funny (or perhaps more) about ignoring the as you did with the product rule, there is another way to look at this that might help your queasiness and provide a better way of remembering what to do in this situation. Basically, instead of calling the revolution of the generic rectangle a tall washer, we will call it a (cylindrical) shell. This sounds somewhat silly, but it really points out the difference. For a washer, the height is infinitesimal, whereas for a shell, the thickness of the wall is infinitesimal. For a physical analogy, this is the difference between an actual metal washer and a piece of metal tubing. To figure out the volume of the tubing (shell), we can slice it open and flatten it out into a rectangular piece of metal. This is not so easily done with a washer. This provides a shortcut (and device) for computing the volume of a shell; just compute the volume of the flattened version.     A cylindrical shell opened and flattened.    Using the flattened out version, we have that the volume of the shell is given by as we obtained before.  Actually, a similar formula works for any washer: While this is interesting geometrically, it does not help with computing integrals using washers.   Generic volume using shells    Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.       Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.     Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by       Volume of a torus     Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571 1630) and is a special case of a theorem by Pappus of Alexandria (290 350 AD).     A torus around the y axis.      So a natural question arises, Which should I use, washers or shells? The answer is that you can use either one; sometimes it is more convenient to use one over the other, other times it really doesn t matter. The real question you need to ask in a particular problem is, Is it better to put things all in terms of or in terms of . This will determine if you want to use a vertical rectangle (of width ) or a horizontal rectangle (of width ). This will determine whether washers or shells are more appropriate.   Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don t look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.      Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:     The -axis.      The -axis.      Note to self  Add several problems using shells and washers here whichever makes the problem easier. Make sure to include a torus.  "
 },
@@ -11768,7 +11804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#fig-VolByWasher",
   "type": "Figure",
-  "number": "21.3.0.1",
+  "number": "21.4.0.1",
   "title": "",
   "body": "     "
 },
@@ -11777,7 +11813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#IntShellExamp",
   "type": "Figure",
-  "number": "21.3.0.2",
+  "number": "21.4.0.2",
   "title": "",
   "body": "     "
 },
@@ -11786,7 +11822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#ShellFlattened",
   "type": "Figure",
-  "number": "21.3.0.3",
+  "number": "21.4.0.3",
   "title": "",
   "body": "   A cylindrical shell opened and flattened.   "
 },
@@ -11795,7 +11831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#exer-GenShells",
   "type": "Problem",
-  "number": "21.3.0.4",
+  "number": "21.4.0.4",
   "title": "Generic volume using shells.",
   "body": " Generic volume using shells    Volume  of revolution using shells Consider the following region bounded by the curves and .     Generic area bounded by two curves.       Draw and label a generic vertical rectangle in this region and draw and label the shell generated by revolving this rectangle about the vertical line to the left of the region.     Compute the volume of this shell and integrate it to show that the volume of the solid generated by revolving the region about the line is given by     "
 },
@@ -11804,7 +11840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#exer-VolTorus",
   "type": "Problem",
-  "number": "21.3.0.6",
+  "number": "21.4.0.6",
   "title": "Volume of a torus.",
   "body": " Volume of a torus     Volume  of revolution  torus Consider a circle of radius , whose center revolves around a line distance away. The donut formed is actually called a torus. Consider the following torus generated by revolving the circle about the line .  Show that the volume of this torus equals the area of the small circle times the circumference of the circle generated by revolving the center of this circle around the line. This was derived by Johannes Kepler (1571 1630) and is a special case of a theorem by Pappus of Alexandria (290 350 AD).     A torus around the y axis.     "
 },
@@ -11813,7 +11849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#example-WashersOrShells",
   "type": "Example",
-  "number": "21.3.0.8",
+  "number": "21.4.0.8",
   "title": "Shell vs. Washers.",
   "body": " Shell vs. Washers   Volume  of revolution  shells vs. washers Consider the following region bounded by , , .     Graph of y=square root of 1-x and y=x.    If we were to draw a vertical rectangle involving , then any integral would, of necessity, need to be divided into two separate integrals to compute, since the coordinate of the upper point on the rectangle changes from one curve to the other. Utilizing, a horizontal rectangle would circumvent this problem. However, we would need to be prepared to put everything in terms of instead of . Luckily, these two equations don t look that bad with regard to this. We would still need to find the point of intersection, but that would have been the case with a vertical rectangle as well.  "
 },
@@ -11822,7 +11858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-VolByShells.html#exer-ShellsVSWashers",
   "type": "Problem",
-  "number": "21.3.0.10",
+  "number": "21.4.0.10",
   "title": "",
   "body": "   Volume  of revolution  shells vs. washers Find the volumes of the solids generated by revolving horizontal rectangles about:     The -axis.      The -axis.    "
 },
@@ -11831,16 +11867,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-SurfAreaAndArcLength.html",
   "type": "Section",
-  "number": "21.4",
+  "number": "21.5",
   "title": "Surface Area and Arc Length",
-  "body": " Surface Area and Arc Length  Recall that we mentioned that in his treatise On the Sphere and the Cylinder , Archimedes not only showed that the sphere had the volume of its circumscribing cylinder, but it also had the surface area. Again, we will not duplicate how Archimedes did it, but we will verify it with Calculus.  Surface area poses a bit more of a challenge than volume. This can be illustrated by the following two boxes.     A cube and a parallellepiped with the same height.    The boxes have the same base and same height, so they have the same volume. However, the slanted box clearly has more surface and could be stretched as far as you like, so the there really is no limit to how large the surface area could be made. The slant makes a difference in surface area. To see this more carefully, we will need to first develop the notion of arc length.   Note to self  Make this a proper link.   You have already been exposed to arc length in the differential calculus part of this book. Recall that in looking at the catenary [Section 4.3.1], we had that the hanging chain satisfied the equation where , were the weight density of the chain and horizontal tension, respectively, and is the length of the chain from the lowest point to . We then differentiated and applied the Pythagorean Theorem to the differential triangle     Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.    We will exploit this to look at the arc length of a curve. Specifically, suppose we have a curve from point to point and want to compute the length of this curve .     Generic curve between A and B.    If we divide this curve into infinitely small segments, then we can compute its length by integrating the lengths of these segments. In other words, we have where denotes a generic point on the curve. Using our infinitesimal Pythagorean Theorem, we have To actually compute this integral (via the Fundamental Theorem), we need to put this integral into a form that we can anti differentiate. For example, we could put everything in terms of or in terms of yielding these two possibilities  The absolute value is necessary since we are factoring out or .In practice, if is always increasing then and so the absolute value isn t necessary. The same applies to . In many applications, this will be the case, but you should be wary that it can happen.   Arclength of a quarter circle   Consider the quarter circle given by the graph of , where . Since the circumference of the unit circle is , the length of this quarter circle should be .     Use an integral to verify this result.      Suppose we tried to compute the length of a quarter of the circle in the following way We d have gotten an arclength of zero. What goes wrong?     Again, there is real temptation to try to memorize formulas and but we urge you not to. First, why try to remember two formulas, when one just needs to remember the Pythagorean Theorem . This seems much more natural.  At this point, it is just a matter of determining what variable you wish to put everything in terms of. The variable doesn t even need to be or . For example, suppose we have , and , with . So we don t need to deal with absolute values, let s assume that the parameter is always increasing so that . Then we could put everything in terms of :    Arclength of a circle  It would have been tedious to compute the length of circumference of the entire circle in . Do you see why?  Use the parameterization , , to verify that the circumference of the unit circle is .                                 Note to self  Insert a collection of problems here.   Now that we have arc length in place, let s go back to the problem of computing the surface area of a sphere. Recalling that surface area needs to take into account the slant of the surface rather than just the height, let s actually divide the surface of the sphere into infinitely small bands.     A sphere with a vertical slice through it.    What we need to do is compute the surface area of this band (called a frustum of a cone). To do that, we need to find the surface area of a cone (without the bottom). With that in mind, let s start with a cone with base radius of and slant length . If we slice the cone and flatten it (much like a paper cup), then we can determine the surface area of the cone, by finding the area of the sector created by flattening it.     Circle with a wedge removed to create a cone.    By dividing this sector into infinitely many infinitely thin triangles, and integrating the areas of these triangles, we get that the area of the sector (and thus the cone) is given by .   The Surface Area of a Conical Frustum    Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by     Armed by this, we can obtain that the surface area of a surface of revolution obtained by revolving a curve about the -axis is given by integrating the surface areas of these infinitely thin bands.   Total Surface Area      As with arc length, you are free to put this integral in terms of whichever variable you wish.   The Surface Area of a Sphere    Surface Area  of a sphere      Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.     Use the parameterization , , to obtain the same answer as part (a).      General Surface Area    Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?     The Surface Area of a Torus    Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.    You might find it easier using the parametric equations and instead of the equation for the generating circle.     Note to self  Insert practice problems here   "
+  "body": " Surface Area and Arc Length  Recall that we mentioned that in his treatise On the Sphere and the Cylinder , Archimedes not only showed that the sphere had the volume of its circumscribing cylinder, but it also had the surface area. Again, we will not duplicate how Archimedes did it, but we will verify it with Calculus.  Surface area poses a bit more of a challenge than volume. This can be illustrated by the following two boxes.     A cube and a parallellepiped with the same height.    The boxes have the same base and same height, so they have the same volume. However, the slanted box clearly has more surface and could be stretched as far as you like, so the there really is no limit to how large the surface area could be made. The slant makes a difference in surface area. To see this more carefully, we will need to first develop the notion of arc length.   Note to self  Make this a proper link.   You have already been exposed to arc length in the differential calculus part of this book. Recall that in looking at the catenary [Section 4.3.1], we had that the hanging chain satisfied the equation where , were the weight density of the chain and horizontal tension, respectively, and is the length of the chain from the lowest point to . We then differentiated and applied the Pythagorean Theorem to the differential triangle     Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.    We will exploit this to look at the arc length of a curve. Specifically, suppose we have a curve from point to point and want to compute the length of this curve .     Generic curve between A and B.    If we divide this curve into infinitely small segments, then we can compute its length by integrating the lengths of these segments. In other words, we have where denotes a generic point on the curve. Using our infinitesimal Pythagorean Theorem, we have To actually compute this integral (via the Fundamental Theorem), we need to put this integral into a form that we can anti differentiate. For example, we could put everything in terms of or in terms of yielding these two possibilities  The absolute value is necessary since we are factoring out or .In practice, if is always increasing then and so the absolute value isn t necessary. The same applies to . In many applications, this will be the case, but you should be wary that it can happen.   Arclength of a quarter circle   Consider the quarter circle given by the graph of , where . Since the circumference of the unit circle is , the length of this quarter circle should be .     Use an integral to verify this result.      Suppose we tried to compute the length of a quarter of the circle in the following way We d have gotten an arclength of zero. What goes wrong?     Again, there is real temptation to try to memorize formulas and but we urge you not to. First, why try to remember two formulas, when one just needs to remember the Pythagorean Theorem . This seems much more natural.  At this point, it is just a matter of determining what variable you wish to put everything in terms of. The variable doesn t even need to be or . For example, suppose we have , and , with . So we don t need to deal with absolute values, let s assume that the parameter is always increasing so that . Then we could put everything in terms of :    Arclength of a circle  It would have been tedious to compute the length of circumference of the entire circle in . Do you see why?  Use the parameterization , , to verify that the circumference of the unit circle is .                                 Note to self  Insert a collection of problems here.   Now that we have arc length in place, let s go back to the problem of computing the surface area of a sphere. Recalling that surface area needs to take into account the slant of the surface rather than just the height, let s actually divide the surface of the sphere into infinitely small bands.     A sphere with a vertical slice through it.    What we need to do is compute the surface area of this band (called a frustum of a cone). To do that, we need to find the surface area of a cone (without the bottom). With that in mind, let s start with a cone with base radius of and slant length . If we slice the cone and flatten it (much like a paper cup), then we can determine the surface area of the cone, by finding the area of the sector created by flattening it.     Circle with a wedge removed to create a cone.    By dividing this sector into infinitely many infinitely thin triangles, and integrating the areas of these triangles, we get that the area of the sector (and thus the cone) is given by .   The Surface Area of a Conical Frustum    Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by     Armed by this, we can obtain that the surface area of a surface of revolution obtained by revolving a curve about the -axis is given by integrating the surface areas of these infinitely thin bands.   Total Surface Area      As with arc length, you are free to put this integral in terms of whichever variable you wish.   The Surface Area of a Sphere    Surface Area  of a sphere      Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.     Use the parameterization , , to obtain the same answer as part (a).      General Surface Area    Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by         What if the line was to the right of the curve? What if it passed through the curve?     The Surface Area of a Torus    Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.    You might find it easier using the parametric equations and instead of the equation for the generating circle.     Note to self  Insert practice problems here   "
 },
 {
   "id": "SurfaceAreaIllus",
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#SurfaceAreaIllus",
   "type": "Figure",
-  "number": "21.4.0.1",
+  "number": "21.5.0.1",
   "title": "",
   "body": "   A cube and a parallellepiped with the same height.   "
 },
@@ -11849,7 +11885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#DiffTri",
   "type": "Figure",
-  "number": "21.4.0.2",
+  "number": "21.5.0.2",
   "title": "",
   "body": "   Right triangle with legs dx and dy, hypotenuse ds, and formula for the length of the hypotenuse.   "
 },
@@ -11858,7 +11894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#figure-GenArcLen",
   "type": "Figure",
-  "number": "21.4.0.3",
+  "number": "21.5.0.3",
   "title": "",
   "body": "   Generic curve between A and B.   "
 },
@@ -11867,7 +11903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#EXERCISEArcLenQtrCirc",
   "type": "Problem",
-  "number": "21.4.0.4",
+  "number": "21.5.0.4",
   "title": "",
   "body": " Arclength of a quarter circle   Consider the quarter circle given by the graph of , where . Since the circumference of the unit circle is , the length of this quarter circle should be .     Use an integral to verify this result.      Suppose we tried to compute the length of a quarter of the circle in the following way We d have gotten an arclength of zero. What goes wrong?    "
 },
@@ -11876,7 +11912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#EXERCISECircumViaParam",
   "type": "Problem",
-  "number": "21.4.0.5",
+  "number": "21.5.0.5",
   "title": "",
   "body": " Arclength of a circle  It would have been tedious to compute the length of circumference of the entire circle in . Do you see why?  Use the parameterization , , to verify that the circumference of the unit circle is .  "
 },
@@ -11885,7 +11921,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#figure-SphereSurfAr",
   "type": "Figure",
-  "number": "21.4.0.6",
+  "number": "21.5.0.6",
   "title": "",
   "body": "   A sphere with a vertical slice through it.   "
 },
@@ -11894,7 +11930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#figure-ConicalFrustum",
   "type": "Figure",
-  "number": "21.4.0.7",
+  "number": "21.5.0.7",
   "title": "",
   "body": "   Circle with a wedge removed to create a cone.   "
 },
@@ -11903,7 +11939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#exercise-SurfAreaConeFrust",
   "type": "Problem",
-  "number": "21.4.0.8",
+  "number": "21.5.0.8",
   "title": "The Surface Area of a Conical Frustum.",
   "body": " The Surface Area of a Conical Frustum    Surface Area of a  conical frustum Consider the frustum cut from the following cone.     A cone with embedded conical frustum.    Show that the surface area of the frustum is given by    "
 },
@@ -11912,7 +11948,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#figure-GenSurfArea",
   "type": "Figure",
-  "number": "21.4.0.10",
+  "number": "21.5.0.10",
   "title": "",
   "body": " Total Surface Area     "
 },
@@ -11921,7 +11957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#exercise-SphereSurfArea",
   "type": "Problem",
-  "number": "21.4.0.11",
+  "number": "21.5.0.11",
   "title": "The Surface Area of a Sphere.",
   "body": " The Surface Area of a Sphere    Surface Area  of a sphere      Use figure with the equation , to show that the surface area of a sphere of radius is as Archimedes claimed.     Use the parameterization , , to obtain the same answer as part (a).    "
 },
@@ -11930,16 +11966,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#exercise-GenSurfArea",
   "type": "Problem",
-  "number": "21.4.0.12",
+  "number": "21.5.0.12",
   "title": "General Surface Area.",
-  "body": " General Surface Area    Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by .        What if the line was to the right of the curve? What if it passed through the curve?   "
+  "body": " General Surface Area    Surface Area Show that the surface area of the surface generated by revolving the following curve about the line to the left of curve is given by         What if the line was to the right of the curve? What if it passed through the curve?   "
 },
 {
   "id": "exercise-SurfAreaTorus",
   "level": "2",
   "url": "sec-SurfAreaAndArcLength.html#exercise-SurfAreaTorus",
   "type": "Problem",
-  "number": "21.4.0.14",
+  "number": "21.5.0.14",
   "title": "The Surface Area of a Torus.",
   "body": " The Surface Area of a Torus    Surface Area  of a  torus In problem we showed that the volume of a torus is equal to the area of the generating circle times the circumference of the circle formed by revolving the center of this circle about axis of the torus. One might wonder if a similar result holds for the surface area of a torus; that is, is the surface area of the torus equal to the circumference of the generating circle times the circumference of the circle formed by revolving the center of this circle about the axis of the torus? To answer this, consider the following torus generated by revolving the circle about the line .        Find the surface area of this torus and use this to answer the above question.    You might find it easier using the parametric equations and instead of the equation for the generating circle.   "
 },
@@ -11948,7 +11984,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "section-CenterMass.html",
   "type": "Section",
-  "number": "21.5",
+  "number": "21.6",
   "title": "Center of Mass",
   "body": " Center of Mass  In and , we made reference to a theorem of Pappus. That theorem says that if a region is revolved about a line not passing through the region, then the volume of the solid of revolution is equal to the area of the region times the circumference of the circle formed by revolving the center of mass (centroid) of this region about the line. Another theorem of Pappus states that the surface area of a surface formed by revolving a curve about a line is equal to the length of the curve times the circumference of the circle formed by revolving the centroid of the curve about the line.   Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.      This played out in the two PIC s as the centroids of a disk and its boundary circle are both the center of the circle.  Disks and circles are pretty straightforward, but what about finding the center of mass of a general region. From a physical point of view, this region can represent a thin plate whose density could vary. To keep the problem geometric (and simpler), we will assume that the density is constantly 1 so that mass really is area. In this case, the center of mass is what we have been calling the centroid of the region.  Everyone probably has heard the term center of mass. But what does this mean? Let s start this with something that everyone is familiar with: an average of grades. If we have five grades: , , , , , then all students know that the average, denoted (read bar) is given by What does this average mean? This means that this student s overall performance is equivalent to the performance of a student who earned 89.6 on each of the five tests. It does not take into account fluctuations among the grades, but gives an overall measure. To put this in a more physical light, if we considered a system of points each with mass at these locations , , , , on a number line, then collectively, this system behaves the same as a mass of located at the point . It doesn t take into account the relationships among the various grades; as much as in astronomy where there is a tendency to “shrink” the mass of a planet to its center of mass, with disregard to the dynamics in that planet.  In general, if we placed a point mass of at each of the positions , , , , , then the center of mass , should satisfy the relationship To help with our discussions on this, we will give a name to the numerator. People have christened this the (first) moment of the system (about the origin). To give it a simple way to remember it, we write Later we will have use for the second moment about the origin, namely In general, one could look at the moment as   Let s apply this reasoning and our integration strategy to an infinite number of points. For example, the interval .        In this case, our simple formula doesn t hold as the position varies throughout the interval. Thus we apply our integration strategy. That is, we divide the interval into infinitely small intervals where the simple formula applies. The simple formula for moment applies to this small subinterval, so we have .  Integrating these individual moments gives us that the total moment of the interval is . Thus, we would have . This agrees with your intuitive notion that the center of mass of the interval should be located at the midpoint of the interval.     Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?     Vocabulary weighted average We did not want to give it away while you were doing the previous problem, but you will actually get what is known as a weighted average ; that is, the center of mass of the two midpoints where the mass of each interval is condensed at its midpoint.  What if we ramp this up to two-dimensions. Suppose we have a number of points of mass located at .        By the same reasoning as before, the center of mass should have the property that this system as a whole should behave the same as if the entire mass was located at . In other words, we should have This leads to the formulation . The thing to take away from this is that even though the center of mass, has two coordinates, we treat each coordinate separately and they are the averages of the coordinates and coordinates, respectively. Also, each coordinate still fits into the formula . Let s use this same idea to a curve of uniform density .     A generic graph of a function.    Using analogous reasoning, the center of mass of this curve will be given by where each coordinate fits into our scheme . . To this end, we will look at the mass of the curve. Since the density is constantly , the mass is really the arc length and is given by .  To address , we will compute the moment of the curve about the line . Dividing our curve into infinitely small pieces, we can use our simple formulation.           Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .    Putting all of this together we have . Again, we urge you to go through this process rather than trying to memorize these formulas.     Moment As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.     Find the equation of the line segment joining and , To avoid dealing with absolute values, let s assume and .     Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?      Note from Bob  In do we want to include that they should be able to arrive at in part (a) without computing the integral using symmetry?      Moment center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .     Verify that by following our process as above.      Compute .     Notice that the above examples show that the center of mass of a curve need not be a point on the curve. We are now in a position to prove Pappus Theorem on surface area.   Pappus Theorem for Surface Area    Surface Area  Pappus Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by      Note to self  Put some practice problems here.   To obtain Pappus theorem for volumes we need to expand this idea to the center of mass of a two-dimensional region. Again, the center of mass can be split into two coordinates ) which represent the averages of the and coordinates of all of the points in the region.  With this in mind, consider a region in the plane which can be thought of as two-dimensional plate with constant density . We will draw this region shortly.  Again, we will use our strategy of dividing our region into pieces where a simple formula can be applied, and we will apply our general idea that the centroid is given by the formula The mass is just the area, so we will focus on the numerator.  Specifically, if we want to find , we will draw a generic vertical box and determine its moment about the line .        The moment of this box is straightforward as every point in it is the same distance from the axis. Formally, we have   Integrating these moments, we get that the total moment of the region is given by . Thus, with this set up, we would have .  As before, you could memorize the formulas, but it is much better to remember simple concepts such as and apply these to a situation where things are constant. For example, we can apply the same reasoning to a horizontal box as below to derive the formula for . This is what integration is all about.     Moment  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by        Center of mass      In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.      Suppose the density was not constant. How would that alter the formulas for the center of mass?     Again, you can memorize formulas, but understanding them helps you to recreate them should you forget or more appropriately, adapt the ideas should the occasion necessitate that. For example, consider the region below bounded by and , .        Assuming the density is constant, it is straightforward to see that . But what about ? If we use the formula you derived above, we would have Getting everything in terms of would be problematic (but doable). It would be nice to keep everything in terms of which would entail using a vertical box. For the area in the denominator, this is not a problem and in fact is probably how you would have computed the area to begin with. For the numerator, let s put in our vertical box and see if we can compute its moment about the line .        The problem with computing the moment (about ) of this vertical box is that our simple formula won t work as the position varies throughout the box. But wait a minute! We know what for this box is, namely . We also know what area of this box is, namely . Using that so that .     Moment Integrate this and determine the coordinate of the center of mass of this region.          Moment For the following region, use the same sort of reasoning to show that the moment about the line is given by        Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven t proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.    Now that we have a handle on the center of mass of a two dimensional region, we can actually make pretty quick work of Pappus Theorem for determining the volume of a solid of revolution.  Consider the following region lying completely to the right of the line .         Pappus Theorem of Volumes    Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.     Note to self  Insert Practice Pappus Problems.   "
 },
@@ -11957,7 +11993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-PappusThems",
   "type": "Figure",
-  "number": "21.5.0.1",
+  "number": "21.6.0.1",
   "title": "",
   "body": " Two Theorems of Pappus: represents the centroids of the region and the curve, respectively.     "
 },
@@ -11966,7 +12002,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-IntervalMoment",
   "type": "Figure",
-  "number": "21.5.0.2",
+  "number": "21.6.0.2",
   "title": "",
   "body": "     "
 },
@@ -11975,7 +12011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-CoM1",
   "type": "Problem",
-  "number": "21.5.0.3",
+  "number": "21.6.0.3",
   "title": "",
   "body": "   Centeroids  center of mass Find the center of mass of the set , . Is the center of mass of the set equal to the averages of the midpoints of the two intervals? Does this make sense?   "
 },
@@ -11993,7 +12029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-CoM2D",
   "type": "Figure",
-  "number": "21.5.0.4",
+  "number": "21.6.0.4",
   "title": "",
   "body": "     "
 },
@@ -12002,7 +12038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-CoMOfCurve",
   "type": "Figure",
-  "number": "21.5.0.5",
+  "number": "21.6.0.5",
   "title": "",
   "body": "   A generic graph of a function.   "
 },
@@ -12011,7 +12047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-MomentOfSegment",
   "type": "Figure",
-  "number": "21.5.0.6",
+  "number": "21.6.0.6",
   "title": "",
   "body": "     "
 },
@@ -12020,7 +12056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-",
   "type": "Problem",
-  "number": "21.5.0.7",
+  "number": "21.6.0.7",
   "title": "",
   "body": "   Moment Provide the analogous reasoning (and diagrams) to show that the total moment about the line on the interval is given by .   "
 },
@@ -12029,7 +12065,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-CoMLineSegment",
   "type": "Problem",
-  "number": "21.5.0.8",
+  "number": "21.6.0.8",
   "title": "",
   "body": "   Moment As a test of our reasoning, let s apply the above ideas to find the center of mass of a line segment. If this reasoning is correct, then we should get the midpoint of the line segment.     Find the equation of the line segment joining and , To avoid dealing with absolute values, let s assume and .     Use the above formulas to determine the coordinates of the center of mass of this line segment. Is it the midpoint of the line segment?    "
 },
@@ -12038,7 +12074,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-CoMCircle",
   "type": "Problem",
-  "number": "21.5.0.9",
+  "number": "21.6.0.9",
   "title": "",
   "body": "   Moment center of mass of a circle By symmetry, the center of mass of a circle should be the center of the circle, but what about a semicircle? With this in mind, consider the upper semicircle of radius centered at the origin. This can be described by the equations .     Verify that by following our process as above.      Compute .    "
 },
@@ -12047,7 +12083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-PappusTheoremSA",
   "type": "Problem",
-  "number": "21.5.0.10",
+  "number": "21.6.0.10",
   "title": "Pappus’ Theorem for Surface Area.",
   "body": " Pappus Theorem for Surface Area    Surface Area  Pappus Theorem Consider the following curve with center of mass revolved about a vertical line to the left of the curve.        Show that the surface area of the surface generated by revolving this curve about the line is given by    "
 },
@@ -12056,7 +12092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-PappusVolumes",
   "type": "Figure",
-  "number": "21.5.0.12",
+  "number": "21.6.0.12",
   "title": "",
   "body": "     "
 },
@@ -12065,7 +12101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-PappusVol",
   "type": "Problem",
-  "number": "21.5.0.13",
+  "number": "21.6.0.13",
   "title": "",
   "body": "   Moment  Pappus Theorem for Volumes Use a horizontal box in the above diagram (appropriately labeled) to show that for the region is given by    "
 },
@@ -12074,7 +12110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-CMPractice1",
   "type": "Problem",
-  "number": "21.5.0.14",
+  "number": "21.6.0.14",
   "title": "",
   "body": "   Center of mass      In everything we did so far, we assumed that the region had a constant density and we said the density was . Would it have made a difference if we said the density was given by some other constant ? Explain.      Suppose the density was not constant. How would that alter the formulas for the center of mass?    "
 },
@@ -12083,7 +12119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-Moments",
   "type": "Figure",
-  "number": "21.5.0.15",
+  "number": "21.6.0.15",
   "title": "",
   "body": "     "
 },
@@ -12092,7 +12128,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-Moments2",
   "type": "Figure",
-  "number": "21.5.0.16",
+  "number": "21.6.0.16",
   "title": "",
   "body": "     "
 },
@@ -12101,7 +12137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-MomentSin3",
   "type": "Problem",
-  "number": "21.5.0.17",
+  "number": "21.6.0.17",
   "title": "",
   "body": "   Moment Integrate this and determine the coordinate of the center of mass of this region.   "
 },
@@ -12110,7 +12146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-GeneralMomentY",
   "type": "Problem",
-  "number": "21.5.0.18",
+  "number": "21.6.0.18",
   "title": "",
   "body": "      Moment For the following region, use the same sort of reasoning to show that the moment about the line is given by    "
 },
@@ -12119,7 +12155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-CoMCycloid",
   "type": "Problem",
-  "number": "21.5.0.19",
+  "number": "21.6.0.19",
   "title": "",
   "body": "   Center of mass  cycloid In you were asked to find the volume of the solid generated by revolving one arch of a cycloid given by around the -axis.        The answer to that problem was . We still haven t proved Pappus Theorem yet, but compute for this planar region and see if Pappus Theorem applied to this will yield the same answer.   "
 },
@@ -12128,7 +12164,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#figure-PappusThmSA",
   "type": "Figure",
-  "number": "21.5.0.21",
+  "number": "21.6.0.21",
   "title": "",
   "body": "     "
 },
@@ -12137,7 +12173,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-CenterMass.html#exercise-PappusThmForVolumes",
   "type": "Problem",
-  "number": "21.5.0.22",
+  "number": "21.6.0.22",
   "title": "Pappus Theorem of Volumes.",
   "body": " Pappus Theorem of Volumes    Volume  Pappus Theorem Use cylindrical shells to show that the volume of the solid generated by revolving this region about the line is given by . This is Pappus Theorem for volumes.   "
 },
@@ -12146,7 +12182,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "section-OtherIntApplications.html",
   "type": "Section",
-  "number": "21.6",
+  "number": "21.7",
   "title": "Other Applications of Integration",
   "body": " Other Applications of Integration   The Tautochrone  You may have noticed that we keep bringing up the cycloid in a number of problems involving areas, arc lengths, volumes, and centers of mass. As we said, this curve has fascinated mathematicians for a long time and many of these elegant results were cleverly obtained before the invention of calculus. We will now see how the cycloid was used to address a more practical problem.  In the 1600 s there was race among naval superpowers (Britain, France, Spain, Holland, etc.) to develop a way of measuring longitude at sea. Measuring latitude was relatively easy and could be accomplished by measuring the angle of elevation of the sun or stars. Before longitude could be measured accurately, ships would sail until they reached the correct latitude of a destination and then sailed east or west until they hit the destination. As such, there were monetary prizes awarded for anyone who develop an accurate way of measuring longitude at sea. For example, the Longitude Act, issued in Britain in 1714 offered a prize of up to £20,000 (about £5.1 million or million in 2022 currency) for anyone who could measure longitude to an accuracy of half a degree.  Since longitude is measured by “time” zones, then it became necessary to develop an accurate way of measuring time at sea. A regular pendulum clock, invented by the Dutch mathematician, scientist, and inventor Christiaan Huygens (1629 1695), used the fact that the oscillation of a pendulum is regular as long as it maintains the same amount of swing per oscillation. This made for an accurate timepiece on land, but it was not accurate at sea where a moving deck would make the pendulum swing at different angles and thus not have a constant period. To remedy this, Huygens developed a pendulum that would follow a tautochrone (a same time curve where a pendulum, exclusively under the influence of gravity, following that path would take the same amount of time to reach the bottom, no matter where it started on the curve). Huygens showed that an inverted cycloid was such a tautochrone shown below. A pendulum following the path of an inverted cycloid will take the same amount of time to reach the bottom no matter where it starts.   Image from MathWords        Vocabulary Involute of the cycloid Huygens then developed a pendulum clock which would do this. He published his work in 1673 in his book Horologium Oscillatorium: sive de motu pendulorum ad horologia aptato demostrationes geometricae (The Pendulum Clock: or geometrical demonstrations concerning the motion of pendula as applied to clocks) . The design from that work . is seen below. To get the pendulum to swing along a cycloidal path, Huygen s proved that if a flexible pendulum wraps around two flaps shaped like arches of a cycloid, then the bottom of the pendulum will trace a cycloid itself as seen on the left. This curve traced out is called the Involute of the cycloid .   Huygens Clock      In practice, the clock did not work any more accurately than a regular pendulum clock as it assumed the only force involved was gravity, whereas a clock at sea was subject to many more forces which could not be ignored. Subsequently, the Englishman John Harrison (1693-1776), a Yorkshire carpenter, invented a chronometer which ran on springs and proved to be very accurate.  Even still, many mathematicians cited Huygens work on this as being very elegant mathematically. Furthermore, Huygens developed his mathematics without calculus as it hadn t been invented (discovered?) yet. We will not prove that the involute of a cycloid is a cycloid, but we will use calculus to prove Huygens claim that the cycloid is, in fact, a tautochrone.  To start, recall that the speed at which the pendulum is traveling is given by where is the arc length traveled and is time. For simplicity, we will let the radius of the circle generating the cycloid be .     Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by     At this point we ve hit an impasse, as the speed of the pendulum is not a constant. Gravity will cause the pendulum to speed up as it swings downward. We will assume that the pendulum does not swing too wide, not too fast, and ignore air resistance. Thus, the only force we will consider is due to gravity and we will denote that by , where is the mass of the pendulum and is the acceleration due to gravity. Below is a diagram of a pendulum following the path of a cycloid with the forces at work.        The force due to gravity is always directed downward, so only a portion of it moves the pendulum along the curve. This tangential force has a magnitude where is the (tangential) acceleration and is obtained by projecting the gravitational force onto the tangent line to the curve. If we draw a differential triangle, we have the following similar triangles.           Tautochrone      Use the fact that the two triangles are similar to show that and use the fact that to conclude that .      Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .     Substituting the formula for from part (b) of we see that   Before we proceed any further, notice that if we use the appropriate trigonometric identity, we get so our formula for the total time traveled by the pendulum from to becomes As formidable as this integral may look, bear in mind that is a constant. Also, this looks ripe for a substitution to make it easier on the eyes. Specifically, what if we let and      Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.      Work and Kinetic Energy  If you go back to our proof that the cycloid is a tautochrone, you will notice that we had the equation . If we multiply both sides by our mass and integrate from to , we get The left hand side is called the work done by gravity moving an object from the height to the height and the right hand side is called the change in kinetic energy from the beginning point , to the terminal point . So, this equation really says that . At some point, you may have heard the expression that energy is the ability to do work. Kinematically, this is what we just showed. We will explore these two concepts in more detail to apply them to some natural questions that arise from things we did before.   Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?    Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:       Kinetic Energy      Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.      Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.      Note to self  More problems pumping tanks of various shapes including one where the bottom is slanted.   In the previous example, an integral was required as the distance lifted was not constant. Some problems have the force varying.   Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.            Kinetic Energy      If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.      Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)     There is another way to approach this problem which does not require examining the anchor separately. Instead of dividing the chain into small pieces where we can apply our formula for work, suppose we look at the work required to raise the anchor and chain from a distance to a distance .        Since the force (combined weight of anchor and remaining chain) stays virtually constant over this interval, then we can still apply our simple formula.      Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)    As we said the above could be done either way, but consider this following variation.    A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?    Since the weight of the water in the bucket is changing over time (unlike the anchor), it probably makes more sense to try to our second approach which is to determine the work required to lift the bucket water and rope from a distance to a distance . We can then integrate these small amounts of work to obtain the total work.     Use this analysis to show that the work to raise everything from a distance to a distance is given by       Integrate this to determine how much work it takes to raise all of this the entire meters.      What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?     Now that we have a handle on work, let s come back to kinetic energy. Let s begin by generalizing what we had done in the tautochrone problem.    Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton s Second Law which states that force , show that    Comment  The quantity is called the kinetic energy of the object (at time ) and is measured in      As we said before, the above can be stated as work change in kineticenergy. It turns out that utilizing the notion of kinetic energy can be a useful tool in determining the work involved in completing a task. For example, recall from Differential Calculus: From Practice to Theory > that the Richard F. Caris Mirror Laboratory uses spin casting to cast large parabolic mirrors for refractive telescopes. They load glass into a revolving furnace. When the glass liquifies, the spinning makes the middle go down and the sides go up. In that book there was a problem which showed that the surface generated would be a parabola. As you can see from these photos, this an exceptionally large furnace and the mirrors it produces are large as well (up to somewhere around 16 tons each).     A question is how long it takes for the furnace to rotate from a standing start to the proper speed. This is where the notion of kinetic energy comes in handy. To begin the process, they load chucks of borosilicate glass which has a density of into the furnace (over a honeycomb substrate) and start spinning the furnace.     For simplicity, we will ignore the substrate and actual furnace itself and let s assume that the glass is a solid disk which measures in radius and is thick.     To compute the kinetic energy of this disk spinning at a rate of we would like to use our simple formula   The mass is no problem as we know the density and the volume of the disk. The problem is the velocity. We know the angular velocity, which is constant, but in our formula for kinetic energy, we are talking about linear velocity which increases as you move away from the axis of rotation. This is where our plan of dividing the solid into parts where we can apply our simple formula applies. Specifically, consider the following cylindrical ring in our disk. As with volumes utilizing cylindrical shells, we will draw a cutaway view.     Notice that all the points in the cylindrical shell are moving at the same linear speed, so we can apply Formula to the shell.     Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .      Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?       Escape Velocity and Improper Integrals  Many people have heard the term escape velocity. A quick look on the internet says that the escape velocity from the surface of the earth is approximately or about times the speed of sound. What does this mean and where did such a number come from? The key is our discovery that work can be obtained by looking at the change in kinetic energy. This also affords us a chance to delve into a new topic: improper integrals.        First, we all know that if you throw a ball into the air, then it will go up and come back down. We learned in Differential Calculus that, ignoring air resistance, if you throw a ball up with an initial velocity of , then the maximum height the ball attains is where is the acceleration due to gravity (which we presumed was constantly equal to ). We noted that this formula said that if we double the initial velocity, then the ball will go 4 times as high, triple it it will go 9 times as high, etc. Is it possible to throw the ball up so fast that it never comes back down. The answer would be no if the acceleration due to gravity remained constant at all altitudes, which is what we assumed in the original problem. This works fine near the surface of the earth, but is not reasonable at higher and higher altitudes. In fact, Newton s Law of Gravitation states that the magnitude of force of gravity between two objects of masses and is given by where is a constant referred to as the universal gravitational constant and is the distance between the centers of mass of the two objects. For objects near the surface of the earth, was so close to constant that we assumed it to be. This is not the case for our projectile being propelled into outer space. Surprisingly, the a amount of work that it takes to perform this task is finite and this is where escape velocity comes in.  If we had an unlimited power supply, then we could rise at whatever rate we wanted and still keep rising indefinitely. Unfortunately, as with throwing a ball into the air, we can only impart an initial velocity and hope it is fast enough to overcome gravity indefinitely. We have the means to deal with this.  The key is remembering that the work done by a force moving a mass along a straight line from point to point is equal to the change in kinetic energy. In symbols it is   However, this was not the definition of work as work was simply . We used calculus in case the force was not constant    Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet to infinity. In other words, the amount of work (and energy) it takes to propel the object so it doesn t come back is finite.      Assume that the original velocity of the mass is and that the velocity at infinity will be 0.     Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .      Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .      Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?      shows that the work to launch a projectile from the surface of a planet to infinity is given by .   Vocabulary improper integral This prompts a new name and notation. The notation is and this is called an improper integral . The improper comes from the fact that a proper definite integral should be defined on a closed bounded interval. In general, the improper integral converges if exists and we say that it is equal to that value. In the above problem, we have .  Notice that to compute this improper integral, we had to first compute a proper definite integral from to and then take the limit of this as .   Convergence of an Improper Integral    Improper Integral  Convergence of Define what we mean for improper integral to converge and what its value would be.    You may find it surprising that an improper integral from to could have a real-world application such as escape velocity. Actually, there is an example of an improper integral of the form which has an application a little closer to home. No doubt you have heard of a bell-shaped curve or perhaps have been in a statistics course that talks about values. What does any of this mean and what does it have to do with improper integrals?  First, the bell-shaped curve is known as a normal (or gaussian) distribution and was developed by the mathematician Karl Gauss to look at the probability that a measurement should deviate from the actual mean of a population. The fact that many measurements such as height, weight, IQ, etc. seem to be normally distributed is what makes this curve ubiquitous, and this is why you have probably heard of it in your travels. Specifically, a normal distribution with a mean of and a standard deviation of has the equation as its probability density function. The fact that it is called a bell-shaped curve can be seen in the following graph.     This is called the probability density function because the probability that the random variable takes on a value less than or equal to is given by which is the area of the shaded region above. It is not easy to see, but Gauss cleverly showed that the area under this entire curve is exactly one, which is a requirement to be a probability density function. Of course, the values of and will affect the shape of the graph as seen below.     Of particular importance is the red curve where the mean and the standard deviation . Any random variable which has a normal distribution with probability density function is said to have a standard normal distribution and a result from probability theory says that if the random variable is normally distributed with mean and standard deviation , then will have a standard normal distribution. We ve said a lot here in the way of theory, so let s provide a concrete example. It is widely accepted that IQ (intelligence quotient) is normally distributed with a mean and standard deviation . It is also widely accepted that someone with an IQ of 140 or above is in the genius range. Suppose we chose someone at random. If we want to compute the probability that this person s IQ is less than or equal to 140, then mathematically, we want to compute Unfortunately, none of our integration techniques will compute this integral exactly. In fact, there are no integration techniques that will do this. Let s do what any person would do and see what the internet says. If we type this into a computer algebra system, we get   We will get into approximating techniques later, but for now let s talk about scores and tables. To compute the score of the above IQ of 140, books and websites will say to compute In the old days, one would then look on a table and arrive at the approximation . Now you would input this score in an appropriate piece of software and obtain the same result. Why are you doing this? The following problem might shed some light    Perform the substitution to to obtain .    This is what the approximation represents in the old tables and in the statistical software. Since it is impossible to have a table for every possible normal distribution, the older tables and newer software packages have approximations for . It is expected that a person uses the above substitution to compute a score and the table provides the approximation for the integral of the standard normal distribution.    Actually, Wolfram Alpha provides the following output where  Vocabulary erf The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.     Use the substitution to show that       Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha s equation is actually correct.     Of course, the values for erf need to be approximated as well, so the above still does not provide an exact answer. As we said, we will get to approximation techniques, but before that, let s look at another type of improper integral.    More Improper Integrals  The previous section looked at definite integrals that are improper because they are being integrated on an infinite interval. There is another type of improper integral that can occur on a finite interval. Furthermore, they can occur in a natural setting.         The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be .  Suppose instead, we compute the arc length by using the equation , . Then If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say Big deal. It worked, consider the area of this region.     The area of this region would be given by     Drills  Try to compute the integral in Formula . What happens?   Both integrals are improper because the functions involved are unbounded on the interval . If fact they are not even defined at one of the endpoints of the interval. The way to handle the first integral is to write it as   The same technique can be used for the second integral This leads to the general idea that if a function is unbounded at the right endpoint of an interval then we can compute the improper integral by provided that limit exists.         Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .      Apply your technique from part (a) to compute the following improper integrals.       Torricelli s Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608 1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).     An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.    In more modern terms, Torricelli showed that it we rotate the following function is rotated about the axis, then the infinitely long solid has a finite volume of . Here is picture of what has been dubbed Torricelli s Trumpet       The Volume of Torricelli rsq\/>s Trumpet        Use an improper integral with volumes of disks to obtain Torricelli s result. Again it should be noted that Torricelli obtained this before the invention of calculus.      Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.     This caused a philosophical debate about the nature of mathematical thinking and understanding of the infinite that persisted into the twentieth century. Even more paradoxical was a later result which showed that the surface area of solid is infinite. This is now called the Painter’s Paradox because we have a solid which holds a finite amount of paint but would require an infinite amount of paint to paint the inside surface!    Let s assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by      Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this x fact to show that the surface area is infinite.      Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.     Torricelli s Trumpet also represents a finite volume solid which does not have a center of mass. We only talked about centers of mass (centroids) of one-dimensional curves and two-dimensional regions. We can extend the ideas to three-dimensional solids, but instead we will give you a two-dimension region which has a finite area but no center of mass. The idea for Torricelli s Trumpet is basically the same.     Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?    Suppose we had the function . Should ? An argument could be made for either case. Now you see why these are called improper integrals. This actually brings into mind the existence of an integral which is a much harder question. We will kick this can down the road until we get into the theory part.   "
 },
@@ -12155,7 +12191,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#figure-Tautochrone1",
   "type": "Figure",
-  "number": "21.6.0.1",
+  "number": "21.7.0.1",
   "title": "",
   "body": " Image from MathWords      "
 },
@@ -12173,7 +12209,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#figure-HuygenClock",
   "type": "Figure",
-  "number": "21.6.0.2",
+  "number": "21.7.0.2",
   "title": "",
   "body": " Huygens Clock     "
 },
@@ -12182,7 +12218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-Taut1",
   "type": "Problem",
-  "number": "21.6.0.3",
+  "number": "21.7.0.3",
   "title": "",
   "body": "   Tautochrone Show that the total time it takes for the pendulum to move along the (inverted) cycloid from a starting position to the bottom of the cycloid is given by    "
 },
@@ -12191,7 +12227,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#figure-CyclPendPath",
   "type": "Figure",
-  "number": "21.6.0.4",
+  "number": "21.7.0.4",
   "title": "",
   "body": "     "
 },
@@ -12200,7 +12236,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#figure-CyclPendPath2",
   "type": "Figure",
-  "number": "21.6.0.5",
+  "number": "21.7.0.5",
   "title": "",
   "body": "     "
 },
@@ -12209,7 +12245,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-Taut2",
   "type": "Problem",
-  "number": "21.6.0.6",
+  "number": "21.7.0.6",
   "title": "",
   "body": "   Tautochrone      Use the fact that the two triangles are similar to show that and use the fact that to conclude that .      Integrate both sides of the result in part (a) from to to show that if the pendulum starts from rest at , then the velocity at any point is given by .    "
 },
@@ -12218,7 +12254,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-Taut3",
   "type": "Problem",
-  "number": "21.6.0.7",
+  "number": "21.7.0.7",
   "title": "",
   "body": "   Tautochrone Perform this substitution and show that the time traveled by the pendulum from to is given by which is independent of the starting point. Thus, the cycloid really is a tautochrone.   "
 },
@@ -12227,7 +12263,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#subsub-WorkEnergy-3",
   "type": "Example",
-  "number": "21.6.0.8",
+  "number": "21.7.0.8",
   "title": "",
   "body": " Suppose we apply a force of newtons to move an object meters (in that direction), then we will have done newton meters (joules) of work. In general, if we apply a force with magnitude newtons to move an object meters in the direction of the force, then the amount of work done by that force is newton meters. As stated in the example above, was the amount of work done by gravity moving a mass from a height of to a height of . Notice the coordinate didn t matter as the direction of the force was along the axis. But what if the force or distance is not constant?  "
 },
@@ -12236,7 +12272,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#subsub-WorkEnergy-4",
   "type": "Example",
-  "number": "21.6.0.9",
+  "number": "21.7.0.9",
   "title": "",
   "body": " Suppose we had the following inground diving pool filled with water weighing newtons\/cubic meter. How long would it take a one horsepower pump at the top of the pool to empty the pool?        First things first. A one horsepower pump can do approximately 735.5 newton-meters of work per second, so we really need to find out how much work it takes to accomplish the task. If we try to use our formula , then the force is pretty straightforward. It is the weight of the water. The difficulty comes from considering the distance. This varies anywhere from to meters. It takes very little work to pump out the water near the top where it takes much more work to pump the water that is at the bottom. This is where our integration strategy of dividing things up into pieces where our simple formula will apply comes in. Let s look at a thin slab of water below and look at the work it would take for the pump to lift that slab to the top of the pool.        Notice that we didn t put in the pump nor the tube going to the bottom of the pool. This was deliberate. You might be thinking, “Wait! If the tube reaches to the bottom of the pool, then isn t that slab of water ultimately being lifted meters and not ?” Actually, if you think about it, the pump only has to lift it the last meters as gravity will do the work of lifting it the first meters. If there was no pump at all, then the water level in the tube would naturally rise to that level itself. Also, since we only have to overcome the weight of the water, which is a vertical force, then we only need to worry about the vertical distance . With this in mind, our simple formula for work applies to lifting the slab. Notice we put in the units to show that they do provide us with the correct units for work. To get the total amount of work done, we integrate these together:   "
 },
@@ -12245,7 +12281,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-KinWork1",
   "type": "Problem",
-  "number": "21.6.0.12",
+  "number": "21.7.0.12",
   "title": "",
   "body": "   Kinetic Energy      Compute this integral to see how much work this would take and use the fact that a one horsepower pump can do newton-meters of work per second to see how many hours it would take for the pump to empty the pool.      Take a guess: If the pool was only half full, would it take the pump half the time to empty it? Use calculus to check you guess.    "
 },
@@ -12254,7 +12290,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#example-WorkKin3",
   "type": "Example",
-  "number": "21.6.0.13",
+  "number": "21.7.0.13",
   "title": "",
   "body": " Suppose an anchor on a cruise ship weighs newtons (approximately US tons) with a chain weighing newtons\/meter (approximately lb\/ft) is being hauled up by a winch. How much work does it require to raise the anchor from a chain length of meters below the water line to a point meters above the surface of the water? See the diagram below.        We can actually approach this problem in two ways. One is reminiscent of what we did pumping the water out of the pool. We still want to apply our formula . This actually works fine for the anchor as the force is the weight of the anchor and the distance is meters. This would be the work required to raise the anchor alone. The chain is another matter. The lower parts of the chain need to be raised more than the upper parts. Here we will look at a small section of the chain and compute the work required to raise that. Specifically, consider the following diagram.        "
 },
@@ -12263,7 +12299,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-WorkKin3",
   "type": "Problem",
-  "number": "21.6.0.16",
+  "number": "21.7.0.16",
   "title": "",
   "body": "   Kinetic Energy      If represents an infinitely small length of chain, then compute the work involved to raise that length of chain meters.      Integrate the above to find the work required to raise both the anchor and the chain. (Don t forget to add in the work to raise the anchor alone.)    "
 },
@@ -12272,7 +12308,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#figure-WorkKin6",
   "type": "Figure",
-  "number": "21.6.0.17",
+  "number": "21.7.0.17",
   "title": "",
   "body": "     "
 },
@@ -12281,7 +12317,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-WorkKin7",
   "type": "Problem",
-  "number": "21.6.0.18",
+  "number": "21.7.0.18",
   "title": "",
   "body": "   Kinetic Energy Integrate the above to compute the work done to raise the anchor and chain and compare your answer to the previous. (They should be the same.)   "
 },
@@ -12290,7 +12326,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-Bucket1",
   "type": "Problem",
-  "number": "21.6.0.19",
+  "number": "21.7.0.19",
   "title": "",
   "body": "  A bucket that weighs newtons is being hauled up meters with a rope that weighs newtons per meter at a constant speed of meter\/second. Initially, the bucket is filled with newtons of water which is leaking out at a rate of newtons per second. How much work is done?   "
 },
@@ -12299,7 +12335,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#exercise-Bucket2",
   "type": "Problem",
-  "number": "21.6.0.20",
+  "number": "21.7.0.20",
   "title": "",
   "body": "   Use this analysis to show that the work to raise everything from a distance to a distance is given by       Integrate this to determine how much work it takes to raise all of this the entire meters.      What would the work be if the water was leaking out at a rate of newtons per second (so the bucket is empty before it reaches the top)?    "
 },
@@ -12308,7 +12344,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEMassOnACurve",
   "type": "Problem",
-  "number": "21.6.0.21",
+  "number": "21.7.0.21",
   "title": "",
   "body": "  Suppose we have a (tangential) force moving a mass moving along a curve from point to point . Let denote a generic point on the curve.     Let denote arc length from point to and represent velocity (speed) and (tangential) acceleration. We have that the work done by to move the mass from to is given by   Using Newton s Second Law which states that force , show that    Comment  The quantity is called the kinetic energy of the object (at time ) and is measured in     "
 },
@@ -12317,7 +12353,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEKinEnergySpinCast",
   "type": "Problem",
-  "number": "21.6.0.22",
+  "number": "21.7.0.22",
   "title": "",
   "body": "   Show that the kinetic energy of the shell is given by Integrate this to determine the kinetic energy of the entire disk as it rotates at .      Suppose you have a 100-horsepower motor that produces of power. How long will it take for this motor to accelerate the disk from rest to ?    "
 },
@@ -12326,7 +12362,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEEscapeVelocity1",
   "type": "Problem",
-  "number": "21.6.0.23",
+  "number": "21.7.0.23",
   "title": "",
   "body": "  Consider an object of mass being launched from the surface of a planet with mass and radius . As we said, Newton s Law of Gravitation states that the force due to gravity is given by   where is the universal gravitational constant and is the distance between the centers of mass of the two objects. Show that the work done by gravity in moving an object from the surface of the planet to an arbitrary altitude of is given by    Comment  It will be a negative number as gravity is doing a negative amount of work moving the object. We are assuming the positive axis points away from the planet so the force is negative.   If we take then this will represent the amount of work done by gravity moving a mass from the surface of the planet to infinity. In other words, the amount of work (and energy) it takes to propel the object so it doesn t come back is finite.   "
 },
@@ -12335,7 +12371,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEEscapeVelocity2",
   "type": "Problem",
-  "number": "21.6.0.24",
+  "number": "21.7.0.24",
   "title": "",
   "body": "  Assume that the original velocity of the mass is and that the velocity at infinity will be 0.     Use the result of and the fact that the work done by gravity is equal to the change in kinetic energy to show that the escape velocity (the initial velocity needed to send an object into space without coming back down, given no other propulsion) is given by Notice that the escape velocity is independent of the mass of the projectile .      Suppose that the acceleration due to gravity on the surface of the planet is given by . Show that   Use the fact that for the earth and meters to check the earlier claim that the escape velocity from the surface of the earth is approximately .      Assuming the radius of the moon is approximately that of the earth and the acceleration due to gravity is about that of earth, how would the escape velocity from the surface of the moon compare with that of the earth?    "
 },
@@ -12353,7 +12389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEDefineConvIndInt",
   "type": "Problem",
-  "number": "21.6.0.25",
+  "number": "21.7.0.25",
   "title": "Convergence of an Improper Integral.",
   "body": " Convergence of an Improper Integral    Improper Integral  Convergence of Define what we mean for improper integral to converge and what its value would be.   "
 },
@@ -12362,7 +12398,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEErrorFunction1",
   "type": "Problem",
-  "number": "21.6.0.26",
+  "number": "21.7.0.26",
   "title": "",
   "body": "  Perform the substitution to to obtain .   "
 },
@@ -12371,7 +12407,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEWolframAlpha1",
   "type": "Problem",
-  "number": "21.6.0.27",
+  "number": "21.7.0.27",
   "title": "",
   "body": "  Actually, Wolfram Alpha provides the following output where  Vocabulary erf The name erf is short for error function and reminds us that Gauss determined this function to compute the probability of errors in measurements.     Use the substitution to show that       Use the result of part a and the fact that the total area under the standard normal curve is 1 to verify that Wolfram Alpha s equation is actually correct.    "
 },
@@ -12380,7 +12416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXAMPLECircumCircleViaImprInt",
   "type": "Example",
-  "number": "21.6.0.28",
+  "number": "21.7.0.28",
   "title": "The Circumference of a Unit Circle, Via an Improper Integral.",
   "body": " The Circumference of a Unit Circle, Via an Improper Integral  We know that the circumference of a unit circle is . Thus, the length of a quarter of that circle is . Suppose we wanted to use calculus to verify this. The easiest way would be to parameterize the quarter of the unit circle lying in the first quadrant by   Thus, the arc length would be .  Suppose instead, we compute the arc length by using the equation , . Then If you don t see the problem yet, suppose instead I wanted to find the area under the curve over the interval Here is a graph of that region.     The area of that region would be computed by the same even though the region itself is unbounded. Before you say Big deal. It worked, consider the area of this region.     The area of this region would be given by   "
 },
@@ -12389,7 +12425,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#PROBLEMImpropInt2",
   "type": "Drill",
-  "number": "21.6.0.29",
+  "number": "21.7.0.29",
   "title": "",
   "body": " Drills  Try to compute the integral in Formula . What happens?  "
 },
@@ -12398,7 +12434,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEImpropInt3",
   "type": "Problem",
-  "number": "21.6.0.30",
+  "number": "21.7.0.30",
   "title": "",
   "body": "       Suppose is unbounded at the left endpoint of the interval . Provide a similar way to compute the improper integral .      Apply your technique from part (a) to compute the following improper integrals.     "
 },
@@ -12407,7 +12443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXAMPLETorricellisTrumpet",
   "type": "Example",
-  "number": "21.6.0.31",
+  "number": "21.7.0.31",
   "title": "Torricelli’s Trumpet and the Painter’s Paradox.",
   "body": " Torricelli s Trumpet and the Painter's Paradox  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  Actually, the idea of computing areas and volumes using infinitely thin slices predates the invention of differential calculus (by a lot!) and was influential in the invention and use of differential calculus. The first known results were by Archimedes circa 250 BC. This predates the first paper of differential calculus (1684 AD) by almost 200 years. We won t get into Archimedes method for doing this, but the immediate predecessors of Newton and Leibniz used the same idea of dividing objects into infinitely thin slices to determine areas and volumes. They just didn t have the fundamental theorem of calculus to compute the value when these slices were added up (integrated), so they used alternate methods.  One of these predecessors was Evangelista Torricelli (1608 1647). In 1643, Torricelli created a mathematical and philosophical stir with a paper he wrote in 1643 De solido hyperbolico acuto . In this paper, he had the following theorem (Translated by G. Loria and G. Vassura 1919).  "
 },
@@ -12416,7 +12452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#TorriThm",
   "type": "Theorem",
-  "number": "21.6.0.32",
+  "number": "21.7.0.32",
   "title": "",
   "body": "  An acute hyperbolic solid, infinitely long, cut by a plane [perpendicular] to the axis, together with the cylinder of the same base, is equal to that right cylinder of which the base is the latus versum (that is, the axis) of the hyperbola, and of which the altitude is equal to the radius of the basis of this acute body.   "
 },
@@ -12425,7 +12461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISETorriTrumpet",
   "type": "Problem",
-  "number": "21.6.0.33",
+  "number": "21.7.0.33",
   "title": "The Volume of Torricelli’rsq\/&gt;s Trumpet.",
   "body": " The Volume of Torricelli rsq\/>s Trumpet        Use an improper integral with volumes of disks to obtain Torricelli s result. Again it should be noted that Torricelli obtained this before the invention of calculus.      Actually, if we use cylindrical shells, this will actually be closer to what Torricelli did and will not involve an improper integral. Do this.    "
 },
@@ -12434,7 +12470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISETorriSurfArea",
   "type": "Problem",
-  "number": "21.6.0.34",
+  "number": "21.7.0.34",
   "title": "",
   "body": "  Let s assume that and focus on the curved part of the trumpet generated by revolving about the axis. We know that the surface area of an infinitely small piece of this is given by      Putting things in terms of , show that the surface area is given by the improper integral Computing this will not be easy, but notice that this integral is greater than (Why?) Use this x fact to show that the surface area is infinite.      Putting the original integral in terms of , show that the surface area is given by Notice that this is still an improper integral (Why?). Again, computing this will not be easy so try a trick like you did in part a to show that this is infinite.    "
 },
@@ -12443,7 +12479,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-OtherIntApplications.html#EXERCISEFiniteAreaInfiniteMoment",
   "type": "Problem",
-  "number": "21.6.0.35",
+  "number": "21.7.0.35",
   "title": "",
   "body": "   Volume infinite Consider the region between the curves and , for . Show that the area of this region is finite but the moment of this region about the axis (line is infinite. How does this say that the region has no centroid?   "
 },
