@@ -770,183 +770,288 @@ eBookConfig.enable_chatcodes =  false;
 <h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Areas in the Plane</span>
 </h2>
-<article class="example example-like" id="ParabolicSection"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Parabolic Section.</span>
-</h3>
-<div class="introduction" id="ParabolicSection-2">
-<div class="para" id="ParabolicSection-2-1">A <dfn class="terminology">parabolic section</dfn> is the region which a straight line cuts from a parabola. Computing the area of a parabolic section is an ancient problem, first solved by Archimedes of Syracuse. In this section we will use Calculus to solve a representative example of this problem two different ways.  Archimedes is considered by some to be the original inventor of Calculus — predating Newton and Leibniz by nearly two thousand years — but there is some debate about this.  We will also look at Archimedes’ solution of the general problem for comparison and you can decide for yourself whether or not he was the original inventor of Calculus.<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="AreasByIntegration-2">Because he invented what has been called the <dfn class="terminology">Method of Exhaustion</dfn> <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Eudoxus/" target="_blank">Eudoxus of Cnidus</a> (408BC–355BC) is considered by some to be the original inventor of Calculus — predating Newton and Leibniz by nearly two thousand years —.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="FIGUREDeathOfArchimedes"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/DeathOfArchimedes.jpeg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Archimedes/" target="_blank">Archimedes of Syracuse</a> (287BC–212BC) was killed by a Roman soldier under the command of General Marcellus. Of his death <a class="external" href="https://en.wikipedia.org/wiki/Plutarch" target="_blank">Plutarch</a> wrote: “a Roman soldier, running upon him with a drawn sword, offered to kill him; and that Archimedes, looking back, earnestly besought him to hold his hand a little while, that he might not leave what he was then at work upon inconclusive and imperfect; but the soldier, nothing moved by his entreaty, instantly killed him.”<div class="autopermalink" data-description="Figure 21.2.0.2"><a href="#FIGUREDeathOfArchimedes" title="Copy heading and permalink for Figure 21.2.0.2" aria-label="Copy heading and permalink for Figure 21.2.0.2">🔗</a></div></figcaption>
+<div class="para" id="AreasByIntegration-3">
+<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Archimedes/" target="_blank">Archimedes of Syracuse</a> established himself as one of the greatest mathematicians of all time in part due to his innovative and dextrous use of the <dfn class="terminology">Method of Exhaustion</dfn> to compute a diverse set of areas and volumes. His computation of the area of general <dfn class="terminology">Parabolic Section</dfn> in particular anticipates both the definite integral and <dfn class="terminology">infinite series</dfn> (which we will discuss in more depth in <a href="CHAPTERApproximationIntegral.html" class="internal" title="Chapter 22: More Approximation Methods">Chapter 22</a>) so it will serve as a useful introduction to both.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="FIGUREDeathOfArchimedes"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IC/DeathOfArchimedes.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Archimedes/" target="_blank">Archimedes of Syracuse</a> (287BC–212BC) was killed by a Roman soldier under the command of General Marcellus. Of his death <a class="external" href="https://en.wikipedia.org/wiki/Plutarch" target="_blank">Plutarch</a> wrote: “A Roman soldier, running upon him with a drawn sword, offered to kill him; and that Archimedes, looking back, earnestly besought him to hold his hand a little while, that he might not leave what he was then at work upon inconclusive and imperfect; but the soldier, nothing moved by his entreaty, instantly killed him.”<div class="autopermalink" data-description="Figure 21.2.0.1"><a href="#FIGUREDeathOfArchimedes" title="Copy heading and permalink for Figure 21.2.0.1" aria-label="Copy heading and permalink for Figure 21.2.0.1">🔗</a></div></figcaption>
 </figure>
+<article class="definition definition-like" id="DEFINITIONParabSection"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parabolic Section.</span>
+</h3>
+<div class="para" id="DEFINITIONParabSection-2-1">A <dfn class="terminology">parabolic section</dfn> is the region which a straight line cuts from a parabola.<div class="autopermalink" data-description="Paragraph"><a href="#DEFINITIONParabSection-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="task exercise-like" id="ParabolicSection-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para logical" id="ParabolicSection-3-1-1">
-<div class="para">We want to find the area of the region bounded by the graphs of</div>
-<div class="displaymath process-math" id="ParabolicSection-3-1-1-1">
+<div class="autopermalink" data-description="Definition 21.2.0.2: Parabolic Section"><a href="#DEFINITIONParabSection" title="Copy heading and permalink for Definition 21.2.0.2: Parabolic Section" aria-label="Copy heading and permalink for Definition 21.2.0.2: Parabolic Section">🔗</a></div>
+</article>
+<article class="example example-like" id="EXAMPLEParabolicSection"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<article class="task exercise-like" id="EXAMPLEParabolicSection-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="EXAMPLEParabolicSection-1-1-1">
+<div class="para">We want to find the area of the parabolic section defined by the graphs of</div>
+<div class="displaymath process-math" id="EXAMPLEParabolicSection-1-1-1-1">
 \begin{align*}
 y\amp{}=x^2 \text{ and }\\
 y\amp{}=2x.
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ParabolicSection-3-1-2">The first step is <em class="emphasis">always</em> to sketch the problem. In this case we only need to graph our two curves.<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="EXAMPLEParabolicSection-1-1-2">The first step is <em class="emphasis">always</em> to sketch the problem. In this case we only need to graph our two curves.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<figure class="figure figure-like" id="ParabolicSection-3-1-3"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IC/ParabSec1.png" class="contained" alt="The area between y equals x and y equals x squared"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A <dfn class="terminology">Parabolic Section</dfn> is the planar region which a straight line cuts from a parabola<div class="autopermalink" data-description="Figure 21.2.0.3"><a href="#ParabolicSection-3-1-3" title="Copy heading and permalink for Figure 21.2.0.3" aria-label="Copy heading and permalink for Figure 21.2.0.3">🔗</a></div></figcaption>
+<figure class="figure figure-like" id="EXAMPLEParabolicSection-1-1-3"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/IC/ParabSec1.png" class="contained" alt="The area between y equals x and y equals x squared"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.4"><a href="#EXAMPLEParabolicSection-1-1-3" title="Copy heading and permalink for Figure 21.2.0.4" aria-label="Copy heading and permalink for Figure 21.2.0.4">🔗</a></div></figcaption>
 </figure> 
-<div class="para logical" id="ParabolicSection-3-1-4">
-<div class="para">Locally we draw a single generic rectangle (in red in the figure) of width <span class="process-math">\(\dx{x}\text{.}\)</span> Since the upper and lower endpoints of our rectangle lie on the upper and lower bounding curves respectully we see that the area of the rectangle is</div>
-<div class="displaymath process-math" id="ParabolicSection-3-1-4-2">
+<div class="para logical" id="EXAMPLEParabolicSection-1-1-4">
+<div class="para">We want to “exhaust” the area of the section by filling it with infinitely many differential rectangles, similar to the generic rectangle in red whose width is <span class="process-math">\(\dx{x}\text{.}\)</span>  Since the upper and lower endpoints of our rectangle lie on the upper and lower bounding curves respectively, we see that the area of a typical rectangle is</div>
+<div class="displaymath process-math" id="EXAMPLEParabolicSection-1-1-4-3">
 \begin{equation*}
 \text{Area of rectangle} = \left(2x-x^2\right)\dx{x.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ParabolicSection-3-1-5">This is the set up. Notice that by labeling the sketch clearly, we were able to easily read the area of the rectangle right off the picture. This was the point — to divide the problem into easily computable parts.<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-3-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="EXAMPLEParabolicSection-1-1-5">Notice that labeling the sketch clearly ennables us to to read the area of the differential rectangle easily right off the picture. This was the point — to divide the problem into easily computable parts.  This is how to set up any such problem. First understand what’s happening locally (at the infinitesimal scale).<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ParabolicSection-3-1-6">We highly recommend that you follow this example closely whenever you have an definite integral to compute. First understand the local problem, then sum the differential areas. If we could we (the authors) would insist that you follow this routine on every application, no matter how easy it may seem. This will help you to develop a habit of careful analysis. That habit will serve you well as the applications get more complicated. We <em class="emphasis">would</em> insist but obviously we have no way to enforce such an injunction. Nevertheless, we know what we are talking about. Listen to us.<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-3-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para logical" id="ParabolicSection-3-1-7">
-<div class="para">To compute the area of the shaded region we need to add these “differential rectangles” together using the <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">FTC</a>.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMFTC.html" id="ParabolicSection-3-1-7-3">
+<div class="para logical" id="EXAMPLEParabolicSection-1-1-6">
+<div class="para">Next, To compute the area of the shaded region we must add these “differential rectangles” together using the <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">FTC</a>. (See <a href="AreasByIntegration.html#PROBLEMParabSect" class="internal" title="Problem 21.2.0.6">Problem 21.2.0.6</a> below.)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/THEOREMFTC.html ./knowl/xref/PROBLEMParabSect.html" id="EXAMPLEParabolicSection-1-1-6-4">
 \begin{equation*}
 \text{Total Area of the Section} =
 \int_{x=0}^{2}\left(2x-x^2\right)\dx{x}=\frac{4}{3}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-3-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>                           <div class="autopermalink" data-description="Task 21.2.0.1.a"><a href="#ParabolicSection-3" title="Copy heading and permalink for Task 21.2.0.1.a" aria-label="Copy heading and permalink for Task 21.2.0.1.a">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="EXAMPLEParabolicSection-1-1-7">We highly recommend that you follow this pattern closely whenever you need to compute a definite integral.  You want to “exhaust” the area you are interested in by filling it with figures whose area is known. Most of the time these will be rectangles. But whatever they are your first task is to generate a generic formula for their area. So focus your attention first on the local problem. Then sum the differential areas using the <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">Fundamental Theorem of Calculus</a>.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="EXAMPLEParabolicSection-1-1-8">Follow this routine on every problem, no matter how easy it may seem. This will help you to develop a habit of careful analysis. That habit will serve you well as the applications get more complicated. We (the authors) would insist but obviously we have no way to enforce the injunction. Nevertheless, we know what we are talking about. Listen to us.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-1-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>                           <div class="autopermalink" data-description="Task 21.2.0.3.a"><a href="#EXAMPLEParabolicSection-1" title="Copy heading and permalink for Task 21.2.0.3.a" aria-label="Copy heading and permalink for Task 21.2.0.3.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="ParabolicSection-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="ParabolicSection-4-1-1">In part (a) we divided the <span class="process-math">\(x-\)</span>axis into differentials which gave our red “differential rectangles” a vertical orientation. But of course there is nothing special about that choice. We could also have divided the <span class="process-math">\(y-\)</span>axis into differentials which would have resulted in rectangles with a horizontal orientation. Either way we should obtain the same area. What is important is that we divide the region consistently into “parallel” rectangles. (Recall Cavalieri’s “all the lines.” Our differential rectangles are essentially taking on the role of Cavalieri’s parallel lines.)    <div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="EXAMPLEParabolicSection-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="EXAMPLEParabolicSection-2-1-1">In part (a) we divided the <span class="process-math">\(x-\)</span>axis into differentials which gave our red “differential rectangles” a vertical orientation. But of course there is nothing special about that choice. We could also have divided the <span class="process-math">\(y-\)</span>axis into differentials which would have resulted in rectangles with a horizontal orientation as in <a href="AreasByIntegration.html#FIGUREParabSec2" class="internal" title="Figure 21.2.0.5">Figure 21.2.0.5</a> below. Either way we should obtain the same area. What is important is that we divide the region consistently into “parallel” rectangles. (Recall Cavalieri’s “all the lines.” Our differential rectangles are essentially taking on the role of Cavalieri’s parallel lines.)    <div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<figure class="figure figure-like" id="FIGUREParabSec2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IC/ParabSec2.png" class="contained" alt="Parabolic Segment in terms of y"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.4"><a href="#FIGUREParabSec2" title="Copy heading and permalink for Figure 21.2.0.4" aria-label="Copy heading and permalink for Figure 21.2.0.4">🔗</a></div></figcaption>
+<figure class="figure figure-like" id="FIGUREParabSec2"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/IC/ParabSec2.png" class="contained" alt="Parabolic Segment in terms of y"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.5"><a href="#FIGUREParabSec2" title="Copy heading and permalink for Figure 21.2.0.5" aria-label="Copy heading and permalink for Figure 21.2.0.5">🔗</a></div></figcaption>
 </figure> 
-<div class="para" id="ParabolicSection-4-1-3">The appropriate sketch reflecting that choice is shown in <a href="AreasByIntegration.html#FIGUREParabSec2" class="internal" title="Figure 21.2.0.4">Figure 21.2.0.4</a>. Notice that this time the (horizontally oriented) rectangles will be stacked vertically like a pile of books on a table, rather than horizontally like books on a shelf. This means that our summation will be oriented vertically this time. Put more simple the summation variable is <span class="process-math">\(y\)</span> when the differentials are <span class="process-math">\(\dx{y}\text{,}\)</span> and <span class="process-math">\(x\)</span> when the differentials are <span class="process-math">\(\dx{x}\text{.}\)</span> You cannot use  <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">Theorem 20.2.0.3</a> to compute an integral if the variable in the integrand matches the variable in the differential. This knowledge can serve as a check to make sure you have set up the definite integral correctly.<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-4-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="EXAMPLEParabolicSection-2-1-3">
+<a href="AreasByIntegration.html#FIGUREParabSec2" class="internal" title="Figure 21.2.0.5">Figure 21.2.0.5</a> shows a sketch reflecting that choice.  Notice that this time the (horizontally oriented) rectangles will be stacked vertically like a pile of books on a table, rather than horizontally like books on a shelf. This means that this time our summation will also have a vertical orientation and the summation variable is <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ParabolicSection-4-1-4">Continuing, we need an expression for the area of our red rectangle. Do you see what it is? Give it some thought before reading on.<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-4-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="EXAMPLEParabolicSection-2-1-4">Notice that you cannot use <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">Theorem 20.2.0.3</a> to compute a definite integral if the variable in the integrand does not match the variable in the differential.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="ParabolicSection-4-1-5">
+<div class="para" id="EXAMPLEParabolicSection-2-1-5">Continuing, we need an expression for the area of our red rectangle. Do you see what it is? Give it some thought before reading on.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="EXAMPLEParabolicSection-2-1-6">
 <div class="para">The left end of the rectangle is on the curve <span class="process-math">\(y=2x\)</span> and the right end is on the curve <span class="process-math">\(y=x^2\text{.}\)</span> The length of our rectangle will be the difference between the <span class="process-math">\(x-\)</span>coordinates of these points. That is the area of our rectangle is</div>
-<div class="displaymath process-math" id="ParabolicSection-4-1-5-4">
+<div class="displaymath process-math" id="EXAMPLEParabolicSection-2-1-6-4">
 \begin{equation*}
-\left(\sqrt{y}-\frac{y}{2}\right)\dx{y}
+\left(\sqrt{y}-\frac{y}{2}\right)\dx{y}.
 \end{equation*}
 </div>
-<div class="para">Since we are summing from bottom-to-top this time (rather than left-to-right) we need to use the <span class="process-math">\(y-\)</span>coordinates in the indices. Thus our definite integral is:</div>
-<div class="displaymath process-math" id="ParabolicSection-4-1-5-6">
+<div class="para">Since the variable here is <span class="process-math">\(y\)</span> we also need to use the <span class="process-math">\(y-\)</span>coordinates in the indices. Thus our definite integral is:</div>
+<div class="displaymath process-math" id="EXAMPLEParabolicSection-2-1-6-7">
 \begin{equation*}
 \text{Total Area of the Section} = \int_{y=0}^{4}
 \left(\sqrt{y}-\frac{y}{2}\right)\dx{y} = \frac{4}{3}.
 \end{equation*}
 </div>
-<div class="para">Since the area of the section has not changed we expect to get the same number however we compute it.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ParabolicSection-4-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>                          <div class="autopermalink" data-description="Task 21.2.0.1.b"><a href="#ParabolicSection-4" title="Copy heading and permalink for Task 21.2.0.1.b" aria-label="Copy heading and permalink for Task 21.2.0.1.b">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="EXAMPLEParabolicSection-2-1-7">
+<em class="alert">Note well:</em> In order to use the <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">Fundamental Theorem of Calculus 20.2.0.3</a> to compute a definite integral the variables in the integrand, the differential, and the indices must all match. This knowledge can serve as a check to make sure you have set up the definite integral correctly.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="EXAMPLEParabolicSection-2-1-8">Since the area of the section has not changed we expect to get the same number however we compute it.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabolicSection-2-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>                          <div class="autopermalink" data-description="Task 21.2.0.3.b"><a href="#EXAMPLEParabolicSection-2" title="Copy heading and permalink for Task 21.2.0.3.b" aria-label="Copy heading and permalink for Task 21.2.0.3.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Example 21.2.0.3"><a href="#EXAMPLEParabolicSection" title="Copy heading and permalink for Example 21.2.0.3" aria-label="Copy heading and permalink for Example 21.2.0.3">🔗</a></div>
 </article>
-<article class="task exercise-like" id="PROBLEMArchQuadParab"><h4 class="heading">
-<span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Archimedes’ Quadrature of the Parabola.</span>
-</h4>
-<div class="para" id="PROBLEMArchQuadParab-2-1">In his treatise “The Quadrature of the Parabola” <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Archimedes/" target="_blank">Archimedes of Syracuse</a> (ca. 250 BC) computed the area of the segment of a parabola. We will present his ideas here (using modern notation). With that in mind, consider the following diagram. Note that the 𝑥 coordinate of 𝐶 is halfway between the 𝑥 coordinates of 𝐴 and 𝐵.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Task 21.2.0.1.c: Archimedes’ Quadrature of the Parabola"><a href="#PROBLEMArchQuadParab" title="Copy heading and permalink for Task 21.2.0.1.c: Archimedes’ Quadrature of the Parabola" aria-label="Copy heading and permalink for Task 21.2.0.1.c: Archimedes’ Quadrature of the Parabola">🔗</a></div>
-</article><div class="autopermalink" data-description="Example 21.2.0.1: A Parabolic Section"><a href="#ParabolicSection" title="Copy heading and permalink for Example 21.2.0.1: A Parabolic Section" aria-label="Copy heading and permalink for Example 21.2.0.1: A Parabolic Section">🔗</a></div>
-</article>
-<article class="example example-like" id="AreasByIntegration-3"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="exercise exercise-like" id="PROBLEMParabSect"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="AreasByIntegration-3-1-1">
-<a class="external" href="https://www.britannica.com/biography/Cicero" target="_blank">Marcus Tullius Cicero</a> (106–43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of <a class="external" href="http://mathshistory.st-andrews.ac.uk/Biographies/Archimedes.html" target="_blank">Archimedes</a>.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<figure class="figure figure-like" id="SphereCyl"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/IC/SphereCyl.png" class="contained" alt="Cylinder with enclosed sphere with the same radius."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.6"><a href="#SphereCyl" title="Copy heading and permalink for Figure 21.2.0.6" aria-label="Copy heading and permalink for Figure 21.2.0.6">🔗</a></div></figcaption>
-</figure> 
-<div class="para logical" id="AreasByIntegration-3-1-3">
-<div class="para">How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise <span class="booktitle">On the Sphere and the Cylinder</span>. In it, Archimedes proves that the volume and surface area of a sphere is <span class="process-math">\(2/3\)</span> that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius <span class="process-math">\(r\text{:}\)</span>
+<article class="task exercise-like" id="PROBLEMParabSect-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="PROBLEMParabSect-1-1-1">Use the <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">Fundamental Theorem of Calculus</a> to compute the integral in part (a) of <a href="AreasByIntegration.html#EXAMPLEParabolicSection" class="internal" title="Example 21.2.0.3">Example 21.2.0.3</a><div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMParabSect-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="AreasByIntegration-3-1-3-4">
-\begin{equation*}
-\text{ Volume}=\frac23{\left( \pi{r^2\cdot 2r}\right)
-=\frac43{\pi{r^3}} }
-\end{equation*}
-</div>
-<div class="displaymath process-math" id="AreasByIntegration-3-1-3-5">
-\begin{equation*}
-\text{ Volume}=\frac23\left(2\pi r\cdot 2r +2\cdot\pi
-r^2\right)=4\pi r^2
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="AreasByIntegration-3-1-4">some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won’t go into Archimedes‘ exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius <span class="process-math">\(r\)</span> can be generated by revolving the curve <span class="process-math">\(y=\sqrt{r^2-x^2}\)</span> about the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="AreasByIntegration-3-1-5">
-<a class="external" href="https://www.britannica.com/biography/Cicero" target="_blank">Marcus Tullius Cicero</a> (106–43 BC) is considered to be one of the greatest orators and philosophers of the late Roman Republic. When he was quaestor (a Roman official) in Syracuse (Sicily) in 75 BC, heset out to find the tomb of the great Greek mathematician Archimedes who died during the Roman siege of the city 137 years earlier. Local Syracusans denied any knowledge of his grave, but Cicero nevertheless discovered a tombstone overgrown with brambles and thorns. When he saw the following symbol on the stone, he knew that he had found the grave of <a class="external" href="http://mathshistory.st-andrews.ac.uk/Biographies/Archimedes.html" target="_blank">Archimedes</a>.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<figure class="figure figure-like" id="AreasByIntegration-3-1-6"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/IC/SphereCyl.png" class="contained" alt="Cylinder with enclosed sphere with the same radius."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.7"><a href="#AreasByIntegration-3-1-6" title="Copy heading and permalink for Figure 21.2.0.7" aria-label="Copy heading and permalink for Figure 21.2.0.7">🔗</a></div></figcaption>
-</figure> 
-<div class="para logical" id="AreasByIntegration-3-1-7">
-<div class="para">How did Cicero surmise that this was the grave of Archimedes? It seems that out of all of Archimedes works, he was proudest of his treatise <span class="booktitle">On the Sphere and the Cylinder</span>. In it, Archimedes proves that the volume and surface area of a sphere is <span class="process-math">\(2/3\)</span> that of its circumscribed cylinder. He was so proud if this, that he instructed that this be carved in his tombstone. This leads to the modern formulas for the volume and surface area of a sphere of radius <span class="process-math">\(r\text{:}\)</span>
-</div>
-<div class="displaymath process-math" id="AreasByIntegration-3-1-7-4">
-\begin{equation*}
-\text{ Volume}=\frac23{\left( \pi{r^2\cdot 2r}\right)
-=\frac43{\pi{r^3}} }
-\end{equation*}
-</div>
-<div class="displaymath process-math" id="AreasByIntegration-3-1-7-5">
-\begin{equation*}
-\text{ Volume}=\frac23\left(2\pi r\cdot 2r +2\cdot\pi
-r^2\right)=4\pi r^2
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="AreasByIntegration-3-1-8">The way in which Archimedes discovered these formulas has led some to call him the inventor of integral calculus. This claim is arguable, but at the very least, his techniques certainly were a precursor to integral calculus. While we won’t go into Archimedes‘ exact method, we will use Integral Calculus to derive these formulas for volume and surface area. We will focus of the volume now and come back to the surface area later. To compute this volume, we will consider that a sphere of radius <span class="process-math">\(r\)</span> can be generated by revolving the curve <span class="process-math">\(y=\sqrt{r^2-x^2}\)</span> about the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-3-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 21.2.0.5"><a href="#AreasByIntegration-3" title="Copy heading and permalink for Example 21.2.0.5" aria-label="Copy heading and permalink for Example 21.2.0.5">🔗</a></div>
+<div class="autopermalink" data-description="Task 21.2.0.6.a"><a href="#PROBLEMParabSect-1" title="Copy heading and permalink for Task 21.2.0.6.a" aria-label="Copy heading and permalink for Task 21.2.0.6.a">🔗</a></div>
 </article>
-<article class="example example-like" id="ParabSectionHoriz"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="task exercise-like" id="PROBLEMParabSect-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="PROBLEMParabSect-2-1-1">Use the <a href="SECTIONInDefInt.html#THEOREMFTC" class="xref" data-knowl="./knowl/xref/THEOREMFTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 20.2.0.3: The Fundamental Theorem of Calculus (FTC)">Fundamental Theorem of Calculus</a> to compute the integral in part (b) of <a href="AreasByIntegration.html#EXAMPLEParabolicSection" class="internal" title="Example 21.2.0.3">Example 21.2.0.3</a><div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMParabSect-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.6.b"><a href="#PROBLEMParabSect-2" title="Copy heading and permalink for Task 21.2.0.6.b" aria-label="Copy heading and permalink for Task 21.2.0.6.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Problem 21.2.0.6"><a href="#PROBLEMParabSect" title="Copy heading and permalink for Problem 21.2.0.6" aria-label="Copy heading and permalink for Problem 21.2.0.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="PROBLEMArchQuadParab"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Archimedes Result By Modern Methods.</span>
 </h3>
-<div class="para" id="ParabSectionHoriz-1">Compute the area of the following region bounded by <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(y=x+2\text{,}\)</span> and <span class="process-math">\(y=\sqrt{4-x}\text{.}\)</span> If we want everything in terms of <span class="process-math">\(x\)</span> then we need to draw a generic vertical rectangle of width <span class="process-math">\(\dx{x}\text{,}\)</span> which we’ve included in the diagram along with all of the appropriate labeling.<div class="autopermalink" data-description="Paragraph"><a href="#ParabSectionHoriz-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="introduction" id="PROBLEMArchQuadParab-2">
+<div class="para" id="PROBLEMArchQuadParab-2-1">In this problem we will      use the full power of Analytic Geometry, Algebra, and a little bit of Calculus to derive the results that Archimedes had to obtain with considerably more labor and ingenuity using only Geometry.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="ParabSectionHoriz-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/IC/AreaExample1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.9"><a href="#ParabSectionHoriz-2" title="Copy heading and permalink for Figure 21.2.0.9" aria-label="Copy heading and permalink for Figure 21.2.0.9">🔗</a></div></figcaption>
-</figure>
-<div class="para" id="ParabSectionHoriz-3">Everything is just as before. The real challenge comes from trying to put everything in terms of <span class="process-math">\(x\)</span> on the entire interval. We have <span class="process-math">\(y_1=0\)</span> but the formula for <span class="process-math">\(y_2\)</span> changes. Remember that the rectangle is a generic rectangle and represents only one of the infinitely many rectangles that are being integrated on the interval from <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=4\text{.}\)</span> On <span class="process-math">\([-2,0]\text{,}\)</span> <span class="process-math">\(y_2=x+2\text{,}\)</span> while on <span class="process-math">\([0,4]\text{,}\)</span> <span class="process-math">\(y_2=\sqrt{4-x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ParabSectionHoriz-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ParabSectionHoriz-4">
-<div class="para">We actually know a way to handle this, utilizing our properties of definite integrals. Specifically, we can do the following</div>
-<div class="displaymath process-math" id="ParabSectionHoriz-4-1">
+<article class="task exercise-like" id="PROBLEMArchQuadParab-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="PROBLEMArchQuadParab-3-1-1">
+<div class="para">Consider the following diagram. Show that the area of <span class="process-math">\(\triangle ABC\)</span> is</div>
+<div class="displaymath process-math" id="PROBLEMArchQuadParab-3-1-1-2">
+\begin{equation*}
+\left(\frac{b-a}{2}\right)^3.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="FIGUREArchParabSection"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/ArchParabSectHint.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.8"><a href="#FIGUREArchParabSection" title="Copy heading and permalink for Figure 21.2.0.8" aria-label="Copy heading and permalink for Figure 21.2.0.8">🔗</a></div></figcaption>
+</figure>               <div class="solutions">
+<details id="PROBLEMArchQuadParab-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="PROBLEMArchQuadParab-3-2-1">There are many ways to do this, but perhaps the simplest is to notice that <span class="process-math">\(\triangle ACD\)</span> and <span class="process-math">\(\triangle
+BCD\)</span> have the same base. What are their heights?<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 21.2.0.7.a.1"><a href="#PROBLEMArchQuadParab-3-2" title="Copy heading and permalink for Hint 21.2.0.7.a.1" aria-label="Copy heading and permalink for Hint 21.2.0.7.a.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.7.a"><a href="#PROBLEMArchQuadParab-3" title="Copy heading and permalink for Task 21.2.0.7.a" aria-label="Copy heading and permalink for Task 21.2.0.7.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="PROBLEMArchQuadParab-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="PROBLEMArchQuadParab-4-1-1">Set up and compute the definite integral which give the area of the parabolic sector in our sketch.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.7.b"><a href="#PROBLEMArchQuadParab-4" title="Copy heading and permalink for Task 21.2.0.7.b" aria-label="Copy heading and permalink for Task 21.2.0.7.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="PROBLEMArchQuadParab-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="PROBLEMArchQuadParab-5-1-1">Show that your result in part (b) is exactly <span class="process-math">\(\frac{4}{3}\)</span> of the result in part (a). This was Archimedes’ result.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.7.c"><a href="#PROBLEMArchQuadParab-5" title="Copy heading and permalink for Task 21.2.0.7.c" aria-label="Copy heading and permalink for Task 21.2.0.7.c">🔗</a></div>
+</article>
+<div class="conclusion" id="PROBLEMArchQuadParab-6">
+<div class="para" id="PROBLEMArchQuadParab-6-1">In the <a href="AreasByIntegration.html#PROBLEMHowArchDidItSection" class="internal" title="Problem 21.2.0.9: How Archimedes Did It">next problem</a> we will use Archimedes results in this problem to show how his methods anticipated both the definite integral and <dfn class="terminology">Geometric Series</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMArchQuadParab-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="autopermalink" data-description="Problem 21.2.0.7: Archimedes Result By Modern Methods"><a href="#PROBLEMArchQuadParab" title="Copy heading and permalink for Problem 21.2.0.7: Archimedes Result By Modern Methods" aria-label="Copy heading and permalink for Problem 21.2.0.7: Archimedes Result By Modern Methods">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="PROBLEMHowArchDidItSection"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">How Archimedes Did It.</span>
+</h3>
+<div class="introduction" id="PROBLEMHowArchDidItSection-2">
+<div class="para" id="PROBLEMHowArchDidItSection-2-1">Archimedes was able to show the results of <a href="AreasByIntegration.html#PROBLEMArchQuadParab" class="internal" title="Problem 21.2.0.7: Archimedes Result By Modern Methods">Problem 21.2.0.7</a> but his methods were considerably more laborious for two reasons.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="PROBLEMHowArchDidItSection-2-2">First, he obtained the result for a completely general parabola. We only showed the result for the parabola with equation <span class="process-math">\(y=x^2\text{.}\)</span> To generalize our result would require  another  major computation and would take us to far afield.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="PROBLEMHowArchDidItSection-2-3">Second, Archimedes did not have access to algebraic notation of any kind. Thus all of the results we obtained by manipulating formulas algebraically he would have had to interpret geometrically, which is a considerably more cumberson endeavor.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="PROBLEMHowArchDidItSection-2-4">But, having obtained the results in part (a) of  <a href="AreasByIntegration.html#PROBLEMArchQuadParab" class="internal" title="Problem 21.2.0.7: Archimedes Result By Modern Methods">Problem 21.2.0.7</a>, he was able to obtain part (c) directly.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="PROBLEMHowArchDidItSection-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="PROBLEMHowArchDidItSection-3-1-1">Notice that in <a href="AreasByIntegration.html#FIGUREArchParabSection" class="internal" title="Figure 21.2.0.8">Figure 21.2.0.8</a> the lines <span class="process-math">\(\overline{AC}\)</span> and <span class="process-math">\(\overline{BC}\)</span> each cut off another section of the parabola.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/ArchParabSeries.png" class="contained"></div>
+<div class="autopermalink" data-description="Task 21.2.0.9.a"><a href="#PROBLEMHowArchDidItSection-3" title="Copy heading and permalink for Task 21.2.0.9.a" aria-label="Copy heading and permalink for Task 21.2.0.9.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="PROBLEMHowArchDidItSection-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="PROBLEMHowArchDidItSection-4-1-1">
+<div class="para">Use your result from part (a) of  <a href="AreasByIntegration.html#PROBLEMArchQuadParab" class="internal" title="Problem 21.2.0.7: Archimedes Result By Modern Methods">Problem 21.2.0.7</a> to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PROBLEMArchQuadParab.html" id="PROBLEMHowArchDidItSection-4-1-1-2">
+\begin{equation*}
+\text{area of }\triangle ACF + \triangle CBE
+=\frac{1}{4}\text{(area of } \triangle ABC)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.9.b"><a href="#PROBLEMHowArchDidItSection-4" title="Copy heading and permalink for Task 21.2.0.9.b" aria-label="Copy heading and permalink for Task 21.2.0.9.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="PROBLEMHowArchDidItSection-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="PROBLEMHowArchDidItSection-5-1-1">
+<div class="para">Compute the sum of the areas of the triangles constructed using the mid-points of <span class="process-math">\(\overline{AB}\text{,}\)</span> <span class="process-math">\(\overline{FC}\text{,}\)</span> <span class="process-math">\(\overline{CE}\text{,}\)</span> and <span class="process-math">\(\overline{EB}\text{.}\)</span> Then do it again. And then again, and continue <i class="foreign">ad infinitum</i>, to show that the area of the parabolic section is equal to</div>
+<div class="displaymath process-math" id="PROBLEMHowArchDidItSection-5-1-1-6">
+\begin{gather}
+\triangle
+ABC\left[1+\frac{1}{4}+\left(\frac{1}{4}\right)^2+\left(\frac{1}{4}\right)^3
++ \cdots \right]\tag{21.2}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.9.c"><a href="#PROBLEMHowArchDidItSection-5" title="Copy heading and permalink for Task 21.2.0.9.c" aria-label="Copy heading and permalink for Task 21.2.0.9.c">🔗</a></div>
+</article>
+<div class="conclusion" id="PROBLEMHowArchDidItSection-6">
+<div class="para" id="PROBLEMHowArchDidItSection-6-1">The sum in <a href="AreasByIntegration.html#PROBLEMHowArchDidItSection-5-1-1-6" class="internal" title="Equation 21.2">formula (21.2)</a> is called a <dfn class="terminology">Geometric Series</dfn>. You may have seen similar sums in the past. If so, and you know how to compute the value of this infinite sum, do that. You will find that it is equal to <span class="process-math">\(\frac{4}{3}\text{.}\)</span> We will return to this question (how to compute the sum of a <dfn class="terminology">Geometric Series</dfn>) in <code class="code-inline tex2jax_ignore">[provisional cross-reference: geometric series]</code>.<div class="autopermalink" data-description="Paragraph"><a href="#PROBLEMHowArchDidItSection-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="autopermalink" data-description="Problem 21.2.0.9: How Archimedes Did It"><a href="#PROBLEMHowArchDidItSection" title="Copy heading and permalink for Problem 21.2.0.9: How Archimedes Did It" aria-label="Copy heading and permalink for Problem 21.2.0.9: How Archimedes Did It">🔗</a></div>
+</article>
+<article class="example example-like" id="EXAMPLEParabSectionHoriz"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="EXAMPLEParabSectionHoriz-1">
+<div class="para">Compute the area of the following region bounded by the curves</div>
+<div class="displaymath process-math" id="EXAMPLEParabSectionHoriz-1-1">
 \begin{align*}
-\text{ Total area
-}\amp =\int_{x=-2}^4(y_2-y_1)\dx{x}\\
-\amp
-=\int_{x=-2}^0(y_2-y_1)\dx{x}+\int_{x=0}^4(y_2-y_1)\dx{x}\\
-\amp
-=\int_{x=-2}^0(x+2-0)\dx{x}+\int_{x=-2}^4\sqrt{4-x}-0\dx{x}
+y\amp{}=0 \text{ (the }x-\text{axis)}\\
+y\amp{}=x+2\\
+y\amp{}=\sqrt{4-x}.
 \end{align*}
 </div>
-<div class="para">Each integral can be handled separately, and the total area is the sum of those two values. This is a perfectly acceptable way to do the problem, and each integral is not too bad to do. But how about if we try a horizontal rectangle and putting everything in terms of <span class="process-math">\(y\text{?}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabSectionHoriz-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ParabSectionHoriz-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="EXAMPLEParabSectionHoriz-2">A diagram of the essential features of this problem is given below. In the future you will be expected to provide your own.  In all of mathematics there is nothing quite as useful as an aid to both understanding and calculation as a visual representation, however crude, of the problem you are working on. Always sketch your problem and label it appropriately.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabSectionHoriz-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="ParabSectionHoriz-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/IC/AreaExample2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.10"><a href="#ParabSectionHoriz-5" title="Copy heading and permalink for Figure 21.2.0.10" aria-label="Copy heading and permalink for Figure 21.2.0.10">🔗</a></div></figcaption>
-</figure><div class="autopermalink" data-description="Example 21.2.0.8"><a href="#ParabSectionHoriz" title="Copy heading and permalink for Example 21.2.0.8" aria-label="Copy heading and permalink for Example 21.2.0.8">🔗</a></div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/AreaExample1.png" class="contained"></div>
+<div class="para logical" id="EXAMPLEParabSectionHoriz-4">
+<div class="para">This problem seems very similar to the others we’ve done. Clearly we need to accumulate the areas of differential rectangles  <span class="process-math">\(x=-2\)</span> to <span class="process-math">\(x=4\text{,}\)</span> so it would seem that the definite integral to be evaluated is</div>
+<div class="displaymath process-math" id="EXAMPLEParabSectionHoriz-4-4">
+\begin{equation*}
+\int_{x=-2}^{4}f(x)\dx{x}
+\end{equation*}
+</div>
+<div class="para">where the graph of <span class="process-math">\(f(x) \)</span> is curve in red in our diagram.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabSectionHoriz-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="EXAMPLEParabSectionHoriz-5">
+<div class="para">This is a correct understanding of the problem, but the actual computation of the integral requires a little more. In particular, notice that our function comes in two parts:</div>
+<div class="displaymath process-math" id="EXAMPLEParabSectionHoriz-5-1">
+\begin{equation*}
+f(x) = \begin{cases}
+x+2 \amp{} \text{ if } -2\le{}x\lt0\\
+\sqrt{4-x} \amp{} \text{ if }0\le{}x.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">That is, the nature of our function changes at <span class="process-math">\(x=0\)</span> and we need to account for the change when we compute the integral.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabSectionHoriz-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="EXAMPLEParabSectionHoriz-6" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Piecewise Functions.</span>
+</h4></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="EXAMPLEParabSectionHoriz-6-2">Be sure you are clear on this point: We do not have two functions, we have a single function in two parts. Which part we use depends on whether the <span class="process-math">\(x\)</span> is greater than or less than zero.<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabSectionHoriz-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para logical" id="EXAMPLEParabSectionHoriz-7">
+<div class="para">In particular, the differential rectangles all have the form <span class="process-math">\((x+2)\dx{x} \)</span> when <span class="process-math">\(x\le{}0\)</span> and the form <span class="process-math">\(\sqrt{4-x}\dx{x}\)</span> when <span class="process-math">\(x\ge{}0\text{.}\)</span> Thus we have</div>
+<div class="displaymath process-math" id="EXAMPLEParabSectionHoriz-7-5">
+\begin{align*}
+\int_{x=-2}^{4}f(x)\dx{x}\amp{}= \int_{x=-2}^{0}f(x)\dx{x} + \int_{x=0}^{4}f(x)\dx{x}\\
+\amp{}= \underbrace{\int_{x=-2}^{0}(x+2) \dx{x}}_{=2} +
+\underbrace{\int_{x=0}^{4}\sqrt{4-x}\dx{x}}_{=\frac{16}{3}}.\\
+\amp{}=\frac{22}{3.}
+\end{align*}
+</div>
+<div class="para">We need to split the integral up in this case because the differential rectangles do not have the same form across the entire interval <span class="process-math">\(\left[0, 4\right]\text{.}\)</span>          </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#EXAMPLEParabSectionHoriz-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 21.2.0.10"><a href="#EXAMPLEParabSectionHoriz" title="Copy heading and permalink for Example 21.2.0.10" aria-label="Copy heading and permalink for Example 21.2.0.10">🔗</a></div>
 </article>
-<article class="problem example-like" id="AreasByIntegration-5"><h3 class="heading">
-<span class="type">Drill</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="exercise exercise-like" id="AreasByIntegration-11"><h3 class="heading">
+<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="AreasByIntegration-5-2">Compute the three integrals in the previous example and verify that you get the same total area done either way.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="AreasByIntegration-11-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="AreasByIntegration-11-1-1-1">Compute the two integrals in the previous example and verify that the given values are correct.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-11-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Drill 21.2.0.11"><a href="#AreasByIntegration-5" title="Copy heading and permalink for Drill 21.2.0.11" aria-label="Copy heading and permalink for Drill 21.2.0.11">🔗</a></div>
+<div class="autopermalink" data-description="Task 21.2.0.11.a"><a href="#AreasByIntegration-11-1" title="Copy heading and permalink for Task 21.2.0.11.a" aria-label="Copy heading and permalink for Task 21.2.0.11.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="AreasByIntegration-11-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="AreasByIntegration-11-2-1-1">The differential rectangles in <a href="AreasByIntegration.html#EXAMPLEParabSectionHoriz" class="internal" title="Example 21.2.0.10">Example 21.2.0.10</a> had a veritical orientation.            Make  a new sketch where the differential rectangles have a horizontal orientation. Use your sketch to write down the accumualtion function which accumulates areas vertically. Then evaluate the definite integral and show that you also get a value of <span class="process-math">\(\frac{22}{3}\text{,}\)</span> as you would expect.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-11-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 21.2.0.11.b"><a href="#AreasByIntegration-11-2" title="Copy heading and permalink for Task 21.2.0.11.b" aria-label="Copy heading and permalink for Task 21.2.0.11.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Problem 21.2.0.11"><a href="#AreasByIntegration-11" title="Copy heading and permalink for Problem 21.2.0.11" aria-label="Copy heading and permalink for Problem 21.2.0.11">🔗</a></div>
 </article>
 <article class="example example-like" id="AreaExam3"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -965,46 +1070,12 @@ r^2\right)=4\pi r^2
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Computing the area between <span class="process-math">\(\sin(x) \)</span> and <span class="process-math">\(\cos(x)\)</span><div class="autopermalink" data-description="Figure 21.2.0.14"><a href="#SinCosAreaWithRect" title="Copy heading and permalink for Figure 21.2.0.14" aria-label="Copy heading and permalink for Figure 21.2.0.14">🔗</a></div></figcaption>
 </figure><div class="autopermalink" data-description="Example 21.2.0.12"><a href="#AreaExam3" title="Copy heading and permalink for Example 21.2.0.12" aria-label="Copy heading and permalink for Example 21.2.0.12">🔗</a></div>
 </article>
-<article class="problem example-like" id="AreasByIntegration-7"><h3 class="heading">
+<article class="problem example-like" id="AreasByIntegration-13"><h3 class="heading">
 <span class="type">Drill</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="AreasByIntegration-7-2">Compute the area indicated in the previous example.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="AreasByIntegration-13-2">Compute the area indicated in the previous example.<div class="autopermalink" data-description="Paragraph"><a href="#AreasByIntegration-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Drill 21.2.0.15"><a href="#AreasByIntegration-7" title="Copy heading and permalink for Drill 21.2.0.15" aria-label="Copy heading and permalink for Drill 21.2.0.15">🔗</a></div>
-</article>
-<article class="exercise exercise-like" id="ArchimedesParab"><h3 class="heading">
-<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Archimedes Quadrature of the Parabola.</span>
-</h3>
-<div class="introduction" id="ArchimedesParab-2">
-<div class="para" id="ArchimedesParab-2-1">In his treatise, Quadrature of the Parabola, Archimedes (287–212 BC) shows that the area of a parabolic 4 segment is <span class="process-math">\(3\)</span> the area of its inscribed triangle.<div class="autopermalink" data-description="Paragraph"><a href="#ArchimedesParab-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="figure figure-like" id="ArchParWithTri"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/IC/ArchParSection.png" class="contained" alt="A parabolic section with inscribed triangle"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.17"><a href="#ArchParWithTri" title="Copy heading and permalink for Figure 21.2.0.17" aria-label="Copy heading and permalink for Figure 21.2.0.17">🔗</a></div></figcaption>
-</figure>
-<div class="para" id="ArchimedesParab-2-3">The “inscribed triangle” is the one where the distance from point <span class="process-math">\(C\)</span> to segment <span class="process-math">\(\overline{AB} \)</span> is a maximum. That The “inscribed triangle” is the one where the distance from point <span class="process-math">\(C\)</span> to segment <span class="process-math">\(AB\text{.}\)</span> Archimedes did this without calculus, equations, or coordinate geometry is a tribute to his genius and talent as a mathematician. He didn’t even have formulas at his disposal; this is why he stated the area as he did.  We will use calculus to confirm Archimedes’ result. With this in mind, consider the parabola <span class="process-math">\(y=x^2\text{,}\)</span> and let <span class="process-math">\(A=(a, a^2)\text{,}\)</span> <span class="process-math">\(B=(b, b^2)\text{,}\)</span> and <span class="process-math">\(C=(c,c^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ArchimedesParab-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<figure class="figure figure-like" id="ArchParSecProb"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/IC/ArchParSecProb.png" class="contained" alt="The parabolic section with vertex at the origin."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.2.0.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.2.0.18"><a href="#ArchParSecProb" title="Copy heading and permalink for Figure 21.2.0.18" aria-label="Copy heading and permalink for Figure 21.2.0.18">🔗</a></div></figcaption>
-</figure>
-</div>
-<article class="task exercise-like" id="ArchimedesParab-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="ArchimedesParab-3-1-1">Find the area of <span class="process-math">\(\triangle ABC\)</span> in terms of <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{.}\)</span> [Hint: You can do this in many ways, but the “easiest” way might be to draw a vertical line through <span class="process-math">\(C\)</span> and use this to divide the triangle into two triangles (only a suggestion).]<div class="autopermalink" data-description="Paragraph"><a href="#ArchimedesParab-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Task 21.2.0.16.a"><a href="#ArchimedesParab-3" title="Copy heading and permalink for Task 21.2.0.16.a" aria-label="Copy heading and permalink for Task 21.2.0.16.a">🔗</a></div>
-</article>
-<article class="task exercise-like" id="ArchimedesParab-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="ArchimedesParab-4-1-1">Find the coordinates of <span class="process-math">\(C\)</span> which maximizes the distance from <span class="process-math">\(C\)</span> to segment <span class="process-math">\(\overline{AB} \)</span> and verify Archimedes’ <span class="process-math">\(r\)</span> result that the area of the parabolic segment is <span class="process-math">\(3\)</span> the area of <span class="process-math">\(\triangle ABC\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ArchimedesParab-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions">
-<details id="ArchimedesParab-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="hint solution-like knowl__content">
-<div class="para" id="ArchimedesParab-4-2-1">Again, you can maximize this distance in many ways, but the easiest way might be to notice that the maximum distance (measured along the perpendicular to <span class="process-math">\(\overline{AB} \)</span>) occurs when the vertical distance is maximized (again, only a suggestion).<div class="autopermalink" data-description="Paragraph"><a href="#ArchimedesParab-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Hint 21.2.0.16.b.1"><a href="#ArchimedesParab-4-2" title="Copy heading and permalink for Hint 21.2.0.16.b.1" aria-label="Copy heading and permalink for Hint 21.2.0.16.b.1">🔗</a></div>
-</div></details>
-</div>
-<div class="autopermalink" data-description="Task 21.2.0.16.b"><a href="#ArchimedesParab-4" title="Copy heading and permalink for Task 21.2.0.16.b" aria-label="Copy heading and permalink for Task 21.2.0.16.b">🔗</a></div>
-</article><div class="autopermalink" data-description="Problem 21.2.0.16: Archimedes Quadrature of the Parabola"><a href="#ArchimedesParab" title="Copy heading and permalink for Problem 21.2.0.16: Archimedes Quadrature of the Parabola" aria-label="Copy heading and permalink for Problem 21.2.0.16: Archimedes Quadrature of the Parabola">🔗</a></div>
+<div class="autopermalink" data-description="Drill 21.2.0.15"><a href="#AreasByIntegration-13" title="Copy heading and permalink for Drill 21.2.0.15" aria-label="Copy heading and permalink for Drill 21.2.0.15">🔗</a></div>
 </article><div class="autopermalink" data-description="Section 21.2: Areas in the Plane"><a href="#AreasByIntegration" title="Copy heading and permalink for Section 21.2: Areas in the Plane" aria-label="Copy heading and permalink for Section 21.2: Areas in the Plane">🔗</a></div>
 </section>
 </div>
