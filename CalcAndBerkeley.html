@@ -36,7 +36,7 @@ htmlPresentation: false,
 <meta name="twitter:description" content="From Practice to Theory">
 <meta property="og:description" content="From Practice to Theory">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.43"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -75,17 +75,35 @@ eBookConfig.enable_chatcodes =  false;
 <h1 class="heading"><a href="Calculus.html"><span class="title">Calculus</span> <span class="subtitle">From Practice to Theory</span></a></h1>
 <p class="byline">Eugene Boman, Robert Rogers</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
-<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
-<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
 <div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
-<h2 class="ptx-search-results-heading">Search Results: </h2>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
 <div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
 <ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="CHAPTERWhatsWrong.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERWhatsWrong.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SECTIONsecants-tangents.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="CHAPTERWhatsWrong.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERWhatsWrong.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="SECTIONsecants-tangents.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\Arctan}{Arctan}
@@ -206,10 +224,10 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
@@ -218,11 +236,11 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="DiffCalcFromPractice.html" class="internal"><span class="codenumber">I</span> <span class="title">Differential Calculus: From Practice</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-DiffCalcFromPractice" class="structural toc-item-list">
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CalculusIsARock.html" class="internal"><span class="codenumber">1</span> <span class="title">Calculus is a Rock</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERproblem-solving.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction: Some  Advice on Problem Solving</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERproblem-solving" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECusing-lett-inst.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using Letters Instead of Numbers</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAn-easy-problem-alg.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Substitution, or Making Things “Easy on the Eyes”</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECan-easy-problem-geo.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An “Easy” Problem From Geometry</span></a></div></li>
@@ -231,7 +249,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERScienceBeforeCalc.html" class="internal"><span class="codenumber">3</span> <span class="title">Science Before Calculus</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERScienceBeforeCalc" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Apologia.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Apologia</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSomePreliminaries.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Some Preliminaries</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laziness-nature.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The Laziness of Nature</span></a></div></li>
@@ -239,11 +257,11 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdescartes-normals.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Descartes’s Method of Normals</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Roberval, Conic Sections, and the Dynamic Approach</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONroberv-conic-sect" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Speed, Velocity, and Rates of Change</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanConicSect" class="internal"><span class="codenumber">3.6.2</span> <span class="title">The Tangent Lines of the Conic Sections</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SUBSECTIONTanConicSect" class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanParab" class="internal"><span class="title">The Tangent to a Parabola</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanEllipse" class="internal"><span class="title">The Tangent to an Ellipse</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#TangentHyperbola" class="internal"><span class="title">The Tangent to an Hyperbola</span></a></div></li>
@@ -256,12 +274,12 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERdifferentials.html" class="internal"><span class="codenumber">4</span> <span class="title">Differentials, Differentiation, and the Derivative</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERdifferentials" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONHist-intr.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONWarning.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Warning: Be Sure You Understand  the Purpose of This Chapter</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONsome-rules-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The General Differentiation Rules</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONsome-rules-diff" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONConstantRule" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Constant Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONSumRule" class="internal"><span class="codenumber">4.3.2</span> <span class="title">The Sum Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONConstMultRule" class="internal"><span class="codenumber">4.3.3</span> <span class="title">The Constant Multiple Rule</span></a></div></li>
@@ -274,7 +292,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERPTERVelocitySlopeTangent.html" class="internal"><span class="codenumber">5</span> <span class="title">Slopes, Tangents, and Rates of Change</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERPTERVelocitySlopeTangent" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONVelocitySlopeTangent.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Slopes and Tangents</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdefin-tang-line.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Defining the Tangent Line</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvomit-comet.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Vomit Comet</span></a></div></li>
@@ -286,7 +304,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSelfIntersectCurve.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Self–intersecting Curves and Parametric Equations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Bridges, Chains, Domes, and Telescopes</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONbridg-chains-telesc" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONBridges" class="internal"><span class="codenumber">5.10.1</span> <span class="title">Bridges</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONChains" class="internal"><span class="codenumber">5.10.2</span> <span class="title">Chains</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONDomes" class="internal"><span class="codenumber">5.10.3</span> <span class="title">Domes</span></a></div></li>
@@ -297,10 +315,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERcalc-trig.html" class="internal"><span class="codenumber">6</span> <span class="title">Calculus and Trigonometry</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERcalc-trig" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONtrig-interl.html" class="internal"><span class="codenumber">6.1</span> <span class="title">A Trigonometric Interlude</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONtrig-interl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONradian-measure" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Radian Measure</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONtrig-interl-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">The Trigonometric Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONmodel-with-trig" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Modeling with Trigonometric Functions</span></a></div></li>
@@ -310,7 +328,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Differentials of the Sine and Cosine Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONdiff-sine-cosine" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Circular Motion</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONpolar-coord-calc" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Polar Coordinates and Calculus</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONBrachistochone" class="internal"><span class="codenumber">6.2.3</span> <span class="title">The Brachistochrone Problem</span></a></div></li>
@@ -324,7 +342,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-inverse-tancot.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Differentials of the Inverse Tangent and Inverse Cotangent Functions</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONother-inverse-trig.html" class="internal"><span class="codenumber">6.7</span> <span class="title">The Other Inverse Trigonometric Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONother-inverse-trig" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSine" class="internal"><span class="codenumber">6.7.1</span> <span class="title">The Inverse Sine Function:  <span class="process-math">\(\inverse\sin(x)\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSecCsc" class="internal"><span class="codenumber">6.7.2</span> <span class="title">The Inverse Secant and Inverse Cosecant</span></a></div></li>
 </ul>
@@ -334,17 +352,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTApproximation.html" class="internal"><span class="codenumber">7</span> <span class="title">Approximation Methods</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTApproximation" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONnewtons-method.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Root Finding: Two  Pre–Calculus Approaches</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONnewtons-method" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBisectionMethod" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Bisection Method</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBabylonianMethod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Babylonian Method for Square Roots</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONnewtons-method-1.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Newton’s Method</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONnewtons-method-1" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONNewtonsMethodBasic" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Idea Behind Newton’s Method</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSpectacularFailure" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Spectacular Failure</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSubtleFailure" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Subtle Failure</span></a></div></li>
@@ -356,7 +374,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERLastElemFunc.html" class="internal"><span class="codenumber">8</span> <span class="title">Exponentials and Logarithms</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERLastElemFunc" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDEsandIVPS.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Initial Value Problems</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONexponential.html" class="internal"><span class="codenumber">8.2</span> <span class="title">The Natural Exponential</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONExponentialFunction.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Exponential Growth and Exponential Notation</span></a></div></li>
@@ -368,7 +386,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNatLog.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Logarithms, Natural and Unnatural</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONLogApps.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Applications of Logarithms</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONLogApps" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SUBSECTIONradioactive-decay" class="internal"><span class="codenumber">8.10.1</span> <span class="title">Radioactive Dating</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SECTIONnewtons-law-cooling" class="internal"><span class="codenumber">8.10.2</span> <span class="title">Chillin’ with Newton: The Law of Cooling</span></a></div></li>
 </ul>
@@ -376,7 +394,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDerivNatLog.html" class="internal"><span class="codenumber">8.11</span> <span class="title">The Derivative of the Natural Logarithm</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONgener-logar-expon.html" class="internal"><span class="codenumber">8.12</span> <span class="title">General Logarithms and Exponentials</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONgener-logar-expon" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html#PARAGRAPHSGenExp" class="internal"><span class="codenumber">8.12.1</span> <span class="title">General Exponentials</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html#PARAGRAPHSGenLog" class="internal"><span class="codenumber">8.12.2</span> <span class="title">General Logarithms</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier" class="internal"><span class="codenumber">8.12.3</span> <span class="title">Common and Napierian Logarithms</span></a></div></li>
@@ -388,12 +406,12 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERwhat-deriv-tells.html" class="internal"><span class="codenumber">9</span> <span class="title">Optimization: Going to Extremes</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERwhat-deriv-tells" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONintroduction.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction: Fermat’s Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfive-simil-probl.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Preliminaries: Some Simple Optimizations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Reflections, Refractions, and Rainbows</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONrefl-refr-rainb" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONreflection" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Reflection</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrefraction" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Refraction: Snell’s Law</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrainbows" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Rainbows</span></a></div></li>
@@ -404,7 +422,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGlobalVsLocalExtrema.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Global vs. Local Extrema</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Optimization, the Abstract Problem</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SUBSECTIONoptim-abstr-probl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SECTIONIntroOptim" class="internal"><span class="codenumber">9.5.1</span> <span class="title">An Illustrative Example from <span class="process-math">\(1750\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-abstr-probl-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Identifying and Distinguishing Maxima and Minima</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Transition Points, and Possible Transition Points on Open Intervals</span></a></div></li>
@@ -414,15 +432,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Concavity and the Second Derivative Test</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv" class="internal"><span class="codenumber">9.6.1</span> <span class="title">The Second Derivative Test</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONconc-second-deriv-1" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv" class="internal"><span class="codenumber">9.6.1</span> <span class="title">The Second Derivative Test</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONoptim-probl.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Optimization Problems</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONoptim-probl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONOptStrat" class="internal"><span class="codenumber">9.7.1</span> <span class="title">Optimization Strategy</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONPageOfText" class="internal"><span class="codenumber">9.7.2</span> <span class="title">There’s More Than One Way to Optimize</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SUBSECTIONPageOfText" class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONFirstSolution" class="internal"><span class="title">First Solution:</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONSecondSolution" class="internal"><span class="title">Second Solution</span></a></div></li>
 </ul>
@@ -434,18 +452,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERPTshape-things.html" class="internal"><span class="codenumber">10</span> <span class="title">Graphing with Calculus</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERPTshape-things" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgraph-with-form.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(y(x)\)</span></span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONgraph-without-form.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphing Without Formulas</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONgraph-without-form" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgraph-without-form.html#SUBSECTIONGraphWithDeriv" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Graphing with Incomplete Information About the Derivative</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgraph-without-form.html#SUBSECTIONGraphFromDerivGraph" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Graphing <span class="process-math">\(y(x)\)</span> from the Graph of <span class="process-math">\(\dfdx{y}{x} \)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(\dfdx{y}{t}\)</span></span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONGraphingWithDeriv" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html#SUBSECTIONDerivDepOnxAlone" class="internal"><span class="codenumber">10.3.1</span> <span class="title">When  <span class="process-math">\(\dfdx{y}{t}\)</span> Depends on <span class="process-math">\(t\)</span> alone</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html#SUBSECTIONDfdxDependsOnYAlone" class="internal"><span class="codenumber">10.3.2</span> <span class="title">When  <span class="process-math">\(\dfdx{y}{t}\)</span> depends on <span class="process-math">\(y\)</span> alone</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html#SUBSECTIONDfdxDependsOnYAndt" class="internal"><span class="codenumber">10.3.3</span> <span class="title">When  <span class="process-math">\(\dfdx{y}{t}\)</span> Depends on <span class="process-math">\(y\)</span> and <span class="process-math">\(t\)</span></span></a></div></li>
@@ -455,17 +473,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERmodel-with-calc.html" class="internal"><span class="codenumber">11</span> <span class="title">Modeling with Calculus</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERmodel-with-calc" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Population Dynamics</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONpopulation-dynamics" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Modeling a Trout Farm</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp" class="internal"><span class="codenumber">11.1.2</span> <span class="title">The Competing Species Model</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONselect-model-probl.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Selected Modeling Problems</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONselect-model-probl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SECTIONepidemic-blues" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Epidemics, The SIR Model</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#subSECTIONtractrix" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The Tractrix</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SUBSECTIONPursuit" class="internal"><span class="codenumber">11.2.3</span> <span class="title">The  Pursuit Problem</span></a></div></li>
@@ -475,16 +493,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERlimits-lhop-rule.html" class="internal"><span class="codenumber">12</span> <span class="title">Limits and L’Hôpital’s Rule</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERlimits-lhop-rule" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Horizontal Asymptotes: Limits “at Infinity”</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONhoriz-asympt-as" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsqueeze-theorem-informal.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvertical-asymptotes.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Vertical Asymptotes: “Infinite” Limits</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Indeterminate Forms and L’Hôpital’s Rule</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONIndetFormsAndLhop" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html#SUBSECTIONLHopitalsRule" class="internal"><span class="codenumber">12.4.1</span> <span class="title">L’Hôpital’s Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html#SUBSECTIONlhop-rule-horiz" class="internal"><span class="codenumber">12.4.2</span> <span class="title">L’Hôpital’s Rule and Horizontal Asymptotes</span></a></div></li>
 </ul>
@@ -495,20 +513,20 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="DiffCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Differential Calculus: To Theory</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-DiffCalcToTheory">
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="CHAPTERWhatsWrong.html" class="internal"><span class="codenumber">13</span> <span class="title">What’s Wrong with Differentials?</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-CHAPTERWhatsWrong">
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="CalcAndBerkeley.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Calculus and Bishop Berkeley</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsecants-tangents.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Secants and Tangents</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERdiff-rules-with-limits.html" class="internal"><span class="codenumber">14</span> <span class="title">The Differentiation Rules via Limits</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERdiff-rules-with-limits" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html" class="internal"><span class="codenumber">14.1</span> <span class="title">The Limit Rules (Theorems)</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont" class="internal"><span class="codenumber">14.1.1</span> <span class="title">The Limit of a Composition and Continuity at a Point</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONlimit-theorems-laws" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont" class="internal"><span class="codenumber">14.1.1</span> <span class="title">The Limit of a Composition and Continuity at a Point</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-rules-via.html" class="internal"><span class="codenumber">14.2</span> <span class="title">The General Differentiation Theorems, via Limits</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONChainRule.html" class="internal"><span class="codenumber">14.3</span> <span class="title">The Chain Rule</span></a></div></li>
@@ -520,7 +538,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERFDT-Redux.html" class="internal"><span class="codenumber">15</span> <span class="title">The First Derivative Test, Redux</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERFDT-Redux" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfermats-theorem.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Fermat’s Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONrolles-lemma-mean.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Rolle’s Lemma and the Mean Value Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfirst-deriv-test.html" class="internal"><span class="codenumber">15.3</span> <span class="title">The Proof of the First Derivative Test</span></a></div></li>
@@ -528,18 +546,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt.html" class="internal"><span class="codenumber">16</span> <span class="title">When the Derivative Doesn’t Exist</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERwhen-deriv-doesnt" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">One Sided Limits</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONone-sided-deriv.html" class="internal"><span class="codenumber">16.2</span> <span class="title">One Sided Derivatives</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERformal-limits.html" class="internal"><span class="codenumber">17</span> <span class="title">Formal Limits</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERformal-limits" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonIntuitExample.html" class="internal"><span class="codenumber">17.1</span> <span class="title">A Non-Intuitive Limit</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Getting Around Infinity</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONlimits-at-infinity" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONEpsDelt1" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Horizontal Asymptotes, Redux</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONconvincing-skeptic" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Convincing Berkeley</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Refining the Definition of a Limit</span></a></div></li>
@@ -549,7 +567,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONlimits-at-real.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Finite Limits at a Real Number</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONLimitLaws.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Limit Laws (Theorems)</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONLimitLaws" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at" class="internal"><span class="codenumber">17.4.1</span> <span class="title">The Limit of a Sum</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONsqueeze-theorem" class="internal"><span class="codenumber">17.4.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SECTIONlimit-composition" class="internal"><span class="codenumber">17.4.3</span> <span class="title">The Limit of a Composition</span></a></div></li>
@@ -563,20 +581,20 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">III</span> <span class="title">Integral Calculus: From Practice</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-IntCalc" class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">18</span> <span class="title">Differential Equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERDiffeqsIVPS" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSummationAndAntidifferentiation.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Antiderivatives, Integrals and Differential Equations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Separation of Variables</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERIntegrationTechniques.html" class="internal"><span class="codenumber">19</span> <span class="title">Integration Techniques</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERIntegrationTechniques" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Integration by Substitution</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONSubstMethed" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SECTIONIntroSubstExample" class="internal"><span class="codenumber">19.1.1</span> <span class="title">Some Introductory Examples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONAirResistance" class="internal"><span class="codenumber">19.1.2</span> <span class="title">Extending Galileo’s Results: Air Resistance</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution" class="internal"><span class="codenumber">19.1.3</span> <span class="title">More on Substitutions</span></a></div></li>
@@ -586,7 +604,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">19.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONPartFrac" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONHeavisideMethod" class="internal"><span class="codenumber">19.2.1</span> <span class="title">Simple Decompositions: Heaviside’s Cover–up Method (HCUM)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDRepeated" class="internal"><span class="codenumber">19.2.2</span> <span class="title">Unreduced Rational Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONRepeatLinFactPFD" class="internal"><span class="codenumber">19.2.3</span> <span class="title">Repeated Linear Factors</span></a></div></li>
@@ -598,10 +616,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERFTC.html" class="internal"><span class="codenumber">20</span> <span class="title">The Fundamental Theorem of Calculus and the Definite Integral</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERFTC" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Historical Precursors of Definite Integration</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">20.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONCavalierisMethod" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">20.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">20.2</span> <span class="title">The Fundamental Theorem of Calculus: Accumulation</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDefiniteIntegral.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
@@ -609,7 +627,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERAppDefInt.html" class="internal"><span class="codenumber">21</span> <span class="title">Applications of Definite Integrals</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERAppDefInt" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONWhyAreas.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Why Do We Compute So Many Areas</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="AreasByIntegration.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Areas in the Plane</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="VolumesByIntegration.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Volumes</span></a></div></li>
@@ -621,11 +639,11 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">22</span> <span class="title">More Approximation Methods</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERApproximationIntegral" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">22.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONPowerSeries" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-3" class="internal"><span class="codenumber">22.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal"><span class="codenumber">22.2.2</span> <span class="title">Summation Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONGeoSeries" class="internal"><span class="codenumber">22.2.3</span> <span class="title">Geometric Series</span></a></div></li>
@@ -641,7 +659,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">23</span> <span class="title">Taylor Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-Taylor" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">23.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">23.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
 </ul>
@@ -650,17 +668,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">IV</span> <span class="title">Integral Calculus: To Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-IntCalcToTheory" class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERRiemannIntegral.html" class="internal"><span class="codenumber">24</span> <span class="title">Defining the Riemann Integral</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERRiemannIntegral" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRiemanIntDef.html" class="internal"><span class="codenumber">24.1</span> <span class="title">Defining the Riemann Integral</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFTC.html" class="internal"><span class="codenumber">24.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="PowerSeries.html" class="internal"><span class="codenumber">25</span> <span class="title">Understanding Power Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-PowerSeries" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSeriesQuestions.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Some Questions We’ve Raised</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONBddIncImpConv.html" class="internal"><span class="codenumber">25.2</span> <span class="title">Any Increasing Sequence Which is Bounded Above Must Converge</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonNegSeries.html" class="internal"><span class="codenumber">25.3</span> <span class="title">Series With Nonnegative Terms</span></a></div></li>
@@ -674,24 +692,24 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">V</span> <span class="title">Stuff  Without a Home</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-PARTNoHome" class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ParmetricInt.html" class="internal"><span class="codenumber">26</span> <span class="title">Integration With Parametric Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONParametricInt.html" class="internal"><span class="codenumber">26.1</span> <span class="title">Parametric Functions and Integration</span></a></div></li></ul>
+<ul id="ptx-toc-group-ParmetricInt" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONParametricInt.html" class="internal"><span class="codenumber">26.1</span> <span class="title">Parametric Functions and Integration</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">27</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">VI</span> <span class="title">Quotations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">28</span> <span class="title">Quotes</span></a></div></li></ul>
+<ul id="ptx-toc-group-PARTQuotes" class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">28</span> <span class="title">Quotes</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-meta_backmatter" class="structural toc-item-list">
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">A</span> <span class="title">The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERPFDTheory" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection1.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Section 1</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection2.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Section 2</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection3.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Section 3</span></a></div></li>
@@ -706,7 +724,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection13.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Section 13</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONSection14.html" class="internal"><span class="codenumber">A.13</span> <span class="title">Section 14</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONSection14" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSection14.html#SUBSUBSECTIONAvoidIrredCase" class="internal"><span class="codenumber">A.13.1</span> <span class="title">Avoiding the Irreducible Case by Allowing Complex Numbers</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSection14.html#SECTIONSection14-4" class="internal"><span class="codenumber">A.13.2</span> <span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span></a></div></li>
 </ul>
@@ -726,114 +744,114 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">13.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Calculus and Bishop Berkeley</span>
 </h2>
 <blockquote class="blockquote" id="CalcAndBerkeley-2">
-<div class="para" id="CalcAndBerkeley-2-1">“In my opinion, a mathematician, in so far as he is a mathematician, need not preoccupy himself with philosophy — an opinion, moreover, which has been expressed by many philosophers.”<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-2-1">“In my opinion, a mathematician, in so far as he is a mathematician, need not preoccupy himself with philosophy — an opinion, moreover, which has been expressed by many philosophers.”<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<cite class="attribution">―<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Lebesgue/" target="_blank">Henri Lebesgue</a> (1875–1941)</cite><div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-2" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<cite class="attribution">―<a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Lebesgue/" target="_blank">Henri Lebesgue</a> (1875–1941)</cite><div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-2" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
 <figure class="figure figure-like" id="CalcAndBerkeley-3"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="external/DC/Berkeley.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">13.1.0.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Berkeley/" target="_blank">Bishop George Berkeley</a> (1685–1753)<div class="autopermalink" data-description="Figure 13.1.0.1"><a href="#CalcAndBerkeley-3" title="Copy heading and permalink for Figure 13.1.0.1" aria-label="Copy heading and permalink for Figure 13.1.0.1">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">13.1.0.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Berkeley/" target="_blank">Bishop George Berkeley</a> (1685–1753)<div class="autopermalink" aria-hidden="true" data-description="Figure 13.1.0.1"><a tabindex="-1" href="#CalcAndBerkeley-3" title="Copy heading and permalink for Figure 13.1.0.1" aria-label="Copy heading and permalink for Figure 13.1.0.1">🔗</a></div></figcaption>
 </figure>
 <details id="CalcAndBerkeley-4" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pronuciation of “Berkeley”.</span>
 </h3></summary>
 <aside class="aside aside-like knowl__content">
-<div class="para" id="CalcAndBerkeley-4-2">His name is properly pronounced “bark lee,” not "burk lee."<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-4-2">His name is properly pronounced “bark lee,” not "burk lee."<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </aside></details>
-<div class="para" id="CalcAndBerkeley-5">In <span class="process-math">\(1734\)</span> an even more devastating repudiation of differentials was published by <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Berkeley" target="_blank">George Berkeley</a>, the Anglican Bishop of the Diocese of Cloyne, Ireland in a treatise ponderously entitled,<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-5">In <span class="process-math">\(1734\)</span> an even more devastating repudiation of differentials was published by <a class="external" href="https://mathshistory.st-andrews.ac.uk/Biographies/Berkeley" target="_blank">George Berkeley</a>, the Anglican Bishop of the Diocese of Cloyne, Ireland in a treatise ponderously entitled,<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <blockquote class="blockquote" id="CalcAndBerkeley-6">
 <div class="para" id="CalcAndBerkeley-6-1">
-<a class="external" href="https://old.maa.org/press/periodicals/convergence/mathematical-treasure-george-berkeleys-the-analyst" target="_blank"><span class="booktitle">THE ANALYST;</span> or, a Discourse Addressed to an Infidel MATHEMATICIAN, wherein it is examined whether the Object, Principles, and Inferences of the modern Analysis are more distinctly conceived, or more evidently deduced, than Religious Mysteries and Points of Faith.</a><div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<a class="external" href="https://old.maa.org/press/periodicals/convergence/mathematical-treasure-george-berkeleys-the-analyst" target="_blank"><span class="booktitle">THE ANALYST;</span> or, a Discourse Addressed to an Infidel MATHEMATICIAN, wherein it is examined whether the Object, Principles, and Inferences of the modern Analysis are more distinctly conceived, or more evidently deduced, than Religious Mysteries and Points of Faith.</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-6" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-6" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-7">Usually it is just called <span class="booktitle">The Analyst</span>.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-7">Usually it is just called <span class="booktitle">The Analyst</span>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-8">Berkeley’s critique was both fierce and correct. Fortunately, it was also (mostly) ignored in its time. Just as we have been so far, mathematicians of the time were too busy <em class="emphasis">using</em> Calculus to concern themselves much with the underlying foundational issues he illuminated so well.  But these foundational issues are real and the time has come for us to address the profound logical difficulties inherent in the notion of an infinitely small quantity.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-8">Berkeley’s critique was both fierce and correct. Fortunately, it was also (mostly) ignored in its time. Just as we have been so far, mathematicians of the time were too busy <em class="emphasis">using</em> Calculus to concern themselves much with the underlying foundational issues he illuminated so well.  But these foundational issues are real and the time has come for us to address the profound logical difficulties inherent in the notion of an infinitely small quantity.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-9">You may well wonder why a Bishop in the Church of England and a philosopher would concern himself with the methods of scientific analysis and investigation. The fact is that Berkeley didn’t really have any quarrel with the use of differentials (or fluxions) in science at all. He was, in fact, a great admirer of Newton and he understood very well that the techniques Newton and Leibniz had introduced actually worked, at least most of the time. He says as much himself in <span class="booktitle">The Analyst</span><div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-9">You may well wonder why a Bishop in the Church of England and a philosopher would concern himself with the methods of scientific analysis and investigation. The fact is that Berkeley didn’t really have any quarrel with the use of differentials (or fluxions) in science at all. He was, in fact, a great admirer of Newton and he understood very well that the techniques Newton and Leibniz had introduced actually worked, at least most of the time. He says as much himself in <span class="booktitle">The Analyst</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="CalcAndBerkeley-10" class="historical aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Historical Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Historical Note.</span>
 </h3></summary>
 <aside class="historical aside-like knowl__content">
-<div class="para" id="CalcAndBerkeley-10-2">In the eighteenth century English nouns were frequently capitalized, and spelling was not as standardized as it is today, so Berkeley’s work looks a little odd to modern eyes. Nevertheless, it is quite readable. Stretch yourself a bit.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-10-2">In the eighteenth century English nouns were frequently capitalized, and spelling was not as standardized as it is today, so Berkeley’s work looks a little odd to modern eyes. Nevertheless, it is quite readable. Stretch yourself a bit.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </aside></details>
 <blockquote class="blockquote" id="CalcAndBerkeley-11">
-<div class="para" id="CalcAndBerkeley-11-1">“I have no Controversy about your Conclusions, but only about your Logic and Method . .  .  It must be remembered that I am not concerned about the truth of your Theorems, but only about the way of coming at them; . . . it may perhaps seem an unaccountable Paradox, that Mathematicians should deduce true Propositions from false Principles, be right in the Conclusion, and yet err in the Premises . . .”     (Section XX)<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-11-1">“I have no Controversy about your Conclusions, but only about your Logic and Method . .  .  It must be remembered that I am not concerned about the truth of your Theorems, but only about the way of coming at them; . . . it may perhaps seem an unaccountable Paradox, that Mathematicians should deduce true Propositions from false Principles, be right in the Conclusion, and yet err in the Premises . . .”     (Section XX)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-11" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-11" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-12">Berkeley might not have bothered publishing his criticisms of Calculus but during the seventeenth and eighteenth centuries a religious movement known as <a class="external" href="https://www.britannica.com/topic/Deism" target="_blank">Deism</a> (called “Free-Thinking” in England) was very strong throughout Europe. Many of the scientists of the age were supportive of the Deistic movement because, while Deism itself is not a form of atheism, many of its adherents were atheists. Moreover the Free–Thinkers in England explicitly espoused the questioning and criticism of religious tenets and attitudes.  Christianity was attacked by some Deists on the grounds that it was not logical and contained too many mysteries.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-12">Berkeley might not have bothered publishing his criticisms of Calculus but during the seventeenth and eighteenth centuries a religious movement known as <a class="external" href="https://www.britannica.com/topic/Deism" target="_blank">Deism</a> (called “Free-Thinking” in England) was very strong throughout Europe. Many of the scientists of the age were supportive of the Deistic movement because, while Deism itself is not a form of atheism, many of its adherents were atheists. Moreover the Free–Thinkers in England explicitly espoused the questioning and criticism of religious tenets and attitudes.  Christianity was attacked by some Deists on the grounds that it was not logical and contained too many mysteries.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-13">As a member of the clergy Berkeley felt compelled to answer these criticisms. Speaking directly to the English scientific community he said,<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-13">As a member of the clergy Berkeley felt compelled to answer these criticisms. Speaking directly to the English scientific community he said,<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <blockquote class="blockquote" id="CalcAndBerkeley-14">
-<div class="para" id="CalcAndBerkeley-14-1">“Whereas then it is supposed, that you apprehend more distinctly, consider more closely, infer more justly, conclude more accurately than other Men, and that you are therefore less religious because more judicious, I shall claim the privilege of a Free–Thinker; and take the Liberty to inquire into the Object, Principles, and Method of Demonstration admitted by the Mathematicians of the present Age, with the same freedom that you presume to treat the Principles and Mysteries of Religion; to the end, that all Men may see what right you have to lead, or what Encouragement others have to follow you.” (Section II)<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-14-1">“Whereas then it is supposed, that you apprehend more distinctly, consider more closely, infer more justly, conclude more accurately than other Men, and that you are therefore less religious because more judicious, I shall claim the privilege of a Free–Thinker; and take the Liberty to inquire into the Object, Principles, and Method of Demonstration admitted by the Mathematicians of the present Age, with the same freedom that you presume to treat the Principles and Mysteries of Religion; to the end, that all Men may see what right you have to lead, or what Encouragement others have to follow you.” (Section II)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-14" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-14" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-15">He made his purpose clear from the outset by including a biblical verse (Mathew, chapter 7, verse 5) on the title page of <span class="booktitle">The Analyst</span>:<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-15">He made his purpose clear from the outset by including a biblical verse (Mathew, chapter 7, verse 5) on the title page of <span class="booktitle">The Analyst</span>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <blockquote class="blockquote" id="CalcAndBerkeley-16">
-<div class="para" id="CalcAndBerkeley-16-1">“First cast out the beam out of thine own Eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye.”<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-16-1">“First cast out the beam out of thine own Eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye.”<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-16" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-16" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-17">So Berkeley’s purpose in writing <span class="booktitle">The Analyst</span> was to defend his religion rather than to attack mathematics. But he was well acquainted with the adage, “The best defense is a good offense” and he mounted a very good defense.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-17">So Berkeley’s purpose in writing <span class="booktitle">The Analyst</span> was to defend his religion rather than to attack mathematics. But he was well acquainted with the adage, “The best defense is a good offense” and he mounted a very good defense.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-18">Some of Berkeley’s specific criticisms will be illuminating.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-18">Some of Berkeley’s specific criticisms will be illuminating.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="CalcAndBerkeley-19" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Historical Background.</span>
 </h3></summary>
 <aside class="aside aside-like knowl__content">
-<div class="para" id="CalcAndBerkeley-19-2">The language of Calculus wasn’t entirely established yet so when Berkeley says “Differences” he means what we’ve been calling differentials.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-19-2">The language of Calculus wasn’t entirely established yet so when Berkeley says “Differences” he means what we’ve been calling differentials.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </aside></details>
 <blockquote class="blockquote" id="CalcAndBerkeley-20">
-<div class="para" id="CalcAndBerkeley-20-1">“. . .  they consider the Increments or Decrements themselves, which they call Differences, and which are supposed to be infinitely small  . . . . Now to conceive a Quantity infinitely small, that is, infinitely less than any sensible or imaginable Quantity, or than any the least finite Magnitude, is, I confess, above my Capacity.  . . .  But to conceive a Part of such infinitely small Quantity, that shall be still infinitely less than it, and consequently though multipliy’d infinitely shall never equal the minutest finite Quantity is, I suspect, an infinite Difficulty to any Man whatsoever . . .” (Section V)<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-20-1">“. . .  they consider the Increments or Decrements themselves, which they call Differences, and which are supposed to be infinitely small  . . . . Now to conceive a Quantity infinitely small, that is, infinitely less than any sensible or imaginable Quantity, or than any the least finite Magnitude, is, I confess, above my Capacity.  . . .  But to conceive a Part of such infinitely small Quantity, that shall be still infinitely less than it, and consequently though multipliy’d infinitely shall never equal the minutest finite Quantity is, I suspect, an infinite Difficulty to any Man whatsoever . . .” (Section V)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-20" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-20" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-21">Do you see what he’s complaining about? Berkeley is questioning the very existence of the differentials we have been relying on since we began. And he has a point. As we’ve seen our differentials have to satisfy two mutually exclusive properties. They can’t be zero but they must be smaller than “the least finite Magnitude.” On its face this seems to be impossible.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-21">Do you see what he’s complaining about? Berkeley is questioning the very existence of the differentials we have been relying on since we began. And he has a point. As we’ve seen our differentials have to satisfy two mutually exclusive properties. They can’t be zero but they must be smaller than “the least finite Magnitude.” On its face this seems to be impossible.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-22">But Berkeley goes further. He says that:<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-22">But Berkeley goes further. He says that:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <blockquote class="blockquote" id="CalcAndBerkeley-23">
-<div class="para" id="CalcAndBerkeley-23-1">“. . .  our modern Analysts are not content to consider only the Differences of finite Quantities: they also consider the the Differences of those Differences, and the Differences of the Differences of the first Differences. And so on <em class="emphasis">ad infinitum.</em> That is, they consider Quantities infinitely less than the least discernible Quantity; and others infinitely less than those infinitely small ones; and still others infinitely less than the preceding Infinitesimals, and so on without end or limit . . .  And (which is most strange) although you should take a Million of Millions of these Infinitesimals, each whereof is supposed infinitely greater than some other real Magnitude, and add them to the least given Quantity, it shall be never the bigger. For this is one of the modest <em class="emphasis">postulata</em> of our modern Mathematicians, and it is a Corner–stone or Ground–work of their Speculations.”    (Section VI)<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-23-1">“. . .  our modern Analysts are not content to consider only the Differences of finite Quantities: they also consider the the Differences of those Differences, and the Differences of the Differences of the first Differences. And so on <em class="emphasis">ad infinitum.</em> That is, they consider Quantities infinitely less than the least discernible Quantity; and others infinitely less than those infinitely small ones; and still others infinitely less than the preceding Infinitesimals, and so on without end or limit . . .  And (which is most strange) although you should take a Million of Millions of these Infinitesimals, each whereof is supposed infinitely greater than some other real Magnitude, and add them to the least given Quantity, it shall be never the bigger. For this is one of the modest <em class="emphasis">postulata</em> of our modern Mathematicians, and it is a Corner–stone or Ground–work of their Speculations.”    (Section VI)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-23" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-23" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-24">Clearly Berkeley is contemptuous of the reasoning we’ve used to justify our differentiation rules. And, again, he has a point. We have pushed aside issues like this until now because we knew we were showing you the correct techniques, even if our justifications would not bear close examination. In the beginning it was more important that you learn to <em class="emphasis">use</em> Calculus than that you understand all of the logical subtleties that have been used to justify it rigorously.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-24">Clearly Berkeley is contemptuous of the reasoning we’ve used to justify our differentiation rules. And, again, he has a point. We have pushed aside issues like this until now because we knew we were showing you the correct techniques, even if our justifications would not bear close examination. In the beginning it was more important that you learn to <em class="emphasis">use</em> Calculus than that you understand all of the logical subtleties that have been used to justify it rigorously.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-25">But wait a second. We <em class="emphasis">know</em> Calculus works. We’ve been successfully solving abstruse and difficult problems with it for some time. Throughout the first part of this text we’ve seen ample, even overwhelming, evidence of this fact.  Isn’t that sufficient?  Can’t we conclude from the fact that it <em class="emphasis">does</em> seem to work that the notion of the differential is tenable after all?<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-25">But wait a second. We <em class="emphasis">know</em> Calculus works. We’ve been successfully solving abstruse and difficult problems with it for some time. Throughout the first part of this text we’ve seen ample, even overwhelming, evidence of this fact.  Isn’t that sufficient?  Can’t we conclude from the fact that it <em class="emphasis">does</em> seem to work that the notion of the differential is tenable after all?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-26">Sadly, no. Berkeley thought of that too:<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-26">Sadly, no. Berkeley thought of that too:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <blockquote class="blockquote" id="CalcAndBerkeley-27">
-<div class="para" id="CalcAndBerkeley-27-1">“But this inverted way of demonstrating your Principles by your Conclusions . . .  is contrary to the Rules of Logic. The truth of a Conclusion will not prove either the Form or the Matter . . . to be true . . . I say that in every other Science Men prove their Conclusions by their Principles, and not their Principles by their Conclusions.”  (Section XX)<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-27-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-27-1">“But this inverted way of demonstrating your Principles by your Conclusions . . .  is contrary to the Rules of Logic. The truth of a Conclusion will not prove either the Form or the Matter . . . to be true . . . I say that in every other Science Men prove their Conclusions by their Principles, and not their Principles by their Conclusions.”  (Section XX)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-27-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#CalcAndBerkeley-27" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#CalcAndBerkeley-27" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
-<div class="para" id="CalcAndBerkeley-28">In order to have confidence in our knowledge, we must begin with simple, clear ideas and build on them logically. Nothing else will do.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-28">In order to have confidence in our knowledge, we must begin with simple, clear ideas and build on them logically. Nothing else will do.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-29">However, the path to simple, clear ideas is neither simple nor clear. As we’ve mentioned before, it took about two hundred years for the mathematical community to find and fully understand how to make Calculus rigorous. We introduced the essential idea, the limit, intuitively in <a href="SECTIONhoriz-asympt-as.html" class="internal" title='Section 12.1: Horizontal Asymptotes: Limits "at Infinity"'>Section 12.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-29">However, the path to simple, clear ideas is neither simple nor clear. As we’ve mentioned before, it took about two hundred years for the mathematical community to find and fully understand how to make Calculus rigorous. We introduced the essential idea, the limit, intuitively in <a href="SECTIONhoriz-asympt-as.html" class="internal" title='Section 12.1: Horizontal Asymptotes: Limits "at Infinity"'>Section 12.1</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="CalcAndBerkeley-30" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Comment.</span>
 </h3></summary>
 <aside class="aside aside-like knowl__content">
-<div class="para" id="CalcAndBerkeley-30-2">For us “rigorous” means that we can provide an argument that even Bishop Berkeley would accept.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-30-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-30-2">For us “rigorous” means that we can provide an argument that even Bishop Berkeley would accept.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-30-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </aside></details>
-<div class="para" id="CalcAndBerkeley-31">It would be possible to introduce the limit concept formally  and then proceed to develop all of Calculus from it. Logically, there is nothing wrong with this approach, and indeed, this is exactly how most Calculus books present the topic. But the limit concept is  very subtle. Unless you understand exactly what issues it is meant to address it is very difficult to understand why it takes the form that it does.<div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-31">It would be possible to introduce the limit concept formally  and then proceed to develop all of Calculus from it. Logically, there is nothing wrong with this approach, and indeed, this is exactly how most Calculus books present the topic. But the limit concept is  very subtle. Unless you understand exactly what issues it is meant to address it is very difficult to understand why it takes the form that it does.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="CalcAndBerkeley-32">So, we will continue to build on our intuitive approach. However, our focus has changed. In Part I we worked intuitively to build confidence in the tools we were building. Here in Part II, our intention is to highlight how and where our intuition falls short, so that when we finally define the limit concept rigorously in <a href="SECTIONlimits-at-real.html#DEFINITIONlimits-at-real" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 17.3.0.1: The Limit at a Point">Definition 17.3.0.1</a> it will be clear why it must have the form that it does. What this means is that while our intention is to finally  provide the rigor we’ve been lacking  we will not actually achieve that until the end of <a href="CHAPTERformal-limits.html" class="internal" title="Chapter 17: Formal Limits">Chapter 17</a><div class="autopermalink" data-description="Paragraph"><a href="#CalcAndBerkeley-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CalcAndBerkeley-32">So, we will continue to build on our intuitive approach. However, our focus has changed. In Part I we worked intuitively to build confidence in the tools we were building. Here in Part II, our intention is to highlight how and where our intuition falls short, so that when we finally define the limit concept rigorously in <a href="SECTIONlimits-at-real.html#DEFINITIONlimits-at-real" class="xref" data-knowl="./knowl/xref/DEFINITIONlimits-at-real.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 17.3.0.1: The Limit at a Point">Definition 17.3.0.1</a> it will be clear why it must have the form that it does. What this means is that while our intention is to finally  provide the rigor we’ve been lacking  we will not actually achieve that until the end of <a href="CHAPTERformal-limits.html" class="internal" title="Chapter 17: Formal Limits">Chapter 17</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CalcAndBerkeley-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Section 13.1: Calculus and Bishop Berkeley"><a href="#CalcAndBerkeley" title="Copy heading and permalink for Section 13.1: Calculus and Bishop Berkeley" aria-label="Copy heading and permalink for Section 13.1: Calculus and Bishop Berkeley">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Section 13.1: Calculus and Bishop Berkeley"><a tabindex="-1" href="#CalcAndBerkeley" title="Copy heading and permalink for Section 13.1: Calculus and Bishop Berkeley" aria-label="Copy heading and permalink for Section 13.1: Calculus and Bishop Berkeley">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">

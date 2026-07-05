@@ -36,7 +36,7 @@ htmlPresentation: false,
 <meta name="twitter:description" content="From Practice to Theory">
 <meta property="og:description" content="From Practice to Theory">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.43"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -75,17 +75,35 @@ eBookConfig.enable_chatcodes =  false;
 <h1 class="heading"><a href="Calculus.html"><span class="title">Calculus</span> <span class="subtitle">From Practice to Theory</span></a></h1>
 <p class="byline">Eugene Boman, Robert Rogers</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
-<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
-<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="meta_backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
 <div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
-<h2 class="ptx-search-results-heading">Search Results: </h2>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
 <div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
 <ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="AreasByIntegration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERAppDefInt.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-VolByShells.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="AreasByIntegration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="CHAPTERAppDefInt.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-VolByShells.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\Arctan}{Arctan}
@@ -206,10 +224,10 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth6 parts focused" data-preexpanded-levels="0" data-max-levels="6"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Epigraphs</span></a></div></li>
@@ -218,11 +236,11 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="DiffCalcFromPractice.html" class="internal"><span class="codenumber">I</span> <span class="title">Differential Calculus: From Practice</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-DiffCalcFromPractice" class="structural toc-item-list">
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="CalculusIsARock.html" class="internal"><span class="codenumber">1</span> <span class="title">Calculus is a Rock</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERproblem-solving.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction: Some  Advice on Problem Solving</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERproblem-solving" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECusing-lett-inst.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Using Letters Instead of Numbers</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONAn-easy-problem-alg.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Substitution, or Making Things “Easy on the Eyes”</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECan-easy-problem-geo.html" class="internal"><span class="codenumber">2.3</span> <span class="title">An “Easy” Problem From Geometry</span></a></div></li>
@@ -231,7 +249,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERScienceBeforeCalc.html" class="internal"><span class="codenumber">3</span> <span class="title">Science Before Calculus</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERScienceBeforeCalc" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Apologia.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Apologia</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSomePreliminaries.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Some Preliminaries</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laziness-nature.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The Laziness of Nature</span></a></div></li>
@@ -239,11 +257,11 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdescartes-normals.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Descartes’s Method of Normals</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Roberval, Conic Sections, and the Dynamic Approach</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONroberv-conic-sect" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONSpdVelRofC" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Speed, Velocity, and Rates of Change</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanConicSect" class="internal"><span class="codenumber">3.6.2</span> <span class="title">The Tangent Lines of the Conic Sections</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SUBSECTIONTanConicSect" class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanParab" class="internal"><span class="title">The Tangent to a Parabola</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#SUBSECTIONTanEllipse" class="internal"><span class="title">The Tangent to an Ellipse</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONroberv-conic-sect.html#TangentHyperbola" class="internal"><span class="title">The Tangent to an Hyperbola</span></a></div></li>
@@ -256,12 +274,12 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERdifferentials.html" class="internal"><span class="codenumber">4</span> <span class="title">Differentials, Differentiation, and the Derivative</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERdifferentials" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONHist-intr.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Historical Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONWarning.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Warning: Be Sure You Understand  the Purpose of This Chapter</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONsome-rules-diff.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The General Differentiation Rules</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONsome-rules-diff" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONConstantRule" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Constant Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONSumRule" class="internal"><span class="codenumber">4.3.2</span> <span class="title">The Sum Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONsome-rules-diff.html#SUBSECTIONConstMultRule" class="internal"><span class="codenumber">4.3.3</span> <span class="title">The Constant Multiple Rule</span></a></div></li>
@@ -274,7 +292,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERPTERVelocitySlopeTangent.html" class="internal"><span class="codenumber">5</span> <span class="title">Slopes, Tangents, and Rates of Change</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERPTERVelocitySlopeTangent" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONVelocitySlopeTangent.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Slopes and Tangents</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdefin-tang-line.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Defining the Tangent Line</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvomit-comet.html" class="internal"><span class="codenumber">5.3</span> <span class="title">The Vomit Comet</span></a></div></li>
@@ -286,7 +304,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSelfIntersectCurve.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Self–intersecting Curves and Parametric Equations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html" class="internal"><span class="codenumber">5.10</span> <span class="title">Bridges, Chains, Domes, and Telescopes</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONbridg-chains-telesc" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONBridges" class="internal"><span class="codenumber">5.10.1</span> <span class="title">Bridges</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONChains" class="internal"><span class="codenumber">5.10.2</span> <span class="title">Chains</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONbridg-chains-telesc.html#SUBSECTIONDomes" class="internal"><span class="codenumber">5.10.3</span> <span class="title">Domes</span></a></div></li>
@@ -297,10 +315,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERcalc-trig.html" class="internal"><span class="codenumber">6</span> <span class="title">Calculus and Trigonometry</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERcalc-trig" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONtrig-interl.html" class="internal"><span class="codenumber">6.1</span> <span class="title">A Trigonometric Interlude</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONtrig-interl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONradian-measure" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Radian Measure</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SECTIONtrig-interl-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">The Trigonometric Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONtrig-interl.html#SUBSECTIONmodel-with-trig" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Modeling with Trigonometric Functions</span></a></div></li>
@@ -310,7 +328,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Differentials of the Sine and Cosine Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONdiff-sine-cosine" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONCircularMotion" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Circular Motion</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONpolar-coord-calc" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Polar Coordinates and Calculus</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONdiff-sine-cosine.html#SUBSECTIONBrachistochone" class="internal"><span class="codenumber">6.2.3</span> <span class="title">The Brachistochrone Problem</span></a></div></li>
@@ -324,7 +342,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-inverse-tancot.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Differentials of the Inverse Tangent and Inverse Cotangent Functions</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONother-inverse-trig.html" class="internal"><span class="codenumber">6.7</span> <span class="title">The Other Inverse Trigonometric Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONother-inverse-trig" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSine" class="internal"><span class="codenumber">6.7.1</span> <span class="title">The Inverse Sine Function:  <span class="process-math">\(\inverse\sin(x)\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONother-inverse-trig.html#InverseSecCsc" class="internal"><span class="codenumber">6.7.2</span> <span class="title">The Inverse Secant and Inverse Cosecant</span></a></div></li>
 </ul>
@@ -334,17 +352,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTApproximation.html" class="internal"><span class="codenumber">7</span> <span class="title">Approximation Methods</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTApproximation" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONnewtons-method.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Root Finding: Two  Pre–Calculus Approaches</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONnewtons-method" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBisectionMethod" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Bisection Method</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method.html#SUBSECTIONBabylonianMethod" class="internal"><span class="codenumber">7.1.2</span> <span class="title">The Babylonian Method for Square Roots</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONnewtons-method-1.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Newton’s Method</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONnewtons-method-1" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONNewtonsMethodBasic" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Idea Behind Newton’s Method</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSpectacularFailure" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Spectacular Failure</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONnewtons-method-1.html#SUBSECTIONSubtleFailure" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Subtle Failure</span></a></div></li>
@@ -356,7 +374,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERLastElemFunc.html" class="internal"><span class="codenumber">8</span> <span class="title">Exponentials and Logarithms</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERLastElemFunc" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDEsandIVPS.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Initial Value Problems</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONexponential.html" class="internal"><span class="codenumber">8.2</span> <span class="title">The Natural Exponential</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONExponentialFunction.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Exponential Growth and Exponential Notation</span></a></div></li>
@@ -368,7 +386,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNatLog.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Logarithms, Natural and Unnatural</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONLogApps.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Applications of Logarithms</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONLogApps" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SUBSECTIONradioactive-decay" class="internal"><span class="codenumber">8.10.1</span> <span class="title">Radioactive Dating</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLogApps.html#SECTIONnewtons-law-cooling" class="internal"><span class="codenumber">8.10.2</span> <span class="title">Chillin’ with Newton: The Law of Cooling</span></a></div></li>
 </ul>
@@ -376,7 +394,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDerivNatLog.html" class="internal"><span class="codenumber">8.11</span> <span class="title">The Derivative of the Natural Logarithm</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONgener-logar-expon.html" class="internal"><span class="codenumber">8.12</span> <span class="title">General Logarithms and Exponentials</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONgener-logar-expon" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html#PARAGRAPHSGenExp" class="internal"><span class="codenumber">8.12.1</span> <span class="title">General Exponentials</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html#PARAGRAPHSGenLog" class="internal"><span class="codenumber">8.12.2</span> <span class="title">General Logarithms</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgener-logar-expon.html#DIGRESSIONBriggsAndNapier" class="internal"><span class="codenumber">8.12.3</span> <span class="title">Common and Napierian Logarithms</span></a></div></li>
@@ -388,12 +406,12 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERwhat-deriv-tells.html" class="internal"><span class="codenumber">9</span> <span class="title">Optimization: Going to Extremes</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERwhat-deriv-tells" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONintroduction.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction: Fermat’s Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfive-simil-probl.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Preliminaries: Some Simple Optimizations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Reflections, Refractions, and Rainbows</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONrefl-refr-rainb" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONreflection" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Reflection</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrefraction" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Refraction: Snell’s Law</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONrefl-refr-rainb.html#SUBSECTIONrainbows" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Rainbows</span></a></div></li>
@@ -404,7 +422,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGlobalVsLocalExtrema.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Global vs. Local Extrema</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Optimization, the Abstract Problem</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SUBSECTIONoptim-abstr-probl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SECTIONIntroOptim" class="internal"><span class="codenumber">9.5.1</span> <span class="title">An Illustrative Example from <span class="process-math">\(1750\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONoptim-abstr-probl-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Identifying and Distinguishing Maxima and Minima</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SUBSECTIONoptim-abstr-probl.html#SUBSECTIONTransitionPoints" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Transition Points, and Possible Transition Points on Open Intervals</span></a></div></li>
@@ -414,15 +432,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Concavity and the Second Derivative Test</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv" class="internal"><span class="codenumber">9.6.1</span> <span class="title">The Second Derivative Test</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONconc-second-deriv-1" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONconc-second-deriv-1.html#SUBSECTIONconc-second-deriv" class="internal"><span class="codenumber">9.6.1</span> <span class="title">The Second Derivative Test</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONoptim-probl.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Optimization Problems</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONoptim-probl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONOptStrat" class="internal"><span class="codenumber">9.7.1</span> <span class="title">Optimization Strategy</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSECTIONPageOfText" class="internal"><span class="codenumber">9.7.2</span> <span class="title">There’s More Than One Way to Optimize</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SUBSECTIONPageOfText" class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONFirstSolution" class="internal"><span class="title">First Solution:</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="SECTIONoptim-probl.html#SUBSUBSECTIONSecondSolution" class="internal"><span class="title">Second Solution</span></a></div></li>
 </ul>
@@ -434,18 +452,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERPTshape-things.html" class="internal"><span class="codenumber">10</span> <span class="title">Graphing with Calculus</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERPTshape-things" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONgraph-with-form.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(y(x)\)</span></span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONgraph-without-form.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Graphing Without Formulas</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONgraph-without-form" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgraph-without-form.html#SUBSECTIONGraphWithDeriv" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Graphing with Incomplete Information About the Derivative</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONgraph-without-form.html#SUBSECTIONGraphFromDerivGraph" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Graphing <span class="process-math">\(y(x)\)</span> from the Graph of <span class="process-math">\(\dfdx{y}{x} \)</span></span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Graphing with a Formula for  <span class="process-math">\(\dfdx{y}{t}\)</span></span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONGraphingWithDeriv" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html#SUBSECTIONDerivDepOnxAlone" class="internal"><span class="codenumber">10.3.1</span> <span class="title">When  <span class="process-math">\(\dfdx{y}{t}\)</span> Depends on <span class="process-math">\(t\)</span> alone</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html#SUBSECTIONDfdxDependsOnYAlone" class="internal"><span class="codenumber">10.3.2</span> <span class="title">When  <span class="process-math">\(\dfdx{y}{t}\)</span> depends on <span class="process-math">\(y\)</span> alone</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONGraphingWithDeriv.html#SUBSECTIONDfdxDependsOnYAndt" class="internal"><span class="codenumber">10.3.3</span> <span class="title">When  <span class="process-math">\(\dfdx{y}{t}\)</span> Depends on <span class="process-math">\(y\)</span> and <span class="process-math">\(t\)</span></span></a></div></li>
@@ -455,17 +473,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERmodel-with-calc.html" class="internal"><span class="codenumber">11</span> <span class="title">Modeling with Calculus</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERmodel-with-calc" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Population Dynamics</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONpopulation-dynamics" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SUBSECTIONModelingTrout" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Modeling a Trout Farm</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONpopulation-dynamics.html#SECTIONlittle-healthy-comp" class="internal"><span class="codenumber">11.1.2</span> <span class="title">The Competing Species Model</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONselect-model-probl.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Selected Modeling Problems</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONselect-model-probl" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SECTIONepidemic-blues" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Epidemics, The SIR Model</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#subSECTIONtractrix" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The Tractrix</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONselect-model-probl.html#SUBSECTIONPursuit" class="internal"><span class="codenumber">11.2.3</span> <span class="title">The  Pursuit Problem</span></a></div></li>
@@ -475,16 +493,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERlimits-lhop-rule.html" class="internal"><span class="codenumber">12</span> <span class="title">Limits and L’Hôpital’s Rule</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERlimits-lhop-rule" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Horizontal Asymptotes: Limits “at Infinity”</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONhoriz-asympt-as" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONhoriz-asympt-as.html#DIGRESSIONLimitNotation" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Limit Notation</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsqueeze-theorem-informal.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONvertical-asymptotes.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Vertical Asymptotes: “Infinite” Limits</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Indeterminate Forms and L’Hôpital’s Rule</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONIndetFormsAndLhop" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html#SUBSECTIONLHopitalsRule" class="internal"><span class="codenumber">12.4.1</span> <span class="title">L’Hôpital’s Rule</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONIndetFormsAndLhop.html#SUBSECTIONlhop-rule-horiz" class="internal"><span class="codenumber">12.4.2</span> <span class="title">L’Hôpital’s Rule and Horizontal Asymptotes</span></a></div></li>
 </ul>
@@ -495,20 +513,20 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="DiffCalcToTheory.html" class="internal"><span class="codenumber">II</span> <span class="title">Differential Calculus: To Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-DiffCalcToTheory" class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERWhatsWrong.html" class="internal"><span class="codenumber">13</span> <span class="title">What’s Wrong with Differentials?</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERWhatsWrong" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="CalcAndBerkeley.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Calculus and Bishop Berkeley</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONsecants-tangents.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Secants and Tangents</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERdiff-rules-with-limits.html" class="internal"><span class="codenumber">14</span> <span class="title">The Differentiation Rules via Limits</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERdiff-rules-with-limits" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html" class="internal"><span class="codenumber">14.1</span> <span class="title">The Limit Rules (Theorems)</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont" class="internal"><span class="codenumber">14.1.1</span> <span class="title">The Limit of a Composition and Continuity at a Point</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONlimit-theorems-laws" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimit-theorems-laws.html#SUBSECTIONlimit-comp-cont" class="internal"><span class="codenumber">14.1.1</span> <span class="title">The Limit of a Composition and Continuity at a Point</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONdiff-rules-via.html" class="internal"><span class="codenumber">14.2</span> <span class="title">The General Differentiation Theorems, via Limits</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONChainRule.html" class="internal"><span class="codenumber">14.3</span> <span class="title">The Chain Rule</span></a></div></li>
@@ -520,7 +538,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERFDT-Redux.html" class="internal"><span class="codenumber">15</span> <span class="title">The First Derivative Test, Redux</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERFDT-Redux" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfermats-theorem.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Fermat’s Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONrolles-lemma-mean.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Rolle’s Lemma and the Mean Value Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONfirst-deriv-test.html" class="internal"><span class="codenumber">15.3</span> <span class="title">The Proof of the First Derivative Test</span></a></div></li>
@@ -528,18 +546,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt.html" class="internal"><span class="codenumber">16</span> <span class="title">When the Derivative Doesn’t Exist</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERwhen-deriv-doesnt" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="CHAPTERwhen-deriv-doesnt-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">One Sided Limits</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONone-sided-deriv.html" class="internal"><span class="codenumber">16.2</span> <span class="title">One Sided Derivatives</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERformal-limits.html" class="internal"><span class="codenumber">17</span> <span class="title">Formal Limits</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERformal-limits" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonIntuitExample.html" class="internal"><span class="codenumber">17.1</span> <span class="title">A Non-Intuitive Limit</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Getting Around Infinity</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONlimits-at-infinity" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONEpsDelt1" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Horizontal Asymptotes, Redux</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONconvincing-skeptic" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Convincing Berkeley</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Refining the Definition of a Limit</span></a></div></li>
@@ -549,7 +567,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONlimits-at-real.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Finite Limits at a Real Number</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONLimitLaws.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Limit Laws (Theorems)</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONLimitLaws" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at" class="internal"><span class="codenumber">17.4.1</span> <span class="title">The Limit of a Sum</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SUBSECTIONsqueeze-theorem" class="internal"><span class="codenumber">17.4.2</span> <span class="title">The Squeeze Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONLimitLaws.html#SECTIONlimit-composition" class="internal"><span class="codenumber">17.4.3</span> <span class="title">The Limit of a Composition</span></a></div></li>
@@ -563,20 +581,20 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="IntCalc.html" class="internal"><span class="codenumber">III</span> <span class="title">Integral Calculus: From Practice</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-IntCalc">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERDiffeqsIVPS.html" class="internal"><span class="codenumber">18</span> <span class="title">Differential Equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERDiffeqsIVPS" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSummationAndAntidifferentiation.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Antiderivatives, Integrals and Differential Equations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONTwoSimpleDiffeqs.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Separation of Variables</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERIntegrationTechniques.html" class="internal"><span class="codenumber">19</span> <span class="title">Integration Techniques</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERIntegrationTechniques" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONSubstMethed.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Integration by Substitution</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONSubstMethed" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SECTIONIntroSubstExample" class="internal"><span class="codenumber">19.1.1</span> <span class="title">Some Introductory Examples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONAirResistance" class="internal"><span class="codenumber">19.1.2</span> <span class="title">Extending Galileo’s Results: Air Resistance</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSubstMethed.html#SUBSECTIONSimpleSubstitution" class="internal"><span class="codenumber">19.1.3</span> <span class="title">More on Substitutions</span></a></div></li>
@@ -586,7 +604,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONPartFrac.html" class="internal"><span class="codenumber">19.2</span> <span class="title">The  Partial Fraction Decomposition</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONPartFrac" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONHeavisideMethod" class="internal"><span class="codenumber">19.2.1</span> <span class="title">Simple Decompositions: Heaviside’s Cover–up Method (HCUM)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONPFDRepeated" class="internal"><span class="codenumber">19.2.2</span> <span class="title">Unreduced Rational Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPartFrac.html#SUBSECTIONRepeatLinFactPFD" class="internal"><span class="codenumber">19.2.3</span> <span class="title">Repeated Linear Factors</span></a></div></li>
@@ -598,10 +616,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERFTC.html" class="internal"><span class="codenumber">20</span> <span class="title">The Fundamental Theorem of Calculus and the Definite Integral</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERFTC" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONCavalierisMethod.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Historical Precursors of Definite Integration</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">20.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li></ul>
+<ul id="ptx-toc-group-SECTIONCavalierisMethod" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONCavalierisMethod.html#SUBSECTIONCavalieri" class="internal"><span class="codenumber">20.1.1</span> <span class="title">Bonaventura Cavalieri and Indivisibles</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONInDefInt.html" class="internal"><span class="codenumber">20.2</span> <span class="title">The Fundamental Theorem of Calculus: Accumulation</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONDefiniteIntegral.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Properties of Definite Integrals</span></a></div></li>
@@ -609,7 +627,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="CHAPTERAppDefInt.html" class="internal"><span class="codenumber">21</span> <span class="title">Applications of Definite Integrals</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-CHAPTERAppDefInt">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONWhyAreas.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Why Do We Compute So Many Areas</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="AreasByIntegration.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Areas in the Plane</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="VolumesByIntegration.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Volumes</span></a></div></li>
@@ -621,11 +639,11 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERApproximationIntegral.html" class="internal"><span class="codenumber">22</span> <span class="title">More Approximation Methods</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERApproximationIntegral" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONGaussianDistribution.html" class="internal"><span class="codenumber">22.1</span> <span class="title">The Gaussian Distribution</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONPowerSeries.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Representing the Natural Exponential Function by a Power Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONPowerSeries" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SECTIONPowerSeries-3" class="internal"><span class="codenumber">22.2.1</span> <span class="title">The Natural Exponential as a Power Series</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONSummationNotation" class="internal"><span class="codenumber">22.2.2</span> <span class="title">Summation Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONPowerSeries.html#SUBSECTIONGeoSeries" class="internal"><span class="codenumber">22.2.3</span> <span class="title">Geometric Series</span></a></div></li>
@@ -641,7 +659,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="Taylor.html" class="internal"><span class="codenumber">23</span> <span class="title">Taylor Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-Taylor" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-2.html" class="internal"><span class="codenumber">23.1</span> <span class="title">The Representation of Numbers</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Taylor-3.html" class="internal"><span class="codenumber">23.2</span> <span class="title">Representations of Polynomials</span></a></div></li>
 </ul>
@@ -650,17 +668,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="IntCalcToTheory.html" class="internal"><span class="codenumber">IV</span> <span class="title">Integral Calculus: To Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-IntCalcToTheory" class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="CHAPTERRiemannIntegral.html" class="internal"><span class="codenumber">24</span> <span class="title">Defining the Riemann Integral</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERRiemannIntegral" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONRiemanIntDef.html" class="internal"><span class="codenumber">24.1</span> <span class="title">Defining the Riemann Integral</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONFTC.html" class="internal"><span class="codenumber">24.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="PowerSeries.html" class="internal"><span class="codenumber">25</span> <span class="title">Understanding Power Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-PowerSeries" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSeriesQuestions.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Some Questions We’ve Raised</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONBddIncImpConv.html" class="internal"><span class="codenumber">25.2</span> <span class="title">Any Increasing Sequence Which is Bounded Above Must Converge</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONNonNegSeries.html" class="internal"><span class="codenumber">25.3</span> <span class="title">Series With Nonnegative Terms</span></a></div></li>
@@ -674,24 +692,24 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="PARTNoHome.html" class="internal"><span class="codenumber">V</span> <span class="title">Stuff  Without a Home</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-PARTNoHome" class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ParmetricInt.html" class="internal"><span class="codenumber">26</span> <span class="title">Integration With Parametric Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONParametricInt.html" class="internal"><span class="codenumber">26.1</span> <span class="title">Parametric Functions and Integration</span></a></div></li></ul>
+<ul id="ptx-toc-group-ParmetricInt" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONParametricInt.html" class="internal"><span class="codenumber">26.1</span> <span class="title">Parametric Functions and Integration</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="SECTIONLeibnizAndFTC.html" class="internal"><span class="codenumber">27</span> <span class="title">Leibniz and the Fundamental Theorem of Calculus</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-part">
 <div class="toc-title-box"><a href="PARTQuotes.html" class="internal"><span class="codenumber">VI</span> <span class="title">Quotations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">28</span> <span class="title">Quotes</span></a></div></li></ul>
+<ul id="ptx-toc-group-PARTQuotes" class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Quotes.html" class="internal"><span class="codenumber">28</span> <span class="title">Quotes</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Appendices</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-meta_backmatter" class="structural toc-item-list">
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="CHAPTERPFDTheory.html" class="internal"><span class="codenumber">A</span> <span class="title">The  Partial Fraction Decomposition: Theory and Alternative Methods of Computation</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-CHAPTERPFDTheory" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection1.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Section 1</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection2.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Section 2</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection3.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Section 3</span></a></div></li>
@@ -706,7 +724,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="SECTIONSection13.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Section 13</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="SECTIONSection14.html" class="internal"><span class="codenumber">A.13</span> <span class="title">Section 14</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-SECTIONSection14" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSection14.html#SUBSUBSECTIONAvoidIrredCase" class="internal"><span class="codenumber">A.13.1</span> <span class="title">Avoiding the Irreducible Case by Allowing Complex Numbers</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SECTIONSection14.html#SECTIONSection14-4" class="internal"><span class="codenumber">A.13.2</span> <span class="title">This section needs to be cannibalized for example and exercises. Otherwise it should  go away.</span></a></div></li>
 </ul>
@@ -725,13 +743,13 @@ eBookConfig.enable_chatcodes =  false;
 <h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volumes</span>
 </h2>
-<div class="para" id="VolumesByIntegration-2">The following is a photograph of Problem 14 from the \textit{Moscow Mathematical Papyrus}, an Egyptian mathematical papyrus from around 1850 BC which currently resides in the Pushkin Museum of Fine Arts.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-2">The following is a photograph of Problem 14 from the \textit{Moscow Mathematical Papyrus}, an Egyptian mathematical papyrus from around 1850 BC which currently resides in the Pushkin Museum of Fine Arts.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exploration project-like" id="RhindPapyrus"><h3 class="heading">
 <span class="type">Cornerstone Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/RhindPapyrus.png" class="contained"></div>
-<div class="para" id="RhindPapyrus-2">The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is <span class="process-math">\(6\text{,}\)</span> whose base is a square of side <span class="process-math">\(4\)</span> and whose top is a square with side <span class="process-math">\(2\text{.}\)</span>  The solution translates as follows.<div class="autopermalink" data-description="Paragraph"><a href="#RhindPapyrus-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="RhindPapyrus-2">The problem is to find the volume of a truncated pyramid (also called a frustum) whose height is <span class="process-math">\(6\text{,}\)</span> whose base is a square of side <span class="process-math">\(4\)</span> and whose top is a square with side <span class="process-math">\(2\text{.}\)</span>  The solution translates as follows.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#RhindPapyrus-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <blockquote class="blockquote" id="RhindPapyrus-3">
 <div class="para logical" id="RhindPapyrus-3-1">
@@ -739,41 +757,41 @@ eBookConfig.enable_chatcodes =  false;
 <li id="RhindPapyrus-3-1-1-1">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-1">You are to square <span class="process-math">\(4\text{,}\)</span> result <span class="process-math">\(16\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="RhindPapyrus-3-1-1-2">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-2">You are to double <span class="process-math">\(4\text{,}\)</span> result <span class="process-math">\(8\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="RhindPapyrus-3-1-1-3">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-3">You are to square <span class="process-math">\(2\text{,}\)</span> result <span class="process-math">\(4\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="RhindPapyrus-3-1-1-4">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-4">You are to add the <span class="process-math">\(16\text{,}\)</span> the <span class="process-math">\(8\text{,}\)</span> and the <span class="process-math">\(4\text{,}\)</span> result <span class="process-math">\(28\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="RhindPapyrus-3-1-1-5">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-5">You are to take a third of <span class="process-math">\(6\text{,}\)</span> result <span class="process-math">\(2\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="RhindPapyrus-3-1-1-6">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-6">You are to take <span class="process-math">\(28\)</span> twice, result <span class="process-math">\(56\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="RhindPapyrus-3-1-1-7">
 <div class="para" id="p-derived-RhindPapyrus-3-1-1-7">See it (the volume) is <span class="process-math">\(56\text{.}\)</span>  You will find it right.</div>
-<div class="autopermalink" data-description="Item"><a href="#RhindPapyrus-3-1-1-7" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#RhindPapyrus-3-1-1-7" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#RhindPapyrus-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#RhindPapyrus-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Quotation"><a href="#RhindPapyrus-3" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#RhindPapyrus-3" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
 <div class="para logical" id="RhindPapyrus-4">
 <div class="para">In modern terms, the volume is given by</div>
@@ -784,7 +802,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 <div class="para">which is the correct answer.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#RhindPapyrus-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#RhindPapyrus-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="RhindPapyrus-5">
 <div class="para">Mathematics historians believe that Egyptians, among other early civilizations, knew the general formula for the volume of a truncated pyramid of height <span class="process-math">\(h\)</span> and square bases whose sides are <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span>
@@ -795,23 +813,23 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 <div class="para">though it would not have been written in such a modern, general form.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#RhindPapyrus-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#RhindPapyrus-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Cornerstone Problem 21.3.0.1"><a href="#RhindPapyrus" title="Copy heading and permalink for Cornerstone Problem 21.3.0.1" aria-label="Copy heading and permalink for Cornerstone Problem 21.3.0.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Cornerstone Problem 21.3.0.1"><a tabindex="-1" href="#RhindPapyrus" title="Copy heading and permalink for Cornerstone Problem 21.3.0.1" aria-label="Copy heading and permalink for Cornerstone Problem 21.3.0.1">🔗</a></div>
 </article>
-<div class="para" id="VolumesByIntegration-4">Mathematics historians are led to believe that Egyptians and other early civilizations also knew the related formula for the volume of a pyramid with height <span class="process-math">\(h\)</span> and a square base with side <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(volume=\frac{1}{3}hb^2\text{.}\)</span>  That being said, historians do not know exactly how either of these formulas were obtained.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-4">Mathematics historians are led to believe that Egyptians and other early civilizations also knew the related formula for the volume of a pyramid with height <span class="process-math">\(h\)</span> and a square base with side <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(volume=\frac{1}{3}hb^2\text{.}\)</span>  That being said, historians do not know exactly how either of these formulas were obtained.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="VolumesByIntegration-5"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="VolumesByIntegration-5-1">How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-5-1">How does the formula for the volume of pyramid follow from the formula for the volume of a truncated pyramid?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.1"><a href="#VolumesByIntegration-5" title="Copy heading and permalink for Problem 21.3.0.1" aria-label="Copy heading and permalink for Problem 21.3.0.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.1"><a tabindex="-1" href="#VolumesByIntegration-5" title="Copy heading and permalink for Problem 21.3.0.1" aria-label="Copy heading and permalink for Problem 21.3.0.1">🔗</a></div>
 </article>
-<div class="para" id="VolumesByIntegration-6">Also, one can use the formula for the volume of a pyramid to obtain the formula for the volume of a truncated pyramid as suggested by the Moscow Papyrus.  With that in mind, consider the side view of a truncated pyramid with height <span class="process-math">\(h\)</span> and base sides <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-6">Also, one can use the formula for the volume of a pyramid to obtain the formula for the volume of a truncated pyramid as suggested by the Moscow Papyrus.  With that in mind, consider the side view of a truncated pyramid with height <span class="process-math">\(h\)</span> and base sides <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/TruncPyr1.png" class="contained" alt="A truncated triangle with height=h, base=b, and top=a."></div>
-<div class="para" id="VolumesByIntegration-8">If one were to fill in the top of the pyramid that was chopped off<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-8">If one were to fill in the top of the pyramid that was chopped off<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/TruncPyr2.png" class="contained"></div>
 <div class="para logical" id="VolumesByIntegration-10">
@@ -821,7 +839,7 @@ eBookConfig.enable_chatcodes =  false;
 \frac{1}{3}\left(x+h\right)b^2-\frac{1}{3}xa^2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="VolumesByIntegration-11"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -834,49 +852,49 @@ b,\ \)</span>and <span class="process-math">\(h\)</span> and use this to obtain 
 \frac{1}{3}h\left(a^2+ab+b^2\right)
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="VolumesByIntegration-11-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="VolumesByIntegration-11-2-1">At some point you will need to utilize the identity <span class="process-math">\(\frac{A^3-B^3}{A-B}=A^2+AB+B^2\text{.}\)</span>  Verify that this is correct and keep it in mind.  You will be using this later.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-11-2-1">At some point you will need to utilize the identity <span class="process-math">\(\frac{A^3-B^3}{A-B}=A^2+AB+B^2\text{.}\)</span>  Verify that this is correct and keep it in mind.  You will be using this later.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 21.3.0.2.1"><a href="#VolumesByIntegration-11-2" title="Copy heading and permalink for Hint 21.3.0.2.1" aria-label="Copy heading and permalink for Hint 21.3.0.2.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 21.3.0.2.1"><a tabindex="-1" href="#VolumesByIntegration-11-2" title="Copy heading and permalink for Hint 21.3.0.2.1" aria-label="Copy heading and permalink for Hint 21.3.0.2.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.2"><a href="#VolumesByIntegration-11" title="Copy heading and permalink for Problem 21.3.0.2" aria-label="Copy heading and permalink for Problem 21.3.0.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.2"><a tabindex="-1" href="#VolumesByIntegration-11" title="Copy heading and permalink for Problem 21.3.0.2" aria-label="Copy heading and permalink for Problem 21.3.0.2">🔗</a></div>
 </article>
 <div class="para logical" id="VolumesByIntegration-12">
 <div class="para">There are questions which remain:</div>
 <ol class="lower-roman ol-marker-1" id="VolumesByIntegration-12-1">
 <li id="VolumesByIntegration-12-1-1">
 <div class="para" id="p-derived-VolumesByIntegration-12-1-1">Is the formula for the volume of a pyramid correct?</div>
-<div class="autopermalink" data-description="Item i"><a href="#VolumesByIntegration-12-1-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item i"><a tabindex="-1" href="#VolumesByIntegration-12-1-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
 </li>
 <li id="VolumesByIntegration-12-1-2">
 <div class="para" id="p-derived-VolumesByIntegration-12-1-2">Do the same ideas work for other shapes such as a cone or a pyramid with a more general base?</div>
-<div class="autopermalink" data-description="Item ii"><a href="#VolumesByIntegration-12-1-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item ii"><a tabindex="-1" href="#VolumesByIntegration-12-1-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
 </li>
 <li id="VolumesByIntegration-12-1-3">
 <div class="para" id="p-derived-VolumesByIntegration-12-1-3">What would these formulas look like?</div>
-<div class="autopermalink" data-description="Item iii"><a href="#VolumesByIntegration-12-1-3" title="Copy heading and permalink for Item iii" aria-label="Copy heading and permalink for Item iii">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item iii"><a tabindex="-1" href="#VolumesByIntegration-12-1-3" title="Copy heading and permalink for Item iii" aria-label="Copy heading and permalink for Item iii">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-13">Ancient civilizations knew answers to these questions but did not necessarily explain how they were obtained.  We can only speculate what they did.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-13">Ancient civilizations knew answers to these questions but did not necessarily explain how they were obtained.  We can only speculate what they did.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-14">For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-14">For example, if you use the following cone to fill the corresponding cylinder, it seems that it takes three cones to fill the cylinder.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="ConeAndCyl"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/ConeCyl.png" class="contained" alt="A cone and cylinder of the same height."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.3"><a href="#ConeAndCyl" title="Copy heading and permalink for Figure 21.3.0.3" aria-label="Copy heading and permalink for Figure 21.3.0.3">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.3"><a tabindex="-1" href="#ConeAndCyl" title="Copy heading and permalink for Figure 21.3.0.3" aria-label="Copy heading and permalink for Figure 21.3.0.3">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-16">This would lead one to guess that the volume of a cone is <span class="process-math">\(\frac{1}{3}\)</span> the height times the area of the base.  This coincides with our formula for the volume of a square based pyramid.  Could it be that the volume of a cone with an arbitrary shape for the base be <span class="process-math">\(\frac{1}{3}\)</span> the height times the area of the base as well?<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-16">This would lead one to guess that the volume of a cone is <span class="process-math">\(\frac{1}{3}\)</span> the height times the area of the base.  This coincides with our formula for the volume of a square based pyramid.  Could it be that the volume of a cone with an arbitrary shape for the base be <span class="process-math">\(\frac{1}{3}\)</span> the height times the area of the base as well?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-17">Fortunately, we have integral calculus at our disposal to address these questions.  Keeping in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities, we will need to look at volumes in a more simplistic and general way.  Take for example the volume of a rectangular box.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-17">Fortunately, we have integral calculus at our disposal to address these questions.  Keeping in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities, we will need to look at volumes in a more simplistic and general way.  Take for example the volume of a rectangular box.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="GenericRectangle"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/GenRect.png" class="contained" alt="A generic rectangle"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.4"><a href="#GenericRectangle" title="Copy heading and permalink for Figure 21.3.0.4" aria-label="Copy heading and permalink for Figure 21.3.0.4">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.4"><a tabindex="-1" href="#GenericRectangle" title="Copy heading and permalink for Figure 21.3.0.4" aria-label="Copy heading and permalink for Figure 21.3.0.4">🔗</a></div></figcaption>
 </figure>
 <div class="para logical" id="VolumesByIntegration-19">
 <div class="para">You probably remember the volume of this box as length times width times height. Let’s restate the volume in this way</div>
@@ -887,25 +905,25 @@ b,\ \)</span>and <span class="process-math">\(h\)</span> and use this to obtain 
 \end{equation*}
 </div>
 <div class="para">The advantage of thinking this way is that it applies to more general objects. For example, the volume of the following circular cylinder and prism follow the same formula.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="VolEqualsFaceXThick"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/IC/VolFacThik.png" class="contained" alt="Pictures and formulas for the volume of a cylinder and a triangular wedge"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.5"><a href="#VolEqualsFaceXThick" title="Copy heading and permalink for Figure 21.3.0.5" aria-label="Copy heading and permalink for Figure 21.3.0.5">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.5"><a tabindex="-1" href="#VolEqualsFaceXThick" title="Copy heading and permalink for Figure 21.3.0.5" aria-label="Copy heading and permalink for Figure 21.3.0.5">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-21">This idea even applies to slabs that have an irregular face.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-21">This idea even applies to slabs that have an irregular face.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="VolEqualsFaceXThick2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/FaceXThickIrreg.png" class="contained" alt="Picture and formula for the volume of an irregular slab."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.6"><a href="#VolEqualsFaceXThick2" title="Copy heading and permalink for Figure 21.3.0.6" aria-label="Copy heading and permalink for Figure 21.3.0.6">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.6"><a tabindex="-1" href="#VolEqualsFaceXThick2" title="Copy heading and permalink for Figure 21.3.0.6" aria-label="Copy heading and permalink for Figure 21.3.0.6">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-23">Let’s illustrate this by addressing the volume of cone.  Recall that we believe that the volume of a cone is 1/3 the volume of the corresponding cylinder, that is, it is <span class="process-math">\(\frac{1}{3}H{\pi R}^2\text{.}\)</span> With this in mind, we will put in a vertical axis, label it <span class="process-math">\(y\text{,}\)</span> and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-23">Let’s illustrate this by addressing the volume of cone.  Recall that we believe that the volume of a cone is 1/3 the volume of the corresponding cylinder, that is, it is <span class="process-math">\(\frac{1}{3}H{\pi R}^2\text{.}\)</span> With this in mind, we will put in a vertical axis, label it <span class="process-math">\(y\text{,}\)</span> and divide the cone into infinitely thin slices. As before, we will only draw one generic slice, but you must imagine that this cone is comprised of infinitely many such slices stacked.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="VolCone"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/IC/VolCone.png" class="contained" alt="Cone with generic horizontal rectangle."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.7"><a href="#VolCone" title="Copy heading and permalink for Figure 21.3.0.7" aria-label="Copy heading and permalink for Figure 21.3.0.7">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.7"><a tabindex="-1" href="#VolCone" title="Copy heading and permalink for Figure 21.3.0.7" aria-label="Copy heading and permalink for Figure 21.3.0.7">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-25">Drawing this generic slice separately we can compute its volume.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-25">Drawing this generic slice separately we can compute its volume.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="ConeSlice"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/ConeSlice.png" class="contained" alt="A generic slice from a cone and a formula for its volume."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.8"><a href="#ConeSlice" title="Copy heading and permalink for Figure 21.3.0.8" aria-label="Copy heading and permalink for Figure 21.3.0.8">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.8"><a tabindex="-1" href="#ConeSlice" title="Copy heading and permalink for Figure 21.3.0.8" aria-label="Copy heading and permalink for Figure 21.3.0.8">🔗</a></div></figcaption>
 </figure>
 <div class="para logical" id="VolumesByIntegration-27">
 <div class="para">Integrating these volumes, we get</div>
@@ -914,57 +932,57 @@ b,\ \)</span>and <span class="process-math">\(h\)</span> and use this to obtain 
 \text{ Volume of cone} = \int_{y=0}^R{\pi r^2\dx{y}} \text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-28">What is left now is to put <span class="process-math">\(r\)</span> in terms of <span class="process-math">\(y\)</span> so the integral can be computed. This can be done by noticing that we have similar triangles.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-28">What is left now is to put <span class="process-math">\(r\)</span> in terms of <span class="process-math">\(y\)</span> so the integral can be computed. This can be done by noticing that we have similar triangles.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="ConeSimTri"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/ConeSimTri.png" class="contained" alt="A right triangle with a similar right triangle inside."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.9"><a href="#ConeSimTri" title="Copy heading and permalink for Figure 21.3.0.9" aria-label="Copy heading and permalink for Figure 21.3.0.9">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.9"><a tabindex="-1" href="#ConeSimTri" title="Copy heading and permalink for Figure 21.3.0.9" aria-label="Copy heading and permalink for Figure 21.3.0.9">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-30">This gives us the proportion <span class="process-math">\(\frac{r}{y}=\frac{R}{H}\text{,}\)</span> so <span class="process-math">\(r=\frac{R}{H}y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-30">This gives us the proportion <span class="process-math">\(\frac{r}{y}=\frac{R}{H}\text{,}\)</span> so <span class="process-math">\(r=\frac{R}{H}y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="ConeVol"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of a Cone.</span>
 </h3>
-<div class="para" id="ConeVol-2-1">Substitute this value for <span class="process-math">\(r\)</span> into the integral and show that the volume of the cone is, in fact,<span class="process-math">\(1/3\)</span> the volume of the cylinder.<div class="autopermalink" data-description="Paragraph"><a href="#ConeVol-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ConeVol-2-1">Substitute this value for <span class="process-math">\(r\)</span> into the integral and show that the volume of the cone is, in fact,<span class="process-math">\(1/3\)</span> the volume of the cylinder.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ConeVol-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.10: Volume of a Cone"><a href="#ConeVol" title="Copy heading and permalink for Problem 21.3.0.10: Volume of a Cone" aria-label="Copy heading and permalink for Problem 21.3.0.10: Volume of a Cone">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.10: Volume of a Cone"><a tabindex="-1" href="#ConeVol" title="Copy heading and permalink for Problem 21.3.0.10: Volume of a Cone" aria-label="Copy heading and permalink for Problem 21.3.0.10: Volume of a Cone">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="VolSqPyr"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of a Square Based Pyramid.</span>
 </h3>
-<div class="para" id="VolSqPyr-2-1"> Use the same idea as above to show that the volume of a square based pyramid is <span class="process-math">\(1/3\)</span> the volume of the box with the same base and height<div class="autopermalink" data-description="Paragraph"><a href="#VolSqPyr-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolSqPyr-2-1"> Use the same idea as above to show that the volume of a square based pyramid is <span class="process-math">\(1/3\)</span> the volume of the box with the same base and height<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolSqPyr-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <figure class="figure figure-like" id="PyramidVolume"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/IC/PyrVol.png" class="contained" alt="A square based pyramid."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.12"><a href="#PyramidVolume" title="Copy heading and permalink for Figure 21.3.0.12" aria-label="Copy heading and permalink for Figure 21.3.0.12">🔗</a></div></figcaption>
-</figure><div class="autopermalink" data-description="Problem 21.3.0.11: Volume of a Square Based Pyramid"><a href="#VolSqPyr" title="Copy heading and permalink for Problem 21.3.0.11: Volume of a Square Based Pyramid" aria-label="Copy heading and permalink for Problem 21.3.0.11: Volume of a Square Based Pyramid">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.12"><a tabindex="-1" href="#PyramidVolume" title="Copy heading and permalink for Figure 21.3.0.12" aria-label="Copy heading and permalink for Figure 21.3.0.12">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.11: Volume of a Square Based Pyramid"><a tabindex="-1" href="#VolSqPyr" title="Copy heading and permalink for Problem 21.3.0.11: Volume of a Square Based Pyramid" aria-label="Copy heading and permalink for Problem 21.3.0.11: Volume of a Square Based Pyramid">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="GeneralCone"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Generalized Cone.</span>
 </h3>
-<div class="para" id="GeneralCone-2-1">Consider the following “generalized cone.”<div class="autopermalink" data-description="Paragraph"><a href="#GeneralCone-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="GeneralCone-2-1">Consider the following “generalized cone.”<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GeneralCone-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <figure class="figure figure-like" id="GenCone"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/GenCone.png" class="contained" alt="A cone an irregular base."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.14"><a href="#GenCone" title="Copy heading and permalink for Figure 21.3.0.14" aria-label="Copy heading and permalink for Figure 21.3.0.14">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.14"><a tabindex="-1" href="#GenCone" title="Copy heading and permalink for Figure 21.3.0.14" aria-label="Copy heading and permalink for Figure 21.3.0.14">🔗</a></div></figcaption>
 </figure> 
-<div class="para" id="GeneralCone-2-3">Show that the volume of this cone is <span class="process-math">\(1/3\)</span> the volume of the “generalized cylinder” with the same height and same base. That is, show that the volume of this cone is <span class="process-math">\(3 \text{ (Area of base)}\times \text{ height }\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#GeneralCone-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="GeneralCone-2-3">Show that the volume of this cone is <span class="process-math">\(1/3\)</span> the volume of the “generalized cylinder” with the same height and same base. That is, show that the volume of this cone is <span class="process-math">\(3 \text{ (Area of base)}\times \text{ height }\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GeneralCone-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="GeneralCone-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="GeneralCone-3-1">The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.<div class="autopermalink" data-description="Paragraph"><a href="#GeneralCone-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="GeneralCone-3-1">The generic slice is similar to the base. When you set up a proportion between the areas, it is proportional to the squares of the distances from the apex.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GeneralCone-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 21.3.0.13.1"><a href="#GeneralCone-3" title="Copy heading and permalink for Hint 21.3.0.13.1" aria-label="Copy heading and permalink for Hint 21.3.0.13.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 21.3.0.13.1"><a tabindex="-1" href="#GeneralCone-3" title="Copy heading and permalink for Hint 21.3.0.13.1" aria-label="Copy heading and permalink for Hint 21.3.0.13.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.13: The Generalized Cone"><a href="#GeneralCone" title="Copy heading and permalink for Problem 21.3.0.13: The Generalized Cone" aria-label="Copy heading and permalink for Problem 21.3.0.13: The Generalized Cone">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.13: The Generalized Cone"><a tabindex="-1" href="#GeneralCone" title="Copy heading and permalink for Problem 21.3.0.13: The Generalized Cone" aria-label="Copy heading and permalink for Problem 21.3.0.13: The Generalized Cone">🔗</a></div>
 </article>
-<div class="para" id="VolumesByIntegration-34">Having determined the volume of various cones, let’s return to the problem of their frusta.  We saw that the volume of the frustum of a square based pyramid with height <span class="process-math">\(h\)</span> and base sides <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> is <span class="process-math">\(\frac{1}{3}h\left(a^2+ab+b^2\right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-34">Having determined the volume of various cones, let’s return to the problem of their frusta.  We saw that the volume of the frustum of a square based pyramid with height <span class="process-math">\(h\)</span> and base sides <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> is <span class="process-math">\(\frac{1}{3}h\left(a^2+ab+b^2\right)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="VolumesByIntegration-35"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="VolumesByIntegration-35-1">Consider the following frustum of a circular cone.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-35-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-35-1">Consider the following frustum of a circular cone.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-35-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="external/IC/TruncPyr3.png" class="contained"></div>
 <div class="para logical" id="VolumesByIntegration-35-3">
@@ -974,9 +992,9 @@ b,\ \)</span>and <span class="process-math">\(h\)</span> and use this to obtain 
 \frac{1}{3}\pi h\left(a^2+ab+b^2\right)
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-35-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-35-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.15"><a href="#VolumesByIntegration-35" title="Copy heading and permalink for Problem 21.3.0.15" aria-label="Copy heading and permalink for Problem 21.3.0.15">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.15"><a tabindex="-1" href="#VolumesByIntegration-35" title="Copy heading and permalink for Problem 21.3.0.15" aria-label="Copy heading and permalink for Problem 21.3.0.15">🔗</a></div>
 </article>
 <div class="para logical" id="VolumesByIntegration-36">
 <div class="para">To see how we can obtain the volume of the frustum of a generalized cone, notice that we can write the formulas we’ve already obtained as</div>
@@ -998,97 +1016,97 @@ a^2+\sqrt{\left(\pi a^2\right)\left(\pi b^2\right)}+\pi b^2)\text{.}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(h\)</span> is the height and <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are the areas of the two bases.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="VolumesByIntegration-37"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="VolumesByIntegration-37-1-1">Verify that this formula for the volume of the frustum of a generalized cone is correct.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-37-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-37-1-1">Verify that this formula for the volume of the frustum of a generalized cone is correct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-37-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="VolumesByIntegration-37-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="VolumesByIntegration-37-2-1">Consider the following diagram of the cone and the frustum cut from it.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-37-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-37-2-1">Consider the following diagram of the cone and the frustum cut from it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-37-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="external/IC/TruncCone1.png" class="contained"></div>
-<div class="autopermalink" data-description="Hint 21.3.0.16.1"><a href="#VolumesByIntegration-37-2" title="Copy heading and permalink for Hint 21.3.0.16.1" aria-label="Copy heading and permalink for Hint 21.3.0.16.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 21.3.0.16.1"><a tabindex="-1" href="#VolumesByIntegration-37-2" title="Copy heading and permalink for Hint 21.3.0.16.1" aria-label="Copy heading and permalink for Hint 21.3.0.16.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.16"><a href="#VolumesByIntegration-37" title="Copy heading and permalink for Problem 21.3.0.16" aria-label="Copy heading and permalink for Problem 21.3.0.16">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.16"><a tabindex="-1" href="#VolumesByIntegration-37" title="Copy heading and permalink for Problem 21.3.0.16" aria-label="Copy heading and permalink for Problem 21.3.0.16">🔗</a></div>
 </article>
-<div class="para" id="VolumesByIntegration-38">When we use an argument similar to that of the truncated pyramid, notice that <span class="process-math">\(\frac{x+h}{x}=\sqrt{\frac{B}{A}}\)</span> .]<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-38" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-38">When we use an argument similar to that of the truncated pyramid, notice that <span class="process-math">\(\frac{x+h}{x}=\sqrt{\frac{B}{A}}\)</span> .]<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-38" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-39">###############################################################<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-39">###############################################################<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-40">As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-40" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-40">As we stated before and as you have seen, we have been focusing on areas to help us understand properties of definite integrals. However, this idea of adding infinitesimal quantities can be applied in a number of other applications. Keep in mind our general strategy of applying a relatively simple formula on an infinitely small piece and then integrating (adding) these infinitely small quantities. Take, for example, the volume of the following box.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-40" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-41">Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-41" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-41">Combining this formula with our idea of dividing and integrating provides a way to compute the volumes of more general solids.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-41" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="VolumesByIntegration-42">Let’s verify this. We know that the volume of the cylinder is given by <span class="process-math">\(\pi R^2\text{.}\)</span> We need to show that the volume of the cone is <span class="process-math">\(1/3\)</span> of that.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-42" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-42">Let’s verify this. We know that the volume of the cylinder is given by <span class="process-math">\(\pi R^2\text{.}\)</span> We need to show that the volume of the cone is <span class="process-math">\(1/3\)</span> of that.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-42" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="FrustomVol"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of a Frustum.</span>
 </h3>
 <div class="introduction" id="FrustomVol-2">
-<div class="para" id="FrustomVol-2-1">A frustum of a cone is basically a cone with the top chopped off.<div class="autopermalink" data-description="Paragraph"><a href="#FrustomVol-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="FrustomVol-2-1">A frustum of a cone is basically a cone with the top chopped off.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#FrustomVol-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="FrustumVol"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/IC/FrustumVol.png" class="contained" alt="A frustum"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.18"><a href="#FrustumVol" title="Copy heading and permalink for Figure 21.3.0.18" aria-label="Copy heading and permalink for Figure 21.3.0.18">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.18"><a tabindex="-1" href="#FrustumVol" title="Copy heading and permalink for Figure 21.3.0.18" aria-label="Copy heading and permalink for Figure 21.3.0.18">🔗</a></div></figcaption>
 </figure>
 </div>
 <article class="task exercise-like" id="FrustomVol-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="FrustomVol-3-1-1">Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!<div class="autopermalink" data-description="Paragraph"><a href="#FrustomVol-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="FrustomVol-3-1-1">Use a definite integral to compute the volume of this frustum. Remember to do the entire set up as above – we insist!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#FrustomVol-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.17.a"><a href="#FrustomVol-3" title="Copy heading and permalink for Task 21.3.0.17.a" aria-label="Copy heading and permalink for Task 21.3.0.17.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.17.a"><a tabindex="-1" href="#FrustomVol-3" title="Copy heading and permalink for Task 21.3.0.17.a" aria-label="Copy heading and permalink for Task 21.3.0.17.a">🔗</a></div>
 </article>
 <article class="task exercise-like" id="FrustomVol-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="FrustomVol-4-1-1">Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.<div class="autopermalink" data-description="Paragraph"><a href="#FrustomVol-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="FrustomVol-4-1-1">Verify your answer in part a by computing the volume of the frustum without calculus. This will involve finding the volume of the cone from which the frustum was cut and subtracting the volume of the top that was cut off. To do this, you will need to find the height of that cone.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#FrustomVol-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.17.b"><a href="#FrustomVol-4" title="Copy heading and permalink for Task 21.3.0.17.b" aria-label="Copy heading and permalink for Task 21.3.0.17.b">🔗</a></div>
-</article><div class="autopermalink" data-description="Problem 21.3.0.17: Volume of a Frustum"><a href="#FrustomVol" title="Copy heading and permalink for Problem 21.3.0.17: Volume of a Frustum" aria-label="Copy heading and permalink for Problem 21.3.0.17: Volume of a Frustum">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.17.b"><a tabindex="-1" href="#FrustomVol-4" title="Copy heading and permalink for Task 21.3.0.17.b" aria-label="Copy heading and permalink for Task 21.3.0.17.b">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.17: Volume of a Frustum"><a tabindex="-1" href="#FrustomVol" title="Copy heading and permalink for Problem 21.3.0.17: Volume of a Frustum" aria-label="Copy heading and permalink for Problem 21.3.0.17: Volume of a Frustum">🔗</a></div>
 </article>
 <figure class="figure figure-like" id="SphereByRevAboutX"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/SpherRevX.png" class="contained" alt="A sphere generated by revolving about the x axis."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.19"><a href="#SphereByRevAboutX" title="Copy heading and permalink for Figure 21.3.0.19" aria-label="Copy heading and permalink for Figure 21.3.0.19">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.19"><a tabindex="-1" href="#SphereByRevAboutX" title="Copy heading and permalink for Figure 21.3.0.19" aria-label="Copy heading and permalink for Figure 21.3.0.19">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-45">We will draw and label a generic rectangle of width <span class="process-math">\(\dx{s}\)</span> and height <span class="process-math">\(y\)</span> and compute the volume of the disk generated by revolving this rectangle about the <span class="process-math">\(x\)</span>-axis. As before, we will draw and label the disk on the .<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-45" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-45">We will draw and label a generic rectangle of width <span class="process-math">\(\dx{s}\)</span> and height <span class="process-math">\(y\)</span> and compute the volume of the disk generated by revolving this rectangle about the <span class="process-math">\(x\)</span>-axis. As before, we will draw and label the disk on the .<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-45" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="VolSphereWithDiffDisc"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/VolSphereWithDiffDisc.png" class="contained" alt="The same sphere with a generic disk and area and volume formulas."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.20"><a href="#VolSphereWithDiffDisc" title="Copy heading and permalink for Figure 21.3.0.20" aria-label="Copy heading and permalink for Figure 21.3.0.20">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.20"><a tabindex="-1" href="#VolSphereWithDiffDisc" title="Copy heading and permalink for Figure 21.3.0.20" aria-label="Copy heading and permalink for Figure 21.3.0.20">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="VolumesByIntegration-47">Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn’t determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-47" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-47">Again, we insist that you go through this process (including drawing all of the pictures) instead of trying to memorize some formula. Admit it, with the disk drawn and labeled, wasn’t determining the volume of disk relatively easy. The integral only came in when we wanted to “integrate” all of the volumes of the disks together.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-47" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="SphereVolXRev"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of a Sphere (rotation about the horizontal axis)..</span>
 </h3>
-<div class="para" id="SphereVolXRev-2-1"> Compute the integral above to determine that the volume of the sphere is, in fact, <span class="process-math">\(\frac43 \pi r^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SphereVolXRev-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="SphereVolXRev-2-1"> Compute the integral above to determine that the volume of the sphere is, in fact, <span class="process-math">\(\frac43 \pi r^3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#SphereVolXRev-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Problem 21.3.0.21: Volume of a Sphere (rotation about the horizontal axis)."><a href="#SphereVolXRev" title="Copy heading and permalink for Problem 21.3.0.21: Volume of a Sphere (rotation about the horizontal axis)." aria-label="Copy heading and permalink for Problem 21.3.0.21: Volume of a Sphere (rotation about the horizontal axis).">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.21: Volume of a Sphere (rotation about the horizontal axis)."><a tabindex="-1" href="#SphereVolXRev" title="Copy heading and permalink for Problem 21.3.0.21: Volume of a Sphere (rotation about the horizontal axis)." aria-label="Copy heading and permalink for Problem 21.3.0.21: Volume of a Sphere (rotation about the horizontal axis).">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="CyclRevX"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Revolving a Cycloid.</span>
 </h3>
-<div class="para" id="CyclRevX-2-1"> Find the volume of the solid generated by revolving one arch of the following cycloid about the <span class="process-math">\(x\)</span> axis.<div class="autopermalink" data-description="Paragraph"><a href="#CyclRevX-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="CyclRevX-2-1"> Find the volume of the solid generated by revolving one arch of the following cycloid about the <span class="process-math">\(x\)</span> axis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#CyclRevX-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <figure class="figure figure-like" id="fig-CycloidVolume"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/IC/CycloidArea.png" class="contained" alt="Cycloid generated by rolling a circle."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.23"><a href="#fig-CycloidVolume" title="Copy heading and permalink for Figure 21.3.0.23" aria-label="Copy heading and permalink for Figure 21.3.0.23">🔗</a></div></figcaption>
-</figure><div class="autopermalink" data-description="Problem 21.3.0.22: Revolving a Cycloid"><a href="#CyclRevX" title="Copy heading and permalink for Problem 21.3.0.22: Revolving a Cycloid" aria-label="Copy heading and permalink for Problem 21.3.0.22: Revolving a Cycloid">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.23"><a tabindex="-1" href="#fig-CycloidVolume" title="Copy heading and permalink for Figure 21.3.0.23" aria-label="Copy heading and permalink for Figure 21.3.0.23">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.22: Revolving a Cycloid"><a tabindex="-1" href="#CyclRevX" title="Copy heading and permalink for Problem 21.3.0.22: Revolving a Cycloid" aria-label="Copy heading and permalink for Problem 21.3.0.22: Revolving a Cycloid">🔗</a></div>
 </article>
-<div class="para" id="VolumesByIntegration-50">Of course, this technique can be applied to find the volume of a more general “solid of revolution.”<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-50" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-50">Of course, this technique can be applied to find the volume of a more general “solid of revolution.”<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-50" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="exer-GenSolidRevX"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="introduction" id="exer-GenSolidRevX-1">
-<div class="para" id="exer-GenSolidRevX-1-1"> Consider the following region bounded by the curves <span class="process-math">\(y=y_1(x)\)</span> and <span class="process-math">\(y=y_2(x)\)</span> and a generic rectangle of width <span class="process-math">\(\dx{x}\)</span> inside it.<div class="autopermalink" data-description="Paragraph"><a href="#exer-GenSolidRevX-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exer-GenSolidRevX-1-1"> Consider the following region bounded by the curves <span class="process-math">\(y=y_1(x)\)</span> and <span class="process-math">\(y=y_2(x)\)</span> and a generic rectangle of width <span class="process-math">\(\dx{x}\)</span> inside it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exer-GenSolidRevX-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-GenVolRevX"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/GenVolRevX.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.25"><a href="#fig-GenVolRevX" title="Copy heading and permalink for Figure 21.3.0.25" aria-label="Copy heading and permalink for Figure 21.3.0.25">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.25"><a tabindex="-1" href="#fig-GenVolRevX" title="Copy heading and permalink for Figure 21.3.0.25" aria-label="Copy heading and permalink for Figure 21.3.0.25">🔗</a></div></figcaption>
 </figure>
 </div>
 <article class="task exercise-like" id="exer-GenSolidRevX-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="exer-GenSolidRevX-2-1-1">Draw and label the thickness and inside and outside radii of the “washer” created by revolving this generic rectangle about the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#exer-GenSolidRevX-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exer-GenSolidRevX-2-1-1">Draw and label the thickness and inside and outside radii of the “washer” created by revolving this generic rectangle about the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exer-GenSolidRevX-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.24.a"><a href="#exer-GenSolidRevX-2" title="Copy heading and permalink for Task 21.3.0.24.a" aria-label="Copy heading and permalink for Task 21.3.0.24.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.24.a"><a tabindex="-1" href="#exer-GenSolidRevX-2" title="Copy heading and permalink for Task 21.3.0.24.a" aria-label="Copy heading and permalink for Task 21.3.0.24.a">🔗</a></div>
 </article>
 <article class="task exercise-like" id="exer-GenSolidRevX-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para logical" id="exer-GenSolidRevX-3-1-1">
@@ -1098,37 +1116,37 @@ a^2+\sqrt{\left(\pi a^2\right)\left(\pi b^2\right)}+\pi b^2)\text{.}
 \pi \int_{x=a}^b \left( y_2^2-y_1^2\right) \dx{x} \text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exer-GenSolidRevX-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exer-GenSolidRevX-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.24.b"><a href="#exer-GenSolidRevX-3" title="Copy heading and permalink for Task 21.3.0.24.b" aria-label="Copy heading and permalink for Task 21.3.0.24.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.24.b"><a tabindex="-1" href="#exer-GenSolidRevX-3" title="Copy heading and permalink for Task 21.3.0.24.b" aria-label="Copy heading and permalink for Task 21.3.0.24.b">🔗</a></div>
 </article>
 <article class="task exercise-like" id="exer-GenSolidRevX-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="exer-GenSolidRevX-4-1-1">To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line <span class="process-math">\(y=c\)</span> not passing through the region. You can assume for the sake of argument that the line lies below the region.<div class="autopermalink" data-description="Paragraph"><a href="#exer-GenSolidRevX-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exer-GenSolidRevX-4-1-1">To emphasize that you should use the process and not memorize a formula, find the integral that will compute the volume of the solid generated by revolving this region about a horizontal line <span class="process-math">\(y=c\)</span> not passing through the region. You can assume for the sake of argument that the line lies below the region.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exer-GenSolidRevX-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.24.c"><a href="#exer-GenSolidRevX-4" title="Copy heading and permalink for Task 21.3.0.24.c" aria-label="Copy heading and permalink for Task 21.3.0.24.c">🔗</a></div>
-</article><div class="autopermalink" data-description="Problem 21.3.0.24"><a href="#exer-GenSolidRevX" title="Copy heading and permalink for Problem 21.3.0.24" aria-label="Copy heading and permalink for Problem 21.3.0.24">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.24.c"><a tabindex="-1" href="#exer-GenSolidRevX-4" title="Copy heading and permalink for Task 21.3.0.24.c" aria-label="Copy heading and permalink for Task 21.3.0.24.c">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.24"><a tabindex="-1" href="#exer-GenSolidRevX" title="Copy heading and permalink for Problem 21.3.0.24" aria-label="Copy heading and permalink for Problem 21.3.0.24">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="GenVolRevY"><h3 class="heading">
 <span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="introduction" id="GenVolRevY-1">
-<div class="para" id="GenVolRevY-1-1"> Consider the following region bounded by the curves <span class="process-math">\(x=x_1(y)\)</span> and <span class="process-math">\(x=x_2(y)\)</span> and the vertical line <span class="process-math">\(x=c\)</span> to the left of this region.<div class="autopermalink" data-description="Paragraph"><a href="#GenVolRevY-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="GenVolRevY-1-1"> Consider the following region bounded by the curves <span class="process-math">\(x=x_1(y)\)</span> and <span class="process-math">\(x=x_2(y)\)</span> and the vertical line <span class="process-math">\(x=c\)</span> to the left of this region.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GenVolRevY-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-GenVolRevY"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/IC/GenVolRevY.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.27<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 21.3.0.27"><a href="#fig-GenVolRevY" title="Copy heading and permalink for Figure 21.3.0.27" aria-label="Copy heading and permalink for Figure 21.3.0.27">🔗</a></div></figcaption>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21.3.0.27<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Figure 21.3.0.27"><a tabindex="-1" href="#fig-GenVolRevY" title="Copy heading and permalink for Figure 21.3.0.27" aria-label="Copy heading and permalink for Figure 21.3.0.27">🔗</a></div></figcaption>
 </figure>
 </div>
 <article class="task exercise-like" id="GenVolRevY-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="GenVolRevY-2-1-1">Draw and label the washer created by revolving the horizontal rectangle around the line <span class="process-math">\(x=c\)</span> and use this to find a formula for the volume of this washer.<div class="autopermalink" data-description="Paragraph"><a href="#GenVolRevY-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="GenVolRevY-2-1-1">Draw and label the washer created by revolving the horizontal rectangle around the line <span class="process-math">\(x=c\)</span> and use this to find a formula for the volume of this washer.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GenVolRevY-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.26.a"><a href="#GenVolRevY-2" title="Copy heading and permalink for Task 21.3.0.26.a" aria-label="Copy heading and permalink for Task 21.3.0.26.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.26.a"><a tabindex="-1" href="#GenVolRevY-2" title="Copy heading and permalink for Task 21.3.0.26.a" aria-label="Copy heading and permalink for Task 21.3.0.26.a">🔗</a></div>
 </article>
 <article class="task exercise-like" id="GenVolRevY-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <details id="GenVolRevY-3-1-1" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
 <span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">To do.</span>
 </h5></summary>
 <aside class="aside aside-like knowl__content">
-<div class="para" id="GenVolRevY-3-1-1-2">h and k are messed up in this problem.<div class="autopermalink" data-description="Paragraph"><a href="#GenVolRevY-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="GenVolRevY-3-1-1-2">h and k are messed up in this problem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GenVolRevY-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </aside></details> 
 <div class="para logical" id="GenVolRevY-3-1-2">
@@ -1139,18 +1157,18 @@ a^2+\sqrt{\left(\pi a^2\right)\left(\pi b^2\right)}+\pi b^2)\text{.}
 -\left(x_1-c\right)^2\right] \dx{y} \text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#GenVolRevY-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#GenVolRevY-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 21.3.0.26.b"><a href="#GenVolRevY-3" title="Copy heading and permalink for Task 21.3.0.26.b" aria-label="Copy heading and permalink for Task 21.3.0.26.b">🔗</a></div>
-</article><div class="autopermalink" data-description="Problem 21.3.0.26"><a href="#GenVolRevY" title="Copy heading and permalink for Problem 21.3.0.26" aria-label="Copy heading and permalink for Problem 21.3.0.26">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 21.3.0.26.b"><a tabindex="-1" href="#GenVolRevY-3" title="Copy heading and permalink for Task 21.3.0.26.b" aria-label="Copy heading and permalink for Task 21.3.0.26.b">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Problem 21.3.0.26"><a tabindex="-1" href="#GenVolRevY" title="Copy heading and permalink for Problem 21.3.0.26" aria-label="Copy heading and permalink for Problem 21.3.0.26">🔗</a></div>
 </article>
 <details id="VolumesByIntegration-53" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">To do.</span>
 </h3></summary>
 <aside class="aside aside-like knowl__content">
-<div class="para" id="VolumesByIntegration-53-2">We need to add a bunch of volume of revolution problems here.<div class="autopermalink" data-description="Paragraph"><a href="#VolumesByIntegration-53-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="VolumesByIntegration-53-2">We need to add a bunch of volume of revolution problems here.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#VolumesByIntegration-53-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-</aside></details><div class="autopermalink" data-description="Section 21.3: Volumes"><a href="#VolumesByIntegration" title="Copy heading and permalink for Section 21.3: Volumes" aria-label="Copy heading and permalink for Section 21.3: Volumes">🔗</a></div>
+</aside></details><div class="autopermalink" aria-hidden="true" data-description="Section 21.3: Volumes"><a tabindex="-1" href="#VolumesByIntegration" title="Copy heading and permalink for Section 21.3: Volumes" aria-label="Copy heading and permalink for Section 21.3: Volumes">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
