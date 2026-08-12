@@ -2068,7 +2068,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.8",
   "title": "Newton’s Method of Fluxions",
-  "body": " Newton s Method of Fluxions   The method of Fluxions is the general key by help whereof the modern mathematicians unlock the secrets of Geometry, and consequently of Nature.   George Berkeley, from The Analyst (1685 1753)   Through experimentation Galileo had accurately described the motion of objects falling near the surface of the earth. At about the same time Johannes Kepler (1571 1630) had accurately described the motion of the planets by analyzing the vast catalog of astronomical observation made by Tycho Brahe (1546 1601). But these two descriptions of motion did not appear to be related.   It was left to Newton to unify them, but the mathematics to do this did not exist at the time. So he invented Calculus, which he called The Method of Fluxions . Galileo studied motion on the surface of the Earth. Kepler studied the motion of the planets, but the underlying theme for both was motion.   Vocabulary fluent For Newton everything was in motion. When he used the variable he thought of it as representing something flowing in time (moving). Such quantities he called fluents , from fluere , the Latin word which means to flow. As he put it himself in his book Quadratura Curvarum ( On the Quadrature of Curves ),   I sought a method of determining quantities from the velocities of the motions or [of the] increments, with which they are generated; and calling these velocities of the motions, or [of the] increments, fluxions , and generated quantities fluents , I fell by degrees, in the years and , upon the method of fluxions, which I have made use of here in the quadrature of curves.    Vocabulary fluxion For a given fluent , Newton used the dotted letter,  , to refer to its instantaneous velocity or fluxion . Whereas for Leibniz the static differential was the fundamental concept, for Newton the dynamic fluxion (velocity) was fundamental. On the surface fluxions seem quite different from differentials.  In Newton s view the only independent variable is time. So all fluxions were velocities, or rates of change with respect to time. To see how fluxions are connected to the differential ratios we ve been using, we need only ask ourselves how Leibniz would express the fluxion, , of the fluent, . In Leibniz notation the rate of change of  with respect to  is the differential ratio . Since Newton defines  to be the rate of change of with respect to ( )ime (velocity),   From Newton s point of view differentiating the spatial coordinate with respect to the spatial coordinate to get is simply not meaningful. On the other hand, if is a point moving along some curve in the plane then both and are fluents with corresponding fluxions and .  What Leibniz s notation expresses as , Newton s notation expresses as . But they are the same thing. since   Although the two formulations are equivalent, Leibniz notation has become dominant in mathematics. But in fields where velocity is a fundamental concept, like physics and engineering, Newton s dot notation is often still used. For example, suppose we are considering a point on the curve and we want the slope of the curve at . Using our differentiation rules, we have To get the slope, we divide by to get   Using his Method of Fluxions, Newton would have considered both and to be fluents and to be a point moving along a curve. His version of Calculus would have started with the same governing equation and determined that their fluxions were related by the equation   To get the slope of the curve , we simply need to recognize that this is the same as   Although Newton s dot notation has fallen out of favor in mathematics you will likely see it being used in your physics or engineering courses (if you take any). We would be remiss if we failed to recognize this fact. So when appropriate, we will sometimes couch our problems in the dynamical language and dot notation of Newton. We will even sometimes refer to the derivatives , or as fluxions. After all when represents time that s what they are. Only the notation has changed.  If you prefer the Leibnizian terms and notation it is easy to translate between Newton and Leibniz. If is changing in time then is the fluxion of .    For each of the following equations, find an equation relating their differentials and use this to relate their fluxions (instantaneous rates of change with respect to time).                                               Examples speed  Consider two carts joined by a foot length of rope passing through a pulley , which is held at a fixed height of feet above where the rope attaches to the carts.   Suppose cart is being pulled to the left at a constant speed of      Make a guess: Is cart moving at a constant speed?    Let s check your guess. The general approach is to find the relationships between all of the fluents involved then differentiate and divide by to see how their fluxions are related. Below we have redrawn the essential features of the problem schematically and labeled all of the fluents.   We have the following relationships between the fluents: and      Differentiate equations to obtain relationships between the differentials , , , and .      Determine the relationship between the fluxions and . Recall that . Is constant? How does this compare with your guess earlier?      Translate your solution into Newton s dot notation.                                                                                 Suppose the length of a rectangle is increasing at a rate of and the width is decreasing at a rate of . Make a guess: Will the area remain constant?      Let the length be denoted by the fluent and the width denoted by the fluent . The fluxions of and are and , respectively. Let denote the area of the rectangle and compute the fluxion .      How does your solution in part (b) compare to your guess in part (a)?      Translate your solution into Newton s dot notation.        The sketch above represents a foot long ladder leaning against a vertical wall. Suppose that the bottom is sliding to the right at a constant rate.     Make a guess: Is the top sliding down at a constant rate?      Find in terms of , and use this to check your guess in part (a).      Translate your solution into Newton s dot notation.       Suppose that at a certain instant of time the price of a certain commodity is increasing at a rate of % per month and the quantity sold is decreasing at a rate of % per month. Would the revenue increase at a rate of % per month? Explain.      The strength of a signal from a cell tower, measured in decibels is inversely proportional to the square of the distance between the tower and the cell phone. Suppose you have a foot tall cell tower and a car driving away from the tower at a rate of (approximately mph). (The icon on your cell phone probably uses bars, but there is no universally agreed upon standard for what one bar means. There is a standard for decibels.)     Find a formula for the rate at which the signal is decreasing in terms of the distance from the car to the base of the tower. (We suggest that you use to denote the constant of proportionality.)      Plot a graph of the formula in part (a) with and use this to approximate the distance from the base of the tower where the signal decreases fastest. (Use . You’ll see why we chose this scale once you’ve plotted it.)      Based on the graph, what is happening to the rate at which the signal is decreasing as the car moves farther away from the tower?       It is reasonable to assume that the rate at which the volume of a spherical raindrop is increasing as it forms is proportional to the surface area of the raindrop. Show that under this assumption, the radius (surprisingly?) grows at a constant rate.      Suppose we have a rectangular box whose length is increasing by , whose width is increasing by and whose height is decreasing by . How fast are the volume and surface area of the box changing when the length is centimeters, width is centimeters, and height is centimeters? Are they increasing or decreasing?      Suppose a point is moving along the curve so that its horizontal velocity is . For which values of is the distance from to the point increasing and for what values is it decreasing? What can you say about the points where the distance transitions from increasing to decreasing or decreasing to increasing?      The ideal gas law ( Boyle s Law) states that the pressure (in Pascals), volume (in cubic meters), and temperature (in degrees Kelvin ) of an ideal gas are related by the formula where is the number of gas molecules and is the Boltzmann constant. What this says is that for a fixed amount of gas, if the volume is held fixed, then the pressure is proportional to the temperature and if the temperature is held fixed, then the pressure is inversely proportional to the volume.     Assuming that we have an enclosed gas, and that is held constant. Find an equation that relates , , and , and use this to find in terms of and .      Suppose we have a piston compressing the gas in a cylinder as in the following sketch.   Show that for the pressure to be held fixed must satisfy (Notice that this is independent of the radius of the cylinder.)      Suppose that when meters the temperature is . If the piston is moving to the right at a rate of , how fast should the temperature be decreasing at that instant to maintain a constant pressure?       A streetlamp is mounted at the top of a foot pole. A foot tall person is walking away from the base of the pole at a constant speed.     Make a guess: Is the length of this person s shadow increasing at a constant rate?      Now compute the rate at which the person s shadow is increasing.       Suppose the position of a point, , on the -axis is given by and the position of another point, , on the -axis is given by . Let represent the distance between and .        If , and show that .    If , and show that .    If , and show that .    If , and show that .    Do you see a pattern yet? If you do, write it down and try to show that it always holds. If you don t, make up some more simple examples and solve them to gather more evidence. when you believe you have see it conjecture a pattern and then show that the pattern always holds.            Show that if , and then . Does this make intuitive sense to you?    Show that if , and , then .    Show that if , and , then .    Do you see a pattern yet? If you do, write it down and try to show that it always holds. If you don t make up some more, simple examples, and solve them to gather more evidence. when you believe you have see it conjecture a pattern and then show that the pattern always holds.         Finally, given any  and any  , find a completely general formula for .     "
+  "body": " Newton s Method of Fluxions   The method of Fluxions is the general key by help whereof the modern mathematicians unlock the secrets of Geometry, and consequently of Nature.   George Berkeley, from The Analyst (1685 1753)   Through experimentation Galileo had accurately described the motion of objects falling near the surface of the earth. At about the same time Johannes Kepler (1571 1630) had accurately described the motion of the planets by analyzing the vast catalog of astronomical observation made by Tycho Brahe (1546 1601). But these two descriptions of motion did not appear to be related.   It was left to Newton to unify them, but the mathematics to do this did not exist at the time. So he invented Calculus, which he called The Method of Fluxions . Galileo studied motion on the surface of the Earth. Kepler studied the motion of the planets, but the underlying theme for both was motion.   Vocabulary fluent For Newton everything was in motion. When he used the variable he thought of it as representing something flowing in time (moving). Such quantities he called fluents , from fluere , the Latin word which means to flow. As he put it himself in his book Quadratura Curvarum ( On the Quadrature of Curves ),   I sought a method of determining quantities from the velocities of the motions or [of the] increments, with which they are generated; and calling these velocities of the motions, or [of the] increments, fluxions , and generated quantities fluents , I fell by degrees, in the years and , upon the method of fluxions, which I have made use of here in the quadrature of curves.    Vocabulary fluxion For a given fluent , Newton used the dotted letter,  , to refer to its instantaneous velocity or fluxion . Whereas for Leibniz the static differential was the fundamental concept, for Newton the dynamic fluxion (velocity) was fundamental. On the surface fluxions seem quite different from differentials.  In Newton s view the only independent variable is time. So all fluxions were velocities, or rates of change with respect to time. To see how fluxions are connected to the differential ratios we ve been using, we need only ask ourselves how Leibniz would express the fluxion, , of the fluent, . In Leibniz notation the rate of change of  with respect to  is the differential ratio . Since Newton defines  to be the rate of change of with respect to ( )ime (velocity),   From Newton s point of view differentiating the spatial coordinate with respect to the spatial coordinate to get is simply not meaningful. On the other hand, if is a point moving along some curve in the plane then both and are fluents with corresponding fluxions and .  What Leibniz s notation expresses as , Newton s notation expresses as . But they are the same thing. since   Although the two formulations are equivalent, Leibniz notation has become dominant in mathematics. But in fields where velocity is a fundamental concept, like physics and engineering, Newton s dot notation is often still used. For example, suppose we are considering a point on the curve and we want the slope of the curve at . Using our differentiation rules, we have To get the slope, we divide by to get   Using his Method of Fluxions, Newton would have considered both and to be fluents and to be a point moving along a curve. His version of Calculus would have started with the same governing equation and determined that their fluxions were related by the equation   To get the slope of the curve , we simply need to recognize that this is the same as   Although Newton s dot notation has fallen out of favor in mathematics you will likely see it being used in your physics or engineering courses (if you take any). We would be remiss if we failed to recognize this fact. So when appropriate, we will sometimes couch our problems in the dynamical language and dot notation of Newton. We will even sometimes refer to the derivatives , or as fluxions. After all when represents time that s what they are. Only the notation has changed.  If you prefer the Leibnizian terms and notation it is easy to translate between Newton and Leibniz. If is changing in time then is the fluxion of .    For each of the following equations, find an equation relating their differentials and use this to relate their fluxions (instantaneous rates of change with respect to time).                                               Examples speed  Consider two carts joined by a foot length of rope passing through a pulley , which is held at a fixed height of feet above where the rope attaches to the carts.   Suppose cart is being pulled to the left at a constant speed of      Make a guess: Is cart moving at a constant speed?    Let s check your guess. The general approach is to find the relationships between all of the fluents involved then differentiate and divide by to see how their fluxions are related. Below we have redrawn the essential features of the problem schematically and labeled all of the fluents.   We have the following relationships between the fluents: and      Differentiate equations to obtain relationships between the differentials , , , and .      Determine the relationship between the fluxions and . Recall that . Is constant? How does this compare with your guess earlier?      Translate your solution into Newton s dot notation.                                                                                 Suppose the length of a rectangle is increasing at a rate of and the width is decreasing at a rate of . Make a guess: Will the area remain constant?      Let the length be denoted by the fluent and the width denoted by the fluent . The fluxions of and are and , respectively. Let denote the area of the rectangle and compute the fluxion .      How does your solution in part (b) compare to your guess in part (a)?      Translate your solution into Newton s dot notation.        The sketch above represents a foot long ladder leaning against a vertical wall. Suppose that the bottom is sliding to the right at a constant rate.     Make a guess: Is the top sliding down at a constant rate?      Find in terms of , and use this to check your guess in part (a).      Translate your solution into Newton s dot notation.       Suppose that at a certain instant of time the price of a certain commodity is increasing at a rate of % per month and the quantity sold is decreasing at a rate of % per month. Would the revenue increase at a rate of % per month? Explain.      The total revenue gained from selling a certain commodity at time is where is the price of the commodity and is the number of items sold.  Suppose that at time we know that is increasing at a rate of % per month and is decreasing at a rate of % per month. Does this mean that will be increasing at a rate of per month at time ? Explain.      The strength of a signal from a cell tower, measured in decibels is inversely proportional to the square of the distance between the tower and the cell phone. Suppose you have a foot tall cell tower and a car driving away from the tower at a rate of (approximately mph). (The icon on your cell phone probably uses bars, but there is no universally agreed upon standard for what one bar means. There is a standard for decibels.)     Find a formula for the rate at which the signal is decreasing in terms of the distance from the car to the base of the tower. (We suggest that you use to denote the constant of proportionality.)      Plot a graph of the formula in part (a) with and use this to approximate the distance from the base of the tower where the signal decreases fastest. (Use . You’ll see why we chose this scale once you’ve plotted it.)      Based on the graph, what is happening to the rate at which the signal is decreasing as the car moves farther away from the tower?       It is reasonable to assume that the rate at which the volume of a spherical raindrop is increasing as it forms is proportional to the surface area of the raindrop. Show that under this assumption, the radius (surprisingly?) grows at a constant rate.      Suppose we have a rectangular box whose length is increasing by , whose width is increasing by and whose height is decreasing by . How fast are the volume and surface area of the box changing when the length is centimeters, width is centimeters, and height is centimeters? Are they increasing or decreasing?      Suppose a point is moving along the curve so that its horizontal velocity is . For which values of is the distance from to the point increasing and for what values is it decreasing? What can you say about the points where the distance transitions from increasing to decreasing or decreasing to increasing?      The ideal gas law ( Boyle s Law) states that the pressure (in Pascals), volume (in cubic meters), and temperature (in degrees Kelvin ) of an ideal gas are related by the formula where is the number of gas molecules and is the Boltzmann constant. What this says is that for a fixed amount of gas, if the volume is held fixed, then the pressure is proportional to the temperature and if the temperature is held fixed, then the pressure is inversely proportional to the volume.     Assuming that we have an enclosed gas, and that is held constant. Find an equation that relates , , and , and use this to find in terms of and .      Suppose we have a piston compressing the gas in a cylinder as in the following sketch.   Show that for the pressure to be held fixed must satisfy (Notice that this is independent of the radius of the cylinder.)      Suppose that when meters the temperature is . If the piston is moving to the right at a rate of , how fast should the temperature be decreasing at that instant to maintain a constant pressure?       A streetlamp is mounted at the top of a foot pole. A foot tall person is walking away from the base of the pole at a constant speed.     Make a guess: Is the length of this person s shadow increasing at a constant rate?      Now compute the rate at which the person s shadow is increasing.       Suppose the position of a point, , on the -axis is given by and the position of another point, , on the -axis is given by . Let represent the distance between and .        If , and show that .    If , and show that .    If , and show that .    If , and show that .    Do you see a pattern yet? If you do, write it down and try to show that it always holds. If you don t, make up some more simple examples and solve them to gather more evidence. when you believe you have see it conjecture a pattern and then show that the pattern always holds.            Show that if , and then . Does this make intuitive sense to you?    Show that if , and , then .    Show that if , and , then .    Do you see a pattern yet? If you do, write it down and try to show that it always holds. If you don t make up some more, simple examples, and solve them to gather more evidence. when you believe you have see it conjecture a pattern and then show that the pattern always holds.         Finally, given any  and any  , find a completely general formula for .     "
 },
 {
   "id": "SECTIONFluxions-6",
@@ -2158,7 +2158,7 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "5.8.0.8",
   "title": "",
-  "body": "  The strength of a signal from a cell tower, measured in decibels is inversely proportional to the square of the distance between the tower and the cell phone. Suppose you have a foot tall cell tower and a car driving away from the tower at a rate of (approximately mph). (The icon on your cell phone probably uses bars, but there is no universally agreed upon standard for what one bar means. There is a standard for decibels.)     Find a formula for the rate at which the signal is decreasing in terms of the distance from the car to the base of the tower. (We suggest that you use to denote the constant of proportionality.)      Plot a graph of the formula in part (a) with and use this to approximate the distance from the base of the tower where the signal decreases fastest. (Use . You’ll see why we chose this scale once you’ve plotted it.)      Based on the graph, what is happening to the rate at which the signal is decreasing as the car moves farther away from the tower?    "
+  "body": "  The total revenue gained from selling a certain commodity at time is where is the price of the commodity and is the number of items sold.  Suppose that at time we know that is increasing at a rate of % per month and is decreasing at a rate of % per month. Does this mean that will be increasing at a rate of per month at time ? Explain.   "
 },
 {
   "id": "SECTIONFluxions-28",
@@ -2167,7 +2167,7 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "5.8.0.9",
   "title": "",
-  "body": "  It is reasonable to assume that the rate at which the volume of a spherical raindrop is increasing as it forms is proportional to the surface area of the raindrop. Show that under this assumption, the radius (surprisingly?) grows at a constant rate.   "
+  "body": "  The strength of a signal from a cell tower, measured in decibels is inversely proportional to the square of the distance between the tower and the cell phone. Suppose you have a foot tall cell tower and a car driving away from the tower at a rate of (approximately mph). (The icon on your cell phone probably uses bars, but there is no universally agreed upon standard for what one bar means. There is a standard for decibels.)     Find a formula for the rate at which the signal is decreasing in terms of the distance from the car to the base of the tower. (We suggest that you use to denote the constant of proportionality.)      Plot a graph of the formula in part (a) with and use this to approximate the distance from the base of the tower where the signal decreases fastest. (Use . You’ll see why we chose this scale once you’ve plotted it.)      Based on the graph, what is happening to the rate at which the signal is decreasing as the car moves farther away from the tower?    "
 },
 {
   "id": "SECTIONFluxions-29",
@@ -2176,7 +2176,7 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "5.8.0.10",
   "title": "",
-  "body": "  Suppose we have a rectangular box whose length is increasing by , whose width is increasing by and whose height is decreasing by . How fast are the volume and surface area of the box changing when the length is centimeters, width is centimeters, and height is centimeters? Are they increasing or decreasing?   "
+  "body": "  It is reasonable to assume that the rate at which the volume of a spherical raindrop is increasing as it forms is proportional to the surface area of the raindrop. Show that under this assumption, the radius (surprisingly?) grows at a constant rate.   "
 },
 {
   "id": "SECTIONFluxions-30",
@@ -2185,6 +2185,15 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "5.8.0.11",
   "title": "",
+  "body": "  Suppose we have a rectangular box whose length is increasing by , whose width is increasing by and whose height is decreasing by . How fast are the volume and surface area of the box changing when the length is centimeters, width is centimeters, and height is centimeters? Are they increasing or decreasing?   "
+},
+{
+  "id": "SECTIONFluxions-31",
+  "level": "2",
+  "url": "SECTIONFluxions.html#SECTIONFluxions-31",
+  "type": "Problem",
+  "number": "5.8.0.12",
+  "title": "",
   "body": "  Suppose a point is moving along the curve so that its horizontal velocity is . For which values of is the distance from to the point increasing and for what values is it decreasing? What can you say about the points where the distance transitions from increasing to decreasing or decreasing to increasing?   "
 },
 {
@@ -2192,18 +2201,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONFluxions.html#PROBLEMIdealGas",
   "type": "Problem",
-  "number": "5.8.0.12",
-  "title": "",
-  "body": "  The ideal gas law ( Boyle s Law) states that the pressure (in Pascals), volume (in cubic meters), and temperature (in degrees Kelvin ) of an ideal gas are related by the formula where is the number of gas molecules and is the Boltzmann constant. What this says is that for a fixed amount of gas, if the volume is held fixed, then the pressure is proportional to the temperature and if the temperature is held fixed, then the pressure is inversely proportional to the volume.     Assuming that we have an enclosed gas, and that is held constant. Find an equation that relates , , and , and use this to find in terms of and .      Suppose we have a piston compressing the gas in a cylinder as in the following sketch.   Show that for the pressure to be held fixed must satisfy (Notice that this is independent of the radius of the cylinder.)      Suppose that when meters the temperature is . If the piston is moving to the right at a rate of , how fast should the temperature be decreasing at that instant to maintain a constant pressure?    "
-},
-{
-  "id": "SECTIONFluxions-32",
-  "level": "2",
-  "url": "SECTIONFluxions.html#SECTIONFluxions-32",
-  "type": "Problem",
   "number": "5.8.0.13",
   "title": "",
-  "body": "  A streetlamp is mounted at the top of a foot pole. A foot tall person is walking away from the base of the pole at a constant speed.     Make a guess: Is the length of this person s shadow increasing at a constant rate?      Now compute the rate at which the person s shadow is increasing.    "
+  "body": "  The ideal gas law ( Boyle s Law) states that the pressure (in Pascals), volume (in cubic meters), and temperature (in degrees Kelvin ) of an ideal gas are related by the formula where is the number of gas molecules and is the Boltzmann constant. What this says is that for a fixed amount of gas, if the volume is held fixed, then the pressure is proportional to the temperature and if the temperature is held fixed, then the pressure is inversely proportional to the volume.     Assuming that we have an enclosed gas, and that is held constant. Find an equation that relates , , and , and use this to find in terms of and .      Suppose we have a piston compressing the gas in a cylinder as in the following sketch.   Show that for the pressure to be held fixed must satisfy (Notice that this is independent of the radius of the cylinder.)      Suppose that when meters the temperature is . If the piston is moving to the right at a rate of , how fast should the temperature be decreasing at that instant to maintain a constant pressure?    "
 },
 {
   "id": "SECTIONFluxions-33",
@@ -2211,6 +2211,15 @@ var ptx_lunr_docs = [
   "url": "SECTIONFluxions.html#SECTIONFluxions-33",
   "type": "Problem",
   "number": "5.8.0.14",
+  "title": "",
+  "body": "  A streetlamp is mounted at the top of a foot pole. A foot tall person is walking away from the base of the pole at a constant speed.     Make a guess: Is the length of this person s shadow increasing at a constant rate?      Now compute the rate at which the person s shadow is increasing.    "
+},
+{
+  "id": "SECTIONFluxions-34",
+  "level": "2",
+  "url": "SECTIONFluxions.html#SECTIONFluxions-34",
+  "type": "Problem",
+  "number": "5.8.0.15",
   "title": "",
   "body": "  Suppose the position of a point, , on the -axis is given by and the position of another point, , on the -axis is given by . Let represent the distance between and .        If , and show that .    If , and show that .    If , and show that .    If , and show that .    Do you see a pattern yet? If you do, write it down and try to show that it always holds. If you don t, make up some more simple examples and solve them to gather more evidence. when you believe you have see it conjecture a pattern and then show that the pattern always holds.            Show that if , and then . Does this make intuitive sense to you?    Show that if , and , then .    Show that if , and , then .    Do you see a pattern yet? If you do, write it down and try to show that it always holds. If you don t make up some more, simple examples, and solve them to gather more evidence. when you believe you have see it conjecture a pattern and then show that the pattern always holds.         Finally, given any  and any  , find a completely general formula for .    "
 },
@@ -8726,7 +8735,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfermats-theorem.html#SECTIONfermats-theorem-8",
   "type": "Scrapwork",
-  "number": "15.1.0.1",
+  "number": "15.1.0.2",
   "title": "",
   "body": " Notice that in Definition the quantity is the slope of a particular secant line, as in the sketch below.   If is a (local) maximum then the slope of the secant line in our diagram, , must be negative when . Since the slope is less than zero it follows that   "
 },
@@ -8735,7 +8744,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfermats-theorem.html#SECTIONfermats-theorem-9",
   "type": "Problem",
-  "number": "15.1.0.2",
+  "number": "15.1.0.3",
   "title": "",
   "body": "  Draw a similar diagram to convince yourself that must also be greater than or equal to zero when .   "
 },
@@ -8753,7 +8762,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONfermats-theorem.html#SECTIONfermats-theorem-12",
   "type": "Problem",
-  "number": "15.1.0.3",
+  "number": "15.1.0.4",
   "title": "",
   "body": "  Use our proof of the maximum case ( ) of Fermat s as a guide to constructing a proof of Fermat s Theorem when is a local minimum.   "
 },
@@ -8816,7 +8825,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#SECTIONrolles-lemma-mean-12",
   "type": "Scrapwork",
-  "number": "15.2.0.1",
+  "number": "15.2.0.5",
   "title": "",
   "body": " The Mean Value Theorem (visualized in below) says that there is a point , in the interval such that the tangent line at and the line through and are parallel. Thus in the special case where the Mean Value Theorem reduces to Rolle s Lemma. In other words the Mean Value Theorem is a generalization of Rolle s Lemma.        We said we would use Rolle s Lemma to prove the Mean Value Theorem. To do that we ll need to create a function -- we ll call it  that satisfies all of the conditions of Rolle s Lemma. If is the function whose graph is the line through and we see that Do you see that is the function we need?  "
 },
@@ -8825,7 +8834,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#SECTIONrolles-lemma-mean-13",
   "type": "Problem",
-  "number": "15.2.0.6",
+  "number": "15.2.0.7",
   "title": "",
   "body": "  Show that .     is a straight line and we have the coordinates of two points, and on the line.   "
 },
@@ -8834,7 +8843,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONrolles-lemma-mean.html#PROBLEMrolles-lemma-mean-2",
   "type": "Problem",
-  "number": "15.2.0.7",
+  "number": "15.2.0.8",
   "title": "",
   "body": "  Show that from the diagram above satisfies all of the conditions of Rolle s Lemma. That is, show that:      is continuous on .       is differentiable on .           "
 },
@@ -9212,7 +9221,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-10",
   "type": "Scrapwork",
-  "number": "17.2.3.1",
+  "number": "17.2.3.4",
   "title": "",
   "body": " Let be given.  As we did in we find the bound by working the problem backwards. We want to end with , so that s where we start.  Since we are only interested in what happens to as , we can safely assume that . In that case if then it follows that and if then , so apparently to make we need . So we take .   END OF SCRAPWORK   "
 },
@@ -9230,7 +9239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-13",
   "type": "Problem",
-  "number": "17.2.3.4",
+  "number": "17.2.3.5",
   "title": "",
   "body": "  Identify which statements in the proof in correspond to the first, second, third, and fourth parts of the format presented above.   "
 },
@@ -9239,7 +9248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLEFormalLimitProof2",
   "type": "Example",
-  "number": "17.2.3.5",
+  "number": "17.2.3.6",
   "title": "",
   "body": " Examples limits  Our previous examples and problems in this section were fairly simple as formal limit problems go. This one is more complex.  Use to show that .  "
 },
@@ -9248,7 +9257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-15",
   "type": "Scrapwork",
-  "number": "17.2.3.2",
+  "number": "17.2.3.7",
   "title": "",
   "body": " For a given , we want to end up with Part of what makes this limit more complex is that the part inside the absolute value , is not always positive. We need to deal with that somehow.  First, since we are only concerned about what happens as it is safe to assume that . In that case, . Next, observe that if also, then . Thus , so that . We could now work backwards like before, and solve for . This will work fine, but the Algebra gets very messy. Try it and see.  There is a sneaky way to do this that avoids some of the Algebra. Notice that . Notice further that if , then so that . Putting all of this together we see that for ,   Thus to guarantee that we need , or .   END OF SCRAPWORK   "
 },
@@ -9266,7 +9275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMProofPractice1",
   "type": "Problem",
-  "number": "17.2.3.6",
+  "number": "17.2.3.8",
   "title": "",
   "body": "  Explain carefully, and in detail, the reasoning that supports the claims made in Equations and .   "
 },
@@ -9275,7 +9284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-20",
   "type": "Problem",
-  "number": "17.2.3.7",
+  "number": "17.2.3.9",
   "title": "",
   "body": "  For each of the following show that .                                                            .}    "
 },
@@ -9284,7 +9293,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-posinfinity",
   "type": "Definition",
-  "number": "17.2.3.8",
+  "number": "17.2.3.10",
   "title": "A Limit at <span class=\"process-math\">\\(+\\infty\\)<\/span>.",
   "body": " A Limit at  Definition Limit at   Suppose that is a real number and that is defined on some interval . Then we say that if and only if for every there is a real number with the property that , whenever .   "
 },
@@ -9293,7 +9302,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-24",
   "type": "Example",
-  "number": "17.2.3.9",
+  "number": "17.2.3.11",
   "title": "",
   "body": " Examples limits  Suppose . Intuitively, it is clear that but we need to prove that this is so.  "
 },
@@ -9302,7 +9311,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-25",
   "type": "Scrapwork",
-  "number": "17.2.3.3",
+  "number": "17.2.3.12",
   "title": "",
   "body": " Suppose is given. We need to specify a number (probably in terms of ), with the property that if then So we will work backwards from this inequality.   Thus , and it appears that as long as is greater than    END OF SCRAPWORK   "
 },
@@ -9320,7 +9329,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-27",
   "type": "Example",
-  "number": "17.2.3.10",
+  "number": "17.2.3.13",
   "title": "",
   "body": " Examples limits  In we approached the problem of finding a horizontal asymptote of in the following highly intuitive manner, using the notation. So we see that this limit must be equal to five. To prove this rigorously, without referring to infinity, we use   "
 },
@@ -9329,7 +9338,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-28",
   "type": "Scrapwork",
-  "number": "17.2.3.4",
+  "number": "17.2.3.14",
   "title": "",
   "body": " Let be given. As before we work backwards from our goal, . As long as this is the same as so we will stipulate that (and therefore ) must be at least greater than . Solving equation for we see that also. So we take to be the greater of and . We capture this idea with the notation, .   END OF SCRAPWORK   "
 },
@@ -9338,7 +9347,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-29",
   "type": "Problem",
-  "number": "17.2.3.11",
+  "number": "17.2.3.15",
   "title": "",
   "body": "       Show that we really only need the condition by showing that implies that .      Suppose that and . Prove that if then     "
 },
@@ -9347,7 +9356,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-30",
   "type": "Problem",
-  "number": "17.2.3.12",
+  "number": "17.2.3.16",
   "title": "",
   "body": "  We want to give a rigorous proof that . Let be given.     Do the scrapwork that shows that we must take .      Show that if then     "
 },
@@ -9356,7 +9365,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-31",
   "type": "Problem",
-  "number": "17.2.3.13",
+  "number": "17.2.3.17",
   "title": "",
   "body": "  Do the scrapwork, and provide a rigorous proof of each of these limits.                        "
 },
@@ -9365,7 +9374,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONlimit-at-neginfinity",
   "type": "Definition",
-  "number": "17.2.3.14",
+  "number": "17.2.3.18",
   "title": "A Limit at <span class=\"process-math\">\\(-\\infty\\)<\/span>.",
   "body": " A Limit at  Definition Limit at   Suppose is defined on some interval . Then we say that if and only if for every we can find a real number with the property that whenever     "
 },
@@ -9374,7 +9383,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONRefiningDerivative-34",
   "type": "Problem",
-  "number": "17.2.3.15",
+  "number": "17.2.3.19",
   "title": "",
   "body": "  Do the scrapwork, and provide a rigorous proof of each of the limits below. Recall that when , .                        "
 },
@@ -9419,7 +9428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-14",
   "type": "Scrapwork",
-  "number": "17.2.4.1",
+  "number": "17.2.4.5",
   "title": "",
   "body": " We want to find a with the property that, for a given , whenever .   Comment  Read this paragraph carefully. It can be very difficult to parse at first.   Working backwards, we start with the inequality . Solving for we see that and thus . This suggests that we should make   "
 },
@@ -9428,7 +9437,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-15",
   "type": "Problem",
-  "number": "17.2.4.5",
+  "number": "17.2.4.6",
   "title": "",
   "body": "   Confirm that is in fact positive.      Use part (a) to show that .    "
 },
@@ -9437,7 +9446,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-16",
   "type": "Problem",
-  "number": "17.2.4.6",
+  "number": "17.2.4.7",
   "title": "",
   "body": "  Do the scrapwork, and provide a rigorous proof of each of the limits.                 "
 },
@@ -9446,7 +9455,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DRILLLeftHandLimit",
   "type": "Drill",
-  "number": "17.2.4.7",
+  "number": "17.2.4.8",
   "title": "",
   "body": " Drills limits one sided, infinite  Using as a guide write down the definition of a right hand, negatively infinite limit. Compare your answer with below. Does your definition work better than ours? Explain.  "
 },
@@ -9455,7 +9464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONLHInfLim",
   "type": "Definition",
-  "number": "17.2.4.8",
+  "number": "17.2.4.9",
   "title": "Right–Hand, Negative  Infinite Limits.",
   "body": " Right Hand, Negative Infinite Limits  Definition Limit right hand, negative, infinite   Let be a real number. Suppose we have defined on some interval . Then we say if and only if for any real number , there is a number with the property that whenever , .   "
 },
@@ -9464,7 +9473,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-22",
   "type": "Problem",
-  "number": "17.2.4.9",
+  "number": "17.2.4.10",
   "title": "",
   "body": "  Suppose is defined on some interval . Use and to prove that if and only if .   "
 },
@@ -9473,7 +9482,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMLeftInfLimits",
   "type": "Problem",
-  "number": "17.2.4.10",
+  "number": "17.2.4.11",
   "title": "",
   "body": "  Left hand, infinite limits can be defined in a manner similar to and .     Give a definition like for       Give a definition like for       Use your definitions in parts (a) and (b) to prove that if and only if     "
 },
@@ -9482,7 +9491,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXAMPLEPosInfLimit",
   "type": "Example",
-  "number": "17.2.4.11",
+  "number": "17.2.4.12",
   "title": "",
   "body": " Examples limits infinite  For example since .  "
 },
@@ -9491,7 +9500,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#EXERCISEPosInfLimit",
   "type": "Problem",
-  "number": "17.2.4.12",
+  "number": "17.2.4.13",
   "title": "",
   "body": "   Use to show that       Use the appropriate definition from to show that     "
 },
@@ -9500,7 +9509,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DEFINITIONInfiniteLimit",
   "type": "Definition",
-  "number": "17.2.4.13",
+  "number": "17.2.4.14",
   "title": "Positive, Infinite Limits.",
   "body": " Positive, Infinite Limits  Limit infinite   Suppose is defined near . Then we say if and only if .           "
 },
@@ -9509,7 +9518,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMInfiniteLimits",
   "type": "Problem",
-  "number": "17.2.4.14",
+  "number": "17.2.4.15",
   "title": "",
   "body": "  Prove each of the following statements.                    does not exist.       does not exist.    "
 },
@@ -9518,7 +9527,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#DRILLPosNegInfLimitsCatch",
   "type": "Drill",
-  "number": "17.2.4.15",
+  "number": "17.2.4.16",
   "title": "",
   "body": " Drills limit infinite  Dig out your the guess you made in response to and compare it with . Were you close? Did you make unjustified assumptions, or ignore some subtlety? Explain.  "
 },
@@ -9527,7 +9536,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#SUBSECTIONVerticalAsymptotes-36",
   "type": "Problem",
-  "number": "17.2.4.16",
+  "number": "17.2.4.17",
   "title": "",
   "body": "  Provide a definition of similar to and use your definition to show that if and only if .   "
 },
@@ -9536,7 +9545,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMEpsDeltDefLim",
   "type": "Problem",
-  "number": "17.2.4.17",
+  "number": "17.2.4.18",
   "title": "Infinite Limits: An Alternate Definition.",
   "body": " Infinite Limits: An Alternate Definition   Suppose is defined near . Show that if for every real number , there is a such that whenever , then .   "
 },
@@ -9545,7 +9554,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-infinity.html#PROBLEMLimitEquivDef",
   "type": "Problem",
-  "number": "17.2.4.18",
+  "number": "17.2.4.19",
   "title": "",
   "body": " Complete this equivalence by showing that if then for every real number , there is a such that whenever and .  "
 },
@@ -9599,7 +9608,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-19",
   "type": "Scrapwork",
-  "number": "17.3.0.1",
+  "number": "17.3.0.5",
   "title": "",
   "body": " Suppose is given. Our goal is to find a such that if (or just ) then . Solving this for we have Recall from that , so we see that or, equivalently   It appears that as long as , so we take .   END OF SCRAPWORK   "
 },
@@ -9635,7 +9644,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#EXAMPLEDiscontLimit2",
   "type": "Example",
-  "number": "17.3.0.5",
+  "number": "17.3.0.6",
   "title": "",
   "body": " Examples limits at a discontinuity  Returning to from recall that we had We had shown by an intuitive argument that . Our previous proof lacked rigor, especially in the last step. We will provide a fully rigorous proof now.  "
 },
@@ -9653,7 +9662,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-30",
   "type": "Problem",
-  "number": "17.3.0.6",
+  "number": "17.3.0.7",
   "title": "",
   "body": "  Use the proof above to recreate the scrapwork that we did before we wrote the proof.   "
 },
@@ -9662,7 +9671,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#EXAMPLEConcrete1",
   "type": "Example",
-  "number": "17.3.0.7",
+  "number": "17.3.0.8",
   "title": "4.",
   "body": " 4  Examples limits  We would like to find the value of , and prove that the value we find is correct.  Remember that none of our limit definitions tell us how to find the value of a limit, only how to prove that it has a particular value after we ve found it. In our examples so far the value of the limits have been intuitively clear so we haven t concerned ourselves with this part of the problem. But before we can prove that a limit has a particular value we obviously need to decide what we believe the limit value is.  We have several options for doing this. The simplest is guessing, but guessing works best if we have some intuition about the problem. Guessing blindly is usually a waste of time. Nevertheless, guessing is always an option. Can you guess the value of this limit?  Another simple option is to use a calculator and plug the value of the limit point, in this case , and see what the calculator comes up with. This will work if the function is continuous at the limit point. But is not continuous at so that won t help with this problem. Try it and see.  A third, and much more useful option is to sketch the graph of to see what is close to near the limit point. The graph of is given below. It is not defined at because when we get zero in the denominator. Nevertheless the limit at seems to exist. As you can see as approaches , appears to approach . Based on this graph it seems likely that the value of the limit is .   As we saw in , Algebra can also be very helpful. In this case we see that where the cancellation in red is only valid when . Our limit point is so it is not under consideration.  In fact, once we have rigorously proved , and from (We will do this in ) the following will be a valid proof:   "
 },
@@ -9671,7 +9680,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-32",
   "type": "Problem",
-  "number": "17.3.0.8",
+  "number": "17.3.0.9",
   "title": "",
   "body": "  Identify where we used , , and in the development above.   "
 },
@@ -9680,7 +9689,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-36",
   "type": "Scrapwork",
-  "number": "17.3.0.2",
+  "number": "17.3.0.10",
   "title": "",
   "body": " As is typical we work backwards from our goal. We need to show that so Since we re not interested in the value of anything at (where the denominator is zero) we can factor and cancel, giving We see that if then or So taking will work for this problem.   END OF SCRAPWORK   "
 },
@@ -9698,7 +9707,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#DIGRESSIONWhyProveTheorems-4",
   "type": "Problem",
-  "number": "17.3.0.9",
+  "number": "17.3.0.11",
   "title": "",
   "body": "   Show that satisfies all of the conditions of L Hôpital s Rule .      Use L Hôpital s Rule to prove that .      Is your proof in part (b) rigorous? Why or why not?    "
 },
@@ -9707,7 +9716,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-40",
   "type": "Example",
-  "number": "17.3.0.10",
+  "number": "17.3.0.12",
   "title": "",
   "body": " Examples Derivative via limits  In this example we will show rigorously that the derivative of is . To do that we need to show that Recall that differentiation is a local property so we are thinking of as a fixed, but unspecified real number. The variable in this example is .  "
 },
@@ -9716,7 +9725,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-41",
   "type": "Scrapwork",
-  "number": "17.3.0.3",
+  "number": "17.3.0.13",
   "title": "",
   "body": " For we need to find such that if , then . Working backwards from this we have so we choose .   END OF SCRAPWORK   "
 },
@@ -9725,7 +9734,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONlimits-at-real.html#SECTIONlimits-at-real-42",
   "type": "Problem",
-  "number": "17.3.0.11",
+  "number": "17.3.0.14",
   "title": "",
   "body": "  Use the scrapwork above to write down a rigorous proof that if then .   "
 },
@@ -9833,7 +9842,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at-16",
   "type": "Scrapwork",
-  "number": "17.4.1.1",
+  "number": "17.4.1.8",
   "title": "",
   "body": " As always we begin by assuming that has been given.  We want to show that if is large enough (larger than some specified ) then The only information we have to work with is the knowledge that which means that we can make and as close to zero as we wish, provided we make large enough. Rewriting the left hand side of equation and invoking the Triangle Inequality we see that But as we ve observed we can make and as close to zero as we wish, provided we take large enough. To be precise, there is a number such that if then . Similarly there is a number such that if then .  Since we need for both of these things to happen a sufficiently large value of is one where and .   END OF SCRAPWORK   "
 },
@@ -9851,7 +9860,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at-18",
   "type": "Problem",
-  "number": "17.4.1.8",
+  "number": "17.4.1.9",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of below.   "
 },
@@ -9860,7 +9869,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimSumNegInf",
   "type": "Theorem",
-  "number": "17.4.1.9",
+  "number": "17.4.1.10",
   "title": "The Limit of a Sum at Negative Infinity.",
   "body": " The Limit of a Sum at Negative Infinity  If and then   "
 },
@@ -9869,7 +9878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONlimit-sum-at-20",
   "type": "Problem",
-  "number": "17.4.1.10",
+  "number": "17.4.1.11",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of below.   "
 },
@@ -9878,7 +9887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimSumPoint",
   "type": "Theorem",
-  "number": "17.4.1.11",
+  "number": "17.4.1.12",
   "title": "Limit of a Sum at a Point.",
   "body": " Limit of a Sum at a Point  Suppose that is some real number, and . Then   "
 },
@@ -9959,7 +9968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONlimit-composition-6",
   "type": "Scrapwork",
-  "number": "17.4.3.1",
+  "number": "17.4.3.3",
   "title": "",
   "body": "  It will be helpful to have a visual guide for this proof so we will rely on diagrams here in the scrapwork. Our finalized proof below will not.  Let be given. We need to show that we can find a such that if then .  Since is continuous at  tells us that   Thus tells us that there there is a real number such that if then , as visualized in the sketch above.  Next, consider what it means to say that . It means that if we take large enough we can make as close to as we would like. In particular, we would like for as in the sketch below.   Therefore, we can find a number such that for every , . If we take , then we have .  From the continuity of at we know that means that    END OF SCRAPWORK   "
 },
@@ -9977,7 +9986,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONlimit-composition-8",
   "type": "Problem",
-  "number": "17.4.3.3",
+  "number": "17.4.3.4",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of Theorem below.   "
 },
@@ -9986,7 +9995,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimCompNegInf",
   "type": "Theorem",
-  "number": "17.4.3.4",
+  "number": "17.4.3.5",
   "title": "The Limit of a Composition at Negative Infinity.",
   "body": " The Limit of a Composition at Negative Infinity  Suppose and is continuous at . Then   "
 },
@@ -9995,7 +10004,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SECTIONlimit-composition-10",
   "type": "Problem",
-  "number": "17.4.3.5",
+  "number": "17.4.3.6",
   "title": "",
   "body": "  Use the proof of Theorem as a model to construct a proof of Theorem below.   "
 },
@@ -10004,7 +10013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimCompPoint",
   "type": "Theorem",
-  "number": "17.4.3.6",
+  "number": "17.4.3.7",
   "title": "The Limit of a Composition at a Point.",
   "body": " The Limit of a Composition at a Point  Suppose , and that is continuous at . Then   "
 },
@@ -10148,7 +10157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#SUBSECTIONOneOverXIsCont-4",
   "type": "Scrapwork",
-  "number": "17.4.5.1",
+  "number": "17.4.5.2",
   "title": "",
   "body": " To keep things simple (this is scrapwork, after all) we will first assume that . If we have an then by we need to find a such that if then . As usual we work backwards.  Combining the fractions we see that so we need to find a such that ensures that .  At first it appears that all we need to do choose . If we could do that we d have in which case   But of course we ve seen this before. Just as in the proof of Lemma , cannot depend on . So we need to replace with a constant somehow. The Algebra here gets a bit delicate. We strongly recommend that you visualize each step of the following argument with a sketch like the one we used in the scrapwork for Theorem   Suppose that Then we see that or Thus if we make , we see that and so, from the right side of equation . .   Comment  Notice that we are using the left side of equation    Therefore . Thus if we choose to be the lesser of and we have everything we need to conclude that for    END OF SCRAPWORK   "
 },
@@ -10157,7 +10166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#PROBLEM1overXIsCont",
   "type": "Problem",
-  "number": "17.4.5.2",
+  "number": "17.4.5.3",
   "title": "",
   "body": "       Use the scrapwork above to show that if then .      If we could replicate the proof in part (a), but keeping track of all of the sign changes will be burdensome. Otherwise it is really the same proof. Instead, notice that if then and so by part (a) Use this observation to prove that if then .    Let .    "
 },
@@ -10166,7 +10175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#THEOREMLimQuot",
   "type": "Theorem",
-  "number": "17.4.5.3",
+  "number": "17.4.5.4",
   "title": "The Limit of a Quotient is the Quotient of the Limits.",
   "body": " The Limit of a Quotient is the Quotient of the Limits  Suppose is positive infinity, negative infinity, or some real number, that , and that . Then   "
 },
@@ -10175,7 +10184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#PROBLEMProofOfQuotLim",
   "type": "Problem",
-  "number": "17.4.5.4",
+  "number": "17.4.5.5",
   "title": "",
   "body": "       Prove that if and then     Rewrite as . Which of our theorems can you apply?      Prove that if and then       Prove that if is some real number, and , and . Then     "
 },
@@ -10184,7 +10193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#DEFINITIONOneSidedLimits-Formal",
   "type": "Definition",
-  "number": "17.4.5.5",
+  "number": "17.4.5.6",
   "title": "Right-Hand Limit.",
   "body": " Right-Hand Limit  Definition Limit right hand   Suppose is defined on some interval . Let be a real number. We say that provided that for each , there is a with such that if , then .   "
 },
@@ -10193,7 +10202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONLimitLaws.html#PROBLEMCodaOneSided",
   "type": "Problem",
-  "number": "17.4.5.6",
+  "number": "17.4.5.7",
   "title": "",
   "body": "       Using as a model, state a similar definition for .      Prove from .    "
 },
@@ -10465,7 +10474,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.1",
   "title": "Integration by Substitution",
-  "body": "  Integration by Substitution   Over the years many very ingenious techniques have been invented to reduce a complex differential equation to something more manageable. Very often these techniques and tricks An old joke says that a technique is a trick that you use more than once. come down to finding a clever substitution which reduces the equation in front of us to one that we already know how to solve.         Some Introductory Examples  Entry #7 of tells us only that . But with a little cleverness we can use it to evaluate other integrals as well. Cleverness comes in many forms but as we ve seen one of the simplest ways to be clever is to make our formulas easier on the eyes with a substitution.   Recall that to differentiate an expression such as , we used the substitution so that we had . We can use the same substitution to reverse the process.  Suppose we want to evaluate the integral . We make the substitution so that . Substituting these into our integral gives .     Suppose we want to find the most general solution of Since this is a separable equation we separate the variable resulting in and integrating both sides we have which we can solve using .     Show that the solution of equation is , where is an unknown constant.     Now suppose we complicate  a bit. Suppose we want to solve the differential equation .  Separating variables as before we obtain The integral on the right is the same as before, but the one on the left does not appear in so we have to be clever.  If we make the substitution , then and the above equation is transformed into which we can solve.     Show that the solution of equation is where again is an unknown constant.      Suppose , solve      Find the pattern   Find the most general solution.                                 Assume that , , , , and are all constant:      While it can be fun to do, grinding out computations for their own sake is a sterile exercise. We re interested in using our mathematics to understand and explain the natural world. In the next section we ll see how we can use the notion of an integral to extend Galileo s work on falling bodies.    Extending Galileo s Results: Air Resistance  When he began his investigations into falling bodies Galileo kept things simple for himself by ignoring the air resistance. In we followed Galileo s example and assumed that the resistance to the motion of a falling body due the Earth s atmosphere was zero (or at least negligible).     With an eye toward generalizing this model to account for resistance, we will re-examine this model utilizing our integration notation. With that in mind, recall that when dropping a ball and ignoring air resistance, the ball accelerates at a constant rate of . If we let denote the velocity at time , then this translates into Note that we are assuming the positive axis points up.   Separate the variables in this differential equation to show that for some constant Show that in this case, , the initial velocity of the ball.   Thus if denotes the height of the ball at time , then we have the differential equation    Separate the variables in this differential equation to obtain for some constant . Show that in this case, the initial height of the ball.   The result of  is essentially the same as the content of . But recall that in that section we explicitly chose to ignore any resistive forces. We repeated the problem here both to remind you of the result and so that we could couch it in the language of differential equations. That will allow us to extend this to a model in a manner which takes resistance into account. In the real world acceleration is not constant because gravity is not the only force in play.   Vocabulary drag In general, the faster the body is moving through a fluid (like air or water) the more the fluid tends to resist the motion. You are quite familiar with this. If you hold your hand out of a car window while the car is moving you ll notice that the faster the car moves, the more force you will feel on your hand. Similarly when you are swimming, the harder you pump your hands and feet through the water the more force you will feel resisting the motion. These are examples of the resistive force or drag .  There are many ways that the drag can manifest. Some of the variables that affect the resistance of a body moving through a fluid are the velocity of the body, the viscosity of the fluid, the shape and size of the body, and the turbulence of the fluid.  When the object is relatively small and the medium is highly viscous the assumption that the drag is proportional to the velocity of the object makes for a reasonably accurate model. This is called linear drag . An example of this is a grain of sand falling in water.  When the object is relatively large and the viscosity of the medium is relatively low the drag is best modeled by assuming that it is proportional to the square of the velocity of the object. This is called quadratic drag , and would be the model to use for a baseball falling in the air.   Vocabulary drag  linear Of course to get a really accurate picture, we could use both a linear and a quadratic term to represent the drag, but to keep things as simple as possible for now we ll assume that the drag is linear. We can always adjust this later if the need arises.   Cornerstone Problem: Linear Drag and Terminal Velocity: Sand Falling in Water    Notice that in this diagram the positive direction is downward.   A circle labeled \"mass\" with one arrow, labeled \"weight\", pointing down, and two arrows, labeled \"drag\" and \"buoyancy,\" pointing up.    From the diagram in above we see that there are three forces acting on the sand particle falling through water,   the weight of the particle (downward),    the drag that the water imposes on it (upward), and    its buoyancy (upward).     The total force acting on the grain will be equal to the sum of those three forces. Thus, according to Newton s Second Law ( ), where is the velocity (so that is acceleration) of the grain, and is time.  Because the positive axis points downward is the (positive) distance that the sand has fallen and is the surface of the water. If, as usual, we denote the acceleration due to gravity by then .  We have assumed that the drag is proportional to velocity so . Notice that this force is negative as the drag is necessarily in the direction opposite of the motion, so we assume that the parameter is some positive constant and is the velocity.   Vocabulary buoyancy The buoyancy of an object is the upward (negative) force that a surrounding fluid applies to any submerged object. This force is equal to the weight of the fluid being displaced by the object. If we denote the mass of the displaced fluid as then .    If the density of the object is less than the density of water then the weight of the object and it s boyancy will balance before the object is completely covered. That is, any object less dense than water will float atop the water.   Thus equation becomes the differential equation . If we assume that the velocity of the particle at the beginning of its fall is then our model for the velocity of a grain of sand falling through water is the IVP                     Solving IVP will yield a function, , which gives the velocity of the grain as a function of time.     The differential equation in IVP is actually a separable equation, but this may not be readily apparent. To see this more clearly make the substitution and show that the differential equation in IVP can be re expressed as Note that (why?),      Find the most general antiderivative of both sides of equation using appropriate entries from . You may need to make a substitution before using the table.      Use your results from part (b) to show that   These integrations should have produced an arbitrary constant on each side of the equals sign, yet we only have one. Explain why this is still correct.               Solve equation for and show that For convenience we ve used to represent the integration constant in both equation and equation , but it does not represent the same constant in both equations. Explain how the two constants are related.    This formula looks a little scary, but remember that is the proportionality constant for the drag, that is the constant from the first substitution, and that is just the starting velocity, . These are all constants. In fact the only variable in sight it the that appears in the exponential.      Use from the initial condition in IVP , to determine the value of the integration constant in equation and show that      Terminal Velocity  Vocabulary terminal velocity   Compute , and explain why this value is called the terminal velocity of the sand grain settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.                                               More on Substitutions  The left side equation does not appear in , but the right substitution turned it into an the integral which is. At that point we simply looked it up. A clever substitution can be very helpful.  This will be true of nearly every integral you will ever compute.     The integration techniques you will be learning in the next few sections do not compute the integrals. They simply transform one integral into another. Your goal will always be for the new integral to be one that you recognize, or that you can compute easily, or that you can find in a table of integrals.                                   As you become more comfortable with the process you will begin to do the simpler steps in your head. This is normal, expected, and even encouraged. However any integration you do can always be broken down into small steps, each of which can be justified. If you have trouble computing a given integral slow down, take it one step at a time and be sure you can justify each step.          Drills  Integration by Substitution  Integration by substitution seems to be a fairly simple technique. And it is simple, at least in concept. But in fact substitution is a very sophisticated idea which is used at all levels of mathematics as you ve already seen. Nearly every integral you do from now on will involve some sort of a substitution at some point in the computation. You need to get as much practice with it as you can.  Compute each of these integrals by making the indicated substitution. Assume is a constant.    ,  Substitution:      ,  Substitution:      ,  Substitution:        Substitution:      ,  Substitution:      ,  Substitution:      ,  Substitution:        Substitution:       For the first four hundred years or so after Calculus was invented it was necessary for scientists, engineers, and mathematicians to memorize a few integrals and to own a table of of known integrals like , but much larger. The image below is a scan of two pages of such a reference. These tables were very large. Notice that the integrals on these two pages are numbered 453 through 477.         Use an appropriate substitution to compute each of the following integrals. Use the formulas in both and as needed.  When there are several possible substitutions available but it is not clear which of them will work, or if any of them will, it is normal and very human to sit and stare at the problem wondering which one to use. Don t do that. The problem will not solve itself. Pick one substitution, try it, and take the new integral as far as you can. If that substitution doesn t work, choose another substitution and try again. Keep trying until you find one that works.        This problem can be done by simply expanding the integrand algebraically. But do you really want to do that?       Do you want to expand the integrand algebraically this time?                                                                                         Compute the integral . by multiplying out the integrand and then integrating.      Compute the integral . using the substitution .      Compute the integral . using the substitution .      Show that the answers you obtained in parts (a), (b), and (c) are all equivalent.     Integrals can be unpredictable, even when you are computing them correctly. You ll need to discipline yourself. You will save yourself a great deal of time and frustration if you don t try to anticipate the solution; don t say to yourself Oh, I see. This antiderivative will look like . . . . That kind of thinking can lead to wasted hours chasing an unworkable approach.  Instead, decide on your first substitution and make it completely. But a substitution is only the first step. Once you decide on a substitution follow it through until you have completely transformed the integral into the new variable. Then look at the new integral with new eyes. Your goal is for the new integral to be easier than the old. Ideally, it will be an integral that you simply know from memory.  The good news is that no substitution is incorrect. The bad news is that no substitution is incorrect. Making a substitution simply replaces one integral with another. We want the new integral to be simpler than the original but there is no guarantee. You simply have to try a substitution and see what happens. For example, given We could use the substitution , so that or . But then we d have which is no more doable than the original. If nothing else, this tells us two things:  We need to gain experience on which substitutions transform a given integral into one which is more promising to do, and  We need to develop other integration techniques we can employ when a substitution fails. We will develop the technique for computing both and in .     Drills  Use the entries in the partial table in to evaluate each of the integrals.                 The value of a table of integrals has diminished considerably in the modern world due to the existence of very sophisticated software. Indeed, most of the integrals you will see in this course can be done by simply instructing your smart phone to do the computation. That being so, a natural question is, Why do we insist that you memorize the simpler integrals like the ones in and the basic techniques. There are several reasons.   Intuition (or the lack thereof)  A similar question can be asked about arithmetic. Was it really necessary for you to learn the arithmetic rules in grade school? After all, any calculuation you need to do now, as an adult, can be done more reliably by posing the question to your phone. Was learning arithmetic a wasted effort?  Suppose that,  you had never learned any arithmetic,  you are planning a road trip of miles, and  there is no source of fuel on the trip.  If your car gets miles per gallon of fuel. How much fuel do you need to bring?  Easy right? You ask your phone how much fuel you need and it says you need gallons. Is that correct? Remember you don t know how to do this calculation yourself. You must rely completely on the software in your phone for the answer. You can only pray that you posed the problem correctly and that your phone correctly interpreted your statement. Since you don t know how to do the computation yourself you have no way of knowing that gallons isn t nearly enough fuel for your trip. Your going to get stranded in the desert.         Mistakes will happen. When they do you need to have enough insight into the problem to know when the numbers are coming out wrong. A very good way to develop that kind of insight is to do problems without any assistance (software or otherwise). We made this same point in . Newton s Method is very good when it works but it doesn t always work. You must have enough insight into your problem to separate the wheat from the chaff .    Convenience:  In this course integrals will often appear as stand alone problems because our goal is to learn how to compute them. In the real world they will far more often come to you as part of a larger, more complex problem. If you are working on such a problem and the expression comes up you d like to be able to say that this is equal to so you can move on to the next step without interupting your work to enter this integral into some software package.  While it may not be obvious right now that it will be eventually. This is a fairly simple integral to compute once you ve learned how (in ) and practiced a bit. If it were to come up inside a larger problem it is actually quicker and easier to simply work through it than to search for it on the internet or to type it into some software package in the required format. Perhaps more importantly when you do the computation yourself you will know it is correct. You have no such assurance when using software.  You need to be able to use your tools smoothly and efficiently when you are working, and integration is one of your tools. Having to stop working in the middle of every large computation you encounter in order to enter the smaller computions into software is like having to interrupt a carpentry job to watch a video explaining how to use a hammer or a saw. It can be done, but it is an onerous task at best. Some things you simply need to know how to do yourself.    Software Doesn t Always Give a Correct Answer  Sometimes computers give the wrong answers. It is that simple. Computer programs are written, either by people or by other programs. In either case errors in programming are unavoidable. They will occur. Even the best written, best tested software will have bugs.    Software Doesn t Always Give a Useful Answer  Of course well written, well tested software is usually right. But the most sophisticated mathematical software packages available today have the cumulative experience and knowledge of nearly the entire mathematical community built into them. As a result such software will often give answers which, although correct, are not helpful. Especially for a beginner.  For example we (the authors) entered the integral into one such system We used Wolfram Alpha . . The answer we got back was which is correct, but what does it mean? You will see the function again in where we will explain it, but until then you have no way to interpret this output, so it is useless to you.  Similarly when we fed it the integral the same system returned . We (the authors) needed to do some investigating to figure out what this means as the symbolism is not part of our core knowledge. It turns out that is a particular Appell hypergeometric function.  Does that help you to understand?  The good news is that we re just making this point: Any software you use will have built in assumptions about your level of expertise. If those assumptions are wrong you will not be able to understand the output even when it is correct. Or what is worse, you ll think you understand when you don t.  The really good news is that for this course you don t need to know what an Appell hypergeometric function is. Probably you never will.     This is not to say that you should not use these tools at all. Mathematical software is available and it can be a marvelous aid. But it is no substitute for the skill, knowledge, and understanding that come from practicing and mastering these basic integration techniques. Use the software. But use it to help you learn. Use it to check your computations after you ve completed them yourself. When you and the software disagree take the time to figure out what is wrong and who is right. That is when learning happens.  Notice that in we have the entries But we don't have an entry for or for . Substitution allows us to fill in these gaps.    For example, we could rewrite      Use an appropriate substitution on the above integral to show       Apply a similar technique to compute .      Previously we computed using the identity . We could also use the identity .  Do we get a different answer? Explain.   If we try a similar approach for the integral ,  we will hit a dead end. Try it and see. We will need to develop other techniques to handle this.  While the purpose of this chapter is to learn techniques for integrating as many differentials as possible, we want to keep our eye on the applications. One of the uses of integration is as a tool for the solution of differential equations.   Quadratic Drag and Terminal Velocity: Sand Falling Through Air  Problem Cornerstone Quadratic Drag   In we computed the terminal velocity of an object falling with linear drag . Next we will consider quadratic drag .  An example of this would be a ball of mass falling through the Earth s atmosphere. In this case buoyancy is typically negligible so we will disregard it. First, let be distance the ball has fallen (so the positive axis is pointing downward), with representing the initial position of the ball. As always we denote the acceleration due to gravity by , so the weight of the ball is . Quadratic drag is proportional to the square of the velocity, so , where is a constant that will depend on the medium our ball is falling through (air, in this instance) and is the velocity. For simplicity, we will assume .     Use Newton s Second Law of Motion: ( ), to show that the velocity of the ball must satisfy the IVP:       Show that the IVP in part (b) is equivalent to       Use the substitution to show that the differential equation in IVP can be re-expressed as                        Here is another application where occurs. This one involves the catenary which we introduced in and mentioned again in .  We saw in that to derive a formula for the catenary curve we need to determine from equation which requires that we compute the integral . It is not at all obvious but the substitution we need is . We will discuss how we came up with this particular substitution in the next section . For now we simply observe that this has a slightly different character than those we ve made before. In the past we made a substitution by setting the substitution variable (usually called ) equal to some complex expression in order to replace it, thereby making things easier on our eyes, or simpler.  But if we make the substitution we get which results in: This is not simpler. If anything it is more complicated In this situation a former teacher of one of the authors was fond of joking Why simplify when you can complicate? . For that reason this form of substitution is sometimes called Inverse Substitution .  But remember that our goal is not to make the integral simpler, our goal is to make the integral doable. In this case the trigonometric identity will be very helpful.  Thus we see that because as we observed in  .  The Absolute Value Function is relatively simple but when it appears in conjunction with other more complicated functions it tends to be more difficult to work with than it really should be. It is annoying, but it is also unavoidable. The square root of is ,not no matter how much we d like it to be, and that fact has to be dealt with.  In any case dealing with the details of the Absolute Value Function is a complication we don t need right now so we will impose the condition which guarantees that and so . This is not a hindrance because it will still be true that   From equation we see that So we see that computing is at the heart of a couple of applications. There are certainly more, but for now let s deal with this integral. While we are at it, we will go a step further.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    The Integral of an Arbitrary Polynomial in and     Integrating Polynomials in Secant and Tangent  This exploration is based on the paper  Integrating Polynomials in Secant and Tangent  , by Jonathan P. McCammond, The American Mathematical Monthly, Nov. 1999, Vol. 106, No. 9. In his paper, McCammond shows that if is any polynomial in two variables then can be evaluated using the substitutions in equations , , , , , and .   We begin by defining and by                                                                                                                 Show that     Show that and     Show that         Secant integral of   Use the results in part (a) to show that       Since we already know that Use the results in part (a) to derive this result again.      Use the results in part (a) to evaluate the integrals. Differentiate your solutions to confirm that they are correct.                                                                                                        The technique in will work for any polynomial in secant and tangent, but it is not always the most efficient or intuitive way to do an integral. For example, we already know    Use the substitutions in to show and use this to show Does this answer differ from what we obtained before? Which method do you prefer?   The integrals of secant and tangent occur frequently enough in applications that you might want to memorize them:                                                                       The procedure described in can be modified to provide a method for evaluating integrals where the integrand involves the cosecant and cotangent functions.     Find trigonometric identities involving the secant and cotangent functions which are analogous to equations , , , , , and .      Replace and with and , respectively in parts (b), (c), and (d) of and use your results in part (a) to evaluate the integrals you obtain.  These integrals appear in applications often enough that you will probably find it useful to commit them both to memory.      In replace and with and , respectively and use your results in part (a) to evaluate all of the integrals that result.                                   As the previous problem indicates, we can theoretically integrate any polynomial in cosecant and cotangent, but in practice, this rarely comes up. This is due to following facts which come from the names cosecant (complement s secant) and cotangent (complement s tangent):   Thus, the substitution will transform any polynomial in cosecant and cotangent into a polynomial in secant and tangent.  We ll come back to integrals involving tangents and secants (and sines and cosines as well), but first we ll apply what we have to finish our study of the catenary and quadratic drag.      A Derivation of the Solution of the Hanging Chain Problem and the Conclusion of the Quadratic Drag Problem  We covered a lot of ground between when we first encountered the catenary problem and developed all the tools to actually solve it. As such, it is probably worthwhile to recap the problem. Originally, we determined that the curve representing the catenary (hanging chain) had to satisfy the second order IVP              Second Order Differential Equations Require Two Integrations  Because the differential equation involves the second derivative (is a second order equation) solving it will involve two integrations. Each integration will generate an arbitrary constant. That s why need two initial conditions; one for each constant generated.   Separating variables and integrating gave us To integrate the left-hand side, we used the substitution to obtain Now we know how to compute this to obtain At this point we need to convert everything from back into and then ultimately into .  From our substitution we have .  We could use equation , to find in terms of but it is simpler to recall basic trigonometry, and draw a right triangle with in standard position     as in .   Diagram of a right triangle where and .   Diagram of a right triangle with angle theta in standard position.     The Mnemonic Triangle  The mnemonic triangle in  is slightly deceptive. It assumes that is in the first quadrant but, as stated, nothing in the problem forces that to be true.   In particular will be in the fourth quadrant if . So we may be introducing an error with our sketch. Fortunately the error, if there is one, will only be the algebraic signs of the quantities involved: We might get a negative value when we it should be positive or vice versa . Most of the time this is not an issue it is not in this problem and in any case we can correct any such errors after finding the necessary formulas first. This is why we call this a mnemonic and not a technique.   Since we ve got two sides of a right triangle we can compute the third side from the Pythagorean relation as shown. And knowing the length of all three sides of a right triangle allows us to compute the numerical value of all of the trigonometic functions of . So we have which we can use to put equation in terms of : .     As clearly as you can, explain how you know that that .      Use the result in part (a) to show that      Thus we have which gives a relation between and . We still need to find , but that will be a bit easier if we first find the value of the constant in equation .   The Hanging Chain Problem (Finally!)  The Hanging Chain Derivation of the Solution    Recall that the lowest point on the chain is at the point . Use IVP to show that so that .      Use equation to show that must satisfy       Square both sides of the result in part (b) to show that must satisfy and ultimately       So, we ve reduced the original catenary problem, IVP to solving the IVP   Separate the variables and integrate both sides of IVP to derive (finally) the solution of equation .  Compare your solution to the one derived in .      Quadratic Drag Conclusion   In we saw that the problem of determining the velocity of an object falling subject to quadratic drag came down to solving this equation where we had made the substitution .     Integrate the left side of equation and unwind the substitution to show that       Use the initial condition to show that .      Exponentiate both sides of equation and solve for to show that       Compute to obtain the terminal velocity. Compare this with the terminal velocity we found in .                                                                                                                                                                                                                          Trigonometric (Inverse) Substitutions  In the previous subsection we saw that the substitution allows us to compute the integral but it is not at all clear what might have led us to that substitution. The simplest way to explain this is to observe that if then the identity , simplifies the integrand considerably because dealing with the trigonometric function is simpler that dealing with the square root.  But there is a larger pattern in play here which we don t want to miss. We will investigate that pattern in this subsection.  In and we found approximations to solutions of the Pursuit Problem and the Tractrix respectively. We now have the tools we need to solve them exactly.   The Pursuit Problem    The Pursuit Curve.   On the Cartesian plane a vertical line marked L passes through the point (1,0). The point D is at coordinates (1,vt) on the line L. A curve s begins at the origin bends upward as it approaches the line L. The point C is marked on s at coordinates (x,y). A ray tangent to s begins at (x,y) an points to D.    Suppose a cat , is running along the vertical line in the figure at a constant speed . When the cat reaches the point , a dog , starts chasing the cat by running directly at it. Assuming that the speed of the dog is times the speed of the cat (where ) and always runs directly at the cat, find the path that the dog traverses. Such a path is called a pursuit curve. The diagram in shows the situation at time .     Let denote the distance the dog has traveled along its path at time . Show that the dog s path must satisfy the IVP     You ll need to compare a differential triangle and an ordinary triangle, neither of which is shown in the figure.       Equation is clearly a separable equation since and can be separated easily. The problem is that is also a variable. We d like to get in terms of either or but we know almost nothing about it.  But only almost. Since is the arc length of the dog s path we know that is the hypotenuse of the differential right triangle with legs and so, .  Differentiate both sides of equation with respect to and show that the dog s path must satisfy the differential equation so that     Once you ve differentiated equation it will probably not be at all clear how to get to equation from there. Don t let yourself be intimidated by notation. This is an algebra problem. Proceed carefully, one step at a time.      Because equation involves the second derivative of it is hard to think about. We ll make it a little easier on our eyes with a substitution.  Show that with the substitution  equation becomes       Like IVP , equation is a second order equation so two initial conditions are needed for a unique solution.  Explain how you know that the initial conditions are true.                        Use one of the initial conditions from part (c) and the trigonometric substitution in equation to show that is the solution of IVP .         Use equations and and the other initial condition from part (c) to show that the dog s path is the graph of the function .      What are the coordinates of the point where the dog catches the cat?     As we saw in on quadratic drag, the tangent function is not the only trigonometric function that proves useful in computing certain integrals. They arise naturally in many situations.   The Tractrix         The following is the view from above of a tractor trailer. Initially, the center of the front axle of the tractor is at the origin and the center of the rear axle is at the point .   Sketch of a tractor trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels upward along the axis (the line ) and that the rear wheels don t slip.     Show the path that the center of the rear axle of the trailer follows must satisfy the IVP       Find the equation, of the tractrix.    After you separate the variables make the substitution .      Plot your solution on the plane.                                                         There is one more trigonometric substitution that you should know. When dealing with , it is often advantageous to let so that . In order to free ourselves from the complications of the absolute value we restrict to the values in . This will ensure that can take on any value in , while still guaranteeing that so that .  It is both cumbersome and confusing to keep track of the restrictions on in each of these substitutions. So in practice we will simply suppress all of that and just say that for integrals with the understanding that was chosen in a manner which makes it unnecessary to fuss over any absolute values that might come up.  A suggestion for remembering which substitution to use comes from the identities which can be rewritten as and Since it is often easier to deal with trigonometric functions than square roots in an integral, it can be advantageous to replace with the appropriate trigonometric function to obtain one of the above identities.    We have the following lines from :   Let s pretend for a moment that you ve forgotten these lines (Though we know you would never do that.). Use the appropriate trigonometric substitution to obtain those three integrals on the right-hand side.    We know that . What about something like     Use the substitution to show that     We will come back to this seemingly innocuous example and more complicated integrals involving trigonometric substitutions, but first we need to develop techniques to integrate more complicated expressions involving trigonometric functions.                                                                     Trigonometric Integrals    describes a strategy for integrating any polynomial in secant and tangent, but it is not always the best strategy. For example, we already know that and Other integrals can be computed without resorting to the full strength of  . For example if we make the substitution then so that    Rewrite and use the substitution to compute this integral. Do you obtain the same answer as before?   The above typifies two different strategies for computing an integral such as . If is an even integer, we can save and convert everything else into using the identity . We can then use the substitution . If is odd and , we can save a and convert everything else into using .    Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in  will work, but it is not necessarily always the most efficient method available. Use whatever method seems simplest to you.                                               As we said before, no substitution is wrong, but it might not change our integral into an easier one. For example, suppose we have If we save a and convert what is left to tangent, then the substitution yields which is not necessarily easier to handle.   Save a in the above integral, convert everything else into and utilize the substitution . What integral will you get?   For the above example the technique in can be used, or there are other strategies we haven t covered yet. In any case, there are limitations on each strategy you learn and the only way to become adept at choosing a strategy and using it is through practice and experience. Even then, there will still be integrals that will stump even the expert.  Another trigonometric integral which occurs often is one of the form . If is odd, we can save and convert everything else into cosine via . The substitution should do the trick from here.          First we save a sine.  . Next we let , so that , which gives .   Had the cosine been raised to an odd power in , we could have saved a cosine instead.   Compute .    Notice that in there would have been nothing wrong with computing as follows: It s just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn t want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.      Compute the integral using the substitutions .     Finish example using your results from part (a). Do you get the same solution as before? Explain.      Compute the integral by:     Saving one of the cosines and converting everthing else into sines.      Saving one of the sines and converting everthing else into cosines.      Do you get the same result in parts (a) and (b)? Explain.      What happens if you don t have an odd power of sine or cosine? For example, suppose you have .         Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In we saw that one of the Half Angle formulas from Trigonometry was helpful. In fact, the Half-Angle formlas: are just the tool we need when there is no way to save a sine or cosine. Using these identities in the integral we see that which doesn t seem to help much until we notice that we can use the Half-Angle formula again. This gives     Drills  Rewrite the integral in as and compute the integral again using the Double Angle formula: . Show that you get an equivalent antiderivative.     Show that by using the Half Angle Identity for .     Show that by   Using the Half Angle Identity for .    Using the identity .      Again, one of the reasons (but not the only one) for learning how to do trigonometric integrals is to apply them when doing trigonometric substitutions. We will see others later.   Note to Bud  Later when we do definite integrals, we can mention computing applied to Fourier series.    Note to self  Maybe we should add an integral of the form here so we can refer back to it.     Back to Trigonometric Substitutions  As you ve already seen, a number of applications involve computing integral of expressions involving , , or and we used these to motivate basic trigonometric substitutions to get rid of the square roots which were troubling. Here we will up the ante a bit as we examine more complicated integrands that still warrant a trigonometric substitution. For example, in , we used the substitution to get From our work in , we now have The problem here is that we have information about , namely , not . Or do we?   Use the identity and the appropriate triangle involving , , and to show that    Let s complicate matters even further. For example, suppose we have . As we shall see, our main strategy will be to perform algebraic manipulations to get our integrand to look like one of the above forms. If we algebraically manipulate the integrand a bit, we get   Of course, now we have another problem. We have where we were happy to have before. But since we were going to substitute away anyhow we ll just substitute away instead.  Letting , we proceed as before.     Complete the trigonometric substitution to show that       Of course, now we need to put things back in terms of . As before we will utilize the fact that and use a triangle as before. This is the beauty of using this triangle as we really don t care what is, only that we know its tangent.            Use the above triangle to show that        Use the appropriate trigonometric substitution to compute the following integrals.          If your solution doesn t look exactly like ours don t jump to the conclusion that you are wrong. It is possible to get two different looking antiderivatives which are actual equivalent.             Let s complicate things a bit further. Suppose we have   Once again our strategy is to manipulate the radicand The part under the radical. so that it looks like Completing the square will work: Thus   Use the substitution to show that       Use the appropriate trigonometric substitution to compute       Use the appropriate trigonometric substitution to compute                          Use the substitutions we have studied in this section to show that the antiderivatives given are correct. You may need to you may need to rearrange the integrand algebraically or make other substitutions first.                                                                                                 If we need to compute integral ? the substitution leads to: , which we can rewrite as      Complete this integral by showing that .      Find another substitution that works, compute the integral again using your new substitution, and show that the antiderivative you obtain is equivalent to the antiderivative in part (a).       As we stated earlier a surprising number of integrals involve terms such as , or . When they occur it is often advantageous to use a trigonometric substitution to remove the square root, which is typically a bigger concern than the trigonometric functions. However, you should remember that there are other techniques at your disposal. And frequently, when you have a choice of techniques one will be simpler than the other. So you ll need to be judicious in your choices. For example, consider the integral      Use the trigonometric substitution to compute the above integral.      Now use the non trigonometric substitution to compute the integral.      Show that the antiderivative you obtained in parts (a) and (b) are equivalent.      Which method do you find more appealing? (Or, less unappealing?)     Obviously, we have not covered every type of integral that might occur. We ve only provided some basics that you can build on as you gain experience. As always the key to success is practice, practice, practice!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "
+  "body": "  Integration by Substitution   Over the years many very ingenious techniques have been invented to reduce a difficult differential equation to something more manageable. Very often these techniques and tricks An old joke says that a technique is a trick that you use more than once. come down to finding a clever substitution which reduces the equation in front of us to one that we already know how to solve.         Some Introductory Examples  Entry #7 of tells us that . But with a little cleverness we can use it to evaluate other integrals as well. Cleverness comes in many forms but as we ve seen one of the simplest ways to be clever is to make our formulas easier on the eyes with a substitution.   Recall that to differentiate an expression such as , we used the substitution so that we had . We can use the same substitution to reverse the process.  Suppose we want to evaluate the integral . We make the substitution so that . Substituting these into our integral gives .     Suppose we want to find the most general solution of This is a separable equation so we separate the variables resulting in Integrating both sides we have which we can solve using .     Show that the solution of equation is , where is an unknown constant.     Next suppose we want to solve the differential equation .  Separating variables as before we obtain The integral on the right is the same as the one in equation . The one on the left however is slightly more complicated. In particular it does not appear in so again we have to be clever.  If we make the substitution , then and the above equation is transformed into which we can solve.     Show that the solution of equation is where again is an unknown constant.      Suppose , solve      Find the pattern   Find the most general solution.                                 Assume that , , , , and are all constant:      While it can be fun to do, grinding out integrals for their own sake is a sterile exercise if we re interested in using our mathematics to understand and explain the natural world. In the next section we ll see how we can use the notion of an integral to extend Galileo s work on falling bodies.    Extending Galileo s Results: Air Resistance  When he began his investigations into falling bodies Galileo kept things simple for himself by ignoring the air resistance and we followed Galileo s example in .      We now have the tools we need to generalize Galileo s model to account for resistance. But first we will re-examine our results from using integration notation.  Recall that a dropped ball accelerates at a constant rate of if air resistance is ignored. If we let denote the velocity at time , then this translates into (since is acceleration). Note that we are assuming the positive axis points up.        Separate the variables in this differential equation to show that for some constant    Show that in this case, , the initial velocity of the ball.           From part (a) we see that if denotes the height of the ball at time , then we have the differential equation Separate the variables to obtain for some constant .    Show that in this case, , the initial height of the ball.        The result of  is essentially the same as the content of . We repeated the problem here both to remind you of the result and so that we could couch it in the language of differential equations. That will allow us to extend this to a model in a manner which takes air resistance into account.   Vocabulary drag In general, the faster the body is moving through a fluid (like air or water) the more the fluid tends to resist the motion. You are quite familiar with this. If you hold your hand out of a car window while the car is moving you ll notice that the faster the car moves, the more force you will feel on your hand. Similarly when you are swimming, the harder you pump your hands and feet through the water the more force you will feel resisting the motion. These are examples of the resistive force or drag .  There are many ways that the drag can manifest. Some of the variables that affect the resistance of a body moving through a fluid are the velocity of the body, the viscosity of the fluid, the shape and size of the body, and the turbulence of the fluid.  When the object is relatively small and the medium is highly viscous, a grain of sand falling in water for example, the assumption that the drag is proportional to the velocity of the object makes for a reasonably accurate model. This is called linear drag .  When the object is relatively large and the viscosity of the medium is relatively low, a baseball falling in the air for example, the drag is best modeled by assuming that it is proportional to the square of the velocity of the object. This is called quadratic drag .   Vocabulary drag  linear Of course to get a really accurate picture, we could use both a linear and a quadratic term to represent the drag, but to keep things as simple as possible for now we ll assume that the drag is linear. We can always adjust this later if the need arises.   Cornerstone Problem: Linear Drag and Terminal Velocity: Sand Falling in Water   From the diagram in we see that there are three forces acting on the sand particle falling through water,   the weight of the particle (downward),    the drag that the water imposes on it (upward), and    its buoyancy (upward).      Notice that in this diagram the positive direction is downward.   A circle labeled \"mass\" with one arrow, labeled \"weight\", pointing down, and two arrows, labeled \"drag\" and \"buoyancy,\" pointing up.    The total force acting on the grain will be equal to the sum of those three forces. Thus, according to Newton s Second Law , where is the velocity (so that is acceleration) of the grain, and is time.  The surface of the water is at . Because the positive axis points downward is the (positive) distance that the sand has fallen. Denoting the acceleration due to gravity by as usual we see that .  We have assumed that the drag is proportional to velocity so . Notice that this force is negative as the drag is necessarily in the direction opposite of the motion, so we assume that the parameter is some positive constant and is the velocity.   Vocabulary buoyancy The buoyancy of an object is the upward (negative) force that a surrounding fluid applies to any submerged object. This force is equal to the weight of the fluid being displaced by the object. If we denote the mass of the displaced fluid as then .   Buoyancy  If the density of the object is less than the density of the surrounding medium (water in this case) then the weight of the object and it s boyancy will balance before the object is completely covered. That is, any object which is less dense than its surrounding medium will float.   Thus equation becomes the differential equation . If we assume that the velocity of the particle at the beginning of its fall is then our model for the velocity of a grain of sand falling through water is the IVP                     Solving IVP will yield a function, , which gives the velocity of the grain as a function of time.     The differential equation in IVP is actually a separable equation, but this may not be readily apparent. To see this more clearly make the substitution and show that the differential equation in IVP can be re expressed as Note that (why?),      Find the most general antiderivative of both sides of equation using appropriate entries from . You ll need to make a substitution before using the table.      Use your results from part (b) to show that   These integrations should have produced an arbitrary constant on each side of the equals sign, yet we only have one. Explain why this is still correct.               Solve equation for and show that For convenience we ve used to represent the integration constant in both equation and equation , but it does not represent the same constant in both equations. Explain how the two constants are related.    This formula looks a little scary, but remember that is the proportionality constant for the drag, that is the constant from the first substitution, and that is just the starting velocity, . These are all constants. In fact the only variable in sight is the that appears in the exponential.      Use from the initial condition in IVP , to determine the value of the integration constant in equation and show that      Terminal Velocity  Vocabulary terminal velocity   Compute , and explain why this value is called the terminal velocity of the sand grain settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.                                               More on Substitutions  As we ve seen a clever substitution can be very helpful. The left side equation does not appear in , but the right substitution turned it into an the integral which is. At that point we simply looked it up.  The integration techniques you will be learning in the next few sections do not compute the integrals. They simply transform one integral into another. Your goal will always be for the new integral to be one that you recognize, or that you can compute easily, or that you can find in a table of integrals. As you become more comfortable with the process you will begin to do the simpler steps in your head. This is normal, expected, and even encouraged. However any integration you do can always be broken down into small steps, each of which can be justified. If you have trouble computing a given integral slow down, take it one step at a time and be sure you can justify each step.          Drills  Integration by Substitution  Integration by substitution seems to be a fairly simple technique. And it is simple, at least in concept. But in fact substitution is a very sophisticated idea which is used at all levels of mathematics as you ve already seen. Nearly every integral you do from now on will involve some sort of a substitution at some point in the computation. You need to get as much practice with it as you can.  Compute each of these integrals by making the indicated substitution. Assume is a constant.    ,  Substitution:      ,  Substitution:      ,  Substitution:        Substitution:      ,  Substitution:      ,  Substitution:      ,  Substitution:        Substitution:       For the first four hundred years or so after Calculus was invented it was necessary for scientists, engineers, and mathematicians to memorize a few integrals and to own a table of of known integrals like , but much larger. The image below is a scan of two pages of such a reference.         Use an appropriate substitution to compute each of the following integrals. Use the formulas in both and as needed.  When there are several possible substitutions available but it is not clear which of them will work, or if any of them will, it is normal and very human to sit and stare at the problem wondering which one to use. Don t do that. The problem will not solve itself. Pick one and try it. If that substitution doesn t work, choose another and try again. Keep trying until you find one that works.        This problem can be done by simply expanding the integrand algebraically. But do you really want to do that?       Do you want to expand the integrand algebraically this time?                                                                                         Compute the integral . by multiplying out the integrand and then integrating.      Compute the integral . using the substitution .      Compute the integral . using the substitution .      Show that the answers you obtained in parts (a), (b), and (c) are all equivalent.     Integrals can be unpredictable, even when you are computing them correctly. You ll need to discipline yourself. You will save yourself a great deal of time and frustration if you don t try to anticipate the solution. Don t say to yourself Oh, I see. This antiderivative will look like . . . . That kind of thinking can lead to wasted hours chasing an unworkable approach.  Instead, decide on your first substitution and make it completely. But that is only the first step. Once you decide on a substitution follow it through until you have completely transformed the integral into the new variable. Then look at the new integral with new eyes. Your goal is for the new integral to be easier than the old. Ideally, it will be an integral that you simply know from memory.  The good news is that no substitution is incorrect.  The bad news is that no substitution is incorrect.  Making a substitution simply replaces one integral with another. We want the new integral to be simpler than the original but there are no guarantees. You simply have to try a substitution and see what happens. For example, given We could use the substitution , so that or . But then we d have which is no more doable than the original. If nothing else, this tells us two things:  We need to gain experience on which substitutions transform a given integral into one which is more promising to do, and  We need to develop other integration techniques we can employ when a substitution fails. We will develop the technique for computing both and in .     Drills  Use the entries in the partial table in to evaluate each of the integrals.                 The value of a table of integrals has diminished considerably in the modern world due to the existence of very sophisticated software. Indeed, most of the integrals you will see in this course can be done by simply instructing your smart phone to do the computation. That being so, a natural question is, Why do we insist that you memorize the simpler integrals like the ones in and the basic techniques. There are several reasons.   Intuition (or the lack thereof)  A similar question can be asked about arithmetic. Was it really necessary for you to learn the arithmetic rules in grade school? After all, any calculuation you need to do now, as an adult, can be done more reliably by posing the question to your phone. Was learning arithmetic a wasted effort?  Suppose that,  you had never learned any arithmetic,  you are planning a road trip of miles across a desert, and  there is no source of fuel on the trip.  If your car gets miles per gallon of fuel. How much fuel do you need to bring?  Easy right? You ask your phone how much fuel you need and it says you need gallons. Is that correct? Remember you don t know how to do this calculation yourself. You must rely completely on the software in your phone for the answer. You can only pray that you posed the problem correctly and that your phone correctly interpreted your statement. Since you don t know how to do the computation yourself you have no way of knowing that gallons isn t nearly enough fuel for your trip. Your going to get stranded in the desert.         Mistakes will happen. When they do you need to have enough insight into the problem to know when the numbers are coming out wrong. We made this same point in . Newton s Method is very good when it works but it doesn t always work. You must have enough insight into your problem to separate the wheat from the chaff . A very good way to develop that kind of insight is to do problems without any assistance (software or otherwise).    Convenience:  In this course integrals will often appear as stand alone problems because our goal is to learn how to compute them. In the real world they will far more often come to you as part of a larger, more complex problem. If you are working on such a problem and the expression comes up you d like to be able to say that this is equal to so you can move on to the next step without interupting your work to enter this integral into some software package.  It may not be obvious to you right now that but it will be eventually. This is a fairly simple integral to compute once you ve learned how ( ) and practiced a bit. If it were to come up inside a larger problem it is actually quicker and easier to simply work through it yourself than to search for it on the internet or to type it into some software package in the required format. Perhaps more importantly when you do the computation yourself you will know it is correct. You have no such assurance when using software.  You need to be able to use your tools smoothly and efficiently when you are working, and integration is one of your tools. Having to stop working in the middle of every large computation you encounter in order to enter the smaller computions into software or search for a video on the internet is like having to interrupt a carpentry job to watch a video explaining how to use a a saw each time you need one. It can be done, but it is an onerous task at best. Some things you simply need to know how to do yourself.    Software Doesn t Always Give a Correct Answer  Sometimes computers give the wrong answers. It is that simple. Computer programs are written, either by people or by other programs. In either case errors in programming are unavoidable. They will occur. Even the best written, best tested software will sometimes give you the wrong answer. You need to have enough expertise to recognize when this happens.    Software Doesn t Always Give a Useful Answer  Of course well written, well tested software is usually right. But the most sophisticated mathematical software packages available today have the cumulative experience and knowledge of nearly the entire mathematical community built into them. As a result such software will often give answers which, although correct, are not helpful. Especially for a beginner.  For example we (the authors) entered the integral into one such system We used Wolfram Alpha . . The answer we got back was which is correct, but what does it mean? You will see the function again in where we will explain it, but until then you have no way to interpret this output, so it is useless to you.  Similarly when we entered the integral the same system returned . We (the authors) needed to do some investigating to figure out what this means as the symbolism is not part of our core knowledge. It turns out that represents a particular Appell hypergeometric function.  Does that help you to understand?  The good news is that we re only making a point. Any mathematical software package you use will have built in assumptions about your level of expertise. If those assumptions are wrong you will not be able to understand the output even when it is correct. Or what is worse, you ll think you understand when you don t.  The really good news is that for this course you don t need to know what an Appell hypergeometric function is. Probably you never will.     This is not to say that you should not use these tools at all. Mathematical software is available and it can be a marvelous aid. But it is no substitute for the skill, knowledge, and understanding that come from practicing and mastering these basic integration techniques. Use the software. But use it to help you learn. Use it to check your computations after you ve completed them yourself. When you and the software disagree take the time to figure out what is wrong and who is right. That is when learning happens.    Notice that in we have the entries But we don't have an entry for or for . Substitution allows us to fill in these gaps.         Use an appropriate substitution to show            Apply a similar technique to compute .         Since we could also use the substitution to compute . Do we get the same answer? Explain.     If we try a similar approach for the integral ,  we will hit a dead end. Try it and see. We will develop a more general approach to integrals like these in .    While the purpose of this chapter is to learn techniques for integrating as many differentials as possible, we want to keep our eye on the applications. One of the uses of integration is as a tool for the solution of differential equations.   Quadratic Drag and Terminal Velocity: Sand Falling Through Air  Problem Cornerstone Quadratic Drag         An example of quadratic drag occurs when a ball of mass falls through the Earth s atmosphere. In this case buoyancy is typically negligible so we will disregard it.  First, let be distance the ball has fallen (so the positive axis is pointing downward), with representing the initial position of the ball. As always we denote the acceleration due to gravity by , so the weight of the ball is . Quadratic drag is proportional to the square of the velocity, so , where is a constant that will depend on the medium our ball is falling through (air, in this instance) and is the velocity. For simplicity, we will assume .     Use Newton s Second Law of Motion: ( ), to show that the velocity of the ball must satisfy the IVP:       Show that the IVP in part (b) is equivalent to       Use the substitution to show that the differential equation in IVP can be re-expressed as       Confirm by differentiation that is an antiderivative of . (In we will learn a method for computing directly.)      Use the result of part (d) to integrate the left side of equation and unwind the substitution (from part (c)) to show that       Use the initial condition to show that .      Exponentiate both sides of equation and solve for to show that       Compute to obtain the terminal velocity. Compare this with the terminal velocity we found in .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         The Integral of an Arbitrary Polynomial in and     Integrating Polynomials in Secant and Tangent  This exploration is based on the paper  Integrating Polynomials in Secant and Tangent  , by Jonathan P. McCammond, The American Mathematical Monthly, Nov. 1999, Vol. 106, No. 9. In his paper, McCammond shows that if is any polynomial in two variables then can be evaluated using the substitutions in equations , , , , , and .   We begin by defining and by                                                                                                                 Show that     Show that and     Show that         Secant integral of   Use the results in part (a) to show that       Since we already know that Use the results in part (a) to derive this result again.      Use the results in part (a) to evaluate the integrals. Differentiate your solutions to confirm that they are correct.                                                                                                        The technique in will work for any polynomial in secant and tangent, but it is not always the most efficient or intuitive way to do an integral. For example, we already know    Use the substitutions in to show and use this to show Does this answer differ from what we obtained before? Which method do you prefer?   The integrals of secant and tangent occur frequently enough in applications that you might want to memorize them:                                                                       The procedure described in can be modified to provide a method for evaluating integrals where the integrand involves the cosecant and cotangent functions.     Find trigonometric identities involving the secant and cotangent functions which are analogous to equations , , , , , and .      Replace and with and , respectively in parts (b), (c), and (d) of and use your results in part (a) to evaluate the integrals you obtain.  These integrals appear in applications often enough that you will probably find it useful to commit them both to memory.      In replace and with and , respectively and use your results in part (a) to evaluate all of the integrals that result.                                   As the previous problem indicates, we can theoretically integrate any polynomial in cosecant and cotangent, but in practice, this rarely comes up. This is due to following facts which come from the names cosecant (complement s secant) and cotangent (complement s tangent):   Thus, the substitution will transform any polynomial in cosecant and cotangent into a polynomial in secant and tangent.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Trigonometric Integrals    describes a strategy for integrating any polynomial in secant and tangent, but it is not always the best strategy. For example, we already know that and Other integrals can be computed without resorting to the full strength of  . For example if we make the substitution then so that    Rewrite and use the substitution to compute this integral. Do you obtain the same answer as before?   The above typifies two different strategies for computing an integral such as . If is an even integer, we can save and convert everything else into using the identity . We can then use the substitution . If is odd and , we can save a and convert everything else into using .    Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in  will work, but it is not necessarily always the most efficient method available. Use whatever method seems simplest to you.                                               As we said before, no substitution is wrong, but it might not change our integral into an easier one. For example, suppose we have If we save a and convert what is left to tangent, then the substitution yields which is not necessarily easier to handle.   Save a in the above integral, convert everything else into and utilize the substitution . What integral will you get?   For the above example the technique in can be used, or there are other strategies we haven t covered yet. In any case, there are limitations on each strategy you learn and the only way to become adept at choosing a strategy and using it is through practice and experience. Even then, there will still be integrals that will stump even the expert.  Another trigonometric integral which occurs often is one of the form . If is odd, we can save and convert everything else into cosine via . The substitution should do the trick from here.          First we save a sine.  . Next we let , so that , which gives .   Had the cosine been raised to an odd power in , we could have saved a cosine instead.   Compute .    Notice that in there would have been nothing wrong with computing as follows: It s just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn t want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.      Compute the integral using the substitutions .     Finish example using your results from part (a). Do you get the same solution as before? Explain.      Compute the integral by:     Saving one of the cosines and converting everthing else into sines.      Saving one of the sines and converting everthing else into cosines.      Do you get the same result in parts (a) and (b)? Explain.      What happens if you don t have an odd power of sine or cosine? For example, suppose you have .         Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In we saw that one of the Half Angle formulas from Trigonometry was helpful. In fact, the Half-Angle formlas: are just the tool we need when there is no way to save a sine or cosine. Using these identities in the integral we see that which doesn t seem to help much until we notice that we can use the Half-Angle formula again. This gives     Drills  Rewrite the integral in as and compute the integral again using the Double Angle formula: . Show that you get an equivalent antiderivative.     Show that by using the Half Angle Identity for .     Show that by   Using the Half Angle Identity for .    Using the identity .      Again, one of the reasons (but not the only one) for learning how to do trigonometric integrals is to apply them when doing trigonometric substitutions. We will see others later.   Note to Bud  Later when we do definite integrals, we can mention computing applied to Fourier series.    Note to self  Maybe we should add an integral of the form here so we can refer back to it.     Trigonometric (Inverse) Substitutions  In we determined that the curve representing the catenary (hanging chain) has to satisfy the second order differential equation but we did not have the tools to derive the catenary curve directly from equation . Now we do.  Because equation involves the second derivative (is a second order equation ) solving it will require two integrations, each of which will generate an arbitrary constant. We will state and use the initial conditions at the appropriate time. For now we want to focus on solving the differential equation.  The only differential equations we ve solved in the past have been first order equations (only the first derivative appeared). Fortunately by making the substitution in equation we can transform equation into the first order equation which we can solve. Separating the variables gives us The substitution we need is but this is not at all obvious. We will discuss how we came up with this particular substitution later. For now we simply observe that this has a slightly different character than the substitutions we ve made before. In the past our substitutions allowed us to make things simpler, or easier on our eyes.   But if we make the substitution we get which results in: This is not simpler. If anything it is more complicated In this situation a former teacher of one of the authors was fond of joking Why simplify when you can complicate? . However it does simplify in the next step. Since we have and since we now know an antiderivative for we have At this point we need to convert our variable from back into and then ultimately into .  From our substitution we have .  We could use equation , to find in terms of but it is simpler to recall basic trigonometry, and draw a right triangle with in standard position     as in .   Diagram of a right triangle where and .   Diagram of a right triangle with angle theta in standard position.     The Mnemonic Triangle  The mnemonic triangle in  is slightly deceptive. It assumes that is in the first quadrant but, as stated, nothing in the problem forces that to be true.   In particular will be in the fourth quadrant if . So we may be introducing an error with our sketch. Fortunately the error, if there is one, will only be the algebraic signs of the quantities involved: We might get a negative value when we it should be positive or vice versa . Most of the time this is not an issue it is not in this problem and in any case we can correct any such errors after finding the necessary formulas first. This is why we call this a mnemonic and not a technique.   Since we ve got two sides of a right triangle we can compute the third side from the Pythagorean relation as shown. And knowing the length of all three sides of a right triangle allows us to compute the numerical value of all of the trigonometic functions of . So we have which we can use to put equation in terms of : .     As clearly as you can, explain how you know that that .      Use the result in part (a) to show that      Thus we have which gives a relation between and . We still need to find , but that will be a bit easier if we first find the value of the constant in equation .   The Hanging Chain Problem (Finally!)  The Hanging Chain Derivation of the Solution    Place the origin of your coordinate system at the lowest point on the chain and use what you know about the slope of a function an optimal point to show that .    Recall that .      Use equation to show that must satisfy       Square both sides of the result in part (b) to show that must satisfy and ultimately       At this point we ve reduced equation to the differential equation   Separate the variables and integrate both sides of equation . Use the fact that to derive the solution of equation . Compare your solution to the one derived in .     Here is another application where occurs. This one involves the catenary which we introduced in and mentioned again in .  We saw in that to derive a formula for the catenary curve we need to determine from equation which requires that we compute the integral . It is not at all obvious but the substitution we need is . We will discuss how we came up with this particular substitution in the next section . For now we simply observe that this has a slightly different character than those we ve made before. In the past we made a substitution by setting the substitution variable (usually called ) equal to some complex expression in order to replace it, thereby making things easier on our eyes, or simpler.               But remember that our goal is not to make the integral simpler, our goal is to make the integral doable. In this case the trigonometric identity will be very helpful.  Thus we see that because as we observed in  .  The Absolute Value Function is relatively simple but when it appears in conjunction with other more complicated functions it tends to be more difficult to work with than it really should be. It is annoying, but it is also unavoidable. The square root of is ,not no matter how much we d like it to be, and that fact has to be dealt with.  In any case dealing with the details of the Absolute Value Function is a complication we don t need right now so we will impose the condition which guarantees that and so . This is not a hindrance because it will still be true that   From equation we see that So we see that computing is at the heart of a couple of applications. There are certainly more, but for now let s deal with this integral. While we are at it, we will go a step further.  In the previous subsection we saw that the substitution allows us to compute the integral but it is not at all clear what might have led us to that substitution. The simplest way to explain this is to observe that if then the identity , simplifies the integrand considerably because dealing with the trigonometric function is simpler that dealing with the square root.  But there is a larger pattern in play here which we don t want to miss. We will investigate that pattern in this subsection.  In and we found approximations to solutions of the Pursuit Problem and the Tractrix respectively. We now have the tools we need to solve them exactly.   The Pursuit Problem    The Pursuit Curve.   On the Cartesian plane a vertical line marked L passes through the point (1,0). The point D is at coordinates (1,vt) on the line L. A curve s begins at the origin bends upward as it approaches the line L. The point C is marked on s at coordinates (x,y). A ray tangent to s begins at (x,y) an points to D.    Suppose a cat , is running along the vertical line in the figure at a constant speed . When the cat reaches the point , a dog , starts chasing the cat by running directly at it. Assuming that the speed of the dog is times the speed of the cat (where ) and always runs directly at the cat, find the path that the dog traverses. Such a path is called a pursuit curve. The diagram in shows the situation at time .     Let denote the distance the dog has traveled along its path at time . Show that the dog s path must satisfy the IVP     You ll need to compare a differential triangle and an ordinary triangle, neither of which is shown in the figure.       Equation is clearly a separable equation since and can be separated easily. The problem is that is also a variable. We d like to get in terms of either or but we know almost nothing about it.  But only almost. Since is the arc length of the dog s path we know that is the hypotenuse of the differential right triangle with legs and so, .  Differentiate both sides of equation with respect to and show that the dog s path must satisfy the differential equation so that     Once you ve differentiated equation it will probably not be at all clear how to get to equation from there. Don t let yourself be intimidated by notation. This is an algebra problem. Proceed carefully, one step at a time.      Because equation involves the second derivative of it is hard to think about. We ll make it a little easier on our eyes with a substitution.  Show that with the substitution  equation becomes       Like IVP , equation is a second order equation so two initial conditions are needed for a unique solution.  Explain how you know that the initial conditions are true.                        Use one of the initial conditions from part (c) and the trigonometric substitution in equation to show that is the solution of IVP .         Use equations and and the other initial condition from part (c) to show that the dog s path is the graph of the function .      What are the coordinates of the point where the dog catches the cat?     As we saw in on quadratic drag, the tangent function is not the only trigonometric function that proves useful in computing certain integrals. They arise naturally in many situations.   The Tractrix         The following is the view from above of a tractor trailer. Initially, the center of the front axle of the tractor is at the origin and the center of the rear axle is at the point .   Sketch of a tractor trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels upward along the axis (the line ) and that the rear wheels don t slip.     Show the path that the center of the rear axle of the trailer follows must satisfy the IVP       Find the equation, of the tractrix.    After you separate the variables make the substitution .      Plot your solution on the plane.                                                         There is one more trigonometric substitution that you should know. When dealing with , it is often advantageous to let so that . In order to free ourselves from the complications of the absolute value we restrict to the values in . This will ensure that can take on any value in , while still guaranteeing that so that .  It is both cumbersome and confusing to keep track of the restrictions on in each of these substitutions. So in practice we will simply suppress all of that and just say that for integrals with the understanding that was chosen in a manner which makes it unnecessary to fuss over any absolute values that might come up.  A suggestion for remembering which substitution to use comes from the identities which can be rewritten as and Since it is often easier to deal with trigonometric functions than square roots in an integral, it can be advantageous to replace with the appropriate trigonometric function to obtain one of the above identities.    We have the following entries from :   Let s pretend for a moment that you ve forgotten these entries (Though we know you would never do that.). Use the appropriate trigonometric substitution to obtain those three integrals on the right-hand side.      We know that . What about something like   Use the substitution to show that                                                                                 As you ve already seen, a number of applications involve computing integral of expressions involving , , or and we used these to motivate basic trigonometric substitutions to get rid of the square roots which were troubling. Here we will up the ante a bit as we examine more complicated integrands that still warrant a trigonometric substitution. For example, in , we used the substitution to get From our work in , we now have The problem here is that we have information about , namely , not . Or do we?   Use the identity and the appropriate triangle involving , , and to show that    Let s complicate matters even further. For example, suppose we have . As we shall see, our main strategy will be to perform algebraic manipulations to get our integrand to look like one of the above forms. If we algebraically manipulate the integrand a bit, we get   Of course, now we have another problem. We have where we were happy to have before. But since we were going to substitute away anyhow we ll just substitute away instead.  Letting , we proceed as before.     Complete the trigonometric substitution to show that       Of course, now we need to put things back in terms of . As before we will use the fact that and use a triangle as before. The beauty of using this triangle is that we really don t care what is. We only need to know its tangent.            Use the above triangle to show that        Use the appropriate trigonometric substitution to compute the following integrals.          If your solution doesn t look exactly like ours don t jump to the conclusion that you are wrong. It is possible to get two different looking antiderivatives which are actual equivalent.             Let s complicate things a bit further. Suppose we have   Once again our strategy is to manipulate the radicand The part under the radical. so that it looks like Completing the square will work: Thus   Use the substitution to show that       Use the appropriate trigonometric substitution to compute       Use the appropriate trigonometric substitution to compute                          Use the substitutions we have studied in this section to show that the antiderivatives given are correct. You may need to you may need to rearrange the integrand algebraically or make other substitutions first.                                                                                                 If we need to compute integral ? the substitution leads to: , which we can rewrite as      Complete this integral by showing that .      Find another substitution that works, compute the integral again using your new substitution, and show that the antiderivative you obtain is equivalent to the antiderivative in part (a).       As we stated earlier a surprising number of integrals involve terms such as , or . When they occur it is often advantageous to use a trigonometric substitution to remove the square root, which is typically a bigger concern than the trigonometric functions. However, you should remember that there are other techniques at your disposal. And frequently, when you have a choice of techniques one will be simpler than the other. So you ll need to be judicious in your choices. For example, consider the integral      Use the trigonometric substitution to compute the above integral.      Now use the non trigonometric substitution to compute the integral.      Show that the antiderivative you obtained in parts (a) and (b) are equivalent.      Which method do you find more appealing? (Or, less unappealing?)     Obviously, we have not covered every type of integral that might occur. We ve only provided some basics that you can build on as you gain experience. As always the key to success is practice, practice, practice!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "
 },
 {
   "id": "EXAMPLEVerySimpleSubst",
@@ -10483,7 +10492,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "19.1.1.2",
   "title": "",
-  "body": " Suppose we want to find the most general solution of Since this is a separable equation we separate the variable resulting in and integrating both sides we have which we can solve using .  "
+  "body": " Suppose we want to find the most general solution of This is a separable equation so we separate the variables resulting in Integrating both sides we have which we can solve using .  "
 },
 {
   "id": "SECTIONIntroSubstExample-5",
@@ -10501,7 +10510,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "19.1.1.4",
   "title": "",
-  "body": " Now suppose we complicate  a bit. Suppose we want to solve the differential equation .  Separating variables as before we obtain The integral on the right is the same as before, but the one on the left does not appear in so we have to be clever.  If we make the substitution , then and the above equation is transformed into which we can solve.  "
+  "body": " Next suppose we want to solve the differential equation .  Separating variables as before we obtain The integral on the right is the same as the one in equation . The one on the left however is slightly more complicated. In particular it does not appear in so again we have to be clever.  If we make the substitution , then and the above equation is transformed into which we can solve.  "
 },
 {
   "id": "SECTIONIntroSubstExample-7",
@@ -10531,22 +10540,31 @@ var ptx_lunr_docs = [
   "body": " Find the pattern   Find the most general solution.                                 Assume that , , , , and are all constant:     "
 },
 {
-  "id": "SUBSECTIONAirResistance-4",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONAirResistance-4",
-  "type": "Problem",
-  "number": "19.1.2.1",
-  "title": "",
-  "body": " Separate the variables in this differential equation to show that for some constant Show that in this case, , the initial velocity of the ball.  "
-},
-{
   "id": "PROBLEMFallingBodyNoFriction",
   "level": "2",
   "url": "SECTIONSubstMethod.html#PROBLEMFallingBodyNoFriction",
   "type": "Problem",
-  "number": "19.1.2.2",
+  "number": "19.1.2.1",
   "title": "",
-  "body": " Separate the variables in this differential equation to obtain for some constant . Show that in this case, the initial height of the ball.  "
+  "body": "      Separate the variables in this differential equation to show that for some constant    Show that in this case, , the initial velocity of the ball.           From part (a) we see that if denotes the height of the ball at time , then we have the differential equation Separate the variables to obtain for some constant .    Show that in this case, , the initial height of the ball.       "
+},
+{
+  "id": "SUBSECTIONAirResistance-6",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONAirResistance-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "drag "
+},
+{
+  "id": "SUBSECTIONAirResistance-7",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONAirResistance-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "drag "
 },
 {
   "id": "SUBSECTIONAirResistance-8",
@@ -10555,30 +10573,12 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "drag "
+  "body": "drag linear drag "
 },
 {
   "id": "SUBSECTIONAirResistance-9",
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONAirResistance-9",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "drag "
-},
-{
-  "id": "SUBSECTIONAirResistance-10",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONAirResistance-10",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "drag linear drag "
-},
-{
-  "id": "SUBSECTIONAirResistance-11",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONAirResistance-11",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -10589,9 +10589,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#CORNERSTONEFallingWithDrag1",
   "type": "Cornerstone Problem",
-  "number": "19.1.2.3",
+  "number": "19.1.2.2",
   "title": "Cornerstone Problem: Linear Drag and Terminal Velocity: Sand Falling in Water.",
-  "body": " Cornerstone Problem: Linear Drag and Terminal Velocity: Sand Falling in Water    Notice that in this diagram the positive direction is downward.   A circle labeled \"mass\" with one arrow, labeled \"weight\", pointing down, and two arrows, labeled \"drag\" and \"buoyancy,\" pointing up.    From the diagram in above we see that there are three forces acting on the sand particle falling through water,   the weight of the particle (downward),    the drag that the water imposes on it (upward), and    its buoyancy (upward).     The total force acting on the grain will be equal to the sum of those three forces. Thus, according to Newton s Second Law ( ), where is the velocity (so that is acceleration) of the grain, and is time.  Because the positive axis points downward is the (positive) distance that the sand has fallen and is the surface of the water. If, as usual, we denote the acceleration due to gravity by then .  We have assumed that the drag is proportional to velocity so . Notice that this force is negative as the drag is necessarily in the direction opposite of the motion, so we assume that the parameter is some positive constant and is the velocity.   Vocabulary buoyancy The buoyancy of an object is the upward (negative) force that a surrounding fluid applies to any submerged object. This force is equal to the weight of the fluid being displaced by the object. If we denote the mass of the displaced fluid as then .    If the density of the object is less than the density of water then the weight of the object and it s boyancy will balance before the object is completely covered. That is, any object less dense than water will float atop the water.   Thus equation becomes the differential equation . If we assume that the velocity of the particle at the beginning of its fall is then our model for the velocity of a grain of sand falling through water is the IVP                     Solving IVP will yield a function, , which gives the velocity of the grain as a function of time.     The differential equation in IVP is actually a separable equation, but this may not be readily apparent. To see this more clearly make the substitution and show that the differential equation in IVP can be re expressed as Note that (why?),      Find the most general antiderivative of both sides of equation using appropriate entries from . You may need to make a substitution before using the table.      Use your results from part (b) to show that   These integrations should have produced an arbitrary constant on each side of the equals sign, yet we only have one. Explain why this is still correct.               Solve equation for and show that For convenience we ve used to represent the integration constant in both equation and equation , but it does not represent the same constant in both equations. Explain how the two constants are related.    This formula looks a little scary, but remember that is the proportionality constant for the drag, that is the constant from the first substitution, and that is just the starting velocity, . These are all constants. In fact the only variable in sight it the that appears in the exponential.      Use from the initial condition in IVP , to determine the value of the integration constant in equation and show that      Terminal Velocity  Vocabulary terminal velocity   Compute , and explain why this value is called the terminal velocity of the sand grain settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.              "
+  "body": " Cornerstone Problem: Linear Drag and Terminal Velocity: Sand Falling in Water   From the diagram in we see that there are three forces acting on the sand particle falling through water,   the weight of the particle (downward),    the drag that the water imposes on it (upward), and    its buoyancy (upward).      Notice that in this diagram the positive direction is downward.   A circle labeled \"mass\" with one arrow, labeled \"weight\", pointing down, and two arrows, labeled \"drag\" and \"buoyancy,\" pointing up.    The total force acting on the grain will be equal to the sum of those three forces. Thus, according to Newton s Second Law , where is the velocity (so that is acceleration) of the grain, and is time.  The surface of the water is at . Because the positive axis points downward is the (positive) distance that the sand has fallen. Denoting the acceleration due to gravity by as usual we see that .  We have assumed that the drag is proportional to velocity so . Notice that this force is negative as the drag is necessarily in the direction opposite of the motion, so we assume that the parameter is some positive constant and is the velocity.   Vocabulary buoyancy The buoyancy of an object is the upward (negative) force that a surrounding fluid applies to any submerged object. This force is equal to the weight of the fluid being displaced by the object. If we denote the mass of the displaced fluid as then .   Buoyancy  If the density of the object is less than the density of the surrounding medium (water in this case) then the weight of the object and it s boyancy will balance before the object is completely covered. That is, any object which is less dense than its surrounding medium will float.   Thus equation becomes the differential equation . If we assume that the velocity of the particle at the beginning of its fall is then our model for the velocity of a grain of sand falling through water is the IVP                     Solving IVP will yield a function, , which gives the velocity of the grain as a function of time.     The differential equation in IVP is actually a separable equation, but this may not be readily apparent. To see this more clearly make the substitution and show that the differential equation in IVP can be re expressed as Note that (why?),      Find the most general antiderivative of both sides of equation using appropriate entries from . You ll need to make a substitution before using the table.      Use your results from part (b) to show that   These integrations should have produced an arbitrary constant on each side of the equals sign, yet we only have one. Explain why this is still correct.               Solve equation for and show that For convenience we ve used to represent the integration constant in both equation and equation , but it does not represent the same constant in both equations. Explain how the two constants are related.    This formula looks a little scary, but remember that is the proportionality constant for the drag, that is the constant from the first substitution, and that is just the starting velocity, . These are all constants. In fact the only variable in sight is the that appears in the exponential.      Use from the initial condition in IVP , to determine the value of the integration constant in equation and show that      Terminal Velocity  Vocabulary terminal velocity   Compute , and explain why this value is called the terminal velocity of the sand grain settling in the water. Notice that the terminal velocity is independent of . Does this make sense physically? Explain.              "
 },
 {
   "id": "DRILLIntSubDrills",
@@ -10612,27 +10612,27 @@ var ptx_lunr_docs = [
   "body": "     "
 },
 {
-  "id": "SUBSECTIONSimpleSubstitution-8",
+  "id": "SUBSECTIONSimpleSubstitution-7",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-8",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-7",
   "type": "Problem",
   "number": "19.1.3.3",
   "title": "",
-  "body": " Use an appropriate substitution to compute each of the following integrals. Use the formulas in both and as needed.  When there are several possible substitutions available but it is not clear which of them will work, or if any of them will, it is normal and very human to sit and stare at the problem wondering which one to use. Don t do that. The problem will not solve itself. Pick one substitution, try it, and take the new integral as far as you can. If that substitution doesn t work, choose another substitution and try again. Keep trying until you find one that works.        This problem can be done by simply expanding the integrand algebraically. But do you really want to do that?       Do you want to expand the integrand algebraically this time?                                                                                     "
+  "body": " Use an appropriate substitution to compute each of the following integrals. Use the formulas in both and as needed.  When there are several possible substitutions available but it is not clear which of them will work, or if any of them will, it is normal and very human to sit and stare at the problem wondering which one to use. Don t do that. The problem will not solve itself. Pick one and try it. If that substitution doesn t work, choose another and try again. Keep trying until you find one that works.        This problem can be done by simply expanding the integrand algebraically. But do you really want to do that?       Do you want to expand the integrand algebraically this time?                                                                                     "
 },
 {
-  "id": "SUBSECTIONSimpleSubstitution-9",
+  "id": "SUBSECTIONSimpleSubstitution-8",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-9",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-8",
   "type": "Problem",
   "number": "19.1.3.4",
   "title": "",
   "body": "   Compute the integral . by multiplying out the integrand and then integrating.      Compute the integral . using the substitution .      Compute the integral . using the substitution .      Show that the answers you obtained in parts (a), (b), and (c) are all equivalent.    "
 },
 {
-  "id": "SUBSECTIONSimpleSubstitution-13",
+  "id": "SUBSECTIONSimpleSubstitution-14",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-13",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-14",
   "type": "Drill",
   "number": "19.1.3.5",
   "title": "",
@@ -10645,50 +10645,32 @@ var ptx_lunr_docs = [
   "type": "Problem",
   "number": "19.1.3.6",
   "title": "",
-  "body": "   Use an appropriate substitution on the above integral to show       Apply a similar technique to compute .    "
-},
-{
-  "id": "SUBSECTIONSimpleSubstitution-18",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-18",
-  "type": "Problem",
-  "number": "19.1.3.7",
-  "title": "",
-  "body": " Previously we computed using the identity . We could also use the identity .  Do we get a different answer? Explain.  "
+  "body": "  Notice that in we have the entries But we don't have an entry for or for . Substitution allows us to fill in these gaps.         Use an appropriate substitution to show            Apply a similar technique to compute .         Since we could also use the substitution to compute . Do we get the same answer? Explain.     If we try a similar approach for the integral ,  we will hit a dead end. Try it and see. We will develop a more general approach to integrals like these in .   "
 },
 {
   "id": "CORNERSTONEFallingWithQuadDrag",
   "level": "2",
   "url": "SECTIONSubstMethod.html#CORNERSTONEFallingWithQuadDrag",
   "type": "Cornerstone Problem",
-  "number": "19.1.3.8",
+  "number": "19.1.3.7",
   "title": "Quadratic Drag and Terminal Velocity: Sand Falling Through Air.",
-  "body": " Quadratic Drag and Terminal Velocity: Sand Falling Through Air  Problem Cornerstone Quadratic Drag   In we computed the terminal velocity of an object falling with linear drag . Next we will consider quadratic drag .  An example of this would be a ball of mass falling through the Earth s atmosphere. In this case buoyancy is typically negligible so we will disregard it. First, let be distance the ball has fallen (so the positive axis is pointing downward), with representing the initial position of the ball. As always we denote the acceleration due to gravity by , so the weight of the ball is . Quadratic drag is proportional to the square of the velocity, so , where is a constant that will depend on the medium our ball is falling through (air, in this instance) and is the velocity. For simplicity, we will assume .     Use Newton s Second Law of Motion: ( ), to show that the velocity of the ball must satisfy the IVP:       Show that the IVP in part (b) is equivalent to       Use the substitution to show that the differential equation in IVP can be re-expressed as                       "
-},
-{
-  "id": "SUBSECTIONSimpleSubstitution-24",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-24",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Inverse Substitution "
+  "body": " Quadratic Drag and Terminal Velocity: Sand Falling Through Air  Problem Cornerstone Quadratic Drag         An example of quadratic drag occurs when a ball of mass falls through the Earth s atmosphere. In this case buoyancy is typically negligible so we will disregard it.  First, let be distance the ball has fallen (so the positive axis is pointing downward), with representing the initial position of the ball. As always we denote the acceleration due to gravity by , so the weight of the ball is . Quadratic drag is proportional to the square of the velocity, so , where is a constant that will depend on the medium our ball is falling through (air, in this instance) and is the velocity. For simplicity, we will assume .     Use Newton s Second Law of Motion: ( ), to show that the velocity of the ball must satisfy the IVP:       Show that the IVP in part (b) is equivalent to       Use the substitution to show that the differential equation in IVP can be re-expressed as       Confirm by differentiation that is an antiderivative of . (In we will learn a method for computing directly.)      Use the result of part (d) to integrate the left side of equation and unwind the substitution (from part (c)) to show that       Use the initial condition to show that .      Exponentiate both sides of equation and solve for to show that       Compute to obtain the terminal velocity. Compare this with the terminal velocity we found in .                      "
 },
 {
   "id": "CORNERSTONEIntegralSecant",
   "level": "2",
   "url": "SECTIONSubstMethod.html#CORNERSTONEIntegralSecant",
   "type": "Cornerstone Problem",
-  "number": "19.1.3.9",
+  "number": "19.1.3.8",
   "title": "The Integral of an Arbitrary Polynomial in <span class=\"process-math\">\\(\\boldsymbol{\\sec(x)} \\)<\/span> and <span class=\"process-math\">\\(\\boldsymbol{\\tan{(x)}}\\)<\/span>.",
   "body": " The Integral of an Arbitrary Polynomial in and     Integrating Polynomials in Secant and Tangent  This exploration is based on the paper  Integrating Polynomials in Secant and Tangent  , by Jonathan P. McCammond, The American Mathematical Monthly, Nov. 1999, Vol. 106, No. 9. In his paper, McCammond shows that if is any polynomial in two variables then can be evaluated using the substitutions in equations , , , , , and .   We begin by defining and by                                                                                                                 Show that     Show that and     Show that         Secant integral of   Use the results in part (a) to show that       Since we already know that Use the results in part (a) to derive this result again.      Use the results in part (a) to evaluate the integrals. Differentiate your solutions to confirm that they are correct.                                                                                                       "
 },
 {
-  "id": "SUBSECTIONSimpleSubstitution-32",
+  "id": "SUBSECTIONSimpleSubstitution-22",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-32",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONSimpleSubstitution-22",
   "type": "Problem",
-  "number": "19.1.3.10",
+  "number": "19.1.3.9",
   "title": "",
   "body": " Use the substitutions in to show and use this to show Does this answer differ from what we obtained before? Which method do you prefer?  "
 },
@@ -10697,97 +10679,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#PROBLEMPolyCscCotByTrigSub",
   "type": "Problem",
-  "number": "19.1.3.11",
+  "number": "19.1.3.10",
   "title": "",
   "body": "  The procedure described in can be modified to provide a method for evaluating integrals where the integrand involves the cosecant and cotangent functions.     Find trigonometric identities involving the secant and cotangent functions which are analogous to equations , , , , , and .      Replace and with and , respectively in parts (b), (c), and (d) of and use your results in part (a) to evaluate the integrals you obtain.  These integrals appear in applications often enough that you will probably find it useful to commit them both to memory.      In replace and with and , respectively and use your results in part (a) to evaluate all of the integrals that result.                                  "
-},
-{
-  "id": "SUBSECTIONHangingChainSolDeriv-3-2",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONHangingChainSolDeriv-3-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "second derivative "
-},
-{
-  "id": "FIGURETrigIdent",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#FIGURETrigIdent",
-  "type": "Figure",
-  "number": "19.1.4.1",
-  "title": "",
-  "body": " Diagram of a right triangle where and .   Diagram of a right triangle with angle theta in standard position.   "
-},
-{
-  "id": "SUBSECTIONHangingChainSolDeriv-9",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONHangingChainSolDeriv-9",
-  "type": "Problem",
-  "number": "19.1.4.2",
-  "title": "",
-  "body": "   As clearly as you can, explain how you know that that .      Use the result in part (a) to show that     "
-},
-{
-  "id": "SUBSECTIONHangingChainSolDeriv-11",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONHangingChainSolDeriv-11",
-  "type": "Problem",
-  "number": "19.1.4.3",
-  "title": "The Hanging Chain Problem (Finally!).",
-  "body": " The Hanging Chain Problem (Finally!)  The Hanging Chain Derivation of the Solution    Recall that the lowest point on the chain is at the point . Use IVP to show that so that .      Use equation to show that must satisfy       Square both sides of the result in part (b) to show that must satisfy and ultimately       So, we ve reduced the original catenary problem, IVP to solving the IVP   Separate the variables and integrate both sides of IVP to derive (finally) the solution of equation .  Compare your solution to the one derived in .    "
-},
-{
-  "id": "PROBLEMQuadDragConclusion",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#PROBLEMQuadDragConclusion",
-  "type": "Problem",
-  "number": "19.1.4.4",
-  "title": "Quadratic Drag Conclusion.",
-  "body": " Quadratic Drag Conclusion   In we saw that the problem of determining the velocity of an object falling subject to quadratic drag came down to solving this equation where we had made the substitution .     Integrate the left side of equation and unwind the substitution to show that       Use the initial condition to show that .      Exponentiate both sides of equation and solve for to show that       Compute to obtain the terminal velocity. Compare this with the terminal velocity we found in .    "
-},
-{
-  "id": "CORNERSTONEPursuitCurve1",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#CORNERSTONEPursuitCurve1",
-  "type": "Cornerstone Problem",
-  "number": "19.1.5.1",
-  "title": "The Pursuit Problem.",
-  "body": " The Pursuit Problem    The Pursuit Curve.   On the Cartesian plane a vertical line marked L passes through the point (1,0). The point D is at coordinates (1,vt) on the line L. A curve s begins at the origin bends upward as it approaches the line L. The point C is marked on s at coordinates (x,y). A ray tangent to s begins at (x,y) an points to D.    Suppose a cat , is running along the vertical line in the figure at a constant speed . When the cat reaches the point , a dog , starts chasing the cat by running directly at it. Assuming that the speed of the dog is times the speed of the cat (where ) and always runs directly at the cat, find the path that the dog traverses. Such a path is called a pursuit curve. The diagram in shows the situation at time .     Let denote the distance the dog has traveled along its path at time . Show that the dog s path must satisfy the IVP     You ll need to compare a differential triangle and an ordinary triangle, neither of which is shown in the figure.       Equation is clearly a separable equation since and can be separated easily. The problem is that is also a variable. We d like to get in terms of either or but we know almost nothing about it.  But only almost. Since is the arc length of the dog s path we know that is the hypotenuse of the differential right triangle with legs and so, .  Differentiate both sides of equation with respect to and show that the dog s path must satisfy the differential equation so that     Once you ve differentiated equation it will probably not be at all clear how to get to equation from there. Don t let yourself be intimidated by notation. This is an algebra problem. Proceed carefully, one step at a time.      Because equation involves the second derivative of it is hard to think about. We ll make it a little easier on our eyes with a substitution.  Show that with the substitution  equation becomes       Like IVP , equation is a second order equation so two initial conditions are needed for a unique solution.  Explain how you know that the initial conditions are true.                        Use one of the initial conditions from part (c) and the trigonometric substitution in equation to show that is the solution of IVP .         Use equations and and the other initial condition from part (c) to show that the dog s path is the graph of the function .      What are the coordinates of the point where the dog catches the cat?    "
-},
-{
-  "id": "CORNERSTONETractrixProblem",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#CORNERSTONETractrixProblem",
-  "type": "Cornerstone Problem",
-  "number": "19.1.5.3",
-  "title": "The Tractrix.",
-  "body": " The Tractrix         The following is the view from above of a tractor trailer. Initially, the center of the front axle of the tractor is at the origin and the center of the rear axle is at the point .   Sketch of a tractor trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels upward along the axis (the line ) and that the rear wheels don t slip.     Show the path that the center of the rear axle of the trailer follows must satisfy the IVP       Find the equation, of the tractrix.    After you separate the variables make the substitution .      Plot your solution on the plane.    "
-},
-{
-  "id": "SUBSECTIONTrigSubst-11",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-11",
-  "type": "Problem",
-  "number": "19.1.5.5",
-  "title": "",
-  "body": "  We have the following lines from :   Let s pretend for a moment that you ve forgotten these lines (Though we know you would never do that.). Use the appropriate trigonometric substitution to obtain those three integrals on the right-hand side.   "
-},
-{
-  "id": "SUBSECTIONTrigSubst-13",
-  "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-13",
-  "type": "Problem",
-  "number": "19.1.5.6",
-  "title": "",
-  "body": "  Use the substitution to show that    "
 },
 {
   "id": "SUBSECTIONTrigIntegrals-3",
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-3",
   "type": "Problem",
-  "number": "19.1.6.1",
+  "number": "19.1.4.1",
   "title": "",
   "body": " Rewrite and use the substitution to compute this integral. Do you obtain the same answer as before?  "
 },
@@ -10796,7 +10697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#PROBLEMPolySecTanByTrigSub",
   "type": "Problem",
-  "number": "19.1.6.2",
+  "number": "19.1.4.2",
   "title": "",
   "body": "  Evaluate the following integrals and differentiate your solution to confirm that it is correct. The method we ve described in  will work, but it is not necessarily always the most efficient method available. Use whatever method seems simplest to you.                                              "
 },
@@ -10805,7 +10706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-7",
   "type": "Problem",
-  "number": "19.1.6.3",
+  "number": "19.1.4.3",
   "title": "",
   "body": " Save a in the above integral, convert everything else into and utilize the substitution . What integral will you get?  "
 },
@@ -10814,7 +10715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#OddSinPower",
   "type": "Example",
-  "number": "19.1.6.4",
+  "number": "19.1.4.4",
   "title": "",
   "body": "        First we save a sine.  . Next we let , so that , which gives .  "
 },
@@ -10823,7 +10724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-12",
   "type": "Problem",
-  "number": "19.1.6.5",
+  "number": "19.1.4.5",
   "title": "",
   "body": " Compute .  "
 },
@@ -10832,7 +10733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-13",
   "type": "Example",
-  "number": "19.1.6.6",
+  "number": "19.1.4.6",
   "title": "",
   "body": " Notice that in there would have been nothing wrong with computing as follows: It s just that it is not immediately clear how to continue from here. Most people will shy away from this because of the square root but in fact, this integral can be computed using techniques you already know.  First, the elementary substitution will give: .  You see why we wouldn t want to go this route, right? Recall that we introduced trigonometric substitutions precisely so we could handle integrals like this last one. It would seem to be counterproductive to take this path since we started with an integral involving trigonometric functions.  While our goal is to be able to work out integrals by the simplest possible method, not the most difficult, it can instructive to see that a computation can be done in more than one manner so we will pursue this just a bit farther.  "
 },
@@ -10841,7 +10742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-14",
   "type": "Problem",
-  "number": "19.1.6.7",
+  "number": "19.1.4.7",
   "title": "",
   "body": "   Compute the integral using the substitutions .     Finish example using your results from part (a). Do you get the same solution as before? Explain.   "
 },
@@ -10850,7 +10751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SinCosOddPower",
   "type": "Problem",
-  "number": "19.1.6.8",
+  "number": "19.1.4.8",
   "title": "",
   "body": "  Compute the integral by:     Saving one of the cosines and converting everthing else into sines.      Saving one of the sines and converting everthing else into cosines.      Do you get the same result in parts (a) and (b)? Explain.    "
 },
@@ -10859,7 +10760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#EXAMPLESinCosEven",
   "type": "Example",
-  "number": "19.1.6.9",
+  "number": "19.1.4.9",
   "title": "",
   "body": " What happens if you don t have an odd power of sine or cosine? For example, suppose you have .         Saving a sine or cosine would lead to an integrand with a square root, which we are trying to avoid, if we can help it. In we saw that one of the Half Angle formulas from Trigonometry was helpful. In fact, the Half-Angle formlas: are just the tool we need when there is no way to save a sine or cosine. Using these identities in the integral we see that which doesn t seem to help much until we notice that we can use the Half-Angle formula again. This gives   "
 },
@@ -10868,7 +10769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-17",
   "type": "Drill",
-  "number": "19.1.6.10",
+  "number": "19.1.4.10",
   "title": "",
   "body": " Drills  Rewrite the integral in as and compute the integral again using the Double Angle formula: . Show that you get an equivalent antiderivative.  "
 },
@@ -10877,7 +10778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#PROBLEMIntCosSqr",
   "type": "Problem",
-  "number": "19.1.6.11",
+  "number": "19.1.4.11",
   "title": "",
   "body": "  Show that by using the Half Angle Identity for .   "
 },
@@ -10886,43 +10787,124 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#SUBSECTIONTrigIntegrals-19",
   "type": "Problem",
-  "number": "19.1.6.12",
+  "number": "19.1.4.12",
   "title": "",
   "body": " Show that by   Using the Half Angle Identity for .    Using the identity .     "
 },
 {
-  "id": "SUBSECTIONTrigSubRedux-3",
+  "id": "SUBSECTIONTrigSubst-3",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubRedux-3",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "second order equation "
+},
+{
+  "id": "SUBSECTIONTrigSubst-4",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "first order equations "
+},
+{
+  "id": "FIGURETrigIdent",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#FIGURETrigIdent",
+  "type": "Figure",
+  "number": "19.1.5.1",
+  "title": "",
+  "body": " Diagram of a right triangle where and .   Diagram of a right triangle with angle theta in standard position.   "
+},
+{
+  "id": "SUBSECTIONTrigSubst-10",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-10",
   "type": "Problem",
-  "number": "19.1.7.1",
+  "number": "19.1.5.2",
+  "title": "",
+  "body": "   As clearly as you can, explain how you know that that .      Use the result in part (a) to show that     "
+},
+{
+  "id": "SUBSECTIONTrigSubst-12",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-12",
+  "type": "Problem",
+  "number": "19.1.5.3",
+  "title": "The Hanging Chain Problem (Finally!).",
+  "body": " The Hanging Chain Problem (Finally!)  The Hanging Chain Derivation of the Solution    Place the origin of your coordinate system at the lowest point on the chain and use what you know about the slope of a function an optimal point to show that .    Recall that .      Use equation to show that must satisfy       Square both sides of the result in part (b) to show that must satisfy and ultimately       At this point we ve reduced equation to the differential equation   Separate the variables and integrate both sides of equation . Use the fact that to derive the solution of equation . Compare your solution to the one derived in .    "
+},
+{
+  "id": "CORNERSTONEPursuitCurve1",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#CORNERSTONEPursuitCurve1",
+  "type": "Cornerstone Problem",
+  "number": "19.1.5.4",
+  "title": "The Pursuit Problem.",
+  "body": " The Pursuit Problem    The Pursuit Curve.   On the Cartesian plane a vertical line marked L passes through the point (1,0). The point D is at coordinates (1,vt) on the line L. A curve s begins at the origin bends upward as it approaches the line L. The point C is marked on s at coordinates (x,y). A ray tangent to s begins at (x,y) an points to D.    Suppose a cat , is running along the vertical line in the figure at a constant speed . When the cat reaches the point , a dog , starts chasing the cat by running directly at it. Assuming that the speed of the dog is times the speed of the cat (where ) and always runs directly at the cat, find the path that the dog traverses. Such a path is called a pursuit curve. The diagram in shows the situation at time .     Let denote the distance the dog has traveled along its path at time . Show that the dog s path must satisfy the IVP     You ll need to compare a differential triangle and an ordinary triangle, neither of which is shown in the figure.       Equation is clearly a separable equation since and can be separated easily. The problem is that is also a variable. We d like to get in terms of either or but we know almost nothing about it.  But only almost. Since is the arc length of the dog s path we know that is the hypotenuse of the differential right triangle with legs and so, .  Differentiate both sides of equation with respect to and show that the dog s path must satisfy the differential equation so that     Once you ve differentiated equation it will probably not be at all clear how to get to equation from there. Don t let yourself be intimidated by notation. This is an algebra problem. Proceed carefully, one step at a time.      Because equation involves the second derivative of it is hard to think about. We ll make it a little easier on our eyes with a substitution.  Show that with the substitution  equation becomes       Like IVP , equation is a second order equation so two initial conditions are needed for a unique solution.  Explain how you know that the initial conditions are true.                        Use one of the initial conditions from part (c) and the trigonometric substitution in equation to show that is the solution of IVP .         Use equations and and the other initial condition from part (c) to show that the dog s path is the graph of the function .      What are the coordinates of the point where the dog catches the cat?    "
+},
+{
+  "id": "CORNERSTONETractrixProblem",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#CORNERSTONETractrixProblem",
+  "type": "Cornerstone Problem",
+  "number": "19.1.5.6",
+  "title": "The Tractrix.",
+  "body": " The Tractrix         The following is the view from above of a tractor trailer. Initially, the center of the front axle of the tractor is at the origin and the center of the rear axle is at the point .   Sketch of a tractor trailer in the act of turning.   Sketch of a tractor-trailer in the act of turning.    Suppose the tractor pulls the front wheels upward along the axis (the line ) and that the rear wheels don t slip.     Show the path that the center of the rear axle of the trailer follows must satisfy the IVP       Find the equation, of the tractrix.    After you separate the variables make the substitution .      Plot your solution on the plane.    "
+},
+{
+  "id": "SUBSECTIONTrigSubst-29",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-29",
+  "type": "Problem",
+  "number": "19.1.5.8",
+  "title": "",
+  "body": "  We have the following entries from :   Let s pretend for a moment that you ve forgotten these entries (Though we know you would never do that.). Use the appropriate trigonometric substitution to obtain those three integrals on the right-hand side.   "
+},
+{
+  "id": "SUBSECTIONTrigSubst-30",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-30",
+  "type": "Problem",
+  "number": "19.1.5.9",
+  "title": "",
+  "body": "  We know that . What about something like   Use the substitution to show that    "
+},
+{
+  "id": "SUBSECTIONTrigSubst-32",
+  "level": "2",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-32",
+  "type": "Problem",
+  "number": "19.1.5.10",
   "title": "",
   "body": " Use the identity and the appropriate triangle involving , , and to show that   "
 },
 {
-  "id": "SUBSECTIONTrigSubRedux-7",
+  "id": "SUBSECTIONTrigSubst-36",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubRedux-7",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-36",
   "type": "Problem",
-  "number": "19.1.7.2",
+  "number": "19.1.5.11",
   "title": "",
-  "body": "   Complete the trigonometric substitution to show that       Of course, now we need to put things back in terms of . As before we will utilize the fact that and use a triangle as before. This is the beauty of using this triangle as we really don t care what is, only that we know its tangent.            Use the above triangle to show that     "
+  "body": "   Complete the trigonometric substitution to show that       Of course, now we need to put things back in terms of . As before we will use the fact that and use a triangle as before. The beauty of using this triangle is that we really don t care what is. We only need to know its tangent.            Use the above triangle to show that     "
 },
 {
-  "id": "SUBSECTIONTrigSubRedux-8",
+  "id": "SUBSECTIONTrigSubst-37",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubRedux-8",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-37",
   "type": "Problem",
-  "number": "19.1.7.4",
+  "number": "19.1.5.13",
   "title": "",
   "body": "  Use the appropriate trigonometric substitution to compute the following integrals.          If your solution doesn t look exactly like ours don t jump to the conclusion that you are wrong. It is possible to get two different looking antiderivatives which are actual equivalent.             Let s complicate things a bit further. Suppose we have   Once again our strategy is to manipulate the radicand The part under the radical. so that it looks like Completing the square will work: Thus   Use the substitution to show that       Use the appropriate trigonometric substitution to compute       Use the appropriate trigonometric substitution to compute     "
 },
 {
-  "id": "SUBSECTIONTrigSubRedux-9",
+  "id": "SUBSECTIONTrigSubst-38",
   "level": "2",
-  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubRedux-9",
+  "url": "SECTIONSubstMethod.html#SUBSECTIONTrigSubst-38",
   "type": "Problem",
-  "number": "19.1.7.5",
+  "number": "19.1.5.14",
   "title": "",
   "body": "                    Use the substitutions we have studied in this section to show that the antiderivatives given are correct. You may need to you may need to rearrange the integrand algebraically or make other substitutions first.                                                                                              "
 },
@@ -10931,7 +10913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#EXERCISEHigherOrderRoot2",
   "type": "Problem",
-  "number": "19.1.7.6",
+  "number": "19.1.5.15",
   "title": "",
   "body": "  If we need to compute integral ? the substitution leads to: , which we can rewrite as      Complete this integral by showing that .      Find another substitution that works, compute the integral again using your new substitution, and show that the antiderivative you obtain is equivalent to the antiderivative in part (a).    "
 },
@@ -10940,7 +10922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONSubstMethod.html#TrigSub1",
   "type": "Problem",
-  "number": "19.1.7.7",
+  "number": "19.1.5.16",
   "title": "",
   "body": "  As we stated earlier a surprising number of integrals involve terms such as , or . When they occur it is often advantageous to use a trigonometric substitution to remove the square root, which is typically a bigger concern than the trigonometric functions. However, you should remember that there are other techniques at your disposal. And frequently, when you have a choice of techniques one will be simpler than the other. So you ll need to be judicious in your choices. For example, consider the integral      Use the trigonometric substitution to compute the above integral.      Now use the non trigonometric substitution to compute the integral.      Show that the antiderivative you obtained in parts (a) and (b) are equivalent.      Which method do you find more appealing? (Or, less unappealing?)    "
 },
@@ -11138,7 +11120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#PROBLEMPFDMotEx1",
   "type": "Problem",
-  "number": "19.2.3.1",
+  "number": "19.2.3.2",
   "title": "",
   "body": "   Explain why the Heaviside s Method can be used to find and in equation .    It s the same reason it worked in equation .      Show that the expression on the right side of equation sums to .            Use the result in part (b) to explain why it is safe to ignore all of the terms on the left except in equation .    "
 },
@@ -11147,7 +11129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#EXAMPLEPFD1",
   "type": "Example",
-  "number": "19.2.3.2",
+  "number": "19.2.3.3",
   "title": "",
   "body": " Next consider the rational function . Its PFD will have two terms, one with denominator and the other with denominator . As before we ll need to assume that these numerators are linear (have degree one less that the degree of their associated denominators; one in this instance). That is, the only requirement we have on these numerators is that they be linear polynomials. The obvious forms to use are and (where , , , and are the constants to be found) but it will turn our that those aren t very helpful. If instead we write our numerators in the forms and things will simplify nicely.  So we seek constants , , , and such that or   By Heaviside s Method we can see that and And so we have or   At this point the situation is similar to that of equation , except that this time we have two constants to find. If we proceed as we did there we see that The obvious next step is to multiply out the left side of the equation we are guaranteed to get a linear polynomial and compare the coefficients. But that is the procedure we rejected in favor of Heaviside s Method back in because it involves too much computation. We d really like to find a simpler method.  Take another look at equation , especially the right side. Writing down that expression is exactly how we would begin the decomposition of a rational function of the form (where is a polynomial we will determine shortly).  Thus we have or equivalently, If we can find we can use Heaviside s Method on equation to find and . This will very helpful if we find very efficiently. And we can, although it probably isn t clear how yet.  Proceeding, we clear the fractions giving This is similar to equation except that this time we are guaranteed that the sum of the terms on the left will reduce down to some polynomial, not some constant It s actually exactly the same thing. A constant is a polynomial of degree zero. . Do you see how to find the polynomial without doing all of that algebra? Think about it for a bit before going on.  We will consider each of the expressions , , and separately.      This expression is in what we will call lowest terms for purposes of this discussion. What we mean is that there is no algebraic operation we can perform on this expression without changing its value that will yield a polynomial. Thus we can ignore it.       Next consider . If we perform the indicated division we get We have not bothered to write down the rational function that appears from the division because, since it is in lowest terms we can ignore it, just like        Just like this division will result in where the function in lowest terms is not necessarily the same one we had before, but again since it will not yield a polynomial we can ignore it.     After ignoring the irrelevant terms identified above we have which is a polynomial of degree .  Combining this with equation we have and we use Heaviside s Method to determine that and Combining equations , , , and we have which we can integrate.  "
 },
@@ -11156,7 +11138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#SUBSECTIONRepeatLinFactPFD-5",
   "type": "Problem",
-  "number": "19.2.3.3",
+  "number": "19.2.3.4",
   "title": "",
   "body": "   Show that our decomposition in is correct by adding the terms on the right side of equation .      Find the most general antiderivative of .    "
 },
@@ -11165,7 +11147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#EXAMPLEPFDEx2",
   "type": "Example",
-  "number": "19.2.3.4",
+  "number": "19.2.3.5",
   "title": "",
   "body": " Our solution to the problem in  probably appeared to be fairly complex but that is only because we needed to carefully explain our reasoning at each step. Since we don t need to do that anymore this example will probably seem much simpler, even though it is actually a little bit more complex.  Consider the function Its decomposition has the form From Heaviside s Method we see immediately that and   Thus we have or but the right side of equation is the PFD of , where is a polynomial to be determined next.  We now have Clearing the fractions we have Performing the indicated divisions and ignoring any non-polynomials gives   Thus we have from which Heaviside s Method gives us Solving for , performing the indicated divisions, and ignoring any non polynomial terms we see that   Thus we have the decomposition   "
 },
@@ -11174,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONPartFrac.html#SUBSECTIONRepeatLinFactPFD-7",
   "type": "Drill",
-  "number": "19.2.3.5",
+  "number": "19.2.3.6",
   "title": "",
   "body": " Compute the integral   "
 },
@@ -11228,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#EXAMPLENonHomDiffeq",
   "type": "Exploration",
-  "number": "19.3.0.1",
+  "number": "19.3.0.2",
   "title": "Population Dynamics: A Non–Separable Differential Equation.",
   "body": " Population Dynamics: A Non Separable Differential Equation  Recall that in we solved the exponential growth equation by separating the variables and then integrating. For reasons that will become clear shortly we re express this equation as    Equation assumes that the relative growth rate, in this case, is constant. But that is almost never true. All biological processes including reproduction tend to slow down when the ambient temperature is cooler and to speed up when it is warmer.  So suppose that we have a population of algae growing in a pond. At night when the temperature is cooler the rate of growth will slow and during the daytime it will speed up. To simplify our demonstration we ll suppose that the speeding up and slowing down takes the form of a cosine wave, . This means that the rate of change of our algae population will be      .  To complete our model we ll assume that initally there are kilograms of algae in the pond. Thus to find the population as a function of time we need to solve the IVP   The differential equation part of IVP is not separable but it is very similar to equation   whose solution is known. Since the equations are similar it seems reasonable to suppose that their solutions will also be similar so the question is, How do we tweak solution ) so as to obtain a solution of IVP ?   Observe that is the product of the constant and the function , One possibility is to suppose that the solution of IVP is also a product. But since this is a slightly more complex problem than equation we ll need a slightly more complex product. So let s guess that where is a differentiable function rather than a constant.   Variation of Parameters  We have called this a guess because ultimately, that s what it is: a trick. But this particular trick turns out to be successful in more than one context so it given the name Variation of Parameters. and has been elevated to the status of technique. Notice that it consists entirely of allowing the (constant) parameter to vary (be variable).           Having made our guess we next try it in IVP and see what happens.    From the Product Rule we see that . Putting this into our differential equation in IVP we have So apparently all we have left to do is compute the integral to find and the solution of will be .  Unfortunately this is well beyond our ability at the moment so we will back up a bit and look at some slightly simpler integrals first.  "
 },
@@ -11237,7 +11219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#PROBLEMIntProdProdInt",
   "type": "Problem",
-  "number": "19.3.0.2",
+  "number": "19.3.0.3",
   "title": "When the Derivative of a Product is the Product of the Derivatives.",
   "body": " When the Derivative of a Product is the Product of the Derivatives   Before we leave this topic behind entirely here is a curious fact. There are certain special pairs of functions for which it is true that In this problem we will find a few examples of such pairs.     Suppose . Show that if and satisfy equation then .  Why did we require that ? Are any other constraints on the functions needed?            Explain how you can tell that is also true. Is it necessary to repeat the computations you did in part (a)?      For each of these pairs of functions either use equation to derive from or use equation to derive from . Assume that is an arbitrary constant.   ,  .   ,    ,    ,    ,              For each pair of functions in part (c) confirm that they satisfy equation by computing the derivatives and comparing them    "
 },
@@ -11246,7 +11228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#EXAMPLEIntxcosx",
   "type": "Example",
-  "number": "19.3.0.3",
+  "number": "19.3.0.4",
   "title": "",
   "body": " To integrate by parts we set so that Making these substitutions gives and, finally   "
 },
@@ -11255,7 +11237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-16",
   "type": "Drill",
-  "number": "19.3.0.4",
+  "number": "19.3.0.5",
   "title": "",
   "body": " Show that by differentiating the right side.  "
 },
@@ -11264,7 +11246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#THEOREMIntegrationByParts",
   "type": "Theorem",
-  "number": "19.3.0.5",
+  "number": "19.3.0.6",
   "title": "Integration by Parts.",
   "body": " Integration by Parts      Differential Form:  .     Functional Form:  .     "
 },
@@ -11273,7 +11255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-21",
   "type": "Drill",
-  "number": "19.3.0.6",
+  "number": "19.3.0.7",
   "title": "",
   "body": " Use Integration by Parts to compute each integral, then verify that your solution is correct by differentiation.                                                      "
 },
@@ -11282,7 +11264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-22",
   "type": "Problem",
-  "number": "19.3.0.7",
+  "number": "19.3.0.8",
   "title": "",
   "body": "  Did you notice that in we suppressed the arbitrary constant when we computed ? This is because once we have chosen , any antiderivative will work as this problem shows.     Evaluate the integral letting again, letting as before. But this time take where is an arbitrary constant. Show that we will obtain the same answer as before.      Show that in general, if we let in the integration by parts formula, then we still obtain the formula     You may find it helpful to use the functional form of Integration by Parts from .     Since keeping track of the arbitrary constant in subsequent computations pointlessly complicates everything it is usually ignored. But don t forget to tack on the at the end.   "
 },
@@ -11291,7 +11273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#PROBLEMIntInvFunc",
   "type": "Problem",
-  "number": "19.3.0.8",
+  "number": "19.3.0.9",
   "title": "Integrals of Inverse Functions.",
   "body": " Integrals of Inverse Functions   So far we have found, by various means, the integrals of the sine, cosine, tangent, cotangent, secant, cosecant, and natural exponential functions. We have held off on finding the antiderivative of the inverses of those functions because that is most easily done using Integration by Parts.     Use Integration by Parts to compute each of the integrals. Confirm your results by differentiation.                           There are really only two choices for . If your first choice doesn t work try the other one.      Suppose that . Generalize the results in part (a) by showing that .    "
 },
@@ -11300,7 +11282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#EXERCISEIntPartsMultiple",
   "type": "Problem",
-  "number": "19.3.0.9",
+  "number": "19.3.0.10",
   "title": "",
   "body": "   Use Integration by Parts to show that .      Complete the integration of . Confirm your result by differentiation.    "
 },
@@ -11309,7 +11291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-26",
   "type": "Drill",
-  "number": "19.3.0.10",
+  "number": "19.3.0.11",
   "title": "",
   "body": " As we saw in sometimes we have to use the same integration technique more than once. If you perform integration by parts twice, be sure not to switch the roles of and . This is not incorrect, but the second integration will simply undo the first integration and circle back to where you started.  To see what we mean integrate by parts twice. The first time let and and the second time let and to confirm that the second Integration by Parts simply undoes the first.  "
 },
@@ -11318,7 +11300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-27",
   "type": "Problem",
-  "number": "19.3.0.11",
+  "number": "19.3.0.12",
   "title": "",
   "body": "   Consider . Use Integration by Parts to show that              Apply integration by parts again (being careful not to switch the roles of and ) to show that            It looks like we went full circle in part (b) and came back to where we started. But look again.      Explain how we can conclude from the result in part (b) that .     Notice that we had to remember to add the arbitrary constant since there is no point in the calculation where it appears naturally .   "
 },
@@ -11327,8 +11309,8 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#PROBLEMNonHomDiffeq",
   "type": "Problem",
-  "number": "19.3.0.12",
-  "title": "Exploration 19.3.0.1, Solved.",
+  "number": "19.3.0.13",
+  "title": "Exploration 19.3.0.2, Solved.",
   "body": " , Solved   We are finally in a position to complete .     Integrate the right hand side of equation to show that Where is an arbitrary constant.      Show that the solution of IVP is       Use the initial condition to determine .    "
 },
 {
@@ -11336,7 +11318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-29",
   "type": "Problem",
-  "number": "19.3.0.13",
+  "number": "19.3.0.14",
   "title": "",
   "body": "  Compute each integral. Confirm your result by differentiation.                                                           "
 },
@@ -11345,7 +11327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONIntParts.html#SECTIONIntParts-30",
   "type": "Problem",
-  "number": "19.3.0.14",
+  "number": "19.3.0.15",
   "title": "",
   "body": "  Suppose is a positive integer. We want to compute the integral .     First let and and show that .      Show that .    Observe that .      Explain how the result in part (b) implies that .    "
 },

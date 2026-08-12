@@ -40,6 +40,9 @@
         for (const bhk of bornHiddens) {
           const summary = bhk.querySelector(":scope > summary");
           const contents = bhk.querySelector(":scope > summary + *");
+          if (!summary || !contents) {
+            continue;
+          }
           new SlideRevealer(summary, contents, bhk);
         }
       }
@@ -647,9 +650,9 @@
   }
   function applyThemeChoice(theme) {
     if (theme === "system") {
-      setDarkMode2(isDarkMode());
+      setDarkMode(isDarkMode());
     } else {
-      setDarkMode2(theme === "dark");
+      setDarkMode(theme === "dark");
     }
   }
   function isDarkMode() {
@@ -662,7 +665,7 @@
       return false;
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
-  function setDarkMode2(isDark) {
+  function setDarkMode(isDark) {
     if (document.documentElement.dataset.darkmode === "disabled")
       return;
     const parentHtml = document.documentElement;
@@ -815,7 +818,7 @@
         }
       });
     }
-    setDarkMode2(isDarkMode());
+    setDarkMode(isDarkMode());
     const lineHeightInput = document.getElementById("ptx-readability-line-height");
     const lineHeightOutput = document.getElementById("ptx-readability-line-height-value");
     const defaultLineHeight = lineHeightInput ? lineHeightInput.defaultValue : null;
@@ -878,10 +881,11 @@
       });
     }
   });
-  setDarkMode2(isDarkMode());
+  setDarkMode(isDarkMode());
   applyLineHeight(getSavedLineHeight());
   applyFontSize(getSavedFontSize());
   window.isDarkMode = isDarkMode;
+  window.setDarkMode = setDarkMode;
 
   // ../../js/pretext.js
   function getOffsetTop(e2) {
@@ -1402,6 +1406,9 @@
       }
     }
   });
+  function getPrintout() {
+    return document.querySelector(".printout");
+  }
   function flattenParagraphsSections(printout) {
     const paragraphsSections = printout.querySelectorAll("section.paragraphs");
     paragraphsSections.forEach((section) => {
@@ -1429,6 +1436,12 @@
       new Promise((resolve) => setTimeout(resolve, timeoutMs))
     ]);
   }
+  function workspaceDivsIn(elem) {
+    if (elem.classList.contains("workspace")) {
+      return [elem];
+    }
+    return [...elem.querySelectorAll(".workspace")];
+  }
   function setInitialWorkspaceHeights() {
     const workspaces = document.querySelectorAll(".workspace");
     workspaces.forEach((ws) => {
@@ -1438,7 +1451,7 @@
   }
   function adjustPrintoutPages() {
     console.log("*** Adjusting printout pages.");
-    const printout = document.querySelector("section.worksheet, section.handout");
+    const printout = getPrintout();
     if (!printout) {
       console.warn("No printout found, exiting adjustPrintoutPages.");
       return;
@@ -1469,7 +1482,7 @@
     console.log("*** Creating printout pages with margins:", margins);
     const conservativeContentHeight = 1056 - (margins.top + margins.bottom);
     const conservativeContentWidth = 794 - (margins.left + margins.right);
-    const printout = document.querySelector("section.worksheet, section.handout");
+    const printout = getPrintout();
     if (!printout) {
       console.warn("No printout found, exiting createPrintoutPages.");
       return;
@@ -1507,7 +1520,7 @@
         continue;
       }
       let totalWorkspaceHeight = 0;
-      if (row.querySelector(".workspace")) {
+      if (workspaceDivsIn(row).length > 0) {
         totalWorkspaceHeight = getElemWorkspaceHeight(row);
       }
       blockList.push({ elem: row, height: blockHeight, workspaceHeight: totalWorkspaceHeight });
@@ -1538,7 +1551,7 @@
     }
   }
   function addHeadersAndFootersToPrintout() {
-    const printout = document.querySelector("section.worksheet, section.handout");
+    const printout = getPrintout();
     if (!printout) {
       console.warn("No printout found, exiting addHeadersAndFootersToPrintout.");
       return;
@@ -1687,7 +1700,7 @@
         }
       }
     }
-    const workspaces = elem.querySelectorAll(".workspace");
+    const workspaces = workspaceDivsIn(elem);
     let totalHeight = 0;
     workspaces.forEach((ws) => {
       const workspaceHeight = ws.offsetHeight;
@@ -1816,6 +1829,28 @@
     }
     return paperSize || "letter";
   }
+  function flattenKnowledPrintout(details) {
+    const content2 = details.querySelector(":scope > .knowl__content");
+    if (!content2) {
+      console.warn("Born-hidden printout has no knowl content; previewing as-is:", details);
+      return details;
+    }
+    const heading = details.querySelector(":scope > summary > .heading");
+    if (heading) {
+      content2.insertBefore(heading, content2.firstChild);
+    }
+    content2.classList.remove("knowl__content");
+    content2.id = details.id;
+    details.replaceWith(content2);
+    return content2;
+  }
+  document.addEventListener("click", (ev) => {
+    const link = ev.target.closest("a.print-link");
+    if (!link || !link.closest("summary")) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    window.location.assign(link.href);
+  });
   async function loadPrintout(printableSectionID) {
     const themeStylesheetLink = document.querySelector('link[rel="stylesheet"][href*="theme"]');
     const themeStylesheetHref = themeStylesheetLink ? themeStylesheetLink.getAttribute("href") : null;
@@ -1826,18 +1861,22 @@
         themeStylesheetLink.addEventListener("load", resolve, { once: true });
       });
     }
-    const printableSection = document.getElementById(printableSectionID);
+    let printableSection = document.getElementById(printableSectionID);
     if (!printableSection) {
-      console.error("No section found with ID:", printableSectionID);
+      console.error("No printable element found with ID:", printableSectionID);
       return;
     }
+    if (printableSection.tagName === "DETAILS") {
+      printableSection = flattenKnowledPrintout(printableSection);
+    }
+    printableSection.classList.add("printout");
     const ptxContent = document.querySelector(".ptx-content");
     const existingSections = ptxContent.querySelectorAll(":scope > section");
     existingSections.forEach((sec) => ptxContent.removeChild(sec));
     ptxContent.appendChild(printableSection);
   }
-  function rewriteSolutions() {
-    var born_hidden_knowls = document.querySelectorAll(".worksheet details, .handout details");
+  async function rewriteSolutions() {
+    var born_hidden_knowls = document.querySelectorAll(".printout details");
     born_hidden_knowls.forEach(function(detail) {
       const summary = detail.querySelector("summary");
       const content2 = detail.innerHTML.replace(summary.outerHTML, "");
@@ -1853,6 +1892,9 @@
       div.appendChild(body);
       detail.parentNode.replaceChild(div, detail);
     });
+    if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+      await MathJax.typesetPromise();
+    }
   }
   function toPixels(value) {
     if (typeof value === "number") return value;
@@ -1877,7 +1919,12 @@
     if (urlParams.has("printpreview")) {
       const printableSectionID = urlParams.get("printpreview");
       await loadPrintout(printableSectionID);
-      const marginList = document.querySelector("section.worksheet, section.handout").getAttribute("data-margins").split(" ");
+      const printout = getPrintout();
+      if (!printout) {
+        console.warn("Nothing to preview for printpreview=" + printableSectionID + "; leaving the page as it is.");
+        return;
+      }
+      const marginList = (printout.getAttribute("data-margins") || "").split(" ");
       const margins = {
         top: toPixels(marginList[0] || "0.75in"),
         // Default to 0.75in if not specified
@@ -1885,7 +1932,7 @@
         bottom: toPixels(marginList[2] || "0.75in"),
         left: toPixels(marginList[3] || "0.75in")
       };
-      rewriteSolutions();
+      await rewriteSolutions();
       let paperSize = getPaperSize();
       if (paperSize) {
         const radio = document.querySelector(`input[name="papersize"][value="${paperSize}"]`);
@@ -1941,7 +1988,7 @@
           });
         }
       }
-      const printoutSection = document.querySelector("section.worksheet, section.handout");
+      const printoutSection = getPrintout();
       if (printoutSection) {
         flattenParagraphsSections(printoutSection);
       }
@@ -1991,6 +2038,42 @@
       console.log("finished adjusting workspace");
     }
   });
+  document.addEventListener("click", (ev) => {
+    const codeBox = ev.target.closest(".clipboardable");
+    if (!navigator.clipboard || !codeBox) return;
+    const button = ev.target.closest(".code-copy");
+    const pre = codeBox.querySelector("pre").cloneNode(true);
+    pre.querySelectorAll(".unselectable").forEach((el2) => el2.remove());
+    const preContent = pre.textContent;
+    navigator.clipboard.writeText(preContent);
+    button.classList.toggle("copied");
+    setTimeout(() => button.classList.toggle("copied"), 1e3);
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".clipboardable");
+    for (el of elements) {
+      const div = document.createElement("div");
+      div.classList.add("clipboardable");
+      el.classList.remove("clipboardable");
+      el.replaceWith(div);
+      div.insertAdjacentElement("afterbegin", el);
+      div.insertAdjacentHTML("beforeend", `
+    <button class="code-copy" title="Copy code" role="button" aria-label="Copy code" >
+        <span class="copyicon material-symbols-outlined">content_copy</span>
+        <span class="checkmark material-symbols-outlined">check</span>
+    </button>
+            `.trim());
+    }
+  });
+  window.addEventListener("DOMContentLoaded", () => {
+    const userDropdownButton = document.getElementById("ptx-user-dropdown-button");
+    const userDropdownContent = document.getElementById("ptx-user-dropdown-content");
+    if (userDropdownButton && userDropdownContent) {
+      new PTXDropdown(userDropdownContent, userDropdownButton);
+    }
+  });
+
+  // ../../js/src/pretext-embed.js
   window.addEventListener("DOMContentLoaded", function(event2) {
     const shareButton = document.getElementById("ptx-embed-button");
     const sharePopupElement = document.getElementById("ptx-embed-popup");
@@ -2039,60 +2122,29 @@
       }
     }
   });
+  function applyEmbedTheme(embedValue) {
+    const instructorTheme = embedValue === "dark" ? "dark" : "light";
+    applyThemeChoice(instructorTheme);
+  }
   window.addEventListener("DOMContentLoaded", function(event2) {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("embed")) {
-      if (urlParams.get("embed") === "dark") {
-        setDarkMode(true);
-      } else {
-        setDarkMode(false);
-      }
-      const elemsToHide = [
-        "ptx-navbar",
-        "ptx-masthead",
-        "ptx-page-footer",
-        "ptx-sidebar",
-        "ptx-content-footer"
-      ];
-      for (let id of elemsToHide) {
-        const elem = document.getElementById(id);
-        if (elem) {
-          elem.classList.add("hidden");
-        }
+    if (!urlParams.has("embed")) {
+      return;
+    }
+    document.body.classList.add("ptx-embedded");
+    const elemsToHide = [
+      "ptx-masthead",
+      "ptx-page-footer",
+      "ptx-sidebar",
+      "ptx-content-footer"
+    ];
+    for (let id of elemsToHide) {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.classList.add("hidden");
       }
     }
-  });
-  document.addEventListener("click", (ev) => {
-    const codeBox = ev.target.closest(".clipboardable");
-    if (!navigator.clipboard || !codeBox) return;
-    const button = ev.target.closest(".code-copy");
-    const preContent = codeBox.querySelector("pre").textContent;
-    navigator.clipboard.writeText(preContent);
-    button.classList.toggle("copied");
-    setTimeout(() => button.classList.toggle("copied"), 1e3);
-  });
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".clipboardable");
-    for (el of elements) {
-      const div = document.createElement("div");
-      div.classList.add("clipboardable");
-      el.classList.remove("clipboardable");
-      el.replaceWith(div);
-      div.insertAdjacentElement("afterbegin", el);
-      div.insertAdjacentHTML("beforeend", `
-    <button class="code-copy" title="Copy code" role="button" aria-label="Copy code" >
-        <span class="copyicon material-symbols-outlined">content_copy</span>
-        <span class="checkmark material-symbols-outlined">check</span>
-    </button>
-            `.trim());
-    }
-  });
-  window.addEventListener("DOMContentLoaded", () => {
-    const userDropdownButton = document.getElementById("ptx-user-dropdown-button");
-    const userDropdownContent = document.getElementById("ptx-user-dropdown-content");
-    if (userDropdownButton && userDropdownContent) {
-      new PTXDropdown(userDropdownContent, userDropdownButton);
-    }
+    applyEmbedTheme(urlParams.get("embed"));
   });
 
   // ../../js/src/pretext-core.js
