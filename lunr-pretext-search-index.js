@@ -4528,119 +4528,83 @@ var ptx_lunr_docs = [
   "body": "  A true catenary is the graph of any function of the form      Show that is not a true catenary.      Plot the graph of equation , and determine the and intercepts.      Notice that the answers part (b) do not determine an arch whose height and width are exactly feet. This is because this curve represents the centers of the triangular cross sections. (Actually the centroids. You will learn about centroids when you take Integral Calculus.)   The sketch below represents a cross sectional slice of the arch, which is an equilateral triangle. In the sketch each side is equal to , and the point is equidistant from , , and . Show that the perpendicular distance from to one side is .     Use the result in part (i) to determine the height and width of the arch.        Vocabulary Catenary weighted catenary   The curve Saarinen used is called a weighted catenary . It is the shape of a hanging chain whose density is not uniform. Saarinen decided to go with this since the size of the triangles was decreasing as they approached the apex of the arch. A true catenary arch would be something of the form Plot the graphs of equation and equation on the same set of axes and use this to show that they both have the same requisite height and width.    "
 },
 {
-  "id": "SECTIONExponentialGrowth",
-  "level": "1",
-  "url": "SECTIONExponentialGrowth.html",
-  "type": "Section",
-  "number": "8.6",
-  "title": "Exponential Growth",
-  "body": " Exponential Growth   Population Growth  Examples Population Growth  Suppose we start with a colony of grams of bacteria in a Petri dish and we wish to model the growth of the population as a function of time. In order to keep our initial discussion simple we begin by assuming that of our bacteria divide once per day at the same time. Such a population is growing at a rate of per day. If we start with grams of bacteria on day zero, then on day one we ll have more, or grams. On day two we ll have more than on day one, or grams. It should be clear that the rate of growth from day to day is proportional to how many bacteria we have on day . Thus from any one day to the next we see that the change in (that is, ) is given by where day, and is the change in population on that day.   Vocabulary nominal growth rate But we assumed that of the bacteria were dividing in sync once per day, which is unrealistic. To get closer to reality suppose next that enough of them divide during any one hour so that at the end of one day the population has still grown by . Then from any one hour to the next we again have equation but this time is equal to one hour, or day. However, we don t have to measure time in days. If we measure it in hours instead we again have . The constant factor is still because we assumed that the population was growing at per day, and this is still true. That factor is called the nominal growth rate.   Mathematical Terminology  The word nominal means in name or thought so this is the named growth rate. It is not always the actual growth rate as we will see soon.   If we measure time in seconds the same reasoning will give us equation , with . If we measure in nanoseconds we get equation , with . If we measure time in infinitesimal increments we get    Principle of Local Linearity  Vocabulary nominal growth rate Notice that we are once againusing the Principle of Local Linearity here. In this infinitesimal time interval the nominal growth rate, , is virtually constant and so we are treating it as linear growth.  Since we started with grams of bacteria we have the initial condition . This says that the amount of bacteria at time must satisfy the IVP: Take specific notice that the differential equation in IVP expresses the idea that the rate of change of the population, , is proportional to the size of the population, , and that the constant of proportionality is , or .   Vocabulary nominal growth rate Clearly there is nothing particularly special about the number If our colony had been increasing at a nominal rate of we d have arrived at the IVP     Vocabulary Differential Equations   To begin solving IVP show that one solution of the differential equation  , is There are other solutions. Find one of them.    From we see that a solution of the differential equation in our bacterial growth problem, IVP , is . But does not satisfy the initial condition since so can t be the solution of IVP . Can we tweak so that it satisfies the initial condition as well?   Find the Pattern    Show that solves the differential equation: . What is ?      Show that solves the differential equation: . What is ?      Show that if is any constant then solves the differential equation . What is ?      Did your answer in part (c) account for the possibility that ? If not, redo it assuming that . What is in this case?        Use the results of part and part to show that is the solution of IVP .      According to the model in part (a) how much did the colony grow over the first day and how does this compare to the growth rate of ?      Use the model to predict the size of the colony in days. Is this reasonable? What does it say about our assumptions in this problem?      Suppose our growth rate was per day. Would the bacteria have grown half as much in the first day as it did when the growth rate was per day?  Make your best guess.  Use Calculus to test your guess.        Vocabulary nominal growth rate  Vocabulary relative growth rate In general, if we start with a population of, say , and the rate of change of is proportional to itself then it will satisfy an IVP of the form: The constant is called the nominal growth rate as we ve seen. Because it is also called the relative growth rate of the population and is often given as a percentage, as we have done here.  The IVP should look familiar to you. Notice that when and it is the same as IVP which we used to define the the natural exponential. Except, of course, for the names of the variables. To put it another way IVP is the special case of IVP when Since these are so similar it is not surprising that the solution of IVP involves the natural exponential.   Problem and suggest, rather convincingly, that the general solution of IVP is     Show that is a solution of IVP .     Part indicates that there are limitations to the usefulness of IVP and its solution, . If we use it to predict how much bacteria there would be after one year we get grams. Since current estimates of the mass of the entire universe are around grams, it is pretty clear that our model doesn’t work in the long term.  Clearly the bacteria can not sustain a growth rate of indefinitely. If nothing else, they will eventually run out of food. Our point here is that this model, like all models, is limited. To use a mathematical model effectively we need to stay within its limitations.  But in the short term this is actually a very good model. The picture below shows the surface of Lake Erie during what is called an algal bloom.   The green discoloration on the western side of the lake is from an explosive (exponential) growth of algae. When the conditions for algae growth are nearly optimum if there is abundant food, there is room for the population to expand into, and the water temperature is exactly right the population of algae in Lake Erie tracks with our model nearly perfectly. The quantity of algae grows exponentially until the conditions become sub-optimal. Then the population of algae drops again to normal levels.   Comment  Except that the nominal growth rate and the initial condition would need to be adjusted to fit the situation.   An algal bloom can happen in any body of water where algae grow. They are common in alpine lakes in the early spring when nutrients are released by the melting snow, but the fish and insects that feed on the algae have not yet emerged in large numbers. We will return to this problem in Section where we will tweak this model to extend its usefulness to longer periods of time. But for now we will continue to use this exponential growth model with the understanding that for large values of it is unreliable.   Drills exponential growth   Suppose our bacteria population is increasing at a relative rate of 10% per day. If we started with 100 grams, how much would there be after one, two, and three days?    Speaking loosely, the observation that lead us to IVP is that the number of baby bacteria in a given generation is proportional to the number of mama and papa bacteria were present in the previous generation. Speaking very loosely, more parents now, means proportionally more babies later. This is all that is required for exponential growth to occur.  "
-},
-{
-  "id": "EXAMPLEpopulation-growth",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#EXAMPLEpopulation-growth",
-  "type": "Example",
-  "number": "8.6.0.1",
-  "title": "Population Growth.",
-  "body": " Population Growth  Examples Population Growth  Suppose we start with a colony of grams of bacteria in a Petri dish and we wish to model the growth of the population as a function of time. In order to keep our initial discussion simple we begin by assuming that of our bacteria divide once per day at the same time. Such a population is growing at a rate of per day. If we start with grams of bacteria on day zero, then on day one we ll have more, or grams. On day two we ll have more than on day one, or grams. It should be clear that the rate of growth from day to day is proportional to how many bacteria we have on day . Thus from any one day to the next we see that the change in (that is, ) is given by where day, and is the change in population on that day.   Vocabulary nominal growth rate But we assumed that of the bacteria were dividing in sync once per day, which is unrealistic. To get closer to reality suppose next that enough of them divide during any one hour so that at the end of one day the population has still grown by . Then from any one hour to the next we again have equation but this time is equal to one hour, or day. However, we don t have to measure time in days. If we measure it in hours instead we again have . The constant factor is still because we assumed that the population was growing at per day, and this is still true. That factor is called the nominal growth rate.   Mathematical Terminology  The word nominal means in name or thought so this is the named growth rate. It is not always the actual growth rate as we will see soon.   If we measure time in seconds the same reasoning will give us equation , with . If we measure in nanoseconds we get equation , with . If we measure time in infinitesimal increments we get    Principle of Local Linearity  Vocabulary nominal growth rate Notice that we are once againusing the Principle of Local Linearity here. In this infinitesimal time interval the nominal growth rate, , is virtually constant and so we are treating it as linear growth.  Since we started with grams of bacteria we have the initial condition . This says that the amount of bacteria at time must satisfy the IVP: Take specific notice that the differential equation in IVP expresses the idea that the rate of change of the population, , is proportional to the size of the population, , and that the constant of proportionality is , or .   Vocabulary nominal growth rate Clearly there is nothing particularly special about the number If our colony had been increasing at a nominal rate of we d have arrived at the IVP   "
-},
-{
-  "id": "DRILLExpGrowth1",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#DRILLExpGrowth1",
-  "type": "Problem",
-  "number": "8.6.0.2",
-  "title": "",
-  "body": " Vocabulary Differential Equations   To begin solving IVP show that one solution of the differential equation  , is There are other solutions. Find one of them.   "
-},
-{
-  "id": "PROBLEMExpGrowth2",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#PROBLEMExpGrowth2",
-  "type": "Problem",
-  "number": "8.6.0.3",
-  "title": "Find the Pattern.",
-  "body": " Find the Pattern    Show that solves the differential equation: . What is ?      Show that solves the differential equation: . What is ?      Show that if is any constant then solves the differential equation . What is ?      Did your answer in part (c) account for the possibility that ? If not, redo it assuming that . What is in this case?    "
-},
-{
-  "id": "PROBLEMBacteriaIVP1",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#PROBLEMBacteriaIVP1",
-  "type": "Problem",
-  "number": "8.6.0.4",
-  "title": "",
-  "body": "   Use the results of part and part to show that is the solution of IVP .      According to the model in part (a) how much did the colony grow over the first day and how does this compare to the growth rate of ?      Use the model to predict the size of the colony in days. Is this reasonable? What does it say about our assumptions in this problem?      Suppose our growth rate was per day. Would the bacteria have grown half as much in the first day as it did when the growth rate was per day?  Make your best guess.  Use Calculus to test your guess.      "
-},
-{
-  "id": "SECTIONExponentialGrowth-7",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-7",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "nominal relative "
-},
-{
-  "id": "SECTIONExponentialGrowth-10",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-10",
-  "type": "Problem",
-  "number": "8.6.0.5",
-  "title": "",
-  "body": "  Show that is a solution of IVP .   "
-},
-{
-  "id": "SECTIONExponentialGrowth-18",
-  "level": "2",
-  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-18",
-  "type": "Drill",
-  "number": "8.6.0.6",
-  "title": "",
-  "body": " Drills exponential growth   Suppose our bacteria population is increasing at a relative rate of 10% per day. If we started with 100 grams, how much would there be after one, two, and three days?   "
-},
-{
   "id": "SECTIONExpAndCmpndInt",
   "level": "1",
   "url": "SECTIONExpAndCmpndInt.html",
   "type": "Section",
-  "number": "8.7",
+  "number": "8.6",
   "title": "Exponential Functions and Compound Interest",
-  "body": " Exponential Functions and Compound Interest   Vocabulary nominal growth rate  Vocabulary compound interest The natural exponential function also arises naturally in financial mathematics. If we invest money in a bond which pays a nominal interest rate of annually, and the interest is compounded quarterly then the effective yield will be .  There is a lot of financial jargon in the previous paragraph which makes it hard to understand if we don t speak financial-ese. So we will take a few pages to learn the vocabulary. After that things will clear up pretty quickly.   Vocabulary compound interest nominal yield To start, the effective yield represents the actual amount of money earned at the end of one year how much money the investment actually pays out. For example, if the investment was not compounded at all, then at the end of one year, every dollar invested would yield in return, so the effective yield is the same as the nominal yield : dollars.  If the investment is compounded semiannually (twice per year), then half of interest earned is paid out midway through the year. This money is then re invested for the next half year. This is summarized in the table below. The effective yield in this case is approximately .   nominal interest compounded semiannually      Time in years  Amount investment is worth in dollars                                           The table below shows, in abbreviated form, the computations needed if the investment is compounded three times in a year.   nominal interest compounded three time per year    Time in years  Amount investment is worth in dollars                     Quarterly compounding means that the interest is re invested four times and is shown in the next table.   nominal interest compounded quarterly    Time in years  Amount investment is worth in dollars                         Notice how these three tables differ, and how they are similar to each other. The effective yield comes from the last entry in each table. It is the difference between the amount the investment is worth at the end of the year and what it is worth at the beginning of the year. So if we compound quarterly the effective yield is   Similarly, if the investment is compounded daily, then the effective yield is . If we compound nominal interest, times in a year, then the return on an investment of one dollar at the end of one year would be dollars, after years dollars, after years dollars.  In general if we let denote the value of the investment of one dollar earning annually, compounded times per year, after years, we have   What if the investment was compounded continuously? That is, suppose the interest is being continuously paid out and simultaneously reinvested? Obviously, this can t actually be done, but it comes to the same thing if at the end of the year we get an effective yield that is equal to the effective yield that would come from continuous compounding. All we have to do is figure out what this is.  To do this, it will be convenient to write as Setting we see that We are particularly interested in the quantity as we compound the interest more frequently (as becomes very large). The following table shows some values of , for large values of . Does the numbers in the right column look familiar to you?   The Expression for Large Values of             2.70481382942    1000  2.71692393224     2.71814592683    100000  2.71826823717    1000000  2.71828046932    10000000  2.71828169255     In Section we saw that . From this table it would appear that approaches the number as grows larger that is, as we compound the interest more frequently. We will show that this is in fact the case in .  Thus if we compound the interest continuously we have This equation was derived under the assumption that our initial investment was only . In general if the initial investment is we have Does this look familiar?    The function has the same form as our solution of IVP so it must satisfy the differential equation: . Confirm that it does.    This is interesting. It appears that IVP can be a model of continuously compounded investment return, as well as population growth. Does this make sense to you?  Think about it for a moment. When money invested the rate of return (rate of growth) is always proportional to the initial investment, in the same way that the rate of growth of a population (the rate of return) is. Speaking very loosely, the amount of baby dollars in the next generation will be proportional to the amount of mama dollars and papa dollars in the current generation in the same way that the number of baby bacteria in the next generation is proportional to the number of parent bacteria now. So it makes sense that these two very different real world phenomena are modeled by the same IVP.  From the point of view of a banker or a biologist, these are very different problems so we assign different meanings to the variables and parameters. But since relationship between the variables and parameters is the same whatever we call them, to a mathematician these are the same problem.  This sort of abstraction is one of the strengths of mathematics. It is not at all obvious that population growth, investment income, or nuclear decay (which we will study shortly) are all essentially the same problem. It is only when we have abstracted out the critical features of each that we can see this.     What would the effective yield be for a bond nominally rated at 5% annually, compounded continuously? How does this compare to the effective yield of an investment compounded daily?      Suppose we had two investments growing continuously with nominal rates of 5% and 10% annually? After one year would the effective yield of the second investment be twice that of the first? Justify your answer.     A natural question to ask is, How long will it take for my money to double? Would an investment compounding continuously at a nominal rate of double in half the time as one growing at a nominal rate of . Take a guess and write it down for later reference.   Vocabulary natural logarithm function To answer this question we d need solve , for and compare this to the solution of . To solve either equation we need a way to undo the natural exponential function. That is, we need the inverse of the natural exponential function. This leads us to a discussion of the natural logarithm function in the next section.  "
+  "body": " Exponential Functions and Compound Interest   Vocabulary nominal growth rate  Vocabulary compound interest The natural exponential function arises naturally in financial mathematics but the world of finance has its own jargon so we will pause briefly to learn some of the vocabulary before we start computing.  The simplest possible situation is where we invest (called the principal ) in a bond (or any investment vehicle) at a simple rate of interest of annually. In this case the return on our investment every year is of our principal , or . So after one year we will have dollars, and after two years we will have dollars.  But notice that in the second year our total investment is no longer just the original principal. It is our principal plus the we earned at the end of the first year, or . At the end of the second year we should receive of that, shouldn t we?  Of course we should. This is called compound interest . Specifically in this case the interest is compounded annually. Note that the nominal (named) interest rate is still . But the effective interest rate (equivalently, the effective yield ) will be more than after the first year. Here s why.  If we invest which pays nominal interest rate of  compounded annually then at the end of the first year our investment will pay us of the amount we had invested during the year ( in this case) or . This is added to the original investment of for a total of . During the second year we have invested so at the end of the second year we d receive of or which is added to the we started the year with for a total of . Notice that the effective yield is slightly more than we would have received from simple interest.               Vocabulary compound interest effective yield The effective yield is actual amount of money earned at the end of any compounding period how much money the investment actually pays out.   Vocabulary compound interest nominal rate The nominal rate is the named rate of interest. It is the percentage which is used in the computations. You can think of it as the rate of interest at each moment of time.  If the investment is compounded semiannually (twice per year), then half of interest earned is paid out midway through the year. This money is then re invested for the next half year. This is summarized in below. The effective yield in this case is approximately .   nominal interest compounded semiannually      Time in years  Amount investment is worth in dollars                                               below shows the computations needed if the investment is compounded three times in a year.   nominal interest compounded three time per year    Time in years  Amount investment is worth in dollars                     Quarterly compounding means that the interest is re invested four times per year and is shown in .   nominal interest compounded quarterly    Time in years  Amount investment is worth in dollars                         Notice how these three tables differ, and how they are similar to each other. The effective yield comes from the last entry in each table. It is the difference between the amount the investment is worth at the end of the year and what it is worth at the beginning of the year. So if we compound quarterly the effective yield is   Similarly, if the investment is compounded daily, then the effective yield is . If we compound nominal interest, times in a year, then the return on an investment of one dollar at the end of one year would be dollars, after years dollars, after years dollars.  In general if we let denote the value of the investment of one dollar earning annually, compounded times per year, after years, we have   What if the investment was compounded continuously? That is, suppose the interest is being continuously paid out and simultaneously reinvested? Obviously, this can t actually be done, but it comes to the same thing if at the end of the year we get an effective yield that is equal to the effective yield that would come from continuous compounding. All we have to do is figure out what this is.  To do this, it will be convenient to write as Setting we see that We are particularly interested in the quantity as we compound the interest more frequently (as becomes very large). shows some values of , for large values of . Does the numbers in the right column look familiar to you?   The Expression for Large Values of             2.70481382942    1000  2.71692393224     2.71814592683    100000  2.71826823717    1000000  2.71828046932    10000000  2.71828169255     In Section we saw that . From this table it would appear that approaches the number as grows larger that is, as we compound the interest more frequently. We will show that this is in fact the case in .  Thus if we compound the interest continuously we have This equation was derived under the assumption that our initial investment was only . In general if the initial investment is we have Does this look familiar?    Show that satisfies . This says that at any particular time the investment is continually growing at a rate which is of the amount invested at that time. That is the nominal rate of return is  .         Note from Bud  Bob suggested removing the following three paragraphs but I think we should keep them. Read my note below.   This is interesting. It appears that IVP can be a model of continuously compounded investment return, as well as population growth. Does this make sense to you?  Think about it for a moment. When money invested the rate of return (rate of growth) is always proportional to the initial investment, in the same way that the rate of growth of a population (the rate of return) is. Speaking very loosely, the amount of baby dollars in the next generation will be proportional to the amount of mama dollars and papa dollars in the current generation in the same way that the number of baby bacteria in the next generation is proportional to the number of parent bacteria now. So it makes sense that these two very different real world phenomena are modeled by the same IVP.  From the point of view of a banker or a biologist, these are very different problems so we assign different meanings to the variables and parameters. But since relationship between the variables and parameters is the same whatever we call them, to a mathematician these are the same problem.  This sort of abstraction is one of the strengths of mathematics. It is not at all obvious that population growth, investment income, or nuclear decay (which we will study shortly) are all essentially the same problem. It is only when we have abstracted out the critical features of each that we can see this.   Note from Bud  Bob suggested removing the previous three paragraphs but I think we should keep them cuz it s one of those moments when we look up from the immediate problem and point out a larger structure.  That said, it probably doesn t belong here any more. Perhaps in the next section?    An investment of one dollar which has a nominal rate of per year would have the following values if compounded daily and continuously  What would the difference between the two values of these investments be in years?      What would the effective yield be for a bond nominally rated at annually, compounded continuously? How does this compare to the effective yield of an investment compounded daily?      Suppose we had two investments growing continuously with nominal rates of 5% and 10% annually? After one year would the effective yield of the second investment be twice that of the first? Justify your answer.     A natural question to ask is, How long will it take for my money to double? Would an investment compounding continuously at a nominal rate of double in half the time as one growing at a nominal rate of . Take a guess and write it down for later reference.   Vocabulary natural logarithm function To answer this question we d need solve , for and compare this to the solution of . To solve either equation we need a way to undo the natural exponential function. That is, we need the inverse of the natural exponential function. This leads us to a discussion of the natural logarithm function, but first let s see how these ideas can help us model population growth..  "
 },
 {
-  "id": "SECTIONExpAndCmpndInt-2",
+  "id": "SECTIONExpAndCmpndInt-3",
   "level": "2",
-  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-2",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "nominal interest compounded effective yield "
+  "body": "principal simple rate principal "
 },
 {
-  "id": "SECTIONExpAndCmpndInt-4",
+  "id": "SECTIONExpAndCmpndInt-5",
   "level": "2",
-  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-4",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "nominal yield "
+  "body": "compound interest nominal interest rate effective interest rate effective yield "
+},
+{
+  "id": "SECTIONExpAndCmpndInt-6",
+  "level": "2",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "nominal interest rate compounded annually effective yield "
+},
+{
+  "id": "SECTIONExpAndCmpndInt-7",
+  "level": "2",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "effective yield "
+},
+{
+  "id": "SECTIONExpAndCmpndInt-8",
+  "level": "2",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "nominal rate "
+},
+{
+  "id": "SECTIONExpAndCmpndInt-9",
+  "level": "2",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "effective yield "
 },
 {
   "id": "TABLE5percenCompSemiAn",
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompSemiAn",
   "type": "Table",
-  "number": "8.7.0.1",
+  "number": "8.6.0.1",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded semiannually",
-  "body": " nominal interest compounded semiannually      Time in years  Amount investment is worth in dollars                                          "
+  "body": " nominal interest compounded semiannually      Time in years  Amount investment is worth in dollars                                             "
 },
 {
   "id": "TABLE5percenCompThreeAn",
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompThreeAn",
   "type": "Table",
-  "number": "8.7.0.2",
+  "number": "8.6.0.2",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded three time per year",
   "body": " nominal interest compounded three time per year    Time in years  Amount investment is worth in dollars                    "
 },
@@ -4649,7 +4613,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompQuart",
   "type": "Table",
-  "number": "8.7.0.3",
+  "number": "8.6.0.3",
   "title": "<span class=\"process-math\">\\(5\\%\\)<\/span> nominal interest compounded quarterly",
   "body": " nominal interest compounded quarterly    Time in years  Amount investment is worth in dollars                        "
 },
@@ -4658,36 +4622,135 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#TABLE5percenCompCont",
   "type": "Table",
-  "number": "8.7.0.4",
+  "number": "8.6.0.4",
   "title": "The Expression <span class=\"process-math\">\\(\\left(1+\\frac{1}{m}\\right)^m\\)<\/span> for Large Values of <span class=\"process-math\">\\(m\\)<\/span>",
   "body": " The Expression for Large Values of             2.70481382942    1000  2.71692393224     2.71814592683    100000  2.71826823717    1000000  2.71828046932    10000000  2.71828169255    "
 },
 {
-  "id": "SECTIONExpAndCmpndInt-19",
+  "id": "SECTIONExpAndCmpndInt-23",
   "level": "2",
-  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-19",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-23",
   "type": "Problem",
-  "number": "8.7.0.5",
+  "number": "8.6.0.5",
   "title": "",
-  "body": "  The function has the same form as our solution of IVP so it must satisfy the differential equation: . Confirm that it does.   "
+  "body": "  Show that satisfies . This says that at any particular time the investment is continually growing at a rate which is of the amount invested at that time. That is the nominal rate of return is  .       "
+},
+{
+  "id": "SECTIONExpAndCmpndInt-30",
+  "level": "2",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-30",
+  "type": "Problem",
+  "number": "8.6.0.6",
+  "title": "",
+  "body": " An investment of one dollar which has a nominal rate of per year would have the following values if compounded daily and continuously  What would the difference between the two values of these investments be in years?  "
 },
 {
   "id": "PROBLEMContCompound1",
   "level": "2",
   "url": "SECTIONExpAndCmpndInt.html#PROBLEMContCompound1",
   "type": "Problem",
-  "number": "8.7.0.6",
+  "number": "8.6.0.7",
   "title": "",
-  "body": "   What would the effective yield be for a bond nominally rated at 5% annually, compounded continuously? How does this compare to the effective yield of an investment compounded daily?      Suppose we had two investments growing continuously with nominal rates of 5% and 10% annually? After one year would the effective yield of the second investment be twice that of the first? Justify your answer.    "
+  "body": "   What would the effective yield be for a bond nominally rated at annually, compounded continuously? How does this compare to the effective yield of an investment compounded daily?      Suppose we had two investments growing continuously with nominal rates of 5% and 10% annually? After one year would the effective yield of the second investment be twice that of the first? Justify your answer.    "
 },
 {
-  "id": "SECTIONExpAndCmpndInt-26",
+  "id": "SECTIONExpAndCmpndInt-33",
   "level": "2",
-  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-26",
+  "url": "SECTIONExpAndCmpndInt.html#SECTIONExpAndCmpndInt-33",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "natural logarithm "
+},
+{
+  "id": "SECTIONExponentialGrowth",
+  "level": "1",
+  "url": "SECTIONExponentialGrowth.html",
+  "type": "Section",
+  "number": "8.7",
+  "title": "Exponential Growth",
+  "body": " Exponential Growth  In the last section, there was a problem which asked you to compare the values of a investment with a nominal interest rate of compounded daily versus continuously over a -year period.  It turns out that the difference is approximately which is pretty negligible given that it is over years. Scientists often use a continuous growth model when tracking the growth of a population s a relatively short period of time because a continuous model is typically easier to deal with than a discrete model like daily compounding. We will still employ the term nominal growth rate to refer to the growth rate at any instant of time.   Population Growth  Examples Population Growth  Suppose we start with a colony of grams of bacteria in a Petri dish and we wish to model the growth of the population as a function of time.                                                              In light of what we said before, let s assume that this bacteria grows at a continuous rate which is proportional to its size. While it is true that the bacteria reproduce in a discrete manner, it is not unreasonable to assume this over a short period. With that in mind, let denote the size of the bacteria culture in grams at time in days and let's assume that the nominal growth rate is .  Since we started with grams of bacteria we have the initial condition . This says that the amount of bacteria at time must satisfy the IVP: Take specific notice that the differential equation in IVP expresses the idea that the rate of change of the population, , is proportional to the size of the population, , and that the constant of proportionality is , or .   Vocabulary nominal growth rate Clearly there is nothing particularly special about the number If our colony had been increasing at a nominal rate of we d have arrived at the IVP     Vocabulary Differential Equations   To begin solving IVP show that one solution of the differential equation  , is There are other solutions. Find one of them.    From we see that a solution of the differential equation in our bacterial growth problem, IVP , is . But does not satisfy the initial condition since so can t be the solution of IVP . Can we tweak so that it satisfies the initial condition as well?   Find the Pattern    Show that solves the differential equation: . What is ?      Show that solves the differential equation: . What is ?      Show that if is any constant then solves the differential equation . What is ?      Did your answer in part (c) account for the possibility that ? If not, redo it assuming that . What is in this case?        Use the results of parts (a) and (b) of to show that is the solution of IVP .      According to the model in part (a) how much did the colony grow over the first day and how does this compare to the growth rate of ?      Use the model to predict the size of the colony in days. Is this reasonable? What does it say about our assumptions in this problem?      Suppose our growth rate was per day. Would the bacteria have grown half as much in the first day as it did when the growth rate was per day?  Make your best guess.  Use Calculus to test your guess.        Vocabulary nominal growth rate  Vocabulary relative growth rate In general, if we start with a population of, say , and the rate of change of is proportional to itself then it will satisfy an IVP of the form: The constant is called the nominal growth rate as we ve seen. Because it is also called the relative growth rate of the population and is often given as a percentage, as we have done here.  The IVP should look familiar to you. Notice that when and it is the same as IVP which we used to define the the natural exponential. Except, of course, for the names of the variables. To put it another way IVP is the special case of IVP when Since these are so similar it is not surprising that the solution of IVP involves the natural exponential.   Problem and suggest, rather convincingly, that the general solution of IVP is     Show that is a solution of IVP .     Part indicates that there are limitations to the usefulness of IVP and its solution, . If we use it to predict how much bacteria there would be after one year we get grams. Since current estimates of the mass of the entire universe are around grams, it is pretty clear that our model doesn’t work in the long term.  Clearly the bacteria can not sustain a growth rate of indefinitely. If nothing else, they will eventually run out of food. Our point here is that this model, like all models, is limited. To use a mathematical model effectively we need to stay within its limitations.  But in the short term this is actually a very good model. The picture below shows the surface of Lake Erie during what is called an algal bloom.   The green discoloration on the western side of the lake is from an explosive (exponential) growth of algae. When the conditions for algae growth are nearly optimum if there is abundant food, there is room for the population to expand into, and the water temperature is exactly right the population of algae in Lake Erie tracks with our model nearly perfectly. The quantity of algae grows exponentially until the conditions become sub-optimal. Then the population of algae drops again to normal levels.          An algal bloom can happen in any body of water where algae grow. They are common in alpine lakes in the early spring when nutrients are released by the melting snow, but the fish and insects that feed on the algae have not yet emerged in large numbers. We will return to this problem in Section where we will tweak this model to extend its usefulness to longer periods of time. But for now we will continue to use this exponential growth model with the understanding that for large values of it is unreliable.   Drills exponential growth   Suppose our bacteria population is increasing at a relative rate of 10% per day. If we started with 100 grams, how much would there be after one, two, and three days?    At the end of the previous section, we asked how long it would take for an investment to double. Here we can ask, based on our model, how long it would take for our population to double, or triple, or reach a specific level. To answer these questions we ll need the inverses of the exponential functions which are called the logarithm functions .         "
+},
+{
+  "id": "SECTIONExponentialGrowth-3",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "nominal growth rate "
+},
+{
+  "id": "EXAMPLEpopulation-growth",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#EXAMPLEpopulation-growth",
+  "type": "Example",
+  "number": "8.7.0.1",
+  "title": "Population Growth.",
+  "body": " Population Growth  Examples Population Growth  Suppose we start with a colony of grams of bacteria in a Petri dish and we wish to model the growth of the population as a function of time.                                                              In light of what we said before, let s assume that this bacteria grows at a continuous rate which is proportional to its size. While it is true that the bacteria reproduce in a discrete manner, it is not unreasonable to assume this over a short period. With that in mind, let denote the size of the bacteria culture in grams at time in days and let's assume that the nominal growth rate is .  Since we started with grams of bacteria we have the initial condition . This says that the amount of bacteria at time must satisfy the IVP: Take specific notice that the differential equation in IVP expresses the idea that the rate of change of the population, , is proportional to the size of the population, , and that the constant of proportionality is , or .   Vocabulary nominal growth rate Clearly there is nothing particularly special about the number If our colony had been increasing at a nominal rate of we d have arrived at the IVP   "
+},
+{
+  "id": "DRILLExpGrowth1",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#DRILLExpGrowth1",
+  "type": "Problem",
+  "number": "8.7.0.2",
+  "title": "",
+  "body": " Vocabulary Differential Equations   To begin solving IVP show that one solution of the differential equation  , is There are other solutions. Find one of them.   "
+},
+{
+  "id": "PROBLEMExpGrowth2",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#PROBLEMExpGrowth2",
+  "type": "Problem",
+  "number": "8.7.0.3",
+  "title": "Find the Pattern.",
+  "body": " Find the Pattern    Show that solves the differential equation: . What is ?      Show that solves the differential equation: . What is ?      Show that if is any constant then solves the differential equation . What is ?      Did your answer in part (c) account for the possibility that ? If not, redo it assuming that . What is in this case?    "
+},
+{
+  "id": "PROBLEMBacteriaIVP1",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#PROBLEMBacteriaIVP1",
+  "type": "Problem",
+  "number": "8.7.0.4",
+  "title": "",
+  "body": "   Use the results of parts (a) and (b) of to show that is the solution of IVP .      According to the model in part (a) how much did the colony grow over the first day and how does this compare to the growth rate of ?      Use the model to predict the size of the colony in days. Is this reasonable? What does it say about our assumptions in this problem?      Suppose our growth rate was per day. Would the bacteria have grown half as much in the first day as it did when the growth rate was per day?  Make your best guess.  Use Calculus to test your guess.      "
+},
+{
+  "id": "SECTIONExponentialGrowth-9",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "nominal relative "
+},
+{
+  "id": "SECTIONExponentialGrowth-12",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-12",
+  "type": "Problem",
+  "number": "8.7.0.5",
+  "title": "",
+  "body": "  Show that is a solution of IVP .   "
+},
+{
+  "id": "SECTIONExponentialGrowth-19",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-19",
+  "type": "Drill",
+  "number": "8.7.0.6",
+  "title": "",
+  "body": " Drills exponential growth   Suppose our bacteria population is increasing at a relative rate of 10% per day. If we started with 100 grams, how much would there be after one, two, and three days?   "
+},
+{
+  "id": "SECTIONExponentialGrowth-20",
+  "level": "2",
+  "url": "SECTIONExponentialGrowth.html#SECTIONExponentialGrowth-20",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "exponential functions logarithm functions "
 },
 {
   "id": "SECTIONnatural-logarithm-1",
