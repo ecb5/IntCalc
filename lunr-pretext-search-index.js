@@ -11662,95 +11662,68 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "20.3",
   "title": "Properties of Definite Integrals",
-  "body": " Properties of Definite Integrals     It is to the definite integral that the structual engineers must render thanks for the Golden Gate Bridge. For it rests on this even more than on concrete and steel.   James R. Newman (1907 1966)   Earlier we observed that the problem in part (c) of was the same as the problem in part (b) in the sense that the computations needed are exactly the same. Since that is true it is clear that the area sketched in can be interpreted as representing the distance traveled in part (b). That is, had we sketched from part (b) we d have drawn exactly the same sketch as the one we used in part (c) but with different labels.  In fact it is generally true that once we have modeled a real-world problem as an integral of the form: it can be helpful to think of the area under the curve (between the graph of and the axis) as a geometric representation of the integral. Some care must be taken however.  It is important to remember that an integral accumulates differentials. When those differentials all represent areas then then so does the integral. But a differential can be either positive or negative and we know that areas can not be negative.   Integrals Are Not Always Areas  For example consider the definite integral Evaluating we have Since areas are by definition positive this is clearly not an area. To see what s going on here consider the sketch in .   Integrals do not always represent areas. It should be clear that for each differential rectangle below the -axis (to the left of the -axis) there is a corresponding rectangle, with the same area, above the -axis (to the right of the -axis). The area of the rectangle on the right is . But the area of the rectangle on the left is because in that case.   Graph of y=x with two identical differential areas between the graph and the x axis. One is to the left of the y axis and below the x axis. The other is above the x axis and above the x axis.                         But the integral computes the sum of the differentials of the form , not , and in this problem for every differential on the right side of the graph there is a corresponding differential on the left side with the same magnitude but opposite sign. Thus they will all sum to zero. Which is not an area.  It is common and wrong to say that the rectangles on the left have negative area so they cancel the rectangles on the right. Be careful. Thinking this way is deceptive. It works just often enough to lead you into carelessness. Avoid it. There is no such thing as a negative area.    In particular the following properties hold:            Properties of the Definite Integral      In light of the Fundamental Theorem Of Calculus this is not surprising that these properties are consistent with the antidifferentiation rules we saw in . That being said, let s make sense of these properties beyond the fundamental theorem. First and foremost, remember that these integrals are sums of differentials and behave like sums. With this in mind, lets compare the first three properties in the table with their finite sum analogs.  Properties , , and might seem less obvious. We will make sense of these geometrically, but let s first note that these are consistent with the FTC as illustrated in the following examples.   Some Examples                               To see that these properties hold geometrically (without the FTC ), recall that this really is a sum of differentials. Specifically, we have the following diagram illustrating a generic rectangle that we are summing.   A geometic representation of integration   A geometic representation of integration    When we consider with , then the difference is a positive change. When we consider , then the difference represents a negative change. Hence, we have    Use the fact that to show that .   As for the last property, Consider the following diagram where .   The sum property of integration   The sum property of integration    If we are summing differentials from to and summing them from to , then this certainly would be the same as summing them from to . Thus .    Show that for the case where , we still have     We already know that Solve for and use a previous property.     Drills  Suppose Compute                               Note to self  Make the reference to part (e) below an active reference.   Part (e) of the last problem brings up an interesting aspect about definite integrals. Since the final answer is a number, then the variable t is immaterial. For example, we have With this in mind, many people call the , , or in the integral a dummy variable. This means that you can substitute any letter in and it will not change the results.  Speaking of substitution, all of the techniques we applied when computing indefinite integrals work just as well for definite integrals. We just need to make sure that the limits of integration match.   Consider the integral If we make the substitution , then , and so At this point, we have two options: we can integrate and change the variable back into to finish the fundamental theorem of calculus, or we can convert everything over to and not deal with anymore. We ll show both. In the first approach, we have   In the second approach we have that , so when , and when , , so that Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an limit for or vice versa.    Computing we see that Integration by Parts seems to be the way to go. If we let and , then After applying we have      Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve.  What would such a curve look like?     Show that   Does this make sense geometrically? Explain.    We know that Use the substitution in the integral on the left.     Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that in this case   Does this make sense geometrically? Explain.     Fourier Series     Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves     Vocabulary Fourier Series It can be shown (though we won t do it here), that if a function defined on the interval can be written as the Fourier Series:  then      With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.      With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.      Given the symmetries of the graphs above, is this surprising? Explain.     "
+  "body": " Properties of Definite Integrals     It is to the definite integral that the structual engineers must render thanks for the Golden Gate Bridge. For it rests on this even more than on concrete and steel.   James R. Newman (1907 1966)   Earlier we observed that the problem in part (c) of was the same as the problem in part (b) in the sense that the computations needed are exactly the same. Since that is true it is clear that the area sketched in can be interpreted as representing the distance traveled in part (b). That is, had we sketched from part (b) we d have drawn exactly the same sketch as the one we used in part (c) but with different labels.  In fact it is generally true that once we have modeled a real-world problem as an integral of the form: it can be helpful to think of the area under the curve (between the graph of and the axis) as a geometric representation of the integral. Some care must be taken however.  It is important to remember that an integral accumulates differentials. When those differentials all represent areas then then so does the integral. But a differential can be either positive or negative and we know that areas can not be negative.   Integrals Are Not Always Areas  For example consider the definite integral Evaluating we have Since areas are by definition positive this is clearly not an area. To see what s going on here consider the sketch in .   Integrals do not always represent areas. It should be clear that for each differential rectangle below the -axis (to the left of the -axis) there is a corresponding rectangle, with the same area, above the -axis (to the right of the -axis). The area of the rectangle on the right is . But the area of the rectangle on the left is because in that case.   Graph of y=x with two identical differential areas between the graph and the x axis. One is to the left of the y axis and below the x axis. The other is above the x axis and above the x axis.                         But the integral computes the sum of the differentials of the form , not , and in this problem for every differential on the right side of the graph there is a corresponding differential on the left side with the same magnitude but with opposite sign. Thus they will all sum to zero. Which is not an area.  It is common and wrong to say that the rectangles on the left have negative area so they cancel the rectangles on the right. Be careful. There is no such thing as a negative area.   This is a place where your intuition will lead you astray if you do not examine it closely. Integration does not always compute an area, but the problems used to teach it are areas (or can be interpreted as areas) just often enough to lead you into careless thinking and bad habits. Avoid it.   Integrals were originaly introduced as a way to compute the sum of infinitely many differentials, and the modern definition of an integral involves a limit of such sums so the intuition you ve learned from basic arithmetic from summing finitely many terms is much more reliable. In particular the following properties hold:                      Properties of the Definite Integral       The next problem is very illuminative and will help you develop your intuition about definite integrals. You should do it or at least give it serious though whether your instructor has assigned it or not.     Give an example of a finite sum which displays each of the properties of the definite integral , and show that each propertie is true for finite sums.               For Property 4   Integrating from to accumulates the sum in one direction, so that is the (finite) difference . Integrating from to accumulates the sum in the other, so is the (finite) difference .                                                                                                      Use Property 1 to prove Property 4 .                                        Drills  Suppose Compute                               Note to self  Make the reference to part (e) below an active reference.   Take particular notice of part (v) of . It brings up an interesting point. Since a definite integral represents a number, not a function, the variable dummy variable and thus it doesn t matter what we call it. For example, we have .       Speaking of substitution, all of the techniques we applied when computing indefinite integrals work just as well for definite integrals. We just need to make sure that the limits of integration match.  To see this consider the integral . If we make the substitution , then , and so but notice that now the index variable is but the function variable is . But we need them to match.  At this point, we have two options:  We can integrate and then change the function variable back into   or we can convert the index variable to .  We ll show both.  The first approach is straightforward. We have   For the second approach notice that when , and when , , so that   It doesn t really matter which procedure you choose. You ll end up doing the same computations either way. We suggest you choose one and use it exclusively, at least at first.    Computing we see that Integration by Parts seems to be the way to go. If we let and , then After applying we have      Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve.  What would such a curve look like?     Show that   Does this make sense geometrically? Explain.    We know that Use the substitution in the integral on the left.     Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that in this case   Does this make sense geometrically? Explain.     Fourier Series     Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves     Vocabulary Fourier Series It can be shown (though we won t do it here), that if a function defined on the interval can be written as the Fourier Series:  then      With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.      With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.      Given the symmetries of the graphs above, is this surprising? Explain.     "
 },
 {
-  "id": "PROBLEMIntegralsAreNotAreas",
+  "id": "EXAMPLEIntegralsAreNotAreas",
   "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#PROBLEMIntegralsAreNotAreas",
-  "type": "Problem",
+  "url": "SECTIONDefiniteIntegral.html#EXAMPLEIntegralsAreNotAreas",
+  "type": "Example",
   "number": "20.3.0.1",
   "title": "Integrals Are Not Always Areas.",
-  "body": " Integrals Are Not Always Areas  For example consider the definite integral Evaluating we have Since areas are by definition positive this is clearly not an area. To see what s going on here consider the sketch in .   Integrals do not always represent areas. It should be clear that for each differential rectangle below the -axis (to the left of the -axis) there is a corresponding rectangle, with the same area, above the -axis (to the right of the -axis). The area of the rectangle on the right is . But the area of the rectangle on the left is because in that case.   Graph of y=x with two identical differential areas between the graph and the x axis. One is to the left of the y axis and below the x axis. The other is above the x axis and above the x axis.                         But the integral computes the sum of the differentials of the form , not , and in this problem for every differential on the right side of the graph there is a corresponding differential on the left side with the same magnitude but opposite sign. Thus they will all sum to zero. Which is not an area.  It is common and wrong to say that the rectangles on the left have negative area so they cancel the rectangles on the right. Be careful. Thinking this way is deceptive. It works just often enough to lead you into carelessness. Avoid it. There is no such thing as a negative area.   "
+  "body": " Integrals Are Not Always Areas  For example consider the definite integral Evaluating we have Since areas are by definition positive this is clearly not an area. To see what s going on here consider the sketch in .   Integrals do not always represent areas. It should be clear that for each differential rectangle below the -axis (to the left of the -axis) there is a corresponding rectangle, with the same area, above the -axis (to the right of the -axis). The area of the rectangle on the right is . But the area of the rectangle on the left is because in that case.   Graph of y=x with two identical differential areas between the graph and the x axis. One is to the left of the y axis and below the x axis. The other is above the x axis and above the x axis.                         But the integral computes the sum of the differentials of the form , not , and in this problem for every differential on the right side of the graph there is a corresponding differential on the left side with the same magnitude but with opposite sign. Thus they will all sum to zero. Which is not an area.  It is common and wrong to say that the rectangles on the left have negative area so they cancel the rectangles on the right. Be careful. There is no such thing as a negative area.   This is a place where your intuition will lead you astray if you do not examine it closely. Integration does not always compute an area, but the problems used to teach it are areas (or can be interpreted as areas) just often enough to lead you into careless thinking and bad habits. Avoid it.  "
 },
 {
-  "id": "IntPropExamples",
+  "id": "PROBLEMPropertiesOfDefInt",
   "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#IntPropExamples",
-  "type": "Example",
+  "url": "SECTIONDefiniteIntegral.html#PROBLEMPropertiesOfDefInt",
+  "type": "Problem",
   "number": "20.3.0.3",
-  "title": "Some Examples.",
-  "body": " Some Examples                              "
+  "title": "",
+  "body": "  Give an example of a finite sum which displays each of the properties of the definite integral , and show that each propertie is true for finite sums.               For Property 4   Integrating from to accumulates the sum in one direction, so that is the (finite) difference . Integrating from to accumulates the sum in the other, so is the (finite) difference .   "
 },
 {
-  "id": "SECTIONDefiniteIntegral-14",
+  "id": "SECTIONDefiniteIntegral-12",
   "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-14",
-  "type": "Figure",
+  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-12",
+  "type": "Problem",
   "number": "20.3.0.4",
   "title": "",
-  "body": " A geometic representation of integration   A geometic representation of integration   "
+  "body": " Use Property 1 to prove Property 4 .  "
+},
+{
+  "id": "DRILLDefIntDrill1",
+  "level": "2",
+  "url": "SECTIONDefiniteIntegral.html#DRILLDefIntDrill1",
+  "type": "Drill",
+  "number": "20.3.0.5",
+  "title": "",
+  "body": " Drills  Suppose Compute                             "
 },
 {
   "id": "SECTIONDefiniteIntegral-16",
   "level": "2",
   "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-16",
-  "type": "Problem",
-  "number": "20.3.0.5",
+  "type": "Example",
+  "number": "20.3.0.6",
   "title": "",
-  "body": " Use the fact that to show that .  "
+  "body": " Speaking of substitution, all of the techniques we applied when computing indefinite integrals work just as well for definite integrals. We just need to make sure that the limits of integration match.  To see this consider the integral . If we make the substitution , then , and so but notice that now the index variable is but the function variable is . But we need them to match.  At this point, we have two options:  We can integrate and then change the function variable back into   or we can convert the index variable to .  We ll show both.  The first approach is straightforward. We have   For the second approach notice that when , and when , , so that   It doesn t really matter which procedure you choose. You ll end up doing the same computations either way. We suggest you choose one and use it exclusively, at least at first.  "
+},
+{
+  "id": "SECTIONDefiniteIntegral-17",
+  "level": "2",
+  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-17",
+  "type": "Example",
+  "number": "20.3.0.7",
+  "title": "",
+  "body": " Computing we see that Integration by Parts seems to be the way to go. If we let and , then After applying we have   "
 },
 {
   "id": "SECTIONDefiniteIntegral-18",
   "level": "2",
   "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-18",
-  "type": "Figure",
-  "number": "20.3.0.6",
-  "title": "",
-  "body": " The sum property of integration   The sum property of integration   "
-},
-{
-  "id": "SECTIONDefiniteIntegral-20",
-  "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-20",
   "type": "Problem",
-  "number": "20.3.0.7",
-  "title": "",
-  "body": "  Show that for the case where , we still have     We already know that Solve for and use a previous property.   "
-},
-{
-  "id": "SECTIONDefiniteIntegral-21",
-  "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-21",
-  "type": "Drill",
   "number": "20.3.0.8",
-  "title": "",
-  "body": " Drills  Suppose Compute                             "
-},
-{
-  "id": "SECTIONDefiniteIntegral-25",
-  "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-25",
-  "type": "Example",
-  "number": "20.3.0.9",
-  "title": "",
-  "body": " Consider the integral If we make the substitution , then , and so At this point, we have two options: we can integrate and change the variable back into to finish the fundamental theorem of calculus, or we can convert everything over to and not deal with anymore. We ll show both. In the first approach, we have   In the second approach we have that , so when , and when , , so that Whichever you do is entirely up to you, usually one is not easier than the other. What you cannot do is to substitute an limit for or vice versa.  "
-},
-{
-  "id": "SECTIONDefiniteIntegral-26",
-  "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-26",
-  "type": "Example",
-  "number": "20.3.0.10",
-  "title": "",
-  "body": " Computing we see that Integration by Parts seems to be the way to go. If we let and , then After applying we have   "
-},
-{
-  "id": "SECTIONDefiniteIntegral-27",
-  "level": "2",
-  "url": "SECTIONDefiniteIntegral.html#SECTIONDefiniteIntegral-27",
-  "type": "Problem",
-  "number": "20.3.0.11",
   "title": "",
   "body": "  Suppose that has the property that . Thus is on the curve of this function exactly when is on the curve.  What would such a curve look like?     Show that   Does this make sense geometrically? Explain.    We know that Use the substitution in the integral on the left.     Suppose that has the property . Thus is on the curve of this function exactly when is on the curve. What would such a curve look like?  Show that in this case   Does this make sense geometrically? Explain.   "
 },
@@ -11759,7 +11732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "SECTIONDefiniteIntegral.html#FourierSeriesProb",
   "type": "Problem",
-  "number": "20.3.0.12",
+  "number": "20.3.0.9",
   "title": "Fourier Series.",
   "body": " Fourier Series     Fourier Series  Mathematicians (and scientists) use these and other symmetry properties with integrals to simplify problems whenever they can.  For example, in the theory of acoustics, sine and cosine waves form the pure tones from which all other sound waves are formed. Mathematically, we can think of a general sound wave as a function on a closed interval of time (which constitutes one cycle of the sound wave). We have some pure tones of varying frequencies defined on the interval .   Graphical representation of some pure tones   Various sinusoidal curves     Vocabulary Fourier Series It can be shown (though we won t do it here), that if a function defined on the interval can be written as the Fourier Series:  then      With the above set up, suppose that is symmetric about the axis. That is . Show that in this case, for all and so can be written exclusively as a sum of cosine waves.      With the above set up, suppose that is symmetric about the origin. That is . Show that in this case, for all and so can be written exclusively as a sum of sine waves.      Given the symmetries of the graphs above, is this surprising? Explain.    "
 },
