@@ -1289,6 +1289,28 @@ body.pretext.ptx-embedded .ptx-navbar .nav-other-controls > .button {
 .exercise-like > *:is(.solutions) {
   margin-top: 0.5em;
 }
+.exercisegroup > .heading:first-child {
+  display: inline;
+  line-height: initial;
+  border-bottom: 0;
+}
+.exercisegroup > .heading:first-child:after {
+  content: "\2009";
+}
+.exercisegroup > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) {
+  display: inline;
+}
+.exercisegroup > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .autopermalink {
+  display: none;
+}
+.exercisegroup > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child,
+.exercisegroup > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child {
+  display: inline;
+}
+.exercisegroup > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child > .autopermalink,
+.exercisegroup > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child > .autopermalink {
+  display: none;
+}
 .exercisegroup .exercise-like {
   margin-top: 1em;
 }
@@ -1296,13 +1318,6 @@ body.pretext.ptx-embedded .ptx-navbar .nav-other-controls > .button {
   font-size: 1.1em;
   line-height: 1.05em;
   margin-top: 0.75em;
-  display: inline;
-}
-.exercisegroup > .heading + .introduction {
-  display: inline;
-}
-.exercisegroup > .heading + .introduction > .para:first-child {
-  display: inline;
 }
 .exercisegroup .exercisegroup-exercises {
   margin-top: 1em;
@@ -1460,20 +1475,22 @@ section.solutions section > h6.heading {
 .discussion-like > .heading:first-child:after {
   content: "\2009";
 }
-.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction) {
+.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) {
   display: inline;
 }
-.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction) > .para:first-child {
+.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .autopermalink {
+  display: none;
+}
+.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child,
+.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child {
   display: inline;
 }
-.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction) > .para.logical:first-child > .para:first-child {
-  display: inline;
+.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child > .autopermalink,
+.discussion-like > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child > .autopermalink {
+  display: none;
 }
 .discussion-like > .heading ::after {
   content: "\2009";
-}
-.discussion-like > .heading + .para {
-  display: inline;
 }
 .discussion-like > .heading .space,
 .discussion-like > .heading .codenumber,
@@ -1559,6 +1576,12 @@ summary.knowl__link {
   padding-top: calc(20px + 0.25ex);
   margin-top: 2.5em !important;
 }
+.goal-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink {
+  left: calc(-1 * (3px + 2em));
+}
+.goal-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink {
+  left: calc(-1 * (23px + 2em));
+}
 .goal-like:not(.knowl__content, .born-hidden-knowl) > .heading:first-child {
   background-color: var(--content-background);
   display: block;
@@ -1593,6 +1616,24 @@ summary.knowl__link {
 .openproblem-like:not(.knowl__content, .born-hidden-knowl) > .heading:first-child,
 .computation-like:not(.knowl__content, .born-hidden-knowl) > .heading:first-child {
   color: var(--block-head-color);
+}
+.theorem-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink,
+.definition-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink,
+.example-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink,
+.project-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink,
+.remark-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink,
+.openproblem-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink,
+.computation-like:not(.knowl__content, .born-hidden-knowl) > .autopermalink {
+  left: calc(-1 * (2px + 2em));
+}
+.theorem-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink,
+.definition-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink,
+.example-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink,
+.project-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink,
+.remark-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink,
+.openproblem-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink,
+.computation-like:not(.knowl__content, .born-hidden-knowl) > * > .autopermalink {
+  left: calc(-1 * (12px + 2em));
 }
 .theorem-like:not(.knowl__content, .born-hidden-knowl)::after,
 .definition-like:not(.knowl__content, .born-hidden-knowl)::after,
@@ -1634,6 +1675,12 @@ summary.knowl__link {
 }
 .project-like:not(.knowl__content, .born-hidden-knowl):not(.knowl__content, .born-hidden-knowl) > .heading:first-child {
   color: var(--block-head-color);
+}
+.project-like:not(.knowl__content, .born-hidden-knowl):not(.knowl__content, .born-hidden-knowl) > .autopermalink {
+  left: calc(-1 * (2px + 2em));
+}
+.project-like:not(.knowl__content, .born-hidden-knowl):not(.knowl__content, .born-hidden-knowl) > * > .autopermalink {
+  left: calc(-1 * (12px + 2em));
 }
 .project-like:not(.knowl__content, .born-hidden-knowl):not(.knowl__content, .born-hidden-knowl)::after {
   content: "";
@@ -1703,30 +1750,44 @@ section.solutions:not(:is(:first-child)):not(.knowl__content, .born-hidden-knowl
   border-left: 10px solid var(--page-border-color);
   background-color: var(--content-background);
 }
+section.solutions:not(:is(:first-child)):not(.knowl__content, .born-hidden-knowl) > .autopermalink {
+  left: calc(-1 * (10px + 2em));
+}
+section.solutions:not(:is(:first-child)):not(.knowl__content, .born-hidden-knowl) > * > .autopermalink {
+  left: calc(-1 * (25px + 2em));
+}
 section.solutions:not(:is(:first-child)):not(.knowl__content, .born-hidden-knowl) > .heading:first-child {
   margin-top: 0;
 }
 .paragraphs > .heading:first-child,
-article > .heading:first-child {
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child {
   display: inline;
   line-height: initial;
   border-bottom: 0;
 }
 .paragraphs > .heading:first-child:after,
-article > .heading:first-child:after {
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child:after {
   content: "\2009";
 }
-.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction),
-article > .heading:first-child + :is(.para, .para.logical, .introduction) {
+.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2),
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) {
   display: inline;
 }
-.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction) > .para:first-child,
-article > .heading:first-child + :is(.para, .para.logical, .introduction) > .para:first-child {
+.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .autopermalink,
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .autopermalink {
+  display: none;
+}
+.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child,
+.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child,
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child,
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child {
   display: inline;
 }
-.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction) > .para.logical:first-child > .para:first-child,
-article > .heading:first-child + :is(.para, .para.logical, .introduction) > .para.logical:first-child > .para:first-child {
-  display: inline;
+.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child > .autopermalink,
+.paragraphs > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child > .autopermalink,
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para:first-child > .autopermalink,
+article:not(:is(.assemblage-like, .goal-like)) > .heading:first-child + :is(.para, .para.logical, .introduction):nth-child(2) > .para.logical:first-child > .para:first-child > .autopermalink {
+  display: none;
 }
 * {
   box-sizing: border-box;
@@ -1755,9 +1816,6 @@ ol.decimal {
 }
 ol.lower-alpha {
   list-style-type: lower-alpha;
-}
-ol.lower-alpha-level-1 > li::marker {
-  content: "(" counter(list-item, lower-alpha) ") ";
 }
 ol.upper-alpha {
   list-style-type: upper-alpha;
@@ -2553,11 +2611,12 @@ img.contained {
   text-align: center;
   font-size: 0.9em;
 }
-.ptx-content img,
-.ptx-content svg {
+.image-box img,
+.image-box svg {
   background: var(--ptx-image-bg);
 }
-.mermaid > svg {
+.image-box .mermaid > svg,
+.image-box .ptx-mermaid-dialog > svg {
   background: none;
 }
 .image-description summary {
@@ -2570,21 +2629,6 @@ img.contained {
   justify-content: center;
   display: flex;
   gap: 0.5em;
-}
-.image-box > img:not(.mag_popup) {
-  cursor: zoom-in;
-}
-img.mag_popup {
-  border: 1px solid #666;
-  box-shadow: 4px 6px 4px #999;
-  cursor: zoom-out;
-}
-.mag_popup_container {
-  background: var(--content-background);
-  width: 100%;
-  position: absolute;
-  z-index: 1001;
-  overflow-x: visible;
 }
 .audio {
   width: 100%;
@@ -3467,6 +3511,10 @@ ul[data-component=timedAssessment] {
   margin-right: auto;
   display: block;
 }
+.geogebra-applet .ggb_preview img {
+  width: 100%;
+  height: 100%;
+}
 .interactive__instructions {
   max-width: var(--base-content-width);
 }
@@ -3799,6 +3847,155 @@ label.incorrect .feedback {
 .ptx-geogebra-calculator .button {
   all: unset;
 }
+.ptx-image-dialog-trigger-container {
+  position: relative;
+}
+.ptx-image-dialog-trigger-container:has(> :is(img, pre.mermaid, .ChemAccess-element, .asymptote-box):hover) .ptx-image-expand-button {
+  opacity: 1;
+}
+.ptx-image-expand-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 1;
+  opacity: 0;
+}
+.ptx-image-expand-button:hover,
+.ptx-image-expand-button:focus {
+  opacity: 0.8;
+}
+.ptx-image-dialog {
+  width: fit-content;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid var(--dialog-border-color);
+  border-radius: 0;
+  background: var(--dialog-background);
+  box-shadow: 0 0 5px var(--dialog-shadow-color);
+  color: var(--dialog-text-color);
+}
+.ptx-image-dialog .ptx-dialog-close-button {
+  font: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+  min-height: 34px;
+  color: var(--button-text-color);
+  background-color: var(--button-background);
+  border-width: 0;
+  border-color: var(--button-border-color);
+  border-style: solid;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  user-select: none;
+}
+.ptx-image-dialog .ptx-dialog-close-button:hover:not(.disabled) {
+  color: var(--button-hover-text-color);
+  background-color: var(--button-hover-background);
+}
+.ptx-image-dialog .ptx-dialog-close-button:focus-visible {
+  outline: 2px solid var(--button-text-color);
+  outline-offset: -2px;
+}
+.ptx-image-dialog .ptx-dialog-close-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.ptx-image-dialog .ptx-dialog-close-button.hidden {
+  display: none;
+}
+.ptx-image-dialog .ptx-dialog-close-button.open {
+  color: var(--button-hover-text-color);
+  background-color: var(--button-hover-background);
+}
+.ptx-image-dialog .ptx-dialog-topbar {
+  min-height: 15px;
+  user-select: none;
+}
+.ptx-image-dialog .heading:is(h2) {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+.ptx-image-dialog::backdrop {
+  background: var(--dialog-background);
+  opacity: 0.6;
+}
+.ptx-image-dialog {
+  background: var(--content-background);
+}
+.ptx-image-dialog .image-box * + * {
+  margin-top: 0.5em;
+}
+.ptx-image-dialog .ptx-image-dialog-content {
+  display: contents;
+}
+.ptx-image-dialog .ptx-dialog-topbar {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 0;
+}
+.ptx-image-dialog .ptx-dialog-close-button {
+  opacity: 0;
+}
+.ptx-image-dialog .ptx-dialog-close-button:hover,
+.ptx-image-dialog .ptx-dialog-close-button:focus {
+  opacity: 0.8;
+}
+.ptx-image-dialog figure,
+.ptx-image-dialog .image-box {
+  width: auto !important;
+  margin: 0 !important;
+}
+.ptx-image-dialog img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+.ptx-image-dialog pre.ptx-mermaid-dialog {
+  width: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 !important;
+  overflow: hidden;
+}
+.ptx-image-dialog pre.ptx-mermaid-dialog svg {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100%;
+}
+.ptx-image-dialog svg.ptx-asymptote-dialog {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100%;
+}
+.ptx-image-dialog .ChemAccess-element {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.ptx-image-dialog .ChemAccess-element .svg,
+.ptx-image-dialog .ChemAccess-element svg {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
 section,
 article,
 li,
@@ -3838,48 +4035,12 @@ li > .autopermalink {
 .exercises > .autopermalink {
   top: 1.5ex;
 }
-.assemblage-like > .para > .autopermalink,
-.example-like > .para > .autopermalink,
-.example-like > .exercise-like > .autopermalink,
-.project-like > .para > .autopermalink,
-.project-like > .exercise-like > .autopermalink,
-.project-like > .exercise-like > .introduction > .para > .autopermalink,
-.project-like > .exercise-like > .conclusion > .para > .autopermalink,
-.remark-like > .para > .autopermalink {
-  left: -2.9em;
-}
-.axiom-like > .para:first-of-type > .autopermalink,
-.example-like > .para:first-of-type > .autopermalink,
-.exercise-like > .para:first-of-type > .autopermalink,
-.solution-like > .para:first-of-type > .autopermalink,
-.assemblage-like > .para:first-of-type > .autopermalink,
-.definition-like > .para:first-of-type > .autopermalink,
-.remark-like > .para:first-of-type > .autopermalink,
-.project-like > .para:first-of-type > .autopermalink,
-.openproblem-like > .para:first-of-type > .autopermalink,
-.computation-like > .para:first-of-type > .autopermalink,
-.theorem-like > .para:first-of-type > .autopermalink,
-.proof > .para:first-of-type > .autopermalink,
-.case > .para:first-of-type > .autopermalink,
 li > .para:first-of-type > .autopermalink,
 dd > .para:first-of-type > .autopermalink {
   display: none;
 }
-.axiom-like > .introduction > .para:first-of-type > .autopermalink,
-.example-like > .introduction > .para:first-of-type > .autopermalink,
-.exercise-like > .introduction > .para:first-of-type > .autopermalink,
-.solution-like > .introduction > .para:first-of-type > .autopermalink,
-.assemblage-like > .introduction > .para:first-of-type > .autopermalink,
-.definition-like > .introduction > .para:first-of-type > .autopermalink,
-.remark-like > .introduction > .para:first-of-type > .autopermalink,
-.project-like > .introduction > .para:first-of-type > .autopermalink,
-.openproblem-like > .introduction > .para:first-of-type > .autopermalink,
-.computation-like > .introduction > .para:first-of-type > .autopermalink,
-.theorem-like > .introduction > .para:first-of-type > .autopermalink,
-.proof > .introduction > .para:first-of-type > .autopermalink,
-.case > .introduction > .para:first-of-type > .autopermalink,
-li > .introduction > .para:first-of-type > .autopermalink,
-dd > .introduction > .para:first-of-type > .autopermalink {
+:is(.solution-like, .assemblage-like):not(:has(> .heading)) > .para:first-of-type > .autopermalink,
+:is(.solution-like, .assemblage-like):not(:has(> .heading)) > .introduction > .para:first-of-type > .autopermalink {
   display: none;
 }
 .ptx-content:has(.autopermalink:hover) .autopermalink {
@@ -4068,7 +4229,7 @@ body.ptx-runestone-template .ptx-runestone-container:has(.parsons_section, .ac_s
   --toclevel3-text-color: var(--toc-text-color);
   --body-text-color: #000;
   --body-title-color: #000;
-  --ptx-image-bg: transparent;
+  --ptx-image-bg: white;
   --activated-content-bg: #fae6e3;
   --summary-link-background: var(--button-background);
   --summary-link-text-color: var(--button-text-color);
