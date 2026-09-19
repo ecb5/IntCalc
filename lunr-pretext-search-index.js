@@ -11458,9 +11458,9 @@ var ptx_lunr_docs = [
   "body": "Method of Exhaustion "
 },
 {
-  "id": "FIGUREy",
+  "id": "FIGUREArchimTombSymbol",
   "level": "2",
-  "url": "SECTIONCavalierisMethod.html#FIGUREy",
+  "url": "SECTIONCavalierisMethod.html#FIGUREArchimTombSymbol",
   "type": "Figure",
   "number": "20.1.1.2",
   "title": "",
